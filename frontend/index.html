@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Digital Safety Knights — Protecting children from online predators, harmful AI, gaming risks, and digital threats worldwide.">
+<meta name="keywords" content="child safety, online safety, Roblox safety, AI safety, digital parenting, cyber safety">
+<meta property="og:title" content="Digital Safety Knights (DSK)">
+<meta property="og:description" content="Protecting Kids in the Digital World">
+<meta property="og:image" content="assets/logo.png">
+<title>Digital Safety Knights (DSK) — Protecting Kids Online</title>
+<link rel="icon" href="assets/favicon.ico">
+<style>
+  :root {
+    --navy: #0d1b3e;
+    --navy2: #1a2f6e;
+    --gold: #c9a84c;
+    --gold2: #e8c56a;
+    --light: #f4f6fb;
+    --white: #ffffff;
+    --danger: #e63946;
+    --success: #2a9d8f;
+    --gray: #6c757d;
+    --text: #2d3748;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--navy);
+    position: sticky; top: 0; z-index: 999;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2rem; height: 68px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .nav-logo img { height: 42px; width: auto; }
+  .nav-logo-text { display: flex; flex-direction: column; }
+  .nav-logo-text .brand { color: var(--gold); font-size: 1rem; font-weight: 900; letter-spacing: 0.5px; }
+  .nav-logo-text .tagline { color: #8899bb; font-size: 0.65rem; letter-spacing: 1px; text-transform: uppercase; }
+  .nav-links { display: flex; gap: 1.4rem; align-items: center; }
+  .nav-links a { color: #ccd6f6; text-decoration: none; font-size: 0.88rem; font-weight: 600; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-emergency { color: #ff6b6b !important; }
+  .nav-cta {
+    background: var(--gold); color: var(--navy) !important;
+    padding: 9px 20px; border-radius: 22px;
+    font-weight: 800 !important; font-size: 0.85rem !important;
+    transition: transform 0.2s, box-shadow 0.2s !important;
+  }
+  .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(201,168,76,0.5); }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, #060e22 0%, var(--navy) 50%, #0f2255 100%);
+    color: white; text-align: center; padding: 100px 2rem 90px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 70% 40%, rgba(201,168,76,0.1) 0%, transparent 65%),
+                radial-gradient(ellipse at 20% 70%, rgba(26,47,110,0.5) 0%, transparent 60%);
+  }
+  .hero-content { position: relative; z-index: 1; }
+  .hero-logo { margin: 0 auto 2rem; }
+  .hero-logo img { height: 110px; width: auto; filter: drop-shadow(0 8px 30px rgba(201,168,76,0.4)); }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.4);
+    color: var(--gold); padding: 6px 18px; border-radius: 20px;
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 2.5px;
+    margin-bottom: 1.8rem; text-transform: uppercase;
+  }
+  .hero h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 900; line-height: 1.1; margin-bottom: 1.2rem; }
+  .hero h1 .gold { color: var(--gold); }
+  .hero p { font-size: 1.1rem; color: #a8b8d8; max-width: 620px; margin: 0 auto 3rem; line-height: 1.75; }
+  .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-gold { background: var(--gold); color: var(--navy); padding: 15px 36px; border-radius: 32px; font-weight: 900; text-decoration: none; font-size: 1rem; box-shadow: 0 6px 24px rgba(201,168,76,0.45); transition: transform 0.2s, box-shadow 0.2s; border: none; cursor: pointer; }
+  .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(201,168,76,0.55); }
+  .btn-ghost { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.25); padding: 15px 36px; border-radius: 32px; font-weight: 700; text-decoration: none; font-size: 1rem; transition: border-color 0.2s, color 0.2s; }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* ── STATS ── */
+  .stats { background: white; padding: 3.5rem 2rem; border-bottom: 1px solid #eee; }
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 2rem; max-width: 900px; margin: 0 auto; text-align: center; }
+  .stat-num { font-size: 2.6rem; font-weight: 900; color: var(--navy); line-height: 1; }
+  .stat-num .gold { color: var(--gold); }
+  .stat-label { color: var(--gray); font-size: 0.85rem; margin-top: 6px; }
+
+  /* ── COMMON SECTION ── */
+  section { padding: 5.5rem 2rem; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .section-header { text-align: center; margin-bottom: 3.5rem; }
+  .section-header h2 { font-size: 2.1rem; font-weight: 900; margin-bottom: 0.5rem; }
+  .section-header p { color: var(--gray); max-width: 560px; margin: 0 auto; line-height: 1.7; }
+  .gold-bar { width: 52px; height: 4px; background: var(--gold); border-radius: 2px; margin: 14px auto; }
+
+  /* ── THREATS ── */
+  #threats { background: var(--navy); }
+  #threats .section-header h2 { color: white; }
+  #threats .section-header p { color: #7a8fbb; }
+  .threat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+  .threat-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.18); border-radius: 18px; padding: 2rem; transition: transform 0.25s, border-color 0.25s, background 0.25s; }
+  .threat-card:hover { transform: translateY(-5px); border-color: var(--gold); background: rgba(201,168,76,0.05); }
+  .threat-icon { font-size: 2.4rem; margin-bottom: 1rem; }
+  .threat-card h3 { color: var(--gold); font-size: 1.05rem; margin-bottom: 0.6rem; }
+  .threat-card p { color: #7a8fbb; font-size: 0.87rem; line-height: 1.65; }
+
+  /* ── PROGRAMS ── */
+  #programs { background: var(--light); }
+  .program-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 1.5rem; }
+  .program-card { background: white; border-radius: 18px; padding: 2.2rem; box-shadow: 0 2px 24px rgba(13,27,62,0.07); border-top: 4px solid var(--gold); transition: transform 0.25s, box-shadow 0.25s; }
+  .program-card:hover { transform: translateY(-5px); box-shadow: 0 8px 32px rgba(13,27,62,0.12); }
+  .prog-tag { display: inline-block; background: rgba(201,168,76,0.1); color: var(--gold); border-radius: 10px; padding: 4px 12px; font-size: 0.73rem; font-weight: 800; margin-bottom: 0.9rem; letter-spacing: 0.5px; }
+  .program-card h3 { font-size: 1.08rem; margin-bottom: 0.6rem; color: var(--navy); }
+  .program-card p { color: var(--gray); font-size: 0.87rem; line-height: 1.65; }
+
+  /* ── BADGES ── */
+  #badges { background: white; }
+  .badge-row { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; }
+  .badge-item { text-align: center; width: 150px; }
+  .badge-circle { width: 86px; height: 86px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; margin: 0 auto 0.9rem; border: 3px solid; transition: transform 0.2s; }
+  .badge-item:hover .badge-circle { transform: scale(1.1); }
+  .b-bronze .badge-circle { background: #f9ede0; border-color: #cd7f32; }
+  .b-silver .badge-circle { background: #f2f2f7; border-color: #9e9e9e; }
+  .b-gold .badge-circle { background: #fef9e6; border-color: var(--gold); }
+  .b-diamond .badge-circle { background: #e8f3fd; border-color: #2980b9; }
+  .b-knight .badge-circle { background: #e9f7ef; border-color: #27ae60; }
+  .badge-item h4 { font-size: 0.88rem; font-weight: 800; color: var(--navy); }
+  .badge-item p { font-size: 0.75rem; color: var(--gray); margin-top: 3px; line-height: 1.4; }
+
+  /* ── MEMBERSHIP ── */
+  #membership { background: var(--light); }
+  .plans-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.5rem; max-width: 920px; margin: 0 auto; }
+  .plan { background: white; border-radius: 22px; padding: 2.5rem 2rem; text-align: center; box-shadow: 0 2px 24px rgba(13,27,62,0.07); position: relative; transition: transform 0.25s; }
+  .plan:hover { transform: translateY(-5px); }
+  .plan.featured { background: var(--navy); color: white; border: 2px solid var(--gold); }
+  .plan-ribbon { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--navy); padding: 4px 18px; border-radius: 20px; font-size: 0.73rem; font-weight: 900; white-space: nowrap; }
+  .plan-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+  .plan-name { font-size: 1.15rem; font-weight: 900; margin-bottom: 0.3rem; }
+  .plan.featured .plan-name { color: var(--gold); }
+  .plan-price { font-size: 2.8rem; font-weight: 900; margin: 1rem 0; }
+  .plan-price sub { font-size: 1rem; font-weight: 400; }
+  .plan.featured .plan-price { color: white; }
+  .plan-features { list-style: none; text-align: left; margin: 1.5rem 0; }
+  .plan-features li { padding: 7px 0; font-size: 0.87rem; display: flex; align-items: flex-start; gap: 8px; border-bottom: 1px solid rgba(0,0,0,0.05); }
+  .plan.featured .plan-features li { color: #b8c8e8; border-bottom-color: rgba(255,255,255,0.06); }
+  .plan-features li::before { content: '✓'; color: var(--gold); font-weight: 900; flex-shrink: 0; margin-top: 1px; }
+  .plan-btn { display: block; width: 100%; padding: 13px; border-radius: 28px; font-weight: 800; font-size: 0.95rem; border: 2px solid; cursor: pointer; transition: all 0.2s; margin-top: 1rem; text-decoration: none; }
+  .btn-outline-navy { background: transparent; border-color: var(--navy); color: var(--navy); }
+  .btn-outline-navy:hover { background: var(--navy); color: white; }
+  .btn-solid-gold { background: var(--gold); border-color: var(--gold); color: var(--navy); }
+  .btn-solid-gold:hover { background: var(--gold2); }
+
+  /* ── GUIDES ── */
+  #guides { background: var(--navy); }
+  #guides .section-header h2 { color: white; }
+  #guides .section-header p { color: #7a8fbb; }
+  .guides-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; }
+  .guide-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 1.5rem; display: flex; gap: 1rem; align-items: flex-start; transition: all 0.2s; cursor: pointer; }
+  .guide-card:hover { background: rgba(201,168,76,0.08); border-color: var(--gold); }
+  .g-icon { font-size: 2.2rem; flex-shrink: 0; }
+  .g-text h4 { color: white; font-size: 0.95rem; margin-bottom: 4px; }
+  .g-text p { color: #7a8fbb; font-size: 0.8rem; margin-bottom: 8px; line-height: 1.5; }
+  .dl-btn { background: var(--gold); color: var(--navy); border: none; border-radius: 8px; padding: 5px 14px; font-size: 0.75rem; font-weight: 800; cursor: pointer; transition: opacity 0.2s; }
+  .dl-btn:hover { opacity: 0.85; }
+
+  /* ── JOURNAL ── */
+  #journal { background: white; }
+  .journal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 1.5rem; }
+  .j-card { border-radius: 18px; overflow: hidden; box-shadow: 0 2px 24px rgba(13,27,62,0.08); transition: transform 0.25s; }
+  .j-card:hover { transform: translateY(-5px); }
+  .j-thumb { height: 150px; display: flex; align-items: center; justify-content: center; font-size: 3.5rem; }
+  .j1 { background: linear-gradient(135deg, #1a2f6e, #060e22); }
+  .j2 { background: linear-gradient(135deg, #1b5e3b, #0d2e1c); }
+  .j3 { background: linear-gradient(135deg, #6b1f7c, #350f40); }
+  .j-body { padding: 1.4rem; }
+  .j-tag { font-size: 0.7rem; font-weight: 800; color: var(--gold); text-transform: uppercase; letter-spacing: 1.5px; }
+  .j-body h3 { font-size: 1rem; margin: 0.5rem 0 0.4rem; line-height: 1.4; }
+  .j-body p { font-size: 0.83rem; color: var(--gray); line-height: 1.55; }
+  .j-meta { font-size: 0.75rem; color: #aaa; margin-top: 0.9rem; }
+
+  /* ── EMERGENCY ── */
+  #emergency { background: #fff5f5; border-top: 4px solid var(--danger); }
+  .em-box { background: white; border-radius: 22px; padding: 3rem 2.5rem; max-width: 720px; margin: 0 auto; text-align: center; box-shadow: 0 4px 32px rgba(230,57,70,0.1); }
+  .em-box h2 { color: var(--danger); font-size: 1.9rem; margin-bottom: 1rem; }
+  .em-box > p { color: var(--gray); margin-bottom: 2rem; line-height: 1.7; max-width: 540px; margin-left: auto; margin-right: auto; }
+  .em-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(155px, 1fr)); gap: 1rem; }
+  .em-contact { background: var(--light); border-radius: 14px; padding: 1.2rem; }
+  .em-contact h4 { font-size: 0.82rem; color: var(--navy); font-weight: 800; margin-bottom: 6px; }
+  .em-contact a { color: var(--danger); font-weight: 800; text-decoration: none; font-size: 0.9rem; display: block; }
+  .em-contact small { color: #aaa; font-size: 0.72rem; display: block; margin-top: 4px; }
+
+  /* ── MODAL ── */
+  .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.65); z-index: 9999; align-items: center; justify-content: center; padding: 1rem; }
+  .overlay.open { display: flex; }
+  .modal { background: white; border-radius: 26px; padding: 2.8rem 2.5rem; max-width: 480px; width: 100%; position: relative; animation: pop 0.3s ease; max-height: 90vh; overflow-y: auto; }
+  @keyframes pop { from { transform: scale(0.88); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+  .modal-x { position: absolute; top: 1.2rem; right: 1.4rem; background: none; border: none; font-size: 1.6rem; cursor: pointer; color: #aaa; line-height: 1; }
+  .modal-x:hover { color: var(--navy); }
+  .modal-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 1.2rem; }
+  .modal-logo img { height: 38px; }
+  .modal-logo span { font-weight: 900; color: var(--navy); font-size: 1rem; }
+  .modal h2 { font-size: 1.55rem; margin-bottom: 0.3rem; color: var(--navy); }
+  .modal > p { color: var(--gray); font-size: 0.88rem; margin-bottom: 1.6rem; }
+  .fgrp { margin-bottom: 1rem; }
+  .fgrp label { display: block; font-size: 0.8rem; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+  .fgrp input, .fgrp select { width: 100%; padding: 11px 14px; border: 1.5px solid #dde2f0; border-radius: 11px; font-size: 0.9rem; outline: none; transition: border-color 0.2s; font-family: inherit; }
+  .fgrp input:focus, .fgrp select:focus { border-color: var(--gold); }
+  .submit { width: 100%; padding: 14px; background: var(--navy); color: white; border: none; border-radius: 28px; font-size: 1rem; font-weight: 900; cursor: pointer; transition: background 0.2s; margin-top: 0.5rem; font-family: inherit; }
+  .submit:hover { background: var(--navy2); }
+  .success { display: none; text-align: center; padding: 1.2rem; background: #eafaf7; border-radius: 14px; color: var(--success); font-weight: 700; margin-top: 1rem; font-size: 0.95rem; }
+
+  /* ── FOOTER ── */
+  footer { background: var(--navy); color: #7a8fbb; padding: 4rem 2rem 2rem; }
+  .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 2.5rem; max-width: 1100px; margin: 0 auto 2.5rem; }
+  .f-brand { display: flex; flex-direction: column; gap: 0.8rem; }
+  .f-brand img { height: 48px; width: auto; }
+  .f-brand .fn { color: var(--gold); font-size: 1rem; font-weight: 900; }
+  .f-brand p { font-size: 0.83rem; line-height: 1.65; }
+  .f-col h4 { color: white; font-size: 0.88rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: 0.5px; }
+  .f-col a { display: block; color: #7a8fbb; text-decoration: none; font-size: 0.83rem; margin-bottom: 0.55rem; transition: color 0.2s; }
+  .f-col a:hover { color: var(--gold); }
+  .footer-bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.07); padding-top: 1.8rem; font-size: 0.8rem; max-width: 1100px; margin: 0 auto; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav { padding: 0 1rem; }
+    .nav-links { display: none; }
+    .hero { padding: 70px 1.5rem 60px; }
+    section { padding: 4rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav>
+  <a class="nav-logo" href="#">
+    <!-- Logo: assets/logo.png dosyanı buraya koy -->
+    <img src="assets/logo.png" alt="DSK Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+    <!-- Fallback SVG (logo yoksa gösterilir) -->
+    <svg style="display:none;width:42px;height:42px" viewBox="0 0 100 100">
+      <polygon points="50,4 96,26 96,68 50,96 4,68 4,26" fill="#0d1b3e" stroke="#c9a84c" stroke-width="5"/>
+      <text x="50" y="65" text-anchor="middle" font-size="30" font-weight="900" fill="#c9a84c" font-family="Arial">DSK</text>
+    </svg>
+    <div class="nav-logo-text">
+      <span class="brand">Digital Safety Knights</span>
+      <span class="tagline">Global Child Safety Org</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#threats">Threats</a>
+    <a href="#programs">Programs</a>
+    <a href="#badges">Badges</a>
+    <a href="#guides">Guides</a>
+    <a href="#journal">Journal</a>
+    <a href="#emergency" class="nav-emergency">🆘 Help</a>
+    <a href="#" class="nav-cta" onclick="openModal();return false;">Join Free</a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-logo">
+      <img src="assets/logo.png" alt="Digital Safety Knights" onerror="this.style.display='none'">
+    </div>
+    <div class="hero-badge">🛡️ Global Digital Child Safety Organization</div>
+    <h1>Protecting Kids in the<br><span class="gold">Digital World</span></h1>
+    <p>From Roblox to AI chatbots, messaging apps to online predators — we equip families with the knowledge and tools to keep children safe online.</p>
+    <div class="hero-btns">
+      <a class="btn-gold" href="#" onclick="openModal();return false;">Join the Knights — Free</a>
+      <a class="btn-ghost" href="#programs">Explore Programs ↓</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STATS ═══ -->
+<div class="stats">
+  <div class="stats-grid">
+    <div><div class="stat-num">12<span class="gold">K+</span></div><div class="stat-label">Families Protected</div></div>
+    <div><div class="stat-num">6</div><div class="stat-label">Safety Programs</div></div>
+    <div><div class="stat-num">48</div><div class="stat-label">Countries Reached</div></div>
+    <div><div class="stat-num">100<span class="gold">%</span></div><div class="stat-label">Free Core Access</div></div>
+  </div>
+</div>
+
+<!-- ═══ THREATS ═══ -->
+<section id="threats">
+  <div class="container">
+    <div class="section-header">
+      <h2>Threats We Fight</h2>
+      <div class="gold-bar"></div>
+      <p>Understanding the dangers is the first step to protecting your child in the digital world.</p>
+    </div>
+    <div class="threat-grid">
+      <div class="threat-card"><div class="threat-icon">🎮</div><h3>In-Game Predators</h3><p>Roblox, Minecraft, Fortnite — predators use in-game chat to groom children. We teach warning signs and how to configure every safety setting.</p></div>
+      <div class="threat-card"><div class="threat-icon">🤖</div><h3>Dangerous AI Chatbots</h3><p>Not all AI is safe. We identify which AI platforms pose risks to children and how bad actors use AI to generate harmful content and target kids.</p></div>
+      <div class="threat-card"><div class="threat-icon">💬</div><h3>Messaging App Grooming</h3><p>WhatsApp, Snapchat, Discord, Instagram — groomers exploit messaging apps daily. Learn the warning signs and monitoring tools available to parents.</p></div>
+      <div class="threat-card"><div class="threat-icon">🌐</div><h3>Harmful Websites</h3><p>Explicit content, radicalization, and self-harm communities. We provide DNS filtering guides, browser safety configs, and reporting tools.</p></div>
+      <div class="threat-card"><div class="threat-icon">📸</div><h3>AI Deepfakes & Sextortion</h3><p>AI-generated images of children are a growing global crisis. We educate families on reporting, prevention, legal resources, and emotional recovery.</p></div>
+      <div class="threat-card"><div class="threat-icon">🔐</div><h3>Cybersecurity Gaps</h3><p>Weak passwords, public WiFi, unsecured devices leave families vulnerable. Our step-by-step checklists close every gap — no tech knowledge needed.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROGRAMS ═══ -->
+<section id="programs">
+  <div class="container">
+    <div class="section-header">
+      <h2>Our Safety Programs</h2>
+      <div class="gold-bar"></div>
+      <p>Practical, actionable programs designed for parents, children, and educators worldwide.</p>
+    </div>
+    <div class="program-grid">
+      <div class="program-card"><span class="prog-tag">🎮 GAMING</span><h3>Roblox Safety Lab</h3><p>Step-by-step guide to locking down Roblox privacy settings, blocking strangers, reporting abuse, and understanding everything your child sees in-game.</p></div>
+      <div class="program-card"><span class="prog-tag">🤖 ARTIFICIAL INTELLIGENCE</span><h3>AI Threat Awareness</h3><p>How to identify unsafe AI platforms, what questions to ask, which AI tools have genuine child safety measures, and how to talk to your kids about AI.</p></div>
+      <div class="program-card"><span class="prog-tag">💬 MESSAGING</span><h3>Grooming Watch Program</h3><p>Warning signs of grooming behavior across Discord, Snapchat, WhatsApp, and Instagram. Includes conversation scripts for parents to use with their children.</p></div>
+      <div class="program-card"><span class="prog-tag">📱 DEVICES</span><h3>Amazon Kids & Parental Controls</h3><p>Configure Amazon Kids, Google Family Link, Apple Screen Time, and Android Family controls for complete device protection at every age level.</p></div>
+      <div class="program-card"><span class="prog-tag">🛡️ CYBERSECURITY</span><h3>Family Cyber Defense</h3><p>DNS filtering with Cloudflare for Families, VPN basics, password managers, and two-factor authentication — practical security for the whole family.</p></div>
+      <div class="program-card"><span class="prog-tag">🎓 EDUCATION</span><h3>Digital Citizenship Academy</h3><p>Monthly video lessons for children ages 6–16 covering respectful online behavior, privacy awareness, and recognizing dangerous situations.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BADGES ═══ -->
+<section id="badges">
+  <div class="container">
+    <div class="section-header">
+      <h2>Knight Badge System</h2>
+      <div class="gold-bar"></div>
+      <p>Complete safety training modules and earn badges that recognize your commitment to protecting children online.</p>
+    </div>
+    <div class="badge-row">
+      <div class="badge-item b-bronze"><div class="badge-circle">🪙</div><h4>Bronze Squire</h4><p>Joined DSK & completed orientation</p></div>
+      <div class="badge-item b-silver"><div class="badge-circle">🥈</div><h4>Silver Guard</h4><p>Completed 3 safety modules</p></div>
+      <div class="badge-item b-gold"><div class="badge-circle">🏅</div><h4>Gold Sentinel</h4><p>All programs + monthly journal reader</p></div>
+      <div class="badge-item b-diamond"><div class="badge-circle">💎</div><h4>Diamond Defender</h4><p>Referred 5 families to DSK</p></div>
+      <div class="badge-item b-knight"><div class="badge-circle">⚔️</div><h4>Digital Knight</h4><p>1 year active member & community educator</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MEMBERSHIP ═══ -->
+<section id="membership">
+  <div class="container">
+    <div class="section-header">
+      <h2>Join Digital Safety Knights</h2>
+      <div class="gold-bar"></div>
+      <p>Everything is completely free. Choose your membership type and join thousands of families protecting their children online.</p>
+    </div>
+    <div class="plans-grid">
+      <div class="plan">
+        <div class="plan-icon">👤</div>
+        <div class="plan-name">Individual</div>
+        <div class="plan-price">Free <sub>/ forever</sub></div>
+        <ul class="plan-features">
+          <li>All 6 family safety guides</li>
+          <li>Monthly DSK Journal</li>
+          <li>Badge system access</li>
+          <li>Emergency resource page</li>
+          <li>Community forum access</li>
+          <li>Safety program content</li>
+        </ul>
+        <button class="plan-btn btn-outline-navy" onclick="openModal('Individual')">Join Free →</button>
+      </div>
+      <div class="plan featured">
+        <div class="plan-ribbon">👨‍👩‍👧‍👦 MOST COMMON</div>
+        <div class="plan-icon">🏠</div>
+        <div class="plan-name">Family</div>
+        <div class="plan-price">Free <sub>/ forever</sub></div>
+        <ul class="plan-features">
+          <li>Everything in Individual</li>
+          <li>Family safety audit checklist</li>
+          <li>Age-specific guides per child</li>
+          <li>Monthly family safety tips</li>
+          <li>Device setup walkthroughs</li>
+          <li>Talk to your kids scripts</li>
+        </ul>
+        <button class="plan-btn btn-solid-gold" onclick="openModal('Family')">Join as Family →</button>
+      </div>
+      <div class="plan">
+        <div class="plan-icon">🏫</div>
+        <div class="plan-name">School</div>
+        <div class="plan-price">Free <sub>/ forever</sub></div>
+        <ul class="plan-features">
+          <li>Everything in Family</li>
+          <li>Classroom safety curriculum</li>
+          <li>Printable student worksheets</li>
+          <li>Teacher & counselor guides</li>
+          <li>School policy templates</li>
+          <li>DSK School Partner badge</li>
+        </ul>
+        <button class="plan-btn btn-outline-navy" onclick="openModal('School')">Join as School →</button>
+      </div>
+    </div>
+
+    <!-- DONATION SECTION -->
+    <div style="margin-top:3rem;background:linear-gradient(135deg,#0d1b3e,#1a2f6e);border-radius:20px;padding:2.5rem;text-align:center;color:white;">
+      <div style="font-size:1.8rem;margin-bottom:0.8rem;">💛 Support Our Mission</div>
+      <p style="color:#a8b8d8;max-width:520px;margin:0 auto 1.5rem;line-height:1.7;font-size:0.95rem;">
+        DSK is completely free because we believe every family deserves access to child safety resources — regardless of income. If you'd like to help us reach more families, please consider a donation.
+      </p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.2rem;">
+        <button onclick="donate(5)"  style="background:rgba(201,168,76,0.15);border:1px solid #c9a84c;color:#c9a84c;padding:10px 22px;border-radius:20px;font-weight:800;cursor:pointer;font-size:0.9rem;">$5</button>
+        <button onclick="donate(10)" style="background:rgba(201,168,76,0.15);border:1px solid #c9a84c;color:#c9a84c;padding:10px 22px;border-radius:20px;font-weight:800;cursor:pointer;font-size:0.9rem;">$10</button>
+        <button onclick="donate(25)" style="background:rgba(201,168,76,0.15);border:1px solid #c9a84c;color:#c9a84c;padding:10px 22px;border-radius:20px;font-weight:800;cursor:pointer;font-size:0.9rem;">$25</button>
+        <button onclick="donate(50)" style="background:#c9a84c;border:1px solid #c9a84c;color:#0d1b3e;padding:10px 22px;border-radius:20px;font-weight:900;cursor:pointer;font-size:0.9rem;">$50</button>
+      </div>
+      <p style="color:#8899bb;font-size:0.78rem;">DSK is a nonprofit organization. All donations go directly toward expanding our programs and reaching more families.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ GUIDES ═══ -->
+<section id="guides">
+  <div class="container">
+    <div class="section-header">
+      <h2>Family Safety Guides</h2>
+      <div class="gold-bar"></div>
+      <p>Free downloadable PDF guides — practical, step-by-step, no technical knowledge required.</p>
+    </div>
+    <div class="guides-grid">
+      <div class="guide-card"><div class="g-icon">🎮</div><div class="g-text"><h4>Roblox Parent Guide</h4><p>Complete privacy & chat lockdown walkthrough</p><button class="dl-btn" onclick="openModal()">Download PDF</button></div></div>
+      <div class="guide-card"><div class="g-icon">🤖</div><div class="g-text"><h4>Safe AI Usage for Kids</h4><p>Which AI tools are genuinely child-safe</p><button class="dl-btn" onclick="openModal()">Download PDF</button></div></div>
+      <div class="guide-card"><div class="g-icon">📱</div><div class="g-text"><h4>iPhone & Android Safety</h4><p>Screen time & app restriction setup</p><button class="dl-btn" onclick="openModal()">Download PDF</button></div></div>
+      <div class="guide-card"><div class="g-icon">💬</div><div class="g-text"><h4>Talk to Your Kids Guide</h4><p>Age-appropriate conversation scripts</p><button class="dl-btn" onclick="openModal()">Download PDF</button></div></div>
+      <div class="guide-card"><div class="g-icon">🔐</div><div class="g-text"><h4>Family Cybersecurity Checklist</h4><p>Passwords, VPN & DNS filtering setup</p><button class="dl-btn" onclick="openModal()">Download PDF</button></div></div>
+      <div class="guide-card"><div class="g-icon">🆘</div><div class="g-text"><h4>Incident Response Guide</h4><p>Step-by-step: what to do if something happens</p><button class="dl-btn" onclick="openModal()">Download PDF</button></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ JOURNAL ═══ -->
+<section id="journal">
+  <div class="container">
+    <div class="section-header">
+      <h2>DSK Monthly Journal</h2>
+      <div class="gold-bar"></div>
+      <p>In-depth stories, threat analysis, and practical advice from our team of child safety experts.</p>
+    </div>
+    <div class="journal-grid">
+      <div class="j-card"><div class="j-thumb j1">🤖</div><div class="j-body"><div class="j-tag">AI Safety</div><h3>How Predators Use AI to Target Children in 2025</h3><p>A deep-dive into the new wave of AI-powered grooming tactics and how families can defend against them today.</p><div class="j-meta">April 2026 · 8 min read</div></div></div>
+      <div class="j-card"><div class="j-thumb j2">🎮</div><div class="j-body"><div class="j-tag">Gaming</div><h3>Inside Roblox: What Parents Don't See</h3><p>An investigative look at hidden chat channels, user-generated games, and content your child may encounter.</p><div class="j-meta">March 2026 · 6 min read</div></div></div>
+      <div class="j-card"><div class="j-thumb j3">💜</div><div class="j-body"><div class="j-tag">Mental Health</div><h3>The Emotional Impact of Online Harassment on Kids</h3><p>Expert advice from child psychologists on recognizing cyberbullying trauma and supporting your child's recovery.</p><div class="j-meta">February 2026 · 10 min read</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EMERGENCY ═══ -->
+<section id="emergency">
+  <div class="container">
+    <div class="em-box">
+      <h2>🆘 Emergency Help for Parents</h2>
+      <p>If you believe a child is in immediate physical danger, call emergency services now. If your child has experienced online abuse, exploitation, or grooming — report it immediately using these resources.</p>
+      <div class="em-grid">
+        <div class="em-contact"><h4>🇺🇸 USA — NCMEC</h4><a href="tel:18008435678">1-800-843-5678</a><small>cybertipline.org</small></div>
+        <div class="em-contact"><h4>🌍 Internet Watch Foundation</h4><a href="https://report.iwf.org.uk" target="_blank">report.iwf.org.uk</a><small>Report illegal online content</small></div>
+        <div class="em-contact"><h4>🇹🇷 Turkey — BTK</h4><a href="tel:158">158</a><small>ihbar.org.tr</small></div>
+        <div class="em-contact"><h4>🌐 FBI Cyber Tips</h4><a href="https://tips.fbi.gov" target="_blank">tips.fbi.gov</a><small>Report cybercrime online</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="footer-grid">
+    <div class="f-brand">
+      <img src="assets/logo.png" alt="DSK" onerror="this.style.display='none'">
+      <div class="fn">Digital Safety Knights</div>
+      <p>A global organization dedicated to protecting children in the digital world — through education, community, and action.</p>
+    </div>
+    <div class="f-col">
+      <h4>Programs</h4>
+      <a href="#programs">Roblox Safety Lab</a>
+      <a href="#programs">AI Threat Awareness</a>
+      <a href="#programs">Grooming Watch</a>
+      <a href="#programs">Cyber Defense</a>
+      <a href="#programs">Digital Citizenship</a>
+    </div>
+    <div class="f-col">
+      <h4>Resources</h4>
+      <a href="#guides">Safety Guides</a>
+      <a href="#journal">Monthly Journal</a>
+      <a href="#badges">Badge System</a>
+      <a href="#membership">Membership Plans</a>
+    </div>
+    <div class="f-col">
+      <h4>Organization</h4>
+      <a href="#">About DSK</a>
+      <a href="#">Our Mission</a>
+      <a href="#">Contact Us</a>
+      <a href="#emergency">Emergency Help</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Digital Safety Knights (DSK) — Global Digital Child Safety Organization · <a href="#" style="color:var(--gold);text-decoration:none;">digitalsafetyknights.org</a></p>
+  </div>
+</footer>
+
+<!-- ═══ SIGNUP MODAL ═══ -->
+<div class="overlay" id="modalOverlay">
+  <div class="modal">
+    <button class="modal-x" onclick="closeModal()">✕</button>
+    <div class="modal-logo">
+      <img src="assets/logo.png" alt="DSK" onerror="this.style.display='none'">
+      <span>Digital Safety Knights</span>
+    </div>
+    <h2>Join DSK Today</h2>
+    <p>Create your free account and start protecting your family from digital threats.</p>
+    <div class="fgrp"><label>Full Name *</label><input type="text" id="f-name" placeholder="Jane Smith"></div>
+    <div class="fgrp"><label>Email Address *</label><input type="email" id="f-email" placeholder="jane@example.com"></div>
+    <div class="fgrp"><label>Country</label>
+      <select id="f-country">
+        <option>United States</option><option>Turkey</option><option>United Kingdom</option>
+        <option>Canada</option><option>Australia</option><option>Other</option>
+      </select>
+    </div>
+    <div class="fgrp"><label>I am a...</label>
+      <select id="f-role">
+        <option>Parent / Guardian</option><option>Educator / Teacher</option>
+        <option>School Administrator</option><option>Child Safety Professional</option><option>Other</option>
+      </select>
+    </div>
+    <div class="fgrp"><label>Membership Plan</label>
+      <select id="f-plan">
+        <option>🛡️ Free Knight (Free forever)</option>
+        <option>⚔️ Guardian ($9/month)</option>
+        <option>🏰 Knight Commander ($29/month)</option>
+      </select>
+    </div>
+    <button class="submit" onclick="submitSignup()">Join the Knights →</button>
+    <div class="success" id="successMsg">🎉 Welcome to Digital Safety Knights! Check your email to confirm your account and receive your first safety guide.</div>
+  </div>
+</div>
+
+<script>
+  // Modal
+  function openModal() {
+    document.getElementById('modalOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.getElementById('modalOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+    document.getElementById('successMsg').style.display = 'none';
+  }
+  document.getElementById('modalOverlay').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+
+  // Form Submit
+  function submitSignup() {
+    var name  = document.getElementById('f-name').value.trim();
+    var email = document.getElementById('f-email').value.trim();
+    if (!name || !email) { alert('Please enter your name and email address.'); return; }
+    if (email.indexOf('@') === -1) { alert('Please enter a valid email address.'); return; }
+
+    var btn = document.querySelector('.submit');
+    btn.textContent = 'Joining...';
+    btn.disabled = true;
+
+    fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/signup', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        name:    name,
+        email:   email,
+        country: document.getElementById('f-country').value,
+        role:    document.getElementById('f-role').value,
+        plan:    document.getElementById('f-plan').value
+      })
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (data.success) {
+        document.getElementById('successMsg').style.display = 'block';
+        document.getElementById('f-name').value  = '';
+        document.getElementById('f-email').value = '';
+        setTimeout(closeModal, 4000);
+      } else {
+        alert(data.message || 'Something went wrong. Please try again.');
+      }
+    })
+    .catch(function(err) {
+      alert('Connection error. Please try again.');
+      console.error(err);
+    })
+    .finally(function() {
+      btn.textContent = 'Join the Knights →';
+      btn.disabled = false;
+    });
+  }
+
+  // Smooth scroll for nav links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const href = a.getAttribute('href');
+      if (href === '#') return;
+      const target = document.querySelector(href);
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+</script>
+</body>
+</html>

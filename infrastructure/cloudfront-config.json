@@ -1,0 +1,52 @@
+{
+  "CallerReference": "dsk-2025",
+  "Comment": "DSK Website Distribution",
+  "Enabled": true,
+  "DefaultRootObject": "index.html",
+  "PriceClass": "PriceClass_100",
+  "Origins": {
+    "Quantity": 1,
+    "Items": [{
+      "Id": "dsk-s3-origin",
+      "DomainName": "digitalsafetyknights.org.s3-website-us-east-1.amazonaws.com",
+      "CustomOriginConfig": {
+        "HTTPPort": 80,
+        "HTTPSPort": 443,
+        "OriginProtocolPolicy": "http-only"
+      }
+    }]
+  },
+  "DefaultCacheBehavior": {
+    "TargetOriginId": "dsk-s3-origin",
+    "ViewerProtocolPolicy": "redirect-to-https",
+    "AllowedMethods": {
+      "Quantity": 2,
+      "Items": ["GET", "HEAD"],
+      "CachedMethods": {
+        "Quantity": 2,
+        "Items": ["GET", "HEAD"]
+      }
+    },
+    "ForwardedValues": {
+      "QueryString": false,
+      "Cookies": {"Forward": "none"}
+    },
+    "MinTTL": 0,
+    "DefaultTTL": 86400,
+    "MaxTTL": 31536000,
+    "Compress": true,
+    "TrustedSigners": {
+      "Enabled": false,
+      "Quantity": 0
+    }
+  },
+  "Aliases": {
+    "Quantity": 2,
+    "Items": ["digitalsafetyknights.org", "www.digitalsafetyknights.org"]
+  },
+  "ViewerCertificate": {
+    "ACMCertificateArn": "arn:aws:acm:us-east-1:339712706640:certificate/4f193a29-ef79-4b2a-b6d2-50c0e4148129",
+    "SSLSupportMethod": "sni-only",
+    "MinimumProtocolVersion": "TLSv1.2_2021"
+  }
+}
