@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Family Safety Audit — Digital Safety Knights</title>
+<link rel="icon" href="assets/favicon.ico">
+<style>
+  :root {
+    --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a;
+    --light: #f4f6fb; --white: #ffffff; --danger: #e63946; --success: #2a9d8f;
+    --warning: #f4a261; --gray: #6c757d;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--light); color: #2d3748; }
+
+  nav {
+    background: var(--navy); position: sticky; top: 0; z-index: 999;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2rem; height: 68px; box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .nav-logo img { height: 42px; }
+  .nav-logo span { color: var(--gold); font-weight: 900; }
+  .back-btn { color: #ccd6f6; text-decoration: none; font-size: 0.88rem; font-weight: 600; }
+  .back-btn:hover { color: var(--gold); }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, var(--navy), var(--navy2));
+    color: white; padding: 60px 2rem; text-align: center;
+  }
+  .hero-icon { font-size: 3.5rem; margin-bottom: 1rem; }
+  .hero h1 { font-size: 2.2rem; font-weight: 900; margin-bottom: 0.8rem; }
+  .hero h1 .gold { color: var(--gold); }
+  .hero p { color: #a8b8d8; max-width: 600px; margin: 0 auto; font-size: 1rem; line-height: 1.7; }
+
+  /* PROGRESS BAR */
+  .progress-bar {
+    background: white; padding: 1.5rem 2rem; border-bottom: 1px solid #eee;
+    position: sticky; top: 68px; z-index: 99;
+  }
+  .progress-info {
+    max-width: 800px; margin: 0 auto 12px; display: flex;
+    justify-content: space-between; font-size: 0.9rem; font-weight: 700; color: var(--navy);
+  }
+  .progress-track {
+    max-width: 800px; margin: 0 auto; height: 10px;
+    background: #e8ecf4; border-radius: 5px; overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold2));
+    width: 0%; transition: width 0.4s; border-radius: 5px;
+  }
+
+  /* AUDIT CONTAINER */
+  .audit-container { max-width: 800px; margin: 0 auto; padding: 2.5rem 2rem; }
+
+  .section {
+    background: white; border-radius: 18px; padding: 2rem;
+    margin-bottom: 1.5rem; box-shadow: 0 2px 24px rgba(13,27,62,0.06);
+    border-left: 5px solid var(--gold);
+  }
+  .section-head { display: flex; align-items: center; gap: 14px; margin-bottom: 1.5rem; }
+  .section-icon {
+    width: 50px; height: 50px; border-radius: 12px;
+    background: var(--navy); color: var(--gold); display: flex;
+    align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0;
+  }
+  .section-title h2 { font-size: 1.2rem; font-weight: 900; color: var(--navy); }
+  .section-title p { font-size: 0.83rem; color: var(--gray); margin-top: 2px; }
+
+  .checklist-item {
+    display: flex; gap: 14px; padding: 14px; border-radius: 12px;
+    margin-bottom: 8px; transition: background 0.2s; cursor: pointer;
+    border: 2px solid transparent;
+  }
+  .checklist-item:hover { background: var(--light); }
+  .checklist-item.checked { background: rgba(42,157,143,0.08); border-color: rgba(42,157,143,0.2); }
+  .checklist-item.checked .check-text { text-decoration: line-through; opacity: 0.7; }
+
+  .check-box {
+    width: 26px; height: 26px; border: 2.5px solid #cdd5e0;
+    border-radius: 8px; flex-shrink: 0; display: flex;
+    align-items: center; justify-content: center;
+    transition: all 0.2s; background: white;
+  }
+  .checklist-item.checked .check-box {
+    background: var(--success); border-color: var(--success);
+  }
+  .check-box::after { content: ''; color: white; font-weight: 900; font-size: 1rem; }
+  .checklist-item.checked .check-box::after { content: '✓'; }
+
+  .check-content { flex: 1; }
+  .check-text { font-size: 0.93rem; line-height: 1.5; color: #333; font-weight: 600; }
+  .check-hint { font-size: 0.78rem; color: var(--gray); margin-top: 3px; line-height: 1.5; }
+
+  /* RESULTS PAGE */
+  .results-page { display: none; max-width: 800px; margin: 0 auto; padding: 2.5rem 2rem; }
+  .results-page.active { display: block; }
+  .audit-page.hidden { display: none; }
+
+  .score-card {
+    background: white; border-radius: 24px; padding: 3rem 2rem;
+    text-align: center; box-shadow: 0 4px 32px rgba(13,27,62,0.1);
+    margin-bottom: 1.5rem;
+  }
+  .score-circle {
+    width: 180px; height: 180px; border-radius: 50%; margin: 0 auto 1.5rem;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; position: relative;
+    background: conic-gradient(var(--gold) 0%, var(--gold) var(--p), #e8ecf4 var(--p), #e8ecf4 100%);
+  }
+  .score-inner {
+    width: 150px; height: 150px; background: white; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; flex-direction: column;
+  }
+  .score-num { font-size: 3rem; font-weight: 900; color: var(--navy); line-height: 1; }
+  .score-num span { font-size: 1.2rem; color: var(--gray); }
+  .score-label { font-size: 0.78rem; color: var(--gray); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+  .badge-earned {
+    display: inline-block; padding: 8px 20px; border-radius: 20px;
+    font-size: 0.85rem; font-weight: 800; margin-top: 1rem;
+  }
+  .grade-A { background: #d4edda; color: #155724; }
+  .grade-B { background: #fff3cd; color: #856404; }
+  .grade-C { background: #f8d7da; color: #721c24; }
+
+  .score-msg { font-size: 1.1rem; color: var(--navy); margin-top: 1rem; line-height: 1.7; }
+
+  .recommendations {
+    background: white; border-radius: 18px; padding: 2rem;
+    box-shadow: 0 2px 24px rgba(13,27,62,0.06); margin-bottom: 1.5rem;
+  }
+  .recommendations h3 {
+    font-size: 1.15rem; color: var(--navy); margin-bottom: 1rem;
+    padding-bottom: 8px; border-bottom: 3px solid var(--gold);
+  }
+  .rec-item {
+    display: flex; gap: 12px; padding: 12px 0;
+    border-bottom: 1px solid #eee; font-size: 0.9rem;
+  }
+  .rec-item:last-child { border-bottom: none; }
+  .rec-item .icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    background: rgba(244,162,97,0.15); color: var(--warning);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    font-size: 1.1rem;
+  }
+  .rec-item .text { flex: 1; line-height: 1.5; }
+  .rec-item .text strong { color: var(--navy); }
+  .rec-item .text a { color: var(--gold); text-decoration: none; font-weight: 700; }
+
+  .actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
+  .btn {
+    padding: 14px 28px; border-radius: 28px; font-weight: 800;
+    text-decoration: none; cursor: pointer; border: 2px solid;
+    font-size: 0.95rem; font-family: inherit; transition: all 0.2s;
+  }
+  .btn-gold { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+  .btn-navy { background: var(--navy); color: white; border-color: var(--navy); }
+  .btn-outline { background: transparent; color: var(--navy); border-color: var(--navy); }
+  .btn:hover { transform: translateY(-2px); }
+
+  /* SUBMIT BAR */
+  .submit-bar {
+    position: sticky; bottom: 0; background: white; padding: 1.2rem 2rem;
+    border-top: 2px solid var(--gold); text-align: center;
+    box-shadow: 0 -4px 24px rgba(0,0,0,0.08);
+  }
+  .submit-btn {
+    background: var(--gold); color: var(--navy); padding: 14px 40px;
+    border: none; border-radius: 28px; font-weight: 900; font-size: 1rem;
+    cursor: pointer; box-shadow: 0 4px 16px rgba(201,168,76,0.3);
+  }
+  .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(201,168,76,0.4); }
+  .submit-btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+
+  footer { background: var(--navy); color: #8899bb; padding: 2rem; text-align: center; font-size: 0.8rem; }
+  footer span { color: var(--gold); font-weight: 800; }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 1.6rem; }
+    .audit-container { padding: 1.5rem 1rem; }
+    .section { padding: 1.5rem; }
+    .score-circle { width: 150px; height: 150px; }
+    .score-inner { width: 124px; height: 124px; }
+    .score-num { font-size: 2.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">
+    <img src="assets/logo.png" alt="DSK">
+    <span>Digital Safety Knights</span>
+  </a>
+  <a href="/" class="back-btn">← Back to Home</a>
+</nav>
+
+<!-- AUDIT PAGE -->
+<div class="audit-page" id="auditPage">
+  <div class="hero">
+    <div class="hero-icon">🛡️</div>
+    <h1>Family Safety <span class="gold">Audit</span></h1>
+    <p>A 5-minute checklist to assess your home's digital safety. Get a personalized score and action plan based on your answers.</p>
+  </div>
+
+  <div class="progress-bar">
+    <div class="progress-info">
+      <span>Your Progress</span>
+      <span><span id="progressCount">0</span> / 35 completed</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+  </div>
+
+  <div class="audit-container">
+
+    <!-- SECTION 1: DEVICE SETUP -->
+    <div class="section">
+      <div class="section-head">
+        <div class="section-icon">📱</div>
+        <div class="section-title">
+          <h2>Device Setup</h2>
+          <p>Phones, tablets, and computers</p>
+        </div>
+      </div>
+      <div class="checklist">
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Screen Time / Family Link is enabled on every child's device</div><div class="check-hint">Apple Screen Time (iOS) or Google Family Link (Android)</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">App installations require parental approval</div><div class="check-hint">Children cannot install new apps without you approving</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Age-appropriate content filters are set</div><div class="check-hint">Movies, TV shows, books, and apps filtered by age rating</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Downtime / Bedtime lock is configured</div><div class="check-hint">Device locks during sleep hours (e.g., 9pm–7am)</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">SafeSearch is enabled and locked on Google/Bing</div><div class="check-hint">Filters explicit results from search engines</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Auto-update is enabled on all devices</div><div class="check-hint">Operating systems and apps update automatically for security</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Location services reviewed for each app</div><div class="check-hint">Only essential apps have location access</div></div></div>
+      </div>
+    </div>
+
+    <!-- SECTION 2: NETWORK SECURITY -->
+    <div class="section">
+      <div class="section-head">
+        <div class="section-icon">🔒</div>
+        <div class="section-title">
+          <h2>Network Security</h2>
+          <p>Home WiFi and internet protection</p>
+        </div>
+      </div>
+      <div class="checklist">
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Home router DNS is set to 1.1.1.3 (Cloudflare for Families)</div><div class="check-hint">Blocks malware and adult content network-wide</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Router firmware was updated in the last 12 months</div><div class="check-hint">Login to router admin panel and check for updates</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">WiFi password is strong (12+ characters)</div><div class="check-hint">Long passphrases like "PurpleDog$Runs9" are best</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Guest WiFi is separated from main network</div><div class="check-hint">Visitors don't have access to your main devices</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">VPN is available for public WiFi use</div><div class="check-hint">ProtonVPN has a free tier — install on family phones</div></div></div>
+      </div>
+    </div>
+
+    <!-- SECTION 3: APP MANAGEMENT -->
+    <div class="section">
+      <div class="section-head">
+        <div class="section-icon">📲</div>
+        <div class="section-title">
+          <h2>App Management</h2>
+          <p>Social media, gaming, and chat apps</p>
+        </div>
+      </div>
+      <div class="checklist">
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Roblox Account Restrictions are enabled</div><div class="check-hint">Settings → Privacy → Account Restrictions</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Roblox chat is set to "Friends only"</div><div class="check-hint">Includes in-game and direct message chat</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Roblox Parent PIN is set</div><div class="check-hint">Prevents children from changing settings</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">No Character.AI, Replika, or roleplay AI apps installed</div><div class="check-hint">These apps are not safe for children</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Discord is restricted (or blocked) for children under 13</div><div class="check-hint">Most concerning conversations happen here</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Social media accounts are set to Private</div><div class="check-hint">Instagram, TikTok, Snapchat — all private</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">YouTube uses YouTube Kids OR Restricted Mode</div><div class="check-hint">Filters out inappropriate content</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Photos and videos shared online are reviewed</div><div class="check-hint">No identifying information in backgrounds</div></div></div>
+      </div>
+    </div>
+
+    <!-- SECTION 4: PASSWORDS & ACCOUNTS -->
+    <div class="section">
+      <div class="section-head">
+        <div class="section-icon">🔐</div>
+        <div class="section-title">
+          <h2>Passwords & Accounts</h2>
+          <p>Account security across the family</p>
+        </div>
+      </div>
+      <div class="checklist">
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Password manager is installed (Bitwarden, 1Password, etc.)</div><div class="check-hint">Bitwarden is free and works for the whole family</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Two-factor authentication on email accounts</div><div class="check-hint">Email is the most important account to protect</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Two-factor authentication on social media</div><div class="check-hint">Prevents account takeover</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">No passwords are reused across accounts</div><div class="check-hint">If one site is hacked, others stay safe</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Children know never to share passwords with friends</div><div class="check-hint">Including Roblox, gaming accounts, social media</div></div></div>
+      </div>
+    </div>
+
+    <!-- SECTION 5: COMMUNICATION RULES -->
+    <div class="section">
+      <div class="section-head">
+        <div class="section-icon">💬</div>
+        <div class="section-title">
+          <h2>Family Communication</h2>
+          <p>Open conversations and clear rules</p>
+        </div>
+      </div>
+      <div class="checklist">
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Family digital rules are agreed upon and posted</div><div class="check-hint">No phones at table, no devices in bedrooms, etc.</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Monthly check-in conversations are scheduled</div><div class="check-hint">"Did anything weird happen online this month?"</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Children know they can come to you without punishment</div><div class="check-hint">"You won't lose your phone if you tell me"</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Family code word is established for verification</div><div class="check-hint">Used to verify identity in unexpected situations</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Children know warning signs of online predators</div><div class="check-hint">Strangers asking personal questions, gifts, secrets</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">No phones in bedrooms at night</div><div class="check-hint">Charge devices in common areas overnight</div></div></div>
+      </div>
+    </div>
+
+    <!-- SECTION 6: EMERGENCY READINESS -->
+    <div class="section">
+      <div class="section-head">
+        <div class="section-icon">🆘</div>
+        <div class="section-title">
+          <h2>Emergency Readiness</h2>
+          <p>Be prepared if something goes wrong</p>
+        </div>
+      </div>
+      <div class="checklist">
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Emergency contacts are saved on parent's phone</div><div class="check-hint">NCMEC: 1-800-843-5678, local police, FBI</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">You know how to take screenshots as evidence</div><div class="check-hint">Preserve evidence before blocking or deleting</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Children know where to find help</div><div class="check-hint">DSK Emergency page bookmarked, hotlines saved</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">DSK Incident Response Guide is downloaded and reviewed</div><div class="check-hint">Step-by-step what to do if something happens</div></div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="submit-bar">
+    <button class="submit-btn" id="submitBtn" onclick="showResults()">See Your Family Safety Score →</button>
+  </div>
+</div>
+
+<!-- RESULTS PAGE -->
+<div class="results-page" id="resultsPage">
+  <div class="score-card">
+    <div class="score-circle" id="scoreCircle">
+      <div class="score-inner">
+        <div class="score-num"><span id="scoreNum">0</span><span>%</span></div>
+        <div class="score-label" id="scoreLabel">Safety Score</div>
+      </div>
+    </div>
+    <div class="badge-earned" id="gradeBadge">Calculating...</div>
+    <div class="score-msg" id="scoreMsg"></div>
+  </div>
+
+  <div class="recommendations" id="recommendations">
+    <h3>📋 Recommended Next Steps</h3>
+    <div id="recList"></div>
+  </div>
+
+  <div class="actions">
+    <button class="btn btn-gold" onclick="emailReport()">📧 Email Me This Report</button>
+    <button class="btn btn-navy" onclick="window.print()">🖨️ Print Report</button>
+    <button class="btn btn-outline" onclick="restart()">↻ Take Audit Again</button>
+  </div>
+</div>
+
+<footer>
+  <p><span>⚔️ Digital Safety Knights</span> · digitalsafetyknights.org · © 2026</p>
+</footer>
+
+<script>
+  var TOTAL = 35;
+  var checkedItems = [];
+
+  function toggle(el) {
+    el.classList.toggle('checked');
+    updateProgress();
+  }
+
+  function updateProgress() {
+    var checked = document.querySelectorAll('.checklist-item.checked').length;
+    document.getElementById('progressCount').textContent = checked;
+    var percent = (checked / TOTAL) * 100;
+    document.getElementById('progressFill').style.width = percent + '%';
+  }
+
+  function showResults() {
+    var items = document.querySelectorAll('.checklist-item');
+    var checked = document.querySelectorAll('.checklist-item.checked');
+    var unchecked = [];
+    items.forEach(function(item) {
+      if (!item.classList.contains('checked')) {
+        unchecked.push(item.querySelector('.check-text').textContent);
+      }
+    });
+
+    var score = Math.round((checked.length / TOTAL) * 100);
+
+    document.getElementById('scoreNum').textContent = score;
+    document.getElementById('scoreCircle').style.setProperty('--p', score + '%');
+
+    var badge = document.getElementById('gradeBadge');
+    var msg = document.getElementById('scoreMsg');
+
+    if (score >= 80) {
+      badge.textContent = '🏅 EXCELLENT — Gold Sentinel Level';
+      badge.className = 'badge-earned grade-A';
+      msg.textContent = 'Your family has an outstanding digital safety setup. Keep up the great work!';
+    } else if (score >= 60) {
+      badge.textContent = '🥈 GOOD — Silver Guard Level';
+      badge.className = 'badge-earned grade-B';
+      msg.textContent = 'Strong foundation, but a few important gaps to close. See recommendations below.';
+    } else if (score >= 40) {
+      badge.textContent = '⚠️ NEEDS WORK — Bronze Squire';
+      badge.className = 'badge-earned grade-B';
+      msg.textContent = "You've started, but several critical safety measures need attention. Don't worry — DSK has the resources to help.";
+    } else {
+      badge.textContent = '🚨 ACTION NEEDED';
+      badge.className = 'badge-earned grade-C';
+      msg.textContent = 'Your family needs significant safety improvements. Start with our Family Safety Guides — every step matters.';
+    }
+
+    var recList = document.getElementById('recList');
+    if (unchecked.length === 0) {
+      recList.innerHTML = '<div class="rec-item"><div class="icon">🎉</div><div class="text"><strong>Perfect score!</strong> Your family is well protected. Consider becoming a DSK educator and helping other families.</div></div>';
+    } else {
+      var top5 = unchecked.slice(0, 5);
+      recList.innerHTML = top5.map(function(item) {
+        return '<div class="rec-item"><div class="icon">⚠️</div><div class="text">' + item + '</div></div>';
+      }).join('');
+      if (unchecked.length > 5) {
+        recList.innerHTML += '<div class="rec-item"><div class="icon">📚</div><div class="text"><strong>And ' + (unchecked.length - 5) + ' more items</strong> — download our <a href="/#guides">Family Safety Guides</a> for step-by-step help.</div></div>';
+      }
+    }
+
+    document.getElementById('auditPage').classList.add('hidden');
+    document.getElementById('resultsPage').classList.add('active');
+    window.scrollTo(0, 0);
+  }
+
+  function emailReport() {
+    var email = prompt('Enter your email to receive this report:');
+    if (!email || email.indexOf('@') === -1) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+
+    var score = parseInt(document.getElementById('scoreNum').textContent);
+    var grade = document.getElementById('gradeBadge').textContent;
+    var message = document.getElementById('scoreMsg').textContent;
+
+    var unchecked = [];
+    document.querySelectorAll('.checklist-item:not(.checked) .check-text').forEach(function(el) {
+      unchecked.push(el.textContent);
+    });
+
+    var btn = event.target;
+    var originalText = btn.textContent;
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/audit-report', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        email: email,
+        score: score,
+        grade: grade,
+        message: message,
+        recommendations: unchecked
+      })
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (data.success) {
+        alert('✅ Report sent! Check your inbox at ' + email);
+      } else {
+        alert('❌ ' + (data.message || 'Could not send. Please try again.'));
+      }
+    })
+    .catch(function(err) {
+      alert('❌ Connection error. Please try again.');
+      console.error(err);
+    })
+    .finally(function() {
+      btn.textContent = originalText;
+      btn.disabled = false;
+    });
+  }
+
+  function restart() {
+    document.querySelectorAll('.checklist-item').forEach(function(el) {
+      el.classList.remove('checked');
+    });
+    document.getElementById('auditPage').classList.remove('hidden');
+    document.getElementById('resultsPage').classList.remove('active');
+    updateProgress();
+    window.scrollTo(0, 0);
+  }
+</script>
+
+</body>
+</html>

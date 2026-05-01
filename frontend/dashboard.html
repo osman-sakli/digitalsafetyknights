@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — Digital Safety Knights</title>
+<link rel="icon" href="assets/favicon.ico">
+<style>
+  :root {
+    --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a;
+    --light: #f4f6fb; --success: #2a9d8f; --gray: #6c757d;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', sans-serif; background: var(--light); color: #2d3748; }
+
+  nav { background: var(--navy); padding: 0 2rem; height: 68px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 20px rgba(0,0,0,0.4); position: sticky; top: 0; z-index: 999; }
+  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .nav-logo img { height: 42px; }
+  .nav-logo span { color: var(--gold); font-weight: 900; }
+  .nav-right { display: flex; gap: 1.5rem; align-items: center; }
+  .nav-right a { color: #ccd6f6; text-decoration: none; font-size: 0.9rem; font-weight: 600; }
+  .nav-right a:hover { color: var(--gold); }
+  .logout-btn { background: rgba(255,255,255,0.1); padding: 7px 16px; border-radius: 18px; }
+
+  .loading, .error-page { min-height: 80vh; display: flex; align-items: center; justify-content: center; flex-direction: column; padding: 2rem; text-align: center; }
+  .spinner { width: 50px; height: 50px; border: 4px solid #e8ecf4; border-top-color: var(--gold); border-radius: 50%; animation: spin 0.8s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .loading p, .error-page p { margin-top: 1rem; color: var(--gray); }
+  .error-page h2 { color: var(--navy); font-size: 1.5rem; margin-bottom: 0.5rem; }
+  .error-page a { color: var(--gold); text-decoration: none; font-weight: 800; margin-top: 1rem; display: inline-block; }
+
+  .dashboard { max-width: 1100px; margin: 0 auto; padding: 2.5rem 2rem; display: none; }
+  .dashboard.active { display: block; }
+
+  .welcome-card { background: linear-gradient(135deg, var(--navy), var(--navy2)); color: white; border-radius: 24px; padding: 2.5rem; margin-bottom: 2rem; position: relative; overflow: hidden; }
+  .welcome-card::before { content: ''; position: absolute; right: -50px; top: -50px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(201,168,76,0.2), transparent); border-radius: 50%; }
+  .welcome-card h1 { font-size: 1.8rem; font-weight: 900; margin-bottom: 0.5rem; }
+  .welcome-card .gold { color: var(--gold); }
+  .welcome-card p { color: #a8b8d8; font-size: 0.95rem; }
+  .member-info { display: flex; gap: 2rem; margin-top: 1.5rem; flex-wrap: wrap; }
+  .info-item { display: flex; flex-direction: column; }
+  .info-item .label { font-size: 0.72rem; color: #8899bb; text-transform: uppercase; letter-spacing: 1px; }
+  .info-item .value { font-size: 0.95rem; color: white; font-weight: 700; margin-top: 4px; }
+
+  .grid { display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; }
+  @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+
+  .card { background: white; border-radius: 18px; padding: 2rem; box-shadow: 0 2px 24px rgba(13,27,62,0.06); margin-bottom: 1.5rem; }
+  .card h2 { font-size: 1.2rem; color: var(--navy); margin-bottom: 1.2rem; padding-bottom: 8px; border-bottom: 3px solid var(--gold); display: flex; align-items: center; gap: 8px; }
+
+  .badges-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 1rem; }
+  .badge-card { text-align: center; padding: 1.2rem 0.5rem; border-radius: 14px; border: 2px solid #eee; transition: all 0.2s; position: relative; }
+  .badge-card.earned { border-color: var(--gold); background: linear-gradient(135deg, #fef9e6, #fdf3d4); }
+  .badge-card.locked { opacity: 0.4; filter: grayscale(50%); }
+  .badge-icon { width: 64px; height: 64px; border-radius: 50%; margin: 0 auto 0.8rem; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; border: 3px solid; }
+  .b-bronze .badge-icon { background: #f9ede0; border-color: #cd7f32; }
+  .b-silver .badge-icon { background: #f2f2f7; border-color: #9e9e9e; }
+  .b-gold .badge-icon { background: #fef9e6; border-color: var(--gold); }
+  .b-diamond .badge-icon { background: #e8f3fd; border-color: #2980b9; }
+  .b-knight .badge-icon { background: #e9f7ef; border-color: #27ae60; }
+  .badge-card h4 { font-size: 0.85rem; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+  .badge-card p { font-size: 0.72rem; color: var(--gray); line-height: 1.4; }
+  .badge-check { position: absolute; top: 8px; right: 8px; background: var(--success); color: white; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 900; }
+
+  .stats-list { display: grid; gap: 0.8rem; }
+  .stat-row { display: flex; justify-content: space-between; padding: 12px 14px; background: var(--light); border-radius: 10px; }
+  .stat-row .label { font-size: 0.88rem; color: var(--gray); }
+  .stat-row .value { font-weight: 900; color: var(--navy); }
+
+  .quick-actions { display: grid; gap: 0.8rem; }
+  .action-link { display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: var(--light); border-radius: 12px; text-decoration: none; color: var(--navy); transition: all 0.2s; }
+  .action-link:hover { background: rgba(201,168,76,0.1); transform: translateX(4px); }
+  .action-link .icon { font-size: 1.4rem; }
+  .action-link .text { flex: 1; }
+  .action-link .text h4 { font-size: 0.92rem; font-weight: 800; }
+  .action-link .text p { font-size: 0.78rem; color: var(--gray); margin-top: 2px; }
+  .action-link .arrow { color: var(--gold); font-weight: 900; }
+
+  .progress-info { background: linear-gradient(135deg, #fef9e6, #fdf3d4); border: 2px solid var(--gold); border-radius: 14px; padding: 1.2rem; margin-bottom: 1.5rem; }
+  .progress-info h3 { color: var(--navy); font-size: 0.95rem; margin-bottom: 0.5rem; }
+  .progress-info p { font-size: 0.85rem; color: #555; line-height: 1.6; }
+
+  footer { background: var(--navy); color: #8899bb; padding: 2rem; text-align: center; font-size: 0.8rem; }
+  footer span { color: var(--gold); font-weight: 800; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">
+    <img src="assets/logo.png" alt="DSK">
+    <span>Digital Safety Knights</span>
+  </a>
+  <div class="nav-right">
+    <a href="/">Home</a>
+    <a href="/audit.html">Audit</a>
+    <a href="#" class="logout-btn" onclick="logout();return false;">Logout</a>
+  </div>
+</nav>
+
+<div class="loading" id="loadingState">
+  <div class="spinner"></div>
+  <p>Verifying your login...</p>
+</div>
+
+<div class="error-page" id="errorState" style="display:none;">
+  <div style="font-size:4rem;">🚫</div>
+  <h2 id="errorTitle">Login Failed</h2>
+  <p id="errorMsg">This login link is invalid or has expired.</p>
+  <a href="/login.html">← Try logging in again</a>
+</div>
+
+<div class="dashboard" id="dashboard">
+  <div class="welcome-card">
+    <h1>Welcome back, <span class="gold" id="memberName">Knight</span>! ⚔️</h1>
+    <p>Here's your DSK profile and progress.</p>
+    <div class="member-info">
+      <div class="info-item"><span class="label">Membership</span><span class="value" id="memberPlan">—</span></div>
+      <div class="info-item"><span class="label">Country</span><span class="value" id="memberCountry">—</span></div>
+      <div class="info-item"><span class="label">Member Since</span><span class="value" id="memberSince">—</span></div>
+      <div class="info-item"><span class="label">Role</span><span class="value" id="memberRole">—</span></div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div>
+      <div class="card">
+        <h2>🏅 Your Badges</h2>
+        <div class="progress-info" id="progressInfo">
+          <h3 id="progressTitle">Keep going!</h3>
+          <p id="progressDesc">Complete more activities to earn the next badge.</p>
+        </div>
+        <div class="badges-grid" id="badgesGrid"></div>
+      </div>
+
+      <div class="card">
+        <h2>⚡ Quick Actions</h2>
+        <div class="quick-actions">
+          <a href="/audit.html" class="action-link">
+            <div class="icon">🛡️</div>
+            <div class="text">
+              <h4>Take Family Safety Audit</h4>
+              <p>Get your safety score and recommendations</p>
+            </div>
+            <div class="arrow">→</div>
+          </a>
+          <a href="/#guides" class="action-link">
+            <div class="icon">📚</div>
+            <div class="text">
+              <h4>Download Safety Guides</h4>
+              <p>6 free guides — Roblox, AI, devices, more</p>
+            </div>
+            <div class="arrow">→</div>
+          </a>
+          <a href="/#journal" class="action-link">
+            <div class="icon">📰</div>
+            <div class="text">
+              <h4>Read Monthly Journal</h4>
+              <p>Latest threats and parent insights</p>
+            </div>
+            <div class="arrow">→</div>
+          </a>
+          <a href="https://discord.gg/RmMZqnF4e" target="_blank" class="action-link">
+            <div class="icon">💬</div>
+            <div class="text">
+              <h4>Join Discord Community</h4>
+              <p>Connect with thousands of parents</p>
+            </div>
+            <div class="arrow">→</div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="card">
+        <h2>📊 Your Stats</h2>
+        <div class="stats-list">
+          <div class="stat-row"><span class="label">Guides Downloaded</span><span class="value" id="statGuides">0</span></div>
+          <div class="stat-row"><span class="label">Journals Read</span><span class="value" id="statJournals">0</span></div>
+          <div class="stat-row"><span class="label">Audits Completed</span><span class="value" id="statAudits">0</span></div>
+          <div class="stat-row"><span class="label">Friends Referred</span><span class="value" id="statReferrals">0</span></div>
+          <div class="stat-row"><span class="label">Badges Earned</span><span class="value" id="statBadges">0 / 5</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>💛 Support DSK</h2>
+        <p style="font-size:0.88rem;color:#555;line-height:1.6;margin-bottom:1rem;">
+          Your donation helps us protect more children worldwide. Every contribution makes a difference.
+        </p>
+        <a href="/#membership" class="action-link" style="background:linear-gradient(135deg,#c9a84c,#e8c56a);color:#0d1b3e;">
+          <div class="icon">💛</div>
+          <div class="text"><h4>Make a Donation</h4></div>
+          <div class="arrow">→</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer><p><span>⚔️ Digital Safety Knights</span> · digitalsafetyknights.org · © 2026</p></footer>
+
+<script>
+  var ALL_BADGES = [
+    {id: 'Bronze Squire', icon: '🪙', class: 'b-bronze', desc: 'Joined DSK'},
+    {id: 'Silver Guard', icon: '🥈', class: 'b-silver', desc: '3+ guides downloaded'},
+    {id: 'Gold Sentinel', icon: '🏅', class: 'b-gold', desc: 'All guides + journal'},
+    {id: 'Diamond Defender', icon: '💎', class: 'b-diamond', desc: '5 referrals'},
+    {id: 'Digital Knight', icon: '⚔️', class: 'b-knight', desc: '1 year active'}
+  ];
+
+  function getToken() {
+    var params = new URLSearchParams(window.location.search);
+    return params.get('token') || localStorage.getItem('dsk_token');
+  }
+
+  function showError(title, msg) {
+    document.getElementById('loadingState').style.display = 'none';
+    document.getElementById('errorState').style.display = 'flex';
+    document.getElementById('errorTitle').textContent = title;
+    document.getElementById('errorMsg').textContent = msg;
+  }
+
+  function logout() {
+    localStorage.removeItem('dsk_token');
+    localStorage.removeItem('dsk_profile');
+    window.location.href = '/login.html';
+  }
+
+  function loadDashboard(profile) {
+    document.getElementById('memberName').textContent = profile.name;
+    document.getElementById('memberPlan').textContent = profile.plan.replace(/[^\w\s]/g, '').trim();
+    document.getElementById('memberCountry').textContent = profile.country || '—';
+    document.getElementById('memberRole').textContent = profile.role || '—';
+
+    if (profile.joined_at) {
+      var d = new Date(profile.joined_at);
+      document.getElementById('memberSince').textContent = d.toLocaleDateString('en-US', {month: 'short', year: 'numeric'});
+    }
+
+    document.getElementById('statGuides').textContent = (profile.guides_downloaded || []).length;
+    document.getElementById('statJournals').textContent = (profile.journal_read || []).length;
+    document.getElementById('statAudits').textContent = profile.audit_completed ? '1' : '0';
+    document.getElementById('statReferrals').textContent = profile.referrals_count || 0;
+    document.getElementById('statBadges').textContent = profile.badges.length + ' / 5';
+
+    var grid = document.getElementById('badgesGrid');
+    grid.innerHTML = ALL_BADGES.map(function(b) {
+      var earned = profile.badges.indexOf(b.id) !== -1;
+      return '<div class="badge-card ' + b.class + ' ' + (earned ? 'earned' : 'locked') + '">' +
+        (earned ? '<div class="badge-check">✓</div>' : '') +
+        '<div class="badge-icon">' + b.icon + '</div>' +
+        '<h4>' + b.id + '</h4>' +
+        '<p>' + b.desc + '</p>' +
+      '</div>';
+    }).join('');
+
+    if (profile.badges.length === 5) {
+      document.getElementById('progressTitle').textContent = '🎉 All Badges Earned!';
+      document.getElementById('progressDesc').textContent = "You're a true Digital Knight. Thank you for your dedication.";
+    } else if (profile.badges.length === 1) {
+      document.getElementById('progressTitle').textContent = '🚀 Just Getting Started';
+      document.getElementById('progressDesc').textContent = 'Download 3 safety guides or take the audit to earn Silver Guard.';
+    } else {
+      document.getElementById('progressTitle').textContent = 'Great progress!';
+      document.getElementById('progressDesc').textContent = 'Keep engaging with DSK to unlock more badges.';
+    }
+
+    document.getElementById('loadingState').style.display = 'none';
+    document.getElementById('dashboard').classList.add('active');
+  }
+
+  // On load
+  var token = getToken();
+  if (!token) {
+    window.location.href = '/login.html';
+  } else {
+    fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/verify', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({token: token})
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (data.success && data.profile) {
+        // Save for refresh (skip token from URL)
+        localStorage.setItem('dsk_profile', JSON.stringify(data.profile));
+        // Clear token from URL bar
+        if (window.history.replaceState) {
+          window.history.replaceState({}, document.title, '/dashboard.html');
+        }
+        loadDashboard(data.profile);
+      } else {
+        // Try cached profile if token invalid (for refresh)
+        var cached = localStorage.getItem('dsk_profile');
+        if (cached) {
+          loadDashboard(JSON.parse(cached));
+        } else {
+          showError('Login Required', data.message || 'Please log in to access your dashboard.');
+          setTimeout(function() { window.location.href = '/login.html'; }, 3000);
+        }
+      }
+    })
+    .catch(function(err) {
+      console.error(err);
+      var cached = localStorage.getItem('dsk_profile');
+      if (cached) {
+        loadDashboard(JSON.parse(cached));
+      } else {
+        showError('Connection Error', 'Could not load your profile. Please try again.');
+      }
+    });
+  }
+</script>
+
+</body>
+</html>

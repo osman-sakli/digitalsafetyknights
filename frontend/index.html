@@ -193,10 +193,12 @@
     <a href="#threats">Threats</a>
     <a href="#programs">Programs</a>
     <a href="#badges">Badges</a>
+    <a href="/audit.html">🛡️ Audit</a>
     <a href="#community">Community</a>
     <a href="#guides">Guides</a>
     <a href="#journal">Journal</a>
     <a href="#emergency" class="nav-emergency">🆘 Help</a>
+    <a href="/login.html" style="color:#ccd6f6 !important;">🔐 Login</a>
     <a href="#" class="nav-cta" onclick="openModal();return false;">Join Free</a>
     <a href="https://discord.gg/RmMZqnF4e" target="_blank" class="nav-cta" style="background:#5865F2;color:white !important;">💬 Discord</a>
   </div>
@@ -210,7 +212,7 @@
     <p>From Roblox to AI chatbots, messaging apps to online predators — we equip families with the knowledge and tools to keep children safe online.</p>
     <div class="hero-btns">
       <a class="btn-gold" href="#" onclick="openModal();return false;">Join the Knights — Free</a>
-      <a class="btn-ghost" href="#programs">Explore Programs ↓</a>
+      <a class="btn-ghost" href="/audit.html">🛡️ Take Family Safety Audit</a>
     </div>
   </div>
 </section>
@@ -334,11 +336,12 @@
       <p style="color:#a8b8d8;max-width:520px;margin:0 auto 1.5rem;line-height:1.7;font-size:0.95rem;">
         DSK is completely free because we believe every family deserves access to child safety resources. If you'd like to help us reach more families, please consider a donation.
       </p>
-      <div style="display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.2rem;">
+      <div style="display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:1rem;">
         <button class="donation-btn" onclick="donate(5)">$5</button>
         <button class="donation-btn" onclick="donate(10)">$10</button>
         <button class="donation-btn" onclick="donate(25)">$25</button>
         <button class="donation-btn primary" onclick="donate(50)">$50</button>
+        <button class="donation-btn" onclick="donateCustom()">Other</button>
       </div>
       <p style="color:#8899bb;font-size:0.78rem;">DSK is a nonprofit. All donations go directly toward expanding our programs.</p>
     </div>
@@ -486,9 +489,11 @@
       <a href="#membership">Membership</a>
     </div>
     <div class="f-col">
-      <h4>Resources</h4>
+      <h4>Tools</h4>
+      <a href="/audit.html">🛡️ Family Safety Audit</a>
       <a href="#guides">Safety Guides</a>
       <a href="#journal">Monthly Journal</a>
+      <a href="#emergency">Emergency Help</a>
     </div>
     <div class="f-col">
       <h4>Organization</h4>
@@ -752,8 +757,46 @@
     if (e.target === this) closeModal();
   });
 
+  function donateCustom() {
+    var amt = prompt('Enter donation amount in USD (minimum $1):');
+    if (!amt) return;
+    var amount = parseFloat(amt);
+    if (isNaN(amount) || amount < 1) {
+      alert('Please enter a valid amount of $1 or more.');
+      return;
+    }
+    donate(Math.round(amount));
+  }
+
   function donate(amount) {
-    alert('Thank you for your generosity! Donation of $' + amount + ' — payment integration coming soon. Please contact us at donate@digitalsafetyknights.org');
+    var email = prompt('Enter your email for the receipt:');
+    if (!email || email.indexOf('@') === -1) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+    var name = prompt('Your name (or "Anonymous"):') || 'Anonymous Donor';
+
+    fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/donate', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        amount: amount * 100,
+        email: email,
+        name: name
+      })
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (data.success && data.checkout_url) {
+        window.location.href = data.checkout_url;
+      } else {
+        alert('❌ ' + (data.message || 'Could not create payment. Please try again.'));
+      }
+    })
+    .catch(function(err) {
+      alert('❌ Connection error. Please try again.');
+      console.error(err);
+    });
   }
 
   function submitSignup() {
