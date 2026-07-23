@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certificate — Digital Safety Knights</title>
+<link rel="icon" href="assets/favicon.ico">
+<style>
+  :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--light); min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 30px 16px; }
+  .toolbar { max-width: 700px; width: 100%; display: flex; justify-content: space-between; margin-bottom: 20px; }
+  .toolbar a, .toolbar button { text-decoration: none; font-weight: 800; font-size: 0.85rem; color: var(--navy); background: white; border: 2px solid #dfe4ee; padding: 10px 18px; border-radius: 12px; cursor: pointer; }
+  .toolbar button.primary { background: var(--gold); color: var(--navy); border: none; }
+
+  .cert { width: 100%; max-width: 700px; background: white; border-radius: 22px; overflow: hidden; box-shadow: 0 10px 50px rgba(13,27,62,0.18); border: 10px solid var(--navy); }
+  .cert-inner { border: 2px solid var(--gold); margin: 10px; padding: 50px 40px; text-align: center; }
+  .cert-shield { font-size: 3.4rem; margin-bottom: 6px; }
+  .cert-eyebrow { color: var(--gold); font-weight: 900; letter-spacing: 3px; font-size: 0.78rem; text-transform: uppercase; }
+  .cert-title { color: var(--navy); font-size: 1.8rem; font-weight: 900; margin: 14px 0 6px; }
+  .cert-sub { color: var(--gray); font-size: 0.95rem; margin-bottom: 30px; }
+  .cert-name { font-size: 2.2rem; font-weight: 900; color: var(--navy2); border-bottom: 3px solid var(--gold); display: inline-block; padding: 0 20px 10px; margin-bottom: 20px; }
+  .cert-badge-row { display: flex; align-items: center; justify-content: center; gap: 16px; margin: 20px 0; }
+  .cert-badge-circle { width: 90px; height: 90px; border-radius: 50%; background: linear-gradient(135deg, var(--gold2), var(--gold)); display: flex; align-items: center; justify-content: center; font-size: 2.4rem; box-shadow: 0 6px 20px rgba(201,168,76,0.5); }
+  .cert-badge-name { font-size: 1.3rem; font-weight: 800; color: var(--navy); text-align: left; }
+  .cert-badge-name small { display: block; color: var(--gray); font-weight: 600; font-size: 0.8rem; }
+  .cert-date { color: var(--gray); font-size: 0.85rem; margin-top: 26px; }
+  .cert-motto { color: var(--navy); font-weight: 900; letter-spacing: 1px; margin-top: 18px; font-size: 1.05rem; }
+  .no-badge-msg { color: var(--gray); font-size: 0.95rem; padding: 20px 0; }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .toolbar { display: none; }
+    .cert { box-shadow: none; max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <a href="/quests.html">← Back to Quests</a>
+  <button class="primary" onclick="window.print()">🖨️ Print / Save as PDF</button>
+</div>
+
+<div class="cert">
+  <div class="cert-inner" id="cert-content">
+    <!-- filled by JS -->
+  </div>
+</div>
+
+<script>
+const PROGRESS_KEY = "dsk_progress";
+const NICKNAME_KEY = "dsk_nickname";
+
+function badgeForCount(n) {
+  if (n >= 6) return { name: "Gold Sentinel", emoji: "🏅" };
+  if (n >= 3) return { name: "Silver Guard", emoji: "🥈" };
+  if (n >= 1) return { name: "Bronze Squire", emoji: "🥉" };
+  return null;
+}
+
+(function render() {
+  const nickname = localStorage.getItem(NICKNAME_KEY);
+  let progress = {};
+  try { progress = JSON.parse(localStorage.getItem(PROGRESS_KEY)) || { completed: {} }; }
+  catch (e) { progress = { completed: {} }; }
+  const n = Object.keys(progress.completed || {}).length;
+  const badge = badgeForCount(n);
+  const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+  const el = document.getElementById('cert-content');
+  if (!nickname || !badge) {
+    el.innerHTML = `
+      <div class="cert-shield">🛡️</div>
+      <div class="cert-eyebrow">Digital Safety Knights</div>
+      <div class="cert-title">No badge earned yet</div>
+      <div class="no-badge-msg">Complete your first quest to unlock a certificate!</div>
+      <a href="/quests.html" style="color:var(--navy2);font-weight:800;">Play a Quest →</a>
+    `;
+    return;
+  }
+
+  el.innerHTML = `
+    <div class="cert-shield">🛡️</div>
+    <div class="cert-eyebrow">Digital Safety Knights — Certificate of Achievement</div>
+    <div class="cert-title">This certifies that</div>
+    <div class="cert-name">${escapeHtml(nickname)}</div>
+    <div class="cert-badge-row">
+      <div class="cert-badge-circle">${badge.emoji}</div>
+      <div class="cert-badge-name">${badge.name}<small>${n} of 6 quests completed</small></div>
+    </div>
+    <div class="cert-sub">has demonstrated real digital safety skills as a member of the Digital Safety Knights.</div>
+    <div class="cert-date">Awarded ${today}</div>
+    <div class="cert-motto">⚔️ Shield up! · digitalsafetyknights.org</div>
+  `;
+})();
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+</script>
+</body>
+</html>

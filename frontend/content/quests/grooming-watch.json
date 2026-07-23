@@ -1,0 +1,63 @@
+{
+  "id": "grooming-watch",
+  "title": "Grooming Watch",
+  "emoji": "🚩",
+  "badgeTrack": "silver-guard",
+  "intro": "Some strangers online are very good at seeming nice. This quest trains you to spot the red flags underneath.",
+  "questions": [
+    {
+      "narrator": "GLITCH",
+      "prompt": "Hey friend! How old are you? What school do you go to?",
+      "choices": [
+        { "text": "Answer honestly, they seem friendly", "correct": false, "coach": "Strangers asking personal questions is a red flag, no matter how friendly they seem." },
+        { "text": "Don't answer, block, and tell a grown-up", "correct": true, "coach": "Knight move! Nice players never need your personal info." },
+        { "text": "Give a fake school name to be safe", "correct": false, "coach": "Better than the truth, but the safest move is not engaging at all — block and tell an adult." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "Hi! My name is—",
+      "choices": [
+        { "text": "Tell them your real full name", "correct": false, "coach": "Woah woah woah — Knight Rule number one! Your real name stays OFF the chat." },
+        { "text": "Give your nickname instead", "correct": true, "coach": "Nice players don't need your real name. Nickname only!" },
+        { "text": "Ask why they want to know", "correct": false, "coach": "You don't owe strangers an explanation — just don't share it." }
+      ]
+    },
+    {
+      "narrator": "GLITCH",
+      "prompt": "Hiii! It's me from school! Accept meee!",
+      "choices": [
+        { "text": "Accept right away, they said they know me", "correct": false, "coach": "Anyone can claim to be 'from school.' That's not proof." },
+        { "text": "Ask them in real life first before accepting", "correct": true, "coach": "Exactly right — verify in person, then accept if it checks out." },
+        { "text": "Ask them to describe your classroom", "correct": false, "coach": "A stranger could guess details. The real check is asking in person." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Someone online says 'this is our secret, don't tell your parents.' What does that phrase actually mean?",
+      "choices": [
+        { "text": "It means they really trust me", "correct": false, "coach": "That phrase is one of the biggest red flags there is — it's designed to isolate you." },
+        { "text": "It's a red flag — trusted people don't ask kids to hide things from parents", "correct": true, "coach": "Exactly. 'Don't tell your parents' is the line itself — that's your answer." },
+        { "text": "It only matters if they ask twice", "correct": false, "coach": "Once is already a red flag. Tell a parent right away." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "An online friend wants to move our chat to a different app that my parents don't know about. Should I?",
+      "choices": [
+        { "text": "Sure, it's just a different app", "correct": false, "coach": "Moving to a less-supervised app is a common tactic to avoid detection. That's a red flag." },
+        { "text": "No — and tell a parent this was asked", "correct": true, "coach": "Exactly right. Wanting to move somewhere less supervised is a warning sign worth reporting." },
+        { "text": "Only move if it's a popular app", "correct": false, "coach": "Popularity doesn't matter — the request itself is the red flag." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "You feel like something online is 'off' but you can't explain why. What's the Knight move?",
+      "choices": [
+        { "text": "Ignore the feeling, it's probably nothing", "correct": false, "coach": "Trust that feeling — it's often your brain noticing a pattern before you can name it." },
+        { "text": "Screenshot it and tell a trusted adult", "correct": true, "coach": "Knight Rule! You are never in trouble for asking — screenshot first, then tell someone." },
+        { "text": "Wait to see if it happens again", "correct": false, "coach": "Don't wait — tell a trusted adult the first time something feels wrong." }
+      ]
+    }
+  ]
+}

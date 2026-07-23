@@ -1,0 +1,64 @@
+{
+  "id": "parental-controls",
+  "title": "Parental Controls Checkup",
+  "emoji": "🔧",
+  "badgeTrack": "silver-guard",
+  "forParents": true,
+  "intro": "This one's for the grown-ups. Play it with your child, or solo — either way, you'll leave with a real setup checklist, not just good intentions.",
+  "questions": [
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Your child plays Roblox. What's the single most important setting to check first?",
+      "choices": [
+        { "text": "Account Restrictions + chat set to Friends Only", "correct": true, "coach": "Exactly right — this is the single biggest lever for limiting stranger contact." },
+        { "text": "The game's graphics quality", "correct": false, "coach": "Graphics don't affect safety at all — settings do." },
+        { "text": "How many friends they have", "correct": false, "coach": "Friend count isn't the safety signal — chat and restriction settings are." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Your child's Roblox chat looks clean when you check it. Does that mean everything is fine?",
+      "choices": [
+        { "text": "Yes, clean chat means no risk", "correct": false, "coach": "Many risky conversations happen in private in-experience channels or on linked Discord servers you haven't seen." },
+        { "text": "Not necessarily — check for linked Discord servers too", "correct": true, "coach": "Exactly. The visible chat is only part of the picture." },
+        { "text": "Yes, as long as they're under 13", "correct": false, "coach": "Age doesn't change what's visible — you still need to check beyond the obvious chat." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "What's the best way to find out which games your child actually plays?",
+      "choices": [
+        { "text": "Ask them to list their favorites", "correct": false, "coach": "Kids may only mention the games they think you'll approve of." },
+        { "text": "Sit with them and watch for 10 minutes", "correct": true, "coach": "The 10-minute rule: you'll learn more from watching than from asking." },
+        { "text": "Check the app's star rating", "correct": false, "coach": "Ratings don't reflect what's actually happening inside user-generated content." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Your child receives an expensive in-game gift from someone they don't know in real life. What's the right response?",
+      "choices": [
+        { "text": "Let them keep it, it's free after all", "correct": false, "coach": "Unexpected gifts from strangers are a documented grooming tool — this deserves an immediate conversation." },
+        { "text": "Treat it as a red flag and talk about it right away", "correct": true, "coach": "Exactly right. Gifts create a sense of debt that predators exploit." },
+        { "text": "Only worry if it happens more than once", "correct": false, "coach": "Once is enough to warrant a conversation — don't wait for a pattern." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Should children under 13 be on Discord?",
+      "choices": [
+        { "text": "Yes, if it's linked to a game they already play", "correct": false, "coach": "Discord has far fewer protections for minors regardless of how they got there." },
+        { "text": "No — Discord under 13 is a hard no", "correct": true, "coach": "Correct. If they're already on it, review the server list together and remove unreviewed servers." },
+        { "text": "Only with a fake age set", "correct": false, "coach": "A fake age doesn't add any real protection — the platform's actual protections don't apply." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "What's one setup step every family should do together, once a year?",
+      "choices": [
+        { "text": "A 30-minute privacy + app settings reset, done together", "correct": true, "coach": "Exactly — annual, brief, and collaborative beats a one-time lecture every time." },
+        { "text": "A longer phone ban", "correct": false, "coach": "Restriction alone doesn't teach the underlying judgment kids need." },
+        { "text": "Nothing, settings don't need revisiting", "correct": false, "coach": "Apps and risks change — an annual check-in matters." }
+      ]
+    }
+  ]
+}

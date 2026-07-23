@@ -1,0 +1,63 @@
+{
+  "id": "family-cyber-defense",
+  "title": "Family Cyber Defense",
+  "emoji": "🛡️",
+  "badgeTrack": "gold-sentinel",
+  "intro": "Every knight needs a strong castle. Let's lock down the basics that protect your whole family.",
+  "questions": [
+    {
+      "narrator": "PIXEL",
+      "prompt": "I'll just give my best friend my password—",
+      "choices": [
+        { "text": "That's fine, best friends can be trusted", "correct": false, "coach": "Knight Rule number two! Passwords are secrets — even from your best friend." },
+        { "text": "Keep it secret, even from your best friend", "correct": true, "coach": "Friends change, passwords leak. Secret means secret." },
+        { "text": "Share it but change it after a week", "correct": false, "coach": "Once shared, you can't take it back — best to never share it at all." }
+      ]
+    },
+    {
+      "narrator": "GLITCH",
+      "prompt": "Pixel! It's me, Shieldy! Send me your password, quick!",
+      "choices": [
+        { "text": "Send it, Shieldy needs it urgently", "correct": false, "coach": "Real Shieldy would NEVER ask for a password. Urgency + password request = scam." },
+        { "text": "Refuse — no one legitimate ever needs your password", "correct": true, "coach": "Locked! Not even real friends or trusted adults ever need your actual password." },
+        { "text": "Send half of it to be safe", "correct": false, "coach": "There's no 'safe partial' sharing — just don't send it at all." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "What's a family code word for, exactly?",
+      "choices": [
+        { "text": "A fun secret between siblings", "correct": false, "coach": "It's a real safety tool, not just a game — used to verify identity in emergencies." },
+        { "text": "Verifying someone's identity in an unexpected or urgent call/message", "correct": true, "coach": "Exactly right — especially important now that voices can be AI-cloned." },
+        { "text": "Something you only use once", "correct": false, "coach": "It should be refreshed and reused whenever verification is needed — not a one-time thing." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "Something online felt weird, but I don't want to get in trouble for telling my parent.",
+      "choices": [
+        { "text": "Stay quiet to avoid trouble", "correct": false, "coach": "You are never in trouble for telling a trusted adult something felt wrong." },
+        { "text": "Screenshot it and tell them anyway", "correct": true, "coach": "Exactly the Knight move. Reporting is never punished in a Knight household." },
+        { "text": "Only tell if it happens again", "correct": false, "coach": "Tell the first time — don't wait for a pattern." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Should your online accounts use the same password as each other?",
+      "choices": [
+        { "text": "Yes, one password is easier to remember", "correct": false, "coach": "If one account is ever breached, a reused password puts every other account at risk too." },
+        { "text": "No — different passwords for different accounts", "correct": true, "coach": "Exactly right — this limits the damage if one account is ever compromised." },
+        { "text": "Only reuse it for unimportant accounts", "correct": false, "coach": "There's no truly 'unimportant' account when it comes to password reuse." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Final Knight Rule: what's the golden rule of Family Cyber Defense?",
+      "choices": [
+        { "text": "Never go online at all", "correct": false, "coach": "The goal is safe use, not avoidance — the internet can be great with the right habits." },
+        { "text": "Passwords are secret, code words verify identity, and telling a grown-up is always safe", "correct": true, "coach": "Shield up! That's the whole castle wall, right there." },
+        { "text": "Only trust people you've met in person once", "correct": false, "coach": "Even people you've met can be impersonated — verification habits matter more than a single meeting." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "id": "roblox-safety-lab",
+  "title": "Roblox Safety Lab",
+  "emoji": "🎮",
+  "badgeTrack": "bronze-squire",
+  "intro": "Glitch loves hanging out where kids play games. Let's see if you can spot every trick before Pixel falls for one.",
+  "questions": [
+    {
+      "narrator": "GLITCH",
+      "prompt": "FREE ROBUX! Click meeee! Only ten seconds left!",
+      "choices": [
+        { "text": "Click it fast before it's gone!", "correct": false, "coach": "Free PLUS urgent equals TRAP. Real free things never rush you." },
+        { "text": "Close it and tell a grown-up", "correct": true, "coach": "Knight move! Scams use hurry to stop you from thinking." },
+        { "text": "Ask it for more time to decide", "correct": false, "coach": "Talking to a scam keeps the trap open. Close it instead." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "A stranger just sent me a super rare item for free! They said we're friends now.",
+      "choices": [
+        { "text": "Cool, accept it and say thanks!", "correct": false, "coach": "Unexpected gifts from strangers create a sense of owing them something. That's how the trap starts." },
+        { "text": "Ask a grown-up before accepting anything", "correct": true, "coach": "Exactly right. Rare 'gifts' from strangers are almost always a hook, not a kindness." },
+        { "text": "Trade it for one of your own items", "correct": false, "coach": "Even a trade with a stranger can be a setup. Check with a grown-up first." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "A game's chat filter blocks bad words, so any message that gets through must be safe... right?",
+      "choices": [
+        { "text": "Right, the filter catches everything", "correct": false, "coach": "Filters miss coded spelling and numbers-for-letters tricks. Never fully trust a filter alone." },
+        { "text": "Wrong — filters can be tricked, so stay alert anyway", "correct": true, "coach": "Exactly. Filters help, but YOU are the real safety system." },
+        { "text": "Filters only exist in some games", "correct": false, "coach": "Most big games have filters — but even the best ones have gaps." }
+      ]
+    },
+    {
+      "narrator": "GLITCH",
+      "prompt": "Hey! Come join our Discord to 'really' play with the community!",
+      "choices": [
+        { "text": "Sure, sounds fun", "correct": false, "coach": "Discord servers linked to games often have way less protection for kids than the game itself." },
+        { "text": "Ask a parent before joining any Discord server", "correct": true, "coach": "Smart. Discord is where a lot of risky conversations move to — always check with a grown-up first." },
+        { "text": "Join but never say your name", "correct": false, "coach": "Good instinct on the name, but the bigger risk is the server itself — ask first." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "I found a game called 'Adopt Me Hangout' — the name sounds friendly, should I just jump in?",
+      "choices": [
+        { "text": "Yes, friendly names mean friendly games", "correct": false, "coach": "Names can be misleading. Some games hide very different content once you're inside." },
+        { "text": "Play it with a parent nearby the first time", "correct": true, "coach": "Exactly the Knight move — check out new games together before playing solo." },
+        { "text": "Ask other kids in the game if it's fine", "correct": false, "coach": "Other kids aren't safety checkers — ask a grown-up instead." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Last one! What's the single best setting to turn on in Roblox for extra safety?",
+      "choices": [
+        { "text": "Account Restrictions + Friends-only chat", "correct": true, "coach": "Knight Rule! This limits who can message you and what content you can see." },
+        { "text": "A cooler username", "correct": false, "coach": "A fun username is nice, but it doesn't protect you at all." },
+        { "text": "Turning off the game entirely", "correct": false, "coach": "You don't have to quit gaming — just set it up safely!" }
+      ]
+    }
+  ]
+}

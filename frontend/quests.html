@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Play a Digital Safety Knights quest — free interactive safety scenarios for kids, no account needed.">
+<title>Quests — Digital Safety Knights</title>
+<link rel="icon" href="assets/favicon.ico">
+<style>
+  :root {
+    --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a;
+    --light: #f4f6fb; --white: #ffffff; --danger: #e63946; --success: #2a9d8f;
+    --gray: #6c757d; --text: #2d3748; --teal: #3EC6C0; --purple: #8A5FBF;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); min-height: 100vh; }
+  a { color: inherit; }
+  .topbar { background: var(--navy); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+  .topbar .brand { color: var(--gold); font-weight: 900; text-decoration: none; font-size: 1.05rem; display: flex; align-items: center; gap: 8px; }
+  .topbar .home-link { color: #cdd6ea; text-decoration: none; font-size: 0.85rem; font-weight: 700; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 28px 18px 80px; }
+
+  /* ---- Nickname gate ---- */
+  #nickname-screen { text-align: center; padding-top: 12vh; }
+  #nickname-screen h1 { font-size: 1.6rem; color: var(--navy); margin-bottom: 10px; }
+  #nickname-screen p { color: var(--gray); margin-bottom: 24px; font-size: 0.95rem; }
+  #nickname-input { width: 100%; max-width: 320px; padding: 16px 18px; font-size: 1.1rem; border: 2px solid #dfe4ee; border-radius: 14px; text-align: center; font-weight: 700; color: var(--navy); }
+  #nickname-input:focus { outline: none; border-color: var(--gold); }
+  .privacy-note { font-size: 0.78rem; color: var(--gray); margin-top: 14px; max-width: 340px; margin-left: auto; margin-right: auto; }
+
+  /* ---- Quest picker ---- */
+  #picker-screen h1 { font-size: 1.7rem; color: var(--navy); margin-bottom: 4px; }
+  #picker-screen .sub { color: var(--gray); margin-bottom: 22px; font-size: 0.95rem; }
+  .quest-grid { display: grid; gap: 14px; }
+  .quest-card { background: var(--white); border-radius: 18px; padding: 18px 20px; display: flex; align-items: center; gap: 16px; text-decoration: none; box-shadow: 0 2px 20px rgba(13,27,62,0.08); border: 2px solid transparent; cursor: pointer; text-align: left; width: 100%; font: inherit; color: inherit; }
+  .quest-card:active { transform: scale(0.985); }
+  .quest-card.done { border-color: var(--success); }
+  .quest-emoji { font-size: 2.2rem; width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; background: var(--light); border-radius: 14px; flex-shrink: 0; }
+  .quest-info h3 { font-size: 1.02rem; color: var(--navy); margin-bottom: 2px; }
+  .quest-info p { font-size: 0.82rem; color: var(--gray); }
+  .quest-check { margin-left: auto; font-size: 1.3rem; color: var(--success); }
+  .badge-strip { display: flex; gap: 10px; margin: 24px 0 8px; overflow-x: auto; padding-bottom: 4px; }
+  .mini-badge { flex-shrink: 0; text-align: center; width: 74px; }
+  .mini-badge .circle { width: 54px; height: 54px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 4px; }
+  .mini-badge.earned .circle { background: linear-gradient(135deg, var(--gold2), var(--gold)); box-shadow: 0 4px 14px rgba(201,168,76,0.5); }
+  .mini-badge.locked .circle { background: #e2e6ef; filter: grayscale(1); opacity: 0.6; }
+  .mini-badge span.label { font-size: 0.68rem; color: var(--gray); font-weight: 700; }
+
+  /* ---- Player ---- */
+  #player-screen .q-header { text-align: center; margin-bottom: 20px; }
+  #player-screen .q-progress { font-size: 0.78rem; color: var(--gray); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+  .progress-track { height: 6px; background: #e2e6ef; border-radius: 3px; overflow: hidden; margin-bottom: 20px; }
+  .progress-fill { height: 100%; background: var(--gold); border-radius: 3px; transition: width 0.3s ease; }
+  .narrator-row { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+  .narrator-badge { background: var(--navy); color: var(--gold); font-weight: 900; font-size: 0.72rem; letter-spacing: 1px; padding: 6px 14px; border-radius: 20px; }
+  .prompt-card { background: var(--white); border-radius: 18px; padding: 24px 22px; box-shadow: 0 2px 24px rgba(13,27,62,0.08); margin-bottom: 20px; }
+  .prompt-card p { font-size: 1.15rem; font-weight: 700; color: var(--navy); line-height: 1.4; }
+  .choice-btn { display: block; width: 100%; text-align: left; background: var(--white); border: 2px solid #dfe4ee; border-radius: 14px; padding: 18px 20px; margin-bottom: 12px; font-size: 1rem; font-weight: 600; color: var(--text); cursor: pointer; min-height: 56px; }
+  .choice-btn:active { transform: scale(0.985); }
+  .choice-btn.correct { border-color: var(--success); background: rgba(42,157,143,0.08); }
+  .choice-btn.incorrect { border-color: var(--danger); background: rgba(230,57,70,0.06); }
+  .choice-btn:disabled { cursor: default; }
+  .coach-box { border-radius: 14px; padding: 16px 18px; margin: 6px 0 20px; font-size: 0.95rem; line-height: 1.5; }
+  .coach-box.correct { background: rgba(42,157,143,0.1); border-left: 4px solid var(--success); }
+  .coach-box.incorrect { background: rgba(230,57,70,0.08); border-left: 4px solid var(--danger); }
+  .next-btn { display: block; width: 100%; background: var(--gold); color: var(--navy); border: none; padding: 18px; border-radius: 14px; font-weight: 900; font-size: 1.02rem; cursor: pointer; min-height: 56px; }
+
+  /* ---- Score / outro ---- */
+  #score-screen { text-align: center; padding-top: 6vh; }
+  .score-shield { font-size: 4rem; margin-bottom: 6px; }
+  #score-screen h1 { font-size: 1.7rem; color: var(--navy); margin-bottom: 6px; }
+  #score-screen .score-num { font-size: 1.05rem; color: var(--gray); margin-bottom: 22px; }
+  .badge-unlock { background: linear-gradient(135deg, var(--gold2), var(--gold)); color: var(--navy); border-radius: 18px; padding: 20px; margin-bottom: 20px; font-weight: 800; }
+  .outro-actions { display: grid; gap: 12px; margin-top: 10px; }
+  .btn-primary { background: var(--gold); color: var(--navy); border: none; padding: 16px; border-radius: 14px; font-weight: 900; font-size: 1rem; cursor: pointer; min-height: 56px; text-decoration: none; display: inline-block; }
+  .btn-ghost { background: var(--white); color: var(--navy); border: 2px solid #dfe4ee; padding: 16px; border-radius: 14px; font-weight: 800; font-size: 0.95rem; cursor: pointer; min-height: 56px; text-decoration: none; display: inline-block; }
+  .hidden { display: none !important; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="/">🛡️ Digital Safety Knights</a>
+  <a class="home-link" href="/">← Home</a>
+</div>
+
+<div class="wrap">
+
+  <!-- NICKNAME GATE -->
+  <div id="nickname-screen">
+    <h1>Pick your Knight nickname</h1>
+    <p>No last name, no email — just a nickname you like. It stays on this device only.</p>
+    <input id="nickname-input" maxlength="20" placeholder="e.g. PixelKnight99" autocomplete="off">
+    <div class="outro-actions" style="max-width:320px;margin:20px auto 0;">
+      <button class="btn-primary" onclick="saveNickname()">Shield up! 🛡️</button>
+    </div>
+    <p class="privacy-note">Your nickname is stored only in this browser (localStorage). We never send it anywhere, and there's no account or login.</p>
+  </div>
+
+  <!-- QUEST PICKER -->
+  <div id="picker-screen" class="hidden">
+    <h1 id="picker-greeting">Welcome back, Knight!</h1>
+    <p class="sub">Pick a quest. Each one takes about 3 minutes.</p>
+    <div class="badge-strip" id="badge-strip"></div>
+    <div class="quest-grid" id="quest-grid"></div>
+  </div>
+
+  <!-- PLAYER -->
+  <div id="player-screen" class="hidden">
+    <div class="q-header">
+      <div class="q-progress" id="q-progress-label">QUESTION 1 OF 6</div>
+      <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+    </div>
+    <div class="narrator-row"><span class="narrator-badge" id="narrator-name">SHIELDY</span></div>
+    <div class="prompt-card"><p id="prompt-text"></p></div>
+    <div id="choices-list"></div>
+    <div id="coach-area"></div>
+    <button class="next-btn hidden" id="next-btn" onclick="nextQuestion()">Continue →</button>
+  </div>
+
+  <!-- SCORE / OUTRO -->
+  <div id="score-screen" class="hidden">
+    <div class="score-shield">🛡️</div>
+    <h1>Shield up!</h1>
+    <div class="score-num" id="score-summary"></div>
+    <div id="badge-unlock-box"></div>
+    <div class="outro-actions">
+      <button class="btn-primary" onclick="showPicker()">Back to Quests</button>
+      <a class="btn-ghost" href="/certificate.html">🏅 View / Print Certificate</a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const QUESTS = [
+  { id: "roblox-safety-lab",     file: "content/quests/roblox-safety-lab.json" },
+  { id: "ai-threat-awareness",   file: "content/quests/ai-threat-awareness.json" },
+  { id: "grooming-watch",        file: "content/quests/grooming-watch.json" },
+  { id: "parental-controls",     file: "content/quests/parental-controls.json" },
+  { id: "family-cyber-defense",  file: "content/quests/family-cyber-defense.json" },
+  { id: "digital-citizenship",   file: "content/quests/digital-citizenship.json" },
+];
+
+const PROGRESS_KEY = "dsk_progress";
+const NICKNAME_KEY = "dsk_nickname";
+
+function getProgress() {
+  try { return JSON.parse(localStorage.getItem(PROGRESS_KEY)) || { completed: {} }; }
+  catch (e) { return { completed: {} }; }
+}
+function saveProgress(p) { localStorage.setItem(PROGRESS_KEY, JSON.stringify(p)); }
+function completedCount() { return Object.keys(getProgress().completed).length; }
+
+function badgeForCount(n) {
+  if (n >= 6) return { name: "Gold Sentinel", emoji: "🏅" };
+  if (n >= 3) return { name: "Silver Guard", emoji: "🥈" };
+  if (n >= 1) return { name: "Bronze Squire", emoji: "🥉" };
+  return null;
+}
+
+function saveNickname() {
+  const val = document.getElementById('nickname-input').value.trim();
+  if (!val) { document.getElementById('nickname-input').focus(); return; }
+  localStorage.setItem(NICKNAME_KEY, val);
+  showPicker();
+}
+
+function showPicker() {
+  document.getElementById('nickname-screen').classList.add('hidden');
+  document.getElementById('player-screen').classList.add('hidden');
+  document.getElementById('score-screen').classList.add('hidden');
+  document.getElementById('picker-screen').classList.remove('hidden');
+
+  const nick = localStorage.getItem(NICKNAME_KEY) || "Knight";
+  document.getElementById('picker-greeting').textContent = "Welcome back, " + nick + "!";
+
+  const progress = getProgress();
+  const grid = document.getElementById('quest-grid');
+  grid.innerHTML = "";
+  QUESTS.forEach(q => {
+    const done = !!progress.completed[q.id];
+    const btn = document.createElement('button');
+    btn.className = "quest-card" + (done ? " done" : "");
+    btn.onclick = () => startQuest(q);
+    btn.innerHTML = `<div class="quest-emoji">${q.meta ? q.meta.emoji : "🛡️"}</div>
+      <div class="quest-info"><h3>${q.meta ? q.meta.title : q.id}</h3><p>${done ? "Completed" : "Not started"}</p></div>
+      ${done ? '<div class="quest-check">✅</div>' : ''}`;
+    grid.appendChild(btn);
+  });
+
+  const n = completedCount();
+  const tiers = [
+    { key: "bronze-squire", label: "Bronze Squire", emoji: "🥉", need: 1 },
+    { key: "silver-guard", label: "Silver Guard", emoji: "🥈", need: 3 },
+    { key: "gold-sentinel", label: "Gold Sentinel", emoji: "🏅", need: 6 },
+    { key: "diamond-defender", label: "Diamond Defender", emoji: "💎", need: 99 },
+    { key: "digital-knight", label: "Digital Knight", emoji: "⚔️", need: 99 },
+  ];
+  const strip = document.getElementById('badge-strip');
+  strip.innerHTML = tiers.map(t => {
+    const earned = n >= t.need;
+    return `<div class="mini-badge ${earned ? 'earned' : 'locked'}"><div class="circle">${t.emoji}</div><span class="label">${t.label}</span></div>`;
+  }).join("");
+
+  // Load meta (title/emoji) for cards not yet loaded, then re-render once.
+  const needsMeta = QUESTS.some(q => !q.meta);
+  if (needsMeta) {
+    Promise.all(QUESTS.map(q => q.meta ? Promise.resolve() : fetch(q.file).then(r => r.json()).then(data => { q.meta = data; q.data = data; })))
+      .then(() => showPicker());
+  }
+}
+
+let currentQuest = null;
+let currentIndex = 0;
+let currentScore = 0;
+
+function startQuest(q) {
+  currentQuest = q;
+  currentIndex = 0;
+  currentScore = 0;
+  document.getElementById('picker-screen').classList.add('hidden');
+  document.getElementById('player-screen').classList.remove('hidden');
+  renderQuestion();
+}
+
+function renderQuestion() {
+  const total = currentQuest.data.questions.length;
+  document.getElementById('q-progress-label').textContent = `QUESTION ${currentIndex + 1} OF ${total}`;
+  document.getElementById('progress-fill').style.width = Math.round((currentIndex / total) * 100) + "%";
+
+  const q = currentQuest.data.questions[currentIndex];
+  document.getElementById('narrator-name').textContent = q.narrator;
+  document.getElementById('prompt-text').textContent = q.prompt;
+  document.getElementById('coach-area').innerHTML = "";
+  document.getElementById('next-btn').classList.add('hidden');
+
+  const list = document.getElementById('choices-list');
+  list.innerHTML = "";
+  q.choices.forEach((choice, i) => {
+    const btn = document.createElement('button');
+    btn.className = "choice-btn";
+    btn.textContent = choice.text;
+    btn.onclick = () => selectChoice(i);
+    list.appendChild(btn);
+  });
+}
+
+function selectChoice(i) {
+  const q = currentQuest.data.questions[currentIndex];
+  const choice = q.choices[i];
+  const buttons = document.querySelectorAll('#choices-list .choice-btn');
+  buttons.forEach((b, idx) => {
+    b.disabled = true;
+    if (idx === i) b.classList.add(choice.correct ? 'correct' : 'incorrect');
+  });
+  if (choice.correct) currentScore++;
+
+  const coachBox = document.createElement('div');
+  coachBox.className = "coach-box " + (choice.correct ? "correct" : "incorrect");
+  coachBox.textContent = (choice.correct ? "✅ " : "💡 ") + choice.coach;
+  document.getElementById('coach-area').innerHTML = "";
+  document.getElementById('coach-area').appendChild(coachBox);
+
+  document.getElementById('next-btn').classList.remove('hidden');
+}
+
+function nextQuestion() {
+  currentIndex++;
+  if (currentIndex >= currentQuest.data.questions.length) {
+    finishQuest();
+  } else {
+    renderQuestion();
+  }
+}
+
+function finishQuest() {
+  const progress = getProgress();
+  const wasAlreadyDone = !!progress.completed[currentQuest.id];
+  progress.completed[currentQuest.id] = { score: currentScore, total: currentQuest.data.questions.length, date: new Date().toISOString() };
+  saveProgress(progress);
+
+  document.getElementById('player-screen').classList.add('hidden');
+  document.getElementById('score-screen').classList.remove('hidden');
+  document.getElementById('score-summary').textContent =
+    `${currentQuest.data.title}: ${currentScore}/${currentQuest.data.questions.length} correct`;
+
+  const n = completedCount();
+  const badge = badgeForCount(n);
+  const box = document.getElementById('badge-unlock-box');
+  const newlyCompleted = !wasAlreadyDone;
+  if (badge && newlyCompleted && (n === 1 || n === 3 || n === 6)) {
+    box.innerHTML = `<div class="badge-unlock">${badge.emoji} Badge unlocked: ${badge.name}!</div>`;
+  } else if (badge) {
+    box.innerHTML = `<div class="badge-unlock">${badge.emoji} Current badge: ${badge.name} · ${n}/6 quests done</div>`;
+  } else {
+    box.innerHTML = "";
+  }
+}
+
+// Boot
+(function init() {
+  const nick = localStorage.getItem(NICKNAME_KEY);
+  const params = new URLSearchParams(location.search);
+  const deepLinkId = params.get('quest');
+
+  if (nick) {
+    if (deepLinkId) {
+      const q = QUESTS.find(x => x.id === deepLinkId);
+      if (q) {
+        fetch(q.file).then(r => r.json()).then(data => { q.meta = data; q.data = data; startQuest(q); });
+        return;
+      }
+    }
+    showPicker();
+  } else {
+    document.getElementById('nickname-screen').classList.remove('hidden');
+  }
+})();
+</script>
+</body>
+</html>

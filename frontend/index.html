@@ -195,6 +195,8 @@
   </a>
   <div class="nav-links">
     <a href="#threats">Threats</a>
+    <a href="/quests.html">🎮 Quests</a>
+    <a href="/glitch-detector.html">🔍 Glitch Detector</a>
     <a href="#programs">Programs</a>
     <a href="#badges">Badges</a>
     <a href="/audit.html">🛡️ Audit</a>
@@ -229,6 +231,20 @@
     <div><div class="stat-num">100<span class="gold">%</span></div><div class="stat-label">Free Access</div></div>
   </div>
 </div>
+
+<section id="today-quest" style="background:var(--white);padding:2.6rem 2rem;">
+  <div class="container" style="max-width:900px;margin:0 auto;">
+    <div id="today-quest-widget" style="background:linear-gradient(135deg,var(--navy2),var(--navy));border-radius:22px;padding:2rem 2.2rem;display:flex;align-items:center;gap:1.6rem;flex-wrap:wrap;box-shadow:0 10px 40px rgba(13,27,62,0.2);">
+      <div id="tq-emoji" style="font-size:3rem;flex-shrink:0;">🎮</div>
+      <div style="flex:1;min-width:220px;">
+        <div style="color:var(--gold);font-weight:800;font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;">Today's Quest · From TikTok? Play it here!</div>
+        <h3 id="tq-title" style="color:white;font-size:1.25rem;margin-bottom:2px;">Loading today's quest...</h3>
+        <p style="color:#cdd6ea;font-size:0.88rem;">Free, no account needed — takes about 3 minutes.</p>
+      </div>
+      <a id="tq-link" href="/quests.html" class="btn-gold" style="flex-shrink:0;">Play Now →</a>
+    </div>
+  </div>
+</section>
 
 <section id="threats">
   <div class="container">
@@ -492,10 +508,10 @@
     </div>
     <div class="f-col">
       <h4>Programs</h4>
-      <a href="#programs">Roblox Safety Lab</a>
-      <a href="#programs">AI Threat Awareness</a>
-      <a href="#programs">Grooming Watch</a>
-      <a href="#programs">Cyber Defense</a>
+      <a href="/quests.html?quest=roblox-safety-lab">Roblox Safety Lab</a>
+      <a href="/quests.html?quest=ai-threat-awareness">AI Threat Awareness</a>
+      <a href="/quests.html?quest=grooming-watch">Grooming Watch</a>
+      <a href="/quests.html?quest=family-cyber-defense">Cyber Defense</a>
     </div>
     <div class="f-col">
       <h4>Community</h4>
@@ -513,6 +529,8 @@
     </div>
     <div class="f-col">
       <h4>Tools</h4>
+      <a href="/quests.html">🎮 Play a Quest</a>
+      <a href="/glitch-detector.html">🔍 Glitch Detector</a>
       <a href="/audit.html">🛡️ Family Safety Audit</a>
       <a href="#guides">Safety Guides</a>
       <a href="#journal">Monthly Journal</a>
@@ -762,6 +780,24 @@
 </div>
 
 <script>
+  (function todaysQuest() {
+    var QUESTS = [
+      { id: "roblox-safety-lab",    title: "Roblox Safety Lab",     emoji: "🎮" },
+      { id: "ai-threat-awareness",  title: "AI Threat Awareness",   emoji: "🤖" },
+      { id: "grooming-watch",       title: "Grooming Watch",        emoji: "🚩" },
+      { id: "parental-controls",    title: "Parental Controls Checkup", emoji: "🔧" },
+      { id: "family-cyber-defense", title: "Family Cyber Defense",  emoji: "🛡️" },
+      { id: "digital-citizenship",  title: "Digital Citizenship",   emoji: "🌐" }
+    ];
+    var start = new Date(new Date().getFullYear(), 0, 0);
+    var diff = new Date() - start;
+    var dayOfYear = Math.floor(diff / 86400000);
+    var q = QUESTS[dayOfYear % QUESTS.length];
+    document.getElementById('tq-emoji').textContent = q.emoji;
+    document.getElementById('tq-title').textContent = q.title;
+    document.getElementById('tq-link').href = '/quests.html?quest=' + q.id;
+  })();
+
   function openModal(plan) {
     document.getElementById('modalOverlay').classList.add('open');
     document.body.style.overflow = 'hidden';

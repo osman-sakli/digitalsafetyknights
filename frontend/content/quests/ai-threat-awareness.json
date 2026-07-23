@@ -1,0 +1,63 @@
+{
+  "id": "ai-threat-awareness",
+  "title": "AI Threat Awareness",
+  "emoji": "🤖",
+  "badgeTrack": "bronze-squire",
+  "intro": "Bot sounds SO sure of itself. The problem? Bot is wrong all the time. Let's train your AI-skepticism muscles.",
+  "questions": [
+    {
+      "narrator": "BOT",
+      "prompt": "Fun fact: sharks are vegetarian and only eat seaweed! I am 100% certain.",
+      "choices": [
+        { "text": "Wow, I didn't know that — must be true", "correct": false, "coach": "Confidence isn't proof. AI can sound 100% sure while being 100% wrong." },
+        { "text": "That sounds wrong — let me double check with a real source", "correct": true, "coach": "Exactly the Knight move. Always verify surprising 'facts' from AI." },
+        { "text": "Ask Bot to say it again, louder", "correct": false, "coach": "Repeating a wrong answer doesn't make it right." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "You get a call and the voice sounds exactly like your mom asking you to send money fast. What's the Knight move?",
+      "choices": [
+        { "text": "Send it — it's mom's voice, has to be real", "correct": false, "coach": "AI can clone a voice from just a few seconds of audio. Voice alone isn't proof anymore." },
+        { "text": "Use the family code word to check first", "correct": true, "coach": "Perfect. A code word only your family knows beats any voice trick." },
+        { "text": "Call back the same number right away", "correct": false, "coach": "Scammers can spoof numbers too — verify a different way, like the code word." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "An AI 'friend' online agrees with literally everything I say, even bad ideas. That means it's a great friend, right?",
+      "choices": [
+        { "text": "Yes, a friend who never disagrees is the best kind", "correct": false, "coach": "A real friend sometimes disagrees with you. An AI that always agrees isn't giving you real feedback." },
+        { "text": "That's a red flag — real friends push back sometimes", "correct": true, "coach": "Exactly. Constant agreement is a design trick, not real friendship." },
+        { "text": "Ask it to disagree just once to test it", "correct": false, "coach": "Good instinct, but the real lesson is: don't treat an always-agreeing AI as a true friend." }
+      ]
+    },
+    {
+      "narrator": "BOT",
+      "prompt": "For your homework, the capital of Australia is Sydney! Trust me.",
+      "choices": [
+        { "text": "Write that down, Bot said so", "correct": false, "coach": "It's actually Canberra! Bot sounds confident but is confidently wrong — classic Bot move." },
+        { "text": "Check a textbook or ask a teacher first", "correct": true, "coach": "Knight move! Always verify homework facts from AI with a trusted source." },
+        { "text": "Just guess something else instead", "correct": false, "coach": "Guessing isn't verifying — check a real source." }
+      ]
+    },
+    {
+      "narrator": "GLITCH",
+      "prompt": "I made a realistic fake photo using pictures from your profile. Send money or I'll share it!",
+      "choices": [
+        { "text": "Pay quickly so it goes away", "correct": false, "coach": "Paying doesn't make it stop, and the image being fake doesn't make the crime less real. Tell a trusted adult immediately." },
+        { "text": "Tell a trusted adult right away and don't pay", "correct": true, "coach": "Exactly right. Screenshot everything, don't pay, and report it — this is a real crime even with a fake image." },
+        { "text": "Delete your account so they can't find you", "correct": false, "coach": "Deleting evidence makes it harder to report. Tell an adult first." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "What's the one thing to always remember about AI tools?",
+      "choices": [
+        { "text": "AI is always right if it sounds smart", "correct": false, "coach": "Sounding smart and being correct are two very different things." },
+        { "text": "AI can be confidently wrong — always double-check", "correct": true, "coach": "Knight Rule locked in! Confidence is not the same as correctness." },
+        { "text": "Never use AI for anything", "correct": false, "coach": "AI can be a great tool — the key is checking its answers, not avoiding it entirely." }
+      ]
+    }
+  ]
+}

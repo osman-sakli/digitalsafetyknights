@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Paste a suspicious message and Shieldy will show you the red flags — free, private, no account needed.">
+<title>Glitch Detector — Digital Safety Knights</title>
+<link rel="icon" href="assets/favicon.ico">
+<style>
+  :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --text: #2d3748; --danger: #e63946; --success: #2a9d8f; --purple: #8A5FBF; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
+  .topbar { background: var(--navy); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+  .topbar .brand { color: var(--gold); font-weight: 900; text-decoration: none; font-size: 1.05rem; }
+  .topbar .home-link { color: #cdd6ea; text-decoration: none; font-size: 0.85rem; font-weight: 700; }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 34px 18px 80px; }
+  .hero { text-align: center; margin-bottom: 26px; }
+  .hero .icon { font-size: 3rem; margin-bottom: 8px; }
+  .hero h1 { color: var(--navy); font-size: 1.7rem; margin-bottom: 8px; }
+  .hero p { color: var(--gray); font-size: 0.95rem; }
+  textarea { width: 100%; min-height: 140px; border: 2px solid #dfe4ee; border-radius: 16px; padding: 18px; font-size: 1rem; font-family: inherit; resize: vertical; }
+  textarea:focus { outline: none; border-color: var(--gold); }
+  .check-btn { display: block; width: 100%; margin-top: 14px; background: var(--gold); color: var(--navy); border: none; padding: 18px; border-radius: 14px; font-weight: 900; font-size: 1.05rem; cursor: pointer; min-height: 56px; }
+  .check-btn:disabled { opacity: 0.5; cursor: default; }
+  .privacy-note { font-size: 0.8rem; color: var(--gray); text-align: center; margin-top: 14px; }
+
+  #result { margin-top: 30px; display: none; }
+  .verdict-card { border-radius: 20px; padding: 26px 24px; text-align: center; color: white; }
+  .verdict-card.trap { background: linear-gradient(135deg, #b3273a, #7c1f2b); }
+  .verdict-card.careful { background: linear-gradient(135deg, #a8791f, #7a5a12); }
+  .verdict-card.clear { background: linear-gradient(135deg, var(--navy2), var(--navy)); }
+  .verdict-icon { font-size: 2.6rem; margin-bottom: 6px; }
+  .verdict-title { font-size: 1.35rem; font-weight: 900; margin-bottom: 4px; }
+  .verdict-sub { font-size: 0.9rem; opacity: 0.9; }
+
+  .flag-list { margin-top: 18px; }
+  .flag-item { background: white; border-radius: 14px; padding: 16px 18px; margin-bottom: 10px; box-shadow: 0 2px 16px rgba(13,27,62,0.07); border-left: 4px solid var(--danger); }
+  .flag-item h4 { color: var(--navy); font-size: 0.95rem; margin-bottom: 4px; }
+  .flag-item p { font-size: 0.87rem; color: var(--gray); line-height: 1.4; }
+
+  .share-hint { text-align: center; font-size: 0.85rem; color: var(--gray); margin-top: 20px; }
+  .reset-btn { display: block; width: 100%; margin-top: 16px; background: white; border: 2px solid #dfe4ee; color: var(--navy); padding: 16px; border-radius: 14px; font-weight: 800; cursor: pointer; min-height: 56px; }
+
+  .patterns-note { margin-top: 40px; background: white; border-radius: 16px; padding: 20px 22px; box-shadow: 0 2px 20px rgba(13,27,62,0.06); }
+  .patterns-note h3 { color: var(--navy); font-size: 1rem; margin-bottom: 10px; }
+  .patterns-note ul { padding-left: 20px; font-size: 0.88rem; color: var(--gray); line-height: 1.8; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="/">🛡️ Digital Safety Knights</a>
+  <a class="home-link" href="/">← Home</a>
+</div>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="icon">🔍</div>
+    <h1>Glitch Detector</h1>
+    <p>Paste a message that seems suspicious. Shieldy will show you exactly which red flags it finds — instantly, and totally privately.</p>
+  </div>
+
+  <div id="input-screen">
+    <textarea id="message-input" placeholder="Paste the message here... e.g. 'FREE ROBUX! Click now, only 10 seconds left!'"></textarea>
+    <button class="check-btn" id="check-btn" onclick="checkMessage()">🛡️ Check for Red Flags</button>
+    <p class="privacy-note">Nothing you type here is saved or sent anywhere — it's checked entirely on your own device.</p>
+  </div>
+
+  <div id="result"></div>
+
+  <div class="patterns-note">
+    <h3>What Shieldy looks for</h3>
+    <ul>
+      <li><b>Urgency</b> — "hurry," "only seconds left," "act now"</li>
+      <li><b>Secrecy</b> — "don't tell your parents," "just between us"</li>
+      <li><b>Personal questions</b> — asking your name, age, school, or address</li>
+      <li><b>Too-good-to-be-true offers</b> — free prizes, gift cards, "you won"</li>
+      <li><b>Money or password requests</b> — asking to pay, verify, or send login info</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+const PATTERNS = [
+  {
+    key: "urgency",
+    title: "Urgency — the hurry-up trick",
+    explain: "Real offers don't need you to act in seconds. Urgency is designed to stop you from thinking clearly.",
+    regex: /\b(hurry|only \d+\s*(seconds|minutes|hours)|act now|right now|limited time|before it'?s gone|last chance|expires? (soon|today)|don'?t wait)\b/i
+  },
+  {
+    key: "secrecy",
+    title: "Secrecy — the 'don't tell' trick",
+    explain: "Trusted people never ask you to keep secrets from your parents. This phrase alone is a major red flag.",
+    regex: /\b(don'?t tell (your )?(parents|mom|dad|mum)|our secret|just between us|keep this (a )?secret|delete this (after|when))\b/i
+  },
+  {
+    key: "personal",
+    title: "Personal questions from a stranger",
+    explain: "Nice people online don't need your real name, age, school, or address. Sharing this is how strangers build a profile on you.",
+    regex: /\b(how old are you|what'?s your (real )?name|what school do you go to|where do you live|send (a|your) photo|your address|what'?s your number)\b/i
+  },
+  {
+    key: "toogood",
+    title: "Too-good-to-be-true offer",
+    explain: "Free prizes, gift cards, and 'you won' messages are almost always designed to get you to click without thinking.",
+    regex: /\b(free (robux|v-?bucks|gift card|money|iphone)|you'?ve? won|claim (your|now)|click here|verify your account|congratulations you)\b/i
+  },
+  {
+    key: "money",
+    title: "Money, gift cards, or password requests",
+    explain: "No real person or company will ever ask a kid to send money, gift card codes, or a password over chat.",
+    regex: /\b(send money|gift card code|wire transfer|send (your )?password|verify your password|pay (now|immediately)|venmo|cashapp|bitcoin)\b/i
+  }
+];
+
+function checkMessage() {
+  const text = document.getElementById('message-input').value.trim();
+  if (!text) { document.getElementById('message-input').focus(); return; }
+
+  const matches = PATTERNS.filter(p => p.regex.test(text));
+
+  const resultEl = document.getElementById('result');
+  resultEl.style.display = 'block';
+  document.getElementById('input-screen').style.display = 'none';
+
+  let verdictClass, icon, title, sub;
+  if (matches.length >= 2) {
+    verdictClass = "trap"; icon = "🚩"; title = `${matches.length} Red Flags Found!`;
+    sub = "This looks like a trap. Don't click, reply, or share anything — show a trusted adult.";
+  } else if (matches.length === 1) {
+    verdictClass = "careful"; icon = "⚠️"; title = "1 Red Flag Found";
+    sub = "Be careful with this one. When in doubt, ask a trusted adult before doing anything.";
+  } else {
+    verdictClass = "clear"; icon = "🤔"; title = "No Obvious Red Flags";
+    sub = "Nothing jumped out — but Shieldy can't catch everything. If it still feels weird, ask a grown-up anyway.";
+  }
+
+  let html = `
+    <div class="verdict-card ${verdictClass}">
+      <div class="verdict-icon">${icon}</div>
+      <div class="verdict-title">${title}</div>
+      <div class="verdict-sub">${sub}</div>
+    </div>
+  `;
+
+  if (matches.length > 0) {
+    html += '<div class="flag-list">' + matches.map(m => `
+      <div class="flag-item">
+        <h4>🚩 ${m.title}</h4>
+        <p>${m.explain}</p>
+      </div>
+    `).join('') + '</div>';
+  }
+
+  html += `
+    <p class="share-hint">📸 Screenshot this card to show how Shieldy caught it — and share what you learned!</p>
+    <button class="reset-btn" onclick="resetChecker()">Check Another Message</button>
+  `;
+
+  resultEl.innerHTML = html;
+}
+
+function resetChecker() {
+  document.getElementById('message-input').value = '';
+  document.getElementById('result').style.display = 'none';
+  document.getElementById('result').innerHTML = '';
+  document.getElementById('input-screen').style.display = 'block';
+}
+</script>
+</body>
+</html>
