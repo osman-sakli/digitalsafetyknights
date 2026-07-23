@@ -34,10 +34,12 @@ aws s3 website s3://$BUCKET \
   --error-document index.html
 
 # 5. Dosyaları yükle
+# Not: bucket "Bucket owner enforced" (ACL'ler kapalı) modunda; public erişim
+# tamamen s3-policy.json'daki bucket policy'den geliyor, --acl kullanmıyoruz.
 echo "📤 Dosyalar yükleniyor..."
 aws s3 sync frontend/ s3://$BUCKET/ \
   --delete \
-  --acl public-read \
+  --exclude ".DS_Store" \
   --cache-control "max-age=86400"
 
 echo ""
