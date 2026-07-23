@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Paste a suspicious message and Shieldy will show you the red flags — free, private, no account needed.">
+<meta name="description" content="Paste a suspicious message or upload a screenshot — Shieldy will show you the red flags. Free, private, no account needed.">
 <title>Glitch Detector — Digital Safety Knights</title>
 <link rel="icon" href="assets/favicon.ico">
 <style>
@@ -23,6 +23,15 @@
   .check-btn { display: block; width: 100%; margin-top: 14px; background: var(--gold); color: var(--navy); border: none; padding: 18px; border-radius: 14px; font-weight: 900; font-size: 1.05rem; cursor: pointer; min-height: 56px; }
   .check-btn:disabled { opacity: 0.5; cursor: default; }
   .privacy-note { font-size: 0.8rem; color: var(--gray); text-align: center; margin-top: 14px; }
+
+  .upload-row { display: flex; align-items: center; gap: 10px; margin-top: 14px; }
+  .upload-row hr { flex: 1; border: none; border-top: 1px solid #dfe4ee; }
+  .upload-row span { font-size: 0.78rem; color: var(--gray); font-weight: 700; }
+  .upload-btn { display: block; width: 100%; margin-top: 14px; background: white; border: 2px dashed #c7cede; color: var(--navy2); padding: 16px; border-radius: 14px; font-weight: 800; font-size: 0.95rem; cursor: pointer; text-align: center; min-height: 56px; }
+  #image-input { display: none; }
+  #image-preview { margin-top: 12px; display: none; }
+  #image-preview img { max-width: 100%; max-height: 220px; border-radius: 12px; display: block; margin: 0 auto; }
+  #ocr-status { text-align: center; font-size: 0.9rem; color: var(--navy2); font-weight: 700; margin-top: 10px; display: none; }
 
   #result { margin-top: 30px; display: none; }
   .verdict-card { border-radius: 20px; padding: 26px 24px; text-align: center; color: white; }
@@ -44,6 +53,7 @@
   .patterns-note { margin-top: 40px; background: white; border-radius: 16px; padding: 20px 22px; box-shadow: 0 2px 20px rgba(13,27,62,0.06); }
   .patterns-note h3 { color: var(--navy); font-size: 1rem; margin-bottom: 10px; }
   .patterns-note ul { padding-left: 20px; font-size: 0.88rem; color: var(--gray); line-height: 1.8; }
+  .patterns-note .source-note { font-size: 0.76rem; color: var(--gray); margin-top: 14px; border-top: 1px solid #eef0f5; padding-top: 12px; }
 </style>
 </head>
 <body>
@@ -57,13 +67,20 @@
   <div class="hero">
     <div class="icon">🔍</div>
     <h1>Glitch Detector</h1>
-    <p>Paste a message that seems suspicious. Shieldy will show you exactly which red flags it finds — instantly, and totally privately.</p>
+    <p>Paste a message, or upload a screenshot of one. Shieldy will show you exactly which red flags it finds — instantly, and totally privately.</p>
   </div>
 
   <div id="input-screen">
     <textarea id="message-input" placeholder="Paste the message here... e.g. 'FREE ROBUX! Click now, only 10 seconds left!'"></textarea>
+
+    <div class="upload-row"><hr><span>OR</span><hr></div>
+    <button class="upload-btn" id="upload-trigger" onclick="document.getElementById('image-input').click()">📷 Upload a Screenshot Instead</button>
+    <input type="file" id="image-input" accept="image/*">
+    <div id="image-preview"><img id="preview-img" alt="Uploaded screenshot"></div>
+    <div id="ocr-status">Reading the text from your image...</div>
+
     <button class="check-btn" id="check-btn" onclick="checkMessage()">🛡️ Check for Red Flags</button>
-    <p class="privacy-note">Nothing you type here is saved or sent anywhere — it's checked entirely on your own device.</p>
+    <p class="privacy-note">Nothing you type or upload here is saved or sent anywhere — everything is checked entirely on your own device, including reading text from images.</p>
   </div>
 
   <div id="result"></div>
@@ -72,11 +89,14 @@
     <h3>What Shieldy looks for</h3>
     <ul>
       <li><b>Urgency</b> — "hurry," "only seconds left," "act now"</li>
-      <li><b>Secrecy</b> — "don't tell your parents," "just between us"</li>
-      <li><b>Personal questions</b> — asking your name, age, school, or address</li>
+      <li><b>Secrecy</b> — "don't tell your parents," "just between us," or coded phrases kids use to warn each other a parent is nearby</li>
+      <li><b>Personal questions</b> — asking your name, age, gender, school, or address</li>
       <li><b>Too-good-to-be-true offers</b> — free prizes, gift cards, "you won"</li>
       <li><b>Money or password requests</b> — asking to pay, verify, or send login info</li>
+      <li><b>Requests to meet up or move to another app</b> — especially ones that ask to keep it secret</li>
+      <li><b>Requests for photos or getting undressed on camera</b> — never something a nice person asks a kid</li>
     </ul>
+    <p class="source-note">Red-flag patterns are based on categories documented by child-safety organizations including NCMEC, Internet Safety 101, and the Child Rescue Coalition. Some real predator codes are just plain numbers (like "9" or "99") — those can't be reliably auto-detected in free text, so if a message is ever confusing or code-like, the safest move is always the same: screenshot it and ask a trusted adult.</p>
   </div>
 </div>
 
@@ -86,31 +106,43 @@ const PATTERNS = [
     key: "urgency",
     title: "Urgency — the hurry-up trick",
     explain: "Real offers don't need you to act in seconds. Urgency is designed to stop you from thinking clearly.",
-    regex: /\b(hurry|only \d+\s*(seconds|minutes|hours)|act now|right now|limited time|before it'?s gone|last chance|expires? (soon|today)|don'?t wait)\b/i
+    regex: /\b(hurry|only \d+\s*(seconds?|minutes?|hours?)( left)?|act now|right now|limited time|before it'?s gone|last chance|expires? (soon|today)|don'?t wait|going fast|almost (out of time|gone)|won'?t last long|time('?s| is) running out)\b/i
   },
   {
     key: "secrecy",
     title: "Secrecy — the 'don't tell' trick",
-    explain: "Trusted people never ask you to keep secrets from your parents. This phrase alone is a major red flag.",
-    regex: /\b(don'?t tell (your )?(parents|mom|dad|mum)|our secret|just between us|keep this (a )?secret|delete this (after|when))\b/i
+    explain: "Trusted people never ask you to keep secrets from your parents. Coded phrases warning that a parent is nearby are also a sign the conversation isn't meant for grown-ups to see.",
+    regex: /\b(don'?t tell (your )?(parents|mom|dad|mum)|our secret|our little secret|just between us|keep this (a )?secret|keep (this )?quiet|delete this (after|when)|erase (this|our) (chat|conversation)|no one (needs to|has to) know|don'?t show (your )?(mom|dad|parents)|\bkpc\b|\bcd9\b|\bp911\b|\bpaw\b|\bpal\b|\bpir\b|\bpos\b|\bmos\b)\b/i
   },
   {
     key: "personal",
     title: "Personal questions from a stranger",
-    explain: "Nice people online don't need your real name, age, school, or address. Sharing this is how strangers build a profile on you.",
-    regex: /\b(how old are you|what'?s your (real )?name|what school do you go to|where do you live|send (a|your) photo|your address|what'?s your number)\b/i
+    explain: "Nice people online don't need your real name, age, gender, school, or address. Sharing this is how strangers build a profile on you.",
+    regex: /\b(how old are you|how old r u|what('?s| is) your (real )?name|what school do you go to|wat skool|where do you live|where do u live|are (you|your parents) home alone|is anyone home|send (a|your) (photo|pic|selfie)|your address|what('?s| is) your (number|gender)|\basl\b|\brumorf\b)\b/i
   },
   {
     key: "toogood",
     title: "Too-good-to-be-true offer",
     explain: "Free prizes, gift cards, and 'you won' messages are almost always designed to get you to click without thinking.",
-    regex: /\b(free (robux|v-?bucks|gift card|money|iphone)|you'?ve? won|claim (your|now)|click here|verify your account|congratulations you)\b/i
+    regex: /\b(free (robux|v-?bucks|gift card|money|iphone|nitro|skin(s)?|followers)|you'?ve? won|you (have|been) been selected|claim (your|now)|click here|verify your account|congratulations you|giveaway|no verification needed)\b/i
   },
   {
     key: "money",
     title: "Money, gift cards, or password requests",
     explain: "No real person or company will ever ask a kid to send money, gift card codes, or a password over chat.",
-    regex: /\b(send money|gift card code|wire transfer|send (your )?password|verify your password|pay (now|immediately)|venmo|cashapp|bitcoin)\b/i
+    regex: /\b(send money|gift card code|steam (gift )?card|itunes (gift )?card|wire transfer|send (your )?password|verify your password|pay (now|immediately)|venmo|cash ?app|paypal ?me|apple ?pay me|bitcoin|crypto ?wallet|seed phrase|read (me|out) the code)\b/i
+  },
+  {
+    key: "meetup",
+    title: "Wants to meet up or move somewhere less supervised",
+    explain: "Moving to a different app, or asking to meet in person, is a common way to get around parental supervision. Never agree — always tell a trusted adult first.",
+    regex: /\b(let'?s meet up|meet me at|i'?ll pick you up|come to my house|don'?t bring anyone|meet in real life|\blmirl\b|\bmirl\b|move (this|our chat) to (a different|another) app|add me on (kik|snap|whatsapp|telegram))\b/i
+  },
+  {
+    key: "sexual",
+    title: "Requests for photos or getting undressed on camera",
+    explain: "Any request for a photo of your body, or slang asking you to get undressed or 'show' yourself on camera, is never something a nice person asks a kid. Don't respond — screenshot it and tell a trusted adult right away.",
+    regex: /\b(get naked|take your clothes off|show me your|turn on your camera (for me)?|i'?ll pay you for (pics|photos)|send (a )?(nude|naked)|\bgnoc\b|\bgypo\b|\biwsn\b|\btdtm\b|\bnifoc\b|\bwtto\b)\b/i
   }
 ];
 
@@ -163,10 +195,54 @@ function checkMessage() {
 
 function resetChecker() {
   document.getElementById('message-input').value = '';
+  document.getElementById('image-input').value = '';
+  document.getElementById('image-preview').style.display = 'none';
   document.getElementById('result').style.display = 'none';
   document.getElementById('result').innerHTML = '';
   document.getElementById('input-screen').style.display = 'block';
 }
+
+// --- Screenshot upload: OCR runs entirely in the browser via Tesseract.js
+// (loaded from CDN only when a user actually uploads an image). The image
+// itself is never uploaded anywhere — it's read locally into a canvas and
+// discarded once the text is extracted.
+let tesseractLoaded = false;
+function loadTesseract() {
+  if (tesseractLoaded) return Promise.resolve();
+  return new Promise((resolve, reject) => {
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js';
+    script.onload = () => { tesseractLoaded = true; resolve(); };
+    script.onerror = reject;
+    document.head.appendChild(script);
+  });
+}
+
+document.getElementById('image-input').addEventListener('change', async function (e) {
+  const file = e.target.files[0];
+  if (!file) return;
+
+  const previewImg = document.getElementById('preview-img');
+  previewImg.src = URL.createObjectURL(file);
+  document.getElementById('image-preview').style.display = 'block';
+
+  const status = document.getElementById('ocr-status');
+  status.style.display = 'block';
+  document.getElementById('check-btn').disabled = true;
+
+  try {
+    await loadTesseract();
+    const { data } = await Tesseract.recognize(file, 'eng');
+    document.getElementById('message-input').value = data.text.trim();
+  } catch (err) {
+    status.textContent = "Couldn't read text from that image — try pasting the message instead.";
+    setTimeout(() => { status.style.display = 'none'; }, 4000);
+    document.getElementById('check-btn').disabled = false;
+    return;
+  }
+  status.style.display = 'none';
+  document.getElementById('check-btn').disabled = false;
+});
 </script>
 </body>
 </html>
