@@ -1,0 +1,6 @@
+dsk-shorts/
+.DS_Store
+infrastructure/terraform/.terraform/
+infrastructure/terraform/.build/
+infrastructure/terraform/*.tfstate
+infrastructure/terraform/*.tfstate.backup
