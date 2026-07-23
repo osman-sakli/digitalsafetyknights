@@ -36,11 +36,24 @@ aws s3 website s3://$BUCKET \
 # 5. Dosyaları yükle
 # Not: bucket "Bucket owner enforced" (ACL'ler kapalı) modunda; public erişim
 # tamamen s3-policy.json'daki bucket policy'den geliyor, --acl kullanmıyoruz.
+#
+# HTML/JSON her deploy'da değişebilir, o yüzden "no-cache" (tarayıcı her
+# seferinde sunucuya sorar) — aksi halde ziyaretçiler 24 saat eski sayfa
+# görmeye devam eder. Görsel/PDF gibi değişmeyen dosyalar uzun cache'lenir.
 echo "📤 Dosyalar yükleniyor..."
 aws s3 sync frontend/ s3://$BUCKET/ \
   --delete \
   --exclude ".DS_Store" \
+  --exclude "*.html" \
+  --exclude "*.json" \
   --cache-control "max-age=86400"
+
+aws s3 sync frontend/ s3://$BUCKET/ \
+  --delete \
+  --exclude "*" \
+  --include "*.html" \
+  --include "*.json" \
+  --cache-control "no-cache"
 
 echo ""
 echo "✅ Deploy tamamlandı!"
