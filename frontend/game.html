@@ -39,6 +39,9 @@
   .how-to { background: rgba(255,255,255,0.05); border: 1px solid rgba(201,168,76,0.25); border-radius: 16px; padding: 16px 20px; margin-bottom: 22px; text-align: left; }
   .how-to h3 { font-size: 0.8rem; color: var(--gold); margin-bottom: 8px; letter-spacing: 1px; text-transform: uppercase; }
   .how-to li { font-size: 0.86rem; color: #cdd6ea; line-height: 1.75; list-style: none; padding-left: 1.5em; text-indent: -1.5em; }
+  .difficulty-row { display: flex; gap: 10px; justify-content: center; margin-bottom: 18px; }
+  .diff-btn { flex: 1; max-width: 140px; background: rgba(255,255,255,0.06); border: 2px solid rgba(255,255,255,0.15); color: #cdd6ea; padding: 12px 8px; border-radius: 14px; font-weight: 800; font-size: 0.85rem; cursor: pointer; }
+  .diff-btn.active { border-color: var(--gold); background: rgba(201,168,76,0.15); color: white; }
   .best-score { font-size: 0.85rem; color: #8899bb; margin-bottom: 16px; }
   .best-score b { color: var(--gold2); }
   .play-btn { background: var(--gold); color: var(--navy); border: none; padding: 17px 46px; border-radius: 32px; font-weight: 900; font-size: 1.15rem; cursor: pointer; box-shadow: 0 10px 32px rgba(201,168,76,0.45); }
@@ -140,6 +143,11 @@
       <li>🛡️ Stand in <b>BLOCK</b> for messages with red flags</li>
       <li>🔥 Chain correct catches in a row for a combo score bonus</li>
       <li>⏱️ No lives, no game over from mistakes — just beat the clock!</li>
+    </div>
+    <div class="difficulty-row">
+      <button class="diff-btn" data-diff="easy" onclick="selectDifficulty('easy')">🐣 Easy</button>
+      <button class="diff-btn" data-diff="medium" onclick="selectDifficulty('medium')">⚔️ Medium</button>
+      <button class="diff-btn" data-diff="hard" onclick="selectDifficulty('hard')">🔥 Hard</button>
     </div>
     <div class="best-score">Your best score: <b id="best-score-val">0</b></div>
     <button class="play-btn" onclick="startGame()">▶️ Play Now</button>
@@ -252,6 +260,21 @@ var MESSAGES = [
 ];
 
 var ROUND_SECONDS = 60;
+var DIFFICULTIES = {
+  easy:   { fallStart: 8200, fallMin: 6200, fallDecay: 18, spawnStart: 3600, spawnMin: 2400, spawnDecay: 14 },
+  medium: { fallStart: 6200, fallMin: 4400, fallDecay: 20, spawnStart: 2700, spawnMin: 1600, spawnDecay: 16 },
+  hard:   { fallStart: 4600, fallMin: 3100, fallDecay: 22, spawnStart: 2000, spawnMin: 1100, spawnDecay: 18 }
+};
+var difficulty = localStorage.getItem('dsk_game_difficulty') || 'easy';
+function selectDifficulty(d) {
+  difficulty = d;
+  localStorage.setItem('dsk_game_difficulty', d);
+  document.querySelectorAll('.diff-btn').forEach(function(b) {
+    b.classList.toggle('active', b.getAttribute('data-diff') === d);
+  });
+}
+selectDifficulty(difficulty);
+
 var score = 0, streak = 0, best = 0, correctCount = 0, totalCount = 0;
 var lane = 'safe'; // current shieldy lane
 var running = false, spawnTimer = null, tickTimer = null, timeLeft = ROUND_SECONDS;
@@ -330,8 +353,9 @@ function tick() {
 function spawnLoop() {
   if (!running) return;
   spawnCard();
+  var cfg = DIFFICULTIES[difficulty];
   var elapsed = ROUND_SECONDS - timeLeft;
-  var delay = Math.max(1100, 2600 - elapsed * 22);
+  var delay = Math.max(cfg.spawnMin, cfg.spawnStart - elapsed * cfg.spawnDecay);
   spawnTimer = setTimeout(spawnLoop, delay);
 }
 
@@ -343,8 +367,9 @@ function spawnCard() {
   el.className = 'msg-card';
   el.textContent = msg.text;
   area.appendChild(el);
+  var cfg = DIFFICULTIES[difficulty];
   var elapsed = ROUND_SECONDS - timeLeft;
-  var duration = Math.max(3200, 4600 - elapsed * 24);
+  var duration = Math.max(cfg.fallMin, cfg.fallStart - elapsed * cfg.fallDecay);
   var card = { el: el, msg: msg, resolved: false, start: performance.now(), duration: duration, areaHeight: area.clientHeight };
   activeCards.push(card);
   requestAnimationFrame(function step(now) { animateCard(card, now); });
