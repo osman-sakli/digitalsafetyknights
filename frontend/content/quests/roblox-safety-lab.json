@@ -52,11 +52,20 @@
     },
     {
       "narrator": "SHIELDY",
-      "prompt": "Last one! What's the single best setting to turn on in Roblox for extra safety?",
+      "prompt": "What's the single best setting to turn on in Roblox for extra safety?",
       "choices": [
         { "text": "Account Restrictions + Friends-only chat", "correct": true, "coach": "Knight Rule! This limits who can message you and what content you can see." },
         { "text": "A cooler username", "correct": false, "coach": "A fun username is nice, but it doesn't protect you at all." },
         { "text": "Turning off the game entirely", "correct": false, "coach": "You don't have to quit gaming — just set it up safely!" }
+      ]
+    },
+    {
+      "narrator": "BOT",
+      "prompt": "Last one! In PK XD, a stranger invites you to their private room and asks you to switch to voice chat so 'it's more fun.' What do you do?",
+      "choices": [
+        { "text": "Join the room and turn on voice chat", "correct": false, "coach": "Private rooms plus a push to voice chat is a classic move to skip past text safety filters." },
+        { "text": "Say no and tell a parent about the invite", "correct": true, "coach": "Exactly right. Avatar games like PK XD still have real strangers behind every character — treat room and voice invites like you would in any other game." },
+        { "text": "Join the room but keep the mic off", "correct": false, "coach": "Better instinct, but a private room with a stranger is still a risk on its own — check with a grown-up first." }
       ]
     }
   ]
