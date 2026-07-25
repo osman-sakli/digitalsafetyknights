@@ -261,9 +261,9 @@ var MESSAGES = [
 
 var ROUND_SECONDS = 60;
 var DIFFICULTIES = {
-  easy:   { fallStart: 8200, fallMin: 6200, fallDecay: 18, spawnStart: 3600, spawnMin: 2400, spawnDecay: 14 },
-  medium: { fallStart: 6200, fallMin: 4400, fallDecay: 20, spawnStart: 2700, spawnMin: 1600, spawnDecay: 16 },
-  hard:   { fallStart: 4600, fallMin: 3100, fallDecay: 22, spawnStart: 2000, spawnMin: 1100, spawnDecay: 18 }
+  easy:   { fallStart: 13000, fallMin: 10500, fallDecay: 12, spawnStart: 5200, spawnMin: 3800, spawnDecay: 8 },
+  medium: { fallStart: 10000, fallMin: 8000,  fallDecay: 14, spawnStart: 4200, spawnMin: 3000, spawnDecay: 10 },
+  hard:   { fallStart: 7500,  fallMin: 5800,  fallDecay: 16, spawnStart: 3200, spawnMin: 2200, spawnDecay: 12 }
 };
 var difficulty = localStorage.getItem('dsk_game_difficulty') || 'easy';
 function selectDifficulty(d) {
