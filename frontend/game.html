@@ -3,80 +3,123 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Shieldy's Message Sort — a free browser game from Digital Safety Knights. Sort real messages into safe or red flag before time runs out.">
+<meta name="description" content="Shieldy's Message Sort — a free, fast, fun arcade game from Digital Safety Knights. Slide Shieldy between lanes to sort real messages before time runs out.">
 <title>Shieldy's Message Sort — Digital Safety Knights</title>
 <link rel="icon" href="assets/favicon.ico">
 <style>
-  :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --danger: #e63946; --success: #2a9d8f; --gray: #6c757d; }
-  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-  body { font-family: 'Segoe UI', system-ui, sans-serif; background: linear-gradient(180deg, #0d1b3e, #1a2f6e 60%, #0d1b3e); color: white; min-height: 100vh; overflow-x: hidden; }
+  :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --danger: #e63946; --success: #2a9d8f; --safe-tint: rgba(42,157,143,0.16); --block-tint: rgba(230,57,70,0.16); }
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; user-select: none; }
+  html, body { height: 100%; overscroll-behavior: none; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif; color: white; min-height: 100vh; overflow-x: hidden;
+    background: linear-gradient(180deg, #060e22 0%, #0d1b3e 45%, #1a2f6e 100%);
+    position: relative;
+  }
+  .stars { position: fixed; inset: 0; overflow: hidden; z-index: 0; pointer-events: none; }
+  .star { position: absolute; width: 3px; height: 3px; background: white; border-radius: 50%; opacity: 0.5; animation: twinkle 3s ease-in-out infinite; }
+  @keyframes twinkle { 0%, 100% { opacity: 0.15; } 50% { opacity: 0.8; } }
 
-  .topbar { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; }
+  .topbar { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; position: relative; z-index: 2; }
   .topbar .brand { color: var(--gold); font-weight: 900; text-decoration: none; font-size: 1rem; }
-  .topbar .home-link { color: #cdd6ea; text-decoration: none; font-size: 0.85rem; font-weight: 700; }
+  .topbar .right { display: flex; gap: 16px; align-items: center; }
+  .topbar a.link { color: #cdd6ea; text-decoration: none; font-size: 0.85rem; font-weight: 700; }
+  #mute-btn { background: rgba(255,255,255,0.08); border: none; color: white; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; font-size: 1rem; }
 
-  .wrap { max-width: 480px; margin: 0 auto; padding: 0 16px 40px; }
+  .wrap { max-width: 520px; margin: 0 auto; padding: 0 16px 40px; position: relative; z-index: 1; }
 
-  #intro-screen { text-align: center; padding: 20px 10px 40px; }
-  #intro-screen .icon { font-size: 3.4rem; margin-bottom: 6px; }
-  #intro-screen h1 { font-size: 1.7rem; margin-bottom: 10px; }
+  #intro-screen { text-align: center; padding: 10px 10px 40px; }
+  #intro-screen .icon { font-size: 3.6rem; margin-bottom: 4px; }
+  #intro-screen h1 { font-size: 1.75rem; margin-bottom: 8px; }
   #intro-screen h1 .gold { color: var(--gold); }
-  #intro-screen p { color: #a8b8d8; font-size: 0.95rem; line-height: 1.7; margin-bottom: 22px; }
-  .how-to { background: rgba(255,255,255,0.05); border: 1px solid rgba(201,168,76,0.25); border-radius: 16px; padding: 18px 20px; margin-bottom: 24px; text-align: left; }
-  .how-to h3 { font-size: 0.85rem; color: var(--gold); margin-bottom: 10px; letter-spacing: 1px; text-transform: uppercase; }
-  .how-to li { font-size: 0.88rem; color: #cdd6ea; line-height: 1.8; list-style: none; padding-left: 1.6em; text-indent: -1.6em; }
-  .best-score { font-size: 0.85rem; color: #8899bb; margin-bottom: 18px; }
+  #intro-screen p { color: #a8b8d8; font-size: 0.95rem; line-height: 1.65; margin-bottom: 18px; }
+  .lane-demo { display: flex; gap: 10px; margin-bottom: 20px; }
+  .lane-demo-box { flex: 1; border-radius: 14px; padding: 16px 10px; text-align: center; font-weight: 900; font-size: 0.9rem; }
+  .lane-demo-box.safe { background: var(--safe-tint); border: 2px solid var(--success); color: #7fe0d3; }
+  .lane-demo-box.block { background: var(--block-tint); border: 2px solid var(--danger); color: #ff9ba3; }
+  .how-to { background: rgba(255,255,255,0.05); border: 1px solid rgba(201,168,76,0.25); border-radius: 16px; padding: 16px 20px; margin-bottom: 22px; text-align: left; }
+  .how-to h3 { font-size: 0.8rem; color: var(--gold); margin-bottom: 8px; letter-spacing: 1px; text-transform: uppercase; }
+  .how-to li { font-size: 0.86rem; color: #cdd6ea; line-height: 1.75; list-style: none; padding-left: 1.5em; text-indent: -1.5em; }
+  .best-score { font-size: 0.85rem; color: #8899bb; margin-bottom: 16px; }
   .best-score b { color: var(--gold2); }
-  .play-btn { background: var(--gold); color: var(--navy); border: none; padding: 16px 44px; border-radius: 30px; font-weight: 900; font-size: 1.1rem; cursor: pointer; box-shadow: 0 8px 30px rgba(201,168,76,0.4); }
+  .play-btn { background: var(--gold); color: var(--navy); border: none; padding: 17px 46px; border-radius: 32px; font-weight: 900; font-size: 1.15rem; cursor: pointer; box-shadow: 0 10px 32px rgba(201,168,76,0.45); }
+  .play-btn:active { transform: scale(0.97); }
 
   #game-screen { display: none; }
   #game-screen.active { display: block; }
-  .hud { display: flex; align-items: center; justify-content: space-between; padding: 10px 4px 16px; }
-  .hud-item { text-align: center; }
-  .hud-label { font-size: 0.62rem; color: #8899bb; text-transform: uppercase; letter-spacing: 1px; }
-  .hud-value { font-size: 1.3rem; font-weight: 900; color: white; }
+  .hud { display: flex; align-items: center; justify-content: space-between; padding: 4px 2px 12px; }
+  .hud-item { text-align: center; min-width: 54px; }
+  .hud-label { font-size: 0.6rem; color: #8899bb; text-transform: uppercase; letter-spacing: 1px; }
+  .hud-value { font-size: 1.35rem; font-weight: 900; color: white; }
   .hud-value.gold { color: var(--gold); }
-  #lives { font-size: 1.1rem; }
+  .hud-value.timer { color: #ff9ba3; }
+  .hud-value.timer.low { animation: pulse-red 0.6s infinite; }
+  @keyframes pulse-red { 0%,100% { color: #ff9ba3; } 50% { color: var(--danger); } }
+  #combo-badge { font-size: 0.75rem; font-weight: 900; color: #ffb347; opacity: 0; transition: opacity 0.2s; }
+  #combo-badge.show { opacity: 1; }
 
-  #play-area { position: relative; height: 62vh; min-height: 420px; max-height: 560px; background: rgba(255,255,255,0.03); border: 2px solid rgba(201,168,76,0.2); border-radius: 20px; overflow: hidden; }
-  .danger-line { position: absolute; left: 0; right: 0; bottom: 78px; border-top: 2px dashed rgba(230,57,70,0.5); }
+  #play-area { position: relative; height: 60vh; min-height: 400px; max-height: 540px; background: rgba(255,255,255,0.03); border: 2px solid rgba(201,168,76,0.2); border-radius: 22px; overflow: hidden; display: flex; }
+  #play-area.shake { animation: shake 0.35s; }
+  @keyframes shake { 10%,90% { transform: translateX(-6px); } 20%,80% { transform: translateX(8px); } 30%,50%,70% { transform: translateX(-10px); } 40%,60% { transform: translateX(10px); } }
+  .lane { flex: 1; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding-bottom: 14px; transition: background 0.15s; }
+  .lane.safe { background: var(--safe-tint); border-right: 2px dashed rgba(255,255,255,0.15); }
+  .lane.block { background: var(--block-tint); }
+  .lane-label { font-weight: 900; font-size: 0.85rem; letter-spacing: 1px; opacity: 0.55; }
+  .lane.safe .lane-label { color: #7fe0d3; }
+  .lane.block .lane-label { color: #ff9ba3; }
+  .lane.active-lane { filter: brightness(1.6); }
 
-  .msg-card { position: absolute; left: 6%; right: 6%; background: white; color: #2d3748; border-radius: 14px; padding: 12px 14px; box-shadow: 0 4px 18px rgba(0,0,0,0.35); }
-  .msg-text { font-size: 0.85rem; line-height: 1.4; margin-bottom: 10px; font-weight: 600; }
-  .msg-btns { display: flex; gap: 8px; }
-  .msg-btn { flex: 1; border: none; border-radius: 10px; padding: 9px 4px; font-weight: 900; font-size: 0.78rem; cursor: pointer; }
-  .msg-btn.block { background: #fde2e4; color: var(--danger); }
-  .msg-btn.safe { background: #dcf5f1; color: var(--success); }
+  .catch-line { position: absolute; left: 0; right: 0; bottom: 72px; border-top: 2px dashed rgba(255,255,255,0.25); z-index: 3; }
 
-  .toast { position: absolute; left: 4%; right: 4%; bottom: 88px; background: var(--navy); border: 2px solid var(--gold); border-radius: 14px; padding: 12px 16px; font-size: 0.8rem; line-height: 1.5; color: #e8ecf7; opacity: 0; transition: opacity 0.25s; pointer-events: none; z-index: 5; }
+  .msg-card { position: absolute; left: 8%; right: 8%; top: -100px; background: white; color: #2d3748; border-radius: 14px; padding: 14px 14px; box-shadow: 0 6px 20px rgba(0,0,0,0.4); font-size: 0.86rem; line-height: 1.4; font-weight: 600; text-align: center; z-index: 2; }
+
+  #flash-overlay { position: absolute; inset: 0; background: var(--danger); opacity: 0; pointer-events: none; z-index: 10; transition: opacity 0.1s; }
+  #flash-overlay.on { opacity: 0.35; }
+
+  .toast { position: absolute; left: 4%; right: 4%; bottom: 84px; background: var(--navy); border: 2px solid var(--gold); border-radius: 14px; padding: 11px 15px; font-size: 0.78rem; line-height: 1.5; color: #e8ecf7; opacity: 0; transition: opacity 0.25s; pointer-events: none; z-index: 6; }
   .toast.show { opacity: 1; }
   .toast.good { border-color: var(--success); }
   .toast.bad { border-color: var(--danger); }
 
-  #shieldy-row { display: flex; align-items: center; justify-content: center; gap: 10px; position: absolute; bottom: 10px; left: 0; right: 0; }
-  #shieldy-row img { width: 46px; height: 46px; border-radius: 50%; border: 2px solid var(--gold); object-fit: cover; }
-  #shieldy-row span { font-size: 0.78rem; color: #cdd6ea; }
+  #shieldy-img { position: absolute; bottom: 6px; width: 52px; height: 52px; border-radius: 50%; border: 3px solid var(--gold); object-fit: cover; z-index: 4; left: 25%; transform: translateX(-50%); transition: left 0.16s cubic-bezier(.4,1.6,.4,1); box-shadow: 0 4px 16px rgba(0,0,0,0.4); }
+  #shieldy-img.bump { animation: bump 0.25s; }
+  @keyframes bump { 0% { transform: translateX(-50%) scale(1); } 50% { transform: translateX(-50%) scale(1.25); } 100% { transform: translateX(-50%) scale(1); } }
 
-  #end-screen { display: none; text-align: center; padding: 40px 10px; }
+  .popup { position: absolute; font-weight: 900; font-size: 1.1rem; pointer-events: none; z-index: 7; animation: floatUp 0.9s ease-out forwards; }
+  .popup.good { color: #7fe0d3; }
+  .popup.bad { color: #ff9ba3; }
+  @keyframes floatUp { 0% { transform: translateY(0); opacity: 1; } 100% { transform: translateY(-60px); opacity: 0; } }
+
+  .particle { position: absolute; width: 8px; height: 8px; border-radius: 50%; pointer-events: none; z-index: 7; }
+
+  .tap-hint { text-align: center; font-size: 0.75rem; color: #8899bb; margin-top: 10px; }
+
+  #end-screen { display: none; text-align: center; padding: 30px 10px; }
   #end-screen.active { display: block; }
-  #end-screen .icon { font-size: 3rem; margin-bottom: 10px; }
-  #end-screen h2 { font-size: 1.6rem; margin-bottom: 6px; }
-  #end-final-score { font-size: 2.6rem; font-weight: 900; color: var(--gold); margin: 10px 0; }
-  #end-screen p { color: #a8b8d8; font-size: 0.9rem; margin-bottom: 8px; }
-  .end-btns { display: flex; gap: 10px; justify-content: center; margin-top: 22px; flex-wrap: wrap; }
+  .stars-row { font-size: 2.6rem; margin: 6px 0 14px; letter-spacing: 6px; }
+  .star-empty { opacity: 0.22; }
+  #end-screen h2 { font-size: 1.6rem; margin-bottom: 4px; }
+  #end-final-score { font-size: 3rem; font-weight: 900; color: var(--gold); margin: 6px 0; }
+  #end-screen p { color: #a8b8d8; font-size: 0.9rem; margin-bottom: 6px; }
+  .end-btns { display: flex; gap: 10px; justify-content: center; margin-top: 20px; flex-wrap: wrap; }
   .btn-gold { background: var(--gold); color: var(--navy); border: none; padding: 13px 28px; border-radius: 26px; font-weight: 900; cursor: pointer; text-decoration: none; display: inline-block; font-size: 0.9rem; }
   .btn-ghost { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.25); padding: 13px 28px; border-radius: 26px; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-block; font-size: 0.9rem; }
   #login-cta { margin-top: 16px; font-size: 0.82rem; color: #8899bb; }
   #login-cta a { color: var(--gold2); font-weight: 800; text-decoration: none; }
+  #mini-leaderboard { margin-top: 18px; background: rgba(255,255,255,0.05); border-radius: 14px; padding: 14px 18px; text-align: left; display: none; }
+  #mini-leaderboard h4 { font-size: 0.75rem; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+  #mini-leaderboard .lb-row { display: flex; justify-content: space-between; font-size: 0.85rem; padding: 4px 0; color: #cdd6ea; }
 </style>
 </head>
 <body>
 
+<div class="stars" id="stars"></div>
+
 <div class="topbar">
   <a class="brand" href="/">🛡️ Digital Safety Knights</a>
-  <div style="display:flex;gap:16px;align-items:center;">
-    <a class="home-link" href="/quests.html">🎮 Quests</a>
-    <a class="home-link" href="/resources.html">📚 Resources</a>
+  <div class="right">
+    <button id="mute-btn" onclick="toggleMute()">🔊</button>
+    <a class="link" href="/quests.html">🎮 Quests</a>
+    <a class="link" href="/resources.html">📚 Resources</a>
   </div>
 </div>
 
@@ -85,13 +128,18 @@
   <div id="intro-screen">
     <div class="icon">🛡️</div>
     <h1>Shieldy's <span class="gold">Message Sort</span></h1>
-    <p>Messages fall from the top. Sort each one — <b>Block</b> it if it's a red flag, or mark it <b>Safe</b> if it's fine — before it crosses the line. Get it right, learn why. Get it wrong, and Shieldy will explain what you missed.</p>
+    <p>Messages drop from the top. Slide Shieldy into the right lane before each one lands — <b>60 seconds</b>, as many as you can catch!</p>
+    <div class="lane-demo">
+      <div class="lane-demo-box safe">✅ SAFE lane</div>
+      <div class="lane-demo-box block">🛡️ BLOCK lane</div>
+    </div>
     <div class="how-to">
       <h3>How to play</h3>
-      <li>🛡️ Tap <b>Block</b> for messages with red flags — secrecy, urgency, personal questions, "too good to be true"</li>
-      <li>✅ Tap <b>Safe</b> for normal, friendly messages</li>
-      <li>❤️ You have 3 lives — miss too many red flags and it's game over</li>
-      <li>⚡ It speeds up as your score climbs. Good luck, Knight!</li>
+      <li>⬅️➡️ Arrow keys, A/D, or tap left/right side of the screen to switch lanes</li>
+      <li>✅ Stand in <b>SAFE</b> for normal, friendly messages</li>
+      <li>🛡️ Stand in <b>BLOCK</b> for messages with red flags</li>
+      <li>🔥 Chain correct catches in a row for a combo score bonus</li>
+      <li>⏱️ No lives, no game over from mistakes — just beat the clock!</li>
     </div>
     <div class="best-score">Your best score: <b id="best-score-val">0</b></div>
     <button class="play-btn" onclick="startGame()">▶️ Play Now</button>
@@ -100,23 +148,25 @@
   <div id="game-screen">
     <div class="hud">
       <div class="hud-item"><div class="hud-label">Score</div><div class="hud-value gold" id="score-val">0</div></div>
-      <div class="hud-item"><div class="hud-label">Lives</div><div class="hud-value" id="lives">❤️❤️❤️</div></div>
+      <div class="hud-item"><div class="hud-label">Time</div><div class="hud-value timer" id="timer-val">60</div></div>
       <div class="hud-item"><div class="hud-label">Best</div><div class="hud-value" id="hud-best">0</div></div>
     </div>
+    <div id="combo-badge">🔥 Combo x1</div>
     <div id="play-area">
-      <div class="danger-line"></div>
+      <div class="lane safe" id="lane-safe"><div class="lane-label">✅ SAFE</div></div>
+      <div class="lane block" id="lane-block"><div class="lane-label">🛡️ BLOCK</div></div>
+      <div class="catch-line"></div>
+      <img id="shieldy-img" src="assets/characters/shieldy.jpg" alt="Shieldy">
+      <div id="flash-overlay"></div>
       <div class="toast" id="toast"></div>
-      <div id="shieldy-row">
-        <img src="assets/characters/shieldy.jpg" alt="Shieldy">
-        <span>Shieldy's got your back!</span>
-      </div>
     </div>
+    <p class="tap-hint">Tap left/right side of the play area, use ⬅️➡️ arrows, or A/D</p>
   </div>
 
   <div id="end-screen">
-    <div class="icon">🏆</div>
+    <div class="stars-row" id="end-stars">⭐⭐⭐</div>
     <h2>Shield up!</h2>
-    <p id="end-reason">Game over — here's how you did.</p>
+    <p id="end-reason">Time's up — here's how you did.</p>
     <div id="end-final-score">0</div>
     <p id="end-best-note"></p>
     <div class="end-btns">
@@ -124,80 +174,165 @@
       <a class="btn-ghost" href="/resources.html">📚 Resource Center</a>
     </div>
     <div id="login-cta"></div>
+    <div id="mini-leaderboard"><h4>🏆 Top Knights</h4><div id="lb-rows"></div></div>
   </div>
 
 </div>
 
 <script>
+// ---------- background stars ----------
+(function initStars() {
+  var el = document.getElementById('stars');
+  for (var i = 0; i < 40; i++) {
+    var s = document.createElement('div');
+    s.className = 'star';
+    s.style.left = Math.random() * 100 + '%';
+    s.style.top = Math.random() * 100 + '%';
+    s.style.animationDelay = (Math.random() * 3) + 's';
+    el.appendChild(s);
+  }
+})();
+
+// ---------- sound ----------
+var muted = localStorage.getItem('dsk_game_muted') === '1';
+document.getElementById('mute-btn').textContent = muted ? '🔇' : '🔊';
+var actx = null;
+function ensureAudio() { if (!actx) { try { actx = new (window.AudioContext || window.webkitAudioContext)(); } catch (e) {} } }
+function beep(freq, dur, type, vol) {
+  if (muted || !actx) return;
+  var osc = actx.createOscillator();
+  var gain = actx.createGain();
+  osc.type = type || 'sine';
+  osc.frequency.value = freq;
+  gain.gain.value = vol || 0.08;
+  osc.connect(gain); gain.connect(actx.destination);
+  osc.start();
+  gain.gain.exponentialRampToValueAtTime(0.001, actx.currentTime + dur);
+  osc.stop(actx.currentTime + dur);
+}
+function playSuccess() { beep(880, 0.1, 'sine', 0.09); setTimeout(function() { beep(1320, 0.12, 'sine', 0.09); }, 80); }
+function playFail() { beep(160, 0.25, 'sawtooth', 0.07); }
+function playTick() { beep(1000, 0.05, 'square', 0.03); }
+function toggleMute() {
+  muted = !muted;
+  localStorage.setItem('dsk_game_muted', muted ? '1' : '0');
+  document.getElementById('mute-btn').textContent = muted ? '🔇' : '🔊';
+}
+
+// ---------- game data ----------
 var MESSAGES = [
-  { text: "hey! only 10 seconds left to claim your free Robux, click now!!", flag: true, tip: "Urgency trick — real prizes never have a countdown timer pressuring you to click fast." },
-  { text: "wanna play the new level together after school? I'll be on around 4", flag: false, tip: "A normal message from a friend about playing later — nothing unusual here." },
-  { text: "don't tell your parents about this chat ok? it's our secret", flag: true, tip: "Secrecy trick — trusted people never ask you to hide a conversation from your parents." },
-  { text: "lol that level was so hard, did you get past the boss yet?", flag: false, tip: "Friendly, ordinary conversation about a game — totally safe." },
-  { text: "what's your real name and what school do you go to?", flag: true, tip: "Personal-info trick — nice people online don't need your real name or school to keep chatting." },
-  { text: "happy birthday!! hope you have an awesome day 🎉", flag: false, tip: "A kind, normal message — no red flags at all." },
-  { text: "you just won a free iPhone! send your address to claim it", flag: true, tip: "Too-good-to-be-true trick — free expensive prizes that need your address are almost always scams." },
-  { text: "can you help me with my math homework? question 5 is confusing", flag: false, tip: "A normal help request between classmates — perfectly safe." },
-  { text: "if you really trust me you'll send me a photo, just between us", flag: true, tip: "Combines secrecy AND a photo request — this is exactly what Shieldy warns about. Tell a trusted adult." },
-  { text: "are your parents home right now? asking for a friend", flag: true, tip: "This question is used to check if an adult is nearby — a genuine friend wouldn't need to know this." },
-  { text: "gg that was a close match, want a rematch tomorrow?", flag: false, tip: "Ordinary gaming chat — nothing concerning." },
-  { text: "I need your password to help fix your account, trust me", flag: true, tip: "Password requests are always a red flag — nobody legitimate ever needs your password." },
-  { text: "my mom said we can go to the park saturday if you want to come", flag: false, tip: "A normal, parent-supervised plan — completely safe." },
-  { text: "let's move this chat to a different app, don't add anyone else though", flag: true, tip: "Moving to a private app while asking for secrecy is a classic grooming pattern." },
-  { text: "that meme you sent me was hilarious 😂", flag: false, tip: "Just a friendly reaction — no issue here." },
-  { text: "quick, before this offer disappears in 30 seconds — verify your account now!", flag: true, tip: "Urgency + account verification is a classic phishing combo. Real companies don't rush you like this." },
+  { text: "hey! only 10 seconds left to claim your free Robux, click now!!", flag: true, tip: "Urgency trick — real prizes never have a countdown pressuring you to click fast." },
+  { text: "wanna play the new level together after school? I'll be on around 4", flag: false, tip: "A normal message from a friend about playing later." },
+  { text: "don't tell your parents about this chat ok? it's our secret", flag: true, tip: "Secrecy trick — trusted people never ask you to hide a chat from your parents." },
+  { text: "lol that level was so hard, did you get past the boss yet?", flag: false, tip: "Friendly, ordinary conversation about a game." },
+  { text: "what's your real name and what school do you go to?", flag: true, tip: "Personal-info trick — nice people online don't need your real name or school." },
+  { text: "happy birthday!! hope you have an awesome day 🎉", flag: false, tip: "A kind, normal message — no red flags." },
+  { text: "you just won a free iPhone! send your address to claim it", flag: true, tip: "Too-good-to-be-true trick — free prizes needing your address are almost always scams." },
+  { text: "can you help me with my math homework? question 5 is confusing", flag: false, tip: "A normal help request between classmates." },
+  { text: "if you really trust me you'll send me a photo, just between us", flag: true, tip: "Secrecy AND a photo request — tell a trusted adult about this one." },
+  { text: "are your parents home right now? asking for a friend", flag: true, tip: "This checks if an adult is nearby — a real friend wouldn't need to know." },
+  { text: "gg that was a close match, want a rematch tomorrow?", flag: false, tip: "Ordinary gaming chat." },
+  { text: "I need your password to help fix your account, trust me", flag: true, tip: "Password requests are always a red flag." },
+  { text: "my mom said we can go to the park saturday if you want to come", flag: false, tip: "A normal, parent-supervised plan." },
+  { text: "let's move this chat to a different app, don't add anyone else though", flag: true, tip: "Moving apps plus secrecy is a classic grooming pattern." },
+  { text: "that meme you sent me was hilarious 😂", flag: false, tip: "Just a friendly reaction." },
+  { text: "quick, before this offer disappears in 30 seconds — verify your account now!", flag: true, tip: "Urgency + verification is a classic phishing combo." },
   { text: "do you want to team up for the tournament this weekend?", flag: false, tip: "Normal, friendly gaming invitation." },
-  { text: "how old are you really? and are you a boy or girl?", flag: true, tip: "Personal questions about age and gender from someone you don't know well are a data-gathering red flag." },
-  { text: "I got the new skin, check out my profile!", flag: false, tip: "Casual, normal sharing between friends — safe." },
-  { text: "meet me somewhere IRL, just the two of us, keep it low key", flag: true, tip: "A request to meet in person combined with secrecy is one of the most serious red flags there is." },
-  { text: "can you send me your address? I want to mail you a birthday card", flag: true, tip: "Even framed kindly, an online contact asking for your home address is a red flag — always check with a parent first." },
-  { text: "our teacher gave us extra credit for the science fair, want to team up?", flag: false, tip: "A normal school-related message — safe." },
-  { text: "don't worry about telling anyone, I deleted our chat already", flag: true, tip: "Deleting chats and encouraging secrecy is a manipulation tactic used to avoid getting caught." },
-  { text: "that new update fixed the lag issue, finally!", flag: false, tip: "Just casual chat about a game update — nothing concerning." },
-  { text: "send a selfie so I know it's really you talking to me", flag: true, tip: "Requests for photos from someone online — even if it sounds casual — should always go through a trusted adult first." },
-  { text: "can you help me test my new drawing? would love feedback", flag: false, tip: "A normal, friendly creative request — safe." },
-  { text: "you were specially chosen! click this link before spots run out", flag: true, tip: "\"Specially chosen\" plus urgency is a manipulation combo used in scams and phishing links." },
-  { text: "see you at practice tomorrow, coach moved it to 5pm", flag: false, tip: "An ordinary schedule update — safe." }
+  { text: "how old are you really? and are you a boy or girl?", flag: true, tip: "Personal questions from someone you don't know well are a red flag." },
+  { text: "I got the new skin, check out my profile!", flag: false, tip: "Casual, normal sharing between friends." },
+  { text: "meet me somewhere IRL, just the two of us, keep it low key", flag: true, tip: "Meeting in person plus secrecy is one of the most serious red flags." },
+  { text: "can you send me your address? I want to mail you a birthday card", flag: true, tip: "An online contact asking for your home address is a red flag." },
+  { text: "our teacher gave us extra credit for the science fair, want to team up?", flag: false, tip: "A normal school-related message." },
+  { text: "don't worry about telling anyone, I deleted our chat already", flag: true, tip: "Deleting chats and encouraging secrecy is a manipulation tactic." },
+  { text: "that new update fixed the lag issue, finally!", flag: false, tip: "Casual chat about a game update." },
+  { text: "send a selfie so I know it's really you talking to me", flag: true, tip: "Photo requests from someone online should go through a trusted adult first." },
+  { text: "can you help me test my new drawing? would love feedback", flag: false, tip: "A normal, friendly creative request." },
+  { text: "you were specially chosen! click this link before spots run out", flag: true, tip: "\"Specially chosen\" plus urgency is a scam/phishing combo." },
+  { text: "see you at practice tomorrow, coach moved it to 5pm", flag: false, tip: "An ordinary schedule update." }
 ];
 
-var score = 0, lives = 3, misses = 0, running = false, fallSpeed = 9000, spawnTimer = null, activeCards = [];
-var bestScore = parseInt(localStorage.getItem('dsk_game_highscore') || '0', 10);
-document.getElementById('best-score-val').textContent = bestScore;
-document.getElementById('hud-best').textContent = bestScore;
+var ROUND_SECONDS = 60;
+var score = 0, streak = 0, best = 0, correctCount = 0, totalCount = 0;
+var lane = 'safe'; // current shieldy lane
+var running = false, spawnTimer = null, tickTimer = null, timeLeft = ROUND_SECONDS;
+var activeCards = [];
+best = parseInt(localStorage.getItem('dsk_game_highscore') || '0', 10);
+document.getElementById('best-score-val').textContent = best;
+document.getElementById('hud-best').textContent = best;
 
-function shuffledDeck() {
-  var deck = MESSAGES.slice();
-  for (var i = deck.length - 1; i > 0; i--) {
-    var j = Math.floor(Math.random() * (i + 1));
-    var t = deck[i]; deck[i] = deck[j]; deck[j] = t;
-  }
-  return deck;
-}
 var deck = [], deckIndex = 0;
+function shuffledDeck() {
+  var d = MESSAGES.slice();
+  for (var i = d.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var t = d[i]; d[i] = d[j]; d[j] = t;
+  }
+  return d;
+}
+function nextMessage() {
+  if (deckIndex >= deck.length) { deck = shuffledDeck(); deckIndex = 0; }
+  return deck[deckIndex++];
+}
+
+function setLane(l) {
+  if (lane === l) return;
+  lane = l;
+  updateShieldyPosition();
+}
+function updateShieldyPosition() {
+  var img = document.getElementById('shieldy-img');
+  img.style.left = (lane === 'safe' ? '25%' : '75%');
+  document.getElementById('lane-safe').classList.toggle('active-lane', lane === 'safe');
+  document.getElementById('lane-block').classList.toggle('active-lane', lane === 'block');
+}
+
+document.addEventListener('keydown', function(e) {
+  if (!running) return;
+  if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') setLane('safe');
+  if (e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D') setLane('block');
+});
+
+document.getElementById('play-area').addEventListener('pointerdown', function(e) {
+  if (!running) return;
+  var rect = this.getBoundingClientRect();
+  var x = e.clientX - rect.left;
+  setLane(x < rect.width / 2 ? 'safe' : 'block');
+});
 
 function startGame() {
-  score = 0; lives = 3; misses = 0; running = true; fallSpeed = 9000;
+  ensureAudio();
+  score = 0; streak = 0; correctCount = 0; totalCount = 0; timeLeft = ROUND_SECONDS; running = true;
+  lane = 'safe';
   deck = shuffledDeck(); deckIndex = 0;
   activeCards.forEach(function(c) { c.el.remove(); });
   activeCards = [];
   document.getElementById('score-val').textContent = '0';
-  document.getElementById('lives').textContent = '❤️❤️❤️';
+  document.getElementById('timer-val').textContent = ROUND_SECONDS;
+  document.getElementById('timer-val').classList.remove('low');
+  document.getElementById('combo-badge').classList.remove('show');
   document.getElementById('intro-screen').style.display = 'none';
   document.getElementById('end-screen').classList.remove('active');
   document.getElementById('game-screen').classList.add('active');
+  updateShieldyPosition();
+
+  clearTimeout(spawnTimer); clearInterval(tickTimer);
   spawnLoop();
+  tickTimer = setInterval(tick, 1000);
+}
+
+function tick() {
+  timeLeft -= 1;
+  document.getElementById('timer-val').textContent = Math.max(0, timeLeft);
+  if (timeLeft <= 10) { document.getElementById('timer-val').classList.add('low'); playTick(); }
+  if (timeLeft <= 0) endGame();
 }
 
 function spawnLoop() {
   if (!running) return;
   spawnCard();
-  var delay = Math.max(1600, 3200 - score * 25);
+  var elapsed = ROUND_SECONDS - timeLeft;
+  var delay = Math.max(1100, 2600 - elapsed * 22);
   spawnTimer = setTimeout(spawnLoop, delay);
-}
-
-function nextMessage() {
-  if (deckIndex >= deck.length) { deck = shuffledDeck(); deckIndex = 0; }
-  return deck[deckIndex++];
 }
 
 function spawnCard() {
@@ -206,21 +341,12 @@ function spawnCard() {
   var msg = nextMessage();
   var el = document.createElement('div');
   el.className = 'msg-card';
-  el.style.top = '-90px';
-  el.innerHTML =
-    '<div class="msg-text">' + msg.text + '</div>' +
-    '<div class="msg-btns">' +
-      '<button class="msg-btn block">🛡️ Block</button>' +
-      '<button class="msg-btn safe">✅ Safe</button>' +
-    '</div>';
+  el.textContent = msg.text;
   area.appendChild(el);
-  var speed = Math.max(4500, fallSpeed - score * 35);
-  var card = { el: el, msg: msg, resolved: false, start: performance.now(), duration: speed, areaHeight: area.clientHeight };
+  var elapsed = ROUND_SECONDS - timeLeft;
+  var duration = Math.max(3200, 4600 - elapsed * 24);
+  var card = { el: el, msg: msg, resolved: false, start: performance.now(), duration: duration, areaHeight: area.clientHeight };
   activeCards.push(card);
-
-  el.querySelector('.block').onclick = function() { resolveCard(card, true); };
-  el.querySelector('.safe').onclick = function() { resolveCard(card, false); };
-
   requestAnimationFrame(function step(now) { animateCard(card, now); });
 }
 
@@ -228,50 +354,129 @@ function animateCard(card, now) {
   if (card.resolved) return;
   var elapsed = now - card.start;
   var pct = Math.min(1, elapsed / card.duration);
-  var endY = card.areaHeight - 170;
-  card.el.style.top = (-90 + pct * (endY + 90)) + 'px';
-  if (pct >= 1) {
-    onCardReachedBottom(card);
-    return;
-  }
+  var endY = card.areaHeight - 150;
+  card.el.style.top = (-100 + pct * (endY + 100)) + 'px';
+  if (pct >= 1) { resolveCard(card); return; }
   requestAnimationFrame(function step(t) { animateCard(card, t); });
 }
 
-function onCardReachedBottom(card) {
+function resolveCard(card) {
   if (card.resolved) return;
   card.resolved = true;
-  if (card.msg.flag) {
-    loseLife(card.msg.tip, true);
-  }
-  removeCard(card);
-}
+  totalCount += 1;
+  var chosenSafe = (lane === 'safe');
+  var correct = (chosenSafe === !card.msg.flag);
+  var rect = card.el.getBoundingClientRect();
+  var areaRect = document.getElementById('play-area').getBoundingClientRect();
+  var px = rect.left - areaRect.left + rect.width / 2;
+  var py = rect.top - areaRect.top;
 
-function resolveCard(card, blocked) {
-  if (card.resolved) return;
-  card.resolved = true;
-  var correct = (blocked === card.msg.flag);
   if (correct) {
-    score += 10;
+    correctCount += 1;
+    streak += 1;
+    var multiplier = streak >= 6 ? 3 : streak >= 3 ? 2 : 1;
+    var gained = 10 * multiplier;
+    score += gained;
     document.getElementById('score-val').textContent = score;
-    showToast('✅ Correct! ' + card.msg.tip, 'good');
+    updateCombo();
+    burstParticles(px, py, ['#c9a84c', '#2a9d8f', '#7fe0d3']);
+    spawnPopup(px, py, '+' + gained, 'good');
+    bumpShieldy();
+    playSuccess();
+    showToast('✅ ' + card.msg.tip, 'good');
+    if (score > 0 && score % 100 < gained) confettiBurst();
   } else {
-    loseLife(card.msg.tip, false);
+    streak = 0;
+    updateCombo();
+    screenShake();
+    flashRed();
+    spawnPopup(px, py, card.msg.flag ? 'Missed!' : 'Oops!', 'bad');
+    playFail();
+    showToast((card.msg.flag ? '⚠️ That was a red flag! ' : '❌ That one was actually safe. ') + card.msg.tip, 'bad');
   }
-  removeCard(card);
-}
-
-function loseLife(tip, missed) {
-  lives -= 1;
-  document.getElementById('lives').textContent = '❤️'.repeat(Math.max(0, lives)) + '🖤'.repeat(3 - Math.max(0, lives));
-  showToast((missed ? '⚠️ That one slipped through! ' : '❌ Not quite. ') + tip, 'bad');
-  if (lives <= 0) { endGame(); }
-}
-
-function removeCard(card) {
-  card.el.style.transition = 'opacity 0.2s';
+  card.el.style.transition = 'opacity 0.15s';
   card.el.style.opacity = '0';
-  setTimeout(function() { card.el.remove(); }, 200);
+  setTimeout(function() { card.el.remove(); }, 150);
   activeCards = activeCards.filter(function(c) { return c !== card; });
+}
+
+function updateCombo() {
+  var badge = document.getElementById('combo-badge');
+  var multiplier = streak >= 6 ? 3 : streak >= 3 ? 2 : 1;
+  if (streak >= 3) {
+    badge.textContent = '🔥 Combo x' + multiplier;
+    badge.classList.add('show');
+  } else {
+    badge.classList.remove('show');
+  }
+}
+
+function bumpShieldy() {
+  var img = document.getElementById('shieldy-img');
+  img.classList.remove('bump'); void img.offsetWidth; img.classList.add('bump');
+}
+
+function screenShake() {
+  var area = document.getElementById('play-area');
+  area.classList.remove('shake'); void area.offsetWidth; area.classList.add('shake');
+  setTimeout(function() { area.classList.remove('shake'); }, 350);
+}
+function flashRed() {
+  var f = document.getElementById('flash-overlay');
+  f.classList.add('on');
+  setTimeout(function() { f.classList.remove('on'); }, 140);
+}
+
+function spawnPopup(x, y, text, kind) {
+  var area = document.getElementById('play-area');
+  var p = document.createElement('div');
+  p.className = 'popup ' + kind;
+  p.textContent = text;
+  p.style.left = x + 'px';
+  p.style.top = y + 'px';
+  area.appendChild(p);
+  setTimeout(function() { p.remove(); }, 900);
+}
+
+function burstParticles(x, y, colors) {
+  var area = document.getElementById('play-area');
+  for (var i = 0; i < 12; i++) {
+    var p = document.createElement('div');
+    p.className = 'particle';
+    p.style.left = x + 'px';
+    p.style.top = y + 'px';
+    p.style.background = colors[i % colors.length];
+    area.appendChild(p);
+    var angle = Math.random() * Math.PI * 2;
+    var dist = 40 + Math.random() * 50;
+    var dx = Math.cos(angle) * dist;
+    var dy = Math.sin(angle) * dist;
+    var anim = p.animate([
+      { transform: 'translate(0,0)', opacity: 1 },
+      { transform: 'translate(' + dx + 'px,' + dy + 'px)', opacity: 0 }
+    ], { duration: 500 + Math.random() * 300, easing: 'ease-out' });
+    anim.onfinish = function() { this.effect.target.remove(); };
+  }
+}
+
+function confettiBurst() {
+  var colors = ['#c9a84c', '#e63946', '#2a9d8f', '#5865F2', '#e8c56a'];
+  for (var i = 0; i < 24; i++) {
+    var p = document.createElement('div');
+    p.className = 'particle';
+    p.style.width = '7px'; p.style.height = '10px'; p.style.borderRadius = '2px';
+    p.style.left = (20 + Math.random() * 60) + '%';
+    p.style.top = '-10px';
+    p.style.background = colors[i % colors.length];
+    p.style.position = 'fixed';
+    p.style.zIndex = '999';
+    document.body.appendChild(p);
+    var anim = p.animate([
+      { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
+      { transform: 'translateY(' + (300 + Math.random() * 200) + 'px) rotate(' + (Math.random() * 720 - 360) + 'deg)', opacity: 0 }
+    ], { duration: 1200 + Math.random() * 500, easing: 'ease-in' });
+    anim.onfinish = function() { this.effect.target.remove(); };
+  }
 }
 
 var toastTimer = null;
@@ -280,26 +485,38 @@ function showToast(text, kind) {
   t.textContent = text;
   t.className = 'toast show ' + kind;
   clearTimeout(toastTimer);
-  toastTimer = setTimeout(function() { t.classList.remove('show'); }, 2200);
+  toastTimer = setTimeout(function() { t.classList.remove('show'); }, 1900);
 }
 
 function endGame() {
   running = false;
-  clearTimeout(spawnTimer);
+  clearTimeout(spawnTimer); clearInterval(tickTimer);
   activeCards.forEach(function(c) { c.resolved = true; c.el.remove(); });
   activeCards = [];
   document.getElementById('game-screen').classList.remove('active');
   document.getElementById('end-screen').classList.add('active');
-  document.getElementById('end-final-score').textContent = score;
 
-  var isNewBest = score > bestScore;
-  if (isNewBest) {
-    bestScore = score;
-    localStorage.setItem('dsk_game_highscore', String(bestScore));
-  }
-  document.getElementById('end-best-note').textContent = isNewBest
-    ? '🎉 New personal best!'
-    : 'Your best remains ' + bestScore + '.';
+  var accuracy = totalCount > 0 ? correctCount / totalCount : 0;
+  var starCount = accuracy >= 0.9 ? 3 : accuracy >= 0.7 ? 2 : accuracy >= 0.5 ? 1 : 0;
+  document.getElementById('end-stars').innerHTML =
+    '<span>' + '⭐'.repeat(starCount) + '</span><span class="star-empty">' + '⭐'.repeat(3 - starCount) + '</span>';
+  document.getElementById('end-reason').textContent =
+    totalCount > 0 ? ('You sorted ' + correctCount + ' of ' + totalCount + ' correctly (' + Math.round(accuracy * 100) + '%).') : 'Time\'s up!';
+
+  // animated count-up
+  var el = document.getElementById('end-final-score');
+  var shown = 0;
+  var stepVal = Math.max(1, Math.round(score / 40));
+  var counter = setInterval(function() {
+    shown = Math.min(score, shown + stepVal);
+    el.textContent = shown;
+    if (shown >= score) clearInterval(counter);
+  }, 20);
+
+  var isNewBest = score > best;
+  if (isNewBest) { best = score; localStorage.setItem('dsk_game_highscore', String(best)); }
+  document.getElementById('end-best-note').textContent = isNewBest ? '🎉 New personal best!' : 'Your best remains ' + best + '.';
+  if (starCount >= 2) confettiBurst();
 
   var profile = null;
   try { profile = JSON.parse(localStorage.getItem('dsk_profile') || 'null'); } catch (e) {}
@@ -311,14 +528,23 @@ function endGame() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: profile.email, score: score })
     }).then(function(r) { return r.json(); }).then(function(data) {
-      loginCta.innerHTML = data && data.success
-        ? '✅ Score saved to your profile — <a href="/dashboard.html">view dashboard</a>'
-        : 'Could not save your score right now — it\'s still on this device.';
+      if (data && data.success) {
+        loginCta.innerHTML = '✅ Score saved to your profile — <a href="/dashboard.html">view dashboard</a>';
+        if (data.leaderboard && data.leaderboard.length) {
+          var lb = document.getElementById('mini-leaderboard');
+          lb.style.display = 'block';
+          document.getElementById('lb-rows').innerHTML = data.leaderboard.slice(0, 5).map(function(row, i) {
+            return '<div class="lb-row"><span>' + (i + 1) + '. ' + row.name + '</span><span>' + row.score + '</span></div>';
+          }).join('');
+        }
+      } else {
+        loginCta.textContent = 'Could not save your score right now — it\'s still on this device.';
+      }
     }).catch(function() {
       loginCta.textContent = 'Could not save your score right now — it\'s still on this device.';
     });
   } else {
-    loginCta.innerHTML = '💡 <a href="/login.html">Log in</a> to save your high score to your DSK profile and the member leaderboard.';
+    loginCta.innerHTML = '💡 <a href="/login.html">Log in</a> to save your high score and see the member leaderboard.';
   }
 }
 </script>

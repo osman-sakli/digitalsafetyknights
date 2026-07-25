@@ -19,18 +19,38 @@
   html { scroll-behavior: smooth; }
   body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
 
-  nav { background: var(--navy); position: sticky; top: 0; z-index: 999; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 68px; box-shadow: 0 2px 20px rgba(0,0,0,0.4); }
-  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  nav { background: var(--navy); position: sticky; top: 0; z-index: 999; display: flex; align-items: center; justify-content: space-between; padding: 0 1.5rem; height: 68px; box-shadow: 0 2px 20px rgba(0,0,0,0.4); gap: 1rem; }
+  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
   .nav-logo img { height: 42px; }
   .nav-logo-text { display: flex; flex-direction: column; }
-  .nav-logo-text .brand { color: var(--gold); font-size: 1rem; font-weight: 900; }
-  .nav-logo-text .tagline { color: #8899bb; font-size: 0.65rem; letter-spacing: 1px; text-transform: uppercase; }
-  .nav-links { display: flex; gap: 1.4rem; align-items: center; }
-  .nav-links a { color: #ccd6f6; text-decoration: none; font-size: 0.88rem; font-weight: 600; }
-  .nav-links a:hover { color: var(--gold); }
+  .nav-logo-text .brand { color: var(--gold); font-size: 1rem; font-weight: 900; white-space: nowrap; }
+  .nav-logo-text .tagline { color: #8899bb; font-size: 0.65rem; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; }
+  .nav-links { display: flex; gap: 0.9rem; align-items: center; flex-wrap: nowrap; }
+  .nav-links > a, .nav-links > .nav-dd > .nav-dd-btn { color: #ccd6f6; text-decoration: none; font-size: 0.85rem; font-weight: 600; white-space: nowrap; background: none; border: none; font-family: inherit; cursor: pointer; padding: 8px 2px; }
+  .nav-links a:hover, .nav-dd-btn:hover { color: var(--gold); }
   .nav-emergency { color: #ff6b6b !important; }
-  .nav-cta { background: var(--gold); color: var(--navy) !important; padding: 9px 20px; border-radius: 22px; font-weight: 800 !important; font-size: 0.85rem !important; }
+  .nav-cta { background: var(--gold); color: var(--navy) !important; padding: 9px 18px; border-radius: 22px; font-weight: 800 !important; font-size: 0.82rem !important; }
   .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(201,168,76,0.5); }
+
+  .nav-dd { position: relative; }
+  .nav-dd-btn::after { content: ' ▾'; font-size: 0.7em; }
+  .nav-dd-menu { display: none; position: absolute; top: calc(100% + 10px); left: 50%; transform: translateX(-50%); background: var(--navy2); border: 1px solid rgba(201,168,76,0.25); border-radius: 14px; padding: 8px; min-width: 190px; box-shadow: 0 12px 30px rgba(0,0,0,0.4); }
+  .nav-dd.open .nav-dd-menu { display: block; }
+  .nav-dd-menu a { display: block; padding: 9px 12px; border-radius: 8px; font-size: 0.85rem; white-space: nowrap; }
+  .nav-dd-menu a:hover { background: rgba(201,168,76,0.12); }
+
+  .nav-burger { display: none; background: none; border: none; color: var(--gold); font-size: 1.6rem; cursor: pointer; padding: 4px 8px; }
+
+  @media (max-width: 1180px) {
+    .nav-burger { display: block; }
+    .nav-links { display: none; position: fixed; top: 68px; left: 0; right: 0; bottom: 0; background: var(--navy); flex-direction: column; align-items: stretch; gap: 0; padding: 1rem 1.5rem 2rem; overflow-y: auto; z-index: 998; }
+    .nav-links.open { display: flex; }
+    .nav-links > a, .nav-links > .nav-dd { border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .nav-links > a, .nav-links > .nav-dd > .nav-dd-btn { width: 100%; text-align: left; padding: 14px 4px; font-size: 0.98rem; }
+    .nav-dd-menu { display: block; position: static; transform: none; background: none; border: none; box-shadow: none; padding: 0 0 8px 12px; }
+    .nav-dd-menu a { padding: 10px 4px; }
+    .nav-cta { display: block; text-align: center; margin: 10px 0; }
+  }
 
   .hero { background: linear-gradient(135deg, #060e22 0%, var(--navy) 50%, #0f2255 100%); color: white; text-align: center; padding: 100px 2rem 90px; position: relative; overflow: hidden; }
   .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 40%, rgba(201,168,76,0.1) 0%, transparent 65%); }
@@ -199,18 +219,29 @@
       <span class="tagline">Global Child Safety Org</span>
     </div>
   </a>
-  <div class="nav-links">
-    <a href="#threats">Threats</a>
+  <button class="nav-burger" id="navBurger" onclick="toggleNav()" aria-label="Menu">☰</button>
+  <div class="nav-links" id="navLinks">
+    <div class="nav-dd">
+      <button class="nav-dd-btn" onclick="toggleDD(this)">Learn</button>
+      <div class="nav-dd-menu">
+        <a href="#threats">Threats We Fight</a>
+        <a href="#programs">Programs</a>
+        <a href="#guides">Guides</a>
+        <a href="#journal">Journal</a>
+        <a href="#badges">Badges</a>
+      </div>
+    </div>
+    <div class="nav-dd">
+      <button class="nav-dd-btn" onclick="toggleDD(this)">Play</button>
+      <div class="nav-dd-menu">
+        <a href="/quests.html">🎮 Quests</a>
+        <a href="/game.html">🕹️ Shieldy's Message Sort</a>
+        <a href="/glitch-detector.html">🔍 Glitch Detector</a>
+      </div>
+    </div>
     <a href="/resources.html">📚 Resources</a>
-    <a href="/quests.html">🎮 Quests</a>
-    <a href="/game.html">🕹️ Game</a>
-    <a href="/glitch-detector.html">🔍 Glitch Detector</a>
-    <a href="#programs">Programs</a>
-    <a href="#badges">Badges</a>
     <a href="/audit.html">🛡️ Audit</a>
     <a href="#community">Community</a>
-    <a href="#guides">Guides</a>
-    <a href="#journal">Journal</a>
     <a href="#emergency" class="nav-emergency">🆘 Help</a>
     <a href="/login.html" style="color:#ccd6f6 !important;">🔐 Login</a>
     <a href="#" class="nav-cta" onclick="openModal();return false;">Join Free</a>
@@ -834,6 +865,24 @@
     document.getElementById('tq-title').textContent = q.title;
     document.getElementById('tq-link').href = '/quests.html?quest=' + q.id;
   })();
+
+  function toggleNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+  function toggleDD(btn) {
+    var dd = btn.closest('.nav-dd');
+    var wasOpen = dd.classList.contains('open');
+    document.querySelectorAll('.nav-dd.open').forEach(function(d) { d.classList.remove('open'); });
+    if (!wasOpen) dd.classList.add('open');
+  }
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.nav-dd')) {
+      document.querySelectorAll('.nav-dd.open').forEach(function(d) { d.classList.remove('open'); });
+    }
+    if (!e.target.closest('.nav-links') && !e.target.closest('#navBurger') && window.innerWidth <= 1180) {
+      document.getElementById('navLinks').classList.remove('open');
+    }
+  });
 
   function openModal(plan) {
     document.getElementById('modalOverlay').classList.add('open');
