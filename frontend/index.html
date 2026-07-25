@@ -57,6 +57,12 @@
   .section-header p { color: var(--gray); max-width: 560px; margin: 0 auto; }
   .gold-bar { width: 52px; height: 4px; background: var(--gold); border-radius: 2px; margin: 14px auto; }
 
+  .vision-band { background: linear-gradient(135deg, var(--navy2), var(--navy)); border-top: 1px solid rgba(201,168,76,0.25); border-bottom: 1px solid rgba(201,168,76,0.25); padding: 2.4rem 2rem; text-align: center; }
+  .vision-band .container { max-width: 780px; margin: 0 auto; }
+  .vision-band .vlabel { color: var(--gold); font-weight: 900; font-size: 0.72rem; letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 0.6rem; }
+  .vision-band p { color: #cdd6ea; font-size: 1rem; line-height: 1.75; }
+  .vision-band strong { color: white; }
+
   #threats { background: var(--navy); }
   #threats .section-header h2 { color: white; }
   #threats .section-header p { color: #7a8fbb; }
@@ -195,7 +201,9 @@
   </a>
   <div class="nav-links">
     <a href="#threats">Threats</a>
+    <a href="/resources.html">📚 Resources</a>
     <a href="/quests.html">🎮 Quests</a>
+    <a href="/game.html">🕹️ Game</a>
     <a href="/glitch-detector.html">🔍 Glitch Detector</a>
     <a href="#programs">Programs</a>
     <a href="#badges">Badges</a>
@@ -229,6 +237,13 @@
     <div><div class="stat-num">6</div><div class="stat-label">Safety Programs</div></div>
     <div><div class="stat-num">48</div><div class="stat-label">Countries Reached</div></div>
     <div><div class="stat-num">100<span class="gold">%</span></div><div class="stat-label">Free Access</div></div>
+  </div>
+</div>
+
+<div class="vision-band">
+  <div class="container">
+    <div class="vlabel">Our Vision</div>
+    <p>We're not just teaching kids to avoid danger — we're <strong>preparing an entire generation</strong> to think critically, recognize manipulation, and navigate a world being reshaped by AI and always-on connection. <strong>Awareness today. Confidence for life.</strong> That's why every guide, quest, and tool on this site stays free, forever.</p>
   </div>
 </div>
 
@@ -306,6 +321,12 @@
       <div class="gold-bar"></div>
       <p>Everything is completely free. Choose your membership type and join thousands of families protecting their children online.</p>
     </div>
+    <div style="display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem;">
+      <div style="background:white;border-radius:16px;padding:0.9rem 1.4rem;box-shadow:0 2px 16px rgba(13,27,62,0.06);font-size:0.85rem;font-weight:700;color:var(--navy);display:flex;align-items:center;gap:8px;">🎮 Game leaderboard access</div>
+      <div style="background:white;border-radius:16px;padding:0.9rem 1.4rem;box-shadow:0 2px 16px rgba(13,27,62,0.06);font-size:0.85rem;font-weight:700;color:var(--navy);display:flex;align-items:center;gap:8px;">⏰ Early access to new Journal issues</div>
+      <div style="background:white;border-radius:16px;padding:0.9rem 1.4rem;box-shadow:0 2px 16px rgba(13,27,62,0.06);font-size:0.85rem;font-weight:700;color:var(--navy);display:flex;align-items:center;gap:8px;">🏆 Member-only certificate</div>
+      <div style="background:white;border-radius:16px;padding:0.9rem 1.4rem;box-shadow:0 2px 16px rgba(13,27,62,0.06);font-size:0.85rem;font-weight:700;color:var(--navy);display:flex;align-items:center;gap:8px;">🗳️ Vote on the next quest topic</div>
+    </div>
     <div class="plans-grid">
       <div class="plan">
         <div class="plan-icon">👤</div>
@@ -317,6 +338,8 @@
           <li>Badge system access</li>
           <li>Emergency resource page</li>
           <li>Community forum access</li>
+          <li>🎮 Game leaderboard &amp; saved high score</li>
+          <li>🏆 Personal dashboard &amp; certificate</li>
         </ul>
         <button class="plan-btn btn-outline-navy" onclick="openModal('Individual')">Join Free →</button>
       </div>
@@ -332,6 +355,8 @@
           <li>Monthly family safety tips</li>
           <li>Device setup walkthroughs</li>
           <li>Talk to your kids scripts</li>
+          <li>⏰ Early access to new Journal issues</li>
+          <li>🗳️ Vote on the next quest topic</li>
         </ul>
         <button class="plan-btn btn-solid-gold" onclick="openModal('Family')">Join as Family →</button>
       </div>
@@ -346,6 +371,7 @@
           <li>Teacher & counselor guides</li>
           <li>School policy templates</li>
           <li>DSK School Partner badge</li>
+          <li>🎮 Classroom leaderboard for the game</li>
         </ul>
         <button class="plan-btn btn-outline-navy" onclick="openModal('School')">Join as School →</button>
       </div>
@@ -364,6 +390,15 @@
         <button class="donation-btn" onclick="donateCustom()">Other</button>
       </div>
       <p style="color:#8899bb;font-size:0.78rem;">DSK is a nonprofit. All donations go directly toward expanding our programs.</p>
+    </div>
+
+    <div style="margin-top:1.5rem;background:linear-gradient(135deg,#3d2e0d,#7a5a12);border-radius:20px;padding:2.2rem 2.5rem;text-align:center;color:white;border:2px solid var(--gold);">
+      <div style="font-size:1.6rem;margin-bottom:0.6rem;">⭐ Founding Knight — Optional</div>
+      <p style="color:#f0e0b8;max-width:560px;margin:0 auto 1.2rem;line-height:1.7;font-size:0.92rem;">
+        A small, symbolic yearly gesture for families who want to go further. $4.99/year — not a paywall, nothing is ever locked behind it. It's a way to say "I believe in this mission" and be listed among our founding supporters.
+      </p>
+      <button class="donation-btn primary" onclick="donate(4.99, true)">⭐ Become a Founding Knight — $4.99/yr</button>
+      <p style="color:#d8c48a;font-size:0.78rem;margin-top:0.8rem;">Includes a Founding Knight badge on your dashboard &amp; certificate.</p>
     </div>
   </div>
 </section>
@@ -529,6 +564,8 @@
     </div>
     <div class="f-col">
       <h4>Tools</h4>
+      <a href="/resources.html">📚 Resource Center</a>
+      <a href="/game.html">🕹️ Shieldy's Message Sort</a>
       <a href="/quests.html">🎮 Play a Quest</a>
       <a href="/glitch-detector.html">🔍 Glitch Detector</a>
       <a href="/audit.html">🛡️ Family Safety Audit</a>
@@ -828,21 +865,24 @@
     donate(Math.round(amount));
   }
 
-  function donate(amount) {
-    var email = prompt('Enter your email for the receipt:');
+  function donate(amount, isFounding) {
+    var profile = null;
+    try { profile = JSON.parse(localStorage.getItem('dsk_profile') || 'null'); } catch (e) {}
+    var email = (profile && profile.email) || prompt('Enter your email for the receipt:');
     if (!email || email.indexOf('@') === -1) {
       alert('Please enter a valid email address.');
       return;
     }
-    var name = prompt('Your name (or "Anonymous"):') || 'Anonymous Donor';
+    var name = (profile && profile.name) || prompt('Your name (or "Anonymous"):') || 'Anonymous Donor';
 
     fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/donate', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
-        amount: amount * 100,
+        amount: Math.round(amount * 100),
         email: email,
-        name: name
+        name: name,
+        founding_knight: !!isFounding
       })
     })
     .then(function(r) { return r.json(); })

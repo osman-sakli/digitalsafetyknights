@@ -29,8 +29,13 @@
 
 <div class="card">
   <div class="icon">⚔️</div>
-  <h1>Thank You for Your <span class="gold">Generosity</span></h1>
+  <h1 id="thankYouTitle">Thank You for Your <span class="gold">Generosity</span></h1>
   <p><span class="heart">💛</span> Your donation helps us protect more children worldwide.</p>
+
+  <div class="impact" id="foundingBanner" style="display:none;background:linear-gradient(135deg,#3d2e0d,#7a5a12);color:white;">
+    <h3 style="color:white;">⭐ Welcome, Founding Knight!</h3>
+    <p style="color:#f0e0b8;">Your Founding Knight badge is now on your DSK dashboard. Nothing was ever locked behind this — it's just our way of saying thank you.</p>
+  </div>
 
   <div class="impact">
     <h3>Your impact, in real terms:</h3>
@@ -46,6 +51,25 @@
     Questions? Contact us at <a href="mailto:donate@digitalsafetyknights.org">donate@digitalsafetyknights.org</a>
   </div>
 </div>
+
+<script>
+  var params = new URLSearchParams(window.location.search);
+  var sessionId = params.get('session_id');
+  if (sessionId) {
+    fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/donation-confirm', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({session_id: sessionId})
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (data.success && data.founding_knight) {
+        document.getElementById('foundingBanner').style.display = 'block';
+      }
+    })
+    .catch(function(err) { console.error(err); });
+  }
+</script>
 
 </body>
 </html>

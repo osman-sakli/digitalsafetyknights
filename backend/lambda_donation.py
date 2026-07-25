@@ -28,6 +28,7 @@ def lambda_handler(event, context):
         amount = int(body.get('amount', 0))  # in cents
         email = body.get('email', '').strip().lower()
         name = body.get('name', 'Anonymous Donor').strip()
+        founding_knight = bool(body.get('founding_knight', False))
 
         if amount < 100:  # min $1
             return {
@@ -44,14 +45,20 @@ def lambda_handler(event, context):
             }
 
         # Create Stripe Checkout Session
+        product_name = 'DSK Founding Knight — Annual Support' if founding_knight else 'Digital Safety Knights Donation'
+        product_desc = (
+            'A symbolic yearly gesture of support — nothing on DSK is ever locked behind this.'
+            if founding_knight else
+            'Supporting child digital safety education worldwide.'
+        )
         session = stripe.checkout.Session.create(
             payment_method_types=['card'],
             line_items=[{
                 'price_data': {
                     'currency': 'usd',
                     'product_data': {
-                        'name': 'Digital Safety Knights Donation',
-                        'description': 'Supporting child digital safety education worldwide.',
+                        'name': product_name,
+                        'description': product_desc,
                     },
                     'unit_amount': amount,
                 },
@@ -62,6 +69,7 @@ def lambda_handler(event, context):
             metadata={
                 'donor_name': name,
                 'donor_email': email,
+                'founding_knight': 'true' if founding_knight else 'false',
             },
             success_url='https://digitalsafetyknights.org/donation-success.html?session_id={CHECKOUT_SESSION_ID}',
             cancel_url='https://digitalsafetyknights.org/#membership',

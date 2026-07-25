@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Shieldy's Message Sort — a free browser game from Digital Safety Knights. Sort real messages into safe or red flag before time runs out.">
+<title>Shieldy's Message Sort — Digital Safety Knights</title>
+<link rel="icon" href="assets/favicon.ico">
+<style>
+  :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --danger: #e63946; --success: #2a9d8f; --gray: #6c757d; }
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: linear-gradient(180deg, #0d1b3e, #1a2f6e 60%, #0d1b3e); color: white; min-height: 100vh; overflow-x: hidden; }
+
+  .topbar { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; }
+  .topbar .brand { color: var(--gold); font-weight: 900; text-decoration: none; font-size: 1rem; }
+  .topbar .home-link { color: #cdd6ea; text-decoration: none; font-size: 0.85rem; font-weight: 700; }
+
+  .wrap { max-width: 480px; margin: 0 auto; padding: 0 16px 40px; }
+
+  #intro-screen { text-align: center; padding: 20px 10px 40px; }
+  #intro-screen .icon { font-size: 3.4rem; margin-bottom: 6px; }
+  #intro-screen h1 { font-size: 1.7rem; margin-bottom: 10px; }
+  #intro-screen h1 .gold { color: var(--gold); }
+  #intro-screen p { color: #a8b8d8; font-size: 0.95rem; line-height: 1.7; margin-bottom: 22px; }
+  .how-to { background: rgba(255,255,255,0.05); border: 1px solid rgba(201,168,76,0.25); border-radius: 16px; padding: 18px 20px; margin-bottom: 24px; text-align: left; }
+  .how-to h3 { font-size: 0.85rem; color: var(--gold); margin-bottom: 10px; letter-spacing: 1px; text-transform: uppercase; }
+  .how-to li { font-size: 0.88rem; color: #cdd6ea; line-height: 1.8; list-style: none; padding-left: 1.6em; text-indent: -1.6em; }
+  .best-score { font-size: 0.85rem; color: #8899bb; margin-bottom: 18px; }
+  .best-score b { color: var(--gold2); }
+  .play-btn { background: var(--gold); color: var(--navy); border: none; padding: 16px 44px; border-radius: 30px; font-weight: 900; font-size: 1.1rem; cursor: pointer; box-shadow: 0 8px 30px rgba(201,168,76,0.4); }
+
+  #game-screen { display: none; }
+  #game-screen.active { display: block; }
+  .hud { display: flex; align-items: center; justify-content: space-between; padding: 10px 4px 16px; }
+  .hud-item { text-align: center; }
+  .hud-label { font-size: 0.62rem; color: #8899bb; text-transform: uppercase; letter-spacing: 1px; }
+  .hud-value { font-size: 1.3rem; font-weight: 900; color: white; }
+  .hud-value.gold { color: var(--gold); }
+  #lives { font-size: 1.1rem; }
+
+  #play-area { position: relative; height: 62vh; min-height: 420px; max-height: 560px; background: rgba(255,255,255,0.03); border: 2px solid rgba(201,168,76,0.2); border-radius: 20px; overflow: hidden; }
+  .danger-line { position: absolute; left: 0; right: 0; bottom: 78px; border-top: 2px dashed rgba(230,57,70,0.5); }
+
+  .msg-card { position: absolute; left: 6%; right: 6%; background: white; color: #2d3748; border-radius: 14px; padding: 12px 14px; box-shadow: 0 4px 18px rgba(0,0,0,0.35); }
+  .msg-text { font-size: 0.85rem; line-height: 1.4; margin-bottom: 10px; font-weight: 600; }
+  .msg-btns { display: flex; gap: 8px; }
+  .msg-btn { flex: 1; border: none; border-radius: 10px; padding: 9px 4px; font-weight: 900; font-size: 0.78rem; cursor: pointer; }
+  .msg-btn.block { background: #fde2e4; color: var(--danger); }
+  .msg-btn.safe { background: #dcf5f1; color: var(--success); }
+
+  .toast { position: absolute; left: 4%; right: 4%; bottom: 88px; background: var(--navy); border: 2px solid var(--gold); border-radius: 14px; padding: 12px 16px; font-size: 0.8rem; line-height: 1.5; color: #e8ecf7; opacity: 0; transition: opacity 0.25s; pointer-events: none; z-index: 5; }
+  .toast.show { opacity: 1; }
+  .toast.good { border-color: var(--success); }
+  .toast.bad { border-color: var(--danger); }
+
+  #shieldy-row { display: flex; align-items: center; justify-content: center; gap: 10px; position: absolute; bottom: 10px; left: 0; right: 0; }
+  #shieldy-row img { width: 46px; height: 46px; border-radius: 50%; border: 2px solid var(--gold); object-fit: cover; }
+  #shieldy-row span { font-size: 0.78rem; color: #cdd6ea; }
+
+  #end-screen { display: none; text-align: center; padding: 40px 10px; }
+  #end-screen.active { display: block; }
+  #end-screen .icon { font-size: 3rem; margin-bottom: 10px; }
+  #end-screen h2 { font-size: 1.6rem; margin-bottom: 6px; }
+  #end-final-score { font-size: 2.6rem; font-weight: 900; color: var(--gold); margin: 10px 0; }
+  #end-screen p { color: #a8b8d8; font-size: 0.9rem; margin-bottom: 8px; }
+  .end-btns { display: flex; gap: 10px; justify-content: center; margin-top: 22px; flex-wrap: wrap; }
+  .btn-gold { background: var(--gold); color: var(--navy); border: none; padding: 13px 28px; border-radius: 26px; font-weight: 900; cursor: pointer; text-decoration: none; display: inline-block; font-size: 0.9rem; }
+  .btn-ghost { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.25); padding: 13px 28px; border-radius: 26px; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-block; font-size: 0.9rem; }
+  #login-cta { margin-top: 16px; font-size: 0.82rem; color: #8899bb; }
+  #login-cta a { color: var(--gold2); font-weight: 800; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="/">🛡️ Digital Safety Knights</a>
+  <div style="display:flex;gap:16px;align-items:center;">
+    <a class="home-link" href="/quests.html">🎮 Quests</a>
+    <a class="home-link" href="/resources.html">📚 Resources</a>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div id="intro-screen">
+    <div class="icon">🛡️</div>
+    <h1>Shieldy's <span class="gold">Message Sort</span></h1>
+    <p>Messages fall from the top. Sort each one — <b>Block</b> it if it's a red flag, or mark it <b>Safe</b> if it's fine — before it crosses the line. Get it right, learn why. Get it wrong, and Shieldy will explain what you missed.</p>
+    <div class="how-to">
+      <h3>How to play</h3>
+      <li>🛡️ Tap <b>Block</b> for messages with red flags — secrecy, urgency, personal questions, "too good to be true"</li>
+      <li>✅ Tap <b>Safe</b> for normal, friendly messages</li>
+      <li>❤️ You have 3 lives — miss too many red flags and it's game over</li>
+      <li>⚡ It speeds up as your score climbs. Good luck, Knight!</li>
+    </div>
+    <div class="best-score">Your best score: <b id="best-score-val">0</b></div>
+    <button class="play-btn" onclick="startGame()">▶️ Play Now</button>
+  </div>
+
+  <div id="game-screen">
+    <div class="hud">
+      <div class="hud-item"><div class="hud-label">Score</div><div class="hud-value gold" id="score-val">0</div></div>
+      <div class="hud-item"><div class="hud-label">Lives</div><div class="hud-value" id="lives">❤️❤️❤️</div></div>
+      <div class="hud-item"><div class="hud-label">Best</div><div class="hud-value" id="hud-best">0</div></div>
+    </div>
+    <div id="play-area">
+      <div class="danger-line"></div>
+      <div class="toast" id="toast"></div>
+      <div id="shieldy-row">
+        <img src="assets/characters/shieldy.jpg" alt="Shieldy">
+        <span>Shieldy's got your back!</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="end-screen">
+    <div class="icon">🏆</div>
+    <h2>Shield up!</h2>
+    <p id="end-reason">Game over — here's how you did.</p>
+    <div id="end-final-score">0</div>
+    <p id="end-best-note"></p>
+    <div class="end-btns">
+      <button class="btn-gold" onclick="startGame()">🔁 Play Again</button>
+      <a class="btn-ghost" href="/resources.html">📚 Resource Center</a>
+    </div>
+    <div id="login-cta"></div>
+  </div>
+
+</div>
+
+<script>
+var MESSAGES = [
+  { text: "hey! only 10 seconds left to claim your free Robux, click now!!", flag: true, tip: "Urgency trick — real prizes never have a countdown timer pressuring you to click fast." },
+  { text: "wanna play the new level together after school? I'll be on around 4", flag: false, tip: "A normal message from a friend about playing later — nothing unusual here." },
+  { text: "don't tell your parents about this chat ok? it's our secret", flag: true, tip: "Secrecy trick — trusted people never ask you to hide a conversation from your parents." },
+  { text: "lol that level was so hard, did you get past the boss yet?", flag: false, tip: "Friendly, ordinary conversation about a game — totally safe." },
+  { text: "what's your real name and what school do you go to?", flag: true, tip: "Personal-info trick — nice people online don't need your real name or school to keep chatting." },
+  { text: "happy birthday!! hope you have an awesome day 🎉", flag: false, tip: "A kind, normal message — no red flags at all." },
+  { text: "you just won a free iPhone! send your address to claim it", flag: true, tip: "Too-good-to-be-true trick — free expensive prizes that need your address are almost always scams." },
+  { text: "can you help me with my math homework? question 5 is confusing", flag: false, tip: "A normal help request between classmates — perfectly safe." },
+  { text: "if you really trust me you'll send me a photo, just between us", flag: true, tip: "Combines secrecy AND a photo request — this is exactly what Shieldy warns about. Tell a trusted adult." },
+  { text: "are your parents home right now? asking for a friend", flag: true, tip: "This question is used to check if an adult is nearby — a genuine friend wouldn't need to know this." },
+  { text: "gg that was a close match, want a rematch tomorrow?", flag: false, tip: "Ordinary gaming chat — nothing concerning." },
+  { text: "I need your password to help fix your account, trust me", flag: true, tip: "Password requests are always a red flag — nobody legitimate ever needs your password." },
+  { text: "my mom said we can go to the park saturday if you want to come", flag: false, tip: "A normal, parent-supervised plan — completely safe." },
+  { text: "let's move this chat to a different app, don't add anyone else though", flag: true, tip: "Moving to a private app while asking for secrecy is a classic grooming pattern." },
+  { text: "that meme you sent me was hilarious 😂", flag: false, tip: "Just a friendly reaction — no issue here." },
+  { text: "quick, before this offer disappears in 30 seconds — verify your account now!", flag: true, tip: "Urgency + account verification is a classic phishing combo. Real companies don't rush you like this." },
+  { text: "do you want to team up for the tournament this weekend?", flag: false, tip: "Normal, friendly gaming invitation." },
+  { text: "how old are you really? and are you a boy or girl?", flag: true, tip: "Personal questions about age and gender from someone you don't know well are a data-gathering red flag." },
+  { text: "I got the new skin, check out my profile!", flag: false, tip: "Casual, normal sharing between friends — safe." },
+  { text: "meet me somewhere IRL, just the two of us, keep it low key", flag: true, tip: "A request to meet in person combined with secrecy is one of the most serious red flags there is." },
+  { text: "can you send me your address? I want to mail you a birthday card", flag: true, tip: "Even framed kindly, an online contact asking for your home address is a red flag — always check with a parent first." },
+  { text: "our teacher gave us extra credit for the science fair, want to team up?", flag: false, tip: "A normal school-related message — safe." },
+  { text: "don't worry about telling anyone, I deleted our chat already", flag: true, tip: "Deleting chats and encouraging secrecy is a manipulation tactic used to avoid getting caught." },
+  { text: "that new update fixed the lag issue, finally!", flag: false, tip: "Just casual chat about a game update — nothing concerning." },
+  { text: "send a selfie so I know it's really you talking to me", flag: true, tip: "Requests for photos from someone online — even if it sounds casual — should always go through a trusted adult first." },
+  { text: "can you help me test my new drawing? would love feedback", flag: false, tip: "A normal, friendly creative request — safe." },
+  { text: "you were specially chosen! click this link before spots run out", flag: true, tip: "\"Specially chosen\" plus urgency is a manipulation combo used in scams and phishing links." },
+  { text: "see you at practice tomorrow, coach moved it to 5pm", flag: false, tip: "An ordinary schedule update — safe." }
+];
+
+var score = 0, lives = 3, misses = 0, running = false, fallSpeed = 9000, spawnTimer = null, activeCards = [];
+var bestScore = parseInt(localStorage.getItem('dsk_game_highscore') || '0', 10);
+document.getElementById('best-score-val').textContent = bestScore;
+document.getElementById('hud-best').textContent = bestScore;
+
+function shuffledDeck() {
+  var deck = MESSAGES.slice();
+  for (var i = deck.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var t = deck[i]; deck[i] = deck[j]; deck[j] = t;
+  }
+  return deck;
+}
+var deck = [], deckIndex = 0;
+
+function startGame() {
+  score = 0; lives = 3; misses = 0; running = true; fallSpeed = 9000;
+  deck = shuffledDeck(); deckIndex = 0;
+  activeCards.forEach(function(c) { c.el.remove(); });
+  activeCards = [];
+  document.getElementById('score-val').textContent = '0';
+  document.getElementById('lives').textContent = '❤️❤️❤️';
+  document.getElementById('intro-screen').style.display = 'none';
+  document.getElementById('end-screen').classList.remove('active');
+  document.getElementById('game-screen').classList.add('active');
+  spawnLoop();
+}
+
+function spawnLoop() {
+  if (!running) return;
+  spawnCard();
+  var delay = Math.max(1600, 3200 - score * 25);
+  spawnTimer = setTimeout(spawnLoop, delay);
+}
+
+function nextMessage() {
+  if (deckIndex >= deck.length) { deck = shuffledDeck(); deckIndex = 0; }
+  return deck[deckIndex++];
+}
+
+function spawnCard() {
+  if (!running) return;
+  var area = document.getElementById('play-area');
+  var msg = nextMessage();
+  var el = document.createElement('div');
+  el.className = 'msg-card';
+  el.style.top = '-90px';
+  el.innerHTML =
+    '<div class="msg-text">' + msg.text + '</div>' +
+    '<div class="msg-btns">' +
+      '<button class="msg-btn block">🛡️ Block</button>' +
+      '<button class="msg-btn safe">✅ Safe</button>' +
+    '</div>';
+  area.appendChild(el);
+  var speed = Math.max(4500, fallSpeed - score * 35);
+  var card = { el: el, msg: msg, resolved: false, start: performance.now(), duration: speed, areaHeight: area.clientHeight };
+  activeCards.push(card);
+
+  el.querySelector('.block').onclick = function() { resolveCard(card, true); };
+  el.querySelector('.safe').onclick = function() { resolveCard(card, false); };
+
+  requestAnimationFrame(function step(now) { animateCard(card, now); });
+}
+
+function animateCard(card, now) {
+  if (card.resolved) return;
+  var elapsed = now - card.start;
+  var pct = Math.min(1, elapsed / card.duration);
+  var endY = card.areaHeight - 170;
+  card.el.style.top = (-90 + pct * (endY + 90)) + 'px';
+  if (pct >= 1) {
+    onCardReachedBottom(card);
+    return;
+  }
+  requestAnimationFrame(function step(t) { animateCard(card, t); });
+}
+
+function onCardReachedBottom(card) {
+  if (card.resolved) return;
+  card.resolved = true;
+  if (card.msg.flag) {
+    loseLife(card.msg.tip, true);
+  }
+  removeCard(card);
+}
+
+function resolveCard(card, blocked) {
+  if (card.resolved) return;
+  card.resolved = true;
+  var correct = (blocked === card.msg.flag);
+  if (correct) {
+    score += 10;
+    document.getElementById('score-val').textContent = score;
+    showToast('✅ Correct! ' + card.msg.tip, 'good');
+  } else {
+    loseLife(card.msg.tip, false);
+  }
+  removeCard(card);
+}
+
+function loseLife(tip, missed) {
+  lives -= 1;
+  document.getElementById('lives').textContent = '❤️'.repeat(Math.max(0, lives)) + '🖤'.repeat(3 - Math.max(0, lives));
+  showToast((missed ? '⚠️ That one slipped through! ' : '❌ Not quite. ') + tip, 'bad');
+  if (lives <= 0) { endGame(); }
+}
+
+function removeCard(card) {
+  card.el.style.transition = 'opacity 0.2s';
+  card.el.style.opacity = '0';
+  setTimeout(function() { card.el.remove(); }, 200);
+  activeCards = activeCards.filter(function(c) { return c !== card; });
+}
+
+var toastTimer = null;
+function showToast(text, kind) {
+  var t = document.getElementById('toast');
+  t.textContent = text;
+  t.className = 'toast show ' + kind;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function() { t.classList.remove('show'); }, 2200);
+}
+
+function endGame() {
+  running = false;
+  clearTimeout(spawnTimer);
+  activeCards.forEach(function(c) { c.resolved = true; c.el.remove(); });
+  activeCards = [];
+  document.getElementById('game-screen').classList.remove('active');
+  document.getElementById('end-screen').classList.add('active');
+  document.getElementById('end-final-score').textContent = score;
+
+  var isNewBest = score > bestScore;
+  if (isNewBest) {
+    bestScore = score;
+    localStorage.setItem('dsk_game_highscore', String(bestScore));
+  }
+  document.getElementById('end-best-note').textContent = isNewBest
+    ? '🎉 New personal best!'
+    : 'Your best remains ' + bestScore + '.';
+
+  var profile = null;
+  try { profile = JSON.parse(localStorage.getItem('dsk_profile') || 'null'); } catch (e) {}
+  var loginCta = document.getElementById('login-cta');
+  if (profile && profile.email) {
+    loginCta.textContent = 'Saving your score to your DSK profile...';
+    fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/game-score', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: profile.email, score: score })
+    }).then(function(r) { return r.json(); }).then(function(data) {
+      loginCta.innerHTML = data && data.success
+        ? '✅ Score saved to your profile — <a href="/dashboard.html">view dashboard</a>'
+        : 'Could not save your score right now — it\'s still on this device.';
+    }).catch(function() {
+      loginCta.textContent = 'Could not save your score right now — it\'s still on this device.';
+    });
+  } else {
+    loginCta.innerHTML = '💡 <a href="/login.html">Log in</a> to save your high score to your DSK profile and the member leaderboard.';
+  }
+}
+</script>
+
+</body>
+</html>

@@ -131,7 +131,9 @@ def lambda_handler(event, context):
             'guides_downloaded': member.get('guides_downloaded', []),
             'journal_read': member.get('journal_read', []),
             'audit_completed': member.get('audit_completed', False),
-            'referrals_count': member.get('referrals_count', 0)
+            'referrals_count': member.get('referrals_count', 0),
+            'game_high_score': member.get('game_high_score', 0),
+            'founding_knight': member.get('founding_knight', False)
         }
 
         return {

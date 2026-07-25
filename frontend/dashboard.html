@@ -93,6 +93,8 @@
   </a>
   <div class="nav-right">
     <a href="/">Home</a>
+    <a href="/resources.html">Resources</a>
+    <a href="/game.html">Game</a>
     <a href="/audit.html">Audit</a>
     <a href="#" class="logout-btn" onclick="logout();return false;">Logout</a>
   </div>
@@ -112,7 +114,7 @@
 
 <div class="dashboard" id="dashboard">
   <div class="welcome-card">
-    <h1>Welcome back, <span class="gold" id="memberName">Knight</span>! ⚔️</h1>
+    <h1>Welcome back, <span class="gold" id="memberName">Knight</span>! ⚔️ <span id="foundingRibbon" style="display:none;font-size:0.75rem;background:rgba(201,168,76,0.2);border:1px solid var(--gold);color:var(--gold);padding:4px 12px;border-radius:14px;vertical-align:middle;">⭐ Founding Knight</span></h1>
     <p>Here's your DSK profile and progress.</p>
     <div class="member-info">
       <div class="info-item"><span class="label">Membership</span><span class="value" id="memberPlan">—</span></div>
@@ -181,7 +183,20 @@
           <div class="stat-row"><span class="label">Audits Completed</span><span class="value" id="statAudits">0</span></div>
           <div class="stat-row"><span class="label">Friends Referred</span><span class="value" id="statReferrals">0</span></div>
           <div class="stat-row"><span class="label">Badges Earned</span><span class="value" id="statBadges">0 / 5</span></div>
+          <div class="stat-row"><span class="label">🕹️ Game High Score</span><span class="value" id="statGameScore">0</span></div>
         </div>
+      </div>
+
+      <div class="card">
+        <h2>🕹️ Shieldy's Message Sort</h2>
+        <p style="font-size:0.88rem;color:#555;line-height:1.6;margin-bottom:1rem;">
+          Your high score is saved to your profile automatically every time you beat it.
+        </p>
+        <a href="/game.html" class="action-link" style="background:linear-gradient(135deg,#1a2f6e,#0d1b3e);color:white;">
+          <div class="icon">🛡️</div>
+          <div class="text"><h4>Play Now</h4></div>
+          <div class="arrow" style="color:var(--gold);">→</div>
+        </a>
       </div>
 
       <div class="card">
@@ -244,6 +259,14 @@
     document.getElementById('statAudits').textContent = profile.audit_completed ? '1' : '0';
     document.getElementById('statReferrals').textContent = profile.referrals_count || 0;
     document.getElementById('statBadges').textContent = profile.badges.length + ' / 5';
+
+    var serverScore = profile.game_high_score || 0;
+    var localScore = parseInt(localStorage.getItem('dsk_game_highscore') || '0', 10);
+    document.getElementById('statGameScore').textContent = Math.max(serverScore, localScore);
+
+    if (profile.founding_knight) {
+      document.getElementById('foundingRibbon').style.display = 'inline-block';
+    }
 
     var grid = document.getElementById('badgesGrid');
     grid.innerHTML = ALL_BADGES.map(function(b) {

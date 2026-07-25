@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The DSK Resource Center — every guide, quest, tool, and journal issue in one place. Free, for parents, kids, teens, and educators.">
+<title>Resource Center — Digital Safety Knights</title>
+<link rel="icon" href="assets/favicon.ico">
+<style>
+  :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --white: #fff; --gray: #6c757d; --text: #2d3748; --success: #2a9d8f; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
+
+  nav { background: var(--navy); position: sticky; top: 0; z-index: 999; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 68px; box-shadow: 0 2px 20px rgba(0,0,0,0.4); }
+  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .nav-logo img { height: 42px; }
+  .nav-logo span { color: var(--gold); font-weight: 900; font-size: 1rem; }
+  .nav-right a { color: #ccd6f6; text-decoration: none; font-size: 0.88rem; font-weight: 700; margin-left: 1.4rem; }
+  .nav-right a:hover { color: var(--gold); }
+
+  .hero { background: linear-gradient(135deg, #060e22 0%, var(--navy) 50%, #0f2255 100%); color: white; text-align: center; padding: 70px 2rem 60px; }
+  .hero-badge { display: inline-block; background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.4); color: var(--gold); padding: 6px 18px; border-radius: 20px; font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; margin-bottom: 1.4rem; text-transform: uppercase; }
+  .hero h1 { font-size: clamp(1.9rem, 4.5vw, 3rem); font-weight: 900; margin-bottom: 0.9rem; }
+  .hero h1 .gold { color: var(--gold); }
+  .hero p { color: #a8b8d8; max-width: 620px; margin: 0 auto; line-height: 1.7; font-size: 1.02rem; }
+
+  .vision-band { background: linear-gradient(135deg, #1a2f6e, #0d1b3e); border-top: 1px solid rgba(201,168,76,0.25); border-bottom: 1px solid rgba(201,168,76,0.25); padding: 2.2rem 2rem; text-align: center; }
+  .vision-band .container { max-width: 780px; margin: 0 auto; }
+  .vision-band .vlabel { color: var(--gold); font-weight: 900; font-size: 0.72rem; letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 0.6rem; }
+  .vision-band p { color: #cdd6ea; font-size: 0.98rem; line-height: 1.75; }
+  .vision-band strong { color: white; }
+
+  section { padding: 3.5rem 2rem; }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  .filters { display: flex; gap: 0.6rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.8rem; }
+  .filter-chip { background: white; border: 2px solid #dde2f0; color: var(--navy); padding: 8px 20px; border-radius: 20px; font-weight: 800; font-size: 0.85rem; cursor: pointer; }
+  .filter-chip.active, .filter-chip:hover { border-color: var(--gold); background: rgba(201,168,76,0.1); }
+
+  .section-title { font-size: 1.4rem; font-weight: 900; color: var(--navy); margin-bottom: 1.3rem; display: flex; align-items: center; gap: 10px; }
+  .section-title .tag { font-size: 0.68rem; background: rgba(201,168,76,0.15); color: var(--gold2); background: var(--navy); padding: 4px 10px; border-radius: 8px; font-weight: 800; }
+
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.3rem; margin-bottom: 3.2rem; }
+  .rcard { background: white; border-radius: 18px; padding: 1.7rem; box-shadow: 0 2px 24px rgba(13,27,62,0.07); border-top: 4px solid var(--gold); text-decoration: none; color: inherit; display: block; transition: transform 0.15s; }
+  .rcard:hover { transform: translateY(-5px); }
+  .rcard .ricon { font-size: 2.1rem; margin-bottom: 0.7rem; }
+  .rcard h3 { font-size: 1.02rem; color: var(--navy); margin-bottom: 0.4rem; }
+  .rcard p { font-size: 0.85rem; color: var(--gray); line-height: 1.55; margin-bottom: 0.8rem; }
+  .rcard .cta { font-size: 0.78rem; font-weight: 900; color: var(--gold2); background: var(--navy); display: inline-block; padding: 6px 14px; border-radius: 10px; }
+  .rcard.game-card { border-top-color: #5865F2; background: linear-gradient(135deg, #1a2f6e, #0d1b3e); color: white; }
+  .rcard.game-card h3 { color: white; }
+  .rcard.game-card p { color: #a8b8d8; }
+  .rcard.game-card .cta { background: var(--gold); color: var(--navy); }
+
+  .tip-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem; margin-bottom: 3.2rem; }
+  .tip { background: var(--white); border-left: 4px solid var(--gold); border-radius: 12px; padding: 1.1rem 1.3rem; box-shadow: 0 2px 16px rgba(13,27,62,0.06); }
+  .tip .tip-tag { font-size: 0.68rem; font-weight: 900; color: var(--gold2); background: var(--navy); display: inline-block; padding: 3px 9px; border-radius: 6px; margin-bottom: 0.5rem; }
+  .tip p { font-size: 0.87rem; line-height: 1.55; color: var(--text); }
+
+  .badge-cta { background: linear-gradient(135deg,#0d1b3e,#1a2f6e); border-radius: 22px; padding: 2.6rem 2rem; text-align: center; color: white; margin-top: 1rem; }
+  .badge-cta h2 { font-size: 1.5rem; margin-bottom: 0.7rem; }
+  .badge-cta p { color: #a8b8d8; max-width: 520px; margin: 0 auto 1.4rem; line-height: 1.7; }
+  .btn-gold { background: var(--gold); color: var(--navy); padding: 13px 30px; border-radius: 26px; font-weight: 900; text-decoration: none; display: inline-block; }
+
+  footer { background: var(--navy); color: #7a8fbb; padding: 2.5rem 2rem; text-align: center; font-size: 0.82rem; }
+  footer a { color: var(--gold); text-decoration: none; }
+
+  [data-tags] { display: block; }
+  [data-tags].hidden { display: none; }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 1rem; } .nav-right a { margin-left: 0.7rem; font-size: 0.78rem; }
+    section { padding: 2.5rem 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">
+    <img src="assets/logo.png" alt="DSK">
+    <span>Digital Safety Knights</span>
+  </a>
+  <div class="nav-right">
+    <a href="/">Home</a>
+    <a href="/quests.html">Quests</a>
+    <a href="/game.html">Game</a>
+    <a href="/login.html">Login</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge">📚 Free Resource Center</div>
+  <h1>Everything We Teach —<br><span class="gold">In One Place</span></h1>
+  <p>Guides, quests, tools, and stories for parents, kids, teens, and educators. Pick your role below, or just browse everything.</p>
+</section>
+
+<div class="vision-band">
+  <div class="container">
+    <div class="vlabel">Our Vision</div>
+    <p>We're not just teaching children to avoid danger — we're <strong>preparing an entire generation</strong> to think critically, recognize manipulation, and navigate a world being reshaped by AI and always-on connection. <strong>Awareness today. Confidence for life.</strong> That's the whole mission, and it's why everything here stays free.</p>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="filters">
+      <button class="filter-chip active" data-filter="all">🌐 Everything</button>
+      <button class="filter-chip" data-filter="parents">👨‍👩‍👧 Parents</button>
+      <button class="filter-chip" data-filter="kids">🧒 Kids</button>
+      <button class="filter-chip" data-filter="teens">🧑 Teens</button>
+      <button class="filter-chip" data-filter="educators">🎓 Educators</button>
+    </div>
+
+    <div class="section-title">🎮 Play &amp; Learn <span class="tag">Interactive</span></div>
+    <div class="card-grid">
+      <a href="/game.html" class="rcard game-card" data-tags="kids teens parents">
+        <div class="ricon">🛡️</div>
+        <h3>Shieldy's Message Sort</h3>
+        <p>Our own arcade-style game — sort real messages into "safe" and "red flag" before time runs out. Fast, fun, and it actually teaches the same red flags Shieldy looks for.</p>
+        <span class="cta">Play Now →</span>
+      </a>
+      <a href="/quests.html" class="rcard" data-tags="kids teens parents educators">
+        <div class="ricon">🎮</div>
+        <h3>Interactive Quests</h3>
+        <p>6 scenario-based quests — Roblox, AI chatbots, grooming red flags, parental controls, cyber defense, digital citizenship. ~3 minutes each, earns badges.</p>
+        <span class="cta">Start a Quest →</span>
+      </a>
+      <a href="/glitch-detector.html" class="rcard" data-tags="kids teens parents">
+        <div class="ricon">🔍</div>
+        <h3>Glitch Detector</h3>
+        <p>Paste a suspicious message or upload a screenshot — get an instant, totally private red-flag check. Nothing is ever sent anywhere.</p>
+        <span class="cta">Check a Message →</span>
+      </a>
+      <a href="/audit.html" class="rcard" data-tags="parents educators">
+        <div class="ricon">🛡️</div>
+        <h3>Family Safety Audit</h3>
+        <p>A guided walkthrough of device setup, network security, app management, and emergency readiness — with a scored report emailed to you.</p>
+        <span class="cta">Take the Audit →</span>
+      </a>
+    </div>
+
+    <div class="section-title">📥 Guides &amp; Checklists <span class="tag">Download</span></div>
+    <div class="card-grid">
+      <a href="https://digitalsafetyknights.org/guides/roblox-parent-guide.pdf" target="_blank" class="rcard" data-tags="parents kids">
+        <div class="ricon">🎮</div><h3>Roblox Parent Guide</h3><p>Complete privacy &amp; chat lockdown walkthrough, step by step.</p><span class="cta">Download PDF →</span>
+      </a>
+      <a href="https://digitalsafetyknights.org/guides/safe-ai-usage-guide.pdf" target="_blank" class="rcard" data-tags="parents teens educators">
+        <div class="ricon">🤖</div><h3>Safe AI Usage for Kids</h3><p>Which AI tools are genuinely child-safe, and which ones to avoid.</p><span class="cta">Download PDF →</span>
+      </a>
+      <a href="https://digitalsafetyknights.org/guides/iphone-android-safety.pdf" target="_blank" class="rcard" data-tags="parents">
+        <div class="ricon">📱</div><h3>iPhone &amp; Android Safety</h3><p>Screen time and app restriction setup for every major device.</p><span class="cta">Download PDF →</span>
+      </a>
+      <a href="https://digitalsafetyknights.org/guides/talk-to-your-kids-guide.pdf" target="_blank" class="rcard" data-tags="parents educators">
+        <div class="ricon">💬</div><h3>Talk to Your Kids Guide</h3><p>Age-appropriate conversation scripts for hard topics.</p><span class="cta">Download PDF →</span>
+      </a>
+      <a href="https://digitalsafetyknights.org/guides/family-cybersecurity-checklist.pdf" target="_blank" class="rcard" data-tags="parents educators">
+        <div class="ricon">🔐</div><h3>Family Cybersecurity Checklist</h3><p>Passwords, VPN, and DNS filtering setup for the whole household.</p><span class="cta">Download PDF →</span>
+      </a>
+      <a href="https://digitalsafetyknights.org/guides/incident-response-guide.pdf" target="_blank" class="rcard" data-tags="parents educators">
+        <div class="ricon">🆘</div><h3>Incident Response Guide</h3><p>Exactly what to do, in order, if something has already happened.</p><span class="cta">Download PDF →</span>
+      </a>
+    </div>
+
+    <div class="section-title">📰 Stories &amp; Reporting <span class="tag">Read</span></div>
+    <div class="card-grid">
+      <a href="/#journal" class="rcard" data-tags="parents educators teens">
+        <div class="ricon">📖</div><h3>DSK Monthly Journal</h3><p>In-depth investigative stories and expert advice — one new issue every month.</p><span class="cta">Read Latest Issue →</span>
+      </a>
+      <a href="/monthly-report/" class="rcard" data-tags="parents educators">
+        <div class="ricon">🗞️</div><h3>This Month in Digital Safety</h3><p>An automated monthly scan of real child-safety and AI-safety news, with sources.</p><span class="cta">See This Month →</span>
+      </a>
+      <a href="/#emergency" class="rcard" data-tags="parents">
+        <div class="ricon">🆘</div><h3>Emergency Help Directory</h3><p>Reporting hotlines and cybercrime units for 40+ countries, one tap away.</p><span class="cta">Find Your Country →</span>
+      </a>
+    </div>
+
+    <div class="section-title">⚡ Quick Knight Tips</div>
+    <div class="tip-grid">
+      <div class="tip" data-tags="parents"><span class="tip-tag">PARENTS</span><p>Set up device controls together with your child, not in secret — it builds trust and they're less likely to look for workarounds.</p></div>
+      <div class="tip" data-tags="kids"><span class="tip-tag">KIDS</span><p>If a message makes you feel rushed, secret, or a little bit weird — that's Shieldy's signal to stop and tell a trusted adult.</p></div>
+      <div class="tip" data-tags="teens"><span class="tip-tag">TEENS</span><p>Sextortion scams move fast on purpose. If it's happening to you: stop paying, stop responding, save the evidence, tell someone today.</p></div>
+      <div class="tip" data-tags="educators"><span class="tip-tag">EDUCATORS</span><p>Kids rarely report grooming directly — watch for sudden secrecy about a device, a new "friend" they won't name, or anxiety after being online.</p></div>
+      <div class="tip" data-tags="parents"><span class="tip-tag">PARENTS</span><p>"Made for Kids" AI chatbots still make mistakes. Review chat logs together weekly for anything under age 13.</p></div>
+      <div class="tip" data-tags="kids"><span class="tip-tag">KIDS</span><p>Nobody nice online ever needs your real name, your school, or your address to keep playing with you.</p></div>
+      <div class="tip" data-tags="teens"><span class="tip-tag">TEENS</span><p>An AI-generated ("deepfake") image of you is not your fault, and it is illegal in most countries — report it, don't hide it.</p></div>
+      <div class="tip" data-tags="educators"><span class="tip-tag">EDUCATORS</span><p>Roblox, Discord, and Snapchat all changed their safety defaults in the last year — re-check settings each semester, not just once.</p></div>
+    </div>
+
+    <div class="badge-cta">
+      <h2>🎉 Join Free — Track Your Progress</h2>
+      <p>Members get a personal dashboard, badge progress, early access to new Journal issues, and their Shieldy's Message Sort high score saved forever.</p>
+      <a href="/#membership" class="btn-gold">See Membership Perks →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>⚔️ <a href="/">Digital Safety Knights</a> · digitalsafetyknights.org · © 2026</p>
+</footer>
+
+<script>
+  var chips = document.querySelectorAll('.filter-chip');
+  var items = document.querySelectorAll('[data-tags]');
+  chips.forEach(function(chip) {
+    chip.addEventListener('click', function() {
+      chips.forEach(function(c) { c.classList.remove('active'); });
+      chip.classList.add('active');
+      var f = chip.getAttribute('data-filter');
+      items.forEach(function(item) {
+        if (f === 'all' || (item.getAttribute('data-tags') || '').indexOf(f) !== -1) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
