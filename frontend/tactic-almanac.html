@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The Tactic Almanac — meet the tricks Glitch uses, as beatable in-story bosses. Never real people, always real red flags.">
+<title>Tactic Almanac — Digital Safety Knights</title>
+<link rel="icon" href="assets/favicon.ico">
+<style>
+  :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --text: #2d3748; --purple: #8A5FBF; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
+  .topbar { background: var(--navy); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+  .topbar .brand { color: var(--gold); font-weight: 900; text-decoration: none; font-size: 1.05rem; }
+  .topbar .home-link { color: #cdd6ea; text-decoration: none; font-size: 0.85rem; font-weight: 700; }
+
+  .hero { background: linear-gradient(135deg, #2b1140 0%, var(--navy) 60%); color: white; text-align: center; padding: 55px 1.5rem 45px; }
+  .hero .icon { font-size: 3rem; margin-bottom: 0.6rem; }
+  .hero h1 { font-size: clamp(1.8rem, 4.5vw, 2.6rem); margin-bottom: 0.7rem; }
+  .hero h1 .purple { color: #c9a8f0; }
+  .hero p { color: #cdc0e0; max-width: 580px; margin: 0 auto; line-height: 1.7; font-size: 0.95rem; }
+
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+  .boss-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.4rem; }
+  .boss-card { background: white; border-radius: 20px; padding: 1.7rem; box-shadow: 0 4px 24px rgba(13,27,62,0.08); border-top: 5px solid var(--purple); }
+  .boss-head { display: flex; align-items: center; gap: 12px; margin-bottom: 0.9rem; }
+  .boss-icon { font-size: 2rem; width: 54px; height: 54px; background: #f4effa; border-radius: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .boss-name { font-size: 1.08rem; font-weight: 900; color: var(--navy); }
+  .boss-alias { font-size: 0.72rem; color: var(--purple); font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; }
+  .boss-desc { font-size: 0.87rem; color: var(--gray); line-height: 1.6; margin-bottom: 0.9rem; }
+  .boss-defeat { background: #eefaf5; border-left: 4px solid var(--success, #2a9d8f); border-radius: 10px; padding: 10px 14px; font-size: 0.83rem; color: #1a5f4f; }
+  .boss-defeat b { color: #0d3d32; }
+
+  .cta-band { text-align: center; margin-top: 3rem; }
+  .btn-gold { background: var(--gold); color: var(--navy); padding: 14px 32px; border-radius: 28px; font-weight: 900; text-decoration: none; display: inline-block; margin: 0 6px; }
+  .btn-ghost { background: transparent; color: var(--navy); border: 2px solid var(--navy); padding: 12px 28px; border-radius: 28px; font-weight: 800; text-decoration: none; display: inline-block; margin: 0 6px; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="/">🛡️ Digital Safety Knights</a>
+  <div style="display:flex;gap:16px;align-items:center;">
+    <a class="home-link" href="/knights.html">⚔️ Meet the Knights</a>
+    <a class="home-link" href="/">← Home</a>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="icon">📖</div>
+  <h1>The Tactic <span class="purple">Almanac</span></h1>
+  <p>Glitch never shows up looking like a villain — that's the whole trick. Here are the seven masks Glitch wears most, so you can recognize the trick before you're inside it. None of these are real people — they're the tactic itself, given a face you can actually remember.</p>
+</section>
+
+<div class="wrap">
+  <div class="boss-grid" id="bossGrid"></div>
+  <div class="cta-band">
+    <a class="btn-gold" href="/glitch-detector.html">🔍 Try the Glitch Detector →</a>
+    <a class="btn-ghost" href="/game.html">🕹️ Practice in the Game →</a>
+  </div>
+</div>
+
+<script>
+var BOSSES = [
+  { icon: "⏰", name: "The Countdown Goblin", alias: "Urgency", desc: "Shows up screaming that you have ten seconds, that the offer expires now, that you have to act before you can think. The rush IS the trick — it's designed to switch your brain off before it can ask a single good question.",
+    defeat: "Beat it by: doing nothing for 60 seconds. Nothing real ever actually expires that fast." },
+  { icon: "🤫", name: "The Secret-Keeper", alias: "Secrecy", desc: "Asks you to keep 'just this one thing' from your parents. Frames it as trust, as being special, as 'our little thing.' It's never really about trust — it's about making sure no adult ever sees the conversation.",
+    defeat: "Beat it by: telling a trusted adult the second anyone asks you to keep an online conversation secret." },
+  { icon: "🎣", name: "The Info Fisher", alias: "Personal Questions", desc: "Casually asks your name, your age, your school, where you live — one harmless-feeling question at a time, until it's added up to a full profile of you.",
+    defeat: "Beat it by: treating your name, school, and address like your house key — you don't hand it to someone just because they asked nicely." },
+  { icon: "🎁", name: "The Prize Phantom", alias: "Too Good To Be True", desc: "Free skins, free Robux, a 'you've been specially chosen' message — always free, always huge, always just one click away. It's never actually free; it's a hook with a very generous-looking bait.",
+    defeat: "Beat it by: remembering that real prizes never need your password to claim them." },
+  { icon: "💸", name: "The Toll Troll", alias: "Money Requests", desc: "Asks for a small payment to 'unlock' something, or a gift card 'just this once,' or your card details to 'verify' you're real. It always starts small — that's the design.",
+    defeat: "Beat it by: never sending money, gift cards, or card details to someone you only know from a screen." },
+  { icon: "📍", name: "The Meetup Shade", alias: "Meeting Up", desc: "Suggests meeting in person, 'just to hang out,' usually paired with a request to keep it quiet. This is the mask that matters most — the one where the risk stops being just online.",
+    defeat: "Beat it by: never meeting anyone in person from online without a trusted adult knowing exactly where, when, and with who." },
+  { icon: "🎭", name: "The Mask", alias: "Inappropriate Requests", desc: "Asks for a photo, asks you to do something on camera, always framed as normal, as no big deal, as something everyone does. It is never no big deal.",
+    defeat: "Beat it by: telling a trusted adult immediately — you will never be in trouble for showing someone this message." }
+];
+
+var grid = document.getElementById('bossGrid');
+grid.innerHTML = BOSSES.map(function(b) {
+  return '<div class="boss-card">' +
+    '<div class="boss-head"><div class="boss-icon">' + b.icon + '</div>' +
+    '<div><div class="boss-name">' + b.name + '</div><div class="boss-alias">' + b.alias + '</div></div></div>' +
+    '<p class="boss-desc">' + b.desc + '</p>' +
+    '<div class="boss-defeat"><b>How to beat it:</b> ' + b.defeat.replace('Beat it by: ', '') + '</div>' +
+  '</div>';
+}).join('');
+</script>
+
+</body>
+</html>

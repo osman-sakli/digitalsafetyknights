@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Knight Chronicles — a short comic-strip story, published alongside the Monthly Journal.">
+<title>Knight Chronicles — Digital Safety Knights</title>
+<link rel="icon" href="assets/favicon.ico">
+<style>
+  :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --text: #2d3748; --teal: #3EC6C0; --purple: #8A5FBF; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
+  .topbar { background: var(--navy); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+  .topbar .brand { color: var(--gold); font-weight: 900; text-decoration: none; font-size: 1.05rem; }
+  .topbar .home-link { color: #cdd6ea; text-decoration: none; font-size: 0.85rem; font-weight: 700; }
+
+  .hero { text-align: center; padding: 50px 1.5rem 20px; }
+  .hero h1 { font-size: 1.9rem; color: var(--navy); margin-bottom: 0.5rem; }
+  .hero .issue-tag { display: inline-block; background: rgba(201,168,76,0.12); color: var(--gold); border: 1px solid rgba(201,168,76,0.4); border-radius: 20px; padding: 5px 16px; font-size: 0.72rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 1rem; }
+  .hero p { color: var(--gray); max-width: 480px; margin: 0 auto; font-size: 0.92rem; line-height: 1.6; }
+
+  .comic-wrap { max-width: 760px; margin: 2rem auto 0; padding: 0 1.2rem 4rem; }
+  .comic-title { text-align: center; font-size: 1.3rem; color: var(--navy); font-weight: 900; margin-bottom: 1.5rem; }
+  .panel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 560px) { .panel-grid { grid-template-columns: 1fr; } }
+  .panel { position: relative; border: 4px solid var(--navy); border-radius: 12px; height: 340px; overflow: hidden; display: flex; align-items: flex-end; justify-content: center; }
+  .panel .p-num { position: absolute; top: 8px; left: 10px; background: var(--navy); color: white; font-weight: 900; font-size: 0.75rem; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; z-index: 3; }
+  .panel img { position: absolute; height: 78%; bottom: 0; filter: drop-shadow(0 10px 14px rgba(0,0,0,0.3)); }
+  .panel .char-left { left: 8%; }
+  .panel .char-right { right: 8%; }
+  .panel .char-center { left: 50%; transform: translateX(-50%); }
+  .bubble { position: absolute; background: white; border: 2px solid var(--navy); border-radius: 14px; padding: 9px 12px; font-size: 0.78rem; font-weight: 700; color: var(--navy); max-width: 62%; z-index: 2; line-height: 1.35; }
+  .bubble::after { content: ''; position: absolute; width: 0; height: 0; border: 8px solid transparent; }
+  .bubble.top-left { top: 10px; left: 8px; }
+  .bubble.top-left::after { bottom: -14px; left: 20px; border-top-color: white; }
+  .bubble.top-right { top: 10px; right: 8px; }
+  .bubble.top-right::after { bottom: -14px; right: 20px; border-top-color: white; }
+  .bubble.mid-center { top: 40%; left: 50%; transform: translateX(-50%); text-align: center; }
+
+  .p1 { background: linear-gradient(160deg, #2b1140, var(--navy)); }
+  .p2 { background: linear-gradient(160deg, var(--navy), #14264f); }
+  .p3 { background: linear-gradient(160deg, #0f3d3a, var(--navy)); }
+  .p4 { background: linear-gradient(160deg, #3d2e0d, var(--navy)); }
+
+  .caption { text-align: center; color: var(--gray); font-size: 0.85rem; margin-top: 1.6rem; line-height: 1.6; }
+  .cta-band { text-align: center; margin-top: 2.2rem; }
+  .btn-gold { background: var(--gold); color: var(--navy); padding: 13px 28px; border-radius: 26px; font-weight: 900; text-decoration: none; display: inline-block; margin: 0 6px; }
+  .btn-ghost { background: transparent; color: var(--navy); border: 2px solid var(--navy); padding: 11px 26px; border-radius: 26px; font-weight: 800; text-decoration: none; display: inline-block; margin: 0 6px; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="/">🛡️ Digital Safety Knights</a>
+  <div style="display:flex;gap:16px;align-items:center;">
+    <a class="home-link" href="/knights.html">⚔️ Meet the Knights</a>
+    <a class="home-link" href="/">← Home</a>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="issue-tag">Issue #1 · August 2026</div>
+  <h1>Knight Chronicles</h1>
+  <p>A short comic, published alongside the Monthly Journal. This issue: Glitch tries the oldest trick in the book on Pixel.</p>
+</section>
+
+<div class="comic-wrap">
+  <div class="comic-title">"The Free Legendary Skin"</div>
+  <div class="panel-grid">
+
+    <div class="panel p1">
+      <div class="p-num">1</div>
+      <div class="bubble top-left">Psssst, Pixel! Free LEGENDARY skin, click quick before it's gone!!</div>
+      <img class="char-right" src="assets/characters/cutouts/glitch-cutout.png" alt="Glitch">
+    </div>
+
+    <div class="panel p2">
+      <div class="p-num">2</div>
+      <div class="bubble top-right">Free... AND I have to hurry? That's literally Glitch's oldest move.</div>
+      <img class="char-left" src="assets/characters/cutouts/pixel-cutout.png" alt="Pixel">
+    </div>
+
+    <div class="panel p3">
+      <div class="p-num">3</div>
+      <div class="bubble top-left">Nice catch! Real rewards never need you to rush.</div>
+      <img class="char-left" src="assets/characters/cutouts/shieldy-cutout.png" alt="Shieldy">
+      <img class="char-right" src="assets/characters/cutouts/pixel-cutout.png" alt="Pixel" style="height:70%;">
+    </div>
+
+    <div class="panel p4">
+      <div class="p-num">4</div>
+      <div class="bubble mid-center">Ugh. Foiled. AGAIN.</div>
+      <img class="char-center" src="assets/characters/cutouts/glitch-cutout.png" alt="Glitch" style="height:65%;opacity:0.85;">
+    </div>
+
+  </div>
+
+  <p class="caption">Glitch will be back next issue with a new trick. Think you'd have spotted this one? Test yourself for real in the game.</p>
+
+  <div class="cta-band">
+    <a class="btn-gold" href="/game.html">🕹️ Play Shieldy's Message Sort →</a>
+    <a class="btn-ghost" href="/#journal">📖 Read the Monthly Journal →</a>
+  </div>
+</div>
+
+</body>
+</html>

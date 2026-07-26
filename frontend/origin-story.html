@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How Digital Safety Knights began — the story behind the shield.">
+<title>Our Origin Story — Digital Safety Knights</title>
+<link rel="icon" href="assets/favicon.ico">
+<style>
+  :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --text: #2d3748; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--navy); color: white; }
+  .topbar { padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; background: rgba(13,27,62,0.9); backdrop-filter: blur(6px); }
+  .topbar .brand { color: var(--gold); font-weight: 900; text-decoration: none; font-size: 1.05rem; }
+  .topbar .home-link { color: #cdd6ea; text-decoration: none; font-size: 0.85rem; font-weight: 700; }
+
+  .beat { min-height: 82vh; display: flex; align-items: center; justify-content: center; padding: 4rem 1.5rem; position: relative; }
+  .beat-inner { max-width: 620px; text-align: center; opacity: 0; transform: translateY(36px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(.2,1,.3,1); }
+  .beat-inner.visible { opacity: 1; transform: translateY(0); }
+  .beat-eyebrow { color: var(--gold); font-weight: 800; font-size: 0.72rem; letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 1rem; }
+  .beat h2 { font-family: 'Segoe UI', system-ui, sans-serif; font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 900; margin-bottom: 1.2rem; line-height: 1.25; }
+  .beat p { color: #b8c4e0; font-size: 1.02rem; line-height: 1.8; }
+  .beat img { height: 140px; margin-bottom: 1.8rem; filter: drop-shadow(0 12px 24px rgba(0,0,0,0.4)); }
+
+  .beat.b1 { background: linear-gradient(135deg, #060e22, var(--navy)); }
+  .beat.b2 { background: linear-gradient(135deg, var(--navy), #1a2f6e); }
+  .beat.b3 { background: linear-gradient(135deg, #1a2f6e, #14264f); }
+  .beat.b4 { background: linear-gradient(135deg, #14264f, var(--navy)); }
+  .beat.b5 { background: linear-gradient(135deg, var(--navy), #060e22); }
+
+  .progress-dots { position: fixed; right: 22px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 10px; z-index: 20; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.25); transition: background 0.3s; }
+  .dot.active { background: var(--gold); }
+  @media (max-width: 640px) { .progress-dots { display: none; } }
+
+  .final-cta { text-align: center; padding: 4rem 1.5rem 6rem; }
+  .btn-gold { background: var(--gold); color: var(--navy); padding: 15px 36px; border-radius: 32px; font-weight: 900; text-decoration: none; display: inline-block; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="/">🛡️ Digital Safety Knights</a>
+  <a class="home-link" href="/">← Home</a>
+</div>
+
+<div class="progress-dots" id="dots"></div>
+
+<section class="beat b1" data-beat="0">
+  <div class="beat-inner">
+    <div class="beat-eyebrow">Chapter One</div>
+    <h2>It started with a question a lot of parents ask, and almost never get a real answer to.</h2>
+    <p>"Is my kid actually safe on the games and apps they use every day?" Not a vague worry — a real, specific question. And every answer we could find was either a scary headline or a settings menu nobody had time to read.</p>
+  </div>
+</section>
+
+<section class="beat b2" data-beat="1">
+  <div class="beat-inner">
+    <img src="assets/characters/cutouts/shieldy-cutout.png" alt="Shieldy">
+    <div class="beat-eyebrow">Chapter Two</div>
+    <h2>So instead of one more warning, we built a shield.</h2>
+    <p>Not a lecture. Not a list of things to be afraid of. Something a kid would actually want to open — quests, badges, a character who says "Shield up" instead of "don't." Fear doesn't teach judgment. Practice does.</p>
+  </div>
+</section>
+
+<section class="beat b3" data-beat="2">
+  <div class="beat-inner">
+    <img src="assets/characters/cutouts/glitch-cutout.png" alt="Glitch">
+    <div class="beat-eyebrow">Chapter Three</div>
+    <h2>Every good story needs someone who tries the trick on you first.</h2>
+    <p>That's Glitch — not a real person, never based on one, just every scam and every red flag given one consistent, rememberable face. If you can spot Glitch's tricks in a game, you can spot them for real.</p>
+  </div>
+</section>
+
+<section class="beat b4" data-beat="3">
+  <div class="beat-inner">
+    <div class="beat-eyebrow">Chapter Four</div>
+    <h2>Then came the guides, the Journal, the tools — because parents needed a shield too.</h2>
+    <p>Family safety guides. A monthly deep-dive Journal. A Glitch Detector that never sends your messages anywhere. A safety audit. All free, on purpose — a real safety net shouldn't have a paywall between a family and the help they need.</p>
+  </div>
+</section>
+
+<section class="beat b5" data-beat="4">
+  <div class="beat-inner">
+    <div class="beat-eyebrow">Chapter Five — Today</div>
+    <h2>We're still building. That's kind of the point.</h2>
+    <p>New platforms show up every year, and so do new tricks. The Knights keep training for them — and every family that joins makes the whole thing a little bit stronger. This isn't a finished project. It's an ongoing one, and you're already part of it.</p>
+  </div>
+</section>
+
+<div class="final-cta">
+  <a class="btn-gold" href="/knights.html">⚔️ Meet the Knights →</a>
+</div>
+
+<script>
+  var beats = document.querySelectorAll('.beat');
+  var dotsWrap = document.getElementById('dots');
+  beats.forEach(function(_, i) {
+    var d = document.createElement('div');
+    d.className = 'dot' + (i === 0 ? ' active' : '');
+    d.id = 'dot-' + i;
+    dotsWrap.appendChild(d);
+  });
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      var inner = entry.target.querySelector('.beat-inner');
+      var idx = entry.target.getAttribute('data-beat');
+      if (entry.isIntersecting) {
+        inner.classList.add('visible');
+        document.querySelectorAll('.dot').forEach(function(d) { d.classList.remove('active'); });
+        var dot = document.getElementById('dot-' + idx);
+        if (dot) dot.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  beats.forEach(function(b) { observer.observe(b); });
+</script>
+
+</body>
+</html>

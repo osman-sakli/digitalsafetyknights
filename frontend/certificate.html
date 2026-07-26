@@ -51,6 +51,7 @@
 <script>
 const PROGRESS_KEY = "dsk_progress";
 const NICKNAME_KEY = "dsk_nickname";
+const EMBLEM_KEY = "dsk_emblem";
 
 function badgeForCount(n) {
   if (n >= 6) return { name: "Gold Sentinel", emoji: "🏅" };
@@ -71,7 +72,7 @@ function badgeForCount(n) {
   const el = document.getElementById('cert-content');
   if (!nickname || !badge) {
     el.innerHTML = `
-      <div class="cert-shield">🛡️</div>
+      <div class="cert-shield" id="cert-emblem">🛡️</div>
       <div class="cert-eyebrow">Digital Safety Knights</div>
       <div class="cert-title">No badge earned yet</div>
       <div class="no-badge-msg">Complete your first quest to unlock a certificate!</div>
@@ -81,7 +82,7 @@ function badgeForCount(n) {
   }
 
   el.innerHTML = `
-    <div class="cert-shield">🛡️</div>
+    <div class="cert-shield" id="cert-emblem">🛡️</div>
     <div class="cert-eyebrow">Digital Safety Knights — Certificate of Achievement</div>
     <div class="cert-title">This certifies that</div>
     <div class="cert-name">${escapeHtml(nickname)}</div>
@@ -93,6 +94,23 @@ function badgeForCount(n) {
     <div class="cert-date">Awarded ${today}</div>
     <div class="cert-motto">⚔️ Shield up! · digitalsafetyknights.org</div>
   `;
+
+  try {
+    const emblem = JSON.parse(localStorage.getItem(EMBLEM_KEY));
+    if (emblem && emblem.color && emblem.symbol) {
+      const emblemEl = document.getElementById('cert-emblem');
+      emblemEl.textContent = emblem.symbol;
+      emblemEl.style.background = emblem.color;
+      emblemEl.style.width = '76px';
+      emblemEl.style.height = '76px';
+      emblemEl.style.borderRadius = '50%';
+      emblemEl.style.display = 'flex';
+      emblemEl.style.alignItems = 'center';
+      emblemEl.style.justifyContent = 'center';
+      emblemEl.style.margin = '0 auto 6px';
+      emblemEl.style.boxShadow = '0 6px 18px rgba(13,27,62,0.25)';
+    }
+  } catch (e) {}
 })();
 
 function escapeHtml(str) {

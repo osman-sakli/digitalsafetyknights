@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Meet the six Digital Safety Knights — Shieldy, Pixel, Bot, Dame Noble, Sprout, and the rival they all watch out for, Glitch.">
+<title>Meet the Knights — Digital Safety Knights</title>
+<link rel="icon" href="assets/favicon.ico">
+<style>
+  :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --text: #2d3748; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
+  .topbar { background: var(--navy); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+  .topbar .brand { color: var(--gold); font-weight: 900; text-decoration: none; font-size: 1.05rem; }
+  .topbar .home-link { color: #cdd6ea; text-decoration: none; font-size: 0.85rem; font-weight: 700; }
+
+  .hero { background: linear-gradient(135deg, #060e22 0%, var(--navy) 50%, #0f2255 100%); color: white; text-align: center; padding: 60px 2rem 50px; }
+  .hero h1 { font-size: clamp(1.9rem, 4.5vw, 2.8rem); font-weight: 900; margin-bottom: 0.8rem; }
+  .hero h1 .gold { color: var(--gold); }
+  .hero p { color: #a8b8d8; max-width: 560px; margin: 0 auto; line-height: 1.7; }
+
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+  .knight-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.6rem; }
+  .knight-card { background: white; border-radius: 22px; padding: 1.8rem; box-shadow: 0 4px 28px rgba(13,27,62,0.08); text-align: center; border-top: 5px solid var(--card-color, var(--gold)); cursor: pointer; transition: transform 0.2s ease; position: relative; overflow: hidden; }
+  .knight-card:hover { transform: translateY(-6px); }
+  .knight-card.rival { border-top-color: #8A5FBF; background: linear-gradient(180deg, #faf6ff, white 30%); }
+  .knight-portrait { height: 140px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; position: relative; }
+  .knight-portrait img.portrait-img { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; border: 4px solid var(--card-color, var(--gold)); box-shadow: 0 8px 20px rgba(0,0,0,0.18); transition: transform 0.2s ease; }
+  .knight-card:hover .knight-portrait img.portrait-img { transform: scale(1.06); }
+  .seasonal-badge { position: absolute; width: 34px; height: 34px; right: calc(50% - 65px - 6px); bottom: 4px; filter: drop-shadow(0 2px 5px rgba(0,0,0,0.35)); }
+  .knight-name { font-size: 1.2rem; font-weight: 900; color: var(--navy); }
+  .knight-title { font-size: 0.75rem; font-weight: 800; color: var(--card-color, var(--gold)); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.8rem; }
+  .knight-bio { font-size: 0.87rem; color: var(--gray); line-height: 1.6; margin-bottom: 0.9rem; }
+  .knight-specialty { font-size: 0.75rem; background: rgba(0,0,0,0.04); border-radius: 10px; padding: 6px 10px; color: var(--navy); font-weight: 700; display: inline-block; margin-bottom: 0.7rem; }
+  .knight-quote { font-size: 0.82rem; font-style: italic; color: var(--card-color, var(--gold)); font-weight: 700; }
+  .tap-hint { font-size: 0.68rem; color: #b8bfcc; margin-top: 0.6rem; }
+
+  .cta-band { text-align: center; margin-top: 3rem; }
+  .btn-gold { background: var(--gold); color: var(--navy); padding: 14px 32px; border-radius: 28px; font-weight: 900; text-decoration: none; display: inline-block; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="/">🛡️ Digital Safety Knights</a>
+  <div style="display:flex;gap:16px;align-items:center;">
+    <a class="home-link" href="/shieldys-journal.html">🛡️ Shieldy's Journal</a>
+    <a class="home-link" href="/resources.html">📚 Resources</a>
+    <a class="home-link" href="/">← Home</a>
+  </div>
+</div>
+
+<section class="hero">
+  <h1>Meet the <span class="gold">Knights</span></h1>
+  <p>Six characters, one mission — and one rival they all keep an eye on. Tap any Knight to hear their signature sound.</p>
+</section>
+
+<div class="wrap">
+  <div class="knight-grid" id="knightGrid"></div>
+
+  <div class="cta-band">
+    <a class="btn-gold" href="/quests.html">🎮 Go on a quest with them →</a>
+  </div>
+</div>
+
+<script>
+var KNIGHTS = [
+  { id: "shieldy", name: "Shieldy", title: "The Leader", color: "#c9a84c", specialty: "🎮 Gaming & in-app red flags",
+    bio: "The one who taught everyone the rules. Calm under pressure, first to notice when something's off, always the one who says the thing out loud that everyone else was quietly worried about.",
+    quote: "Shield up.", note: 660 },
+  { id: "pixel", name: "Pixel", title: "The Gamer", color: "#3EC6C0", specialty: "🕹️ Roblox, PK XD & game chat",
+    bio: "Lives inside every game worth playing. Knows every settings menu by heart and can spot a scam item trade from a mile away — because they've almost fallen for one before.",
+    quote: "Nice try. Not today.", note: 784 },
+  { id: "bot", name: "Bot", title: "The Analyst", color: "#8fa6c9", specialty: "🤖 AI chatbots & deepfakes",
+    bio: "Understands exactly how AI works, which is precisely why Bot never fully trusts it. Explains complicated things in one sentence, patiently, as many times as it takes.",
+    quote: "Real isn't always what it looks like.", note: 523 },
+  { id: "dame-noble", name: "Dame Noble", title: "The Heart", color: "#b98a4a", specialty: "💬 Cyberbullying & kindness",
+    bio: "The one everyone actually talks to when something's wrong. Takes feelings as seriously as firewalls, because she knows the emotional damage is usually the real damage.",
+    quote: "You did nothing wrong. Let's fix it together.", note: 587 },
+  { id: "sprout", name: "Sprout", title: "The Newest Recruit", color: "#7cbf6b", specialty: "🌱 First-timers & basics",
+    bio: "Just joined the Knights and still asks the questions everyone else is too embarrassed to ask — which is exactly why Sprout is the best teacher of the basics.",
+    quote: "Wait, can you explain that one more time?", note: 440 },
+  { id: "glitch", name: "Glitch", title: "The Rival", color: "#8A5FBF", specialty: "⚠️ Every trick in the book", rival: true,
+    bio: "Not a villain — a warning made friendly enough for a Tuesday afternoon. Glitch shows up in every quest trying every trick a real scammer might use, so you get to practice spotting it first, here, where nothing's actually at stake.",
+    quote: "You really thought that was free?", note: 220 }
+];
+
+var actx = null;
+function playNote(freq) {
+  try {
+    if (!actx) actx = new (window.AudioContext || window.webkitAudioContext)();
+    var osc = actx.createOscillator();
+    var gain = actx.createGain();
+    osc.type = 'sine';
+    osc.frequency.value = freq;
+    gain.gain.value = 0.1;
+    osc.connect(gain); gain.connect(actx.destination);
+    osc.start();
+    gain.gain.exponentialRampToValueAtTime(0.001, actx.currentTime + 0.5);
+    osc.stop(actx.currentTime + 0.5);
+  } catch (e) {}
+}
+
+var SEASONS = [
+  { months: [7, 8], badge: 'assets/icons/seasonal-back-to-school.png', label: 'Back to School' }
+];
+function currentSeasonBadge() {
+  var m = new Date().getMonth();
+  var season = SEASONS.find(function(s) { return s.months.indexOf(m) !== -1; });
+  return season ? season.badge : null;
+}
+
+var grid = document.getElementById('knightGrid');
+var seasonBadge = currentSeasonBadge();
+grid.innerHTML = KNIGHTS.map(function(k) {
+  return '<div class="knight-card' + (k.rival ? ' rival' : '') + '" style="--card-color:' + k.color + '" onclick="playNote(' + k.note + ')">' +
+    '<div class="knight-portrait"><img class="portrait-img" src="assets/characters/circles/' + k.id + '.jpg" alt="' + k.name + '">' +
+    (seasonBadge ? '<img class="seasonal-badge" src="' + seasonBadge + '" alt="">' : '') + '</div>' +
+    '<div class="knight-name">' + k.name + '</div>' +
+    '<div class="knight-title">' + k.title + '</div>' +
+    '<div class="knight-specialty">' + k.specialty + '</div>' +
+    '<p class="knight-bio">' + k.bio + '</p>' +
+    '<div class="knight-quote">"' + k.quote + '"</div>' +
+    '<div class="tap-hint">🔊 tap for sound</div>' +
+  '</div>';
+}).join('');
+</script>
+
+</body>
+</html>

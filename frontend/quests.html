@@ -29,6 +29,15 @@
   #nickname-input:focus { outline: none; border-color: var(--gold); }
   .privacy-note { font-size: 0.78rem; color: var(--gray); margin-top: 14px; max-width: 340px; margin-left: auto; margin-right: auto; }
 
+  .emblem-picker { max-width: 340px; margin: 22px auto 0; }
+  .emblem-label { font-size: 0.8rem; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+  .emblem-row { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 14px; }
+  .emblem-swatch { width: 40px; height: 40px; border-radius: 50%; border: 3px solid transparent; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; background: var(--light); }
+  .emblem-swatch.color-swatch.selected { border-color: var(--navy); transform: scale(1.1); }
+  .emblem-swatch.symbol-swatch { background: #eef1f8; }
+  .emblem-swatch.symbol-swatch.selected { border-color: var(--gold); background: #fff6e0; }
+  .emblem-preview { width: 64px; height: 64px; border-radius: 50%; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; border: 3px solid white; box-shadow: 0 4px 14px rgba(13,27,62,0.2); }
+
   /* ---- Quest picker ---- */
   #picker-screen h1 { font-size: 1.7rem; color: var(--navy); margin-bottom: 4px; }
   #picker-screen .sub { color: var(--gray); margin-bottom: 22px; font-size: 0.95rem; }
@@ -96,6 +105,15 @@
     <h1>Pick your Knight nickname</h1>
     <p>No last name, no email — just a nickname you like. It stays on this device only.</p>
     <input id="nickname-input" maxlength="20" placeholder="e.g. PixelKnight99" autocomplete="off">
+
+    <div class="emblem-picker">
+      <div class="emblem-preview" id="emblem-preview">🛡️</div>
+      <div class="emblem-label">Pick your emblem color</div>
+      <div class="emblem-row" id="emblem-colors"></div>
+      <div class="emblem-label">Pick your emblem symbol</div>
+      <div class="emblem-row" id="emblem-symbols"></div>
+    </div>
+
     <div class="outro-actions" style="max-width:320px;margin:20px auto 0;">
       <button class="btn-primary" onclick="saveNickname()">Shield up! 🛡️</button>
     </div>
@@ -149,6 +167,35 @@ const QUESTS = [
 
 const PROGRESS_KEY = "dsk_progress";
 const NICKNAME_KEY = "dsk_nickname";
+const EMBLEM_KEY = "dsk_emblem";
+const EMBLEM_COLORS = ["#c9a84c", "#3EC6C0", "#8A5FBF", "#9e9e9e", "#e6636e", "#7cbf6b"];
+const EMBLEM_SYMBOLS = ["⚔️", "🛡️", "⭐", "🔥", "🌙", "🍀"];
+
+function getEmblem() {
+  try { return JSON.parse(localStorage.getItem(EMBLEM_KEY)) || { color: EMBLEM_COLORS[0], symbol: EMBLEM_SYMBOLS[1] }; }
+  catch (e) { return { color: EMBLEM_COLORS[0], symbol: EMBLEM_SYMBOLS[1] }; }
+}
+function saveEmblem(e) { localStorage.setItem(EMBLEM_KEY, JSON.stringify(e)); }
+
+function renderEmblemPicker() {
+  const current = getEmblem();
+  const colorRow = document.getElementById('emblem-colors');
+  const symbolRow = document.getElementById('emblem-symbols');
+  colorRow.innerHTML = EMBLEM_COLORS.map(c =>
+    `<button type="button" class="emblem-swatch color-swatch${c === current.color ? ' selected' : ''}" style="background:${c}" onclick="pickEmblemColor('${c}')"></button>`
+  ).join('');
+  symbolRow.innerHTML = EMBLEM_SYMBOLS.map(s =>
+    `<button type="button" class="emblem-swatch symbol-swatch${s === current.symbol ? ' selected' : ''}" onclick="pickEmblemSymbol('${s}')">${s}</button>`
+  ).join('');
+  updateEmblemPreview();
+}
+function pickEmblemColor(c) { const e = getEmblem(); e.color = c; saveEmblem(e); renderEmblemPicker(); }
+function pickEmblemSymbol(s) { const e = getEmblem(); e.symbol = s; saveEmblem(e); renderEmblemPicker(); }
+function updateEmblemPreview() {
+  const e = getEmblem();
+  const preview = document.getElementById('emblem-preview');
+  if (preview) { preview.style.background = e.color; preview.textContent = e.symbol; }
+}
 
 function getProgress() {
   try { return JSON.parse(localStorage.getItem(PROGRESS_KEY)) || { completed: {} }; }
@@ -178,7 +225,10 @@ function showPicker() {
   document.getElementById('picker-screen').classList.remove('hidden');
 
   const nick = localStorage.getItem(NICKNAME_KEY) || "Knight";
-  document.getElementById('picker-greeting').textContent = "Welcome back, " + nick + "!";
+  const emblem = getEmblem();
+  document.getElementById('picker-greeting').innerHTML =
+    '<span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:' + emblem.color + ';font-size:1rem;vertical-align:middle;margin-right:8px;">' + emblem.symbol + '</span>' +
+    'Welcome back, ' + nick + '!';
 
   const progress = getProgress();
   const grid = document.getElementById('quest-grid');
@@ -320,6 +370,7 @@ function finishQuest() {
     showPicker();
   } else {
     document.getElementById('nickname-screen').classList.remove('hidden');
+    renderEmblemPicker();
   }
 })();
 </script>

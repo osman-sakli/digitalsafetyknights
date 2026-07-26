@@ -4,7 +4,7 @@
   "emoji": "🔧",
   "badgeTrack": "silver-guard",
   "forParents": true,
-  "intro": "This one's for the grown-ups. Play it with your child, or solo — either way, you'll leave with a real setup checklist, not just good intentions.",
+  "intro": "Glitch counts on families never quite getting around to the settings menu. This one's for the grown-ups — play it with your child, or solo — either way, you'll leave with a real setup checklist that closes Glitch's favorite doors, not just good intentions.",
   "questions": [
     {
       "narrator": "SHIELDY",
@@ -34,8 +34,8 @@
       ]
     },
     {
-      "narrator": "SHIELDY",
-      "prompt": "Your child receives an expensive in-game gift from someone they don't know in real life. What's the right response?",
+      "narrator": "GLITCH",
+      "prompt": "Hey kid, I just sent your child an expensive in-game gift — we've never met in real life, but now they kind of owe me one, right? What's the right response?",
       "choices": [
         { "text": "Let them keep it, it's free after all", "correct": false, "coach": "Unexpected gifts from strangers are a documented grooming tool — this deserves an immediate conversation." },
         { "text": "Treat it as a red flag and talk about it right away", "correct": true, "coach": "Exactly right. Gifts create a sense of debt that predators exploit." },

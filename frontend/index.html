@@ -68,9 +68,10 @@
   .knights-row h3 { font-family: 'Baloo Display', system-ui, sans-serif; color: var(--gold2); font-size: 1.3rem; margin-bottom: 0.3rem; }
   .knights-row p { color: #8899bb; font-size: 0.85rem; margin-bottom: 2rem; }
   .knights-strip { display: flex; justify-content: center; align-items: flex-end; gap: 0.5rem; flex-wrap: wrap; max-width: 1000px; margin: 0 auto; }
-  .knight-card { width: 130px; text-align: center; }
-  .knight-card img { width: 100%; height: auto; filter: drop-shadow(0 10px 18px rgba(0,0,0,0.4)); transition: transform 0.25s ease; }
-  .knight-card:hover img { transform: translateY(-8px) scale(1.04); }
+  .knight-card { width: 110px; text-align: center; position: relative; }
+  .knight-card .seasonal-badge { position: absolute; width: 30px; height: 30px; left: 50%; margin-left: 22px; top: 62px; filter: drop-shadow(0 2px 5px rgba(0,0,0,0.4)); }
+  .knight-card img { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; border: 3px solid var(--gold); box-shadow: 0 8px 18px rgba(0,0,0,0.35); transition: transform 0.25s ease; }
+  .knight-card:hover img { transform: translateY(-6px) scale(1.06); }
   .knight-card .kname { color: white; font-weight: 800; font-size: 0.82rem; margin-top: 0.4rem; }
   .hero-badge { display: inline-block; background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.4); color: var(--gold); padding: 6px 18px; border-radius: 20px; font-size: 0.72rem; font-weight: 700; letter-spacing: 2.5px; margin-bottom: 1.8rem; text-transform: uppercase; }
   .hero h1 { font-family: 'Baloo Display', system-ui, sans-serif; font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.2rem; text-wrap: balance; }
@@ -250,9 +251,11 @@
   <div class="nav-sub">
     <a href="#threats">Threats</a>
     <a href="/resources.html">📚 Resources</a>
+    <a href="/knights.html">⚔️ Meet the Knights</a>
     <a href="/quests.html">🎮 Quests</a>
     <a href="/game.html">🕹️ Game<span class="pop-tag">New</span></a>
     <a href="/glitch-detector.html">🔍 Glitch Detector</a>
+    <a href="/tactic-almanac.html">📖 Tactic Almanac</a>
     <a href="#programs">Programs</a>
     <a href="#badges">Badges</a>
     <a href="/audit.html">🛡️ Audit</a>
@@ -300,18 +303,20 @@
   </div>
 </div>
 
+<a href="/knights.html" style="text-decoration:none;">
 <div class="knights-row">
   <h3>⚔️ Meet the Knights</h3>
-  <p>Six characters. One mission. Say hello to the squad keeping you safe online.</p>
+  <p>Six characters. One mission. Tap to meet the whole squad →</p>
   <div class="knights-strip">
-    <div class="knight-card"><img src="assets/characters/cutouts/shieldy-cutout.png" alt="Shieldy"><div class="kname">Shieldy</div></div>
-    <div class="knight-card"><img src="assets/characters/cutouts/pixel-cutout.png" alt="Pixel"><div class="kname">Pixel</div></div>
-    <div class="knight-card"><img src="assets/characters/cutouts/glitch-cutout.png" alt="Glitch"><div class="kname">Glitch</div></div>
-    <div class="knight-card"><img src="assets/characters/cutouts/bot-cutout.png" alt="Bot"><div class="kname">Bot</div></div>
-    <div class="knight-card"><img src="assets/characters/cutouts/dame-noble-cutout.png" alt="Dame Noble"><div class="kname">Dame Noble</div></div>
-    <div class="knight-card"><img src="assets/characters/cutouts/sprout-cutout.png" alt="Sprout"><div class="kname">Sprout</div></div>
+    <div class="knight-card"><img src="assets/characters/circles/shieldy.jpg" alt="Shieldy"><div class="kname">Shieldy</div></div>
+    <div class="knight-card"><img src="assets/characters/circles/pixel.jpg" alt="Pixel"><div class="kname">Pixel</div></div>
+    <div class="knight-card"><img src="assets/characters/circles/glitch.jpg" alt="Glitch"><div class="kname">Glitch</div></div>
+    <div class="knight-card"><img src="assets/characters/circles/bot.jpg" alt="Bot"><div class="kname">Bot</div></div>
+    <div class="knight-card"><img src="assets/characters/circles/dame-noble.jpg" alt="Dame Noble"><div class="kname">Dame Noble</div></div>
+    <div class="knight-card"><img src="assets/characters/circles/sprout.jpg" alt="Sprout"><div class="kname">Sprout</div></div>
   </div>
 </div>
+</a>
 
 <section id="today-quest" style="background:var(--white);padding:2.6rem 2rem;">
   <div class="container" style="max-width:900px;margin:0 auto;">
@@ -323,6 +328,16 @@
         <p style="color:#cdd6ea;font-size:0.88rem;">Free, no account needed — takes about 3 minutes.</p>
       </div>
       <a id="tq-link" href="/quests.html" class="btn-gold" style="flex-shrink:0;">Play Now →</a>
+    </div>
+
+    <div id="knight-of-month" style="margin-top:1.2rem;background:white;border:2px solid var(--light);border-radius:22px;padding:1.6rem 2.2rem;display:flex;align-items:center;gap:1.6rem;flex-wrap:wrap;box-shadow:0 4px 24px rgba(13,27,62,0.06);">
+      <img id="kom-img" src="assets/characters/circles/shieldy.jpg" alt="" style="width:90px;height:90px;border-radius:50%;object-fit:cover;flex-shrink:0;border:3px solid var(--gold);box-shadow:0 6px 12px rgba(0,0,0,0.15);">
+      <div style="flex:1;min-width:220px;">
+        <div style="color:var(--gold);font-weight:800;font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;">⭐ Knight of the Month</div>
+        <h3 id="kom-name" style="color:var(--navy);font-size:1.15rem;margin-bottom:2px;">Shieldy</h3>
+        <p id="kom-tie" style="color:var(--gray);font-size:0.87rem;">This month's spotlight.</p>
+      </div>
+      <a href="/knights.html" class="btn-gold" style="flex-shrink:0;background:transparent;color:var(--navy);border:2px solid var(--navy);">Meet the Knights →</a>
     </div>
   </div>
 </section>
@@ -634,16 +649,21 @@
       <a href="/game.html">🕹️ Shieldy's Message Sort</a>
       <a href="/quests.html">🎮 Play a Quest</a>
       <a href="/glitch-detector.html">🔍 Glitch Detector</a>
+      <a href="/tactic-almanac.html">📖 Tactic Almanac</a>
       <a href="/audit.html">🛡️ Family Safety Audit</a>
       <a href="#guides">Safety Guides</a>
       <a href="#journal">Monthly Journal</a>
+      <a href="/knight-chronicles.html">💥 Knight Chronicles Comic</a>
+      <a href="/shieldys-journal.html">🛡️ Shieldy's Journal</a>
+      <a href="/knights.html">⚔️ Meet the Knights</a>
       <a href="/monthly-report/">📰 This Month in Digital Safety</a>
       <a href="#emergency">Emergency Help</a>
     </div>
     <div class="f-col">
       <h4>Organization</h4>
-      <a href="#">About DSK</a>
-      <a href="#">Our Mission</a>
+      <a href="/origin-story.html">📖 Our Origin Story</a>
+      <a href="/knights.html">⚔️ Meet the Knights</a>
+      <a href="/tactic-almanac.html">📖 Tactic Almanac</a>
       <a href="#">Contact Us</a>
       <a href="#emergency">Emergency Help</a>
     </div>
@@ -899,6 +919,38 @@
       if (!ticking) { requestAnimationFrame(update); ticking = true; }
     }, { passive: true });
     update();
+  })();
+
+  (function seasonalBadges() {
+    var SEASONS = [{ months: [7, 8], badge: 'assets/icons/seasonal-back-to-school.png' }];
+    var m = new Date().getMonth();
+    var season = SEASONS.find(function(s) { return s.months.indexOf(m) !== -1; });
+    if (!season) return;
+    document.querySelectorAll('.knight-card').forEach(function(card) {
+      var badge = document.createElement('img');
+      badge.className = 'seasonal-badge';
+      badge.src = season.badge;
+      badge.alt = '';
+      card.appendChild(badge);
+    });
+  })();
+
+  (function knightOfMonth() {
+    var MONTHS = {
+      1: { id: "dame-noble", name: "Dame Noble", tie: "February's Journal is about the emotional side of online harassment — exactly Dame Noble's specialty." },
+      2: { id: "pixel", name: "Pixel", tie: "March's Journal goes inside Roblox — Pixel's home turf." },
+      3: { id: "bot", name: "Bot", tie: "April's Journal covers AI-powered grooming tactics — straight from Bot's field of expertise." },
+      4: { id: "shieldy", name: "Shieldy", tie: "May's Journal covers fast-moving sextortion tactics — Shieldy's specialty is spotting the red flags in time." },
+      5: { id: "bot", name: "Bot", tie: "June's Journal breaks down how the algorithm and feed are built — pure Bot territory." },
+      6: { id: "glitch", name: "Glitch", tie: "July's Journal is about stranger-danger chat apps — and nobody plays a well-disguised stranger better than Glitch." },
+      7: { id: "shieldy", name: "Shieldy", tie: "August's Journal is the back-to-school family reset — Shieldy's leading the charge." }
+    };
+    var m = new Date().getMonth();
+    var pick = MONTHS[m] || { id: "sprout", name: "Sprout", tie: "New month, new chance to learn (or re-learn) the basics — that's Sprout's whole thing." };
+    document.getElementById('kom-img').src = 'assets/characters/circles/' + pick.id + '.jpg';
+    document.getElementById('kom-img').alt = pick.name;
+    document.getElementById('kom-name').textContent = pick.name;
+    document.getElementById('kom-tie').textContent = pick.tie;
   })();
 
   (function todaysQuest() {
