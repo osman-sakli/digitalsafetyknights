@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Certificate — Digital Safety Knights</title>
 <link rel="icon" href="assets/favicon.ico">
+<script src="assets/knight-points.js"></script>
 <style>
   :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -27,6 +28,10 @@
   .cert-date { color: var(--gray); font-size: 0.85rem; margin-top: 26px; }
   .cert-motto { color: var(--navy); font-weight: 900; letter-spacing: 1px; margin-top: 18px; font-size: 1.05rem; }
   .no-badge-msg { color: var(--gray); font-size: 0.95rem; padding: 20px 0; }
+  .cert-stats-row { display: flex; justify-content: center; gap: 2.2rem; margin: 24px 0; flex-wrap: wrap; }
+  .cert-stat { text-align: center; }
+  .cert-stat .num { font-size: 1.5rem; font-weight: 900; color: var(--navy2); }
+  .cert-stat .lbl { font-size: 0.7rem; color: var(--gray); text-transform: uppercase; letter-spacing: 1px; }
 
   @media print {
     body { background: white; padding: 0; }
@@ -91,9 +96,23 @@ function badgeForCount(n) {
       <div class="cert-badge-name">${badge.name}<small>${n} of 6 quests completed</small></div>
     </div>
     <div class="cert-sub">has demonstrated real digital safety skills as a member of the Digital Safety Knights.</div>
+    <div class="cert-stats-row" id="cert-stats"></div>
     <div class="cert-date">Awarded ${today}</div>
     <div class="cert-motto">⚔️ Shield up! · digitalsafetyknights.org</div>
   `;
+
+  if (window.DSKPoints) {
+    const points = DSKPoints.getPoints();
+    const level = DSKPoints.levelForPoints(points);
+    const streak = DSKPoints.getStreak();
+    const gameHigh = parseInt(localStorage.getItem('dsk_game_highscore') || '0', 10);
+    document.getElementById('cert-stats').innerHTML = `
+      <div class="cert-stat"><div class="num">${level.emoji} ${level.name}</div><div class="lbl">Rank</div></div>
+      <div class="cert-stat"><div class="num">${points}</div><div class="lbl">Knight Points</div></div>
+      <div class="cert-stat"><div class="num">${streak}</div><div class="lbl">Day Streak</div></div>
+      <div class="cert-stat"><div class="num">${gameHigh}</div><div class="lbl">Game High Score</div></div>
+    `;
+  }
 
   try {
     const emblem = JSON.parse(localStorage.getItem(EMBLEM_KEY));

@@ -189,6 +189,7 @@
     .score-num { font-size: 2.5rem; }
   }
 </style>
+<script src="assets/knight-points.js"></script>
 </head>
 <body>
 
@@ -441,6 +442,11 @@
     document.getElementById('auditPage').classList.add('hidden');
     document.getElementById('resultsPage').classList.add('active');
     window.scrollTo(0, 0);
+
+    if (window.DSKPoints && !localStorage.getItem('dsk_audit_points_awarded')) {
+      localStorage.setItem('dsk_audit_points_awarded', '1');
+      DSKPoints.addPoints(50, 'Family Safety Audit completed');
+    }
   }
 
   function emailReport() {

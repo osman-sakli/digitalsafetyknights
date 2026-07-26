@@ -112,6 +112,7 @@
   #mini-leaderboard h4 { font-size: 0.75rem; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
   #mini-leaderboard .lb-row { display: flex; justify-content: space-between; font-size: 0.85rem; padding: 4px 0; color: #cdd6ea; }
 </style>
+<script src="assets/knight-points.js"></script>
 </head>
 <body>
 
@@ -148,6 +149,7 @@
       <button class="diff-btn" data-diff="easy" onclick="selectDifficulty('easy')">🐣 Easy</button>
       <button class="diff-btn" data-diff="medium" onclick="selectDifficulty('medium')">⚔️ Medium</button>
       <button class="diff-btn" data-diff="hard" onclick="selectDifficulty('hard')">🔥 Hard</button>
+      <span id="chaos-btn-wrap"></span>
     </div>
     <div class="best-score">Your best score: <b id="best-score-val">0</b></div>
     <button class="play-btn" onclick="startGame()">▶️ Play Now</button>
@@ -182,7 +184,8 @@
       <a class="btn-ghost" href="/resources.html">📚 Resource Center</a>
     </div>
     <div id="login-cta"></div>
-    <div id="mini-leaderboard"><h4>🏆 Top Knights</h4><div id="lb-rows"></div></div>
+    <div id="mini-leaderboard-weekly" style="margin-top:18px;background:rgba(255,255,255,0.05);border-radius:14px;padding:14px 18px;text-align:left;display:none;"><h4 style="font-size:0.75rem;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">📅 This Week's Top Knights</h4><div id="lb-rows-weekly"></div></div>
+    <div id="mini-leaderboard"><h4>🏆 All-Time Top Knights</h4><div id="lb-rows"></div></div>
   </div>
 
 </div>
@@ -263,16 +266,35 @@ var ROUND_SECONDS = 60;
 var DIFFICULTIES = {
   easy:   { fallStart: 13000, fallMin: 10500, fallDecay: 12, spawnStart: 5200, spawnMin: 3800, spawnDecay: 8 },
   medium: { fallStart: 10000, fallMin: 8000,  fallDecay: 14, spawnStart: 4200, spawnMin: 3000, spawnDecay: 10 },
-  hard:   { fallStart: 7500,  fallMin: 5800,  fallDecay: 16, spawnStart: 3200, spawnMin: 2200, spawnDecay: 12 }
+  hard:   { fallStart: 7500,  fallMin: 5800,  fallDecay: 16, spawnStart: 3200, spawnMin: 2200, spawnDecay: 12 },
+  chaos:  { fallStart: 5200,  fallMin: 3800,  fallDecay: 20, spawnStart: 2200, spawnMin: 1400, spawnDecay: 16 }
 };
+var CHAOS_UNLOCK_SCORE = 100;
 var difficulty = localStorage.getItem('dsk_game_difficulty') || 'easy';
+
+function chaosUnlocked() {
+  return parseInt(localStorage.getItem('dsk_game_highscore_hard') || '0', 10) >= CHAOS_UNLOCK_SCORE;
+}
+function renderChaosButton() {
+  var wrap = document.getElementById('chaos-btn-wrap');
+  if (!wrap) return;
+  if (chaosUnlocked()) {
+    wrap.innerHTML = '<button class="diff-btn" data-diff="chaos" onclick="selectDifficulty(\'chaos\')">🌀 Chaos</button>';
+  } else {
+    wrap.innerHTML = '<button class="diff-btn" disabled title="Score ' + CHAOS_UNLOCK_SCORE + '+ on Hard to unlock" style="opacity:0.4;cursor:not-allowed;">🔒 Chaos</button>';
+  }
+}
+
 function selectDifficulty(d) {
+  if (d === 'chaos' && !chaosUnlocked()) return;
   difficulty = d;
   localStorage.setItem('dsk_game_difficulty', d);
   document.querySelectorAll('.diff-btn').forEach(function(b) {
     b.classList.toggle('active', b.getAttribute('data-diff') === d);
   });
 }
+renderChaosButton();
+if (difficulty === 'chaos' && !chaosUnlocked()) difficulty = 'hard';
 selectDifficulty(difficulty);
 
 var score = 0, streak = 0, best = 0, correctCount = 0, totalCount = 0;
@@ -539,9 +561,25 @@ function endGame() {
   }, 20);
 
   var isNewBest = score > best;
-  if (isNewBest) { best = score; localStorage.setItem('dsk_game_highscore', String(best)); }
+  if (isNewBest) {
+    if (window.DSKPoints) DSKPoints.addPoints(score - best, 'new high score');
+    best = score;
+    localStorage.setItem('dsk_game_highscore', String(best));
+  }
   document.getElementById('end-best-note').textContent = isNewBest ? '🎉 New personal best!' : 'Your best remains ' + best + '.';
   if (starCount >= 2) confettiBurst();
+
+  if (difficulty === 'hard') {
+    var hardBest = parseInt(localStorage.getItem('dsk_game_highscore_hard') || '0', 10);
+    if (score > hardBest) {
+      localStorage.setItem('dsk_game_highscore_hard', String(score));
+      if (score >= CHAOS_UNLOCK_SCORE && hardBest < CHAOS_UNLOCK_SCORE) {
+        renderChaosButton();
+        if (window.DSKPoints) setTimeout(function () { DSKPoints.showToast('🌀 Chaos Mode unlocked!'); }, 1200);
+      }
+    }
+  }
+  if (window.DSKPoints) DSKPoints.markComboActivity('game');
 
   var profile = null;
   try { profile = JSON.parse(localStorage.getItem('dsk_profile') || 'null'); } catch (e) {}
@@ -559,6 +597,13 @@ function endGame() {
           var lb = document.getElementById('mini-leaderboard');
           lb.style.display = 'block';
           document.getElementById('lb-rows').innerHTML = data.leaderboard.slice(0, 5).map(function(row, i) {
+            return '<div class="lb-row"><span>' + (i + 1) + '. ' + row.name + '</span><span>' + row.score + '</span></div>';
+          }).join('');
+        }
+        if (data.weekly_leaderboard && data.weekly_leaderboard.length) {
+          var wlb = document.getElementById('mini-leaderboard-weekly');
+          wlb.style.display = 'block';
+          document.getElementById('lb-rows-weekly').innerHTML = data.weekly_leaderboard.slice(0, 5).map(function(row, i) {
             return '<div class="lb-row"><span>' + (i + 1) + '. ' + row.name + '</span><span>' + row.score + '</span></div>';
           }).join('');
         }

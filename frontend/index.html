@@ -230,6 +230,7 @@
     section { padding: 4rem 1.5rem; }
   }
 </style>
+<script src="assets/knight-points.js"></script>
 </head>
 <body>
 
@@ -338,6 +339,16 @@
         <p id="kom-tie" style="color:var(--gray);font-size:0.87rem;">This month's spotlight.</p>
       </div>
       <a href="/knights.html" class="btn-gold" style="flex-shrink:0;background:transparent;color:var(--navy);border:2px solid var(--navy);">Meet the Knights →</a>
+    </div>
+
+    <div id="weekly-challenge" style="margin-top:1.2rem;background:linear-gradient(135deg,#3d2e0d,#7a5a12);border-radius:22px;padding:1.6rem 2.2rem;display:flex;align-items:center;gap:1.6rem;flex-wrap:wrap;box-shadow:0 4px 24px rgba(13,27,62,0.1);color:white;">
+      <div style="font-size:2.4rem;flex-shrink:0;" id="wc-icon">🎯</div>
+      <div style="flex:1;min-width:220px;">
+        <div style="color:var(--gold2);font-weight:800;font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;">This Week's Knight Challenge</div>
+        <h3 id="wc-text" style="font-size:1.1rem;margin-bottom:2px;">Loading challenge...</h3>
+        <p id="wc-status" style="color:#f0e0b8;font-size:0.85rem;"></p>
+      </div>
+      <a id="wc-link" href="/quests.html" class="btn-gold" style="flex-shrink:0;">Go →</a>
     </div>
   </div>
 </section>
@@ -520,12 +531,12 @@
       <p>Free downloadable PDF guides — practical, step-by-step, no technical knowledge required.</p>
     </div>
     <div class="guides-grid">
-      <div class="guide-card"><div class="g-icon">🎮</div><div class="g-text"><h4>Roblox Parent Guide</h4><p>Complete privacy & chat lockdown walkthrough</p><a href="https://digitalsafetyknights.org/guides/roblox-parent-guide.pdf" target="_blank" class="dl-btn">Download PDF</a></div></div>
-      <div class="guide-card"><div class="g-icon">🤖</div><div class="g-text"><h4>Safe AI Usage for Kids</h4><p>Which AI tools are genuinely child-safe</p><a href="https://digitalsafetyknights.org/guides/safe-ai-usage-guide.pdf" target="_blank" class="dl-btn">Download PDF</a></div></div>
-      <div class="guide-card"><div class="g-icon">📱</div><div class="g-text"><h4>iPhone & Android Safety</h4><p>Screen time & app restriction setup</p><a href="https://digitalsafetyknights.org/guides/iphone-android-safety.pdf" target="_blank" class="dl-btn">Download PDF</a></div></div>
-      <div class="guide-card"><div class="g-icon">💬</div><div class="g-text"><h4>Talk to Your Kids Guide</h4><p>Age-appropriate conversation scripts</p><a href="https://digitalsafetyknights.org/guides/talk-to-your-kids-guide.pdf" target="_blank" class="dl-btn">Download PDF</a></div></div>
-      <div class="guide-card"><div class="g-icon">🔐</div><div class="g-text"><h4>Family Cybersecurity Checklist</h4><p>Passwords, VPN & DNS filtering setup</p><a href="https://digitalsafetyknights.org/guides/family-cybersecurity-checklist.pdf" target="_blank" class="dl-btn">Download PDF</a></div></div>
-      <div class="guide-card"><div class="g-icon">🆘</div><div class="g-text"><h4>Incident Response Guide</h4><p>Step-by-step: what to do if something happens</p><a href="https://digitalsafetyknights.org/guides/incident-response-guide.pdf" target="_blank" class="dl-btn">Download PDF</a></div></div>
+      <div class="guide-card"><div class="g-icon">🎮</div><div class="g-text"><h4>Roblox Parent Guide</h4><p>Complete privacy & chat lockdown walkthrough</p><a href="https://digitalsafetyknights.org/guides/roblox-parent-guide.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="dl-btn">Download PDF</a></div></div>
+      <div class="guide-card"><div class="g-icon">🤖</div><div class="g-text"><h4>Safe AI Usage for Kids</h4><p>Which AI tools are genuinely child-safe</p><a href="https://digitalsafetyknights.org/guides/safe-ai-usage-guide.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="dl-btn">Download PDF</a></div></div>
+      <div class="guide-card"><div class="g-icon">📱</div><div class="g-text"><h4>iPhone & Android Safety</h4><p>Screen time & app restriction setup</p><a href="https://digitalsafetyknights.org/guides/iphone-android-safety.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="dl-btn">Download PDF</a></div></div>
+      <div class="guide-card"><div class="g-icon">💬</div><div class="g-text"><h4>Talk to Your Kids Guide</h4><p>Age-appropriate conversation scripts</p><a href="https://digitalsafetyknights.org/guides/talk-to-your-kids-guide.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="dl-btn">Download PDF</a></div></div>
+      <div class="guide-card"><div class="g-icon">🔐</div><div class="g-text"><h4>Family Cybersecurity Checklist</h4><p>Passwords, VPN & DNS filtering setup</p><a href="https://digitalsafetyknights.org/guides/family-cybersecurity-checklist.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="dl-btn">Download PDF</a></div></div>
+      <div class="guide-card"><div class="g-icon">🆘</div><div class="g-text"><h4>Incident Response Guide</h4><p>Step-by-step: what to do if something happens</p><a href="https://digitalsafetyknights.org/guides/incident-response-guide.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="dl-btn">Download PDF</a></div></div>
     </div>
   </div>
 </section>
@@ -934,6 +945,42 @@
       badge.alt = '';
       card.appendChild(badge);
     });
+  })();
+
+  (function weeklyChallenge() {
+    function isoWeek(d) {
+      d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+      d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay() || 7));
+      var yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+      return Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
+    }
+    function questProgressCount() {
+      try { return Object.keys(JSON.parse(localStorage.getItem('dsk_progress')).completed || {}).length; }
+      catch (e) { return 0; }
+    }
+    var points = window.DSKPoints ? DSKPoints.getPoints() : 0;
+    var streak = parseInt(localStorage.getItem('dsk_streak_count') || '0', 10);
+    var gameHigh = parseInt(localStorage.getItem('dsk_game_highscore') || '0', 10);
+    var hardHigh = parseInt(localStorage.getItem('dsk_game_highscore_hard') || '0', 10);
+    var auditDone = localStorage.getItem('dsk_audit_points_awarded') === '1';
+    var questCount = questProgressCount();
+
+    var CHALLENGES = [
+      { icon: '🕹️', text: 'Score 50+ in Shieldy\'s Message Sort', link: '/game.html', done: gameHigh >= 50 },
+      { icon: '🎮', text: 'Complete your first Quest', link: '/quests.html', done: questCount >= 1 },
+      { icon: '🔥', text: 'Build a 3-day play streak', link: '/quests.html', done: streak >= 3 },
+      { icon: '⚔️', text: 'Reach 100 Knight Points', link: '/quests.html', done: points >= 100 },
+      { icon: '🏅', text: 'Complete 3 different Quests', link: '/quests.html', done: questCount >= 3 },
+      { icon: '🌀', text: 'Unlock Chaos Mode (100+ on Hard)', link: '/game.html', done: hardHigh >= 100 },
+      { icon: '🛡️', text: 'Complete the Family Safety Audit', link: '/audit.html', done: auditDone },
+      { icon: '👑', text: 'Reach 250 Knight Points (Sentinel)', link: '/quests.html', done: points >= 250 }
+    ];
+    var pick = CHALLENGES[isoWeek(new Date()) % CHALLENGES.length];
+    document.getElementById('wc-icon').textContent = pick.icon;
+    document.getElementById('wc-text').textContent = pick.text;
+    document.getElementById('wc-status').textContent = pick.done ? '✅ Done this week — nice!' : 'Not completed yet';
+    document.getElementById('wc-link').href = pick.link;
+    document.getElementById('wc-link').textContent = pick.done ? 'Play Again →' : 'Go →';
   })();
 
   (function knightOfMonth() {

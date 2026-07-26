@@ -83,6 +83,7 @@
   footer { background: var(--navy); color: #8899bb; padding: 2rem; text-align: center; font-size: 0.8rem; }
   footer span { color: var(--gold); font-weight: 800; }
 </style>
+<script src="assets/knight-points.js"></script>
 </head>
 <body>
 
@@ -113,14 +114,17 @@
 </div>
 
 <div class="dashboard" id="dashboard">
-  <div class="welcome-card">
-    <h1>Welcome back, <span class="gold" id="memberName">Knight</span>! ⚔️ <span id="foundingRibbon" style="display:none;font-size:0.75rem;background:rgba(201,168,76,0.2);border:1px solid var(--gold);color:var(--gold);padding:4px 12px;border-radius:14px;vertical-align:middle;">⭐ Founding Knight</span></h1>
-    <p>Here's your DSK profile and progress.</p>
-    <div class="member-info">
-      <div class="info-item"><span class="label">Membership</span><span class="value" id="memberPlan">—</span></div>
-      <div class="info-item"><span class="label">Country</span><span class="value" id="memberCountry">—</span></div>
-      <div class="info-item"><span class="label">Member Since</span><span class="value" id="memberSince">—</span></div>
-      <div class="info-item"><span class="label">Role</span><span class="value" id="memberRole">—</span></div>
+  <div class="welcome-card" style="display:flex;align-items:center;gap:1.8rem;flex-wrap:wrap;">
+    <div id="kp-ring" style="width:100px;height:100px;flex-shrink:0;background:rgba(255,255,255,0.9);border-radius:50%;"></div>
+    <div style="flex:1;min-width:240px;">
+      <h1>Welcome back, <span class="gold" id="memberName">Knight</span>! ⚔️ <span id="foundingRibbon" style="display:none;font-size:0.75rem;background:rgba(201,168,76,0.2);border:1px solid var(--gold);color:var(--gold);padding:4px 12px;border-radius:14px;vertical-align:middle;">⭐ Founding Knight</span></h1>
+      <p>Here's your DSK profile and progress. <b id="kp-points-label" style="color:var(--gold);">0</b> <span style="color:#a8b8d8;">Knight Points</span> <span id="kp-streak-label" style="color:#a8b8d8;"></span></p>
+      <div class="member-info">
+        <div class="info-item"><span class="label">Membership</span><span class="value" id="memberPlan">—</span></div>
+        <div class="info-item"><span class="label">Country</span><span class="value" id="memberCountry">—</span></div>
+        <div class="info-item"><span class="label">Member Since</span><span class="value" id="memberSince">—</span></div>
+        <div class="info-item"><span class="label">Role</span><span class="value" id="memberRole">—</span></div>
+      </div>
     </div>
   </div>
 
@@ -266,6 +270,13 @@
 
     if (profile.founding_knight) {
       document.getElementById('foundingRibbon').style.display = 'inline-block';
+    }
+
+    if (window.DSKPoints) {
+      var streak = DSKPoints.checkStreak();
+      DSKPoints.renderLevelRing(document.getElementById('kp-ring'), DSKPoints.getPoints());
+      document.getElementById('kp-points-label').textContent = DSKPoints.getPoints();
+      document.getElementById('kp-streak-label').textContent = streak.count > 1 ? ('· 🔥 ' + streak.count + '-day streak') : '';
     }
 
     var grid = document.getElementById('badgesGrid');

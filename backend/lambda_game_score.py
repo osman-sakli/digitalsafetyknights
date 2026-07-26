@@ -1,5 +1,6 @@
 import json
 import boto3
+import datetime
 from decimal import Decimal
 
 dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
@@ -12,6 +13,11 @@ def decimal_default(obj):
     raise TypeError
 
 
+def current_iso_week():
+    y, w, _ = datetime.date.today().isocalendar()
+    return f'{y}-W{w:02d}'
+
+
 def top_leaderboard(limit=10):
     resp = members.scan(
         ProjectionExpression='#n, game_high_score',
@@ -22,6 +28,19 @@ def top_leaderboard(limit=10):
     rows = resp.get('Items', [])
     rows.sort(key=lambda r: r.get('game_high_score', 0), reverse=True)
     return [{'name': r.get('name', 'Knight'), 'score': r.get('game_high_score', 0)} for r in rows[:limit]]
+
+
+def top_weekly_leaderboard(limit=10):
+    week = current_iso_week()
+    resp = members.scan(
+        ProjectionExpression='#n, game_weekly_score, game_weekly_week',
+        ExpressionAttributeNames={'#n': 'name'},
+        FilterExpression='attribute_exists(game_weekly_score) AND game_weekly_score > :z AND game_weekly_week = :w',
+        ExpressionAttributeValues={':z': 0, ':w': week}
+    )
+    rows = resp.get('Items', [])
+    rows.sort(key=lambda r: r.get('game_weekly_score', 0), reverse=True)
+    return [{'name': r.get('name', 'Knight'), 'score': r.get('game_weekly_score', 0)} for r in rows[:limit]]
 
 
 def lambda_handler(event, context):
@@ -51,11 +70,22 @@ def lambda_handler(event, context):
         current_best = int(existing['Item'].get('game_high_score', 0))
         new_best = max(current_best, score)
 
+        week = current_iso_week()
+        stored_week = existing['Item'].get('game_weekly_week')
+        weekly_current = int(existing['Item'].get('game_weekly_score', 0)) if stored_week == week else 0
+        weekly_best = max(weekly_current, score)
+
         if new_best > current_best:
             members.update_item(
                 Key={'email': email},
                 UpdateExpression='SET game_high_score = :s',
                 ExpressionAttributeValues={':s': new_best}
+            )
+        if weekly_best > weekly_current or stored_week != week:
+            members.update_item(
+                Key={'email': email},
+                UpdateExpression='SET game_weekly_score = :s, game_weekly_week = :w',
+                ExpressionAttributeValues={':s': weekly_best, ':w': week}
             )
 
         return {
@@ -65,7 +95,9 @@ def lambda_handler(event, context):
                 'success': True,
                 'game_high_score': new_best,
                 'is_new_best': new_best > current_best,
-                'leaderboard': top_leaderboard()
+                'game_weekly_score': weekly_best,
+                'leaderboard': top_leaderboard(),
+                'weekly_leaderboard': top_weekly_leaderboard()
             }, default=decimal_default)
         }
 
