@@ -31,7 +31,7 @@ aws s3api put-bucket-policy \
 echo "🌐 Website hosting aktif ediliyor..."
 aws s3 website s3://$BUCKET \
   --index-document index.html \
-  --error-document index.html
+  --error-document 404.html
 
 # 5. Dosyaları yükle
 # Not: bucket "Bucket owner enforced" (ACL'ler kapalı) modunda; public erişim

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found — Digital Safety Knights</title>
+<link rel="icon" href="assets/favicon.ico">
+<style>
+  :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, #060e22 0%, var(--navy) 50%, #0f2255 100%); color: white; padding: 2rem; overflow-x: hidden;
+  }
+  .wrap { max-width: 560px; text-align: center; }
+  .scene { position: relative; height: 220px; display: flex; align-items: flex-end; justify-content: center; margin-bottom: 1.5rem; }
+  .scene img { position: absolute; bottom: 0; height: 210px; filter: drop-shadow(0 12px 20px rgba(0,0,0,0.4)); }
+  #glitch-img { left: 50%; transform: translateX(-115%) rotate(-8deg); animation: wiggle 1.8s ease-in-out infinite; }
+  #shieldy-img { left: 50%; transform: translateX(10%); }
+  @keyframes wiggle { 0%, 100% { transform: translateX(-115%) rotate(-8deg); } 50% { transform: translateX(-110%) rotate(-4deg); } }
+  .bubble { position: absolute; top: 0; left: 52%; background: white; color: var(--navy); font-weight: 800; font-size: 0.8rem; padding: 8px 14px; border-radius: 14px; white-space: nowrap; }
+  .bubble::after { content: ''; position: absolute; bottom: -6px; left: 24px; border: 6px solid transparent; border-top-color: white; }
+  .num { font-size: 5rem; font-weight: 900; color: var(--gold); line-height: 1; margin-bottom: 0.5rem; }
+  h1 { font-size: 1.4rem; margin-bottom: 0.8rem; }
+  p { color: #a8b8d8; line-height: 1.7; margin-bottom: 2rem; }
+  .btn-gold { background: var(--gold); color: var(--navy); padding: 14px 32px; border-radius: 28px; font-weight: 900; text-decoration: none; display: inline-block; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="scene">
+    <div class="bubble">Not so fast, Glitch!</div>
+    <img id="glitch-img" src="assets/characters/cutouts/glitch-cutout.png" alt="Glitch">
+    <img id="shieldy-img" src="assets/characters/cutouts/shieldy-cutout.png" alt="Shieldy">
+  </div>
+  <div class="num">404</div>
+  <h1>Glitch redirected you somewhere that doesn't exist.</h1>
+  <p>Good thing Shieldy caught him. This page took a wrong turn — but everything you actually need is one click away.</p>
+  <a class="btn-gold" href="/">🛡️ Back to Safety</a>
+</div>
+
+</body>
+</html>
