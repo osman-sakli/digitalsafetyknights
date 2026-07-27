@@ -38,6 +38,7 @@
   .cta-band { text-align: center; margin-top: 3rem; }
   .btn-gold { background: var(--gold); color: var(--navy); padding: 14px 32px; border-radius: 28px; font-weight: 900; text-decoration: none; display: inline-block; }
 </style>
+<link rel="stylesheet" href="assets/breadcrumb.css">
 </head>
 <body>
 
@@ -49,6 +50,7 @@
     <a class="home-link" href="/">← Home</a>
   </div>
 </div>
+<div class="dsk-breadcrumb"><a href="/">Home</a><span class="sep">/</span><span class="current">Meet the Knights</span></div>
 
 <section class="hero">
   <h1>Meet the <span class="gold">Knights</span></h1>
@@ -126,5 +128,9 @@ grid.innerHTML = KNIGHTS.map(function(k) {
 }).join('');
 </script>
 
+<script src="/assets/dark-mode.js"></script>
+<script src="/assets/lang-switcher.js"></script>
+<script src="/assets/site-search.js"></script>
+<script src="/assets/play-now-fab.js"></script>
 </body>
 </html>

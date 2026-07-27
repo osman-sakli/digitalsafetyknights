@@ -1,0 +1,5 @@
+.dsk-breadcrumb { max-width: 900px; margin: 0 auto; padding: 10px 20px 0; font-size: 0.78rem; color: var(--gray, #6c757d); }
+.dsk-breadcrumb a { color: var(--gray, #6c757d); text-decoration: none; }
+.dsk-breadcrumb a:hover { color: var(--gold, #c9a84c); text-decoration: underline; }
+.dsk-breadcrumb .sep { margin: 0 6px; opacity: 0.6; }
+.dsk-breadcrumb .current { color: var(--navy, #0d1b3e); font-weight: 700; }

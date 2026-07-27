@@ -30,6 +30,7 @@
   .q-btn:hover { border-color: var(--gold); }
   .category-label { font-size: 0.72rem; font-weight: 900; color: var(--gold2); background: var(--navy); display: inline-block; padding: 4px 10px; border-radius: 8px; margin: 18px 0 8px; text-transform: uppercase; letter-spacing: 0.5px; }
 </style>
+<link rel="stylesheet" href="assets/breadcrumb.css">
 </head>
 <body>
 
@@ -37,6 +38,7 @@
   <a class="brand" href="/">🛡️ Digital Safety Knights</a>
   <a class="home-link" href="/knights.html">⚔️ Meet the Knights</a>
 </div>
+<div class="dsk-breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/knights.html">Meet the Knights</a><span class="sep">/</span><span class="current">Ask Shieldy</span></div>
 
 <div class="wrap">
   <div class="hero">
@@ -101,5 +103,9 @@ area.innerHTML = CATEGORIES.map(function(cat) {
 }).join('');
 </script>
 
+<script src="/assets/dark-mode.js"></script>
+<script src="/assets/lang-switcher.js"></script>
+<script src="/assets/site-search.js"></script>
+<script src="/assets/play-now-fab.js"></script>
 </body>
 </html>

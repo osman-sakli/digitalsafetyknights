@@ -40,6 +40,7 @@
   .score-num { font-size: 1.6rem; font-weight: 900; color: var(--navy); }
   .reset-btn { display: block; margin: 14px auto 0; background: var(--gold); color: var(--navy); border: none; padding: 11px 24px; border-radius: 20px; font-weight: 900; cursor: pointer; }
 </style>
+<link rel="stylesheet" href="assets/breadcrumb.css">
 </head>
 <body>
 
@@ -47,6 +48,7 @@
   <a class="brand" href="/">🛡️ Digital Safety Knights</a>
   <a class="home-link" href="/resources.html">← Resource Center</a>
 </div>
+<div class="dsk-breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/resources.html">Resources</a><span class="sep">/</span><span class="current">Build Your Safe Profile</span></div>
 
 <div class="wrap">
   <div class="hero">
@@ -153,5 +155,9 @@ function render() {
 resetGame();
 </script>
 
+<script src="/assets/dark-mode.js"></script>
+<script src="/assets/lang-switcher.js"></script>
+<script src="/assets/site-search.js"></script>
+<script src="/assets/play-now-fab.js"></script>
 </body>
 </html>

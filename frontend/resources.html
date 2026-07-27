@@ -269,7 +269,18 @@
       });
     });
   });
+
+  (function() {
+    var wantFor = new URLSearchParams(window.location.search).get('for');
+    if (!wantFor) return;
+    var match = Array.prototype.filter.call(chips, function(c) { return c.getAttribute('data-filter') === wantFor; })[0];
+    if (match) match.click();
+  })();
 </script>
 
+<script src="/assets/dark-mode.js"></script>
+<script src="/assets/lang-switcher.js"></script>
+<script src="/assets/site-search.js"></script>
+<script src="/assets/play-now-fab.js"></script>
 </body>
 </html>

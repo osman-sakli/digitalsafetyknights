@@ -28,6 +28,15 @@
   .display { font-family: 'Baloo Display', system-ui, sans-serif; font-weight: 800; }
   .pop-tag { display: inline-flex; align-items: center; background: var(--pop); color: #1a2e05; font-size: 0.62rem; font-weight: 900; letter-spacing: 0.5px; padding: 2px 7px; border-radius: 8px; margin-left: 5px; vertical-align: middle; text-transform: uppercase; }
 
+  .whats-new-banner { background: linear-gradient(90deg, var(--gold), var(--gold2)); color: var(--navy); display: flex; align-items: center; justify-content: center; gap: 14px; padding: 10px 44px 10px 16px; position: relative; font-size: 0.85rem; }
+  .whats-new-banner .wn-inner { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center; max-width: 900px; text-align: center; }
+  .whats-new-banner .wn-tag { background: var(--navy); color: var(--gold2); font-weight: 900; font-size: 0.68rem; padding: 3px 10px; border-radius: 8px; letter-spacing: 0.5px; text-transform: uppercase; flex-shrink: 0; }
+  .whats-new-banner .wn-text { font-weight: 700; }
+  .whats-new-banner .wn-link { color: var(--navy); font-weight: 900; text-decoration: underline; white-space: nowrap; }
+  .whats-new-banner .wn-close { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--navy); font-size: 1.3rem; font-weight: 900; cursor: pointer; line-height: 1; padding: 4px 8px; }
+  .whats-new-banner.wn-hidden { display: none; }
+  @media (max-width: 700px) { .whats-new-banner { font-size: 0.78rem; padding: 10px 40px 10px 12px; } }
+
   .nav-wrap { position: sticky; top: 0; z-index: 999; box-shadow: 0 2px 20px rgba(0,0,0,0.4); }
   nav { background: var(--navy); display: flex; align-items: center; justify-content: space-between; padding: 10px 1.5rem; gap: 1rem; }
   .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
@@ -55,10 +64,13 @@
   .hero { background: linear-gradient(135deg, rgba(6,14,34,0.88) 0%, rgba(13,27,62,0.82) 50%, rgba(15,34,85,0.85) 100%), url('assets/hero-backdrop.jpg') center 65%/cover no-repeat; color: white; text-align: center; padding: 100px 2rem 90px; position: relative; overflow: hidden; }
   .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 40%, rgba(201,168,76,0.12) 0%, transparent 65%); pointer-events: none; }
   .hero-content { position: relative; z-index: 2; }
-  .hero-logo img { height: 110px; filter: drop-shadow(0 8px 30px rgba(201,168,76,0.4)); margin-bottom: 2rem; animation: crest-intro 1.1s cubic-bezier(.2,1.4,.4,1) both, crest-glow 3.5s ease-in-out 1.1s infinite; }
+  .hero-logo { position: relative; display: inline-block; margin-bottom: 1.4rem; }
+  .hero-logo img { height: 210px; filter: drop-shadow(0 8px 30px rgba(201,168,76,0.4)); animation: crest-intro 1.1s cubic-bezier(.2,1.4,.4,1) both, shieldy-idle 3.6s ease-in-out 1.1s infinite; }
+  .hero-logo .sparkle { position: absolute; top: 14%; right: 18%; font-size: 1.3rem; animation: sparkle-twinkle 2.8s ease-in-out 1.6s infinite; }
   @keyframes crest-intro { 0% { opacity: 0; transform: scale(0.6) translateY(20px); } 100% { opacity: 1; transform: scale(1) translateY(0); } }
-  @keyframes crest-glow { 0%, 100% { filter: drop-shadow(0 8px 30px rgba(201,168,76,0.4)); } 50% { filter: drop-shadow(0 8px 42px rgba(201,168,76,0.75)); } }
-  @media (prefers-reduced-motion: reduce) { .hero-logo img { animation: none; } }
+  @keyframes shieldy-idle { 0%, 100% { transform: translateY(0) rotate(-1deg); filter: drop-shadow(0 8px 30px rgba(201,168,76,0.4)); } 50% { transform: translateY(-9px) rotate(1deg); filter: drop-shadow(0 14px 40px rgba(201,168,76,0.7)); } }
+  @keyframes sparkle-twinkle { 0%, 45%, 100% { opacity: 0; transform: scale(0.5); } 65% { opacity: 1; transform: scale(1.2); } 85% { opacity: 0; transform: scale(0.7); } }
+  @media (prefers-reduced-motion: reduce) { .hero-logo img, .hero-logo .sparkle { animation: none; } }
 
   .parallax-layer { position: absolute; pointer-events: none; z-index: 1; opacity: 0.5; }
   .p-star { color: var(--gold); font-size: 1.1rem; }
@@ -83,9 +95,15 @@
 
   .stats { background: white; padding: 3.5rem 2rem; border-bottom: 1px solid #eee; }
   .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 2rem; max-width: 900px; margin: 0 auto; text-align: center; }
-  .stat-num { font-size: 2.6rem; font-weight: 900; color: var(--navy); }
+  .stat-num { font-size: 2.6rem; font-weight: 900; color: var(--navy); font-variant-numeric: tabular-nums; }
   .stat-num .gold { color: var(--gold); }
   .stat-label { color: var(--gray); font-size: 0.85rem; margin-top: 6px; }
+  .stats-ticker { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 2.2rem; color: var(--gray); font-size: 0.85rem; font-weight: 700; }
+  .ticker-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--success, #2a9d8f); animation: ticker-pulse 1.8s ease-in-out infinite; flex-shrink: 0; }
+  #ticker-text { transition: opacity 0.3s ease; }
+  #ticker-text.fading { opacity: 0; }
+  @keyframes ticker-pulse { 0%, 100% { opacity: 0.4; transform: scale(0.85); } 50% { opacity: 1; transform: scale(1.1); } }
+  @media (prefers-reduced-motion: reduce) { .ticker-dot { animation: none; } }
 
   section { padding: 5.5rem 2rem; }
   .container { max-width: 1100px; margin: 0 auto; }
@@ -206,6 +224,16 @@
   .modal-logo span { font-weight: 900; color: var(--navy); }
   .modal h2 { font-size: 1.55rem; margin-bottom: 0.3rem; color: var(--navy); }
   .modal > p { color: var(--gray); font-size: 0.88rem; margin-bottom: 1.6rem; }
+
+  .start-here-modal { max-width: 560px; text-align: center; }
+  .start-here-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem; margin: 0.4rem 0 1.3rem; }
+  .role-card { background: var(--light); border: 2px solid #e4e9f5; border-radius: 16px; padding: 1.2rem 0.6rem; display: flex; flex-direction: column; align-items: center; gap: 5px; cursor: pointer; font-family: inherit; transition: transform 0.15s, border-color 0.15s; }
+  .role-card:hover { border-color: var(--gold); background: rgba(201,168,76,0.08); transform: translateY(-3px); }
+  .role-icon { font-size: 2rem; }
+  .role-label { font-weight: 900; color: var(--navy); font-size: 0.88rem; }
+  .role-sub { font-size: 0.7rem; color: var(--gray); }
+  .start-here-skip { display: block; text-align: center; color: var(--gray); font-size: 0.82rem; text-decoration: underline; background: none; border: none; cursor: pointer; font-family: inherit; margin: 0 auto; }
+  @media (max-width: 480px) { .start-here-grid { grid-template-columns: 1fr; } }
   .fgrp { margin-bottom: 1rem; }
   .fgrp label { display: block; font-size: 0.8rem; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
   .fgrp input, .fgrp select { width: 100%; padding: 11px 14px; border: 1.5px solid #dde2f0; border-radius: 11px; font-size: 0.9rem; outline: none; font-family: inherit; }
@@ -233,6 +261,15 @@
 <script src="assets/knight-points.js"></script>
 </head>
 <body>
+
+<div class="whats-new-banner" id="whats-new-banner">
+  <div class="wn-inner">
+    <span class="wn-tag">✨ New</span>
+    <span class="wn-text">Back-to-School Digital Setup: The 30-Minute Family Tech Reset — August's Journal issue is up.</span>
+    <a href="https://digitalsafetyknights.org/journal/august-2026.pdf" target="_blank" class="wn-link" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')">Read it →</a>
+  </div>
+  <button class="wn-close" onclick="dismissWhatsNew()" aria-label="Dismiss">&times;</button>
+</div>
 
 <div class="nav-wrap">
   <nav>
@@ -275,7 +312,7 @@
   <span class="parallax-layer p-cloud" data-speed="0.18" style="top:70%;left:85%;">☁️</span>
   <span class="parallax-layer p-star" data-speed="0.25" style="top:45%;left:92%;">✦</span>
   <div class="hero-content">
-    <div class="hero-logo"><img src="assets/logo.png" alt="Digital Safety Knights"></div>
+    <div class="hero-logo"><img src="assets/characters/cutouts/shieldy-cutout.png" alt="Shieldy, the Digital Safety Knights mascot"><span class="sparkle" aria-hidden="true">✨</span></div>
     <div class="hero-badge">🛡️ Global Digital Child Safety Organization</div>
     <h1>Protecting Kids in the<br><span class="gold">Digital World</span></h1>
     <p>From Roblox to AI chatbots, messaging apps to online predators — we equip families with the knowledge and tools to keep children safe online.</p>
@@ -287,12 +324,13 @@
 </section>
 
 <div class="stats">
-  <div class="stats-grid">
-    <div><div class="stat-num">12<span class="gold">K+</span></div><div class="stat-label">Families Protected</div></div>
-    <div><div class="stat-num">6</div><div class="stat-label">Safety Programs</div></div>
-    <div><div class="stat-num">48</div><div class="stat-label">Countries Reached</div></div>
-    <div><div class="stat-num">100<span class="gold">%</span></div><div class="stat-label">Free Access</div></div>
+  <div class="stats-grid" id="stats-grid">
+    <div><div class="stat-num"><span class="count-target" data-count="12">0</span><span class="gold">K+</span></div><div class="stat-label">Families Protected</div></div>
+    <div><div class="stat-num"><span class="count-target" data-count="6">0</span></div><div class="stat-label">Safety Programs</div></div>
+    <div><div class="stat-num"><span class="count-target" data-count="48">0</span></div><div class="stat-label">Countries Reached</div></div>
+    <div><div class="stat-num"><span class="count-target" data-count="100">0</span><span class="gold">%</span></div><div class="stat-label">Free Access</div></div>
   </div>
+  <div class="stats-ticker"><span class="ticker-dot"></span><span id="ticker-text">100 structured quests across 10 chapters</span></div>
 </div>
 
 <div class="vision-band">
@@ -643,11 +681,41 @@
       <p>A global organization dedicated to protecting children in the digital world — through education, community, and action.</p>
     </div>
     <div class="f-col">
-      <h4>Programs</h4>
-      <a href="/quests.html?quest=roblox-safety-lab">Roblox Safety Lab</a>
-      <a href="/quests.html?quest=ai-threat-awareness">AI Threat Awareness</a>
-      <a href="/quests.html?quest=grooming-watch">Grooming Watch</a>
-      <a href="/quests.html?quest=family-cyber-defense">Cyber Defense</a>
+      <h4>Play &amp; Learn</h4>
+      <a href="/quests.html">🎮 Interactive Quests</a>
+      <a href="/game.html">🕹️ Shieldy's Message Sort</a>
+      <a href="/glitch-detector.html">🔍 Glitch Detector</a>
+      <a href="/chat-simulator.html">💬 Chat Simulator</a>
+      <a href="/spot-the-deepfake.html">🎭 Spot the Deepfake</a>
+      <a href="/tactic-almanac.html">📖 Tactic Almanac</a>
+    </div>
+    <div class="f-col">
+      <h4>Interactive Tools</h4>
+      <a href="/password-dojo.html">🔐 Password Dojo</a>
+      <a href="/privacy-simulator.html">⚙️ Privacy Settings Simulator</a>
+      <a href="/footprint-calculator.html">👣 Digital Footprint Calculator</a>
+      <a href="/ask-shieldy.html">🛡️ Ask Shieldy</a>
+      <a href="/safe-profile-builder.html">🗂️ Build Your Safe Profile</a>
+      <a href="/screen-time-checkin.html">📱 Screen-Time Check-In</a>
+    </div>
+    <div class="f-col">
+      <h4>Guides &amp; Reading</h4>
+      <a href="/resources.html">📚 Resource Center</a>
+      <a href="#guides">Safety Guides</a>
+      <a href="/guides/knights-toolkit.pdf">🖨️ The Knight's Toolkit</a>
+      <a href="#journal">Monthly Journal</a>
+      <a href="/knight-chronicles.html">💥 Knight Chronicles Comic</a>
+      <a href="/shieldys-journal.html">🛡️ Shieldy's Journal</a>
+      <a href="/monthly-report/">📰 This Month in Digital Safety</a>
+    </div>
+    <div class="f-col">
+      <h4>Organization</h4>
+      <a href="/about.html">👋 About the Founders</a>
+      <a href="/origin-story.html">📖 Our Origin Story</a>
+      <a href="/knights.html">⚔️ Meet the Knights</a>
+      <a href="/audit.html">🛡️ Family Safety Audit</a>
+      <a href="#">Contact Us</a>
+      <a href="#emergency">🆘 Emergency Help</a>
     </div>
     <div class="f-col">
       <h4>Community</h4>
@@ -655,44 +723,39 @@
       <a href="#community">Parent Community</a>
       <a href="#badges">Badge System</a>
       <a href="#membership">Membership</a>
-    </div>
-    <div class="f-col">
-      <h4>Follow Us</h4>
       <a href="https://www.tiktok.com/@digitalsafetyknights" target="_blank">🎵 TikTok</a>
       <a href="https://www.instagram.com/digitalsafetyknights/" target="_blank">📸 Instagram</a>
       <a href="https://www.youtube.com/@digitalsafetyknights" target="_blank">▶️ YouTube</a>
-      <a href="https://discord.gg/RmMZqnF4e" target="_blank">💬 Discord</a>
-    </div>
-    <div class="f-col">
-      <h4>Tools</h4>
-      <a href="/resources.html">📚 Resource Center</a>
-      <a href="/game.html">🕹️ Shieldy's Message Sort</a>
-      <a href="/quests.html">🎮 Play a Quest</a>
-      <a href="/glitch-detector.html">🔍 Glitch Detector</a>
-      <a href="/tactic-almanac.html">📖 Tactic Almanac</a>
-      <a href="/audit.html">🛡️ Family Safety Audit</a>
-      <a href="#guides">Safety Guides</a>
-      <a href="#journal">Monthly Journal</a>
-      <a href="/knight-chronicles.html">💥 Knight Chronicles Comic</a>
-      <a href="/shieldys-journal.html">🛡️ Shieldy's Journal</a>
-      <a href="/knights.html">⚔️ Meet the Knights</a>
-      <a href="/monthly-report/">📰 This Month in Digital Safety</a>
-      <a href="#emergency">Emergency Help</a>
-    </div>
-    <div class="f-col">
-      <h4>Organization</h4>
-      <a href="/about.html">👋 About the Founders</a>
-      <a href="/origin-story.html">📖 Our Origin Story</a>
-      <a href="/knights.html">⚔️ Meet the Knights</a>
-      <a href="/tactic-almanac.html">📖 Tactic Almanac</a>
-      <a href="#">Contact Us</a>
-      <a href="#emergency">Emergency Help</a>
     </div>
   </div>
   <div class="footer-bottom">
     <p>© 2026 Digital Safety Knights (DSK) — Global Digital Child Safety Organization · digitalsafetyknights.org</p>
   </div>
 </footer>
+
+<div class="overlay" id="startHereOverlay">
+  <div class="modal start-here-modal">
+    <button class="modal-x" onclick="dismissStartHere()">✕</button>
+    <div class="modal-logo" style="justify-content:center;">
+      <img src="assets/logo.png" alt="DSK">
+      <span>Digital Safety Knights</span>
+    </div>
+    <h2>Who's browsing today?</h2>
+    <p>Pick one and we'll point you to the right place first — you can always explore everything.</p>
+    <div class="start-here-grid">
+      <button type="button" class="role-card" onclick="chooseRole('kid')">
+        <span class="role-icon">🧒</span><span class="role-label">I'm a Kid</span><span class="role-sub">Play &amp; quests</span>
+      </button>
+      <button type="button" class="role-card" onclick="chooseRole('parent')">
+        <span class="role-icon">👨‍👩‍👧</span><span class="role-label">I'm a Parent</span><span class="role-sub">Guides &amp; audit</span>
+      </button>
+      <button type="button" class="role-card" onclick="chooseRole('teacher')">
+        <span class="role-icon">🎓</span><span class="role-label">I'm a Teacher</span><span class="role-sub">Classroom tools</span>
+      </button>
+    </div>
+    <button type="button" class="start-here-skip" onclick="dismissStartHere()">Just let me look around →</button>
+  </div>
+</div>
 
 <div class="overlay" id="modalOverlay">
   <div class="modal">
@@ -1159,7 +1222,101 @@
       if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
     });
   });
+
+  // Count-up animation for the stats band
+  (function() {
+    var grid = document.getElementById('stats-grid');
+    if (!grid) return;
+    var animated = false;
+    function animateCounts() {
+      if (animated) return;
+      animated = true;
+      grid.querySelectorAll('.count-target').forEach(function(el) {
+        var target = parseInt(el.getAttribute('data-count'), 10);
+        var start = 0;
+        var duration = 1400;
+        var startTime = null;
+        function step(ts) {
+          if (!startTime) startTime = ts;
+          var progress = Math.min((ts - startTime) / duration, 1);
+          var eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.round(start + (target - start) * eased);
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+    }
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) { if (entry.isIntersecting) animateCounts(); });
+      }, { threshold: 0.4 });
+      obs.observe(grid);
+    } else {
+      animateCounts();
+    }
+  })();
+
+  // First-visit "Start Here" role picker
+  (function() {
+    var overlay = document.getElementById('startHereOverlay');
+    if (!overlay) return;
+    window.chooseRole = function(role) {
+      localStorage.setItem('dsk_role', role);
+      localStorage.setItem('dsk_role_chosen', '1');
+      overlay.classList.remove('open');
+      var dest = { kid: '/quests.html', parent: '/resources.html?for=parents', teacher: '/resources.html?for=educators' };
+      window.location.href = dest[role] || '/quests.html';
+    };
+    window.dismissStartHere = function() {
+      localStorage.setItem('dsk_role_chosen', '1');
+      overlay.classList.remove('open');
+    };
+    if (!localStorage.getItem('dsk_role_chosen')) {
+      setTimeout(function() { overlay.classList.add('open'); }, 1200);
+    }
+  })();
+
+  // "What's New" banner — dismissible per-issue
+  (function() {
+    var ISSUE_ID = 'august-2026';
+    var KEY = 'dsk_whatsnew_dismissed';
+    var banner = document.getElementById('whats-new-banner');
+    if (!banner) return;
+    if (localStorage.getItem(KEY) === ISSUE_ID) {
+      banner.classList.add('wn-hidden');
+    }
+    window.dismissWhatsNew = function() {
+      localStorage.setItem(KEY, ISSUE_ID);
+      banner.classList.add('wn-hidden');
+    };
+  })();
+
+  // Rotating facts ticker beneath the stats band
+  (function() {
+    var el = document.getElementById('ticker-text');
+    if (!el) return;
+    var facts = [
+      '100 structured quests across 10 chapters',
+      '9 free interactive safety tools',
+      '6 downloadable family guides',
+      'Emergency hotlines for 40+ countries',
+      'Everything on this site stays free — always'
+    ];
+    var i = 0;
+    setInterval(function() {
+      el.classList.add('fading');
+      setTimeout(function() {
+        i = (i + 1) % facts.length;
+        el.textContent = facts[i];
+        el.classList.remove('fading');
+      }, 300);
+    }, 4200);
+  })();
 </script>
 
+<script src="/assets/dark-mode.js"></script>
+<script src="/assets/lang-switcher.js"></script>
+<script src="/assets/site-search.js"></script>
+<script src="/assets/play-now-fab.js"></script>
 </body>
 </html>
