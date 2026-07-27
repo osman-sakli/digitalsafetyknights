@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Spot the Deepfake — a scenario quiz teaching kids the real-world tells of AI-faked video, audio, and images.">
+<title>Spot the Deepfake — Digital Safety Knights</title>
+<link rel="icon" href="assets/favicon.ico">
+<script src="assets/knight-points.js"></script>
+<style>
+  :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --success: #2a9d8f; --danger: #e63946; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--light); color: #2d3748; }
+  .topbar { background: var(--navy); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+  .topbar .brand { color: var(--gold); font-weight: 900; text-decoration: none; font-size: 1.05rem; }
+  .topbar .home-link { color: #cdd6ea; text-decoration: none; font-size: 0.85rem; font-weight: 700; }
+  .wrap { max-width: 560px; margin: 0 auto; padding: 30px 18px 80px; }
+  .hero { text-align: center; margin-bottom: 20px; }
+  .hero .icon { font-size: 2.6rem; margin-bottom: 6px; }
+  .hero h1 { color: var(--navy); font-size: 1.5rem; margin-bottom: 6px; }
+  .hero p { color: var(--gray); font-size: 0.88rem; }
+
+  .progress-track { height: 8px; background: #e8ecf4; border-radius: 4px; margin-bottom: 20px; overflow: hidden; }
+  .progress-fill { height: 100%; background: var(--gold); border-radius: 4px; transition: width 0.3s ease; }
+
+  .scenario-card { background: white; border-radius: 18px; padding: 22px; box-shadow: 0 2px 24px rgba(13,27,62,0.08); margin-bottom: 16px; }
+  .scenario-icon { font-size: 2rem; margin-bottom: 10px; }
+  .scenario-text { font-size: 0.95rem; line-height: 1.6; color: #2d3748; margin-bottom: 18px; }
+  .choice-btn { display: block; width: 100%; text-align: left; background: var(--light); border: 2px solid transparent; border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; font-weight: 700; font-size: 0.9rem; cursor: pointer; font-family: inherit; }
+  .choice-btn:hover { border-color: var(--gold); }
+  .choice-btn.correct { background: rgba(42,157,143,0.12); border-color: var(--success); color: var(--success); }
+  .choice-btn.wrong { background: rgba(230,57,70,0.1); border-color: var(--danger); color: var(--danger); }
+  .explain-box { background: var(--navy); color: #e8ecf7; border-radius: 12px; padding: 14px 16px; font-size: 0.85rem; line-height: 1.6; margin-top: 14px; display: none; }
+  .explain-box.show { display: block; }
+  .next-btn { display: none; width: 100%; background: var(--gold); color: var(--navy); border: none; padding: 14px; border-radius: 14px; font-weight: 900; font-size: 0.95rem; cursor: pointer; margin-top: 12px; }
+  .next-btn.show { display: block; }
+
+  .end-screen { text-align: center; display: none; }
+  .end-screen.show { display: block; }
+  .end-score { font-size: 2.4rem; font-weight: 900; color: var(--gold); margin: 10px 0; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="/">🛡️ Digital Safety Knights</a>
+  <a class="home-link" href="/resources.html">← Resource Center</a>
+</div>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="icon">🕵️</div>
+    <h1>Spot the Deepfake</h1>
+    <p>AI can fake a video, a voice, or a photo. Read each scenario and pick the biggest real-world tell.</p>
+  </div>
+
+  <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+
+  <div id="quiz-area"></div>
+
+  <div class="end-screen" id="end-screen">
+    <div style="font-size:3rem;">🏆</div>
+    <h2>Nice detective work!</h2>
+    <div class="end-score" id="end-score">0/8</div>
+    <p style="color:var(--gray);">The best rule: if something feels urgent, too dramatic, or asks you to act fast — pause and check with a trusted adult before believing or sharing it.</p>
+  </div>
+</div>
+
+<script>
+var SCENARIOS = [
+  { icon: '📞', text: "You get a call and it sounds exactly like your mom's voice, panicked, asking you to send money right now to a number you don't recognize.", choices: [
+      { text: "It's her voice, so it must be real — send it", correct: false },
+      { text: "Hang up and call her back on her real number first", correct: true },
+      { text: "Ask the caller more questions to be sure", correct: false }
+    ], explain: "Voice-cloning tools can copy a real person's voice from just a few seconds of audio online. A panicked, urgent money request is the biggest tell — always verify through a second, separate way of contacting them." },
+  { icon: '🎥', text: "A video shows a celebrity you like recommending a crypto investment app you've never heard of, promising huge returns.", choices: [
+      { text: "Celebrities are trustworthy, so it's probably fine", correct: false },
+      { text: "Assume it's fake until proven otherwise — check the celebrity's real official accounts", correct: true },
+      { text: "Try it with a small amount of money first", correct: false }
+    ], explain: "AI face- and voice-swapping is extremely common in fake celebrity endorsement scams — especially for investments promising huge, guaranteed returns. Real celebrities almost never personally promote random crypto apps." },
+  { icon: '💬', text: "In a video chat, the person's mouth movements seem slightly out of sync with their words, and they never blink.", choices: [
+      { text: "That's just a bad internet connection", correct: false },
+      { text: "That's a classic sign of a real-time AI face filter or deepfake", correct: true },
+      { text: "Ignore it, video calls always look weird", correct: false }
+    ], explain: "Mismatched lip-sync and unnatural blinking (or no blinking at all) are two of the most common visual glitches in live deepfake video calls — technology hasn't fully solved these yet." },
+  { icon: '🖼️', text: "You see a shocking photo of a news event that seems too dramatic to be real, with slightly warped hands or background details in the image.", choices: [
+      { text: "Share it immediately, it's important", correct: false },
+      { text: "Look closely at hands, text, and background patterns, then check a real news source", correct: true },
+      { text: "Only share it if it gets a lot of likes first", correct: false }
+    ], explain: "AI image generators still frequently struggle with hands, background text, and repeating patterns. Checking a real news source before sharing dramatic images is always the safer move." },
+  { icon: '🎮', text: "A 'friend' in your favorite game sends a voice message that sounds a little robotic and oddly repeats the same phrase twice.", choices: [
+      { text: "Real people never sound robotic, so it's fine", correct: false },
+      { text: "Odd repeated phrasing and a flat robotic tone can mean it's AI-generated audio", correct: true },
+      { text: "Turn up the volume to check", correct: false }
+    ], explain: "AI voice generators can still sound slightly flat or repeat unnatural phrasing. If a 'friend' suddenly sounds different or acts strange, it's worth double-checking through another channel." },
+  { icon: '📸', text: "Someone claims to have an embarrassing photo of you that you don't remember taking, and says they'll share it unless you pay them.", choices: [
+      { text: "Pay quickly so they'll delete it", correct: false },
+      { text: "Don't pay, don't panic — save the evidence and tell a trusted adult immediately", correct: true },
+      { text: "Argue with them online to prove it's fake", correct: false }
+    ], explain: "This is a sextortion tactic — real or AI-faked, paying never guarantees it stops, and often leads to more demands. Telling a trusted adult right away is always the correct move, and it is never the victim's fault." },
+  { icon: '🗞️', text: "An article quotes a scientist saying something that sounds extreme and out of character, with no link to where the quote actually came from.", choices: [
+      { text: "If it's written down, it's probably true", correct: false },
+      { text: "Look for the original source before believing an out-of-character quote", correct: true },
+      { text: "Trust it because the article looks professional", correct: false }
+    ], explain: "AI text generators can produce very convincing but entirely fake quotes attributed to real people. A professional-looking article is not proof — always look for the original, verifiable source." },
+  { icon: '🤖', text: "An AI chatbot tells you it's 100% certain about a fact, with total confidence, and no hesitation at all.", choices: [
+      { text: "Total confidence means it must be correct", correct: false },
+      { text: "AI can sound extremely confident while still being completely wrong", correct: true },
+      { text: "Confidence only matters for human experts", correct: false }
+    ], explain: "AI chatbots are often \"confidently wrong\" — they don't actually know when they're making things up. Confidence is not the same as accuracy; always double-check important facts with a real source." }
+];
+
+var idx = 0, score = 0;
+
+function renderScenario() {
+  if (idx >= SCENARIOS.length) { showEnd(); return; }
+  document.getElementById('progress-fill').style.width = (idx / SCENARIOS.length * 100) + '%';
+  var s = SCENARIOS[idx];
+  var area = document.getElementById('quiz-area');
+  area.innerHTML =
+    '<div class="scenario-card">' +
+      '<div class="scenario-icon">' + s.icon + '</div>' +
+      '<div class="scenario-text">' + s.text + '</div>' +
+      '<div id="choices"></div>' +
+      '<div class="explain-box" id="explain-box"></div>' +
+      '<button class="next-btn" id="next-btn" onclick="nextScenario()">Continue →</button>' +
+    '</div>';
+  var choicesEl = document.getElementById('choices');
+  choicesEl.innerHTML = s.choices.map(function(c, i) {
+    return '<button type="button" class="choice-btn" onclick="answer(' + i + ')" id="choice-' + i + '">' + c.text + '</button>';
+  }).join('');
+}
+
+function answer(i) {
+  var s = SCENARIOS[idx];
+  var correct = s.choices[i].correct;
+  if (correct) score++;
+  s.choices.forEach(function(c, j) {
+    var btn = document.getElementById('choice-' + j);
+    btn.onclick = null;
+    if (c.correct) btn.classList.add('correct');
+    else if (j === i) btn.classList.add('wrong');
+  });
+  var box = document.getElementById('explain-box');
+  box.textContent = (correct ? '✅ ' : '❌ ') + s.explain;
+  box.classList.add('show');
+  document.getElementById('next-btn').classList.add('show');
+}
+
+function nextScenario() { idx++; renderScenario(); }
+
+function showEnd() {
+  document.getElementById('progress-fill').style.width = '100%';
+  document.getElementById('quiz-area').innerHTML = '';
+  document.getElementById('end-score').textContent = score + '/' + SCENARIOS.length;
+  document.getElementById('end-screen').classList.add('show');
+  if (window.DSKPoints) {
+    DSKPoints.addPoints(score * 5, 'Spot the Deepfake');
+  }
+}
+
+renderScenario();
+</script>
+
+</body>
+</html>

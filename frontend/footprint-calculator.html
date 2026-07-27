@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Digital Footprint Calculator — see how much a fictional profile reveals when you add it all up.">
+<title>Digital Footprint Calculator — Digital Safety Knights</title>
+<link rel="icon" href="assets/favicon.ico">
+<script src="assets/knight-points.js"></script>
+<style>
+  :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --danger: #e63946; --success: #2a9d8f; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--light); color: #2d3748; }
+  .topbar { background: var(--navy); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+  .topbar .brand { color: var(--gold); font-weight: 900; text-decoration: none; font-size: 1.05rem; }
+  .topbar .home-link { color: #cdd6ea; text-decoration: none; font-size: 0.85rem; font-weight: 700; }
+  .wrap { max-width: 560px; margin: 0 auto; padding: 30px 18px 80px; }
+  .hero { text-align: center; margin-bottom: 20px; }
+  .hero .icon { font-size: 2.6rem; margin-bottom: 6px; }
+  .hero h1 { color: var(--navy); font-size: 1.5rem; margin-bottom: 6px; }
+  .hero p { color: var(--gray); font-size: 0.88rem; }
+
+  .profile-card { background: white; border-radius: 16px; padding: 18px 20px; box-shadow: 0 2px 20px rgba(13,27,62,0.07); margin-bottom: 16px; }
+  .profile-card h3 { color: var(--navy); font-size: 0.85rem; margin-bottom: 10px; }
+  .item-row { display: flex; align-items: center; gap: 10px; padding: 8px 0; }
+  .item-row input { width: 18px; height: 18px; }
+  .item-row label { font-size: 0.88rem; flex: 1; cursor: pointer; }
+  .item-weight { font-size: 0.72rem; color: var(--gray); }
+
+  .silhouette-stage { text-align: center; margin: 20px 0; }
+  .silhouette { font-size: 5rem; display: inline-block; filter: blur(10px) brightness(2); transition: filter 0.4s ease; }
+  .footprint-label { font-weight: 900; color: var(--navy); margin-top: 8px; }
+  .footprint-desc { font-size: 0.85rem; color: var(--gray); margin-top: 4px; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="/">🛡️ Digital Safety Knights</a>
+  <a class="home-link" href="/resources.html">← Resource Center</a>
+</div>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="icon">👣</div>
+    <h1>Digital Footprint Calculator</h1>
+    <p>Check the boxes for what a made-up profile shares online. Watch how clear the picture gets as it adds up.</p>
+  </div>
+
+  <div class="silhouette-stage">
+    <div class="silhouette" id="silhouette">🧑</div>
+    <div class="footprint-label" id="footprint-label">Nothing shared yet</div>
+    <div class="footprint-desc" id="footprint-desc">A stranger piecing this together would know... nothing.</div>
+  </div>
+
+  <div class="profile-card">
+    <h3>WHAT DOES THIS PROFILE SHARE?</h3>
+    <div id="items-list"></div>
+  </div>
+</div>
+
+<script>
+var ITEMS = [
+  { id: 'firstname', label: 'First name', weight: 1 },
+  { id: 'fullname', label: 'Full real name', weight: 3 },
+  { id: 'age', label: 'Exact age or birthday', weight: 2 },
+  { id: 'school', label: 'School name', weight: 3 },
+  { id: 'city', label: 'City or neighborhood', weight: 3 },
+  { id: 'address', label: 'Home address', weight: 5 },
+  { id: 'photo', label: 'A clear face photo', weight: 3 },
+  { id: 'schedule', label: 'Daily routine (e.g. "at practice every Tuesday 4pm")', weight: 4 },
+  { id: 'family', label: "Family members' names", weight: 3 },
+  { id: 'vacation', label: 'Real-time location tags / "on vacation now" posts', weight: 4 },
+  { id: 'pet', label: "Pet's name (often reused as a security answer)", weight: 1 },
+  { id: 'phone', label: 'Phone number', weight: 4 }
+];
+
+var MAX_SCORE = ITEMS.reduce(function(sum, i) { return sum + i.weight; }, 0);
+
+function render() {
+  var list = document.getElementById('items-list');
+  list.innerHTML = ITEMS.map(function(i) {
+    return '<div class="item-row"><input type="checkbox" id="chk-' + i.id + '" onchange="update()">' +
+      '<label for="chk-' + i.id + '">' + i.label + '</label>' +
+      '<span class="item-weight">weight ' + i.weight + '</span></div>';
+  }).join('');
+}
+
+function update() {
+  var score = 0;
+  ITEMS.forEach(function(i) {
+    if (document.getElementById('chk-' + i.id).checked) score += i.weight;
+  });
+  var pct = score / MAX_SCORE;
+  var blur = Math.max(0, 10 - pct * 10);
+  var brightness = Math.max(1, 2 - pct * 1);
+  document.getElementById('silhouette').style.filter = 'blur(' + blur + 'px) brightness(' + brightness + ')';
+
+  var label, desc;
+  if (pct === 0) { label = 'Nothing shared yet'; desc = 'A stranger piecing this together would know... nothing.'; }
+  else if (pct < 0.25) { label = 'Barely visible'; desc = 'Still pretty anonymous — a stranger has almost nothing to work with.'; }
+  else if (pct < 0.5) { label = 'Coming into focus'; desc = 'A patient stranger could start guessing who this is.'; }
+  else if (pct < 0.75) { label = 'Recognizable'; desc = 'This is enough for someone to identify and even locate this person.'; }
+  else { label = 'Fully exposed'; desc = 'A stranger could realistically find, recognize, and predict where to find this person in real life.'; }
+
+  document.getElementById('footprint-label').textContent = label;
+  document.getElementById('footprint-desc').textContent = desc;
+
+  if (pct >= 0.75 && window.DSKPoints && !localStorage.getItem('dsk_footprint_done')) {
+    localStorage.setItem('dsk_footprint_done', '1');
+    DSKPoints.addPoints(15, 'Digital Footprint Calculator');
+  }
+}
+
+render();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Build Your Safe Profile — sort what's ok to share online vs what should stay private.">
+<title>Build Your Safe Profile — Digital Safety Knights</title>
+<link rel="icon" href="assets/favicon.ico">
+<script src="assets/knight-points.js"></script>
+<style>
+  :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --success: #2a9d8f; --danger: #e63946; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--light); color: #2d3748; }
+  .topbar { background: var(--navy); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+  .topbar .brand { color: var(--gold); font-weight: 900; text-decoration: none; font-size: 1.05rem; }
+  .topbar .home-link { color: #cdd6ea; text-decoration: none; font-size: 0.85rem; font-weight: 700; }
+  .wrap { max-width: 620px; margin: 0 auto; padding: 30px 18px 80px; }
+  .hero { text-align: center; margin-bottom: 20px; }
+  .hero .icon { font-size: 2.6rem; margin-bottom: 6px; }
+  .hero h1 { color: var(--navy); font-size: 1.5rem; margin-bottom: 6px; }
+  .hero p { color: var(--gray); font-size: 0.88rem; }
+
+  .tray { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 20px; min-height: 44px; }
+  .item-chip { background: white; border: 2px solid var(--navy); border-radius: 20px; padding: 9px 16px; font-weight: 700; font-size: 0.85rem; cursor: pointer; box-shadow: 0 2px 12px rgba(13,27,62,0.08); }
+  .item-chip.selected { background: var(--gold); border-color: var(--gold); }
+
+  .buckets { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .bucket { border-radius: 16px; padding: 14px; min-height: 200px; }
+  .bucket.share { background: rgba(42,157,143,0.08); border: 2px dashed var(--success); }
+  .bucket.private { background: rgba(230,57,70,0.06); border: 2px dashed var(--danger); }
+  .bucket-title { font-weight: 900; font-size: 0.85rem; margin-bottom: 10px; text-align: center; }
+  .bucket.share .bucket-title { color: var(--success); }
+  .bucket.private .bucket-title { color: var(--danger); }
+  .placed-chip { background: white; border-radius: 10px; padding: 8px 10px; font-size: 0.8rem; font-weight: 700; margin-bottom: 6px; text-align: center; }
+  .placed-chip.correct { border-left: 4px solid var(--success); }
+  .placed-chip.wrong { border-left: 4px solid var(--danger); }
+  .placed-explain { font-size: 0.72rem; color: var(--gray); font-weight: 400; margin-top: 2px; }
+
+  .score-band { margin-top: 18px; background: white; border-radius: 16px; padding: 14px 18px; text-align: center; box-shadow: 0 2px 20px rgba(13,27,62,0.07); }
+  .score-num { font-size: 1.6rem; font-weight: 900; color: var(--navy); }
+  .reset-btn { display: block; margin: 14px auto 0; background: var(--gold); color: var(--navy); border: none; padding: 11px 24px; border-radius: 20px; font-weight: 900; cursor: pointer; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="/">🛡️ Digital Safety Knights</a>
+  <a class="home-link" href="/resources.html">← Resource Center</a>
+</div>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="icon">🗂️</div>
+    <h1>Build Your Safe Profile</h1>
+    <p>Tap an item, then tap the bucket where you think it belongs.</p>
+  </div>
+
+  <div class="tray" id="tray"></div>
+
+  <div class="buckets">
+    <div class="bucket share" onclick="place('share')">
+      <div class="bucket-title">✅ OK to Share</div>
+      <div id="share-list"></div>
+    </div>
+    <div class="bucket private" onclick="place('private')">
+      <div class="bucket-title">🔒 Keep Private</div>
+      <div id="private-list"></div>
+    </div>
+  </div>
+
+  <div class="score-band">
+    <div class="score-num" id="score-num">0 / 0 sorted</div>
+    <button class="reset-btn" onclick="resetGame()">🔁 Reset</button>
+  </div>
+</div>
+
+<script>
+var ITEMS = [
+  { text: 'Nickname or gamer tag', correct: 'share', explain: "A made-up nickname doesn't reveal who you really are." },
+  { text: 'Favorite game or hobby', correct: 'share', explain: 'Interests are totally safe to share — that\'s how you find friends with things in common.' },
+  { text: 'Cartoon avatar picture', correct: 'share', explain: 'A drawn avatar shows personality without revealing your real face.' },
+  { text: 'Your team\'s win/loss record', correct: 'share', explain: 'General game stats don\'t identify you personally.' },
+  { text: 'Full real name', correct: 'private', explain: 'Your real name is one of the easiest ways to be identified and searched.' },
+  { text: 'School name', correct: 'private', explain: 'This tells a stranger exactly where to find you in person.' },
+  { text: 'Home address', correct: 'private', explain: 'This is the single most sensitive piece of information — never share it online.' },
+  { text: 'A clear photo of your face', correct: 'private', explain: 'Real photos can be searched, saved, and used without your permission.' },
+  { text: 'Daily schedule (e.g. "practice every Tuesday")', correct: 'private', explain: 'Routines tell someone exactly when and where to find you.' },
+  { text: 'Phone number', correct: 'private', explain: 'A phone number can be used to contact, track down, or impersonate you.' },
+  { text: 'Exact birthdate', correct: 'private', explain: 'Combined with your name, this is often enough to steal an identity.' },
+  { text: 'Parent\'s full name and workplace', correct: 'private', explain: 'This can be used to locate or impersonate your family.' }
+];
+
+var order = [];
+var placements = {};
+var selectedIndex = null;
+
+function shuffle(arr) {
+  var a = arr.slice();
+  for (var i = a.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var t = a[i]; a[i] = a[j]; a[j] = t;
+  }
+  return a;
+}
+
+function resetGame() {
+  order = shuffle(ITEMS.map(function(_, i) { return i; }));
+  placements = {};
+  selectedIndex = null;
+  render();
+}
+
+function selectItem(i) {
+  selectedIndex = (selectedIndex === i) ? null : i;
+  render();
+}
+
+function place(bucket) {
+  if (selectedIndex === null) return;
+  placements[selectedIndex] = bucket;
+  selectedIndex = null;
+  render();
+}
+
+function render() {
+  var tray = document.getElementById('tray');
+  var unplaced = order.filter(function(i) { return placements[i] === undefined; });
+  tray.innerHTML = unplaced.length ? unplaced.map(function(i) {
+    return '<button type="button" class="item-chip' + (selectedIndex === i ? ' selected' : '') + '" onclick="selectItem(' + i + ')">' + ITEMS[i].text + '</button>';
+  }).join('') : '<span style="color:var(--gray);font-size:0.85rem;">All items sorted! Check your results below.</span>';
+
+  ['share', 'private'].forEach(function(bucket) {
+    var list = document.getElementById(bucket + '-list');
+    var items = Object.keys(placements).filter(function(i) { return placements[i] === bucket; });
+    list.innerHTML = items.map(function(i) {
+      var item = ITEMS[i];
+      var isCorrect = item.correct === bucket;
+      return '<div class="placed-chip ' + (isCorrect ? 'correct' : 'wrong') + '">' + item.text +
+        '<div class="placed-explain">' + (isCorrect ? '✅ ' : '❌ ') + item.explain + '</div></div>';
+    }).join('');
+  });
+
+  var sortedCount = Object.keys(placements).length;
+  var correctCount = Object.keys(placements).filter(function(i) { return placements[i] === ITEMS[i].correct; }).length;
+  document.getElementById('score-num').textContent = correctCount + ' / ' + ITEMS.length + ' correct (' + sortedCount + ' sorted)';
+
+  if (sortedCount === ITEMS.length && window.DSKPoints && !localStorage.getItem('dsk_safeprofile_done')) {
+    localStorage.setItem('dsk_safeprofile_done', '1');
+    DSKPoints.addPoints(correctCount * 3, 'Build Your Safe Profile');
+  }
+}
+
+resetGame();
+</script>
+
+</body>
+</html>
