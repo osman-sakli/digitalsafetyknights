@@ -24,8 +24,7 @@
   }
 
   var saved = localStorage.getItem(KEY);
-  var initial = saved || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-  applyTheme(initial);
+  applyTheme(saved === 'dark' ? 'dark' : 'light');
 
   btn.addEventListener('click', function() {
     var next = root.classList.contains('dsk-dark') ? 'light' : 'dark';
