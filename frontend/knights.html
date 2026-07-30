@@ -39,34 +39,36 @@
   .btn-gold { background: var(--gold); color: var(--navy); padding: 14px 32px; border-radius: 28px; font-weight: 900; text-decoration: none; display: inline-block; }
 </style>
 <link rel="stylesheet" href="assets/breadcrumb.css">
+<script src="/assets/i18n.js"></script>
 </head>
 <body>
 
 <div class="topbar">
   <a class="brand" href="/">🛡️ Digital Safety Knights</a>
   <div style="display:flex;gap:16px;align-items:center;">
-    <a class="home-link" href="/shieldys-journal.html">🛡️ Shieldy's Journal</a>
-    <a class="home-link" href="/resources.html">📚 Resources</a>
-    <a class="home-link" href="/">← Home</a>
+    <a class="home-link" href="/shieldys-journal.html" data-i18n="knights.journalLink">🛡️ Shieldy's Journal</a>
+    <a class="home-link" href="/resources.html" data-i18n="nav.resources">📚 Resources</a>
+    <a class="home-link" href="/" data-i18n="qp.home">← Home</a>
   </div>
 </div>
-<div class="dsk-breadcrumb"><a href="/">Home</a><span class="sep">/</span><span class="current">Meet the Knights</span></div>
+<div class="dsk-breadcrumb"><a href="/" data-i18n="qp.home2">Home</a><span class="sep">/</span><span class="current" data-i18n="nav.meetKnights2">Meet the Knights</span></div>
 
 <section class="hero">
-  <h1>Meet the <span class="gold">Knights</span></h1>
-  <p>Six characters, one mission — and one rival they all keep an eye on. Tap any Knight to hear their signature sound.</p>
+  <h1 data-i18n="knights.title">Meet the <span class="gold">Knights</span></h1>
+  <p data-i18n="knights.subtitle">Six characters, one mission — and one rival they all keep an eye on. Tap any Knight to hear their signature sound.</p>
 </section>
 
 <div class="wrap">
   <div class="knight-grid" id="knightGrid"></div>
 
   <div class="cta-band">
-    <a class="btn-gold" href="/quests.html">🎮 Go on a quest with them →</a>
+    <a class="btn-gold" href="/quests.html" data-i18n="knights.goQuest">🎮 Go on a quest with them →</a>
   </div>
 </div>
 
 <script>
-var KNIGHTS = [
+var knIsTr = window.DSKi18n && DSKi18n.lang === 'tr';
+var KNIGHTS_EN = [
   { id: "shieldy", name: "Shieldy", title: "The Leader", color: "#c9a84c", specialty: "🎮 Gaming & in-app red flags",
     bio: "The one who taught everyone the rules. Calm under pressure, first to notice when something's off, always the one who says the thing out loud that everyone else was quietly worried about.",
     quote: "Shield up.", note: 660 },
@@ -86,6 +88,29 @@ var KNIGHTS = [
     bio: "Not a villain — a warning made friendly enough for a Tuesday afternoon. Glitch shows up in every quest trying every trick a real scammer might use, so you get to practice spotting it first, here, where nothing's actually at stake.",
     quote: "You really thought that was free?", note: 220 }
 ];
+
+var KNIGHTS_TR = [
+  { id: "shieldy", name: "Shieldy", title: "Lider", color: "#c9a84c", specialty: "🎮 Oyun ve uygulama içi uyarı işaretleri",
+    bio: "Herkese kuralları öğreten kişi. Baskı altında sakin, bir şeyin ters gittiğini ilk fark eden, herkesin sessizce endişelendiği şeyi her zaman yüksek sesle söyleyen kişi.",
+    quote: "Kalkanını kaldır.", note: 660 },
+  { id: "pixel", name: "Pixel", title: "Oyuncu", color: "#3EC6C0", specialty: "🕹️ Roblox, PK XD ve oyun sohbeti",
+    bio: "Oynanmaya değer her oyunun içinde yaşıyor. Her ayarlar menüsünü ezbere biliyor ve bir dolandırıcılık eşya takasını kilometrelerce uzaktan fark edebiliyor — çünkü daha önce neredeyse birine düşmüştü.",
+    quote: "İyi denemeydi. Bugün olmaz.", note: 784 },
+  { id: "bot", name: "Bot", title: "Analist", color: "#8fa6c9", specialty: "🤖 Yapay zeka sohbet botları ve sahte görüntüler",
+    bio: "Yapay zekanın tam olarak nasıl çalıştığını anlıyor, Bot'un ona asla tam olarak güvenmemesinin tam nedeni de bu. Karmaşık şeyleri tek bir cümlede, sabırla, gerektiği kadar çok kez açıklar.",
+    quote: "Gerçek her zaman göründüğü gibi değildir.", note: 523 },
+  { id: "dame-noble", name: "Dame Noble", title: "Kalp", color: "#b98a4a", specialty: "💬 Siber zorbalık ve nezaket",
+    bio: "Bir şeyler yanlış gittiğinde herkesin gerçekten konuştuğu kişi. Duygusal hasarın genellikle asıl hasar olduğunu bildiği için duyguları güvenlik duvarları kadar ciddiye alır.",
+    quote: "Hiçbir yanlış yapmadın. Birlikte düzeltelim.", note: 587 },
+  { id: "sprout", name: "Sprout", title: "En Yeni Katılan", color: "#7cbf6b", specialty: "🌱 Yeni başlayanlar ve temel bilgiler",
+    bio: "Şövalyelere yeni katıldı ve herkesin sormaktan utandığı soruları hâlâ soruyor — Sprout'un temelleri en iyi öğreten kişi olmasının tam nedeni de bu.",
+    quote: "Bekle, bunu bir kez daha açıklar mısın?", note: 440 },
+  { id: "glitch", name: "Glitch", title: "Rakip", color: "#8A5FBF", specialty: "⚠️ Kitaptaki her numara", rival: true,
+    bio: "Bir kötü adam değil — bir Salı öğleden sonrası için yeterince dostça yapılmış bir uyarı. Glitch her görevde gerçek bir dolandırıcının kullanabileceği her numarayı deniyor, böylece burada, gerçekte hiçbir şey riske girmezken önce fark etmeyi pratik edebiliyorsun.",
+    quote: "Bunun gerçekten bedava olduğunu mu düşündün?", note: 220 }
+];
+
+var KNIGHTS = knIsTr ? KNIGHTS_TR : KNIGHTS_EN;
 
 var actx = null;
 function playNote(freq) {
@@ -123,12 +148,11 @@ grid.innerHTML = KNIGHTS.map(function(k) {
     '<div class="knight-specialty">' + k.specialty + '</div>' +
     '<p class="knight-bio">' + k.bio + '</p>' +
     '<div class="knight-quote">"' + k.quote + '"</div>' +
-    '<div class="tap-hint">🔊 tap for sound</div>' +
+    '<div class="tap-hint">🔊 ' + (knIsTr ? 'ses için dokun' : 'tap for sound') + '</div>' +
   '</div>';
 }).join('');
 </script>
 
-<script src="/assets/i18n.js"></script>
 <script src="/assets/lang-switcher.js"></script>
 <script src="/assets/site-search.js"></script>
 <script src="/assets/play-now-fab.js"></script>
