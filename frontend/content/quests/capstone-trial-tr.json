@@ -1,0 +1,90 @@
+{
+  "id": "capstone-trial",
+  "title": "Şövalye'nin Sınavı",
+  "emoji": "🏆",
+  "badgeTrack": "digital-knight",
+  "intro": "Akademideki her görevde eğitim aldın. Bu final sınavı, altısının en zor kararlarını birleştiriyor — geçersen, tam bir Dijital Şövalye olarak mezun olursun.",
+  "questions": [
+    {
+      "narrator": "GLITCH",
+      "prompt": "BEDAVA ROBUX! Hemen tıklaaa! Sadece on saniye kaldı!",
+      "choices": [
+        { "text": "Kaybolmadan hızlıca tıkla!", "correct": false, "coach": "Bedava ARTI acele eşittir TUZAK. Gerçekten bedava olan şeyler seni asla acele ettirmez." },
+        { "text": "Kapat ve bir yetişkine söyle", "correct": true, "coach": "Şövalye hamlesi! Dolandırıcılar düşünmeni engellemek için acele kullanır." },
+        { "text": "Karar vermek için daha fazla süre iste", "correct": false, "coach": "Bir dolandırıcılıkla konuşmak tuzağı açık tutar. Onun yerine kapat." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Ekstra güvenlik için Roblox'ta açılacak en iyi tek ayar hangisidir?",
+      "choices": [
+        { "text": "Hesap Kısıtlamaları + Sadece Arkadaşlar sohbeti", "correct": true, "coach": "Şövalye Kuralı! Bu, sana kimlerin mesaj atabileceğini ve neleri görebileceğini sınırlar." },
+        { "text": "Daha havalı bir kullanıcı adı", "correct": false, "coach": "Eğlenceli bir kullanıcı adı güzel, ama seni hiç korumaz." },
+        { "text": "Oyunu tamamen kapatmak", "correct": false, "coach": "Oyunu tamamen bırakmana gerek yok — sadece güvenli şekilde ayarla!" }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Çevrimiçi biri 'bu bizim sırrımız, ebeveynlerine söyleme' diyor. Bu cümle gerçekte ne anlama gelir?",
+      "choices": [
+        { "text": "Bana gerçekten güvendiği anlamına gelir", "correct": false, "coach": "O cümle var olan en büyük uyarı işaretlerinden biridir — seni yalnızlaştırmak için tasarlanmıştır." },
+        { "text": "Bir uyarı işareti — güvenilir insanlar çocuklardan ebeveynlerinden bir şey saklamalarını istemez", "correct": true, "coach": "Kesinlikle doğru. 'Ebeveynlerine söyleme' cümlesinin kendisi cevaptır." },
+        { "text": "Sadece iki kez sorarsa önemlidir", "correct": false, "coach": "Bir kez bile söylenmesi zaten bir uyarı işaretidir. Hemen bir ebeveyne söyle." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "Çevrimiçi bir arkadaşım sohbetimizi ebeveynlerimin bilmediği farklı bir uygulamaya taşımak istiyor. Yapmalı mıyım?",
+      "choices": [
+        { "text": "Tabii, sadece farklı bir uygulama", "correct": false, "coach": "Daha az denetlenen bir uygulamaya geçmek, fark edilmekten kaçınmak için yaygın bir taktiktir. Bu bir uyarı işaretidir." },
+        { "text": "Hayır — ve bunun istendiğini bir ebeveyne söyle", "correct": true, "coach": "Tam olarak doğru. Daha az denetlenen bir yere taşınmak istemek, bildirilmeye değer bir uyarı işaretidir." },
+        { "text": "Sadece popüler bir uygulamaysa taşın", "correct": false, "coach": "Popülerlik önemli değil — isteğin kendisi uyarı işaretidir." }
+      ]
+    },
+    {
+      "narrator": "BOT",
+      "prompt": "Ödevin için, Avustralya'nın başkenti Sidney'dir! Güven bana.",
+      "choices": [
+        { "text": "Bunu yaz, Bot öyle dedi", "correct": false, "coach": "Aslında Canberra! Bot kendinden emin görünüyor ama emin bir şekilde yanılıyor — klasik Bot hamlesi." },
+        { "text": "Önce bir ders kitabına bak ya da bir öğretmene sor", "correct": true, "coach": "Şövalye hamlesi! Yapay zekadan gelen ödev bilgilerini her zaman güvenilir bir kaynaktan doğrula." },
+        { "text": "Bunun yerine başka bir şey tahmin et", "correct": false, "coach": "Tahmin etmek doğrulamak değildir — gerçek bir kaynağa bak." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Bir telefon geliyor ve ses tıpkı annen gibi, hemen para göndermeni istiyor. Şövalye hamlesi nedir?",
+      "choices": [
+        { "text": "Gönder — annemin sesi, gerçek olmalı", "correct": false, "coach": "Yapay zeka sadece birkaç saniyelik sesten bir sesi klonlayabilir. Artık ses tek başına kanıt değil." },
+        { "text": "Önce ailenin kod kelimesini kullanarak kontrol et", "correct": true, "coach": "Mükemmel. Sadece ailenin bildiği bir kod kelime her ses numarasını yener." },
+        { "text": "Aynı numarayı hemen geri ara", "correct": false, "coach": "Dolandırıcılar numaraları da sahtekarlıkla gösterebilir — kod kelime gibi farklı bir yolla doğrula." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Her ailenin yılda bir kez birlikte yapması gereken bir kurulum adımı nedir?",
+      "choices": [
+        { "text": "Birlikte yapılan 30 dakikalık bir gizlilik + uygulama ayarları sıfırlaması", "correct": true, "coach": "Kesinlikle — yıllık, kısa ve ortak yapılan bir kontrol, tek seferlik bir nutuktan her zaman daha iyidir." },
+        { "text": "Daha uzun bir telefon yasağı", "correct": false, "coach": "Sadece kısıtlama, çocukların ihtiyaç duyduğu altta yatan muhakemeyi öğretmez." },
+        { "text": "Hiçbir şey, ayarların yeniden gözden geçirilmesine gerek yok", "correct": false, "coach": "Uygulamalar ve riskler değişir — yıllık bir kontrol önemlidir." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "Sınıfımdan biri grup sohbetimizde rahatsız ediliyor. Bana olmuyor, o yüzden benim sorunum değil, değil mi?",
+      "choices": [
+        { "text": "Doğru, karışma", "correct": false, "coach": "Sessizce izlemek devam etmesine izin verir. Bir Şövalye ya sesini yükseltir ya da güvendiği bir yetişkini dahil eder." },
+        { "text": "Güvendiğin bir yetişkine söyle ya da onlar için sesini yükselt", "correct": true, "coach": "Tam olarak Şövalye hamlesi — başkaları için ayağa kalkmak gerçek dijital vatandaşlıktır." },
+        { "text": "Grup sohbetinden sessizce çık", "correct": false, "coach": "Çıkmak sadece seni korur — bir Şövalye başkalarını da gözetir." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Bir Dijital Şövalye olarak 'Kalkanını kaldır' gerçekte ne anlama gelir?",
+      "choices": [
+        { "text": "Çevrimiçi sadece kendini koru", "correct": false, "coach": "Bu sadece senden ibaret değil — bir Şövalye başkalarını da korur." },
+        { "text": "Kendini koru VE çevrimiçi başkalarını da gözet", "correct": true, "coach": "Tam olarak bu. Kalkanını kaldır — hem kendin hem de etrafındakiler için." },
+        { "text": "İnternetten tamamen kaçın", "correct": false, "coach": "Bir Şövalye olmak interneti akıllıca kullanmaktır, ondan kaçınmak değil." }
+      ]
+    }
+  ]
+}

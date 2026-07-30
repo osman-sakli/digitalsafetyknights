@@ -8,6 +8,7 @@
 <link rel="icon" href="assets/favicon.ico">
 <link rel="stylesheet" href="assets/breadcrumb.css">
 <script src="assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
 <style>
   :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --text: #2d3748; --success: #2a9d8f; --danger: #e63946; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -77,19 +78,19 @@
 
 <div class="topbar">
   <a class="brand" href="/">🛡️ Digital Safety Knights</a>
-  <a class="home-link" href="/quests.html">🎮 Quests</a>
+  <a class="home-link" href="/quests.html" data-i18n="nav.quests2">🎮 Quests</a>
 </div>
-<div class="dsk-breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/resources.html">Resources</a><span class="sep">/</span><span class="current">Knight Academy</span></div>
+<div class="dsk-breadcrumb"><a href="/" data-i18n="qp.home2">Home</a><span class="sep">/</span><a href="/resources.html" data-i18n="nav.resources2">Resources</a><span class="sep">/</span><span class="current" data-i18n="footer.academy2">Knight Academy</span></div>
 
 <div class="wrap">
   <div class="hero">
     <div class="icon">🎓</div>
-    <h1>The Knight Academy</h1>
-    <p>A guided path through every quest and guide, in order — finishing with the Knight's Trial, the final capstone challenge.</p>
+    <h1 data-i18n="ac.title">The Knight Academy</h1>
+    <p data-i18n="ac.subtitle">A guided path through every quest and guide, in order — finishing with the Knight's Trial, the final capstone challenge.</p>
   </div>
 
   <div class="academy-progress">
-    <div class="ap-label">ACADEMY PROGRESS</div>
+    <div class="ap-label" data-i18n="ac.progressLabel">ACADEMY PROGRESS</div>
     <div class="ap-track"><div class="ap-fill" id="ap-fill" style="width:0%"></div></div>
     <div class="ap-count" id="ap-count">0 / 12 steps complete</div>
   </div>
@@ -106,7 +107,9 @@
 </div>
 
 <script>
-const STEPS = [
+const acIsTr = window.DSKi18n && DSKi18n.lang === 'tr';
+
+const STEPS_EN = [
   { kind: "quest", type: "quest", id: "roblox-safety-lab", title: "Quest: Roblox Safety Lab", icon: "🎮", href: "/quests.html?quest=roblox-safety-lab" },
   { kind: "guide", type: "guide", id: "roblox-parent-guide", title: "Guide: Roblox Parent Guide", icon: "📥", href: "https://digitalsafetyknights.org/guides/roblox-parent-guide.pdf" },
   { kind: "quest", type: "quest", id: "grooming-watch", title: "Quest: Grooming Watch", icon: "🚩", href: "/quests.html?quest=grooming-watch" },
@@ -120,6 +123,44 @@ const STEPS = [
   { kind: "quest", type: "quest", id: "digital-citizenship", title: "Quest: Digital Citizenship", icon: "🌐", href: "/quests.html?quest=digital-citizenship" },
   { kind: "guide", type: "guide", id: "incident-response-guide", title: "Guide: Incident Response Guide", icon: "📥", href: "https://digitalsafetyknights.org/guides/incident-response-guide.pdf" }
 ];
+
+const STEPS_TR = [
+  { kind: "quest", type: "quest", id: "roblox-safety-lab", title: "Görev: Roblox Güvenlik Laboratuvarı", icon: "🎮", href: "/quests.html?quest=roblox-safety-lab" },
+  { kind: "guide", type: "guide", id: "roblox-parent-guide", title: "Rehber: Roblox Ebeveyn Rehberi", icon: "📥", href: "https://digitalsafetyknights.org/guides/roblox-parent-guide.pdf" },
+  { kind: "quest", type: "quest", id: "grooming-watch", title: "Görev: Kandırma Nöbeti", icon: "🚩", href: "/quests.html?quest=grooming-watch" },
+  { kind: "guide", type: "guide", id: "talk-to-your-kids-guide", title: "Rehber: Çocuklarınızla Konuşma Rehberi", icon: "📥", href: "https://digitalsafetyknights.org/guides/talk-to-your-kids-guide.pdf" },
+  { kind: "quest", type: "quest", id: "ai-threat-awareness", title: "Görev: Yapay Zeka Tehdit Farkındalığı", icon: "🤖", href: "/quests.html?quest=ai-threat-awareness" },
+  { kind: "guide", type: "guide", id: "safe-ai-usage-guide", title: "Rehber: Çocuklar için Güvenli Yapay Zeka Kullanımı", icon: "📥", href: "https://digitalsafetyknights.org/guides/safe-ai-usage-guide.pdf" },
+  { kind: "quest", type: "quest", id: "family-cyber-defense", title: "Görev: Aile Siber Savunması", icon: "🛡️", href: "/quests.html?quest=family-cyber-defense" },
+  { kind: "guide", type: "guide", id: "family-cybersecurity-checklist", title: "Rehber: Aile Siber Güvenlik Kontrol Listesi", icon: "📥", href: "https://digitalsafetyknights.org/guides/family-cybersecurity-checklist.pdf" },
+  { kind: "quest", type: "quest", id: "parental-controls", title: "Görev: Ebeveyn Kontrolleri Kontrolü", icon: "🔧", href: "/quests.html?quest=parental-controls" },
+  { kind: "guide", type: "guide", id: "iphone-android-safety", title: "Rehber: iPhone & Android Güvenliği", icon: "📥", href: "https://digitalsafetyknights.org/guides/iphone-android-safety.pdf" },
+  { kind: "quest", type: "quest", id: "digital-citizenship", title: "Görev: Dijital Vatandaşlık", icon: "🌐", href: "/quests.html?quest=digital-citizenship" },
+  { kind: "guide", type: "guide", id: "incident-response-guide", title: "Rehber: Olay Müdahale Rehberi", icon: "📥", href: "https://digitalsafetyknights.org/guides/incident-response-guide.pdf" }
+];
+
+const STEPS = acIsTr ? STEPS_TR : STEPS_EN;
+const AC_L = acIsTr ? {
+  quest: "Görev", guide: "Rehber", play: "Oyna →", read: "Oku →",
+  stepsComplete: (n, total) => n + " / " + total + " adım tamamlandı",
+  capstone: "Final", trial: "Şövalye'nin Sınavı", locked: "Kilitli", begin: "Başla →",
+  loading: "Sınav yükleniyor…", questionOf: (i, n) => "SORU " + i + " / " + n, continueBtn: "Devam Et →",
+  graduated: "Mezun oldun — Dijital Şövalye!", almost: "Neredeyse başardın!",
+  correctOf: (s, n) => s + " / " + n + " doğru",
+  passedMsg: " — Şövalye Akademisi yolunun tamamını ve 100 bonus Şövalye Puanı kazandın.",
+  failMsg: " — yukarıdaki görevleri gözden geçir ve Sınavı istediğin zaman tekrar dene.",
+  shieldUp: "Kalkanını kaldır! 🛡️", close: "Kapat"
+} : {
+  quest: "Quest", guide: "Guide", play: "Play →", read: "Read →",
+  stepsComplete: (n, total) => n + " / " + total + " steps complete",
+  capstone: "Capstone", trial: "The Knight's Trial", locked: "Locked", begin: "Begin →",
+  loading: "Loading the Trial…", questionOf: (i, n) => "QUESTION " + i + " OF " + n, continueBtn: "Continue →",
+  graduated: "You graduated — Digital Knight!", almost: "Almost there!",
+  correctOf: (s, n) => s + " / " + n + " correct",
+  passedMsg: " — you've earned the full Knight Academy path and 100 bonus Knight Points.",
+  failMsg: " — review the quests above and try the Trial again any time.",
+  shieldUp: "Shield up! 🛡️", close: "Close"
+};
 
 const GUIDES_KEY = "dsk_academy_guides_read";
 const PROGRESS_KEY = "dsk_progress"; // shared with quests.html
@@ -149,8 +190,10 @@ function isStepDone(step) {
 function render() {
   const doneCount = STEPS.filter(isStepDone).length;
   document.getElementById('ap-fill').style.width = Math.round((doneCount / STEPS.length) * 100) + "%";
-  document.getElementById('ap-count').textContent = doneCount + " / " + STEPS.length + " steps complete";
+  document.getElementById('ap-count').textContent = AC_L.stepsComplete(doneCount, STEPS.length);
 
+  const questPrefix = acIsTr ? 'Görev: ' : 'Quest: ';
+  const guidePrefix = acIsTr ? 'Rehber: ' : 'Guide: ';
   const path = document.getElementById('path');
   path.innerHTML = STEPS.map((step, i) => {
     const done = isStepDone(step);
@@ -159,16 +202,16 @@ function render() {
         '<div class="step-dot">' + (done ? '✓' : (i + 1)) + '</div>' +
         '<div class="step-card">' +
           '<div class="step-icon">' + step.icon + '</div>' +
-          '<div class="step-info"><div class="step-kind">Quest</div><div class="step-title">' + step.title.replace('Quest: ', '') + '</div></div>' +
-          '<div class="step-action">' + (done ? '<span class="step-check">✅</span>' : '<a class="step-btn" href="' + step.href + '">Play →</a>') + '</div>' +
+          '<div class="step-info"><div class="step-kind">' + AC_L.quest + '</div><div class="step-title">' + step.title.replace(questPrefix, '') + '</div></div>' +
+          '<div class="step-action">' + (done ? '<span class="step-check">✅</span>' : '<a class="step-btn" href="' + step.href + '">' + AC_L.play + '</a>') + '</div>' +
         '</div></div>';
     }
     return '<div class="step' + (done ? ' done' : '') + '">' +
       '<div class="step-dot">' + (done ? '✓' : (i + 1)) + '</div>' +
       '<div class="step-card">' +
         '<div class="step-icon">' + step.icon + '</div>' +
-        '<div class="step-info"><div class="step-kind">Guide</div><div class="step-title">' + step.title.replace('Guide: ', '') + '</div></div>' +
-        '<div class="step-action">' + (done ? '<span class="step-check">✅</span>' : '<a class="step-btn secondary" href="' + step.href + '" target="_blank" onclick="markGuideRead(\'' + step.id + '\');if(window.DSKPoints)DSKPoints.markComboActivity(\'guide\')">Read →</a>') + '</div>' +
+        '<div class="step-info"><div class="step-kind">' + AC_L.guide + '</div><div class="step-title">' + step.title.replace(guidePrefix, '') + '</div></div>' +
+        '<div class="step-action">' + (done ? '<span class="step-check">✅</span>' : '<a class="step-btn secondary" href="' + step.href + '" target="_blank" onclick="markGuideRead(\'' + step.id + '\');if(window.DSKPoints)DSKPoints.markComboActivity(\'guide\')">' + AC_L.read + '</a>') + '</div>' +
       '</div></div>';
   }).join('') + renderCapstone(doneCount);
 }
@@ -180,9 +223,9 @@ function renderCapstone(doneCount) {
     '<div class="step-dot">' + (graduated ? '🏆' : (unlocked ? '!' : '🔒')) + '</div>' +
     '<div class="step-card">' +
       '<div class="step-icon">🏆</div>' +
-      '<div class="step-info"><div class="step-kind">Capstone</div><div class="step-title">The Knight\'s Trial</div></div>' +
+      '<div class="step-info"><div class="step-kind">' + AC_L.capstone + '</div><div class="step-title">' + AC_L.trial + '</div></div>' +
       '<div class="step-action">' +
-        (graduated ? '<span class="step-check">✅</span>' : (unlocked ? '<button type="button" class="step-btn" onclick="startCapstone()">Begin →</button>' : '<span style="font-size:0.78rem;color:var(--gray);">Locked</span>')) +
+        (graduated ? '<span class="step-check">✅</span>' : (unlocked ? '<button type="button" class="step-btn" onclick="startCapstone()">' + AC_L.begin + '</button>' : '<span style="font-size:0.78rem;color:var(--gray);">' + AC_L.locked + '</span>')) +
       '</div>' +
     '</div></div>';
 }
@@ -194,8 +237,8 @@ let cScore = 0;
 
 function startCapstone() {
   document.getElementById('quiz-overlay').classList.add('open');
-  document.getElementById('quiz-body').innerHTML = '<p style="text-align:center;color:var(--gray);padding:30px 0;">Loading the Trial…</p>';
-  fetch('content/quests/capstone-trial.json').then(r => r.json()).then(data => {
+  document.getElementById('quiz-body').innerHTML = '<p style="text-align:center;color:var(--gray);padding:30px 0;">' + AC_L.loading + '</p>';
+  fetch(acIsTr ? 'content/quests/capstone-trial-tr.json' : 'content/quests/capstone-trial.json').then(r => r.json()).then(data => {
     capstoneData = data;
     cIndex = 0;
     cScore = 0;
@@ -209,13 +252,13 @@ function renderCapstoneQuestion() {
   const q = capstoneData.questions[cIndex];
   const body = document.getElementById('quiz-body');
   body.innerHTML =
-    '<div class="quiz-progress">QUESTION ' + (cIndex + 1) + ' OF ' + total + '</div>' +
+    '<div class="quiz-progress">' + AC_L.questionOf(cIndex + 1, total) + '</div>' +
     '<div class="quiz-track"><div class="quiz-fill" style="width:' + Math.round((cIndex / total) * 100) + '%"></div></div>' +
     '<div class="quiz-narrator">' + q.narrator + '</div>' +
     '<div class="quiz-prompt">' + q.prompt + '</div>' +
     '<div id="quiz-choices"></div>' +
     '<div id="quiz-coach"></div>' +
-    '<button class="quiz-next hidden" id="quiz-next-btn" onclick="nextCapstoneQuestion()">Continue →</button>';
+    '<button class="quiz-next hidden" id="quiz-next-btn" onclick="nextCapstoneQuestion()">' + AC_L.continueBtn + '</button>';
 
   const list = document.getElementById('quiz-choices');
   q.choices.forEach((choice, i) => {
@@ -256,13 +299,13 @@ function finishCapstone() {
   const body = document.getElementById('quiz-body');
   if (passed) {
     localStorage.setItem('dsk_academy_graduated', '1');
-    if (window.DSKPoints) DSKPoints.addPoints(100, "Knight Academy Graduate");
+    if (window.DSKPoints) DSKPoints.addPoints(100, acIsTr ? "Şövalye Akademisi Mezunu" : "Knight Academy Graduate");
   }
   body.innerHTML = '<div class="grad-result">' +
     '<div class="gicon">' + (passed ? '🏆' : '🛡️') + '</div>' +
-    '<h2>' + (passed ? "You graduated — Digital Knight!" : "Almost there!") + '</h2>' +
-    '<p>' + cScore + ' / ' + total + ' correct' + (passed ? ' — you\'ve earned the full Knight Academy path and 100 bonus Knight Points.' : ' — review the quests above and try the Trial again any time.') + '</p>' +
-    '<button class="step-btn" style="width:100%;padding:14px;" onclick="closeQuiz();render();">' + (passed ? 'Shield up! 🛡️' : 'Close') + '</button>' +
+    '<h2>' + (passed ? AC_L.graduated : AC_L.almost) + '</h2>' +
+    '<p>' + AC_L.correctOf(cScore, total) + (passed ? AC_L.passedMsg : AC_L.failMsg) + '</p>' +
+    '<button class="step-btn" style="width:100%;padding:14px;" onclick="closeQuiz();render();">' + (passed ? AC_L.shieldUp : AC_L.close) + '</button>' +
   '</div>';
   render();
 }

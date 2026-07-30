@@ -472,5 +472,10 @@
   "ma.childSig": "Çocuğun İmzası & Tarih",
   "ma.parentSig": "Ebeveyn/Vasi İmzası & Tarih",
   "ma.printBtn": "🖨️ Yazdır / PDF Olarak Kaydet",
-  "ma.editBtn": "← Kuralları Düzenle"
+  "ma.editBtn": "← Kuralları Düzenle",
+
+  "nav.quests2": "🎮 Görevler",
+  "ac.title": "Şövalye Akademisi",
+  "ac.subtitle": "Her görev ve rehber boyunca sırayla rehberli bir yol — Şövalye'nin Sınavı ile, final mücadelesiyle bitiyor.",
+  "ac.progressLabel": "AKADEMİ İLERLEMESİ"
 }
