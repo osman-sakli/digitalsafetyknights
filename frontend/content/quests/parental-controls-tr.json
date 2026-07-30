@@ -1,0 +1,64 @@
+{
+  "id": "parental-controls",
+  "title": "Ebeveyn Kontrolleri Kontrolü",
+  "emoji": "🔧",
+  "badgeTrack": "silver-guard",
+  "forParents": true,
+  "intro": "Glitch, ailelerin ayarlar menüsüne asla vakit ayıramamasına güvenir. Bu görev yetişkinler için — çocuğunuzla birlikte oynayın ya da tek başınıza — her iki durumda da sadece iyi niyetle değil, Glitch'in en sevdiği kapıları kapatan gerçek bir kurulum listesiyle ayrılacaksınız.",
+  "questions": [
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Çocuğunuz Roblox oynuyor. Önce kontrol edilmesi gereken en önemli tek ayar hangisi?",
+      "choices": [
+        { "text": "Hesap Kısıtlamaları + sohbeti Sadece Arkadaşlar olarak ayarlamak", "correct": true, "coach": "Tam olarak doğru — bu, yabancı temasını sınırlamak için en büyük tek kaldıraçtır." },
+        { "text": "Oyunun grafik kalitesi", "correct": false, "coach": "Grafikler güvenliği hiç etkilemez — ayarlar etkiler." },
+        { "text": "Kaç arkadaşı olduğu", "correct": false, "coach": "Arkadaş sayısı güvenlik sinyali değildir — sohbet ve kısıtlama ayarları önemlidir." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Çocuğunuzun Roblox sohbeti kontrol ettiğinizde temiz görünüyor. Bu her şeyin yolunda olduğu anlamına mı gelir?",
+      "choices": [
+        { "text": "Evet, temiz sohbet risk yok demektir", "correct": false, "coach": "Birçok riskli konuşma, görmediğiniz özel oyun içi kanallarda veya bağlı Discord sunucularında gerçekleşir." },
+        { "text": "Mutlaka değil — bağlı Discord sunucularını da kontrol edin", "correct": true, "coach": "Kesinlikle doğru. Görünen sohbet resmin sadece bir parçasıdır." },
+        { "text": "Evet, 13 yaşından küçükse sorun yok", "correct": false, "coach": "Yaş görüneni değiştirmez — yine de görünen sohbetin ötesini kontrol etmeniz gerekir." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Çocuğunuzun gerçekten hangi oyunları oynadığını öğrenmenin en iyi yolu nedir?",
+      "choices": [
+        { "text": "Favorilerini listelemesini isteyin", "correct": false, "coach": "Çocuklar sadece onaylayacağınızı düşündükleri oyunlardan bahsedebilir." },
+        { "text": "Yanlarına oturun ve 10 dakika izleyin", "correct": true, "coach": "10 dakika kuralı: sormaktan çok izlemekten daha fazla şey öğrenirsiniz." },
+        { "text": "Uygulamanın yıldız puanını kontrol edin", "correct": false, "coach": "Puanlar, kullanıcı içeriğinde gerçekte neler olduğunu yansıtmaz." }
+      ]
+    },
+    {
+      "narrator": "GLITCH",
+      "prompt": "Hey, çocuğunuza pahalı bir oyun içi hediye gönderdim — gerçek hayatta hiç tanışmadık, ama artık bana bir şey borçlu gibi, değil mi? Doğru tepki nedir?",
+      "choices": [
+        { "text": "Tutsun, sonuçta bedava", "correct": false, "coach": "Yabancılardan gelen beklenmedik hediyeler belgelenmiş bir kandırma aracıdır — bu hemen bir konuşmayı hak eder." },
+        { "text": "Bunu bir uyarı işareti olarak görün ve hemen konuşun", "correct": true, "coach": "Tam olarak doğru. Hediyeler, istismarcıların kullandığı bir borç hissi yaratır." },
+        { "text": "Sadece birden fazla olursa endişelenin", "correct": false, "coach": "Bir kez bile bir konuşmayı hak eder — bir örüntü oluşmasını beklemeyin." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "13 yaşından küçük çocuklar Discord'da olmalı mı?",
+      "choices": [
+        { "text": "Evet, zaten oynadıkları bir oyuna bağlıysa", "correct": false, "coach": "Discord, oraya nasıl geldiklerinden bağımsız olarak reşit olmayanlar için çok daha az koruma sunar." },
+        { "text": "Hayır — 13 yaş altı için Discord kesinlikle olmaz", "correct": true, "coach": "Doğru. Zaten kullanıyorlarsa, sunucu listesini birlikte gözden geçirin ve incelenmemiş sunucuları kaldırın." },
+        { "text": "Sadece sahte bir yaş girilirse olur", "correct": false, "coach": "Sahte bir yaş gerçek bir koruma eklemez — platformun asıl korumaları uygulanmaz." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Her ailenin yılda bir kez birlikte yapması gereken bir kurulum adımı nedir?",
+      "choices": [
+        { "text": "Birlikte yapılan 30 dakikalık bir gizlilik + uygulama ayarları sıfırlaması", "correct": true, "coach": "Kesinlikle — yıllık, kısa ve ortak yapılan bir kontrol, tek seferlik bir nutuktan her zaman daha iyidir." },
+        { "text": "Daha uzun bir telefon yasağı", "correct": false, "coach": "Sadece kısıtlama, çocukların ihtiyaç duyduğu altta yatan muhakemeyi öğretmez." },
+        { "text": "Hiçbir şey, ayarların yeniden gözden geçirilmesine gerek yok", "correct": false, "coach": "Uygulamalar ve riskler değişir — yıllık bir kontrol önemlidir." }
+      ]
+    }
+  ]
+}

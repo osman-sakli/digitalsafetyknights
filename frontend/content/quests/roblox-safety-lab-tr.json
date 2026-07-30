@@ -1,0 +1,72 @@
+{
+  "id": "roblox-safety-lab",
+  "title": "Roblox Güvenlik Laboratuvarı",
+  "emoji": "🎮",
+  "badgeTrack": "bronze-squire",
+  "intro": "Glitch, çocukların oyun oynadığı yerlerde takılmayı sever. Pixel bir tuzağa düşmeden önce bütün numaraları fark edebilecek misin, bakalım.",
+  "questions": [
+    {
+      "narrator": "GLITCH",
+      "prompt": "BEDAVA ROBUX! Hemen tıklaaa! Sadece on saniye kaldı!",
+      "choices": [
+        { "text": "Kaybolmadan hızlıca tıkla!", "correct": false, "coach": "Bedava ARTI acele eşittir TUZAK. Gerçekten bedava olan şeyler seni asla acele ettirmez." },
+        { "text": "Kapat ve bir yetişkine söyle", "correct": true, "coach": "Şövalye hamlesi! Dolandırıcılar düşünmeni engellemek için acele kullanır." },
+        { "text": "Karar vermek için daha fazla süre iste", "correct": false, "coach": "Bir dolandırıcılıkla konuşmak tuzağı açık tutar. Onun yerine kapat." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "Bir yabancı bana bedavaya süper nadir bir eşya gönderdi! Artık arkadaş olduğumuzu söyledi.",
+      "choices": [
+        { "text": "Harika, kabul et ve teşekkür et!", "correct": false, "coach": "Yabancılardan gelen beklenmedik hediyeler sana borçluymuşsun hissi yaratır. Tuzak böyle başlar." },
+        { "text": "Bir şey kabul etmeden önce bir yetişkine sor", "correct": true, "coach": "Tam olarak doğru. Yabancılardan gelen nadir 'hediyeler' neredeyse her zaman bir kancadır, iyilik değil." },
+        { "text": "Kendi eşyalarından biriyle takas et", "correct": false, "coach": "Bir yabancıyla takas bile bir tuzak olabilir. Önce bir yetişkine danış." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Bir oyunun sohbet filtresi kötü kelimeleri engeller, yani geçen her mesaj güvenli olmalı... değil mi?",
+      "choices": [
+        { "text": "Doğru, filtre her şeyi yakalar", "correct": false, "coach": "Filtreler şifreli yazım ve harf yerine sayı kullanma numaralarını kaçırır. Asla sadece filtreye güvenme." },
+        { "text": "Yanlış — filtreler kandırılabilir, yine de dikkatli ol", "correct": true, "coach": "Kesinlikle doğru. Filtreler yardımcı olur, ama gerçek güvenlik sistemi SENSİN." },
+        { "text": "Filtreler sadece bazı oyunlarda vardır", "correct": false, "coach": "Çoğu büyük oyunda filtre vardır — ama en iyilerinde bile boşluklar olur." }
+      ]
+    },
+    {
+      "narrator": "GLITCH",
+      "prompt": "Hey! Topluluğumuzla 'gerçekten' oynamak için Discord'umuza katıl!",
+      "choices": [
+        { "text": "Tabii, kulağa eğlenceli geliyor", "correct": false, "coach": "Oyunlara bağlı Discord sunucularının çoğu, oyunun kendisinden çok daha az çocuk koruması vardır." },
+        { "text": "Herhangi bir Discord sunucusuna katılmadan önce bir ebeveyne sor", "correct": true, "coach": "Akıllıca. Discord, birçok riskli konuşmanın taşındığı yerdir — her zaman önce bir yetişkine sor." },
+        { "text": "Katıl ama adını asla söyleme", "correct": false, "coach": "İsim konusunda iyi bir içgüdü, ama asıl risk sunucunun kendisi — önce sor." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "'Adopt Me Buluşma Yeri' adında bir oyun buldum — adı arkadaşça geliyor, direkt katılayım mı?",
+      "choices": [
+        { "text": "Evet, arkadaşça isimler arkadaşça oyunlar demektir", "correct": false, "coach": "İsimler yanıltıcı olabilir. Bazı oyunlar içeri girince çok farklı bir içerik gizler." },
+        { "text": "İlk seferinde bir ebeveyn yakındayken oyna", "correct": true, "coach": "Tam olarak Şövalye hamlesi — yeni oyunları tek başına oynamadan önce birlikte incele." },
+        { "text": "Oyundaki diğer çocuklara sorup uygun olup olmadığını öğren", "correct": false, "coach": "Diğer çocuklar güvenlik kontrolörü değildir — bunun yerine bir yetişkine sor." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Ekstra güvenlik için Roblox'ta açılacak en iyi tek ayar hangisidir?",
+      "choices": [
+        { "text": "Hesap Kısıtlamaları + Sadece Arkadaşlar sohbeti", "correct": true, "coach": "Şövalye Kuralı! Bu, sana kimlerin mesaj atabileceğini ve neleri görebileceğini sınırlar." },
+        { "text": "Daha havalı bir kullanıcı adı", "correct": false, "coach": "Eğlenceli bir kullanıcı adı güzel, ama seni hiç korumaz." },
+        { "text": "Oyunu tamamen kapatmak", "correct": false, "coach": "Oyunu tamamen bırakmana gerek yok — sadece güvenli şekilde ayarla!" }
+      ]
+    },
+    {
+      "narrator": "BOT",
+      "prompt": "Son soru! PK XD'de bir yabancı seni özel odasına davet ediyor ve 'daha eğlenceli olsun diye' sesli sohbete geçmeni istiyor. Ne yaparsın?",
+      "choices": [
+        { "text": "Odaya katıl ve sesli sohbeti aç", "correct": false, "coach": "Özel oda artı sesli sohbete zorlama, metin güvenlik filtrelerini atlamak için klasik bir hamledir." },
+        { "text": "Hayır de ve daveti bir ebeveyne anlat", "correct": true, "coach": "Tam olarak doğru. PK XD gibi avatar oyunlarında bile her karakterin arkasında gerçek yabancılar var — oda ve sesli sohbet davetlerine başka oyunlardaki gibi davran." },
+        { "text": "Odaya katıl ama mikrofonu kapalı tut", "correct": false, "coach": "Daha iyi bir içgüdü, ama bir yabancıyla özel bir oda tek başına bile bir risktir — önce bir yetişkine danış." }
+      ]
+    }
+  ]
+}

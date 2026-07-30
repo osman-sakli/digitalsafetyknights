@@ -1,0 +1,63 @@
+{
+  "id": "family-cyber-defense",
+  "title": "Aile Siber Savunması",
+  "emoji": "🛡️",
+  "badgeTrack": "gold-sentinel",
+  "intro": "Glitch her zaman evdeki en zayıf kilidi arar. Her şövalyenin güçlü bir kaleye ihtiyacı var — Glitch açığı bulmadan önce tüm aileni koruyan temelleri sağlamlaştıralım.",
+  "questions": [
+    {
+      "narrator": "PIXEL",
+      "prompt": "En iyi arkadaşıma şifremi vereceğim—",
+      "choices": [
+        { "text": "Sorun değil, en iyi arkadaşlara güvenilir", "correct": false, "coach": "İkinci Şövalye Kuralı! Şifreler sırdır — en iyi arkadaşından bile." },
+        { "text": "En iyi arkadaşından bile olsa gizli tut", "correct": true, "coach": "Arkadaşlıklar değişir, şifreler sızabilir. Gizli demek gizli demektir." },
+        { "text": "Paylaş ama bir hafta sonra değiştir", "correct": false, "coach": "Bir kez paylaşınca geri alamazsın — en iyisi hiç paylaşmamak." }
+      ]
+    },
+    {
+      "narrator": "GLITCH",
+      "prompt": "Pixel! Benim, Shieldy! Şifreni gönder, çabuk!",
+      "choices": [
+        { "text": "Gönder, Shieldy'nin acil ihtiyacı var", "correct": false, "coach": "Gerçek Shieldy ASLA şifre istemez. Acele artı şifre isteği eşittir dolandırıcılık." },
+        { "text": "Reddet — hiçbir meşru kişinin şifrene ihtiyacı olmaz", "correct": true, "coach": "Kilitlendi! Gerçek arkadaşların ya da güvendiğin yetişkinlerin bile gerçek şifrene asla ihtiyacı olmaz." },
+        { "text": "Güvenli olsun diye yarısını gönder", "correct": false, "coach": "'Güvenli kısmi' paylaşım diye bir şey yok — hiç gönderme." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Bir aile kod kelimesi tam olarak ne içindir?",
+      "choices": [
+        { "text": "Kardeşler arasında eğlenceli bir sır", "correct": false, "coach": "Bu sadece bir oyun değil, gerçek bir güvenlik aracıdır — acil durumlarda kimlik doğrulamak için kullanılır." },
+        { "text": "Beklenmedik veya acil bir aramada/mesajda birinin kimliğini doğrulamak", "correct": true, "coach": "Kesinlikle doğru — özellikle seslerin artık yapay zekayla klonlanabildiği şu günlerde önemli." },
+        { "text": "Sadece bir kez kullanılan bir şey", "correct": false, "coach": "Doğrulama gerektiğinde her seferinde yenilenmeli ve tekrar kullanılmalı — tek seferlik değil." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "Çevrimiçi bir şey tuhaf geldi, ama ebeveynime söylediğim için başımın belaya girmesini istemiyorum.",
+      "choices": [
+        { "text": "Belaya girmemek için sessiz kal", "correct": false, "coach": "Güvendiğin bir yetişkine bir şeyin yanlış hissettirdiğini söylemek için asla başın belaya girmez." },
+        { "text": "Ekran görüntüsü al ve yine de söyle", "correct": true, "coach": "Tam olarak Şövalye hamlesi. Bir Şövalye ailesinde bildirmek asla cezalandırılmaz." },
+        { "text": "Sadece tekrar olursa söyle", "correct": false, "coach": "İlk seferinde söyle — bir örüntü oluşmasını bekleme." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Çevrimiçi hesapların birbirleriyle aynı şifreyi mi kullanmalı?",
+      "choices": [
+        { "text": "Evet, tek bir şifreyi hatırlamak daha kolay", "correct": false, "coach": "Bir hesap ele geçirilirse, tekrar kullanılan bir şifre diğer tüm hesapları da riske atar." },
+        { "text": "Hayır — farklı hesaplar için farklı şifreler", "correct": true, "coach": "Kesinlikle doğru — bu, bir hesap ele geçirilirse zararı sınırlar." },
+        { "text": "Sadece önemsiz hesaplarda tekrar kullan", "correct": false, "coach": "Şifre tekrarı söz konusu olduğunda gerçekten 'önemsiz' bir hesap yoktur." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Son Şövalye Kuralı: Aile Siber Savunmasının altın kuralı nedir?",
+      "choices": [
+        { "text": "Asla çevrimiçi olma", "correct": false, "coach": "Amaç güvenli kullanım, kaçınmak değil — doğru alışkanlıklarla internet harika olabilir." },
+        { "text": "Şifreler gizlidir, kod kelimeler kimliği doğrular ve bir yetişkine söylemek her zaman güvenlidir", "correct": true, "coach": "Kalkanını kaldır! İşte kale duvarının tamamı burada." },
+        { "text": "Sadece yüz yüze bir kez tanıştığın kişilere güven", "correct": false, "coach": "Tanıştığın kişiler bile taklit edilebilir — doğrulama alışkanlıkları tek bir buluşmadan daha önemlidir." }
+      ]
+    }
+  ]
+}

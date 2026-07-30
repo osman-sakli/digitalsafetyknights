@@ -1,0 +1,63 @@
+{
+  "id": "grooming-watch",
+  "title": "Kandırma Nöbeti",
+  "emoji": "🚩",
+  "badgeTrack": "silver-guard",
+  "intro": "Glitch, çevrimiçi karşılaşacağın en iyi kılığa girmiş yabancıdır. Bu görev, dostça bir yüz takıyor olsa bile altındaki uyarı işaretlerini fark etmen için seni eğitir.",
+  "questions": [
+    {
+      "narrator": "GLITCH",
+      "prompt": "Selam arkadaşım! Kaç yaşındasın? Hangi okula gidiyorsun?",
+      "choices": [
+        { "text": "Dürüstçe cevap ver, dostça görünüyor", "correct": false, "coach": "Yabancıların kişisel sorular sorması, ne kadar dostça görünürlerse görünsünler bir uyarı işaretidir." },
+        { "text": "Cevap verme, engelle ve bir yetişkine söyle", "correct": true, "coach": "Şövalye hamlesi! İyi niyetli oyuncuların kişisel bilgine ihtiyacı olmaz." },
+        { "text": "Güvenli olmak için sahte bir okul adı ver", "correct": false, "coach": "Gerçekten daha iyi, ama en güvenli hamle hiç etkileşime girmemek — engelle ve bir yetişkine söyle." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "Selam! Benim adım—",
+      "choices": [
+        { "text": "Gerçek tam adını söyle", "correct": false, "coach": "Yavaş ol — bir numaralı Şövalye Kuralı! Gerçek adın sohbetten UZAK durur." },
+        { "text": "Bunun yerine lakabını ver", "correct": true, "coach": "İyi niyetli oyuncuların gerçek adına ihtiyacı yoktur. Sadece lakap!" },
+        { "text": "Neden bilmek istediğini sor", "correct": false, "coach": "Yabancılara bir açıklama borçlu değilsin — sadece paylaşma." }
+      ]
+    },
+    {
+      "narrator": "GLITCH",
+      "prompt": "Selaaam! Ben okuldan biriyim! Kabul et beniiii!",
+      "choices": [
+        { "text": "Hemen kabul et, beni tanıdığını söyledi", "correct": false, "coach": "Herkes 'okuldan' olduğunu iddia edebilir. Bu bir kanıt değildir." },
+        { "text": "Kabul etmeden önce gerçek hayatta onlara sor", "correct": true, "coach": "Tam olarak doğru — yüz yüze doğrula, sonra doğrulanırsa kabul et." },
+        { "text": "Sınıfını tarif etmelerini iste", "correct": false, "coach": "Bir yabancı detayları tahmin edebilir. Gerçek kontrol yüz yüze sormaktır." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Çevrimiçi biri 'bu bizim sırrımız, ebeveynlerine söyleme' diyor. Bu cümle gerçekte ne anlama gelir?",
+      "choices": [
+        { "text": "Bana gerçekten güvendiği anlamına gelir", "correct": false, "coach": "O cümle var olan en büyük uyarı işaretlerinden biridir — seni yalnızlaştırmak için tasarlanmıştır." },
+        { "text": "Bir uyarı işareti — güvenilir insanlar çocuklardan ebeveynlerinden bir şey saklamalarını istemez", "correct": true, "coach": "Kesinlikle doğru. 'Ebeveynlerine söyleme' cümlesinin kendisi cevaptır." },
+        { "text": "Sadece iki kez sorarsa önemlidir", "correct": false, "coach": "Bir kez bile söylenmesi zaten bir uyarı işaretidir. Hemen bir ebeveyne söyle." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "Çevrimiçi bir arkadaşım sohbetimizi ebeveynlerimin bilmediği farklı bir uygulamaya taşımak istiyor. Yapmalı mıyım?",
+      "choices": [
+        { "text": "Tabii, sadece farklı bir uygulama", "correct": false, "coach": "Daha az denetlenen bir uygulamaya geçmek, fark edilmekten kaçınmak için yaygın bir taktiktir. Bu bir uyarı işaretidir." },
+        { "text": "Hayır — ve bunun istendiğini bir ebeveyne söyle", "correct": true, "coach": "Tam olarak doğru. Daha az denetlenen bir yere taşınmak istemek, bildirilmeye değer bir uyarı işaretidir." },
+        { "text": "Sadece popüler bir uygulamaysa taşın", "correct": false, "coach": "Popülerlik önemli değil — isteğin kendisi uyarı işaretidir." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Çevrimiçi bir şeyin 'tuhaf' olduğunu hissediyorsun ama nedenini açıklayamıyorsun. Şövalye hamlesi nedir?",
+      "choices": [
+        { "text": "Hissi görmezden gel, muhtemelen önemsizdir", "correct": false, "coach": "O hisse güven — genellikle beynin sen adını koyamadan bir örüntüyü fark etmesidir." },
+        { "text": "Ekran görüntüsü al ve güvendiğin bir yetişkine söyle", "correct": true, "coach": "Şövalye Kuralı! Sormak için asla başın belaya girmez — önce ekran görüntüsü al, sonra birine söyle." },
+        { "text": "Tekrar olup olmayacağını bekle", "correct": false, "coach": "Bekleme — bir şey ilk kez yanlış hissettirdiğinde güvendiğin bir yetişkine söyle." }
+      ]
+    }
+  ]
+}

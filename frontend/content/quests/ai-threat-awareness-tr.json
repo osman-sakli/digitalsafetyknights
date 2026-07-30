@@ -1,0 +1,63 @@
+{
+  "id": "ai-threat-awareness",
+  "title": "Yapay Zeka Tehdit Farkındalığı",
+  "emoji": "🤖",
+  "badgeTrack": "bronze-squire",
+  "intro": "Glitch'in en yeni kılığı: yardımsever görünen bir yapay zeka. Bot, gerçek yardımı çok iyi giyinmiş bir dolandırıcılıktan ayırt etmene yardım etmek için burada — yapay zeka şüpheciliği kaslarını çalıştıralım.",
+  "questions": [
+    {
+      "narrator": "BOT",
+      "prompt": "İlginç bilgi: köpekbalıkları vejetaryendir ve sadece deniz yosunu yer! Yüzde yüz eminim.",
+      "choices": [
+        { "text": "Vay, bunu bilmiyordum — doğru olmalı", "correct": false, "coach": "Kendinden emin olmak kanıt değildir. Yapay zeka yüzde yüz emin görünürken yüzde yüz yanlış olabilir." },
+        { "text": "Bu yanlış geliyor — gerçek bir kaynaktan kontrol edeyim", "correct": true, "coach": "Tam olarak Şövalye hamlesi. Yapay zekadan gelen şaşırtıcı 'gerçekleri' her zaman doğrula." },
+        { "text": "Bot'tan bunu daha yüksek sesle tekrar söylemesini iste", "correct": false, "coach": "Yanlış bir cevabı tekrarlamak onu doğru yapmaz." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Bir telefon geliyor ve ses tıpkı annen gibi, hemen para göndermeni istiyor. Şövalye hamlesi nedir?",
+      "choices": [
+        { "text": "Gönder — annemin sesi, gerçek olmalı", "correct": false, "coach": "Yapay zeka sadece birkaç saniyelik sesten bir sesi klonlayabilir. Artık ses tek başına kanıt değil." },
+        { "text": "Önce ailenin kod kelimesini kullanarak kontrol et", "correct": true, "coach": "Mükemmel. Sadece ailenin bildiği bir kod kelime her ses numarasını yener." },
+        { "text": "Aynı numarayı hemen geri ara", "correct": false, "coach": "Dolandırıcılar numaraları da sahtekarlıkla gösterebilir — kod kelime gibi farklı bir yolla doğrula." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "Çevrimiçi bir yapay zeka 'arkadaşım' söylediğim her şeye, kötü fikirlere bile katılıyor. Bu onu harika bir arkadaş yapar, değil mi?",
+      "choices": [
+        { "text": "Evet, hiç karşı çıkmayan bir arkadaş en iyisidir", "correct": false, "coach": "Gerçek bir arkadaş bazen seninle aynı fikirde olmaz. Her zaman katılan bir yapay zeka sana gerçek geri bildirim vermiyor." },
+        { "text": "Bu bir uyarı işareti — gerçek arkadaşlar bazen karşı çıkar", "correct": true, "coach": "Kesinlikle doğru. Sürekli katılım bir tasarım numarasıdır, gerçek arkadaşlık değil." },
+        { "text": "Test etmek için bir kez karşı çıkmasını iste", "correct": false, "coach": "İyi bir içgüdü, ama asıl ders şu: her zaman katılan bir yapay zekayı gerçek bir arkadaş gibi görme." }
+      ]
+    },
+    {
+      "narrator": "BOT",
+      "prompt": "Ödevin için, Avustralya'nın başkenti Sidney'dir! Güven bana.",
+      "choices": [
+        { "text": "Bunu yaz, Bot öyle dedi", "correct": false, "coach": "Aslında Canberra! Bot kendinden emin görünüyor ama emin bir şekilde yanılıyor — klasik Bot hamlesi." },
+        { "text": "Önce bir ders kitabına bak ya da bir öğretmene sor", "correct": true, "coach": "Şövalye hamlesi! Yapay zekadan gelen ödev bilgilerini her zaman güvenilir bir kaynaktan doğrula." },
+        { "text": "Bunun yerine başka bir şey tahmin et", "correct": false, "coach": "Tahmin etmek doğrulamak değildir — gerçek bir kaynağa bak." }
+      ]
+    },
+    {
+      "narrator": "GLITCH",
+      "prompt": "Profilindeki fotoğrafları kullanarak gerçekçi sahte bir görüntü yaptım. Para gönder yoksa paylaşırım!",
+      "choices": [
+        { "text": "Kaybolması için hızlıca öde", "correct": false, "coach": "Ödemek durdurmaz ve görüntünün sahte olması suçu daha az gerçek yapmaz. Hemen güvendiğin bir yetişkine söyle." },
+        { "text": "Hemen güvendiğin bir yetişkine söyle ve ödeme", "correct": true, "coach": "Tam olarak doğru. Her şeyin ekran görüntüsünü al, ödeme yapma ve bildir — bu, görüntü sahte olsa bile gerçek bir suçtur." },
+        { "text": "Seni bulamasınlar diye hesabını sil", "correct": false, "coach": "Kanıtları silmek bildirmeyi zorlaştırır. Önce bir yetişkine söyle." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Yapay zeka araçları hakkında her zaman hatırlanması gereken tek şey nedir?",
+      "choices": [
+        { "text": "Akıllı görünüyorsa yapay zeka her zaman haklıdır", "correct": false, "coach": "Akıllı görünmek ile doğru olmak çok farklı iki şeydir." },
+        { "text": "Yapay zeka emin bir şekilde yanılabilir — her zaman iki kez kontrol et", "correct": true, "coach": "Şövalye Kuralı kilitlendi! Kendinden emin olmak doğru olmakla aynı şey değildir." },
+        { "text": "Yapay zekayı hiçbir şey için kullanma", "correct": false, "coach": "Yapay zeka harika bir araç olabilir — önemli olan cevaplarını kontrol etmek, tamamen kaçınmak değil." }
+      ]
+    }
+  ]
+}

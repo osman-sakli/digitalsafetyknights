@@ -3,7 +3,7 @@
   var KEY = 'dsk_lang';
   var LANGS = [
     { code: 'en', label: 'English', flag: '🇺🇸', ready: true },
-    { code: 'tr', label: 'Türkçe', flag: '🇹🇷', ready: false },
+    { code: 'tr', label: 'Türkçe', flag: '🇹🇷', ready: true },
     { code: 'es', label: 'Español', flag: '🇪🇸', ready: false }
   ];
 
@@ -62,11 +62,9 @@
       menu.classList.remove('open');
       return;
     }
+    if (code === current) { menu.classList.remove('open'); return; }
     current = code;
     localStorage.setItem(KEY, code);
-    document.getElementById('dsk-lang-flag').textContent = lang.flag;
-    document.getElementById('dsk-lang-code').textContent = code.toUpperCase();
-    menu.innerHTML = renderMenu();
-    menu.classList.remove('open');
+    location.reload();
   });
 })();

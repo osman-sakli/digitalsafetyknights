@@ -1,0 +1,63 @@
+{
+  "id": "digital-citizenship",
+  "title": "Dijital Vatandaşlık",
+  "emoji": "🌐",
+  "badgeTrack": "gold-sentinel",
+  "intro": "Glitch dikkat edilmesi gereken tek şey değil — bir Şövalye olmak sadece savunmayla ilgili değil, başkalarına çevrimiçi nasıl davrandığınla da ilgili. Son görev, hadi başlayalım!",
+  "questions": [
+    {
+      "narrator": "BOT",
+      "prompt": "Bütün ödev denemeni senin için bitirdim! Sadece kopyala yapıştır yap.",
+      "choices": [
+        { "text": "Aynen kopyala ve teslim et", "correct": false, "coach": "Yapay zeka öğrenmene yardım edebilir, ama yapay zeka çalışmasını kendi çalışman gibi teslim etmek dürüst değil — ayrıca yapay zeka emin bir şekilde de yanılabilir." },
+        { "text": "Öğrenmek için kullan, sonra kendi cevabını yaz", "correct": true, "coach": "Tam olarak doğru — yapay zeka öğrenmek için bir araçtır, kendi çalışmanın yerine geçmez." },
+        { "text": "Kopyala ama birkaç kelimeyi değiştir", "correct": false, "coach": "Bu hâlâ senin çalışman değil — yapay zekayı anlamak için kullan, sonra kendin yaz." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "Sınıfımdan biri grup sohbetimizde rahatsız ediliyor. Bana olmuyor, o yüzden benim sorunum değil, değil mi?",
+      "choices": [
+        { "text": "Doğru, karışma", "correct": false, "coach": "Sessizce izlemek devam etmesine izin verir. Bir Şövalye ya sesini yükseltir ya da güvendiği bir yetişkini dahil eder." },
+        { "text": "Güvendiğin bir yetişkine söyle ya da onlar için sesini yükselt", "correct": true, "coach": "Tam olarak Şövalye hamlesi — başkaları için ayağa kalkmak gerçek dijital vatandaşlıktır." },
+        { "text": "Grup sohbetinden sessizce çık", "correct": false, "coach": "Çıkmak sadece seni korur — bir Şövalye başkalarını da gözetir." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Bir arkadaşının utandırıcı bir fotoğrafı elinde. Grup sohbetinde eğlence için paylaşmak sorun olur mu?",
+      "choices": [
+        { "text": "Tabii, sadece arkadaşlar arasında bir şaka", "correct": false, "coach": "Birinin fotoğrafını izni olmadan paylaşmak, 'sadece şaka' olsa bile onu gerçekten incitebilir." },
+        { "text": "Hayır — her zaman önce onlara sor", "correct": true, "coach": "Tam olarak doğru. Zararsız görünen fotoğraflarda bile izin önemlidir." },
+        { "text": "Sadece onları zaten tanıyanlarla paylaş", "correct": false, "coach": "Önemli olan izindir, kimin gördüğü değil — her zaman önce sor." }
+      ]
+    },
+    {
+      "narrator": "GLITCH",
+      "prompt": "İki farklı hesap sana sürekli mesaj atıyor, ama yazma şekillerinde bir şey aynı gibi hissettiriyor. Ne düşünmelisin?",
+      "choices": [
+        { "text": "Hiçbir şey, muhtemelen sadece iki arkadaş", "correct": false, "coach": "Aynı kişi, daha güvenilir görünmek ya da bir engeli aşmak için birden fazla hesap kullanabilir." },
+        { "text": "Aynı kişi olabilir — güvendiğin bir yetişkine bundan bahset", "correct": true, "coach": "İyi yakaladın. Böyle örüntüleri fark etmek tam olarak geliştirdiğimiz Şövalye becerisidir." },
+        { "text": "Her iki hesaptan da farklı olduklarını kanıtlamalarını iste", "correct": false, "coach": "Kendin araştırma — bunun yerine güvendiğin bir yetişkine götür." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "Çevrimiçi biriyle aynı fikirde değilim ve gerçekten sinirliyim. Şövalye tepkisi nedir?",
+      "choices": [
+        { "text": "Kötü bir şeyle karşılık ver", "correct": false, "coach": "Öfkeyle yanıt vermek genellikle durumu kötüleştirir ve seni de onlar kadar incitebilir." },
+        { "text": "Uzaklaş, sakinleş ve cevap vermeye değip değmediğine karar ver", "correct": true, "coach": "Tam olarak doğru — bir Şövalye anın kendisini değil, anı kontrol eder." },
+        { "text": "Arkadaşlarını da üstüne saldırtmaya çalış", "correct": false, "coach": "Grup halinde saldırmak, haklı hissetsen bile bir taciz türüdür." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Bir Dijital Şövalye olarak 'Kalkanını kaldır' gerçekte ne anlama gelir?",
+      "choices": [
+        { "text": "Çevrimiçi sadece kendini koru", "correct": false, "coach": "Bu sadece senden ibaret değil — bir Şövalye başkalarını da korur." },
+        { "text": "Kendini koru VE çevrimiçi başkalarını da gözet", "correct": true, "coach": "Tam olarak bu. Kalkanını kaldır — hem kendin hem de etrafındakiler için." },
+        { "text": "İnternetten tamamen kaçın", "correct": false, "coach": "Bir Şövalye olmak interneti akıllıca kullanmaktır, ondan kaçınmak değil." }
+      ]
+    }
+  ]
+}

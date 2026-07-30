@@ -92,15 +92,16 @@
   .hidden { display: none !important; }
 </style>
 <script src="assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
 </head>
 <body>
 
 <div class="topbar">
   <a class="brand" href="/">🛡️ Digital Safety Knights</a>
   <div style="display:flex;gap:16px;align-items:center;">
-    <a class="home-link" href="/resources.html">📚 Resources</a>
-    <a class="home-link" href="/game.html">🎮 Play Game</a>
-    <a class="home-link" href="/">← Home</a>
+    <a class="home-link" href="/resources.html" data-i18n="nav.resources">📚 Resources</a>
+    <a class="home-link" href="/game.html" data-i18n="qp.playGame">🎮 Play Game</a>
+    <a class="home-link" href="/" data-i18n="qp.home">← Home</a>
   </div>
 </div>
 
@@ -108,22 +109,22 @@
 
   <!-- NICKNAME GATE -->
   <div id="nickname-screen">
-    <h1>Pick your Knight nickname</h1>
-    <p>No last name, no email — just a nickname you like. It stays on this device only.</p>
-    <input id="nickname-input" maxlength="20" placeholder="e.g. PixelKnight99" autocomplete="off">
+    <h1 data-i18n="qp.pickNickname">Pick your Knight nickname</h1>
+    <p data-i18n="qp.nicknameHelp">No last name, no email — just a nickname you like. It stays on this device only.</p>
+    <input id="nickname-input" maxlength="20" placeholder="e.g. PixelKnight99" autocomplete="off" data-i18n-attr="placeholder:qp.nicknamePlaceholder">
 
     <div class="emblem-picker">
       <div class="emblem-preview" id="emblem-preview">🛡️</div>
-      <div class="emblem-label">Pick your emblem color</div>
+      <div class="emblem-label" data-i18n="qp.pickColor">Pick your emblem color</div>
       <div class="emblem-row" id="emblem-colors"></div>
-      <div class="emblem-label">Pick your emblem symbol</div>
+      <div class="emblem-label" data-i18n="qp.pickSymbol">Pick your emblem symbol</div>
       <div class="emblem-row" id="emblem-symbols"></div>
     </div>
 
     <div class="outro-actions" style="max-width:320px;margin:20px auto 0;">
-      <button class="btn-primary" onclick="saveNickname()">Shield up! 🛡️</button>
+      <button class="btn-primary" onclick="saveNickname()" data-i18n="qp.shieldUp">Shield up! 🛡️</button>
     </div>
-    <p class="privacy-note">Your nickname is stored only in this browser (localStorage). We never send it anywhere, and there's no account or login.</p>
+    <p class="privacy-note" data-i18n="qp.privacyNote">Your nickname is stored only in this browser (localStorage). We never send it anywhere, and there's no account or login.</p>
   </div>
 
   <!-- QUEST PICKER -->
@@ -139,12 +140,12 @@
         </div>
       </div>
     </div>
-    <p class="sub">Pick a quest. Each one takes about 3 minutes.</p>
+    <p class="sub" data-i18n="qp.pickQuest">Pick a quest. Each one takes about 3 minutes.</p>
     <div class="tier-row">
-      <span class="tier-label">Reading level:</span>
-      <button type="button" class="tier-btn" data-tier="younger" onclick="setQuestTier('younger')">🧒 6–9</button>
-      <button type="button" class="tier-btn" data-tier="standard" onclick="setQuestTier('standard')">🧑 10–13</button>
-      <button type="button" class="tier-btn" data-tier="older" onclick="setQuestTier('older')">🎓 14–17</button>
+      <span class="tier-label" data-i18n="qp.readingLevel">Reading level:</span>
+      <button type="button" class="tier-btn" data-tier="younger" onclick="setQuestTier('younger')" data-i18n="qp.tierYounger">🧒 6–9</button>
+      <button type="button" class="tier-btn" data-tier="standard" onclick="setQuestTier('standard')" data-i18n="qp.tierStandard">🧑 10–13</button>
+      <button type="button" class="tier-btn" data-tier="older" onclick="setQuestTier('older')" data-i18n="qp.tierOlder">🎓 14–17</button>
     </div>
     <div class="badge-strip" id="badge-strip"></div>
     <div class="quest-grid" id="quest-grid"></div>
@@ -161,18 +162,18 @@
     <div class="prompt-card"><p id="prompt-text"></p></div>
     <div id="choices-list"></div>
     <div id="coach-area"></div>
-    <button class="next-btn hidden" id="next-btn" onclick="nextQuestion()">Continue →</button>
+    <button class="next-btn hidden" id="next-btn" onclick="nextQuestion()" data-i18n="qp.continueBtn">Continue →</button>
   </div>
 
   <!-- SCORE / OUTRO -->
   <div id="score-screen" class="hidden">
     <div class="score-shield">🛡️</div>
-    <h1>Shield up!</h1>
+    <h1 data-i18n="qp.shieldUpPlain">Shield up!</h1>
     <div class="score-num" id="score-summary"></div>
     <div id="badge-unlock-box"></div>
     <div class="outro-actions">
-      <button class="btn-primary" onclick="showPicker()">Back to Quests</button>
-      <a class="btn-ghost" href="/certificate.html">🏅 View / Print Certificate</a>
+      <button class="btn-primary" onclick="showPicker()" data-i18n="qp.backToQuests">Back to Quests</button>
+      <a class="btn-ghost" href="/certificate.html" data-i18n="qp.viewCertificate">🏅 View / Print Certificate</a>
     </div>
   </div>
 
@@ -252,9 +253,10 @@ function saveProgress(p) { localStorage.setItem(PROGRESS_KEY, JSON.stringify(p))
 function completedCount() { return Object.keys(getProgress().completed).length; }
 
 function badgeForCount(n) {
-  if (n >= 6) return { name: "Gold Sentinel", emoji: "🏅" };
-  if (n >= 3) return { name: "Silver Guard", emoji: "🥈" };
-  if (n >= 1) return { name: "Bronze Squire", emoji: "🥉" };
+  const t = window.DSKi18n ? DSKi18n.t : function(k, f) { return f; };
+  if (n >= 6) return { name: t('qp.badgeGold', 'Gold Sentinel'), emoji: "🏅" };
+  if (n >= 3) return { name: t('qp.badgeSilver', 'Silver Guard'), emoji: "🥈" };
+  if (n >= 1) return { name: t('qp.badgeBronze', 'Bronze Squire'), emoji: "🥉" };
   return null;
 }
 
@@ -273,9 +275,10 @@ function showPicker() {
 
   const nick = localStorage.getItem(NICKNAME_KEY) || "Knight";
   const emblem = getEmblem();
+  const welcomeText = (window.DSKi18n ? DSKi18n.t('qp.welcomeBack', 'Welcome back, {n}!') : 'Welcome back, {n}!').replace('{n}', nick);
   document.getElementById('picker-greeting').innerHTML =
     '<span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:' + emblem.color + ';font-size:1rem;vertical-align:middle;margin-right:8px;">' + emblem.symbol + '</span>' +
-    'Welcome back, ' + nick + '!';
+    welcomeText;
 
   if (window.DSKPoints) {
     const streak = DSKPoints.checkStreak();
@@ -304,8 +307,9 @@ function showPicker() {
     const btn = document.createElement('button');
     btn.className = "quest-card" + (done ? " done" : "");
     btn.onclick = () => startQuest(q);
+    const statusText = window.DSKi18n ? (done ? DSKi18n.t('qp.completed', 'Completed') : DSKi18n.t('qp.notStarted', 'Not started')) : (done ? 'Completed' : 'Not started');
     btn.innerHTML = `<div class="quest-emoji">${q.meta ? q.meta.emoji : "🛡️"}</div>
-      <div class="quest-info"><h3>${q.meta ? q.meta.title : q.id}</h3><p>${done ? "Completed" : "Not started"}</p></div>
+      <div class="quest-info"><h3>${q.meta ? q.meta.title : q.id}</h3><p>${statusText}</p></div>
       ${done ? '<div class="quest-check">✅</div>' : ''}`;
     grid.appendChild(btn);
   });
@@ -313,12 +317,13 @@ function showPicker() {
   renderTierButtons();
 
   const n = completedCount();
+  const t = window.DSKi18n ? DSKi18n.t : function(k, f) { return f; };
   const tiers = [
-    { key: "bronze-squire", label: "Bronze Squire", emoji: "🥉", need: 1 },
-    { key: "silver-guard", label: "Silver Guard", emoji: "🥈", need: 3 },
-    { key: "gold-sentinel", label: "Gold Sentinel", emoji: "🏅", need: 6 },
-    { key: "diamond-defender", label: "Diamond Defender", emoji: "💎", need: 99 },
-    { key: "digital-knight", label: "Digital Knight", emoji: "⚔️", need: 99 },
+    { key: "bronze-squire", label: t('qp.badgeBronze', 'Bronze Squire'), emoji: "🥉", need: 1 },
+    { key: "silver-guard", label: t('qp.badgeSilver', 'Silver Guard'), emoji: "🥈", need: 3 },
+    { key: "gold-sentinel", label: t('qp.badgeGold', 'Gold Sentinel'), emoji: "🏅", need: 6 },
+    { key: "diamond-defender", label: t('qp.badgeDiamond', 'Diamond Defender'), emoji: "💎", need: 99 },
+    { key: "digital-knight", label: t('qp.badgeKnight', 'Digital Knight'), emoji: "⚔️", need: 99 },
   ];
   const strip = document.getElementById('badge-strip');
   strip.innerHTML = tiers.map(t => {
@@ -327,9 +332,10 @@ function showPicker() {
   }).join("");
 
   // Load meta (title/emoji) for cards not yet loaded, then re-render once.
+  const metaLang = window.DSKi18n ? DSKi18n.lang : 'en';
   const needsMeta = QUESTS.some(q => !q.meta);
   if (needsMeta) {
-    Promise.all(QUESTS.map(q => q.meta ? Promise.resolve() : fetch(q.file).then(r => r.json()).then(data => { q.meta = data; q.data = data; })))
+    Promise.all(QUESTS.map(q => q.meta ? Promise.resolve() : fetch(metaLang === 'tr' ? `content/quests/${q.id}-tr.json` : q.file).then(r => r.json()).then(data => { q.meta = data; q.data = data; })))
       .then(() => showPicker());
   }
 }
@@ -344,30 +350,35 @@ function startQuest(q) {
   document.getElementById('picker-screen').classList.add('hidden');
   document.getElementById('player-screen').classList.remove('hidden');
 
+  const lang = window.DSKi18n ? DSKi18n.lang : 'en';
   const tier = getQuestTier();
   const isForParents = q.meta && q.meta.forParents;
-  const tieredFile = (tier !== "standard" && !isForParents)
-    ? `content/quests/${q.id}-${tier}.json`
-    : q.file;
+  let variantFile = q.file;
+  if (lang === 'tr') {
+    variantFile = `content/quests/${q.id}-tr.json`;
+  } else if (tier !== "standard" && !isForParents) {
+    variantFile = `content/quests/${q.id}-${tier}.json`;
+  }
 
-  if (tieredFile === q.file && q.data) {
+  if (variantFile === q.file && q.data) {
     currentQuest = q;
     renderQuestion();
     return;
   }
 
-  fetch(tieredFile)
-    .then(r => { if (!r.ok) throw new Error("tier variant missing"); return r.json(); })
+  fetch(variantFile)
+    .then(r => { if (!r.ok) throw new Error("variant missing"); return r.json(); })
     .then(data => { currentQuest = Object.assign({}, q, { data: data }); renderQuestion(); })
     .catch(() => {
-      // No tier variant for this quest (e.g. parent-facing content) — standard version always exists.
+      // No variant for this quest/language (e.g. parent-facing content) — standard version always exists.
       fetch(q.file).then(r => r.json()).then(data => { currentQuest = Object.assign({}, q, { data: data }); renderQuestion(); });
     });
 }
 
 function renderQuestion() {
   const total = currentQuest.data.questions.length;
-  document.getElementById('q-progress-label').textContent = `QUESTION ${currentIndex + 1} OF ${total}`;
+  const qLabel = window.DSKi18n ? DSKi18n.t('qp.questionOf', 'QUESTION {i} OF {n}') : 'QUESTION {i} OF {n}';
+  document.getElementById('q-progress-label').textContent = qLabel.replace('{i}', currentIndex + 1).replace('{n}', total);
   document.getElementById('progress-fill').style.width = Math.round((currentIndex / total) * 100) + "%";
 
   const q = currentQuest.data.questions[currentIndex];
@@ -423,17 +434,19 @@ function finishQuest() {
 
   document.getElementById('player-screen').classList.add('hidden');
   document.getElementById('score-screen').classList.remove('hidden');
-  document.getElementById('score-summary').textContent =
-    `${currentQuest.data.title}: ${currentScore}/${currentQuest.data.questions.length} correct`;
+  const t = window.DSKi18n ? DSKi18n.t : function(k, f) { return f; };
+  const scoreLabel = t('qp.scoreLine', '{title}: {score}/{total} correct')
+    .replace('{title}', currentQuest.data.title).replace('{score}', currentScore).replace('{total}', currentQuest.data.questions.length);
+  document.getElementById('score-summary').textContent = scoreLabel;
 
   const n = completedCount();
   const badge = badgeForCount(n);
   const box = document.getElementById('badge-unlock-box');
   const newlyCompleted = !wasAlreadyDone;
   if (badge && newlyCompleted && (n === 1 || n === 3 || n === 6)) {
-    box.innerHTML = `<div class="badge-unlock">${badge.emoji} Badge unlocked: ${badge.name}!</div>`;
+    box.innerHTML = `<div class="badge-unlock">${badge.emoji} ${t('qp.badgeUnlocked', 'Badge unlocked: {name}!').replace('{name}', badge.name)}</div>`;
   } else if (badge) {
-    box.innerHTML = `<div class="badge-unlock">${badge.emoji} Current badge: ${badge.name} · ${n}/6 quests done</div>`;
+    box.innerHTML = `<div class="badge-unlock">${badge.emoji} ${t('qp.currentBadge', 'Current badge: {name} · {n}/6 quests done').replace('{name}', badge.name).replace('{n}', n)}</div>`;
   } else {
     box.innerHTML = "";
   }
