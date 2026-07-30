@@ -84,6 +84,7 @@
   footer span { color: var(--gold); font-weight: 800; }
 </style>
 <script src="assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
 </head>
 <body>
 
@@ -93,37 +94,37 @@
     <span>Digital Safety Knights</span>
   </a>
   <div class="nav-right">
-    <a href="/">Home</a>
-    <a href="/resources.html">Resources</a>
-    <a href="/game.html">Game</a>
-    <a href="/audit.html">Audit</a>
-    <a href="#" class="logout-btn" onclick="logout();return false;">Logout</a>
+    <a href="/" data-i18n="qp.home2">Home</a>
+    <a href="/resources.html" data-i18n="nav.resources2">Resources</a>
+    <a href="/game.html" data-i18n="res.navGame">Game</a>
+    <a href="/audit.html" data-i18n="nav.audit2">Audit</a>
+    <a href="#" class="logout-btn" onclick="logout();return false;" data-i18n="dash.logout">Logout</a>
   </div>
 </nav>
 
 <div class="loading" id="loadingState">
   <div class="spinner"></div>
-  <p>Verifying your login...</p>
+  <p data-i18n="dash.verifying">Verifying your login...</p>
 </div>
 
 <div class="error-page" id="errorState" style="display:none;">
   <div style="font-size:4rem;">🚫</div>
   <h2 id="errorTitle">Login Failed</h2>
   <p id="errorMsg">This login link is invalid or has expired.</p>
-  <a href="/login.html">← Try logging in again</a>
+  <a href="/login.html" data-i18n="dash.tryAgain">← Try logging in again</a>
 </div>
 
 <div class="dashboard" id="dashboard">
   <div class="welcome-card" style="display:flex;align-items:center;gap:1.8rem;flex-wrap:wrap;">
     <div id="kp-ring" style="width:100px;height:100px;flex-shrink:0;background:rgba(255,255,255,0.9);border-radius:50%;"></div>
     <div style="flex:1;min-width:240px;">
-      <h1>Welcome back, <span class="gold" id="memberName">Knight</span>! ⚔️ <span id="foundingRibbon" style="display:none;font-size:0.75rem;background:rgba(201,168,76,0.2);border:1px solid var(--gold);color:var(--gold);padding:4px 12px;border-radius:14px;vertical-align:middle;">⭐ Founding Knight</span></h1>
-      <p>Here's your DSK profile and progress. <b id="kp-points-label" style="color:var(--gold);">0</b> <span style="color:#a8b8d8;">Knight Points</span> <span id="kp-streak-label" style="color:#a8b8d8;"></span></p>
+      <h1><span data-i18n="dash.welcomeBack">Welcome back,</span> <span class="gold" id="memberName">Knight</span>! ⚔️ <span id="foundingRibbon" style="display:none;font-size:0.75rem;background:rgba(201,168,76,0.2);border:1px solid var(--gold);color:var(--gold);padding:4px 12px;border-radius:14px;vertical-align:middle;" data-i18n="dash.foundingKnight">⭐ Founding Knight</span></h1>
+      <p><span data-i18n="dash.profileProgress">Here's your DSK profile and progress.</span> <b id="kp-points-label" style="color:var(--gold);">0</b> <span style="color:#a8b8d8;" data-i18n="qp.knightPoints">Knight Points</span> <span id="kp-streak-label" style="color:#a8b8d8;"></span></p>
       <div class="member-info">
-        <div class="info-item"><span class="label">Membership</span><span class="value" id="memberPlan">—</span></div>
-        <div class="info-item"><span class="label">Country</span><span class="value" id="memberCountry">—</span></div>
-        <div class="info-item"><span class="label">Member Since</span><span class="value" id="memberSince">—</span></div>
-        <div class="info-item"><span class="label">Role</span><span class="value" id="memberRole">—</span></div>
+        <div class="info-item"><span class="label" data-i18n="dash.membership">Membership</span><span class="value" id="memberPlan">—</span></div>
+        <div class="info-item"><span class="label" data-i18n="dash.country">Country</span><span class="value" id="memberCountry">—</span></div>
+        <div class="info-item"><span class="label" data-i18n="dash.memberSince">Member Since</span><span class="value" id="memberSince">—</span></div>
+        <div class="info-item"><span class="label" data-i18n="dash.role">Role</span><span class="value" id="memberRole">—</span></div>
       </div>
     </div>
   </div>
@@ -131,46 +132,46 @@
   <div class="grid">
     <div>
       <div class="card">
-        <h2>🏅 Your Badges</h2>
+        <h2 data-i18n="dash.yourBadges">🏅 Your Badges</h2>
         <div class="progress-info" id="progressInfo">
-          <h3 id="progressTitle">Keep going!</h3>
-          <p id="progressDesc">Complete more activities to earn the next badge.</p>
+          <h3 id="progressTitle" data-i18n="dash.keepGoing">Keep going!</h3>
+          <p id="progressDesc" data-i18n="dash.completeMore">Complete more activities to earn the next badge.</p>
         </div>
         <div class="badges-grid" id="badgesGrid"></div>
       </div>
 
       <div class="card">
-        <h2>⚡ Quick Actions</h2>
+        <h2 data-i18n="dash.quickActions">⚡ Quick Actions</h2>
         <div class="quick-actions">
           <a href="/audit.html" class="action-link">
             <div class="icon">🛡️</div>
             <div class="text">
-              <h4>Take Family Safety Audit</h4>
-              <p>Get your safety score and recommendations</p>
+              <h4 data-i18n="dash.takeAudit">Take Family Safety Audit</h4>
+              <p data-i18n="dash.takeAuditP">Get your safety score and recommendations</p>
             </div>
             <div class="arrow">→</div>
           </a>
           <a href="/#guides" class="action-link">
             <div class="icon">📚</div>
             <div class="text">
-              <h4>Download Safety Guides</h4>
-              <p>6 free guides — Roblox, AI, devices, more</p>
+              <h4 data-i18n="dash.downloadGuides">Download Safety Guides</h4>
+              <p data-i18n="dash.downloadGuidesP">6 free guides — Roblox, AI, devices, more</p>
             </div>
             <div class="arrow">→</div>
           </a>
           <a href="/#journal" class="action-link">
             <div class="icon">📰</div>
             <div class="text">
-              <h4>Read Monthly Journal</h4>
-              <p>Latest threats and parent insights</p>
+              <h4 data-i18n="dash.readJournal">Read Monthly Journal</h4>
+              <p data-i18n="dash.readJournalP">Latest threats and parent insights</p>
             </div>
             <div class="arrow">→</div>
           </a>
           <a href="https://discord.gg/RmMZqnF4e" target="_blank" class="action-link">
             <div class="icon">💬</div>
             <div class="text">
-              <h4>Join Discord Community</h4>
-              <p>Connect with thousands of parents</p>
+              <h4 data-i18n="dash.joinDiscord">Join Discord Community</h4>
+              <p data-i18n="dash.joinDiscordP">Connect with thousands of parents</p>
             </div>
             <div class="arrow">→</div>
           </a>
@@ -180,37 +181,37 @@
 
     <div>
       <div class="card">
-        <h2>📊 Your Stats</h2>
+        <h2 data-i18n="dash.yourStats">📊 Your Stats</h2>
         <div class="stats-list">
-          <div class="stat-row"><span class="label">Guides Downloaded</span><span class="value" id="statGuides">0</span></div>
-          <div class="stat-row"><span class="label">Journals Read</span><span class="value" id="statJournals">0</span></div>
-          <div class="stat-row"><span class="label">Audits Completed</span><span class="value" id="statAudits">0</span></div>
-          <div class="stat-row"><span class="label">Friends Referred</span><span class="value" id="statReferrals">0</span></div>
-          <div class="stat-row"><span class="label">Badges Earned</span><span class="value" id="statBadges">0 / 5</span></div>
-          <div class="stat-row"><span class="label">🕹️ Game High Score</span><span class="value" id="statGameScore">0</span></div>
+          <div class="stat-row"><span class="label" data-i18n="dash.guidesDownloaded">Guides Downloaded</span><span class="value" id="statGuides">0</span></div>
+          <div class="stat-row"><span class="label" data-i18n="dash.journalsRead">Journals Read</span><span class="value" id="statJournals">0</span></div>
+          <div class="stat-row"><span class="label" data-i18n="dash.auditsCompleted">Audits Completed</span><span class="value" id="statAudits">0</span></div>
+          <div class="stat-row"><span class="label" data-i18n="dash.friendsReferred">Friends Referred</span><span class="value" id="statReferrals">0</span></div>
+          <div class="stat-row"><span class="label" data-i18n="dash.badgesEarned">Badges Earned</span><span class="value" id="statBadges">0 / 5</span></div>
+          <div class="stat-row"><span class="label" data-i18n="dash.gameHighScore">🕹️ Game High Score</span><span class="value" id="statGameScore">0</span></div>
         </div>
       </div>
 
       <div class="card">
-        <h2>🕹️ Shieldy's Message Sort</h2>
-        <p style="font-size:0.88rem;color:#555;line-height:1.6;margin-bottom:1rem;">
+        <h2 data-i18n="dash.messageSort">🕹️ Shieldy's Message Sort</h2>
+        <p style="font-size:0.88rem;color:#555;line-height:1.6;margin-bottom:1rem;" data-i18n="dash.messageSortP">
           Your high score is saved to your profile automatically every time you beat it.
         </p>
         <a href="/game.html" class="action-link" style="background:linear-gradient(135deg,#1a2f6e,#0d1b3e);color:white;">
           <div class="icon">🛡️</div>
-          <div class="text"><h4>Play Now</h4></div>
+          <div class="text"><h4 data-i18n="game.playNow2">Play Now</h4></div>
           <div class="arrow" style="color:var(--gold);">→</div>
         </a>
       </div>
 
       <div class="card">
-        <h2>💛 Support DSK</h2>
-        <p style="font-size:0.88rem;color:#555;line-height:1.6;margin-bottom:1rem;">
+        <h2 data-i18n="dash.supportDsk">💛 Support DSK</h2>
+        <p style="font-size:0.88rem;color:#555;line-height:1.6;margin-bottom:1rem;" data-i18n="dash.supportDskP">
           Your donation helps us protect more children worldwide. Every contribution makes a difference.
         </p>
         <a href="/#membership" class="action-link" style="background:linear-gradient(135deg,#c9a84c,#e8c56a);color:#0d1b3e;">
           <div class="icon">💛</div>
-          <div class="text"><h4>Make a Donation</h4></div>
+          <div class="text"><h4 data-i18n="dash.makeDonation">Make a Donation</h4></div>
           <div class="arrow">→</div>
         </a>
       </div>
@@ -221,12 +222,20 @@
 <footer><p><span>⚔️ Digital Safety Knights</span> · digitalsafetyknights.org · © 2026</p></footer>
 
 <script>
-  var ALL_BADGES = [
-    {id: 'Bronze Squire', icon: '🪙', class: 'b-bronze', desc: 'Joined DSK'},
-    {id: 'Silver Guard', icon: '🥈', class: 'b-silver', desc: '3+ guides downloaded'},
-    {id: 'Gold Sentinel', icon: '🏅', class: 'b-gold', desc: 'All guides + journal'},
-    {id: 'Diamond Defender', icon: '💎', class: 'b-diamond', desc: '5 referrals'},
-    {id: 'Digital Knight', icon: '⚔️', class: 'b-knight', desc: '1 year active'}
+  var dashIsTr = window.DSKi18n && DSKi18n.lang === 'tr';
+  // badge.id values must stay in English — they're matched against profile.badges from the server, not displayed as-is for the label
+  var ALL_BADGES = dashIsTr ? [
+    {id: 'Bronze Squire', label: 'Bronz Yaver', icon: '🪙', class: 'b-bronze', desc: "DSK'ya katıldı"},
+    {id: 'Silver Guard', label: 'Gümüş Muhafız', icon: '🥈', class: 'b-silver', desc: '3+ rehber indirildi'},
+    {id: 'Gold Sentinel', label: 'Altın Nöbetçi', icon: '🏅', class: 'b-gold', desc: 'Tüm rehberler + dergi'},
+    {id: 'Diamond Defender', label: 'Elmas Savunucu', icon: '💎', class: 'b-diamond', desc: '5 yönlendirme'},
+    {id: 'Digital Knight', label: 'Dijital Şövalye', icon: '⚔️', class: 'b-knight', desc: '1 yıl aktif'}
+  ] : [
+    {id: 'Bronze Squire', label: 'Bronze Squire', icon: '🪙', class: 'b-bronze', desc: 'Joined DSK'},
+    {id: 'Silver Guard', label: 'Silver Guard', icon: '🥈', class: 'b-silver', desc: '3+ guides downloaded'},
+    {id: 'Gold Sentinel', label: 'Gold Sentinel', icon: '🏅', class: 'b-gold', desc: 'All guides + journal'},
+    {id: 'Diamond Defender', label: 'Diamond Defender', icon: '💎', class: 'b-diamond', desc: '5 referrals'},
+    {id: 'Digital Knight', label: 'Digital Knight', icon: '⚔️', class: 'b-knight', desc: '1 year active'}
   ];
 
   function getToken() {
@@ -255,7 +264,7 @@
 
     if (profile.joined_at) {
       var d = new Date(profile.joined_at);
-      document.getElementById('memberSince').textContent = d.toLocaleDateString('en-US', {month: 'short', year: 'numeric'});
+      document.getElementById('memberSince').textContent = d.toLocaleDateString(dashIsTr ? 'tr-TR' : 'en-US', {month: 'short', year: 'numeric'});
     }
 
     document.getElementById('statGuides').textContent = (profile.guides_downloaded || []).length;
@@ -276,7 +285,7 @@
       var streak = DSKPoints.checkStreak();
       DSKPoints.renderLevelRing(document.getElementById('kp-ring'), DSKPoints.getPoints());
       document.getElementById('kp-points-label').textContent = DSKPoints.getPoints();
-      document.getElementById('kp-streak-label').textContent = streak.count > 1 ? ('· 🔥 ' + streak.count + '-day streak') : '';
+      document.getElementById('kp-streak-label').textContent = streak.count > 1 ? ('· 🔥 ' + streak.count + (dashIsTr ? ' günlük seri' : '-day streak')) : '';
     }
 
     var grid = document.getElementById('badgesGrid');
@@ -285,20 +294,33 @@
       return '<div class="badge-card ' + b.class + ' ' + (earned ? 'earned' : 'locked') + '">' +
         (earned ? '<div class="badge-check">✓</div>' : '') +
         '<div class="badge-icon">' + b.icon + '</div>' +
-        '<h4>' + b.id + '</h4>' +
+        '<h4>' + b.label + '</h4>' +
         '<p>' + b.desc + '</p>' +
       '</div>';
     }).join('');
 
-    if (profile.badges.length === 5) {
-      document.getElementById('progressTitle').textContent = '🎉 All Badges Earned!';
-      document.getElementById('progressDesc').textContent = "You're a true Digital Knight. Thank you for your dedication.";
-    } else if (profile.badges.length === 1) {
-      document.getElementById('progressTitle').textContent = '🚀 Just Getting Started';
-      document.getElementById('progressDesc').textContent = 'Download 3 safety guides or take the audit to earn Silver Guard.';
+    if (dashIsTr) {
+      if (profile.badges.length === 5) {
+        document.getElementById('progressTitle').textContent = '🎉 Tüm Rozetler Kazanıldı!';
+        document.getElementById('progressDesc').textContent = 'Gerçek bir Dijital Şövalyesin. Bağlılığın için teşekkürler.';
+      } else if (profile.badges.length === 1) {
+        document.getElementById('progressTitle').textContent = '🚀 Yeni Başlıyor';
+        document.getElementById('progressDesc').textContent = 'Gümüş Muhafız kazanmak için 3 güvenlik rehberi indir ya da denetimi yap.';
+      } else {
+        document.getElementById('progressTitle').textContent = 'Harika ilerleme!';
+        document.getElementById('progressDesc').textContent = 'Daha fazla rozet açmak için DSK ile etkileşime devam et.';
+      }
     } else {
-      document.getElementById('progressTitle').textContent = 'Great progress!';
-      document.getElementById('progressDesc').textContent = 'Keep engaging with DSK to unlock more badges.';
+      if (profile.badges.length === 5) {
+        document.getElementById('progressTitle').textContent = '🎉 All Badges Earned!';
+        document.getElementById('progressDesc').textContent = "You're a true Digital Knight. Thank you for your dedication.";
+      } else if (profile.badges.length === 1) {
+        document.getElementById('progressTitle').textContent = '🚀 Just Getting Started';
+        document.getElementById('progressDesc').textContent = 'Download 3 safety guides or take the audit to earn Silver Guard.';
+      } else {
+        document.getElementById('progressTitle').textContent = 'Great progress!';
+        document.getElementById('progressDesc').textContent = 'Keep engaging with DSK to unlock more badges.';
+      }
     }
 
     document.getElementById('loadingState').style.display = 'none';
@@ -331,7 +353,7 @@
         if (cached) {
           loadDashboard(JSON.parse(cached));
         } else {
-          showError('Login Required', data.message || 'Please log in to access your dashboard.');
+          showError(dashIsTr ? 'Giriş Gerekli' : 'Login Required', data.message || (dashIsTr ? 'Panelinize erişmek için lütfen giriş yapın.' : 'Please log in to access your dashboard.'));
           setTimeout(function() { window.location.href = '/login.html'; }, 3000);
         }
       }
@@ -342,13 +364,12 @@
       if (cached) {
         loadDashboard(JSON.parse(cached));
       } else {
-        showError('Connection Error', 'Could not load your profile. Please try again.');
+        showError(dashIsTr ? 'Bağlantı Hatası' : 'Connection Error', dashIsTr ? 'Profiliniz yüklenemedi. Lütfen tekrar deneyin.' : 'Could not load your profile. Please try again.');
       }
     });
   }
 </script>
 
-<script src="/assets/i18n.js"></script>
 <script src="/assets/lang-switcher.js"></script>
 <script src="/assets/site-search.js"></script>
 <script src="/assets/play-now-fab.js"></script>
