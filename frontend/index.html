@@ -186,6 +186,11 @@
   .g-text h4 { color: white; font-size: 0.95rem; margin-bottom: 4px; }
   .g-text p { color: #7a8fbb; font-size: 0.8rem; margin-bottom: 8px; }
   .dl-btn { background: var(--gold); color: var(--navy); border: none; border-radius: 8px; padding: 5px 14px; font-size: 0.75rem; font-weight: 800; cursor: pointer; text-decoration: none; display: inline-block; }
+  .quick-toggle { background: none; border: none; color: var(--gold2); font-size: 0.74rem; font-weight: 800; cursor: pointer; padding: 0; margin-left: 8px; text-decoration: underline; }
+  .quick-summary { display: none; list-style: none; margin-top: 10px; padding: 10px 12px; background: rgba(0,0,0,0.2); border-radius: 10px; border-left: 3px solid var(--gold); }
+  .quick-summary.open { display: block; }
+  .quick-summary li { font-size: 0.78rem; color: #cdd6ea; line-height: 1.5; margin-bottom: 5px; padding-left: 14px; position: relative; }
+  .quick-summary li::before { content: '•'; position: absolute; left: 0; color: var(--gold); }
 
   #journal { background: white; }
   .journal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 1.5rem; }
@@ -291,7 +296,8 @@
     <a href="/resources.html">📚 Resources</a>
     <a href="/knights.html">⚔️ Meet the Knights</a>
     <a href="/quests.html">🎮 Quests</a>
-    <a href="/game.html">🕹️ Game<span class="pop-tag">New</span></a>
+    <a href="/academy.html">🎓 Academy<span class="pop-tag">New</span></a>
+    <a href="/game.html">🕹️ Game</a>
     <a href="/glitch-detector.html">🔍 Glitch Detector</a>
     <a href="/tactic-almanac.html">📖 Tactic Almanac</a>
     <a href="#programs">Programs</a>
@@ -569,13 +575,56 @@
       <p>Free downloadable PDF guides — practical, step-by-step, no technical knowledge required.</p>
     </div>
     <div class="guides-grid">
-      <div class="guide-card"><div class="g-icon">🎮</div><div class="g-text"><h4>Roblox Parent Guide</h4><p>Complete privacy & chat lockdown walkthrough</p><a href="https://digitalsafetyknights.org/guides/roblox-parent-guide.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="dl-btn">Download PDF</a></div></div>
-      <div class="guide-card"><div class="g-icon">🤖</div><div class="g-text"><h4>Safe AI Usage for Kids</h4><p>Which AI tools are genuinely child-safe</p><a href="https://digitalsafetyknights.org/guides/safe-ai-usage-guide.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="dl-btn">Download PDF</a></div></div>
-      <div class="guide-card"><div class="g-icon">📱</div><div class="g-text"><h4>iPhone & Android Safety</h4><p>Screen time & app restriction setup</p><a href="https://digitalsafetyknights.org/guides/iphone-android-safety.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="dl-btn">Download PDF</a></div></div>
-      <div class="guide-card"><div class="g-icon">💬</div><div class="g-text"><h4>Talk to Your Kids Guide</h4><p>Age-appropriate conversation scripts</p><a href="https://digitalsafetyknights.org/guides/talk-to-your-kids-guide.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="dl-btn">Download PDF</a></div></div>
-      <div class="guide-card"><div class="g-icon">🔐</div><div class="g-text"><h4>Family Cybersecurity Checklist</h4><p>Passwords, VPN & DNS filtering setup</p><a href="https://digitalsafetyknights.org/guides/family-cybersecurity-checklist.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="dl-btn">Download PDF</a></div></div>
-      <div class="guide-card"><div class="g-icon">🆘</div><div class="g-text"><h4>Incident Response Guide</h4><p>Step-by-step: what to do if something happens</p><a href="https://digitalsafetyknights.org/guides/incident-response-guide.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="dl-btn">Download PDF</a></div></div>
+      <div class="guide-card"><div class="g-icon">🎮</div><div class="g-text"><h4>Roblox Parent Guide</h4><p>Complete privacy & chat lockdown walkthrough</p><a href="https://digitalsafetyknights.org/guides/roblox-parent-guide.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="dl-btn">Download PDF</a><button type="button" class="quick-toggle" onclick="toggleQuick(this)">⚡ 60-Second Version</button>
+        <ul class="quick-summary">
+          <li>Turn on Account Restrictions + Friends-Only chat — the single biggest lever for limiting stranger contact.</li>
+          <li>A "clean" visible chat doesn't mean safe — check for linked Discord servers you haven't seen.</li>
+          <li>Use the 10-minute rule: watch your child play instead of just asking what they play.</li>
+          <li>Treat unexpected gifts from other players as a red flag worth a conversation, not a nice surprise.</li>
+        </ul>
+      </div></div>
+      <div class="guide-card"><div class="g-icon">🤖</div><div class="g-text"><h4>Safe AI Usage for Kids</h4><p>Which AI tools are genuinely child-safe</p><a href="https://digitalsafetyknights.org/guides/safe-ai-usage-guide.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="dl-btn">Download PDF</a><button type="button" class="quick-toggle" onclick="toggleQuick(this)">⚡ 60-Second Version</button>
+        <ul class="quick-summary">
+          <li>AI can sound completely confident while being completely wrong — teach "double-check, don't trust the tone."</li>
+          <li>Voice and video can now be convincingly faked — a family code word beats a familiar-sounding voice.</li>
+          <li>An AI that always agrees isn't a real friend — it's a design pattern, not rapport.</li>
+          <li>Use AI to learn, never to submit someone else's (or something else's) words as your own.</li>
+        </ul>
+      </div></div>
+      <div class="guide-card"><div class="g-icon">📱</div><div class="g-text"><h4>iPhone & Android Safety</h4><p>Screen time & app restriction setup</p><a href="https://digitalsafetyknights.org/guides/iphone-android-safety.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="dl-btn">Download PDF</a><button type="button" class="quick-toggle" onclick="toggleQuick(this)">⚡ 60-Second Version</button>
+        <ul class="quick-summary">
+          <li>Screen Time / Digital Wellbeing controls are off by default — they only work once you turn them on.</li>
+          <li>App Store purchase approval prevents surprise downloads and in-app purchases.</li>
+          <li>Location sharing defaults vary wildly by app — check each one, don't assume.</li>
+          <li>A once-a-year, 30-minute settings reset catches what's drifted since last time.</li>
+        </ul>
+      </div></div>
+      <div class="guide-card"><div class="g-icon">💬</div><div class="g-text"><h4>Talk to Your Kids Guide</h4><p>Age-appropriate conversation scripts</p><a href="https://digitalsafetyknights.org/guides/talk-to-your-kids-guide.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="dl-btn">Download PDF</a><button type="button" class="quick-toggle" onclick="toggleQuick(this)">⚡ 60-Second Version</button>
+        <ul class="quick-summary">
+          <li>Age-appropriate scripts work better than one big scary talk — little and often beats once and dramatic.</li>
+          <li>Lead with curiosity ("what's this game like?") not interrogation.</li>
+          <li>Reacting calmly to bad news is what determines whether they tell you next time.</li>
+          <li>Have the conversation before there's a reason to, not just after.</li>
+        </ul>
+      </div></div>
+      <div class="guide-card"><div class="g-icon">🔐</div><div class="g-text"><h4>Family Cybersecurity Checklist</h4><p>Passwords, VPN & DNS filtering setup</p><a href="https://digitalsafetyknights.org/guides/family-cybersecurity-checklist.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="dl-btn">Download PDF</a><button type="button" class="quick-toggle" onclick="toggleQuick(this)">⚡ 60-Second Version</button>
+        <ul class="quick-summary">
+          <li>Unique passwords per account — one breach shouldn't cascade into five.</li>
+          <li>Two-factor authentication closes the gap a stolen password leaves open.</li>
+          <li>A VPN and DNS filtering add a network-level safety net beyond app settings.</li>
+          <li>Do a full family pass once a year — accounts and defaults drift.</li>
+        </ul>
+      </div></div>
+      <div class="guide-card"><div class="g-icon">🆘</div><div class="g-text"><h4>Incident Response Guide</h4><p>Step-by-step: what to do if something happens</p><a href="https://digitalsafetyknights.org/guides/incident-response-guide.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="dl-btn">Download PDF</a><button type="button" class="quick-toggle" onclick="toggleQuick(this)">⚡ 60-Second Version</button>
+        <ul class="quick-summary">
+          <li>Don't pay, don't delete, don't panic — screenshot first, always.</li>
+          <li>Tell a trusted adult the same day — evidence and options both shrink over time.</li>
+          <li>Report to the platform and to a formal channel (like a CyberTipline) — both matter.</li>
+          <li>Recovery conversations focus on next steps, not blame.</li>
+        </ul>
+      </div></div>
       <div class="guide-card"><div class="g-icon">🖨️</div><div class="g-text"><h4>The Knight's Toolkit</h4><p>Printable poster, sticker sheet & bookmarks</p><a href="https://digitalsafetyknights.org/guides/knights-toolkit.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="dl-btn">Download PDF</a></div></div>
+      <div class="guide-card"><div class="g-icon">🏫</div><div class="g-text"><h4>Classroom Lesson Plan Kit</h4><p>5-week digital safety syllabus for grades 4-8</p><a href="https://digitalsafetyknights.org/guides/classroom-lesson-plan-kit.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="dl-btn">Download PDF</a></div></div>
     </div>
   </div>
 </section>
@@ -618,6 +667,7 @@
     <div class="em-box">
       <h2>🆘 Emergency Help for Parents</h2>
       <p>If you believe a child is in immediate physical danger, call emergency services now. If your child has experienced online abuse, exploitation, or grooming — report it immediately.</p>
+      <div id="em-locate-banner" style="display:none;background:white;border:2px solid var(--danger);border-radius:14px;padding:12px 16px;max-width:480px;margin:0 auto 16px;font-size:0.85rem;color:var(--text);"></div>
       <input type="text" id="em-search" placeholder="🔍 Search your country..." style="width:100%;max-width:360px;padding:11px 16px;border:2px solid #eee0e0;border-radius:24px;font-size:0.9rem;margin-bottom:14px;font-family:inherit;">
       <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:1.6rem;">
         <button type="button" class="em-region-chip active" data-region="all" onclick="filterEmergency('all')" style="background:var(--danger);color:white;border:none;padding:8px 16px;border-radius:18px;font-weight:800;font-size:0.8rem;cursor:pointer;">🌐 All Regions</button>
@@ -627,46 +677,46 @@
         <button type="button" class="em-region-chip" data-region="asia" onclick="filterEmergency('asia')" style="background:var(--light);color:var(--text);border:none;padding:8px 16px;border-radius:18px;font-weight:800;font-size:0.8rem;cursor:pointer;">🌏 Asia &amp; Pacific</button>
       </div>
       <div class="em-grid" id="em-grid">
-        <div class="em-contact" data-region="americas"><h4>🇺🇸 USA — NCMEC</h4><a href="tel:18008435678">1-800-843-5678</a><small>cybertipline.org</small></div>
-        <div class="em-contact" data-region="americas"><h4>🌐 FBI Cyber Tips</h4><a href="https://tips.fbi.gov" target="_blank">tips.fbi.gov</a><small>USA federal crimes</small></div>
-        <div class="em-contact" data-region="americas"><h4>🇨🇦 Canada — Cybertip</h4><a href="https://cybertip.ca" target="_blank">cybertip.ca</a><small>Online exploitation</small></div>
-        <div class="em-contact" data-region="americas"><h4>🇲🇽 Mexico — Policia Cibernetica</h4><a href="tel:0885">088</a><small>www.gob.mx/policiafederal</small></div>
-        <div class="em-contact" data-region="europe"><h4>🇬🇧 UK — CEOP</h4><a href="https://www.ceop.police.uk" target="_blank">ceop.police.uk</a><small>Child exploitation</small></div>
-        <div class="em-contact" data-region="europe"><h4>🌍 Internet Watch Foundation</h4><a href="https://report.iwf.org.uk" target="_blank">report.iwf.org.uk</a><small>Report illegal content</small></div>
-        <div class="em-contact" data-region="europe"><h4>🇮🇪 Ireland — Hotline</h4><a href="https://hotline.ie" target="_blank">hotline.ie</a><small>Illegal online content</small></div>
-        <div class="em-contact" data-region="europe"><h4>🇩🇪 Germany — BKA</h4><a href="https://www.bka.de" target="_blank">bka.de</a><small>Federal Criminal Police</small></div>
-        <div class="em-contact" data-region="europe"><h4>🇫🇷 France — Pharos</h4><a href="https://www.internet-signalement.gouv.fr" target="_blank">internet-signalement.gouv.fr</a><small>Report cybercrime</small></div>
-        <div class="em-contact" data-region="europe"><h4>🇪🇸 Spain — INCIBE</h4><a href="tel:017">017</a><small>incibe.es</small></div>
-        <div class="em-contact" data-region="europe"><h4>🇮🇹 Italy — Polizia Postale</h4><a href="https://www.commissariatodips.it" target="_blank">commissariatodips.it</a><small>Postal Police</small></div>
-        <div class="em-contact" data-region="europe"><h4>🇳🇱 Netherlands — Meldpunt</h4><a href="https://meldpunt-kinderporno.nl" target="_blank">meldpunt-kinderporno.nl</a><small>Dutch hotline</small></div>
-        <div class="em-contact" data-region="europe"><h4>🇸🇪 Sweden — ECPAT</h4><a href="https://ecpat.se" target="_blank">ecpat.se</a><small>Child protection</small></div>
-        <div class="em-contact" data-region="europe"><h4>🇹🇷 Turkey — BTK</h4><a href="tel:158">158</a><small>ihbar.org.tr</small></div>
-        <div class="em-contact" data-region="europe"><h4>🇷🇺 Russia — Roskomnadzor</h4><a href="https://rkn.gov.ru" target="_blank">rkn.gov.ru</a><small>Content reporting</small></div>
-        <div class="em-contact" data-region="mea"><h4>🇮🇱 Israel — 105</h4><a href="tel:105">105</a><small>Child protection hotline</small></div>
-        <div class="em-contact" data-region="mea"><h4>🇸🇦 Saudi Arabia — 1919</h4><a href="tel:1919">1919</a><small>Cybercrime hotline</small></div>
-        <div class="em-contact" data-region="mea"><h4>🇦🇪 UAE — eCrime</h4><a href="https://www.ecrime.ae" target="_blank">ecrime.ae</a><small>Cybercrime reporting</small></div>
-        <div class="em-contact" data-region="asia"><h4>🇮🇳 India — Cyber Crime</h4><a href="https://cybercrime.gov.in" target="_blank">cybercrime.gov.in</a><small>Online reporting portal</small></div>
-        <div class="em-contact" data-region="asia"><h4>🇵🇰 Pakistan — FIA</h4><a href="tel:1991">1991</a><small>Cyber Crime Wing</small></div>
-        <div class="em-contact" data-region="asia"><h4>🇨🇳 China — CAC</h4><a href="https://www.12377.cn" target="_blank">12377.cn</a><small>Illegal content report</small></div>
-        <div class="em-contact" data-region="asia"><h4>🇯🇵 Japan — IHC</h4><a href="https://www.internethotline.jp" target="_blank">internethotline.jp</a><small>Internet Hotline Center</small></div>
-        <div class="em-contact" data-region="asia"><h4>🇰🇷 South Korea — KCSC</h4><a href="https://www.kocsc.or.kr" target="_blank">kocsc.or.kr</a><small>Communications Standards</small></div>
-        <div class="em-contact" data-region="asia"><h4>🇹🇭 Thailand — ThaiHotline</h4><a href="https://www.thaihotline.org" target="_blank">thaihotline.org</a><small>Report abuse</small></div>
-        <div class="em-contact" data-region="asia"><h4>🇵🇭 Philippines — IACAT</h4><a href="tel:1343">1343</a><small>Anti-trafficking hotline</small></div>
-        <div class="em-contact" data-region="asia"><h4>🇻🇳 Vietnam — VNCERT</h4><a href="https://www.vncert.gov.vn" target="_blank">vncert.gov.vn</a><small>Cybersecurity</small></div>
-        <div class="em-contact" data-region="asia"><h4>🇲🇾 Malaysia — CyberSecurity</h4><a href="tel:1300882999">1300-88-2999</a><small>cybersecurity.my</small></div>
-        <div class="em-contact" data-region="asia"><h4>🇸🇬 Singapore — SPF</h4><a href="tel:1800255000">1800-255-0000</a><small>Police Hotline</small></div>
-        <div class="em-contact" data-region="asia"><h4>🇮🇩 Indonesia — Kominfo</h4><a href="https://trustpositif.kominfo.go.id" target="_blank">trustpositif.kominfo.go.id</a><small>Content filtering</small></div>
-        <div class="em-contact" data-region="asia"><h4>🇦🇺 Australia — eSafety</h4><a href="https://www.esafety.gov.au" target="_blank">esafety.gov.au</a><small>Commissioner reports</small></div>
-        <div class="em-contact" data-region="asia"><h4>🇳🇿 New Zealand — Netsafe</h4><a href="tel:0508638723">0508 NETSAFE</a><small>netsafe.org.nz</small></div>
-        <div class="em-contact" data-region="mea"><h4>🇿🇦 South Africa — SAPS</h4><a href="tel:10111">10111</a><small>Police emergency</small></div>
-        <div class="em-contact" data-region="mea"><h4>🇪🇬 Egypt — 108</h4><a href="tel:108">108</a><small>Child hotline</small></div>
-        <div class="em-contact" data-region="mea"><h4>🇰🇪 Kenya — Childline</h4><a href="tel:116">116</a><small>childlinekenya.co.ke</small></div>
-        <div class="em-contact" data-region="mea"><h4>🇳🇬 Nigeria — NCCC</h4><a href="https://www.ncc.gov.ng" target="_blank">ncc.gov.ng</a><small>Communications Commission</small></div>
-        <div class="em-contact" data-region="americas"><h4>🇧🇷 Brazil — SaferNet</h4><a href="https://new.safernet.org.br" target="_blank">safernet.org.br</a><small>Online safety hotline</small></div>
-        <div class="em-contact" data-region="americas"><h4>🇦🇷 Argentina — Grooming</h4><a href="tel:134">134</a><small>grooming.gob.ar</small></div>
-        <div class="em-contact" data-region="americas"><h4>🇨🇱 Chile — CiberCrime</h4><a href="https://www.pdichile.cl" target="_blank">pdichile.cl</a><small>Investigations Police</small></div>
-        <div class="em-contact" data-region="americas"><h4>🇨🇴 Colombia — Te Protejo</h4><a href="https://teprotejo.org" target="_blank">teprotejo.org</a><small>Online exploitation</small></div>
-        <div class="em-contact" data-region="americas"><h4>🇵🇪 Peru — Chat 100</h4><a href="tel:100">100</a><small>Child helpline</small></div>
+        <div class="em-contact" data-region="americas" data-country="US"><h4>🇺🇸 USA — NCMEC</h4><a href="tel:18008435678">1-800-843-5678</a><small>cybertipline.org</small></div>
+        <div class="em-contact" data-region="americas" data-country="US"><h4>🌐 FBI Cyber Tips</h4><a href="https://tips.fbi.gov" target="_blank">tips.fbi.gov</a><small>USA federal crimes</small></div>
+        <div class="em-contact" data-region="americas" data-country="CA"><h4>🇨🇦 Canada — Cybertip</h4><a href="https://cybertip.ca" target="_blank">cybertip.ca</a><small>Online exploitation</small></div>
+        <div class="em-contact" data-region="americas" data-country="MX"><h4>🇲🇽 Mexico — Policia Cibernetica</h4><a href="tel:0885">088</a><small>www.gob.mx/policiafederal</small></div>
+        <div class="em-contact" data-region="europe" data-country="GB"><h4>🇬🇧 UK — CEOP</h4><a href="https://www.ceop.police.uk" target="_blank">ceop.police.uk</a><small>Child exploitation</small></div>
+        <div class="em-contact" data-region="europe" data-country="GB"><h4>🌍 Internet Watch Foundation</h4><a href="https://report.iwf.org.uk" target="_blank">report.iwf.org.uk</a><small>Report illegal content</small></div>
+        <div class="em-contact" data-region="europe" data-country="IE"><h4>🇮🇪 Ireland — Hotline</h4><a href="https://hotline.ie" target="_blank">hotline.ie</a><small>Illegal online content</small></div>
+        <div class="em-contact" data-region="europe" data-country="DE"><h4>🇩🇪 Germany — BKA</h4><a href="https://www.bka.de" target="_blank">bka.de</a><small>Federal Criminal Police</small></div>
+        <div class="em-contact" data-region="europe" data-country="FR"><h4>🇫🇷 France — Pharos</h4><a href="https://www.internet-signalement.gouv.fr" target="_blank">internet-signalement.gouv.fr</a><small>Report cybercrime</small></div>
+        <div class="em-contact" data-region="europe" data-country="ES"><h4>🇪🇸 Spain — INCIBE</h4><a href="tel:017">017</a><small>incibe.es</small></div>
+        <div class="em-contact" data-region="europe" data-country="IT"><h4>🇮🇹 Italy — Polizia Postale</h4><a href="https://www.commissariatodips.it" target="_blank">commissariatodips.it</a><small>Postal Police</small></div>
+        <div class="em-contact" data-region="europe" data-country="NL"><h4>🇳🇱 Netherlands — Meldpunt</h4><a href="https://meldpunt-kinderporno.nl" target="_blank">meldpunt-kinderporno.nl</a><small>Dutch hotline</small></div>
+        <div class="em-contact" data-region="europe" data-country="SE"><h4>🇸🇪 Sweden — ECPAT</h4><a href="https://ecpat.se" target="_blank">ecpat.se</a><small>Child protection</small></div>
+        <div class="em-contact" data-region="europe" data-country="TR"><h4>🇹🇷 Turkey — BTK</h4><a href="tel:158">158</a><small>ihbar.org.tr</small></div>
+        <div class="em-contact" data-region="europe" data-country="RU"><h4>🇷🇺 Russia — Roskomnadzor</h4><a href="https://rkn.gov.ru" target="_blank">rkn.gov.ru</a><small>Content reporting</small></div>
+        <div class="em-contact" data-region="mea" data-country="IL"><h4>🇮🇱 Israel — 105</h4><a href="tel:105">105</a><small>Child protection hotline</small></div>
+        <div class="em-contact" data-region="mea" data-country="SA"><h4>🇸🇦 Saudi Arabia — 1919</h4><a href="tel:1919">1919</a><small>Cybercrime hotline</small></div>
+        <div class="em-contact" data-region="mea" data-country="AE"><h4>🇦🇪 UAE — eCrime</h4><a href="https://www.ecrime.ae" target="_blank">ecrime.ae</a><small>Cybercrime reporting</small></div>
+        <div class="em-contact" data-region="asia" data-country="IN"><h4>🇮🇳 India — Cyber Crime</h4><a href="https://cybercrime.gov.in" target="_blank">cybercrime.gov.in</a><small>Online reporting portal</small></div>
+        <div class="em-contact" data-region="asia" data-country="PK"><h4>🇵🇰 Pakistan — FIA</h4><a href="tel:1991">1991</a><small>Cyber Crime Wing</small></div>
+        <div class="em-contact" data-region="asia" data-country="CN"><h4>🇨🇳 China — CAC</h4><a href="https://www.12377.cn" target="_blank">12377.cn</a><small>Illegal content report</small></div>
+        <div class="em-contact" data-region="asia" data-country="JP"><h4>🇯🇵 Japan — IHC</h4><a href="https://www.internethotline.jp" target="_blank">internethotline.jp</a><small>Internet Hotline Center</small></div>
+        <div class="em-contact" data-region="asia" data-country="KR"><h4>🇰🇷 South Korea — KCSC</h4><a href="https://www.kocsc.or.kr" target="_blank">kocsc.or.kr</a><small>Communications Standards</small></div>
+        <div class="em-contact" data-region="asia" data-country="TH"><h4>🇹🇭 Thailand — ThaiHotline</h4><a href="https://www.thaihotline.org" target="_blank">thaihotline.org</a><small>Report abuse</small></div>
+        <div class="em-contact" data-region="asia" data-country="PH"><h4>🇵🇭 Philippines — IACAT</h4><a href="tel:1343">1343</a><small>Anti-trafficking hotline</small></div>
+        <div class="em-contact" data-region="asia" data-country="VN"><h4>🇻🇳 Vietnam — VNCERT</h4><a href="https://www.vncert.gov.vn" target="_blank">vncert.gov.vn</a><small>Cybersecurity</small></div>
+        <div class="em-contact" data-region="asia" data-country="MY"><h4>🇲🇾 Malaysia — CyberSecurity</h4><a href="tel:1300882999">1300-88-2999</a><small>cybersecurity.my</small></div>
+        <div class="em-contact" data-region="asia" data-country="SG"><h4>🇸🇬 Singapore — SPF</h4><a href="tel:1800255000">1800-255-0000</a><small>Police Hotline</small></div>
+        <div class="em-contact" data-region="asia" data-country="ID"><h4>🇮🇩 Indonesia — Kominfo</h4><a href="https://trustpositif.kominfo.go.id" target="_blank">trustpositif.kominfo.go.id</a><small>Content filtering</small></div>
+        <div class="em-contact" data-region="asia" data-country="AU"><h4>🇦🇺 Australia — eSafety</h4><a href="https://www.esafety.gov.au" target="_blank">esafety.gov.au</a><small>Commissioner reports</small></div>
+        <div class="em-contact" data-region="asia" data-country="NZ"><h4>🇳🇿 New Zealand — Netsafe</h4><a href="tel:0508638723">0508 NETSAFE</a><small>netsafe.org.nz</small></div>
+        <div class="em-contact" data-region="mea" data-country="ZA"><h4>🇿🇦 South Africa — SAPS</h4><a href="tel:10111">10111</a><small>Police emergency</small></div>
+        <div class="em-contact" data-region="mea" data-country="EG"><h4>🇪🇬 Egypt — 108</h4><a href="tel:108">108</a><small>Child hotline</small></div>
+        <div class="em-contact" data-region="mea" data-country="KE"><h4>🇰🇪 Kenya — Childline</h4><a href="tel:116">116</a><small>childlinekenya.co.ke</small></div>
+        <div class="em-contact" data-region="mea" data-country="NG"><h4>🇳🇬 Nigeria — NCCC</h4><a href="https://www.ncc.gov.ng" target="_blank">ncc.gov.ng</a><small>Communications Commission</small></div>
+        <div class="em-contact" data-region="americas" data-country="BR"><h4>🇧🇷 Brazil — SaferNet</h4><a href="https://new.safernet.org.br" target="_blank">safernet.org.br</a><small>Online safety hotline</small></div>
+        <div class="em-contact" data-region="americas" data-country="AR"><h4>🇦🇷 Argentina — Grooming</h4><a href="tel:134">134</a><small>grooming.gob.ar</small></div>
+        <div class="em-contact" data-region="americas" data-country="CL"><h4>🇨🇱 Chile — CiberCrime</h4><a href="https://www.pdichile.cl" target="_blank">pdichile.cl</a><small>Investigations Police</small></div>
+        <div class="em-contact" data-region="americas" data-country="CO"><h4>🇨🇴 Colombia — Te Protejo</h4><a href="https://teprotejo.org" target="_blank">teprotejo.org</a><small>Online exploitation</small></div>
+        <div class="em-contact" data-region="americas" data-country="PE"><h4>🇵🇪 Peru — Chat 100</h4><a href="tel:100">100</a><small>Child helpline</small></div>
         <div class="em-contact" data-region="americas"><h4>💬 Crisis Text Line</h4><a href="sms:741741?body=HOME">Text HOME to 741741</a><small>USA/Canada 24/7</small></div>
       </div>
     </div>
@@ -703,10 +753,19 @@
       <a href="/resources.html">📚 Resource Center</a>
       <a href="#guides">Safety Guides</a>
       <a href="/guides/knights-toolkit.pdf">🖨️ The Knight's Toolkit</a>
-      <a href="#journal">Monthly Journal</a>
+      <a href="/journal-archive.html">📰 Journal Archive</a>
       <a href="/knight-chronicles.html">💥 Knight Chronicles Comic</a>
       <a href="/shieldys-journal.html">🛡️ Shieldy's Journal</a>
       <a href="/monthly-report/">📰 This Month in Digital Safety</a>
+    </div>
+    <div class="f-col">
+      <h4>Learning Paths</h4>
+      <a href="/academy.html">🎓 The Knight Academy</a>
+      <a href="/case-studies.html">📔 What Happened To…</a>
+      <a href="/glossary.html">📖 Glossary of Terms</a>
+      <a href="/myth-vs-fact.html">🔍 Myth vs Fact</a>
+      <a href="/media-agreement.html">📝 Family Media Agreement</a>
+      <a href="/guides/classroom-lesson-plan-kit.pdf">🏫 Classroom Lesson Plan Kit</a>
     </div>
     <div class="f-col">
       <h4>Organization</h4>
@@ -1025,6 +1084,84 @@
   }
   document.getElementById('em-search').addEventListener('input', applyEmergencyFilter);
 
+  // Smart, privacy-first country detection — no permission prompt required.
+  // Guesses from the browser's IANA timezone (already exposed to every page,
+  // no API call, no location permission), then pins that country's card to
+  // the top of the grid. An optional precise-location upgrade is offered for
+  // timezones shared by multiple countries.
+  (function emergencyLocate() {
+    var TZ_TO_COUNTRY = {
+      "America/New_York": "US", "America/Chicago": "US", "America/Denver": "US", "America/Los_Angeles": "US", "America/Anchorage": "US", "Pacific/Honolulu": "US",
+      "America/Toronto": "CA", "America/Vancouver": "CA", "America/Edmonton": "CA", "America/Winnipeg": "CA", "America/Halifax": "CA",
+      "America/Mexico_City": "MX", "America/Tijuana": "MX",
+      "America/Sao_Paulo": "BR", "America/Argentina/Buenos_Aires": "AR", "America/Santiago": "CL", "America/Bogota": "CO", "America/Lima": "PE",
+      "Europe/London": "GB", "Europe/Dublin": "IE", "Europe/Berlin": "DE", "Europe/Paris": "FR", "Europe/Madrid": "ES",
+      "Europe/Rome": "IT", "Europe/Amsterdam": "NL", "Europe/Stockholm": "SE", "Europe/Istanbul": "TR", "Europe/Moscow": "RU",
+      "Asia/Jerusalem": "IL", "Asia/Riyadh": "SA", "Asia/Dubai": "AE",
+      "Asia/Kolkata": "IN", "Asia/Karachi": "PK", "Asia/Shanghai": "CN", "Asia/Tokyo": "JP", "Asia/Seoul": "KR",
+      "Asia/Bangkok": "TH", "Asia/Manila": "PH", "Asia/Ho_Chi_Minh": "VN", "Asia/Kuala_Lumpur": "MY", "Asia/Singapore": "SG",
+      "Asia/Jakarta": "ID", "Australia/Sydney": "AU", "Australia/Melbourne": "AU", "Pacific/Auckland": "NZ",
+      "Africa/Johannesburg": "ZA", "Africa/Cairo": "EG", "Africa/Nairobi": "KE", "Africa/Lagos": "NG"
+    };
+    // Approximate capital-city coordinates, used only for the opt-in precise
+    // upgrade below (nearest-match, entirely client-side — no geocoding API).
+    var COUNTRY_COORDS = {
+      US: [38.9, -77.0], CA: [45.4, -75.7], MX: [19.4, -99.1], BR: [-15.8, -47.9], AR: [-34.6, -58.4],
+      CL: [-33.4, -70.6], CO: [4.7, -74.1], PE: [-12.0, -77.0], GB: [51.5, -0.1], IE: [53.3, -6.3],
+      DE: [52.5, 13.4], FR: [48.9, 2.3], ES: [40.4, -3.7], IT: [41.9, 12.5], NL: [52.4, 4.9],
+      SE: [59.3, 18.1], TR: [39.9, 32.9], RU: [55.8, 37.6], IL: [31.8, 35.2], SA: [24.7, 46.7],
+      AE: [24.5, 54.4], IN: [28.6, 77.2], PK: [33.7, 73.0], CN: [39.9, 116.4], JP: [35.7, 139.7],
+      KR: [37.6, 127.0], TH: [13.8, 100.5], PH: [14.6, 121.0], VN: [21.0, 105.8], MY: [3.1, 101.7],
+      SG: [1.35, 103.8], ID: [-6.2, 106.8], AU: [-35.3, 149.1], NZ: [-41.3, 174.8], ZA: [-25.7, 28.2],
+      EG: [30.0, 31.2], KE: [-1.3, 36.8], NG: [9.1, 7.5]
+    };
+    var COUNTRY_NAMES = { US: "USA", CA: "Canada", MX: "Mexico", BR: "Brazil", AR: "Argentina", CL: "Chile", CO: "Colombia", PE: "Peru", GB: "the UK", IE: "Ireland", DE: "Germany", FR: "France", ES: "Spain", IT: "Italy", NL: "the Netherlands", SE: "Sweden", TR: "Turkey", RU: "Russia", IL: "Israel", SA: "Saudi Arabia", AE: "the UAE", IN: "India", PK: "Pakistan", CN: "China", JP: "Japan", KR: "South Korea", TH: "Thailand", PH: "the Philippines", VN: "Vietnam", MY: "Malaysia", SG: "Singapore", ID: "Indonesia", AU: "Australia", NZ: "New Zealand", ZA: "South Africa", EG: "Egypt", KE: "Kenya", NG: "Nigeria" };
+
+    function pinCountry(code) {
+      var card = document.querySelector('#em-grid .em-contact[data-country="' + code + '"]');
+      if (!card) return false;
+      var clone = card.cloneNode(true);
+      clone.classList.add('em-pinned');
+      clone.style.border = '2px solid var(--danger)';
+      clone.style.order = '-1';
+      document.getElementById('em-grid').prepend(clone);
+      return true;
+    }
+
+    function showBanner(code, precise) {
+      var banner = document.getElementById('em-locate-banner');
+      var name = COUNTRY_NAMES[code] || code;
+      banner.style.display = 'block';
+      banner.innerHTML = '📍 ' + (precise ? 'Based on your location, looks like you\'re in <b>' + name + '</b>' : 'Looks like you might be in <b>' + name + '</b>') +
+        ' — your local contact is pinned to the top.' +
+        (precise ? '' : ' <button type="button" onclick="emergencyUsePreciseLocation()" style="background:none;border:none;color:var(--danger);font-weight:800;text-decoration:underline;cursor:pointer;font-size:0.85rem;">Use my exact location instead</button>') +
+        ' <button type="button" onclick="document.getElementById(\'em-locate-banner\').style.display=\'none\';document.querySelectorAll(\'.em-pinned\').forEach(function(e){e.remove()});" style="background:none;border:none;color:var(--gray);text-decoration:underline;cursor:pointer;font-size:0.85rem;">Not right? Dismiss</button>';
+    }
+
+    window.emergencyUsePreciseLocation = function() {
+      if (!navigator.geolocation) return;
+      navigator.geolocation.getCurrentPosition(function(pos) {
+        var lat = pos.coords.latitude, lon = pos.coords.longitude;
+        var best = null, bestDist = Infinity;
+        Object.keys(COUNTRY_COORDS).forEach(function(code) {
+          var c = COUNTRY_COORDS[code];
+          var d = Math.pow(c[0] - lat, 2) + Math.pow(c[1] - lon, 2);
+          if (d < bestDist) { bestDist = d; best = code; }
+        });
+        if (best) {
+          document.querySelectorAll('.em-pinned').forEach(function(e) { e.remove(); });
+          if (pinCountry(best)) showBanner(best, true);
+        }
+      }, function() { /* permission denied or unavailable — silently keep the timezone-based guess */ });
+    };
+
+    try {
+      var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      var code = TZ_TO_COUNTRY[tz];
+      if (code && pinCountry(code)) showBanner(code, false);
+    } catch (e) { /* Intl unsupported — no smart default, full list still works */ }
+  })();
+
   (function seasonalBadges() {
     var SEASONS = [{ months: [7, 8], badge: 'assets/icons/seasonal-back-to-school.png' }];
     var m = new Date().getMonth();
@@ -1275,6 +1412,13 @@
       setTimeout(function() { overlay.classList.add('open'); }, 1200);
     }
   })();
+
+  // 60-Second Version toggle on guide cards
+  window.toggleQuick = function(btn) {
+    var list = btn.parentElement.querySelector('.quick-summary');
+    var open = list.classList.toggle('open');
+    btn.textContent = open ? '⚡ Hide Summary' : '⚡ 60-Second Version';
+  };
 
   // "What's New" banner — dismissible per-issue
   (function() {

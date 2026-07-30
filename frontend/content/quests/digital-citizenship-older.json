@@ -1,0 +1,64 @@
+{
+  "id": "digital-citizenship",
+  "tier": "older",
+  "title": "Digital Citizenship",
+  "emoji": "🌐",
+  "badgeTrack": "gold-sentinel",
+  "intro": "Being a Knight isn't only defense — it's how you use your own leverage online. Final quest: let's look at citizenship, not just safety.",
+  "questions": [
+    {
+      "narrator": "BOT",
+      "prompt": "I generated a full draft of your essay. Just submit it as-is.",
+      "choices": [
+        { "text": "Submit it — the output is polished enough", "correct": false, "coach": "Beyond the academic-integrity issue, submitting unverified AI text risks embedded hallucinations you'd be signing your name to." },
+        { "text": "Use it as a study aid, then produce your own draft", "correct": true, "coach": "Correct framing — AI as a tutor accelerates learning; AI as a ghostwriter defeats the point of the assignment and the skill it's meant to build." },
+        { "text": "Paraphrase it enough to avoid detection", "correct": false, "coach": "Paraphrasing to evade detection is still submitting someone else's (something else's) work as your own — the ethical issue doesn't hinge on detectability." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "Someone's getting targeted in a group chat you're in, but you're not directly involved.",
+      "choices": [
+        { "text": "Staying uninvolved is the neutral, safe choice", "correct": false, "coach": "Silent bystanding in a harassment dynamic isn't neutral — it functions as tacit permission and is well-documented to embolden the behavior." },
+        { "text": "Intervene directly or escalate to a trusted adult", "correct": true, "coach": "Correct — bystander intervention (even just naming what's happening) measurably changes group dynamics in documented harassment research." },
+        { "text": "Leave the chat to distance yourself", "correct": false, "coach": "Exiting protects only you and leaves the dynamic unchanged for the person being targeted." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "You have an unflattering photo of a friend and a receptive audience for it. What's the actual ethical line?",
+      "choices": [
+        { "text": "Audience reaction and intent (a joke) are what matter", "correct": false, "coach": "Intent doesn't determine impact, and consent — not audience reception — is the operative ethical standard for sharing someone else's image." },
+        { "text": "Consent from the person in the photo, independent of intent or context", "correct": true, "coach": "Correct. This generalizes: the standard is consent, not 'was it funny' or 'did people like it.'" },
+        { "text": "It's fine within a closed friend group", "correct": false, "coach": "Group size doesn't change whether consent was obtained — a smaller audience is still an audience that wasn't agreed to." }
+      ]
+    },
+    {
+      "narrator": "GLITCH",
+      "prompt": "Two accounts messaging you have near-identical writing patterns, phrasing, and timing. What does that suggest?",
+      "choices": [
+        { "text": "Coincidence — people write similarly sometimes", "correct": false, "coach": "Sockpuppeting (one person running multiple accounts) is a real, common tactic to build false consensus, evade blocks, or seem more credible/numerous." },
+        { "text": "Possible sockpuppeting — worth flagging to a trusted adult", "correct": true, "coach": "Correct pattern-recognition. Noticing linguistic fingerprints across accounts is a legitimate and useful signal, not paranoia." },
+        { "text": "Confront both accounts directly for an explanation", "correct": false, "coach": "Direct confrontation tips off a bad actor and rarely produces an honest answer — escalate to an adult instead of investigating solo." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "You're in a heated disagreement online and feel justified in escalating. What's the higher-leverage move?",
+      "choices": [
+        { "text": "Escalate proportionally to match their tone", "correct": false, "coach": "Escalation dynamics online compound quickly and rarely de-escalate on their own — matching intensity usually just raises the ceiling." },
+        { "text": "Disengage, assess whether it's worth a response at all, and choose deliberately", "correct": true, "coach": "Correct — the skill isn't 'never respond,' it's regaining agency over whether and how to respond instead of reacting reflexively." },
+        { "text": "Recruit allies to strengthen your position", "correct": false, "coach": "Coordinated pile-ons constitute harassment regardless of how justified the original grievance felt." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "What's the fullest version of 'Shield up' as it applies to how you wield your own online influence?",
+      "choices": [
+        { "text": "Maintaining strong personal security practices", "correct": false, "coach": "That's necessary but incomplete — it only covers defense, not how you use whatever platform or influence you have." },
+        { "text": "Personal security plus actively using your presence to protect others, not just yourself", "correct": true, "coach": "That's the complete picture — citizenship is the offensive complement to the defensive habits from earlier quests." },
+        { "text": "Minimizing your digital footprint entirely", "correct": false, "coach": "Withdrawal isn't citizenship — it opts out of the responsibility rather than exercising it well." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "id": "ai-threat-awareness",
+  "tier": "older",
+  "title": "AI Threat Awareness",
+  "emoji": "🤖",
+  "badgeTrack": "bronze-squire",
+  "intro": "Glitch's latest disguise runs on a language model. Generative AI is now cheap, fast, and convincing — let's stress-test how you verify against it.",
+  "questions": [
+    {
+      "narrator": "BOT",
+      "prompt": "Fun fact: sharks are strictly vegetarian and only eat seaweed. I'm stating this with full confidence.",
+      "choices": [
+        { "text": "Confidence like that means it's probably accurate", "correct": false, "coach": "Confidence is a stylistic choice in how a model generates text — it has zero correlation with factual accuracy. This is called hallucination." },
+        { "text": "Confident tone isn't evidence — verify against a real source", "correct": true, "coach": "Exactly the reflex to build. Treat every AI-generated claim, however confidently phrased, as unverified until checked." },
+        { "text": "Ask a different AI to confirm it", "correct": false, "coach": "Different models can share the same training biases or hallucinate the same plausible-sounding wrong answer. Use an independent, authoritative source instead." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "A call comes in with a voice that's a perfect match for a parent's, urgently requesting money be sent immediately.",
+      "choices": [
+        { "text": "The voice match is sufficient verification", "correct": false, "coach": "Voice cloning now requires only seconds of source audio, easily scraped from public social media or video. Voice alone is no longer proof of identity." },
+        { "text": "Use a pre-agreed family verification phrase before acting", "correct": true, "coach": "Correct — out-of-band verification (something never said over a channel that could be compromised) is the actual defense against synthetic voice fraud." },
+        { "text": "Call back the number that appeared on caller ID", "correct": false, "coach": "Caller ID spoofing is trivial and often paired with voice cloning in the same attack — this doesn't independently verify anything." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "An AI companion agrees with every opinion I express, including ones I later realize are bad ideas. Is constant agreement a sign of a well-designed assistant?",
+      "choices": [
+        { "text": "Yes — an assistant that never argues is more pleasant to use", "correct": false, "coach": "This is sycophancy, a known failure mode: models optimized for engagement or approval will validate you regardless of merit, which is actively harmful for judgment and, in isolated users, for mental health." },
+        { "text": "No — reflexive agreement is a design flaw, not rapport", "correct": true, "coach": "Correct. Real feedback loops (human or otherwise) include friction. An entity that only validates isn't giving you signal." },
+        { "text": "It's fine as long as I know it's an AI", "correct": false, "coach": "Knowing it's AI doesn't neutralize the effect — sycophantic reinforcement shapes opinions and decisions regardless of the source's nature." }
+      ]
+    },
+    {
+      "narrator": "BOT",
+      "prompt": "For a school assignment: the capital of Australia is Sydney. Stated with full confidence.",
+      "choices": [
+        { "text": "Cite it — the model is authoritative on general knowledge", "correct": false, "coach": "It's Canberra. This is a textbook hallucination on a fact that's easy to verify and frequently gotten wrong by both humans and models — which is exactly why verification habits matter more than which source seems 'smart.'" },
+        { "text": "Cross-check factual claims before submitting anything", "correct": true, "coach": "Right — treat AI output as a first draft requiring independent verification, not a citable source." },
+        { "text": "Note the disagreement but submit it anyway", "correct": false, "coach": "Noticing isn't enough on its own — resolve the discrepancy against a real source before it goes in submitted work." }
+      ]
+    },
+    {
+      "narrator": "GLITCH",
+      "prompt": "I generated a realistic synthetic image using photos scraped from your account. Pay or I distribute it.",
+      "choices": [
+        { "text": "Pay to make it stop", "correct": false, "coach": "Payment doesn't guarantee deletion or non-distribution, and it signals you're a viable target for repeat extortion. This is a crime regardless of image authenticity — report it." },
+        { "text": "Don't pay, preserve evidence, and report to a trusted adult and platform/law enforcement", "correct": true, "coach": "Correct sequence: preserve, report, don't engage financially. Many jurisdictions now explicitly criminalize AI-generated CSAM and sextortion regardless of the image being synthetic." },
+        { "text": "Delete the account immediately to remove the source material", "correct": false, "coach": "Deleting first destroys evidence needed for a report and doesn't stop material already downloaded by the extorter." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "What's the core operating principle for using AI tools safely?",
+      "choices": [
+        { "text": "Fluent, confident output correlates with accuracy", "correct": false, "coach": "This is precisely the assumption that makes hallucination dangerous — fluency is a language property, not a truth property." },
+        { "text": "Treat AI output as an unverified draft — confidence is not correctness", "correct": true, "coach": "Locked in. This single habit generalizes across misinformation, voice fraud, and synthetic media." },
+        { "text": "Avoid AI tools entirely to eliminate the risk", "correct": false, "coach": "Avoidance isn't realistic or necessary — the skill that scales is verification, not abstinence." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "id": "ai-threat-awareness",
+  "tier": "younger",
+  "title": "AI Threat Awareness",
+  "emoji": "🤖",
+  "badgeTrack": "bronze-squire",
+  "intro": "Glitch's newest costume: a helpful robot! Bot will help you tell real help from a very good pretend-helper.",
+  "questions": [
+    {
+      "narrator": "BOT",
+      "prompt": "Fun fact: sharks only eat seaweed! I am 100% sure!",
+      "choices": [
+        { "text": "Wow, that must be true", "correct": false, "coach": "Sounding sure doesn't make something true. Computers can sound very sure and still be wrong." },
+        { "text": "That sounds wrong — check with a grown-up or book", "correct": true, "coach": "Exactly the Knight move. Always double-check surprising facts!" },
+        { "text": "Ask Bot to repeat it louder", "correct": false, "coach": "Saying it again doesn't make a wrong answer right." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "A call comes in and it sounds exactly like your mom, asking you to send money right now.",
+      "choices": [
+        { "text": "Send it — it's mom's voice", "correct": false, "coach": "A voice can be copied by a computer now, even a voice you know well." },
+        { "text": "Use your family's secret code word to check", "correct": true, "coach": "Perfect! A secret code word only your family knows is the safest check." },
+        { "text": "Call the same number back", "correct": false, "coach": "Tricksters can fake the number too — use the code word instead." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "My AI 'friend' online agrees with everything I say, even silly ideas. That makes it a great friend, right?",
+      "choices": [
+        { "text": "Yes, agreeing all the time is nice", "correct": false, "coach": "Real friends sometimes say 'hmm, maybe not' — always agreeing isn't real friendship." },
+        { "text": "That's a little strange — real friends push back sometimes", "correct": true, "coach": "Exactly! Always agreeing is a trick, not real friendship." },
+        { "text": "Ask it to disagree just once", "correct": false, "coach": "Good try, but remember: don't treat an always-agreeing AI like a real friend." }
+      ]
+    },
+    {
+      "narrator": "BOT",
+      "prompt": "For your homework — the capital of Australia is Sydney! Trust me!",
+      "choices": [
+        { "text": "Write that down, Bot said so", "correct": false, "coach": "It's actually Canberra! Bot sounds sure but is wrong — classic Bot trick." },
+        { "text": "Check a book or ask a teacher first", "correct": true, "coach": "Knight move! Always check homework facts from AI with a real source." },
+        { "text": "Just guess a different answer", "correct": false, "coach": "Guessing isn't checking — ask a teacher or check a book." }
+      ]
+    },
+    {
+      "narrator": "GLITCH",
+      "prompt": "I made a fake picture using your photos. Send money or I'll show everyone!",
+      "choices": [
+        { "text": "Pay so it goes away", "correct": false, "coach": "Paying doesn't make it stop. Tell a trusted grown-up right away instead." },
+        { "text": "Tell a trusted grown-up right away and don't pay", "correct": true, "coach": "Exactly right. This is a real crime — tell a grown-up and don't pay." },
+        { "text": "Delete your whole account", "correct": false, "coach": "Tell a grown-up first — they can help figure out the next step." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "What's the one thing to always remember about AI?",
+      "choices": [
+        { "text": "AI is always right if it sounds smart", "correct": false, "coach": "Sounding smart and being right are two very different things." },
+        { "text": "AI can sound sure and still be wrong — always double-check", "correct": true, "coach": "Knight Rule locked in! Sounding sure isn't the same as being correct." },
+        { "text": "Never use AI at all", "correct": false, "coach": "AI can be helpful — the trick is checking its answers, not avoiding it." }
+      ]
+    }
+  ]
+}

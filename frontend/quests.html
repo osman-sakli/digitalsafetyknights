@@ -41,7 +41,11 @@
 
   /* ---- Quest picker ---- */
   #picker-screen h1 { font-size: 1.7rem; color: var(--navy); margin-bottom: 4px; }
-  #picker-screen .sub { color: var(--gray); margin-bottom: 22px; font-size: 0.95rem; }
+  #picker-screen .sub { color: var(--gray); margin-bottom: 14px; font-size: 0.95rem; }
+  .tier-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+  .tier-label { font-size: 0.78rem; font-weight: 800; color: var(--gray); }
+  .tier-btn { background: var(--white); border: 2px solid #dfe4ee; border-radius: 18px; padding: 7px 14px; font-size: 0.8rem; font-weight: 800; color: var(--navy); cursor: pointer; }
+  .tier-btn.active { border-color: var(--gold); background: rgba(201,168,76,0.12); }
   .quest-grid { display: grid; gap: 14px; }
   .quest-card { background: var(--white); border-radius: 18px; padding: 18px 20px; display: flex; align-items: center; gap: 16px; text-decoration: none; box-shadow: 0 2px 20px rgba(13,27,62,0.08); border: 2px solid transparent; cursor: pointer; text-align: left; width: 100%; font: inherit; color: inherit; }
   .quest-card:active { transform: scale(0.985); }
@@ -136,6 +140,12 @@
       </div>
     </div>
     <p class="sub">Pick a quest. Each one takes about 3 minutes.</p>
+    <div class="tier-row">
+      <span class="tier-label">Reading level:</span>
+      <button type="button" class="tier-btn" data-tier="younger" onclick="setQuestTier('younger')">🧒 6–9</button>
+      <button type="button" class="tier-btn" data-tier="standard" onclick="setQuestTier('standard')">🧑 10–13</button>
+      <button type="button" class="tier-btn" data-tier="older" onclick="setQuestTier('older')">🎓 14–17</button>
+    </div>
     <div class="badge-strip" id="badge-strip"></div>
     <div class="quest-grid" id="quest-grid"></div>
     <div id="family-squad-box" style="display:none;margin-top:22px;background:var(--light);border-radius:14px;padding:14px 18px;"></div>
@@ -177,6 +187,14 @@ const QUESTS = [
   { id: "family-cyber-defense",  file: "content/quests/family-cyber-defense.json" },
   { id: "digital-citizenship",   file: "content/quests/digital-citizenship.json" },
 ];
+
+const TIER_KEY = "dsk_quest_tier";
+function getQuestTier() { return localStorage.getItem(TIER_KEY) || "standard"; }
+function setQuestTier(tier) { localStorage.setItem(TIER_KEY, tier); renderTierButtons(); }
+function renderTierButtons() {
+  const tier = getQuestTier();
+  document.querySelectorAll('.tier-btn').forEach(b => b.classList.toggle('active', b.getAttribute('data-tier') === tier));
+}
 
 const PROGRESS_KEY = "dsk_progress";
 const NICKNAME_KEY = "dsk_nickname";
@@ -292,6 +310,8 @@ function showPicker() {
     grid.appendChild(btn);
   });
 
+  renderTierButtons();
+
   const n = completedCount();
   const tiers = [
     { key: "bronze-squire", label: "Bronze Squire", emoji: "🥉", need: 1 },
@@ -319,12 +339,30 @@ let currentIndex = 0;
 let currentScore = 0;
 
 function startQuest(q) {
-  currentQuest = q;
   currentIndex = 0;
   currentScore = 0;
   document.getElementById('picker-screen').classList.add('hidden');
   document.getElementById('player-screen').classList.remove('hidden');
-  renderQuestion();
+
+  const tier = getQuestTier();
+  const isForParents = q.meta && q.meta.forParents;
+  const tieredFile = (tier !== "standard" && !isForParents)
+    ? `content/quests/${q.id}-${tier}.json`
+    : q.file;
+
+  if (tieredFile === q.file && q.data) {
+    currentQuest = q;
+    renderQuestion();
+    return;
+  }
+
+  fetch(tieredFile)
+    .then(r => { if (!r.ok) throw new Error("tier variant missing"); return r.json(); })
+    .then(data => { currentQuest = Object.assign({}, q, { data: data }); renderQuestion(); })
+    .catch(() => {
+      // No tier variant for this quest (e.g. parent-facing content) — standard version always exists.
+      fetch(q.file).then(r => r.json()).then(data => { currentQuest = Object.assign({}, q, { data: data }); renderQuestion(); });
+    });
 }
 
 function renderQuestion() {

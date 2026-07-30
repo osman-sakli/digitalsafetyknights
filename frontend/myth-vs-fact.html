@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Myth vs Fact — short, shareable answers to what parents are actually searching for at night about kids' online safety.">
+<title>Myth vs Fact — Digital Safety Knights</title>
+<link rel="icon" href="assets/favicon.ico">
+<link rel="stylesheet" href="assets/breadcrumb.css">
+<script src="assets/knight-points.js"></script>
+<style>
+  :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --text: #2d3748; --success: #2a9d8f; --danger: #e63946; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
+  .topbar { background: var(--navy); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+  .topbar .brand { color: var(--gold); font-weight: 900; text-decoration: none; font-size: 1.05rem; }
+  .topbar .home-link { color: #cdd6ea; text-decoration: none; font-size: 0.85rem; font-weight: 700; }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 30px 18px 90px; }
+  .hero { text-align: center; margin-bottom: 24px; }
+  .hero .icon { font-size: 2.6rem; margin-bottom: 6px; }
+  .hero h1 { color: var(--navy); font-size: 1.6rem; margin-bottom: 6px; }
+  .hero p { color: var(--gray); font-size: 0.9rem; }
+
+  .mvf-grid { display: grid; gap: 16px; }
+  .mvf-card { border-radius: 18px; overflow: hidden; box-shadow: 0 2px 20px rgba(13,27,62,0.08); cursor: pointer; }
+  .mvf-myth { background: linear-gradient(135deg, #fdeeee, #fff5f5); border: 2px solid rgba(230,57,70,0.25); padding: 20px 22px; }
+  .mvf-myth .mvf-label { font-size: 0.68rem; font-weight: 900; color: var(--danger); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+  .mvf-myth h3 { font-size: 1.05rem; color: var(--navy); line-height: 1.4; }
+  .mvf-myth .tap-hint { font-size: 0.76rem; color: var(--gray); margin-top: 10px; }
+  .mvf-fact { display: none; background: linear-gradient(135deg, var(--navy2), var(--navy)); color: white; padding: 20px 22px; }
+  .mvf-fact.show { display: block; }
+  .mvf-fact .mvf-label { font-size: 0.68rem; font-weight: 900; color: var(--gold2); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+  .mvf-fact p { font-size: 0.92rem; line-height: 1.6; color: #dbe2f0; }
+  .mvf-fact .fact-actions { display: flex; gap: 10px; margin-top: 14px; }
+  .fact-btn { background: rgba(255,255,255,0.12); color: white; border: 1px solid rgba(255,255,255,0.25); padding: 7px 14px; border-radius: 10px; font-size: 0.78rem; font-weight: 700; cursor: pointer; }
+  .fact-btn:hover { background: rgba(255,255,255,0.2); }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="/">🛡️ Digital Safety Knights</a>
+  <a class="home-link" href="/resources.html">📚 Resources</a>
+</div>
+<div class="dsk-breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/resources.html">Resources</a><span class="sep">/</span><span class="current">Myth vs Fact</span></div>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="icon">🔍</div>
+    <h1>Myth vs Fact</h1>
+    <p>Tap a myth to reveal the real answer — the stuff parents actually search for at 11pm.</p>
+  </div>
+
+  <div class="mvf-grid" id="mvf-grid"></div>
+</div>
+
+<script>
+const PAIRS = [
+  { myth: "My kid's game chat looks clean when I check it, so it's safe.", fact: "A clean visible chat log doesn't mean much — many risky conversations move to private in-experience channels or linked Discord servers you haven't seen. Check for linked servers, not just the chat you can already see." },
+  { myth: "If I don't give my kid a phone, they're safe from online risks.", fact: "Kids access the internet through school devices, friends' phones, gaming consoles, and shared family tablets. Delaying a personal phone is reasonable, but it isn't a safety plan on its own — the habits and conversations matter more than the device." },
+  { myth: "A strong password is all my child's account really needs.", fact: "A strong, unique password matters, but two-factor authentication is what actually stops most account takeovers — even a stolen password is useless to an attacker without the second step." },
+  { myth: "My child would tell me right away if something happened.", fact: "Most kids delay telling a parent because they fear losing device access or getting in trouble — not because they don't trust you. Make it explicit and repeated: telling you is never punished, no matter what." },
+  { myth: "Online predators are always obvious strangers with fake profiles.", fact: "Grooming typically starts with a normal-looking profile and weeks of ordinary, friendly conversation before anything concerning happens. The red flag isn't how someone looks — it's the pattern: gifts, secrecy requests, and escalation." },
+  { myth: "Deleting an app removes the risk once something's gone wrong.", fact: "Deleting first destroys the evidence needed to report what happened. Screenshot everything, tell a trusted adult, and only then decide what to do with the account or app." },
+  { myth: "AI chatbot 'friends' are basically harmless entertainment.", fact: "AI companions that always agree and never push back are a documented design pattern (sycophancy) that can reinforce bad decisions and unhealthy attachment, especially for isolated kids. Worth checking in on, not just dismissing as a toy." },
+  { myth: "A screen-time limit solves most of the real risk.", fact: "Screen-time limits address overuse, not the content or contact risks that happen in minutes, not hours. A single risky conversation can happen in a 10-minute session — settings and conversations matter more than the clock." },
+  { myth: "If content breaks platform rules, it gets removed quickly.", fact: "Moderation is inconsistent and often slow, especially for coded language, private DMs, or content that's borderline rather than obviously against the rules. Reporting is still worth doing, but don't assume it's instant or guaranteed." },
+  { myth: "Sextortion mainly targets teen girls.", fact: "Financial sextortion (as opposed to older, image-focused sextortion patterns) has surged specifically among teen boys, often moving from first contact to threat within hours. It's one of the fastest-growing threats regardless of gender." },
+  { myth: "My teenager is too smart and tech-savvy to fall for a scam.", fact: "Sophistication doesn't prevent social engineering — scams targeting teens are built around urgency, social proof, and emotional pressure, not technical trickery. Confidence with technology isn't the same skill as recognizing manipulation." }
+];
+
+const grid = document.getElementById('mvf-grid');
+grid.innerHTML = PAIRS.map((p, i) => `
+  <div class="mvf-card">
+    <div class="mvf-myth" id="myth-${i}" onclick="revealFact(${i})">
+      <div class="mvf-label">❌ Myth</div>
+      <h3>${p.myth}</h3>
+      <div class="tap-hint">Tap to see the fact →</div>
+    </div>
+    <div class="mvf-fact" id="fact-${i}">
+      <div class="mvf-label">✅ Fact</div>
+      <p>${p.fact}</p>
+      <div class="fact-actions">
+        <button type="button" class="fact-btn" onclick="event.stopPropagation();shareFact(${i})">🔗 Share this</button>
+        <button type="button" class="fact-btn" onclick="event.stopPropagation();hideFact(${i})">← Back</button>
+      </div>
+    </div>
+  </div>
+`).join('');
+
+function revealFact(i) {
+  document.getElementById('myth-' + i).style.display = 'none';
+  document.getElementById('fact-' + i).classList.add('show');
+  if (window.DSKPoints) DSKPoints.markComboActivity('guide');
+}
+function hideFact(i) {
+  document.getElementById('fact-' + i).classList.remove('show');
+  document.getElementById('myth-' + i).style.display = '';
+}
+function shareFact(i) {
+  const p = PAIRS[i];
+  const text = 'Myth: ' + p.myth + '\n\nFact: ' + p.fact + '\n\n— Digital Safety Knights (digitalsafetyknights.org)';
+  if (navigator.share) {
+    navigator.share({ text: text }).catch(function() {});
+  } else if (navigator.clipboard) {
+    navigator.clipboard.writeText(text).then(function() {
+      if (window.DSKPoints && window.DSKPoints.showToast) window.DSKPoints.showToast('Copied to clipboard!');
+    });
+  }
+}
+</script>
+<script src="/assets/lang-switcher.js"></script>
+<script src="/assets/site-search.js"></script>
+<script src="/assets/play-now-fab.js"></script>
+</body>
+</html>

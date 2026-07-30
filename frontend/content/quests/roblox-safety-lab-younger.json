@@ -1,0 +1,73 @@
+{
+  "id": "roblox-safety-lab",
+  "tier": "younger",
+  "title": "Roblox Safety Lab",
+  "emoji": "🎮",
+  "badgeTrack": "bronze-squire",
+  "intro": "Glitch loves hiding in the games you play. Let's find every trick before Pixel falls for one!",
+  "questions": [
+    {
+      "narrator": "GLITCH",
+      "prompt": "FREE ROBUX!! Click here right now, quick quick quick!",
+      "choices": [
+        { "text": "Click it fast before it's gone!", "correct": false, "coach": "Free + hurry-up = trick! Real free things never rush you." },
+        { "text": "Close it and tell a grown-up", "correct": true, "coach": "Knight move! Tricks want you to click before you think." },
+        { "text": "Wait a little and then click", "correct": false, "coach": "Waiting doesn't help — just close it and tell a grown-up." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "A stranger gave me a super cool item for free! Now they say we're best friends.",
+      "choices": [
+        { "text": "Say thank you and keep it", "correct": false, "coach": "A surprise gift from a stranger can be a trick to make you feel like you owe them." },
+        { "text": "Tell a grown-up before keeping anything", "correct": true, "coach": "Exactly right! Free gifts from strangers are almost always a trick." },
+        { "text": "Trade it for something of mine", "correct": false, "coach": "Trading with a stranger can be a trick too — ask a grown-up first." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "The game blocks bad words, so anything that gets through must be okay... right?",
+      "choices": [
+        { "text": "Right, the filter catches everything", "correct": false, "coach": "Filters miss sneaky tricks like using numbers instead of letters." },
+        { "text": "Nope — stay alert even with a filter on", "correct": true, "coach": "Exactly! Filters help, but YOU are the real safety hero." },
+        { "text": "Filters aren't in every game", "correct": false, "coach": "Most games do have them — but even good filters have gaps." }
+      ]
+    },
+    {
+      "narrator": "GLITCH",
+      "prompt": "Come join our Discord to really play with everyone!",
+      "choices": [
+        { "text": "Sure, that sounds fun", "correct": false, "coach": "Places outside the game often have way less protection for kids." },
+        { "text": "Ask a grown-up before joining", "correct": true, "coach": "Smart! Always check with a grown-up before going somewhere new." },
+        { "text": "Join but use a fake name", "correct": false, "coach": "Good instinct, but ask a grown-up first — that's the real safety step." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "I found a new game with a super friendly name. Should I just jump right in?",
+      "choices": [
+        { "text": "Yes, a nice name means a nice game", "correct": false, "coach": "Names can trick you — what's inside a game can be very different." },
+        { "text": "Try it with a grown-up nearby first", "correct": true, "coach": "Exactly the Knight move — check new games together first." },
+        { "text": "Ask other kids if it's fine", "correct": false, "coach": "Other kids aren't safety checkers — ask a grown-up instead." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "What's the best setting to turn on for extra safety?",
+      "choices": [
+        { "text": "Friends-only chat", "correct": true, "coach": "Knight Rule! This means only your real friends can message you." },
+        { "text": "A cooler username", "correct": false, "coach": "A fun name is nice, but it doesn't keep you safe." },
+        { "text": "Turning the game off forever", "correct": false, "coach": "You don't have to stop playing — just play it safely!" }
+      ]
+    },
+    {
+      "narrator": "BOT",
+      "prompt": "Last one! A stranger in the game asks you to switch to talking with your voice because it's 'more fun.'",
+      "choices": [
+        { "text": "Turn on voice chat", "correct": false, "coach": "That's a trick to skip past the safety filters that protect you." },
+        { "text": "Say no and tell a grown-up", "correct": true, "coach": "Exactly right — always tell a grown-up about a request like this." },
+        { "text": "Talk but don't say your name", "correct": false, "coach": "Better instinct, but the real move is telling a grown-up." }
+      ]
+    }
+  ]
+}

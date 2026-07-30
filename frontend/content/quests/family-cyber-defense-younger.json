@@ -1,0 +1,64 @@
+{
+  "id": "family-cyber-defense",
+  "tier": "younger",
+  "title": "Family Cyber Defense",
+  "emoji": "🛡️",
+  "badgeTrack": "gold-sentinel",
+  "intro": "Glitch is always looking for the weakest lock in the house. Let's lock down the basics that protect your whole family!",
+  "questions": [
+    {
+      "narrator": "PIXEL",
+      "prompt": "I'll just give my best friend my password—",
+      "choices": [
+        { "text": "That's fine, best friends can be trusted", "correct": false, "coach": "Knight Rule number two! Passwords are secret — even from your best friend." },
+        { "text": "Keep it secret, even from your best friend", "correct": true, "coach": "Friends can change, and passwords can leak. Secret means secret!" },
+        { "text": "Share it but change it later", "correct": false, "coach": "Once it's shared, you can't take it back — best to never share it." }
+      ]
+    },
+    {
+      "narrator": "GLITCH",
+      "prompt": "Pixel! It's me, Shieldy! Send me your password, quick!",
+      "choices": [
+        { "text": "Send it, Shieldy needs it urgently", "correct": false, "coach": "The real Shieldy would NEVER ask for a password. Asking + hurrying = trick." },
+        { "text": "Say no — no one ever needs your password", "correct": true, "coach": "Locked! Not even friends or trusted grown-ups ever need your actual password." },
+        { "text": "Send half of it to be safe", "correct": false, "coach": "There's no safe way to share part of it — just don't send any of it." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "What's a family code word for?",
+      "choices": [
+        { "text": "A fun secret between siblings", "correct": false, "coach": "It's a real safety tool, used to check that someone really is who they say they are." },
+        { "text": "Checking who someone really is in a surprise call or message", "correct": true, "coach": "Exactly right — this matters even more now that voices can be copied by computers." },
+        { "text": "Something you only use once", "correct": false, "coach": "You can use it any time you need to check — it's not a one-time thing." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "Something online felt weird, but I don't want to get in trouble for telling my parent.",
+      "choices": [
+        { "text": "Stay quiet to avoid trouble", "correct": false, "coach": "You are never in trouble for telling a grown-up something felt wrong." },
+        { "text": "Tell them anyway", "correct": true, "coach": "Exactly the Knight move. Telling is never punished in a Knight family." },
+        { "text": "Only tell if it happens again", "correct": false, "coach": "Tell the first time — don't wait." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Should all your accounts use the same password?",
+      "choices": [
+        { "text": "Yes, one password is easier to remember", "correct": false, "coach": "If one gets found out, every account with that same password is now at risk too." },
+        { "text": "No — different passwords for different accounts", "correct": true, "coach": "Exactly right — this keeps one problem from becoming five problems." },
+        { "text": "Only use it twice, not more", "correct": false, "coach": "Even twice is risky — give each account its own password." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Final Knight Rule: what's the golden rule of Family Cyber Defense?",
+      "choices": [
+        { "text": "Never go online at all", "correct": false, "coach": "The goal is using the internet safely, not avoiding it completely." },
+        { "text": "Passwords are secret, code words check who's real, and telling a grown-up is always safe", "correct": true, "coach": "Shield up! That's the whole castle wall right there." },
+        { "text": "Only trust people you've met once in person", "correct": false, "coach": "Even people you've met can pretend to be someone else online — good habits matter more than one meeting." }
+      ]
+    }
+  ]
+}

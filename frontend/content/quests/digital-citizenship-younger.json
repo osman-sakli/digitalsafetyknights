@@ -1,0 +1,55 @@
+{
+  "id": "digital-citizenship",
+  "tier": "younger",
+  "title": "Digital Citizenship",
+  "emoji": "🌐",
+  "badgeTrack": "gold-sentinel",
+  "intro": "Being a Knight isn't just about staying safe — it's about being kind online too. Last quest, let's go!",
+  "questions": [
+    {
+      "narrator": "BOT",
+      "prompt": "I wrote your whole homework story for you! Just copy and paste it.",
+      "choices": [
+        { "text": "Copy it exactly and turn it in", "correct": false, "coach": "AI can help you learn, but turning in AI's words as your own isn't being honest." },
+        { "text": "Use it to learn, then write your own", "correct": true, "coach": "Exactly right — AI is a helper for learning, not a replacement for your own work." },
+        { "text": "Copy it but change a few words", "correct": false, "coach": "That's still not really your own work — read it to learn, then write it yourself." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "Someone in my class is being picked on in our group chat. It's not happening to me, so it's not my problem, right?",
+      "choices": [
+        { "text": "Right, stay out of it", "correct": false, "coach": "Watching quietly lets it keep happening. A Knight speaks up or tells a grown-up." },
+        { "text": "Tell a grown-up or speak up for them", "correct": true, "coach": "Exactly the Knight move — standing up for others is real kindness." },
+        { "text": "Leave the group chat quietly", "correct": false, "coach": "Leaving only protects you — a Knight looks out for others too." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "You have a silly photo of a friend. Is it okay to share it in a group chat for laughs?",
+      "choices": [
+        { "text": "Sure, it's just a joke", "correct": false, "coach": "Sharing someone's photo without asking can hurt their feelings, even as a joke." },
+        { "text": "No — ask them first, always", "correct": true, "coach": "Exactly right. Always ask before sharing a photo of someone." },
+        { "text": "Only share with people who know them", "correct": false, "coach": "Asking first is what matters, not who sees it." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "I'm really mad at someone online. What's the Knight way to respond?",
+      "choices": [
+        { "text": "Say something mean back", "correct": false, "coach": "Responding in anger usually makes things worse for everyone." },
+        { "text": "Step away, calm down, then decide what to do", "correct": true, "coach": "Exactly right — a Knight stays in control of the moment." },
+        { "text": "Get your friends to pile on too", "correct": false, "coach": "Getting a group to pile on is unkind, even when you feel upset." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "What does 'Shield up' really mean, as a Digital Knight?",
+      "choices": [
+        { "text": "Protect only yourself online", "correct": false, "coach": "It's bigger than just you — a Knight protects others too." },
+        { "text": "Protect yourself AND look out for others", "correct": true, "coach": "That's it exactly. Shield up — for you and for everyone around you." },
+        { "text": "Stay off the internet completely", "correct": false, "coach": "Being a Knight means using the internet wisely, not avoiding it." }
+      ]
+    }
+  ]
+}

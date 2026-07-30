@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A plain-language glossary of digital safety terms every parent should know — grooming, sextortion, deepfakes, and more, defined clearly in one place.">
+<title>Glossary of Digital Safety Terms — Digital Safety Knights</title>
+<link rel="icon" href="assets/favicon.ico">
+<link rel="stylesheet" href="assets/breadcrumb.css">
+<script src="assets/knight-points.js"></script>
+<style>
+  :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --text: #2d3748; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
+  .topbar { background: var(--navy); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+  .topbar .brand { color: var(--gold); font-weight: 900; text-decoration: none; font-size: 1.05rem; }
+  .topbar .home-link { color: #cdd6ea; text-decoration: none; font-size: 0.85rem; font-weight: 700; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 30px 18px 90px; }
+  .hero { text-align: center; margin-bottom: 22px; }
+  .hero .icon { font-size: 2.6rem; margin-bottom: 6px; }
+  .hero h1 { color: var(--navy); font-size: 1.6rem; margin-bottom: 6px; }
+  .hero p { color: var(--gray); font-size: 0.9rem; }
+
+  #g-search { width: 100%; padding: 14px 18px; border-radius: 14px; border: 2px solid #dfe4ee; font-size: 0.95rem; font-family: inherit; margin-bottom: 22px; }
+  #g-search:focus { outline: none; border-color: var(--gold); }
+
+  .g-letter { font-size: 0.78rem; font-weight: 900; color: var(--gold2); background: var(--navy); display: inline-block; padding: 4px 12px; border-radius: 8px; margin: 20px 0 10px; }
+  .g-letter:first-child { margin-top: 0; }
+  .g-term { background: white; border-radius: 14px; padding: 16px 18px; margin-bottom: 10px; box-shadow: 0 2px 16px rgba(13,27,62,0.06); }
+  .g-term h3 { font-size: 1rem; color: var(--navy); margin-bottom: 5px; }
+  .g-term p { font-size: 0.88rem; color: var(--text); line-height: 1.55; }
+  .g-term .see-also { font-size: 0.76rem; color: var(--gray); margin-top: 6px; }
+  .g-term .see-also a { color: var(--gold2); background: var(--navy); padding: 2px 8px; border-radius: 6px; text-decoration: none; font-weight: 700; }
+  .g-empty { text-align: center; color: var(--gray); padding: 50px 0; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="/">🛡️ Digital Safety Knights</a>
+  <a class="home-link" href="/resources.html">📚 Resources</a>
+</div>
+<div class="dsk-breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/resources.html">Resources</a><span class="sep">/</span><span class="current">Glossary</span></div>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="icon">📖</div>
+    <h1>Glossary of Digital Safety Terms</h1>
+    <p>Plain-language definitions for the words that matter — no jargon, defined once, clearly.</p>
+  </div>
+
+  <input id="g-search" type="text" placeholder="Search a term… (e.g. 'grooming', 'VPN', 'deepfake')">
+  <div id="g-list"></div>
+</div>
+
+<script>
+const TERMS = [
+  { term: "Algorithm / The Feed", def: "The automated system that decides what shows up next on a platform, usually optimized to keep you watching as long as possible rather than to show you what's most useful." },
+  { term: "Catfishing", def: "Pretending to be someone else online — a different age, gender, or identity — usually to build trust before asking for something inappropriate." },
+  { term: "Content Filter", def: "A tool (built into a game, app, or router) that automatically blocks certain words, images, or sites. Filters help, but they're not perfect — they miss coded language and new tricks." },
+  { term: "COPPA", def: "The Children's Online Privacy Protection Act — a U.S. law limiting how companies can collect data from children under 13. It's why some apps ask for a birthdate before you can sign up." },
+  { term: "Cyberbullying", def: "Repeated, deliberate harassment or humiliation of someone through messages, posts, or images. Unlike in-person bullying, it can follow a child home and reach a much larger audience instantly." },
+  { term: "Deepfake", def: "A photo, video, or audio clip generated or altered by AI to realistically show someone doing or saying something that never happened. Increasingly hard to distinguish from real media." },
+  { term: "Direct Message (DM)", def: "A private message sent one-to-one or in a small group, outside of public posts or comments — where most grooming and scam conversations actually happen, out of public view." },
+  { term: "Discord", def: "A chat and voice app organized into topic-based 'servers.' Widely linked to games like Roblox and Minecraft, with far fewer built-in protections for minors than the games themselves." },
+  { term: "Digital Footprint", def: "The trail of information about a person that exists online — posts, photos, comments, even data collected quietly by apps — which can add up to reveal far more than any single post." },
+  { term: "Doxxing", def: "Publishing someone's private information (real name, address, school, phone number) online without their consent, usually to harass, intimidate, or endanger them." },
+  { term: "End-to-End Encryption", def: "A technical protection that means only the sender and recipient of a message can read it — not even the app company can see the content. Good for privacy, but it also means adults can't monitor those chats." },
+  { term: "Finsta", def: "A 'fake Instagram' — a second, more private account (often under a false name) some teens use to post more freely, sometimes specifically to keep content hidden from parents." },
+  { term: "Grooming", def: "A gradual, deliberate process an adult uses to build trust with a child in order to lower their defenses — often through flattery, gifts, secret-keeping, and slowly escalating requests." },
+  { term: "Hallucination (AI)", def: "When an AI tool generates false information while sounding completely confident and fluent. AI hallucinations are common even in simple, easily-checkable facts — confidence is not the same as accuracy." },
+  { term: "In-Game Chat", def: "Messaging built directly into a video game. Often has a basic profanity filter but rarely catches sophisticated grooming language, coded terms, or numbers-for-letters tricks." },
+  { term: "IP Address", def: "A numeric label assigned to a device on the internet, which can reveal a rough location (usually city-level). Not usually dangerous on its own, but one piece of the puzzle in doxxing." },
+  { term: "Livestream", def: "Real-time video broadcast to viewers, often on platforms with random-chat or stranger-matching features — a common venue for exposure to strangers with no delay to catch problems before they happen." },
+  { term: "Made for Kids", def: "A YouTube channel-level designation (used by DSK's own channel) that disables certain data collection and personalized ads, and is legally required for content clearly directed at children." },
+  { term: "Metadata", def: "Hidden data attached to a file — like the exact time and GPS location a photo was taken — that can be visible to others even when the photo itself reveals nothing sensitive." },
+  { term: "Parental Controls", def: "Built-in settings on a device, platform, or router that let a parent restrict screen time, content, purchases, or contact from strangers. Most are off by default and need to be turned on." },
+  { term: "Phishing", def: "A message designed to trick someone into giving up a password, payment info, or personal details — often by impersonating a trusted brand, friend, or family member and creating urgency." },
+  { term: "Predator", def: "An adult who deliberately seeks out and targets children online for exploitation, typically using grooming tactics to build trust before escalating to harmful requests." },
+  { term: "Sextortion", def: "Blackmail where someone threatens to share a real or AI-generated sexual image of a person unless paid or given more images. One of the fastest-growing threats to teens, especially teen boys." },
+  { term: "Sharenting", def: "Parents sharing a lot of photos, milestones, or details about their child online — well-intentioned, but it builds a digital footprint the child never chose and can't control." },
+  { term: "Sockpuppet", def: "A second (or third) fake account run by the same person, often used to seem more trustworthy, build fake consensus, or get around being blocked." },
+  { term: "Swatting", def: "Falsely reporting an emergency at someone's address to trigger a police response, usually as a form of harassment against someone known only through gaming or online conflict." },
+  { term: "Two-Factor Authentication (2FA)", def: "An extra login step beyond a password — usually a code sent to a phone or app — that stops most account takeovers even if a password is stolen." },
+  { term: "Voice Cloning", def: "AI-generated speech that convincingly mimics a real person's voice from just a few seconds of sample audio, now good enough to fool family members over a phone call." },
+  { term: "VPN", def: "A Virtual Private Network — a tool that reroutes and encrypts internet traffic, hiding browsing activity and location from your internet provider and some websites." }
+];
+
+const list = document.getElementById('g-list');
+const searchEl = document.getElementById('g-search');
+
+function render() {
+  const q = searchEl.value.trim().toLowerCase();
+  const filtered = TERMS.filter(t => !q || (t.term + ' ' + t.def).toLowerCase().indexOf(q) !== -1)
+    .sort((a, b) => a.term.localeCompare(b.term));
+
+  if (!filtered.length) {
+    list.innerHTML = '<div class="g-empty">No terms match that search.</div>';
+    return;
+  }
+
+  let html = '';
+  let lastLetter = '';
+  filtered.forEach(t => {
+    const letter = t.term[0].toUpperCase();
+    if (letter !== lastLetter) {
+      html += '<div class="g-letter">' + letter + '</div>';
+      lastLetter = letter;
+    }
+    html += '<div class="g-term"><h3>' + t.term + '</h3><p>' + t.def + '</p></div>';
+  });
+  list.innerHTML = html;
+}
+
+searchEl.addEventListener('input', render);
+render();
+</script>
+<script src="/assets/lang-switcher.js"></script>
+<script src="/assets/site-search.js"></script>
+<script src="/assets/play-now-fab.js"></script>
+</body>
+</html>

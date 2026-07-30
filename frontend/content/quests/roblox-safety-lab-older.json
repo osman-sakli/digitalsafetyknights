@@ -1,0 +1,73 @@
+{
+  "id": "roblox-safety-lab",
+  "tier": "older",
+  "title": "Roblox Safety Lab",
+  "emoji": "🎮",
+  "badgeTrack": "bronze-squire",
+  "intro": "Glitch runs the same plays you'd expect in any game economy: fake scarcity, social engineering, off-platform migration. Let's pressure-test your instincts.",
+  "questions": [
+    {
+      "narrator": "GLITCH",
+      "prompt": "FREE ROBUX — limited time, click before the timer runs out!",
+      "choices": [
+        { "text": "Click it, worst case it doesn't work", "correct": false, "coach": "Artificial urgency is a manipulation tactic, not a real deadline. It's designed to bypass your judgment, and 'worst case' is often credential theft." },
+        { "text": "Close it and report it if the platform allows", "correct": true, "coach": "Correct instinct. Scarcity + urgency is one of the oldest scam patterns — recognizing the pattern matters more than the specific scam." },
+        { "text": "Screenshot it to show friends how dumb it is", "correct": false, "coach": "Fine impulse, but engaging with the link at all (even to screenshot the page) risks tracking pixels or redirect chains. Just close it." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "A stranger sent an expensive item for free and said 'we're friends now.' What's actually happening?",
+      "choices": [
+        { "text": "Nothing — free items happen sometimes", "correct": false, "coach": "This is reciprocity exploitation — a documented social-engineering and grooming tactic where an unearned gift creates a felt obligation." },
+        { "text": "It's a manufactured sense of obligation, worth a real conversation with a trusted adult", "correct": true, "coach": "Exactly. Naming the tactic ('they're trying to make me feel like I owe them') is the actual defense, not just refusing the item." },
+        { "text": "Trade something back to even the score", "correct": false, "coach": "Trading 'evens the score' emotionally but doesn't address the underlying tactic — the goal was never a fair trade." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Automated chat filters catch profanity and known scam phrases. Does a clean chat log mean the conversation is safe?",
+      "choices": [
+        { "text": "Yes, filters are comprehensive now", "correct": false, "coach": "Filters are pattern-matching, not judgment — leetspeak, coded terms, and slow-burn grooming conversations routinely pass through clean." },
+        { "text": "No — filters catch known patterns, not intent", "correct": true, "coach": "Right. Treat filters as one layer, not the whole defense — your own judgment is the layer that catches what's novel." },
+        { "text": "Only unmoderated games have this issue", "correct": false, "coach": "Even heavily moderated platforms have this gap — it's structural, not a moderation-effort problem." }
+      ]
+    },
+    {
+      "narrator": "GLITCH",
+      "prompt": "Come to our Discord, it's where 'the real community' hangs out.",
+      "choices": [
+        { "text": "Join it, Discord is basically the same as the game", "correct": false, "coach": "It isn't — off-platform migration is a deliberate move to a space with fewer moderation tools and less visibility for parents." },
+        { "text": "Recognize the platform-shift request and check with a trusted adult first", "correct": true, "coach": "Exactly the tell to watch for — any request to move the conversation somewhere less supervised deserves scrutiny regardless of the reason given." },
+        { "text": "Join with a throwaway account", "correct": false, "coach": "A throwaway account protects your identity but doesn't address why the shift was requested in the first place." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "A new game has a wholesome-sounding name and a huge player count. Is that enough to trust it?",
+      "choices": [
+        { "text": "Yes, high player count means it's been vetted", "correct": false, "coach": "Player count reflects popularity, not safety review — user-generated-content platforms can have wildly different experiences inside the same shell." },
+        { "text": "No — name and popularity aren't safety signals", "correct": true, "coach": "Correct. Check what's actually inside before assuming based on branding." },
+        { "text": "Check its App Store rating instead", "correct": false, "coach": "Star ratings reflect general satisfaction, not the presence of predatory actors within user-generated spaces." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "What's the highest-leverage account setting for limiting unwanted contact?",
+      "choices": [
+        { "text": "Account Restrictions + Friends-only chat", "correct": true, "coach": "Right — this single setting closes the largest attack surface: unsolicited contact from strangers." },
+        { "text": "A strong, unique password", "correct": false, "coach": "Important for account security, but it doesn't limit who can contact you inside the game." },
+        { "text": "Reporting bad actors after the fact", "correct": false, "coach": "Reporting matters, but it's reactive — restricting contact up front prevents the exposure in the first place." }
+      ]
+    },
+    {
+      "narrator": "BOT",
+      "prompt": "A stranger in a private room pushes to switch to voice 'because typing is slow.' What's the real function of that request?",
+      "choices": [
+        { "text": "It's just a convenience preference", "correct": false, "coach": "Voice bypasses text-based filters, leaves no reviewable record, and adds a layer of false intimacy — the 'convenience' framing is doing work." },
+        { "text": "It removes the text paper trail and any filtering, so decline and tell a trusted adult", "correct": true, "coach": "Exactly. Naming what the request actually accomplishes (no record, no filter) is the skill — not just a gut 'no.'" },
+        { "text": "Join voice but record it yourself", "correct": false, "coach": "Recording without disclosure has its own problems, and it still exposes you to the room. Decline and report instead." }
+      ]
+    }
+  ]
+}

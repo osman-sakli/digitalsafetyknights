@@ -48,6 +48,11 @@
   .rcard h3 { font-size: 1.02rem; color: var(--navy); margin-bottom: 0.4rem; }
   .rcard p { font-size: 0.85rem; color: var(--gray); line-height: 1.55; margin-bottom: 0.8rem; }
   .rcard .cta { font-size: 0.78rem; font-weight: 900; color: var(--gold2); background: var(--navy); display: inline-block; padding: 6px 14px; border-radius: 10px; }
+  .quick-toggle { display: block; background: none; border: none; color: var(--navy); font-size: 0.76rem; font-weight: 800; cursor: pointer; padding: 0; margin-top: 10px; text-decoration: underline; }
+  .quick-summary { display: none; list-style: none; margin-top: 8px; padding: 10px 12px; background: var(--light); border-radius: 10px; border-left: 3px solid var(--gold); }
+  .quick-summary.open { display: block; }
+  .quick-summary li { font-size: 0.78rem; color: var(--gray); line-height: 1.5; margin-bottom: 5px; padding-left: 14px; position: relative; }
+  .quick-summary li::before { content: '•'; position: absolute; left: 0; color: var(--gold); }
   .rcard.game-card { border-top-color: #5865F2; background: linear-gradient(135deg, #1a2f6e, #0d1b3e); color: white; }
   .rcard.game-card h3 { color: white; }
   .rcard.game-card p { color: #a8b8d8; }
@@ -190,28 +195,107 @@
       </a>
     </div>
 
+    <div class="section-title">🎓 Learning Paths <span class="tag">Structured</span></div>
+    <div class="card-grid">
+      <a href="/academy.html" class="rcard" data-tags="kids teens parents educators">
+        <div class="ricon">🎓</div>
+        <h3>The Knight Academy</h3>
+        <p>A guided path through all 6 quests and guides, ending in the Knight's Trial capstone challenge.</p>
+        <span class="cta">Start the Path →</span>
+      </a>
+      <a href="/case-studies.html" class="rcard" data-tags="parents teens educators">
+        <div class="ricon">📔</div>
+        <h3>What Happened To…</h3>
+        <p>Tasteful, fictionalized stories showing how these situations actually unfold — and how each one got caught in time.</p>
+        <span class="cta">Read the Stories →</span>
+      </a>
+      <a href="/glossary.html" class="rcard" data-tags="parents teens educators">
+        <div class="ricon">📖</div>
+        <h3>Glossary of Terms</h3>
+        <p>Grooming, sextortion, deepfake — plain-language definitions for the words that matter, in one place.</p>
+        <span class="cta">Look Up a Term →</span>
+      </a>
+      <a href="/myth-vs-fact.html" class="rcard" data-tags="parents teens educators">
+        <div class="ricon">🔍</div>
+        <h3>Myth vs Fact</h3>
+        <p>Short, shareable answers to what parents are actually searching for at 11pm.</p>
+        <span class="cta">Tap to Reveal →</span>
+      </a>
+      <a href="/media-agreement.html" class="rcard" data-tags="parents">
+        <div class="ricon">📝</div>
+        <h3>Family Media Agreement</h3>
+        <p>Pick the rules that fit your family, then print or save a document everyone signs together.</p>
+        <span class="cta">Build Yours →</span>
+      </a>
+      <a href="/journal-archive.html" class="rcard" data-tags="parents teens educators">
+        <div class="ricon">📰</div>
+        <h3>Journal Archive</h3>
+        <p>Every past issue of the DSK Monthly Journal, searchable and filterable by topic.</p>
+        <span class="cta">Browse Archive →</span>
+      </a>
+    </div>
+
     <div class="section-title">📥 Guides &amp; Checklists <span class="tag">Download</span></div>
     <div class="card-grid">
       <a href="https://digitalsafetyknights.org/guides/roblox-parent-guide.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="rcard" data-tags="parents kids">
         <div class="ricon">🎮</div><h3>Roblox Parent Guide</h3><p>Complete privacy &amp; chat lockdown walkthrough, step by step.</p><span class="cta">Download PDF →</span>
+        <button type="button" class="quick-toggle" onclick="toggleQuick(event,this)">⚡ 60-Second Version</button>
+        <ul class="quick-summary">
+          <li>Turn on Account Restrictions + Friends-Only chat — the biggest lever for limiting stranger contact.</li>
+          <li>A "clean" visible chat doesn't mean safe — check for linked Discord servers you haven't seen.</li>
+          <li>Use the 10-minute rule: watch your child play instead of just asking what they play.</li>
+        </ul>
       </a>
       <a href="https://digitalsafetyknights.org/guides/safe-ai-usage-guide.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="rcard" data-tags="parents teens educators">
         <div class="ricon">🤖</div><h3>Safe AI Usage for Kids</h3><p>Which AI tools are genuinely child-safe, and which ones to avoid.</p><span class="cta">Download PDF →</span>
+        <button type="button" class="quick-toggle" onclick="toggleQuick(event,this)">⚡ 60-Second Version</button>
+        <ul class="quick-summary">
+          <li>AI can sound completely confident while being completely wrong — double-check, don't trust the tone.</li>
+          <li>Voice and video can now be convincingly faked — a family code word beats a familiar-sounding voice.</li>
+          <li>An AI that always agrees isn't a real friend — it's a design pattern, not rapport.</li>
+        </ul>
       </a>
       <a href="https://digitalsafetyknights.org/guides/iphone-android-safety.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="rcard" data-tags="parents">
         <div class="ricon">📱</div><h3>iPhone &amp; Android Safety</h3><p>Screen time and app restriction setup for every major device.</p><span class="cta">Download PDF →</span>
+        <button type="button" class="quick-toggle" onclick="toggleQuick(event,this)">⚡ 60-Second Version</button>
+        <ul class="quick-summary">
+          <li>Screen Time / Digital Wellbeing controls are off by default — they only work once you turn them on.</li>
+          <li>App Store purchase approval prevents surprise downloads and in-app purchases.</li>
+          <li>A once-a-year, 30-minute settings reset catches what's drifted since last time.</li>
+        </ul>
       </a>
       <a href="https://digitalsafetyknights.org/guides/talk-to-your-kids-guide.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="rcard" data-tags="parents educators">
         <div class="ricon">💬</div><h3>Talk to Your Kids Guide</h3><p>Age-appropriate conversation scripts for hard topics.</p><span class="cta">Download PDF →</span>
+        <button type="button" class="quick-toggle" onclick="toggleQuick(event,this)">⚡ 60-Second Version</button>
+        <ul class="quick-summary">
+          <li>Little and often beats one big scary talk.</li>
+          <li>Lead with curiosity ("what's this game like?") not interrogation.</li>
+          <li>Reacting calmly to bad news is what determines whether they tell you next time.</li>
+        </ul>
       </a>
       <a href="https://digitalsafetyknights.org/guides/family-cybersecurity-checklist.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="rcard" data-tags="parents educators">
         <div class="ricon">🔐</div><h3>Family Cybersecurity Checklist</h3><p>Passwords, VPN, and DNS filtering setup for the whole household.</p><span class="cta">Download PDF →</span>
+        <button type="button" class="quick-toggle" onclick="toggleQuick(event,this)">⚡ 60-Second Version</button>
+        <ul class="quick-summary">
+          <li>Unique passwords per account — one breach shouldn't cascade into five.</li>
+          <li>Two-factor authentication closes the gap a stolen password leaves open.</li>
+          <li>Do a full family pass once a year — accounts and defaults drift.</li>
+        </ul>
       </a>
       <a href="https://digitalsafetyknights.org/guides/incident-response-guide.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="rcard" data-tags="parents educators">
         <div class="ricon">🆘</div><h3>Incident Response Guide</h3><p>Exactly what to do, in order, if something has already happened.</p><span class="cta">Download PDF →</span>
+        <button type="button" class="quick-toggle" onclick="toggleQuick(event,this)">⚡ 60-Second Version</button>
+        <ul class="quick-summary">
+          <li>Don't pay, don't delete, don't panic — screenshot first, always.</li>
+          <li>Tell a trusted adult the same day — evidence and options both shrink over time.</li>
+          <li>Report to the platform and to a formal channel (like a CyberTipline) — both matter.</li>
+        </ul>
       </a>
       <a href="https://digitalsafetyknights.org/guides/knights-toolkit.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="rcard" data-tags="kids">
         <div class="ricon">🖨️</div><h3>The Knight's Toolkit</h3><p>Printable poster of the 5 Knight Rules, a cut-out character sticker sheet, and bookmarks.</p><span class="cta">Download PDF →</span>
+      </a>
+      <a href="https://digitalsafetyknights.org/guides/classroom-lesson-plan-kit.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="rcard" data-tags="educators">
+        <div class="ricon">🏫</div><h3>Classroom Lesson Plan Kit</h3><p>A structured 5-week digital safety syllabus for grades 4–8 — objectives, activities, and take-home resources.</p><span class="cta">Download PDF →</span>
       </a>
     </div>
 
@@ -253,6 +337,14 @@
 </footer>
 
 <script>
+  function toggleQuick(event, btn) {
+    event.preventDefault();
+    event.stopPropagation();
+    var list = btn.parentElement.querySelector('.quick-summary');
+    var open = list.classList.toggle('open');
+    btn.textContent = open ? '⚡ Hide Summary' : '⚡ 60-Second Version';
+  }
+
   var chips = document.querySelectorAll('.filter-chip');
   var items = document.querySelectorAll('[data-tags]');
   chips.forEach(function(chip) {

@@ -1,0 +1,64 @@
+{
+  "id": "grooming-watch",
+  "tier": "older",
+  "title": "Grooming Watch",
+  "emoji": "🚩",
+  "badgeTrack": "silver-guard",
+  "intro": "Grooming follows a documented, repeatable pattern: trust-building, isolation, secrecy, escalation. Once you can name each stage, the disguise stops working.",
+  "questions": [
+    {
+      "narrator": "GLITCH",
+      "prompt": "So how old are you, actually? And what school — I might know people there.",
+      "choices": [
+        { "text": "Answer — it's just small talk", "correct": false, "coach": "This is the reconnaissance/trust-building stage — low-stakes personal questions that build a profile and rapport before any red flag is obvious." },
+        { "text": "Decline, disengage, and flag it to a trusted adult", "correct": true, "coach": "Correct. The specific question matters less than recognizing the stage — early-conversation personal-detail-gathering from a stranger is the pattern to name." },
+        { "text": "Give a slightly false age and see how they respond", "correct": false, "coach": "Testing them keeps the conversation open and gives them more data on you. Disengage instead of probing." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "What's your real name? I feel like I already know you so well.",
+      "choices": [
+        { "text": "Share it — the rapport feels genuine", "correct": false, "coach": "Manufactured intimacy ('I feel like I already know you') is a deliberate accelerant used to shortcut normal trust-building timelines." },
+        { "text": "Recognize the accelerated-intimacy tactic and keep identity details withheld", "correct": true, "coach": "Exactly. Naming the tactic — rushed emotional intimacy — is the actual skill, more useful than a blanket 'don't share your name' rule." },
+        { "text": "Share a nickname to seem more open", "correct": false, "coach": "A nickname is fine as a baseline habit, but the interesting risk here is the rapport-acceleration pattern itself, worth flagging regardless of what you share." }
+      ]
+    },
+    {
+      "narrator": "GLITCH",
+      "prompt": "It's me from school, just under a different account — trust me, follow back.",
+      "choices": [
+        { "text": "Accept it, claiming a shared context is usually true", "correct": false, "coach": "Claimed shared context is trivially fabricated and is a common way to bypass stranger-danger instincts specifically because it feels verified." },
+        { "text": "Verify the claim through an out-of-band channel before accepting", "correct": true, "coach": "Correct — verify identity claims the same way you'd verify a suspicious financial request: through a channel the claimant doesn't control." },
+        { "text": "Ask them to prove it with details only a classmate would know", "correct": false, "coach": "Detail-based verification is gameable — information leaks and guessing make this weaker than true out-of-band verification." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "'This stays between us, okay? Your parents wouldn't get it.' What stage of the pattern is this?",
+      "choices": [
+        { "text": "Normal privacy-seeking between friends", "correct": false, "coach": "Isolation-from-guardians framing is one of the most consistent, well-documented markers across grooming cases — it's not incidental privacy, it's a structural move." },
+        { "text": "The isolation/secrecy stage — a hard stop, report it", "correct": true, "coach": "Correct identification. This phrase alone, regardless of everything said before it, warrants disengaging and reporting." },
+        { "text": "Only concerning if paired with a specific ask", "correct": false, "coach": "The secrecy framing is concerning on its own — it's laying groundwork that precedes the ask, not a response to one." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "Let's move this to an app with disappearing messages, it's just easier.",
+      "choices": [
+        { "text": "Sure, ephemeral messaging is normal now", "correct": false, "coach": "Migration to lower-oversight, evidence-erasing platforms is a deliberate escalation step, independent of how normalized that app category is generally." },
+        { "text": "Decline the platform shift and report the request", "correct": true, "coach": "Correct — the request to move somewhere less visible/reviewable is the signal, regardless of the specific platform's mainstream reputation." },
+        { "text": "Move but keep your own separate screenshots", "correct": false, "coach": "Self-documentation doesn't address the exposure — decline the migration itself and escalate to a trusted adult." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "You can't articulate exactly why, but a conversation feels wrong. What's the correct response?",
+      "choices": [
+        { "text": "Wait for something more concrete before acting", "correct": false, "coach": "Ambiguous unease is frequently pattern-recognition below conscious articulation — waiting for 'concrete' evidence often means waiting through the isolation stage." },
+        { "text": "Document it and escalate to a trusted adult immediately, articulable or not", "correct": true, "coach": "Correct. Treat the unease itself as sufficient signal to escalate — you don't need a fully-formed case to ask for help." },
+        { "text": "Handle it yourself by setting a boundary in the chat", "correct": false, "coach": "A self-managed boundary doesn't create a record or bring in support — escalate rather than handling it solo." }
+      ]
+    }
+  ]
+}

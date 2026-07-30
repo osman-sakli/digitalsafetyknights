@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The Knight Academy — a guided path through all 6 quests and guides, ending in the Knight's Trial capstone.">
+<title>Knight Academy — Digital Safety Knights</title>
+<link rel="icon" href="assets/favicon.ico">
+<link rel="stylesheet" href="assets/breadcrumb.css">
+<script src="assets/knight-points.js"></script>
+<style>
+  :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --text: #2d3748; --success: #2a9d8f; --danger: #e63946; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
+  .topbar { background: var(--navy); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+  .topbar .brand { color: var(--gold); font-weight: 900; text-decoration: none; font-size: 1.05rem; }
+  .topbar .home-link { color: #cdd6ea; text-decoration: none; font-size: 0.85rem; font-weight: 700; }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 30px 18px 90px; }
+  .hero { text-align: center; margin-bottom: 26px; }
+  .hero .icon { font-size: 2.6rem; margin-bottom: 6px; }
+  .hero h1 { color: var(--navy); font-size: 1.6rem; margin-bottom: 6px; }
+  .hero p { color: var(--gray); font-size: 0.9rem; max-width: 480px; margin: 0 auto; }
+
+  .academy-progress { background: white; border-radius: 16px; padding: 16px 20px; margin-bottom: 24px; box-shadow: 0 2px 20px rgba(13,27,62,0.07); }
+  .academy-progress .ap-label { font-size: 0.78rem; font-weight: 800; color: var(--gray); margin-bottom: 8px; }
+  .ap-track { height: 10px; background: #e8ecf4; border-radius: 5px; overflow: hidden; }
+  .ap-fill { height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold2)); border-radius: 5px; transition: width 0.4s; }
+  .ap-count { text-align: right; font-size: 0.78rem; color: var(--navy); font-weight: 800; margin-top: 6px; }
+
+  .path { position: relative; padding-left: 34px; }
+  .path::before { content: ''; position: absolute; left: 13px; top: 10px; bottom: 10px; width: 3px; background: #dfe4ee; border-radius: 2px; }
+  .step { position: relative; margin-bottom: 14px; }
+  .step-dot { position: absolute; left: -34px; top: 14px; width: 28px; height: 28px; border-radius: 50%; background: #dfe4ee; color: var(--gray); display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 900; border: 3px solid var(--light); }
+  .step.done .step-dot { background: var(--success); color: white; }
+  .step-card { background: white; border-radius: 16px; padding: 16px 18px; box-shadow: 0 2px 20px rgba(13,27,62,0.07); display: flex; align-items: center; gap: 14px; }
+  .step.done .step-card { border-left: 4px solid var(--success); }
+  .step-icon { font-size: 1.6rem; flex-shrink: 0; width: 40px; text-align: center; }
+  .step-info { flex: 1; min-width: 0; }
+  .step-kind { font-size: 0.66rem; font-weight: 900; color: var(--gold2); background: var(--navy); display: inline-block; padding: 2px 8px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 4px; }
+  .step-title { font-weight: 800; color: var(--navy); font-size: 0.95rem; }
+  .step-action { flex-shrink: 0; }
+  .step-btn { background: var(--gold); color: var(--navy); border: none; padding: 9px 16px; border-radius: 12px; font-weight: 900; font-size: 0.8rem; cursor: pointer; text-decoration: none; display: inline-block; white-space: nowrap; }
+  .step-btn.secondary { background: var(--light); color: var(--navy); }
+  .step-check { color: var(--success); font-size: 1.3rem; }
+
+  .capstone-step .step-card { background: linear-gradient(135deg, var(--navy2), var(--navy)); color: white; }
+  .capstone-step .step-title { color: var(--gold2); }
+  .capstone-step.locked .step-card { opacity: 0.55; }
+  .capstone-step .step-dot { background: var(--gold); color: var(--navy); }
+
+  /* Capstone quiz overlay */
+  .overlay { display: none; position: fixed; inset: 0; background: rgba(6,14,34,0.75); z-index: 999; align-items: center; justify-content: center; padding: 16px; }
+  .overlay.open { display: flex; }
+  .quiz-modal { background: white; border-radius: 20px; padding: 24px 22px; max-width: 480px; width: 100%; max-height: 88vh; overflow-y: auto; }
+  .quiz-progress { font-size: 0.75rem; font-weight: 800; color: var(--gray); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+  .quiz-track { height: 6px; background: #e8ecf4; border-radius: 3px; overflow: hidden; margin-bottom: 18px; }
+  .quiz-fill { height: 100%; background: var(--gold); border-radius: 3px; }
+  .quiz-narrator { background: var(--navy); color: var(--gold); font-weight: 900; font-size: 0.7rem; letter-spacing: 1px; padding: 5px 12px; border-radius: 16px; display: inline-block; margin-bottom: 10px; }
+  .quiz-prompt { font-size: 1.05rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; line-height: 1.4; }
+  .quiz-choice { display: block; width: 100%; text-align: left; background: white; border: 2px solid #dfe4ee; border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; font-size: 0.92rem; font-weight: 600; color: var(--text); cursor: pointer; }
+  .quiz-choice.correct { border-color: var(--success); background: rgba(42,157,143,0.08); }
+  .quiz-choice.incorrect { border-color: var(--danger); background: rgba(230,57,70,0.06); }
+  .quiz-choice:disabled { cursor: default; }
+  .quiz-coach { border-radius: 12px; padding: 14px 16px; margin: 4px 0 16px; font-size: 0.88rem; line-height: 1.5; }
+  .quiz-coach.correct { background: rgba(42,157,143,0.1); border-left: 4px solid var(--success); }
+  .quiz-coach.incorrect { background: rgba(230,57,70,0.08); border-left: 4px solid var(--danger); }
+  .quiz-next { display: block; width: 100%; background: var(--gold); color: var(--navy); border: none; padding: 14px; border-radius: 12px; font-weight: 900; cursor: pointer; }
+  .quiz-close { position: absolute; top: 14px; right: 18px; background: none; border: none; font-size: 1.4rem; color: #aaa; cursor: pointer; }
+  .hidden { display: none !important; }
+  .grad-result { text-align: center; }
+  .grad-result .gicon { font-size: 3.4rem; margin-bottom: 10px; }
+  .grad-result h2 { color: var(--navy); margin-bottom: 8px; }
+  .grad-result p { color: var(--gray); font-size: 0.92rem; margin-bottom: 18px; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="/">🛡️ Digital Safety Knights</a>
+  <a class="home-link" href="/quests.html">🎮 Quests</a>
+</div>
+<div class="dsk-breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/resources.html">Resources</a><span class="sep">/</span><span class="current">Knight Academy</span></div>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="icon">🎓</div>
+    <h1>The Knight Academy</h1>
+    <p>A guided path through every quest and guide, in order — finishing with the Knight's Trial, the final capstone challenge.</p>
+  </div>
+
+  <div class="academy-progress">
+    <div class="ap-label">ACADEMY PROGRESS</div>
+    <div class="ap-track"><div class="ap-fill" id="ap-fill" style="width:0%"></div></div>
+    <div class="ap-count" id="ap-count">0 / 12 steps complete</div>
+  </div>
+
+  <div class="path" id="path"></div>
+</div>
+
+<!-- CAPSTONE QUIZ -->
+<div class="overlay" id="quiz-overlay">
+  <div class="quiz-modal" style="position:relative;">
+    <button class="quiz-close" onclick="closeQuiz()">&times;</button>
+    <div id="quiz-body"></div>
+  </div>
+</div>
+
+<script>
+const STEPS = [
+  { kind: "quest", type: "quest", id: "roblox-safety-lab", title: "Quest: Roblox Safety Lab", icon: "🎮", href: "/quests.html?quest=roblox-safety-lab" },
+  { kind: "guide", type: "guide", id: "roblox-parent-guide", title: "Guide: Roblox Parent Guide", icon: "📥", href: "https://digitalsafetyknights.org/guides/roblox-parent-guide.pdf" },
+  { kind: "quest", type: "quest", id: "grooming-watch", title: "Quest: Grooming Watch", icon: "🚩", href: "/quests.html?quest=grooming-watch" },
+  { kind: "guide", type: "guide", id: "talk-to-your-kids-guide", title: "Guide: Talk to Your Kids Guide", icon: "📥", href: "https://digitalsafetyknights.org/guides/talk-to-your-kids-guide.pdf" },
+  { kind: "quest", type: "quest", id: "ai-threat-awareness", title: "Quest: AI Threat Awareness", icon: "🤖", href: "/quests.html?quest=ai-threat-awareness" },
+  { kind: "guide", type: "guide", id: "safe-ai-usage-guide", title: "Guide: Safe AI Usage for Kids", icon: "📥", href: "https://digitalsafetyknights.org/guides/safe-ai-usage-guide.pdf" },
+  { kind: "quest", type: "quest", id: "family-cyber-defense", title: "Quest: Family Cyber Defense", icon: "🛡️", href: "/quests.html?quest=family-cyber-defense" },
+  { kind: "guide", type: "guide", id: "family-cybersecurity-checklist", title: "Guide: Family Cybersecurity Checklist", icon: "📥", href: "https://digitalsafetyknights.org/guides/family-cybersecurity-checklist.pdf" },
+  { kind: "quest", type: "quest", id: "parental-controls", title: "Quest: Parental Controls Checkup", icon: "🔧", href: "/quests.html?quest=parental-controls" },
+  { kind: "guide", type: "guide", id: "iphone-android-safety", title: "Guide: iPhone & Android Safety", icon: "📥", href: "https://digitalsafetyknights.org/guides/iphone-android-safety.pdf" },
+  { kind: "quest", type: "quest", id: "digital-citizenship", title: "Quest: Digital Citizenship", icon: "🌐", href: "/quests.html?quest=digital-citizenship" },
+  { kind: "guide", type: "guide", id: "incident-response-guide", title: "Guide: Incident Response Guide", icon: "📥", href: "https://digitalsafetyknights.org/guides/incident-response-guide.pdf" }
+];
+
+const GUIDES_KEY = "dsk_academy_guides_read";
+const PROGRESS_KEY = "dsk_progress"; // shared with quests.html
+
+function getQuestProgress() {
+  try { return JSON.parse(localStorage.getItem(PROGRESS_KEY)) || { completed: {} }; }
+  catch (e) { return { completed: {} }; }
+}
+function getGuidesRead() {
+  try { return JSON.parse(localStorage.getItem(GUIDES_KEY)) || {}; }
+  catch (e) { return {}; }
+}
+function markGuideRead(id) {
+  const g = getGuidesRead();
+  if (!g[id]) {
+    g[id] = true;
+    localStorage.setItem(GUIDES_KEY, JSON.stringify(g));
+    render();
+  }
+}
+
+function isStepDone(step) {
+  if (step.type === "quest") return !!getQuestProgress().completed[step.id];
+  return !!getGuidesRead()[step.id];
+}
+
+function render() {
+  const doneCount = STEPS.filter(isStepDone).length;
+  document.getElementById('ap-fill').style.width = Math.round((doneCount / STEPS.length) * 100) + "%";
+  document.getElementById('ap-count').textContent = doneCount + " / " + STEPS.length + " steps complete";
+
+  const path = document.getElementById('path');
+  path.innerHTML = STEPS.map((step, i) => {
+    const done = isStepDone(step);
+    if (step.type === "quest") {
+      return '<div class="step' + (done ? ' done' : '') + '">' +
+        '<div class="step-dot">' + (done ? '✓' : (i + 1)) + '</div>' +
+        '<div class="step-card">' +
+          '<div class="step-icon">' + step.icon + '</div>' +
+          '<div class="step-info"><div class="step-kind">Quest</div><div class="step-title">' + step.title.replace('Quest: ', '') + '</div></div>' +
+          '<div class="step-action">' + (done ? '<span class="step-check">✅</span>' : '<a class="step-btn" href="' + step.href + '">Play →</a>') + '</div>' +
+        '</div></div>';
+    }
+    return '<div class="step' + (done ? ' done' : '') + '">' +
+      '<div class="step-dot">' + (done ? '✓' : (i + 1)) + '</div>' +
+      '<div class="step-card">' +
+        '<div class="step-icon">' + step.icon + '</div>' +
+        '<div class="step-info"><div class="step-kind">Guide</div><div class="step-title">' + step.title.replace('Guide: ', '') + '</div></div>' +
+        '<div class="step-action">' + (done ? '<span class="step-check">✅</span>' : '<a class="step-btn secondary" href="' + step.href + '" target="_blank" onclick="markGuideRead(\'' + step.id + '\');if(window.DSKPoints)DSKPoints.markComboActivity(\'guide\')">Read →</a>') + '</div>' +
+      '</div></div>';
+  }).join('') + renderCapstone(doneCount);
+}
+
+function renderCapstone(doneCount) {
+  const unlocked = doneCount >= STEPS.length;
+  const graduated = localStorage.getItem('dsk_academy_graduated') === '1';
+  return '<div class="step capstone-step' + (unlocked ? '' : ' locked') + '">' +
+    '<div class="step-dot">' + (graduated ? '🏆' : (unlocked ? '!' : '🔒')) + '</div>' +
+    '<div class="step-card">' +
+      '<div class="step-icon">🏆</div>' +
+      '<div class="step-info"><div class="step-kind">Capstone</div><div class="step-title">The Knight\'s Trial</div></div>' +
+      '<div class="step-action">' +
+        (graduated ? '<span class="step-check">✅</span>' : (unlocked ? '<button type="button" class="step-btn" onclick="startCapstone()">Begin →</button>' : '<span style="font-size:0.78rem;color:var(--gray);">Locked</span>')) +
+      '</div>' +
+    '</div></div>';
+}
+
+// ---- Capstone quiz engine ----
+let capstoneData = null;
+let cIndex = 0;
+let cScore = 0;
+
+function startCapstone() {
+  document.getElementById('quiz-overlay').classList.add('open');
+  document.getElementById('quiz-body').innerHTML = '<p style="text-align:center;color:var(--gray);padding:30px 0;">Loading the Trial…</p>';
+  fetch('content/quests/capstone-trial.json').then(r => r.json()).then(data => {
+    capstoneData = data;
+    cIndex = 0;
+    cScore = 0;
+    renderCapstoneQuestion();
+  });
+}
+function closeQuiz() { document.getElementById('quiz-overlay').classList.remove('open'); }
+
+function renderCapstoneQuestion() {
+  const total = capstoneData.questions.length;
+  const q = capstoneData.questions[cIndex];
+  const body = document.getElementById('quiz-body');
+  body.innerHTML =
+    '<div class="quiz-progress">QUESTION ' + (cIndex + 1) + ' OF ' + total + '</div>' +
+    '<div class="quiz-track"><div class="quiz-fill" style="width:' + Math.round((cIndex / total) * 100) + '%"></div></div>' +
+    '<div class="quiz-narrator">' + q.narrator + '</div>' +
+    '<div class="quiz-prompt">' + q.prompt + '</div>' +
+    '<div id="quiz-choices"></div>' +
+    '<div id="quiz-coach"></div>' +
+    '<button class="quiz-next hidden" id="quiz-next-btn" onclick="nextCapstoneQuestion()">Continue →</button>';
+
+  const list = document.getElementById('quiz-choices');
+  q.choices.forEach((choice, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'quiz-choice';
+    btn.textContent = choice.text;
+    btn.onclick = () => selectCapstoneChoice(i);
+    list.appendChild(btn);
+  });
+}
+
+function selectCapstoneChoice(i) {
+  const q = capstoneData.questions[cIndex];
+  const choice = q.choices[i];
+  document.querySelectorAll('#quiz-choices .quiz-choice').forEach((b, idx) => {
+    b.disabled = true;
+    if (idx === i) b.classList.add(choice.correct ? 'correct' : 'incorrect');
+  });
+  if (choice.correct) cScore++;
+
+  const coach = document.getElementById('quiz-coach');
+  coach.innerHTML = '<div class="quiz-coach ' + (choice.correct ? 'correct' : 'incorrect') + '">' + (choice.correct ? '✅ ' : '💡 ') + choice.coach + '</div>';
+  document.getElementById('quiz-next-btn').classList.remove('hidden');
+}
+
+function nextCapstoneQuestion() {
+  cIndex++;
+  if (cIndex >= capstoneData.questions.length) {
+    finishCapstone();
+  } else {
+    renderCapstoneQuestion();
+  }
+}
+
+function finishCapstone() {
+  const total = capstoneData.questions.length;
+  const passed = cScore >= Math.ceil(total * 0.6);
+  const body = document.getElementById('quiz-body');
+  if (passed) {
+    localStorage.setItem('dsk_academy_graduated', '1');
+    if (window.DSKPoints) DSKPoints.addPoints(100, "Knight Academy Graduate");
+  }
+  body.innerHTML = '<div class="grad-result">' +
+    '<div class="gicon">' + (passed ? '🏆' : '🛡️') + '</div>' +
+    '<h2>' + (passed ? "You graduated — Digital Knight!" : "Almost there!") + '</h2>' +
+    '<p>' + cScore + ' / ' + total + ' correct' + (passed ? ' — you\'ve earned the full Knight Academy path and 100 bonus Knight Points.' : ' — review the quests above and try the Trial again any time.') + '</p>' +
+    '<button class="step-btn" style="width:100%;padding:14px;" onclick="closeQuiz();render();">' + (passed ? 'Shield up! 🛡️' : 'Close') + '</button>' +
+  '</div>';
+  render();
+}
+
+render();
+</script>
+<script src="/assets/lang-switcher.js"></script>
+<script src="/assets/site-search.js"></script>
+<script src="/assets/play-now-fab.js"></script>
+</body>
+</html>

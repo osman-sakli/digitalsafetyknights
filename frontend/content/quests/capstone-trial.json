@@ -1,0 +1,90 @@
+{
+  "id": "capstone-trial",
+  "title": "The Knight's Trial",
+  "emoji": "🏆",
+  "badgeTrack": "digital-knight",
+  "intro": "You've trained across every quest in the Academy. This final trial mixes the hardest calls from all six — pass it, and you graduate a full Digital Knight.",
+  "questions": [
+    {
+      "narrator": "GLITCH",
+      "prompt": "FREE ROBUX! Click meeee! Only ten seconds left!",
+      "choices": [
+        { "text": "Click it fast before it's gone!", "correct": false, "coach": "Free PLUS urgent equals TRAP. Real free things never rush you." },
+        { "text": "Close it and tell a grown-up", "correct": true, "coach": "Knight move! Scams use hurry to stop you from thinking." },
+        { "text": "Ask it for more time to decide", "correct": false, "coach": "Talking to a scam keeps the trap open. Close it instead." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "What's the single best setting to turn on in Roblox for extra safety?",
+      "choices": [
+        { "text": "Account Restrictions + Friends-only chat", "correct": true, "coach": "Knight Rule! This limits who can message you and what content you can see." },
+        { "text": "A cooler username", "correct": false, "coach": "A fun username is nice, but it doesn't protect you at all." },
+        { "text": "Turning off the game entirely", "correct": false, "coach": "You don't have to quit gaming — just set it up safely!" }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Someone online says 'this is our secret, don't tell your parents.' What does that phrase actually mean?",
+      "choices": [
+        { "text": "It means they really trust me", "correct": false, "coach": "That phrase is one of the biggest red flags there is — it's designed to isolate you." },
+        { "text": "It's a red flag — trusted people don't ask kids to hide things from parents", "correct": true, "coach": "Exactly. 'Don't tell your parents' is the line itself — that's your answer." },
+        { "text": "It only matters if they ask twice", "correct": false, "coach": "Once is already a red flag. Tell a parent right away." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "An online friend wants to move our chat to a different app that my parents don't know about. Should I?",
+      "choices": [
+        { "text": "Sure, it's just a different app", "correct": false, "coach": "Moving to a less-supervised app is a common tactic to avoid detection. That's a red flag." },
+        { "text": "No — and tell a parent this was asked", "correct": true, "coach": "Exactly right. Wanting to move somewhere less supervised is a warning sign worth reporting." },
+        { "text": "Only move if it's a popular app", "correct": false, "coach": "Popularity doesn't matter — the request itself is the red flag." }
+      ]
+    },
+    {
+      "narrator": "BOT",
+      "prompt": "For your homework, the capital of Australia is Sydney! Trust me.",
+      "choices": [
+        { "text": "Write that down, Bot said so", "correct": false, "coach": "It's actually Canberra! Bot sounds confident but is confidently wrong — classic Bot move." },
+        { "text": "Check a textbook or ask a teacher first", "correct": true, "coach": "Knight move! Always verify homework facts from AI with a trusted source." },
+        { "text": "Just guess something else instead", "correct": false, "coach": "Guessing isn't verifying — check a real source." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "A call comes in and the voice sounds exactly like your mom asking you to send money fast. What's the Knight move?",
+      "choices": [
+        { "text": "Send it — it's mom's voice, has to be real", "correct": false, "coach": "AI can clone a voice from just a few seconds of audio. Voice alone isn't proof anymore." },
+        { "text": "Use the family code word to check first", "correct": true, "coach": "Perfect. A code word only your family knows beats any voice trick." },
+        { "text": "Call back the same number right away", "correct": false, "coach": "Scammers can spoof numbers too — verify a different way, like the code word." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "What's one setup step every family should do together, once a year?",
+      "choices": [
+        { "text": "A 30-minute privacy + app settings reset, done together", "correct": true, "coach": "Exactly — annual, brief, and collaborative beats a one-time lecture every time." },
+        { "text": "A longer phone ban", "correct": false, "coach": "Restriction alone doesn't teach the underlying judgment kids need." },
+        { "text": "Nothing, settings don't need revisiting", "correct": false, "coach": "Apps and risks change — an annual check-in matters." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "Someone in my class is getting picked on in our group chat. It's not happening to me, so it's not my problem, right?",
+      "choices": [
+        { "text": "Right, stay out of it", "correct": false, "coach": "Watching silently lets it continue. A Knight speaks up or gets a trusted adult involved." },
+        { "text": "Tell a trusted adult or speak up for them", "correct": true, "coach": "Exactly the Knight move — standing up for others is real digital citizenship." },
+        { "text": "Leave the group chat quietly", "correct": false, "coach": "Leaving protects only you — a Knight looks out for others too." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "What does 'Shield up' really mean, as a Digital Knight?",
+      "choices": [
+        { "text": "Protect only yourself online", "correct": false, "coach": "It's bigger than just you — a Knight protects others too." },
+        { "text": "Protect yourself AND look out for others online", "correct": true, "coach": "That's it exactly. Shield up — for you and for the people around you." },
+        { "text": "Avoid the internet completely", "correct": false, "coach": "Being a Knight means using the internet wisely, not avoiding it." }
+      ]
+    }
+  ]
+}

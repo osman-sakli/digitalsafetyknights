@@ -1,0 +1,64 @@
+{
+  "id": "grooming-watch",
+  "tier": "younger",
+  "title": "Grooming Watch",
+  "emoji": "🚩",
+  "badgeTrack": "silver-guard",
+  "intro": "Some strangers online wear a very friendly disguise. This quest helps you spot the warning signs underneath — even when someone seems nice.",
+  "questions": [
+    {
+      "narrator": "GLITCH",
+      "prompt": "Hey friend! How old are you? What school do you go to?",
+      "choices": [
+        { "text": "Answer honestly, they seem nice", "correct": false, "coach": "A stranger asking personal questions is a warning sign, even if they seem friendly." },
+        { "text": "Don't answer, and tell a grown-up", "correct": true, "coach": "Knight move! Nice people online never need your personal info." },
+        { "text": "Give a made-up school name", "correct": false, "coach": "Better than the truth, but the safest move is to tell a grown-up and stop talking to them." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "Hi! What's your real name?",
+      "choices": [
+        { "text": "Tell them your real full name", "correct": false, "coach": "Knight Rule number one! Your real name stays off the chat with strangers." },
+        { "text": "Give your nickname instead", "correct": true, "coach": "Nice people don't need your real name. Nickname only!" },
+        { "text": "Ask why they want to know", "correct": false, "coach": "You don't need to explain anything — just don't share it." }
+      ]
+    },
+    {
+      "narrator": "GLITCH",
+      "prompt": "Hiii! It's me from school! Let me follow you!",
+      "choices": [
+        { "text": "Accept right away, they said they know me", "correct": false, "coach": "Anyone online can say they're 'from school' — that's not proof." },
+        { "text": "Check with them in real life first", "correct": true, "coach": "Exactly right — ask in person, then decide." },
+        { "text": "Ask them to describe your classroom", "correct": false, "coach": "A stranger might guess right. Checking in person is the real answer." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Someone online says 'this is our secret, don't tell your parents.' What does that really mean?",
+      "choices": [
+        { "text": "It means they really trust me", "correct": false, "coach": "That phrase is one of the biggest warning signs there is." },
+        { "text": "It's a warning sign — tell a grown-up right away", "correct": true, "coach": "Exactly. 'Don't tell your parents' is the warning sign itself." },
+        { "text": "It's only bad if they say it twice", "correct": false, "coach": "Even once is a warning sign. Tell a grown-up right away." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "An online friend wants to chat somewhere my parents don't know about. Should I?",
+      "choices": [
+        { "text": "Sure, it's just a different app", "correct": false, "coach": "Wanting to move somewhere more private is a warning sign." },
+        { "text": "No — and tell a grown-up they asked", "correct": true, "coach": "Exactly right. Always tell a grown-up when someone asks this." },
+        { "text": "Only move if it seems like a fun app", "correct": false, "coach": "It doesn't matter what the app is — the request itself is the warning sign." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Something online feels 'off' but you can't say why. What's the Knight move?",
+      "choices": [
+        { "text": "Ignore the feeling, it's probably nothing", "correct": false, "coach": "Trust that feeling — it's your brain noticing something before you can explain it." },
+        { "text": "Tell a trusted grown-up about it", "correct": true, "coach": "Knight Rule! You are never in trouble for telling — always speak up." },
+        { "text": "Wait and see if it happens again", "correct": false, "coach": "Don't wait — tell a grown-up the first time something feels wrong." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Build a customizable Family Media Agreement together, then print or save it as a document your family actually signs.">
+<title>Family Media Agreement Generator — Digital Safety Knights</title>
+<link rel="icon" href="assets/favicon.ico">
+<link rel="stylesheet" href="assets/breadcrumb.css">
+<script src="assets/knight-points.js"></script>
+<style>
+  :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --text: #2d3748; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
+  .topbar, .dsk-breadcrumb, .wrap > .hero, .form-card, .gen-btn-row { }
+  .topbar { background: var(--navy); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+  .topbar .brand { color: var(--gold); font-weight: 900; text-decoration: none; font-size: 1.05rem; }
+  .topbar .home-link { color: #cdd6ea; text-decoration: none; font-size: 0.85rem; font-weight: 700; }
+  .wrap { max-width: 640px; margin: 0 auto; padding: 30px 18px 90px; }
+  .hero { text-align: center; margin-bottom: 20px; }
+  .hero .icon { font-size: 2.6rem; margin-bottom: 6px; }
+  .hero h1 { color: var(--navy); font-size: 1.6rem; margin-bottom: 6px; }
+  .hero p { color: var(--gray); font-size: 0.9rem; }
+
+  .form-card { background: white; border-radius: 18px; padding: 22px 22px; box-shadow: 0 2px 20px rgba(13,27,62,0.07); margin-bottom: 18px; }
+  .form-card h3 { font-size: 0.82rem; color: var(--navy); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 14px; }
+  .fgrp { margin-bottom: 14px; }
+  .fgrp label { display: block; font-size: 0.85rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+  .fgrp input[type="text"] { width: 100%; padding: 11px 14px; border: 2px solid #dfe4ee; border-radius: 10px; font-size: 0.92rem; font-family: inherit; }
+  .fgrp input:focus { outline: none; border-color: var(--gold); }
+  .rule-row { display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; border-bottom: 1px solid #f0f2f7; }
+  .rule-row:last-child { border-bottom: none; }
+  .rule-row input[type="checkbox"] { margin-top: 3px; width: 18px; height: 18px; flex-shrink: 0; }
+  .rule-row label { font-size: 0.88rem; color: var(--text); cursor: pointer; }
+  .gen-btn { display: block; width: 100%; background: var(--gold); color: var(--navy); border: none; padding: 15px; border-radius: 14px; font-weight: 900; font-size: 0.98rem; cursor: pointer; }
+
+  /* ---- Printable agreement preview ---- */
+  #agreement-preview { display: none; background: white; border-radius: 18px; padding: 30px 28px; box-shadow: 0 2px 24px rgba(13,27,62,0.08); }
+  #agreement-preview.show { display: block; }
+  .ap-header { text-align: center; border-bottom: 3px solid var(--gold); padding-bottom: 16px; margin-bottom: 20px; }
+  .ap-header .shield { font-size: 2.2rem; }
+  .ap-header h2 { color: var(--navy); font-size: 1.3rem; margin: 6px 0 2px; }
+  .ap-header .fam-name { color: var(--gray); font-size: 0.9rem; }
+  .ap-section { margin-bottom: 18px; }
+  .ap-section h4 { color: var(--navy); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+  .ap-rules { list-style: none; }
+  .ap-rules li { font-size: 0.9rem; padding: 6px 0; padding-left: 24px; position: relative; }
+  .ap-rules li::before { content: '☐'; position: absolute; left: 0; color: var(--gold); font-size: 1.1rem; }
+  .ap-sign-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
+  .ap-sign-line { border-top: 2px solid var(--text); padding-top: 6px; font-size: 0.78rem; color: var(--gray); text-align: center; margin-top: 30px; }
+  .print-actions { display: flex; gap: 10px; margin-top: 20px; }
+  .print-btn { flex: 1; background: var(--navy); color: white; border: none; padding: 13px; border-radius: 12px; font-weight: 800; cursor: pointer; font-size: 0.88rem; }
+  .print-btn.secondary { background: var(--light); color: var(--navy); }
+
+  @media print {
+    .topbar, .dsk-breadcrumb, .hero, .form-card, .print-actions { display: none !important; }
+    body { background: white; }
+    #agreement-preview { box-shadow: none; padding: 0; }
+    .wrap { padding: 0; max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="/">🛡️ Digital Safety Knights</a>
+  <a class="home-link" href="/resources.html">📚 Resources</a>
+</div>
+<div class="dsk-breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/resources.html">Resources</a><span class="sep">/</span><span class="current">Family Media Agreement</span></div>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="icon">📝</div>
+    <h1>Family Media Agreement</h1>
+    <p>Pick the rules that fit your family, then print or save a document everyone signs together — not just a good intention.</p>
+  </div>
+
+  <div class="form-card">
+    <h3>Family Details</h3>
+    <div class="fgrp"><label>Family or Child's Name</label><input type="text" id="fam-name" placeholder="e.g. The Rivera Family"></div>
+    <div class="fgrp"><label>Daily Screen Time Goal (optional)</label><input type="text" id="screen-goal" placeholder="e.g. 2 hours on school days"></div>
+  </div>
+
+  <div class="form-card">
+    <h3>Choose Your Family's Rules</h3>
+    <div id="rules-list"></div>
+  </div>
+
+  <div class="form-card">
+    <h3>Add Your Own Rule (optional)</h3>
+    <div class="fgrp"><input type="text" id="custom-rule" placeholder="Type a rule specific to your family…"></div>
+  </div>
+
+  <button type="button" class="gen-btn" onclick="generateAgreement()">Generate Our Agreement →</button>
+
+  <div id="agreement-preview">
+    <div class="ap-header">
+      <div class="shield">🛡️</div>
+      <h2>Our Family Media Agreement</h2>
+      <div class="fam-name" id="prev-fam-name"></div>
+    </div>
+    <div class="ap-section" id="prev-screen-goal-section">
+      <h4>Screen Time Goal</h4>
+      <p id="prev-screen-goal" style="font-size:0.9rem;"></p>
+    </div>
+    <div class="ap-section">
+      <h4>We Agree To</h4>
+      <ul class="ap-rules" id="prev-rules"></ul>
+    </div>
+    <div class="ap-sign-row">
+      <div class="ap-sign-line">Child's Signature &amp; Date</div>
+      <div class="ap-sign-line">Parent/Guardian's Signature &amp; Date</div>
+    </div>
+    <div class="print-actions">
+      <button type="button" class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+      <button type="button" class="print-btn secondary" onclick="document.getElementById('agreement-preview').classList.remove('show')">← Edit Rules</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const RULES = [
+  { id: "bedroom", label: "Devices charge outside the bedroom overnight", checked: true },
+  { id: "ask-download", label: "Ask a parent before downloading any new app or game", checked: true },
+  { id: "no-password-share", label: "Never share passwords with anyone, including friends", checked: true },
+  { id: "tell-adult", label: "Tell a trusted adult if anything online feels wrong — no punishment for telling", checked: true },
+  { id: "no-meetup", label: "Never meet an online friend in person without a parent present", checked: true },
+  { id: "friends-only-chat", label: "Keep game and app chat settings on Friends Only", checked: true },
+  { id: "no-personal-info", label: "Keep real name, school, and address off public profiles and chats", checked: true },
+  { id: "family-codeword", label: "Use our family code word to verify any urgent or unusual call or message", checked: false },
+  { id: "annual-check", label: "Do a 30-minute privacy and settings check together once a year", checked: false },
+  { id: "dinner-free", label: "No phones at the dinner table", checked: false },
+  { id: "one-hour-before-bed", label: "No screens for the last hour before bedtime", checked: false },
+  { id: "ai-honesty", label: "Use AI tools to learn, never to turn in someone else's (or something else's) work as your own", checked: false }
+];
+
+const rulesList = document.getElementById('rules-list');
+rulesList.innerHTML = RULES.map(r =>
+  `<div class="rule-row"><input type="checkbox" id="rule-${r.id}" ${r.checked ? 'checked' : ''}><label for="rule-${r.id}">${r.label}</label></div>`
+).join('');
+
+function generateAgreement() {
+  const famName = document.getElementById('fam-name').value.trim() || 'Our Family';
+  const screenGoal = document.getElementById('screen-goal').value.trim();
+  const customRule = document.getElementById('custom-rule').value.trim();
+
+  document.getElementById('prev-fam-name').textContent = famName;
+
+  const goalSection = document.getElementById('prev-screen-goal-section');
+  if (screenGoal) {
+    goalSection.style.display = '';
+    document.getElementById('prev-screen-goal').textContent = screenGoal;
+  } else {
+    goalSection.style.display = 'none';
+  }
+
+  const selected = RULES.filter(r => document.getElementById(`rule-${r.id}`).checked).map(r => r.label);
+  if (customRule) selected.push(customRule);
+
+  document.getElementById('prev-rules').innerHTML = selected.map(r => `<li>${r}</li>`).join('') ||
+    '<li style="color:var(--gray);">No rules selected yet — go back and pick at least one.</li>';
+
+  const preview = document.getElementById('agreement-preview');
+  preview.classList.add('show');
+  preview.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  if (window.DSKPoints) DSKPoints.markComboActivity('guide');
+}
+</script>
+<script src="/assets/lang-switcher.js"></script>
+<script src="/assets/site-search.js"></script>
+<script src="/assets/play-now-fab.js"></script>
+</body>
+</html>

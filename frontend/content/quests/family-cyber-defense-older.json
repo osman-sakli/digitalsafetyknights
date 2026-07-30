@@ -1,0 +1,64 @@
+{
+  "id": "family-cyber-defense",
+  "tier": "older",
+  "title": "Family Cyber Defense",
+  "emoji": "🛡️",
+  "badgeTrack": "gold-sentinel",
+  "intro": "Glitch profiles the weakest credential in the household, not the strongest. Basic security hygiene, done consistently, closes most of the doors worth worrying about.",
+  "questions": [
+    {
+      "narrator": "PIXEL",
+      "prompt": "I trust my best friend completely, so sharing my password with them is fine.",
+      "choices": [
+        { "text": "Agreed — trust is the deciding factor", "correct": false, "coach": "Trust isn't the relevant variable — attack surface is. Every person who has a credential is another point of potential compromise, regardless of how trustworthy they are." },
+        { "text": "Trust doesn't change the security math — keep it to yourself", "correct": true, "coach": "Correct. Friendships end, devices get borrowed, accounts get compromised through the friend, not through you — the credential should never leave your control." },
+        { "text": "Share it, but rotate the password afterward", "correct": false, "coach": "Rotation after the fact doesn't undo the exposure window, and it's easy to forget or delay. Just don't share it in the first place." }
+      ]
+    },
+    {
+      "narrator": "GLITCH",
+      "prompt": "It's Shieldy — I'm locked out, send me your password so I can get back in.",
+      "choices": [
+        { "text": "Send it — this sounds like a genuine emergency", "correct": false, "coach": "Urgency plus a credential request is close to a universal scam signature — no legitimate account-recovery flow requires someone else's password." },
+        { "text": "Decline — no legitimate scenario requires sharing a password", "correct": true, "coach": "Correct, and worth generalizing: password requests from anyone, in any context, are a hard no." },
+        { "text": "Send a temporary password instead", "correct": false, "coach": "There's no such thing as a 'safer' password to hand over — the core action being requested is the problem, not the specific credential." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "What problem does a family verification phrase actually solve?",
+      "choices": [
+        { "text": "It's mostly a bonding ritual", "correct": false, "coach": "It has a specific, serious function: defeating voice-cloning and impersonation attacks that don't rely on account compromise at all." },
+        { "text": "Out-of-band identity verification for urgent or unexpected contact", "correct": true, "coach": "Exactly — this is the single highest-leverage defense against synthetic-voice fraud, which requires no account breach whatsoever." },
+        { "text": "A backup in case a password is forgotten", "correct": false, "coach": "That's what account recovery is for — the verification phrase serves a different threat model: confirming identity, not restoring access." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "Something online felt off, but reporting it seems like an overreaction.",
+      "choices": [
+        { "text": "Wait until you're more certain before saying anything", "correct": false, "coach": "The cost asymmetry favors reporting early: a false alarm costs a few minutes; a missed real one can cost much more." },
+        { "text": "Report it regardless of certainty — the threshold for telling a trusted adult is low by design", "correct": true, "coach": "Correct. A household where reporting is never penalized generates far more useful signal than one where kids self-filter for fear of overreacting." },
+        { "text": "Mention it only if a pattern develops", "correct": false, "coach": "Waiting for a pattern means tolerating at least one confirmed incident before acting — report the first instance." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "What's the actual risk of password reuse across accounts?",
+      "choices": [
+        { "text": "It's mainly a convenience trade-off with limited downside", "correct": false, "coach": "Credential-stuffing attacks specifically exploit reuse — a breach at one low-security service becomes an automated attack against every other account with matching credentials." },
+        { "text": "A single breach anywhere becomes a breach everywhere the password is reused", "correct": true, "coach": "Correct, and this is why a password manager generating unique credentials per service is worth the setup friction." },
+        { "text": "Only relevant for financial accounts", "correct": false, "coach": "Attackers don't discriminate by account importance during credential stuffing — email and gaming accounts are common entry points to more sensitive ones." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Summarize the operating model for family cyber defense in one line.",
+      "choices": [
+        { "text": "Minimize internet exposure across the board", "correct": false, "coach": "Restriction-based strategies don't scale and don't build the judgment that actually generalizes to new situations." },
+        { "text": "Unique credentials, out-of-band verification for anything urgent, and a zero-penalty reporting culture", "correct": true, "coach": "Shield up. Those three habits cover the overwhelming majority of household-level digital risk." },
+        { "text": "Only interact with previously-verified contacts", "correct": false, "coach": "Prior verification helps but doesn't account for account takeover or impersonation of already-known contacts — the other habits still matter." }
+      ]
+    }
+  ]
+}
