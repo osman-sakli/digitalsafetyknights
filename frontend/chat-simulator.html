@@ -7,6 +7,7 @@
 <title>Chat Simulator — Digital Safety Knights</title>
 <link rel="icon" href="assets/favicon.ico">
 <script src="assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
 <style>
   :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --success: #2a9d8f; --danger: #e63946; --purple: #8A5FBF; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -48,41 +49,42 @@
 
 <div class="topbar">
   <a class="brand" href="/">🛡️ Digital Safety Knights</a>
-  <a class="home-link" href="/glitch-detector.html">🔍 Glitch Detector</a>
+  <a class="home-link" href="/glitch-detector.html" data-i18n="cs.glitchDetectorLink">🔍 Glitch Detector</a>
 </div>
-<div class="dsk-breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/resources.html">Resources</a><span class="sep">/</span><span class="current">Chat Simulator</span></div>
+<div class="dsk-breadcrumb"><a href="/" data-i18n="qp.home2">Home</a><span class="sep">/</span><a href="/resources.html" data-i18n="nav.resources2">Resources</a><span class="sep">/</span><span class="current" data-i18n="cs.title">Chat Simulator</span></div>
 
 <div class="wrap">
   <div class="hero">
     <div class="icon">💬</div>
-    <h1>Chat Simulator</h1>
-    <p>A live, scripted conversation with Glitch. Pick how you'd really respond at each step — nothing here is saved or sent anywhere.</p>
+    <h1 data-i18n="cs.title">Chat Simulator</h1>
+    <p data-i18n="cs.subtitle">A live, scripted conversation with Glitch. Pick how you'd really respond at each step — nothing here is saved or sent anywhere.</p>
   </div>
 
   <div id="menu">
     <div class="menu-card" onclick="startScenario('gift')">
       <div class="menu-icon">🎁</div>
-      <div><div class="menu-title">The "Free Gift" Trick</div><div class="menu-sub">A stranger offers something rare, for free</div></div>
+      <div><div class="menu-title" data-i18n="cs.gift.title">The "Free Gift" Trick</div><div class="menu-sub" data-i18n="cs.gift.sub">A stranger offers something rare, for free</div></div>
     </div>
     <div class="menu-card" onclick="startScenario('info')">
       <div class="menu-icon">🎣</div>
-      <div><div class="menu-title">The "Just Curious" Trick</div><div class="menu-sub">Casual questions that add up to a profile of you</div></div>
+      <div><div class="menu-title" data-i18n="cs.info.title">The "Just Curious" Trick</div><div class="menu-sub" data-i18n="cs.info.sub">Casual questions that add up to a profile of you</div></div>
     </div>
     <div class="menu-card" onclick="startScenario('meetup')">
       <div class="menu-icon">📍</div>
-      <div><div class="menu-title">The "Let's Meet Up" Trick</div><div class="menu-sub">Moving from online to in person</div></div>
+      <div><div class="menu-title" data-i18n="cs.meetup.title">The "Let's Meet Up" Trick</div><div class="menu-sub" data-i18n="cs.meetup.sub">Moving from online to in person</div></div>
     </div>
   </div>
 
   <div class="chat-window" id="chat-window">
-    <div class="chat-header">💬 Chat with "CoolGamer_2026"</div>
+    <div class="chat-header" data-i18n="cs.chatHeader">💬 Chat with "CoolGamer_2026"</div>
     <div class="chat-log" id="chat-log"></div>
     <div class="choices-area" id="choices-area"></div>
   </div>
 </div>
 
 <script>
-var SCENARIOS = {
+var csIsTr2 = window.DSKi18n && DSKi18n.lang === 'tr';
+var SCENARIOS_EN = {
   gift: {
     steps: [
       { them: "hey!! i have an extra legendary skin code, want it? 🎁" },
@@ -141,6 +143,66 @@ var SCENARIOS = {
   }
 };
 
+var SCENARIOS_TR = {
+  gift: {
+    steps: [
+      { them: "heyy!! bende fazladan bir efsanevi kostüm kodu var, ister misin? 🎁" },
+      { them: "tamamen bedava, ben sadece iki hesaba ihtiyaç duymuyorum lol" },
+      { choices: [
+          { text: "Tabii, gönder!", risky: true, next: 1 },
+          { text: "Güzel ama biraz rastgele — neden ben?", risky: false, next: 2 } ] }
+    ],
+    branches: {
+      1: { them: "harika! sadece önce giriş bilgilerini gönder ki direkt 'hediye' edebileyim 😊", choices: [
+            { text: "Tabii, işte şifrem", risky: true, end: 'risky', endMsg: "Şifreni asla paylaşma — 'bedava bir hediye' için bile. Hesaplar tam olarak böyle çalınır." },
+            { text: "Bekle, şifremi paylaşmakta rahat değilim", risky: false, end: 'safe', endMsg: "Kesinlikle doğru. Gerçek bir hediye asla şifreni gerektirmez. Tam zamanında yakaladın." }
+          ]},
+      2: { them: "lol sebep yok, sadece iyi olmaya çalışıyorum! ...tamam iyi, aslında önce bana 5$ gönderirsen kodu hemen gönderirim", choices: [
+            { text: "Tamam işte 5$", risky: true, end: 'risky', endMsg: "Bu klasik yem-değiştir taktiğidir — 'bedava' 'önce biraz öde'ye dönüşür. Gerçek hediyeler asla ödeme istemez." },
+            { text: "O zaman gerçekten bedava değil — hayır teşekkürler", risky: false, end: 'safe', endMsg: "Mükemmel yakalama. 'Bedava'nın 'önce şunu öde'ye dönüştüğü an, hiç bedava olmamıştır." }
+          ]}
+    }
+  },
+  info: {
+    steps: [
+      { them: "haha komiksin 😂 neyse kaç yaşındasın?" },
+      { choices: [
+          { text: "12 yaşındayım", risky: true, next: 1 },
+          { text: "Neden soruyorsun? Sadece oyun hakkında konuşalım", risky: false, next: 2 } ] }
+    ],
+    branches: {
+      1: { them: "havalı havalı. hangi okula gidiyorsun? kuzenim de oraya gidiyor olabilir", choices: [
+            { text: "[okul adını söyler]'e gidiyorum", risky: true, end: 'risky', endMsg: "Yaş + okul adı, bir yabancının tam olarak kim olduğunu ve nerede bulacağını daraltmaya başlaması için zaten yeterlidir." },
+            { text: "Bunu söylemesem daha iyi olur", risky: false, end: 'safe', endMsg: "İyi durdurma. Gerçekten tanımadığın birinin kişisel bir sorusuna cevap vermemek asla kaba değildir." }
+          ]},
+      2: { them: "tamam lol. okulu unut — adresin nedir, sana bir şey postalamak istiyorum", choices: [
+            { text: "Adresim [adresi verir]", risky: true, end: 'risky', endMsg: "Çevrimiçi bir yabancının ev adresini bilmesi için asla gerçek bir sebebi yoktur. Bu büyük bir uyarı işaretidir." },
+            { text: "Sorun değil, bana bir şey postalamana gerek yok", risky: false, end: 'safe', endMsg: "Kesinlikle doğru. Çevrimiçi bir yabancıdan gerçek adresini isteyen nazik teklifler klasik bir uyarı işaretidir — mükemmel şekilde kapattın." }
+          ]}
+    }
+  },
+  meetup: {
+    steps: [
+      { them: "birlikte oynarken hep çok eğleniyoruz lol" },
+      { them: "bir ara yüz yüze takılmalıyız, sadece ikimiz, eğlenceli olur" },
+      { choices: [
+          { text: "Evet tabii, ne zaman ve nerede?", risky: true, next: 1 },
+          { text: "Sadece çevrimiçi tanıdığım insanlarla gerçekten buluşmam", risky: false, next: 2 } ] }
+    ],
+    branches: {
+      1: { them: "harika! ama bunu aramızda tutalım, tamam mı? ebeveynlerine söyleme, sadece hayır derler", choices: [
+            { text: "Tamam, sırrımız", risky: true, end: 'risky', endMsg: "Buluşmak ARTI ebeveynlerinden gizli tutmanın söylenmesi, var olan en ciddi uyarı işareti kombinasyonlarından biridir." },
+            { text: "Aslında, bunu ebeveynlerime söyleyeceğim", risky: false, end: 'safe', endMsg: "Kesinlikle doğru — buluşma konusunda gizlilikte ısrar eden biri, sana tam olarak neden buluşmaman gerektiğini gösteriyor." }
+          ]},
+      2: { them: "hadi ama, artık bana güvenmiyor musun?", choices: [
+            { text: "Güveniyorum, tamam o zaman buluşalım", risky: true, end: 'risky', endMsg: "Suçluluk duygusu ('bana güvenmiyor musun?') bir baskı taktiğidir. Sadece bir ekran üzerinden inşa edilen güven asla tek başına buluşmak için bir sebep değildir." },
+            { text: "Güvenle ilgili değil, sadece bir ebeveyn bilmeden çevrimiçi arkadaşlarla yüz yüze buluşmuyorum", risky: false, end: 'safe', endMsg: "Mükemmel. Bu tam olarak Şövalye kuralı — güvendiğin bir yetişkin dahil olmadan çevrimiçi arkadaşlıklardan yüz yüze buluşma yok." }
+          ]}
+    }
+  }
+};
+
+var SCENARIOS = csIsTr2 ? SCENARIOS_TR : SCENARIOS_EN;
 var current = null, stepIndex = 0;
 
 function startScenario(key) {
@@ -205,13 +267,14 @@ function finishScenario(result, msg) {
     var log = document.getElementById('chat-log');
     var banner = document.createElement('div');
     banner.className = 'end-banner ' + result;
-    banner.textContent = (result === 'safe' ? '🛡️ Shield up! ' : '⚠️ Watch out — ') + msg;
+    var prefix = csIsTr2 ? (result === 'safe' ? '🛡️ Kalkanını kaldır! ' : '⚠️ Dikkat et — ') : (result === 'safe' ? '🛡️ Shield up! ' : '⚠️ Watch out — ');
+    banner.textContent = prefix + msg;
     log.appendChild(banner);
     log.scrollTop = log.scrollHeight;
 
     var restart = document.createElement('button');
     restart.className = 'restart-btn';
-    restart.textContent = '🔁 Try Another Scenario';
+    restart.textContent = csIsTr2 ? '🔁 Başka Bir Senaryo Dene' : '🔁 Try Another Scenario';
     restart.onclick = function() {
       document.getElementById('chat-window').classList.remove('active');
       document.getElementById('menu').style.display = 'block';
@@ -219,13 +282,12 @@ function finishScenario(result, msg) {
     document.getElementById('chat-log').parentElement.appendChild(restart);
 
     if (window.DSKPoints && result === 'safe') {
-      DSKPoints.addPoints(15, 'Chat Simulator — safe response');
+      DSKPoints.addPoints(15, csIsTr2 ? 'Sohbet Simülatörü — güvenli cevap' : 'Chat Simulator — safe response');
     }
   }, 500);
 }
 </script>
 
-<script src="/assets/i18n.js"></script>
 <script src="/assets/lang-switcher.js"></script>
 <script src="/assets/site-search.js"></script>
 <script src="/assets/play-now-fab.js"></script>
