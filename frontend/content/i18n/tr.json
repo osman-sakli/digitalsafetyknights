@@ -428,5 +428,13 @@
   "res.ctaSubtitle": "Üyeler kişisel bir panel, rozet ilerlemesi, yeni Dergi sayılarına erken erişim ve sonsuza kadar kaydedilen Shieldy'nin Mesaj Ayıklama Oyunu yüksek skorlarını alır.",
   "res.ctaBtn": "Üyelik Ayrıcalıklarını Gör →",
   "footer.brandName": "Digital Safety Knights",
-  "res.hideSummary": "⚡ Özeti Gizle"
+  "res.hideSummary": "⚡ Özeti Gizle",
+
+  "qp.dayStreak": "{n} günlük seri",
+  "qp.pts": "puan",
+  "qp.familySquad": "👪 Bu cihazdaki Aile Ekibi",
+  "qp.familyTotal": "Aile Toplamı: {n} puan",
+  "qp.knightPoints": "Şövalye Puanı",
+  "qp.customizeEmblem": "🎨 Amblemi Özelleştir",
+  "qp.unlocksAt": "{n} Şövalye Puanında açılır"
 }

@@ -134,9 +134,9 @@
       <div style="flex:1;min-width:200px;">
         <h1 id="picker-greeting" style="margin-bottom:2px;">Welcome back, Knight!</h1>
         <div style="font-size:0.85rem;color:var(--gray);">
-          <b id="kp-points-label">0</b> Knight Points
+          <b id="kp-points-label">0</b> <span data-i18n="qp.knightPoints">Knight Points</span>
           <span id="kp-streak-label" style="margin-left:10px;"></span>
-          <a href="#" onclick="openEmblemEditor();return false;" style="margin-left:10px;color:var(--gold);font-weight:700;text-decoration:none;">🎨 Customize Emblem</a>
+          <a href="#" onclick="openEmblemEditor();return false;" style="margin-left:10px;color:var(--gold);font-weight:700;text-decoration:none;" data-i18n="qp.customizeEmblem">🎨 Customize Emblem</a>
         </div>
       </div>
     </div>
@@ -222,11 +222,11 @@ function renderEmblemPicker() {
   const symbolRow = document.getElementById('emblem-symbols');
   colorRow.innerHTML = EMBLEM_COLORS.map(c => {
     const locked = c.unlock && points < c.unlock;
-    return `<button type="button" class="emblem-swatch color-swatch${c.v === current.color ? ' selected' : ''}${locked ? ' locked' : ''}" style="background:${c.v}" ${locked ? `title="Unlocks at ${c.unlock} Knight Points" disabled` : `onclick="pickEmblemColor('${c.v}')"`}>${locked ? '🔒' : ''}</button>`;
+    return `<button type="button" class="emblem-swatch color-swatch${c.v === current.color ? ' selected' : ''}${locked ? ' locked' : ''}" style="background:${c.v}" ${locked ? `title="${(window.DSKi18n ? DSKi18n.t('qp.unlocksAt', 'Unlocks at {n} Knight Points') : 'Unlocks at {n} Knight Points').replace('{n}', c.unlock)}" disabled` : `onclick="pickEmblemColor('${c.v}')"`}>${locked ? '🔒' : ''}</button>`;
   }).join('');
   symbolRow.innerHTML = EMBLEM_SYMBOLS.map(s => {
     const locked = s.unlock && points < s.unlock;
-    return `<button type="button" class="emblem-swatch symbol-swatch${s.v === current.symbol ? ' selected' : ''}${locked ? ' locked' : ''}" ${locked ? `title="Unlocks at ${s.unlock} Knight Points" disabled` : `onclick="pickEmblemSymbol('${s.v}')"`}>${locked ? '🔒' : s.v}</button>`;
+    return `<button type="button" class="emblem-swatch symbol-swatch${s.v === current.symbol ? ' selected' : ''}${locked ? ' locked' : ''}" ${locked ? `title="${(window.DSKi18n ? DSKi18n.t('qp.unlocksAt', 'Unlocks at {n} Knight Points') : 'Unlocks at {n} Knight Points').replace('{n}', s.unlock)}" disabled` : `onclick="pickEmblemSymbol('${s.v}')"`}>${locked ? '🔒' : s.v}</button>`;
   }).join('');
   updateEmblemPreview();
 }
@@ -284,16 +284,18 @@ function showPicker() {
     const streak = DSKPoints.checkStreak();
     DSKPoints.renderLevelRing(document.getElementById('kp-ring'), DSKPoints.getPoints());
     document.getElementById('kp-points-label').textContent = DSKPoints.getPoints();
-    document.getElementById('kp-streak-label').textContent = streak.count > 1 ? ('🔥 ' + streak.count + '-day streak') : '';
+    const tStreak = window.DSKi18n ? DSKi18n.t : function(k, f) { return f; };
+    document.getElementById('kp-streak-label').textContent = streak.count > 1 ? ('🔥 ' + tStreak('qp.dayStreak', '{n}-day streak').replace('{n}', streak.count)) : '';
 
     const profiles = DSKPoints.getFamilyProfiles();
     const names = Object.keys(profiles);
     const squadBox = document.getElementById('family-squad-box');
     if (names.length > 1) {
       squadBox.style.display = 'block';
-      squadBox.innerHTML = '<b style="color:var(--navy);">👪 Family Squad on this device</b><br>' +
-        names.map(n => n + ': <b>' + profiles[n] + '</b> pts').join(' &nbsp;·&nbsp; ') +
-        ' &nbsp;·&nbsp; <b>Family Total: ' + DSKPoints.familyTotal() + ' pts</b>';
+      const ptsWord = tStreak('qp.pts', 'pts');
+      squadBox.innerHTML = '<b style="color:var(--navy);">' + tStreak('qp.familySquad', '👪 Family Squad on this device') + '</b><br>' +
+        names.map(n => n + ': <b>' + profiles[n] + '</b> ' + ptsWord).join(' &nbsp;·&nbsp; ') +
+        ' &nbsp;·&nbsp; <b>' + tStreak('qp.familyTotal', 'Family Total: {n} pts').replace('{n}', DSKPoints.familyTotal()) + '</b>';
     } else {
       squadBox.style.display = 'none';
     }
