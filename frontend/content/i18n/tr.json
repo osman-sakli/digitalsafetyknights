@@ -568,5 +568,24 @@
   "cs.info.sub": "Toplanınca senin profiline dönüşen gündelik sorular",
   "cs.meetup.title": "\"Hadi Buluşalım\" Numarası",
   "cs.meetup.sub": "Çevrimiçinden yüz yüze geçiş",
-  "cs.chatHeader": "💬 \"CoolGamer_2026\" ile Sohbet"
+  "cs.chatHeader": "💬 \"CoolGamer_2026\" ile Sohbet",
+
+  "gd.title": "Glitch Dedektörü",
+  "gd.subtitle": "Bir mesaj yapıştır, ya da bir tanesinin ekran görüntüsünü yükle. Shieldy tam olarak hangi uyarı işaretlerini bulduğunu gösterir — anında ve tamamen özel.",
+  "gd.textareaPh": "Mesajı buraya yapıştır... örn. 'BEDAVA ROBUX! Hemen tıkla, sadece 10 saniye kaldı!'",
+  "gd.or": "VEYA",
+  "gd.uploadBtn": "📷 Bunun Yerine Bir Ekran Görüntüsü Yükle",
+  "gd.ocrStatus": "Görüntündeki metin okunuyor...",
+  "gd.checkBtn": "🛡️ Uyarı İşaretlerini Kontrol Et",
+  "gd.privacyNote": "Burada yazdığın veya yüklediğin hiçbir şey kaydedilmez veya gönderilmez — görüntülerden metin okuma dahil her şey tamamen kendi cihazında kontrol edilir.",
+  "gd.tryChatSim": "💬 Sohbet Simülatörünü Dene — canlı bir konuşmayı pratik et →",
+  "gd.whatLooksFor": "Shieldy neye bakıyor",
+  "gd.li1": "<b>Aciliyet</b> — \"acele et,\" \"sadece saniyeler kaldı,\" \"hemen harekete geç\"",
+  "gd.li2": "<b>Gizlilik</b> — \"ebeveynlerine söyleme,\" \"aramızda kalsın,\" ya da çocukların bir ebeveynin yakında olduğunu birbirlerine uyarmak için kullandığı şifreli ifadeler",
+  "gd.li3": "<b>Kişisel sorular</b> — adını, yaşını, cinsiyetini, okulunu veya adresini sormak",
+  "gd.li4": "<b>Gerçek olamayacak kadar iyi teklifler</b> — bedava ödüller, hediye kartları, \"kazandın\"",
+  "gd.li5": "<b>Para veya şifre istekleri</b> — ödeme, doğrulama veya giriş bilgisi göndermeyi istemek",
+  "gd.li6": "<b>Buluşma veya başka bir uygulamaya taşınma istekleri</b> — özellikle gizli tutulmasını isteyenler",
+  "gd.li7": "<b>Fotoğraf veya kamerada soyunma istekleri</b> — iyi niyetli birinin bir çocuktan asla istemeyeceği bir şey",
+  "gd.sourceNote": "Uyarı işareti örüntüleri, NCMEC, Internet Safety 101 ve Child Rescue Coalition dahil çocuk güvenliği kuruluşları tarafından belgelenen kategorilere dayanmaktadır. Bazı gerçek istismarcı kodları sadece düz sayılardır (\"9\" veya \"99\" gibi) — bunlar serbest metinde güvenilir bir şekilde otomatik tespit edilemez, bu yüzden bir mesaj kafa karıştırıcı veya kodlu görünüyorsa, en güvenli hamle her zaman aynıdır: ekran görüntüsü al ve güvendiğin bir yetişkine sor."
 }
