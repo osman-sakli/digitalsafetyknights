@@ -552,5 +552,10 @@
   "spb.subtitle": "Bir öğeye dokun, sonra ait olduğunu düşündüğün kutuya dokun.",
   "spb.okShare": "✅ Paylaşmak Uygun",
   "spb.keepPrivate": "🔒 Özel Tut",
-  "spb.reset": "🔁 Sıfırla"
+  "spb.reset": "🔁 Sıfırla",
+
+  "std.title": "Sahte Görüntüyü Bul",
+  "std.subtitle": "Yapay zeka bir videoyu, sesi veya fotoğrafı taklit edebilir. Her senaryoyu oku ve en büyük gerçek dünya işaretini seç.",
+  "std.niceWork": "İyi dedektiflik!",
+  "std.bestRule": "En iyi kural: bir şey acil, çok dramatik hissettiriyorsa veya hızlı hareket etmeni istiyorsa — inanmadan veya paylaşmadan önce dur ve güvendiğin bir yetişkinle kontrol et."
 }

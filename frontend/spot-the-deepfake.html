@@ -7,6 +7,7 @@
 <title>Spot the Deepfake — Digital Safety Knights</title>
 <link rel="icon" href="assets/favicon.ico">
 <script src="assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
 <style>
   :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --success: #2a9d8f; --danger: #e63946; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -45,15 +46,15 @@
 
 <div class="topbar">
   <a class="brand" href="/">🛡️ Digital Safety Knights</a>
-  <a class="home-link" href="/resources.html">← Resource Center</a>
+  <a class="home-link" href="/resources.html" data-i18n="fc.backResources">← Resource Center</a>
 </div>
-<div class="dsk-breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/resources.html">Resources</a><span class="sep">/</span><span class="current">Spot the Deepfake</span></div>
+<div class="dsk-breadcrumb"><a href="/" data-i18n="qp.home2">Home</a><span class="sep">/</span><a href="/resources.html" data-i18n="nav.resources2">Resources</a><span class="sep">/</span><span class="current" data-i18n="std.title">Spot the Deepfake</span></div>
 
 <div class="wrap">
   <div class="hero">
     <div class="icon">🕵️</div>
-    <h1>Spot the Deepfake</h1>
-    <p>AI can fake a video, a voice, or a photo. Read each scenario and pick the biggest real-world tell.</p>
+    <h1 data-i18n="std.title">Spot the Deepfake</h1>
+    <p data-i18n="std.subtitle">AI can fake a video, a voice, or a photo. Read each scenario and pick the biggest real-world tell.</p>
   </div>
 
   <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
@@ -62,14 +63,15 @@
 
   <div class="end-screen" id="end-screen">
     <div style="font-size:3rem;">🏆</div>
-    <h2>Nice detective work!</h2>
+    <h2 data-i18n="std.niceWork">Nice detective work!</h2>
     <div class="end-score" id="end-score">0/8</div>
-    <p style="color:var(--gray);">The best rule: if something feels urgent, too dramatic, or asks you to act fast — pause and check with a trusted adult before believing or sharing it.</p>
+    <p style="color:var(--gray);" data-i18n="std.bestRule">The best rule: if something feels urgent, too dramatic, or asks you to act fast — pause and check with a trusted adult before believing or sharing it.</p>
   </div>
 </div>
 
 <script>
-var SCENARIOS = [
+var stdIsTr = window.DSKi18n && DSKi18n.lang === 'tr';
+var SCENARIOS_EN = [
   { icon: '📞', text: "You get a call and it sounds exactly like your mom's voice, panicked, asking you to send money right now to a number you don't recognize.", choices: [
       { text: "It's her voice, so it must be real — send it", correct: false },
       { text: "Hang up and call her back on her real number first", correct: true },
@@ -112,6 +114,50 @@ var SCENARIOS = [
     ], explain: "AI chatbots are often \"confidently wrong\" — they don't actually know when they're making things up. Confidence is not the same as accuracy; always double-check important facts with a real source." }
 ];
 
+var SCENARIOS_TR = [
+  { icon: '📞', text: "Bir telefon geliyor ve tıpkı annenin sesi gibi, panik içinde, tanımadığın bir numaraya hemen para göndermeni istiyor.", choices: [
+      { text: "Onun sesi, o yüzden gerçek olmalı — gönder", correct: false },
+      { text: "Kapat ve önce onu gerçek numarasından geri ara", correct: true },
+      { text: "Emin olmak için arayana daha fazla soru sor", correct: false }
+    ], explain: "Ses klonlama araçları, çevrimiçi sadece birkaç saniyelik sesten gerçek bir kişinin sesini kopyalayabilir. Panik içinde, acil bir para isteği en büyük uyarı işaretidir — her zaman ikinci, ayrı bir iletişim yoluyla doğrula." },
+  { icon: '🎥', text: "Bir video, sevdiğin bir ünlünün hiç duymadığın bir kripto para yatırım uygulamasını, büyük getiriler vaat ederek önerdiğini gösteriyor.", choices: [
+      { text: "Ünlüler güvenilirdir, o yüzden muhtemelen sorun yok", correct: false },
+      { text: "Aksi kanıtlanana kadar sahte olduğunu varsay — ünlünün gerçek resmi hesaplarını kontrol et", correct: true },
+      { text: "Önce küçük bir miktarla dene", correct: false }
+    ], explain: "Yapay zeka yüz ve ses değiştirme, özellikle büyük, garantili getiriler vaat eden yatırımlar için sahte ünlü onayı dolandırıcılıklarında son derece yaygındır. Gerçek ünlüler neredeyse hiç kişisel olarak rastgele kripto uygulamalarını tanıtmaz." },
+  { icon: '💬', text: "Bir görüntülü sohbette, kişinin ağız hareketleri sözleriyle biraz uyumsuz görünüyor ve hiç göz kırpmıyor.", choices: [
+      { text: "Bu sadece kötü bir internet bağlantısı", correct: false },
+      { text: "Bu, gerçek zamanlı bir yapay zeka yüz filtresinin veya sahte görüntünün klasik bir işareti", correct: true },
+      { text: "Görmezden gel, görüntülü aramalar hep tuhaf görünür", correct: false }
+    ], explain: "Uyumsuz dudak senkronizasyonu ve doğal olmayan göz kırpma (ya da hiç göz kırpmama), canlı sahte görüntülü aramalarda en yaygın iki görsel hatadır — teknoloji bunları henüz tam olarak çözmedi." },
+  { icon: '🖼️', text: "Gerçek olamayacak kadar dramatik görünen, elleri veya arka plan detayları biraz çarpık olan şok edici bir haber fotoğrafı görüyorsun.", choices: [
+      { text: "Hemen paylaş, önemli", correct: false },
+      { text: "Ellere, yazılara ve arka plan örüntülerine yakından bak, sonra gerçek bir haber kaynağını kontrol et", correct: true },
+      { text: "Sadece çok beğeni alırsa paylaş", correct: false }
+    ], explain: "Yapay zeka görüntü üreticileri hâlâ sık sık ellerde, arka plan yazılarında ve tekrarlayan örüntülerde zorlanıyor. Dramatik görüntüleri paylaşmadan önce gerçek bir haber kaynağını kontrol etmek her zaman daha güvenli bir hamledir." },
+  { icon: '🎮', text: "En sevdiğin oyunda bir 'arkadaşın', biraz robotik gelen ve garip bir şekilde aynı ifadeyi iki kez tekrarlayan bir sesli mesaj gönderiyor.", choices: [
+      { text: "Gerçek insanlar asla robotik ses çıkarmaz, o yüzden sorun yok", correct: false },
+      { text: "Garip tekrarlanan ifadeler ve düz robotik ton, yapay zeka üretimi ses olabileceği anlamına gelebilir", correct: true },
+      { text: "Kontrol etmek için sesi yükselt", correct: false }
+    ], explain: "Yapay zeka ses üreticileri hâlâ biraz düz gelebilir ya da doğal olmayan ifadeleri tekrarlayabilir. Bir 'arkadaş' aniden farklı geliyorsa ya da garip davranıyorsa, başka bir kanaldan kontrol etmeye değer." },
+  { icon: '📸', text: "Biri, çekildiğini hatırlamadığın utandırıcı bir fotoğrafına sahip olduğunu iddia ediyor ve ödeme yapmazsan paylaşacağını söylüyor.", choices: [
+      { text: "Silmesi için hızlıca öde", correct: false },
+      { text: "Ödeme yapma, panik yapma — kanıtı sakla ve hemen güvendiğin bir yetişkine söyle", correct: true },
+      { text: "Sahte olduğunu kanıtlamak için çevrimiçi tartış", correct: false }
+    ], explain: "Bu bir şantaj taktiğidir — gerçek ya da yapay zeka ile sahte olsun, ödemek asla durmasını garanti etmez ve genellikle daha fazla talebe yol açar. Hemen güvendiğin bir yetişkine söylemek her zaman doğru hamledir, ve bu asla kurbanın suçu değildir." },
+  { icon: '🗞️', text: "Bir makale, bir bilim insanının aşırı ve karakterine aykırı görünen bir şey söylediğini alıntılıyor, ama alıntının gerçekte nereden geldiğine dair bir bağlantı yok.", choices: [
+      { text: "Yazılıysa, muhtemelen doğrudur", correct: false },
+      { text: "İnanmadan önce karaktere aykırı bir alıntının orijinal kaynağını ara", correct: true },
+      { text: "Makale profesyonel göründüğü için güven", correct: false }
+    ], explain: "Yapay zeka metin üreticileri, gerçek insanlara atfedilen çok ikna edici ama tamamen sahte alıntılar üretebilir. Profesyonel görünen bir makale kanıt değildir — her zaman orijinal, doğrulanabilir kaynağı ara." },
+  { icon: '🤖', text: "Bir yapay zeka sohbet botu, bir gerçek hakkında %100 emin olduğunu, tam bir güvenle ve hiç tereddüt etmeden söylüyor.", choices: [
+      { text: "Tam güven, doğru olması gerektiği anlamına gelir", correct: false },
+      { text: "Yapay zeka son derece kendinden emin görünürken hâlâ tamamen yanlış olabilir", correct: true },
+      { text: "Güven sadece insan uzmanlar için önemlidir", correct: false }
+    ], explain: "Yapay zeka sohbet botları genellikle \"emin bir şekilde yanılır\" — bir şeyi uydurduklarını gerçekte bilmezler. Kendinden emin olmak doğrulukla aynı şey değildir; önemli gerçekleri her zaman gerçek bir kaynakla iki kez kontrol et." }
+];
+
+var SCENARIOS = stdIsTr ? SCENARIOS_TR : SCENARIOS_EN;
 var idx = 0, score = 0;
 
 function renderScenario() {
@@ -125,7 +171,7 @@ function renderScenario() {
       '<div class="scenario-text">' + s.text + '</div>' +
       '<div id="choices"></div>' +
       '<div class="explain-box" id="explain-box"></div>' +
-      '<button class="next-btn" id="next-btn" onclick="nextScenario()">Continue →</button>' +
+      '<button class="next-btn" id="next-btn" onclick="nextScenario()">' + (stdIsTr ? 'Devam Et →' : 'Continue →') + '</button>' +
     '</div>';
   var choicesEl = document.getElementById('choices');
   choicesEl.innerHTML = s.choices.map(function(c, i) {
@@ -157,14 +203,13 @@ function showEnd() {
   document.getElementById('end-score').textContent = score + '/' + SCENARIOS.length;
   document.getElementById('end-screen').classList.add('show');
   if (window.DSKPoints) {
-    DSKPoints.addPoints(score * 5, 'Spot the Deepfake');
+    DSKPoints.addPoints(score * 5, stdIsTr ? 'Sahte Görüntüyü Bul' : 'Spot the Deepfake');
   }
 }
 
 renderScenario();
 </script>
 
-<script src="/assets/i18n.js"></script>
 <script src="/assets/lang-switcher.js"></script>
 <script src="/assets/site-search.js"></script>
 <script src="/assets/play-now-fab.js"></script>
