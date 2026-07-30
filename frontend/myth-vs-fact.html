@@ -8,6 +8,7 @@
 <link rel="icon" href="assets/favicon.ico">
 <link rel="stylesheet" href="assets/breadcrumb.css">
 <script src="assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
 <style>
   :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --text: #2d3748; --success: #2a9d8f; --danger: #e63946; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -40,22 +41,22 @@
 
 <div class="topbar">
   <a class="brand" href="/">🛡️ Digital Safety Knights</a>
-  <a class="home-link" href="/resources.html">📚 Resources</a>
+  <a class="home-link" href="/resources.html" data-i18n="nav.resources">📚 Resources</a>
 </div>
-<div class="dsk-breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/resources.html">Resources</a><span class="sep">/</span><span class="current">Myth vs Fact</span></div>
+<div class="dsk-breadcrumb"><a href="/" data-i18n="qp.home2">Home</a><span class="sep">/</span><a href="/resources.html" data-i18n="nav.resources2">Resources</a><span class="sep">/</span><span class="current" data-i18n="mvf.title">Myth vs Fact</span></div>
 
 <div class="wrap">
   <div class="hero">
     <div class="icon">🔍</div>
-    <h1>Myth vs Fact</h1>
-    <p>Tap a myth to reveal the real answer — the stuff parents actually search for at 11pm.</p>
+    <h1 data-i18n="mvf.title">Myth vs Fact</h1>
+    <p data-i18n="mvf.subtitle">Tap a myth to reveal the real answer — the stuff parents actually search for at 11pm.</p>
   </div>
 
   <div class="mvf-grid" id="mvf-grid"></div>
 </div>
 
 <script>
-const PAIRS = [
+const PAIRS_EN = [
   { myth: "My kid's game chat looks clean when I check it, so it's safe.", fact: "A clean visible chat log doesn't mean much — many risky conversations move to private in-experience channels or linked Discord servers you haven't seen. Check for linked servers, not just the chat you can already see." },
   { myth: "If I don't give my kid a phone, they're safe from online risks.", fact: "Kids access the internet through school devices, friends' phones, gaming consoles, and shared family tablets. Delaying a personal phone is reasonable, but it isn't a safety plan on its own — the habits and conversations matter more than the device." },
   { myth: "A strong password is all my child's account really needs.", fact: "A strong, unique password matters, but two-factor authentication is what actually stops most account takeovers — even a stolen password is useless to an attacker without the second step." },
@@ -69,20 +70,39 @@ const PAIRS = [
   { myth: "My teenager is too smart and tech-savvy to fall for a scam.", fact: "Sophistication doesn't prevent social engineering — scams targeting teens are built around urgency, social proof, and emotional pressure, not technical trickery. Confidence with technology isn't the same skill as recognizing manipulation." }
 ];
 
+const PAIRS_TR = [
+  { myth: "Çocuğumun oyun sohbeti kontrol ettiğimde temiz görünüyor, yani güvenli.", fact: "Temiz görünen bir sohbet kaydı pek bir şey ifade etmez — birçok riskli konuşma, görmediğiniz özel oyun içi kanallara veya bağlı Discord sunucularına taşınır. Sadece görebildiğiniz sohbeti değil, bağlı sunucuları da kontrol edin." },
+  { myth: "Çocuğuma telefon vermezsem çevrimiçi risklerden güvende olur.", fact: "Çocuklar okul cihazları, arkadaşlarının telefonları, oyun konsolları ve paylaşılan aile tabletleri üzerinden internete erişir. Kişisel bir telefonu geciktirmek makul, ama tek başına bir güvenlik planı değildir — alışkanlıklar ve konuşmalar cihazdan daha önemlidir." },
+  { myth: "Güçlü bir şifre, çocuğumun hesabının gerçekten ihtiyacı olan tek şey.", fact: "Güçlü, benzersiz bir şifre önemlidir, ama çoğu hesap ele geçirmeyi asıl durduran şey iki faktörlü kimlik doğrulamadır — çalınan bir şifre bile ikinci adım olmadan bir saldırgana işe yaramaz." },
+  { myth: "Bir şey olursa çocuğum bana hemen söyler.", fact: "Çoğu çocuk, cihaz erişimini kaybetmekten veya başının belaya girmesinden korktuğu için ebeveynine söylemeyi erteler — size güvenmedikleri için değil. Bunu açık ve tekrar tekrar belirtin: söylemek asla cezalandırılmaz, ne olursa olsun." },
+  { myth: "Çevrimiçi istismarcılar her zaman sahte profilli belirgin yabancılardır.", fact: "Kandırma genellikle normal görünen bir profille ve endişe verici bir şey olmadan önce haftalarca süren sıradan, dostça bir konuşmayla başlar. Uyarı işareti birinin nasıl göründüğü değil — örüntüdür: hediyeler, gizlilik istekleri ve tırmanma." },
+  { myth: "Bir şey ters gittiğinde bir uygulamayı silmek riski ortadan kaldırır.", fact: "Önce silmek, ne olduğunu bildirmek için gereken kanıtı yok eder. Her şeyin ekran görüntüsünü alın, güvendiğiniz bir yetişkine söyleyin, ve ancak sonra hesap ya da uygulamayla ne yapılacağına karar verin." },
+  { myth: "Yapay zeka sohbet botu 'arkadaşları' aslında zararsız bir eğlence.", fact: "Her zaman katılan ve asla karşı çıkmayan yapay zeka arkadaşları, kötü kararları ve özellikle yalnız çocuklarda sağlıksız bağlanmayı pekiştirebilen belgelenmiş bir tasarım biçimidir (yağcılık). Bir oyuncak diye göz ardı etmek yerine kontrol etmeye değer." },
+  { myth: "Bir ekran süresi sınırı gerçek riskin çoğunu çözer.", fact: "Ekran süresi sınırları aşırı kullanımı ele alır, dakikalar içinde (saatler değil) olan içerik veya temas risklerini değil. Tek bir riskli konuşma 10 dakikalık bir oturumda gerçekleşebilir — ayarlar ve konuşmalar saatten daha önemlidir." },
+  { myth: "İçerik platform kurallarını ihlal ederse hızlıca kaldırılır.", fact: "Moderasyon tutarsız ve genellikle yavaştır, özellikle şifreli dil, özel DM'ler veya kurallara açıkça aykırı olmaktan çok sınırda olan içerik için. Bildirmek hâlâ değerlidir, ama anında ya da garanti olduğunu varsaymayın." },
+  { myth: "Şantaj çoğunlukla genç kızları hedefler.", fact: "Finansal şantaj (eski, görüntü odaklı şantaj örüntülerinin aksine) özellikle genç erkekler arasında arttı, genellikle ilk temastan tehdide saatler içinde geçiyor. Cinsiyetten bağımsız en hızlı büyüyen tehditlerden biri." },
+  { myth: "Gencim bir dolandırıcılığa düşmeyecek kadar akıllı ve teknoloji bilgili.", fact: "Sofistikelik sosyal mühendisliği önlemez — gençleri hedefleyen dolandırıcılıklar teknik hilelerden çok aciliyet, sosyal kanıt ve duygusal baskı üzerine kuruludur. Teknolojiye güven, manipülasyonu tanımakla aynı beceri değildir." }
+];
+
+const MVF_LABELS_TR = { myth: "❌ Efsane", fact: "✅ Gerçek", tapHint: "Gerçeği görmek için dokun →", shareBtn: "🔗 Bunu Paylaş", backBtn: "← Geri" };
+const isTr = window.DSKi18n && DSKi18n.lang === 'tr';
+const PAIRS = isTr ? PAIRS_TR : PAIRS_EN;
+const L = isTr ? MVF_LABELS_TR : { myth: "❌ Myth", fact: "✅ Fact", tapHint: "Tap to see the fact →", shareBtn: "🔗 Share this", backBtn: "← Back" };
+
 const grid = document.getElementById('mvf-grid');
 grid.innerHTML = PAIRS.map((p, i) => `
   <div class="mvf-card">
     <div class="mvf-myth" id="myth-${i}" onclick="revealFact(${i})">
-      <div class="mvf-label">❌ Myth</div>
+      <div class="mvf-label">${L.myth}</div>
       <h3>${p.myth}</h3>
-      <div class="tap-hint">Tap to see the fact →</div>
+      <div class="tap-hint">${L.tapHint}</div>
     </div>
     <div class="mvf-fact" id="fact-${i}">
-      <div class="mvf-label">✅ Fact</div>
+      <div class="mvf-label">${L.fact}</div>
       <p>${p.fact}</p>
       <div class="fact-actions">
-        <button type="button" class="fact-btn" onclick="event.stopPropagation();shareFact(${i})">🔗 Share this</button>
-        <button type="button" class="fact-btn" onclick="event.stopPropagation();hideFact(${i})">← Back</button>
+        <button type="button" class="fact-btn" onclick="event.stopPropagation();shareFact(${i})">${L.shareBtn}</button>
+        <button type="button" class="fact-btn" onclick="event.stopPropagation();hideFact(${i})">${L.backBtn}</button>
       </div>
     </div>
   </div>
@@ -99,12 +119,14 @@ function hideFact(i) {
 }
 function shareFact(i) {
   const p = PAIRS[i];
-  const text = 'Myth: ' + p.myth + '\n\nFact: ' + p.fact + '\n\n— Digital Safety Knights (digitalsafetyknights.org)';
+  const mythWord = isTr ? 'Efsane' : 'Myth';
+  const factWord = isTr ? 'Gerçek' : 'Fact';
+  const text = mythWord + ': ' + p.myth + '\n\n' + factWord + ': ' + p.fact + '\n\n— Digital Safety Knights (digitalsafetyknights.org)';
   if (navigator.share) {
     navigator.share({ text: text }).catch(function() {});
   } else if (navigator.clipboard) {
     navigator.clipboard.writeText(text).then(function() {
-      if (window.DSKPoints && window.DSKPoints.showToast) window.DSKPoints.showToast('Copied to clipboard!');
+      if (window.DSKPoints && window.DSKPoints.showToast) window.DSKPoints.showToast(isTr ? 'Panoya kopyalandı!' : 'Copied to clipboard!');
     });
   }
 }

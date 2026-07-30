@@ -436,5 +436,41 @@
   "qp.familyTotal": "Aile Toplamı: {n} puan",
   "qp.knightPoints": "Şövalye Puanı",
   "qp.customizeEmblem": "🎨 Amblemi Özelleştir",
-  "qp.unlocksAt": "{n} Şövalye Puanında açılır"
+  "qp.unlocksAt": "{n} Şövalye Puanında açılır",
+
+  "nav.resources2": "Kaynaklar",
+  "mvf.title": "Efsane mi Gerçek mi",
+  "mvf.subtitle": "Gerçek cevabı görmek için bir efsaneye dokun — ebeveynlerin gece 11'de gerçekten aradığı şeyler.",
+
+  "ja.title": "Dergi Arşivi",
+  "ja.subtitle": "DSK Aylık Dergisinin her sayısı, konuya göre aranabilir ve filtrelenebilir.",
+  "ja.searchPlaceholder": "Başlık ve konu ara… (örn. 'roblox', 'yapay zeka', 'şantaj')",
+
+  "gl.title": "Dijital Güvenlik Terimleri Sözlüğü",
+  "gl.title2": "Sözlük",
+  "gl.subtitle": "Önemli kelimeler için sade dilde tanımlar — jargon yok, bir kez, açıkça tanımlanmış.",
+  "gl.searchPlaceholder": "Bir terim ara… (örn. 'kandırma', 'VPN', 'sahte görüntü')",
+
+  "cs.title": "Başlarına Ne Geldi…",
+  "cs.subtitle": "Bu durumların gerçekte nasıl geliştiğine ve her birinin zamanında nasıl fark edildiğine dair kısa, gerçekçi hikayeler.",
+  "cs.disclaimer": "✍️ Buradaki her isim ve hikaye kurgusaldır — iyi belgelenmiş örüntülerden oluşturulmuş bileşimlerdir, gerçek çocuklar veya gerçek olaylar değildir. Güvendiğiniz bir yetişkinle birlikte okuyun.",
+
+  "ma.title": "Aile Medya Anlaşması",
+  "ma.subtitle": "Ailene uyan kuralları seç, sonra sadece iyi bir niyet değil, herkesin birlikte imzaladığı bir belgeyi yazdır ya da kaydet.",
+  "ma.familyDetails": "Aile Bilgileri",
+  "ma.familyName": "Aile veya Çocuğun Adı",
+  "ma.familyNamePh": "örn. Yılmaz Ailesi",
+  "ma.screenGoalLabel": "Günlük Ekran Süresi Hedefi (isteğe bağlı)",
+  "ma.screenGoalPh": "örn. Okul günlerinde 2 saat",
+  "ma.chooseRules": "Ailenizin Kurallarını Seçin",
+  "ma.addOwnRule": "Kendi Kuralınızı Ekleyin (isteğe bağlı)",
+  "ma.customRulePh": "Ailenize özel bir kural yazın…",
+  "ma.generateBtn": "Anlaşmamızı Oluştur →",
+  "ma.previewTitle": "Aile Medya Anlaşmamız",
+  "ma.screenTimeGoal": "Ekran Süresi Hedefi",
+  "ma.weAgreeTo": "Şunları Kabul Ediyoruz",
+  "ma.childSig": "Çocuğun İmzası & Tarih",
+  "ma.parentSig": "Ebeveyn/Vasi İmzası & Tarih",
+  "ma.printBtn": "🖨️ Yazdır / PDF Olarak Kaydet",
+  "ma.editBtn": "← Kuralları Düzenle"
 }

@@ -8,6 +8,7 @@
 <link rel="icon" href="assets/favicon.ico">
 <link rel="stylesheet" href="assets/breadcrumb.css">
 <script src="assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
 <style>
   :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --text: #2d3748; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -38,23 +39,23 @@
 
 <div class="topbar">
   <a class="brand" href="/">🛡️ Digital Safety Knights</a>
-  <a class="home-link" href="/resources.html">📚 Resources</a>
+  <a class="home-link" href="/resources.html" data-i18n="nav.resources">📚 Resources</a>
 </div>
-<div class="dsk-breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/resources.html">Resources</a><span class="sep">/</span><span class="current">Glossary</span></div>
+<div class="dsk-breadcrumb"><a href="/" data-i18n="qp.home2">Home</a><span class="sep">/</span><a href="/resources.html" data-i18n="nav.resources2">Resources</a><span class="sep">/</span><span class="current" data-i18n="gl.title2">Glossary</span></div>
 
 <div class="wrap">
   <div class="hero">
     <div class="icon">📖</div>
-    <h1>Glossary of Digital Safety Terms</h1>
-    <p>Plain-language definitions for the words that matter — no jargon, defined once, clearly.</p>
+    <h1 data-i18n="gl.title">Glossary of Digital Safety Terms</h1>
+    <p data-i18n="gl.subtitle">Plain-language definitions for the words that matter — no jargon, defined once, clearly.</p>
   </div>
 
-  <input id="g-search" type="text" placeholder="Search a term… (e.g. 'grooming', 'VPN', 'deepfake')">
+  <input id="g-search" type="text" placeholder="Search a term… (e.g. 'grooming', 'VPN', 'deepfake')" data-i18n-attr="placeholder:gl.searchPlaceholder">
   <div id="g-list"></div>
 </div>
 
 <script>
-const TERMS = [
+const TERMS_EN = [
   { term: "Algorithm / The Feed", def: "The automated system that decides what shows up next on a platform, usually optimized to keep you watching as long as possible rather than to show you what's most useful." },
   { term: "Catfishing", def: "Pretending to be someone else online — a different age, gender, or identity — usually to build trust before asking for something inappropriate." },
   { term: "Content Filter", def: "A tool (built into a game, app, or router) that automatically blocks certain words, images, or sites. Filters help, but they're not perfect — they miss coded language and new tricks." },
@@ -86,6 +87,42 @@ const TERMS = [
   { term: "VPN", def: "A Virtual Private Network — a tool that reroutes and encrypts internet traffic, hiding browsing activity and location from your internet provider and some websites." }
 ];
 
+const TERMS_TR = [
+  { term: "Algoritma / Akış", def: "Bir platformda sırada neyin gösterileceğine karar veren otomatik sistem — genellikle en yararlı içeriği göstermek yerine seni mümkün olduğunca uzun süre izlemede tutmak için optimize edilmiştir." },
+  { term: "Catfishing (Sahte Kimlik)", def: "Çevrimiçi başka biriymiş gibi davranmak — farklı bir yaş, cinsiyet veya kimlik — genellikle uygunsuz bir şey istemeden önce güven inşa etmek için." },
+  { term: "İçerik Filtresi", def: "Bir oyuna, uygulamaya veya yönlendiriciye yerleşik, belirli kelimeleri, görüntüleri veya siteleri otomatik olarak engelleyen bir araç. Filtreler yardımcı olur, ama mükemmel değildir — şifreli dili ve yeni numaraları kaçırırlar." },
+  { term: "COPPA", def: "Çocukların Çevrimiçi Gizlilik Koruma Yasası (ABD) — şirketlerin 13 yaş altı çocuklardan veri toplama şeklini sınırlayan bir ABD yasası. Bazı uygulamaların kaydolmadan önce doğum tarihi sormasının nedeni budur." },
+  { term: "Siber Zorbalık", def: "Birinin mesajlar, gönderiler veya görüntüler yoluyla tekrarlanan, kasıtlı taciz veya küçük düşürülmesi. Yüz yüze zorbalığın aksine, bir çocuğu eve kadar takip edebilir ve anında çok daha büyük bir kitleye ulaşabilir." },
+  { term: "Deepfake (Sahte Görüntü)", def: "Yapay zeka tarafından üretilen veya değiştirilen, birinin hiç olmamış bir şeyi yaptığını veya söylediğini gerçekçi şekilde gösteren bir fotoğraf, video veya ses klibi. Gerçek medyadan ayırt etmek giderek zorlaşıyor." },
+  { term: "Özel Mesaj (DM)", def: "Herkese açık gönderilerin veya yorumların dışında, birebir veya küçük bir grupta gönderilen özel bir mesaj — çoğu kandırma ve dolandırıcılık konuşmasının gerçekte, kamu görüşü dışında gerçekleştiği yer." },
+  { term: "Discord", def: "Konuya dayalı 'sunucular' halinde düzenlenmiş bir sohbet ve sesli konuşma uygulaması. Roblox ve Minecraft gibi oyunlara yaygın olarak bağlıdır, oyunların kendisinden çok daha az yerleşik reşit olmayan koruması vardır." },
+  { term: "Dijital Ayak İzi", def: "Bir kişi hakkında çevrimiçi var olan bilgi izi — gönderiler, fotoğraflar, yorumlar, hatta uygulamalar tarafından sessizce toplanan veriler — bunlar tek bir gönderinin ortaya koyabileceğinden çok daha fazlasını ortaya çıkarabilir." },
+  { term: "Doxxing (Bilgi İfşası)", def: "Birinin özel bilgilerini (gerçek adı, adresi, okulu, telefon numarası) rızası olmadan çevrimiçi yayınlamak, genellikle taciz etmek, korkutmak veya tehlikeye atmak için." },
+  { term: "Uçtan Uca Şifreleme", def: "Bir mesajı sadece gönderenin ve alıcının okuyabileceği anlamına gelen teknik bir koruma — uygulama şirketi bile içeriği göremez. Gizlilik için iyidir, ama aynı zamanda yetişkinlerin o sohbetleri izleyemeyeceği anlamına da gelir." },
+  { term: "Finsta", def: "'Sahte Instagram' — bazı gençlerin daha özgürce paylaşım yapmak için kullandığı, genellikle sahte bir isim altında, bazen özellikle içeriği ebeveynlerden gizli tutmak için ikinci, daha özel bir hesap." },
+  { term: "Kandırma (Grooming)", def: "Bir yetişkinin bir çocuğun savunmasını düşürmek için güven inşa etmek amacıyla kullandığı kademeli, kasıtlı bir süreç — genellikle iltifat, hediyeler, sır tutma ve yavaşça tırmanan isteklerle." },
+  { term: "Halüsinasyon (Yapay Zeka)", def: "Bir yapay zeka aracının tamamen kendinden emin ve akıcı görünürken yanlış bilgi üretmesi. Yapay zeka halüsinasyonları basit, kolayca kontrol edilebilir gerçeklerde bile yaygındır — kendinden emin olmak doğrulukla aynı şey değildir." },
+  { term: "Oyun İçi Sohbet", def: "Bir video oyununa doğrudan yerleşik mesajlaşma. Genellikle temel bir küfür filtresi vardır ama nadiren gelişmiş kandırma dilini, şifreli terimleri veya harf yerine sayı numaralarını yakalar." },
+  { term: "IP Adresi", def: "İnternetteki bir cihaza atanan sayısal bir etiket, kabaca bir konumu (genellikle şehir düzeyinde) ortaya çıkarabilir. Genellikle tek başına tehlikeli değildir, ama bilgi ifşasının bir parçası olabilir." },
+  { term: "Canlı Yayın", def: "İzleyicilere gerçek zamanlı video yayını, genellikle rastgele sohbet veya yabancı eşleştirme özelliklerine sahip platformlarda — sorunlar gerçekleşmeden önce yakalamak için gecikme olmadan yabancılara maruz kalmanın yaygın bir yeri." },
+  { term: "Made for Kids", def: "Belirli veri toplamayı ve kişiselleştirilmiş reklamları devre dışı bırakan ve açıkça çocuklara yönelik içerik için yasal olarak zorunlu olan bir YouTube kanal düzeyi tanımlaması (DSK'nın kendi kanalında da kullanılır)." },
+  { term: "Meta Veri", def: "Bir dosyaya eklenmiş gizli veri — bir fotoğrafın çekildiği tam zaman ve GPS konumu gibi — fotoğrafın kendisi hassas hiçbir şey ortaya çıkarmasa bile başkalarına görünebilir." },
+  { term: "Ebeveyn Kontrolleri", def: "Bir cihazda, platformda veya yönlendiricide bir ebeveynin ekran süresini, içeriği, satın alımları veya yabancılardan gelen temasları kısıtlamasına izin veren yerleşik ayarlar. Çoğu varsayılan olarak kapalıdır ve açılması gerekir." },
+  { term: "Kimlik Avı (Phishing)", def: "Birini bir şifre, ödeme bilgisi veya kişisel detay vermesi için kandırmak üzere tasarlanmış bir mesaj — genellikle güvenilir bir marka, arkadaş veya aile üyesini taklit ederek ve aciliyet yaratarak." },
+  { term: "İstismarcı (Predator)", def: "Kasıtlı olarak çevrimiçi çocukları sömürmek için arayan ve hedefleyen bir yetişkin, tipik olarak zararlı isteklere tırmanmadan önce güven inşa etmek için kandırma taktikleri kullanır." },
+  { term: "Şantaj (Sextortion)", def: "Birinin gerçek veya yapay zeka ile üretilmiş cinsel içerikli bir görüntüsünü, ödeme yapılmadıkça veya daha fazla görüntü verilmedikçe paylaşmakla tehdit edilmesi. Gençler için, özellikle genç erkekler için en hızlı büyüyen tehditlerden biri." },
+  { term: "Sharenting", def: "Ebeveynlerin çocukları hakkında çevrimiçi çok sayıda fotoğraf, dönüm noktası veya detay paylaşması — iyi niyetli, ama çocuğun asla seçmediği ve kontrol edemediği bir dijital ayak izi oluşturur." },
+  { term: "Sockpuppet (Sahte Hesap)", def: "Aynı kişi tarafından yönetilen ikinci (veya üçüncü) sahte bir hesap, genellikle daha güvenilir görünmek, sahte bir fikir birliği oluşturmak veya engellenmeyi aşmak için kullanılır." },
+  { term: "Swatting", def: "Birinin adresinde sahte bir acil durum bildirerek polis müdahalesini tetiklemek, genellikle sadece oyun veya çevrimiçi çatışma yoluyla tanınan birine karşı bir taciz biçimi olarak." },
+  { term: "İki Faktörlü Kimlik Doğrulama (2FA)", def: "Bir şifrenin ötesinde ekstra bir giriş adımı — genellikle bir telefona veya uygulamaya gönderilen bir kod — bir şifre çalınsa bile çoğu hesap ele geçirmeyi durdurur." },
+  { term: "Ses Klonlama", def: "Sadece birkaç saniyelik örnek sesten gerçek bir kişinin sesini ikna edici şekilde taklit eden yapay zeka üretimi konuşma, artık bir telefon görüşmesinde aile üyelerini bile kandıracak kadar iyi." },
+  { term: "VPN", def: "Sanal Özel Ağ — internet trafiğini yeniden yönlendiren ve şifreleyen, tarama etkinliğini ve konumu internet sağlayıcınızdan ve bazı web sitelerinden gizleyen bir araç." }
+];
+
+const glIsTr = window.DSKi18n && DSKi18n.lang === 'tr';
+const TERMS = glIsTr ? TERMS_TR : TERMS_EN;
+const GL_NO_MATCH = glIsTr ? 'Bu aramayla eşleşen terim yok.' : 'No terms match that search.';
+
 const list = document.getElementById('g-list');
 const searchEl = document.getElementById('g-search');
 
@@ -95,7 +132,7 @@ function render() {
     .sort((a, b) => a.term.localeCompare(b.term));
 
   if (!filtered.length) {
-    list.innerHTML = '<div class="g-empty">No terms match that search.</div>';
+    list.innerHTML = '<div class="g-empty">' + GL_NO_MATCH + '</div>';
     return;
   }
 

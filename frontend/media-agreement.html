@@ -8,6 +8,7 @@
 <link rel="icon" href="assets/favicon.ico">
 <link rel="stylesheet" href="assets/breadcrumb.css">
 <script src="assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
 <style>
   :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --text: #2d3748; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -64,62 +65,62 @@
 
 <div class="topbar">
   <a class="brand" href="/">🛡️ Digital Safety Knights</a>
-  <a class="home-link" href="/resources.html">📚 Resources</a>
+  <a class="home-link" href="/resources.html" data-i18n="nav.resources">📚 Resources</a>
 </div>
-<div class="dsk-breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/resources.html">Resources</a><span class="sep">/</span><span class="current">Family Media Agreement</span></div>
+<div class="dsk-breadcrumb"><a href="/" data-i18n="qp.home2">Home</a><span class="sep">/</span><a href="/resources.html" data-i18n="nav.resources2">Resources</a><span class="sep">/</span><span class="current" data-i18n="footer.mediaAgreement2">Family Media Agreement</span></div>
 
 <div class="wrap">
   <div class="hero">
     <div class="icon">📝</div>
-    <h1>Family Media Agreement</h1>
-    <p>Pick the rules that fit your family, then print or save a document everyone signs together — not just a good intention.</p>
+    <h1 data-i18n="ma.title">Family Media Agreement</h1>
+    <p data-i18n="ma.subtitle">Pick the rules that fit your family, then print or save a document everyone signs together — not just a good intention.</p>
   </div>
 
   <div class="form-card">
-    <h3>Family Details</h3>
-    <div class="fgrp"><label>Family or Child's Name</label><input type="text" id="fam-name" placeholder="e.g. The Rivera Family"></div>
-    <div class="fgrp"><label>Daily Screen Time Goal (optional)</label><input type="text" id="screen-goal" placeholder="e.g. 2 hours on school days"></div>
+    <h3 data-i18n="ma.familyDetails">Family Details</h3>
+    <div class="fgrp"><label data-i18n="ma.familyName">Family or Child's Name</label><input type="text" id="fam-name" placeholder="e.g. The Rivera Family" data-i18n-attr="placeholder:ma.familyNamePh"></div>
+    <div class="fgrp"><label data-i18n="ma.screenGoalLabel">Daily Screen Time Goal (optional)</label><input type="text" id="screen-goal" placeholder="e.g. 2 hours on school days" data-i18n-attr="placeholder:ma.screenGoalPh"></div>
   </div>
 
   <div class="form-card">
-    <h3>Choose Your Family's Rules</h3>
+    <h3 data-i18n="ma.chooseRules">Choose Your Family's Rules</h3>
     <div id="rules-list"></div>
   </div>
 
   <div class="form-card">
-    <h3>Add Your Own Rule (optional)</h3>
-    <div class="fgrp"><input type="text" id="custom-rule" placeholder="Type a rule specific to your family…"></div>
+    <h3 data-i18n="ma.addOwnRule">Add Your Own Rule (optional)</h3>
+    <div class="fgrp"><input type="text" id="custom-rule" placeholder="Type a rule specific to your family…" data-i18n-attr="placeholder:ma.customRulePh"></div>
   </div>
 
-  <button type="button" class="gen-btn" onclick="generateAgreement()">Generate Our Agreement →</button>
+  <button type="button" class="gen-btn" onclick="generateAgreement()" data-i18n="ma.generateBtn">Generate Our Agreement →</button>
 
   <div id="agreement-preview">
     <div class="ap-header">
       <div class="shield">🛡️</div>
-      <h2>Our Family Media Agreement</h2>
+      <h2 data-i18n="ma.previewTitle">Our Family Media Agreement</h2>
       <div class="fam-name" id="prev-fam-name"></div>
     </div>
     <div class="ap-section" id="prev-screen-goal-section">
-      <h4>Screen Time Goal</h4>
+      <h4 data-i18n="ma.screenTimeGoal">Screen Time Goal</h4>
       <p id="prev-screen-goal" style="font-size:0.9rem;"></p>
     </div>
     <div class="ap-section">
-      <h4>We Agree To</h4>
+      <h4 data-i18n="ma.weAgreeTo">We Agree To</h4>
       <ul class="ap-rules" id="prev-rules"></ul>
     </div>
     <div class="ap-sign-row">
-      <div class="ap-sign-line">Child's Signature &amp; Date</div>
-      <div class="ap-sign-line">Parent/Guardian's Signature &amp; Date</div>
+      <div class="ap-sign-line" data-i18n="ma.childSig">Child's Signature &amp; Date</div>
+      <div class="ap-sign-line" data-i18n="ma.parentSig">Parent/Guardian's Signature &amp; Date</div>
     </div>
     <div class="print-actions">
-      <button type="button" class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
-      <button type="button" class="print-btn secondary" onclick="document.getElementById('agreement-preview').classList.remove('show')">← Edit Rules</button>
+      <button type="button" class="print-btn" onclick="window.print()" data-i18n="ma.printBtn">🖨️ Print / Save as PDF</button>
+      <button type="button" class="print-btn secondary" onclick="document.getElementById('agreement-preview').classList.remove('show')" data-i18n="ma.editBtn">← Edit Rules</button>
     </div>
   </div>
 </div>
 
 <script>
-const RULES = [
+const RULES_EN = [
   { id: "bedroom", label: "Devices charge outside the bedroom overnight", checked: true },
   { id: "ask-download", label: "Ask a parent before downloading any new app or game", checked: true },
   { id: "no-password-share", label: "Never share passwords with anyone, including friends", checked: true },
@@ -134,13 +135,33 @@ const RULES = [
   { id: "ai-honesty", label: "Use AI tools to learn, never to turn in someone else's (or something else's) work as your own", checked: false }
 ];
 
+const RULES_TR = [
+  { id: "bedroom", label: "Cihazlar gece boyunca yatak odası dışında şarj olsun", checked: true },
+  { id: "ask-download", label: "Yeni bir uygulama veya oyun indirmeden önce bir ebeveyne sor", checked: true },
+  { id: "no-password-share", label: "Şifreleri arkadaşlar dahil hiç kimseyle paylaşma", checked: true },
+  { id: "tell-adult", label: "Çevrimiçi bir şey yanlış hissettirirse güvendiğin bir yetişkine söyle — söylemek için ceza yok", checked: true },
+  { id: "no-meetup", label: "Bir ebeveyn olmadan çevrimiçi bir arkadaşla asla yüz yüze buluşma", checked: true },
+  { id: "friends-only-chat", label: "Oyun ve uygulama sohbet ayarlarını Sadece Arkadaşlar olarak tut", checked: true },
+  { id: "no-personal-info", label: "Gerçek adını, okulunu ve adresini herkese açık profillerden ve sohbetlerden uzak tut", checked: true },
+  { id: "family-codeword", label: "Herhangi bir acil veya olağandışı arama/mesajı doğrulamak için aile kod kelimemizi kullan", checked: false },
+  { id: "annual-check", label: "Yılda bir kez birlikte 30 dakikalık bir gizlilik ve ayar kontrolü yap", checked: false },
+  { id: "dinner-free", label: "Yemek masasında telefon yok", checked: false },
+  { id: "one-hour-before-bed", label: "Yatmadan önceki son bir saat ekran yok", checked: false },
+  { id: "ai-honesty", label: "Yapay zeka araçlarını öğrenmek için kullan, başkasının (ya da başka bir şeyin) işini kendininmiş gibi teslim etme", checked: false }
+];
+
+const maIsTr = window.DSKi18n && DSKi18n.lang === 'tr';
+const RULES = maIsTr ? RULES_TR : RULES_EN;
+const MA_OUR_FAMILY = maIsTr ? 'Ailemiz' : 'Our Family';
+const MA_NO_RULES = maIsTr ? 'Henüz kural seçilmedi — geri dön ve en az bir tane seç.' : 'No rules selected yet — go back and pick at least one.';
+
 const rulesList = document.getElementById('rules-list');
 rulesList.innerHTML = RULES.map(r =>
   `<div class="rule-row"><input type="checkbox" id="rule-${r.id}" ${r.checked ? 'checked' : ''}><label for="rule-${r.id}">${r.label}</label></div>`
 ).join('');
 
 function generateAgreement() {
-  const famName = document.getElementById('fam-name').value.trim() || 'Our Family';
+  const famName = document.getElementById('fam-name').value.trim() || MA_OUR_FAMILY;
   const screenGoal = document.getElementById('screen-goal').value.trim();
   const customRule = document.getElementById('custom-rule').value.trim();
 
@@ -158,7 +179,7 @@ function generateAgreement() {
   if (customRule) selected.push(customRule);
 
   document.getElementById('prev-rules').innerHTML = selected.map(r => `<li>${r}</li>`).join('') ||
-    '<li style="color:var(--gray);">No rules selected yet — go back and pick at least one.</li>';
+    '<li style="color:var(--gray);">' + MA_NO_RULES + '</li>';
 
   const preview = document.getElementById('agreement-preview');
   preview.classList.add('show');

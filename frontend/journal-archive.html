@@ -8,6 +8,7 @@
 <link rel="icon" href="assets/favicon.ico">
 <link rel="stylesheet" href="assets/breadcrumb.css">
 <script src="assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
 <style>
   :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --text: #2d3748; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -45,24 +46,24 @@
 
 <div class="topbar">
   <a class="brand" href="/">🛡️ Digital Safety Knights</a>
-  <a class="home-link" href="/resources.html">📚 Resources</a>
+  <a class="home-link" href="/resources.html" data-i18n="nav.resources">📚 Resources</a>
 </div>
-<div class="dsk-breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/resources.html">Resources</a><span class="sep">/</span><span class="current">Journal Archive</span></div>
+<div class="dsk-breadcrumb"><a href="/" data-i18n="qp.home2">Home</a><span class="sep">/</span><a href="/resources.html" data-i18n="nav.resources2">Resources</a><span class="sep">/</span><span class="current" data-i18n="footer.journalArchive2">Journal Archive</span></div>
 
 <div class="wrap">
   <div class="hero">
     <div class="icon">📰</div>
-    <h1>Journal Archive</h1>
-    <p>Every issue of the DSK Monthly Journal, searchable and filterable by topic.</p>
+    <h1 data-i18n="ja.title">Journal Archive</h1>
+    <p data-i18n="ja.subtitle">Every issue of the DSK Monthly Journal, searchable and filterable by topic.</p>
   </div>
 
-  <div class="search-row"><input id="j-search" type="text" placeholder="Search titles and topics… (e.g. 'roblox', 'ai', 'sextortion')"></div>
+  <div class="search-row"><input id="j-search" type="text" placeholder="Search titles and topics… (e.g. 'roblox', 'ai', 'sextortion')" data-i18n-attr="placeholder:ja.searchPlaceholder"></div>
   <div class="filters" id="j-filters"></div>
   <div class="j-grid" id="j-grid"></div>
 </div>
 
 <script>
-const ISSUES = [
+const ISSUES_EN = [
   { tag: "Parent Toolkit", thumb: "🎒", bg: "#e8f4f2", title: "Back-to-School Digital Setup: The 30-Minute Family Tech Reset", desc: "A practical, once-a-year checklist to reset privacy settings, platform protections, and your family media agreement together.", meta: "August 2026 · 6 min read", file: "august-2026.pdf" },
   { tag: "Stranger Danger", thumb: "🎥", bg: "#fdeeee", title: "The Livestream Loophole: Random-Chat Apps After Omegle", desc: "Omegle shut down in 2023 — but instant random-video chat with strangers didn't disappear, it moved. Here's where.", meta: "July 2026 · 6 min read", file: "july-2026.pdf" },
   { tag: "Tech & Algorithms", thumb: "📱", bg: "#eef1fb", title: "How the Feed Is Built to Keep Them Scrolling", desc: "Infinite scroll, autoplay, and variable rewards, explained — and what actually helps beyond a screen-time limit.", meta: "June 2026 · 7 min read", file: "june-2026.pdf" },
@@ -72,13 +73,29 @@ const ISSUES = [
   { tag: "Mental Health", thumb: "💜", bg: "#f4eefb", title: "The Emotional Impact of Online Harassment on Kids", desc: "Expert advice from child psychologists on recognizing cyberbullying trauma and supporting your child's recovery.", meta: "February 2026 · 10 min read", file: "february-2026.pdf" }
 ];
 
+const ISSUES_TR = [
+  { tag: "Ebeveyn Araç Seti", thumb: "🎒", bg: "#e8f4f2", title: "Okula Dönüş Dijital Kurulumu: 30 Dakikalık Aile Teknoloji Sıfırlaması", desc: "Gizlilik ayarlarını, platform korumalarını ve aile medya anlaşmanızı birlikte sıfırlamak için pratik, yılda bir kez yapılan bir kontrol listesi.", meta: "Ağustos 2026 · 6 dk okuma", file: "august-2026.pdf" },
+  { tag: "Yabancı Tehlikesi", thumb: "🎥", bg: "#fdeeee", title: "Canlı Yayın Açığı: Omegle Sonrası Rastgele Sohbet Uygulamaları", desc: "Omegle 2023'te kapandı — ama yabancılarla anlık rastgele video sohbeti kaybolmadı, sadece taşındı. İşte nereye.", meta: "Temmuz 2026 · 6 dk okuma", file: "july-2026.pdf" },
+  { tag: "Teknoloji & Algoritmalar", thumb: "📱", bg: "#eef1fb", title: "Akış, Onları Kaydırmaya Devam Ettirmek İçin Nasıl Tasarlandı", desc: "Sonsuz kaydırma, otomatik oynatma ve değişken ödüller anlatıldı — ve ekran süresi sınırının ötesinde gerçekten neyin yardımcı olduğu.", meta: "Haziran 2026 · 7 dk okuma", file: "june-2026.pdf" },
+  { tag: "İstismarcı Taktikleri", thumb: "🔒", bg: "#fdeeee", title: "En Hızlı Büyüyen Tehdit: Genç Erkeklere Yönelik Finansal Şantaj", desc: "Dolandırıcılığın nasıl işlediği, hızın neden silah olduğu ve bu zaten olduğunda tam olarak ne yapılması gerektiği.", meta: "Mayıs 2026 · 7 dk okuma", file: "may-2026.pdf" },
+  { tag: "Yapay Zeka Güvenliği", thumb: "🤖", bg: "#eef1fb", title: "İstismarcılar 2026'da Çocukları Hedeflemek İçin Yapay Zekayı Nasıl Kullanıyor", desc: "Yapay zeka destekli kandırma taktiklerinin yeni dalgasına ve ailelerin bunlara karşı bugün nasıl savunma yapabileceğine derinlemesine bir bakış.", meta: "Nisan 2026 · 8 dk okuma", file: "april-2026.pdf" },
+  { tag: "Oyun", thumb: "🎮", bg: "#eef8ec", title: "Roblox'un İçinde: Ebeveynlerin Görmediği Şeyler", desc: "Gizli sohbet kanallarına, kullanıcı üretimi oyunlara ve çocuğunuzun karşılaşabileceği içeriğe araştırıcı bir bakış.", meta: "Mart 2026 · 6 dk okuma", file: "march-2026.pdf" },
+  { tag: "Ruh Sağlığı", thumb: "💜", bg: "#f4eefb", title: "Çevrimiçi Tacizin Çocuklar Üzerindeki Duygusal Etkisi", desc: "Çocuk psikologlarından siber zorbalık travmasını tanıma ve çocuğunuzun iyileşmesini destekleme konusunda uzman tavsiyesi.", meta: "Şubat 2026 · 10 dk okuma", file: "february-2026.pdf" }
+];
+
+const jaIsTr = window.DSKi18n && DSKi18n.lang === 'tr';
+const ISSUES = jaIsTr ? ISSUES_TR : ISSUES_EN;
+const JA_ALL_TOPICS = jaIsTr ? '🌐 Tüm Konular' : '🌐 All Topics';
+const JA_NO_RESULTS = jaIsTr ? 'Bu aramayla eşleşen sayı yok — farklı bir kelime veya konu deneyin.' : 'No issues match that search — try a different word or topic.';
+const JA_DOWNLOAD = jaIsTr ? 'PDF İndir' : 'Download PDF';
+
 const grid = document.getElementById('j-grid');
 const filtersEl = document.getElementById('j-filters');
 const searchEl = document.getElementById('j-search');
 let activeTag = 'all';
 
 const tags = ['all', ...Array.from(new Set(ISSUES.map(i => i.tag)))];
-filtersEl.innerHTML = tags.map(t => '<button type="button" class="filter-chip' + (t === 'all' ? ' active' : '') + '" data-tag="' + t + '">' + (t === 'all' ? '🌐 All Topics' : t) + '</button>').join('');
+filtersEl.innerHTML = tags.map(t => '<button type="button" class="filter-chip' + (t === 'all' ? ' active' : '') + '" data-tag="' + t + '">' + (t === 'all' ? JA_ALL_TOPICS : t) + '</button>').join('');
 filtersEl.querySelectorAll('.filter-chip').forEach(chip => {
   chip.addEventListener('click', () => {
     activeTag = chip.getAttribute('data-tag');
@@ -96,13 +113,13 @@ function renderGrid() {
     return matchesTag && matchesQuery;
   });
   if (!filtered.length) {
-    grid.innerHTML = '<div class="j-empty">No issues match that search — try a different word or topic.</div>';
+    grid.innerHTML = '<div class="j-empty">' + JA_NO_RESULTS + '</div>';
     return;
   }
   grid.innerHTML = filtered.map(i =>
     '<a class="j-card" href="https://digitalsafetyknights.org/journal/' + i.file + '" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity(\'guide\')">' +
       '<div class="j-thumb" style="background:' + i.bg + '">' + i.thumb + '</div>' +
-      '<div class="j-body"><div class="j-tag">' + i.tag + '</div><h3>' + i.title + '</h3><p>' + i.desc + '</p><div class="j-meta">' + i.meta + ' · 📥 Download PDF</div></div>' +
+      '<div class="j-body"><div class="j-tag">' + i.tag + '</div><h3>' + i.title + '</h3><p>' + i.desc + '</p><div class="j-meta">' + i.meta + ' · 📥 ' + JA_DOWNLOAD + '</div></div>' +
     '</a>'
   ).join('');
 }
