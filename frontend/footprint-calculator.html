@@ -7,6 +7,7 @@
 <title>Digital Footprint Calculator — Digital Safety Knights</title>
 <link rel="icon" href="assets/favicon.ico">
 <script src="assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
 <style>
   :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --danger: #e63946; --success: #2a9d8f; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -38,31 +39,32 @@
 
 <div class="topbar">
   <a class="brand" href="/">🛡️ Digital Safety Knights</a>
-  <a class="home-link" href="/resources.html">← Resource Center</a>
+  <a class="home-link" href="/resources.html" data-i18n="fc.backResources">← Resource Center</a>
 </div>
-<div class="dsk-breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/resources.html">Resources</a><span class="sep">/</span><span class="current">Digital Footprint Calculator</span></div>
+<div class="dsk-breadcrumb"><a href="/" data-i18n="qp.home2">Home</a><span class="sep">/</span><a href="/resources.html" data-i18n="nav.resources2">Resources</a><span class="sep">/</span><span class="current" data-i18n="fc.title">Digital Footprint Calculator</span></div>
 
 <div class="wrap">
   <div class="hero">
     <div class="icon">👣</div>
-    <h1>Digital Footprint Calculator</h1>
-    <p>Check the boxes for what a made-up profile shares online. Watch how clear the picture gets as it adds up.</p>
+    <h1 data-i18n="fc.title">Digital Footprint Calculator</h1>
+    <p data-i18n="fc.subtitle">Check the boxes for what a made-up profile shares online. Watch how clear the picture gets as it adds up.</p>
   </div>
 
   <div class="silhouette-stage">
     <div class="silhouette" id="silhouette">🧑</div>
-    <div class="footprint-label" id="footprint-label">Nothing shared yet</div>
-    <div class="footprint-desc" id="footprint-desc">A stranger piecing this together would know... nothing.</div>
+    <div class="footprint-label" id="footprint-label" data-i18n="fc.label0">Nothing shared yet</div>
+    <div class="footprint-desc" id="footprint-desc" data-i18n="fc.desc0">A stranger piecing this together would know... nothing.</div>
   </div>
 
   <div class="profile-card">
-    <h3>WHAT DOES THIS PROFILE SHARE?</h3>
+    <h3 data-i18n="fc.whatShares">WHAT DOES THIS PROFILE SHARE?</h3>
     <div id="items-list"></div>
   </div>
 </div>
 
 <script>
-var ITEMS = [
+var fcIsTr = window.DSKi18n && DSKi18n.lang === 'tr';
+var ITEMS_EN = [
   { id: 'firstname', label: 'First name', weight: 1 },
   { id: 'fullname', label: 'Full real name', weight: 3 },
   { id: 'age', label: 'Exact age or birthday', weight: 2 },
@@ -77,6 +79,24 @@ var ITEMS = [
   { id: 'phone', label: 'Phone number', weight: 4 }
 ];
 
+var ITEMS_TR = [
+  { id: 'firstname', label: 'Ad', weight: 1 },
+  { id: 'fullname', label: 'Tam gerçek ad', weight: 3 },
+  { id: 'age', label: 'Tam yaş veya doğum günü', weight: 2 },
+  { id: 'school', label: 'Okul adı', weight: 3 },
+  { id: 'city', label: 'Şehir veya mahalle', weight: 3 },
+  { id: 'address', label: 'Ev adresi', weight: 5 },
+  { id: 'photo', label: 'Net bir yüz fotoğrafı', weight: 3 },
+  { id: 'schedule', label: 'Günlük rutin (örn. "her Salı saat 16:00\'da antrenmanda")', weight: 4 },
+  { id: 'family', label: 'Aile üyelerinin adları', weight: 3 },
+  { id: 'vacation', label: 'Gerçek zamanlı konum etiketleri / "şu an tatilde" paylaşımları', weight: 4 },
+  { id: 'pet', label: 'Evcil hayvanın adı (genellikle güvenlik sorusu olarak tekrar kullanılır)', weight: 1 },
+  { id: 'phone', label: 'Telefon numarası', weight: 4 }
+];
+
+var ITEMS = fcIsTr ? ITEMS_TR : ITEMS_EN;
+var FC_WEIGHT = fcIsTr ? 'ağırlık' : 'weight';
+
 var MAX_SCORE = ITEMS.reduce(function(sum, i) { return sum + i.weight; }, 0);
 
 function render() {
@@ -84,7 +104,7 @@ function render() {
   list.innerHTML = ITEMS.map(function(i) {
     return '<div class="item-row"><input type="checkbox" id="chk-' + i.id + '" onchange="update()">' +
       '<label for="chk-' + i.id + '">' + i.label + '</label>' +
-      '<span class="item-weight">weight ' + i.weight + '</span></div>';
+      '<span class="item-weight">' + FC_WEIGHT + ' ' + i.weight + '</span></div>';
   }).join('');
 }
 
@@ -99,25 +119,32 @@ function update() {
   document.getElementById('silhouette').style.filter = 'blur(' + blur + 'px) brightness(' + brightness + ')';
 
   var label, desc;
-  if (pct === 0) { label = 'Nothing shared yet'; desc = 'A stranger piecing this together would know... nothing.'; }
-  else if (pct < 0.25) { label = 'Barely visible'; desc = 'Still pretty anonymous — a stranger has almost nothing to work with.'; }
-  else if (pct < 0.5) { label = 'Coming into focus'; desc = 'A patient stranger could start guessing who this is.'; }
-  else if (pct < 0.75) { label = 'Recognizable'; desc = 'This is enough for someone to identify and even locate this person.'; }
-  else { label = 'Fully exposed'; desc = 'A stranger could realistically find, recognize, and predict where to find this person in real life.'; }
+  if (fcIsTr) {
+    if (pct === 0) { label = 'Henüz bir şey paylaşılmadı'; desc = 'Bunu bir araya getiren bir yabancı... hiçbir şey bilmezdi.'; }
+    else if (pct < 0.25) { label = 'Zar zor görünür'; desc = 'Hâlâ oldukça anonim — bir yabancının çalışacak neredeyse hiçbir şeyi yok.'; }
+    else if (pct < 0.5) { label = 'Netleşiyor'; desc = 'Sabırlı bir yabancı bunun kim olduğunu tahmin etmeye başlayabilir.'; }
+    else if (pct < 0.75) { label = 'Tanınabilir'; desc = 'Bu, birinin bu kişiyi tanımlaması ve hatta bulması için yeterli.'; }
+    else { label = 'Tamamen açığa çıkmış'; desc = 'Bir yabancı gerçekten bu kişiyi gerçek hayatta bulabilir, tanıyabilir ve nerede olacağını tahmin edebilir.'; }
+  } else {
+    if (pct === 0) { label = 'Nothing shared yet'; desc = 'A stranger piecing this together would know... nothing.'; }
+    else if (pct < 0.25) { label = 'Barely visible'; desc = 'Still pretty anonymous — a stranger has almost nothing to work with.'; }
+    else if (pct < 0.5) { label = 'Coming into focus'; desc = 'A patient stranger could start guessing who this is.'; }
+    else if (pct < 0.75) { label = 'Recognizable'; desc = 'This is enough for someone to identify and even locate this person.'; }
+    else { label = 'Fully exposed'; desc = 'A stranger could realistically find, recognize, and predict where to find this person in real life.'; }
+  }
 
   document.getElementById('footprint-label').textContent = label;
   document.getElementById('footprint-desc').textContent = desc;
 
   if (pct >= 0.75 && window.DSKPoints && !localStorage.getItem('dsk_footprint_done')) {
     localStorage.setItem('dsk_footprint_done', '1');
-    DSKPoints.addPoints(15, 'Digital Footprint Calculator');
+    DSKPoints.addPoints(15, fcIsTr ? 'Dijital Ayak İzi Hesaplayıcı' : 'Digital Footprint Calculator');
   }
 }
 
 render();
 </script>
 
-<script src="/assets/i18n.js"></script>
 <script src="/assets/lang-switcher.js"></script>
 <script src="/assets/site-search.js"></script>
 <script src="/assets/play-now-fab.js"></script>

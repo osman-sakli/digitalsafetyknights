@@ -517,5 +517,19 @@
   "kc.p4": "Off. Yine bozuldu.",
   "kc.caption": "Glitch bir sonraki sayıda yeni bir numarayla dönecek. Bunu fark edebileceğini mi düşünüyorsun? Kendini oyunda gerçekten test et.",
   "kc.playGame": "🕹️ Shieldy'nin Mesaj Ayıklama Oyununu Oyna →",
-  "kc.readJournal": "📖 Aylık Dergiyi Oku →"
+  "kc.readJournal": "📖 Aylık Dergiyi Oku →",
+
+  "fc.backResources": "← Kaynak Merkezi",
+  "fc.title": "Dijital Ayak İzi Hesaplayıcı",
+  "fc.subtitle": "Uydurma bir profilin çevrimiçi neler paylaştığını kutulara işaretle. Toplandıkça resmin ne kadar netleştiğini izle.",
+  "fc.whatShares": "BU PROFİL NE PAYLAŞIYOR?",
+  "fc.label0": "Henüz bir şey paylaşılmadı",
+  "fc.desc0": "Bunu bir araya getiren bir yabancı... hiçbir şey bilmezdi.",
+
+  "pd.title2": "Şifre Dojosu",
+  "pd.title": "Şifre Gücü Dojosu",
+  "pd.subtitle": "Aşağıya bir deneme şifresi yaz ve kalkanının büyümesini izle. İstersen önce gerçek şifrelerini burada dene — hiçbir şey bu sayfadan çıkmaz.",
+  "pd.placeholder": "Bir deneme şifresi yaz...",
+  "pd.startTyping": "Yazmaya başla...",
+  "pd.privacyNote": "🔒 Bu sayfa tarayıcında %100 çevrimdışı çalışır. Burada yazdığın hiçbir şey kaydedilmez, saklanmaz veya hiçbir yere gönderilmez — ne DSK'ya, ne kimseye."
 }
