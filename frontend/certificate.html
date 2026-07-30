@@ -6,6 +6,7 @@
 <title>Certificate — Digital Safety Knights</title>
 <link rel="icon" href="assets/favicon.ico">
 <script src="assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
 <style>
   :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -43,8 +44,8 @@
 <body>
 
 <div class="toolbar">
-  <a href="/quests.html">← Back to Quests</a>
-  <button class="primary" onclick="window.print()">🖨️ Print / Save as PDF</button>
+  <a href="/quests.html" data-i18n="cert.backQuests">← Back to Quests</a>
+  <button class="primary" onclick="window.print()" data-i18n="cert.printBtn">🖨️ Print / Save as PDF</button>
 </div>
 
 <div class="cert">
@@ -54,11 +55,18 @@
 </div>
 
 <script>
+const certIsTr = window.DSKi18n && DSKi18n.lang === 'tr';
 const PROGRESS_KEY = "dsk_progress";
 const NICKNAME_KEY = "dsk_nickname";
 const EMBLEM_KEY = "dsk_emblem";
 
 function badgeForCount(n) {
+  if (certIsTr) {
+    if (n >= 6) return { name: "Altın Nöbetçi", emoji: "🏅" };
+    if (n >= 3) return { name: "Gümüş Muhafız", emoji: "🥈" };
+    if (n >= 1) return { name: "Bronz Yaver", emoji: "🥉" };
+    return null;
+  }
   if (n >= 6) return { name: "Gold Sentinel", emoji: "🏅" };
   if (n >= 3) return { name: "Silver Guard", emoji: "🥈" };
   if (n >= 1) return { name: "Bronze Squire", emoji: "🥉" };
@@ -72,11 +80,17 @@ function badgeForCount(n) {
   catch (e) { progress = { completed: {} }; }
   const n = Object.keys(progress.completed || {}).length;
   const badge = badgeForCount(n);
-  const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  const today = new Date().toLocaleDateString(certIsTr ? 'tr-TR' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
   const el = document.getElementById('cert-content');
   if (!nickname || !badge) {
-    el.innerHTML = `
+    el.innerHTML = certIsTr ? `
+      <div class="cert-shield" id="cert-emblem">🛡️</div>
+      <div class="cert-eyebrow">Digital Safety Knights</div>
+      <div class="cert-title">Henüz rozet kazanılmadı</div>
+      <div class="no-badge-msg">Bir sertifikanın kilidini açmak için ilk görevini tamamla!</div>
+      <a href="/quests.html" style="color:var(--navy2);font-weight:800;">Bir Görev Oyna →</a>
+    ` : `
       <div class="cert-shield" id="cert-emblem">🛡️</div>
       <div class="cert-eyebrow">Digital Safety Knights</div>
       <div class="cert-title">No badge earned yet</div>
@@ -86,7 +100,20 @@ function badgeForCount(n) {
     return;
   }
 
-  el.innerHTML = `
+  el.innerHTML = certIsTr ? `
+    <div class="cert-shield" id="cert-emblem">🛡️</div>
+    <div class="cert-eyebrow">Digital Safety Knights — Başarı Sertifikası</div>
+    <div class="cert-title">Bu sertifika şunu onaylar:</div>
+    <div class="cert-name">${escapeHtml(nickname)}</div>
+    <div class="cert-badge-row">
+      <div class="cert-badge-circle">${badge.emoji}</div>
+      <div class="cert-badge-name">${badge.name}<small>6 görevden ${n} tanesi tamamlandı</small></div>
+    </div>
+    <div class="cert-sub">Digital Safety Knights üyesi olarak gerçek dijital güvenlik becerileri gösterdi.</div>
+    <div class="cert-stats-row" id="cert-stats"></div>
+    <div class="cert-date">${today} tarihinde verildi</div>
+    <div class="cert-motto">⚔️ Kalkanını kaldır! · digitalsafetyknights.org</div>
+  ` : `
     <div class="cert-shield" id="cert-emblem">🛡️</div>
     <div class="cert-eyebrow">Digital Safety Knights — Certificate of Achievement</div>
     <div class="cert-title">This certifies that</div>
@@ -106,11 +133,12 @@ function badgeForCount(n) {
     const level = DSKPoints.levelForPoints(points);
     const streak = DSKPoints.getStreak();
     const gameHigh = parseInt(localStorage.getItem('dsk_game_highscore') || '0', 10);
+    const L = certIsTr ? { rank: 'Rütbe', points: 'Şövalye Puanı', streak: 'Günlük Seri', gameHigh: 'Oyun Yüksek Skoru' } : { rank: 'Rank', points: 'Knight Points', streak: 'Day Streak', gameHigh: 'Game High Score' };
     document.getElementById('cert-stats').innerHTML = `
-      <div class="cert-stat"><div class="num">${level.emoji} ${level.name}</div><div class="lbl">Rank</div></div>
-      <div class="cert-stat"><div class="num">${points}</div><div class="lbl">Knight Points</div></div>
-      <div class="cert-stat"><div class="num">${streak}</div><div class="lbl">Day Streak</div></div>
-      <div class="cert-stat"><div class="num">${gameHigh}</div><div class="lbl">Game High Score</div></div>
+      <div class="cert-stat"><div class="num">${level.emoji} ${level.name}</div><div class="lbl">${L.rank}</div></div>
+      <div class="cert-stat"><div class="num">${points}</div><div class="lbl">${L.points}</div></div>
+      <div class="cert-stat"><div class="num">${streak}</div><div class="lbl">${L.streak}</div></div>
+      <div class="cert-stat"><div class="num">${gameHigh}</div><div class="lbl">${L.gameHigh}</div></div>
     `;
   }
 
@@ -138,5 +166,6 @@ function escapeHtml(str) {
   return div.innerHTML;
 }
 </script>
+<script src="/assets/lang-switcher.js"></script>
 </body>
 </html>

@@ -24,34 +24,36 @@
   .footer { font-size: 0.78rem; color: #999; margin-top: 2rem; }
   .footer a { color: #c9a84c; text-decoration: none; font-weight: 700; }
 </style>
+<script src="/assets/i18n.js"></script>
 </head>
 <body>
 
 <div class="card">
   <div class="icon">⚔️</div>
-  <h1 id="thankYouTitle">Thank You for Your <span class="gold">Generosity</span></h1>
-  <p><span class="heart">💛</span> Your donation helps us protect more children worldwide.</p>
+  <h1 id="thankYouTitle" data-i18n="ds.title">Thank You for Your <span class="gold">Generosity</span></h1>
+  <p><span class="heart">💛</span> <span data-i18n="ds.subtitle">Your donation helps us protect more children worldwide.</span></p>
 
   <div class="impact" id="foundingBanner" style="display:none;background:linear-gradient(135deg,#3d2e0d,#7a5a12);color:white;">
-    <h3 style="color:white;">⭐ Welcome, Founding Knight!</h3>
-    <p style="color:#f0e0b8;">Your Founding Knight badge is now on your DSK dashboard. Nothing was ever locked behind this — it's just our way of saying thank you.</p>
+    <h3 style="color:white;" data-i18n="ds.foundingTitle">⭐ Welcome, Founding Knight!</h3>
+    <p style="color:#f0e0b8;" data-i18n="ds.foundingP">Your Founding Knight badge is now on your DSK dashboard. Nothing was ever locked behind this — it's just our way of saying thank you.</p>
   </div>
 
   <div class="impact">
-    <h3>Your impact, in real terms:</h3>
-    <p>Every donation goes directly toward expanding our safety programs, translating guides into more languages, and reaching families who need us most. There are no salaries, no overhead — just impact.</p>
+    <h3 data-i18n="ds.impactTitle">Your impact, in real terms:</h3>
+    <p data-i18n="ds.impactP">Every donation goes directly toward expanding our safety programs, translating guides into more languages, and reaching families who need us most. There are no salaries, no overhead — just impact.</p>
   </div>
 
-  <p>You'll receive a receipt by email shortly. Welcome to the DSK family of supporters.</p>
+  <p data-i18n="ds.receipt">You'll receive a receipt by email shortly. Welcome to the DSK family of supporters.</p>
 
-  <a href="/" class="btn">← Back to Home</a>
-  <a href="https://discord.gg/RmMZqnF4e" target="_blank" class="btn btn-secondary">Join Community →</a>
+  <a href="/" class="btn" data-i18n="qp.home">← Back to Home</a>
+  <a href="https://discord.gg/RmMZqnF4e" target="_blank" class="btn btn-secondary" data-i18n="ds.joinCommunity">Join Community →</a>
 
   <div class="footer">
-    Questions? Contact us at <a href="mailto:donate@digitalsafetyknights.org">donate@digitalsafetyknights.org</a>
+    <span data-i18n="ds.questions">Questions? Contact us at</span> <a href="mailto:donate@digitalsafetyknights.org">donate@digitalsafetyknights.org</a>
   </div>
 </div>
 
+<script src="/assets/lang-switcher.js"></script>
 <script>
   var params = new URLSearchParams(window.location.search);
   var sessionId = params.get('session_id');

@@ -792,5 +792,30 @@
   "game.playNow2": "Şimdi Oyna",
   "dash.supportDsk": "💛 DSK'yı Destekle",
   "dash.supportDskP": "Bağışınız dünya çapında daha fazla çocuğu korumamıza yardımcı olur. Her katkı fark yaratır.",
-  "dash.makeDonation": "Bağış Yap"
+  "dash.makeDonation": "Bağış Yap",
+
+  "p404.bubble": "O kadar hızlı değil, Glitch!",
+  "p404.h1": "Glitch seni var olmayan bir yere yönlendirdi.",
+  "p404.p": "İyi ki Shieldy onu yakaladı. Bu sayfa yanlış bir dönüş yaptı — ama gerçekten ihtiyacın olan her şey bir tık uzağında.",
+  "p404.backBtn": "🛡️ Güvenliğe Dön",
+
+  "ds.title": "Cömertliğin İçin <span class=\"gold\">Teşekkürler</span>",
+  "ds.subtitle": "Bağışın dünya çapında daha fazla çocuğu korumamıza yardımcı oluyor.",
+  "ds.foundingTitle": "⭐ Hoş geldin, Kurucu Şövalye!",
+  "ds.foundingP": "Kurucu Şövalye rozetin artık DSK panelinde. Bunun arkasında hiçbir şey kilitli değildi — bu sadece teşekkür etme şeklimiz.",
+  "ds.impactTitle": "Somut etkin:",
+  "ds.impactP": "Her bağış doğrudan güvenlik programlarımızı genişletmeye, rehberleri daha fazla dile çevirmeye ve bize en çok ihtiyaç duyan ailelere ulaşmaya gidiyor. Maaş yok, genel gider yok — sadece etki var.",
+  "ds.receipt": "Kısa süre içinde e-posta ile bir makbuz alacaksın. DSK destekçileri ailesine hoş geldin.",
+  "ds.joinCommunity": "Topluluğa Katıl →",
+  "ds.questions": "Sorular mı var? Bize ulaşın:",
+
+  "login.title": "Tekrar Hoş Geldin, <span class=\"gold\">Şövalye</span>",
+  "login.subtitle": "E-postanı gir, sana güvenli bir giriş bağlantısı gönderelim. Şifre gerekmez.",
+  "join.email2": "E-posta Adresi",
+  "login.sendLink": "🔐 Giriş Bağlantısı Gönder",
+  "login.notMember": "Henüz üye değil misin?",
+  "login.joinFree": "DSK'ya Ücretsiz Katıl →",
+
+  "cert.backQuests": "← Görevlere Dön",
+  "cert.printBtn": "🖨️ Yazdır / PDF Olarak Kaydet"
 }

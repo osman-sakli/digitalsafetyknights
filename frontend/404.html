@@ -25,20 +25,22 @@
   p { color: #a8b8d8; line-height: 1.7; margin-bottom: 2rem; }
   .btn-gold { background: var(--gold); color: var(--navy); padding: 14px 32px; border-radius: 28px; font-weight: 900; text-decoration: none; display: inline-block; }
 </style>
+<script src="/assets/i18n.js"></script>
 </head>
 <body>
 
 <div class="wrap">
   <div class="scene">
-    <div class="bubble">Not so fast, Glitch!</div>
+    <div class="bubble" data-i18n="p404.bubble">Not so fast, Glitch!</div>
     <img id="glitch-img" src="assets/characters/cutouts/glitch-cutout.png" alt="Glitch">
     <img id="shieldy-img" src="assets/characters/cutouts/shieldy-cutout.png" alt="Shieldy">
   </div>
   <div class="num">404</div>
-  <h1>Glitch redirected you somewhere that doesn't exist.</h1>
-  <p>Good thing Shieldy caught him. This page took a wrong turn — but everything you actually need is one click away.</p>
-  <a class="btn-gold" href="/">🛡️ Back to Safety</a>
+  <h1 data-i18n="p404.h1">Glitch redirected you somewhere that doesn't exist.</h1>
+  <p data-i18n="p404.p">Good thing Shieldy caught him. This page took a wrong turn — but everything you actually need is one click away.</p>
+  <a class="btn-gold" href="/" data-i18n="p404.backBtn">🛡️ Back to Safety</a>
 </div>
 
+<script src="/assets/lang-switcher.js"></script>
 </body>
 </html>
