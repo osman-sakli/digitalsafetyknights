@@ -7,6 +7,7 @@
 <title>Screen-Time Check-In — Digital Safety Knights</title>
 <link rel="icon" href="assets/favicon.ico">
 <script src="assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
 <style>
   :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --success: #2a9d8f; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -45,20 +46,20 @@
 
 <div class="topbar">
   <a class="brand" href="/">🛡️ Digital Safety Knights</a>
-  <a class="home-link" href="/resources.html">← Resource Center</a>
+  <a class="home-link" href="/resources.html" data-i18n="fc.backResources">← Resource Center</a>
 </div>
-<div class="dsk-breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/resources.html">Resources</a><span class="sep">/</span><span class="current">Screen-Time Check-In</span></div>
+<div class="dsk-breadcrumb"><a href="/" data-i18n="qp.home2">Home</a><span class="sep">/</span><a href="/resources.html" data-i18n="nav.resources2">Resources</a><span class="sep">/</span><span class="current" data-i18n="stc.title">Screen-Time Check-In</span></div>
 
 <div class="wrap">
   <div class="hero">
     <div class="icon">📱</div>
-    <h1>Screen-Time Check-In</h1>
-    <p>A quick, private moment to notice how you feel about your day online.</p>
+    <h1 data-i18n="stc.title">Screen-Time Check-In</h1>
+    <p data-i18n="stc.subtitle">A quick, private moment to notice how you feel about your day online.</p>
   </div>
-  <div class="privacy-banner">🔒 This stays only on this device. Nobody else can see it — not your parents, not DSK, nobody, unless you choose to show them.</div>
+  <div class="privacy-banner" data-i18n="stc.privacyBanner">🔒 This stays only on this device. Nobody else can see it — not your parents, not DSK, nobody, unless you choose to show them.</div>
 
   <div class="card">
-    <h3>ABOUT HOW MANY HOURS ON A SCREEN TODAY?</h3>
+    <h3 data-i18n="stc.hoursQuestion">ABOUT HOW MANY HOURS ON A SCREEN TODAY?</h3>
     <div class="slider-row">
       <input type="range" id="hours-slider" min="0" max="12" step="0.5" value="2" oninput="updateSlider()">
       <div class="slider-val" id="hours-val">2 hours</div>
@@ -66,7 +67,7 @@
   </div>
 
   <div class="card">
-    <h3>HOW DO YOU FEEL ABOUT TODAY?</h3>
+    <h3 data-i18n="stc.moodQuestion">HOW DO YOU FEEL ABOUT TODAY?</h3>
     <div class="mood-row" id="mood-row">
       <button class="mood-btn" data-mood="great" onclick="selectMood('great')">😄</button>
       <button class="mood-btn" data-mood="good" onclick="selectMood('good')">🙂</button>
@@ -76,23 +77,24 @@
     </div>
   </div>
 
-  <button class="save-btn" onclick="saveCheckin()">Save Today's Check-In</button>
+  <button class="save-btn" onclick="saveCheckin()" data-i18n="stc.saveBtn">Save Today's Check-In</button>
 
   <div class="history">
-    <h3 style="color:var(--navy);font-size:0.85rem;margin-bottom:10px;">YOUR LAST 7 CHECK-INS</h3>
+    <h3 style="color:var(--navy);font-size:0.85rem;margin-bottom:10px;" data-i18n="stc.last7">YOUR LAST 7 CHECK-INS</h3>
     <div id="history-list"></div>
-    <button class="clear-btn" onclick="clearHistory()">Clear my history</button>
+    <button class="clear-btn" onclick="clearHistory()" data-i18n="stc.clearHistory">Clear my history</button>
   </div>
 </div>
 
 <script>
+var stcIsTr = window.DSKi18n && DSKi18n.lang === 'tr';
 var MOOD_EMOJI = { great: '😄', good: '🙂', meh: '😐', tired: '😴', stressed: '😣' };
 var HISTORY_KEY = 'dsk_screentime_log';
 var selectedMood = null;
 
 function updateSlider() {
   var v = document.getElementById('hours-slider').value;
-  document.getElementById('hours-val').textContent = v + ' hours';
+  document.getElementById('hours-val').textContent = v + (stcIsTr ? ' saat' : ' hours');
 }
 
 function selectMood(m) {
@@ -107,18 +109,18 @@ function getHistory() {
 }
 
 function saveCheckin() {
-  if (!selectedMood) { alert('Pick how you feel first!'); return; }
+  if (!selectedMood) { alert(stcIsTr ? 'Önce nasıl hissettiğini seç!' : 'Pick how you feel first!'); return; }
   var hours = document.getElementById('hours-slider').value;
   var today = new Date().toISOString().slice(0, 10);
   var history = getHistory().filter(function(h) { return h.date !== today; });
   history.unshift({ date: today, hours: hours, mood: selectedMood });
   localStorage.setItem(HISTORY_KEY, JSON.stringify(history.slice(0, 30)));
   renderHistory();
-  if (window.DSKPoints) DSKPoints.addPoints(5, 'Daily check-in');
+  if (window.DSKPoints) DSKPoints.addPoints(5, stcIsTr ? 'Günlük kontrol' : 'Daily check-in');
 }
 
 function clearHistory() {
-  if (!confirm('Clear your private check-in history? This cannot be undone.')) return;
+  if (!confirm(stcIsTr ? 'Özel kontrol geçmişini temizle? Bu geri alınamaz.' : 'Clear your private check-in history? This cannot be undone.')) return;
   localStorage.removeItem(HISTORY_KEY);
   renderHistory();
 }
@@ -127,12 +129,13 @@ function renderHistory() {
   var history = getHistory().slice(0, 7);
   var list = document.getElementById('history-list');
   if (!history.length) {
-    list.innerHTML = '<div class="history-empty">No check-ins yet — save your first one above.</div>';
+    list.innerHTML = '<div class="history-empty">' + (stcIsTr ? 'Henüz kontrol yok — yukarıdan ilkini kaydet.' : 'No check-ins yet — save your first one above.') + '</div>';
     return;
   }
+  var hrsWord = stcIsTr ? 'sa' : 'hrs';
   list.innerHTML = history.map(function(h) {
     var d = new Date(h.date + 'T00:00:00');
-    return '<div class="history-row"><span>' + d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) + '</span><span>' + h.hours + ' hrs</span><span>' + MOOD_EMOJI[h.mood] + '</span></div>';
+    return '<div class="history-row"><span>' + d.toLocaleDateString(stcIsTr ? 'tr-TR' : 'en-US', { month: 'short', day: 'numeric' }) + '</span><span>' + h.hours + ' ' + hrsWord + '</span><span>' + MOOD_EMOJI[h.mood] + '</span></div>';
   }).join('');
 }
 
@@ -140,7 +143,6 @@ updateSlider();
 renderHistory();
 </script>
 
-<script src="/assets/i18n.js"></script>
 <script src="/assets/lang-switcher.js"></script>
 <script src="/assets/site-search.js"></script>
 <script src="/assets/play-now-fab.js"></script>

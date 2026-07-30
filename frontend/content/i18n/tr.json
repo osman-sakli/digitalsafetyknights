@@ -531,5 +531,20 @@
   "pd.subtitle": "Aşağıya bir deneme şifresi yaz ve kalkanının büyümesini izle. İstersen önce gerçek şifrelerini burada dene — hiçbir şey bu sayfadan çıkmaz.",
   "pd.placeholder": "Bir deneme şifresi yaz...",
   "pd.startTyping": "Yazmaya başla...",
-  "pd.privacyNote": "🔒 Bu sayfa tarayıcında %100 çevrimdışı çalışır. Burada yazdığın hiçbir şey kaydedilmez, saklanmaz veya hiçbir yere gönderilmez — ne DSK'ya, ne kimseye."
+  "pd.privacyNote": "🔒 Bu sayfa tarayıcında %100 çevrimdışı çalışır. Burada yazdığın hiçbir şey kaydedilmez, saklanmaz veya hiçbir yere gönderilmez — ne DSK'ya, ne kimseye.",
+
+  "stc.title": "Ekran Süresi Kontrolü",
+  "stc.subtitle": "Çevrimiçi geçirdiğin gün hakkında nasıl hissettiğini fark etmek için hızlı, özel bir an.",
+  "stc.privacyBanner": "🔒 Bu sadece bu cihazda kalır. Kendin göstermeyi seçmedikçe başka kimse göremez — ebeveynlerin de değil, DSK de değil, kimse.",
+  "stc.hoursQuestion": "BUGÜN EKRAN BAŞINDA YAKLAŞIK KAÇ SAAT?",
+  "stc.moodQuestion": "BUGÜN HAKKINDA NASIL HİSSEDİYORSUN?",
+  "stc.saveBtn": "Bugünkü Kontrolü Kaydet",
+  "stc.last7": "SON 7 KONTROLÜN",
+  "stc.clearHistory": "Geçmişimi temizle",
+
+  "ps.title": "Gizlilik Ayarları Simülatörü",
+  "ps.subtitle": "Önce burada sahte bir uygulamanın ayarlarını kilitlemeyi pratik et — gerçek hesaplarında yapmadan önce güvenli bir deneme alanı.",
+  "ps.gameTab": "🎮 Oyun Uygulaması",
+  "ps.socialTab": "📸 Sosyal Uygulama",
+  "ps.tapToLock": "Kilitlemek için yukarıdaki ayarlara dokun."
 }
