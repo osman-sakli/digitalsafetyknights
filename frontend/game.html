@@ -113,6 +113,7 @@
   #mini-leaderboard .lb-row { display: flex; justify-content: space-between; font-size: 0.85rem; padding: 4px 0; color: #cdd6ea; }
 </style>
 <script src="assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
 </head>
 <body>
 
@@ -122,8 +123,8 @@
   <a class="brand" href="/">🛡️ Digital Safety Knights</a>
   <div class="right">
     <button id="mute-btn" onclick="toggleMute()">🔊</button>
-    <a class="link" href="/quests.html">🎮 Quests</a>
-    <a class="link" href="/resources.html">📚 Resources</a>
+    <a class="link" href="/quests.html" data-i18n="nav.quests2">🎮 Quests</a>
+    <a class="link" href="/resources.html" data-i18n="nav.resources">📚 Resources</a>
   </div>
 </div>
 
@@ -131,61 +132,61 @@
 
   <div id="intro-screen">
     <div class="icon">🛡️</div>
-    <h1>Shieldy's <span class="gold">Message Sort</span></h1>
-    <p>Messages drop from the top. Slide Shieldy into the right lane before each one lands — <b>60 seconds</b>, as many as you can catch!</p>
+    <h1 data-i18n="game.title">Shieldy's <span class="gold">Message Sort</span></h1>
+    <p data-i18n="game.subtitle">Messages drop from the top. Slide Shieldy into the right lane before each one lands — <b>60 seconds</b>, as many as you can catch!</p>
     <div class="lane-demo">
-      <div class="lane-demo-box safe">✅ SAFE lane</div>
-      <div class="lane-demo-box block">🛡️ BLOCK lane</div>
+      <div class="lane-demo-box safe" data-i18n="game.safeLane">✅ SAFE lane</div>
+      <div class="lane-demo-box block" data-i18n="game.blockLane">🛡️ BLOCK lane</div>
     </div>
     <div class="how-to">
-      <h3>How to play</h3>
-      <li>⬅️➡️ Arrow keys, A/D, or tap left/right side of the screen to switch lanes</li>
-      <li>✅ Stand in <b>SAFE</b> for normal, friendly messages</li>
-      <li>🛡️ Stand in <b>BLOCK</b> for messages with red flags</li>
-      <li>🔥 Chain correct catches in a row for a combo score bonus</li>
-      <li>⏱️ No lives, no game over from mistakes — just beat the clock!</li>
+      <h3 data-i18n="game.howToPlay">How to play</h3>
+      <li data-i18n="game.htp1">⬅️➡️ Arrow keys, A/D, or tap left/right side of the screen to switch lanes</li>
+      <li data-i18n="game.htp2">✅ Stand in <b>SAFE</b> for normal, friendly messages</li>
+      <li data-i18n="game.htp3">🛡️ Stand in <b>BLOCK</b> for messages with red flags</li>
+      <li data-i18n="game.htp4">🔥 Chain correct catches in a row for a combo score bonus</li>
+      <li data-i18n="game.htp5">⏱️ No lives, no game over from mistakes — just beat the clock!</li>
     </div>
     <div class="difficulty-row">
-      <button class="diff-btn" data-diff="easy" onclick="selectDifficulty('easy')">🐣 Easy</button>
-      <button class="diff-btn" data-diff="medium" onclick="selectDifficulty('medium')">⚔️ Medium</button>
-      <button class="diff-btn" data-diff="hard" onclick="selectDifficulty('hard')">🔥 Hard</button>
+      <button class="diff-btn" data-diff="easy" onclick="selectDifficulty('easy')" data-i18n="game.easy">🐣 Easy</button>
+      <button class="diff-btn" data-diff="medium" onclick="selectDifficulty('medium')" data-i18n="game.medium">⚔️ Medium</button>
+      <button class="diff-btn" data-diff="hard" onclick="selectDifficulty('hard')" data-i18n="game.hard">🔥 Hard</button>
       <span id="chaos-btn-wrap"></span>
     </div>
-    <div class="best-score">Your best score: <b id="best-score-val">0</b></div>
-    <button class="play-btn" onclick="startGame()">▶️ Play Now</button>
+    <div class="best-score"><span data-i18n="game.bestScore">Your best score:</span> <b id="best-score-val">0</b></div>
+    <button class="play-btn" onclick="startGame()" data-i18n="game.playNow">▶️ Play Now</button>
   </div>
 
   <div id="game-screen">
     <div class="hud">
-      <div class="hud-item"><div class="hud-label">Score</div><div class="hud-value gold" id="score-val">0</div></div>
-      <div class="hud-item"><div class="hud-label">Time</div><div class="hud-value timer" id="timer-val">60</div></div>
-      <div class="hud-item"><div class="hud-label">Best</div><div class="hud-value" id="hud-best">0</div></div>
+      <div class="hud-item"><div class="hud-label" data-i18n="game.score">Score</div><div class="hud-value gold" id="score-val">0</div></div>
+      <div class="hud-item"><div class="hud-label" data-i18n="game.time">Time</div><div class="hud-value timer" id="timer-val">60</div></div>
+      <div class="hud-item"><div class="hud-label" data-i18n="game.best">Best</div><div class="hud-value" id="hud-best">0</div></div>
     </div>
     <div id="combo-badge">🔥 Combo x1</div>
     <div id="play-area">
-      <div class="lane safe" id="lane-safe"><div class="lane-label">✅ SAFE</div></div>
-      <div class="lane block" id="lane-block"><div class="lane-label">🛡️ BLOCK</div></div>
+      <div class="lane safe" id="lane-safe"><div class="lane-label" data-i18n="game.safeLabel">✅ SAFE</div></div>
+      <div class="lane block" id="lane-block"><div class="lane-label" data-i18n="game.blockLabel">🛡️ BLOCK</div></div>
       <div class="catch-line"></div>
       <img id="shieldy-img" src="assets/characters/shieldy.jpg" alt="Shieldy">
       <div id="flash-overlay"></div>
       <div class="toast" id="toast"></div>
     </div>
-    <p class="tap-hint">Tap left/right side of the play area, use ⬅️➡️ arrows, or A/D</p>
+    <p class="tap-hint" data-i18n="game.tapHint">Tap left/right side of the play area, use ⬅️➡️ arrows, or A/D</p>
   </div>
 
   <div id="end-screen">
     <div class="stars-row" id="end-stars">⭐⭐⭐</div>
-    <h2>Shield up!</h2>
-    <p id="end-reason">Time's up — here's how you did.</p>
+    <h2 data-i18n="qp.shieldUpPlain">Shield up!</h2>
+    <p id="end-reason" data-i18n="game.timesUp">Time's up — here's how you did.</p>
     <div id="end-final-score">0</div>
     <p id="end-best-note"></p>
     <div class="end-btns">
-      <button class="btn-gold" onclick="startGame()">🔁 Play Again</button>
-      <a class="btn-ghost" href="/resources.html">📚 Resource Center</a>
+      <button class="btn-gold" onclick="startGame()" data-i18n="game.playAgain">🔁 Play Again</button>
+      <a class="btn-ghost" href="/resources.html" data-i18n="game.resourceCenter">📚 Resource Center</a>
     </div>
     <div id="login-cta"></div>
-    <div id="mini-leaderboard-weekly" style="margin-top:18px;background:rgba(255,255,255,0.05);border-radius:14px;padding:14px 18px;text-align:left;display:none;"><h4 style="font-size:0.75rem;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">📅 This Week's Top Knights</h4><div id="lb-rows-weekly"></div></div>
-    <div id="mini-leaderboard"><h4>🏆 All-Time Top Knights</h4><div id="lb-rows"></div></div>
+    <div id="mini-leaderboard-weekly" style="margin-top:18px;background:rgba(255,255,255,0.05);border-radius:14px;padding:14px 18px;text-align:left;display:none;"><h4 style="font-size:0.75rem;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;" data-i18n="game.weeklyTop">📅 This Week's Top Knights</h4><div id="lb-rows-weekly"></div></div>
+    <div id="mini-leaderboard"><h4 data-i18n="game.allTimeTop">🏆 All-Time Top Knights</h4><div id="lb-rows"></div></div>
   </div>
 
 </div>
@@ -231,7 +232,8 @@ function toggleMute() {
 }
 
 // ---------- game data ----------
-var MESSAGES = [
+var gameIsTr = window.DSKi18n && DSKi18n.lang === 'tr';
+var MESSAGES_EN = [
   { text: "hey! only 10 seconds left to claim your free Robux, click now!!", flag: true, tip: "Urgency trick — real prizes never have a countdown pressuring you to click fast." },
   { text: "wanna play the new level together after school? I'll be on around 4", flag: false, tip: "A normal message from a friend about playing later." },
   { text: "don't tell your parents about this chat ok? it's our secret", flag: true, tip: "Secrecy trick — trusted people never ask you to hide a chat from your parents." },
@@ -262,6 +264,39 @@ var MESSAGES = [
   { text: "see you at practice tomorrow, coach moved it to 5pm", flag: false, tip: "An ordinary schedule update." }
 ];
 
+var MESSAGES_TR = [
+  { text: "hey! bedava Robux'unu almak için sadece 10 saniye kaldı, hemen tıkla!!", flag: true, tip: "Aciliyet numarası — gerçek ödüllerin hızlıca tıklaman için baskı yapan bir geri sayımı olmaz." },
+  { text: "okuldan sonra yeni seviyeyi birlikte oynayalım mı? saat 4 gibi olurum", flag: false, tip: "Bir arkadaştan, daha sonra oynamak hakkında normal bir mesaj." },
+  { text: "bu sohbeti ebeveynlerine söyleme tamam mı? bizim sırrımız", flag: true, tip: "Gizlilik numarası — güvenilir insanlar asla bir sohbeti ebeveynlerinden saklamanı istemez." },
+  { text: "lol o seviye çok zordu, patronu geçebildin mi?", flag: false, tip: "Bir oyun hakkında dostça, sıradan bir konuşma." },
+  { text: "gerçek adın ne ve hangi okula gidiyorsun?", flag: true, tip: "Kişisel bilgi numarası — iyi niyetli insanların çevrimiçi gerçek adına veya okuluna ihtiyacı olmaz." },
+  { text: "iyi ki doğdun!! harika bir gün geçirmeni dilerim 🎉", flag: false, tip: "Nazik, normal bir mesaj — uyarı işareti yok." },
+  { text: "bedava bir iPhone kazandın! almak için adresini gönder", flag: true, tip: "Gerçek olamayacak kadar iyi numarası — adresini isteyen bedava ödüller neredeyse her zaman dolandırıcılıktır." },
+  { text: "matematik ödevimde yardım edebilir misin? 5. soru kafa karıştırıcı", flag: false, tip: "Sınıf arkadaşları arasında normal bir yardım isteği." },
+  { text: "bana gerçekten güveniyorsan bana bir fotoğraf gönderirsin, aramızda kalsın", flag: true, tip: "Gizlilik VE bir fotoğraf isteği — bunu güvendiğin bir yetişkine söyle." },
+  { text: "ebeveynlerin şu an evde mi? bir arkadaşım için soruyorum", flag: true, tip: "Bu, bir yetişkinin yakında olup olmadığını kontrol eder — gerçek bir arkadaşın bunu bilmesine gerek yoktur." },
+  { text: "gg çok yakın bir maçtı, yarın rövanş ister misin?", flag: false, tip: "Sıradan bir oyun sohbeti." },
+  { text: "hesabını düzeltmene yardım etmek için şifrene ihtiyacım var, güven bana", flag: true, tip: "Şifre istekleri her zaman bir uyarı işaretidir." },
+  { text: "annem cumartesi parka gidebileceğimizi söyledi, gelmek ister misin", flag: false, tip: "Normal, ebeveyn gözetiminde bir plan." },
+  { text: "bu sohbeti farklı bir uygulamaya taşıyalım, ama başka kimseyi ekleme", flag: true, tip: "Uygulama değiştirme artı gizlilik, klasik bir kandırma örüntüsüdür." },
+  { text: "gönderdiğin o mim çok komikti 😂", flag: false, tip: "Sadece dostça bir tepki." },
+  { text: "çabuk, bu teklif 30 saniye içinde kaybolmadan — hesabını hemen doğrula!", flag: true, tip: "Aciliyet + doğrulama, klasik bir kimlik avı kombinasyonudur." },
+  { text: "bu hafta sonu turnuva için takım kurmak ister misin?", flag: false, tip: "Normal, dostça bir oyun daveti." },
+  { text: "gerçekten kaç yaşındasın? ve erkek misin kız mısın?", flag: true, tip: "İyi tanımadığın birinden gelen kişisel sorular bir uyarı işaretidir." },
+  { text: "yeni kostümü aldım, profilime bak!", flag: false, tip: "Arkadaşlar arasında gündelik, normal paylaşım." },
+  { text: "bir yerde IRL buluşalım, sadece ikimiz, kimseye söyleme", flag: true, tip: "Yüz yüze buluşmak artı gizlilik, var olan en ciddi uyarı işaretlerinden biridir." },
+  { text: "adresini gönderir misin? sana bir doğum günü kartı postalamak istiyorum", flag: true, tip: "Çevrimiçi bir kişinin ev adresini istemesi bir uyarı işaretidir." },
+  { text: "öğretmenimiz bilim fuarı için ekstra puan verdi, takım kurmak ister misin?", flag: false, tip: "Normal, okulla ilgili bir mesaj." },
+  { text: "kimseye söylemek için endişelenme, sohbetimizi zaten sildim", flag: true, tip: "Sohbetleri silmek ve gizliliği teşvik etmek bir manipülasyon taktiğidir." },
+  { text: "yeni güncelleme gecikme sorununu düzeltti, sonunda!", flag: false, tip: "Bir oyun güncellemesi hakkında gündelik sohbet." },
+  { text: "bir selfie gönder ki gerçekten sen olduğunu bileyim", flag: true, tip: "Çevrimiçi birinden gelen fotoğraf istekleri önce güvendiğin bir yetişkinden geçmelidir." },
+  { text: "yeni çizimimi test etmeme yardım eder misin? geri bildirim isterim", flag: false, tip: "Normal, dostça bir yaratıcı istek." },
+  { text: "özel olarak seçildin! yerler dolmadan bu bağlantıya tıkla", flag: true, tip: "\"Özel olarak seçildin\" artı aciliyet, bir dolandırıcılık/kimlik avı kombinasyonudur." },
+  { text: "yarın antrenmanda görüşürüz, koç saat 5'e aldı", flag: false, tip: "Sıradan bir program güncellemesi." }
+];
+
+var MESSAGES = gameIsTr ? MESSAGES_TR : MESSAGES_EN;
+
 var ROUND_SECONDS = 60;
 var DIFFICULTIES = {
   easy:   { fallStart: 13000, fallMin: 10500, fallDecay: 12, spawnStart: 5200, spawnMin: 3800, spawnDecay: 8 },
@@ -279,9 +314,10 @@ function renderChaosButton() {
   var wrap = document.getElementById('chaos-btn-wrap');
   if (!wrap) return;
   if (chaosUnlocked()) {
-    wrap.innerHTML = '<button class="diff-btn" data-diff="chaos" onclick="selectDifficulty(\'chaos\')">🌀 Chaos</button>';
+    wrap.innerHTML = '<button class="diff-btn" data-diff="chaos" onclick="selectDifficulty(\'chaos\')">🌀 ' + (gameIsTr ? 'Kaos' : 'Chaos') + '</button>';
   } else {
-    wrap.innerHTML = '<button class="diff-btn" disabled title="Score ' + CHAOS_UNLOCK_SCORE + '+ on Hard to unlock" style="opacity:0.4;cursor:not-allowed;">🔒 Chaos</button>';
+    var lockTitle = gameIsTr ? ('Açmak için Zor modda ' + CHAOS_UNLOCK_SCORE + '+ puan yap') : ('Score ' + CHAOS_UNLOCK_SCORE + '+ on Hard to unlock');
+    wrap.innerHTML = '<button class="diff-btn" disabled title="' + lockTitle + '" style="opacity:0.4;cursor:not-allowed;">🔒 ' + (gameIsTr ? 'Kaos' : 'Chaos') + '</button>';
   }
 }
 
@@ -437,9 +473,12 @@ function resolveCard(card) {
     updateCombo();
     screenShake();
     flashRed();
-    spawnPopup(px, py, card.msg.flag ? 'Missed!' : 'Oops!', 'bad');
+    spawnPopup(px, py, card.msg.flag ? (gameIsTr ? 'Kaçırdın!' : 'Missed!') : (gameIsTr ? 'Hata!' : 'Oops!'), 'bad');
     playFail();
-    showToast((card.msg.flag ? '⚠️ That was a red flag! ' : '❌ That one was actually safe. ') + card.msg.tip, 'bad');
+    var badPrefix = gameIsTr ?
+      (card.msg.flag ? '⚠️ Bu bir uyarı işaretiydi! ' : '❌ O aslında güvenliydi. ') :
+      (card.msg.flag ? '⚠️ That was a red flag! ' : '❌ That one was actually safe. ');
+    showToast(badPrefix + card.msg.tip, 'bad');
   }
   card.el.style.transition = 'opacity 0.15s';
   card.el.style.opacity = '0';
@@ -451,7 +490,7 @@ function updateCombo() {
   var badge = document.getElementById('combo-badge');
   var multiplier = streak >= 6 ? 3 : streak >= 3 ? 2 : 1;
   if (streak >= 3) {
-    badge.textContent = '🔥 Combo x' + multiplier;
+    badge.textContent = '🔥 ' + (gameIsTr ? 'Kombo x' : 'Combo x') + multiplier;
     badge.classList.add('show');
   } else {
     badge.classList.remove('show');
@@ -547,8 +586,9 @@ function endGame() {
   var starCount = accuracy >= 0.9 ? 3 : accuracy >= 0.7 ? 2 : accuracy >= 0.5 ? 1 : 0;
   document.getElementById('end-stars').innerHTML =
     '<span>' + '⭐'.repeat(starCount) + '</span><span class="star-empty">' + '⭐'.repeat(3 - starCount) + '</span>';
-  document.getElementById('end-reason').textContent =
-    totalCount > 0 ? ('You sorted ' + correctCount + ' of ' + totalCount + ' correctly (' + Math.round(accuracy * 100) + '%).') : 'Time\'s up!';
+  document.getElementById('end-reason').textContent = gameIsTr ?
+    (totalCount > 0 ? (totalCount + ' mesajdan ' + correctCount + ' tanesini doğru ayırdın (%' + Math.round(accuracy * 100) + ').') : 'Süre bitti!') :
+    (totalCount > 0 ? ('You sorted ' + correctCount + ' of ' + totalCount + ' correctly (' + Math.round(accuracy * 100) + '%).') : 'Time\'s up!');
 
   // animated count-up
   var el = document.getElementById('end-final-score');
@@ -562,11 +602,13 @@ function endGame() {
 
   var isNewBest = score > best;
   if (isNewBest) {
-    if (window.DSKPoints) DSKPoints.addPoints(score - best, 'new high score');
+    if (window.DSKPoints) DSKPoints.addPoints(score - best, gameIsTr ? 'yeni yüksek skor' : 'new high score');
     best = score;
     localStorage.setItem('dsk_game_highscore', String(best));
   }
-  document.getElementById('end-best-note').textContent = isNewBest ? '🎉 New personal best!' : 'Your best remains ' + best + '.';
+  document.getElementById('end-best-note').textContent = gameIsTr ?
+    (isNewBest ? '🎉 Yeni kişisel rekor!' : 'En iyi skorun ' + best + ' olarak kaldı.') :
+    (isNewBest ? '🎉 New personal best!' : 'Your best remains ' + best + '.');
   if (starCount >= 2) confettiBurst();
 
   if (difficulty === 'hard') {
@@ -575,7 +617,7 @@ function endGame() {
       localStorage.setItem('dsk_game_highscore_hard', String(score));
       if (score >= CHAOS_UNLOCK_SCORE && hardBest < CHAOS_UNLOCK_SCORE) {
         renderChaosButton();
-        if (window.DSKPoints) setTimeout(function () { DSKPoints.showToast('🌀 Chaos Mode unlocked!'); }, 1200);
+        if (window.DSKPoints) setTimeout(function () { DSKPoints.showToast(gameIsTr ? '🌀 Kaos Modu açıldı!' : '🌀 Chaos Mode unlocked!'); }, 1200);
       }
     }
   }
@@ -585,14 +627,14 @@ function endGame() {
   try { profile = JSON.parse(localStorage.getItem('dsk_profile') || 'null'); } catch (e) {}
   var loginCta = document.getElementById('login-cta');
   if (profile && profile.email) {
-    loginCta.textContent = 'Saving your score to your DSK profile...';
+    loginCta.textContent = gameIsTr ? 'Skorun DSK profiline kaydediliyor...' : 'Saving your score to your DSK profile...';
     fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/game-score', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: profile.email, score: score })
     }).then(function(r) { return r.json(); }).then(function(data) {
       if (data && data.success) {
-        loginCta.innerHTML = '✅ Score saved to your profile — <a href="/dashboard.html">view dashboard</a>';
+        loginCta.innerHTML = gameIsTr ? '✅ Skor profiline kaydedildi — <a href="/dashboard.html">panele git</a>' : '✅ Score saved to your profile — <a href="/dashboard.html">view dashboard</a>';
         if (data.leaderboard && data.leaderboard.length) {
           var lb = document.getElementById('mini-leaderboard');
           lb.style.display = 'block';
@@ -608,16 +650,18 @@ function endGame() {
           }).join('');
         }
       } else {
-        loginCta.textContent = 'Could not save your score right now — it\'s still on this device.';
+        loginCta.textContent = gameIsTr ? 'Skorun şu anda kaydedilemedi — yine de bu cihazda duruyor.' : 'Could not save your score right now — it\'s still on this device.';
       }
     }).catch(function() {
-      loginCta.textContent = 'Could not save your score right now — it\'s still on this device.';
+      loginCta.textContent = gameIsTr ? 'Skorun şu anda kaydedilemedi — yine de bu cihazda duruyor.' : 'Could not save your score right now — it\'s still on this device.';
     });
   } else {
-    loginCta.innerHTML = '💡 <a href="/login.html">Log in</a> to save your high score and see the member leaderboard.';
+    loginCta.innerHTML = gameIsTr ? '💡 En yüksek skorunu kaydetmek ve üye lider tablosunu görmek için <a href="/login.html">giriş yap</a>.' : '💡 <a href="/login.html">Log in</a> to save your high score and see the member leaderboard.';
   }
 }
 </script>
 
+<script src="/assets/lang-switcher.js"></script>
+<script src="/assets/site-search.js"></script>
 </body>
 </html>
