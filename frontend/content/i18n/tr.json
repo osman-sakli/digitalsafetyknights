@@ -546,5 +546,11 @@
   "ps.subtitle": "Önce burada sahte bir uygulamanın ayarlarını kilitlemeyi pratik et — gerçek hesaplarında yapmadan önce güvenli bir deneme alanı.",
   "ps.gameTab": "🎮 Oyun Uygulaması",
   "ps.socialTab": "📸 Sosyal Uygulama",
-  "ps.tapToLock": "Kilitlemek için yukarıdaki ayarlara dokun."
+  "ps.tapToLock": "Kilitlemek için yukarıdaki ayarlara dokun.",
+
+  "spb.title": "Güvenli Profilini Oluştur",
+  "spb.subtitle": "Bir öğeye dokun, sonra ait olduğunu düşündüğün kutuya dokun.",
+  "spb.okShare": "✅ Paylaşmak Uygun",
+  "spb.keepPrivate": "🔒 Özel Tut",
+  "spb.reset": "🔁 Sıfırla"
 }
