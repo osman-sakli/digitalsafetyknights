@@ -31,29 +31,31 @@
   .category-label { font-size: 0.72rem; font-weight: 900; color: var(--gold2); background: var(--navy); display: inline-block; padding: 4px 10px; border-radius: 8px; margin: 18px 0 8px; text-transform: uppercase; letter-spacing: 0.5px; }
 </style>
 <link rel="stylesheet" href="assets/breadcrumb.css">
+<script src="/assets/i18n.js"></script>
 </head>
 <body>
 
 <div class="topbar">
   <a class="brand" href="/">🛡️ Digital Safety Knights</a>
-  <a class="home-link" href="/knights.html">⚔️ Meet the Knights</a>
+  <a class="home-link" href="/knights.html" data-i18n="nav.meetKnights2">⚔️ Meet the Knights</a>
 </div>
-<div class="dsk-breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/knights.html">Meet the Knights</a><span class="sep">/</span><span class="current">Ask Shieldy</span></div>
+<div class="dsk-breadcrumb"><a href="/" data-i18n="qp.home2">Home</a><span class="sep">/</span><a href="/knights.html" data-i18n="nav.meetKnights2">Meet the Knights</a><span class="sep">/</span><span class="current" data-i18n="as.title">Ask Shieldy</span></div>
 
 <div class="wrap">
   <div class="hero">
     <img src="assets/characters/circles/shieldy.jpg" alt="Shieldy">
-    <h1>Ask Shieldy</h1>
-    <p>Tap a question below. Shieldy always gives the same honest, pre-written answer — no surprises.</p>
+    <h1 data-i18n="as.title">Ask Shieldy</h1>
+    <p data-i18n="as.subtitle">Tap a question below. Shieldy always gives the same honest, pre-written answer — no surprises.</p>
   </div>
-  <div class="safe-note">🔒 This isn't a live AI chat. Every answer here is written in advance by the DSK team — nothing you tap is ever sent anywhere.</div>
+  <div class="safe-note" data-i18n="as.safeNote">🔒 This isn't a live AI chat. Every answer here is written in advance by the DSK team — nothing you tap is ever sent anywhere.</div>
 
   <div class="chat-log" id="chat-log"></div>
   <div id="question-area"></div>
 </div>
 
 <script>
-var CATEGORIES = [
+var asIsTr = window.DSKi18n && DSKi18n.lang === 'tr';
+var CATEGORIES_EN = [
   { label: "Getting Started", questions: [
       { q: "What is Digital Safety Knights?", a: "We're a free organization that helps kids and families stay safe online — through games, quests, guides, and tools, not scary lectures." },
       { q: "Do I need an account to play?", a: "Nope! Quests and the game just ask for a nickname that stays on your device. No email, no password, no account needed to play." },
@@ -76,6 +78,32 @@ var CATEGORIES = [
       { q: "Who made Digital Safety Knights?", a: "A real family who wanted better answers to online safety than a scary headline or a settings menu nobody has time to read. You can read our story on the About page." }
   ]}
 ];
+
+var CATEGORIES_TR = [
+  { label: "Başlarken", questions: [
+      { q: "Digital Safety Knights nedir?", a: "Çocukların ve ailelerin çevrimiçi güvende kalmasına yardımcı olan ücretsiz bir kuruluşuz — korkutucu nutuklarla değil, oyunlar, görevler, rehberler ve araçlarla." },
+      { q: "Oynamak için hesaba ihtiyacım var mı?", a: "Hayır! Görevler ve oyun sadece cihazında kalan bir lakap ister. Oynamak için e-posta, şifre veya hesap gerekmez." },
+      { q: "Bunların hepsi gerçekten ücretsiz mi?", a: "Hepsi, her zaman. Rehberler, görevler, oyun, araçlar — bu sitedeki her şey kasıtlı olarak ücretsizdir." }
+  ]},
+  { label: "Güvende Kalmak", questions: [
+      { q: "Bir yabancı bana kişisel sorular soruyor, ne yapmalıyım?", a: "Cevap verme, ve hemen güvendiğin bir yetişkine söyle. Seninle konuşmaya devam etmek için iyi niyetli insanların adına, yaşına, okuluna veya adresine ihtiyacı olmaz." },
+      { q: "Çevrimiçi biri benimle yüz yüze buluşmak istiyor, uygun mu?", a: "Güvendiğin bir yetişkin tam olarak nerede, ne zaman ve kiminle olduğunu bilmeden sadece çevrimiçinden tanıdığın biriyle asla buluşma. Bu var olan en büyük uyarı işaretlerinden biridir." },
+      { q: "Şifremi bir arkadaşla paylaşmam uygun mu?", a: "Hayır — en iyi arkadaşınla bile. Şifreler sırdır, nokta. Başka birinin bildiğini düşünüyorsan, değiştir." },
+      { q: "Ya zaten pişman olduğum bir şey paylaştıysam?", a: "Hemen güvendiğin bir yetişkine söyle. Söylediğin için başın belaya girmez — biri ne kadar erken yardım ederse, o kadar çok şey yapılabilir." }
+  ]},
+  { label: "Yapay Zeka & Çevrimiçi Tuhaf Şeyler", questions: [
+      { q: "Gerçek bir kişiyle mi yoksa yapay zekayla mı konuştuğumu nasıl anlarım?", a: "Anında gelen, söylediğin her şeye katılan veya biraz fazla mükemmel görünen cevaplara dikkat et. Gerçek arkadaşlar cevap vermek için zaman alır ve her zaman seninle aynı fikirde olmaz." },
+      { q: "Yapay zeka gerçekten birinin sesini ya da yüzünü taklit edebilir mi?", a: "Evet, gerçekten yapabilir — ses ve video artık ikisi de ikna edici şekilde taklit edilebiliyor. Bir şey acil veya dramatik hissettiriyorsa, inanmadan önce dur ve başka bir yoldan doğrula." },
+      { q: "Ödev için yapay zeka kullanmak hile mi?", a: "Yapay zeka bir şeyi anlamana yardım edebilir, ama yapay zekanın sözlerini kendininmiş gibi teslim etmek dürüst bir çalışma değildir. Öğrenmek için kullan, öğrenmeyi atlamak için değil." }
+  ]},
+  { label: "Bu Siteyi Kullanmak", questions: [
+      { q: "Şövalye Puanı nedir?", a: "Görevler, oyun oynayarak ve güvenlik denetimini tamamlayarak kazandığın puanlar — Yaver, Şövalye, Nöbetçi ve Şampiyon rütbelerine doğru birikir." },
+      { q: "Skorum ya da lakabım başkasıyla paylaşılıyor mu?", a: "Hayır. Ücretsiz bir hesap oluşturmayı seçmediğin sürece her şey sadece kendi tarayıcında saklanır, ve o zaman bile bilgini asla satmayız ya da paylaşmayız." },
+      { q: "Digital Safety Knights'ı kim kurdu?", a: "Çevrimiçi güvenlik için korkutucu bir manşetten ya da kimsenin okumaya vakti olmayan bir ayarlar menüsünden daha iyi cevaplar isteyen gerçek bir aile. Hikayemizi Hakkımızda sayfasında okuyabilirsin." }
+  ]}
+];
+
+var CATEGORIES = asIsTr ? CATEGORIES_TR : CATEGORIES_EN;
 
 function ask(qObj, btn) {
   var log = document.getElementById('chat-log');
@@ -103,7 +131,6 @@ area.innerHTML = CATEGORIES.map(function(cat) {
 }).join('');
 </script>
 
-<script src="/assets/i18n.js"></script>
 <script src="/assets/lang-switcher.js"></script>
 <script src="/assets/site-search.js"></script>
 <script src="/assets/play-now-fab.js"></script>

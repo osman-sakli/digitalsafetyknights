@@ -36,34 +36,36 @@
   .btn-ghost { background: transparent; color: var(--navy); border: 2px solid var(--navy); padding: 12px 28px; border-radius: 28px; font-weight: 800; text-decoration: none; display: inline-block; margin: 0 6px; }
 </style>
 <link rel="stylesheet" href="assets/breadcrumb.css">
+<script src="/assets/i18n.js"></script>
 </head>
 <body>
 
 <div class="topbar">
   <a class="brand" href="/">🛡️ Digital Safety Knights</a>
   <div style="display:flex;gap:16px;align-items:center;">
-    <a class="home-link" href="/knights.html">⚔️ Meet the Knights</a>
-    <a class="home-link" href="/">← Home</a>
+    <a class="home-link" href="/knights.html" data-i18n="nav.meetKnights2">⚔️ Meet the Knights</a>
+    <a class="home-link" href="/" data-i18n="qp.home">← Home</a>
   </div>
 </div>
-<div class="dsk-breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/knights.html">Meet the Knights</a><span class="sep">/</span><span class="current">Tactic Almanac</span></div>
+<div class="dsk-breadcrumb"><a href="/" data-i18n="qp.home2">Home</a><span class="sep">/</span><a href="/knights.html" data-i18n="nav.meetKnights2">Meet the Knights</a><span class="sep">/</span><span class="current" data-i18n="ta.title2">Tactic Almanac</span></div>
 
 <section class="hero">
   <div class="icon">📖</div>
-  <h1>The Tactic <span class="purple">Almanac</span></h1>
-  <p>Glitch never shows up looking like a villain — that's the whole trick. Here are the seven masks Glitch wears most, so you can recognize the trick before you're inside it. None of these are real people — they're the tactic itself, given a face you can actually remember.</p>
+  <h1 data-i18n="ta.title">The Tactic <span class="purple">Almanac</span></h1>
+  <p data-i18n="ta.subtitle">Glitch never shows up looking like a villain — that's the whole trick. Here are the seven masks Glitch wears most, so you can recognize the trick before you're inside it. None of these are real people — they're the tactic itself, given a face you can actually remember.</p>
 </section>
 
 <div class="wrap">
   <div class="boss-grid" id="bossGrid"></div>
   <div class="cta-band">
-    <a class="btn-gold" href="/glitch-detector.html">🔍 Try the Glitch Detector →</a>
-    <a class="btn-ghost" href="/game.html">🕹️ Practice in the Game →</a>
+    <a class="btn-gold" href="/glitch-detector.html" data-i18n="ta.tryDetector">🔍 Try the Glitch Detector →</a>
+    <a class="btn-ghost" href="/game.html" data-i18n="ta.practiceGame">🕹️ Practice in the Game →</a>
   </div>
 </div>
 
 <script>
-var BOSSES = [
+var taIsTr = window.DSKi18n && DSKi18n.lang === 'tr';
+var BOSSES_EN = [
   { icon: "⏰", name: "The Countdown Goblin", alias: "Urgency", desc: "Shows up screaming that you have ten seconds, that the offer expires now, that you have to act before you can think. The rush IS the trick — it's designed to switch your brain off before it can ask a single good question.",
     defeat: "Beat it by: doing nothing for 60 seconds. Nothing real ever actually expires that fast." },
   { icon: "🤫", name: "The Secret-Keeper", alias: "Secrecy", desc: "Asks you to keep 'just this one thing' from your parents. Frames it as trust, as being special, as 'our little thing.' It's never really about trust — it's about making sure no adult ever sees the conversation.",
@@ -80,18 +82,37 @@ var BOSSES = [
     defeat: "Beat it by: telling a trusted adult immediately — you will never be in trouble for showing someone this message." }
 ];
 
+var BOSSES_TR = [
+  { icon: "⏰", name: "Geri Sayım Gulyabanisi", alias: "Aciliyet", desc: "On saniyen olduğunu, teklifin şimdi bittiğini, düşünmeden önce harekete geçmen gerektiğini bağırarak ortaya çıkar. Acele TUZAĞIN KENDİSİDİR — tek bir iyi soru sorabilmeden önce beynini kapatmak için tasarlanmıştır.",
+    defeat: "60 saniye boyunca hiçbir şey yapmayarak yen. Gerçek hiçbir şey bu kadar hızlı bitmez." },
+  { icon: "🤫", name: "Sır Bekçisi", alias: "Gizlilik", desc: "Ebeveynlerinden 'sadece bunu' saklamanı ister. Bunu güven, özel olmak, 'bizim küçük şeyimiz' olarak sunar. Asla gerçekten güvenle ilgili değildir — hiçbir yetişkinin konuşmayı görmemesini sağlamakla ilgilidir.",
+    defeat: "Biri senden çevrimiçi bir konuşmayı gizli tutmanı istediği anda güvendiğin bir yetişkine söyleyerek yen." },
+  { icon: "🎣", name: "Bilgi Avcısı", alias: "Kişisel Sorular", desc: "Rastgele adını, yaşını, okulunu, nerede yaşadığını sorar — bir seferde zararsız hissettiren bir soru, ta ki senin hakkında tam bir profile dönüşene kadar.",
+    defeat: "Adını, okulunu ve adresini ev anahtarın gibi görerek yen — sadece nazikçe sorduğu için birine vermezsin." },
+  { icon: "🎁", name: "Ödül Hayaleti", alias: "Gerçek Olamayacak Kadar İyi", desc: "Bedava kostümler, bedava Robux, 'özel olarak seçildin' mesajı — her zaman bedava, her zaman büyük, her zaman sadece bir tık uzakta. Asla gerçekten bedava değildir; çok cömert görünen bir yemle donatılmış bir kancadır.",
+    defeat: "Gerçek ödüllerin onları almak için asla şifrene ihtiyacı olmadığını hatırlayarak yen." },
+  { icon: "💸", name: "Geçiş Ücreti Trolü", alias: "Para İstekleri", desc: "Bir şeyin 'kilidini açmak' için küçük bir ödeme, ya da 'sadece bu sefer' bir hediye kartı, ya da gerçek olduğunu 'doğrulamak' için kart bilgilerini ister. Her zaman küçük başlar — tasarımı budur.",
+    defeat: "Sadece ekrandan tanıdığın birine asla para, hediye kartı veya kart bilgisi göndermeyerek yen." },
+  { icon: "📍", name: "Buluşma Gölgesi", alias: "Buluşmak", desc: "Genellikle sessiz tutma isteğiyle birlikte, 'sadece takılmak için' yüz yüze buluşmayı önerir. Bu, en önemli maskedir — riskin sadece çevrimiçi olmaktan çıktığı an.",
+    defeat: "Güvendiğin bir yetişkin tam olarak nerede, ne zaman ve kiminle olduğunu bilmeden çevrimiçinden hiç kimseyle yüz yüze buluşmayarak yen." },
+  { icon: "🎭", name: "Maske", alias: "Uygunsuz İstekler", desc: "Bir fotoğraf ister, kamerada bir şey yapmanı ister, her zaman normal, önemsiz, herkesin yaptığı bir şey olarak çerçeveler. Asla önemsiz değildir.",
+    defeat: "Hemen güvendiğin bir yetişkine söyleyerek yen — birine bu mesajı gösterdiğin için asla başın belaya girmez." }
+];
+
+var BOSSES = taIsTr ? BOSSES_TR : BOSSES_EN;
+var TA_HOW_TO_BEAT = taIsTr ? "Nasıl yenilir:" : "How to beat it:";
+
 var grid = document.getElementById('bossGrid');
 grid.innerHTML = BOSSES.map(function(b) {
   return '<div class="boss-card">' +
     '<div class="boss-head"><div class="boss-icon">' + b.icon + '</div>' +
     '<div><div class="boss-name">' + b.name + '</div><div class="boss-alias">' + b.alias + '</div></div></div>' +
     '<p class="boss-desc">' + b.desc + '</p>' +
-    '<div class="boss-defeat"><b>How to beat it:</b> ' + b.defeat.replace('Beat it by: ', '') + '</div>' +
+    '<div class="boss-defeat"><b>' + TA_HOW_TO_BEAT + '</b> ' + b.defeat.replace('Beat it by: ', '') + '</div>' +
   '</div>';
 }).join('');
 </script>
 
-<script src="/assets/i18n.js"></script>
 <script src="/assets/lang-switcher.js"></script>
 <script src="/assets/site-search.js"></script>
 <script src="/assets/play-now-fab.js"></script>
