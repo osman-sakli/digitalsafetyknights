@@ -190,6 +190,7 @@
   }
 </style>
 <script src="assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
 <link rel="stylesheet" href="assets/breadcrumb.css">
 </head>
 <body>
@@ -200,25 +201,25 @@
     <span>Digital Safety Knights</span>
   </a>
   <div style="display:flex;gap:16px;align-items:center;">
-    <a href="/resources.html" class="back-btn">📚 Resources</a>
-    <a href="/game.html" class="back-btn">🎮 Play Game</a>
-    <a href="/" class="back-btn">← Back to Home</a>
+    <a href="/resources.html" class="back-btn" data-i18n="nav.resources">📚 Resources</a>
+    <a href="/game.html" class="back-btn" data-i18n="qp.playGame">🎮 Play Game</a>
+    <a href="/" class="back-btn" data-i18n="audit.backHome">← Back to Home</a>
   </div>
 </nav>
-<div class="dsk-breadcrumb"><a href="/">Home</a><span class="sep">/</span><a href="/resources.html">Resources</a><span class="sep">/</span><span class="current">Family Safety Audit</span></div>
+<div class="dsk-breadcrumb"><a href="/" data-i18n="qp.home2">Home</a><span class="sep">/</span><a href="/resources.html" data-i18n="nav.resources2">Resources</a><span class="sep">/</span><span class="current" data-i18n="audit.title2">Family Safety Audit</span></div>
 
 <!-- AUDIT PAGE -->
 <div class="audit-page" id="auditPage">
   <div class="hero">
     <div class="hero-icon">🛡️</div>
-    <h1>Family Safety <span class="gold">Audit</span></h1>
-    <p>A 5-minute checklist to assess your home's digital safety. Get a personalized score and action plan based on your answers.</p>
+    <h1 data-i18n="audit.title">Family Safety <span class="gold">Audit</span></h1>
+    <p data-i18n="audit.subtitle">A 5-minute checklist to assess your home's digital safety. Get a personalized score and action plan based on your answers.</p>
   </div>
 
   <div class="progress-bar">
     <div class="progress-info">
-      <span>Your Progress</span>
-      <span><span id="progressCount">0</span> / 35 completed</span>
+      <span data-i18n="audit.yourProgress">Your Progress</span>
+      <span><span id="progressCount">0</span> <span data-i18n="audit.completedOf35">/ 35 completed</span></span>
     </div>
     <div class="progress-track">
       <div class="progress-fill" id="progressFill"></div>
@@ -232,18 +233,18 @@
       <div class="section-head">
         <div class="section-icon">📱</div>
         <div class="section-title">
-          <h2>Device Setup</h2>
-          <p>Phones, tablets, and computers</p>
+          <h2 data-i18n="audit.s1.title">Device Setup</h2>
+          <p data-i18n="audit.s1.subtitle">Phones, tablets, and computers</p>
         </div>
       </div>
       <div class="checklist">
-        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Screen Time / Family Link is enabled on every child's device</div><div class="check-hint">Apple Screen Time (iOS) or Google Family Link (Android)</div></div></div>
-        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">App installations require parental approval</div><div class="check-hint">Children cannot install new apps without you approving</div></div></div>
-        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Age-appropriate content filters are set</div><div class="check-hint">Movies, TV shows, books, and apps filtered by age rating</div></div></div>
-        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Downtime / Bedtime lock is configured</div><div class="check-hint">Device locks during sleep hours (e.g., 9pm–7am)</div></div></div>
-        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">SafeSearch is enabled and locked on Google/Bing</div><div class="check-hint">Filters explicit results from search engines</div></div></div>
-        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Auto-update is enabled on all devices</div><div class="check-hint">Operating systems and apps update automatically for security</div></div></div>
-        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Location services reviewed for each app</div><div class="check-hint">Only essential apps have location access</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text" data-i18n="audit.s1.i1.t">Screen Time / Family Link is enabled on every child's device</div><div class="check-hint" data-i18n="audit.s1.i1.h">Apple Screen Time (iOS) or Google Family Link (Android)</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text" data-i18n="audit.s1.i2.t">App installations require parental approval</div><div class="check-hint" data-i18n="audit.s1.i2.h">Children cannot install new apps without you approving</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text" data-i18n="audit.s1.i3.t">Age-appropriate content filters are set</div><div class="check-hint" data-i18n="audit.s1.i3.h">Movies, TV shows, books, and apps filtered by age rating</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text" data-i18n="audit.s1.i4.t">Downtime / Bedtime lock is configured</div><div class="check-hint" data-i18n="audit.s1.i4.h">Device locks during sleep hours (e.g., 9pm–7am)</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text" data-i18n="audit.s1.i5.t">SafeSearch is enabled and locked on Google/Bing</div><div class="check-hint" data-i18n="audit.s1.i5.h">Filters explicit results from search engines</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text" data-i18n="audit.s1.i6.t">Auto-update is enabled on all devices</div><div class="check-hint" data-i18n="audit.s1.i6.h">Operating systems and apps update automatically for security</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text" data-i18n="audit.s1.i7.t">Location services reviewed for each app</div><div class="check-hint" data-i18n="audit.s1.i7.h">Only essential apps have location access</div></div></div>
       </div>
     </div>
 
@@ -252,16 +253,16 @@
       <div class="section-head">
         <div class="section-icon">🔒</div>
         <div class="section-title">
-          <h2>Network Security</h2>
-          <p>Home WiFi and internet protection</p>
+          <h2 data-i18n="audit.s2.title">Network Security</h2>
+          <p data-i18n="audit.s2.subtitle">Home WiFi and internet protection</p>
         </div>
       </div>
       <div class="checklist">
-        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Home router DNS is set to 1.1.1.3 (Cloudflare for Families)</div><div class="check-hint">Blocks malware and adult content network-wide</div></div></div>
-        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Router firmware was updated in the last 12 months</div><div class="check-hint">Login to router admin panel and check for updates</div></div></div>
-        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">WiFi password is strong (12+ characters)</div><div class="check-hint">Long passphrases like "PurpleDog$Runs9" are best</div></div></div>
-        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Guest WiFi is separated from main network</div><div class="check-hint">Visitors don't have access to your main devices</div></div></div>
-        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">VPN is available for public WiFi use</div><div class="check-hint">ProtonVPN has a free tier — install on family phones</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text" data-i18n="audit.s2.i1.t">Home router DNS is set to 1.1.1.3 (Cloudflare for Families)</div><div class="check-hint" data-i18n="audit.s2.i1.h">Blocks malware and adult content network-wide</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text" data-i18n="audit.s2.i2.t">Router firmware was updated in the last 12 months</div><div class="check-hint" data-i18n="audit.s2.i2.h">Login to router admin panel and check for updates</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text" data-i18n="audit.s2.i3.t">WiFi password is strong (12+ characters)</div><div class="check-hint" data-i18n="audit.s2.i3.h">Long passphrases like "PurpleDog$Runs9" are best</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text" data-i18n="audit.s2.i4.t">Guest WiFi is separated from main network</div><div class="check-hint" data-i18n="audit.s2.i4.h">Visitors don't have access to your main devices</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text" data-i18n="audit.s2.i5.t">VPN is available for public WiFi use</div><div class="check-hint" data-i18n="audit.s2.i5.h">ProtonVPN has a free tier — install on family phones</div></div></div>
       </div>
     </div>
 
@@ -270,19 +271,19 @@
       <div class="section-head">
         <div class="section-icon">📲</div>
         <div class="section-title">
-          <h2>App Management</h2>
-          <p>Social media, gaming, and chat apps</p>
+          <h2 data-i18n="audit.s3.title">App Management</h2>
+          <p data-i18n="audit.s3.subtitle">Social media, gaming, and chat apps</p>
         </div>
       </div>
       <div class="checklist">
-        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Roblox Account Restrictions are enabled</div><div class="check-hint">Settings → Privacy → Account Restrictions</div></div></div>
-        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Roblox chat is set to "Friends only"</div><div class="check-hint">Includes in-game and direct message chat</div></div></div>
-        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Roblox Parent PIN is set</div><div class="check-hint">Prevents children from changing settings</div></div></div>
-        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">No Character.AI, Replika, or roleplay AI apps installed</div><div class="check-hint">These apps are not safe for children</div></div></div>
-        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Discord is restricted (or blocked) for children under 13</div><div class="check-hint">Most concerning conversations happen here</div></div></div>
-        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Social media accounts are set to Private</div><div class="check-hint">Instagram, TikTok, Snapchat — all private</div></div></div>
-        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">YouTube uses YouTube Kids OR Restricted Mode</div><div class="check-hint">Filters out inappropriate content</div></div></div>
-        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Photos and videos shared online are reviewed</div><div class="check-hint">No identifying information in backgrounds</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text" data-i18n="audit.s3.i1.t">Roblox Account Restrictions are enabled</div><div class="check-hint" data-i18n="audit.s3.i1.h">Settings → Privacy → Account Restrictions</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text" data-i18n="audit.s3.i2.t">Roblox chat is set to "Friends only"</div><div class="check-hint" data-i18n="audit.s3.i2.h">Includes in-game and direct message chat</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text" data-i18n="audit.s3.i3.t">Roblox Parent PIN is set</div><div class="check-hint" data-i18n="audit.s3.i3.h">Prevents children from changing settings</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text" data-i18n="audit.s3.i4.t">No Character.AI, Replika, or roleplay AI apps installed</div><div class="check-hint" data-i18n="audit.s3.i4.h">These apps are not safe for children</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text" data-i18n="audit.s3.i5.t">Discord is restricted (or blocked) for children under 13</div><div class="check-hint" data-i18n="audit.s3.i5.h">Most concerning conversations happen here</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text" data-i18n="audit.s3.i6.t">Social media accounts are set to Private</div><div class="check-hint" data-i18n="audit.s3.i6.h">Instagram, TikTok, Snapchat — all private</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text" data-i18n="audit.s3.i7.t">YouTube uses YouTube Kids OR Restricted Mode</div><div class="check-hint" data-i18n="audit.s3.i7.h">Filters out inappropriate content</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text" data-i18n="audit.s3.i8.t">Photos and videos shared online are reviewed</div><div class="check-hint" data-i18n="audit.s3.i8.h">No identifying information in backgrounds</div></div></div>
       </div>
     </div>
 
@@ -291,16 +292,16 @@
       <div class="section-head">
         <div class="section-icon">🔐</div>
         <div class="section-title">
-          <h2>Passwords & Accounts</h2>
-          <p>Account security across the family</p>
+          <h2 data-i18n="audit.s4.title">Passwords & Accounts</h2>
+          <p data-i18n="audit.s4.subtitle">Account security across the family</p>
         </div>
       </div>
       <div class="checklist">
-        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Password manager is installed (Bitwarden, 1Password, etc.)</div><div class="check-hint">Bitwarden is free and works for the whole family</div></div></div>
-        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Two-factor authentication on email accounts</div><div class="check-hint">Email is the most important account to protect</div></div></div>
-        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Two-factor authentication on social media</div><div class="check-hint">Prevents account takeover</div></div></div>
-        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">No passwords are reused across accounts</div><div class="check-hint">If one site is hacked, others stay safe</div></div></div>
-        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Children know never to share passwords with friends</div><div class="check-hint">Including Roblox, gaming accounts, social media</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text" data-i18n="audit.s4.i1.t">Password manager is installed (Bitwarden, 1Password, etc.)</div><div class="check-hint" data-i18n="audit.s4.i1.h">Bitwarden is free and works for the whole family</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text" data-i18n="audit.s4.i2.t">Two-factor authentication on email accounts</div><div class="check-hint" data-i18n="audit.s4.i2.h">Email is the most important account to protect</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text" data-i18n="audit.s4.i3.t">Two-factor authentication on social media</div><div class="check-hint" data-i18n="audit.s4.i3.h">Prevents account takeover</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text" data-i18n="audit.s4.i4.t">No passwords are reused across accounts</div><div class="check-hint" data-i18n="audit.s4.i4.h">If one site is hacked, others stay safe</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text" data-i18n="audit.s4.i5.t">Children know never to share passwords with friends</div><div class="check-hint" data-i18n="audit.s4.i5.h">Including Roblox, gaming accounts, social media</div></div></div>
       </div>
     </div>
 
@@ -309,17 +310,17 @@
       <div class="section-head">
         <div class="section-icon">💬</div>
         <div class="section-title">
-          <h2>Family Communication</h2>
-          <p>Open conversations and clear rules</p>
+          <h2 data-i18n="audit.s5.title">Family Communication</h2>
+          <p data-i18n="audit.s5.subtitle">Open conversations and clear rules</p>
         </div>
       </div>
       <div class="checklist">
-        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Family digital rules are agreed upon and posted</div><div class="check-hint">No phones at table, no devices in bedrooms, etc.</div></div></div>
-        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Monthly check-in conversations are scheduled</div><div class="check-hint">"Did anything weird happen online this month?"</div></div></div>
-        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Children know they can come to you without punishment</div><div class="check-hint">"You won't lose your phone if you tell me"</div></div></div>
-        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Family code word is established for verification</div><div class="check-hint">Used to verify identity in unexpected situations</div></div></div>
-        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Children know warning signs of online predators</div><div class="check-hint">Strangers asking personal questions, gifts, secrets</div></div></div>
-        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">No phones in bedrooms at night</div><div class="check-hint">Charge devices in common areas overnight</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text" data-i18n="audit.s5.i1.t">Family digital rules are agreed upon and posted</div><div class="check-hint" data-i18n="audit.s5.i1.h">No phones at table, no devices in bedrooms, etc.</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text" data-i18n="audit.s5.i2.t">Monthly check-in conversations are scheduled</div><div class="check-hint" data-i18n="audit.s5.i2.h">"Did anything weird happen online this month?"</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text" data-i18n="audit.s5.i3.t">Children know they can come to you without punishment</div><div class="check-hint" data-i18n="audit.s5.i3.h">"You won't lose your phone if you tell me"</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text" data-i18n="audit.s5.i4.t">Family code word is established for verification</div><div class="check-hint" data-i18n="audit.s5.i4.h">Used to verify identity in unexpected situations</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text" data-i18n="audit.s5.i5.t">Children know warning signs of online predators</div><div class="check-hint" data-i18n="audit.s5.i5.h">Strangers asking personal questions, gifts, secrets</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text" data-i18n="audit.s5.i6.t">No phones in bedrooms at night</div><div class="check-hint" data-i18n="audit.s5.i6.h">Charge devices in common areas overnight</div></div></div>
       </div>
     </div>
 
@@ -328,22 +329,22 @@
       <div class="section-head">
         <div class="section-icon">🆘</div>
         <div class="section-title">
-          <h2>Emergency Readiness</h2>
-          <p>Be prepared if something goes wrong</p>
+          <h2 data-i18n="audit.s6.title">Emergency Readiness</h2>
+          <p data-i18n="audit.s6.subtitle">Be prepared if something goes wrong</p>
         </div>
       </div>
       <div class="checklist">
-        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Emergency contacts are saved on parent's phone</div><div class="check-hint">NCMEC: 1-800-843-5678, local police, FBI</div></div></div>
-        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">You know how to take screenshots as evidence</div><div class="check-hint">Preserve evidence before blocking or deleting</div></div></div>
-        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">Children know where to find help</div><div class="check-hint">DSK Emergency page bookmarked, hotlines saved</div></div></div>
-        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text">DSK Incident Response Guide is downloaded and reviewed</div><div class="check-hint">Step-by-step what to do if something happens</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text" data-i18n="audit.s6.i1.t">Emergency contacts are saved on parent's phone</div><div class="check-hint" data-i18n="audit.s6.i1.h">NCMEC: 1-800-843-5678, local police, FBI</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text" data-i18n="audit.s6.i2.t">You know how to take screenshots as evidence</div><div class="check-hint" data-i18n="audit.s6.i2.h">Preserve evidence before blocking or deleting</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text" data-i18n="audit.s6.i3.t">Children know where to find help</div><div class="check-hint" data-i18n="audit.s6.i3.h">DSK Emergency page bookmarked, hotlines saved</div></div></div>
+        <div class="checklist-item" onclick="toggle(this)"><div class="check-box"></div><div class="check-content"><div class="check-text" data-i18n="audit.s6.i4.t">DSK Incident Response Guide is downloaded and reviewed</div><div class="check-hint" data-i18n="audit.s6.i4.h">Step-by-step what to do if something happens</div></div></div>
       </div>
     </div>
 
   </div>
 
   <div class="submit-bar">
-    <button class="submit-btn" id="submitBtn" onclick="showResults()">See Your Family Safety Score →</button>
+    <button class="submit-btn" id="submitBtn" onclick="showResults()" data-i18n="audit.seeScore">See Your Family Safety Score →</button>
   </div>
 </div>
 
@@ -353,22 +354,22 @@
     <div class="score-circle" id="scoreCircle">
       <div class="score-inner">
         <div class="score-num"><span id="scoreNum">0</span><span>%</span></div>
-        <div class="score-label" id="scoreLabel">Safety Score</div>
+        <div class="score-label" id="scoreLabel" data-i18n="audit.safetyScore">Safety Score</div>
       </div>
     </div>
-    <div class="badge-earned" id="gradeBadge">Calculating...</div>
+    <div class="badge-earned" id="gradeBadge" data-i18n="audit.calculating">Calculating...</div>
     <div class="score-msg" id="scoreMsg"></div>
   </div>
 
   <div class="recommendations" id="recommendations">
-    <h3>📋 Recommended Next Steps</h3>
+    <h3 data-i18n="audit.recNextSteps">📋 Recommended Next Steps</h3>
     <div id="recList"></div>
   </div>
 
   <div class="actions">
-    <button class="btn btn-gold" onclick="emailReport()">📧 Email Me This Report</button>
-    <button class="btn btn-navy" onclick="window.print()">🖨️ Print Report</button>
-    <button class="btn btn-outline" onclick="restart()">↻ Take Audit Again</button>
+    <button class="btn btn-gold" onclick="emailReport()" data-i18n="audit.emailReport">📧 Email Me This Report</button>
+    <button class="btn btn-navy" onclick="window.print()" data-i18n="audit.printReport">🖨️ Print Report</button>
+    <button class="btn btn-outline" onclick="restart()" data-i18n="audit.retakeAudit">↻ Take Audit Again</button>
   </div>
 </div>
 
@@ -377,6 +378,7 @@
 </footer>
 
 <script>
+  var auditIsTr = window.DSKi18n && DSKi18n.lang === 'tr';
   var TOTAL = 35;
   var checkedItems = [];
 
@@ -410,34 +412,58 @@
     var badge = document.getElementById('gradeBadge');
     var msg = document.getElementById('scoreMsg');
 
-    if (score >= 80) {
-      badge.textContent = '🏅 EXCELLENT — Gold Sentinel Level';
-      badge.className = 'badge-earned grade-A';
-      msg.textContent = 'Your family has an outstanding digital safety setup. Keep up the great work!';
-    } else if (score >= 60) {
-      badge.textContent = '🥈 GOOD — Silver Guard Level';
-      badge.className = 'badge-earned grade-B';
-      msg.textContent = 'Strong foundation, but a few important gaps to close. See recommendations below.';
-    } else if (score >= 40) {
-      badge.textContent = '⚠️ NEEDS WORK — Bronze Squire';
-      badge.className = 'badge-earned grade-B';
-      msg.textContent = "You've started, but several critical safety measures need attention. Don't worry — DSK has the resources to help.";
+    if (auditIsTr) {
+      if (score >= 80) {
+        badge.textContent = '🏅 MÜKEMMEL — Altın Nöbetçi Seviyesi';
+        badge.className = 'badge-earned grade-A';
+        msg.textContent = 'Ailenizin olağanüstü bir dijital güvenlik kurulumu var. Harika işe devam edin!';
+      } else if (score >= 60) {
+        badge.textContent = '🥈 İYİ — Gümüş Muhafız Seviyesi';
+        badge.className = 'badge-earned grade-B';
+        msg.textContent = 'Güçlü bir temel, ama kapatılması gereken birkaç önemli boşluk var. Aşağıdaki önerilere bakın.';
+      } else if (score >= 40) {
+        badge.textContent = '⚠️ ÇALIŞMA GEREKİYOR — Bronz Yaver';
+        badge.className = 'badge-earned grade-B';
+        msg.textContent = 'Başladınız, ama birkaç kritik güvenlik önlemi dikkat gerektiriyor. Endişelenmeyin — DSK\'nın yardımcı olacak kaynakları var.';
+      } else {
+        badge.textContent = '🚨 EYLEM GEREKİYOR';
+        badge.className = 'badge-earned grade-C';
+        msg.textContent = 'Ailenizin önemli güvenlik iyileştirmelerine ihtiyacı var. Aile Güvenlik Rehberlerimizle başlayın — her adım önemli.';
+      }
     } else {
-      badge.textContent = '🚨 ACTION NEEDED';
-      badge.className = 'badge-earned grade-C';
-      msg.textContent = 'Your family needs significant safety improvements. Start with our Family Safety Guides — every step matters.';
+      if (score >= 80) {
+        badge.textContent = '🏅 EXCELLENT — Gold Sentinel Level';
+        badge.className = 'badge-earned grade-A';
+        msg.textContent = 'Your family has an outstanding digital safety setup. Keep up the great work!';
+      } else if (score >= 60) {
+        badge.textContent = '🥈 GOOD — Silver Guard Level';
+        badge.className = 'badge-earned grade-B';
+        msg.textContent = 'Strong foundation, but a few important gaps to close. See recommendations below.';
+      } else if (score >= 40) {
+        badge.textContent = '⚠️ NEEDS WORK — Bronze Squire';
+        badge.className = 'badge-earned grade-B';
+        msg.textContent = "You've started, but several critical safety measures need attention. Don't worry — DSK has the resources to help.";
+      } else {
+        badge.textContent = '🚨 ACTION NEEDED';
+        badge.className = 'badge-earned grade-C';
+        msg.textContent = 'Your family needs significant safety improvements. Start with our Family Safety Guides — every step matters.';
+      }
     }
 
     var recList = document.getElementById('recList');
     if (unchecked.length === 0) {
-      recList.innerHTML = '<div class="rec-item"><div class="icon">🎉</div><div class="text"><strong>Perfect score!</strong> Your family is well protected. Consider becoming a DSK educator and helping other families.</div></div>';
+      recList.innerHTML = auditIsTr ?
+        '<div class="rec-item"><div class="icon">🎉</div><div class="text"><strong>Mükemmel skor!</strong> Aileniz iyi korunuyor. Bir DSK eğitimcisi olmayı ve diğer ailelere yardım etmeyi düşünün.</div></div>' :
+        '<div class="rec-item"><div class="icon">🎉</div><div class="text"><strong>Perfect score!</strong> Your family is well protected. Consider becoming a DSK educator and helping other families.</div></div>';
     } else {
       var top5 = unchecked.slice(0, 5);
       recList.innerHTML = top5.map(function(item) {
         return '<div class="rec-item"><div class="icon">⚠️</div><div class="text">' + item + '</div></div>';
       }).join('');
       if (unchecked.length > 5) {
-        recList.innerHTML += '<div class="rec-item"><div class="icon">📚</div><div class="text"><strong>And ' + (unchecked.length - 5) + ' more items</strong> — download our <a href="/#guides">Family Safety Guides</a> for step-by-step help.</div></div>';
+        recList.innerHTML += auditIsTr ?
+          ('<div class="rec-item"><div class="icon">📚</div><div class="text"><strong>Ve ' + (unchecked.length - 5) + ' madde daha</strong> — adım adım yardım için <a href="/#guides">Aile Güvenlik Rehberlerimizi</a> indirin.</div></div>') :
+          ('<div class="rec-item"><div class="icon">📚</div><div class="text"><strong>And ' + (unchecked.length - 5) + ' more items</strong> — download our <a href="/#guides">Family Safety Guides</a> for step-by-step help.</div></div>');
       }
     }
 
@@ -447,14 +473,14 @@
 
     if (window.DSKPoints && !localStorage.getItem('dsk_audit_points_awarded')) {
       localStorage.setItem('dsk_audit_points_awarded', '1');
-      DSKPoints.addPoints(50, 'Family Safety Audit completed');
+      DSKPoints.addPoints(50, auditIsTr ? 'Aile Güvenlik Denetimi tamamlandı' : 'Family Safety Audit completed');
     }
   }
 
   function emailReport() {
-    var email = prompt('Enter your email to receive this report:');
+    var email = prompt(auditIsTr ? 'Bu raporu almak için e-postanı gir:' : 'Enter your email to receive this report:');
     if (!email || email.indexOf('@') === -1) {
-      alert('Please enter a valid email address.');
+      alert(auditIsTr ? 'Lütfen geçerli bir e-posta adresi gir.' : 'Please enter a valid email address.');
       return;
     }
 
@@ -469,7 +495,7 @@
 
     var btn = event.target;
     var originalText = btn.textContent;
-    btn.textContent = 'Sending...';
+    btn.textContent = auditIsTr ? 'Gönderiliyor...' : 'Sending...';
     btn.disabled = true;
 
     fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/audit-report', {
@@ -486,13 +512,13 @@
     .then(function(r) { return r.json(); })
     .then(function(data) {
       if (data.success) {
-        alert('✅ Report sent! Check your inbox at ' + email);
+        alert(auditIsTr ? ('✅ Rapor gönderildi! ' + email + ' adresindeki gelen kutunu kontrol et') : ('✅ Report sent! Check your inbox at ' + email));
       } else {
-        alert('❌ ' + (data.message || 'Could not send. Please try again.'));
+        alert('❌ ' + (data.message || (auditIsTr ? 'Gönderilemedi. Lütfen tekrar deneyin.' : 'Could not send. Please try again.')));
       }
     })
     .catch(function(err) {
-      alert('❌ Connection error. Please try again.');
+      alert(auditIsTr ? '❌ Bağlantı hatası. Lütfen tekrar deneyin.' : '❌ Connection error. Please try again.');
       console.error(err);
     })
     .finally(function() {
@@ -512,7 +538,6 @@
   }
 </script>
 
-<script src="/assets/i18n.js"></script>
 <script src="/assets/lang-switcher.js"></script>
 <script src="/assets/site-search.js"></script>
 <script src="/assets/play-now-fab.js"></script>
