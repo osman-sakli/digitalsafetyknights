@@ -2,7 +2,21 @@
   var KEY = 'dsk_lang';
   window.DSKi18n = window.DSKi18n || {};
   var dict = {};
-  var lang = localStorage.getItem(KEY) || 'en';
+
+  function detectLang() {
+    try {
+      var langs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || ''];
+      for (var i = 0; i < langs.length; i++) {
+        if (/^tr\b/i.test(langs[i])) return 'tr';
+      }
+      if (Intl.DateTimeFormat().resolvedOptions().timeZone === 'Europe/Istanbul') return 'tr';
+    } catch (e) {}
+    return null;
+  }
+
+  var stored = localStorage.getItem(KEY);
+  var lang = stored || detectLang() || 'en';
+  if (!stored) localStorage.setItem(KEY, lang); // first visit: remember the detected/default choice so it's consistent across pages and overridable via the switcher
   window.DSKi18n.lang = lang;
 
   function apply() {
