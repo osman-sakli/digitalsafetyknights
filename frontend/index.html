@@ -264,14 +264,15 @@
   }
 </style>
 <script src="assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
 </head>
 <body>
 
 <div class="whats-new-banner" id="whats-new-banner">
   <div class="wn-inner">
-    <span class="wn-tag">✨ New</span>
-    <span class="wn-text">Back-to-School Digital Setup: The 30-Minute Family Tech Reset — August's Journal issue is up.</span>
-    <a href="https://digitalsafetyknights.org/journal/august-2026.pdf" target="_blank" class="wn-link" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')">Read it →</a>
+    <span class="wn-tag" data-i18n="wn.tag">✨ New</span>
+    <span class="wn-text" data-i18n="wn.text">Back-to-School Digital Setup: The 30-Minute Family Tech Reset — August's Journal issue is up.</span>
+    <a href="https://digitalsafetyknights.org/journal/august-2026.pdf" target="_blank" class="wn-link" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" data-i18n="wn.readIt">Read it →</a>
   </div>
   <button class="wn-close" onclick="dismissWhatsNew()" aria-label="Dismiss">&times;</button>
 </div>
@@ -336,7 +337,7 @@
     <div><div class="stat-num"><span class="count-target" data-count="48">0</span></div><div class="stat-label">Countries Reached</div></div>
     <div><div class="stat-num"><span class="count-target" data-count="100">0</span><span class="gold">%</span></div><div class="stat-label">Free Access</div></div>
   </div>
-  <div class="stats-ticker"><span class="ticker-dot"></span><span id="ticker-text">100 structured quests across 10 chapters</span></div>
+  <div class="stats-ticker"><span class="ticker-dot"></span><span id="ticker-text" data-i18n="ticker.fact1">100 structured quests across 10 chapters</span></div>
 </div>
 
 <div class="vision-band">
@@ -677,47 +678,47 @@
         <button type="button" class="em-region-chip" data-region="asia" onclick="filterEmergency('asia')" style="background:var(--light);color:var(--text);border:none;padding:8px 16px;border-radius:18px;font-weight:800;font-size:0.8rem;cursor:pointer;" data-i18n="emergency.asia">🌏 Asia &amp; Pacific</button>
       </div>
       <div class="em-grid" id="em-grid">
-        <div class="em-contact" data-region="americas" data-country="US"><h4>🇺🇸 USA — NCMEC</h4><a href="tel:18008435678">1-800-843-5678</a><small>cybertipline.org</small></div>
-        <div class="em-contact" data-region="americas" data-country="US"><h4>🌐 FBI Cyber Tips</h4><a href="https://tips.fbi.gov" target="_blank">tips.fbi.gov</a><small>USA federal crimes</small></div>
-        <div class="em-contact" data-region="americas" data-country="CA"><h4>🇨🇦 Canada — Cybertip</h4><a href="https://cybertip.ca" target="_blank">cybertip.ca</a><small>Online exploitation</small></div>
-        <div class="em-contact" data-region="americas" data-country="MX"><h4>🇲🇽 Mexico — Policia Cibernetica</h4><a href="tel:0885">088</a><small>www.gob.mx/policiafederal</small></div>
-        <div class="em-contact" data-region="europe" data-country="GB"><h4>🇬🇧 UK — CEOP</h4><a href="https://www.ceop.police.uk" target="_blank">ceop.police.uk</a><small>Child exploitation</small></div>
-        <div class="em-contact" data-region="europe" data-country="GB"><h4>🌍 Internet Watch Foundation</h4><a href="https://report.iwf.org.uk" target="_blank">report.iwf.org.uk</a><small>Report illegal content</small></div>
-        <div class="em-contact" data-region="europe" data-country="IE"><h4>🇮🇪 Ireland — Hotline</h4><a href="https://hotline.ie" target="_blank">hotline.ie</a><small>Illegal online content</small></div>
-        <div class="em-contact" data-region="europe" data-country="DE"><h4>🇩🇪 Germany — BKA</h4><a href="https://www.bka.de" target="_blank">bka.de</a><small>Federal Criminal Police</small></div>
-        <div class="em-contact" data-region="europe" data-country="FR"><h4>🇫🇷 France — Pharos</h4><a href="https://www.internet-signalement.gouv.fr" target="_blank">internet-signalement.gouv.fr</a><small>Report cybercrime</small></div>
-        <div class="em-contact" data-region="europe" data-country="ES"><h4>🇪🇸 Spain — INCIBE</h4><a href="tel:017">017</a><small>incibe.es</small></div>
-        <div class="em-contact" data-region="europe" data-country="IT"><h4>🇮🇹 Italy — Polizia Postale</h4><a href="https://www.commissariatodips.it" target="_blank">commissariatodips.it</a><small>Postal Police</small></div>
-        <div class="em-contact" data-region="europe" data-country="NL"><h4>🇳🇱 Netherlands — Meldpunt</h4><a href="https://meldpunt-kinderporno.nl" target="_blank">meldpunt-kinderporno.nl</a><small>Dutch hotline</small></div>
-        <div class="em-contact" data-region="europe" data-country="SE"><h4>🇸🇪 Sweden — ECPAT</h4><a href="https://ecpat.se" target="_blank">ecpat.se</a><small>Child protection</small></div>
-        <div class="em-contact" data-region="europe" data-country="TR"><h4>🇹🇷 Turkey — BTK</h4><a href="tel:158">158</a><small>ihbar.org.tr</small></div>
-        <div class="em-contact" data-region="europe" data-country="RU"><h4>🇷🇺 Russia — Roskomnadzor</h4><a href="https://rkn.gov.ru" target="_blank">rkn.gov.ru</a><small>Content reporting</small></div>
-        <div class="em-contact" data-region="mea" data-country="IL"><h4>🇮🇱 Israel — 105</h4><a href="tel:105">105</a><small>Child protection hotline</small></div>
-        <div class="em-contact" data-region="mea" data-country="SA"><h4>🇸🇦 Saudi Arabia — 1919</h4><a href="tel:1919">1919</a><small>Cybercrime hotline</small></div>
-        <div class="em-contact" data-region="mea" data-country="AE"><h4>🇦🇪 UAE — eCrime</h4><a href="https://www.ecrime.ae" target="_blank">ecrime.ae</a><small>Cybercrime reporting</small></div>
-        <div class="em-contact" data-region="asia" data-country="IN"><h4>🇮🇳 India — Cyber Crime</h4><a href="https://cybercrime.gov.in" target="_blank">cybercrime.gov.in</a><small>Online reporting portal</small></div>
-        <div class="em-contact" data-region="asia" data-country="PK"><h4>🇵🇰 Pakistan — FIA</h4><a href="tel:1991">1991</a><small>Cyber Crime Wing</small></div>
-        <div class="em-contact" data-region="asia" data-country="CN"><h4>🇨🇳 China — CAC</h4><a href="https://www.12377.cn" target="_blank">12377.cn</a><small>Illegal content report</small></div>
-        <div class="em-contact" data-region="asia" data-country="JP"><h4>🇯🇵 Japan — IHC</h4><a href="https://www.internethotline.jp" target="_blank">internethotline.jp</a><small>Internet Hotline Center</small></div>
-        <div class="em-contact" data-region="asia" data-country="KR"><h4>🇰🇷 South Korea — KCSC</h4><a href="https://www.kocsc.or.kr" target="_blank">kocsc.or.kr</a><small>Communications Standards</small></div>
-        <div class="em-contact" data-region="asia" data-country="TH"><h4>🇹🇭 Thailand — ThaiHotline</h4><a href="https://www.thaihotline.org" target="_blank">thaihotline.org</a><small>Report abuse</small></div>
-        <div class="em-contact" data-region="asia" data-country="PH"><h4>🇵🇭 Philippines — IACAT</h4><a href="tel:1343">1343</a><small>Anti-trafficking hotline</small></div>
-        <div class="em-contact" data-region="asia" data-country="VN"><h4>🇻🇳 Vietnam — VNCERT</h4><a href="https://www.vncert.gov.vn" target="_blank">vncert.gov.vn</a><small>Cybersecurity</small></div>
-        <div class="em-contact" data-region="asia" data-country="MY"><h4>🇲🇾 Malaysia — CyberSecurity</h4><a href="tel:1300882999">1300-88-2999</a><small>cybersecurity.my</small></div>
-        <div class="em-contact" data-region="asia" data-country="SG"><h4>🇸🇬 Singapore — SPF</h4><a href="tel:1800255000">1800-255-0000</a><small>Police Hotline</small></div>
-        <div class="em-contact" data-region="asia" data-country="ID"><h4>🇮🇩 Indonesia — Kominfo</h4><a href="https://trustpositif.kominfo.go.id" target="_blank">trustpositif.kominfo.go.id</a><small>Content filtering</small></div>
-        <div class="em-contact" data-region="asia" data-country="AU"><h4>🇦🇺 Australia — eSafety</h4><a href="https://www.esafety.gov.au" target="_blank">esafety.gov.au</a><small>Commissioner reports</small></div>
-        <div class="em-contact" data-region="asia" data-country="NZ"><h4>🇳🇿 New Zealand — Netsafe</h4><a href="tel:0508638723">0508 NETSAFE</a><small>netsafe.org.nz</small></div>
-        <div class="em-contact" data-region="mea" data-country="ZA"><h4>🇿🇦 South Africa — SAPS</h4><a href="tel:10111">10111</a><small>Police emergency</small></div>
-        <div class="em-contact" data-region="mea" data-country="EG"><h4>🇪🇬 Egypt — 108</h4><a href="tel:108">108</a><small>Child hotline</small></div>
-        <div class="em-contact" data-region="mea" data-country="KE"><h4>🇰🇪 Kenya — Childline</h4><a href="tel:116">116</a><small>childlinekenya.co.ke</small></div>
-        <div class="em-contact" data-region="mea" data-country="NG"><h4>🇳🇬 Nigeria — NCCC</h4><a href="https://www.ncc.gov.ng" target="_blank">ncc.gov.ng</a><small>Communications Commission</small></div>
-        <div class="em-contact" data-region="americas" data-country="BR"><h4>🇧🇷 Brazil — SaferNet</h4><a href="https://new.safernet.org.br" target="_blank">safernet.org.br</a><small>Online safety hotline</small></div>
-        <div class="em-contact" data-region="americas" data-country="AR"><h4>🇦🇷 Argentina — Grooming</h4><a href="tel:134">134</a><small>grooming.gob.ar</small></div>
-        <div class="em-contact" data-region="americas" data-country="CL"><h4>🇨🇱 Chile — CiberCrime</h4><a href="https://www.pdichile.cl" target="_blank">pdichile.cl</a><small>Investigations Police</small></div>
-        <div class="em-contact" data-region="americas" data-country="CO"><h4>🇨🇴 Colombia — Te Protejo</h4><a href="https://teprotejo.org" target="_blank">teprotejo.org</a><small>Online exploitation</small></div>
-        <div class="em-contact" data-region="americas" data-country="PE"><h4>🇵🇪 Peru — Chat 100</h4><a href="tel:100">100</a><small>Child helpline</small></div>
-        <div class="em-contact" data-region="americas"><h4>💬 Crisis Text Line</h4><a href="sms:741741?body=HOME">Text HOME to 741741</a><small>USA/Canada 24/7</small></div>
+        <div class="em-contact" data-region="americas" data-country="US"><h4>🇺🇸 <span data-i18n="em.us">USA</span> — NCMEC</h4><a href="tel:18008435678">1-800-843-5678</a><small>cybertipline.org</small></div>
+        <div class="em-contact" data-region="americas" data-country="US"><h4>🌐 FBI Cyber Tips</h4><a href="https://tips.fbi.gov" target="_blank">tips.fbi.gov</a><small data-i18n="em.usFederal">USA federal crimes</small></div>
+        <div class="em-contact" data-region="americas" data-country="CA"><h4>🇨🇦 <span data-i18n="em.ca">Canada</span> — Cybertip</h4><a href="https://cybertip.ca" target="_blank">cybertip.ca</a><small data-i18n="em.onlineExploit">Online exploitation</small></div>
+        <div class="em-contact" data-region="americas" data-country="MX"><h4>🇲🇽 <span data-i18n="em.mx">Mexico</span> — Policia Cibernetica</h4><a href="tel:0885">088</a><small>www.gob.mx/policiafederal</small></div>
+        <div class="em-contact" data-region="europe" data-country="GB"><h4>🇬🇧 <span data-i18n="em.gb">UK</span> — CEOP</h4><a href="https://www.ceop.police.uk" target="_blank">ceop.police.uk</a><small data-i18n="em.childExploit">Child exploitation</small></div>
+        <div class="em-contact" data-region="europe" data-country="GB"><h4>🌍 Internet Watch Foundation</h4><a href="https://report.iwf.org.uk" target="_blank">report.iwf.org.uk</a><small data-i18n="em.reportIllegal">Report illegal content</small></div>
+        <div class="em-contact" data-region="europe" data-country="IE"><h4>🇮🇪 <span data-i18n="em.ie">Ireland</span> — Hotline</h4><a href="https://hotline.ie" target="_blank">hotline.ie</a><small data-i18n="em.illegalOnline">Illegal online content</small></div>
+        <div class="em-contact" data-region="europe" data-country="DE"><h4>🇩🇪 <span data-i18n="em.de">Germany</span> — BKA</h4><a href="https://www.bka.de" target="_blank">bka.de</a><small data-i18n="em.federalCriminal">Federal Criminal Police</small></div>
+        <div class="em-contact" data-region="europe" data-country="FR"><h4>🇫🇷 <span data-i18n="em.fr">France</span> — Pharos</h4><a href="https://www.internet-signalement.gouv.fr" target="_blank">internet-signalement.gouv.fr</a><small data-i18n="em.reportCyber">Report cybercrime</small></div>
+        <div class="em-contact" data-region="europe" data-country="ES"><h4>🇪🇸 <span data-i18n="em.es">Spain</span> — INCIBE</h4><a href="tel:017">017</a><small>incibe.es</small></div>
+        <div class="em-contact" data-region="europe" data-country="IT"><h4>🇮🇹 <span data-i18n="em.it">Italy</span> — Polizia Postale</h4><a href="https://www.commissariatodips.it" target="_blank">commissariatodips.it</a><small data-i18n="em.postalPolice">Postal Police</small></div>
+        <div class="em-contact" data-region="europe" data-country="NL"><h4>🇳🇱 <span data-i18n="em.nl">Netherlands</span> — Meldpunt</h4><a href="https://meldpunt-kinderporno.nl" target="_blank">meldpunt-kinderporno.nl</a><small data-i18n="em.dutchHotline">Dutch hotline</small></div>
+        <div class="em-contact" data-region="europe" data-country="SE"><h4>🇸🇪 <span data-i18n="em.se">Sweden</span> — ECPAT</h4><a href="https://ecpat.se" target="_blank">ecpat.se</a><small data-i18n="em.childProtect">Child protection</small></div>
+        <div class="em-contact" data-region="europe" data-country="TR"><h4>🇹🇷 Türkiye — BTK</h4><a href="tel:158">158</a><small>ihbar.org.tr</small></div>
+        <div class="em-contact" data-region="europe" data-country="RU"><h4>🇷🇺 <span data-i18n="em.ru">Russia</span> — Roskomnadzor</h4><a href="https://rkn.gov.ru" target="_blank">rkn.gov.ru</a><small data-i18n="em.contentReporting">Content reporting</small></div>
+        <div class="em-contact" data-region="mea" data-country="IL"><h4>🇮🇱 <span data-i18n="em.il">Israel</span> — 105</h4><a href="tel:105">105</a><small data-i18n="em.childProtectHotline">Child protection hotline</small></div>
+        <div class="em-contact" data-region="mea" data-country="SA"><h4>🇸🇦 <span data-i18n="em.sa">Saudi Arabia</span> — 1919</h4><a href="tel:1919">1919</a><small data-i18n="em.cybercrimeHotline">Cybercrime hotline</small></div>
+        <div class="em-contact" data-region="mea" data-country="AE"><h4>🇦🇪 <span data-i18n="em.ae">UAE</span> — eCrime</h4><a href="https://www.ecrime.ae" target="_blank">ecrime.ae</a><small data-i18n="em.cybercrimeReporting">Cybercrime reporting</small></div>
+        <div class="em-contact" data-region="asia" data-country="IN"><h4>🇮🇳 <span data-i18n="em.in">India</span> — Cyber Crime</h4><a href="https://cybercrime.gov.in" target="_blank">cybercrime.gov.in</a><small data-i18n="em.onlineReportPortal">Online reporting portal</small></div>
+        <div class="em-contact" data-region="asia" data-country="PK"><h4>🇵🇰 <span data-i18n="em.pk">Pakistan</span> — FIA</h4><a href="tel:1991">1991</a><small data-i18n="em.cyberCrimeWing">Cyber Crime Wing</small></div>
+        <div class="em-contact" data-region="asia" data-country="CN"><h4>🇨🇳 <span data-i18n="em.cn">China</span> — CAC</h4><a href="https://www.12377.cn" target="_blank">12377.cn</a><small data-i18n="em.illegalContentReport">Illegal content report</small></div>
+        <div class="em-contact" data-region="asia" data-country="JP"><h4>🇯🇵 <span data-i18n="em.jp">Japan</span> — IHC</h4><a href="https://www.internethotline.jp" target="_blank">internethotline.jp</a><small data-i18n="em.internetHotlineCenter">Internet Hotline Center</small></div>
+        <div class="em-contact" data-region="asia" data-country="KR"><h4>🇰🇷 <span data-i18n="em.kr">South Korea</span> — KCSC</h4><a href="https://www.kocsc.or.kr" target="_blank">kocsc.or.kr</a><small data-i18n="em.commsStandards">Communications Standards</small></div>
+        <div class="em-contact" data-region="asia" data-country="TH"><h4>🇹🇭 <span data-i18n="em.th">Thailand</span> — ThaiHotline</h4><a href="https://www.thaihotline.org" target="_blank">thaihotline.org</a><small data-i18n="em.reportAbuse">Report abuse</small></div>
+        <div class="em-contact" data-region="asia" data-country="PH"><h4>🇵🇭 <span data-i18n="em.ph">Philippines</span> — IACAT</h4><a href="tel:1343">1343</a><small data-i18n="em.antiTrafficking">Anti-trafficking hotline</small></div>
+        <div class="em-contact" data-region="asia" data-country="VN"><h4>🇻🇳 <span data-i18n="em.vn">Vietnam</span> — VNCERT</h4><a href="https://www.vncert.gov.vn" target="_blank">vncert.gov.vn</a><small data-i18n="em.cybersecurity">Cybersecurity</small></div>
+        <div class="em-contact" data-region="asia" data-country="MY"><h4>🇲🇾 <span data-i18n="em.my">Malaysia</span> — CyberSecurity</h4><a href="tel:1300882999">1300-88-2999</a><small>cybersecurity.my</small></div>
+        <div class="em-contact" data-region="asia" data-country="SG"><h4>🇸🇬 <span data-i18n="em.sg">Singapore</span> — SPF</h4><a href="tel:1800255000">1800-255-0000</a><small data-i18n="em.policeHotline">Police Hotline</small></div>
+        <div class="em-contact" data-region="asia" data-country="ID"><h4>🇮🇩 <span data-i18n="em.id">Indonesia</span> — Kominfo</h4><a href="https://trustpositif.kominfo.go.id" target="_blank">trustpositif.kominfo.go.id</a><small data-i18n="em.contentFiltering">Content filtering</small></div>
+        <div class="em-contact" data-region="asia" data-country="AU"><h4>🇦🇺 <span data-i18n="em.au">Australia</span> — eSafety</h4><a href="https://www.esafety.gov.au" target="_blank">esafety.gov.au</a><small data-i18n="em.commissionerReports">Commissioner reports</small></div>
+        <div class="em-contact" data-region="asia" data-country="NZ"><h4>🇳🇿 <span data-i18n="em.nz">New Zealand</span> — Netsafe</h4><a href="tel:0508638723">0508 NETSAFE</a><small>netsafe.org.nz</small></div>
+        <div class="em-contact" data-region="mea" data-country="ZA"><h4>🇿🇦 <span data-i18n="em.za">South Africa</span> — SAPS</h4><a href="tel:10111">10111</a><small data-i18n="em.policeEmergency">Police emergency</small></div>
+        <div class="em-contact" data-region="mea" data-country="EG"><h4>🇪🇬 <span data-i18n="em.eg">Egypt</span> — 108</h4><a href="tel:108">108</a><small data-i18n="em.childHotline">Child hotline</small></div>
+        <div class="em-contact" data-region="mea" data-country="KE"><h4>🇰🇪 <span data-i18n="em.ke">Kenya</span> — Childline</h4><a href="tel:116">116</a><small>childlinekenya.co.ke</small></div>
+        <div class="em-contact" data-region="mea" data-country="NG"><h4>🇳🇬 <span data-i18n="em.ng">Nigeria</span> — NCCC</h4><a href="https://www.ncc.gov.ng" target="_blank">ncc.gov.ng</a><small data-i18n="em.commsCommission">Communications Commission</small></div>
+        <div class="em-contact" data-region="americas" data-country="BR"><h4>🇧🇷 <span data-i18n="em.br">Brazil</span> — SaferNet</h4><a href="https://new.safernet.org.br" target="_blank">safernet.org.br</a><small data-i18n="em.onlineSafetyHotline">Online safety hotline</small></div>
+        <div class="em-contact" data-region="americas" data-country="AR"><h4>🇦🇷 <span data-i18n="em.ar">Argentina</span> — Grooming</h4><a href="tel:134">134</a><small>grooming.gob.ar</small></div>
+        <div class="em-contact" data-region="americas" data-country="CL"><h4>🇨🇱 <span data-i18n="em.cl">Chile</span> — CiberCrime</h4><a href="https://www.pdichile.cl" target="_blank">pdichile.cl</a><small data-i18n="em.investigationsPolice">Investigations Police</small></div>
+        <div class="em-contact" data-region="americas" data-country="CO"><h4>🇨🇴 <span data-i18n="em.co">Colombia</span> — Te Protejo</h4><a href="https://teprotejo.org" target="_blank">teprotejo.org</a><small data-i18n="em.onlineExploit">Online exploitation</small></div>
+        <div class="em-contact" data-region="americas" data-country="PE"><h4>🇵🇪 <span data-i18n="em.pe">Peru</span> — Chat 100</h4><a href="tel:100">100</a><small data-i18n="em.childHelpline">Child helpline</small></div>
+        <div class="em-contact" data-region="americas"><h4>💬 Crisis Text Line</h4><a href="sms:741741?body=HOME" data-i18n="em.textHome">Text HOME to 741741</a><small data-i18n="em.usCanada247">USA/Canada 24/7</small></div>
       </div>
     </div>
   </div>
@@ -1115,7 +1116,10 @@
       SG: [1.35, 103.8], ID: [-6.2, 106.8], AU: [-35.3, 149.1], NZ: [-41.3, 174.8], ZA: [-25.7, 28.2],
       EG: [30.0, 31.2], KE: [-1.3, 36.8], NG: [9.1, 7.5]
     };
-    var COUNTRY_NAMES = { US: "USA", CA: "Canada", MX: "Mexico", BR: "Brazil", AR: "Argentina", CL: "Chile", CO: "Colombia", PE: "Peru", GB: "the UK", IE: "Ireland", DE: "Germany", FR: "France", ES: "Spain", IT: "Italy", NL: "the Netherlands", SE: "Sweden", TR: "Turkey", RU: "Russia", IL: "Israel", SA: "Saudi Arabia", AE: "the UAE", IN: "India", PK: "Pakistan", CN: "China", JP: "Japan", KR: "South Korea", TH: "Thailand", PH: "the Philippines", VN: "Vietnam", MY: "Malaysia", SG: "Singapore", ID: "Indonesia", AU: "Australia", NZ: "New Zealand", ZA: "South Africa", EG: "Egypt", KE: "Kenya", NG: "Nigeria" };
+    var emLocIsTr = window.DSKi18n && DSKi18n.lang === 'tr';
+    var COUNTRY_NAMES = emLocIsTr ?
+      { US: "ABD", CA: "Kanada", MX: "Meksika", BR: "Brezilya", AR: "Arjantin", CL: "Şili", CO: "Kolombiya", PE: "Peru", GB: "Birleşik Krallık", IE: "İrlanda", DE: "Almanya", FR: "Fransa", ES: "İspanya", IT: "İtalya", NL: "Hollanda", SE: "İsveç", TR: "Türkiye", RU: "Rusya", IL: "İsrail", SA: "Suudi Arabistan", AE: "BAE", IN: "Hindistan", PK: "Pakistan", CN: "Çin", JP: "Japonya", KR: "Güney Kore", TH: "Tayland", PH: "Filipinler", VN: "Vietnam", MY: "Malezya", SG: "Singapur", ID: "Endonezya", AU: "Avustralya", NZ: "Yeni Zelanda", ZA: "Güney Afrika", EG: "Mısır", KE: "Kenya", NG: "Nijerya" } :
+      { US: "USA", CA: "Canada", MX: "Mexico", BR: "Brazil", AR: "Argentina", CL: "Chile", CO: "Colombia", PE: "Peru", GB: "the UK", IE: "Ireland", DE: "Germany", FR: "France", ES: "Spain", IT: "Italy", NL: "the Netherlands", SE: "Sweden", TR: "Turkey", RU: "Russia", IL: "Israel", SA: "Saudi Arabia", AE: "the UAE", IN: "India", PK: "Pakistan", CN: "China", JP: "Japan", KR: "South Korea", TH: "Thailand", PH: "the Philippines", VN: "Vietnam", MY: "Malaysia", SG: "Singapore", ID: "Indonesia", AU: "Australia", NZ: "New Zealand", ZA: "South Africa", EG: "Egypt", KE: "Kenya", NG: "Nigeria" };
 
     function pinCountry(code) {
       var card = document.querySelector('#em-grid .em-contact[data-country="' + code + '"]');
@@ -1132,10 +1136,16 @@
       var banner = document.getElementById('em-locate-banner');
       var name = COUNTRY_NAMES[code] || code;
       banner.style.display = 'block';
-      banner.innerHTML = '📍 ' + (precise ? 'Based on your location, looks like you\'re in <b>' + name + '</b>' : 'Looks like you might be in <b>' + name + '</b>') +
+      banner.innerHTML = emLocIsTr ?
+        ('📍 ' + (precise ? ('Konumuna göre <b>' + name + '</b>\'de olabilirsin') : ('<b>' + name + '</b>\'de olabilirsin gibi görünüyor')) +
+        ' — yerel kişin en üste sabitlendi.' +
+        (precise ? '' : ' <button type="button" onclick="emergencyUsePreciseLocation()" style="background:none;border:none;color:var(--danger);font-weight:800;text-decoration:underline;cursor:pointer;font-size:0.85rem;">Bunun yerine tam konumumu kullan</button>') +
+        ' <button type="button" onclick="document.getElementById(\'em-locate-banner\').style.display=\'none\';document.querySelectorAll(\'.em-pinned\').forEach(function(e){e.remove()});" style="background:none;border:none;color:var(--gray);text-decoration:underline;cursor:pointer;font-size:0.85rem;">Doğru değil mi? Kapat</button>')
+        :
+        ('📍 ' + (precise ? 'Based on your location, looks like you\'re in <b>' + name + '</b>' : 'Looks like you might be in <b>' + name + '</b>') +
         ' — your local contact is pinned to the top.' +
         (precise ? '' : ' <button type="button" onclick="emergencyUsePreciseLocation()" style="background:none;border:none;color:var(--danger);font-weight:800;text-decoration:underline;cursor:pointer;font-size:0.85rem;">Use my exact location instead</button>') +
-        ' <button type="button" onclick="document.getElementById(\'em-locate-banner\').style.display=\'none\';document.querySelectorAll(\'.em-pinned\').forEach(function(e){e.remove()});" style="background:none;border:none;color:var(--gray);text-decoration:underline;cursor:pointer;font-size:0.85rem;">Not right? Dismiss</button>';
+        ' <button type="button" onclick="document.getElementById(\'em-locate-banner\').style.display=\'none\';document.querySelectorAll(\'.em-pinned\').forEach(function(e){e.remove()});" style="background:none;border:none;color:var(--gray);text-decoration:underline;cursor:pointer;font-size:0.85rem;">Not right? Dismiss</button>');
     }
 
     window.emergencyUsePreciseLocation = function() {
@@ -1194,7 +1204,17 @@
     var auditDone = localStorage.getItem('dsk_audit_points_awarded') === '1';
     var questCount = questProgressCount();
 
-    var CHALLENGES = [
+    var wcIsTr = window.DSKi18n && DSKi18n.lang === 'tr';
+    var CHALLENGES = wcIsTr ? [
+      { icon: '🕹️', text: "Shieldy'nin Mesaj Ayıklama Oyununda 50+ puan yap", link: '/game.html', done: gameHigh >= 50 },
+      { icon: '🎮', text: 'İlk Görevini tamamla', link: '/quests.html', done: questCount >= 1 },
+      { icon: '🔥', text: '3 günlük oynama serisi oluştur', link: '/quests.html', done: streak >= 3 },
+      { icon: '⚔️', text: '100 Şövalye Puanına ulaş', link: '/quests.html', done: points >= 100 },
+      { icon: '🏅', text: '3 farklı Görevi tamamla', link: '/quests.html', done: questCount >= 3 },
+      { icon: '🌀', text: 'Kaos Modunu aç (Zor modda 100+)', link: '/game.html', done: hardHigh >= 100 },
+      { icon: '🛡️', text: 'Aile Güvenlik Denetimini tamamla', link: '/audit.html', done: auditDone },
+      { icon: '👑', text: '250 Şövalye Puanına ulaş (Nöbetçi)', link: '/quests.html', done: points >= 250 }
+    ] : [
       { icon: '🕹️', text: 'Score 50+ in Shieldy\'s Message Sort', link: '/game.html', done: gameHigh >= 50 },
       { icon: '🎮', text: 'Complete your first Quest', link: '/quests.html', done: questCount >= 1 },
       { icon: '🔥', text: 'Build a 3-day play streak', link: '/quests.html', done: streak >= 3 },
@@ -1207,13 +1227,22 @@
     var pick = CHALLENGES[isoWeek(new Date()) % CHALLENGES.length];
     document.getElementById('wc-icon').textContent = pick.icon;
     document.getElementById('wc-text').textContent = pick.text;
-    document.getElementById('wc-status').textContent = pick.done ? '✅ Done this week — nice!' : 'Not completed yet';
+    document.getElementById('wc-status').textContent = pick.done ? (wcIsTr ? '✅ Bu hafta yapıldı — harika!' : '✅ Done this week — nice!') : (wcIsTr ? 'Henüz tamamlanmadı' : 'Not completed yet');
     document.getElementById('wc-link').href = pick.link;
-    document.getElementById('wc-link').textContent = pick.done ? 'Play Again →' : 'Go →';
+    document.getElementById('wc-link').textContent = pick.done ? (wcIsTr ? 'Tekrar Oyna →' : 'Play Again →') : (wcIsTr ? 'Git →' : 'Go →');
   })();
 
   (function knightOfMonth() {
-    var MONTHS = {
+    var komIsTr = window.DSKi18n && DSKi18n.lang === 'tr';
+    var MONTHS = komIsTr ? {
+      1: { id: "dame-noble", name: "Dame Noble", tie: "Şubat Dergisi çevrimiçi tacizin duygusal boyutuyla ilgili — tam olarak Dame Noble'ın uzmanlığı." },
+      2: { id: "pixel", name: "Pixel", tie: "Mart Dergisi Roblox'un içine giriyor — Pixel'in ana bölgesi." },
+      3: { id: "bot", name: "Bot", tie: "Nisan Dergisi yapay zeka destekli kandırma taktiklerini kapsıyor — tam olarak Bot'un uzmanlık alanı." },
+      4: { id: "shieldy", name: "Shieldy", tie: "Mayıs Dergisi hızlı ilerleyen şantaj taktiklerini kapsıyor — Shieldy'nin uzmanlığı uyarı işaretlerini zamanında fark etmek." },
+      5: { id: "bot", name: "Bot", tie: "Haziran Dergisi algoritmanın ve akışın nasıl kurulduğunu inceliyor — tam Bot bölgesi." },
+      6: { id: "glitch", name: "Glitch", tie: "Temmuz Dergisi yabancı tehlikesi sohbet uygulamalarıyla ilgili — ve iyi gizlenmiş bir yabancıyı Glitch'ten daha iyi kimse oynayamaz." },
+      7: { id: "shieldy", name: "Shieldy", tie: "Ağustos Dergisi okula dönüş aile sıfırlaması — Shieldy öncülük ediyor." }
+    } : {
       1: { id: "dame-noble", name: "Dame Noble", tie: "February's Journal is about the emotional side of online harassment — exactly Dame Noble's specialty." },
       2: { id: "pixel", name: "Pixel", tie: "March's Journal goes inside Roblox — Pixel's home turf." },
       3: { id: "bot", name: "Bot", tie: "April's Journal covers AI-powered grooming tactics — straight from Bot's field of expertise." },
@@ -1223,7 +1252,7 @@
       7: { id: "shieldy", name: "Shieldy", tie: "August's Journal is the back-to-school family reset — Shieldy's leading the charge." }
     };
     var m = new Date().getMonth();
-    var pick = MONTHS[m] || { id: "sprout", name: "Sprout", tie: "New month, new chance to learn (or re-learn) the basics — that's Sprout's whole thing." };
+    var pick = MONTHS[m] || (komIsTr ? { id: "sprout", name: "Sprout", tie: "Yeni ay, temelleri öğrenmek (ya da tekrar öğrenmek) için yeni bir şans — Sprout'un bütün meselesi bu." } : { id: "sprout", name: "Sprout", tie: "New month, new chance to learn (or re-learn) the basics — that's Sprout's whole thing." });
     document.getElementById('kom-img').src = 'assets/characters/circles/' + pick.id + '.jpg';
     document.getElementById('kom-img').alt = pick.name;
     document.getElementById('kom-name').textContent = pick.name;
@@ -1231,7 +1260,15 @@
   })();
 
   (function todaysQuest() {
-    var QUESTS = [
+    var tqIsTr = window.DSKi18n && DSKi18n.lang === 'tr';
+    var QUESTS = tqIsTr ? [
+      { id: "roblox-safety-lab",    title: "Roblox Güvenlik Laboratuvarı",     emoji: "🎮" },
+      { id: "ai-threat-awareness",  title: "Yapay Zeka Tehdit Farkındalığı",   emoji: "🤖" },
+      { id: "grooming-watch",       title: "Kandırma Nöbeti",        emoji: "🚩" },
+      { id: "parental-controls",    title: "Ebeveyn Kontrolleri Kontrolü", emoji: "🔧" },
+      { id: "family-cyber-defense", title: "Aile Siber Savunması",  emoji: "🛡️" },
+      { id: "digital-citizenship",  title: "Dijital Vatandaşlık",   emoji: "🌐" }
+    ] : [
       { id: "roblox-safety-lab",    title: "Roblox Safety Lab",     emoji: "🎮" },
       { id: "ai-threat-awareness",  title: "AI Threat Awareness",   emoji: "🤖" },
       { id: "grooming-watch",       title: "Grooming Watch",        emoji: "🚩" },
@@ -1268,25 +1305,27 @@
   });
 
   function donateCustom() {
-    var amt = prompt('Enter donation amount in USD (minimum $1):');
+    var dcIsTr = window.DSKi18n && DSKi18n.lang === 'tr';
+    var amt = prompt(dcIsTr ? 'Bağış miktarını USD olarak gir (minimum 1$):' : 'Enter donation amount in USD (minimum $1):');
     if (!amt) return;
     var amount = parseFloat(amt);
     if (isNaN(amount) || amount < 1) {
-      alert('Please enter a valid amount of $1 or more.');
+      alert(dcIsTr ? 'Lütfen 1$ veya daha fazla geçerli bir miktar gir.' : 'Please enter a valid amount of $1 or more.');
       return;
     }
     donate(Math.round(amount));
   }
 
   function donate(amount, isFounding) {
+    var dIsTr2 = window.DSKi18n && DSKi18n.lang === 'tr';
     var profile = null;
     try { profile = JSON.parse(localStorage.getItem('dsk_profile') || 'null'); } catch (e) {}
-    var email = (profile && profile.email) || prompt('Enter your email for the receipt:');
+    var email = (profile && profile.email) || prompt(dIsTr2 ? 'Makbuz için e-postanı gir:' : 'Enter your email for the receipt:');
     if (!email || email.indexOf('@') === -1) {
-      alert('Please enter a valid email address.');
+      alert(dIsTr2 ? 'Lütfen geçerli bir e-posta adresi gir.' : 'Please enter a valid email address.');
       return;
     }
-    var name = (profile && profile.name) || prompt('Your name (or "Anonymous"):') || 'Anonymous Donor';
+    var name = (profile && profile.name) || prompt(dIsTr2 ? 'Adın (ya da "Anonim"):' : 'Your name (or "Anonymous"):') || (dIsTr2 ? 'Anonim Bağışçı' : 'Anonymous Donor');
 
     fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/donate', {
       method: 'POST',
@@ -1303,23 +1342,25 @@
       if (data.success && data.checkout_url) {
         window.location.href = data.checkout_url;
       } else {
-        alert('❌ ' + (data.message || 'Could not create payment. Please try again.'));
+        var dIsTr = window.DSKi18n && DSKi18n.lang === 'tr';
+        alert('❌ ' + (data.message || (dIsTr ? 'Ödeme oluşturulamadı. Lütfen tekrar deneyin.' : 'Could not create payment. Please try again.')));
       }
     })
     .catch(function(err) {
-      alert('❌ Connection error. Please try again.');
+      alert((window.DSKi18n && DSKi18n.lang === 'tr') ? '❌ Bağlantı hatası. Lütfen tekrar deneyin.' : '❌ Connection error. Please try again.');
       console.error(err);
     });
   }
 
   function submitSignup() {
+    var sIsTr = window.DSKi18n && DSKi18n.lang === 'tr';
     var name  = document.getElementById('f-name').value.trim();
     var email = document.getElementById('f-email').value.trim();
-    if (!name || !email) { alert('Please enter your name and email.'); return; }
-    if (email.indexOf('@') === -1) { alert('Please enter a valid email.'); return; }
+    if (!name || !email) { alert(sIsTr ? 'Lütfen adını ve e-postanı gir.' : 'Please enter your name and email.'); return; }
+    if (email.indexOf('@') === -1) { alert(sIsTr ? 'Lütfen geçerli bir e-posta gir.' : 'Please enter a valid email.'); return; }
 
     var btn = document.querySelector('.submit');
-    btn.textContent = 'Joining...';
+    btn.textContent = sIsTr ? 'Katılıyor...' : 'Joining...';
     btn.disabled = true;
 
     fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/signup', {
@@ -1339,14 +1380,14 @@
         document.getElementById('f-name').value = '';
         document.getElementById('f-email').value = '';
         setTimeout(closeModal, 4000);
-      } else { alert(data.message || 'Something went wrong.'); }
+      } else { alert(data.message || (sIsTr ? 'Bir şeyler ters gitti.' : 'Something went wrong.')); }
     })
     .catch(function(err) {
-      alert('Connection error. Please try again.');
+      alert(sIsTr ? 'Bağlantı hatası. Lütfen tekrar deneyin.' : 'Connection error. Please try again.');
       console.error(err);
     })
     .finally(function() {
-      btn.textContent = 'Join the Knights — Free →';
+      btn.textContent = sIsTr ? 'Şövalyelere Katıl — Ücretsiz →' : 'Join the Knights — Free →';
       btn.disabled = false;
     });
   }
@@ -1417,7 +1458,8 @@
   window.toggleQuick = function(btn) {
     var list = btn.parentElement.querySelector('.quick-summary');
     var open = list.classList.toggle('open');
-    btn.textContent = open ? '⚡ Hide Summary' : '⚡ 60-Second Version';
+    var t = window.DSKi18n ? DSKi18n.t : function(k, f) { return f; };
+    btn.textContent = open ? t('res.hideSummary', '⚡ Hide Summary') : t('guide.60sec', '⚡ 60-Second Version');
   };
 
   // "What's New" banner — dismissible per-issue
@@ -1439,7 +1481,14 @@
   (function() {
     var el = document.getElementById('ticker-text');
     if (!el) return;
-    var facts = [
+    var tickerIsTr = window.DSKi18n && DSKi18n.lang === 'tr';
+    var facts = tickerIsTr ? [
+      '10 bölümde 100 yapılandırılmış görev',
+      '9 ücretsiz interaktif güvenlik aracı',
+      '6 indirilebilir aile rehberi',
+      "40'tan fazla ülke için acil yardım hatları",
+      'Bu sitedeki her şey ücretsiz kalır — her zaman'
+    ] : [
       '100 structured quests across 10 chapters',
       '9 free interactive safety tools',
       '6 downloadable family guides',
@@ -1458,7 +1507,6 @@
   })();
 </script>
 
-<script src="/assets/i18n.js"></script>
 <script src="/assets/lang-switcher.js"></script>
 <script src="/assets/site-search.js"></script>
 <script src="/assets/play-now-fab.js"></script>

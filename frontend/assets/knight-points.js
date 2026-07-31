@@ -10,11 +10,13 @@
   var COMBO_PREFIX = 'dsk_combo_';
 
   var LEVELS = [
-    { name: 'Squire', emoji: '🪖', min: 0 },
-    { name: 'Knight', emoji: '⚔️', min: 100 },
-    { name: 'Sentinel', emoji: '🛡️', min: 250 },
-    { name: 'Champion', emoji: '👑', min: 500 }
+    { name: 'Squire', nameTr: 'Yaver', emoji: '🪖', min: 0 },
+    { name: 'Knight', nameTr: 'Şövalye', emoji: '⚔️', min: 100 },
+    { name: 'Sentinel', nameTr: 'Nöbetçi', emoji: '🛡️', min: 250 },
+    { name: 'Champion', nameTr: 'Şampiyon', emoji: '👑', min: 500 }
   ];
+
+  function isTr() { return !!(global.DSKi18n && global.DSKi18n.lang === 'tr'); }
 
   function todayStr() { return new Date().toISOString().slice(0, 10); }
   function currentNickname() { return localStorage.getItem('dsk_nickname') || 'Knight'; }
@@ -44,9 +46,12 @@
     localStorage.setItem(POINTS_KEY, String(total));
     recordFamilyProfile(total);
     var newLevel = levelForPoints(total);
-    showToast('+' + amount + ' Knight Points' + (reason ? ' — ' + reason : ''));
+    var tr = isTr();
+    showToast('+' + amount + ' ' + (tr ? 'Şövalye Puanı' : 'Knight Points') + (reason ? ' — ' + reason : ''));
     if (newLevel.name !== oldLevel.name) {
-      setTimeout(function () { showToast(newLevel.emoji + ' Level up! You\'re now a ' + newLevel.name + '.'); }, 900);
+      setTimeout(function () {
+        showToast(newLevel.emoji + ' ' + (tr ? ('Seviye atladın! Artık bir ' + newLevel.name + '.') : ('Level up! You\'re now a ' + newLevel.name + '.')));
+      }, 900);
     }
     return total;
   }
@@ -55,9 +60,10 @@
     var current = LEVELS[0];
     for (var i = 0; i < LEVELS.length; i++) { if (points >= LEVELS[i].min) current = LEVELS[i]; }
     var next = LEVELS[LEVELS.indexOf(current) + 1] || null;
+    var tr = isTr();
     return {
-      name: current.name, emoji: current.emoji, min: current.min,
-      next: next ? next.name : null, nextMin: next ? next.min : null
+      name: tr ? current.nameTr : current.name, emoji: current.emoji, min: current.min,
+      next: next ? (tr ? next.nameTr : next.name) : null, nextMin: next ? next.min : null
     };
   }
 
@@ -106,9 +112,10 @@
     localStorage.setItem(STREAK_LAST_KEY, today);
     localStorage.setItem(STREAK_COUNT_KEY, String(count));
 
+    var tr = isTr();
     var bonus = 5;
-    var reason = count + '-day streak';
-    if (count > 0 && count % 7 === 0) { bonus += 20; reason = count + '-day streak milestone!'; }
+    var reason = count + (tr ? ' günlük seri' : '-day streak');
+    if (count > 0 && count % 7 === 0) { bonus += 20; reason = count + (tr ? ' günlük seri kilometre taşı!' : '-day streak milestone!'); }
     addPoints(bonus, reason);
     return { count: count, isNew: true };
   }
@@ -125,7 +132,7 @@
     if (combo.quest && combo.game && combo.guide && !combo.awarded) {
       combo.awarded = true;
       localStorage.setItem(key, JSON.stringify(combo));
-      addPoints(30, 'Combo Quest Day! Quest + Game + Guide in one visit');
+      addPoints(30, isTr() ? 'Kombo Görev Günü! Tek ziyarette Görev + Oyun + Rehber' : 'Combo Quest Day! Quest + Game + Guide in one visit');
     }
   }
 
