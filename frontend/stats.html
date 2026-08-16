@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Traffic — Digital Safety Knights</title>
+<link rel="icon" href="assets/favicon.ico">
+<style>
+  :root { --navy:#0d1b3e; --navy2:#1a2f6e; --gold:#c9a84c; --gold2:#e8c56a; --light:#f4f6fb; --gray:#6c757d; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Segoe UI',system-ui,sans-serif; background:var(--light); color:#2d3748; }
+  .top { background:var(--navy); padding:14px 20px; display:flex; justify-content:space-between; align-items:center; }
+  .top a { color:var(--gold); font-weight:900; text-decoration:none; }
+  .top span { color:#8fa0c4; font-size:0.78rem; }
+  .wrap { max-width:900px; margin:0 auto; padding:2rem 1.4rem 4rem; }
+  h1 { color:var(--navy); font-size:1.6rem; margin-bottom:0.3rem; }
+  .sub { color:var(--gray); font-size:0.88rem; margin-bottom:1.6rem; }
+
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:0.9rem; margin-bottom:1.8rem; }
+  .card { background:white; border-radius:16px; padding:1.2rem 1.3rem; box-shadow:0 2px 16px rgba(13,27,62,0.07); border-top:3px solid var(--gold); }
+  .card .n { font-size:2rem; font-weight:900; color:var(--navy); font-variant-numeric:tabular-nums; }
+  .card .l { font-size:0.72rem; color:var(--gray); text-transform:uppercase; letter-spacing:1px; font-weight:800; margin-top:2px; }
+  .card .d { font-size:0.75rem; font-weight:800; margin-top:5px; }
+  .up { color:#1e7d3a; } .down { color:#c0392b; }
+
+  h2 { color:var(--navy); font-size:1.05rem; margin:1.6rem 0 0.7rem; }
+  .panel { background:white; border-radius:16px; padding:1.2rem 1.4rem; box-shadow:0 2px 16px rgba(13,27,62,0.06); }
+  table { width:100%; border-collapse:collapse; font-size:0.88rem; }
+  th { text-align:left; color:var(--gray); font-size:0.7rem; text-transform:uppercase; letter-spacing:1px; padding-bottom:8px; }
+  td { padding:7px 0; border-top:1px solid #eef1f7; font-variant-numeric:tabular-nums; }
+  td.r, th.r { text-align:right; }
+  .bar { height:7px; background:var(--light); border-radius:4px; overflow:hidden; margin-top:4px; }
+  .bar i { display:block; height:100%; background:var(--gold); border-radius:4px; }
+  .note { color:var(--gray); font-size:0.76rem; line-height:1.6; margin-top:1.4rem; background:#fdf9ee; border-left:4px solid var(--gold); padding:12px 15px; border-radius:8px; }
+  .empty { color:var(--gray); font-size:0.9rem; padding:1.5rem 0; }
+</style>
+</head>
+<body>
+<div class="top"><a href="/">🛡️ Digital Safety Knights</a><span id="updated"></span></div>
+<div class="wrap">
+  <h1>📊 Traffic</h1>
+  <p class="sub">Real visitor numbers from CloudFront's own server logs — no analytics script, no cookies, no third party.</p>
+  <div class="cards" id="cards"></div>
+  <h2>Last 30 days</h2>
+  <div class="panel" id="daysPanel"><div class="empty">Loading…</div></div>
+  <h2>Top pages yesterday</h2>
+  <div class="panel" id="pagesPanel"><div class="empty">Loading…</div></div>
+  <h2>Where visitors came from</h2>
+  <div class="panel" id="countriesPanel"><div class="empty">Loading…</div></div>
+  <p class="sub">Approximated from the CloudFront edge that served each visitor. No IP is ever sent to a geolocation service.</p>
+  <div class="note">
+    “Visitors” counts distinct IP addresses that requested an actual page, with obvious bots filtered out.
+    IPs are counted in memory and never stored — this file holds counts only, and the raw CloudFront logs
+    auto-delete after 7 days. This is why the site can honestly say it does no tracking.
+  </div>
+</div>
+<script>
+(function () {
+  function esc(t){var d=document.createElement('div');d.textContent=t==null?'':t;return d.innerHTML;}
+  fetch('/content/traffic-stats.json?t=' + Math.floor(Date.now()/300000))
+    .then(function(r){ if(!r.ok) throw new Error('http '+r.status); return r.json(); })
+    .then(function(data){
+      var days = data.days || [];
+      if (!days.length) throw new Error('empty');
+      document.getElementById('updated').textContent = 'updated ' + new Date(data.updated).toLocaleString();
+
+      var y = days[0], prev = days[1];
+      var week = days.slice(0,7).reduce(function(a,d){return a+d.visitors;},0);
+      function delta(){
+        if(!prev || !prev.visitors) return '';
+        var c = y.visitors - prev.visitors, p = Math.round(c/prev.visitors*100);
+        return '<div class="d '+(c>=0?'up':'down')+'">'+(c>=0?'▲ +':'▼ ')+c+' ('+(c>=0?'+':'')+p+'%)</div>';
+      }
+      document.getElementById('cards').innerHTML =
+        '<div class="card"><div class="n">'+y.visitors+'</div><div class="l">Visitors ('+y.date+')</div>'+delta()+'</div>'+
+        '<div class="card"><div class="n">'+y.pageViews+'</div><div class="l">Page views</div></div>'+
+        '<div class="card"><div class="n">'+week+'</div><div class="l">Visitors, last 7d</div></div>'+
+        '<div class="card"><div class="n">'+y.botsFiltered+'</div><div class="l">Bots filtered</div></div>';
+
+      var max = Math.max.apply(null, days.map(function(d){return d.visitors;})) || 1;
+      document.getElementById('daysPanel').innerHTML =
+        '<table><tr><th>Date</th><th class="r">Visitors</th><th class="r">Views</th></tr>' +
+        days.map(function(d){
+          return '<tr><td>'+esc(d.date)+'<div class="bar"><i style="width:'+Math.round(d.visitors/max*100)+'%"></i></div></td>'+
+                 '<td class="r">'+d.visitors+'</td><td class="r">'+d.pageViews+'</td></tr>';
+        }).join('') + '</table>';
+
+      var tp = y.topPages || [];
+      document.getElementById('pagesPanel').innerHTML = tp.length
+        ? '<table><tr><th>Page</th><th class="r">Views</th></tr>' + tp.map(function(p){
+            return '<tr><td>'+esc(p.path)+'</td><td class="r">'+p.views+'</td></tr>';
+          }).join('') + '</table>'
+        : '<div class="empty">No page data yet.</div>';
+
+      var cs = y.countries || [];
+      document.getElementById('countriesPanel').innerHTML = cs.length
+        ? '<table><tr><th>Country</th><th class="r">Visitors</th></tr>' + cs.map(function(c){
+            return '<tr><td>'+esc(c.country)+'</td><td class="r">'+c.visitors+'</td></tr>';
+          }).join('') + '</table>'
+        : '<div class="empty">No country data yet — appears with the next daily report.</div>';
+    })
+    .catch(function(e){
+      console.error(e);
+      var msg = '<div class="empty">No data yet. The first report is generated at 09:00 UTC, once a full day of logs exists.</div>';
+      document.getElementById('daysPanel').innerHTML = msg;
+      document.getElementById('pagesPanel').innerHTML = msg;
+      document.getElementById('countriesPanel').innerHTML = msg;
+    });
+})();
+</script>
+</body>
+</html>
