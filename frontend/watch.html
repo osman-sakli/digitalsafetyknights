@@ -1,0 +1,146 @@
+<!-- Self-hosted on purpose: a YouTube embed would load third-party player
+     code and set cookies, and the site promises no ads and no tracking. -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Watch — Digital Safety Knights</title>
+<meta name="description" content="Short animated films that teach kids how to stay safe online. A new one every day. No ads, no tracking.">
+<meta property="og:title" content="Watch — Digital Safety Knights">
+<meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
+<link rel="icon" href="/assets/logo.png">
+<script src="/assets/i18n.js"></script>
+<style>
+  :root {
+    --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a;
+    --light: #f4f6fb; --white: #fff; --text: #2d3748; --pop: #b4e33d;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
+  .display { font-family: 'Baloo Display', system-ui, sans-serif; font-weight: 800; }
+
+  .topbar { background: var(--navy); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 20px rgba(0,0,0,.3); }
+  .topbar .brand { color: var(--gold); font-weight: 900; text-decoration: none; font-size: 1.05rem; }
+  .topbar a.home-link { color: #cdd6ea; text-decoration: none; font-size: .85rem; font-weight: 700; margin-left: 16px; }
+
+  .hero { background: linear-gradient(160deg, var(--navy), var(--navy2)); color: #fff; padding: 46px 20px 54px; text-align: center; }
+  .hero h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); color: var(--gold2); }
+  .hero p { color: #cdd6ea; max-width: 620px; margin: 12px auto 0; line-height: 1.6; }
+  .hero .badges { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 20px; }
+  .hero .badge { background: rgba(255,255,255,.1); border: 1px solid rgba(232,197,106,.35); color: #e8c56a; font-size: .74rem; font-weight: 800; padding: 6px 13px; border-radius: 20px; }
+
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 34px 18px 70px; }
+  .grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fill, minmax(178px, 1fr)); }
+
+  .card { background: #000; border-radius: 16px; overflow: hidden; cursor: pointer; position: relative; aspect-ratio: 9/16; border: none; padding: 0; display: block; width: 100%; box-shadow: 0 6px 18px rgba(13,27,62,.16); transition: transform .18s, box-shadow .18s; }
+  .card:hover, .card:focus-visible { transform: translateY(-5px); box-shadow: 0 14px 30px rgba(13,27,62,.3); outline: none; }
+  .card:focus-visible { box-shadow: 0 0 0 3px var(--gold), 0 14px 30px rgba(13,27,62,.3); }
+  .card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .card .noposter { width: 100%; height: 100%; background: linear-gradient(160deg, var(--navy2), var(--navy)); display: flex; align-items: center; justify-content: center; font-size: 2.4rem; }
+  .card .meta { position: absolute; left: 0; right: 0; bottom: 0; padding: 30px 11px 11px; background: linear-gradient(transparent, rgba(0,0,0,.88)); text-align: left; }
+  .card .t { color: #fff; font-size: .82rem; font-weight: 800; line-height: 1.25; }
+  .card .d { color: #b9c4dd; font-size: .68rem; margin-top: 3px; font-variant-numeric: tabular-nums; }
+  .card .play { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 48px; height: 48px; border-radius: 50%; background: rgba(255,255,255,.9); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--navy); }
+
+  .theatre { position: fixed; inset: 0; background: rgba(5,10,24,.94); display: none; align-items: center; justify-content: center; z-index: 200; padding: 18px; }
+  .theatre.open { display: flex; }
+  .theatre .box { width: min(94vw, 420px); }
+  .theatre video { width: 100%; border-radius: 16px; background: #000; display: block; max-height: 78vh; }
+  .theatre .cap { color: #fff; font-weight: 800; margin-top: 12px; text-align: center; font-size: 1rem; }
+  .theatre .close { position: absolute; top: 14px; right: 18px; background: rgba(255,255,255,.14); color: #fff; border: none; font-size: 1.5rem; width: 42px; height: 42px; border-radius: 50%; cursor: pointer; }
+  .theatre .nav { background: rgba(255,255,255,.14); color: #fff; border: none; font-size: 1.3rem; width: 42px; height: 42px; border-radius: 50%; cursor: pointer; margin: 0 6px; }
+  .theatre .row { display: flex; justify-content: center; align-items: center; margin-top: 12px; }
+
+  .empty { text-align: center; color: #6c757d; padding: 50px 0; }
+  .note { text-align: center; color: #6c757d; font-size: .82rem; margin-top: 34px; line-height: 1.7; }
+  @media (prefers-reduced-motion: reduce) { .card { transition: none; } }
+</style>
+
+<div class="topbar">
+  <a class="brand" href="/">🛡️ Digital Safety Knights</a>
+  <div>
+    <a class="home-link" href="/quests.html" data-i18n="shorts.navQuests">🗺️ Quests</a>
+    <a class="home-link" href="/game.html" data-i18n="shorts.navGame">🎮 Play</a>
+    <a class="home-link" href="/" data-i18n="shorts.navHome">← Home</a>
+  </div>
+</div>
+
+<div class="hero">
+  <h1 class="display" data-i18n="shorts.title">Shieldy's Shorts</h1>
+  <p data-i18n="shorts.sub">Tiny films about staying safe online. Each one takes about 13 seconds — watch one, learn one thing, go play.</p>
+  <div class="badges">
+    <span class="badge" data-i18n="shorts.badgeDaily">🎬 A new one every day</span>
+    <span class="badge" data-i18n="shorts.badgeFree">💛 Always free</span>
+    <span class="badge" data-i18n="shorts.badgeNoTrack">🔒 No ads, no tracking</span>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="grid" id="grid"><div class="empty" data-i18n="shorts.loading">Loading…</div></div>
+  <p class="note" data-i18n="shorts.note">These play right here on our own site — nothing is embedded from anywhere else, so nobody is tracking what you watch.</p>
+</div>
+
+<div class="theatre" id="theatre" role="dialog" aria-modal="true">
+  <button class="close" id="closeBtn" aria-label="Close">✕</button>
+  <div class="box">
+    <video id="player" controls playsinline preload="metadata"></video>
+    <div class="cap display" id="cap"></div>
+    <div class="row">
+      <button class="nav" id="prevBtn" aria-label="Previous">‹</button>
+      <button class="nav" id="nextBtn" aria-label="Next">›</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var items = [], at = -1;
+  var grid = document.getElementById('grid'), th = document.getElementById('theatre');
+  var player = document.getElementById('player'), cap = document.getElementById('cap');
+  function esc(t){ var d = document.createElement('div'); d.textContent = t == null ? '' : t; return d.innerHTML; }
+
+  fetch('/content/video-library.json?t=' + Math.floor(Date.now() / 600000))
+    .then(function (r) { if (!r.ok) throw new Error('http ' + r.status); return r.json(); })
+    .then(function (data) {
+      items = data.items || [];
+      if (!items.length) throw new Error('empty');
+      grid.innerHTML = items.map(function (v, i) {
+        var thumb = v.poster
+          ? '<img loading="lazy" src="' + esc(v.poster) + '" alt="">'
+          : '<div class="noposter">🛡️</div>';
+        return '<button class="card" data-i="' + i + '" aria-label="' + esc(v.title) + '">' + thumb +
+          '<span class="play">▶</span><span class="meta"><span class="t">' + esc(v.title) +
+          '</span><span class="d">' + esc(v.date) + '</span></span></button>';
+      }).join('');
+    })
+    .catch(function () {
+      grid.innerHTML = '<div class="empty">' +
+        (window.t ? t('shorts.empty') : 'No videos yet — check back soon.') + '</div>';
+    });
+
+  function open(i) {
+    if (i < 0 || i >= items.length) return;
+    at = i;
+    var v = items[i];
+    player.src = v.src;
+    player.poster = v.poster || '';
+    cap.textContent = v.title;
+    th.classList.add('open');
+    player.play().catch(function () { /* autoplay may be blocked; controls are there */ });
+  }
+  function close() { th.classList.remove('open'); player.pause(); player.removeAttribute('src'); player.load(); }
+
+  grid.addEventListener('click', function (e) {
+    var b = e.target.closest('.card'); if (b) open(parseInt(b.dataset.i, 10));
+  });
+  document.getElementById('closeBtn').addEventListener('click', close);
+  document.getElementById('nextBtn').addEventListener('click', function () { open((at + 1) % items.length); });
+  document.getElementById('prevBtn').addEventListener('click', function () { open((at - 1 + items.length) % items.length); });
+  th.addEventListener('click', function (e) { if (e.target === th) close(); });
+  document.addEventListener('keydown', function (e) {
+    if (!th.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowRight') open((at + 1) % items.length);
+    if (e.key === 'ArrowLeft') open((at - 1 + items.length) % items.length);
+  });
+  player.addEventListener('ended', function () { if (items.length > 1) open((at + 1) % items.length); });
+})();
+</script>
