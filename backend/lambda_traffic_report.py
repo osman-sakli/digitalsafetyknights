@@ -21,6 +21,7 @@ import json
 import os
 
 import boto3
+import boto3.dynamodb.conditions as ddb_cond
 
 LOG_BUCKET = "dsk-cf-logs-339712706640"
 LOG_PREFIX = "cf/"
@@ -28,6 +29,8 @@ SITE_BUCKET = "digitalsafetyknights.org"
 STATS_KEY = "content/traffic-stats.json"
 ADMIN_EMAIL = "osmansakli@yahoo.com"
 KEEP_DAYS = 30
+SHORTS_BUCKET = "dsk-shorts-out-339712706640"
+QUEUE_TABLE = "dsk-shorts-publish-queue"
 
 s3 = boto3.client("s3")
 ses = boto3.client("ses", region_name="us-east-1")
@@ -224,6 +227,40 @@ def aggregate(day):
     }
 
 
+
+def shorts_health(day):
+    """Did yesterday's short actually get made and posted?
+
+    The pipeline alerts from inside its container, so a task that dies
+    before the container starts tells nobody — that is how 2026-08-27
+    produced no short and no warning. This runs outside the pipeline, so it
+    still reports when the pipeline never ran at all.
+    """
+    iso = day.isoformat()
+    out = {"date": iso, "video": False, "status": None, "platforms": [], "problems": []}
+
+    try:
+        listing = s3.list_objects_v2(Bucket=SHORTS_BUCKET, Prefix=iso + "/", MaxKeys=20)
+        out["video"] = any(o["Key"].endswith(".mp4") for o in listing.get("Contents", []))
+    except Exception as e:
+        out["problems"].append(f"could not check the video bucket ({e})")
+
+    try:
+        ddb = boto3.resource("dynamodb").Table(QUEUE_TABLE)
+        rows = ddb.scan(
+            FilterExpression=ddb_cond.Attr("date").eq(iso)
+        ).get("Items", [])
+        if rows:
+            out["status"] = rows[0].get("status")
+    except Exception as e:
+        out["problems"].append(f"could not read the publish queue ({e})")
+
+    if not out["video"]:
+        out["problems"].append("no video was produced — the daily task did not run or failed early")
+    elif out["status"] and out["status"] != "published":
+        out["problems"].append(f"video made but not published (status: {out['status']})")
+    return out
+
 def load_history():
     try:
         body = s3.get_object(Bucket=SITE_BUCKET, Key=STATS_KEY)["Body"].read()
@@ -249,7 +286,7 @@ def publish(day_stats):
     return days
 
 
-def send_email(stats, days):
+def send_email(stats, days, health=None):
     prev = days[1] if len(days) > 1 else None
     delta_html, delta_txt = "", ""
     if prev and prev["visitors"]:
@@ -283,6 +320,22 @@ def send_email(stats, days):
         for c in stats.get("countries", [])
     ) or '<tr><td style="padding:10px 0;color:#6c757d;font-size:13px;">No country data yet.</td></tr>'
 
+    if health and health["problems"]:
+        health_html = (
+            '<div style="background:#fdecea;border-left:4px solid #e63946;border-radius:8px;padding:12px 14px;margin-top:22px;">'
+            '<div style="font-size:13px;font-weight:900;color:#a4161a;">\u26a0\ufe0f Daily short needs attention</div>'
+            + "".join(f'<div style="font-size:12.5px;color:#6a1a1f;margin-top:5px;">{p}</div>'
+                      for p in health["problems"])
+            + '</div>'
+        )
+    elif health:
+        health_html = (
+            '<div style="background:#e8f5f1;border-left:4px solid #2a9d8f;border-radius:8px;padding:11px 14px;margin-top:22px;">'
+            '<div style="font-size:13px;font-weight:800;color:#1d6f63;">\u2705 Daily short published</div></div>'
+        )
+    else:
+        health_html = ""
+
     peak = max((d["visitors"] for d in days[:7]), default=1) or 1
     week_rows = "".join(
         f'<tr><td style="padding:6px 0;font-size:13px;color:#2d3748;">{d["date"]}</td>'
@@ -308,6 +361,8 @@ def send_email(stats, days):
 
     <h3 style="color:#0d1b3e;font-size:14px;margin:24px 0 6px;">Top pages</h3>
     <table width="100%" cellspacing="0" cellpadding="0">{top_rows}</table>
+
+    {health_html}
 
     <h3 style="color:#0d1b3e;font-size:14px;margin:24px 0 6px;">Where visitors came from</h3>
     <table width="100%" cellspacing="0" cellpadding="0">{country_rows}</table>
@@ -337,6 +392,8 @@ def send_email(stats, days):
         f"Last 7 days:   {week_total}\n"
         f"Bots filtered: {stats['botsFiltered']}\n\n"
         + "\n".join(f"  {p['views']:>5}  {p['path']}" for p in stats["topPages"])
+        + ("\n\nDAILY SHORT: " + ("OK, published" if health and not health["problems"]
+             else "; ".join(health["problems"]) if health else "not checked"))
         + "\n\nWhere visitors came from (approx, from the serving CloudFront edge):\n"
         + ("\n".join(f"  {c['visitors']:>5}  {c['country']}" for c in stats.get("countries", []))
            or "  no country data yet")
@@ -363,7 +420,7 @@ def handler(event, context):
     stats = aggregate(day)
     days = publish(stats)
     if not event.get("skipEmail"):
-        send_email(stats, days)
+        send_email(stats, days, shorts_health(day))
     print(json.dumps(stats, indent=2))
     return stats
 
