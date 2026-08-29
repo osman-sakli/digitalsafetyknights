@@ -31,6 +31,8 @@ ADMIN_EMAIL = "osmansakli@yahoo.com"
 KEEP_DAYS = 30
 SHORTS_BUCKET = "dsk-shorts-out-339712706640"
 QUEUE_TABLE = "dsk-shorts-publish-queue"
+UPLOAD_KEY_SECRET = "dsk-shorts/upload-api-key"
+EXPECTED_PLATFORMS = ("youtube", "facebook", "tiktok", "instagram")
 
 s3 = boto3.client("s3")
 ses = boto3.client("ses", region_name="us-east-1")
@@ -257,9 +259,53 @@ def shorts_health(day):
 
     if not out["video"]:
         out["problems"].append("no video was produced — the daily task did not run or failed early")
-    elif out["status"] and out["status"] != "published":
+        return out
+    if out["status"] and out["status"] != "published":
         out["problems"].append(f"video made but not published (status: {out['status']})")
+        return out
+
+    # The queue says "published" as soon as the upload is handed off, which
+    # stays true even when a platform silently drops out — Instagram went
+    # missing for days while the row still read published. Only the
+    # per-platform result tells you where the video actually landed.
+    for platform, ok, detail in platform_results(rows):
+        if ok:
+            out["platforms"].append(platform)
+        else:
+            out["problems"].append(f"{platform}: {detail}")
     return out
+
+
+def platform_results(rows):
+    """Yields (platform, ok, detail) for yesterday's upload, by asking the
+    upload service what became of it. A platform absent from the results
+    never finished at all, which is a different failure from one that
+    errored, so the two are reported differently."""
+    try:
+        import urllib.request
+        body = json.loads(rows[0].get("detail") or "{}").get("body") or "{}"
+        request_id = json.loads(body).get("request_id")
+        if not request_id:
+            return
+        key = boto3.client("secretsmanager").get_secret_value(
+            SecretId=UPLOAD_KEY_SECRET)["SecretString"]
+        req = urllib.request.Request(
+            f"https://api.upload-post.com/api/uploadposts/status?request_id={request_id}",
+            headers={"Authorization": f"Apikey {key}"})
+        data = json.loads(urllib.request.urlopen(req, timeout=25).read())
+    except Exception as e:
+        yield ("upload service", False, f"could not be checked ({e})")
+        return
+
+    seen = {r["platform"]: r for r in data.get("results", []) if r.get("platform")}
+    for platform in EXPECTED_PLATFORMS:
+        r = seen.get(platform)
+        if r is None:
+            yield (platform, False, "never finished — check the account is still connected")
+        elif r.get("success"):
+            yield (platform, True, r.get("post_url") or "")
+        else:
+            yield (platform, False, (r.get("error_code") or r.get("error_message") or "failed"))
 
 def load_history():
     try:
