@@ -880,7 +880,7 @@
   "wn.tag": "✨ Yeni",
   "wn.text": "Kids Internet and Digital Safety Act, Meclis'ten 267-117 oyla geçti — aileniz için gerçekte ne değişiyor. Kasım Dergi sayısı yayında.",
   "wn.readIt": "Oku →",
-  "ticker.fact1": "10 bölümde 100 yapılandırılmış görev",
+  "ticker.fact1": "7 hikaye tabanlı görev, her büyük tehdidi kapsar",
   "src.title2": "Kaynaklar & Araştırma",
   "src.h1": "Kaynaklar & <span class=\"gold\">Araştırma</span>",
   "src.subtitle": "Bu sitede herhangi bir yerde belirttiğimiz her istatistik ve tehdit, aşağıda gerçek, tarihli ve bağlantılı bir kaynağa dayanıyor — NCMEC, FBI, FTC, eyalet başsavcıları ve bağımsız araştırma kuruluşları. Kaynaklandıramıyorsak, söylemiyoruz.",
@@ -952,5 +952,14 @@
   "shorts.empty": "Henüz video yok — yakında tekrar bak.",
   "shorts.note": "Bu videolar doğrudan kendi sitemizde oynuyor — hiçbiri başka bir yerden gömülmedi, yani ne izlediğini kimse takip etmiyor.",
   "shorts.title": "Shieldy'nin Kısa Filmleri",
-  "shorts.loading": "Yükleniyor…"
+  "shorts.loading": "Yükleniyor…",
+  "nav.groupLearn": "📚 Öğren",
+  "nav.groupPlay": "🎮 Oyna",
+  "nav.groupClub": "⚔️ Kulüp",
+  "nav.menu": "Menü",
+  "nav.closeMenu": "Menüyü kapat",
+  "stats.foundingKnights": "Kurucu Şövalye (ilklerden biri ol)",
+  "stats.freeTools": "Ücretsiz İnteraktif Araç",
+  "stats.languages": "Konuşulan Dil",
+  "stats.alwaysFree": "Ailelere Maliyet, Her Zaman"
 }

@@ -10,6 +10,7 @@
 <title>Digital Safety Knights (DSK) — Protecting Kids Online</title>
 <link rel="canonical" href="https://digitalsafetyknights.org/">
 <link rel="icon" href="assets/favicon.ico">
+<link rel="stylesheet" href="assets/theme.css">
 <style>
   @font-face {
     font-family: 'Baloo Display';
@@ -25,7 +26,7 @@
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
+  body { font-family: 'Nunito Sans', 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
   .display { font-family: 'Baloo Display', system-ui, sans-serif; font-weight: 800; }
   .pop-tag { display: inline-flex; align-items: center; background: var(--pop); color: #1a2e05; font-size: 0.62rem; font-weight: 900; letter-spacing: 0.5px; padding: 2px 7px; border-radius: 8px; margin-left: 5px; vertical-align: middle; text-transform: uppercase; }
 
@@ -162,19 +163,19 @@
   #threats .section-header h2 { color: white; }
   #threats .section-header p { color: #7a8fbb; }
   .threat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-  .threat-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.18); border-radius: 18px; padding: 2rem; }
-  .threat-card:hover { border-color: var(--gold); background: rgba(201,168,76,0.05); transform: translateY(-5px); }
+  .threat-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.18); border-left: 4px solid var(--zone-color, var(--gold)); border-radius: 18px; padding: 2rem; transition: border-color .2s, background .2s, transform .2s; }
+  .threat-card:hover { border-color: var(--zone-color, var(--gold)); background: color-mix(in srgb, var(--zone-color, var(--gold)) 8%, transparent); transform: translateY(-5px); }
   .threat-icon { font-size: 2.4rem; margin-bottom: 1rem; }
   .threat-icon img { width: 64px; height: 64px; display: block; border-radius: 50%; box-shadow: 0 4px 16px rgba(0,0,0,0.25); }
-  .threat-card h3 { color: var(--gold); font-size: 1.05rem; margin-bottom: 0.6rem; }
+  .threat-card h3 { color: var(--zone-color, var(--gold)); font-size: 1.05rem; margin-bottom: 0.6rem; }
   .threat-card p { color: #7a8fbb; font-size: 0.87rem; line-height: 1.65; }
 
   #programs { background: var(--light); }
   .program-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 1.5rem; }
-  .program-card { background: white; border-radius: 18px; padding: 2.2rem; box-shadow: 0 2px 24px rgba(13,27,62,0.07); border-top: 4px solid var(--gold); }
+  .program-card { background: white; border-radius: 18px; padding: 2.2rem; box-shadow: 0 2px 24px rgba(13,27,62,0.07); border-top: 4px solid var(--zone-color, var(--gold)); }
   .program-card:hover { transform: translateY(-5px); }
   .prog-icon { width: 52px; height: 52px; border-radius: 14px; display: block; margin-bottom: 0.9rem; }
-  .prog-tag { display: inline-block; background: rgba(201,168,76,0.1); color: var(--gold); border-radius: 10px; padding: 4px 12px; font-size: 0.73rem; font-weight: 800; margin-bottom: 0.9rem; }
+  .prog-tag { display: inline-block; background: color-mix(in srgb, var(--zone-color, var(--gold)) 12%, transparent); color: var(--zone-color, var(--gold)); border-radius: 10px; padding: 4px 12px; font-size: 0.73rem; font-weight: 800; margin-bottom: 0.9rem; }
   .program-card h3 { font-family: 'Baloo Display', system-ui, sans-serif; font-size: 1.1rem; margin-bottom: 0.6rem; color: var(--navy); }
   .program-card p { color: var(--gray); font-size: 0.87rem; line-height: 1.65; }
 
@@ -298,6 +299,7 @@
 </style>
 <script src="assets/knight-points.js"></script>
 <script src="/assets/i18n.js"></script>
+<script src="assets/realm-nav.js" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -363,26 +365,45 @@
     </div>
   </nav>
   <div class="nav-sub">
-    <a href="#threats" data-i18n="nav.threats">Threats</a>
-    <a href="/resources.html" data-i18n="nav.resources">📚 Resources</a>
-    <a href="/knights.html" data-i18n="nav.meetKnights">⚔️ Meet the Knights</a>
-    <a href="/quests.html" data-i18n="nav.quests">🎮 Quests</a>
-    <a href="/watch.html"><span data-i18n="nav.watch">🎬 Watch</span><span class="pop-tag">New</span></a>
-    <a href="/member-id.html" data-i18n="nav.memberCard">🪪 Member Card</a>
-    <a href="/knight-council.html" data-i18n="nav.knightCouncil">⚔️ Knight Council</a>
-    <a href="/school-programs.html" data-i18n="nav.schoolPrograms">🏫 School Programs</a>
-    <a href="/academy.html"><span data-i18n="nav.academy">🎓 Academy</span><span class="pop-tag">New</span></a>
-    <a href="/game.html" data-i18n="nav.game">🕹️ Game</a>
-    <a href="/glitch-detector.html" data-i18n="nav.glitchDetector">🔍 Glitch Detector</a>
-    <a href="/tactic-almanac.html" data-i18n="nav.tacticAlmanac">📖 Tactic Almanac</a>
-    <a href="#programs" data-i18n="nav.programs">Programs</a>
-    <a href="#badges" data-i18n="nav.badges">Badges</a>
-    <a href="/audit.html" data-i18n="nav.audit">🛡️ Audit</a>
-    <a href="#community" data-i18n="nav.community">Community</a>
-    <a href="#guides" data-i18n="nav.guides">Guides</a>
-    <a href="#journal" data-i18n="nav.journal">Journal</a>
-    <a href="/news-archive.html" data-i18n="nav.newsArchive">🗞️ News Archive</a>
-    <a href="#emergency" class="nav-emergency" data-i18n="nav.help">🆘 Help</a>
+    <button class="realm-nav-toggle" type="button" aria-expanded="false" aria-controls="realmNavGroups" data-i18n-attr="aria-label:nav.menu" aria-label="Menu"><span></span></button>
+    <div class="realm-nav-groups" id="realmNavGroups">
+      <div class="realm-nav-group">
+        <button class="rng-label" type="button" aria-expanded="false"><span data-i18n="nav.groupLearn">📚 Learn</span><span class="rng-caret">▾</span></button>
+        <div class="realm-nav-panel">
+          <a href="#threats" data-i18n="nav.threats">Threats</a>
+          <a href="/resources.html" data-i18n="nav.resources">📚 Resources</a>
+          <a href="/tactic-almanac.html" data-i18n="nav.tacticAlmanac">📖 Tactic Almanac</a>
+          <a href="/academy.html"><span data-i18n="nav.academy">🎓 Academy</span><span class="pop-tag">New</span></a>
+          <a href="#programs" data-i18n="nav.programs">Programs</a>
+          <a href="/audit.html" data-i18n="nav.audit">🛡️ Audit</a>
+          <a href="#guides" data-i18n="nav.guides">Guides</a>
+          <a href="#journal" data-i18n="nav.journal">Journal</a>
+          <a href="/news-archive.html" data-i18n="nav.newsArchive">🗞️ News Archive</a>
+        </div>
+      </div>
+      <div class="realm-nav-group">
+        <button class="rng-label" type="button" aria-expanded="false"><span data-i18n="nav.groupPlay">🎮 Play</span><span class="rng-caret">▾</span></button>
+        <div class="realm-nav-panel">
+          <a href="/quests.html" data-i18n="nav.quests">🎮 Quests</a>
+          <a href="/watch.html"><span data-i18n="nav.watch">🎬 Watch</span><span class="pop-tag">New</span></a>
+          <a href="/game.html" data-i18n="nav.game">🕹️ Game</a>
+          <a href="/glitch-detector.html" data-i18n="nav.glitchDetector">🔍 Glitch Detector</a>
+        </div>
+      </div>
+      <div class="realm-nav-group">
+        <button class="rng-label" type="button" aria-expanded="false"><span data-i18n="nav.groupClub">⚔️ Club</span><span class="rng-caret">▾</span></button>
+        <div class="realm-nav-panel">
+          <a href="/knights.html" data-i18n="nav.meetKnights">⚔️ Meet the Knights</a>
+          <a href="/member-id.html" data-i18n="nav.memberCard">🪪 Member Card</a>
+          <a href="/knight-council.html" data-i18n="nav.knightCouncil">⚔️ Knight Council</a>
+          <a href="#badges" data-i18n="nav.badges">Badges</a>
+          <a href="#community" data-i18n="nav.community">Community</a>
+        </div>
+      </div>
+      <a class="realm-nav-direct" href="/school-programs.html" data-i18n="nav.schoolPrograms">🏫 School Programs</a>
+      <a class="realm-nav-direct nav-emergency" href="#emergency" data-i18n="nav.help">🆘 Help</a>
+    </div>
+    <div class="realm-nav-backdrop"></div>
   </div>
 </div>
 
@@ -416,12 +437,12 @@
 
 <div class="stats">
   <div class="stats-grid" id="stats-grid">
-    <div><div class="stat-num"><span class="count-target" data-count="12">0</span><span class="gold">K+</span></div><div class="stat-label">Families Protected</div></div>
-    <div><div class="stat-num"><span class="count-target" data-count="6">0</span></div><div class="stat-label">Safety Programs</div></div>
-    <div><div class="stat-num"><span class="count-target" data-count="48">0</span></div><div class="stat-label">Countries Reached</div></div>
-    <div><div class="stat-num"><span class="count-target" data-count="100">0</span><span class="gold">%</span></div><div class="stat-label">Free Access</div></div>
+    <div><div class="stat-num"><span class="count-target" data-count="7">0</span></div><div class="stat-label" data-i18n="stats.foundingKnights">Founding Knights (be one of the first)</div></div>
+    <div><div class="stat-num"><span class="count-target" data-count="9">0</span></div><div class="stat-label" data-i18n="stats.freeTools">Free Interactive Tools</div></div>
+    <div><div class="stat-num"><span class="count-target" data-count="3">0</span></div><div class="stat-label" data-i18n="stats.languages">Languages Spoken</div></div>
+    <div><div class="stat-num"><span class="gold">$0</span></div><div class="stat-label" data-i18n="stats.alwaysFree">Cost to Families, Always</div></div>
   </div>
-  <div class="stats-ticker"><span class="ticker-dot"></span><span id="ticker-text" data-i18n="ticker.fact1">100 structured quests across 10 chapters</span></div>
+  <div class="stats-ticker"><span class="ticker-dot"></span><span id="ticker-text" data-i18n="ticker.fact1">7 story-driven quests, one for every major threat</span></div>
 </div>
 
 <div class="vision-band">
@@ -520,12 +541,12 @@
       <p data-i18n="threats.subtitle">Understanding the dangers is the first step to protecting your child in the digital world.</p>
     </div>
     <div class="threat-grid">
-      <div class="threat-card"><div class="threat-icon"><img src="assets/icons/threat-gaming.png" alt="In-game predators"></div><h3 data-i18n="threats.gaming.h">In-Game Predators</h3><p data-i18n="threats.gaming.p">Roblox, Minecraft, Fortnite, PK XD — predators use in-game chat to groom children. We teach warning signs and how to configure every safety setting.</p></div>
-      <div class="threat-card"><div class="threat-icon"><img src="assets/icons/threat-ai-chatbot.png" alt="Dangerous AI chatbots"></div><h3 data-i18n="threats.ai.h">Dangerous AI Chatbots</h3><p data-i18n="threats.ai.p">Not all AI is safe. We identify which AI platforms pose risks to children and how bad actors use AI to generate harmful content.</p></div>
-      <div class="threat-card"><div class="threat-icon"><img src="assets/icons/threat-messaging.png" alt="Messaging app grooming"></div><h3 data-i18n="threats.messaging.h">Messaging App Grooming</h3><p data-i18n="threats.messaging.p">WhatsApp, Snapchat, Discord, Instagram — groomers exploit messaging apps daily. Learn the warning signs and monitoring tools available.</p></div>
-      <div class="threat-card"><div class="threat-icon"><img src="assets/icons/threat-websites.png" alt="Harmful websites"></div><h3 data-i18n="threats.websites.h">Harmful Websites</h3><p data-i18n="threats.websites.p">Explicit content, radicalization, and self-harm communities. We provide DNS filtering guides and browser safety configs.</p></div>
-      <div class="threat-card"><div class="threat-icon"><img src="assets/icons/threat-deepfake.png" alt="AI deepfakes and sextortion"></div><h3 data-i18n="threats.deepfake.h">AI Deepfakes & Sextortion</h3><p data-i18n="threats.deepfake.p">AI-generated images of children are a growing global crisis. We educate families on reporting, prevention, and legal resources.</p></div>
-      <div class="threat-card"><div class="threat-icon"><img src="assets/icons/threat-cyber.png" alt="Cybersecurity gaps"></div><h3 data-i18n="threats.cyber.h">Cybersecurity Gaps</h3><p data-i18n="threats.cyber.p">Weak passwords, public WiFi, unsecured devices leave families vulnerable. Our step-by-step checklists close every gap.</p></div>
+      <div class="threat-card" style="--zone-color:var(--zone-stranger)"><div class="threat-icon"><img src="assets/icons/threat-gaming.png" alt="In-game predators"></div><h3 data-i18n="threats.gaming.h">In-Game Predators</h3><p data-i18n="threats.gaming.p">Roblox, Minecraft, Fortnite, PK XD — predators use in-game chat to groom children. We teach warning signs and how to configure every safety setting.</p></div>
+      <div class="threat-card" style="--zone-color:var(--zone-ai)"><div class="threat-icon"><img src="assets/icons/threat-ai-chatbot.png" alt="Dangerous AI chatbots"></div><h3 data-i18n="threats.ai.h">Dangerous AI Chatbots</h3><p data-i18n="threats.ai.p">Not all AI is safe. We identify which AI platforms pose risks to children and how bad actors use AI to generate harmful content.</p></div>
+      <div class="threat-card" style="--zone-color:var(--zone-stranger)"><div class="threat-icon"><img src="assets/icons/threat-messaging.png" alt="Messaging app grooming"></div><h3 data-i18n="threats.messaging.h">Messaging App Grooming</h3><p data-i18n="threats.messaging.p">WhatsApp, Snapchat, Discord, Instagram — groomers exploit messaging apps daily. Learn the warning signs and monitoring tools available.</p></div>
+      <div class="threat-card" style="--zone-color:var(--zone-scam)"><div class="threat-icon"><img src="assets/icons/threat-websites.png" alt="Harmful websites"></div><h3 data-i18n="threats.websites.h">Harmful Websites</h3><p data-i18n="threats.websites.p">Explicit content, radicalization, and self-harm communities. We provide DNS filtering guides and browser safety configs.</p></div>
+      <div class="threat-card" style="--zone-color:var(--zone-ai)"><div class="threat-icon"><img src="assets/icons/threat-deepfake.png" alt="AI deepfakes and sextortion"></div><h3 data-i18n="threats.deepfake.h">AI Deepfakes & Sextortion</h3><p data-i18n="threats.deepfake.p">AI-generated images of children are a growing global crisis. We educate families on reporting, prevention, and legal resources.</p></div>
+      <div class="threat-card" style="--zone-color:var(--zone-privacy)"><div class="threat-icon"><img src="assets/icons/threat-cyber.png" alt="Cybersecurity gaps"></div><h3 data-i18n="threats.cyber.h">Cybersecurity Gaps</h3><p data-i18n="threats.cyber.p">Weak passwords, public WiFi, unsecured devices leave families vulnerable. Our step-by-step checklists close every gap.</p></div>
     </div>
   </div>
 </section>
@@ -538,11 +559,11 @@
       <p data-i18n="programs.subtitle">Practical, actionable programs designed for parents, children, and educators worldwide.</p>
     </div>
     <div class="program-grid">
-      <div class="program-card"><img class="prog-icon" src="assets/icons/prog-roblox-lab.png" alt=""><span class="prog-tag" data-i18n="programs.gaming.tag">🎮 GAMING</span><h3 data-i18n="programs.roblox.h">Roblox Safety Lab</h3><p data-i18n="programs.roblox.p">Step-by-step guide to locking down Roblox and PK XD privacy settings, blocking strangers, and understanding what your child sees in-game.</p></div>
-      <div class="program-card"><img class="prog-icon" src="assets/icons/prog-ai-awareness.png" alt=""><span class="prog-tag" data-i18n="programs.ai.tag">🤖 AI</span><h3 data-i18n="programs.ai.h">AI Threat Awareness</h3><p data-i18n="programs.ai.p">How to identify unsafe AI platforms, what questions to ask, and which AI tools have genuine child safety measures.</p></div>
-      <div class="program-card"><img class="prog-icon" src="assets/icons/prog-grooming-watch.png" alt=""><span class="prog-tag" data-i18n="programs.messaging.tag">💬 MESSAGING</span><h3 data-i18n="programs.grooming.h">Grooming Watch Program</h3><p data-i18n="programs.grooming.p">Warning signs across Discord, Snapchat, WhatsApp, Instagram. Includes conversation scripts for parents.</p></div>
-      <div class="program-card"><img class="prog-icon" src="assets/icons/prog-parental-controls.png" alt=""><span class="prog-tag" data-i18n="programs.devices.tag">📱 DEVICES</span><h3 data-i18n="programs.parental.h">Parental Controls Guide</h3><p data-i18n="programs.parental.p">Configure Amazon Kids, Google Family Link, Apple Screen Time, and Android controls for complete protection.</p></div>
-      <div class="program-card"><img class="prog-icon" src="assets/icons/prog-cyber-defense.png" alt=""><span class="prog-tag" data-i18n="programs.cyber.tag">🛡️ CYBER</span><h3 data-i18n="programs.cyber.h">Family Cyber Defense</h3><p data-i18n="programs.cyber.p">DNS filtering, VPN basics, password managers, and 2FA — practical security for the whole family.</p></div>
+      <div class="program-card" style="--zone-color:var(--zone-stranger)"><img class="prog-icon" src="assets/icons/prog-roblox-lab.png" alt=""><span class="prog-tag" data-i18n="programs.gaming.tag">🎮 GAMING</span><h3 data-i18n="programs.roblox.h">Roblox Safety Lab</h3><p data-i18n="programs.roblox.p">Step-by-step guide to locking down Roblox and PK XD privacy settings, blocking strangers, and understanding what your child sees in-game.</p></div>
+      <div class="program-card" style="--zone-color:var(--zone-ai)"><img class="prog-icon" src="assets/icons/prog-ai-awareness.png" alt=""><span class="prog-tag" data-i18n="programs.ai.tag">🤖 AI</span><h3 data-i18n="programs.ai.h">AI Threat Awareness</h3><p data-i18n="programs.ai.p">How to identify unsafe AI platforms, what questions to ask, and which AI tools have genuine child safety measures.</p></div>
+      <div class="program-card" style="--zone-color:var(--zone-stranger)"><img class="prog-icon" src="assets/icons/prog-grooming-watch.png" alt=""><span class="prog-tag" data-i18n="programs.messaging.tag">💬 MESSAGING</span><h3 data-i18n="programs.grooming.h">Grooming Watch Program</h3><p data-i18n="programs.grooming.p">Warning signs across Discord, Snapchat, WhatsApp, Instagram. Includes conversation scripts for parents.</p></div>
+      <div class="program-card" style="--zone-color:var(--zone-privacy)"><img class="prog-icon" src="assets/icons/prog-parental-controls.png" alt=""><span class="prog-tag" data-i18n="programs.devices.tag">📱 DEVICES</span><h3 data-i18n="programs.parental.h">Parental Controls Guide</h3><p data-i18n="programs.parental.p">Configure Amazon Kids, Google Family Link, Apple Screen Time, and Android controls for complete protection.</p></div>
+      <div class="program-card" style="--zone-color:var(--zone-privacy)"><img class="prog-icon" src="assets/icons/prog-cyber-defense.png" alt=""><span class="prog-tag" data-i18n="programs.cyber.tag">🛡️ CYBER</span><h3 data-i18n="programs.cyber.h">Family Cyber Defense</h3><p data-i18n="programs.cyber.p">DNS filtering, VPN basics, password managers, and 2FA — practical security for the whole family.</p></div>
       <div class="program-card"><img class="prog-icon" src="assets/icons/prog-digital-citizenship.png" alt=""><span class="prog-tag" data-i18n="programs.edu.tag">🎓 EDUCATION</span><h3 data-i18n="programs.citizenship.h">Digital Citizenship Academy</h3><p data-i18n="programs.citizenship.p">Monthly lessons for children ages 6–16 covering respectful online behavior and recognizing danger.</p></div>
       <a class="program-card" href="/school-programs.html" style="text-decoration:none;display:block;"><span class="prog-icon" style="width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.8rem;background:linear-gradient(135deg,#e8c56a,#c9a84c);margin-bottom:0.9rem;">🏫</span><span class="prog-tag" data-i18n="programs.school.tag">📍 IN-PERSON &amp; VIRTUAL</span><h3 data-i18n="programs.school.h">School &amp; Community Seminars</h3><p data-i18n="programs.school.p">Free live sessions for students, parent nights, and staff — in-person across NJ and surrounding states, or virtual anywhere.</p></a>
     </div>
@@ -1612,7 +1633,10 @@
           upd.textContent = L.updated + ': ' + d.toLocaleDateString(wLang === 'tr' ? 'tr-TR' : wLang === 'es' ? 'es-ES' : 'en-US', { month: 'short', day: 'numeric' }) + ', ' + d.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
         }
         if (grid) {
-          grid.innerHTML = data.items.map(function (it) {
+          // Top 3 only — the same items already scroll in the hero's
+          // compact ticker, so this section's job is a few real, sourced
+          // highlights plus the archive link, not a second full repeat.
+          grid.innerHTML = data.items.slice(0, 3).map(function (it) {
             return '<a href="' + esc(it.url) + '" target="_blank" rel="noopener noreferrer" ' +
               'style="display:block;background:white;border-radius:16px;padding:1.2rem 1.3rem;text-decoration:none;box-shadow:0 3px 18px rgba(13,27,62,0.07);border-top:3px solid var(--gold);">' +
               '<div style="color:var(--gold);font-weight:900;font-size:0.66rem;letter-spacing:1.2px;text-transform:uppercase;margin-bottom:7px;">' + L.via + ': ' + esc(it.source) + '</div>' +
@@ -1969,21 +1993,21 @@
     var tickerIsTr = tickerLang === 'tr';
     var tickerIsEs = tickerLang === 'es';
     var facts = tickerIsTr ? [
-      '10 bölümde 100 yapılandırılmış görev',
+      '7 hikaye tabanlı görev, her büyük tehdidi kapsar',
       '9 ücretsiz interaktif güvenlik aracı',
-      '6 indirilebilir aile rehberi',
+      '10 indirilebilir aile rehberi',
       "40'tan fazla ülke için acil yardım hatları",
       'Bu sitedeki her şey ücretsiz kalır — her zaman'
     ] : tickerIsEs ? [
-      '100 misiones estructuradas en 10 capítulos',
+      '7 misiones narrativas, una por cada amenaza principal',
       '9 herramientas de seguridad interactivas gratuitas',
-      '6 guías familiares descargables',
+      '10 guías familiares descargables',
       'Líneas de ayuda de emergencia para más de 40 países',
       'Todo en este sitio permanece gratis — siempre'
     ] : [
-      '100 structured quests across 10 chapters',
+      '7 story-driven quests, one for every major threat',
       '9 free interactive safety tools',
-      '6 downloadable family guides',
+      '10 downloadable family guides',
       'Emergency hotlines for 40+ countries',
       'Everything on this site stays free — always'
     ];

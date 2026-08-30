@@ -880,7 +880,7 @@
   "wn.tag": "✨ Nuevo",
   "wn.text": "La Kids Internet and Digital Safety Act pasó la Cámara 267-117 — qué cambia realmente para tu familia. Ya está disponible el número de noviembre de la Revista.",
   "wn.readIt": "Leerlo →",
-  "ticker.fact1": "100 misiones estructuradas en 10 capítulos",
+  "ticker.fact1": "7 misiones narrativas, una por cada amenaza principal",
   "src.title2": "Fuentes e Investigación",
   "src.h1": "Fuentes e <span class=\"gold\">Investigación</span>",
   "src.subtitle": "Cada estadística y amenaza que mencionamos en cualquier parte de este sitio se remonta a una fuente real, fechada y enlazada a continuación — NCMEC, el FBI, la FTC, fiscales generales estatales y organizaciones de investigación independientes. Si no podemos citar la fuente, no lo decimos.",
@@ -952,5 +952,14 @@
   "shorts.empty": "Todavía no hay vídeos: vuelve pronto.",
   "shorts.note": "Estos vídeos se reproducen aquí mismo, en nuestro propio sitio; no hay nada incrustado de otro lugar, así que nadie sabe qué estás viendo.",
   "shorts.title": "Los cortos de Shieldy",
-  "shorts.loading": "Cargando…"
+  "shorts.loading": "Cargando…",
+  "nav.groupLearn": "📚 Aprender",
+  "nav.groupPlay": "🎮 Jugar",
+  "nav.groupClub": "⚔️ Club",
+  "nav.menu": "Menú",
+  "nav.closeMenu": "Cerrar menú",
+  "stats.foundingKnights": "Caballeros Fundadores (sé de los primeros)",
+  "stats.freeTools": "Herramientas Interactivas Gratuitas",
+  "stats.languages": "Idiomas Disponibles",
+  "stats.alwaysFree": "Costo para las Familias, Siempre"
 }

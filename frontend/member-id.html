@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Member ID Card — Digital Safety Knights</title>
+<meta property="og:title" content="Member ID Card — Digital Safety Knights">
+<meta property="og:description" content="Print your Digital Safety Knights membership card — free, no account needed, nothing sent to a server.">
+<meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
+<meta property="og:url" content="https://digitalsafetyknights.org/member-id.html">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.ico">
+<link rel="stylesheet" href="assets/theme.css">
+<script src="assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
+<style>
+  :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Nunito Sans', 'Segoe UI', system-ui, sans-serif; background: var(--light); min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 30px 16px; }
+  .toolbar { max-width: 560px; width: 100%; display: flex; justify-content: space-between; margin-bottom: 20px; }
+  .toolbar a, .toolbar button { text-decoration: none; font-weight: 800; font-size: 0.85rem; color: var(--navy); background: white; border: 2px solid #dfe4ee; padding: 10px 18px; border-radius: 12px; cursor: pointer; }
+  .toolbar button.primary { background: var(--gold); color: var(--navy); border: none; }
+
+  .card-wrap { width: 100%; max-width: 560px; }
+  .card { position: relative; width: 100%; aspect-ratio: 1.586 / 1; border-radius: 22px; background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 55%, #22397a 100%); color: white; box-shadow: 0 16px 50px rgba(13,27,62,0.35); overflow: hidden; border: 2px solid var(--gold); padding: 24px 26px; display: flex; flex-direction: column; justify-content: space-between; }
+  .card::before { content: ''; position: absolute; right: -60px; top: -60px; width: 220px; height: 220px; background: radial-gradient(circle, rgba(201,168,76,0.25), transparent 70%); }
+  .card::after { content: ''; position: absolute; left: -40px; bottom: -80px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(106,79,184,0.22), transparent 70%); }
+
+  .card-top { display: flex; justify-content: space-between; align-items: flex-start; position: relative; z-index: 1; }
+  .card-brand { display: flex; align-items: center; gap: 10px; }
+  .card-brand img { height: 30px; }
+  .card-brand-text { font-weight: 900; font-size: 0.92rem; letter-spacing: 0.4px; line-height: 1.15; }
+  .card-brand-text small { display: block; color: var(--gold2); font-weight: 700; font-size: 0.62rem; letter-spacing: 1.5px; text-transform: uppercase; }
+  .card-rank-chip { display: flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.1); border: 1px solid rgba(201,168,76,0.5); border-radius: 20px; padding: 5px 12px; font-weight: 800; font-size: 0.78rem; white-space: nowrap; }
+
+  .card-mid { position: relative; z-index: 1; }
+  .card-name-label { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 2px; color: #a8b8d8; margin-bottom: 3px; }
+  .card-name { font-size: 1.5rem; font-weight: 900; color: white; }
+  .card-emblem { width: 46px; height: 46px; border-radius: 50%; background: linear-gradient(135deg, var(--gold2), var(--gold)); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; float: right; box-shadow: 0 4px 14px rgba(201,168,76,0.5); }
+
+  .card-bottom { display: flex; justify-content: space-between; align-items: flex-end; position: relative; z-index: 1; }
+  .card-field .lbl { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1.5px; color: #8899bb; }
+  .card-field .val { font-size: 0.92rem; font-weight: 800; color: white; font-variant-numeric: tabular-nums; margin-top: 2px; }
+  .card-stats { display: flex; gap: 18px; }
+
+  .card-back-note { max-width: 560px; width: 100%; background: white; border-radius: 16px; margin-top: 18px; padding: 18px 22px; box-shadow: 0 6px 24px rgba(13,27,62,0.1); color: var(--gray); font-size: 0.85rem; line-height: 1.5; }
+  .card-back-note strong { color: var(--navy); }
+  .no-badge-msg { color: var(--gray); font-size: 0.95rem; }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .toolbar, .card-back-note { display: none; }
+    .card { box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <a href="/quests.html" data-i18n="memberid.backQuests">← Back to Quests</a>
+  <button class="primary" onclick="window.print()" data-i18n="memberid.printBtn">🖨️ Print / Save as PDF</button>
+</div>
+
+<div class="card-wrap">
+  <div class="card" id="card-content">
+    <!-- filled by JS -->
+  </div>
+</div>
+
+<div class="card-back-note" id="back-note"></div>
+
+<script>
+const midLang = (window.DSKi18n && DSKi18n.lang) || 'en';
+const midIsTr = midLang === 'tr';
+const midIsEs = midLang === 'es';
+const NICKNAME_KEY = "dsk_nickname";
+const EMBLEM_KEY = "dsk_emblem";
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+(function render() {
+  const nickname = localStorage.getItem(NICKNAME_KEY);
+  const el = document.getElementById('card-content');
+  const note = document.getElementById('back-note');
+
+  if (!nickname || !window.DSKPoints) {
+    el.innerHTML = midIsTr ? `
+      <div style="display:flex;align-items:center;justify-content:center;height:100%;text-align:center;">
+        <div>
+          <div style="font-size:2.4rem;">🛡️</div>
+          <div class="no-badge-msg" style="color:#ccd6f6;margin-top:8px;">Kartını almak için önce bir takma ad seç!</div>
+          <a href="/quests.html" style="color:var(--gold2);font-weight:800;text-decoration:none;">Bir Görev Oyna →</a>
+        </div>
+      </div>` : midIsEs ? `
+      <div style="display:flex;align-items:center;justify-content:center;height:100%;text-align:center;">
+        <div>
+          <div style="font-size:2.4rem;">🛡️</div>
+          <div class="no-badge-msg" style="color:#ccd6f6;margin-top:8px;">¡Elige un apodo primero para obtener tu tarjeta!</div>
+          <a href="/quests.html" style="color:var(--gold2);font-weight:800;text-decoration:none;">Jugar una Misión →</a>
+        </div>
+      </div>` : `
+      <div style="display:flex;align-items:center;justify-content:center;height:100%;text-align:center;">
+        <div>
+          <div style="font-size:2.4rem;">🛡️</div>
+          <div class="no-badge-msg" style="color:#ccd6f6;margin-top:8px;">Pick a nickname first to get your card!</div>
+          <a href="/quests.html" style="color:var(--gold2);font-weight:800;text-decoration:none;">Play a Quest →</a>
+        </div>
+      </div>`;
+    note.style.display = 'none';
+    return;
+  }
+
+  const points = DSKPoints.getPoints();
+  const level = DSKPoints.levelForPoints(points);
+  const streak = DSKPoints.getStreak();
+  const memberId = DSKPoints.getMemberId();
+  const since = DSKPoints.getMemberSince();
+  const sinceFmt = new Date(since).toLocaleDateString(midIsTr ? 'tr-TR' : midIsEs ? 'es-ES' : 'en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+
+  let emblem = { color: 'linear-gradient(135deg, var(--gold2), var(--gold))', symbol: '🛡️' };
+  try {
+    const saved = JSON.parse(localStorage.getItem(EMBLEM_KEY));
+    if (saved && saved.color && saved.symbol) emblem = saved;
+  } catch (e) {}
+
+  const L = midIsTr ? {
+    org: 'DİJİTAL GÜVENLİK ŞÖVALYELERİ', member: 'RESMİ ÜYE', memberId: 'ÜYE NO', since: 'ÜYELİK TARİHİ',
+    points: 'PUAN', streak: 'GÜN SERİSİ', back: 'Bu, gerçek dijital güvenlik becerileri geliştiren bir <strong>Digital Safety Knights</strong> üyesi olduğunu gösteren, tamamen tarayıcında saklanan, eğlence amaçlı bir üyelik kartıdır. Hiçbir kişisel bilgi bir sunucuya gönderilmez.'
+  } : midIsEs ? {
+    org: 'DIGITAL SAFETY KNIGHTS', member: 'MIEMBRO OFICIAL', memberId: 'ID DE MIEMBRO', since: 'MIEMBRO DESDE',
+    points: 'PUNTOS', streak: 'RACHA', back: 'Esta es una tarjeta de membresía divertida que muestra que eres un miembro de <strong>Digital Safety Knights</strong> desarrollando habilidades reales de seguridad digital. Se guarda solo en tu navegador — no se envía ninguna información personal a un servidor.'
+  } : {
+    org: 'DIGITAL SAFETY KNIGHTS', member: 'OFFICIAL MEMBER', memberId: 'MEMBER ID', since: 'MEMBER SINCE',
+    points: 'POINTS', streak: 'DAY STREAK', back: 'This is a fun membership card showing you\'re a <strong>Digital Safety Knights</strong> member building real digital-safety skills. It lives only in your browser — no personal information is ever sent to a server.'
+  };
+
+  el.innerHTML = `
+    <div class="card-top">
+      <div class="card-brand">
+        <img src="/assets/logo.png" alt="">
+        <div class="card-brand-text">${L.org}<small>${L.member}</small></div>
+      </div>
+      <div class="card-rank-chip">${level.emoji} ${level.name}</div>
+    </div>
+    <div class="card-mid">
+      <div class="card-emblem" style="background:${emblem.color};">${emblem.symbol}</div>
+      <div class="card-name-label">${midIsTr ? 'ÜYE ADI' : midIsEs ? 'NOMBRE DEL MIEMBRO' : 'MEMBER NAME'}</div>
+      <div class="card-name">${escapeHtml(nickname)}</div>
+    </div>
+    <div class="card-bottom">
+      <div class="card-field">
+        <div class="lbl">${L.memberId}</div>
+        <div class="val">${memberId}</div>
+      </div>
+      <div class="card-stats">
+        <div class="card-field">
+          <div class="lbl">${L.since}</div>
+          <div class="val">${sinceFmt}</div>
+        </div>
+        <div class="card-field">
+          <div class="lbl">${L.points}</div>
+          <div class="val">${points}</div>
+        </div>
+        <div class="card-field">
+          <div class="lbl">${L.streak}</div>
+          <div class="val">${streak} 🔥</div>
+        </div>
+      </div>
+    </div>
+  `;
+  note.innerHTML = L.back;
+})();
+</script>
+<script src="/assets/lang-switcher.js"></script>
+</body>
+</html>

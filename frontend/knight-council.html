@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Knight Council — Digital Safety Knights</title>
+<link rel="canonical" href="https://digitalsafetyknights.org/knight-council.html">
+<meta name="description" content="Knight Council — a teen ambassador program for ages 13-17 who want to help spread digital safety awareness in their own communities.">
+<meta property="og:title" content="Knight Council — Digital Safety Knights">
+<meta property="og:description" content="A teen ambassador program for ages 13-17 who want to help spread digital safety awareness in their own communities.">
+<meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
+<meta property="og:url" content="https://digitalsafetyknights.org/knight-council.html">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.ico">
+<link rel="stylesheet" href="assets/theme.css">
+<script src="assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
+<style>
+  :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Nunito Sans', 'Segoe UI', system-ui, sans-serif; background: var(--light); color: #2d3748; }
+
+  .kc-hero { background: var(--realm-bg); color: white; padding: 3rem 1.5rem 3.5rem; text-align: center; position: relative; overflow: hidden; }
+  .kc-hero .eyebrow { color: var(--gold); font-weight: 900; letter-spacing: 2px; font-size: 0.8rem; text-transform: uppercase; }
+  .kc-hero h1 { font-size: 2.2rem; font-weight: 900; margin: 10px 0 12px; }
+  .kc-hero p { color: #cdd7f0; max-width: 560px; margin: 0 auto; line-height: 1.7; font-size: 1rem; }
+  .kc-hero a.back { position: absolute; left: 1.5rem; top: 1.5rem; color: #cdd7f0; text-decoration: none; font-weight: 700; font-size: 0.85rem; }
+  .kc-hero-portrait { width: 84px; height: 84px; border-radius: 50%; object-fit: cover; border: 3px solid var(--gold); box-shadow: 0 8px 20px rgba(0,0,0,0.35); margin-bottom: 14px; }
+
+  .kc-wrap { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+
+  .kc-section { background: white; border-radius: 18px; padding: 2rem; margin-bottom: 1.5rem; box-shadow: 0 6px 24px rgba(13,27,62,0.08); }
+  .kc-section h2 { color: var(--navy); font-size: 1.25rem; margin-bottom: 1rem; }
+  .kc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+  .kc-item { background: var(--light); border-radius: 12px; padding: 1.1rem; border-top: 3px solid var(--zone-color, var(--gold)); }
+  .kc-item .icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 8px; background: color-mix(in srgb, var(--zone-color, var(--gold)) 16%, transparent); }
+  .kc-item h3 { color: var(--navy); font-size: 0.95rem; margin-bottom: 4px; }
+  .kc-item p { color: var(--gray); font-size: 0.85rem; line-height: 1.5; }
+
+  .kc-eligibility { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 0.5rem; }
+  .kc-eligibility .chip { background: var(--light); border: 2px solid var(--gold); color: var(--navy); font-weight: 800; font-size: 0.85rem; padding: 8px 16px; border-radius: 20px; }
+
+  .kc-form label { display: block; font-weight: 800; font-size: 0.85rem; color: var(--navy); margin: 1rem 0 6px; }
+  .kc-form input, .kc-form textarea { width: 100%; padding: 12px 14px; border: 2px solid #dfe4ee; border-radius: 10px; font-size: 0.95rem; font-family: inherit; }
+  .kc-form textarea { min-height: 100px; resize: vertical; }
+  .kc-form .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .kc-submit { margin-top: 1.5rem; width: 100%; background: linear-gradient(135deg, var(--gold2), var(--gold)); color: var(--navy); border: none; padding: 16px; border-radius: 14px; font-weight: 900; font-size: 1rem; cursor: pointer; }
+  .kc-submit:disabled { opacity: 0.6; cursor: default; }
+  .kc-status { margin-top: 1rem; font-size: 0.9rem; font-weight: 700; padding: 12px; border-radius: 10px; display: none; }
+  .kc-status.ok { display: block; background: #e6f4ea; color: #1e7d3a; }
+  .kc-status.err { display: block; background: #fbe9e7; color: #c0392b; }
+
+  footer { text-align: center; padding: 2rem; color: var(--gray); font-size: 0.85rem; }
+</style>
+</head>
+<body>
+
+<div class="kc-hero">
+  <a href="/" class="back" data-i18n="qp.home">← Home</a>
+  <img class="kc-hero-portrait" src="assets/characters/circles/dame-noble.jpg" alt="Dame Noble">
+  <div class="eyebrow">Digital Safety Knights</div>
+  <h1 id="kc-title">⚔️ Knight Council</h1>
+  <p id="kc-tagline">A teen ambassador program for young people who want to help spread digital safety awareness in their own communities.</p>
+</div>
+
+<div class="kc-wrap">
+  <div class="kc-section">
+    <h2 id="kc-what-title">What Knight Council Members Do</h2>
+    <div class="kc-grid" id="kc-what-grid"></div>
+  </div>
+
+  <div class="kc-section">
+    <h2 id="kc-eligibility-title">Who Can Apply</h2>
+    <div class="kc-eligibility">
+      <span class="chip" id="kc-chip-age">Ages 13–17</span>
+      <span class="chip" id="kc-chip-review">Reviewed every 2 weeks</span>
+      <span class="chip" id="kc-chip-badge">Special Knight Council badge</span>
+    </div>
+  </div>
+
+  <div class="kc-section">
+    <h2 id="kc-form-title">Apply</h2>
+    <form class="kc-form" id="kc-form">
+      <label for="kc-name" id="kc-label-name">Your Name</label>
+      <input type="text" id="kc-name" required maxlength="80">
+
+      <div class="row2">
+        <div>
+          <label for="kc-email" id="kc-label-email">Email</label>
+          <input type="email" id="kc-email" required maxlength="120">
+        </div>
+        <div>
+          <label for="kc-age" id="kc-label-age">Age</label>
+          <input type="number" id="kc-age" min="13" max="17" required>
+        </div>
+      </div>
+
+      <label for="kc-country" id="kc-label-country">Country</label>
+      <input type="text" id="kc-country" maxlength="60">
+
+      <label for="kc-why" id="kc-label-why">Why do you want to join Knight Council?</label>
+      <textarea id="kc-why" required minlength="20" maxlength="1000"></textarea>
+
+      <button type="submit" class="kc-submit" id="kc-submit">Submit Application</button>
+      <div class="kc-status" id="kc-status"></div>
+    </form>
+  </div>
+</div>
+
+<footer>⚔️ Digital Safety Knights · digitalsafetyknights.org · © 2026</footer>
+
+<script>
+var kcLang = (window.DSKi18n && DSKi18n.lang) || 'en';
+var kcIsTr = kcLang === 'tr';
+var kcIsEs = kcLang === 'es';
+
+var WHAT = kcIsTr ? [
+  {icon:'🗣️', title:'Farkındalık Yay', desc:'Okulunda ya da topluluğunda dijital güvenlik konusunda arkadaşlarına ve ailelere bilgi paylaş.'},
+  {icon:'💬', title:'Discord\'da Yardım Et', desc:'Topluluk sunucumuzda diğer gençlere ve ailelere hoş geldin de, sorularını yanıtla.'},
+  {icon:'📝', title:'Geri Bildirim Ver', desc:'Yeni rehberleri ve içerikleri yayınlanmadan önce gerçek bir gencin gözünden incele.'},
+  {icon:'🏅', title:'Özel Rozet Kazan', desc:'Knight Council üyeleri için özel bir rozet ve profilinde görünen bir unvan.'}
+] : kcIsEs ? [
+  {icon:'🗣️', title:'Difunde Conciencia', desc:'Comparte información de seguridad digital con amigos y familias en tu escuela o comunidad.'},
+  {icon:'💬', title:'Ayuda en Discord', desc:'Da la bienvenida a otros jóvenes y familias en nuestro servidor de la comunidad y responde preguntas.'},
+  {icon:'📝', title:'Da tu Opinión', desc:'Revisa nuevas guías y contenido antes de publicarlos, desde la perspectiva real de un adolescente.'},
+  {icon:'🏅', title:'Gana una Insignia Especial', desc:'Una insignia exclusiva para miembros de Knight Council y un título visible en tu perfil.'}
+] : [
+  {icon:'🗣️', title:'Spread Awareness', desc:'Share digital safety information with friends and families in your school or community.'},
+  {icon:'💬', title:'Help Out on Discord', desc:'Welcome other teens and families in our community server and answer their questions.'},
+  {icon:'📝', title:'Give Feedback', desc:'Review new guides and content before they\'re published, from a real teen\'s perspective.'},
+  {icon:'🏅', title:'Earn a Special Badge', desc:'An exclusive Knight Council badge and title shown on your profile.'}
+];
+
+document.getElementById('kc-title').textContent = kcIsTr ? '⚔️ Şövalye Konseyi' : kcIsEs ? '⚔️ Consejo de Caballeros' : '⚔️ Knight Council';
+document.getElementById('kc-tagline').textContent = kcIsTr
+  ? 'Kendi topluluğunda dijital güvenlik farkındalığı yaymak isteyen gençler için bir elçilik programı.'
+  : kcIsEs
+  ? 'Un programa de embajadores para adolescentes que quieren ayudar a difundir la conciencia sobre seguridad digital en su propia comunidad.'
+  : 'A teen ambassador program for young people who want to help spread digital safety awareness in their own communities.';
+document.getElementById('kc-what-title').textContent = kcIsTr ? 'Şövalye Konseyi Üyeleri Ne Yapar' : kcIsEs ? 'Qué Hacen los Miembros del Consejo' : 'What Knight Council Members Do';
+document.getElementById('kc-eligibility-title').textContent = kcIsTr ? 'Kimler Başvurabilir' : kcIsEs ? 'Quién Puede Aplicar' : 'Who Can Apply';
+document.getElementById('kc-form-title').textContent = kcIsTr ? 'Başvur' : kcIsEs ? 'Aplicar' : 'Apply';
+document.getElementById('kc-chip-age').textContent = kcIsTr ? '13–17 Yaş' : kcIsEs ? 'Edades 13–17' : 'Ages 13–17';
+document.getElementById('kc-chip-review').textContent = kcIsTr ? 'Her 2 haftada bir değerlendirilir' : kcIsEs ? 'Revisado cada 2 semanas' : 'Reviewed every 2 weeks';
+document.getElementById('kc-chip-badge').textContent = kcIsTr ? 'Özel Şövalye Konseyi rozeti' : kcIsEs ? 'Insignia especial del Consejo' : 'Special Knight Council badge';
+document.getElementById('kc-label-name').textContent = kcIsTr ? 'Adın' : kcIsEs ? 'Tu Nombre' : 'Your Name';
+document.getElementById('kc-label-email').textContent = 'Email';
+document.getElementById('kc-label-age').textContent = kcIsTr ? 'Yaşın' : kcIsEs ? 'Edad' : 'Age';
+document.getElementById('kc-label-country').textContent = kcIsTr ? 'Ülke' : kcIsEs ? 'País' : 'Country';
+document.getElementById('kc-label-why').textContent = kcIsTr ? 'Neden Şövalye Konseyi\'ne katılmak istiyorsun?' : kcIsEs ? '¿Por qué quieres unirte al Consejo de Caballeros?' : 'Why do you want to join Knight Council?';
+document.getElementById('kc-submit').textContent = kcIsTr ? 'Başvuruyu Gönder' : kcIsEs ? 'Enviar Solicitud' : 'Submit Application';
+
+// Purely a rhythm device — these four activities aren't threat zones, so
+// the colors are just borrowed from the same palette for visual variety
+// rather than a claim that "Give Feedback" IS the AI zone, say.
+var WHAT_COLORS = ['var(--zone-stranger)', 'var(--zone-ai)', 'var(--zone-privacy)', 'var(--gold)'];
+var whatGrid = document.getElementById('kc-what-grid');
+whatGrid.innerHTML = WHAT.map(function (w, i) {
+  return '<div class="kc-item" style="--zone-color:' + WHAT_COLORS[i % WHAT_COLORS.length] + '"><div class="icon">' + w.icon + '</div><h3>' + w.title + '</h3><p>' + w.desc + '</p></div>';
+}).join('');
+
+document.getElementById('kc-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var submitBtn = document.getElementById('kc-submit');
+  var statusEl = document.getElementById('kc-status');
+  statusEl.className = 'kc-status';
+  submitBtn.disabled = true;
+
+  fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/knight-council-apply', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      name: document.getElementById('kc-name').value.trim(),
+      email: document.getElementById('kc-email').value.trim(),
+      age: document.getElementById('kc-age').value,
+      country: document.getElementById('kc-country').value.trim() || 'Unknown',
+      why: document.getElementById('kc-why').value.trim()
+    })
+  })
+  .then(function (r) { return r.json(); })
+  .then(function (data) {
+    submitBtn.disabled = false;
+    if (data.success) {
+      statusEl.className = 'kc-status ok';
+      statusEl.textContent = data.message;
+      document.getElementById('kc-form').reset();
+    } else {
+      statusEl.className = 'kc-status err';
+      statusEl.textContent = '❌ ' + (data.message || (kcIsTr ? 'Bir hata oluştu.' : kcIsEs ? 'Ocurrió un error.' : 'Something went wrong.'));
+    }
+  })
+  .catch(function () {
+    submitBtn.disabled = false;
+    statusEl.className = 'kc-status err';
+    statusEl.textContent = kcIsTr ? '❌ Bağlantı hatası. Lütfen tekrar deneyin.' : kcIsEs ? '❌ Error de conexión. Inténtalo de nuevo.' : '❌ Connection error. Please try again.';
+  });
+});
+</script>
+<script src="/assets/lang-switcher.js"></script>
+</body>
+</html>
