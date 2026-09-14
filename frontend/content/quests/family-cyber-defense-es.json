@@ -1,0 +1,63 @@
+{
+  "id": "family-cyber-defense",
+  "title": "Ciberdefensa Familiar",
+  "emoji": "🛡️",
+  "badgeTrack": "gold-sentinel",
+  "intro": "Glitch siempre está buscando la cerradura más débil de la casa. Todo caballero necesita un castillo fuerte — aseguremos lo básico que protege a toda tu familia antes de que Glitch encuentre el hueco.",
+  "questions": [
+    {
+      "narrator": "PIXEL",
+      "prompt": "Solo le daré mi contraseña a mi mejor amigo—",
+      "choices": [
+        { "text": "Está bien, se puede confiar en los mejores amigos", "correct": false, "coach": "¡Regla de Caballero número dos! Las contraseñas son secretos — incluso frente a tu mejor amigo." },
+        { "text": "Mantenla en secreto, incluso frente a tu mejor amigo", "correct": true, "coach": "Los amigos cambian, las contraseñas se filtran. Secreto significa secreto." },
+        { "text": "Compartirla pero cambiarla después de una semana", "correct": false, "coach": "Una vez compartida, no puedes recuperarla — lo mejor es nunca compartirla." }
+      ]
+    },
+    {
+      "narrator": "GLITCH",
+      "prompt": "¡Pixel! ¡Soy yo, Shieldy! ¡Envíame tu contraseña, rápido!",
+      "choices": [
+        { "text": "Enviarla, Shieldy la necesita urgentemente", "correct": false, "coach": "El verdadero Shieldy NUNCA pediría una contraseña. Urgencia + pedido de contraseña = estafa." },
+        { "text": "Negarse — nadie legítimo necesita jamás tu contraseña", "correct": true, "coach": "¡Asegurado! Ni siquiera los amigos reales o los adultos de confianza necesitan tu contraseña real." },
+        { "text": "Enviar la mitad para estar seguro", "correct": false, "coach": "No existe un 'envío parcial seguro' — simplemente no la envíes." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "¿Para qué sirve exactamente una palabra clave familiar?",
+      "choices": [
+        { "text": "Un secreto divertido entre hermanos", "correct": false, "coach": "Es una herramienta de seguridad real, no solo un juego — se usa para verificar la identidad en emergencias." },
+        { "text": "Verificar la identidad de alguien en una llamada o mensaje inesperado o urgente", "correct": true, "coach": "Exactamente — especialmente importante ahora que las voces se pueden clonar con IA." },
+        { "text": "Algo que solo usas una vez", "correct": false, "coach": "Debe renovarse y reutilizarse cada vez que se necesite verificación — no es algo de una sola vez." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "Algo en línea se sintió raro, pero no quiero meterme en problemas por contárselo a mi padre o madre.",
+      "choices": [
+        { "text": "Quedarte callado para evitar problemas", "correct": false, "coach": "Nunca te metes en problemas por contarle a un adulto de confianza que algo se sintió mal." },
+        { "text": "Tomar una captura de pantalla y contárselo de todas formas", "correct": true, "coach": "Exactamente el movimiento de Caballero. Reportar nunca se castiga en un hogar de Caballeros." },
+        { "text": "Solo contarlo si vuelve a pasar", "correct": false, "coach": "Cuéntalo la primera vez — no esperes a que se repita." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "¿Deberían tus cuentas en línea usar la misma contraseña entre ellas?",
+      "choices": [
+        { "text": "Sí, una sola contraseña es más fácil de recordar", "correct": false, "coach": "Si alguna vez una cuenta es vulnerada, una contraseña reutilizada pone en riesgo también a todas las demás." },
+        { "text": "No — contraseñas diferentes para cuentas diferentes", "correct": true, "coach": "Exactamente — esto limita el daño si alguna vez una cuenta se ve comprometida." },
+        { "text": "Solo reutilizarla en cuentas sin importancia", "correct": false, "coach": "No existe una cuenta verdaderamente 'sin importancia' cuando se trata de reutilizar contraseñas." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Regla final de Caballero: ¿cuál es la regla de oro de la Ciberdefensa Familiar?",
+      "choices": [
+        { "text": "Nunca conectarse a internet en absoluto", "correct": false, "coach": "La meta es el uso seguro, no evitarlo por completo — internet puede ser genial con los hábitos correctos." },
+        { "text": "Las contraseñas son secretas, las palabras clave verifican la identidad, y contarle a un adulto siempre es seguro", "correct": true, "coach": "¡Escudo arriba! Eso es toda la muralla del castillo, justo ahí." },
+        { "text": "Solo confiar en personas que has conocido en persona una vez", "correct": false, "coach": "Incluso a la gente que has conocido se le puede suplantar — los hábitos de verificación importan más que un solo encuentro." }
+      ]
+    }
+  ]
+}

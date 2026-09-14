@@ -1,0 +1,90 @@
+{
+  "id": "capstone-trial",
+  "title": "El Juicio del Caballero",
+  "emoji": "🏆",
+  "badgeTrack": "digital-knight",
+  "intro": "Has entrenado en cada misión de la Academia. Este juicio final combina las decisiones más difíciles de las seis — apruébalo, y te gradúas como un Caballero Digital completo.",
+  "questions": [
+    {
+      "narrator": "GLITCH",
+      "prompt": "¡ROBUX GRATIS! ¡Haz clic ya! ¡Solo quedan diez segundos!",
+      "choices": [
+        { "text": "¡Haz clic rápido antes de que desaparezca!", "correct": false, "coach": "Gratis MÁS urgente es igual a TRAMPA. Las cosas realmente gratis nunca te apuran." },
+        { "text": "Ciérralo y díselo a un adulto", "correct": true, "coach": "¡Movimiento de Caballero! Las estafas usan la prisa para que no pienses." },
+        { "text": "Pídele más tiempo para decidir", "correct": false, "coach": "Hablar con una estafa mantiene la trampa abierta. Mejor ciérrala." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "¿Cuál es la mejor configuración individual para activar en Roblox para más seguridad?",
+      "choices": [
+        { "text": "Restricciones de Cuenta + chat solo con Amigos", "correct": true, "coach": "¡Regla de Caballero! Esto limita quién puede enviarte mensajes y qué contenido puedes ver." },
+        { "text": "Un nombre de usuario más genial", "correct": false, "coach": "Un nombre de usuario divertido está bien, pero no te protege en absoluto." },
+        { "text": "Apagar el juego por completo", "correct": false, "coach": "No tienes que dejar de jugar — ¡solo configúralo de forma segura!" }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Alguien en línea dice 'esto es nuestro secreto, no se lo cuentes a tus padres'. ¿Qué significa realmente esa frase?",
+      "choices": [
+        { "text": "Significa que realmente confía en mí", "correct": false, "coach": "Esa frase es una de las mayores señales de alerta que existen — está diseñada para aislarte." },
+        { "text": "Es una señal de alerta — las personas de confianza no le piden a los niños que oculten cosas a sus padres", "correct": true, "coach": "Exacto. 'No se lo cuentes a tus padres' es la señal misma — esa es tu respuesta." },
+        { "text": "Solo importa si lo piden dos veces", "correct": false, "coach": "Una sola vez ya es una señal de alerta. Cuéntaselo a un padre o madre de inmediato." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "Un amigo en línea quiere mover nuestro chat a otra app que mis padres no conocen. ¿Debería hacerlo?",
+      "choices": [
+        { "text": "Claro, es solo otra app", "correct": false, "coach": "Mudarse a una app menos supervisada es una táctica común para evitar ser detectado. Eso es una señal de alerta." },
+        { "text": "No — y contarle a un padre o madre que se lo pidieron", "correct": true, "coach": "Exactamente. Querer mudarse a un lugar menos supervisado es una señal de advertencia que vale la pena reportar." },
+        { "text": "Solo mudarse si es una app popular", "correct": false, "coach": "La popularidad no importa — el pedido en sí mismo es la señal de alerta." }
+      ]
+    },
+    {
+      "narrator": "BOT",
+      "prompt": "Para tu tarea, ¡la capital de Australia es Sídney! Confía en mí.",
+      "choices": [
+        { "text": "Anotarlo, Bot lo dijo", "correct": false, "coach": "¡En realidad es Canberra! Bot suena seguro pero está seguro y equivocado a la vez — un clásico de Bot." },
+        { "text": "Revisar un libro de texto o preguntarle a un maestro primero", "correct": true, "coach": "¡Movimiento de Caballero! Verifica siempre los datos de tarea de la IA con una fuente confiable." },
+        { "text": "Adivinar otra cosa en su lugar", "correct": false, "coach": "Adivinar no es verificar — revisa una fuente real." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Entra una llamada y la voz suena exactamente como la de tu mamá pidiéndote que envíes dinero rápido. ¿Cuál es el movimiento de Caballero?",
+      "choices": [
+        { "text": "Enviarlo — es la voz de mamá, tiene que ser real", "correct": false, "coach": "La IA puede clonar una voz con solo unos segundos de audio. La voz sola ya no es prueba." },
+        { "text": "Usar la palabra clave familiar para verificar primero", "correct": true, "coach": "Perfecto. Una palabra clave que solo tu familia conoce vence cualquier truco de voz." },
+        { "text": "Volver a llamar al mismo número de inmediato", "correct": false, "coach": "Los estafadores también pueden falsificar números — verifica de otra forma, como con la palabra clave." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "¿Cuál es un paso de configuración que toda familia debería hacer junta, una vez al año?",
+      "choices": [
+        { "text": "Un reinicio de 30 minutos de privacidad y configuración de apps, hecho en equipo", "correct": true, "coach": "Exacto — anual, breve y colaborativo siempre le gana a un sermón único." },
+        { "text": "Una prohibición más larga del teléfono", "correct": false, "coach": "Solo restringir no enseña el criterio de fondo que los niños necesitan." },
+        { "text": "Nada, la configuración no necesita revisarse", "correct": false, "coach": "Las apps y los riesgos cambian — una revisión anual importa." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "Alguien en mi clase está siendo molestado en nuestro chat grupal. No me está pasando a mí, así que no es mi problema, ¿verdad?",
+      "choices": [
+        { "text": "Verdad, no te metas", "correct": false, "coach": "Mirar en silencio permite que continúe. Un Caballero habla o involucra a un adulto de confianza." },
+        { "text": "Contárselo a un adulto de confianza o defenderlo", "correct": true, "coach": "Exactamente el movimiento de Caballero — defender a otros es ciudadanía digital real." },
+        { "text": "Salir del chat grupal en silencio", "correct": false, "coach": "Salir solo te protege a ti — un Caballero también cuida a los demás." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "¿Qué significa realmente 'Escudo arriba' para un Caballero Digital?",
+      "choices": [
+        { "text": "Protegerte solo a ti mismo en línea", "correct": false, "coach": "Es más grande que solo tú — un Caballero también protege a otros." },
+        { "text": "Protegerte a ti mismo Y cuidar a otros en línea", "correct": true, "coach": "Eso es exactamente. Escudo arriba — para ti y para quienes te rodean." },
+        { "text": "Evitar internet por completo", "correct": false, "coach": "Ser un Caballero significa usar internet con sabiduría, no evitarlo." }
+      ]
+    }
+  ]
+}

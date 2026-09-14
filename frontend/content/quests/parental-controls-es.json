@@ -1,0 +1,64 @@
+{
+  "id": "parental-controls",
+  "title": "Revisión de Controles Parentales",
+  "emoji": "🔧",
+  "badgeTrack": "silver-guard",
+  "forParents": true,
+  "intro": "Glitch cuenta con que las familias nunca lleguen a revisar el menú de configuración. Esta misión es para los adultos — juégala con tu hijo o hija, o en solitario — de cualquier forma, te irás con una lista de configuración real que cierra las puertas favoritas de Glitch, no solo buenas intenciones.",
+  "questions": [
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Tu hijo o hija juega Roblox. ¿Cuál es la configuración individual más importante para revisar primero?",
+      "choices": [
+        { "text": "Restricciones de Cuenta + chat configurado solo para Amigos", "correct": true, "coach": "Exactamente — esta es la palanca más importante para limitar el contacto con desconocidos." },
+        { "text": "La calidad gráfica del juego", "correct": false, "coach": "Los gráficos no afectan la seguridad en absoluto — la configuración sí." },
+        { "text": "Cuántos amigos tiene", "correct": false, "coach": "El número de amigos no es la señal de seguridad — lo son la configuración de chat y las restricciones." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "El chat de Roblox de tu hijo o hija se ve limpio cuando lo revisas. ¿Eso significa que todo está bien?",
+      "choices": [
+        { "text": "Sí, chat limpio significa cero riesgo", "correct": false, "coach": "Muchas conversaciones riesgosas ocurren en canales privados dentro de la experiencia o en servidores de Discord vinculados que no has visto." },
+        { "text": "No necesariamente — revisa también si hay servidores de Discord vinculados", "correct": true, "coach": "Exacto. El chat visible es solo una parte del panorama." },
+        { "text": "Sí, mientras tenga menos de 13 años", "correct": false, "coach": "La edad no cambia lo que es visible — igual necesitas revisar más allá del chat obvio." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "¿Cuál es la mejor manera de averiguar qué juegos realmente juega tu hijo o hija?",
+      "choices": [
+        { "text": "Pedirle que enumere sus favoritos", "correct": false, "coach": "Los niños quizás solo mencionen los juegos que creen que aprobarás." },
+        { "text": "Sentarte con ellos y observar durante 10 minutos", "correct": true, "coach": "La regla de los 10 minutos: aprenderás más observando que preguntando." },
+        { "text": "Revisar la calificación de estrellas de la app", "correct": false, "coach": "Las calificaciones no reflejan lo que realmente sucede dentro del contenido generado por usuarios." }
+      ]
+    },
+    {
+      "narrator": "GLITCH",
+      "prompt": "Oye, acabo de enviarle a tu hijo o hija un regalo caro dentro del juego — nunca nos hemos conocido en persona, pero ahora como que me debe una, ¿no? ¿Cuál es la respuesta correcta?",
+      "choices": [
+        { "text": "Dejar que se lo quede, después de todo es gratis", "correct": false, "coach": "Los regalos inesperados de desconocidos son una herramienta de manipulación documentada — esto merece una conversación inmediata." },
+        { "text": "Tratarlo como una señal de alerta y hablarlo de inmediato", "correct": true, "coach": "Exactamente. Los regalos crean una sensación de deuda que los depredadores explotan." },
+        { "text": "Preocuparse solo si pasa más de una vez", "correct": false, "coach": "Una sola vez ya amerita una conversación — no esperes a que se convierta en un patrón." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "¿Deberían los menores de 13 años estar en Discord?",
+      "choices": [
+        { "text": "Sí, si está vinculado a un juego que ya juegan", "correct": false, "coach": "Discord tiene muchas menos protecciones para menores sin importar cómo llegaron allí." },
+        { "text": "No — Discord antes de los 13 es un no rotundo", "correct": true, "coach": "Correcto. Si ya están en la plataforma, revisen juntos la lista de servidores y eliminen los que no se hayan verificado." },
+        { "text": "Solo con una edad falsa configurada", "correct": false, "coach": "Una edad falsa no añade ninguna protección real — las protecciones reales de la plataforma no se aplican." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "¿Cuál es un paso de configuración que toda familia debería hacer junta, una vez al año?",
+      "choices": [
+        { "text": "Un reinicio de 30 minutos de privacidad y configuración de apps, hecho en equipo", "correct": true, "coach": "Exacto — anual, breve y colaborativo siempre le gana a un sermón único." },
+        { "text": "Una prohibición más larga del teléfono", "correct": false, "coach": "Solo restringir no enseña el criterio de fondo que los niños necesitan." },
+        { "text": "Nada, la configuración no necesita revisarse", "correct": false, "coach": "Las apps y los riesgos cambian — una revisión anual importa." }
+      ]
+    }
+  ]
+}

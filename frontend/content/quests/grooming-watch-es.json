@@ -1,0 +1,63 @@
+{
+  "id": "grooming-watch",
+  "title": "Vigilancia de Manipulación",
+  "emoji": "🚩",
+  "badgeTrack": "silver-guard",
+  "intro": "Glitch es el desconocido mejor disfrazado que conocerás en línea. Esta misión te entrena para detectar las señales de alerta debajo del disfraz — incluso cuando lleva una cara amigable.",
+  "questions": [
+    {
+      "narrator": "GLITCH",
+      "prompt": "¡Hola amigo! ¿Cuántos años tienes? ¿A qué escuela vas?",
+      "choices": [
+        { "text": "Responder con honestidad, parece amigable", "correct": false, "coach": "Que un desconocido haga preguntas personales es una señal de alerta, sin importar cuán amigable parezca." },
+        { "text": "No responder, bloquear y contarle a un adulto", "correct": true, "coach": "¡Movimiento de Caballero! Los jugadores agradables nunca necesitan tu información personal." },
+        { "text": "Dar un nombre de escuela falso para estar seguro", "correct": false, "coach": "Mejor que la verdad, pero lo más seguro es no interactuar en absoluto — bloquea y cuéntale a un adulto." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "¡Hola! Mi nombre es—",
+      "choices": [
+        { "text": "Decirles tu nombre completo real", "correct": false, "coach": "Epa, epa, epa — ¡regla de Caballero número uno! Tu nombre real se queda FUERA del chat." },
+        { "text": "Dar tu apodo en su lugar", "correct": true, "coach": "Los jugadores agradables no necesitan tu nombre real. ¡Solo el apodo!" },
+        { "text": "Preguntar por qué quieren saberlo", "correct": false, "coach": "No le debes una explicación a los desconocidos — simplemente no lo compartas." }
+      ]
+    },
+    {
+      "narrator": "GLITCH",
+      "prompt": "¡Holaaa! ¡Soy yo, de la escuela! ¡Acéptameee!",
+      "choices": [
+        { "text": "Aceptar de inmediato, dijeron que me conocen", "correct": false, "coach": "Cualquiera puede afirmar ser 'de la escuela'. Eso no es prueba." },
+        { "text": "Preguntarles en persona primero antes de aceptar", "correct": true, "coach": "Exactamente — verifica en persona y luego acepta si se confirma." },
+        { "text": "Pedirles que describan tu salón de clases", "correct": false, "coach": "Un desconocido podría adivinar los detalles. La verdadera verificación es preguntar en persona." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Alguien en línea dice 'esto es nuestro secreto, no se lo cuentes a tus padres'. ¿Qué significa realmente esa frase?",
+      "choices": [
+        { "text": "Significa que realmente confía en mí", "correct": false, "coach": "Esa frase es una de las mayores señales de alerta que existen — está diseñada para aislarte." },
+        { "text": "Es una señal de alerta — las personas de confianza no le piden a los niños que oculten cosas a sus padres", "correct": true, "coach": "Exacto. 'No se lo cuentes a tus padres' es la señal misma — esa es tu respuesta." },
+        { "text": "Solo importa si lo piden dos veces", "correct": false, "coach": "Una sola vez ya es una señal de alerta. Cuéntaselo a un padre o madre de inmediato." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "Un amigo en línea quiere mover nuestro chat a otra app que mis padres no conocen. ¿Debería hacerlo?",
+      "choices": [
+        { "text": "Claro, es solo otra app", "correct": false, "coach": "Mudarse a una app menos supervisada es una táctica común para evitar ser detectado. Eso es una señal de alerta." },
+        { "text": "No — y contarle a un padre o madre que se lo pidieron", "correct": true, "coach": "Exactamente. Querer mudarse a un lugar menos supervisado es una señal de advertencia que vale la pena reportar." },
+        { "text": "Solo mudarse si es una app popular", "correct": false, "coach": "La popularidad no importa — el pedido en sí mismo es la señal de alerta." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Sientes que algo en línea está 'raro' pero no puedes explicar por qué. ¿Cuál es el movimiento de Caballero?",
+      "choices": [
+        { "text": "Ignorar la sensación, probablemente no sea nada", "correct": false, "coach": "Confía en esa sensación — a menudo es tu cerebro notando un patrón antes de que puedas nombrarlo." },
+        { "text": "Tomar una captura de pantalla y contárselo a un adulto de confianza", "correct": true, "coach": "¡Regla de Caballero! Nunca te metes en problemas por preguntar — captura primero, luego cuéntaselo a alguien." },
+        { "text": "Esperar a ver si vuelve a pasar", "correct": false, "coach": "No esperes — cuéntale a un adulto de confianza la primera vez que algo se sienta mal." }
+      ]
+    }
+  ]
+}

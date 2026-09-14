@@ -1,0 +1,72 @@
+{
+  "id": "roblox-safety-lab",
+  "title": "Laboratorio de Seguridad de Roblox",
+  "emoji": "🎮",
+  "badgeTrack": "bronze-squire",
+  "intro": "A Glitch le encanta rondar donde juegan los niños. Veamos si puedes detectar cada truco antes de que Pixel caiga en uno.",
+  "questions": [
+    {
+      "narrator": "GLITCH",
+      "prompt": "¡ROBUX GRATIS! ¡Haz clic ya! ¡Solo quedan diez segundos!",
+      "choices": [
+        { "text": "¡Haz clic rápido antes de que desaparezca!", "correct": false, "coach": "Gratis MÁS urgente es igual a TRAMPA. Las cosas realmente gratis nunca te apuran." },
+        { "text": "Ciérralo y díselo a un adulto", "correct": true, "coach": "¡Movimiento de Caballero! Las estafas usan la prisa para que no pienses." },
+        { "text": "Pídele más tiempo para decidir", "correct": false, "coach": "Hablar con una estafa mantiene la trampa abierta. Mejor ciérrala." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "¡Un desconocido me acaba de enviar un objeto súper raro gratis! Dijo que ahora somos amigos.",
+      "choices": [
+        { "text": "¡Genial, acéptalo y da las gracias!", "correct": false, "coach": "Los regalos inesperados de desconocidos crean una sensación de deberles algo. Así empieza la trampa." },
+        { "text": "Pregúntale a un adulto antes de aceptar algo", "correct": true, "coach": "Exactamente. Los 'regalos' raros de desconocidos casi siempre son un anzuelo, no un gesto amable." },
+        { "text": "Cámbialo por uno de tus propios objetos", "correct": false, "coach": "Incluso un intercambio con un desconocido puede ser una trampa. Consulta primero con un adulto." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "El filtro de chat de un juego bloquea las palabras malas, así que cualquier mensaje que pase debe ser seguro... ¿verdad?",
+      "choices": [
+        { "text": "Verdad, el filtro atrapa todo", "correct": false, "coach": "Los filtros no detectan la escritura en código ni los trucos de números por letras. Nunca confíes solo en un filtro." },
+        { "text": "Falso — los filtros se pueden burlar, así que mantente alerta igual", "correct": true, "coach": "Exacto. Los filtros ayudan, pero TÚ eres el verdadero sistema de seguridad." },
+        { "text": "Los filtros solo existen en algunos juegos", "correct": false, "coach": "La mayoría de los juegos grandes tienen filtros — pero incluso los mejores tienen huecos." }
+      ]
+    },
+    {
+      "narrator": "GLITCH",
+      "prompt": "¡Oye! ¡Únete a nuestro Discord para jugar 'de verdad' con la comunidad!",
+      "choices": [
+        { "text": "Claro, suena divertido", "correct": false, "coach": "Los servidores de Discord vinculados a juegos suelen tener mucha menos protección para niños que el juego mismo." },
+        { "text": "Pregúntale a un padre o madre antes de unirte a cualquier servidor de Discord", "correct": true, "coach": "Inteligente. Discord es donde muchas conversaciones riesgosas se trasladan — consulta siempre primero con un adulto." },
+        { "text": "Únete pero nunca digas tu nombre", "correct": false, "coach": "Buen instinto con el nombre, pero el riesgo mayor es el servidor en sí — pregunta primero." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "Encontré un juego llamado 'Adopt Me Hangout' — el nombre suena amigable, ¿debería entrar sin más?",
+      "choices": [
+        { "text": "Sí, los nombres amigables significan juegos amigables", "correct": false, "coach": "Los nombres pueden ser engañosos. Algunos juegos esconden contenido muy diferente una vez que entras." },
+        { "text": "Juégalo con un padre o madre cerca la primera vez", "correct": true, "coach": "Exactamente el movimiento de Caballero — explora juegos nuevos juntos antes de jugar solo." },
+        { "text": "Pregúntales a otros niños del juego si está bien", "correct": false, "coach": "Otros niños no son verificadores de seguridad — pregúntale a un adulto en su lugar." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "¿Cuál es la mejor configuración individual para activar en Roblox para más seguridad?",
+      "choices": [
+        { "text": "Restricciones de Cuenta + chat solo con Amigos", "correct": true, "coach": "¡Regla de Caballero! Esto limita quién puede enviarte mensajes y qué contenido puedes ver." },
+        { "text": "Un nombre de usuario más genial", "correct": false, "coach": "Un nombre de usuario divertido está bien, pero no te protege en absoluto." },
+        { "text": "Apagar el juego por completo", "correct": false, "coach": "No tienes que dejar de jugar — ¡solo configúralo de forma segura!" }
+      ]
+    },
+    {
+      "narrator": "BOT",
+      "prompt": "¡Última pregunta! En PK XD, un desconocido te invita a su sala privada y te pide cambiar al chat de voz porque 'es más divertido'. ¿Qué haces?",
+      "choices": [
+        { "text": "Entrar a la sala y activar el chat de voz", "correct": false, "coach": "Una sala privada más la presión al chat de voz es una jugada clásica para saltarse los filtros de seguridad de texto." },
+        { "text": "Decir que no y contarle a un padre o madre sobre la invitación", "correct": true, "coach": "Exactamente. Los juegos con avatares como PK XD igual tienen desconocidos reales detrás de cada personaje — trata las invitaciones a salas y voz igual que en cualquier otro juego." },
+        { "text": "Entrar a la sala pero mantener el micrófono apagado", "correct": false, "coach": "Mejor instinto, pero una sala privada con un desconocido sigue siendo un riesgo por sí sola — consulta primero con un adulto." }
+      ]
+    }
+  ]
+}

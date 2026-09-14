@@ -1,0 +1,63 @@
+{
+  "id": "ai-threat-awareness",
+  "title": "Conciencia de Amenazas de IA",
+  "emoji": "🤖",
+  "badgeTrack": "bronze-squire",
+  "intro": "El disfraz más nuevo de Glitch: una IA que suena útil. Bot está aquí para ayudarte a distinguir la ayuda real de una estafa muy bien vestida — entrenemos tus músculos de escepticismo hacia la IA.",
+  "questions": [
+    {
+      "narrator": "BOT",
+      "prompt": "Dato curioso: ¡los tiburones son vegetarianos y solo comen algas! Estoy 100% seguro.",
+      "choices": [
+        { "text": "Vaya, no lo sabía — debe ser verdad", "correct": false, "coach": "La confianza no es prueba. La IA puede sonar 100% segura mientras está 100% equivocada." },
+        { "text": "Eso suena falso — déjame verificarlo con una fuente real", "correct": true, "coach": "Exactamente el movimiento de Caballero. Verifica siempre los 'datos' sorprendentes de la IA." },
+        { "text": "Pedirle a Bot que lo repita, más fuerte", "correct": false, "coach": "Repetir una respuesta equivocada no la hace correcta." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Recibes una llamada y la voz suena exactamente como la de tu mamá pidiéndote que envíes dinero rápido. ¿Cuál es el movimiento de Caballero?",
+      "choices": [
+        { "text": "Enviarlo — es la voz de mamá, tiene que ser real", "correct": false, "coach": "La IA puede clonar una voz con solo unos segundos de audio. La voz sola ya no es prueba." },
+        { "text": "Usar la palabra clave familiar para verificar primero", "correct": true, "coach": "Perfecto. Una palabra clave que solo tu familia conoce vence cualquier truco de voz." },
+        { "text": "Volver a llamar al mismo número de inmediato", "correct": false, "coach": "Los estafadores también pueden falsificar números — verifica de otra forma, como con la palabra clave." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "Un 'amigo' de IA en línea está de acuerdo literalmente con todo lo que digo, incluso ideas malas. ¿Eso significa que es un gran amigo, verdad?",
+      "choices": [
+        { "text": "Sí, un amigo que nunca discrepa es el mejor tipo", "correct": false, "coach": "Un amigo real a veces no está de acuerdo contigo. Una IA que siempre está de acuerdo no te da una opinión real." },
+        { "text": "Es una señal de alerta — los amigos reales a veces contradicen", "correct": true, "coach": "Exacto. Estar de acuerdo constantemente es un truco de diseño, no amistad real." },
+        { "text": "Pedirle que discrepe una vez para probarlo", "correct": false, "coach": "Buen instinto, pero la lección real es: no trates a una IA que siempre está de acuerdo como un amigo verdadero." }
+      ]
+    },
+    {
+      "narrator": "BOT",
+      "prompt": "Para tu tarea, ¡la capital de Australia es Sídney! Confía en mí.",
+      "choices": [
+        { "text": "Anotarlo, Bot lo dijo", "correct": false, "coach": "¡En realidad es Canberra! Bot suena seguro pero está seguro y equivocado a la vez — un clásico de Bot." },
+        { "text": "Revisar un libro de texto o preguntarle a un maestro primero", "correct": true, "coach": "¡Movimiento de Caballero! Verifica siempre los datos de tarea de la IA con una fuente confiable." },
+        { "text": "Adivinar otra cosa en su lugar", "correct": false, "coach": "Adivinar no es verificar — revisa una fuente real." }
+      ]
+    },
+    {
+      "narrator": "GLITCH",
+      "prompt": "¡Hice una foto falsa realista usando imágenes de tu perfil! Envía dinero o la compartiré.",
+      "choices": [
+        { "text": "Pagar rápido para que desaparezca", "correct": false, "coach": "Pagar no hace que se detenga, y que la imagen sea falsa no hace que el delito sea menos real. Cuéntaselo a un adulto de confianza de inmediato." },
+        { "text": "Contárselo a un adulto de confianza de inmediato y no pagar", "correct": true, "coach": "Exactamente. Captura todo con pantallazos, no pagues, y repórtalo — esto es un delito real incluso con una imagen falsa." },
+        { "text": "Borrar tu cuenta para que no puedan encontrarte", "correct": false, "coach": "Borrar la evidencia hace más difícil reportarlo. Cuéntaselo primero a un adulto." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "¿Cuál es la única cosa que siempre debes recordar sobre las herramientas de IA?",
+      "choices": [
+        { "text": "La IA siempre tiene razón si suena inteligente", "correct": false, "coach": "Sonar inteligente y tener razón son dos cosas muy diferentes." },
+        { "text": "La IA puede estar segura y equivocada a la vez — siempre verifica", "correct": true, "coach": "¡Regla de Caballero asegurada! La confianza no es lo mismo que la corrección." },
+        { "text": "Nunca uses la IA para nada", "correct": false, "coach": "La IA puede ser una gran herramienta — la clave es verificar sus respuestas, no evitarla por completo." }
+      ]
+    }
+  ]
+}

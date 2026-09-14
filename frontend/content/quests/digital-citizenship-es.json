@@ -1,0 +1,63 @@
+{
+  "id": "digital-citizenship",
+  "title": "Ciudadanía Digital",
+  "emoji": "🌐",
+  "badgeTrack": "gold-sentinel",
+  "intro": "Glitch no es lo único a vigilar — ser un Caballero no se trata solo de defenderte, sino también de cómo tratas a los demás en línea. Misión final, ¡vamos!",
+  "questions": [
+    {
+      "narrator": "BOT",
+      "prompt": "¡Terminé todo tu ensayo de tarea por ti! Solo cópialo y pégalo.",
+      "choices": [
+        { "text": "Copiarlo exactamente y entregarlo", "correct": false, "coach": "La IA puede ayudarte a aprender, pero entregar el trabajo de la IA como propio no es honesto — y la IA también puede estar segura y equivocada." },
+        { "text": "Usarlo para aprender y luego escribir tu propia respuesta", "correct": true, "coach": "Exactamente — la IA es una herramienta para aprender, no un reemplazo de tu propio trabajo." },
+        { "text": "Copiarlo pero cambiar algunas palabras", "correct": false, "coach": "Eso sigue sin ser tu propio trabajo — usa la IA para entender, y luego escríbelo tú mismo." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "Alguien en mi clase está siendo molestado en nuestro chat grupal. No me está pasando a mí, así que no es mi problema, ¿verdad?",
+      "choices": [
+        { "text": "Verdad, no te metas", "correct": false, "coach": "Mirar en silencio permite que continúe. Un Caballero habla o involucra a un adulto de confianza." },
+        { "text": "Contárselo a un adulto de confianza o defenderlo", "correct": true, "coach": "Exactamente el movimiento de Caballero — defender a otros es ciudadanía digital real." },
+        { "text": "Salir del chat grupal en silencio", "correct": false, "coach": "Salir solo te protege a ti — un Caballero también cuida a los demás." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Tienes una foto vergonzosa de un amigo. ¿Está bien compartirla en un chat grupal para reírse?",
+      "choices": [
+        { "text": "Claro, es solo una broma entre amigos", "correct": false, "coach": "Compartir la foto de alguien sin su consentimiento puede lastimarlo de verdad, incluso 'de broma'." },
+        { "text": "No — pregúntale primero, siempre", "correct": true, "coach": "Exactamente. El consentimiento importa incluso para fotos que parecen inofensivas." },
+        { "text": "Solo compartirla con gente que ya lo conoce", "correct": false, "coach": "Lo que importa es el consentimiento, no quién la ve — pregunta siempre primero." }
+      ]
+    },
+    {
+      "narrator": "GLITCH",
+      "prompt": "Dos cuentas distintas te siguen escribiendo, pero algo en cómo escriben se siente igual. ¿Qué deberías considerar?",
+      "choices": [
+        { "text": "Nada, probablemente son solo dos amigos", "correct": false, "coach": "La misma persona puede manejar varias cuentas para parecer más confiable o para evadir un bloqueo." },
+        { "text": "Podría ser la misma persona — coméntaselo a un adulto de confianza", "correct": true, "coach": "Buena observación. Notar patrones así es exactamente la habilidad de Caballero que estamos construyendo." },
+        { "text": "Pedirles a ambas cuentas que demuestren que son diferentes", "correct": false, "coach": "No lo investigues tú mismo — llévaselo a un adulto de confianza." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "No estoy de acuerdo con alguien en línea y estoy muy enojado. ¿Cuál es la forma de Caballero de responder?",
+      "choices": [
+        { "text": "Responder con algo cruel", "correct": false, "coach": "Responder con enojo generalmente empeora las cosas y puede lastimarte tanto como a ellos." },
+        { "text": "Alejarte, calmarte y decidir si vale la pena responder", "correct": true, "coach": "Exactamente — un Caballero controla el momento en vez de dejar que el momento lo controle a él." },
+        { "text": "Pedirles a tus amigos que también se unan", "correct": false, "coach": "Sumarse en grupo contra alguien es una forma de acoso, incluso cuando te sientes con razón." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "¿Qué significa realmente 'Escudo arriba' para un Caballero Digital?",
+      "choices": [
+        { "text": "Protegerte solo a ti mismo en línea", "correct": false, "coach": "Es más grande que solo tú — un Caballero también protege a otros." },
+        { "text": "Protegerte a ti mismo Y cuidar a otros en línea", "correct": true, "coach": "Eso es exactamente. Escudo arriba — para ti y para quienes te rodean." },
+        { "text": "Evitar internet por completo", "correct": false, "coach": "Ser un Caballero significa usar internet con sabiduría, no evitarlo." }
+      ]
+    }
+  ]
+}
