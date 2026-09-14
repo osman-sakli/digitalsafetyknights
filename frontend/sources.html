@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Every statistic and threat claim on Digital Safety Knights, sourced and dated — NCMEC, FBI, FTC, state attorneys general, and independent research, updated monthly.">
+<meta property="og:title" content="Sources & Research — Digital Safety Knights">
+<meta property="og:description" content="Every statistic and threat claim on Digital Safety Knights, sourced and dated — NCMEC, FBI, FTC, state attorneys general, and independent research.">
+<title>Sources & Research — Digital Safety Knights</title>
+<link rel="canonical" href="https://digitalsafetyknights.org/sources.html">
+<link rel="icon" href="assets/favicon.ico">
+<link rel="stylesheet" href="assets/breadcrumb.css">
+<link rel="stylesheet" href="assets/theme.css">
+<script src="assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
+<style>
+  :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --text: #2d3748; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Nunito Sans', 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
+  .topbar { background: var(--navy); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+  .topbar .brand { color: var(--gold); font-weight: 900; text-decoration: none; font-size: 1.05rem; }
+  .topbar .home-link { color: #cdd6ea; text-decoration: none; font-size: 0.85rem; font-weight: 700; }
+
+  .hero { background: var(--realm-bg); color: white; text-align: center; padding: 55px 1.5rem 45px; }
+  .hero .icon { font-size: 3rem; margin-bottom: 0.6rem; }
+  .hero h1 { font-size: clamp(1.8rem, 4.5vw, 2.6rem); margin-bottom: 0.7rem; }
+  .hero h1 .gold { color: var(--gold2); }
+  .hero p { color: #cdd6ea; max-width: 620px; margin: 0 auto; line-height: 1.7; font-size: 0.95rem; }
+
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+  .section-label { font-size: 0.72rem; font-weight: 900; color: var(--gold2); background: var(--navy); display: inline-block; padding: 5px 14px; border-radius: 8px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; }
+  .section-title { font-size: 1.5rem; color: var(--navy); font-weight: 900; margin-bottom: 6px; }
+  .section-sub { color: var(--gray); font-size: 0.9rem; margin-bottom: 1.6rem; max-width: 640px; line-height: 1.6; }
+
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.1rem; margin-bottom: 3rem; }
+  .stat-card { background: var(--navy); color: white; border-radius: 16px; padding: 1.3rem 1.4rem; box-shadow: 0 4px 20px rgba(13,27,62,0.15); }
+  .stat-card .num { font-size: 1.9rem; font-weight: 900; color: var(--gold2); line-height: 1.1; margin-bottom: 6px; }
+  .stat-card .label { font-size: 0.82rem; color: #cdd6ea; line-height: 1.45; }
+  .stat-card .src { font-size: 0.68rem; color: #8fa0c9; margin-top: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.4px; }
+
+  .src-category { margin-bottom: 2.4rem; }
+  .src-category h2 { font-size: 1.15rem; color: var(--navy); font-weight: 900; border-bottom: 2px solid var(--gold); padding-bottom: 8px; margin-bottom: 14px; }
+  .src-item { background: white; border-radius: 14px; padding: 1rem 1.3rem; margin-bottom: 0.8rem; box-shadow: 0 2px 14px rgba(13,27,62,0.06); }
+  .src-item .src-title { font-weight: 800; color: var(--navy); font-size: 0.95rem; margin-bottom: 4px; }
+  .src-item .src-desc { font-size: 0.85rem; color: var(--text); line-height: 1.55; margin-bottom: 6px; }
+  .src-item .src-meta { font-size: 0.76rem; color: var(--gray); display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .src-item .src-meta a { color: var(--navy2); font-weight: 700; text-decoration: none; }
+  .src-item .src-meta a:hover { text-decoration: underline; }
+  .src-item .src-date { background: var(--light); padding: 2px 9px; border-radius: 6px; font-weight: 700; }
+
+  .update-note { background: #fdf9ee; border-left: 4px solid var(--gold); border-radius: 8px; padding: 14px 18px; font-size: 0.85rem; color: var(--text); line-height: 1.6; margin-bottom: 2.5rem; }
+
+  .cta-band { text-align: center; margin-top: 2rem; }
+  .btn-gold { background: var(--gold); color: var(--navy); padding: 14px 32px; border-radius: 28px; font-weight: 900; text-decoration: none; display: inline-block; margin: 0 6px; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="/">🛡️ Digital Safety Knights</a>
+  <a class="home-link" href="/resources.html" data-i18n="nav.resources2">📚 Resources</a>
+</div>
+<div class="dsk-breadcrumb"><a href="/" data-i18n="qp.home2">Home</a><span class="sep">/</span><a href="/resources.html" data-i18n="nav.resources2">Resources</a><span class="sep">/</span><span class="current" data-i18n="src.title2">Sources &amp; Research</span></div>
+
+<section class="hero">
+  <div class="icon">📊</div>
+  <h1 data-i18n="src.h1">Sources &amp; <span class="gold">Research</span></h1>
+  <p data-i18n="src.subtitle">Every statistic and threat we name anywhere on this site traces back to a real, dated, linked source below — NCMEC, the FBI, the FTC, state attorneys general, and independent research organizations. If we can't source it, we don't say it.</p>
+</section>
+
+<div class="wrap">
+  <div class="section-label" data-i18n="src.numbersLabel">By The Numbers</div>
+  <div class="section-title" data-i18n="src.numbersTitle">The current scale of the problem</div>
+  <p class="section-sub" data-i18n="src.numbersSub">Figures below are the most recent official numbers available, refreshed as new reports are published.</p>
+
+  <div class="stat-grid" id="statGrid"></div>
+
+  <div class="section-label" data-i18n="src.sourcesLabel">Sources</div>
+  <div class="section-title" data-i18n="src.sourcesTitle">Legislation, litigation &amp; threat data</div>
+  <div class="update-note" data-i18n="src.updateNote">This page is refreshed monthly as new laws, lawsuits, and reports land — same research pipeline that feeds our Monthly Journal. Last reviewed: September 2026.</div>
+
+  <div id="sourceCategories"></div>
+
+  <div class="cta-band">
+    <a class="btn-gold" href="/resources.html" data-i18n="src.backToResources">📚 Back to Resources →</a>
+  </div>
+</div>
+
+<script>
+var srcLang = (window.DSKi18n && DSKi18n.lang) || 'en';
+var srcIsTr = srcLang === 'tr';
+var srcIsEs = srcLang === 'es';
+
+var STATS_EN = [
+  { num: "1.4M", label: "Online enticement reports to NCMEC's CyberTipline in 2025 — a 156% increase year-over-year.", src: "NCMEC, 2026" },
+  { num: "137/day", label: "Average financial sextortion reports in 2025. 91% of US victims are male; ages 14-17 are the most targeted minor group.", src: "NCMEC, 2026" },
+  { num: "+1,325%", label: "Increase in AI-generated CSAM reports between 2023 and 2024 alone.", src: "Internet Watch Foundation" },
+  { num: "350+", label: "Individuals under FBI investigation nationwide tied to the 764 Network, spanning all 56 field offices.", src: "FBI / DOJ, 2026" },
+  { num: "53,000+", label: "NCMEC reports escalated as urgent or involving a child in imminent danger in 2025.", src: "NCMEC, 2026" },
+  { num: "1 in 4", label: "People who have encountered or know someone who's encountered an AI voice-cloning scam.", src: "Consumer Reports, 2026" },
+  { num: "45%", label: "Of surveyed teens use a generative-AI tool more than once a week.", src: "Family Online Safety Institute, 2026" },
+  { num: "26 states", label: "Now mandate full \"bell-to-bell\" cell phone bans in K-12 schools.", src: "Ballotpedia, 2026" }
+];
+var STATS_TR = [
+  { num: "1.4M", label: "2025'te NCMEC'in CyberTipline'ına yapılan çevrimiçi kandırma bildirimleri — yıllık %156 artış.", src: "NCMEC, 2026" },
+  { num: "137/gün", label: "2025'te ortalama finansal şantaj bildirimi. ABD'deki mağdurların %91'i erkek; 14-17 yaş en çok hedeflenen reşit olmayan grup.", src: "NCMEC, 2026" },
+  { num: "+%1.325", label: "Sadece 2023 ve 2024 arasında yapay zeka tarafından üretilen CSAM bildirimlerindeki artış.", src: "Internet Watch Foundation" },
+  { num: "350+", label: "56 FBI saha ofisinin tamamında, 764 Ağı ile bağlantılı olarak ulusal çapta FBI soruşturması altındaki kişi sayısı.", src: "FBI / Adalet Bakanlığı, 2026" },
+  { num: "53,000+", label: "2025'te acil veya bir çocuğun yakın tehlikede olduğu durum olarak öne çıkarılan NCMEC bildirimi.", src: "NCMEC, 2026" },
+  { num: "4'te 1", label: "Bir yapay zeka ses klonlama dolandırıcılığıyla karşılaşan veya karşılaşan birini tanıyan kişi oranı.", src: "Consumer Reports, 2026" },
+  { num: "%45", label: "Ankete katılan gençlerin haftada birden fazla kez üretken yapay zeka aracı kullanma oranı.", src: "Family Online Safety Institute, 2026" },
+  { num: "26 eyalet", label: "K-12 okullarında artık tam \"zilden zile\" cep telefonu yasağı zorunlu kılıyor.", src: "Ballotpedia, 2026" }
+];
+var STATS_ES = [
+  { num: "1.4M", label: "Reportes de seducción en línea a la CyberTipline de NCMEC en 2025 — un aumento del 156% interanual.", src: "NCMEC, 2026" },
+  { num: "137/día", label: "Promedio de reportes de sextorsión financiera en 2025. El 91% de las víctimas en EE. UU. son hombres; 14-17 años es el grupo de menores más atacado.", src: "NCMEC, 2026" },
+  { num: "+1,325%", label: "Aumento en los reportes de CSAM generado por IA solo entre 2023 y 2024.", src: "Internet Watch Foundation" },
+  { num: "350+", label: "Personas bajo investigación del FBI a nivel nacional vinculadas a la Red 764, en las 56 oficinas de campo.", src: "FBI / DOJ, 2026" },
+  { num: "53,000+", label: "Reportes de NCMEC calificados como urgentes o que involucran a un niño en peligro inminente en 2025.", src: "NCMEC, 2026" },
+  { num: "1 de cada 4", label: "Personas que han encontrado o conocen a alguien que encontró una estafa de clonación de voz por IA.", src: "Consumer Reports, 2026" },
+  { num: "45%", label: "De los adolescentes encuestados usa una herramienta de IA generativa más de una vez por semana.", src: "Family Online Safety Institute, 2026" },
+  { num: "26 estados", label: "Ya exigen prohibiciones completas de celulares \"de campana a campana\" en escuelas K-12.", src: "Ballotpedia, 2026" }
+];
+var STATS = srcIsTr ? STATS_TR : srcIsEs ? STATS_ES : STATS_EN;
+
+function renderStats() {
+  document.getElementById('statGrid').innerHTML = STATS.map(function(s) {
+    return '<div class="stat-card"><div class="num">' + s.num + '</div><div class="label">' + s.label + '</div><div class="src">' + s.src + '</div></div>';
+  }).join('');
+}
+renderStats();
+
+var CATS_EN = [
+  { title: "Legislation & Policy", items: [
+    { title: "TAKE IT DOWN Act — federal law, FTC enforcement live", desc: "Requires platforms to remove reported non-consensual intimate imagery (including AI deepfakes) within 48 hours of a verified request. Penalty: $53,088 per violation.", src: "FTC.gov", url: "https://www.ftc.gov/business-guidance/resources/complying-take-it-down-act", date: "May 2026" },
+    { title: "Kids Internet and Digital Safety Act passes the House 267-117", desc: "Bundles 14 child-safety bills including a revised KOSA: age verification, limits on \"compulsive usage\" design, parental screen-time visibility tools, and expanding COPPA's protections and ad-targeting ban from age 12 to 17. Not yet law — the Senate has not acted.", src: "Congress.gov", url: "https://www.congress.gov/bill/119th-congress/senate-bill/1748", date: "June 29, 2026" },
+    { title: "UK Online Safety Act — platforms must now report CSEA content", desc: "In-scope user-to-user services must proactively report detected child sexual exploitation and abuse content to the UK's National Crime Agency, not just remove it — a materially stricter duty than removal-only.", src: "UK Government / Ofcom", url: "https://www.gov.uk/government/collections/online-safety-act", date: "April 2026" },
+    { title: "New York's SAFE for Kids Act — final rules published", desc: "Defines age-verification and parental-consent standards for \"addictive feeds.\" Effective January 25, 2027.", src: "NY Attorney General", url: "https://ag.ny.gov/press-release/2026/attorney-general-james-and-governor-hochul-release-final-safe-kids-act-rules", date: "July 2026" },
+    { title: "App Store Accountability Acts (Utah, Texas, Louisiana)", desc: "Would require app stores to get parental consent for every download/purchase by minors, sorted into age bands. Utah's postponed to 2027; Texas is enjoined and headed toward the Supreme Court.", src: "Bass, Berry & Sims", url: "https://www.bassberry.com/news/apps-and-minors-new-compliance-frontiers-and-risks-in-louisiana-utah-and-texas/", date: "2026" },
+    { title: "45 US states now criminalize AI-generated CSAM", desc: "Most of these laws were enacted in 2024-2025; 5 states plus DC have not yet passed equivalent statutes.", src: "Enough Abuse", url: "https://enoughabuse.org/get-vocal/laws-by-state/state-laws-criminalizing-ai-generated-or-computer-edited-child-sexual-abuse-material-csam/", date: "July 2026" },
+    { title: "26 states now mandate school phone bans", desc: "35 states plus DC have some form of cell phone policy in K-12 schools; 26 require full \"bell-to-bell\" bans.", src: "Ballotpedia", url: "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools", date: "2026" }
+  ]},
+  { title: "Litigation", items: [
+    { title: "Character.AI + Google settle with 5 families", desc: "Settlement reached with families whose children died by suicide or suffered serious mental-health crises tied to companion-AI use. Terms undisclosed.", src: "ConsumerNotice.org", url: "https://www.consumernotice.org/legal/ai-chatbot-lawsuit/", date: "January 2026" },
+    { title: "Florida sues OpenAI directly — first of its kind", desc: "First state lawsuit against a general-purpose AI company (not just a companion app), filed by the Florida Attorney General.", src: "State AG filing coverage", url: "https://www.consumernotice.org/legal/ai-chatbot-lawsuit/", date: "June 2026" },
+    { title: "LA County and Oklahoma sue Roblox", desc: "Both allege the platform's design and moderation gave predators \"powerful tools\" to target children.", src: "Malwarebytes / Hoodline", url: "https://www.malwarebytes.com/blog/news/2026/02/roblox-gives-predators-powerful-tools-to-target-children-says-la-county", date: "Feb & May 2026" },
+    { title: "Discord faces suits from Nevada, Texas, New Jersey", desc: "No settlement yet as of mid-2026; allegations include weak age verification and misleading parents about safety.", src: "Texas Attorney General", url: "https://www.texasattorneygeneral.gov/news/releases/attorney-general-ken-paxton-files-landmark-lawsuit-against-discord-deceiving-parents-and-exposing", date: "May 2026" },
+    { title: "Six states have sued Snapchat since 2024", desc: "A Missouri case cites a dark-web \"Sextortion Handbook\" that instructs predators to use Snap Map to locate victims near named schools.", src: "Daily Citizen", url: "https://dailycitizen.focusonthefamily.com/lawsuit-against-snapchat-latest-in-social-media-accountability-push/", date: "June 2026" },
+    { title: "4 families sue Meta, TikTok, Snap & YouTube together", desc: "Over four teen suicides the families attribute to \"years of escalating harms\" from platform design.", src: "Fortune", url: "https://fortune.com/2026/08/01/4-teen-suicides-spark-new-lawsuit-against-meta-tiktok-snap-youtube/", date: "August 2026" }
+  ]},
+  { title: "Threat Data & Named Networks", items: [
+    { title: "The 764 Network", desc: "An FBI-investigated, online-only predator network operating primarily via Roblox (initial contact) and Discord (escalation) — not a single app or company, but a manipulation pattern spreading peer-to-peer.", src: "Global Project Against Hate and Extremism", url: "https://globalextremism.org/post/764-network/", date: "2026" },
+    { title: "NCMEC 2025 CyberTipline full-year data", desc: "1.5M+ total reports with a nexus to generative AI or child exploitation; 61.8 million files submitted with reports.", src: "NCMEC", url: "https://www.missingkids.org/blog/2026/the-work-never-stops-first-look-at-ncmecs-2025-data", date: "2026" },
+    { title: "AI voice-cloning scams targeting families", desc: "Scammers clone a family member's voice from public social-media clips to stage a fake emergency call. Best defense: a family-only verification phrase.", src: "Consumer Reports / WSLS", url: "https://www.wsls.com/news/2026/06/02/consumer-reports-ai-voice-cloning-scams-on-the-rise/", date: "June 2026" }
+  ]}
+];
+
+var CATS_TR = [
+  { title: "Yasalar & Politika", items: [
+    { title: "TAKE IT DOWN Yasası — federal kanun, FTC uygulaması yürürlükte", desc: "Platformların, doğrulanmış bir talepten sonra 48 saat içinde rızasız samimi görüntüleri (yapay zeka deepfake'leri dahil) kaldırmasını zorunlu kılıyor. Ceza: ihlal başına 53.088 dolar.", src: "FTC.gov", url: "https://www.ftc.gov/business-guidance/resources/complying-take-it-down-act", date: "Mayıs 2026" },
+    { title: "Kids Internet and Digital Safety Act, Meclis'ten 267-117 oyla geçti", desc: "Revize edilmiş bir KOSA dahil 14 çocuk güvenliği yasa tasarısını birleştiriyor: yaş doğrulama, \"bağımlılık yapan kullanım\" tasarımına sınırlamalar, ebeveyn ekran süresi görünürlük araçları ve COPPA'nın korumalarını ve reklam hedefleme yasağını 12'den 17 yaşa genişletme. Henüz yasa değil — Senato harekete geçmedi.", src: "Congress.gov", url: "https://www.congress.gov/bill/119th-congress/senate-bill/1748", date: "29 Haziran 2026" },
+    { title: "İngiltere Online Safety Act — platformlar artık CSEA içeriğini bildirmek zorunda", desc: "Kapsam dahilindeki kullanıcıdan kullanıcıya hizmetler, tespit edilen çocuk cinsel istismarı içeriğini sadece kaldırmak yerine, Birleşik Krallık'ın Ulusal Suç Ajansı'na proaktif olarak bildirmek zorunda — sadece kaldırmadan çok daha katı bir yükümlülük.", src: "İngiltere Hükümeti / Ofcom", url: "https://www.gov.uk/government/collections/online-safety-act", date: "Nisan 2026" },
+    { title: "New York'un SAFE for Kids Yasası — nihai kurallar yayınlandı", desc: "\"Bağımlılık yaratan akışlar\" için yaş doğrulama ve ebeveyn onayı standartlarını tanımlıyor. 25 Ocak 2027'de yürürlüğe giriyor.", src: "New York Başsavcılığı", url: "https://ag.ny.gov/press-release/2026/attorney-general-james-and-governor-hochul-release-final-safe-kids-act-rules", date: "Temmuz 2026" },
+    { title: "Uygulama Mağazası Hesap Verebilirlik Yasaları (Utah, Teksas, Louisiana)", desc: "Uygulama mağazalarının, reşit olmayanların her indirme/satın alma işlemi için yaş gruplarına ayrılmış ebeveyn onayı almasını gerektirecek. Utah 2027'ye ertelendi; Teksas'a tedbir kararı verildi ve Yüksek Mahkeme'ye gidiyor.", src: "Bass, Berry & Sims", url: "https://www.bassberry.com/news/apps-and-minors-new-compliance-frontiers-and-risks-in-louisiana-utah-and-texas/", date: "2026" },
+    { title: "45 ABD eyaleti artık yapay zeka üretimi CSAM'i suç sayıyor", desc: "Bu yasaların çoğu 2024-2025'te çıkarıldı; 5 eyalet ve DC henüz eşdeğer yasalar çıkarmadı.", src: "Enough Abuse", url: "https://enoughabuse.org/get-vocal/laws-by-state/state-laws-criminalizing-ai-generated-or-computer-edited-child-sexual-abuse-material-csam/", date: "Temmuz 2026" },
+    { title: "26 eyalet artık okul telefon yasaklarını zorunlu kılıyor", desc: "35 eyalet ve DC, K-12 okullarında bir tür cep telefonu politikasına sahip; 26'sı tam \"zilden zile\" yasağı gerektiriyor.", src: "Ballotpedia", url: "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools", date: "2026" }
+  ]},
+  { title: "Davalar", items: [
+    { title: "Character.AI + Google, 5 aileyle anlaştı", desc: "Yapay zeka arkadaş uygulaması kullanımıyla bağlantılı olarak çocukları intihar eden veya ciddi ruh sağlığı krizleri yaşayan ailelerle anlaşmaya varıldı. Şartlar açıklanmadı.", src: "ConsumerNotice.org", url: "https://www.consumernotice.org/legal/ai-chatbot-lawsuit/", date: "Ocak 2026" },
+    { title: "Florida, OpenAI'a doğrudan dava açtı — türünün ilki", desc: "Florida Başsavcısı tarafından açılan, genel amaçlı bir yapay zeka şirketine (sadece bir arkadaş uygulamasına değil) karşı ilk eyalet davası.", src: "Eyalet Başsavcılığı haberleri", url: "https://www.consumernotice.org/legal/ai-chatbot-lawsuit/", date: "Haziran 2026" },
+    { title: "LA County ve Oklahoma, Roblox'a dava açtı", desc: "Her ikisi de platformun tasarımının ve denetiminin saldırganlara çocukları hedeflemek için \"güçlü araçlar\" verdiğini iddia ediyor.", src: "Malwarebytes / Hoodline", url: "https://www.malwarebytes.com/blog/news/2026/02/roblox-gives-predators-powerful-tools-to-target-children-says-la-county", date: "Şubat & Mayıs 2026" },
+    { title: "Discord, Nevada, Teksas ve New Jersey'den davalarla karşı karşıya", desc: "2026'nın ortası itibarıyla henüz anlaşma yok; iddialar arasında zayıf yaş doğrulama ve ebeveynleri güvenlik konusunda yanıltma var.", src: "Teksas Başsavcılığı", url: "https://www.texasattorneygeneral.gov/news/releases/attorney-general-ken-paxton-files-landmark-lawsuit-against-discord-deceiving-parents-and-exposing", date: "Mayıs 2026" },
+    { title: "2024'ten beri altı eyalet Snapchat'e dava açtı", desc: "Bir Missouri davası, saldırganlara Snap Map'i belirtilen okulların yakınındaki mağdurları bulmak için kullanmalarını öğreten karanlık ağdaki bir \"Şantaj El Kitabı\"na atıfta bulunuyor.", src: "Daily Citizen", url: "https://dailycitizen.focusonthefamily.com/lawsuit-against-snapchat-latest-in-social-media-accountability-push/", date: "Haziran 2026" },
+    { title: "4 aile birlikte Meta, TikTok, Snap ve YouTube'a dava açtı", desc: "Ailelerin platform tasarımından kaynaklanan \"yıllarca süren artan zararlara\" bağladığı dört genç intiharı nedeniyle.", src: "Fortune", url: "https://fortune.com/2026/08/01/4-teen-suicides-spark-new-lawsuit-against-meta-tiktok-snap-youtube/", date: "Ağustos 2026" }
+  ]},
+  { title: "Tehdit Verileri & Adlandırılmış Ağlar", items: [
+    { title: "764 Ağı", desc: "Öncelikle Roblox (ilk temas) ve Discord (tırmanma) üzerinden çalışan, FBI tarafından soruşturulan, tamamen çevrimiçi bir saldırgan ağı — tek bir uygulama veya şirket değil, akrandan akrana yayılan bir manipülasyon kalıbı.", src: "Global Project Against Hate and Extremism", url: "https://globalextremism.org/post/764-network/", date: "2026" },
+    { title: "NCMEC 2025 CyberTipline tam yıl verisi", desc: "Üretken yapay zeka veya çocuk istismarıyla bağlantılı 1,5 milyondan fazla toplam bildirim; bildirimlerle birlikte 61,8 milyon dosya gönderildi.", src: "NCMEC", url: "https://www.missingkids.org/blog/2026/the-work-never-stops-first-look-at-ncmecs-2025-data", date: "2026" },
+    { title: "Aileleri hedef alan yapay zeka ses klonlama dolandırıcılıkları", desc: "Dolandırıcılar, sahte bir acil durum araması sahnelemek için halka açık sosyal medya klipslerinden bir aile üyesinin sesini klonluyor. En iyi savunma: yalnızca ailenin bildiği bir doğrulama ifadesi.", src: "Consumer Reports / WSLS", url: "https://www.wsls.com/news/2026/06/02/consumer-reports-ai-voice-cloning-scams-on-the-rise/", date: "Haziran 2026" }
+  ]}
+];
+
+var CATS_ES = [
+  { title: "Legislación y Política", items: [
+    { title: "Ley TAKE IT DOWN — ley federal, aplicación de la FTC en vigor", desc: "Exige que las plataformas eliminen imágenes íntimas no consensuadas reportadas (incluidos deepfakes de IA) dentro de las 48 horas de una solicitud verificada. Multa: $53,088 por infracción.", src: "FTC.gov", url: "https://www.ftc.gov/business-guidance/resources/complying-take-it-down-act", date: "Mayo 2026" },
+    { title: "La Kids Internet and Digital Safety Act pasa la Cámara 267-117", desc: "Agrupa 14 proyectos de ley de seguridad infantil, incluyendo una KOSA revisada: verificación de edad, límites al diseño de \"uso compulsivo\", herramientas de visibilidad de tiempo de pantalla para padres, y ampliar las protecciones de COPPA y la prohibición de publicidad dirigida de los 12 a los 17 años. Aún no es ley — el Senado no ha actuado.", src: "Congress.gov", url: "https://www.congress.gov/bill/119th-congress/senate-bill/1748", date: "29 de junio de 2026" },
+    { title: "Ley de Seguridad en Línea del Reino Unido — las plataformas ahora deben reportar contenido CSEA", desc: "Los servicios de usuario a usuario dentro del alcance deben reportar proactivamente el contenido detectado de explotación y abuso sexual infantil a la Agencia Nacional contra el Crimen del Reino Unido, no solo eliminarlo — un deber materialmente más estricto que solo eliminar.", src: "Gobierno del Reino Unido / Ofcom", url: "https://www.gov.uk/government/collections/online-safety-act", date: "Abril 2026" },
+    { title: "La Ley SAFE for Kids de Nueva York — reglas finales publicadas", desc: "Define estándares de verificación de edad y consentimiento parental para \"feeds adictivos\". Entra en vigor el 25 de enero de 2027.", src: "Fiscal General de NY", url: "https://ag.ny.gov/press-release/2026/attorney-general-james-and-governor-hochul-release-final-safe-kids-act-rules", date: "Julio 2026" },
+    { title: "Leyes de Responsabilidad de Tiendas de Aplicaciones (Utah, Texas, Luisiana)", desc: "Exigirían que las tiendas de aplicaciones obtengan el consentimiento parental para cada descarga/compra de menores, clasificados por bandas de edad. Utah pospuesta a 2027; Texas bajo mandato judicial y rumbo a la Corte Suprema.", src: "Bass, Berry & Sims", url: "https://www.bassberry.com/news/apps-and-minors-new-compliance-frontiers-and-risks-in-louisiana-utah-and-texas/", date: "2026" },
+    { title: "45 estados de EE. UU. ya penalizan el CSAM generado por IA", desc: "La mayoría de estas leyes se promulgaron en 2024-2025; 5 estados más DC aún no han aprobado leyes equivalentes.", src: "Enough Abuse", url: "https://enoughabuse.org/get-vocal/laws-by-state/state-laws-criminalizing-ai-generated-or-computer-edited-child-sexual-abuse-material-csam/", date: "Julio 2026" },
+    { title: "26 estados ya exigen prohibiciones de celulares en escuelas", desc: "35 estados más DC tienen alguna política de celulares en escuelas K-12; 26 exigen prohibiciones completas \"de campana a campana\".", src: "Ballotpedia", url: "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools", date: "2026" }
+  ]},
+  { title: "Litigios", items: [
+    { title: "Character.AI + Google llegan a un acuerdo con 5 familias", desc: "Acuerdo alcanzado con familias cuyos hijos murieron por suicidio o sufrieron crisis graves de salud mental vinculadas al uso de IA de compañía. Términos no revelados.", src: "ConsumerNotice.org", url: "https://www.consumernotice.org/legal/ai-chatbot-lawsuit/", date: "Enero 2026" },
+    { title: "Florida demanda a OpenAI directamente — el primero de su tipo", desc: "Primera demanda estatal contra una empresa de IA de propósito general (no solo una app de compañía), presentada por el Fiscal General de Florida.", src: "Cobertura de fiscalías estatales", url: "https://www.consumernotice.org/legal/ai-chatbot-lawsuit/", date: "Junio 2026" },
+    { title: "El Condado de LA y Oklahoma demandan a Roblox", desc: "Ambos alegan que el diseño y la moderación de la plataforma dieron a los depredadores \"herramientas poderosas\" para atacar a niños.", src: "Malwarebytes / Hoodline", url: "https://www.malwarebytes.com/blog/news/2026/02/roblox-gives-predators-powerful-tools-to-target-children-says-la-county", date: "Feb. y mayo 2026" },
+    { title: "Discord enfrenta demandas de Nevada, Texas y Nueva Jersey", desc: "Sin acuerdo aún a mediados de 2026; las alegaciones incluyen verificación de edad débil y engañar a los padres sobre la seguridad.", src: "Fiscal General de Texas", url: "https://www.texasattorneygeneral.gov/news/releases/attorney-general-ken-paxton-files-landmark-lawsuit-against-discord-deceiving-parents-and-exposing", date: "Mayo 2026" },
+    { title: "Seis estados han demandado a Snapchat desde 2024", desc: "Un caso de Missouri cita un \"Manual de Sextorsión\" de la dark web que instruye a los depredadores a usar Snap Map para localizar víctimas cerca de escuelas nombradas.", src: "Daily Citizen", url: "https://dailycitizen.focusonthefamily.com/lawsuit-against-snapchat-latest-in-social-media-accountability-push/", date: "Junio 2026" },
+    { title: "4 familias demandan juntas a Meta, TikTok, Snap y YouTube", desc: "Por cuatro suicidios de adolescentes que las familias atribuyen a \"años de daños crecientes\" por el diseño de las plataformas.", src: "Fortune", url: "https://fortune.com/2026/08/01/4-teen-suicides-spark-new-lawsuit-against-meta-tiktok-snap-youtube/", date: "Agosto 2026" }
+  ]},
+  { title: "Datos de Amenazas y Redes Identificadas", items: [
+    { title: "La Red 764", desc: "Una red de depredadores investigada por el FBI, exclusivamente en línea, que opera principalmente a través de Roblox (contacto inicial) y Discord (escalada) — no una sola app o empresa, sino un patrón de manipulación que se propaga entre pares.", src: "Global Project Against Hate and Extremism", url: "https://globalextremism.org/post/764-network/", date: "2026" },
+    { title: "Datos completos de 2025 de la CyberTipline de NCMEC", desc: "Más de 1.5 millones de reportes totales con nexo a IA generativa o explotación infantil; 61.8 millones de archivos enviados junto con los reportes.", src: "NCMEC", url: "https://www.missingkids.org/blog/2026/the-work-never-stops-first-look-at-ncmecs-2025-data", date: "2026" },
+    { title: "Estafas de clonación de voz por IA dirigidas a familias", desc: "Los estafadores clonan la voz de un familiar a partir de clips públicos de redes sociales para simular una llamada de emergencia falsa. Mejor defensa: una frase de verificación que solo la familia conozca.", src: "Consumer Reports / WSLS", url: "https://www.wsls.com/news/2026/06/02/consumer-reports-ai-voice-cloning-scams-on-the-rise/", date: "Junio 2026" }
+  ]}
+];
+
+var CATS = srcIsTr ? CATS_TR : srcIsEs ? CATS_ES : CATS_EN;
+
+function renderSources() {
+  document.getElementById('sourceCategories').innerHTML = CATS.map(function(cat) {
+    return '<div class="src-category"><h2>' + cat.title + '</h2>' +
+      cat.items.map(function(item) {
+        return '<div class="src-item">' +
+          '<div class="src-title">' + item.title + '</div>' +
+          '<div class="src-desc">' + item.desc + '</div>' +
+          '<div class="src-meta"><span class="src-date">' + item.date + '</span> <a href="' + item.url + '" target="_blank" rel="noopener">' + item.src + ' ↗</a></div>' +
+        '</div>';
+      }).join('') +
+    '</div>';
+  }).join('');
+}
+renderSources();
+</script>
+<script src="/assets/lang-switcher.js"></script>
+<script src="/assets/site-search.js"></script>
+<script src="/assets/play-now-fab.js"></script>
+</body>
+</html>

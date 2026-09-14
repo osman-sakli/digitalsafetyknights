@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A day-by-day archive of child online-safety news from around the web, with a link to the original reporting for every story.">
+<meta property="og:title" content="News Archive — Digital Safety Knights">
+<meta property="og:description" content="A day-by-day archive of child online-safety news, every story linked to its original source.">
+<meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
+<meta property="og:url" content="https://digitalsafetyknights.org/news-archive.html">
+<meta property="og:type" content="website">
+<title>News Archive — Digital Safety Knights</title>
+<link rel="canonical" href="https://digitalsafetyknights.org/news-archive.html">
+<link rel="icon" href="assets/favicon.ico">
+<link rel="stylesheet" href="assets/breadcrumb.css">
+<link rel="stylesheet" href="assets/theme.css">
+<script src="assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
+<style>
+  :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --text: #2d3748; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Nunito Sans', 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
+  .topbar { background: var(--navy); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+  .topbar .brand { color: var(--gold); font-weight: 900; text-decoration: none; font-size: 1.05rem; }
+  .topbar .home-link { color: #cdd6ea; text-decoration: none; font-size: 0.85rem; font-weight: 700; }
+
+  .hero { background: var(--realm-bg); color: white; text-align: center; padding: 52px 1.5rem 42px; }
+  .hero .icon { font-size: 2.8rem; margin-bottom: 0.5rem; }
+  .hero h1 { font-size: clamp(1.7rem, 4.5vw, 2.4rem); margin-bottom: 0.6rem; }
+  .hero h1 .gold { color: var(--gold2); }
+  .hero p { color: #cdd6ea; max-width: 620px; margin: 0 auto; line-height: 1.7; font-size: 0.94rem; }
+  .hero .meta { margin-top: 1rem; color: #93a4c9; font-size: 0.8rem; font-weight: 700; }
+
+  .wrap { max-width: 900px; margin: 0 auto; padding: 2.4rem 1.5rem 4rem; }
+  .toolbar { display: flex; gap: 0.7rem; flex-wrap: wrap; margin-bottom: 1.6rem; }
+  #search { flex: 1; min-width: 220px; padding: 12px 15px; border: 2px solid #dfe4ee; border-radius: 12px; font-size: 0.92rem; font-family: inherit; }
+  #search:focus { outline: none; border-color: var(--gold); }
+
+  .day { margin-bottom: 2rem; }
+  .day-head { display: flex; align-items: center; gap: 12px; margin-bottom: 0.9rem; }
+  .day-date { font-size: 1.05rem; font-weight: 900; color: var(--navy); white-space: nowrap; }
+  .day-rule { flex: 1; height: 2px; background: linear-gradient(90deg, var(--gold), transparent); }
+  .day-count { font-size: 0.74rem; color: var(--gray); font-weight: 700; white-space: nowrap; }
+
+  .item { display: block; background: white; border-radius: 14px; padding: 1.05rem 1.2rem; margin-bottom: 0.7rem; text-decoration: none; box-shadow: 0 2px 14px rgba(13,27,62,0.06); border-left: 4px solid var(--gold); }
+  .item:hover { box-shadow: 0 6px 22px rgba(13,27,62,0.13); transform: translateY(-1px); }
+  .item .src { color: var(--gold); font-weight: 900; font-size: 0.63rem; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 6px; }
+  .item h3 { color: var(--navy); font-size: 0.97rem; line-height: 1.42; margin-bottom: 5px; }
+  .item p { color: var(--gray); font-size: 0.84rem; line-height: 1.55; }
+  .item .go { display: inline-block; margin-top: 8px; color: var(--navy2); font-weight: 800; font-size: 0.78rem; }
+
+  .empty { text-align: center; color: var(--gray); padding: 2.5rem 1rem; font-size: 0.94rem; }
+  .note { background: #fdf9ee; border-left: 4px solid var(--gold); border-radius: 8px; padding: 13px 17px; font-size: 0.82rem; line-height: 1.6; margin-bottom: 1.6rem; color: var(--text); }
+  footer { text-align: center; padding: 2rem; color: var(--gray); font-size: 0.84rem; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="/">🛡️ Digital Safety Knights</a>
+  <a class="home-link" href="/sources.html" data-i18n="src.title2">📊 Sources &amp; Research</a>
+</div>
+<div class="dsk-breadcrumb"><a href="/" data-i18n="qp.home2">Home</a><span class="sep">/</span><a href="/resources.html" data-i18n="nav.resources2">Resources</a><span class="sep">/</span><span class="current" data-i18n="arch.crumb">News Archive</span></div>
+
+<section class="hero">
+  <div class="icon">🗞️</div>
+  <h1 data-i18n="arch.h1">News <span class="gold">Archive</span></h1>
+  <p data-i18n="arch.subtitle">Every story our Digital Safety Watch has picked up, day by day. We don't write these — each one links straight to the publisher that reported it.</p>
+  <div class="meta" id="arch-meta"></div>
+</section>
+
+<div class="wrap">
+  <div class="note" data-i18n="arch.note">Collected automatically twice a day from public news sources. Headlines and links belong to their original publishers; summaries are short plain-language restatements for parents.</div>
+  <div class="toolbar">
+    <input type="search" id="search" data-i18n-attr="placeholder:arch.searchPlaceholder" placeholder="Search headlines, sources…">
+  </div>
+  <div id="days"><div class="empty" data-i18n="arch.loading">Loading the archive…</div></div>
+</div>
+
+<footer>⚔️ Digital Safety Knights · digitalsafetyknights.org</footer>
+
+<script>
+(function () {
+  var aLang = (window.DSKi18n && DSKi18n.lang) || 'en';
+  var L = aLang === 'tr'
+    ? { via: 'Kaynak', read: 'Haberi oku →', fail: 'Arşiv yüklenemedi.', none: 'Aramanla eşleşen haber yok.', stories: 'haber', days: 'gün', total: '{n} haber · {d} gün', locale: 'tr-TR' }
+    : aLang === 'es'
+    ? { via: 'Fuente', read: 'Leer la noticia →', fail: 'No se pudo cargar el archivo.', none: 'Ninguna noticia coincide con tu búsqueda.', stories: 'noticias', days: 'días', total: '{n} noticias · {d} días', locale: 'es-ES' }
+    : { via: 'Source', read: 'Read the story →', fail: "Couldn't load the archive.", none: 'No stories match your search.', stories: 'stories', days: 'days', total: '{n} stories · {d} days', locale: 'en-US' };
+
+  function esc(s) { var d = document.createElement('div'); d.textContent = s == null ? '' : s; return d.innerHTML; }
+
+  var allDays = [];
+  var container = document.getElementById('days');
+
+  function render(filter) {
+    var q = (filter || '').trim().toLowerCase();
+    var html = '';
+    var shown = 0;
+    allDays.forEach(function (entry) {
+      var items = entry.items.filter(function (it) {
+        if (!q) return true;
+        return (it.title + ' ' + it.source + ' ' + (it.summary || '')).toLowerCase().indexOf(q) !== -1;
+      });
+      if (!items.length) return;
+      shown += items.length;
+      var d = new Date(entry.date + 'T00:00:00');
+      var label = d.toLocaleDateString(L.locale, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+      html += '<div class="day"><div class="day-head">' +
+        '<span class="day-date">' + esc(label) + '</span>' +
+        '<span class="day-rule"></span>' +
+        '<span class="day-count">' + items.length + ' ' + L.stories + '</span>' +
+        '</div>' +
+        items.map(function (it) {
+          return '<a class="item" href="' + esc(it.url) + '" target="_blank" rel="noopener noreferrer">' +
+            '<div class="src">' + L.via + ': ' + esc(it.source) + '</div>' +
+            '<h3>' + esc(it.title) + '</h3>' +
+            (it.summary ? '<p>' + esc(it.summary) + '</p>' : '') +
+            '<span class="go">' + L.read + '</span>' +
+            '</a>';
+        }).join('') +
+        '</div>';
+    });
+    container.innerHTML = shown ? html : '<div class="empty">' + L.none + '</div>';
+  }
+
+  fetch('/content/news-archive.json?t=' + Math.floor(Date.now() / 600000))
+    .then(function (r) { if (!r.ok) throw new Error('http ' + r.status); return r.json(); })
+    .then(function (data) {
+      var days = data.days || {};
+      allDays = Object.keys(days).sort().reverse().map(function (d) { return { date: d, items: days[d] }; });
+      document.getElementById('arch-meta').textContent =
+        L.total.replace('{n}', data.totalItems || 0).replace('{d}', allDays.length);
+      render('');
+    })
+    .catch(function (e) {
+      console.error('archive', e);
+      container.innerHTML = '<div class="empty">' + L.fail + '</div>';
+    });
+
+  var searchEl = document.getElementById('search');
+  var t;
+  searchEl.addEventListener('input', function () {
+    clearTimeout(t);
+    t = setTimeout(function () { render(searchEl.value); }, 160);
+  });
+})();
+</script>
+<script src="/assets/lang-switcher.js"></script>
+<script src="/assets/site-search.js"></script>
+<script src="/assets/play-now-fab.js"></script>
+</body>
+</html>
