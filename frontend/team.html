@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Team — Digital Safety Knights</title>
+<link rel="canonical" href="https://digitalsafetyknights.org/team.html">
+<meta name="description" content="Meet the Digital Safety Knights leadership team, and see the roles we're actively growing into.">
+<meta property="og:title" content="Our Team — Digital Safety Knights">
+<meta property="og:description" content="Meet the Digital Safety Knights leadership team, and see the roles we're actively growing into.">
+<meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
+<meta property="og:url" content="https://digitalsafetyknights.org/team.html">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.ico">
+<link rel="stylesheet" href="assets/theme.css">
+<script src="assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
+<style>
+  :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Nunito Sans', 'Segoe UI', system-ui, sans-serif; background: var(--light); color: #2d3748; }
+
+  .tm-hero { background: var(--realm-bg); color: white; padding: 3rem 1.5rem 3.5rem; text-align: center; position: relative; overflow: hidden; }
+  .tm-hero .eyebrow { color: var(--gold); font-weight: 900; letter-spacing: 2px; font-size: 0.8rem; text-transform: uppercase; }
+  .tm-hero h1 { font-size: 2.2rem; font-weight: 900; margin: 10px 0 12px; }
+  .tm-hero p { color: #cdd7f0; max-width: 580px; margin: 0 auto; line-height: 1.7; font-size: 1rem; }
+  .tm-hero a.back { position: absolute; left: 1.5rem; top: 1.5rem; color: #cdd7f0; text-decoration: none; font-weight: 700; font-size: 0.85rem; }
+
+  .tm-wrap { max-width: 980px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+
+  .tm-tier-label { text-align: center; font-size: 0.72rem; font-weight: 900; letter-spacing: 1.8px; text-transform: uppercase; color: var(--gray); margin-bottom: 1.1rem; }
+
+  .tm-leaders { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.3rem; margin-bottom: 1.6rem; }
+  .tm-lcard { background: white; border-radius: 20px; padding: 1.8rem; box-shadow: 0 8px 26px rgba(13,27,62,0.09); border-top: 4px solid var(--card-color, var(--gold)); transition: transform .2s ease, box-shadow .2s ease; }
+  .tm-lcard:hover { transform: translateY(-4px); box-shadow: 0 14px 34px rgba(13,27,62,0.14); }
+  .tm-lcard img { width: 74px; height: 74px; border-radius: 50%; object-fit: cover; border: 3px solid var(--card-color, var(--gold)); margin-bottom: 0.9rem; }
+  .tm-lcard .name { font-size: 1.15rem; font-weight: 900; color: var(--navy); }
+  .tm-lcard .title { font-size: 0.76rem; font-weight: 800; letter-spacing: 0.4px; text-transform: uppercase; color: var(--card-color, var(--gold)); margin: 3px 0 10px; }
+  .tm-lcard p { font-size: 0.87rem; color: var(--gray); line-height: 1.65; margin-bottom: 0.7rem; }
+  .tm-lcard a.more { font-size: 0.78rem; font-weight: 800; color: var(--navy); text-decoration: none; }
+  .tm-lcard a.more:hover { color: var(--card-color, var(--gold)); }
+
+  .tm-connector { display: flex; justify-content: center; margin: 0.6rem 0 1.6rem; }
+  .tm-connector svg { display: block; max-width: 100%; height: auto; }
+  .tm-connector path, .tm-connector line { stroke: #c7d0e4; stroke-width: 2; fill: none; }
+  .tm-connector .draw { stroke-dasharray: 260; stroke-dashoffset: 260; animation: tmDraw 1s ease forwards 0.15s; }
+  @media (prefers-reduced-motion: reduce) { .tm-connector .draw { animation: none; stroke-dashoffset: 0; } }
+  @keyframes tmDraw { to { stroke-dashoffset: 0; } }
+
+  .tm-open-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.1rem; }
+  .tm-ocard { background: #fbfaf5; border: 1.5px dashed var(--gold); border-radius: 18px; padding: 1.5rem; transition: box-shadow .2s ease, transform .2s ease; }
+  .tm-ocard:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(201,168,76,0.22); }
+  .tm-ocard .role { font-size: 1rem; font-weight: 900; color: var(--navy); margin-bottom: 4px; }
+  .tm-ocard .summary { font-size: 0.84rem; color: var(--gray); line-height: 1.55; margin-bottom: 0.8rem; }
+  .tm-ocard ul { margin: 0 0 0.8rem 1.1rem; padding: 0; }
+  .tm-ocard li { font-size: 0.82rem; color: #4a5568; line-height: 1.6; margin-bottom: 3px; }
+  .tm-ocard .looking { font-size: 0.78rem; color: #8a6d2a; background: #fdf3dc; border-radius: 8px; padding: 8px 10px; line-height: 1.5; margin-bottom: 0.9rem; }
+  .tm-ocard .apply { display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 900; color: white; background: linear-gradient(135deg, var(--gold2), var(--gold)); text-decoration: none; padding: 9px 16px; border-radius: 20px; }
+  .tm-ocard .apply:hover { filter: brightness(1.06); }
+  .tm-tag { display: inline-block; font-size: 0.66rem; font-weight: 900; letter-spacing: 0.4px; text-transform: uppercase; color: #8a6d2a; border: 1px solid var(--gold); border-radius: 20px; padding: 3px 10px; margin-bottom: 0.7rem; }
+
+  .tm-note { max-width: 680px; margin: 2.4rem auto 0; text-align: center; font-size: 0.85rem; color: var(--gray); line-height: 1.7; background: #fdf9ee; border-left: 4px solid var(--gold); padding: 14px 20px; border-radius: 10px; }
+
+  footer { text-align: center; padding: 2rem; color: var(--gray); font-size: 0.85rem; }
+</style>
+</head>
+<body>
+
+<div class="tm-hero">
+  <a href="/" class="back" data-i18n="qp.home">← Home</a>
+  <div class="eyebrow">Digital Safety Knights</div>
+  <h1>🛡️ Our Team</h1>
+  <p>A small, real leadership team today — and the roles we're actively building toward as the organization grows.</p>
+</div>
+
+<div class="tm-wrap">
+  <div class="tm-tier-label">Leadership</div>
+  <div class="tm-leaders">
+    <div class="tm-lcard" style="--card-color:#b98a4a;">
+      <img src="assets/founders/ayse.jpg" alt="Ayşe Saklı">
+      <div class="name">Ayşe Saklı</div>
+      <div class="title">Club Leader &amp; Co-Founder</div>
+      <p>Ayşe is the reason the Knights look and feel the way they do — she handles the creative details, comes up with the ideas, and gives the feedback that keeps every character on-brand. She already codes in Python and Lua, and built a Roblox game that placed second in a game design competition.</p>
+      <p>She leads her school's coding club, and regularly presents Digital Safety Knights sessions directly to student groups.</p>
+      <a class="more" href="/about.html">Read her full story →</a>
+    </div>
+    <div class="tm-lcard" style="--card-color:#c9a84c;">
+      <img src="assets/founders/osman.jpg" alt="Osman Sakli">
+      <div class="name">Osman Sakli</div>
+      <div class="title">Co-Founder &amp; CEO</div>
+      <p>Osman is a Site Reliability Engineer and Cloud/DevOps Engineer with over a decade of hands-on experience keeping production systems reliable, secure, and online — AWS and Kubernetes certified, fluent across cloud infrastructure, CI/CD, and observability.</p>
+      <p>He built Digital Safety Knights the same way he'd secure any critical system: assume the threat is real, plan for it anyway, and make sure the safety net is actually free for the families who need it.</p>
+      <a class="more" href="/about.html">Read his full story →</a>
+    </div>
+  </div>
+
+  <div class="tm-connector">
+    <svg width="600" height="60" viewBox="0 0 600 60" aria-hidden="true">
+      <line class="draw" x1="300" y1="0" x2="300" y2="20"/>
+      <path class="draw" d="M 130 20 L 470 20"/>
+      <line class="draw" x1="130" y1="20" x2="130" y2="60"/>
+      <line class="draw" x1="240" y1="20" x2="240" y2="60"/>
+      <line class="draw" x1="360" y1="20" x2="360" y2="60"/>
+      <line class="draw" x1="470" y1="20" x2="470" y2="60"/>
+    </svg>
+  </div>
+
+  <div class="tm-tier-label">Open Roles — We're Hiring</div>
+  <div class="tm-open-grid">
+
+    <div class="tm-ocard">
+      <span class="tm-tag">Open</span>
+      <div class="role">Director, School &amp; Community Partnerships</div>
+      <p class="summary">Owns inbound school, nonprofit, and organization requests end-to-end.</p>
+      <ul>
+        <li>Field and respond to inbound session requests from schools, nonprofits, and community groups</li>
+        <li>Coordinate scheduling, logistics, and format (in-person, virtual, or materials-only)</li>
+        <li>Tailor session content to each audience's age group and needs</li>
+      </ul>
+      <div class="looking">Looking for: experience with schools or nonprofits, strong written communication, comfort presenting to groups.</div>
+      <a class="apply" href="/apply.html?role=school_partnerships">✉️ I'm interested</a>
+    </div>
+
+    <div class="tm-ocard">
+      <span class="tm-tag">Open</span>
+      <div class="role">Content &amp; Research Lead</div>
+      <p class="summary">Owns the Monthly Journal, guides, and the research pipeline behind every claim the site makes.</p>
+      <ul>
+        <li>Research and write the Monthly Journal and legislative tracker updates</li>
+        <li>Maintain and expand our library of parent and educator guides</li>
+        <li>Fact-check and source every statistic the site publishes</li>
+      </ul>
+      <div class="looking">Looking for: strong research and writing skills, comfort with primary-source verification, interest in child-safety policy.</div>
+      <a class="apply" href="/apply.html?role=content_research">✉️ I'm interested</a>
+    </div>
+
+    <div class="tm-ocard">
+      <span class="tm-tag">Open</span>
+      <div class="role">Community &amp; Digital Engagement Manager</div>
+      <p class="summary">Runs Discord, social channels, and member communications — the day-to-day voice of DSK.</p>
+      <ul>
+        <li>Moderate and grow our Discord community</li>
+        <li>Manage social media presence and posting cadence</li>
+        <li>Handle day-to-day member email communications</li>
+      </ul>
+      <div class="looking">Looking for: active community/social management experience, consistent availability, a calm and welcoming tone with families.</div>
+      <a class="apply" href="/apply.html?role=community_engagement">✉️ I'm interested</a>
+    </div>
+
+    <div class="tm-ocard">
+      <span class="tm-tag">Open</span>
+      <div class="role">Volunteer &amp; Knight Council Coordinator</div>
+      <p class="summary">Recruits and supports the teen ambassador program and future volunteers.</p>
+      <ul>
+        <li>Review and onboard Knight Council teen applicants</li>
+        <li>Organize volunteer opportunities and recognition</li>
+        <li>Build the pipeline for future team growth</li>
+      </ul>
+      <div class="looking">Looking for: experience mentoring teens or running youth programs, organized and reliable, genuine enthusiasm for the mission.</div>
+      <a class="apply" href="/apply.html?role=volunteer_coordinator">✉️ I'm interested</a>
+    </div>
+
+  </div>
+
+  <div class="tm-note">
+    This is Digital Safety Knights' actual structure today — two leaders, and four roles we're actively building toward
+    as the organization grows. Nothing here is filled that isn't real. See our
+    <a href="/transparency.html" style="color:#8a6d2a;font-weight:800;">real numbers</a> for more.
+  </div>
+</div>
+
+<footer>⚔️ Digital Safety Knights · digitalsafetyknights.org · © 2026</footer>
+
+<script src="/assets/lang-switcher.js"></script>
+</body>
+</html>

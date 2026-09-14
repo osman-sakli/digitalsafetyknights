@@ -3,6 +3,8 @@ import boto3
 import uuid
 from datetime import datetime
 
+ADMIN_EMAIL = 'osmansakli@yahoo.com'
+
 dynamodb = boto3.resource('dynamodb', region_name='us-east-1')
 ses = boto3.client('ses', region_name='us-east-1')
 table = dynamodb.Table('dsk-members')
@@ -61,6 +63,8 @@ def lambda_handler(event, context):
 
         # Hoşgeldin maili gönder
         send_welcome_email(email, name, plan)
+        # Yeni üye bildirimi (admin)
+        send_admin_notification(name, email, country, role, plan)
 
         return {
             'statusCode': 200,
@@ -132,3 +136,28 @@ def send_welcome_email(email, name, plan):
     except Exception as e:
         print(f'Email error: {str(e)}')
         # Mail gönderilemese bile kayıt başarılı sayılır
+
+
+def send_admin_notification(name, email, country, role, plan):
+    """Tells Osman a real person joined. Wrapped in its own try/except so a
+    notification failure can never break the member's signup."""
+    try:
+        ses.send_email(
+            Source='noreply@digitalsafetyknights.org',
+            Destination={'ToAddresses': [ADMIN_EMAIL]},
+            Message={
+                'Subject': {'Data': f'🛡️ New DSK member: {name}'},
+                'Body': {'Text': {'Data': (
+                    f"A new member just joined Digital Safety Knights.\n\n"
+                    f"Name:    {name}\n"
+                    f"Email:   {email}\n"
+                    f"Role:    {role}\n"
+                    f"Plan:    {plan}\n"
+                    f"Country: {country}\n\n"
+                    f"They will start receiving the Weekly Knight Report.\n"
+                    f"Full list: DynamoDB table dsk-members"
+                )}}
+            }
+        )
+    except Exception as e:
+        print(f'Admin notification error: {str(e)}')

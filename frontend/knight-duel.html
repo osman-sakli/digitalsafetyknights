@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Knight's Duel — Digital Safety Knights</title>
+<link rel="canonical" href="https://digitalsafetyknights.org/knight-duel.html">
+<meta name="description" content="Knight's Duel — battle Glitch and other tricksters in a fast, fun safety-battle game. Free, no download, no account.">
+<meta property="og:title" content="Knight's Duel — Digital Safety Knights">
+<meta property="og:description" content="Battle Glitch in a fast, fun safety-battle game — free, no download, no account.">
+<meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
+<meta property="og:url" content="https://digitalsafetyknights.org/knight-duel.html">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.ico">
+<link rel="stylesheet" href="assets/theme.css">
+<script src="assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
+<style>
+  :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --danger: #e63946; --success: #2a9d8f; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Nunito Sans', 'Segoe UI', system-ui, sans-serif; background: linear-gradient(180deg, #0d1b3e, #1a2f6e 60%, #0d1b3e); color: white; min-height: 100vh; overflow-x: hidden; }
+  .top-bar { display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; }
+  .top-bar a { color: #cdd6ea; text-decoration: none; font-weight: 700; font-size: 0.85rem; }
+  .mute-btn { background: rgba(255,255,255,0.1); border: none; color: white; width: 38px; height: 38px; border-radius: 50%; font-size: 1.1rem; cursor: pointer; }
+
+  .screen { display: none; padding: 0 1.2rem 3rem; max-width: 640px; margin: 0 auto; text-align: center; }
+  .screen.active { display: block; }
+
+  /* ---------- intro ---------- */
+  #screen-intro .icon { font-size: 4rem; margin: 1.5rem 0 0.5rem; }
+  #screen-intro h1 { font-size: 2rem; font-weight: 900; margin-bottom: 0.6rem; }
+  #screen-intro h1 .gold { color: var(--gold2); }
+  #screen-intro p { color: #cdd6ea; line-height: 1.7; margin-bottom: 1.6rem; }
+  .realm-card { background: rgba(255,255,255,0.06); border: 2px solid rgba(201,168,76,0.35); border-radius: 18px; padding: 1.4rem; margin-bottom: 1.6rem; }
+  .realm-card .emoji { font-size: 2.2rem; }
+  .realm-card h3 { margin: 0.5rem 0 0.3rem; color: var(--gold2); }
+  .realm-card p { color: #cdd6ea; font-size: 0.88rem; margin: 0; }
+  #nickname-input { width: 100%; max-width: 320px; padding: 14px; border-radius: 14px; border: 2px solid rgba(201,168,76,0.4); background: rgba(255,255,255,0.08); color: white; font-size: 1.05rem; font-weight: 800; text-align: center; margin-bottom: 1rem; }
+  #nickname-input::placeholder { color: #8899bb; }
+  .btn-gold { background: linear-gradient(135deg, var(--gold2), var(--gold)); color: var(--navy); border: none; padding: 16px 36px; border-radius: 30px; font-weight: 900; font-size: 1.05rem; cursor: pointer; box-shadow: 0 8px 24px rgba(201,168,76,0.35); }
+  .btn-ghost { background: rgba(255,255,255,0.08); color: white; border: 2px solid rgba(255,255,255,0.2); padding: 14px 30px; border-radius: 26px; font-weight: 800; cursor: pointer; font-size: 0.95rem; }
+
+  /* ---------- battle ---------- */
+  #play-area { position: relative; }
+  #play-area.shake { animation: shakeAnim 0.35s; }
+  @keyframes shakeAnim { 10%,90%{transform:translate3d(-1px,0,0);} 20%,80%{transform:translate3d(2px,0,0);} 30%,50%,70%{transform:translate3d(-4px,0,0);} 40%,60%{transform:translate3d(4px,0,0);} }
+  #flash-overlay { position: fixed; inset: 0; background: rgba(230,57,70,0.35); opacity: 0; pointer-events: none; z-index: 500; transition: opacity 0.1s; }
+  #flash-overlay.on { opacity: 1; }
+  #flash-overlay.success { background: rgba(42,157,143,0.3); }
+
+  .hp-row { display: flex; align-items: center; gap: 10px; margin: 0.6rem 0; }
+  .hp-row .name { font-weight: 900; font-size: 0.85rem; width: 90px; text-align: left; }
+  .hp-bar-track { flex: 1; height: 16px; background: rgba(0,0,0,0.35); border-radius: 10px; overflow: hidden; border: 2px solid rgba(255,255,255,0.15); }
+  .hp-bar-fill { height: 100%; border-radius: 10px; transition: width 0.4s ease; }
+  .hp-bar-fill.villain { background: linear-gradient(90deg, #e63946, #ff8a65); }
+  .hp-bar-fill.knight { background: linear-gradient(90deg, #2a9d8f, #6ee7c8); }
+
+  .duel-stage { display: flex; justify-content: space-between; align-items: flex-end; margin: 1rem 0; }
+  .fighter { width: 42%; }
+  .fighter img { width: 100%; max-height: 190px; object-fit: contain; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.4)); }
+  .fighter.villain img { transform: scaleX(-1); }
+  .fighter.hit img { animation: hitAnim 0.3s; }
+  @keyframes hitAnim { 0%{filter:brightness(2) drop-shadow(0 10px 20px rgba(230,57,70,0.8));} 100%{filter:brightness(1);} }
+  .knight-badge { width: 100%; max-height: 150px; border-radius: 50%; aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; font-size: 3.4rem; box-shadow: 0 10px 24px rgba(0,0,0,0.4); margin: 0 auto; }
+
+  .speech-bubble { background: white; color: var(--navy); border-radius: 18px; padding: 1.1rem 1.3rem; margin: 0.6rem 0 1.2rem; position: relative; text-align: left; }
+  .speech-bubble .narrator { font-weight: 900; font-size: 0.72rem; letter-spacing: 1px; color: var(--gold); text-transform: uppercase; margin-bottom: 4px; }
+  .speech-bubble .prompt { font-size: 1.02rem; font-weight: 700; line-height: 1.5; }
+
+  .choice-btn { display: block; width: 100%; text-align: left; background: rgba(255,255,255,0.08); border: 2px solid rgba(255,255,255,0.18); color: white; padding: 14px 18px; border-radius: 14px; margin-bottom: 10px; font-size: 0.95rem; font-weight: 600; cursor: pointer; font-family: inherit; }
+  .choice-btn:hover:not(:disabled) { border-color: var(--gold); }
+  .choice-btn:disabled { cursor: default; }
+  .choice-btn.correct { border-color: var(--success); background: rgba(42,157,143,0.25); }
+  .choice-btn.incorrect { border-color: var(--danger); background: rgba(230,57,70,0.2); }
+
+  .coach-box { display: none; background: rgba(255,255,255,0.08); border-radius: 12px; padding: 1rem 1.2rem; margin: 0.6rem 0 1rem; font-size: 0.88rem; line-height: 1.55; text-align: left; }
+  .coach-box.show { display: block; }
+  .coach-box.correct { border-left: 4px solid var(--success); }
+  .coach-box.incorrect { border-left: 4px solid var(--danger); }
+
+  .popup { position: absolute; font-weight: 900; font-size: 1.3rem; pointer-events: none; animation: popupFloat 0.9s forwards; z-index: 10; }
+  .popup.hit { color: #ff8a65; }
+  .popup.miss { color: #6ee7c8; }
+  @keyframes popupFloat { 0%{ transform: translateY(0); opacity: 1; } 100%{ transform: translateY(-50px); opacity: 0; } }
+
+  /* ---------- victory / retry ---------- */
+  #screen-victory .icon, #screen-retry .icon { font-size: 4rem; margin: 1.5rem 0 0.6rem; }
+  #screen-victory h1 { color: var(--gold2); font-size: 1.8rem; margin-bottom: 0.5rem; }
+  #screen-retry h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+  #result-canvas { max-width: 100%; border-radius: 18px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); margin: 1rem 0; }
+  .btn-row { display: flex; gap: 0.8rem; justify-content: center; flex-wrap: wrap; margin-top: 1rem; }
+</style>
+</head>
+<body>
+
+<div id="flash-overlay"></div>
+
+<div class="top-bar">
+  <a href="/quests.html" data-i18n="qp.home">← Home</a>
+  <button class="mute-btn" id="mute-btn" onclick="toggleMute()">🔊</button>
+</div>
+
+<div id="play-area">
+
+<div class="screen active" id="screen-intro">
+  <div class="icon">⚔️</div>
+  <h1 id="kd-title">Knight's <span class="gold">Duel</span></h1>
+  <p id="kd-tagline">Glitch is testing you with six sneaky tricks. Answer right to land a hit — answer wrong and he gets a hit in, but you'll always learn the move either way.</p>
+  <div class="realm-card">
+    <div class="emoji">🚩</div>
+    <h3 id="kd-realm-title">Realm 1: Grooming Watch</h3>
+    <p id="kd-realm-desc">Spot the red flags a well-disguised stranger uses online.</p>
+  </div>
+  <input type="text" id="nickname-input" maxlength="24" placeholder="Your Knight name">
+  <div>
+    <button class="btn-gold" id="start-btn" onclick="startBattle()">⚔️ Start Battle</button>
+  </div>
+</div>
+
+<div class="screen" id="screen-battle">
+  <div class="hp-row">
+    <div class="name" id="villain-name">GLITCH</div>
+    <div class="hp-bar-track"><div class="hp-bar-fill villain" id="villain-hp" style="width:100%;"></div></div>
+  </div>
+  <div class="duel-stage">
+    <div class="fighter villain" id="villain-fighter"><img src="assets/characters/cutouts/glitch-cutout.png" alt="Glitch"></div>
+    <div class="fighter knight">
+      <div class="knight-badge" id="knight-badge" style="background:linear-gradient(135deg,#e8c56a,#c9a84c);">🛡️</div>
+    </div>
+  </div>
+  <div class="hp-row">
+    <div class="name" id="knight-name">YOU</div>
+    <div class="hp-bar-track"><div class="hp-bar-fill knight" id="knight-hp" style="width:100%;"></div></div>
+  </div>
+
+  <div class="speech-bubble">
+    <div class="narrator" id="narrator-name">GLITCH</div>
+    <div class="prompt" id="prompt-text">Loading...</div>
+  </div>
+
+  <div id="choices-wrap"></div>
+  <div class="coach-box" id="coach-box"></div>
+  <div style="text-align:center;"><button class="btn-gold" id="next-btn" style="display:none;" onclick="nextRound()">Continue →</button></div>
+</div>
+
+<div class="screen" id="screen-victory">
+  <div class="icon">🏆</div>
+  <h1 id="victory-title">You Defeated Glitch!</h1>
+  <p id="victory-sub" style="color:#cdd6ea;">Every trick, spotted.</p>
+  <canvas id="result-canvas" width="600" height="600"></canvas>
+  <div class="btn-row">
+    <button class="btn-gold" id="download-btn" onclick="downloadCard()">⬇️ Save Battle Card</button>
+    <button class="btn-ghost" onclick="location.href='/quests.html'">🎮 More Quests</button>
+  </div>
+</div>
+
+<div class="screen" id="screen-retry">
+  <div class="icon">🛡️</div>
+  <h1 id="retry-title">So Close!</h1>
+  <p id="retry-sub" style="color:#cdd6ea;">Glitch got away this time — but you still learned every trick. Ready for a rematch?</p>
+  <div class="btn-row">
+    <button class="btn-gold" onclick="location.reload()">⚔️ Try Again</button>
+    <button class="btn-ghost" onclick="location.href='/quests.html'">🎮 More Quests</button>
+  </div>
+</div>
+
+</div>
+
+<script>
+var kdLang = (window.DSKi18n && DSKi18n.lang) || 'en';
+var kdIsTr = kdLang === 'tr';
+var kdIsEs = kdLang === 'es';
+
+// ---------- sound (same zero-dependency pattern as game.html) ----------
+var muted = localStorage.getItem('dsk_game_muted') === '1';
+document.getElementById('mute-btn').textContent = muted ? '🔇' : '🔊';
+var actx = null;
+function ensureAudio() { if (!actx) { try { actx = new (window.AudioContext || window.webkitAudioContext)(); } catch (e) {} } }
+function beep(freq, dur, type, vol) {
+  if (muted || !actx) return;
+  var osc = actx.createOscillator();
+  var gain = actx.createGain();
+  osc.type = type || 'sine';
+  osc.frequency.value = freq;
+  gain.gain.value = vol || 0.08;
+  osc.connect(gain); gain.connect(actx.destination);
+  osc.start();
+  gain.gain.exponentialRampToValueAtTime(0.001, actx.currentTime + dur);
+  osc.stop(actx.currentTime + dur);
+}
+function playHit() { beep(880, 0.1, 'sine', 0.09); setTimeout(function() { beep(1320, 0.12, 'sine', 0.09); }, 80); }
+function playMiss() { beep(160, 0.25, 'sawtooth', 0.07); }
+function playVictory() { beep(660, 0.12, 'sine', 0.09); setTimeout(function(){beep(880,0.12,'sine',0.09);},120); setTimeout(function(){beep(1320,0.2,'sine',0.1);},240); }
+function toggleMute() {
+  muted = !muted;
+  localStorage.setItem('dsk_game_muted', muted ? '1' : '0');
+  document.getElementById('mute-btn').textContent = muted ? '🔇' : '🔊';
+}
+
+// ---------- fx helpers (same pattern as game.html) ----------
+function screenShake() {
+  var area = document.getElementById('play-area');
+  area.classList.remove('shake'); void area.offsetWidth; area.classList.add('shake');
+  setTimeout(function() { area.classList.remove('shake'); }, 350);
+}
+function flash(kind) {
+  var f = document.getElementById('flash-overlay');
+  f.className = kind === 'success' ? 'success' : '';
+  f.classList.add('on');
+  setTimeout(function() { f.classList.remove('on'); }, 140);
+}
+function spawnPopup(kind, text) {
+  var area = document.getElementById('play-area');
+  var p = document.createElement('div');
+  p.className = 'popup ' + kind;
+  p.textContent = text;
+  p.style.left = (kind === 'hit' ? '20%' : '65%');
+  p.style.top = '30%';
+  area.appendChild(p);
+  setTimeout(function() { p.remove(); }, 900);
+}
+function hitFlash(el) {
+  el.classList.remove('hit'); void el.offsetWidth; el.classList.add('hit');
+}
+
+// ---------- i18n strings ----------
+var STR = kdIsTr ? {
+  title: 'Şövalye <span class="gold">Düellosu</span>',
+  tagline: 'Glitch seni altı sinsi hileyle test ediyor. Doğru cevapla vur — yanlış cevap versen de o bir vuruş yapar ama her durumda o hamleyi öğrenirsin.',
+  realmTitle: 'Bölge 1: Grooming Watch', realmDesc: 'İyi gizlenmiş bir yabancının kullandığı kırmızı bayrakları fark et.',
+  namePlaceholder: 'Şövalye adın', start: '⚔️ Düelloyu Başlat', continueBtn: 'Devam Et →',
+  victoryTitle: "Glitch'i Yendin!", victorySub: 'Her hile, fark edildi.',
+  retryTitle: 'Çok Yaklaştın!', retrySub: "Glitch bu sefer kaçtı — ama yine de her hileyi öğrendin. Rövanş için hazır mısın?",
+  save: '⬇️ Savaş Kartını Kaydet', more: '🎮 Daha Fazla Görev'
+} : kdIsEs ? {
+  title: 'Duelo de <span class="gold">Caballeros</span>',
+  tagline: 'Glitch te está probando con seis trucos astutos. Responde bien para golpear — si fallas, él te golpea, pero siempre aprenderás la jugada de todos modos.',
+  realmTitle: 'Reino 1: Vigilancia contra el Grooming', realmDesc: 'Detecta las señales de alerta que usa un desconocido bien disfrazado.',
+  namePlaceholder: 'Tu nombre de Caballero', start: '⚔️ Comenzar Duelo', continueBtn: 'Continuar →',
+  victoryTitle: '¡Derrotaste a Glitch!', victorySub: 'Cada truco, detectado.',
+  retryTitle: '¡Muy Cerca!', retrySub: 'Glitch escapó esta vez — pero igual aprendiste cada truco. ¿Listo para la revancha?',
+  save: '⬇️ Guardar Tarjeta de Batalla', more: '🎮 Más Misiones'
+} : {
+  title: "Knight's <span class=\"gold\">Duel</span>",
+  tagline: "Glitch is testing you with six sneaky tricks. Answer right to land a hit — answer wrong and he gets a hit in, but you'll always learn the move either way.",
+  realmTitle: 'Realm 1: Grooming Watch', realmDesc: 'Spot the red flags a well-disguised stranger uses online.',
+  namePlaceholder: 'Your Knight name', start: '⚔️ Start Battle', continueBtn: 'Continue →',
+  victoryTitle: 'You Defeated Glitch!', victorySub: 'Every trick, spotted.',
+  retryTitle: 'So Close!', retrySub: "Glitch got away this time — but you still learned every trick. Ready for a rematch?",
+  save: '⬇️ Save Battle Card', more: '🎮 More Quests'
+};
+
+document.getElementById('kd-title').innerHTML = STR.title;
+document.getElementById('kd-tagline').textContent = STR.tagline;
+document.getElementById('kd-realm-title').textContent = STR.realmTitle;
+document.getElementById('kd-realm-desc').textContent = STR.realmDesc;
+document.getElementById('nickname-input').placeholder = STR.namePlaceholder;
+document.getElementById('start-btn').textContent = STR.start;
+document.getElementById('next-btn').textContent = STR.continueBtn;
+document.getElementById('victory-title').textContent = STR.victoryTitle;
+document.getElementById('victory-sub').textContent = STR.victorySub;
+document.getElementById('retry-title').textContent = STR.retryTitle;
+document.getElementById('retry-sub').textContent = STR.retrySub;
+document.getElementById('download-btn').textContent = STR.save;
+document.querySelectorAll('.btn-ghost').forEach(function(b){ if (b.textContent.indexOf('Quests')!==-1 || b.textContent.indexOf('Görev')!==-1 || b.textContent.indexOf('Misiones')!==-1) b.textContent = STR.more; });
+
+// ---------- battle state ----------
+var QUEST_FILE = kdIsTr ? 'content/quests/grooming-watch-tr.json' : kdIsEs ? 'content/quests/grooming-watch-es.json' : 'content/quests/grooming-watch.json';
+var questData = null;
+var qIndex = 0;
+var villainHP = 100;
+var knightHP = 100;
+var correctCount = 0;
+var damagePerHit = 0;
+var battleEnded = false;
+var nickname = localStorage.getItem('dsk_nickname') || '';
+
+if (nickname) document.getElementById('nickname-input').value = nickname;
+
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(function(s) { s.classList.remove('active'); });
+  document.getElementById(id).classList.add('active');
+}
+
+function startBattle() {
+  ensureAudio();
+  var n = document.getElementById('nickname-input').value.trim();
+  if (n.length < 2) { document.getElementById('nickname-input').focus(); return; }
+  nickname = n;
+  localStorage.setItem('dsk_nickname', nickname);
+  document.getElementById('knight-name').textContent = nickname.toUpperCase();
+
+  fetch(QUEST_FILE).then(function(r) { return r.json(); }).then(function(data) {
+    questData = data;
+    damagePerHit = Math.ceil(100 / data.questions.length);
+    showScreen('screen-battle');
+    renderQuestion();
+  }).catch(function() {
+    alert(kdIsTr ? 'Yüklenemedi, tekrar dene.' : kdIsEs ? 'No se pudo cargar, intenta de nuevo.' : 'Could not load, please try again.');
+  });
+}
+
+function renderQuestion() {
+  var q = questData.questions[qIndex];
+  document.getElementById('narrator-name').textContent = q.narrator;
+  document.getElementById('prompt-text').textContent = q.prompt;
+  document.getElementById('coach-box').className = 'coach-box';
+  document.getElementById('next-btn').style.display = 'none';
+
+  var wrap = document.getElementById('choices-wrap');
+  wrap.innerHTML = '';
+  q.choices.forEach(function(choice, i) {
+    var btn = document.createElement('button');
+    btn.className = 'choice-btn';
+    btn.textContent = choice.text;
+    btn.onclick = function() { handleChoice(choice, btn); };
+    wrap.appendChild(btn);
+  });
+}
+
+function handleChoice(choice, btnEl) {
+  var buttons = document.querySelectorAll('#choices-wrap .choice-btn');
+  buttons.forEach(function(b) { b.disabled = true; });
+  btnEl.classList.add(choice.correct ? 'correct' : 'incorrect');
+
+  var coachBox = document.getElementById('coach-box');
+  coachBox.className = 'coach-box show ' + (choice.correct ? 'correct' : 'incorrect');
+  coachBox.textContent = (choice.correct ? '✅ ' : '💡 ') + choice.coach;
+
+  if (choice.correct) {
+    correctCount++;
+    villainHP = Math.max(0, villainHP - damagePerHit);
+    document.getElementById('villain-hp').style.width = villainHP + '%';
+    hitFlash(document.getElementById('villain-fighter'));
+    screenShake();
+    flash('success');
+    spawnPopup('hit', '-' + damagePerHit);
+    playHit();
+  } else {
+    knightHP = Math.max(0, knightHP - 15);
+    document.getElementById('knight-hp').style.width = knightHP + '%';
+    flash();
+    spawnPopup('miss', '-15');
+    playMiss();
+  }
+
+  setTimeout(function() { document.getElementById('next-btn').style.display = 'inline-block'; }, 500);
+}
+
+function nextRound() {
+  if (battleEnded) return;
+  qIndex++;
+  if (qIndex >= questData.questions.length) {
+    endBattle();
+    return;
+  }
+  renderQuestion();
+}
+
+function endBattle() {
+  if (battleEnded) return;
+  battleEnded = true;
+  var pointsLabel = kdIsTr ? "Şövalye Düellosu" : kdIsEs ? 'Duelo de Caballeros' : "Knight's Duel";
+  if (window.DSKPoints) {
+    DSKPoints.addPoints(correctCount * 10, pointsLabel + ': ' + questData.title);
+    DSKPoints.markComboActivity('quest');
+  }
+
+  if (villainHP <= 0) {
+    playVictory();
+    renderResultCard();
+    showScreen('screen-victory');
+  } else {
+    showScreen('screen-retry');
+  }
+}
+
+function renderResultCard() {
+  var canvas = document.getElementById('result-canvas');
+  var ctx = canvas.getContext('2d');
+  var W = canvas.width, H = canvas.height;
+
+  var grad = ctx.createLinearGradient(0, 0, 0, H);
+  grad.addColorStop(0, '#1a2f6e');
+  grad.addColorStop(1, '#0d1b3e');
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, W, H);
+
+  ctx.strokeStyle = '#c9a84c';
+  ctx.lineWidth = 6;
+  ctx.strokeRect(16, 16, W - 32, H - 32);
+
+  ctx.textAlign = 'center';
+  ctx.fillStyle = '#e8c56a';
+  ctx.font = '900 22px Arial';
+  ctx.fillText('DIGITAL SAFETY KNIGHTS', W / 2, 80);
+
+  ctx.font = '900 34px Arial';
+  ctx.fillStyle = '#ffffff';
+  var title = kdIsTr ? "GLITCH'İ YENDİM!" : kdIsEs ? '¡DERROTÉ A GLITCH!' : 'I DEFEATED GLITCH!';
+  ctx.fillText(title, W / 2, 150);
+
+  ctx.font = '800 26px Arial';
+  ctx.fillStyle = '#cdd6ea';
+  ctx.fillText(questData.title.toUpperCase(), W / 2, 200);
+
+  ctx.font = '80px Arial';
+  ctx.fillText('🛡️⚔️', W / 2, 320);
+
+  var level = window.DSKPoints ? DSKPoints.levelForPoints(DSKPoints.getPoints()) : {emoji:'🪖', name:'Squire'};
+  ctx.font = '60px Arial';
+  ctx.fillText(level.emoji, W / 2, 410);
+
+  ctx.font = '900 30px Arial';
+  ctx.fillStyle = '#ffffff';
+  ctx.fillText(nickname, W / 2, 460);
+
+  ctx.font = '700 20px Arial';
+  ctx.fillStyle = '#e8c56a';
+  ctx.fillText(level.name + ' · ' + correctCount + '/' + questData.questions.length + (kdIsTr ? ' doğru' : kdIsEs ? ' correctas' : ' correct'), W / 2, 495);
+
+  ctx.font = '600 16px Arial';
+  ctx.fillStyle = '#8899bb';
+  ctx.fillText('digitalsafetyknights.org', W / 2, 560);
+}
+
+function downloadCard() {
+  var canvas = document.getElementById('result-canvas');
+  var link = document.createElement('a');
+  link.download = 'knight-duel-victory.png';
+  link.href = canvas.toDataURL('image/png');
+  link.click();
+}
+</script>
+<script src="/assets/lang-switcher.js"></script>
+</body>
+</html>

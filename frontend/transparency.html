@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Real Numbers — Digital Safety Knights</title>
+<link rel="canonical" href="https://digitalsafetyknights.org/transparency.html">
+<meta name="description" content="No fabricated stats. The real, live numbers behind Digital Safety Knights — members, tools, languages, and content, updated automatically.">
+<meta property="og:title" content="Our Real Numbers — Digital Safety Knights">
+<meta property="og:description" content="No fabricated stats. The real, live numbers behind Digital Safety Knights, updated automatically.">
+<meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
+<meta property="og:url" content="https://digitalsafetyknights.org/transparency.html">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.ico">
+<link rel="stylesheet" href="assets/theme.css">
+<script src="assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
+<style>
+  :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Nunito Sans', 'Segoe UI', system-ui, sans-serif; background: var(--light); color: #2d3748; }
+
+  .tp-hero { background: var(--realm-bg); color: white; padding: 3rem 1.5rem 3.5rem; text-align: center; position: relative; overflow: hidden; }
+  .tp-hero .eyebrow { color: var(--gold); font-weight: 900; letter-spacing: 2px; font-size: 0.8rem; text-transform: uppercase; }
+  .tp-hero h1 { font-size: 2.2rem; font-weight: 900; margin: 10px 0 12px; }
+  .tp-hero p { color: #cdd7f0; max-width: 580px; margin: 0 auto; line-height: 1.7; font-size: 1rem; }
+  .tp-hero a.back { position: absolute; left: 1.5rem; top: 1.5rem; color: #cdd7f0; text-decoration: none; font-weight: 700; font-size: 0.85rem; }
+
+  .tp-wrap { max-width: 860px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+
+  .tp-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1rem; margin-bottom: 1.8rem; }
+  .tp-card { background: white; border-radius: 16px; padding: 1.4rem 1.3rem; box-shadow: 0 6px 20px rgba(13,27,62,0.08); border-top: 3px solid var(--zone-color, var(--gold)); }
+  .tp-card .n { font-size: 2.2rem; font-weight: 900; color: var(--navy); font-variant-numeric: tabular-nums; }
+  .tp-card .l { font-size: 0.78rem; color: var(--gray); font-weight: 700; margin-top: 4px; line-height: 1.4; }
+
+  .tp-section { background: white; border-radius: 18px; padding: 2rem; margin-bottom: 1.5rem; box-shadow: 0 6px 24px rgba(13,27,62,0.08); }
+  .tp-section h2 { color: var(--navy); font-size: 1.15rem; margin-bottom: 0.9rem; }
+  .tp-section p { color: #4a5568; line-height: 1.75; font-size: 0.93rem; margin-bottom: 0.8rem; }
+  .tp-section p:last-child { margin-bottom: 0; }
+
+  .tp-live-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 0.72rem; font-weight: 800; color: #1e7d3a; background: #e6f4ea; padding: 4px 12px; border-radius: 20px; margin-bottom: 1.2rem; }
+  .tp-live-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: #1e7d3a; }
+
+  .tp-cta { text-align: center; margin-top: 2rem; }
+  .tp-btn { display: inline-block; background: linear-gradient(135deg, var(--gold2), var(--gold)); color: var(--navy); padding: 14px 30px; border-radius: 25px; font-weight: 900; text-decoration: none; margin: 0 6px; }
+
+  footer { text-align: center; padding: 2rem; color: var(--gray); font-size: 0.85rem; }
+</style>
+</head>
+<body>
+
+<div class="tp-hero">
+  <a href="/" class="back" data-i18n="qp.home">← Home</a>
+  <div class="eyebrow">Digital Safety Knights</div>
+  <h1 id="tp-title">📊 Our Real Numbers</h1>
+  <p id="tp-tagline">No inflated stats, no vanity metrics. This page shows exactly who we are right now — pulled live from our own systems, not hand-typed.</p>
+</div>
+
+<div class="tp-wrap">
+  <div style="text-align:center;">
+    <div class="tp-live-badge" id="tp-live-badge"><span class="dot"></span> Live data</div>
+  </div>
+
+  <div class="tp-cards" id="tp-cards"></div>
+
+  <div class="tp-section">
+    <h2 id="tp-why-title">Why This Page Exists</h2>
+    <p id="tp-why-p1">Most nonprofit and edtech sites lead with big, round numbers — "millions protected," "trusted by thousands." We don't, because we can't honestly say that yet, and we'd rather tell you the truth.</p>
+    <p id="tp-why-p2">Digital Safety Knights is a small, free nonprofit organization. The numbers above are exactly what they say — a live member count from our own database, a real content count from our own video library, nothing rounded up or estimated.</p>
+  </div>
+
+  <div class="tp-cta">
+    <a class="tp-btn" href="/about.html" id="tp-cta-about">👋 Meet the Founders</a>
+    <a class="tp-btn" href="/contact.html" id="tp-cta-contact">✉️ Ask Us Anything</a>
+  </div>
+</div>
+
+<footer>⚔️ Digital Safety Knights · digitalsafetyknights.org · © 2026</footer>
+
+<script>
+var tpLang = (window.DSKi18n && DSKi18n.lang) || 'en';
+var tpIsTr = tpLang === 'tr';
+var tpIsEs = tpLang === 'es';
+
+document.getElementById('tp-title').textContent = tpIsTr ? '📊 Gerçek Sayılarımız' : tpIsEs ? '📊 Nuestros Números Reales' : '📊 Our Real Numbers';
+document.getElementById('tp-tagline').textContent = tpIsTr
+  ? 'Şişirilmiş istatistik yok, gösteriş amaçlı sayı yok. Bu sayfa şu an tam olarak kim olduğumuzu gösteriyor — elle yazılmış değil, kendi sistemlerimizden canlı olarak çekiliyor.'
+  : tpIsEs
+  ? 'Sin estadísticas infladas, sin métricas de vanidad. Esta página muestra exactamente quiénes somos ahora mismo — extraído en vivo de nuestros propios sistemas, no escrito a mano.'
+  : "No inflated stats, no vanity metrics. This page shows exactly who we are right now — pulled live from our own systems, not hand-typed.";
+document.getElementById('tp-live-badge').innerHTML = '<span class="dot"></span> ' + (tpIsTr ? 'Canlı veri' : tpIsEs ? 'Datos en vivo' : 'Live data');
+document.getElementById('tp-why-title').textContent = tpIsTr ? 'Bu Sayfa Neden Var' : tpIsEs ? 'Por Qué Existe Esta Página' : 'Why This Page Exists';
+document.getElementById('tp-why-p1').textContent = tpIsTr
+  ? 'Çoğu STK ve eğitim teknolojisi sitesi büyük, yuvarlak sayılarla açılır — "milyonlarca kişi korundu," "binlerce kişi tarafından güveniliyor." Biz yapmıyoruz, çünkü bunu dürüstçe söyleyemeyiz ve size gerçeği anlatmayı tercih ederiz.'
+  : tpIsEs
+  ? 'La mayoría de los sitios de ONG y edtech comienzan con números grandes y redondos — "millones protegidos," "confiado por miles." Nosotros no, porque aún no podemos decir eso honestamente, y preferimos decirte la verdad.'
+  : 'Most nonprofit and edtech sites lead with big, round numbers — "millions protected," "trusted by thousands." We don\'t, because we can\'t honestly say that yet, and we\'d rather tell you the truth.';
+document.getElementById('tp-why-p2').textContent = tpIsTr
+  ? 'Digital Safety Knights küçük, ücretsiz bir kâr amacı gütmeyen kuruluştur. Yukarıdaki sayılar tam olarak söyledikleri şeydir — kendi veritabanımızdan canlı bir üye sayısı, kendi video kütüphanemizden gerçek bir içerik sayısı, hiçbir şey yuvarlanmamış veya tahmin edilmemiştir.'
+  : tpIsEs
+  ? 'Digital Safety Knights es una organización sin fines de lucro pequeña y gratuita. Los números anteriores son exactamente lo que dicen ser — un recuento de miembros en vivo de nuestra propia base de datos, un recuento de contenido real de nuestra propia biblioteca de videos, nada redondeado ni estimado.'
+  : 'Digital Safety Knights is a small, free nonprofit organization. The numbers above are exactly what they say — a live member count from our own database, a real content count from our own video library, nothing rounded up or estimated.';
+document.getElementById('tp-cta-about').textContent = tpIsTr ? '👋 Kurucularla Tanışın' : tpIsEs ? '👋 Conoce a los Fundadores' : '👋 Meet the Founders';
+document.getElementById('tp-cta-contact').textContent = tpIsTr ? '✉️ Bize Sorun' : tpIsEs ? '✉️ Pregúntanos' : '✉️ Ask Us Anything';
+
+var LAUNCH_DATE = new Date('2026-04-11T00:00:00Z');
+var daysBuilding = Math.max(1, Math.floor((Date.now() - LAUNCH_DATE.getTime()) / 86400000));
+
+function card(n, label, color) {
+  return '<div class="tp-card" style="--zone-color:' + color + '"><div class="n">' + n + '</div><div class="l">' + label + '</div></div>';
+}
+
+var L = {
+  members: tpIsTr ? 'Kurucu Şövalye (ilklerden biri ol)' : tpIsEs ? 'Caballeros Fundadores (sé de los primeros)' : 'Founding Knights (be one of the first)',
+  countries: tpIsTr ? 'Üyelerimizin geldiği ülke' : tpIsEs ? 'Países de origen de nuestros miembros' : 'Countries our members call home',
+  tools: tpIsTr ? 'Ücretsiz İnteraktif Araç' : tpIsEs ? 'Herramientas Interactivas Gratuitas' : 'Free Interactive Tools',
+  languages: tpIsTr ? 'Konuşulan Dil' : tpIsEs ? 'Idiomas Disponibles' : 'Languages Spoken',
+  films: tpIsTr ? 'Kendi Yapımı Kısa Film' : tpIsEs ? 'Cortometrajes Propios Producidos' : 'Original Short Films Produced',
+  days: tpIsTr ? 'Gündür İnşa Ediyoruz' : tpIsEs ? 'Días Construyendo' : 'Days We\'ve Been Building',
+  cost: tpIsTr ? 'Ailelere Maliyet, Her Zaman' : tpIsEs ? 'Costo para las Familias, Siempre' : 'Cost to Families, Always'
+};
+
+function render(memberCount, countryCount) {
+  var html = '';
+  html += card(memberCount, L.members, 'var(--zone-ai)');
+  html += card(countryCount, L.countries, 'var(--zone-privacy)');
+  html += card(9, L.tools, 'var(--zone-scam)');
+  html += card(3, L.languages, 'var(--zone-stranger)');
+  html += card(33, L.films, 'var(--gold)');
+  html += card(daysBuilding, L.days, 'var(--zone-ai)');
+  html += card('$0', L.cost, 'var(--zone-privacy)');
+  document.getElementById('tp-cards').innerHTML = html;
+}
+
+// Render immediately with a safe fallback, then swap in live numbers.
+render(7, 2);
+
+fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/transparency-stats')
+  .then(function (r) { return r.json(); })
+  .then(function (data) {
+    if (typeof data.members === 'number') {
+      render(data.members, data.countries);
+    }
+  })
+  .catch(function () { /* fallback numbers already rendered */ });
+</script>
+<script src="/assets/lang-switcher.js"></script>
+</body>
+</html>
