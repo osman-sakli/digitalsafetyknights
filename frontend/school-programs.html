@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>School &amp; Organization Programs — Digital Safety Knights</title>
+<link rel="canonical" href="https://digitalsafetyknights.org/school-programs.html">
+<meta name="description" content="Book a free Digital Safety Knights seminar, or request our guides and materials, for your school, nonprofit, charity, or community organization — in-person in NJ and surrounding states, or virtual/remote anywhere.">
+<meta property="og:title" content="School &amp; Organization Programs — Digital Safety Knights">
+<meta property="og:description" content="Book a free seminar, or request our guides and materials, for your school, nonprofit, or community organization — in-person in NJ and surrounding states, or virtual anywhere.">
+<meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
+<meta property="og:url" content="https://digitalsafetyknights.org/school-programs.html">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.ico">
+<link rel="stylesheet" href="assets/theme.css">
+<script src="assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
+<style>
+  :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Nunito Sans', 'Segoe UI', system-ui, sans-serif; background: var(--light); color: #2d3748; }
+
+  .sp-hero { background: var(--realm-bg); color: white; padding: 3rem 1.5rem 3.5rem; text-align: center; position: relative; overflow: hidden; }
+  .sp-hero::before { content: ''; position: absolute; right: -60px; top: -60px; width: 240px; height: 240px; background: radial-gradient(circle, rgba(201,168,76,0.22), transparent 70%); }
+  .sp-hero .eyebrow { color: var(--gold); font-weight: 900; letter-spacing: 2px; font-size: 0.8rem; text-transform: uppercase; }
+  .sp-hero h1 { font-size: 2.2rem; font-weight: 900; margin: 10px 0 12px; }
+  .sp-hero p { color: #cdd7f0; max-width: 600px; margin: 0 auto; line-height: 1.7; font-size: 1rem; }
+  .sp-hero a.back { position: absolute; left: 1.5rem; top: 1.5rem; color: #cdd7f0; text-decoration: none; font-weight: 700; font-size: 0.85rem; }
+
+  .sp-wrap { max-width: 780px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+
+  .sp-section { background: white; border-radius: 18px; padding: 2rem; margin-bottom: 1.5rem; box-shadow: 0 6px 24px rgba(13,27,62,0.08); }
+  .sp-section h2 { color: var(--navy); font-size: 1.25rem; margin-bottom: 1rem; }
+  .sp-section p.lede { color: var(--gray); font-size: 0.92rem; line-height: 1.65; margin-bottom: 1rem; }
+
+  .sp-formats { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+  .sp-format-card { background: var(--light); border-radius: 12px; padding: 1.2rem; border: 2px solid transparent; }
+  .sp-format-card .icon { font-size: 1.6rem; margin-bottom: 6px; }
+  .sp-format-card h3 { color: var(--navy); font-size: 1rem; margin-bottom: 6px; }
+  .sp-format-card p { color: var(--gray); font-size: 0.85rem; line-height: 1.55; }
+  .sp-format-card .zone { display: inline-block; margin-top: 8px; background: white; border: 2px solid var(--gold); color: var(--navy); font-weight: 800; font-size: 0.72rem; padding: 4px 10px; border-radius: 14px; }
+
+  .sp-topics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0.9rem; }
+  .sp-topic { background: var(--light); border-radius: 12px; padding: 1rem; }
+  .sp-topic .icon { font-size: 1.3rem; margin-bottom: 4px; }
+  .sp-topic h4 { color: var(--navy); font-size: 0.9rem; margin-bottom: 3px; }
+  .sp-topic p { color: var(--gray); font-size: 0.8rem; line-height: 1.5; }
+
+  .sp-audience-row { display: flex; gap: 0.9rem; flex-wrap: wrap; margin-top: 0.5rem; }
+  .sp-audience-row .chip { background: var(--light); border: 2px solid var(--gold); color: var(--navy); font-weight: 800; font-size: 0.85rem; padding: 8px 16px; border-radius: 20px; }
+
+  .sp-form label { display: block; font-weight: 800; font-size: 0.85rem; color: var(--navy); margin: 1rem 0 6px; }
+  .sp-form input, .sp-form select, .sp-form textarea { width: 100%; padding: 12px 14px; border: 2px solid #dfe4ee; border-radius: 10px; font-size: 0.95rem; font-family: inherit; }
+  .sp-form textarea { min-height: 100px; resize: vertical; }
+  .sp-form .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .sp-format-toggle { display: flex; gap: 0.7rem; margin-top: 6px; flex-wrap: wrap; }
+  .sp-format-toggle label { display: flex; align-items: center; gap: 6px; background: var(--light); border: 2px solid #dfe4ee; border-radius: 10px; padding: 10px 14px; font-weight: 700; font-size: 0.85rem; color: var(--navy); margin: 0; cursor: pointer; }
+  .sp-format-toggle input { width: auto; }
+  .sp-submit { margin-top: 1.5rem; width: 100%; background: linear-gradient(135deg, var(--gold2), var(--gold)); color: var(--navy); border: none; padding: 16px; border-radius: 14px; font-weight: 900; font-size: 1rem; cursor: pointer; }
+  .sp-submit:disabled { opacity: 0.6; cursor: default; }
+  .sp-status { margin-top: 1rem; font-size: 0.9rem; font-weight: 700; padding: 12px; border-radius: 10px; display: none; }
+  .sp-status.ok { display: block; background: #e6f4ea; color: #1e7d3a; }
+  .sp-status.err { display: block; background: #fbe9e7; color: #c0392b; }
+
+  footer { text-align: center; padding: 2rem; color: var(--gray); font-size: 0.85rem; }
+</style>
+</head>
+<body>
+
+<div class="sp-hero">
+  <a href="/" class="back" data-i18n="qp.home">← Home</a>
+  <div class="eyebrow">Digital Safety Knights</div>
+  <h1 id="sp-title">🏫 School &amp; Organization Programs</h1>
+  <p id="sp-tagline">Free digital safety seminars and materials — for schools, nonprofits, charities, and community organizations alike. In-person across NJ and surrounding states, or virtual/remote anywhere.</p>
+</div>
+
+<div class="sp-wrap">
+  <div class="sp-section" style="background:linear-gradient(135deg,var(--gold2),var(--gold));box-shadow:0 6px 24px rgba(201,168,76,0.25);">
+    <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+      <div style="font-size:2rem;">🗓️</div>
+      <div style="flex:1;min-width:220px;">
+        <h2 style="color:var(--navy);margin-bottom:4px;" id="sp-dsw-title">Running a Digital Safety Week in October?</h2>
+        <p style="color:var(--navy);opacity:0.85;font-size:0.9rem;" id="sp-dsw-sub">We have a free, ready-to-run 5-day plan and printable poster — no prep needed.</p>
+      </div>
+      <a href="/digital-safety-week.html" style="background:var(--navy);color:var(--gold2);padding:12px 22px;border-radius:22px;font-weight:900;text-decoration:none;white-space:nowrap;" id="sp-dsw-cta">Get the Free Kit →</a>
+    </div>
+  </div>
+
+  <div class="sp-section">
+    <h2 id="sp-formats-title">How Sessions Work</h2>
+    <div class="sp-formats">
+      <div class="sp-format-card">
+        <div class="icon">🚗</div>
+        <h3 id="sp-format1-h">In-Person</h3>
+        <p id="sp-format1-p">A live assembly, classroom workshop, or parent-night presentation at your school.</p>
+        <span class="zone" id="sp-format1-zone">NJ, NY, PA, CT &amp; DE</span>
+      </div>
+      <div class="sp-format-card">
+        <div class="icon">💻</div>
+        <h3 id="sp-format2-h">Virtual</h3>
+        <p id="sp-format2-p">A live video-call session for classrooms or a parent-night webinar — available anywhere.</p>
+        <span class="zone" id="sp-format2-zone">Anywhere</span>
+      </div>
+      <div class="sp-format-card">
+        <div class="icon">📄</div>
+        <h3 id="sp-format3-h">Materials &amp; Guides Only</h3>
+        <p id="sp-format3-p">No live session needed? We'll send your organization our guides, handouts, and educational materials directly.</p>
+        <span class="zone" id="sp-format3-zone">Email, any time</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sp-section">
+    <h2 id="sp-audience-title">Who We Present To</h2>
+    <p class="lede" id="sp-audience-lede">Not just schools — any organization serving kids, teens, or families.</p>
+    <div class="sp-audience-row">
+      <span class="chip" id="sp-chip-students">Students (age-adapted)</span>
+      <span class="chip" id="sp-chip-parents">Parent nights</span>
+      <span class="chip" id="sp-chip-staff">Teachers &amp; staff</span>
+      <span class="chip" id="sp-chip-nonprofit">Nonprofits &amp; charities</span>
+      <span class="chip" id="sp-chip-community">Community &amp; youth organizations</span>
+    </div>
+    <p class="lede" style="margin-top:1rem;margin-bottom:0;" id="sp-kc-note">Have a student aged 13-17 who wants to get more involved after the session? They can apply directly to <a href="/knight-council.html" style="color:var(--navy);font-weight:800;">Knight Council</a>, our teen ambassador program.</p>
+    <p class="lede" style="margin-top:0.6rem;margin-bottom:0;" id="sp-principal-note">Need to get sign-off first? Share our <a href="/for-principals.html" style="color:var(--navy);font-weight:800;">one-page overview for principals</a> with your administrator.</p>
+  </div>
+
+  <div class="sp-section">
+    <h2 id="sp-topics-title">Topics We Cover</h2>
+    <div class="sp-topics-grid" id="sp-topics-grid"></div>
+  </div>
+
+  <p style="text-align:center;font-size:0.85rem;color:var(--gray);margin-bottom:1.2rem;">
+    <span id="sp-faq-prompt">Have questions before you request a session?</span>
+    <a href="/school-faq.html" id="sp-faq-link" style="color:var(--navy);font-weight:800;">See our FAQ →</a>
+  </p>
+
+  <div class="sp-section">
+    <h2 id="sp-form-title">Request a Session</h2>
+    <p class="lede" id="sp-form-lede">Tell us a bit about your organization and we'll follow up within a few business days.</p>
+    <form class="sp-form" id="sp-form">
+      <label for="sp-school" id="sp-label-school">School / Organization Name</label>
+      <input type="text" id="sp-school" required maxlength="120">
+
+      <div class="row2">
+        <div>
+          <label for="sp-contact" id="sp-label-contact">Your Name</label>
+          <input type="text" id="sp-contact" required maxlength="80">
+        </div>
+        <div>
+          <label for="sp-email" id="sp-label-email">Email</label>
+          <input type="email" id="sp-email" required maxlength="120">
+        </div>
+      </div>
+
+      <div class="row2">
+        <div>
+          <label for="sp-phone" id="sp-label-phone">Phone (optional)</label>
+          <input type="tel" id="sp-phone" maxlength="30">
+        </div>
+        <div>
+          <label for="sp-grades" id="sp-label-grades">Audience / Age Group (if applicable)</label>
+          <input type="text" id="sp-grades" maxlength="60" placeholder="e.g. Grades 3-5, or 'parents'">
+        </div>
+      </div>
+
+      <div class="row2">
+        <div>
+          <label for="sp-city" id="sp-label-city">City</label>
+          <input type="text" id="sp-city" maxlength="80">
+        </div>
+        <div>
+          <label for="sp-state" id="sp-label-state">State / Country</label>
+          <input type="text" id="sp-state" maxlength="60">
+        </div>
+      </div>
+
+      <label id="sp-label-format">Preferred Format</label>
+      <div class="sp-format-toggle">
+        <label><input type="radio" name="sp-format" value="in_person"> <span id="sp-radio-in-person">In-Person</span></label>
+        <label><input type="radio" name="sp-format" value="virtual"> <span id="sp-radio-virtual">Virtual</span></label>
+        <label><input type="radio" name="sp-format" value="either" checked> <span id="sp-radio-either">Either</span></label>
+        <label><input type="radio" name="sp-format" value="materials_only"> <span id="sp-radio-materials">Just send materials</span></label>
+      </div>
+
+      <label for="sp-message" id="sp-label-message">Tell us about your organization and what you're looking for</label>
+      <textarea id="sp-message" maxlength="1500"></textarea>
+
+      <button type="submit" class="sp-submit" id="sp-submit">Request a Session</button>
+      <div class="sp-status" id="sp-status"></div>
+    </form>
+  </div>
+</div>
+
+<footer>⚔️ Digital Safety Knights · digitalsafetyknights.org · © 2026</footer>
+
+<script>
+var spLang = (window.DSKi18n && DSKi18n.lang) || 'en';
+var spIsTr = spLang === 'tr';
+var spIsEs = spLang === 'es';
+
+var TOPICS = spIsTr ? [
+  {icon:'🎮', title:'Roblox &amp; Oyun Güvenliği', desc:'Gizlilik ayarları, yabancıları engelleme, oyun içi ne görüyorlar.'},
+  {icon:'🤖', title:'Yapay Zeka Farkındalığı', desc:'Güvensiz AI sohbet uygulamalarını tanıma.'},
+  {icon:'💬', title:'Grooming Uyarı İşaretleri', desc:'Discord, Snapchat, Instagram üzerinde tehlike belirtileri.'},
+  {icon:'🖼️', title:'Deepfake &amp; Sahte Görseller', desc:'Yapay zeka ile üretilmiş içerikleri tanıma ve TAKE IT DOWN Yasası.'},
+  {icon:'📱', title:'Ebeveyn Kontrolleri', desc:'Cihaz ve uygulama ayarlarını doğru kurma.'},
+  {icon:'🛡️', title:'Dijital Vatandaşlık', desc:'Saygılı çevrimiçi davranış ve tehlikeyi tanıma.'}
+] : spIsEs ? [
+  {icon:'🎮', title:'Seguridad en Roblox y Juegos', desc:'Configuración de privacidad, bloquear extraños, qué ven en el juego.'},
+  {icon:'🤖', title:'Conciencia sobre IA', desc:'Reconocer aplicaciones de IA inseguras.'},
+  {icon:'💬', title:'Señales de Grooming', desc:'Señales de advertencia en Discord, Snapchat, Instagram.'},
+  {icon:'🖼️', title:'Deepfakes e Imágenes Falsas', desc:'Reconocer contenido generado por IA y la Ley TAKE IT DOWN.'},
+  {icon:'📱', title:'Controles Parentales', desc:'Configurar correctamente dispositivos y aplicaciones.'},
+  {icon:'🛡️', title:'Ciudadanía Digital', desc:'Comportamiento respetuoso en línea y reconocer el peligro.'}
+] : [
+  {icon:'🎮', title:'Roblox &amp; Gaming Safety', desc:'Privacy settings, blocking strangers, what kids actually see in-game.'},
+  {icon:'🤖', title:'AI Awareness', desc:'Recognizing unsafe AI chat apps and companion platforms.'},
+  {icon:'💬', title:'Grooming Warning Signs', desc:'Red flags across Discord, Snapchat, Instagram.'},
+  {icon:'🖼️', title:'Deepfakes &amp; Fake Images', desc:'Recognizing AI-generated content and the TAKE IT DOWN Act.'},
+  {icon:'📱', title:'Parental Controls', desc:'Setting up device and app controls correctly.'},
+  {icon:'🛡️', title:'Digital Citizenship', desc:'Respectful online behavior and recognizing danger.'}
+];
+
+document.getElementById('sp-title').innerHTML = spIsTr ? '🏫 Okul &amp; Kurum Programları' : spIsEs ? '🏫 Programas para Escuelas y Organizaciones' : '🏫 School &amp; Organization Programs';
+document.getElementById('sp-tagline').textContent = spIsTr
+  ? 'Ücretsiz dijital güvenlik seminerleri ve materyaller — okullar, dernekler, vakıflar ve topluluk kuruluşları için. NJ ve komşu eyaletlerde yüz yüze, ya da her yerde online/uzaktan.'
+  : spIsEs
+  ? 'Seminarios y materiales gratuitos de seguridad digital — para escuelas, organizaciones sin fines de lucro y comunitarias por igual. En persona en NJ y estados vecinos, o virtual/remoto desde cualquier lugar.'
+  : 'Free digital safety seminars and materials — for schools, nonprofits, charities, and community organizations alike. In-person across NJ and surrounding states, or virtual/remote anywhere.';
+
+document.getElementById('sp-dsw-title').textContent = spIsTr ? 'Ekim ayında bir Dijital Güvenlik Haftası mı düzenliyorsunuz?' : spIsEs ? '¿Vas a organizar una Semana de Seguridad Digital en octubre?' : 'Running a Digital Safety Week in October?';
+document.getElementById('sp-dsw-sub').textContent = spIsTr ? 'Ücretsiz, hemen uygulanabilir 5 günlük bir plan ve basılabilir poster hazır — hazırlık gerekmez.' : spIsEs ? 'Tenemos un plan gratuito de 5 días listo para usar y un póster imprimible — sin preparación necesaria.' : 'We have a free, ready-to-run 5-day plan and printable poster — no prep needed.';
+document.getElementById('sp-dsw-cta').textContent = spIsTr ? 'Ücretsiz Kiti Al →' : spIsEs ? 'Obtener el Kit Gratis →' : 'Get the Free Kit →';
+document.getElementById('sp-principal-note').innerHTML = spIsTr
+  ? 'Önce onay mı almanız gerekiyor? Yöneticinizle <a href="/for-principals.html" style="color:var(--navy);font-weight:800;">müdürler için tek sayfalık özetimizi</a> paylaşın.'
+  : spIsEs
+  ? '¿Necesitas la aprobación primero? Comparte nuestro <a href="/for-principals.html" style="color:var(--navy);font-weight:800;">resumen de una página para directores</a> con tu administrador.'
+  : 'Need to get sign-off first? Share our <a href="/for-principals.html" style="color:var(--navy);font-weight:800;">one-page overview for principals</a> with your administrator.';
+document.getElementById('sp-formats-title').textContent = spIsTr ? 'Oturumlar Nasıl İşliyor' : spIsEs ? 'Cómo Funcionan las Sesiones' : 'How Sessions Work';
+document.getElementById('sp-format1-h').textContent = spIsTr ? 'Yüz Yüze' : spIsEs ? 'En Persona' : 'In-Person';
+document.getElementById('sp-format1-p').textContent = spIsTr ? 'Okulunuzda canlı bir toplantı, sınıf atölyesi ya da ebeveyn gecesi sunumu.' : spIsEs ? 'Una asamblea en vivo, taller en el aula, o presentación en la noche de padres en tu escuela.' : 'A live assembly, classroom workshop, or parent-night presentation at your school.';
+document.getElementById('sp-format1-zone').textContent = spIsTr ? 'NJ, NY, PA, CT ve DE' : spIsEs ? 'NJ, NY, PA, CT y DE' : 'NJ, NY, PA, CT & DE';
+document.getElementById('sp-format2-h').textContent = spIsTr ? 'Online' : spIsEs ? 'Virtual' : 'Virtual';
+document.getElementById('sp-format2-p').textContent = spIsTr ? 'Sınıflar için canlı görüntülü oturum ya da ebeveyn gecesi webinarı — her yerden katılım.' : spIsEs ? 'Una sesión de videollamada en vivo para clases o un seminario web para la noche de padres — disponible desde cualquier lugar.' : 'A live video-call session for classrooms or a parent-night webinar — available anywhere.';
+document.getElementById('sp-format2-zone').textContent = spIsTr ? 'Her Yerden' : spIsEs ? 'Desde Cualquier Lugar' : 'Anywhere';
+document.getElementById('sp-format3-h').textContent = spIsTr ? 'Sadece Materyal &amp; Rehber' : spIsEs ? 'Solo Materiales y Guías' : 'Materials & Guides Only';
+document.getElementById('sp-format3-p').textContent = spIsTr ? 'Canlı bir oturuma gerek yok mu? Kurumunuza rehberlerimizi, broşürlerimizi ve eğitim materyallerimizi doğrudan gönderelim.' : spIsEs ? '¿No necesitas una sesión en vivo? Enviaremos nuestras guías, folletos y materiales educativos directamente a tu organización.' : "No live session needed? We'll send your organization our guides, handouts, and educational materials directly.";
+document.getElementById('sp-format3-zone').textContent = spIsTr ? 'E-posta, her zaman' : spIsEs ? 'Correo, en cualquier momento' : 'Email, any time';
+
+document.getElementById('sp-audience-title').textContent = spIsTr ? 'Kimlere Sunum Yapıyoruz' : spIsEs ? 'A Quién Presentamos' : 'Who We Present To';
+document.getElementById('sp-audience-lede').textContent = spIsTr ? 'Sadece okullar değil — çocuklara, gençlere ya da ailelere hizmet eden her kurum.' : spIsEs ? 'No solo escuelas — cualquier organización que sirva a niños, adolescentes o familias.' : 'Not just schools — any organization serving kids, teens, or families.';
+document.getElementById('sp-chip-students').textContent = spIsTr ? 'Öğrenciler (yaşa uygun)' : spIsEs ? 'Estudiantes (adaptado a la edad)' : 'Students (age-adapted)';
+document.getElementById('sp-chip-parents').textContent = spIsTr ? 'Ebeveyn geceleri' : spIsEs ? 'Noches de padres' : 'Parent nights';
+document.getElementById('sp-chip-staff').textContent = spIsTr ? 'Öğretmenler ve personel' : spIsEs ? 'Maestros y personal' : 'Teachers & staff';
+document.getElementById('sp-chip-nonprofit').textContent = spIsTr ? 'Dernekler ve vakıflar' : spIsEs ? 'ONGs y organizaciones benéficas' : 'Nonprofits & charities';
+document.getElementById('sp-chip-community').textContent = spIsTr ? 'Topluluk ve gençlik kuruluşları' : spIsEs ? 'Organizaciones comunitarias y juveniles' : 'Community & youth organizations';
+document.getElementById('sp-kc-note').innerHTML = spIsTr
+  ? 'Oturumdan sonra daha fazla dahil olmak isteyen 13-17 yaş arası bir öğrenciniz mi var? Doğrudan gençlik elçi programımız <a href="/knight-council.html" style="color:var(--navy);font-weight:800;">Şövalye Konseyi</a>\'ne başvurabilirler.'
+  : spIsEs
+  ? '¿Tienes un estudiante de 13 a 17 años que quiere involucrarse más después de la sesión? Puede aplicar directamente a <a href="/knight-council.html" style="color:var(--navy);font-weight:800;">Knight Council</a>, nuestro programa de embajadores adolescentes.'
+  : 'Have a student aged 13-17 who wants to get more involved after the session? They can apply directly to <a href="/knight-council.html" style="color:var(--navy);font-weight:800;">Knight Council</a>, our teen ambassador program.';
+
+document.getElementById('sp-topics-title').textContent = spIsTr ? 'Ele Aldığımız Konular' : spIsEs ? 'Temas que Cubrimos' : 'Topics We Cover';
+document.getElementById('sp-topics-grid').innerHTML = TOPICS.map(function (t) {
+  return '<div class="sp-topic"><div class="icon">' + t.icon + '</div><h4>' + t.title + '</h4><p>' + t.desc + '</p></div>';
+}).join('');
+
+document.getElementById('sp-faq-prompt').textContent = spIsTr ? 'Talep etmeden önce sorularınız mı var?' : spIsEs ? '¿Tienes preguntas antes de solicitar una sesión?' : 'Have questions before you request a session?';
+document.getElementById('sp-faq-link').textContent = spIsTr ? 'SSS\'ye bakın →' : spIsEs ? 'Ver nuestras preguntas frecuentes →' : 'See our FAQ →';
+document.getElementById('sp-form-title').textContent = spIsTr ? 'Talepte Bulun' : spIsEs ? 'Enviar Solicitud' : 'Request a Session';
+document.getElementById('sp-form-lede').textContent = spIsTr ? 'Kurumun hakkında biraz bilgi ver, birkaç iş günü içinde sana ulaşalım.' : spIsEs ? 'Cuéntanos un poco sobre tu organización y te contactaremos en unos días hábiles.' : "Tell us a bit about your organization and we'll follow up within a few business days.";
+document.getElementById('sp-label-school').textContent = spIsTr ? 'Okul / Kurum Adı' : spIsEs ? 'Nombre de la Escuela / Organización' : 'School / Organization Name';
+document.getElementById('sp-label-contact').textContent = spIsTr ? 'Adın' : spIsEs ? 'Tu Nombre' : 'Your Name';
+document.getElementById('sp-label-email').textContent = 'Email';
+document.getElementById('sp-label-phone').textContent = spIsTr ? 'Telefon (opsiyonel)' : spIsEs ? 'Teléfono (opcional)' : 'Phone (optional)';
+document.getElementById('sp-label-grades').textContent = spIsTr ? 'Hedef Kitle / Yaş Grubu (varsa)' : spIsEs ? 'Audiencia / Grupo de Edad (si aplica)' : 'Audience / Age Group (if applicable)';
+document.getElementById('sp-grades').placeholder = spIsTr ? 'ör. 3-5. Sınıf, ya da "ebeveynler"' : spIsEs ? 'ej. Grados 3-5, o "padres"' : "e.g. Grades 3-5, or 'parents'";
+document.getElementById('sp-label-city').textContent = spIsTr ? 'Şehir' : spIsEs ? 'Ciudad' : 'City';
+document.getElementById('sp-label-state').textContent = spIsTr ? 'Eyalet / Ülke' : spIsEs ? 'Estado / País' : 'State / Country';
+document.getElementById('sp-label-format').textContent = spIsTr ? 'Tercih Edilen Format' : spIsEs ? 'Formato Preferido' : 'Preferred Format';
+document.getElementById('sp-radio-in-person').textContent = spIsTr ? 'Yüz Yüze' : spIsEs ? 'En Persona' : 'In-Person';
+document.getElementById('sp-radio-virtual').textContent = spIsTr ? 'Online' : spIsEs ? 'Virtual' : 'Virtual';
+document.getElementById('sp-radio-either').textContent = spIsTr ? 'Fark Etmez' : spIsEs ? 'Cualquiera' : 'Either';
+document.getElementById('sp-radio-materials').textContent = spIsTr ? 'Sadece materyal gönderin' : spIsEs ? 'Solo envíen materiales' : 'Just send materials';
+document.getElementById('sp-label-message').textContent = spIsTr ? 'Kurumun hakkında ve ne aradığın hakkında bize anlat' : spIsEs ? 'Cuéntanos sobre tu organización y qué estás buscando' : "Tell us about your organization and what you're looking for";
+document.getElementById('sp-submit').textContent = spIsTr ? 'Talebi Gönder' : spIsEs ? 'Enviar Solicitud' : 'Request a Session';
+
+document.getElementById('sp-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var submitBtn = document.getElementById('sp-submit');
+  var statusEl = document.getElementById('sp-status');
+  statusEl.className = 'sp-status';
+  submitBtn.disabled = true;
+
+  var formatVal = 'either';
+  var radios = document.getElementsByName('sp-format');
+  for (var i = 0; i < radios.length; i++) { if (radios[i].checked) formatVal = radios[i].value; }
+
+  fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/school-program-request', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      school_name: document.getElementById('sp-school').value.trim(),
+      contact_name: document.getElementById('sp-contact').value.trim(),
+      email: document.getElementById('sp-email').value.trim(),
+      phone: document.getElementById('sp-phone').value.trim(),
+      grade_levels: document.getElementById('sp-grades').value.trim(),
+      city: document.getElementById('sp-city').value.trim(),
+      state: document.getElementById('sp-state').value.trim(),
+      format: formatVal,
+      message: document.getElementById('sp-message').value.trim()
+    })
+  })
+  .then(function (r) { return r.json(); })
+  .then(function (data) {
+    submitBtn.disabled = false;
+    if (data.success) {
+      statusEl.className = 'sp-status ok';
+      statusEl.textContent = data.message;
+      document.getElementById('sp-form').reset();
+    } else {
+      statusEl.className = 'sp-status err';
+      statusEl.textContent = '❌ ' + (data.message || (spIsTr ? 'Bir hata oluştu.' : spIsEs ? 'Ocurrió un error.' : 'Something went wrong.'));
+    }
+  })
+  .catch(function () {
+    submitBtn.disabled = false;
+    statusEl.className = 'sp-status err';
+    statusEl.textContent = spIsTr ? '❌ Bağlantı hatası. Lütfen tekrar deneyin.' : spIsEs ? '❌ Error de conexión. Inténtalo de nuevo.' : '❌ Connection error. Please try again.';
+  });
+});
+</script>
+<script src="/assets/lang-switcher.js"></script>
+</body>
+</html>

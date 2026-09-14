@@ -82,11 +82,22 @@ If the site is plain static HTML: implement features as self-contained pages/com
 - Parent page: "What your child is learning" — explains quests/badges, links the 6 guides.
 - Add per-quest "Parent talk prompt" (one question to ask at dinner) shown on the quest result screen behind a "For parents" toggle.
 
-## Phase 4 — School Pilot Kit
+## Phase 4 — School Pilot Kit — DONE (2026-09-13)
 
-- `/schools` page: pitch for teachers + downloadable 6-week lesson plan (one program per week; PDF), classroom mode note, contact CTA.
-- **Classroom mode** for quests: teacher projects, class votes by show of hands, teacher clicks the class answer — same engine, bigger fonts, no profile needed (`?mode=classroom`).
-- One-pager PDF for principals (mission, what students learn, free, COPPA-safe).
+- `/schools` pitch page: built as `school-programs.html` (booking) +
+  `digital-safety-week.html` (5-day plan for Cybersecurity Awareness Month) +
+  `school-faq.html` (contact CTA and objection-handling). The 6-week lesson
+  plan is `guides/classroom-lesson-plan-kit.pdf` (shipped as a 5-week plan,
+  same shape).
+- **Classroom mode** for quests: shipped as `quests.html?mode=classroom` —
+  skips the nickname/profile step, scales up prompt/choice/coach text for a
+  projector, hides personal points/streak UI, same quest engine and JSON
+  content otherwise. Documented on `for-principals.html`.
+- One-pager for principals: `for-principals.html` — mission, what students
+  learn, why it's free, COPPA/privacy stance. Built as a print-friendly HTML
+  page rather than a static PDF (no PDF source-generator exists in this repo
+  for the other guides, so this stays a live page instead of another opaque
+  binary that can drift from the site).
 
 ## Phase 5 — Turkish localization (i18n)
 
