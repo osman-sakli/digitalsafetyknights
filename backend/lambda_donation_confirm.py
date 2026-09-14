@@ -42,15 +42,42 @@ def lambda_handler(event, context):
         metadata = session.metadata or {}
         is_founding = metadata.get('founding_knight') == 'true'
         email = (metadata.get('donor_email') or session.customer_email or '').strip().lower()
+        name = metadata.get('donor_name') or 'Knight'
 
         if is_founding and email:
+            # Founding Knight is a subscription — most one-off site donors
+            # aren't already in dsk-members, so create the record here if
+            # needed rather than silently dropping the badge.
+            update_fields = {
+                'founding_knight': True,
+                'founding_knight_since': datetime.utcnow().isoformat(),
+                'stripe_customer_id': session.customer,
+            }
+            if session.mode == 'subscription' and session.subscription:
+                update_fields['stripe_subscription_id'] = session.subscription
+
             existing = members.get_item(Key={'email': email})
             if 'Item' in existing:
+                expr_names = {f'#{k}': k for k in update_fields}
+                expr_values = {f':{k}': v for k, v in update_fields.items()}
                 members.update_item(
                     Key={'email': email},
-                    UpdateExpression='SET founding_knight = :f, founding_knight_since = :d',
-                    ExpressionAttributeValues={':f': True, ':d': datetime.utcnow().isoformat()}
+                    UpdateExpression='SET ' + ', '.join(f'#{k} = :{k}' for k in update_fields),
+                    ExpressionAttributeNames=expr_names,
+                    ExpressionAttributeValues=expr_values,
                 )
+            else:
+                members.put_item(Item={
+                    'email': email,
+                    'name': name,
+                    'country': 'Unknown',
+                    'role': 'Unknown',
+                    'plan': 'Founding Knight',
+                    'badge': 'Bronze Squire',
+                    'joined_at': datetime.utcnow().isoformat(),
+                    'active': True,
+                    **update_fields,
+                })
 
         return {
             'statusCode': 200,
