@@ -5,11 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Shieldy's Journal — casual, first-person notes from Digital Safety Knights' own mascot. Shorter and looser than the Monthly Journal.">
 <title>Shieldy's Journal — Digital Safety Knights</title>
+<link rel="canonical" href="https://digitalsafetyknights.org/shieldys-journal.html">
+<meta property="og:title" content="Shieldy's Journal — Digital Safety Knights">
+<meta property="og:description" content="Shieldy's Journal — casual, first-person notes from Digital Safety Knights' own mascot. Shorter and looser than the Monthly Journal.">
+<meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
+<meta property="og:url" content="https://digitalsafetyknights.org/shieldys-journal.html">
+<meta property="og:type" content="website">
 <link rel="icon" href="assets/favicon.ico">
 <style>
   :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --text: #2d3748; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
+  body { font-family: 'Nunito Sans', 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
   .topbar { background: var(--navy); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
   .topbar .brand { color: var(--gold); font-weight: 900; text-decoration: none; font-size: 1.05rem; }
   .topbar .home-link { color: #cdd6ea; text-decoration: none; font-size: 0.85rem; font-weight: 700; }
@@ -29,6 +35,8 @@
   .entry .sign { font-size: 0.85rem; font-weight: 800; color: var(--navy); font-style: italic; }
 </style>
 <link rel="stylesheet" href="assets/breadcrumb.css">
+<link rel="stylesheet" href="assets/theme.css">
+<script src="assets/knight-points.js"></script>
 <script src="/assets/i18n.js"></script>
 </head>
 <body>
@@ -81,6 +89,7 @@
 
 </div>
 
+<script>if (window.DSKPoints) DSKPoints.checkStreak();</script>
 <script src="/assets/lang-switcher.js"></script>
 <script src="/assets/site-search.js"></script>
 <script src="/assets/play-now-fab.js"></script>

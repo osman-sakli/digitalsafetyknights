@@ -4,6 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Family Safety Audit — Digital Safety Knights</title>
+<meta name="description" content="The Family Safety Audit — a free, scored checklist across 6 sections to see where your family's digital safety setup stands today.">
+<link rel="canonical" href="https://digitalsafetyknights.org/audit.html">
+<meta property="og:title" content="Family Safety Audit — Digital Safety Knights">
+<meta property="og:description" content="The Family Safety Audit — a free, scored checklist across 6 sections to see where your family's digital safety setup stands today.">
+<meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
+<meta property="og:url" content="https://digitalsafetyknights.org/audit.html">
+<meta property="og:type" content="website">
 <link rel="icon" href="assets/favicon.ico">
 <style>
   :root {
@@ -12,7 +19,7 @@
     --warning: #f4a261; --gray: #6c757d;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--light); color: #2d3748; }
+  body { font-family: 'Nunito Sans', 'Segoe UI', system-ui, sans-serif; background: var(--light); color: #2d3748; }
 
   nav {
     background: var(--navy); position: sticky; top: 0; z-index: 999;
@@ -27,7 +34,7 @@
 
   /* HERO */
   .hero {
-    background: linear-gradient(135deg, var(--navy), var(--navy2));
+    background: var(--realm-bg);
     color: white; padding: 60px 2rem; text-align: center;
   }
   .hero-icon { font-size: 3.5rem; margin-bottom: 1rem; }
@@ -192,6 +199,7 @@
 <script src="assets/knight-points.js"></script>
 <script src="/assets/i18n.js"></script>
 <link rel="stylesheet" href="assets/breadcrumb.css">
+<link rel="stylesheet" href="assets/theme.css">
 </head>
 <body>
 
@@ -378,7 +386,9 @@
 </footer>
 
 <script>
-  var auditIsTr = window.DSKi18n && DSKi18n.lang === 'tr';
+  var auditLang = (window.DSKi18n && DSKi18n.lang) || 'en';
+  var auditIsTr = auditLang === 'tr';
+  var auditIsEs = auditLang === 'es';
   var TOTAL = 35;
   var checkedItems = [];
 
@@ -430,6 +440,24 @@
         badge.className = 'badge-earned grade-C';
         msg.textContent = 'Ailenizin önemli güvenlik iyileştirmelerine ihtiyacı var. Aile Güvenlik Rehberlerimizle başlayın — her adım önemli.';
       }
+    } else if (auditIsEs) {
+      if (score >= 80) {
+        badge.textContent = '🏅 EXCELENTE — Nivel Centinela de Oro';
+        badge.className = 'badge-earned grade-A';
+        msg.textContent = 'Tu familia tiene una configuración de seguridad digital excepcional. ¡Sigan con el gran trabajo!';
+      } else if (score >= 60) {
+        badge.textContent = '🥈 BUENO — Nivel Guardia de Plata';
+        badge.className = 'badge-earned grade-B';
+        msg.textContent = 'Base sólida, pero hay algunos vacíos importantes por cerrar. Consulta las recomendaciones abajo.';
+      } else if (score >= 40) {
+        badge.textContent = '⚠️ NECESITA TRABAJO — Escudero de Bronce';
+        badge.className = 'badge-earned grade-B';
+        msg.textContent = 'Ya empezaste, pero varias medidas de seguridad críticas necesitan atención. No te preocupes — DSK tiene los recursos para ayudarte.';
+      } else {
+        badge.textContent = '🚨 SE NECESITA ACCIÓN';
+        badge.className = 'badge-earned grade-C';
+        msg.textContent = 'Tu familia necesita mejoras de seguridad importantes. Empieza con nuestras Guías de Seguridad Familiar — cada paso cuenta.';
+      }
     } else {
       if (score >= 80) {
         badge.textContent = '🏅 EXCELLENT — Gold Sentinel Level';
@@ -454,6 +482,8 @@
     if (unchecked.length === 0) {
       recList.innerHTML = auditIsTr ?
         '<div class="rec-item"><div class="icon">🎉</div><div class="text"><strong>Mükemmel skor!</strong> Aileniz iyi korunuyor. Bir DSK eğitimcisi olmayı ve diğer ailelere yardım etmeyi düşünün.</div></div>' :
+        auditIsEs ?
+        '<div class="rec-item"><div class="icon">🎉</div><div class="text"><strong>¡Puntaje perfecto!</strong> Tu familia está bien protegida. Considera convertirte en educador de DSK y ayudar a otras familias.</div></div>' :
         '<div class="rec-item"><div class="icon">🎉</div><div class="text"><strong>Perfect score!</strong> Your family is well protected. Consider becoming a DSK educator and helping other families.</div></div>';
     } else {
       var top5 = unchecked.slice(0, 5);
@@ -463,6 +493,8 @@
       if (unchecked.length > 5) {
         recList.innerHTML += auditIsTr ?
           ('<div class="rec-item"><div class="icon">📚</div><div class="text"><strong>Ve ' + (unchecked.length - 5) + ' madde daha</strong> — adım adım yardım için <a href="/#guides">Aile Güvenlik Rehberlerimizi</a> indirin.</div></div>') :
+          auditIsEs ?
+          ('<div class="rec-item"><div class="icon">📚</div><div class="text"><strong>Y ' + (unchecked.length - 5) + ' elementos más</strong> — descarga nuestras <a href="/#guides">Guías de Seguridad Familiar</a> para ayuda paso a paso.</div></div>') :
           ('<div class="rec-item"><div class="icon">📚</div><div class="text"><strong>And ' + (unchecked.length - 5) + ' more items</strong> — download our <a href="/#guides">Family Safety Guides</a> for step-by-step help.</div></div>');
       }
     }
@@ -473,14 +505,14 @@
 
     if (window.DSKPoints && !localStorage.getItem('dsk_audit_points_awarded')) {
       localStorage.setItem('dsk_audit_points_awarded', '1');
-      DSKPoints.addPoints(50, auditIsTr ? 'Aile Güvenlik Denetimi tamamlandı' : 'Family Safety Audit completed');
+      DSKPoints.addPoints(50, auditIsTr ? 'Aile Güvenlik Denetimi tamamlandı' : auditIsEs ? 'Auditoría de Seguridad Familiar completada' : 'Family Safety Audit completed');
     }
   }
 
   function emailReport() {
-    var email = prompt(auditIsTr ? 'Bu raporu almak için e-postanı gir:' : 'Enter your email to receive this report:');
+    var email = prompt(auditIsTr ? 'Bu raporu almak için e-postanı gir:' : auditIsEs ? 'Ingresa tu correo electrónico para recibir este informe:' : 'Enter your email to receive this report:');
     if (!email || email.indexOf('@') === -1) {
-      alert(auditIsTr ? 'Lütfen geçerli bir e-posta adresi gir.' : 'Please enter a valid email address.');
+      alert(auditIsTr ? 'Lütfen geçerli bir e-posta adresi gir.' : auditIsEs ? 'Ingresa una dirección de correo electrónico válida.' : 'Please enter a valid email address.');
       return;
     }
 
@@ -495,7 +527,7 @@
 
     var btn = event.target;
     var originalText = btn.textContent;
-    btn.textContent = auditIsTr ? 'Gönderiliyor...' : 'Sending...';
+    btn.textContent = auditIsTr ? 'Gönderiliyor...' : auditIsEs ? 'Enviando...' : 'Sending...';
     btn.disabled = true;
 
     fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/audit-report', {
@@ -512,13 +544,13 @@
     .then(function(r) { return r.json(); })
     .then(function(data) {
       if (data.success) {
-        alert(auditIsTr ? ('✅ Rapor gönderildi! ' + email + ' adresindeki gelen kutunu kontrol et') : ('✅ Report sent! Check your inbox at ' + email));
+        alert(auditIsTr ? ('✅ Rapor gönderildi! ' + email + ' adresindeki gelen kutunu kontrol et') : auditIsEs ? ('✅ ¡Informe enviado! Revisa tu bandeja de entrada en ' + email) : ('✅ Report sent! Check your inbox at ' + email));
       } else {
-        alert('❌ ' + (data.message || (auditIsTr ? 'Gönderilemedi. Lütfen tekrar deneyin.' : 'Could not send. Please try again.')));
+        alert('❌ ' + (data.message || (auditIsTr ? 'Gönderilemedi. Lütfen tekrar deneyin.' : auditIsEs ? 'No se pudo enviar. Por favor, inténtalo de nuevo.' : 'Could not send. Please try again.')));
       }
     })
     .catch(function(err) {
-      alert(auditIsTr ? '❌ Bağlantı hatası. Lütfen tekrar deneyin.' : '❌ Connection error. Please try again.');
+      alert(auditIsTr ? '❌ Bağlantı hatası. Lütfen tekrar deneyin.' : auditIsEs ? '❌ Error de conexión. Por favor, inténtalo de nuevo.' : '❌ Connection error. Please try again.');
       console.error(err);
     })
     .finally(function() {

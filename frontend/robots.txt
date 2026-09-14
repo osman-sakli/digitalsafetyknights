@@ -1,0 +1,30 @@
+# Digital Safety Knights — free child online-safety education.
+# Everything here is public and free to read. Crawling is welcome.
+
+User-agent: *
+Allow: /
+Disallow: /dashboard.html
+Disallow: /login.html
+Disallow: /donation-success.html
+Disallow: /certificate.html
+Disallow: /member-id.html
+Disallow: /stats.html
+
+# AI answer engines — explicitly allowed; being cited in an AI answer is a
+# legitimate way for a parent to find this information.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://digitalsafetyknights.org/sitemap.xml

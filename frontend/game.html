@@ -5,13 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Shieldy's Message Sort — a free, fast, fun arcade game from Digital Safety Knights. Slide Shieldy between lanes to sort real messages before time runs out.">
 <title>Shieldy's Message Sort — Digital Safety Knights</title>
+<link rel="canonical" href="https://digitalsafetyknights.org/game.html">
+<meta property="og:title" content="Shieldy's Message Sort — Digital Safety Knights">
+<meta property="og:description" content="Shieldy's Message Sort — a free, fast, fun arcade game from Digital Safety Knights. Slide Shieldy between lanes to sort real messages before time runs out.">
+<meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
+<meta property="og:url" content="https://digitalsafetyknights.org/game.html">
+<meta property="og:type" content="website">
 <link rel="icon" href="assets/favicon.ico">
+<link rel="stylesheet" href="assets/theme.css">
 <style>
   :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --danger: #e63946; --success: #2a9d8f; --safe-tint: rgba(42,157,143,0.16); --block-tint: rgba(230,57,70,0.16); }
   * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; user-select: none; }
   html, body { height: 100%; overscroll-behavior: none; }
   body {
-    font-family: 'Segoe UI', system-ui, sans-serif; color: white; min-height: 100vh; overflow-x: hidden;
+    font-family: 'Nunito Sans', 'Segoe UI', system-ui, sans-serif; color: white; min-height: 100vh; overflow-x: hidden;
     background: linear-gradient(180deg, #060e22 0%, #0d1b3e 45%, #1a2f6e 100%);
     position: relative;
   }
@@ -232,7 +239,9 @@ function toggleMute() {
 }
 
 // ---------- game data ----------
-var gameIsTr = window.DSKi18n && DSKi18n.lang === 'tr';
+var gameLang = (window.DSKi18n && DSKi18n.lang) || 'en';
+var gameIsTr = gameLang === 'tr';
+var gameIsEs = gameLang === 'es';
 var MESSAGES_EN = [
   { text: "hey! only 10 seconds left to claim your free Robux, click now!!", flag: true, tip: "Urgency trick — real prizes never have a countdown pressuring you to click fast." },
   { text: "wanna play the new level together after school? I'll be on around 4", flag: false, tip: "A normal message from a friend about playing later." },
@@ -295,7 +304,38 @@ var MESSAGES_TR = [
   { text: "yarın antrenmanda görüşürüz, koç saat 5'e aldı", flag: false, tip: "Sıradan bir program güncellemesi." }
 ];
 
-var MESSAGES = gameIsTr ? MESSAGES_TR : MESSAGES_EN;
+var MESSAGES_ES = [
+  { text: "¡hey! solo quedan 10 segundos para reclamar tu Robux gratis, ¡haz clic ahora!!", flag: true, tip: "Truco de urgencia — los premios reales nunca tienen una cuenta regresiva que te presiona a hacer clic rápido." },
+  { text: "¿quieres jugar el nivel nuevo juntos después de clases? estaré conectado como a las 4", flag: false, tip: "Un mensaje normal de un amigo sobre jugar más tarde." },
+  { text: "no le digas a tus padres sobre este chat ok? es nuestro secreto", flag: true, tip: "Truco de secreto — las personas de confianza nunca te piden ocultar un chat de tus padres." },
+  { text: "jaja ese nivel estuvo súper difícil, ¿ya pasaste al jefe?", flag: false, tip: "Conversación amistosa y ordinaria sobre un juego." },
+  { text: "¿cuál es tu nombre real y a qué escuela vas?", flag: true, tip: "Truco de información personal — las personas con buenas intenciones en línea no necesitan tu nombre real ni tu escuela." },
+  { text: "¡feliz cumpleaños!! espero que tengas un día increíble 🎉", flag: false, tip: "Un mensaje amable y normal — sin señales de alerta." },
+  { text: "¡acabas de ganar un iPhone gratis! envía tu dirección para reclamarlo", flag: true, tip: "Truco de demasiado bueno para ser verdad — los premios gratis que piden tu dirección casi siempre son estafas." },
+  { text: "¿me ayudas con mi tarea de matemáticas? la pregunta 5 es confusa", flag: false, tip: "Una solicitud de ayuda normal entre compañeros de clase." },
+  { text: "si de verdad confías en mí me enviarás una foto, solo entre nosotros", flag: true, tip: "Secreto Y una solicitud de foto — cuéntale esto a un adulto de confianza." },
+  { text: "¿están tus padres en casa ahora mismo? pregunto por un amigo", flag: true, tip: "Esto verifica si hay un adulto cerca — un amigo de verdad no necesitaría saberlo." },
+  { text: "gg qué partido tan reñido, ¿quieres la revancha mañana?", flag: false, tip: "Chat de juego ordinario." },
+  { text: "necesito tu contraseña para ayudarte a arreglar tu cuenta, confía en mí", flag: true, tip: "Las solicitudes de contraseña siempre son una señal de alerta." },
+  { text: "mi mamá dijo que podemos ir al parque el sábado si quieres venir", flag: false, tip: "Un plan normal, supervisado por un padre." },
+  { text: "pasemos este chat a otra aplicación, pero no agregues a nadie más", flag: true, tip: "Cambiar de aplicación más secreto es un patrón clásico de acoso." },
+  { text: "ese meme que me enviaste estuvo buenísimo 😂", flag: false, tip: "Solo una reacción amistosa." },
+  { text: "rápido, antes de que esta oferta desaparezca en 30 segundos — ¡verifica tu cuenta ahora!", flag: true, tip: "Urgencia + verificación es una combinación clásica de phishing." },
+  { text: "¿quieres formar equipo para el torneo de este fin de semana?", flag: false, tip: "Invitación normal y amistosa de juego." },
+  { text: "¿cuántos años tienes en verdad? ¿y eres niño o niña?", flag: true, tip: "Las preguntas personales de alguien que no conoces bien son una señal de alerta." },
+  { text: "conseguí el traje nuevo, ¡mira mi perfil!", flag: false, tip: "Compartir casual y normal entre amigos." },
+  { text: "reunámonos en persona, solo nosotros dos, mantenlo discreto", flag: true, tip: "Reunirse en persona más secreto es una de las señales de alerta más graves." },
+  { text: "¿me puedes enviar tu dirección? quiero mandarte una tarjeta de cumpleaños", flag: true, tip: "Un contacto en línea que pide tu dirección de casa es una señal de alerta." },
+  { text: "nuestra maestra nos dio crédito extra por la feria de ciencias, ¿quieres formar equipo?", flag: false, tip: "Un mensaje normal relacionado con la escuela." },
+  { text: "no te preocupes por contarle a nadie, ya borré nuestro chat", flag: true, tip: "Borrar chats y fomentar el secreto es una táctica de manipulación." },
+  { text: "¡esa actualización nueva arregló el problema de retraso, por fin!", flag: false, tip: "Chat casual sobre una actualización del juego." },
+  { text: "envía una selfie para saber que de verdad eres tú quien me habla", flag: true, tip: "Las solicitudes de fotos de alguien en línea deben pasar primero por un adulto de confianza." },
+  { text: "¿me ayudas a probar mi nuevo dibujo? me encantaría recibir comentarios", flag: false, tip: "Una solicitud creativa normal y amistosa." },
+  { text: "¡fuiste especialmente elegido! haz clic en este enlace antes de que se acaben los cupos", flag: true, tip: "\"Especialmente elegido\" más urgencia es una combinación de estafa/phishing." },
+  { text: "nos vemos en el entrenamiento mañana, el entrenador lo cambió a las 5pm", flag: false, tip: "Una actualización de horario ordinaria." }
+];
+
+var MESSAGES = gameIsTr ? MESSAGES_TR : gameIsEs ? MESSAGES_ES : MESSAGES_EN;
 
 var ROUND_SECONDS = 60;
 var DIFFICULTIES = {
@@ -314,10 +354,10 @@ function renderChaosButton() {
   var wrap = document.getElementById('chaos-btn-wrap');
   if (!wrap) return;
   if (chaosUnlocked()) {
-    wrap.innerHTML = '<button class="diff-btn" data-diff="chaos" onclick="selectDifficulty(\'chaos\')">🌀 ' + (gameIsTr ? 'Kaos' : 'Chaos') + '</button>';
+    wrap.innerHTML = '<button class="diff-btn" data-diff="chaos" onclick="selectDifficulty(\'chaos\')">🌀 ' + (gameIsTr ? 'Kaos' : gameIsEs ? 'Caos' : 'Chaos') + '</button>';
   } else {
-    var lockTitle = gameIsTr ? ('Açmak için Zor modda ' + CHAOS_UNLOCK_SCORE + '+ puan yap') : ('Score ' + CHAOS_UNLOCK_SCORE + '+ on Hard to unlock');
-    wrap.innerHTML = '<button class="diff-btn" disabled title="' + lockTitle + '" style="opacity:0.4;cursor:not-allowed;">🔒 ' + (gameIsTr ? 'Kaos' : 'Chaos') + '</button>';
+    var lockTitle = gameIsTr ? ('Açmak için Zor modda ' + CHAOS_UNLOCK_SCORE + '+ puan yap') : gameIsEs ? ('Consigue ' + CHAOS_UNLOCK_SCORE + '+ puntos en Difícil para desbloquear') : ('Score ' + CHAOS_UNLOCK_SCORE + '+ on Hard to unlock');
+    wrap.innerHTML = '<button class="diff-btn" disabled title="' + lockTitle + '" style="opacity:0.4;cursor:not-allowed;">🔒 ' + (gameIsTr ? 'Kaos' : gameIsEs ? 'Caos' : 'Chaos') + '</button>';
   }
 }
 
@@ -473,10 +513,12 @@ function resolveCard(card) {
     updateCombo();
     screenShake();
     flashRed();
-    spawnPopup(px, py, card.msg.flag ? (gameIsTr ? 'Kaçırdın!' : 'Missed!') : (gameIsTr ? 'Hata!' : 'Oops!'), 'bad');
+    spawnPopup(px, py, card.msg.flag ? (gameIsTr ? 'Kaçırdın!' : gameIsEs ? '¡Se te pasó!' : 'Missed!') : (gameIsTr ? 'Hata!' : gameIsEs ? '¡Uy!' : 'Oops!'), 'bad');
     playFail();
     var badPrefix = gameIsTr ?
       (card.msg.flag ? '⚠️ Bu bir uyarı işaretiydi! ' : '❌ O aslında güvenliydi. ') :
+      gameIsEs ?
+      (card.msg.flag ? '⚠️ ¡Esa era una señal de alerta! ' : '❌ Ese en realidad era seguro. ') :
       (card.msg.flag ? '⚠️ That was a red flag! ' : '❌ That one was actually safe. ');
     showToast(badPrefix + card.msg.tip, 'bad');
   }
@@ -490,7 +532,7 @@ function updateCombo() {
   var badge = document.getElementById('combo-badge');
   var multiplier = streak >= 6 ? 3 : streak >= 3 ? 2 : 1;
   if (streak >= 3) {
-    badge.textContent = '🔥 ' + (gameIsTr ? 'Kombo x' : 'Combo x') + multiplier;
+    badge.textContent = '🔥 ' + (gameIsTr ? 'Kombo x' : gameIsEs ? 'Combo x' : 'Combo x') + multiplier;
     badge.classList.add('show');
   } else {
     badge.classList.remove('show');
@@ -588,6 +630,8 @@ function endGame() {
     '<span>' + '⭐'.repeat(starCount) + '</span><span class="star-empty">' + '⭐'.repeat(3 - starCount) + '</span>';
   document.getElementById('end-reason').textContent = gameIsTr ?
     (totalCount > 0 ? (totalCount + ' mesajdan ' + correctCount + ' tanesini doğru ayırdın (%' + Math.round(accuracy * 100) + ').') : 'Süre bitti!') :
+    gameIsEs ?
+    (totalCount > 0 ? ('Clasificaste correctamente ' + correctCount + ' de ' + totalCount + ' (' + Math.round(accuracy * 100) + '%).') : '¡Se acabó el tiempo!') :
     (totalCount > 0 ? ('You sorted ' + correctCount + ' of ' + totalCount + ' correctly (' + Math.round(accuracy * 100) + '%).') : 'Time\'s up!');
 
   // animated count-up
@@ -602,12 +646,14 @@ function endGame() {
 
   var isNewBest = score > best;
   if (isNewBest) {
-    if (window.DSKPoints) DSKPoints.addPoints(score - best, gameIsTr ? 'yeni yüksek skor' : 'new high score');
+    if (window.DSKPoints) DSKPoints.addPoints(score - best, gameIsTr ? 'yeni yüksek skor' : gameIsEs ? 'nuevo puntaje más alto' : 'new high score');
     best = score;
     localStorage.setItem('dsk_game_highscore', String(best));
   }
   document.getElementById('end-best-note').textContent = gameIsTr ?
     (isNewBest ? '🎉 Yeni kişisel rekor!' : 'En iyi skorun ' + best + ' olarak kaldı.') :
+    gameIsEs ?
+    (isNewBest ? '🎉 ¡Nuevo récord personal!' : 'Tu mejor puntaje sigue siendo ' + best + '.') :
     (isNewBest ? '🎉 New personal best!' : 'Your best remains ' + best + '.');
   if (starCount >= 2) confettiBurst();
 
@@ -617,7 +663,7 @@ function endGame() {
       localStorage.setItem('dsk_game_highscore_hard', String(score));
       if (score >= CHAOS_UNLOCK_SCORE && hardBest < CHAOS_UNLOCK_SCORE) {
         renderChaosButton();
-        if (window.DSKPoints) setTimeout(function () { DSKPoints.showToast(gameIsTr ? '🌀 Kaos Modu açıldı!' : '🌀 Chaos Mode unlocked!'); }, 1200);
+        if (window.DSKPoints) setTimeout(function () { DSKPoints.showToast(gameIsTr ? '🌀 Kaos Modu açıldı!' : gameIsEs ? '🌀 ¡Modo Caos desbloqueado!' : '🌀 Chaos Mode unlocked!'); }, 1200);
       }
     }
   }
@@ -627,14 +673,14 @@ function endGame() {
   try { profile = JSON.parse(localStorage.getItem('dsk_profile') || 'null'); } catch (e) {}
   var loginCta = document.getElementById('login-cta');
   if (profile && profile.email) {
-    loginCta.textContent = gameIsTr ? 'Skorun DSK profiline kaydediliyor...' : 'Saving your score to your DSK profile...';
+    loginCta.textContent = gameIsTr ? 'Skorun DSK profiline kaydediliyor...' : gameIsEs ? 'Guardando tu puntaje en tu perfil de DSK...' : 'Saving your score to your DSK profile...';
     fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/game-score', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: profile.email, score: score })
     }).then(function(r) { return r.json(); }).then(function(data) {
       if (data && data.success) {
-        loginCta.innerHTML = gameIsTr ? '✅ Skor profiline kaydedildi — <a href="/dashboard.html">panele git</a>' : '✅ Score saved to your profile — <a href="/dashboard.html">view dashboard</a>';
+        loginCta.innerHTML = gameIsTr ? '✅ Skor profiline kaydedildi — <a href="/dashboard.html">panele git</a>' : gameIsEs ? '✅ Puntaje guardado en tu perfil — <a href="/dashboard.html">ver panel</a>' : '✅ Score saved to your profile — <a href="/dashboard.html">view dashboard</a>';
         if (data.leaderboard && data.leaderboard.length) {
           var lb = document.getElementById('mini-leaderboard');
           lb.style.display = 'block';
@@ -650,13 +696,13 @@ function endGame() {
           }).join('');
         }
       } else {
-        loginCta.textContent = gameIsTr ? 'Skorun şu anda kaydedilemedi — yine de bu cihazda duruyor.' : 'Could not save your score right now — it\'s still on this device.';
+        loginCta.textContent = gameIsTr ? 'Skorun şu anda kaydedilemedi — yine de bu cihazda duruyor.' : gameIsEs ? 'No se pudo guardar tu puntaje en este momento — de todos modos sigue en este dispositivo.' : 'Could not save your score right now — it\'s still on this device.';
       }
     }).catch(function() {
-      loginCta.textContent = gameIsTr ? 'Skorun şu anda kaydedilemedi — yine de bu cihazda duruyor.' : 'Could not save your score right now — it\'s still on this device.';
+      loginCta.textContent = gameIsTr ? 'Skorun şu anda kaydedilemedi — yine de bu cihazda duruyor.' : gameIsEs ? 'No se pudo guardar tu puntaje en este momento — de todos modos sigue en este dispositivo.' : 'Could not save your score right now — it\'s still on this device.';
     });
   } else {
-    loginCta.innerHTML = gameIsTr ? '💡 En yüksek skorunu kaydetmek ve üye lider tablosunu görmek için <a href="/login.html">giriş yap</a>.' : '💡 <a href="/login.html">Log in</a> to save your high score and see the member leaderboard.';
+    loginCta.innerHTML = gameIsTr ? '💡 En yüksek skorunu kaydetmek ve üye lider tablosunu görmek için <a href="/login.html">giriş yap</a>.' : gameIsEs ? '💡 <a href="/login.html">Inicia sesión</a> para guardar tu puntaje más alto y ver la tabla de líderes de miembros.' : '💡 <a href="/login.html">Log in</a> to save your high score and see the member leaderboard.';
   }
 }
 </script>

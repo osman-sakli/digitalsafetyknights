@@ -4,10 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Login — Digital Safety Knights</title>
+<meta name="description" content="Sign in to your free Digital Safety Knights account to track badges, points, and progress.">
+<meta property="og:title" content="Login — Digital Safety Knights">
+<meta property="og:description" content="Sign in to your free Digital Safety Knights account to track badges, points, and progress.">
+<meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
+<meta property="og:url" content="https://digitalsafetyknights.org/login.html">
+<meta property="og:type" content="website">
 <link rel="icon" href="assets/favicon.ico">
+<link rel="stylesheet" href="assets/theme.css">
 <style>
+  :root { --navy: #0d1b3e; --navy2: #1a2f6e; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #0d1b3e, #1a2f6e); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem; }
+  body { font-family: 'Nunito Sans', 'Segoe UI', sans-serif; background: var(--realm-bg); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem; }
   .card { background: white; border-radius: 24px; padding: 3rem 2.5rem; max-width: 460px; width: 100%; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
   .logo { display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 1.5rem; }
   .logo img { height: 50px; }
@@ -54,16 +62,18 @@
 </div>
 
 <script>
-  var loginIsTr = window.DSKi18n && DSKi18n.lang === 'tr';
+  var loginLang = (window.DSKi18n && DSKi18n.lang) || 'en';
+  var loginIsTr = loginLang === 'tr';
+  var loginIsEs = loginLang === 'es';
   function sendLink() {
     var email = document.getElementById('email').value.trim();
     if (!email || email.indexOf('@') === -1) {
-      showMsg(loginIsTr ? 'Lütfen geçerli bir e-posta adresi gir.' : 'Please enter a valid email address.', 'error');
+      showMsg(loginIsTr ? 'Lütfen geçerli bir e-posta adresi gir.' : loginIsEs ? 'Por favor ingresa una dirección de correo electrónico válida.' : 'Please enter a valid email address.', 'error');
       return;
     }
 
     var btn = document.getElementById('loginBtn');
-    btn.textContent = loginIsTr ? 'Gönderiliyor...' : 'Sending...';
+    btn.textContent = loginIsTr ? 'Gönderiliyor...' : loginIsEs ? 'Enviando...' : 'Sending...';
     btn.disabled = true;
 
     fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/login', {
@@ -74,18 +84,18 @@
     .then(function(r) { return r.json(); })
     .then(function(data) {
       if (data.success) {
-        showMsg(loginIsTr ? ('✅ Giriş bağlantısı gönderildi! E-postanı kontrol et (' + email + ').') : ('✅ Login link sent! Check your email (' + email + ').'), 'success');
+        showMsg(loginIsTr ? ('✅ Giriş bağlantısı gönderildi! E-postanı kontrol et (' + email + ').') : loginIsEs ? ('✅ ¡Enlace de acceso enviado! Revisa tu correo (' + email + ').') : ('✅ Login link sent! Check your email (' + email + ').'), 'success');
         document.getElementById('email').value = '';
       } else {
-        showMsg('❌ ' + (data.message || (loginIsTr ? 'Bağlantı gönderilemedi.' : 'Could not send link.')), 'error');
+        showMsg('❌ ' + (data.message || (loginIsTr ? 'Bağlantı gönderilemedi.' : loginIsEs ? 'No se pudo enviar el enlace.' : 'Could not send link.')), 'error');
       }
     })
     .catch(function(err) {
-      showMsg(loginIsTr ? '❌ Bağlantı hatası. Lütfen tekrar deneyin.' : '❌ Connection error. Please try again.', 'error');
+      showMsg(loginIsTr ? '❌ Bağlantı hatası. Lütfen tekrar deneyin.' : loginIsEs ? '❌ Error de conexión. Por favor, inténtalo de nuevo.' : '❌ Connection error. Please try again.', 'error');
       console.error(err);
     })
     .finally(function() {
-      btn.textContent = loginIsTr ? '🔐 Giriş Bağlantısı Gönder' : '🔐 Send Login Link';
+      btn.textContent = loginIsTr ? '🔐 Giriş Bağlantısı Gönder' : loginIsEs ? '🔐 Enviar Enlace de Acceso' : '🔐 Send Login Link';
       btn.disabled = false;
     });
   }

@@ -5,14 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="A plain-language glossary of digital safety terms every parent should know — grooming, sextortion, deepfakes, and more, defined clearly in one place.">
 <title>Glossary of Digital Safety Terms — Digital Safety Knights</title>
+<link rel="canonical" href="https://digitalsafetyknights.org/glossary.html">
+<meta property="og:title" content="Glossary of Digital Safety Terms — Digital Safety Knights">
+<meta property="og:description" content="A plain-language glossary of digital safety terms every parent should know — grooming, sextortion, deepfakes, and more, defined clearly in one place.">
+<meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
+<meta property="og:url" content="https://digitalsafetyknights.org/glossary.html">
+<meta property="og:type" content="website">
 <link rel="icon" href="assets/favicon.ico">
 <link rel="stylesheet" href="assets/breadcrumb.css">
+<link rel="stylesheet" href="assets/theme.css">
 <script src="assets/knight-points.js"></script>
 <script src="/assets/i18n.js"></script>
 <style>
   :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --text: #2d3748; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
+  body { font-family: 'Nunito Sans', 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
   .topbar { background: var(--navy); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
   .topbar .brand { color: var(--gold); font-weight: 900; text-decoration: none; font-size: 1.05rem; }
   .topbar .home-link { color: #cdd6ea; text-decoration: none; font-size: 0.85rem; font-weight: 700; }
@@ -119,9 +126,43 @@ const TERMS_TR = [
   { term: "VPN", def: "Sanal Özel Ağ — internet trafiğini yeniden yönlendiren ve şifreleyen, tarama etkinliğini ve konumu internet sağlayıcınızdan ve bazı web sitelerinden gizleyen bir araç." }
 ];
 
-const glIsTr = window.DSKi18n && DSKi18n.lang === 'tr';
-const TERMS = glIsTr ? TERMS_TR : TERMS_EN;
-const GL_NO_MATCH = glIsTr ? 'Bu aramayla eşleşen terim yok.' : 'No terms match that search.';
+const TERMS_ES = [
+  { term: "Algoritmo / El Feed", def: "El sistema automatizado que decide qué aparece a continuación en una plataforma, generalmente optimizado para mantenerte viendo el mayor tiempo posible en lugar de mostrarte lo más útil." },
+  { term: "Catfishing (Identidad Falsa)", def: "Hacerse pasar por otra persona en línea — una edad, género o identidad diferente — generalmente para generar confianza antes de pedir algo inapropiado." },
+  { term: "Filtro de Contenido", def: "Una herramienta (integrada en un juego, app o router) que bloquea automáticamente ciertas palabras, imágenes o sitios. Los filtros ayudan, pero no son perfectos — se les escapan el lenguaje en clave y los trucos nuevos." },
+  { term: "COPPA", def: "La Ley de Protección de la Privacidad Infantil en Línea (EE. UU.) — una ley que limita cómo las empresas pueden recolectar datos de niños menores de 13 años. Por eso algunas apps piden la fecha de nacimiento antes de registrarse." },
+  { term: "Ciberacoso", def: "Hostigamiento o humillación repetida y deliberada de alguien a través de mensajes, publicaciones o imágenes. A diferencia del acoso en persona, puede seguir a un niño hasta su casa y alcanzar a una audiencia mucho mayor de forma instantánea." },
+  { term: "Deepfake", def: "Una foto, video o clip de audio generado o alterado por IA para mostrar de forma realista a alguien haciendo o diciendo algo que nunca ocurrió. Cada vez más difícil de distinguir de un contenido real." },
+  { term: "Mensaje Directo (DM)", def: "Un mensaje privado enviado de uno a uno o en un grupo pequeño, fuera de las publicaciones o comentarios públicos — donde ocurren realmente la mayoría de las conversaciones de grooming y estafas, fuera de la vista pública." },
+  { term: "Discord", def: "Una app de chat y voz organizada en 'servidores' por temas. Muy vinculada a juegos como Roblox y Minecraft, con muchas menos protecciones integradas para menores que los propios juegos." },
+  { term: "Huella Digital", def: "El rastro de información sobre una persona que existe en línea — publicaciones, fotos, comentarios, incluso datos recolectados silenciosamente por apps — que puede sumar mucho más de lo que revela cualquier publicación individual." },
+  { term: "Doxxing", def: "Publicar información privada de alguien (nombre real, dirección, escuela, número de teléfono) en línea sin su consentimiento, generalmente para acosar, intimidar o poner en peligro a esa persona." },
+  { term: "Cifrado de Extremo a Extremo", def: "Una protección técnica que significa que solo el remitente y el destinatario de un mensaje pueden leerlo — ni siquiera la empresa de la app puede ver el contenido. Bueno para la privacidad, pero también significa que los adultos no pueden monitorear esos chats." },
+  { term: "Finsta", def: "Un 'Instagram falso' — una segunda cuenta más privada (a menudo con un nombre falso) que algunos adolescentes usan para publicar con más libertad, a veces específicamente para ocultar el contenido a sus padres." },
+  { term: "Grooming (Manipulación)", def: "Un proceso gradual y deliberado que un adulto usa para ganarse la confianza de un niño con el fin de bajar sus defensas — a menudo mediante halagos, regalos, guardar secretos y peticiones que escalan poco a poco." },
+  { term: "Alucinación (IA)", def: "Cuando una herramienta de IA genera información falsa mientras suena completamente segura y fluida. Las alucinaciones de IA son comunes incluso en datos simples y fáciles de verificar — sonar seguro no es lo mismo que tener razón." },
+  { term: "Chat Dentro del Juego", def: "Mensajería integrada directamente en un videojuego. Suele tener un filtro básico de groserías, pero rara vez detecta lenguaje de grooming sofisticado, términos en clave o trucos de números por letras." },
+  { term: "Dirección IP", def: "Una etiqueta numérica asignada a un dispositivo en internet, que puede revelar una ubicación aproximada (generalmente a nivel de ciudad). Normalmente no es peligrosa por sí sola, pero es una pieza más del rompecabezas en el doxxing." },
+  { term: "Transmisión en Vivo (Livestream)", def: "Video en tiempo real transmitido a espectadores, a menudo en plataformas con chat aleatorio o emparejamiento con desconocidos — un lugar común de exposición a extraños sin ningún margen para detener problemas antes de que ocurran." },
+  { term: "Made for Kids", def: "Una designación a nivel de canal de YouTube (usada por el propio canal de DSK) que desactiva cierta recolección de datos y anuncios personalizados, y que es legalmente obligatoria para contenido claramente dirigido a niños." },
+  { term: "Metadatos", def: "Datos ocultos adjuntos a un archivo — como la hora exacta y la ubicación GPS en que se tomó una foto — que pueden ser visibles para otros incluso cuando la foto en sí no revela nada sensible." },
+  { term: "Controles Parentales", def: "Ajustes integrados en un dispositivo, plataforma o router que permiten a un padre restringir el tiempo de pantalla, el contenido, las compras o el contacto de desconocidos. La mayoría vienen desactivados por defecto y hay que activarlos." },
+  { term: "Phishing (Suplantación)", def: "Un mensaje diseñado para engañar a alguien y hacer que revele una contraseña, datos de pago o información personal — a menudo haciéndose pasar por una marca, amigo o familiar de confianza y creando urgencia." },
+  { term: "Depredador", def: "Un adulto que busca y selecciona deliberadamente a niños en línea para explotarlos, típicamente usando tácticas de grooming para ganar confianza antes de escalar a peticiones dañinas." },
+  { term: "Sextorsión", def: "Chantaje en el que alguien amenaza con compartir una imagen sexual real o generada por IA de una persona a menos que se le pague o se le den más imágenes. Una de las amenazas de más rápido crecimiento para los adolescentes, especialmente los varones." },
+  { term: "Sharenting", def: "Padres que comparten muchas fotos, hitos o detalles de sus hijos en línea — con buenas intenciones, pero que construye una huella digital que el niño nunca eligió y no puede controlar." },
+  { term: "Sockpuppet (Cuenta Títere)", def: "Una segunda (o tercera) cuenta falsa manejada por la misma persona, usada a menudo para parecer más confiable, simular consenso o evadir un bloqueo." },
+  { term: "Swatting", def: "Denunciar falsamente una emergencia en la dirección de alguien para provocar una respuesta policial, generalmente como una forma de acoso contra alguien conocido solo a través de un juego o un conflicto en línea." },
+  { term: "Autenticación de Dos Factores (2FA)", def: "Un paso de inicio de sesión adicional además de la contraseña — normalmente un código enviado a un teléfono o app — que detiene la mayoría de los robos de cuenta incluso si roban la contraseña." },
+  { term: "Clonación de Voz", def: "Habla generada por IA que imita de forma convincente la voz de una persona real a partir de solo unos segundos de audio de muestra, ahora lo bastante buena como para engañar a familiares por teléfono." },
+  { term: "VPN", def: "Una Red Privada Virtual — una herramienta que redirige y cifra el tráfico de internet, ocultando la actividad de navegación y la ubicación ante tu proveedor de internet y algunos sitios web." }
+];
+
+const glLang = (window.DSKi18n && DSKi18n.lang) || 'en';
+const glIsTr = glLang === 'tr';
+const glIsEs = glLang === 'es';
+const TERMS = glIsTr ? TERMS_TR : glIsEs ? TERMS_ES : TERMS_EN;
+const GL_NO_MATCH = glIsTr ? 'Bu aramayla eşleşen terim yok.' : glIsEs ? 'Ningún término coincide con esa búsqueda.' : 'No terms match that search.';
 
 const list = document.getElementById('g-list');
 const searchEl = document.getElementById('g-search');

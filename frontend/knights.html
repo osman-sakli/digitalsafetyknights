@@ -5,16 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Meet the six Digital Safety Knights — Shieldy, Pixel, Bot, Dame Noble, Sprout, and the rival they all watch out for, Glitch.">
 <title>Meet the Knights — Digital Safety Knights</title>
+<link rel="canonical" href="https://digitalsafetyknights.org/knights.html">
+<meta property="og:title" content="Meet the Knights — Digital Safety Knights">
+<meta property="og:description" content="Meet the six Digital Safety Knights — Shieldy, Pixel, Bot, Dame Noble, Sprout, and the rival they all watch out for, Glitch.">
+<meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
+<meta property="og:url" content="https://digitalsafetyknights.org/knights.html">
+<meta property="og:type" content="website">
 <link rel="icon" href="assets/favicon.ico">
+<link rel="stylesheet" href="assets/theme.css">
 <style>
   :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --text: #2d3748; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
+  body { font-family: 'Nunito Sans', 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
   .topbar { background: var(--navy); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
   .topbar .brand { color: var(--gold); font-weight: 900; text-decoration: none; font-size: 1.05rem; }
   .topbar .home-link { color: #cdd6ea; text-decoration: none; font-size: 0.85rem; font-weight: 700; }
 
-  .hero { background: linear-gradient(135deg, #060e22 0%, var(--navy) 50%, #0f2255 100%); color: white; text-align: center; padding: 60px 2rem 50px; }
+  .hero { background: var(--realm-bg); color: white; text-align: center; padding: 60px 2rem 50px; }
   .hero h1 { font-size: clamp(1.9rem, 4.5vw, 2.8rem); font-weight: 900; margin-bottom: 0.8rem; }
   .hero h1 .gold { color: var(--gold); }
   .hero p { color: #a8b8d8; max-width: 560px; margin: 0 auto; line-height: 1.7; }
@@ -39,6 +46,7 @@
   .btn-gold { background: var(--gold); color: var(--navy); padding: 14px 32px; border-radius: 28px; font-weight: 900; text-decoration: none; display: inline-block; }
 </style>
 <link rel="stylesheet" href="assets/breadcrumb.css">
+<script src="assets/knight-points.js"></script>
 <script src="/assets/i18n.js"></script>
 </head>
 <body>
@@ -67,7 +75,9 @@
 </div>
 
 <script>
-var knIsTr = window.DSKi18n && DSKi18n.lang === 'tr';
+var knLang = (window.DSKi18n && DSKi18n.lang) || 'en';
+var knIsTr = knLang === 'tr';
+var knIsEs = knLang === 'es';
 var KNIGHTS_EN = [
   { id: "shieldy", name: "Shieldy", title: "The Leader", color: "#c9a84c", specialty: "🎮 Gaming & in-app red flags",
     bio: "The one who taught everyone the rules. Calm under pressure, first to notice when something's off, always the one who says the thing out loud that everyone else was quietly worried about.",
@@ -110,7 +120,28 @@ var KNIGHTS_TR = [
     quote: "Bunun gerçekten bedava olduğunu mu düşündün?", note: 220 }
 ];
 
-var KNIGHTS = knIsTr ? KNIGHTS_TR : KNIGHTS_EN;
+var KNIGHTS_ES = [
+  { id: "shieldy", name: "Shieldy", title: "El Líder", color: "#c9a84c", specialty: "🎮 Juegos y señales de alerta dentro de apps",
+    bio: "El que le enseñó las reglas a todos. Tranquilo bajo presión, el primero en notar cuando algo anda mal, siempre el que dice en voz alta lo que todos los demás ya sospechaban en silencio.",
+    quote: "Escudo arriba.", note: 660 },
+  { id: "pixel", name: "Pixel", title: "El Jugador", color: "#3EC6C0", specialty: "🕹️ Roblox, PK XD y chats de juegos",
+    bio: "Vive dentro de cada juego que vale la pena jugar. Conoce de memoria cada menú de configuración y puede detectar un intercambio de objetos fraudulento a kilómetros de distancia — porque casi cae en uno antes.",
+    quote: "Buen intento. Hoy no.", note: 784 },
+  { id: "bot", name: "Bot", title: "El Analista", color: "#8fa6c9", specialty: "🤖 Chatbots de IA y deepfakes",
+    bio: "Entiende exactamente cómo funciona la IA, precisamente por eso Bot nunca confía del todo en ella. Explica cosas complicadas en una sola frase, con paciencia, las veces que hagan falta.",
+    quote: "Lo real no siempre es lo que parece.", note: 523 },
+  { id: "dame-noble", name: "Dama Noble", title: "El Corazón", color: "#b98a4a", specialty: "💬 Ciberacoso y amabilidad",
+    bio: "Con quien todos hablan de verdad cuando algo anda mal. Se toma los sentimientos tan en serio como los firewalls, porque sabe que el daño emocional suele ser el verdadero daño.",
+    quote: "No hiciste nada malo. Vamos a arreglarlo juntos.", note: 587 },
+  { id: "sprout", name: "Sprout", title: "Recluta Más Reciente", color: "#7cbf6b", specialty: "🌱 Primeros pasos y lo básico",
+    bio: "Recién se unió a los Caballeros y todavía hace las preguntas que a todos los demás les da vergüenza hacer — precisamente por eso Sprout es quien mejor enseña lo básico.",
+    quote: "Espera, ¿puedes explicarlo una vez más?", note: 440 },
+  { id: "glitch", name: "Glitch", title: "El Rival", color: "#8A5FBF", specialty: "⚠️ Todos los trucos posibles", rival: true,
+    bio: "No es un villano — es una advertencia hecha lo bastante amigable para un martes cualquiera. Glitch aparece en cada misión probando cada truco que usaría un estafador de verdad, para que puedas practicar a detectarlo primero aquí, donde en realidad no hay nada en juego.",
+    quote: "¿De verdad pensaste que eso era gratis?", note: 220 }
+];
+
+var KNIGHTS = knIsTr ? KNIGHTS_TR : knIsEs ? KNIGHTS_ES : KNIGHTS_EN;
 
 var actx = null;
 function playNote(freq) {
@@ -148,9 +179,11 @@ grid.innerHTML = KNIGHTS.map(function(k) {
     '<div class="knight-specialty">' + k.specialty + '</div>' +
     '<p class="knight-bio">' + k.bio + '</p>' +
     '<div class="knight-quote">"' + k.quote + '"</div>' +
-    '<div class="tap-hint">🔊 ' + (knIsTr ? 'ses için dokun' : 'tap for sound') + '</div>' +
+    '<div class="tap-hint">🔊 ' + (knIsTr ? 'ses için dokun' : knIsEs ? 'toca para escuchar' : 'tap for sound') + '</div>' +
   '</div>';
 }).join('');
+
+if (window.DSKPoints) DSKPoints.checkStreak();
 </script>
 
 <script src="/assets/lang-switcher.js"></script>

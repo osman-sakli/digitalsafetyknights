@@ -9,6 +9,9 @@
       for (var i = 0; i < langs.length; i++) {
         if (/^tr\b/i.test(langs[i])) return 'tr';
       }
+      for (var j = 0; j < langs.length; j++) {
+        if (/^es\b/i.test(langs[j])) return 'es';
+      }
       if (Intl.DateTimeFormat().resolvedOptions().timeZone === 'Europe/Istanbul') return 'tr';
     } catch (e) {}
     return null;
@@ -33,6 +36,13 @@
         var attr = parts[0].trim(), key = parts[1].trim();
         if (dict[key] != null) el.setAttribute(attr, dict[key]);
       });
+    });
+    document.querySelectorAll('a[href*="/guides/"], a[href*="/journal/"]').forEach(function(a) {
+      var href = a.getAttribute('href');
+      var suffix = '-' + lang + '.pdf';
+      if (/\.pdf$/i.test(href) && href.slice(-suffix.length).toLowerCase() !== suffix) {
+        a.setAttribute('href', href.replace(/(-[a-z]{2})?\.pdf$/i, suffix));
+      }
     });
   }
 

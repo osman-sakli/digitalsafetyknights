@@ -5,13 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Spot the Deepfake — a scenario quiz teaching kids the real-world tells of AI-faked video, audio, and images.">
 <title>Spot the Deepfake — Digital Safety Knights</title>
+<link rel="canonical" href="https://digitalsafetyknights.org/spot-the-deepfake.html">
+<meta property="og:title" content="Spot the Deepfake — Digital Safety Knights">
+<meta property="og:description" content="Spot the Deepfake — a scenario quiz teaching kids the real-world tells of AI-faked video, audio, and images.">
+<meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
+<meta property="og:url" content="https://digitalsafetyknights.org/spot-the-deepfake.html">
+<meta property="og:type" content="website">
 <link rel="icon" href="assets/favicon.ico">
 <script src="assets/knight-points.js"></script>
 <script src="/assets/i18n.js"></script>
 <style>
   :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --success: #2a9d8f; --danger: #e63946; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--light); color: #2d3748; }
+  body { font-family: 'Nunito Sans', 'Segoe UI', system-ui, sans-serif; background: var(--light); color: #2d3748; }
   .topbar { background: var(--navy); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
   .topbar .brand { color: var(--gold); font-weight: 900; text-decoration: none; font-size: 1.05rem; }
   .topbar .home-link { color: #cdd6ea; text-decoration: none; font-size: 0.85rem; font-weight: 700; }
@@ -41,6 +47,7 @@
   .end-score { font-size: 2.4rem; font-weight: 900; color: var(--gold); margin: 10px 0; }
 </style>
 <link rel="stylesheet" href="assets/breadcrumb.css">
+<link rel="stylesheet" href="assets/theme.css">
 </head>
 <body>
 
@@ -70,7 +77,9 @@
 </div>
 
 <script>
-var stdIsTr = window.DSKi18n && DSKi18n.lang === 'tr';
+var stdLang = (window.DSKi18n && DSKi18n.lang) || 'en';
+var stdIsTr = stdLang === 'tr';
+var stdIsEs = stdLang === 'es';
 var SCENARIOS_EN = [
   { icon: '📞', text: "You get a call and it sounds exactly like your mom's voice, panicked, asking you to send money right now to a number you don't recognize.", choices: [
       { text: "It's her voice, so it must be real — send it", correct: false },
@@ -157,7 +166,50 @@ var SCENARIOS_TR = [
     ], explain: "Yapay zeka sohbet botları genellikle \"emin bir şekilde yanılır\" — bir şeyi uydurduklarını gerçekte bilmezler. Kendinden emin olmak doğrulukla aynı şey değildir; önemli gerçekleri her zaman gerçek bir kaynakla iki kez kontrol et." }
 ];
 
-var SCENARIOS = stdIsTr ? SCENARIOS_TR : SCENARIOS_EN;
+var SCENARIOS_ES = [
+  { icon: '📞', text: "Recibes una llamada y suena exactamente como la voz de tu mamá, en pánico, pidiéndote que envíes dinero de inmediato a un número que no reconoces.", choices: [
+      { text: "Es su voz, así que debe ser real — envíalo", correct: false },
+      { text: "Cuelga y llámala de vuelta primero a su número real", correct: true },
+      { text: "Hazle más preguntas a quien llama para estar seguro", correct: false }
+    ], explain: "Las herramientas de clonación de voz pueden copiar la voz de una persona real a partir de solo unos segundos de audio en línea. Una petición de dinero urgente y en pánico es la señal más grande — siempre verifica por una segunda forma de contacto separada." },
+  { icon: '🎥', text: "Un video muestra a una celebridad que te gusta recomendando una aplicación de inversión en criptomonedas que nunca habías escuchado, prometiendo enormes ganancias.", choices: [
+      { text: "Las celebridades son confiables, así que probablemente esté bien", correct: false },
+      { text: "Asume que es falso hasta que se demuestre lo contrario — revisa las cuentas oficiales reales de la celebridad", correct: true },
+      { text: "Pruébalo primero con una pequeña cantidad de dinero", correct: false }
+    ], explain: "El intercambio de rostro y voz con IA es extremadamente común en estafas de respaldo falso de celebridades — especialmente para inversiones que prometen ganancias enormes y garantizadas. Las celebridades reales casi nunca promocionan personalmente aplicaciones de cripto al azar." },
+  { icon: '💬', text: "En una videollamada, los movimientos de la boca de la persona parecen ligeramente desincronizados con sus palabras, y nunca parpadea.", choices: [
+      { text: "Eso es solo una mala conexión a internet", correct: false },
+      { text: "Esa es una señal clásica de un filtro facial de IA en tiempo real o un deepfake", correct: true },
+      { text: "Ignóralo, las videollamadas siempre se ven raras", correct: false }
+    ], explain: "La sincronización labial incorrecta y el parpadeo antinatural (o la ausencia total de parpadeo) son dos de los errores visuales más comunes en las videollamadas deepfake en vivo — la tecnología aún no ha resuelto esto por completo." },
+  { icon: '🖼️', text: "Ves una foto impactante de un evento noticioso que parece demasiado dramática para ser real, con manos ligeramente deformadas o detalles extraños en el fondo de la imagen.", choices: [
+      { text: "Compártela de inmediato, es importante", correct: false },
+      { text: "Observa de cerca las manos, el texto y los patrones de fondo, luego revisa una fuente de noticias real", correct: true },
+      { text: "Solo compártela si primero recibe muchos me gusta", correct: false }
+    ], explain: "Los generadores de imágenes con IA todavía suelen tener problemas con las manos, el texto de fondo y los patrones repetitivos. Revisar una fuente de noticias real antes de compartir imágenes dramáticas siempre es lo más seguro." },
+  { icon: '🎮', text: "Un 'amigo' en tu juego favorito te envía un mensaje de voz que suena un poco robótico y repite de forma extraña la misma frase dos veces.", choices: [
+      { text: "Las personas reales nunca suenan robóticas, así que está bien", correct: false },
+      { text: "Una frase repetida de forma extraña y un tono robótico plano pueden significar que es audio generado por IA", correct: true },
+      { text: "Sube el volumen para comprobarlo", correct: false }
+    ], explain: "Los generadores de voz con IA todavía pueden sonar algo planos o repetir frases de forma poco natural. Si un 'amigo' de repente suena diferente o actúa de forma extraña, vale la pena verificarlo por otro canal." },
+  { icon: '📸', text: "Alguien afirma tener una foto vergonzosa tuya que no recuerdas haberte tomado, y dice que la compartirá a menos que le pagues.", choices: [
+      { text: "Paga rápido para que la borren", correct: false },
+      { text: "No pagues, no entres en pánico — guarda la evidencia y cuéntaselo a un adulto de confianza de inmediato", correct: true },
+      { text: "Discute con ellos en línea para demostrar que es falsa", correct: false }
+    ], explain: "Esto es una táctica de sextorsión — real o falsificada con IA, pagar nunca garantiza que se detenga, y a menudo lleva a más exigencias. Contarle a un adulto de confianza de inmediato siempre es lo correcto, y nunca es culpa de la víctima." },
+  { icon: '🗞️', text: "Un artículo cita a un científico diciendo algo que suena extremo y fuera de su carácter habitual, sin ningún enlace a de dónde vino realmente la cita.", choices: [
+      { text: "Si está escrito, probablemente sea verdad", correct: false },
+      { text: "Busca la fuente original antes de creer una cita fuera de carácter", correct: true },
+      { text: "Confía en ello porque el artículo se ve profesional", correct: false }
+    ], explain: "Los generadores de texto con IA pueden producir citas muy convincentes pero completamente falsas atribuidas a personas reales. Un artículo de aspecto profesional no es prueba de nada — siempre busca la fuente original y verificable." },
+  { icon: '🤖', text: "Un chatbot de IA te dice que está 100% seguro de un dato, con total confianza y sin ninguna duda.", choices: [
+      { text: "Total confianza significa que debe ser correcto", correct: false },
+      { text: "La IA puede sonar extremadamente segura y aun así estar completamente equivocada", correct: true },
+      { text: "La confianza solo importa en los expertos humanos", correct: false }
+    ], explain: "Los chatbots de IA suelen estar \"seguros pero equivocados\" — en realidad no saben cuándo están inventando cosas. La confianza no es lo mismo que la precisión; siempre verifica los datos importantes con una fuente real." }
+];
+
+var SCENARIOS = stdIsTr ? SCENARIOS_TR : stdIsEs ? SCENARIOS_ES : SCENARIOS_EN;
 var idx = 0, score = 0;
 
 function renderScenario() {
@@ -171,7 +223,7 @@ function renderScenario() {
       '<div class="scenario-text">' + s.text + '</div>' +
       '<div id="choices"></div>' +
       '<div class="explain-box" id="explain-box"></div>' +
-      '<button class="next-btn" id="next-btn" onclick="nextScenario()">' + (stdIsTr ? 'Devam Et →' : 'Continue →') + '</button>' +
+      '<button class="next-btn" id="next-btn" onclick="nextScenario()">' + (stdIsTr ? 'Devam Et →' : stdIsEs ? 'Continuar →' : 'Continue →') + '</button>' +
     '</div>';
   var choicesEl = document.getElementById('choices');
   choicesEl.innerHTML = s.choices.map(function(c, i) {
@@ -203,7 +255,7 @@ function showEnd() {
   document.getElementById('end-score').textContent = score + '/' + SCENARIOS.length;
   document.getElementById('end-screen').classList.add('show');
   if (window.DSKPoints) {
-    DSKPoints.addPoints(score * 5, stdIsTr ? 'Sahte Görüntüyü Bul' : 'Spot the Deepfake');
+    DSKPoints.addPoints(score * 5, stdIsTr ? 'Sahte Görüntüyü Bul' : stdIsEs ? 'Detecta el Deepfake' : 'Spot the Deepfake');
   }
 }
 

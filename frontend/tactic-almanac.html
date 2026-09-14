@@ -5,16 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="The Tactic Almanac — meet the tricks Glitch uses, as beatable in-story bosses. Never real people, always real red flags.">
 <title>Tactic Almanac — Digital Safety Knights</title>
+<link rel="canonical" href="https://digitalsafetyknights.org/tactic-almanac.html">
+<meta property="og:title" content="Tactic Almanac — Digital Safety Knights">
+<meta property="og:description" content="The Tactic Almanac — meet the tricks Glitch uses, as beatable in-story bosses. Never real people, always real red flags.">
+<meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
+<meta property="og:url" content="https://digitalsafetyknights.org/tactic-almanac.html">
+<meta property="og:type" content="website">
 <link rel="icon" href="assets/favicon.ico">
 <style>
   :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --text: #2d3748; --purple: #8A5FBF; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
+  body { font-family: 'Nunito Sans', 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
   .topbar { background: var(--navy); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
   .topbar .brand { color: var(--gold); font-weight: 900; text-decoration: none; font-size: 1.05rem; }
   .topbar .home-link { color: #cdd6ea; text-decoration: none; font-size: 0.85rem; font-weight: 700; }
 
-  .hero { background: linear-gradient(135deg, #2b1140 0%, var(--navy) 60%); color: white; text-align: center; padding: 55px 1.5rem 45px; }
+  .hero { background: var(--realm-bg); color: white; text-align: center; padding: 55px 1.5rem 45px; }
   .hero .icon { font-size: 3rem; margin-bottom: 0.6rem; }
   .hero h1 { font-size: clamp(1.8rem, 4.5vw, 2.6rem); margin-bottom: 0.7rem; }
   .hero h1 .purple { color: #c9a8f0; }
@@ -36,6 +42,8 @@
   .btn-ghost { background: transparent; color: var(--navy); border: 2px solid var(--navy); padding: 12px 28px; border-radius: 28px; font-weight: 800; text-decoration: none; display: inline-block; margin: 0 6px; }
 </style>
 <link rel="stylesheet" href="assets/breadcrumb.css">
+<link rel="stylesheet" href="assets/theme.css">
+<script src="assets/knight-points.js"></script>
 <script src="/assets/i18n.js"></script>
 </head>
 <body>
@@ -64,7 +72,9 @@
 </div>
 
 <script>
-var taIsTr = window.DSKi18n && DSKi18n.lang === 'tr';
+var taLang = (window.DSKi18n && DSKi18n.lang) || 'en';
+var taIsTr = taLang === 'tr';
+var taIsEs = taLang === 'es';
 var BOSSES_EN = [
   { icon: "⏰", name: "The Countdown Goblin", alias: "Urgency", desc: "Shows up screaming that you have ten seconds, that the offer expires now, that you have to act before you can think. The rush IS the trick — it's designed to switch your brain off before it can ask a single good question.",
     defeat: "Beat it by: doing nothing for 60 seconds. Nothing real ever actually expires that fast." },
@@ -99,8 +109,25 @@ var BOSSES_TR = [
     defeat: "Hemen güvendiğin bir yetişkine söyleyerek yen — birine bu mesajı gösterdiğin için asla başın belaya girmez." }
 ];
 
-var BOSSES = taIsTr ? BOSSES_TR : BOSSES_EN;
-var TA_HOW_TO_BEAT = taIsTr ? "Nasıl yenilir:" : "How to beat it:";
+var BOSSES_ES = [
+  { icon: "⏰", name: "El Duende de la Cuenta Regresiva", alias: "Urgencia", desc: "Aparece gritando que tienes diez segundos, que la oferta expira ahora mismo, que tienes que actuar antes de poder pensar. La prisa ES el truco — está diseñada para apagar tu cerebro antes de que pueda hacer una sola buena pregunta.",
+    defeat: "No hagas nada durante 60 segundos. Nada real expira realmente tan rápido." },
+  { icon: "🤫", name: "El Guardián de Secretos", alias: "Secreto", desc: "Te pide que guardes 'solo esta cosita' de tus padres. Lo presenta como confianza, como ser especial, como 'nuestra cosita'. Nunca se trata realmente de confianza — se trata de asegurarse de que ningún adulto vea jamás la conversación.",
+    defeat: "Cuéntale a un adulto de confianza en el segundo en que alguien te pida mantener en secreto una conversación en línea." },
+  { icon: "🎣", name: "El Pescador de Información", alias: "Preguntas Personales", desc: "Pregunta casualmente tu nombre, tu edad, tu escuela, dónde vives — una pregunta que se siente inofensiva a la vez, hasta que se suma a un perfil completo sobre ti.",
+    defeat: "Trata tu nombre, escuela y dirección como la llave de tu casa — no se la entregas a alguien solo porque lo pidió amablemente." },
+  { icon: "🎁", name: "El Fantasma del Premio", alias: "Demasiado Bueno Para Ser Verdad", desc: "Trajes gratis, Robux gratis, un mensaje de 'has sido especialmente elegido' — siempre gratis, siempre enorme, siempre a solo un clic de distancia. Nunca es realmente gratis; es un anzuelo con una carnada que se ve muy generosa.",
+    defeat: "Recuerda que los premios reales nunca necesitan tu contraseña para reclamarlos." },
+  { icon: "💸", name: "El Trol del Peaje", alias: "Solicitudes de Dinero", desc: "Pide un pequeño pago para 'desbloquear' algo, o una tarjeta de regalo 'solo esta vez', o los datos de tu tarjeta para 'verificar' que eres real. Siempre empieza pequeño — ese es el diseño.",
+    defeat: "Nunca envíes dinero, tarjetas de regalo o datos de tarjetas a alguien que solo conoces por una pantalla." },
+  { icon: "📍", name: "La Sombra del Encuentro", alias: "Reunirse en Persona", desc: "Sugiere reunirse en persona, 'solo para pasar el rato', normalmente combinado con la petición de mantenerlo en silencio. Esta es la máscara que más importa — donde el riesgo deja de ser solo en línea.",
+    defeat: "Nunca te reúnas en persona con alguien de internet sin que un adulto de confianza sepa exactamente dónde, cuándo y con quién." },
+  { icon: "🎭", name: "La Máscara", alias: "Solicitudes Inapropiadas", desc: "Pide una foto, te pide que hagas algo frente a la cámara, siempre presentándolo como normal, sin importancia, como algo que todos hacen. Nunca es sin importancia.",
+    defeat: "Cuéntaselo de inmediato a un adulto de confianza — nunca te meterás en problemas por mostrarle a alguien este mensaje." }
+];
+
+var BOSSES = taIsTr ? BOSSES_TR : taIsEs ? BOSSES_ES : BOSSES_EN;
+var TA_HOW_TO_BEAT = taIsTr ? "Nasıl yenilir:" : taIsEs ? "Cómo vencerlo:" : "How to beat it:";
 
 var grid = document.getElementById('bossGrid');
 grid.innerHTML = BOSSES.map(function(b) {
@@ -111,6 +138,8 @@ grid.innerHTML = BOSSES.map(function(b) {
     '<div class="boss-defeat"><b>' + TA_HOW_TO_BEAT + '</b> ' + b.defeat.replace('Beat it by: ', '') + '</div>' +
   '</div>';
 }).join('');
+
+if (window.DSKPoints) DSKPoints.checkStreak();
 </script>
 
 <script src="/assets/lang-switcher.js"></script>

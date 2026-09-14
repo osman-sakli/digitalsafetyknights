@@ -5,11 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Knight Chronicles — a short comic-strip story, published alongside the Monthly Journal.">
 <title>Knight Chronicles — Digital Safety Knights</title>
+<link rel="canonical" href="https://digitalsafetyknights.org/knight-chronicles.html">
+<meta property="og:title" content="Knight Chronicles — Digital Safety Knights">
+<meta property="og:description" content="Knight Chronicles — a short comic-strip story, published alongside the Monthly Journal.">
+<meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
+<meta property="og:url" content="https://digitalsafetyknights.org/knight-chronicles.html">
+<meta property="og:type" content="website">
 <link rel="icon" href="assets/favicon.ico">
 <style>
   :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --text: #2d3748; --teal: #3EC6C0; --purple: #8A5FBF; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
+  body { font-family: 'Nunito Sans', 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
   .topbar { background: var(--navy); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
   .topbar .brand { color: var(--gold); font-weight: 900; text-decoration: none; font-size: 1.05rem; }
   .topbar .home-link { color: #cdd6ea; text-decoration: none; font-size: 0.85rem; font-weight: 700; }
@@ -48,6 +54,8 @@
   .btn-ghost { background: transparent; color: var(--navy); border: 2px solid var(--navy); padding: 11px 26px; border-radius: 26px; font-weight: 800; text-decoration: none; display: inline-block; margin: 0 6px; }
 </style>
 <link rel="stylesheet" href="assets/breadcrumb.css">
+<link rel="stylesheet" href="assets/theme.css">
+<script src="assets/knight-points.js"></script>
 <script src="/assets/i18n.js"></script>
 </head>
 <body>
@@ -106,6 +114,7 @@
   </div>
 </div>
 
+<script>if (window.DSKPoints) DSKPoints.checkStreak();</script>
 <script src="/assets/lang-switcher.js"></script>
 <script src="/assets/site-search.js"></script>
 <script src="/assets/play-now-fab.js"></script>

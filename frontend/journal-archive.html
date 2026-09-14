@@ -5,14 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Search and browse every past issue of the DSK Monthly Journal.">
 <title>Journal Archive — Digital Safety Knights</title>
+<link rel="canonical" href="https://digitalsafetyknights.org/journal-archive.html">
+<meta property="og:title" content="Journal Archive — Digital Safety Knights">
+<meta property="og:description" content="Search and browse every past issue of the DSK Monthly Journal.">
+<meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
+<meta property="og:url" content="https://digitalsafetyknights.org/journal-archive.html">
+<meta property="og:type" content="website">
 <link rel="icon" href="assets/favicon.ico">
 <link rel="stylesheet" href="assets/breadcrumb.css">
+<link rel="stylesheet" href="assets/theme.css">
 <script src="assets/knight-points.js"></script>
 <script src="/assets/i18n.js"></script>
 <style>
   :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --text: #2d3748; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
+  body { font-family: 'Nunito Sans', 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
   .topbar { background: var(--navy); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
   .topbar .brand { color: var(--gold); font-weight: 900; text-decoration: none; font-size: 1.05rem; }
   .topbar .home-link { color: #cdd6ea; text-decoration: none; font-size: 0.85rem; font-weight: 700; }
@@ -64,6 +71,7 @@
 
 <script>
 const ISSUES_EN = [
+  { tag: "AI Safety & Policy", thumb: "⚖️", bg: "#eceef8", title: "The Age-Verification Trap: Why \"Just Verify Their Age\" Doesn't Fix AI Chatbot Safety", desc: "California wants AI platforms to verify minors' ages. The EFF says no privacy-safe way to do that exists. Both are true — here's what that means for parents right now.", meta: "September 2026 · 7 min read", file: "september-2026.pdf" },
   { tag: "Parent Toolkit", thumb: "🎒", bg: "#e8f4f2", title: "Back-to-School Digital Setup: The 30-Minute Family Tech Reset", desc: "A practical, once-a-year checklist to reset privacy settings, platform protections, and your family media agreement together.", meta: "August 2026 · 6 min read", file: "august-2026.pdf" },
   { tag: "Stranger Danger", thumb: "🎥", bg: "#fdeeee", title: "The Livestream Loophole: Random-Chat Apps After Omegle", desc: "Omegle shut down in 2023 — but instant random-video chat with strangers didn't disappear, it moved. Here's where.", meta: "July 2026 · 6 min read", file: "july-2026.pdf" },
   { tag: "Tech & Algorithms", thumb: "📱", bg: "#eef1fb", title: "How the Feed Is Built to Keep Them Scrolling", desc: "Infinite scroll, autoplay, and variable rewards, explained — and what actually helps beyond a screen-time limit.", meta: "June 2026 · 7 min read", file: "june-2026.pdf" },
@@ -74,20 +82,34 @@ const ISSUES_EN = [
 ];
 
 const ISSUES_TR = [
-  { tag: "Ebeveyn Araç Seti", thumb: "🎒", bg: "#e8f4f2", title: "Okula Dönüş Dijital Kurulumu: 30 Dakikalık Aile Teknoloji Sıfırlaması", desc: "Gizlilik ayarlarını, platform korumalarını ve aile medya anlaşmanızı birlikte sıfırlamak için pratik, yılda bir kez yapılan bir kontrol listesi.", meta: "Ağustos 2026 · 6 dk okuma", file: "august-2026.pdf" },
-  { tag: "Yabancı Tehlikesi", thumb: "🎥", bg: "#fdeeee", title: "Canlı Yayın Açığı: Omegle Sonrası Rastgele Sohbet Uygulamaları", desc: "Omegle 2023'te kapandı — ama yabancılarla anlık rastgele video sohbeti kaybolmadı, sadece taşındı. İşte nereye.", meta: "Temmuz 2026 · 6 dk okuma", file: "july-2026.pdf" },
-  { tag: "Teknoloji & Algoritmalar", thumb: "📱", bg: "#eef1fb", title: "Akış, Onları Kaydırmaya Devam Ettirmek İçin Nasıl Tasarlandı", desc: "Sonsuz kaydırma, otomatik oynatma ve değişken ödüller anlatıldı — ve ekran süresi sınırının ötesinde gerçekten neyin yardımcı olduğu.", meta: "Haziran 2026 · 7 dk okuma", file: "june-2026.pdf" },
-  { tag: "İstismarcı Taktikleri", thumb: "🔒", bg: "#fdeeee", title: "En Hızlı Büyüyen Tehdit: Genç Erkeklere Yönelik Finansal Şantaj", desc: "Dolandırıcılığın nasıl işlediği, hızın neden silah olduğu ve bu zaten olduğunda tam olarak ne yapılması gerektiği.", meta: "Mayıs 2026 · 7 dk okuma", file: "may-2026.pdf" },
-  { tag: "Yapay Zeka Güvenliği", thumb: "🤖", bg: "#eef1fb", title: "İstismarcılar 2026'da Çocukları Hedeflemek İçin Yapay Zekayı Nasıl Kullanıyor", desc: "Yapay zeka destekli kandırma taktiklerinin yeni dalgasına ve ailelerin bunlara karşı bugün nasıl savunma yapabileceğine derinlemesine bir bakış.", meta: "Nisan 2026 · 8 dk okuma", file: "april-2026.pdf" },
-  { tag: "Oyun", thumb: "🎮", bg: "#eef8ec", title: "Roblox'un İçinde: Ebeveynlerin Görmediği Şeyler", desc: "Gizli sohbet kanallarına, kullanıcı üretimi oyunlara ve çocuğunuzun karşılaşabileceği içeriğe araştırıcı bir bakış.", meta: "Mart 2026 · 6 dk okuma", file: "march-2026.pdf" },
-  { tag: "Ruh Sağlığı", thumb: "💜", bg: "#f4eefb", title: "Çevrimiçi Tacizin Çocuklar Üzerindeki Duygusal Etkisi", desc: "Çocuk psikologlarından siber zorbalık travmasını tanıma ve çocuğunuzun iyileşmesini destekleme konusunda uzman tavsiyesi.", meta: "Şubat 2026 · 10 dk okuma", file: "february-2026.pdf" }
+  { tag: "Yapay Zeka Güvenliği & Politika", thumb: "⚖️", bg: "#eceef8", title: "Yaş Doğrulama Tuzağı: \"Sadece Yaşını Doğrula\" Yapay Zeka Sohbet Botu Güvenliğini Neden Çözmüyor", desc: "Kaliforniya, yapay zeka platformlarının reşit olmayanların yaşını doğrulamasını istiyor. EFF ise bunun gizliliği koruyan bir yolu olmadığını söylüyor. İkisi de doğru — ebeveynler için bugün ne anlama geldiği burada.", meta: "Eylül 2026 · 7 dk okuma", file: "september-2026-tr.pdf" },
+  { tag: "Ebeveyn Araç Seti", thumb: "🎒", bg: "#e8f4f2", title: "Okula Dönüş Dijital Kurulumu: 30 Dakikalık Aile Teknoloji Sıfırlaması", desc: "Gizlilik ayarlarını, platform korumalarını ve aile medya anlaşmanızı birlikte sıfırlamak için pratik, yılda bir kez yapılan bir kontrol listesi.", meta: "Ağustos 2026 · 6 dk okuma", file: "august-2026-tr.pdf" },
+  { tag: "Yabancı Tehlikesi", thumb: "🎥", bg: "#fdeeee", title: "Canlı Yayın Açığı: Omegle Sonrası Rastgele Sohbet Uygulamaları", desc: "Omegle 2023'te kapandı — ama yabancılarla anlık rastgele video sohbeti kaybolmadı, sadece taşındı. İşte nereye.", meta: "Temmuz 2026 · 6 dk okuma", file: "july-2026-tr.pdf" },
+  { tag: "Teknoloji & Algoritmalar", thumb: "📱", bg: "#eef1fb", title: "Akış, Onları Kaydırmaya Devam Ettirmek İçin Nasıl Tasarlandı", desc: "Sonsuz kaydırma, otomatik oynatma ve değişken ödüller anlatıldı — ve ekran süresi sınırının ötesinde gerçekten neyin yardımcı olduğu.", meta: "Haziran 2026 · 7 dk okuma", file: "june-2026-tr.pdf" },
+  { tag: "İstismarcı Taktikleri", thumb: "🔒", bg: "#fdeeee", title: "En Hızlı Büyüyen Tehdit: Genç Erkeklere Yönelik Finansal Şantaj", desc: "Dolandırıcılığın nasıl işlediği, hızın neden silah olduğu ve bu zaten olduğunda tam olarak ne yapılması gerektiği.", meta: "Mayıs 2026 · 7 dk okuma", file: "may-2026-tr.pdf" },
+  { tag: "Yapay Zeka Güvenliği", thumb: "🤖", bg: "#eef1fb", title: "İstismarcılar 2026'da Çocukları Hedeflemek İçin Yapay Zekayı Nasıl Kullanıyor", desc: "Yapay zeka destekli kandırma taktiklerinin yeni dalgasına ve ailelerin bunlara karşı bugün nasıl savunma yapabileceğine derinlemesine bir bakış.", meta: "Nisan 2026 · 8 dk okuma", file: "april-2026-tr.pdf" },
+  { tag: "Oyun", thumb: "🎮", bg: "#eef8ec", title: "Roblox'un İçinde: Ebeveynlerin Görmediği Şeyler", desc: "Gizli sohbet kanallarına, kullanıcı üretimi oyunlara ve çocuğunuzun karşılaşabileceği içeriğe araştırıcı bir bakış.", meta: "Mart 2026 · 6 dk okuma", file: "march-2026-tr.pdf" },
+  { tag: "Ruh Sağlığı", thumb: "💜", bg: "#f4eefb", title: "Çevrimiçi Tacizin Çocuklar Üzerindeki Duygusal Etkisi", desc: "Çocuk psikologlarından siber zorbalık travmasını tanıma ve çocuğunuzun iyileşmesini destekleme konusunda uzman tavsiyesi.", meta: "Şubat 2026 · 10 dk okuma", file: "february-2026-tr.pdf" }
 ];
 
-const jaIsTr = window.DSKi18n && DSKi18n.lang === 'tr';
-const ISSUES = jaIsTr ? ISSUES_TR : ISSUES_EN;
-const JA_ALL_TOPICS = jaIsTr ? '🌐 Tüm Konular' : '🌐 All Topics';
-const JA_NO_RESULTS = jaIsTr ? 'Bu aramayla eşleşen sayı yok — farklı bir kelime veya konu deneyin.' : 'No issues match that search — try a different word or topic.';
-const JA_DOWNLOAD = jaIsTr ? 'PDF İndir' : 'Download PDF';
+const ISSUES_ES = [
+  { tag: "Seguridad de IA y Política", thumb: "⚖️", bg: "#eceef8", title: "La Trampa de la Verificación de Edad: Por Qué \"Solo Verifica Su Edad\" No Resuelve la Seguridad de los Chatbots de IA", desc: "California quiere que las plataformas de IA verifiquen la edad de los menores. La EFF dice que no existe una forma que proteja la privacidad para hacerlo. Ambas cosas son ciertas — esto es lo que significa para los padres en este momento.", meta: "Septiembre 2026 · 7 min de lectura", file: "september-2026-es.pdf" },
+  { tag: "Kit de Herramientas para Padres", thumb: "🎒", bg: "#e8f4f2", title: "Configuración Digital de Vuelta al Cole: El Reinicio Tecnológico Familiar de 30 Minutos", desc: "Una lista de verificación práctica, una vez al año, para reiniciar juntos la configuración de privacidad, las protecciones de la plataforma y el acuerdo familiar sobre medios.", meta: "Agosto 2026 · 6 min de lectura", file: "august-2026-es.pdf" },
+  { tag: "Peligro de Desconocidos", thumb: "🎥", bg: "#fdeeee", title: "El Vacío Legal de la Transmisión en Vivo: Apps de Chat Aleatorio Después de Omegle", desc: "Omegle cerró en 2023 — pero el chat de video aleatorio instantáneo con desconocidos no desapareció, se mudó. Aquí está a dónde.", meta: "Julio 2026 · 6 min de lectura", file: "july-2026-es.pdf" },
+  { tag: "Tecnología y Algoritmos", thumb: "📱", bg: "#eef1fb", title: "Cómo Está Construido el Feed para Mantenerlos Deslizando", desc: "Desplazamiento infinito, reproducción automática y recompensas variables, explicados — y qué es lo que realmente ayuda más allá de un límite de tiempo de pantalla.", meta: "Junio 2026 · 7 min de lectura", file: "june-2026-es.pdf" },
+  { tag: "Tácticas de Depredadores", thumb: "🔒", bg: "#fdeeee", title: "La Amenaza de Más Rápido Crecimiento: Sextorsión Financiera de Adolescentes Varones", desc: "Cómo funciona la estafa, por qué la velocidad es el arma, y exactamente qué hacer si ya está sucediendo.", meta: "Mayo 2026 · 7 min de lectura", file: "may-2026-es.pdf" },
+  { tag: "Seguridad de IA", thumb: "🤖", bg: "#eef1fb", title: "Cómo los Depredadores Usan la IA para Atacar a los Niños en 2026", desc: "Un análisis profundo de la nueva ola de tácticas de manipulación impulsadas por IA y cómo las familias pueden defenderse de ellas hoy.", meta: "Abril 2026 · 8 min de lectura", file: "april-2026-es.pdf" },
+  { tag: "Videojuegos", thumb: "🎮", bg: "#eef8ec", title: "Dentro de Roblox: Lo Que los Padres No Ven", desc: "Una mirada investigativa a los canales de chat ocultos, los juegos creados por usuarios y el contenido que tu hijo o hija puede encontrar.", meta: "Marzo 2026 · 6 min de lectura", file: "march-2026-es.pdf" },
+  { tag: "Salud Mental", thumb: "💜", bg: "#f4eefb", title: "El Impacto Emocional del Acoso en Línea en los Niños", desc: "Consejos de expertos de psicólogos infantiles sobre cómo reconocer el trauma del ciberacoso y apoyar la recuperación de tu hijo o hija.", meta: "Febrero 2026 · 10 min de lectura", file: "february-2026-es.pdf" }
+];
+
+const jaLang = (window.DSKi18n && DSKi18n.lang) || 'en';
+const jaIsTr = jaLang === 'tr';
+const jaIsEs = jaLang === 'es';
+const ISSUES = jaIsTr ? ISSUES_TR : jaIsEs ? ISSUES_ES : ISSUES_EN;
+const JA_ALL_TOPICS = jaIsTr ? '🌐 Tüm Konular' : jaIsEs ? '🌐 Todos los Temas' : '🌐 All Topics';
+const JA_NO_RESULTS = jaIsTr ? 'Bu aramayla eşleşen sayı yok — farklı bir kelime veya konu deneyin.' : jaIsEs ? 'Ningún número coincide con esa búsqueda — prueba con otra palabra o tema.' : 'No issues match that search — try a different word or topic.';
+const JA_DOWNLOAD = jaIsTr ? 'PDF İndir' : jaIsEs ? 'Descargar PDF' : 'Download PDF';
 
 const grid = document.getElementById('j-grid');
 const filtersEl = document.getElementById('j-filters');

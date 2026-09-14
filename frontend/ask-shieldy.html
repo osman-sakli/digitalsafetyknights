@@ -5,11 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Ask Shieldy — tap a question and get a clear, pre-written answer. No open AI chat, no free text, just Shieldy's real answers.">
 <title>Ask Shieldy — Digital Safety Knights</title>
+<link rel="canonical" href="https://digitalsafetyknights.org/ask-shieldy.html">
+<meta property="og:title" content="Ask Shieldy — Digital Safety Knights">
+<meta property="og:description" content="Ask Shieldy — tap a question and get a clear, pre-written answer. No open AI chat, no free text, just Shieldy's real answers.">
+<meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
+<meta property="og:url" content="https://digitalsafetyknights.org/ask-shieldy.html">
+<meta property="og:type" content="website">
 <link rel="icon" href="assets/favicon.ico">
 <style>
   :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--light); color: #2d3748; }
+  body { font-family: 'Nunito Sans', 'Segoe UI', system-ui, sans-serif; background: var(--light); color: #2d3748; }
   .topbar { background: var(--navy); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
   .topbar .brand { color: var(--gold); font-weight: 900; text-decoration: none; font-size: 1.05rem; }
   .topbar .home-link { color: #cdd6ea; text-decoration: none; font-size: 0.85rem; font-weight: 700; }
@@ -31,6 +37,8 @@
   .category-label { font-size: 0.72rem; font-weight: 900; color: var(--gold2); background: var(--navy); display: inline-block; padding: 4px 10px; border-radius: 8px; margin: 18px 0 8px; text-transform: uppercase; letter-spacing: 0.5px; }
 </style>
 <link rel="stylesheet" href="assets/breadcrumb.css">
+<link rel="stylesheet" href="assets/theme.css">
+<script src="assets/knight-points.js"></script>
 <script src="/assets/i18n.js"></script>
 </head>
 <body>
@@ -54,7 +62,9 @@
 </div>
 
 <script>
-var asIsTr = window.DSKi18n && DSKi18n.lang === 'tr';
+var asLang = (window.DSKi18n && DSKi18n.lang) || 'en';
+var asIsTr = asLang === 'tr';
+var asIsEs = asLang === 'es';
 var CATEGORIES_EN = [
   { label: "Getting Started", questions: [
       { q: "What is Digital Safety Knights?", a: "We're a free organization that helps kids and families stay safe online — through games, quests, guides, and tools, not scary lectures." },
@@ -103,7 +113,31 @@ var CATEGORIES_TR = [
   ]}
 ];
 
-var CATEGORIES = asIsTr ? CATEGORIES_TR : CATEGORIES_EN;
+var CATEGORIES_ES = [
+  { label: "Primeros Pasos", questions: [
+      { q: "¿Qué es Digital Safety Knights?", a: "Somos una organización gratuita que ayuda a niños y familias a mantenerse seguros en línea — con juegos, misiones, guías y herramientas, no con charlas que dan miedo." },
+      { q: "¿Necesito una cuenta para jugar?", a: "¡No! Las misiones y el juego solo piden un apodo que se queda en tu dispositivo. No se necesita correo, contraseña ni cuenta para jugar." },
+      { q: "¿De verdad todo esto es gratis?", a: "Todo, siempre. Guías, misiones, el juego, las herramientas — todo en este sitio es gratuito a propósito." }
+  ]},
+  { label: "Mantenerse Seguro", questions: [
+      { q: "Un desconocido me hace preguntas personales, ¿qué hago?", a: "No respondas, y cuéntaselo a un adulto de confianza de inmediato. Las personas con buenas intenciones en línea no necesitan tu nombre, edad, escuela o dirección para seguir hablando contigo." },
+      { q: "Alguien en línea quiere conocerme en persona, ¿está bien?", a: "Nunca te encuentres con alguien que solo conoces en línea sin que un adulto de confianza sepa exactamente dónde, cuándo y con quién. Esta es una de las señales de alerta más grandes que existen." },
+      { q: "¿Está bien compartir mi contraseña con un amigo?", a: "No — ni siquiera con tu mejor amigo. Las contraseñas son secretos, punto final. Si crees que alguien más la sabe, cámbiala." },
+      { q: "¿Qué pasa si ya compartí algo de lo que me arrepiento?", a: "Cuéntaselo a un adulto de confianza de inmediato. No te meterás en problemas por contarlo — mientras antes alguien ayude, más se puede hacer." }
+  ]},
+  { label: "IA y Cosas Raras en Línea", questions: [
+      { q: "¿Cómo sé si estoy hablando con una persona real o con una IA?", a: "Presta atención a respuestas que llegan al instante, que están de acuerdo con todo lo que dices, o que suenan demasiado perfectas. Los amigos reales tardan en responder y no siempre están de acuerdo contigo." },
+      { q: "¿La IA realmente puede falsificar la voz o el rostro de alguien?", a: "Sí, realmente puede — la voz y el video ahora pueden falsificarse de forma muy convincente. Si algo se siente urgente o dramático, detente y verifícalo de otra forma antes de creerlo." },
+      { q: "¿Es hacer trampa usar IA para la tarea?", a: "La IA puede ayudarte a entender algo, pero entregar las palabras de la IA como si fueran tuyas no es un trabajo honesto. Úsala para aprender, no para saltarte el aprendizaje." }
+  ]},
+  { label: "Usar Este Sitio", questions: [
+      { q: "¿Qué son los Puntos de Caballero?", a: "Puntos que ganas al jugar misiones, el juego, y al completar la auditoría de seguridad — se acumulan hacia los rangos de Escudero, Caballero, Centinela y Campeón." },
+      { q: "¿Mi puntaje o apodo se comparte con alguien?", a: "No. Todo se guarda solo en tu propio navegador a menos que decidas crear una cuenta gratuita, e incluso entonces, nunca vendemos ni compartimos tu información." },
+      { q: "¿Quién creó Digital Safety Knights?", a: "Una familia real que quería mejores respuestas sobre seguridad en línea que un titular alarmante o un menú de configuración que nadie tiene tiempo de leer. Puedes leer nuestra historia en la página Acerca de." }
+  ]}
+];
+
+var CATEGORIES = asIsTr ? CATEGORIES_TR : asIsEs ? CATEGORIES_ES : CATEGORIES_EN;
 
 function ask(qObj, btn) {
   var log = document.getElementById('chat-log');
@@ -118,6 +152,7 @@ function ask(qObj, btn) {
     reply.textContent = '🛡️ ' + qObj.a;
     log.appendChild(reply);
     reply.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    if (window.DSKPoints) DSKPoints.markComboActivity('guide');
   }, 350);
 }
 

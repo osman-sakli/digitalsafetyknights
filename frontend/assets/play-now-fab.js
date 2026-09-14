@@ -12,12 +12,16 @@
     '@media (max-width: 480px) { #dsk-play-fab { right: 12px; bottom: 12px; } #dsk-play-fab .fab-btn { width: 50px; height: 50px; font-size: 1.35rem; } #dsk-play-fab .fab-label { display: none; } }';
   document.head.appendChild(style);
 
+  var pfLang = (window.DSKi18n && DSKi18n.lang) || 'en';
+  var PF_ARIA = pfLang === 'tr' ? "Shieldy'nin Mesaj Sınıflandırmasını Oyna" : pfLang === 'es' ? "Juega la Clasificación de Mensajes de Shieldy" : "Play Shieldy's Message Sort";
+  var PF_LABEL = pfLang === 'tr' ? "Shieldy'nin Oyununu Oyna →" : pfLang === 'es' ? "Juega el Juego de Shieldy →" : "Play Shieldy's Game →";
+
   var wrap = document.createElement('div');
   wrap.id = 'dsk-play-fab';
   wrap.innerHTML =
-    '<a class="fab-btn" href="/game.html" aria-label="Play Shieldy\'s Message Sort">' +
+    '<a class="fab-btn" href="/game.html" aria-label="' + PF_ARIA + '">' +
       '<span class="fab-ring" aria-hidden="true"></span>🕹️' +
     '</a>' +
-    '<span class="fab-label">Play Shieldy\'s Game →</span>';
+    '<span class="fab-label">' + PF_LABEL + '</span>';
   document.body.appendChild(wrap);
 })();

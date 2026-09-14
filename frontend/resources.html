@@ -5,12 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="The DSK Resource Center — every guide, quest, tool, and journal issue in one place. Free, for parents, kids, teens, and educators.">
 <title>Resource Center — Digital Safety Knights</title>
+<link rel="canonical" href="https://digitalsafetyknights.org/resources.html">
+<meta property="og:title" content="Resource Center — Digital Safety Knights">
+<meta property="og:description" content="The DSK Resource Center — every guide, quest, tool, and journal issue in one place. Free, for parents, kids, teens, and educators.">
+<meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
+<meta property="og:url" content="https://digitalsafetyknights.org/resources.html">
+<meta property="og:type" content="website">
 <link rel="icon" href="assets/favicon.ico">
+<link rel="stylesheet" href="assets/theme.css">
 <style>
   :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --white: #fff; --gray: #6c757d; --text: #2d3748; --success: #2a9d8f; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
+  body { font-family: 'Nunito Sans', 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
 
   nav { background: var(--navy); position: sticky; top: 0; z-index: 999; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 68px; box-shadow: 0 2px 20px rgba(0,0,0,0.4); }
   .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
@@ -19,7 +26,7 @@
   .nav-right a { color: #ccd6f6; text-decoration: none; font-size: 0.88rem; font-weight: 700; margin-left: 1.4rem; }
   .nav-right a:hover { color: var(--gold); }
 
-  .hero { background: linear-gradient(135deg, #060e22 0%, var(--navy) 50%, #0f2255 100%); color: white; text-align: center; padding: 70px 2rem 60px; }
+  .hero { background: var(--realm-bg); color: white; text-align: center; padding: 70px 2rem 60px; }
   .hero-badge { display: inline-block; background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.4); color: var(--gold); padding: 6px 18px; border-radius: 20px; font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; margin-bottom: 1.4rem; text-transform: uppercase; }
   .hero h1 { font-size: clamp(1.9rem, 4.5vw, 3rem); font-weight: 900; margin-bottom: 0.9rem; }
   .hero h1 .gold { color: var(--gold); }
@@ -48,6 +55,7 @@
   .rcard h3 { font-size: 1.02rem; color: var(--navy); margin-bottom: 0.4rem; }
   .rcard p { font-size: 0.85rem; color: var(--gray); line-height: 1.55; margin-bottom: 0.8rem; }
   .rcard .cta { font-size: 0.78rem; font-weight: 900; color: var(--gold2); background: var(--navy); display: inline-block; padding: 6px 14px; border-radius: 10px; }
+  .rcard .reviewed-by { display: block; font-size: 0.72rem; font-weight: 700; color: #2a9d8f; margin-bottom: 0.6rem; }
   .quick-toggle { display: block; background: none; border: none; color: var(--navy); font-size: 0.76rem; font-weight: 800; cursor: pointer; padding: 0; margin-top: 10px; text-decoration: underline; }
   .quick-summary { display: none; list-style: none; margin-top: 8px; padding: 10px 12px; background: var(--light); border-radius: 10px; border-left: 3px solid var(--gold); }
   .quick-summary.open { display: block; }
@@ -238,17 +246,35 @@
 
     <div class="section-title"><span data-i18n="res.guidesChecklists">📥 Guides &amp; Checklists</span> <span class="tag" data-i18n="res.tagDownload">Download</span></div>
     <div class="card-grid">
-      <a href="https://digitalsafetyknights.org/guides/roblox-parent-guide.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="rcard" data-tags="parents kids">
-        <div class="ricon">🎮</div><h3 data-i18n="guide.roblox.h">Roblox Parent Guide</h3><p data-i18n="res.rg.roblox.p">Complete privacy &amp; chat lockdown walkthrough, step by step.</p><span class="cta" data-i18n="res.downloadCta">Download PDF →</span>
+      <a href="https://digitalsafetyknights.org/guides/snapchat-parent-guide.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="rcard" data-tags="parents kids">
+        <div class="ricon">👻</div><h3 data-i18n="guide.snapchat.h">Snapchat Parent Guide</h3><p data-i18n="res.rg.snapchat.p">Snap Map, Quick Add, and disappearing messages, step by step.</p><span class="reviewed-by" data-i18n="guide.reviewedBy">✓ Reviewed by DSK Research Team</span><span class="cta" data-i18n="res.downloadCta">Download PDF →</span>
         <button type="button" class="quick-toggle" onclick="toggleQuick(event,this)" data-i18n="guide.60sec">⚡ 60-Second Version</button>
         <ul class="quick-summary">
-          <li data-i18n="guide.roblox.q1">Turn on Account Restrictions + Friends-Only chat — the biggest lever for limiting stranger contact.</li>
+          <li data-i18n="guide.snapchat.q1">Turn on Ghost Mode first — Snap Map shares your child's precise real-time location by default.</li>
+          <li data-i18n="guide.snapchat.q2">Turn off Quick Add in both directions so Snapchat stops suggesting strangers as friends.</li>
+          <li data-i18n="res.rg.snapchat.q3">A dark-web "Sextortion Handbook" specifically names Snap Map as a tool to locate victims near schools.</li>
+        </ul>
+      </a>
+      <a href="https://digitalsafetyknights.org/guides/discord-parent-guide.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="rcard" data-tags="parents kids">
+        <div class="ricon">💬</div><h3 data-i18n="guide.discord.h">Discord Parent Guide</h3><p data-i18n="res.rg.discord.p">Complete privacy &amp; safety walkthrough, step by step.</p><span class="reviewed-by" data-i18n="guide.reviewedBy">✓ Reviewed by DSK Research Team</span><span class="cta" data-i18n="res.downloadCta">Download PDF →</span>
+        <button type="button" class="quick-toggle" onclick="toggleQuick(event,this)" data-i18n="guide.60sec">⚡ 60-Second Version</button>
+        <ul class="quick-summary">
+          <li data-i18n="guide.discord.q1">Set friend requests to Friends of Friends or No one — Discord's default (Everyone) lets any stranger add your child.</li>
+          <li data-i18n="guide.discord.q2">The single biggest red flag: an online "friend" from a game asking to move the conversation to Discord.</li>
+          <li data-i18n="res.rg.discord.q3">Link Discord's own Family Center (with your teen's consent) for visibility without reading their messages.</li>
+        </ul>
+      </a>
+      <a href="https://digitalsafetyknights.org/guides/roblox-parent-guide.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="rcard" data-tags="parents kids">
+        <div class="ricon">🎮</div><h3 data-i18n="guide.roblox.h">Roblox Parent Guide</h3><p data-i18n="res.rg.roblox.p">Complete privacy &amp; chat lockdown walkthrough, step by step.</p><span class="reviewed-by" data-i18n="guide.reviewedBy">✓ Reviewed by DSK Research Team</span><span class="cta" data-i18n="res.downloadCta">Download PDF →</span>
+        <button type="button" class="quick-toggle" onclick="toggleQuick(event,this)" data-i18n="guide.60sec">⚡ 60-Second Version</button>
+        <ul class="quick-summary">
+          <li data-i18n="guide.roblox.q1">Roblox made chat-off and DM-blocking the default for under-13s in April 2026 — verify it's still on, since account changes can quietly reset it.</li>
           <li data-i18n="guide.roblox.q2">A "clean" visible chat doesn't mean safe — check for linked Discord servers you haven't seen.</li>
           <li data-i18n="guide.roblox.q3">Use the 10-minute rule: watch your child play instead of just asking what they play.</li>
         </ul>
       </a>
       <a href="https://digitalsafetyknights.org/guides/safe-ai-usage-guide.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="rcard" data-tags="parents teens educators">
-        <div class="ricon">🤖</div><h3 data-i18n="guide.ai.h">Safe AI Usage for Kids</h3><p data-i18n="res.rg.ai.p">Which AI tools are genuinely child-safe, and which ones to avoid.</p><span class="cta" data-i18n="res.downloadCta">Download PDF →</span>
+        <div class="ricon">🤖</div><h3 data-i18n="guide.ai.h">Safe AI Usage for Kids</h3><p data-i18n="res.rg.ai.p">Which AI tools are genuinely child-safe, and which ones to avoid.</p><span class="reviewed-by" data-i18n="guide.reviewedBy">✓ Reviewed by DSK Research Team</span><span class="cta" data-i18n="res.downloadCta">Download PDF →</span>
         <button type="button" class="quick-toggle" onclick="toggleQuick(event,this)" data-i18n="guide.60sec">⚡ 60-Second Version</button>
         <ul class="quick-summary">
           <li data-i18n="res.rg.ai.q1">AI can sound completely confident while being completely wrong — double-check, don't trust the tone.</li>
@@ -257,7 +283,7 @@
         </ul>
       </a>
       <a href="https://digitalsafetyknights.org/guides/iphone-android-safety.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="rcard" data-tags="parents">
-        <div class="ricon">📱</div><h3 data-i18n="guide.phone.h">iPhone &amp; Android Safety</h3><p data-i18n="res.rg.phone.p">Screen time and app restriction setup for every major device.</p><span class="cta" data-i18n="res.downloadCta">Download PDF →</span>
+        <div class="ricon">📱</div><h3 data-i18n="guide.phone.h">iPhone &amp; Android Safety</h3><p data-i18n="res.rg.phone.p">Screen time and app restriction setup for every major device.</p><span class="reviewed-by" data-i18n="guide.reviewedBy">✓ Reviewed by DSK Research Team</span><span class="cta" data-i18n="res.downloadCta">Download PDF →</span>
         <button type="button" class="quick-toggle" onclick="toggleQuick(event,this)" data-i18n="guide.60sec">⚡ 60-Second Version</button>
         <ul class="quick-summary">
           <li data-i18n="guide.phone.q1">Screen Time / Digital Wellbeing controls are off by default — they only work once you turn them on.</li>
@@ -266,7 +292,7 @@
         </ul>
       </a>
       <a href="https://digitalsafetyknights.org/guides/talk-to-your-kids-guide.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="rcard" data-tags="parents educators">
-        <div class="ricon">💬</div><h3 data-i18n="guide.talk.h">Talk to Your Kids Guide</h3><p data-i18n="res.rg.talk.p">Age-appropriate conversation scripts for hard topics.</p><span class="cta" data-i18n="res.downloadCta">Download PDF →</span>
+        <div class="ricon">💬</div><h3 data-i18n="guide.talk.h">Talk to Your Kids Guide</h3><p data-i18n="res.rg.talk.p">Age-appropriate conversation scripts for hard topics.</p><span class="reviewed-by" data-i18n="guide.reviewedBy">✓ Reviewed by DSK Research Team</span><span class="cta" data-i18n="res.downloadCta">Download PDF →</span>
         <button type="button" class="quick-toggle" onclick="toggleQuick(event,this)" data-i18n="guide.60sec">⚡ 60-Second Version</button>
         <ul class="quick-summary">
           <li data-i18n="res.rg.talk.q1">Little and often beats one big scary talk.</li>
@@ -275,7 +301,7 @@
         </ul>
       </a>
       <a href="https://digitalsafetyknights.org/guides/family-cybersecurity-checklist.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="rcard" data-tags="parents educators">
-        <div class="ricon">🔐</div><h3 data-i18n="guide.cyber.h">Family Cybersecurity Checklist</h3><p data-i18n="res.rg.cyber.p">Passwords, VPN, and DNS filtering setup for the whole household.</p><span class="cta" data-i18n="res.downloadCta">Download PDF →</span>
+        <div class="ricon">🔐</div><h3 data-i18n="guide.cyber.h">Family Cybersecurity Checklist</h3><p data-i18n="res.rg.cyber.p">Passwords, VPN, and DNS filtering setup for the whole household.</p><span class="reviewed-by" data-i18n="guide.reviewedBy">✓ Reviewed by DSK Research Team</span><span class="cta" data-i18n="res.downloadCta">Download PDF →</span>
         <button type="button" class="quick-toggle" onclick="toggleQuick(event,this)" data-i18n="guide.60sec">⚡ 60-Second Version</button>
         <ul class="quick-summary">
           <li data-i18n="guide.cyber.q1">Unique passwords per account — one breach shouldn't cascade into five.</li>
@@ -284,19 +310,19 @@
         </ul>
       </a>
       <a href="https://digitalsafetyknights.org/guides/incident-response-guide.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="rcard" data-tags="parents educators">
-        <div class="ricon">🆘</div><h3 data-i18n="guide.incident.h">Incident Response Guide</h3><p data-i18n="res.rg.incident.p">Exactly what to do, in order, if something has already happened.</p><span class="cta" data-i18n="res.downloadCta">Download PDF →</span>
+        <div class="ricon">🆘</div><h3 data-i18n="guide.incident.h">Incident Response Guide</h3><p data-i18n="res.rg.incident.p">Exactly what to do, in order, if something has already happened.</p><span class="reviewed-by" data-i18n="guide.reviewedBy">✓ Reviewed by DSK Research Team</span><span class="cta" data-i18n="res.downloadCta">Download PDF →</span>
         <button type="button" class="quick-toggle" onclick="toggleQuick(event,this)" data-i18n="guide.60sec">⚡ 60-Second Version</button>
         <ul class="quick-summary">
           <li data-i18n="guide.incident.q1">Don't pay, don't delete, don't panic — screenshot first, always.</li>
           <li data-i18n="guide.incident.q2">Tell a trusted adult the same day — evidence and options both shrink over time.</li>
-          <li data-i18n="guide.incident.q3">Report to the platform and to a formal channel (like a CyberTipline) — both matter.</li>
+          <li data-i18n="guide.incident.q3">Report to the platform and to a formal channel — federal law now requires image removal within 48 hours.</li>
         </ul>
       </a>
       <a href="https://digitalsafetyknights.org/guides/knights-toolkit.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="rcard" data-tags="kids">
-        <div class="ricon">🖨️</div><h3 data-i18n="guide.toolkit.h">The Knight's Toolkit</h3><p data-i18n="res.rg.toolkit.p">Printable poster of the 5 Knight Rules, a cut-out character sticker sheet, and bookmarks.</p><span class="cta" data-i18n="res.downloadCta">Download PDF →</span>
+        <div class="ricon">🖨️</div><h3 data-i18n="guide.toolkit.h">The Knight's Toolkit</h3><p data-i18n="res.rg.toolkit.p">Printable poster of the 5 Knight Rules, a cut-out character sticker sheet, and bookmarks.</p><span class="reviewed-by" data-i18n="guide.reviewedBy">✓ Reviewed by DSK Research Team</span><span class="cta" data-i18n="res.downloadCta">Download PDF →</span>
       </a>
       <a href="https://digitalsafetyknights.org/guides/classroom-lesson-plan-kit.pdf" target="_blank" onclick="if(window.DSKPoints)DSKPoints.markComboActivity('guide')" class="rcard" data-tags="educators">
-        <div class="ricon">🏫</div><h3 data-i18n="guide.lessonKit.h">Classroom Lesson Plan Kit</h3><p data-i18n="res.rg.lessonKit.p">A structured 5-week digital safety syllabus for grades 4–8 — objectives, activities, and take-home resources.</p><span class="cta" data-i18n="res.downloadCta">Download PDF →</span>
+        <div class="ricon">🏫</div><h3 data-i18n="guide.lessonKit.h">Classroom Lesson Plan Kit</h3><p data-i18n="res.rg.lessonKit.p">A structured 5-week digital safety syllabus for grades 4–8 — objectives, activities, and take-home resources.</p><span class="reviewed-by" data-i18n="guide.reviewedBy">✓ Reviewed by DSK Research Team</span><span class="cta" data-i18n="res.downloadCta">Download PDF →</span>
       </a>
     </div>
 
@@ -310,6 +336,12 @@
       </a>
       <a href="/#emergency" class="rcard" data-tags="parents">
         <div class="ricon">🆘</div><h3 data-i18n="res.emergencydir.h">Emergency Help Directory</h3><p data-i18n="res.emergencydir.p">Reporting hotlines and cybercrime units for 40+ countries, one tap away.</p><span class="cta" data-i18n="res.emergencydir.cta">Find Your Country →</span>
+      </a>
+      <a href="/sources.html" class="rcard" data-tags="parents educators">
+        <div class="ricon">📊</div><h3 data-i18n="res.sources.h">Sources &amp; Research</h3><p data-i18n="res.sources.p">Every statistic and threat we cite, sourced and dated — NCMEC, FBI, FTC, and independent research, updated monthly.</p><span class="cta" data-i18n="res.sources.cta">See the Sources →</span>
+      </a>
+      <a href="/legislative-tracker.html" class="rcard" data-tags="parents educators">
+        <div class="ricon">⚖️</div><h3 data-i18n="res.legislative.h">Legislative Tracker</h3><p data-i18n="res.legislative.p">Which child-safety laws are actually in effect right now vs. still pending — plain language, updated monthly.</p><span class="cta" data-i18n="res.legislative.cta">See What's Law Now →</span>
       </a>
     </div>
 

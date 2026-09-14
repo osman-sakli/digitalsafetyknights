@@ -4,14 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dashboard — Digital Safety Knights</title>
+<meta name="description" content="Your Digital Safety Knights member dashboard — badges, points, streaks, and progress across every quest and guide.">
+<meta property="og:title" content="Dashboard — Digital Safety Knights">
+<meta property="og:description" content="Your Digital Safety Knights member dashboard — badges, points, streaks, and progress across every quest and guide.">
+<meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
+<meta property="og:url" content="https://digitalsafetyknights.org/dashboard.html">
+<meta property="og:type" content="website">
 <link rel="icon" href="assets/favicon.ico">
+<link rel="stylesheet" href="assets/theme.css">
 <style>
   :root {
     --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a;
     --light: #f4f6fb; --success: #2a9d8f; --gray: #6c757d;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', sans-serif; background: var(--light); color: #2d3748; }
+  body { font-family: 'Nunito Sans', 'Segoe UI', sans-serif; background: var(--light); color: #2d3748; }
 
   nav { background: var(--navy); padding: 0 2rem; height: 68px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 20px rgba(0,0,0,0.4); position: sticky; top: 0; z-index: 999; }
   .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
@@ -32,7 +39,7 @@
   .dashboard { max-width: 1100px; margin: 0 auto; padding: 2.5rem 2rem; display: none; }
   .dashboard.active { display: block; }
 
-  .welcome-card { background: linear-gradient(135deg, var(--navy), var(--navy2)); color: white; border-radius: 24px; padding: 2.5rem; margin-bottom: 2rem; position: relative; overflow: hidden; }
+  .welcome-card { background: var(--realm-bg); color: white; border-radius: 24px; padding: 2.5rem; margin-bottom: 2rem; position: relative; overflow: hidden; }
   .welcome-card::before { content: ''; position: absolute; right: -50px; top: -50px; width: 200px; height: 200px; background: radial-gradient(circle, rgba(201,168,76,0.2), transparent); border-radius: 50%; }
   .welcome-card h1 { font-size: 1.8rem; font-weight: 900; margin-bottom: 0.5rem; }
   .welcome-card .gold { color: var(--gold); }
@@ -204,6 +211,18 @@
         </a>
       </div>
 
+      <div class="card" id="manageSubCard" style="display:none;">
+        <h2 data-i18n="dash.manageSub">⭐ Founding Knight Subscription</h2>
+        <p style="font-size:0.88rem;color:#555;line-height:1.6;margin-bottom:1rem;" data-i18n="dash.manageSubP">
+          Update your payment method or cancel your annual subscription anytime — no questions asked.
+        </p>
+        <a href="#" class="action-link" id="manageSubBtn" style="background:linear-gradient(135deg,#1a2f6e,#0d1b3e);color:white;">
+          <div class="icon">⚙️</div>
+          <div class="text"><h4 data-i18n="dash.manageSubBtn">Manage Subscription</h4></div>
+          <div class="arrow" style="color:var(--gold);">→</div>
+        </a>
+      </div>
+
       <div class="card">
         <h2 data-i18n="dash.supportDsk">💛 Support DSK</h2>
         <p style="font-size:0.88rem;color:#555;line-height:1.6;margin-bottom:1rem;" data-i18n="dash.supportDskP">
@@ -222,7 +241,9 @@
 <footer><p><span>⚔️ Digital Safety Knights</span> · digitalsafetyknights.org · © 2026</p></footer>
 
 <script>
-  var dashIsTr = window.DSKi18n && DSKi18n.lang === 'tr';
+  var dashLang = (window.DSKi18n && DSKi18n.lang) || 'en';
+  var dashIsTr = dashLang === 'tr';
+  var dashIsEs = dashLang === 'es';
   // badge.id values must stay in English — they're matched against profile.badges from the server, not displayed as-is for the label
   var ALL_BADGES = dashIsTr ? [
     {id: 'Bronze Squire', label: 'Bronz Yaver', icon: '🪙', class: 'b-bronze', desc: "DSK'ya katıldı"},
@@ -230,6 +251,12 @@
     {id: 'Gold Sentinel', label: 'Altın Nöbetçi', icon: '🏅', class: 'b-gold', desc: 'Tüm rehberler + dergi'},
     {id: 'Diamond Defender', label: 'Elmas Savunucu', icon: '💎', class: 'b-diamond', desc: '5 yönlendirme'},
     {id: 'Digital Knight', label: 'Dijital Şövalye', icon: '⚔️', class: 'b-knight', desc: '1 yıl aktif'}
+  ] : dashIsEs ? [
+    {id: 'Bronze Squire', label: 'Escudero de Bronce', icon: '🪙', class: 'b-bronze', desc: 'Se unió a DSK'},
+    {id: 'Silver Guard', label: 'Guardia de Plata', icon: '🥈', class: 'b-silver', desc: '3+ guías descargadas'},
+    {id: 'Gold Sentinel', label: 'Centinela de Oro', icon: '🏅', class: 'b-gold', desc: 'Todas las guías + revista'},
+    {id: 'Diamond Defender', label: 'Defensor de Diamante', icon: '💎', class: 'b-diamond', desc: '5 referidos'},
+    {id: 'Digital Knight', label: 'Caballero Digital', icon: '⚔️', class: 'b-knight', desc: '1 año activo'}
   ] : [
     {id: 'Bronze Squire', label: 'Bronze Squire', icon: '🪙', class: 'b-bronze', desc: 'Joined DSK'},
     {id: 'Silver Guard', label: 'Silver Guard', icon: '🥈', class: 'b-silver', desc: '3+ guides downloaded'},
@@ -264,7 +291,7 @@
 
     if (profile.joined_at) {
       var d = new Date(profile.joined_at);
-      document.getElementById('memberSince').textContent = d.toLocaleDateString(dashIsTr ? 'tr-TR' : 'en-US', {month: 'short', year: 'numeric'});
+      document.getElementById('memberSince').textContent = d.toLocaleDateString(dashIsTr ? 'tr-TR' : dashIsEs ? 'es-ES' : 'en-US', {month: 'short', year: 'numeric'});
     }
 
     document.getElementById('statGuides').textContent = (profile.guides_downloaded || []).length;
@@ -279,13 +306,34 @@
 
     if (profile.founding_knight) {
       document.getElementById('foundingRibbon').style.display = 'inline-block';
+      var manageCard = document.getElementById('manageSubCard');
+      manageCard.style.display = 'block';
+      document.getElementById('manageSubBtn').addEventListener('click', function (e) {
+        e.preventDefault();
+        fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/billing-portal', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({email: profile.email})
+        })
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (data.success && data.portal_url) {
+            window.location.href = data.portal_url;
+          } else {
+            alert('❌ ' + (data.message || 'Could not open billing portal.'));
+          }
+        })
+        .catch(function () {
+          alert(dashIsTr ? '❌ Bağlantı hatası.' : dashIsEs ? '❌ Error de conexión.' : '❌ Connection error.');
+        });
+      });
     }
 
     if (window.DSKPoints) {
       var streak = DSKPoints.checkStreak();
       DSKPoints.renderLevelRing(document.getElementById('kp-ring'), DSKPoints.getPoints());
       document.getElementById('kp-points-label').textContent = DSKPoints.getPoints();
-      document.getElementById('kp-streak-label').textContent = streak.count > 1 ? ('· 🔥 ' + streak.count + (dashIsTr ? ' günlük seri' : '-day streak')) : '';
+      document.getElementById('kp-streak-label').textContent = streak.count > 1 ? ('· 🔥 ' + streak.count + (dashIsTr ? ' günlük seri' : dashIsEs ? ' días de racha' : '-day streak')) : '';
     }
 
     var grid = document.getElementById('badgesGrid');
@@ -309,6 +357,17 @@
       } else {
         document.getElementById('progressTitle').textContent = 'Harika ilerleme!';
         document.getElementById('progressDesc').textContent = 'Daha fazla rozet açmak için DSK ile etkileşime devam et.';
+      }
+    } else if (dashIsEs) {
+      if (profile.badges.length === 5) {
+        document.getElementById('progressTitle').textContent = '🎉 ¡Todas las Insignias Ganadas!';
+        document.getElementById('progressDesc').textContent = 'Eres un verdadero Caballero Digital. Gracias por tu dedicación.';
+      } else if (profile.badges.length === 1) {
+        document.getElementById('progressTitle').textContent = '🚀 Recién Empezando';
+        document.getElementById('progressDesc').textContent = 'Descarga 3 guías de seguridad o realiza la auditoría para ganar el Guardia de Plata.';
+      } else {
+        document.getElementById('progressTitle').textContent = '¡Gran progreso!';
+        document.getElementById('progressDesc').textContent = 'Sigue interactuando con DSK para desbloquear más insignias.';
       }
     } else {
       if (profile.badges.length === 5) {
@@ -353,7 +412,7 @@
         if (cached) {
           loadDashboard(JSON.parse(cached));
         } else {
-          showError(dashIsTr ? 'Giriş Gerekli' : 'Login Required', data.message || (dashIsTr ? 'Panelinize erişmek için lütfen giriş yapın.' : 'Please log in to access your dashboard.'));
+          showError(dashIsTr ? 'Giriş Gerekli' : dashIsEs ? 'Inicio de Sesión Requerido' : 'Login Required', data.message || (dashIsTr ? 'Panelinize erişmek için lütfen giriş yapın.' : dashIsEs ? 'Por favor, inicia sesión para acceder a tu panel.' : 'Please log in to access your dashboard.'));
           setTimeout(function() { window.location.href = '/login.html'; }, 3000);
         }
       }
@@ -364,7 +423,7 @@
       if (cached) {
         loadDashboard(JSON.parse(cached));
       } else {
-        showError(dashIsTr ? 'Bağlantı Hatası' : 'Connection Error', dashIsTr ? 'Profiliniz yüklenemedi. Lütfen tekrar deneyin.' : 'Could not load your profile. Please try again.');
+        showError(dashIsTr ? 'Bağlantı Hatası' : dashIsEs ? 'Error de Conexión' : 'Connection Error', dashIsTr ? 'Profiliniz yüklenemedi. Lütfen tekrar deneyin.' : dashIsEs ? 'No se pudo cargar tu perfil. Por favor, inténtalo de nuevo.' : 'Could not load your profile. Please try again.');
       }
     });
   }

@@ -5,14 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Myth vs Fact — short, shareable answers to what parents are actually searching for at night about kids' online safety.">
 <title>Myth vs Fact — Digital Safety Knights</title>
+<link rel="canonical" href="https://digitalsafetyknights.org/myth-vs-fact.html">
+<meta property="og:title" content="Myth vs Fact — Digital Safety Knights">
+<meta property="og:description" content="Myth vs Fact — short, shareable answers to what parents are actually searching for at night about kids' online safety.">
+<meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
+<meta property="og:url" content="https://digitalsafetyknights.org/myth-vs-fact.html">
+<meta property="og:type" content="website">
 <link rel="icon" href="assets/favicon.ico">
 <link rel="stylesheet" href="assets/breadcrumb.css">
+<link rel="stylesheet" href="assets/theme.css">
 <script src="assets/knight-points.js"></script>
 <script src="/assets/i18n.js"></script>
 <style>
   :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --text: #2d3748; --success: #2a9d8f; --danger: #e63946; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
+  body { font-family: 'Nunito Sans', 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
   .topbar { background: var(--navy); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
   .topbar .brand { color: var(--gold); font-weight: 900; text-decoration: none; font-size: 1.05rem; }
   .topbar .home-link { color: #cdd6ea; text-decoration: none; font-size: 0.85rem; font-weight: 700; }
@@ -84,10 +91,27 @@ const PAIRS_TR = [
   { myth: "Gencim bir dolandırıcılığa düşmeyecek kadar akıllı ve teknoloji bilgili.", fact: "Sofistikelik sosyal mühendisliği önlemez — gençleri hedefleyen dolandırıcılıklar teknik hilelerden çok aciliyet, sosyal kanıt ve duygusal baskı üzerine kuruludur. Teknolojiye güven, manipülasyonu tanımakla aynı beceri değildir." }
 ];
 
+const PAIRS_ES = [
+  { myth: "El chat del juego de mi hijo se ve limpio cuando lo reviso, así que es seguro.", fact: "Un registro de chat visible y limpio no significa mucho — muchas conversaciones riesgosas se trasladan a canales privados dentro del juego o a servidores de Discord vinculados que no has visto. Revisa si hay servidores vinculados, no solo el chat que ya puedes ver." },
+  { myth: "Si no le doy un teléfono a mi hijo, está a salvo de los riesgos en línea.", fact: "Los niños acceden a internet a través de dispositivos escolares, teléfonos de amigos, consolas de videojuegos y tablets familiares compartidas. Retrasar un teléfono personal es razonable, pero no es un plan de seguridad por sí solo — los hábitos y las conversaciones importan más que el dispositivo." },
+  { myth: "Una contraseña fuerte es todo lo que la cuenta de mi hijo realmente necesita.", fact: "Una contraseña fuerte y única importa, pero la autenticación de dos factores es lo que realmente detiene la mayoría de los robos de cuenta — incluso una contraseña robada es inútil para un atacante sin ese segundo paso." },
+  { myth: "Mi hijo me contaría de inmediato si algo pasara.", fact: "La mayoría de los niños retrasan contarle a un padre porque temen perder el acceso al dispositivo o meterse en problemas — no porque no confíen en ti. Déjalo explícito y repítelo: contarte nunca se castiga, pase lo que pase." },
+  { myth: "Los depredadores en línea siempre son desconocidos obvios con perfiles falsos.", fact: "El grooming típicamente empieza con un perfil de apariencia normal y semanas de conversación común y amistosa antes de que ocurra algo preocupante. La señal de alerta no es cómo se ve alguien — es el patrón: regalos, peticiones de guardar el secreto y escalada." },
+  { myth: "Borrar una app elimina el riesgo una vez que algo salió mal.", fact: "Borrar primero destruye la evidencia necesaria para reportar lo que pasó. Toma capturas de pantalla de todo, cuéntaselo a un adulto de confianza, y solo después decide qué hacer con la cuenta o la app." },
+  { myth: "Los 'amigos' chatbot de IA son básicamente un entretenimiento inofensivo.", fact: "Los compañeros de IA que siempre están de acuerdo y nunca discrepan son un patrón de diseño documentado (adulación) que puede reforzar malas decisiones y apegos poco saludables, especialmente en niños aislados. Vale la pena prestarles atención, no descartarlos simplemente como un juguete." },
+  { myth: "Un límite de tiempo de pantalla resuelve la mayor parte del riesgo real.", fact: "Los límites de tiempo de pantalla abordan el uso excesivo, no los riesgos de contenido o contacto que ocurren en minutos, no en horas. Una sola conversación riesgosa puede pasar en una sesión de 10 minutos — la configuración y las conversaciones importan más que el reloj." },
+  { myth: "Si un contenido rompe las reglas de la plataforma, se elimina rápido.", fact: "La moderación es inconsistente y a menudo lenta, especialmente con lenguaje en clave, mensajes directos privados o contenido que está en el límite en vez de violar las reglas obviamente. Reportar sigue valiendo la pena, pero no asumas que es instantáneo ni garantizado." },
+  { myth: "La sextorsión afecta principalmente a las chicas adolescentes.", fact: "La sextorsión financiera (a diferencia de los patrones más antiguos centrados en imágenes) se ha disparado específicamente entre los chicos adolescentes, y a menudo pasa del primer contacto a la amenaza en cuestión de horas. Es una de las amenazas de más rápido crecimiento sin importar el género." },
+  { myth: "Mi adolescente es demasiado listo y hábil con la tecnología para caer en una estafa.", fact: "La sofisticación no evita la ingeniería social — las estafas dirigidas a adolescentes se construyen a partir de urgencia, prueba social y presión emocional, no de trucos técnicos. Ser hábil con la tecnología no es la misma habilidad que reconocer la manipulación." }
+];
+
 const MVF_LABELS_TR = { myth: "❌ Efsane", fact: "✅ Gerçek", tapHint: "Gerçeği görmek için dokun →", shareBtn: "🔗 Bunu Paylaş", backBtn: "← Geri" };
-const isTr = window.DSKi18n && DSKi18n.lang === 'tr';
-const PAIRS = isTr ? PAIRS_TR : PAIRS_EN;
-const L = isTr ? MVF_LABELS_TR : { myth: "❌ Myth", fact: "✅ Fact", tapHint: "Tap to see the fact →", shareBtn: "🔗 Share this", backBtn: "← Back" };
+const MVF_LABELS_ES = { myth: "❌ Mito", fact: "✅ Realidad", tapHint: "Toca para ver la realidad →", shareBtn: "🔗 Compartir esto", backBtn: "← Volver" };
+const lang = (window.DSKi18n && DSKi18n.lang) || 'en';
+const isTr = lang === 'tr';
+const isEs = lang === 'es';
+const PAIRS = isTr ? PAIRS_TR : isEs ? PAIRS_ES : PAIRS_EN;
+const L = isTr ? MVF_LABELS_TR : isEs ? MVF_LABELS_ES : { myth: "❌ Myth", fact: "✅ Fact", tapHint: "Tap to see the fact →", shareBtn: "🔗 Share this", backBtn: "← Back" };
 
 const grid = document.getElementById('mvf-grid');
 grid.innerHTML = PAIRS.map((p, i) => `
@@ -119,14 +143,14 @@ function hideFact(i) {
 }
 function shareFact(i) {
   const p = PAIRS[i];
-  const mythWord = isTr ? 'Efsane' : 'Myth';
-  const factWord = isTr ? 'Gerçek' : 'Fact';
+  const mythWord = isTr ? 'Efsane' : isEs ? 'Mito' : 'Myth';
+  const factWord = isTr ? 'Gerçek' : isEs ? 'Realidad' : 'Fact';
   const text = mythWord + ': ' + p.myth + '\n\n' + factWord + ': ' + p.fact + '\n\n— Digital Safety Knights (digitalsafetyknights.org)';
   if (navigator.share) {
     navigator.share({ text: text }).catch(function() {});
   } else if (navigator.clipboard) {
     navigator.clipboard.writeText(text).then(function() {
-      if (window.DSKPoints && window.DSKPoints.showToast) window.DSKPoints.showToast(isTr ? 'Panoya kopyalandı!' : 'Copied to clipboard!');
+      if (window.DSKPoints && window.DSKPoints.showToast) window.DSKPoints.showToast(isTr ? 'Panoya kopyalandı!' : isEs ? '¡Copiado al portapapeles!' : 'Copied to clipboard!');
     });
   }
 }
