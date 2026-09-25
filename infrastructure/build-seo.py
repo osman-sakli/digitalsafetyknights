@@ -33,7 +33,8 @@ EXCLUDE = {
 
 # Rough priority tiers — the homepage and the pages we actually want found.
 HIGH = {"index.html", "resources.html", "school-programs.html", "quests.html",
-        "news-archive.html", "legislative-tracker.html", "sources.html"}
+        "news-archive.html", "legislative-tracker.html", "sources.html",
+        "chapters.html"}
 MEDIUM = {"knights.html", "academy.html", "game.html", "audit.html",
           "knight-council.html", "journal-archive.html", "glossary.html"}
 

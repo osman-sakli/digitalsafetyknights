@@ -122,6 +122,7 @@
     </div>
     <p class="lede" style="margin-top:1rem;margin-bottom:0;" id="sp-kc-note">Have a student aged 13-17 who wants to get more involved after the session? They can apply directly to <a href="/knight-council.html" style="color:var(--navy);font-weight:800;">Knight Council</a>, our teen ambassador program.</p>
     <p class="lede" style="margin-top:0.6rem;margin-bottom:0;" id="sp-principal-note">Need to get sign-off first? Share our <a href="/for-principals.html" style="color:var(--navy);font-weight:800;">one-page overview for principals</a> with your administrator.</p>
+    <p class="lede" style="margin-top:0.6rem;margin-bottom:0;" id="sp-chapter-note">Want to bring DSK to your country long-term, not just for one session? Consider <a href="/chapters.html" style="color:var(--navy);font-weight:800;">starting a local chapter</a>.</p>
   </div>
 
   <div class="sp-section">
@@ -236,6 +237,11 @@ document.getElementById('sp-principal-note').innerHTML = spIsTr
   : spIsEs
   ? '¿Necesitas la aprobación primero? Comparte nuestro <a href="/for-principals.html" style="color:var(--navy);font-weight:800;">resumen de una página para directores</a> con tu administrador.'
   : 'Need to get sign-off first? Share our <a href="/for-principals.html" style="color:var(--navy);font-weight:800;">one-page overview for principals</a> with your administrator.';
+document.getElementById('sp-chapter-note').innerHTML = spIsTr
+  ? 'DSK\'yı sadece bir oturum için değil, uzun vadede ülkenize getirmek mi istiyorsunuz? <a href="/chapters.html" style="color:var(--navy);font-weight:800;">Yerel bir şube başlatmayı</a> düşünün.'
+  : spIsEs
+  ? '¿Quieres traer DSK a tu país a largo plazo, no solo para una sesión? Considera <a href="/chapters.html" style="color:var(--navy);font-weight:800;">iniciar un capítulo local</a>.'
+  : 'Want to bring DSK to your country long-term, not just for one session? Consider <a href="/chapters.html" style="color:var(--navy);font-weight:800;">starting a local chapter</a>.';
 document.getElementById('sp-formats-title').textContent = spIsTr ? 'Oturumlar Nasıl İşliyor' : spIsEs ? 'Cómo Funcionan las Sesiones' : 'How Sessions Work';
 document.getElementById('sp-format1-h').textContent = spIsTr ? 'Yüz Yüze' : spIsEs ? 'En Persona' : 'In-Person';
 document.getElementById('sp-format1-p').textContent = spIsTr ? 'Okulunuzda canlı bir toplantı, sınıf atölyesi ya da ebeveyn gecesi sunumu.' : spIsEs ? 'Una asamblea en vivo, taller en el aula, o presentación en la noche de padres en tu escuela.' : 'A live assembly, classroom workshop, or parent-night presentation at your school.';

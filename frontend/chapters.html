@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapters — Digital Safety Knights</title>
+<link rel="canonical" href="https://digitalsafetyknights.org/chapters.html">
+<meta name="description" content="Digital Safety Knights chapters: a worldwide network of local volunteers bringing digital safety education to schools and communities everywhere. Start a chapter in your country.">
+<meta property="og:title" content="Chapters — Digital Safety Knights">
+<meta property="og:description" content="A worldwide network of local volunteers bringing digital safety education to schools and communities everywhere. Start a chapter in your country.">
+<meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
+<meta property="og:url" content="https://digitalsafetyknights.org/chapters.html">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.ico">
+<link rel="stylesheet" href="assets/theme.css">
+<script src="assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
+<style>
+  :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Nunito Sans', 'Segoe UI', system-ui, sans-serif; background: var(--light); color: #2d3748; }
+
+  .ch-hero { background: var(--realm-bg); color: white; padding: 3rem 1.5rem 3.5rem; text-align: center; position: relative; overflow: hidden; }
+  .ch-hero::before { content: ''; position: absolute; right: -60px; top: -60px; width: 240px; height: 240px; background: radial-gradient(circle, rgba(201,168,76,0.22), transparent 70%); }
+  .ch-hero .eyebrow { color: var(--gold); font-weight: 900; letter-spacing: 2px; font-size: 0.8rem; text-transform: uppercase; }
+  .ch-hero h1 { font-size: 2.2rem; font-weight: 900; margin: 10px 0 12px; }
+  .ch-hero p { color: #cdd7f0; max-width: 620px; margin: 0 auto; line-height: 1.7; font-size: 1rem; }
+  .ch-hero a.back { position: absolute; left: 1.5rem; top: 1.5rem; color: #cdd7f0; text-decoration: none; font-weight: 700; font-size: 0.85rem; }
+
+  .ch-wrap { max-width: 780px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+
+  .ch-section { background: white; border-radius: 18px; padding: 2rem; margin-bottom: 1.5rem; box-shadow: 0 6px 24px rgba(13,27,62,0.08); }
+  .ch-section h2 { color: var(--navy); font-size: 1.25rem; margin-bottom: 1rem; }
+  .ch-section p.lede { color: var(--gray); font-size: 0.92rem; line-height: 1.65; margin-bottom: 1rem; }
+
+  .ch-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+  .ch-card { background: var(--light); border-radius: 12px; padding: 1.1rem 1.2rem; }
+  .ch-card h3 { color: var(--navy); font-size: 1rem; margin-bottom: 3px; }
+  .ch-card p { color: var(--gray); font-size: 0.82rem; }
+
+  .ch-empty { text-align: center; padding: 2rem 1rem; }
+  .ch-empty .emoji { font-size: 2.2rem; margin-bottom: 10px; }
+  .ch-empty h3 { color: var(--navy); font-size: 1.05rem; margin-bottom: 6px; }
+  .ch-empty p { color: var(--gray); font-size: 0.9rem; max-width: 420px; margin: 0 auto; line-height: 1.6; }
+
+  .ch-does-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0.9rem; }
+  .ch-does { background: var(--light); border-radius: 12px; padding: 1rem; }
+  .ch-does .icon { font-size: 1.3rem; margin-bottom: 4px; }
+  .ch-does h4 { color: var(--navy); font-size: 0.9rem; margin-bottom: 3px; }
+  .ch-does p { color: var(--gray); font-size: 0.8rem; line-height: 1.5; }
+
+  .ch-form label { display: block; font-weight: 800; font-size: 0.85rem; color: var(--navy); margin: 1rem 0 6px; }
+  .ch-form input, .ch-form select, .ch-form textarea { width: 100%; padding: 12px 14px; border: 2px solid #dfe4ee; border-radius: 10px; font-size: 0.95rem; font-family: inherit; }
+  .ch-form textarea { min-height: 100px; resize: vertical; }
+  .ch-form .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .ch-submit { margin-top: 1.5rem; width: 100%; background: linear-gradient(135deg, var(--gold2), var(--gold)); color: var(--navy); border: none; padding: 16px; border-radius: 14px; font-weight: 900; font-size: 1rem; cursor: pointer; }
+  .ch-submit:disabled { opacity: 0.6; cursor: default; }
+  .ch-status { margin-top: 1rem; font-size: 0.9rem; font-weight: 700; padding: 12px; border-radius: 10px; display: none; }
+  .ch-status.ok { display: block; background: #e6f4ea; color: #1e7d3a; }
+  .ch-status.err { display: block; background: #fbe9e7; color: #c0392b; }
+
+  footer { text-align: center; padding: 2rem; color: var(--gray); font-size: 0.85rem; }
+</style>
+</head>
+<body>
+
+<div class="ch-hero">
+  <a href="/" class="back" data-i18n="qp.home">← Home</a>
+  <div class="eyebrow">Digital Safety Knights</div>
+  <h1 id="ch-title">🌍 Chapters</h1>
+  <p id="ch-tagline">A worldwide network of local Knights bringing digital safety education to schools and communities in their own country. Our mission: every child, everywhere, deserves this education — and a chapter starts with one person willing to bring it home.</p>
+</div>
+
+<div class="ch-wrap">
+
+  <div class="ch-section">
+    <h2 id="ch-active-title">Active Chapters</h2>
+    <p class="lede" id="ch-active-lede">Real chapters, run by real people — updated live, never a made-up number.</p>
+    <div id="ch-active-list"></div>
+  </div>
+
+  <div class="ch-section">
+    <h2 id="ch-does-title">What a Chapter Does</h2>
+    <div class="ch-does-grid">
+      <div class="ch-does"><div class="icon">🏫</div><h4 id="ch-does1-h">Local Sessions</h4><p id="ch-does1-p">Represents DSK at schools and community groups in your area — you lead, using our materials and training.</p></div>
+      <div class="ch-does"><div class="icon">🗣️</div><h4 id="ch-does2-h">Local Voice</h4><p id="ch-does2-p">Adapts our content to your country's platforms, laws, and language — you know your community best.</p></div>
+      <div class="ch-does"><div class="icon">🤝</div><h4 id="ch-does3-h">Local Network</h4><p id="ch-does3-p">Connects local schools, parents, and youth organizations into the wider DSK community and Knight Council.</p></div>
+      <div class="ch-does"><div class="icon">🛡️</div><h4 id="ch-does4-h">Backed by DSK</h4><p id="ch-does4-p">You're not starting from zero — guides, quests, training, and ongoing support come from the core team.</p></div>
+    </div>
+  </div>
+
+  <div class="ch-section">
+    <h2 id="ch-form-title">Start a Chapter</h2>
+    <p class="lede" id="ch-form-lede">Tell us about yourself and your country. This is a real responsibility, not just a signup — we review every application personally and usually follow up with a few questions or a short call.</p>
+    <form class="ch-form" id="ch-form">
+      <div class="row2">
+        <div>
+          <label for="ch-name" id="ch-label-name">Your Name</label>
+          <input type="text" id="ch-name" required maxlength="80">
+        </div>
+        <div>
+          <label for="ch-email" id="ch-label-email">Email</label>
+          <input type="email" id="ch-email" required maxlength="120">
+        </div>
+      </div>
+
+      <div class="row2">
+        <div>
+          <label for="ch-country" id="ch-label-country">Country</label>
+          <input type="text" id="ch-country" required maxlength="60">
+        </div>
+        <div>
+          <label for="ch-city" id="ch-label-city">City (optional)</label>
+          <input type="text" id="ch-city" maxlength="80">
+        </div>
+      </div>
+
+      <label for="ch-role" id="ch-label-role">You Are A...</label>
+      <select id="ch-role">
+        <option value="parent" id="ch-role-parent">Parent</option>
+        <option value="teacher" id="ch-role-teacher">Teacher / Educator</option>
+        <option value="student" id="ch-role-student">Student (18+)</option>
+        <option value="community_leader" id="ch-role-community">Community / Youth Organization Leader</option>
+        <option value="other" id="ch-role-other">Other</option>
+      </select>
+
+      <label for="ch-why" id="ch-label-why">Why do you want to start a Digital Safety Knights chapter in your country?</label>
+      <textarea id="ch-why" required minlength="20" maxlength="1500"></textarea>
+
+      <button type="submit" class="ch-submit" id="ch-submit">Apply to Start a Chapter</button>
+      <div class="ch-status" id="ch-status"></div>
+    </form>
+  </div>
+
+  <p style="text-align:center;font-size:0.85rem;color:var(--gray);">
+    <span id="ch-alt-prompt">Looking to book a session instead of starting a chapter?</span>
+    <a href="/school-programs.html" id="ch-alt-link" style="color:var(--navy);font-weight:800;">See School &amp; Organization Programs →</a>
+  </p>
+
+</div>
+
+<footer>⚔️ Digital Safety Knights · digitalsafetyknights.org · © 2026</footer>
+
+<script>
+var chLang = (window.DSKi18n && DSKi18n.lang) || 'en';
+var chIsTr = chLang === 'tr';
+var chIsEs = chLang === 'es';
+
+document.getElementById('ch-title').innerHTML = chIsTr ? '🌍 Şubeler' : chIsEs ? '🌍 Capítulos' : '🌍 Chapters';
+document.getElementById('ch-tagline').textContent = chIsTr
+  ? 'Kendi ülkelerinde okullara ve topluluklara dijital güvenlik eğitimi götüren yerel Şövalyelerden oluşan dünya çapında bir ağ. Misyonumuz: nerede yaşarsa yaşasın her çocuk bu eğitimi hak ediyor — ve bir şube, bunu evine getirmeye istekli tek bir kişiyle başlar.'
+  : chIsEs
+  ? 'Una red mundial de Knights locales que llevan educación en seguridad digital a escuelas y comunidades en su propio país. Nuestra misión: todo niño, donde sea que viva, merece esta educación — y un capítulo comienza con una sola persona dispuesta a traerla a casa.'
+  : 'A worldwide network of local Knights bringing digital safety education to schools and communities in their own country. Our mission: every child, everywhere, deserves this education — and a chapter starts with one person willing to bring it home.';
+
+document.getElementById('ch-active-title').textContent = chIsTr ? 'Aktif Şubeler' : chIsEs ? 'Capítulos Activos' : 'Active Chapters';
+document.getElementById('ch-active-lede').textContent = chIsTr ? 'Gerçek insanların yönettiği gerçek şubeler — canlı güncellenir, asla uydurma bir sayı değil.' : chIsEs ? 'Capítulos reales, dirigidos por personas reales — actualizado en vivo, nunca un número inventado.' : 'Real chapters, run by real people — updated live, never a made-up number.';
+
+document.getElementById('ch-does-title').textContent = chIsTr ? 'Bir Şube Ne Yapar' : chIsEs ? 'Qué Hace un Capítulo' : 'What a Chapter Does';
+document.getElementById('ch-does1-h').textContent = chIsTr ? 'Yerel Oturumlar' : chIsEs ? 'Sesiones Locales' : 'Local Sessions';
+document.getElementById('ch-does1-p').textContent = chIsTr ? 'Kendi bölgenizdeki okullarda ve topluluk gruplarında DSK\'yı temsil eder — materyallerimizi ve eğitimimizi kullanarak siz liderlik edersiniz.' : chIsEs ? 'Representa a DSK en escuelas y grupos comunitarios de tu zona — tú lideras, usando nuestros materiales y capacitación.' : 'Represents DSK at schools and community groups in your area — you lead, using our materials and training.';
+document.getElementById('ch-does2-h').textContent = chIsTr ? 'Yerel Ses' : chIsEs ? 'Voz Local' : 'Local Voice';
+document.getElementById('ch-does2-p').textContent = chIsTr ? 'İçeriğimizi ülkenizin platformlarına, yasalarına ve diline uyarlar — topluluğunuzu en iyi siz bilirsiniz.' : chIsEs ? 'Adapta nuestro contenido a las plataformas, leyes e idioma de tu país — tú conoces mejor a tu comunidad.' : "Adapts our content to your country's platforms, laws, and language — you know your community best.";
+document.getElementById('ch-does3-h').textContent = chIsTr ? 'Yerel Ağ' : chIsEs ? 'Red Local' : 'Local Network';
+document.getElementById('ch-does3-p').textContent = chIsTr ? 'Yerel okulları, ebeveynleri ve gençlik kuruluşlarını daha geniş DSK topluluğuna ve Şövalye Konseyi\'ne bağlar.' : chIsEs ? 'Conecta escuelas locales, padres y organizaciones juveniles con la comunidad más amplia de DSK y el Knight Council.' : 'Connects local schools, parents, and youth organizations into the wider DSK community and Knight Council.';
+document.getElementById('ch-does4-h').textContent = chIsTr ? 'DSK Desteğiyle' : chIsEs ? 'Respaldado por DSK' : 'Backed by DSK';
+document.getElementById('ch-does4-p').textContent = chIsTr ? 'Sıfırdan başlamıyorsunuz — rehberler, görevler, eğitim ve sürekli destek merkez ekipten gelir.' : chIsEs ? 'No empiezas de cero — guías, misiones, capacitación y apoyo continuo vienen del equipo central.' : "You're not starting from zero — guides, quests, training, and ongoing support come from the core team.";
+
+document.getElementById('ch-form-title').textContent = chIsTr ? 'Bir Şube Başlat' : chIsEs ? 'Iniciar un Capítulo' : 'Start a Chapter';
+document.getElementById('ch-form-lede').textContent = chIsTr ? 'Kendinizden ve ülkenizden bahsedin. Bu gerçek bir sorumluluktur, sadece bir kayıt değil — her başvuruyu kişisel olarak inceliyoruz ve genellikle birkaç soru ya da kısa bir görüşmeyle takip ediyoruz.' : chIsEs ? 'Cuéntanos sobre ti y tu país. Esto es una responsabilidad real, no solo un registro — revisamos cada solicitud personalmente y normalmente hacemos seguimiento con algunas preguntas o una breve llamada.' : "Tell us about yourself and your country. This is a real responsibility, not just a signup — we review every application personally and usually follow up with a few questions or a short call.";
+document.getElementById('ch-label-name').textContent = chIsTr ? 'Adın' : chIsEs ? 'Tu Nombre' : 'Your Name';
+document.getElementById('ch-label-email').textContent = 'Email';
+document.getElementById('ch-label-country').textContent = chIsTr ? 'Ülke' : chIsEs ? 'País' : 'Country';
+document.getElementById('ch-label-city').textContent = chIsTr ? 'Şehir (opsiyonel)' : chIsEs ? 'Ciudad (opcional)' : 'City (optional)';
+document.getElementById('ch-label-role').textContent = chIsTr ? 'Siz Kimsiniz...' : chIsEs ? 'Eres...' : 'You Are A...';
+document.getElementById('ch-role-parent').textContent = chIsTr ? 'Ebeveyn' : chIsEs ? 'Padre/Madre' : 'Parent';
+document.getElementById('ch-role-teacher').textContent = chIsTr ? 'Öğretmen / Eğitimci' : chIsEs ? 'Maestro/a / Educador/a' : 'Teacher / Educator';
+document.getElementById('ch-role-student').textContent = chIsTr ? 'Öğrenci (18+)' : chIsEs ? 'Estudiante (18+)' : 'Student (18+)';
+document.getElementById('ch-role-community').textContent = chIsTr ? 'Topluluk / Gençlik Kuruluşu Lideri' : chIsEs ? 'Líder Comunitario / de Organización Juvenil' : 'Community / Youth Organization Leader';
+document.getElementById('ch-role-other').textContent = chIsTr ? 'Diğer' : chIsEs ? 'Otro' : 'Other';
+document.getElementById('ch-label-why').textContent = chIsTr ? 'Ülkenizde neden bir Digital Safety Knights şubesi başlatmak istiyorsunuz?' : chIsEs ? '¿Por qué quieres iniciar un capítulo de Digital Safety Knights en tu país?' : 'Why do you want to start a Digital Safety Knights chapter in your country?';
+document.getElementById('ch-submit').textContent = chIsTr ? 'Şube Başlatmak İçin Başvur' : chIsEs ? 'Solicitar Iniciar un Capítulo' : 'Apply to Start a Chapter';
+document.getElementById('ch-alt-prompt').textContent = chIsTr ? 'Şube başlatmak yerine bir oturum mu ayırtmak istiyorsunuz?' : chIsEs ? '¿Buscas reservar una sesión en lugar de iniciar un capítulo?' : 'Looking to book a session instead of starting a chapter?';
+document.getElementById('ch-alt-link').textContent = chIsTr ? 'Okul ve Kurum Programlarına bakın →' : chIsEs ? 'Ver Programas para Escuelas y Organizaciones →' : 'See School & Organization Programs →';
+
+var CH_EMPTY_H = chIsTr ? 'Henüz şube yok — ülkenizdeki ilk şube siz olun!' : chIsEs ? 'Aún no hay capítulos — ¡sé el primero en tu país!' : 'No chapters yet — be the first in your country!';
+var CH_EMPTY_P = chIsTr ? 'Aşağıdan başvuran ilk kişi olun. Her yeni şube, bu haritada gerçek bir nokta olarak başlar.' : chIsEs ? 'Sé la primera persona en postularte a continuación. Cada nuevo capítulo comienza como un punto real en este mapa.' : "Be the first person to apply below. Every new chapter starts as one real point on this map.";
+var CH_SINCE = chIsTr ? 'yılından beri' : chIsEs ? 'desde' : 'since';
+
+fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/chapters-list')
+  .then(function (r) { return r.json(); })
+  .then(function (data) {
+    var el = document.getElementById('ch-active-list');
+    var chapters = (data && data.chapters) || [];
+    if (chapters.length === 0) {
+      el.innerHTML = '<div class="ch-empty"><div class="emoji">🌱</div><h3>' + CH_EMPTY_H + '</h3><p>' + CH_EMPTY_P + '</p></div>';
+      return;
+    }
+    el.innerHTML = '<div class="ch-list">' + chapters.map(function (c) {
+      var since = c.since ? ' <span style="opacity:0.6;">· ' + CH_SINCE + ' ' + c.since + '</span>' : '';
+      return '<div class="ch-card"><h3>' + c.chapter_name + '</h3><p>' + c.country + since + '</p></div>';
+    }).join('') + '</div>';
+  })
+  .catch(function () {
+    var el = document.getElementById('ch-active-list');
+    el.innerHTML = '<div class="ch-empty"><div class="emoji">🌱</div><h3>' + CH_EMPTY_H + '</h3><p>' + CH_EMPTY_P + '</p></div>';
+  });
+
+document.getElementById('ch-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var submitBtn = document.getElementById('ch-submit');
+  var statusEl = document.getElementById('ch-status');
+  statusEl.className = 'ch-status';
+  submitBtn.disabled = true;
+
+  fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/chapter-apply', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      name: document.getElementById('ch-name').value.trim(),
+      email: document.getElementById('ch-email').value.trim(),
+      country: document.getElementById('ch-country').value.trim(),
+      city: document.getElementById('ch-city').value.trim(),
+      role: document.getElementById('ch-role').value,
+      why: document.getElementById('ch-why').value.trim()
+    })
+  })
+  .then(function (r) { return r.json(); })
+  .then(function (data) {
+    submitBtn.disabled = false;
+    if (data.success) {
+      statusEl.className = 'ch-status ok';
+      statusEl.textContent = data.message;
+      document.getElementById('ch-form').reset();
+    } else {
+      statusEl.className = 'ch-status err';
+      statusEl.textContent = '❌ ' + (data.message || (chIsTr ? 'Bir hata oluştu.' : chIsEs ? 'Ocurrió un error.' : 'Something went wrong.'));
+    }
+  })
+  .catch(function () {
+    submitBtn.disabled = false;
+    statusEl.className = 'ch-status err';
+    statusEl.textContent = chIsTr ? '❌ Bağlantı hatası. Lütfen tekrar deneyin.' : chIsEs ? '❌ Error de conexión. Inténtalo de nuevo.' : '❌ Connection error. Please try again.';
+  });
+});
+</script>
+<script src="/assets/lang-switcher.js"></script>
+</body>
+</html>

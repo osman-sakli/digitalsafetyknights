@@ -40,6 +40,7 @@
     { title: "Sources & Research", url: "/sources.html", icon: "📊", kw: "sources citations statistics data ncmec fbi ftc research legislation lawsuits" },
     { title: "Legislative Tracker", url: "/legislative-tracker.html", icon: "⚖️", kw: "law legislation kosa kids act take it down app store bill status pending effect" },
     { title: "News Archive", url: "/news-archive.html", icon: "🗞️", kw: "news archive daily headlines press stories sources digital safety watch updates" },
+    { title: "Chapters", url: "/chapters.html", icon: "🌍", kw: "chapters local chapter worldwide global start a chapter country volunteer" },
     { title: "Emergency Help & Hotlines", url: "/#emergency", icon: "🆘", kw: "emergency hotline crisis help country region urgent" },
     { title: "Login", url: "/login.html", icon: "🔐", kw: "sign in account" },
     { title: "Dashboard", url: "/dashboard.html", icon: "📊", kw: "my account progress points badges" }
@@ -80,6 +81,7 @@
     { title: "Kaynaklar & Araştırma", url: "/sources.html", icon: "📊", kw: "kaynaklar istatistik veri ncmec fbi ftc arastirma yasalar davalar" },
     { title: "Yasal Takip", url: "/legislative-tracker.html", icon: "⚖️", kw: "yasa mevzuat kosa kids act take it down uygulama magazasi durum beklemede yururlukte" },
     { title: "Haber Arşivi", url: "/news-archive.html", icon: "🗞️", kw: "haber arsiv gunluk manset basin kaynak dijital guvenlik radari guncelleme" },
+    { title: "Şubeler", url: "/chapters.html", icon: "🌍", kw: "sube subeler dunya capinda kuresel sube baslat ulke gonullu" },
     { title: "Acil Yardım ve Hatlar", url: "/#emergency", icon: "🆘", kw: "acil durum yardim hatti kriz ulke bolge" },
     { title: "Giriş", url: "/login.html", icon: "🔐", kw: "giris yap hesap login" },
     { title: "Panel", url: "/dashboard.html", icon: "📊", kw: "hesabim ilerleme puan rozet dashboard" }
@@ -120,6 +122,7 @@
     { title: "Fuentes e Investigación", url: "/sources.html", icon: "📊", kw: "fuentes citas estadisticas datos ncmec fbi ftc investigacion legislacion demandas" },
     { title: "Rastreador Legislativo", url: "/legislative-tracker.html", icon: "⚖️", kw: "ley legislacion kosa kids act take it down tienda de apps estado pendiente vigente" },
     { title: "Archivo de Noticias", url: "/news-archive.html", icon: "🗞️", kw: "noticias archivo diario titulares prensa fuentes vigilancia seguridad digital" },
+    { title: "Capítulos", url: "/chapters.html", icon: "🌍", kw: "capitulos capitulo mundial global iniciar un capitulo pais voluntario" },
     { title: "Ayuda de Emergencia y Líneas Directas", url: "/#emergency", icon: "🆘", kw: "emergencia linea directa crisis pais region urgente" },
     { title: "Iniciar Sesión", url: "/login.html", icon: "🔐", kw: "iniciar sesion cuenta login" },
     { title: "Panel", url: "/dashboard.html", icon: "📊", kw: "mi cuenta progreso puntos insignias dashboard" }
