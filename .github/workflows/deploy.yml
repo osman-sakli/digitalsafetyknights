@@ -20,12 +20,39 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Deploy to S3
+      - name: Generate SEO files (sitemap, robots.txt, canonical tags)
+        run: python3 infrastructure/build-seo.py
+
+      - name: Deploy static assets to S3
         run: |
+          # videos/ is populated by infrastructure/sync-video-library.py from a
+          # separate S3 bucket, not from this repo — excluded here so --delete
+          # doesn't wipe the whole video library on every deploy (this bit us
+          # for real on 2026-09-26: the bucket's ACL setting was also stale
+          # here, "Bucket owner enforced" doesn't accept --acl at all).
           aws s3 sync frontend/ s3://${{ secrets.S3_BUCKET }}/ \
             --delete \
-            --acl public-read \
+            --exclude ".DS_Store" \
+            --exclude "*.html" \
+            --exclude "*.json" \
+            --exclude "videos/*" \
             --cache-control "max-age=86400"
+
+      - name: Deploy HTML/JSON to S3
+        run: |
+          # content/news-feed.json, content/news-archive.json (dsk-news-feed
+          # Lambda, every 12h) and content/video-library.json
+          # (sync-video-library.py) are written by other systems, not this
+          # repo — excluded here for the same --delete-safety reason as above.
+          aws s3 sync frontend/ s3://${{ secrets.S3_BUCKET }}/ \
+            --delete \
+            --exclude "*" \
+            --include "*.html" \
+            --include "*.json" \
+            --exclude "content/news-feed.json" \
+            --exclude "content/news-archive.json" \
+            --exclude "content/video-library.json" \
+            --cache-control "no-cache"
 
       - name: Invalidate CloudFront cache
         run: |
