@@ -91,7 +91,13 @@
     menu.classList.remove('open');
     sessionStorage.setItem('dsk_lang_transitioning', '1');
     fade.classList.add('show');
-    setTimeout(function () { location.reload(); }, 220);
+    // Navigate to the /en//tr//es/ mirror of this same page rather than just
+    // reloading in place, so the URL bar itself reflects the chosen
+    // language (a real, indexable, shareable URL) instead of only an
+    // invisible localStorage flag.
+    var bare = location.pathname.replace(/^\/(en|tr|es)(\/|$)/, '/');
+    var dest = bare === '/' ? '/' + code + '/' : '/' + code + bare;
+    setTimeout(function () { location.href = dest + location.search + location.hash; }, 220);
   });
 
   if (sessionStorage.getItem('dsk_lang_transitioning')) {

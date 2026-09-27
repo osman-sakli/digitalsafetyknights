@@ -17,9 +17,20 @@
     return null;
   }
 
+  function pathLang() {
+    // /en/, /tr/, /es/ — a URL-visible language for SEO/professionalism
+    // (hreflang, indexable per-language pages). Wins over everything else:
+    // landing on a prefixed URL is an explicit choice, and it's remembered
+    // via localStorage so unprefixed pages you navigate to next (most
+    // internal links are still unprefixed) stay in the same language.
+    var m = /^\/(en|tr|es)(\/|$)/.exec(location.pathname);
+    return m ? m[1] : null;
+  }
+
+  var fromPath = pathLang();
   var stored = localStorage.getItem(KEY);
-  var lang = stored || detectLang() || 'en';
-  if (!stored) localStorage.setItem(KEY, lang); // first visit: remember the detected/default choice so it's consistent across pages and overridable via the switcher
+  var lang = fromPath || stored || detectLang() || 'en';
+  if (fromPath || !stored) localStorage.setItem(KEY, lang); // first visit, or an explicit /xx/ URL: remember it so it's consistent across pages and overridable via the switcher
   window.DSKi18n.lang = lang;
 
   function apply() {

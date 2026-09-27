@@ -6,13 +6,17 @@
 <meta name="description" content="Meet the six Digital Safety Knights — Shieldy, Pixel, Bot, Dame Noble, Sprout, and the rival they all watch out for, Glitch.">
 <title>Meet the Knights — Digital Safety Knights</title>
 <link rel="canonical" href="https://digitalsafetyknights.org/knights.html">
+<link rel="alternate" hreflang="en" href="https://digitalsafetyknights.org/en/knights.html">
+<link rel="alternate" hreflang="tr" href="https://digitalsafetyknights.org/tr/knights.html">
+<link rel="alternate" hreflang="es" href="https://digitalsafetyknights.org/es/knights.html">
+<link rel="alternate" hreflang="x-default" href="https://digitalsafetyknights.org/knights.html">
 <meta property="og:title" content="Meet the Knights — Digital Safety Knights">
 <meta property="og:description" content="Meet the six Digital Safety Knights — Shieldy, Pixel, Bot, Dame Noble, Sprout, and the rival they all watch out for, Glitch.">
 <meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
 <meta property="og:url" content="https://digitalsafetyknights.org/knights.html">
 <meta property="og:type" content="website">
-<link rel="icon" href="assets/favicon.ico">
-<link rel="stylesheet" href="assets/theme.css">
+<link rel="icon" href="/assets/favicon.ico">
+<link rel="stylesheet" href="/assets/theme.css">
 <style>
   :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --text: #2d3748; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -45,8 +49,8 @@
   .cta-band { text-align: center; margin-top: 3rem; }
   .btn-gold { background: var(--gold); color: var(--navy); padding: 14px 32px; border-radius: 28px; font-weight: 900; text-decoration: none; display: inline-block; }
 </style>
-<link rel="stylesheet" href="assets/breadcrumb.css">
-<script src="assets/knight-points.js"></script>
+<link rel="stylesheet" href="/assets/breadcrumb.css">
+<script src="/assets/knight-points.js"></script>
 <script src="/assets/i18n.js"></script>
 </head>
 <body>
@@ -172,7 +176,7 @@ var grid = document.getElementById('knightGrid');
 var seasonBadge = currentSeasonBadge();
 grid.innerHTML = KNIGHTS.map(function(k) {
   return '<div class="knight-card' + (k.rival ? ' rival' : '') + '" style="--card-color:' + k.color + '" onclick="playNote(' + k.note + ')">' +
-    '<div class="knight-portrait"><img class="portrait-img" src="assets/characters/circles/' + k.id + '.jpg" alt="' + k.name + '">' +
+    '<div class="knight-portrait"><img class="portrait-img" src="/assets/characters/circles/' + k.id + '.jpg" alt="' + k.name + '">' +
     (seasonBadge ? '<img class="seasonal-badge" src="' + seasonBadge + '" alt="">' : '') + '</div>' +
     '<div class="knight-name">' + k.name + '</div>' +
     '<div class="knight-title">' + k.title + '</div>' +

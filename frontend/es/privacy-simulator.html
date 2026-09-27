@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Privacy Settings Simulator — practice locking down a fake game/social app's settings in a safe sandbox before doing it for real.">
+<title>Privacy Settings Simulator — Digital Safety Knights</title>
+<link rel="canonical" href="https://digitalsafetyknights.org/es/privacy-simulator.html">
+<link rel="alternate" hreflang="en" href="https://digitalsafetyknights.org/en/privacy-simulator.html">
+<link rel="alternate" hreflang="tr" href="https://digitalsafetyknights.org/tr/privacy-simulator.html">
+<link rel="alternate" hreflang="es" href="https://digitalsafetyknights.org/es/privacy-simulator.html">
+<link rel="alternate" hreflang="x-default" href="https://digitalsafetyknights.org/privacy-simulator.html">
+<meta property="og:title" content="Privacy Settings Simulator — Digital Safety Knights">
+<meta property="og:description" content="Privacy Settings Simulator — practice locking down a fake game/social app's settings in a safe sandbox before doing it for real.">
+<meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
+<meta property="og:url" content="https://digitalsafetyknights.org/privacy-simulator.html">
+<meta property="og:type" content="website">
+<link rel="icon" href="/assets/favicon.ico">
+<script src="/assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
+<style>
+  :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --success: #2a9d8f; --danger: #e63946; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Nunito Sans', 'Segoe UI', system-ui, sans-serif; background: var(--light); color: #2d3748; }
+  .topbar { background: var(--navy); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+  .topbar .brand { color: var(--gold); font-weight: 900; text-decoration: none; font-size: 1.05rem; }
+  .topbar .home-link { color: #cdd6ea; text-decoration: none; font-size: 0.85rem; font-weight: 700; }
+  .wrap { max-width: 480px; margin: 0 auto; padding: 30px 18px 80px; }
+  .hero { text-align: center; margin-bottom: 20px; }
+  .hero .icon { font-size: 2.6rem; margin-bottom: 6px; }
+  .hero h1 { color: var(--navy); font-size: 1.5rem; margin-bottom: 6px; }
+  .hero p { color: var(--gray); font-size: 0.88rem; }
+
+  .app-tabs { display: flex; gap: 8px; margin-bottom: 16px; }
+  .app-tab { flex: 1; background: white; border: 2px solid #dfe4ee; border-radius: 12px; padding: 10px; font-weight: 800; font-size: 0.85rem; cursor: pointer; text-align: center; }
+  .app-tab.active { border-color: var(--gold); background: rgba(201,168,76,0.1); color: var(--navy); }
+
+  .phone-frame { background: #1a1a2e; border-radius: 28px; padding: 10px; box-shadow: 0 12px 40px rgba(0,0,0,0.25); }
+  .phone-screen { background: white; border-radius: 20px; padding: 18px; min-height: 420px; }
+  .screen-title { font-weight: 900; color: var(--navy); font-size: 1.05rem; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 2px solid var(--light); }
+
+  .setting-row { padding: 12px 0; border-bottom: 1px solid #eef0f5; }
+  .setting-label { font-weight: 800; font-size: 0.88rem; color: var(--navy); margin-bottom: 8px; }
+  .option-pills { display: flex; gap: 6px; flex-wrap: wrap; }
+  .pill { background: var(--light); border: 2px solid transparent; border-radius: 16px; padding: 6px 12px; font-size: 0.78rem; font-weight: 700; cursor: pointer; color: var(--gray); }
+  .pill.selected.safe { background: rgba(42,157,143,0.15); border-color: var(--success); color: var(--success); }
+  .pill.selected.risky { background: rgba(230,57,70,0.12); border-color: var(--danger); color: var(--danger); }
+
+  .score-band { margin-top: 18px; background: white; border-radius: 16px; padding: 16px 18px; text-align: center; box-shadow: 0 2px 20px rgba(13,27,62,0.07); }
+  .score-num { font-size: 2rem; font-weight: 900; color: var(--navy); }
+  .score-msg { font-size: 0.85rem; color: var(--gray); margin-top: 4px; }
+</style>
+<link rel="stylesheet" href="/assets/breadcrumb.css">
+<link rel="stylesheet" href="/assets/theme.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="/">🛡️ Digital Safety Knights</a>
+  <a class="home-link" href="/resources.html" data-i18n="fc.backResources">← Resource Center</a>
+</div>
+<div class="dsk-breadcrumb"><a href="/" data-i18n="qp.home2">Home</a><span class="sep">/</span><a href="/resources.html" data-i18n="nav.resources2">Resources</a><span class="sep">/</span><span class="current" data-i18n="ps.title">Privacy Settings Simulator</span></div>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="icon">⚙️</div>
+    <h1 data-i18n="ps.title">Privacy Settings Simulator</h1>
+    <p data-i18n="ps.subtitle">Practice locking down a fake app's settings here first — a safe sandbox before you do it on your real accounts.</p>
+  </div>
+
+  <div class="app-tabs">
+    <div class="app-tab active" data-app="game" onclick="switchApp('game')" data-i18n="ps.gameTab">🎮 Game App</div>
+    <div class="app-tab" data-app="social" onclick="switchApp('social')" data-i18n="ps.socialTab">📸 Social App</div>
+  </div>
+
+  <div class="phone-frame">
+    <div class="phone-screen">
+      <div class="screen-title" id="screen-title">Game App Settings</div>
+      <div id="settings-list"></div>
+    </div>
+  </div>
+
+  <div class="score-band">
+    <div class="score-num" id="score-num">0%</div>
+    <div class="score-msg" id="score-msg" data-i18n="ps.tapToLock">Tap the settings above to lock things down.</div>
+  </div>
+</div>
+
+<script>
+var psLang = (window.DSKi18n && DSKi18n.lang) || 'en';
+var psIsTr = psLang === 'tr';
+var psIsEs = psLang === 'es';
+var APPS_EN = {
+  game: {
+    title: 'Game App Settings',
+    settings: [
+      { key: 'chat', label: 'Who can message you?', options: [{ v: 'everyone', l: 'Everyone', safe: false }, { v: 'friends', l: 'Friends Only', safe: true }, { v: 'noone', l: 'No One', safe: true }] },
+      { key: 'friend_req', label: 'Who can send friend requests?', options: [{ v: 'everyone', l: 'Everyone', safe: false }, { v: 'friendsof', l: 'Friends of Friends', safe: false }, { v: 'noone', l: 'No One', safe: true }] },
+      { key: 'location', label: 'Show my location in-game?', options: [{ v: 'on', l: 'On', safe: false }, { v: 'off', l: 'Off', safe: true }] },
+      { key: 'voice', label: 'Voice chat with strangers?', options: [{ v: 'everyone', l: 'Everyone', safe: false }, { v: 'friends', l: 'Friends Only', safe: true }, { v: 'off', l: 'Off', safe: true }] },
+      { key: 'gifts', label: 'Accept gifts/items from strangers?', options: [{ v: 'on', l: 'Allow', safe: false }, { v: 'off', l: "Don't Allow", safe: true }] }
+    ]
+  },
+  social: {
+    title: 'Social App Settings',
+    settings: [
+      { key: 'account', label: 'Account visibility', options: [{ v: 'public', l: 'Public', safe: false }, { v: 'private', l: 'Private', safe: true }] },
+      { key: 'dm', label: 'Who can message you?', options: [{ v: 'everyone', l: 'Everyone', safe: false }, { v: 'followers', l: 'Followers Only', safe: true }] },
+      { key: 'tagging', label: 'Who can tag you in posts?', options: [{ v: 'everyone', l: 'Everyone', safe: false }, { v: 'friends', l: 'Friends Only', safe: true }, { v: 'noone', l: 'No One', safe: true }] },
+      { key: 'location_tag', label: 'Attach location to posts?', options: [{ v: 'on', l: 'On', safe: false }, { v: 'off', l: 'Off', safe: true }] },
+      { key: 'activity', label: 'Show when you\'re active?', options: [{ v: 'on', l: 'On', safe: false }, { v: 'off', l: 'Off', safe: true }] }
+    ]
+  }
+};
+
+var APPS_TR = {
+  game: {
+    title: 'Oyun Uygulaması Ayarları',
+    settings: [
+      { key: 'chat', label: 'Sana kim mesaj atabilir?', options: [{ v: 'everyone', l: 'Herkes', safe: false }, { v: 'friends', l: 'Sadece Arkadaşlar', safe: true }, { v: 'noone', l: 'Hiç Kimse', safe: true }] },
+      { key: 'friend_req', label: 'Kim arkadaşlık isteği gönderebilir?', options: [{ v: 'everyone', l: 'Herkes', safe: false }, { v: 'friendsof', l: 'Arkadaşların Arkadaşları', safe: false }, { v: 'noone', l: 'Hiç Kimse', safe: true }] },
+      { key: 'location', label: 'Oyun içinde konumumu göster?', options: [{ v: 'on', l: 'Açık', safe: false }, { v: 'off', l: 'Kapalı', safe: true }] },
+      { key: 'voice', label: 'Yabancılarla sesli sohbet?', options: [{ v: 'everyone', l: 'Herkes', safe: false }, { v: 'friends', l: 'Sadece Arkadaşlar', safe: true }, { v: 'off', l: 'Kapalı', safe: true }] },
+      { key: 'gifts', label: 'Yabancılardan hediye/eşya kabul et?', options: [{ v: 'on', l: 'İzin Ver', safe: false }, { v: 'off', l: 'İzin Verme', safe: true }] }
+    ]
+  },
+  social: {
+    title: 'Sosyal Uygulama Ayarları',
+    settings: [
+      { key: 'account', label: 'Hesap görünürlüğü', options: [{ v: 'public', l: 'Herkese Açık', safe: false }, { v: 'private', l: 'Özel', safe: true }] },
+      { key: 'dm', label: 'Sana kim mesaj atabilir?', options: [{ v: 'everyone', l: 'Herkes', safe: false }, { v: 'followers', l: 'Sadece Takipçiler', safe: true }] },
+      { key: 'tagging', label: 'Gönderilerde seni kim etiketleyebilir?', options: [{ v: 'everyone', l: 'Herkes', safe: false }, { v: 'friends', l: 'Sadece Arkadaşlar', safe: true }, { v: 'noone', l: 'Hiç Kimse', safe: true }] },
+      { key: 'location_tag', label: 'Gönderilere konum ekle?', options: [{ v: 'on', l: 'Açık', safe: false }, { v: 'off', l: 'Kapalı', safe: true }] },
+      { key: 'activity', label: 'Aktif olduğunda göster?', options: [{ v: 'on', l: 'Açık', safe: false }, { v: 'off', l: 'Kapalı', safe: true }] }
+    ]
+  }
+};
+
+var APPS_ES = {
+  game: {
+    title: 'Ajustes de la Aplicación de Juego',
+    settings: [
+      { key: 'chat', label: '¿Quién puede enviarte mensajes?', options: [{ v: 'everyone', l: 'Todos', safe: false }, { v: 'friends', l: 'Solo Amigos', safe: true }, { v: 'noone', l: 'Nadie', safe: true }] },
+      { key: 'friend_req', label: '¿Quién puede enviarte solicitudes de amistad?', options: [{ v: 'everyone', l: 'Todos', safe: false }, { v: 'friendsof', l: 'Amigos de Amigos', safe: false }, { v: 'noone', l: 'Nadie', safe: true }] },
+      { key: 'location', label: '¿Mostrar mi ubicación en el juego?', options: [{ v: 'on', l: 'Activado', safe: false }, { v: 'off', l: 'Desactivado', safe: true }] },
+      { key: 'voice', label: '¿Chat de voz con desconocidos?', options: [{ v: 'everyone', l: 'Todos', safe: false }, { v: 'friends', l: 'Solo Amigos', safe: true }, { v: 'off', l: 'Desactivado', safe: true }] },
+      { key: 'gifts', label: '¿Aceptar regalos/objetos de desconocidos?', options: [{ v: 'on', l: 'Permitir', safe: false }, { v: 'off', l: 'No Permitir', safe: true }] }
+    ]
+  },
+  social: {
+    title: 'Ajustes de la Aplicación Social',
+    settings: [
+      { key: 'account', label: 'Visibilidad de la cuenta', options: [{ v: 'public', l: 'Pública', safe: false }, { v: 'private', l: 'Privada', safe: true }] },
+      { key: 'dm', label: '¿Quién puede enviarte mensajes?', options: [{ v: 'everyone', l: 'Todos', safe: false }, { v: 'followers', l: 'Solo Seguidores', safe: true }] },
+      { key: 'tagging', label: '¿Quién puede etiquetarte en publicaciones?', options: [{ v: 'everyone', l: 'Todos', safe: false }, { v: 'friends', l: 'Solo Amigos', safe: true }, { v: 'noone', l: 'Nadie', safe: true }] },
+      { key: 'location_tag', label: '¿Agregar ubicación a las publicaciones?', options: [{ v: 'on', l: 'Activado', safe: false }, { v: 'off', l: 'Desactivado', safe: true }] },
+      { key: 'activity', label: '¿Mostrar cuándo estás activo?', options: [{ v: 'on', l: 'Activado', safe: false }, { v: 'off', l: 'Desactivado', safe: true }] }
+    ]
+  }
+};
+
+var APPS = psIsTr ? APPS_TR : psIsEs ? APPS_ES : APPS_EN;
+
+var state = { game: {}, social: {} };
+var currentApp = 'game';
+
+function switchApp(app) {
+  currentApp = app;
+  document.querySelectorAll('.app-tab').forEach(function(t) { t.classList.toggle('active', t.getAttribute('data-app') === app); });
+  document.getElementById('screen-title').textContent = APPS[app].title;
+  render();
+}
+
+function pick(settingKey, value) {
+  state[currentApp][settingKey] = value;
+  render();
+}
+
+function render() {
+  var app = APPS[currentApp];
+  document.getElementById('screen-title').textContent = app.title;
+  var list = document.getElementById('settings-list');
+  list.innerHTML = app.settings.map(function(s) {
+    var selected = state[currentApp][s.key];
+    return '<div class="setting-row"><div class="setting-label">' + s.label + '</div><div class="option-pills">' +
+      s.options.map(function(o) {
+        var isSel = selected === o.v;
+        var cls = isSel ? ('pill selected ' + (o.safe ? 'safe' : 'risky')) : 'pill';
+        return '<button type="button" class="' + cls + '" onclick="pick(\'' + s.key + '\',\'' + o.v + '\')">' + o.l + '</button>';
+      }).join('') +
+    '</div></div>';
+  }).join('');
+
+  var totalSettings = APPS.game.settings.length + APPS.social.settings.length;
+  var safeCount = 0;
+  ['game', 'social'].forEach(function(a) {
+    APPS[a].settings.forEach(function(s) {
+      var sel = state[a][s.key];
+      var opt = s.options.find(function(o) { return o.v === sel; });
+      if (opt && opt.safe) safeCount++;
+    });
+  });
+  var pct = Math.round((safeCount / totalSettings) * 100);
+  document.getElementById('score-num').textContent = pct + '%';
+  var msg = psIsTr ?
+    (pct === 100 ? '🎉 Her iki uygulamada da tamamen kilitlendi! Gerçek hayatta bunu başarırdın.' :
+     pct >= 60 ? 'İyi gidiyor — sıkılaştırmak için birkaç ayar daha kaldı.' :
+     'Devam et — daha güvenli seçeneği görmek için her seçeneğe dokun.') :
+    psIsEs ?
+    (pct === 100 ? '🎉 ¡Todo bloqueado en ambas aplicaciones! Lo lograrías en la vida real.' :
+     pct >= 60 ? 'Buen progreso — quedan algunos ajustes más por reforzar.' :
+     'Sigue así — toca cada opción para ver cuál es la más segura.') :
+    (pct === 100 ? '🎉 Fully locked down on both apps! You\'d ace this in real life.' :
+     pct >= 60 ? 'Good progress — a few more settings to tighten up.' :
+     'Keep going — tap each option to see which is the safer choice.');
+  document.getElementById('score-msg').textContent = msg;
+
+  if (pct === 100 && window.DSKPoints && !localStorage.getItem('dsk_privacy_sim_done')) {
+    localStorage.setItem('dsk_privacy_sim_done', '1');
+    DSKPoints.addPoints(20, psIsTr ? 'Gizlilik Ayarları Simülatörü ustalaştı' : psIsEs ? 'Simulador de Ajustes de Privacidad dominado' : 'Privacy Settings Simulator mastered');
+  }
+}
+
+render();
+</script>
+
+<script src="/assets/lang-switcher.js"></script>
+<script src="/assets/site-search.js"></script>
+<script src="/assets/play-now-fab.js"></script>
+</body>
+</html>

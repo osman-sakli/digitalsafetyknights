@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Plain-language tracker: which child-online-safety laws are actually in effect right now vs. still pending, and what each one means for your family.">
+<meta property="og:title" content="Legislative Tracker — Digital Safety Knights">
+<meta property="og:description" content="Which child-safety laws are actually in effect right now vs. still pending, in plain language.">
+<title>Legislative Tracker — Digital Safety Knights</title>
+<link rel="canonical" href="https://digitalsafetyknights.org/es/legislative-tracker.html">
+<link rel="alternate" hreflang="en" href="https://digitalsafetyknights.org/en/legislative-tracker.html">
+<link rel="alternate" hreflang="tr" href="https://digitalsafetyknights.org/tr/legislative-tracker.html">
+<link rel="alternate" hreflang="es" href="https://digitalsafetyknights.org/es/legislative-tracker.html">
+<link rel="alternate" hreflang="x-default" href="https://digitalsafetyknights.org/legislative-tracker.html">
+<link rel="icon" href="/assets/favicon.ico">
+<link rel="stylesheet" href="/assets/breadcrumb.css">
+<link rel="stylesheet" href="/assets/theme.css">
+<script src="/assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
+<style>
+  :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --text: #2d3748; --success: #2a9d8f; --warn: #d9a441; --pending: #6c757d; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Nunito Sans', 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
+  .topbar { background: var(--navy); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+  .topbar .brand { color: var(--gold); font-weight: 900; text-decoration: none; font-size: 1.05rem; }
+  .topbar .home-link { color: #cdd6ea; text-decoration: none; font-size: 0.85rem; font-weight: 700; }
+
+  .hero { background: var(--realm-bg); color: white; text-align: center; padding: 55px 1.5rem 45px; }
+  .hero .icon { font-size: 3rem; margin-bottom: 0.6rem; }
+  .hero h1 { font-size: clamp(1.8rem, 4.5vw, 2.6rem); margin-bottom: 0.7rem; }
+  .hero h1 .gold { color: var(--gold2); }
+  .hero p { color: #cdd6ea; max-width: 620px; margin: 0 auto; line-height: 1.7; font-size: 0.95rem; }
+
+  .wrap { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+  .legend { display: flex; gap: 1.2rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2.2rem; font-size: 0.82rem; color: var(--gray); }
+  .legend span { display: flex; align-items: center; gap: 6px; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .dot.effect { background: var(--success); }
+  .dot.pending { background: var(--warn); }
+  .dot.court { background: #c2453b; }
+
+  .section-title { font-size: 1.3rem; color: var(--navy); font-weight: 900; margin: 2.2rem 0 1rem; }
+  .law-card { background: white; border-radius: 16px; padding: 1.2rem 1.4rem; margin-bottom: 0.9rem; box-shadow: 0 2px 16px rgba(13,27,62,0.07); }
+  .law-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-bottom: 6px; }
+  .law-name { font-weight: 800; color: var(--navy); font-size: 1rem; }
+  .status-chip { font-size: 0.68rem; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; padding: 4px 11px; border-radius: 20px; white-space: nowrap; color: white; }
+  .status-chip.effect { background: var(--success); }
+  .status-chip.pending { background: var(--warn); }
+  .status-chip.court { background: #c2453b; }
+  .law-date { font-size: 0.76rem; color: var(--gray); margin-bottom: 6px; }
+  .law-desc { font-size: 0.87rem; color: var(--text); line-height: 1.55; }
+  .law-desc b { color: var(--navy); }
+
+  .phone-map { background: var(--navy); color: white; border-radius: 18px; padding: 1.6rem 1.8rem; margin-top: 2.2rem; }
+  .phone-map h3 { color: var(--gold2); font-size: 1.05rem; margin-bottom: 10px; }
+  .phone-map p { font-size: 0.87rem; color: #cdd6ea; line-height: 1.6; margin-bottom: 8px; }
+  .phone-stats { display: flex; gap: 1.4rem; flex-wrap: wrap; margin-top: 10px; }
+  .phone-stat .num { font-size: 1.6rem; font-weight: 900; color: var(--gold2); }
+  .phone-stat .label { font-size: 0.76rem; color: #a9b8d8; }
+
+  .update-note { background: #fdf9ee; border-left: 4px solid var(--gold); border-radius: 8px; padding: 14px 18px; font-size: 0.85rem; color: var(--text); line-height: 1.6; margin-bottom: 1.5rem; }
+  .cta-band { text-align: center; margin-top: 2.5rem; }
+  .btn-gold { background: var(--gold); color: var(--navy); padding: 14px 32px; border-radius: 28px; font-weight: 900; text-decoration: none; display: inline-block; margin: 0 6px; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="/">🛡️ Digital Safety Knights</a>
+  <a class="home-link" href="/sources.html" data-i18n="src.title2">📊 Sources &amp; Research</a>
+</div>
+<div class="dsk-breadcrumb"><a href="/" data-i18n="qp.home2">Home</a><span class="sep">/</span><a href="/resources.html" data-i18n="nav.resources2">Resources</a><span class="sep">/</span><span class="current" data-i18n="leg.title2">Legislative Tracker</span></div>
+
+<section class="hero">
+  <div class="icon">⚖️</div>
+  <h1 data-i18n="leg.h1">Legislative <span class="gold">Tracker</span></h1>
+  <p data-i18n="leg.subtitle">Coverage of this space is usually written for lawyers. This page is written for parents: is a given law actually protecting your family right now, or is it still pending? Plain language, updated monthly.</p>
+</section>
+
+<div class="wrap">
+  <div class="legend">
+    <span><span class="dot effect"></span> <span data-i18n="leg.legendEffect">In effect now</span></span>
+    <span><span class="dot pending"></span> <span data-i18n="leg.legendPending">Passed, not yet in effect</span></span>
+    <span><span class="dot court"></span> <span data-i18n="leg.legendCourt">Blocked / in court</span></span>
+  </div>
+
+  <div class="update-note" data-i18n="leg.updateNote">Refreshed monthly alongside our Sources &amp; Research page. Last reviewed: September 2026.</div>
+
+  <div class="section-title" data-i18n="leg.federalTitle">🇺🇸 Federal (US)</div>
+  <div id="federalList"></div>
+
+  <div class="section-title" data-i18n="leg.stateTitle">🏛️ State (US)</div>
+  <div id="stateList"></div>
+
+  <div class="section-title" data-i18n="leg.intlTitle">🌍 International</div>
+  <div id="intlList"></div>
+
+  <div class="phone-map">
+    <h3 data-i18n="leg.phoneTitle">📵 School Phone Bans — Where Things Stand</h3>
+    <p data-i18n="leg.phoneDesc">Separate from online-platform law, but the single most concrete recent change in kids' daily digital lives: a fast-growing number of US states now require phone-free school days.</p>
+    <div class="phone-stats">
+      <div class="phone-stat"><div class="num">26</div><div class="label" data-i18n="leg.phoneStat1">states mandate full "bell-to-bell" bans</div></div>
+      <div class="phone-stat"><div class="num">35+DC</div><div class="label" data-i18n="leg.phoneStat2">states with some phone policy</div></div>
+    </div>
+  </div>
+
+  <div class="cta-band">
+    <a class="btn-gold" href="/sources.html" data-i18n="leg.seeSources">📊 See Full Sources &amp; Citations →</a>
+  </div>
+</div>
+
+<script>
+var legLang = (window.DSKi18n && DSKi18n.lang) || 'en';
+var legIsTr = legLang === 'tr';
+var legIsEs = legLang === 'es';
+
+var FEDERAL_EN = [
+  { name: "TAKE IT DOWN Act", status: "effect", date: "FTC enforcement began May 2026", desc: "Requires platforms to remove reported non-consensual intimate images (including AI deepfakes) within <b>48 hours</b> of a verified request. <b>What it means for you:</b> if this happens to your child, you now have real legal leverage — file with the platform, then the FTC if they miss the deadline." },
+  { name: "Meta Teen Accounts Settlement", status: "effect", date: "Rolling out since an August 2026 litigation settlement; full rollout over 6-12 months", desc: "Following a lawsuit settlement, Meta is rolling in new limits for under-18 accounts on Instagram and Facebook: a default <b>2-hour/day</b> time limit (parent-adjustable), an automatic midnight-6am block, notifications blocked 8am-3pm on school days, and parent alerts when a teen creates a new account or is contacted by a flagged adult account. <b>What it means for you:</b> check your teen's account settings now — this is actively rolling out, not a future promise." },
+  { name: "Kids Internet and Digital Safety Act", status: "pending", date: "Passed House 267-117 June 29, 2026; Senate Commerce Committee advanced an amended version Aug 5, 2026", desc: "Bundles 14 child-safety bills including a revised KOSA: age verification, limits on \"compulsive usage\" design, parental screen-time visibility tools, and expanding COPPA's protections and ad-targeting ban from age 12 to 17. <b>What it means for you:</b> still not law — it cleared a Senate committee but needs a full Senate vote and reconciliation with the House version before anything is required of platforms." },
+  { name: "45 states criminalize AI-generated CSAM", status: "effect", date: "Most enacted 2024-2025", desc: "AI-generated child sexual abuse material is now a state crime in 45 states plus federal law. <b>What it means for you:</b> report AI-generated imagery of a minor exactly as you would real imagery — it is treated as a serious crime, not a gray area." }
+];
+var STATE_EN = [
+  { name: "Texas App Store Accountability Act", status: "effect", date: "In effect since Jan 1, 2026 — 5th Circuit stayed the injunction", desc: "Requires app stores (Apple, Google) to verify a user's age and get parental consent before a minor downloads or buys an app. <b>What it means for you:</b> unlike similar laws elsewhere, this one is not blocked — Texas's Attorney General can enforce it right now." },
+  { name: "Louisiana App Store Accountability Act", status: "effect", date: "In effect since July 1, 2026", desc: "Same core requirement as Texas: age verification and parental consent at the app-store level. <b>What it means for you:</b> if you're in Louisiana, app stores are required to check age and get your consent before your child downloads age-restricted apps." },
+  { name: "California App Store Accountability Act (DAAA)", status: "pending", date: "Effective January 1, 2027", desc: "California's version of the same app-store age-verification model. <b>What it means for you:</b> not yet enforced — but California is the largest state to adopt this, likely pushing Apple and Google toward one national approach instead of state-by-state rules." },
+  { name: "New York SAFE for Kids Act", status: "pending", date: "Rules finalized July 2026; effective January 25, 2027", desc: "Requires age verification and parental consent for \"addictive feed\" algorithms. <b>What it means for you:</b> if you're in New York, expect platforms to start rolling out age-check prompts before the January 2027 deadline." },
+  { name: "Utah App Store Accountability Act", status: "pending", date: "Deadline pushed to May 6, 2027; private-lawsuit enforcement only", desc: "Same app-store age-verification concept, but amended to remove state-agency enforcement entirely. <b>What it means for you:</b> don't expect a government agency to enforce this — it only takes effect for you if a parent personally sues." },
+  { name: "Kentucky v. Character Technologies", status: "court", date: "Filed Jan 8, 2026, Franklin Circuit Court", desc: "The first state lawsuit against an AI chatbot company: Kentucky's Attorney General alleges Character.AI exposed children to unwanted sexual content and encouraged self-harm, violating state consumer-protection and data-privacy law. <b>What it means for you:</b> a live test of whether state law can hold AI companion apps accountable — worth watching wherever you live." },
+  { name: "School phone bans (26 states)", status: "effect", date: "Varies by state; several effective 2026-2027 school year", desc: "Full \"bell-to-bell\" bans on phone use during the school day. <b>What it means for you:</b> check your specific state and district — timing and strictness vary (see the map below)." }
+];
+var INTL_EN = [
+  { name: "UK Online Safety Act — CSEA Reporting Duty", status: "effect", date: "In effect since April 2026", desc: "In-scope user-to-user platforms must now proactively <b>report</b> detected child sexual exploitation and abuse (CSEA) content to the UK's National Crime Agency, not just remove it. <b>What it means for you:</b> a materially stricter standard than removal-only — worth knowing if you or family are in the UK, and a likely direction for other jurisdictions." },
+  { name: "EU KIDS Act (proposed)", status: "pending", date: "European Commission proposal published Sept 17, 2026", desc: "Following its July 2026 expert-panel recommendations, the European Commission formally proposed the \"Keeping Internet Digital Spaces Accountable and Trustworthy\" (KIDS) Act — an EU-wide framework meant to head off a patchwork of different national social-media age laws. <b>What it means for you:</b> not yet law — it needs European Parliament and Council approval — but signals the EU moving toward one bloc-wide standard rather than country-by-country rules." }
+];
+
+var FEDERAL_TR = [
+  { name: "TAKE IT DOWN Yasası", status: "effect", date: "FTC uygulaması Mayıs 2026'da başladı", desc: "Platformların, doğrulanmış bir talepten sonra <b>48 saat içinde</b> rızasız samimi görüntüleri (yapay zeka deepfake'leri dahil) kaldırmasını zorunlu kılıyor. <b>Sizin için ne anlama geliyor:</b> bu çocuğunuzun başına gelirse, artık gerçek bir yasal kaldıraca sahipsiniz — platforma başvurun, süreyi kaçırırlarsa FTC'ye." },
+  { name: "Meta Teen Accounts Anlaşması", status: "effect", date: "Ağustos 2026'daki bir dava anlaşmasından beri uygulanıyor; tam uygulama 6-12 ay sürecek", desc: "Bir dava anlaşmasının ardından Meta, Instagram ve Facebook'ta 18 yaş altı hesaplar için yeni sınırlar getiriyor: varsayılan <b>günde 2 saat</b> zaman sınırı (ebeveyn ayarlanabilir), otomatik gece yarısı-6 engellemesi, okul günlerinde 8:00-15:00 arası bildirim engeli, ve bir genç yeni bir hesap açtığında ya da işaretlenmiş bir yetişkin hesabı tarafından iletişime geçildiğinde ebeveyn uyarıları. <b>Sizin için ne anlama geliyor:</b> gencinizin hesap ayarlarını şimdi kontrol edin — bu aktif olarak uygulanıyor, gelecekteki bir vaat değil." },
+  { name: "Kids Internet and Digital Safety Act", status: "pending", date: "29 Haziran 2026'da Meclis'ten 267-117 oyla geçti; Senato Ticaret Komitesi 5 Ağustos 2026'da revize bir versiyonu ilerletti", desc: "Revize edilmiş bir KOSA dahil 14 çocuk güvenliği yasa tasarısını birleştiriyor: yaş doğrulama, \"bağımlılık yapan kullanım\" tasarımına sınırlamalar, ebeveyn ekran süresi görünürlük araçları ve COPPA'nın korumalarını ve reklam hedefleme yasağını 12'den 17 yaşa genişletme. <b>Sizin için ne anlama geliyor:</b> hâlâ yasa değil — bir Senato komitesinden geçti ama platformlardan bir şey istenmeden önce tam bir Senato oylaması ve Meclis versiyonuyla uzlaştırma gerekiyor." },
+  { name: "45 eyalet yapay zeka CSAM'ini suç sayıyor", status: "effect", date: "Çoğu 2024-2025'te çıkarıldı", desc: "Yapay zeka tarafından üretilen çocuk cinsel istismarı materyali artık 45 eyalette ve federal yasada bir suç. <b>Sizin için ne anlama geliyor:</b> bir reşit olmayanın yapay zeka tarafından üretilmiş görüntülerini tam olarak gerçek görüntüler gibi bildirin — gri bir alan değil, ciddi bir suç olarak ele alınıyor." }
+];
+var STATE_TR = [
+  { name: "Teksas Uygulama Mağazası Hesap Verebilirlik Yasası", status: "effect", date: "1 Ocak 2026'dan beri yürürlükte — 5. Daire Mahkemesi tedbir kararını durdurdu", desc: "Uygulama mağazalarının (Apple, Google) bir kullanıcının yaşını doğrulamasını ve bir reşit olmayan bir uygulama indirmeden/satın almadan önce ebeveyn onayı almasını zorunlu kılıyor. <b>Sizin için ne anlama geliyor:</b> başka yerlerdeki benzer yasaların aksine, bu yasa engellenmedi — Teksas Başsavcısı şu anda bunu uygulayabilir." },
+  { name: "Louisiana Uygulama Mağazası Hesap Verebilirlik Yasası", status: "effect", date: "1 Temmuz 2026'dan beri yürürlükte", desc: "Teksas'la aynı temel gereklilik: uygulama mağazası seviyesinde yaş doğrulama ve ebeveyn onayı. <b>Sizin için ne anlama geliyor:</b> Louisiana'daysanız, çocuğunuz yaş kısıtlamalı bir uygulama indirmeden önce uygulama mağazalarının yaşını kontrol etmesi ve onayınızı alması gerekiyor." },
+  { name: "Kaliforniya Uygulama Mağazası Hesap Verebilirlik Yasası (DAAA)", status: "pending", date: "1 Ocak 2027'de yürürlüğe giriyor", desc: "Aynı uygulama mağazası yaş doğrulama modelinin Kaliforniya versiyonu. <b>Sizin için ne anlama geliyor:</b> henüz uygulanmıyor — ama Kaliforniya bunu benimseyen en büyük eyalet, bu da muhtemelen Apple ve Google'ı eyalet eyalet kurallar yerine tek bir ulusal yaklaşıma itecek." },
+  { name: "New York SAFE for Kids Yasası", status: "pending", date: "Kurallar Temmuz 2026'da kesinleşti; 25 Ocak 2027'de yürürlüğe giriyor", desc: "\"Bağımlılık yaratan akış\" algoritmaları için yaş doğrulama ve ebeveyn onayı gerektiriyor. <b>Sizin için ne anlama geliyor:</b> New York'taysanız, Ocak 2027 son tarihinden önce platformların yaş kontrolü istemleri sunmaya başlamasını bekleyin." },
+  { name: "Utah Uygulama Mağazası Hesap Verebilirlik Yasası", status: "pending", date: "Son tarih 6 Mayıs 2027'ye ertelendi; sadece özel dava yoluyla uygulanabilir", desc: "Aynı uygulama mağazası yaş doğrulama fikri, ama devlet kurumu uygulamasını tamamen kaldıracak şekilde değiştirildi. <b>Sizin için ne anlama geliyor:</b> bir devlet kurumunun bunu uygulamasını beklemeyin — bu sizin için ancak bir ebeveyn kişisel olarak dava açarsa geçerli olur." },
+  { name: "Kentucky - Character Technologies Davası", status: "court", date: "8 Ocak 2026'da Franklin İlçe Mahkemesi'nde açıldı", desc: "Bir yapay zeka sohbet botu şirketine karşı ilk eyalet davası: Kentucky Başsavcısı, Character.AI'ın çocukları istenmeyen cinsel içeriğe maruz bıraktığını ve kendine zarar vermeyi teşvik ettiğini, eyalet tüketici koruma ve veri gizliliği yasasını ihlal ettiğini iddia ediyor. <b>Sizin için ne anlama geliyor:</b> eyalet yasasının yapay zeka arkadaş uygulamalarını hesap verebilir tutup tutamayacağının canlı bir testi — nerede yaşarsanız yaşayın izlemeye değer." },
+  { name: "Okul telefon yasakları (26 eyalet)", status: "effect", date: "Eyalete göre değişir; birçoğu 2026-2027 öğretim yılında yürürlükte", desc: "Okul günü boyunca telefon kullanımına tam \"zilden zile\" yasakları. <b>Sizin için ne anlama geliyor:</b> kendi eyaletinizi ve bölgenizi kontrol edin — zamanlama ve katılık değişir (aşağıdaki haritaya bakın)." }
+];
+var INTL_TR = [
+  { name: "İngiltere Online Safety Act — CSEA Bildirim Yükümlülüğü", status: "effect", date: "Nisan 2026'dan beri yürürlükte", desc: "Kapsam dahilindeki kullanıcıdan kullanıcıya platformlar artık tespit edilen çocuk cinsel istismarı içeriğini (CSEA) sadece kaldırmak yerine, Birleşik Krallık'ın Ulusal Suç Ajansı'na proaktif olarak <b>bildirmek</b> zorunda. <b>Sizin için ne anlama geliyor:</b> sadece kaldırmadan çok daha katı bir standart — siz veya aileniz İngiltere'deyse bilinmeye değer, diğer ülkeler için de olası bir yön." },
+  { name: "AB KIDS Yasası (önerildi)", status: "pending", date: "Avrupa Komisyonu önerisi 17 Eylül 2026'da yayınlandı", desc: "Temmuz 2026'daki uzman paneli önerilerinin ardından, Avrupa Komisyonu resmi olarak \"Keeping Internet Digital Spaces Accountable and Trustworthy\" (KIDS) Yasası'nı önerdi — farklı ulusal sosyal medya yaş yasalarının bir karmaşasını önlemeyi amaçlayan AB çapında bir çerçeve. <b>Sizin için ne anlama geliyor:</b> henüz yasa değil — Avrupa Parlamentosu ve Konseyi'nin onayı gerekiyor — ama AB'nin ülke ülke kurallar yerine tek bir blok çapında standarda doğru ilerlediğinin sinyalini veriyor." }
+];
+
+var FEDERAL_ES = [
+  { name: "Ley TAKE IT DOWN", status: "effect", date: "La aplicación de la FTC comenzó en mayo de 2026", desc: "Exige que las plataformas eliminen imágenes íntimas no consensuadas reportadas (incluidos deepfakes de IA) dentro de <b>48 horas</b> de una solicitud verificada. <b>Qué significa para ti:</b> si esto le pasa a tu hijo, ahora tienes influencia legal real — repórtalo a la plataforma, luego a la FTC si no cumplen el plazo." },
+  { name: "Acuerdo de Meta sobre Cuentas Adolescentes", status: "effect", date: "En marcha desde un acuerdo judicial de agosto de 2026; implementación completa en 6-12 meses", desc: "Tras un acuerdo judicial, Meta está incorporando nuevos límites para cuentas de menores de 18 años en Instagram y Facebook: un límite predeterminado de <b>2 horas al día</b> (ajustable por los padres), un bloqueo automático de medianoche a 6am, notificaciones bloqueadas de 8am a 3pm en días escolares, y alertas a los padres cuando un adolescente crea una cuenta nueva o es contactado por una cuenta de adulto marcada. <b>Qué significa para ti:</b> revisa la configuración de la cuenta de tu adolescente ahora — esto se está implementando activamente, no es una promesa futura." },
+  { name: "Kids Internet and Digital Safety Act", status: "pending", date: "Aprobada por la Cámara 267-117 el 29 de junio de 2026; el Comité de Comercio del Senado avanzó una versión modificada el 5 de agosto de 2026", desc: "Agrupa 14 proyectos de ley de seguridad infantil, incluyendo una KOSA revisada: verificación de edad, límites al diseño de \"uso compulsivo\", herramientas de visibilidad de tiempo de pantalla para padres, y ampliar las protecciones de COPPA y la prohibición de publicidad dirigida de los 12 a los 17 años. <b>Qué significa para ti:</b> todavía no es ley — pasó un comité del Senado pero necesita una votación completa del Senado y reconciliación con la versión de la Cámara antes de exigir algo a las plataformas." },
+  { name: "45 estados penalizan el CSAM generado por IA", status: "effect", date: "La mayoría promulgadas en 2024-2025", desc: "El material de abuso sexual infantil generado por IA ya es delito estatal en 45 estados más la ley federal. <b>Qué significa para ti:</b> reporta imágenes generadas por IA de un menor exactamente como reportarías imágenes reales — se trata como un delito grave, no una zona gris." }
+];
+var STATE_ES = [
+  { name: "Ley de Responsabilidad de Tiendas de Apps de Texas", status: "effect", date: "Vigente desde el 1 de enero de 2026 — el 5º Circuito suspendió la orden judicial", desc: "Exige que las tiendas de apps (Apple, Google) verifiquen la edad de un usuario y obtengan consentimiento parental antes de que un menor descargue o compre una app. <b>Qué significa para ti:</b> a diferencia de leyes similares en otros lugares, esta no está bloqueada — el Fiscal General de Texas puede exigirla ahora mismo." },
+  { name: "Ley de Responsabilidad de Tiendas de Apps de Luisiana", status: "effect", date: "Vigente desde el 1 de julio de 2026", desc: "Mismo requisito básico que la ley de Texas: verificación de edad y consentimiento parental a nivel de tienda de apps. <b>Qué significa para ti:</b> si estás en Luisiana, las tiendas de apps deben verificar la edad y obtener tu consentimiento antes de que tu hijo descargue apps con restricción de edad." },
+  { name: "Ley de Responsabilidad de Tiendas de Apps de California (DAAA)", status: "pending", date: "Vigente a partir del 1 de enero de 2027", desc: "La versión de California del mismo modelo de verificación de edad en tiendas de apps. <b>Qué significa para ti:</b> aún no se aplica — pero California es el estado más grande en adoptar esto, probablemente empujando a Apple y Google hacia un enfoque nacional único en lugar de reglas estado por estado." },
+  { name: "Ley SAFE for Kids de Nueva York", status: "pending", date: "Reglas finalizadas en julio de 2026; vigente el 25 de enero de 2027", desc: "Exige verificación de edad y consentimiento parental para algoritmos de \"feed adictivo\". <b>Qué significa para ti:</b> si estás en Nueva York, espera que las plataformas comiencen a implementar verificaciones de edad antes del plazo de enero de 2027." },
+  { name: "Ley de Responsabilidad de Tiendas de Apps de Utah", status: "pending", date: "Plazo pospuesto al 6 de mayo de 2027; solo exigible mediante demanda privada", desc: "Mismo concepto de verificación de edad en tiendas de apps, pero modificada para eliminar por completo la aplicación por una agencia estatal. <b>Qué significa para ti:</b> no esperes que una agencia gubernamental aplique esto — solo entra en vigor para ti si un padre o madre demanda personalmente." },
+  { name: "Kentucky contra Character Technologies", status: "court", date: "Presentada el 8 de enero de 2026, Tribunal del Circuito de Franklin", desc: "La primera demanda estatal contra una empresa de chatbots de IA: el Fiscal General de Kentucky alega que Character.AI expuso a niños a contenido sexual no deseado y fomentó la autolesión, violando la ley estatal de protección al consumidor y privacidad de datos. <b>Qué significa para ti:</b> una prueba real de si la ley estatal puede responsabilizar a las apps de compañía de IA — vale la pena seguirla vivas donde vivas." },
+  { name: "Prohibiciones de celulares en escuelas (26 estados)", status: "effect", date: "Varía por estado; varias vigentes en el ciclo escolar 2026-2027", desc: "Prohibiciones completas \"de campana a campana\" del uso de celulares durante el día escolar. <b>Qué significa para ti:</b> revisa tu estado y distrito específico — el momento y la severidad varían (ver el mapa abajo)." }
+];
+var INTL_ES = [
+  { name: "Ley de Seguridad en Línea del Reino Unido — Deber de Reportar CSEA", status: "effect", date: "Vigente desde abril de 2026", desc: "Las plataformas de usuario a usuario dentro del alcance ahora deben <b>reportar</b> proactivamente el contenido detectado de explotación y abuso sexual infantil (CSEA) a la Agencia Nacional contra el Crimen del Reino Unido, no solo eliminarlo. <b>Qué significa para ti:</b> un estándar mucho más estricto que solo eliminar — vale la pena saberlo si tú o tu familia están en el Reino Unido, y una dirección probable para otras jurisdicciones." },
+  { name: "Ley KIDS de la UE (propuesta)", status: "pending", date: "Propuesta de la Comisión Europea publicada el 17 de septiembre de 2026", desc: "Tras sus recomendaciones del panel de expertos de julio de 2026, la Comisión Europea propuso formalmente la Ley \"Keeping Internet Digital Spaces Accountable and Trustworthy\" (KIDS) — un marco a nivel de la UE pensado para evitar un mosaico de diferentes leyes nacionales de edad para redes sociales. <b>Qué significa para ti:</b> aún no es ley — necesita la aprobación del Parlamento Europeo y el Consejo — pero indica que la UE se mueve hacia un estándar único para todo el bloque en lugar de reglas país por país." }
+];
+
+var STATUS_LABEL = {
+  en: { effect: "In Effect", pending: "Pending", court: "In Court" },
+  tr: { effect: "Yürürlükte", pending: "Beklemede", court: "Mahkemede" },
+  es: { effect: "Vigente", pending: "Pendiente", court: "En los Tribunales" }
+};
+
+var FEDERAL = legIsTr ? FEDERAL_TR : legIsEs ? FEDERAL_ES : FEDERAL_EN;
+var STATE = legIsTr ? STATE_TR : legIsEs ? STATE_ES : STATE_EN;
+var INTL = legIsTr ? INTL_TR : legIsEs ? INTL_ES : INTL_EN;
+var labels = STATUS_LABEL[legIsTr ? 'tr' : legIsEs ? 'es' : 'en'];
+
+function renderList(elId, items) {
+  document.getElementById(elId).innerHTML = items.map(function(item) {
+    return '<div class="law-card">' +
+      '<div class="law-head"><div class="law-name">' + item.name + '</div><div class="status-chip ' + item.status + '">' + labels[item.status] + '</div></div>' +
+      '<div class="law-date">' + item.date + '</div>' +
+      '<div class="law-desc">' + item.desc + '</div>' +
+    '</div>';
+  }).join('');
+}
+renderList('federalList', FEDERAL);
+renderList('stateList', STATE);
+renderList('intlList', INTL);
+</script>
+<script src="/assets/lang-switcher.js"></script>
+<script src="/assets/site-search.js"></script>
+<script src="/assets/play-now-fab.js"></script>
+</body>
+</html>

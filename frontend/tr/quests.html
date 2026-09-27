@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Play a Digital Safety Knights quest — free interactive safety scenarios for kids, no account needed.">
+<title>Quests — Digital Safety Knights</title>
+<link rel="canonical" href="https://digitalsafetyknights.org/tr/quests.html">
+<link rel="alternate" hreflang="en" href="https://digitalsafetyknights.org/en/quests.html">
+<link rel="alternate" hreflang="tr" href="https://digitalsafetyknights.org/tr/quests.html">
+<link rel="alternate" hreflang="es" href="https://digitalsafetyknights.org/es/quests.html">
+<link rel="alternate" hreflang="x-default" href="https://digitalsafetyknights.org/quests.html">
+<meta property="og:title" content="Quests — Digital Safety Knights">
+<meta property="og:description" content="Play a Digital Safety Knights quest — free interactive safety scenarios for kids, no account needed.">
+<meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
+<meta property="og:url" content="https://digitalsafetyknights.org/quests.html">
+<meta property="og:type" content="website">
+<link rel="icon" href="/assets/favicon.ico">
+<link rel="stylesheet" href="/assets/theme.css">
+<style>
+  :root {
+    --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a;
+    --light: #f4f6fb; --white: #ffffff; --danger: #e63946; --success: #2a9d8f;
+    --gray: #6c757d; --text: #2d3748; --teal: #3EC6C0; --purple: #8A5FBF;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Nunito Sans', 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); min-height: 100vh; }
+  a { color: inherit; }
+  .topbar { background: var(--navy); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+  .topbar .brand { color: var(--gold); font-weight: 900; text-decoration: none; font-size: 1.05rem; display: flex; align-items: center; gap: 8px; }
+  .topbar .home-link { color: #cdd6ea; text-decoration: none; font-size: 0.85rem; font-weight: 700; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 28px 18px 80px; }
+
+  /* ---- Nickname gate ---- */
+  #nickname-screen { text-align: center; padding-top: 12vh; }
+  #nickname-screen h1 { font-size: 1.6rem; color: var(--navy); margin-bottom: 10px; }
+  #nickname-screen p { color: var(--gray); margin-bottom: 24px; font-size: 0.95rem; }
+  #nickname-input { width: 100%; max-width: 320px; padding: 16px 18px; font-size: 1.1rem; border: 2px solid #dfe4ee; border-radius: 14px; text-align: center; font-weight: 700; color: var(--navy); }
+  #nickname-input:focus { outline: none; border-color: var(--gold); }
+  .privacy-note { font-size: 0.78rem; color: var(--gray); margin-top: 14px; max-width: 340px; margin-left: auto; margin-right: auto; }
+
+  .emblem-picker { max-width: 340px; margin: 22px auto 0; }
+  .emblem-label { font-size: 0.8rem; font-weight: 800; color: var(--navy); margin-bottom: 8px; }
+  .emblem-row { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 14px; }
+  .emblem-swatch { width: 40px; height: 40px; border-radius: 50%; border: 3px solid transparent; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; background: var(--light); }
+  .emblem-swatch.color-swatch.selected { border-color: var(--navy); transform: scale(1.1); }
+  .emblem-swatch.symbol-swatch { background: #eef1f8; }
+  .emblem-swatch.symbol-swatch.selected { border-color: var(--gold); background: #fff6e0; }
+  .emblem-swatch.locked { opacity: 0.45; cursor: not-allowed; font-size: 0.85rem; }
+  .emblem-preview { width: 64px; height: 64px; border-radius: 50%; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; border: 3px solid white; box-shadow: 0 4px 14px rgba(13,27,62,0.2); }
+
+  /* ---- Quest picker ---- */
+  #picker-screen h1 { font-size: 1.7rem; color: var(--navy); margin-bottom: 4px; }
+  #picker-screen .sub { color: var(--gray); margin-bottom: 14px; font-size: 0.95rem; }
+  .tier-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+  .tier-label { font-size: 0.78rem; font-weight: 800; color: var(--gray); }
+  .tier-btn { background: var(--white); border: 2px solid #dfe4ee; border-radius: 18px; padding: 7px 14px; font-size: 0.8rem; font-weight: 800; color: var(--navy); cursor: pointer; }
+  .tier-btn.active { border-color: var(--gold); background: rgba(201,168,76,0.12); }
+  .quest-grid { display: grid; gap: 14px; }
+  .quest-card { background: var(--white); border-radius: 18px; padding: 18px 20px; display: flex; align-items: center; gap: 16px; text-decoration: none; box-shadow: 0 2px 20px rgba(13,27,62,0.08); border: 2px solid transparent; cursor: pointer; text-align: left; width: 100%; font: inherit; color: inherit; }
+  .quest-card:active { transform: scale(0.985); }
+  .quest-card.done { border-color: var(--success); }
+  .quest-emoji { font-size: 2.2rem; width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; background: var(--light); border-radius: 14px; flex-shrink: 0; }
+  .quest-info h3 { font-size: 1.02rem; color: var(--navy); margin-bottom: 2px; }
+  .quest-info p { font-size: 0.82rem; color: var(--gray); }
+  .quest-check { margin-left: auto; font-size: 1.3rem; color: var(--success); }
+  .badge-strip { display: flex; gap: 10px; margin: 24px 0 8px; overflow-x: auto; padding-bottom: 4px; }
+  .mini-badge { flex-shrink: 0; text-align: center; width: 74px; }
+  .mini-badge .circle { width: 54px; height: 54px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 4px; }
+  .mini-badge.earned .circle { background: linear-gradient(135deg, var(--gold2), var(--gold)); box-shadow: 0 4px 14px rgba(201,168,76,0.5); }
+  .mini-badge.locked .circle { background: #e2e6ef; filter: grayscale(1); opacity: 0.6; }
+  .mini-badge span.label { font-size: 0.68rem; color: var(--gray); font-weight: 700; }
+
+  /* ---- Player ---- */
+  #player-screen .q-header { text-align: center; margin-bottom: 20px; }
+  #player-screen .q-progress { font-size: 0.78rem; color: var(--gray); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+  .progress-track { height: 6px; background: #e2e6ef; border-radius: 3px; overflow: hidden; margin-bottom: 20px; }
+  .progress-fill { height: 100%; background: var(--gold); border-radius: 3px; transition: width 0.3s ease; }
+  .narrator-row { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+  .narrator-badge { background: var(--navy); color: var(--gold); font-weight: 900; font-size: 0.72rem; letter-spacing: 1px; padding: 6px 14px; border-radius: 20px; }
+  .prompt-card { background: var(--white); border-radius: 18px; padding: 24px 22px; box-shadow: 0 2px 24px rgba(13,27,62,0.08); margin-bottom: 20px; }
+  .prompt-card p { font-size: 1.15rem; font-weight: 700; color: var(--navy); line-height: 1.4; }
+  .choice-btn { display: block; width: 100%; text-align: left; background: var(--white); border: 2px solid #dfe4ee; border-radius: 14px; padding: 18px 20px; margin-bottom: 12px; font-size: 1rem; font-weight: 600; color: var(--text); cursor: pointer; min-height: 56px; }
+  .choice-btn:active { transform: scale(0.985); }
+  .choice-btn.correct { border-color: var(--success); background: rgba(42,157,143,0.08); }
+  .choice-btn.incorrect { border-color: var(--danger); background: rgba(230,57,70,0.06); }
+  .choice-btn:disabled { cursor: default; }
+  .coach-box { border-radius: 14px; padding: 16px 18px; margin: 6px 0 20px; font-size: 0.95rem; line-height: 1.5; }
+  .coach-box.correct { background: rgba(42,157,143,0.1); border-left: 4px solid var(--success); }
+  .coach-box.incorrect { background: rgba(230,57,70,0.08); border-left: 4px solid var(--danger); }
+  .next-btn { display: block; width: 100%; background: var(--gold); color: var(--navy); border: none; padding: 18px; border-radius: 14px; font-weight: 900; font-size: 1.02rem; cursor: pointer; min-height: 56px; }
+
+  /* ---- Score / outro ---- */
+  #score-screen { text-align: center; padding-top: 6vh; }
+  .score-shield { font-size: 4rem; margin-bottom: 6px; }
+  #score-screen h1 { font-size: 1.7rem; color: var(--navy); margin-bottom: 6px; }
+  #score-screen .score-num { font-size: 1.05rem; color: var(--gray); margin-bottom: 22px; }
+  .badge-unlock { background: linear-gradient(135deg, var(--gold2), var(--gold)); color: var(--navy); border-radius: 18px; padding: 20px; margin-bottom: 20px; font-weight: 800; }
+  .outro-actions { display: grid; gap: 12px; margin-top: 10px; }
+  .btn-primary { background: var(--gold); color: var(--navy); border: none; padding: 16px; border-radius: 14px; font-weight: 900; font-size: 1rem; cursor: pointer; min-height: 56px; text-decoration: none; display: inline-block; }
+  .btn-ghost { background: var(--white); color: var(--navy); border: 2px solid #dfe4ee; padding: 16px; border-radius: 14px; font-weight: 800; font-size: 0.95rem; cursor: pointer; min-height: 56px; text-decoration: none; display: inline-block; }
+  .hidden { display: none !important; }
+
+  /* Classroom mode — teacher projects, class votes by show of hands, teacher
+     clicks the answer. Same quest engine, just bigger text for a projector
+     and no personal profile UI. */
+  body.classroom-mode .prompt-card p { font-size: 1.55rem; line-height: 1.45; }
+  body.classroom-mode .narrator-badge { font-size: 0.95rem; padding: 9px 20px; }
+  body.classroom-mode .choice-btn { font-size: 1.25rem; padding: 24px 26px; min-height: 68px; }
+  body.classroom-mode .coach-box { font-size: 1.1rem; }
+  body.classroom-mode #personal-stats-row,
+  body.classroom-mode #kp-ring,
+  body.classroom-mode #family-squad-box { display: none !important; }
+</style>
+<script src="/assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="/">🛡️ Digital Safety Knights</a>
+  <div style="display:flex;gap:16px;align-items:center;">
+    <a class="home-link" href="/resources.html" data-i18n="nav.resources">📚 Resources</a>
+    <a class="home-link" href="/game.html" data-i18n="qp.playGame">🎮 Play Game</a>
+    <a class="home-link" href="/" data-i18n="qp.home">← Home</a>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- NICKNAME GATE -->
+  <div id="nickname-screen">
+    <h1 data-i18n="qp.pickNickname">Pick your Knight nickname</h1>
+    <p data-i18n="qp.nicknameHelp">No last name, no email — just a nickname you like. It stays on this device only.</p>
+    <input id="nickname-input" maxlength="20" placeholder="e.g. PixelKnight99" autocomplete="off" data-i18n-attr="placeholder:qp.nicknamePlaceholder">
+
+    <div class="emblem-picker">
+      <div class="emblem-preview" id="emblem-preview">🛡️</div>
+      <div class="emblem-label" data-i18n="qp.pickColor">Pick your emblem color</div>
+      <div class="emblem-row" id="emblem-colors"></div>
+      <div class="emblem-label" data-i18n="qp.pickSymbol">Pick your emblem symbol</div>
+      <div class="emblem-row" id="emblem-symbols"></div>
+    </div>
+
+    <div class="outro-actions" style="max-width:320px;margin:20px auto 0;">
+      <button class="btn-primary" onclick="saveNickname()" data-i18n="qp.shieldUp">Shield up! 🛡️</button>
+    </div>
+    <p class="privacy-note" data-i18n="qp.privacyNote">Your nickname is stored only in this browser (localStorage). We never send it anywhere, and there's no account or login.</p>
+  </div>
+
+  <!-- QUEST PICKER -->
+  <div id="picker-screen" class="hidden">
+    <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:6px;">
+      <div id="kp-ring" style="width:64px;height:64px;flex-shrink:0;"></div>
+      <div style="flex:1;min-width:200px;">
+        <h1 id="picker-greeting" style="margin-bottom:2px;">Welcome back, Knight!</h1>
+        <div id="personal-stats-row" style="font-size:0.85rem;color:var(--gray);">
+          <b id="kp-points-label">0</b> <span data-i18n="qp.knightPoints">Knight Points</span>
+          <span id="kp-streak-label" style="margin-left:10px;"></span>
+          <a href="#" onclick="openEmblemEditor();return false;" style="margin-left:10px;color:var(--gold);font-weight:700;text-decoration:none;" data-i18n="qp.customizeEmblem">🎨 Customize Emblem</a>
+        </div>
+      </div>
+    </div>
+    <div id="classroom-badge" class="hidden" style="background:var(--navy);color:var(--gold2);font-weight:900;font-size:0.78rem;letter-spacing:0.5px;padding:8px 16px;border-radius:20px;margin-bottom:14px;">🎓 <span data-i18n="qp.classroomMode">Classroom Mode — no profile, no personal data</span></div>
+    <p class="sub" data-i18n="qp.pickQuest">Pick a quest. Each one takes about 3 minutes.</p>
+    <div class="tier-row">
+      <span class="tier-label" data-i18n="qp.readingLevel">Reading level:</span>
+      <button type="button" class="tier-btn" data-tier="younger" onclick="setQuestTier('younger')" data-i18n="qp.tierYounger">🧒 6–9</button>
+      <button type="button" class="tier-btn" data-tier="standard" onclick="setQuestTier('standard')" data-i18n="qp.tierStandard">🧑 10–13</button>
+      <button type="button" class="tier-btn" data-tier="older" onclick="setQuestTier('older')" data-i18n="qp.tierOlder">🎓 14–17</button>
+    </div>
+    <div class="badge-strip" id="badge-strip"></div>
+    <div class="quest-grid" id="quest-grid"></div>
+    <div id="family-squad-box" style="display:none;margin-top:22px;background:var(--light);border-radius:14px;padding:14px 18px;"></div>
+  </div>
+
+  <!-- PLAYER -->
+  <div id="player-screen" class="hidden">
+    <div class="q-header">
+      <div class="q-progress" id="q-progress-label">QUESTION 1 OF 6</div>
+      <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+    </div>
+    <div class="narrator-row"><span class="narrator-badge" id="narrator-name">SHIELDY</span></div>
+    <div class="prompt-card"><p id="prompt-text"></p></div>
+    <div id="choices-list"></div>
+    <div id="coach-area"></div>
+    <button class="next-btn hidden" id="next-btn" onclick="nextQuestion()" data-i18n="qp.continueBtn">Continue →</button>
+  </div>
+
+  <!-- SCORE / OUTRO -->
+  <div id="score-screen" class="hidden">
+    <div class="score-shield">🛡️</div>
+    <h1 data-i18n="qp.shieldUpPlain">Shield up!</h1>
+    <div class="score-num" id="score-summary"></div>
+    <div id="badge-unlock-box"></div>
+    <div class="outro-actions">
+      <button class="btn-primary" onclick="showPicker()" data-i18n="qp.backToQuests">Back to Quests</button>
+      <a class="btn-ghost" href="/certificate.html" data-i18n="qp.viewCertificate">🏅 View / Print Certificate</a>
+      <a class="btn-ghost" href="/member-id.html" data-i18n="qp.viewMemberCard">🪪 View Member ID Card</a>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const QUESTS = [
+  { id: "roblox-safety-lab",     file: "content/quests/roblox-safety-lab.json" },
+  { id: "ai-threat-awareness",   file: "content/quests/ai-threat-awareness.json" },
+  { id: "grooming-watch",        file: "content/quests/grooming-watch.json" },
+  { id: "parental-controls",     file: "content/quests/parental-controls.json" },
+  { id: "family-cyber-defense",  file: "content/quests/family-cyber-defense.json" },
+  { id: "digital-citizenship",   file: "content/quests/digital-citizenship.json" },
+];
+
+const TIER_KEY = "dsk_quest_tier";
+function getQuestTier() { return localStorage.getItem(TIER_KEY) || "standard"; }
+function setQuestTier(tier) { localStorage.setItem(TIER_KEY, tier); renderTierButtons(); }
+function renderTierButtons() {
+  const tier = getQuestTier();
+  document.querySelectorAll('.tier-btn').forEach(b => b.classList.toggle('active', b.getAttribute('data-tier') === tier));
+}
+
+const PROGRESS_KEY = "dsk_progress";
+const NICKNAME_KEY = "dsk_nickname";
+const EMBLEM_KEY = "dsk_emblem";
+const EMBLEM_COLORS = [
+  { v: "#c9a84c" }, { v: "#3EC6C0" }, { v: "#8A5FBF" }, { v: "#9e9e9e" }, { v: "#e6636e" }, { v: "#7cbf6b" },
+  { v: "#1a1a2e", unlock: 100 }, { v: "#e8b4b8", unlock: 250 }
+];
+const EMBLEM_SYMBOLS = [
+  { v: "⚔️" }, { v: "🛡️" }, { v: "⭐" }, { v: "🔥" }, { v: "🌙" }, { v: "🍀" },
+  { v: "💎", unlock: 250 }, { v: "👑", unlock: 500 }
+];
+
+function getEmblem() {
+  try { return JSON.parse(localStorage.getItem(EMBLEM_KEY)) || { color: EMBLEM_COLORS[0].v, symbol: EMBLEM_SYMBOLS[1].v }; }
+  catch (e) { return { color: EMBLEM_COLORS[0].v, symbol: EMBLEM_SYMBOLS[1].v }; }
+}
+function saveEmblem(e) { localStorage.setItem(EMBLEM_KEY, JSON.stringify(e)); }
+
+function renderEmblemPicker() {
+  const current = getEmblem();
+  const points = window.DSKPoints ? DSKPoints.getPoints() : 0;
+  const colorRow = document.getElementById('emblem-colors');
+  const symbolRow = document.getElementById('emblem-symbols');
+  colorRow.innerHTML = EMBLEM_COLORS.map(c => {
+    const locked = c.unlock && points < c.unlock;
+    return `<button type="button" class="emblem-swatch color-swatch${c.v === current.color ? ' selected' : ''}${locked ? ' locked' : ''}" style="background:${c.v}" ${locked ? `title="${(window.DSKi18n ? DSKi18n.t('qp.unlocksAt', 'Unlocks at {n} Knight Points') : 'Unlocks at {n} Knight Points').replace('{n}', c.unlock)}" disabled` : `onclick="pickEmblemColor('${c.v}')"`}>${locked ? '🔒' : ''}</button>`;
+  }).join('');
+  symbolRow.innerHTML = EMBLEM_SYMBOLS.map(s => {
+    const locked = s.unlock && points < s.unlock;
+    return `<button type="button" class="emblem-swatch symbol-swatch${s.v === current.symbol ? ' selected' : ''}${locked ? ' locked' : ''}" ${locked ? `title="${(window.DSKi18n ? DSKi18n.t('qp.unlocksAt', 'Unlocks at {n} Knight Points') : 'Unlocks at {n} Knight Points').replace('{n}', s.unlock)}" disabled` : `onclick="pickEmblemSymbol('${s.v}')"`}>${locked ? '🔒' : s.v}</button>`;
+  }).join('');
+  updateEmblemPreview();
+}
+function pickEmblemColor(c) { const e = getEmblem(); e.color = c; saveEmblem(e); renderEmblemPicker(); }
+function pickEmblemSymbol(s) { const e = getEmblem(); e.symbol = s; saveEmblem(e); renderEmblemPicker(); }
+
+function openEmblemEditor() {
+  document.getElementById('nickname-input').value = localStorage.getItem(NICKNAME_KEY) || '';
+  document.getElementById('picker-screen').classList.add('hidden');
+  document.getElementById('nickname-screen').classList.remove('hidden');
+  renderEmblemPicker();
+}
+function updateEmblemPreview() {
+  const e = getEmblem();
+  const preview = document.getElementById('emblem-preview');
+  if (preview) { preview.style.background = e.color; preview.textContent = e.symbol; }
+}
+
+function getProgress() {
+  try { return JSON.parse(localStorage.getItem(PROGRESS_KEY)) || { completed: {} }; }
+  catch (e) { return { completed: {} }; }
+}
+function saveProgress(p) { localStorage.setItem(PROGRESS_KEY, JSON.stringify(p)); }
+function completedCount() { return Object.keys(getProgress().completed).length; }
+
+function badgeForCount(n) {
+  const t = window.DSKi18n ? DSKi18n.t : function(k, f) { return f; };
+  if (n >= 6) return { name: t('qp.badgeGold', 'Gold Sentinel'), emoji: "🏅" };
+  if (n >= 3) return { name: t('qp.badgeSilver', 'Silver Guard'), emoji: "🥈" };
+  if (n >= 1) return { name: t('qp.badgeBronze', 'Bronze Squire'), emoji: "🥉" };
+  return null;
+}
+
+function saveNickname() {
+  const val = document.getElementById('nickname-input').value.trim();
+  if (!val) { document.getElementById('nickname-input').focus(); return; }
+  localStorage.setItem(NICKNAME_KEY, val);
+  showPicker();
+}
+
+function showPicker() {
+  document.getElementById('nickname-screen').classList.add('hidden');
+  document.getElementById('player-screen').classList.add('hidden');
+  document.getElementById('score-screen').classList.add('hidden');
+  document.getElementById('picker-screen').classList.remove('hidden');
+
+  document.getElementById('classroom-badge').classList.toggle('hidden', !isClassroomMode());
+
+  if (isClassroomMode()) {
+    const classroomTitle = window.DSKi18n ? DSKi18n.t('qp.classroomPicker', 'Pick a quest to project') : 'Pick a quest to project';
+    document.getElementById('picker-greeting').textContent = classroomTitle;
+  } else {
+    const nick = localStorage.getItem(NICKNAME_KEY) || "Knight";
+    const emblem = getEmblem();
+    const welcomeText = (window.DSKi18n ? DSKi18n.t('qp.welcomeBack', 'Welcome back, {n}!') : 'Welcome back, {n}!').replace('{n}', nick);
+    document.getElementById('picker-greeting').innerHTML =
+      '<span style="display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:' + emblem.color + ';font-size:1rem;vertical-align:middle;margin-right:8px;">' + emblem.symbol + '</span>' +
+      welcomeText;
+  }
+
+  if (window.DSKPoints && !isClassroomMode()) {
+    const streak = DSKPoints.checkStreak();
+    DSKPoints.renderLevelRing(document.getElementById('kp-ring'), DSKPoints.getPoints());
+    document.getElementById('kp-points-label').textContent = DSKPoints.getPoints();
+    const tStreak = window.DSKi18n ? DSKi18n.t : function(k, f) { return f; };
+    document.getElementById('kp-streak-label').textContent = streak.count > 1 ? ('🔥 ' + tStreak('qp.dayStreak', '{n}-day streak').replace('{n}', streak.count)) : '';
+
+    const profiles = DSKPoints.getFamilyProfiles();
+    const names = Object.keys(profiles);
+    const squadBox = document.getElementById('family-squad-box');
+    if (names.length > 1) {
+      squadBox.style.display = 'block';
+      const ptsWord = tStreak('qp.pts', 'pts');
+      squadBox.innerHTML = '<b style="color:var(--navy);">' + tStreak('qp.familySquad', '👪 Family Squad on this device') + '</b><br>' +
+        names.map(n => n + ': <b>' + profiles[n] + '</b> ' + ptsWord).join(' &nbsp;·&nbsp; ') +
+        ' &nbsp;·&nbsp; <b>' + tStreak('qp.familyTotal', 'Family Total: {n} pts').replace('{n}', DSKPoints.familyTotal()) + '</b>';
+    } else {
+      squadBox.style.display = 'none';
+    }
+  }
+
+  const progress = getProgress();
+  const grid = document.getElementById('quest-grid');
+  grid.innerHTML = "";
+  QUESTS.forEach(q => {
+    const done = !!progress.completed[q.id];
+    const btn = document.createElement('button');
+    btn.className = "quest-card" + (done ? " done" : "");
+    btn.onclick = () => startQuest(q);
+    const statusText = window.DSKi18n ? (done ? DSKi18n.t('qp.completed', 'Completed') : DSKi18n.t('qp.notStarted', 'Not started')) : (done ? 'Completed' : 'Not started');
+    btn.innerHTML = `<div class="quest-emoji">${q.meta ? q.meta.emoji : "🛡️"}</div>
+      <div class="quest-info"><h3>${q.meta ? q.meta.title : q.id}</h3><p>${statusText}</p></div>
+      ${done ? '<div class="quest-check">✅</div>' : ''}`;
+    grid.appendChild(btn);
+  });
+
+  renderTierButtons();
+
+  const n = completedCount();
+  const t = window.DSKi18n ? DSKi18n.t : function(k, f) { return f; };
+  const tiers = [
+    { key: "bronze-squire", label: t('qp.badgeBronze', 'Bronze Squire'), emoji: "🥉", need: 1 },
+    { key: "silver-guard", label: t('qp.badgeSilver', 'Silver Guard'), emoji: "🥈", need: 3 },
+    { key: "gold-sentinel", label: t('qp.badgeGold', 'Gold Sentinel'), emoji: "🏅", need: 6 },
+    { key: "diamond-defender", label: t('qp.badgeDiamond', 'Diamond Defender'), emoji: "💎", need: 99 },
+    { key: "digital-knight", label: t('qp.badgeKnight', 'Digital Knight'), emoji: "⚔️", need: 99 },
+  ];
+  const strip = document.getElementById('badge-strip');
+  strip.innerHTML = tiers.map(t => {
+    const earned = n >= t.need;
+    return `<div class="mini-badge ${earned ? 'earned' : 'locked'}"><div class="circle">${t.emoji}</div><span class="label">${t.label}</span></div>`;
+  }).join("");
+
+  // Load meta (title/emoji) for cards not yet loaded, then re-render once.
+  const metaLang = window.DSKi18n ? DSKi18n.lang : 'en';
+  const needsMeta = QUESTS.some(q => !q.meta);
+  if (needsMeta) {
+    Promise.all(QUESTS.map(q => q.meta ? Promise.resolve() : fetch(metaLang === 'tr' ? `content/quests/${q.id}-tr.json` : metaLang === 'es' ? `content/quests/${q.id}-es.json` : q.file).then(r => r.json()).then(data => { q.meta = data; q.data = data; })))
+      .then(() => showPicker());
+  }
+}
+
+let currentQuest = null;
+let currentIndex = 0;
+let currentScore = 0;
+
+function startQuest(q) {
+  currentIndex = 0;
+  currentScore = 0;
+  document.getElementById('picker-screen').classList.add('hidden');
+  document.getElementById('player-screen').classList.remove('hidden');
+
+  const lang = window.DSKi18n ? DSKi18n.lang : 'en';
+  const tier = getQuestTier();
+  const isForParents = q.meta && q.meta.forParents;
+  let variantFile = q.file;
+  if (lang === 'tr') {
+    variantFile = `content/quests/${q.id}-tr.json`;
+  } else if (lang === 'es') {
+    variantFile = `content/quests/${q.id}-es.json`;
+  } else if (tier !== "standard" && !isForParents) {
+    variantFile = `content/quests/${q.id}-${tier}.json`;
+  }
+
+  if (variantFile === q.file && q.data) {
+    currentQuest = q;
+    renderQuestion();
+    return;
+  }
+
+  fetch(variantFile)
+    .then(r => { if (!r.ok) throw new Error("variant missing"); return r.json(); })
+    .then(data => { currentQuest = Object.assign({}, q, { data: data }); renderQuestion(); })
+    .catch(() => {
+      // No variant for this quest/language (e.g. parent-facing content) — standard version always exists.
+      fetch(q.file).then(r => r.json()).then(data => { currentQuest = Object.assign({}, q, { data: data }); renderQuestion(); });
+    });
+}
+
+function renderQuestion() {
+  const total = currentQuest.data.questions.length;
+  const qLabel = window.DSKi18n ? DSKi18n.t('qp.questionOf', 'QUESTION {i} OF {n}') : 'QUESTION {i} OF {n}';
+  document.getElementById('q-progress-label').textContent = qLabel.replace('{i}', currentIndex + 1).replace('{n}', total);
+  document.getElementById('progress-fill').style.width = Math.round((currentIndex / total) * 100) + "%";
+
+  const q = currentQuest.data.questions[currentIndex];
+  document.getElementById('narrator-name').textContent = q.narrator;
+  document.getElementById('prompt-text').textContent = q.prompt;
+  document.getElementById('coach-area').innerHTML = "";
+  document.getElementById('next-btn').classList.add('hidden');
+
+  const list = document.getElementById('choices-list');
+  list.innerHTML = "";
+  q.choices.forEach((choice, i) => {
+    const btn = document.createElement('button');
+    btn.className = "choice-btn";
+    btn.textContent = choice.text;
+    btn.onclick = () => selectChoice(i);
+    list.appendChild(btn);
+  });
+}
+
+function selectChoice(i) {
+  const q = currentQuest.data.questions[currentIndex];
+  const choice = q.choices[i];
+  const buttons = document.querySelectorAll('#choices-list .choice-btn');
+  buttons.forEach((b, idx) => {
+    b.disabled = true;
+    if (idx === i) b.classList.add(choice.correct ? 'correct' : 'incorrect');
+  });
+  if (choice.correct) currentScore++;
+
+  const coachBox = document.createElement('div');
+  coachBox.className = "coach-box " + (choice.correct ? "correct" : "incorrect");
+  coachBox.textContent = (choice.correct ? "✅ " : "💡 ") + choice.coach;
+  document.getElementById('coach-area').innerHTML = "";
+  document.getElementById('coach-area').appendChild(coachBox);
+
+  document.getElementById('next-btn').classList.remove('hidden');
+}
+
+function nextQuestion() {
+  currentIndex++;
+  if (currentIndex >= currentQuest.data.questions.length) {
+    finishQuest();
+  } else {
+    renderQuestion();
+  }
+}
+
+function finishQuest() {
+  const progress = getProgress();
+  const wasAlreadyDone = !!progress.completed[currentQuest.id];
+  progress.completed[currentQuest.id] = { score: currentScore, total: currentQuest.data.questions.length, date: new Date().toISOString() };
+  saveProgress(progress);
+
+  document.getElementById('player-screen').classList.add('hidden');
+  document.getElementById('score-screen').classList.remove('hidden');
+  const t = window.DSKi18n ? DSKi18n.t : function(k, f) { return f; };
+  const scoreLabel = t('qp.scoreLine', '{title}: {score}/{total} correct')
+    .replace('{title}', currentQuest.data.title).replace('{score}', currentScore).replace('{total}', currentQuest.data.questions.length);
+  document.getElementById('score-summary').textContent = scoreLabel;
+
+  const n = completedCount();
+  const badge = badgeForCount(n);
+  const box = document.getElementById('badge-unlock-box');
+  const newlyCompleted = !wasAlreadyDone;
+  if (badge && newlyCompleted && (n === 1 || n === 3 || n === 6)) {
+    box.innerHTML = `<div class="badge-unlock">${badge.emoji} ${t('qp.badgeUnlocked', 'Badge unlocked: {name}!').replace('{name}', badge.name)}</div>`;
+  } else if (badge) {
+    box.innerHTML = `<div class="badge-unlock">${badge.emoji} ${t('qp.currentBadge', 'Current badge: {name} · {n}/6 quests done').replace('{name}', badge.name).replace('{n}', n)}</div>`;
+  } else {
+    box.innerHTML = "";
+  }
+
+  if (newlyCompleted && window.DSKPoints && !isClassroomMode()) {
+    DSKPoints.addPoints(currentScore * 10, currentQuest.data.title);
+    DSKPoints.markComboActivity('quest');
+  }
+}
+
+function isClassroomMode() { return document.body.classList.contains('classroom-mode'); }
+
+// Boot
+(function init() {
+  const params = new URLSearchParams(location.search);
+  if (params.get('mode') === 'classroom') document.body.classList.add('classroom-mode');
+  const nick = localStorage.getItem(NICKNAME_KEY);
+  const deepLinkId = params.get('quest');
+
+  if (nick || isClassroomMode()) {
+    if (deepLinkId) {
+      const q = QUESTS.find(x => x.id === deepLinkId);
+      if (q) {
+        fetch(q.file).then(r => r.json()).then(data => { q.meta = data; q.data = data; startQuest(q); });
+        return;
+      }
+    }
+    showPicker();
+  } else {
+    document.getElementById('nickname-screen').classList.remove('hidden');
+    renderEmblemPicker();
+  }
+})();
+</script>
+<script src="/assets/lang-switcher.js"></script>
+<script src="/assets/site-search.js"></script>
+<script src="/assets/play-now-fab.js"></script>
+</body>
+</html>

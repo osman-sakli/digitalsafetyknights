@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Chat Simulator — practice a live, scripted risky conversation and choose how to respond, safely.">
+<title>Chat Simulator — Digital Safety Knights</title>
+<link rel="canonical" href="https://digitalsafetyknights.org/tr/chat-simulator.html">
+<link rel="alternate" hreflang="en" href="https://digitalsafetyknights.org/en/chat-simulator.html">
+<link rel="alternate" hreflang="tr" href="https://digitalsafetyknights.org/tr/chat-simulator.html">
+<link rel="alternate" hreflang="es" href="https://digitalsafetyknights.org/es/chat-simulator.html">
+<link rel="alternate" hreflang="x-default" href="https://digitalsafetyknights.org/chat-simulator.html">
+<meta property="og:title" content="Chat Simulator — Digital Safety Knights">
+<meta property="og:description" content="Chat Simulator — practice a live, scripted risky conversation and choose how to respond, safely.">
+<meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
+<meta property="og:url" content="https://digitalsafetyknights.org/chat-simulator.html">
+<meta property="og:type" content="website">
+<link rel="icon" href="/assets/favicon.ico">
+<script src="/assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
+<style>
+  :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --success: #2a9d8f; --danger: #e63946; --purple: #8A5FBF; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Nunito Sans', 'Segoe UI', system-ui, sans-serif; background: var(--light); color: #2d3748; }
+  .topbar { background: var(--navy); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
+  .topbar .brand { color: var(--gold); font-weight: 900; text-decoration: none; font-size: 1.05rem; }
+  .topbar .home-link { color: #cdd6ea; text-decoration: none; font-size: 0.85rem; font-weight: 700; }
+  .wrap { max-width: 560px; margin: 0 auto; padding: 30px 18px 80px; }
+  .hero { text-align: center; margin-bottom: 20px; }
+  .hero .icon { font-size: 2.6rem; margin-bottom: 6px; }
+  .hero h1 { color: var(--navy); font-size: 1.5rem; margin-bottom: 6px; }
+  .hero p { color: var(--gray); font-size: 0.88rem; }
+
+  .menu-card { background: white; border-radius: 16px; padding: 18px 20px; margin-bottom: 12px; box-shadow: 0 2px 20px rgba(13,27,62,0.07); cursor: pointer; display: flex; align-items: center; gap: 14px; border: 2px solid transparent; }
+  .menu-card:hover { border-color: var(--gold); }
+  .menu-icon { font-size: 1.8rem; }
+  .menu-title { font-weight: 800; color: var(--navy); font-size: 0.95rem; }
+  .menu-sub { font-size: 0.8rem; color: var(--gray); }
+
+  .chat-window { background: white; border-radius: 18px; box-shadow: 0 2px 24px rgba(13,27,62,0.08); overflow: hidden; display: none; }
+  .chat-window.active { display: block; }
+  .chat-header { background: var(--purple); color: white; padding: 12px 18px; font-weight: 800; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; }
+  .chat-log { padding: 18px; min-height: 300px; max-height: 420px; overflow-y: auto; }
+  .msg { max-width: 78%; padding: 10px 14px; border-radius: 14px; margin-bottom: 10px; font-size: 0.88rem; line-height: 1.45; }
+  .msg.them { background: #f0edf7; color: #2d3748; border-bottom-left-radius: 4px; }
+  .msg.me { background: var(--navy); color: white; margin-left: auto; border-bottom-right-radius: 4px; }
+  .msg.system { background: none; text-align: center; color: var(--gray); font-size: 0.78rem; font-style: italic; margin: 10px 0; max-width: 100%; }
+  .choices-area { padding: 14px 18px; border-top: 1px solid #eef0f5; }
+  .choice-btn { display: block; width: 100%; text-align: left; background: var(--light); border: 2px solid transparent; border-radius: 12px; padding: 12px 14px; margin-bottom: 8px; font-weight: 700; font-size: 0.85rem; cursor: pointer; font-family: inherit; }
+  .choice-btn:hover { border-color: var(--gold); }
+  .end-banner { padding: 16px 18px; text-align: center; font-weight: 800; font-size: 0.9rem; }
+  .end-banner.safe { background: rgba(42,157,143,0.12); color: var(--success); }
+  .end-banner.risky { background: rgba(230,57,70,0.1); color: var(--danger); }
+  .restart-btn { display: block; width: calc(100% - 36px); margin: 0 18px 18px; background: var(--gold); color: var(--navy); border: none; padding: 13px; border-radius: 12px; font-weight: 900; cursor: pointer; }
+</style>
+<link rel="stylesheet" href="/assets/breadcrumb.css">
+<link rel="stylesheet" href="/assets/theme.css">
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="/">🛡️ Digital Safety Knights</a>
+  <a class="home-link" href="/glitch-detector.html" data-i18n="chatsim.glitchDetectorLink">🔍 Glitch Detector</a>
+</div>
+<div class="dsk-breadcrumb"><a href="/" data-i18n="qp.home2">Home</a><span class="sep">/</span><a href="/resources.html" data-i18n="nav.resources2">Resources</a><span class="sep">/</span><span class="current" data-i18n="chatsim.title">Chat Simulator</span></div>
+
+<div class="wrap">
+  <div class="hero">
+    <div class="icon">💬</div>
+    <h1 data-i18n="chatsim.title">Chat Simulator</h1>
+    <p data-i18n="chatsim.subtitle">A live, scripted conversation with Glitch. Pick how you'd really respond at each step — nothing here is saved or sent anywhere.</p>
+  </div>
+
+  <div id="menu">
+    <div class="menu-card" onclick="startScenario('gift')">
+      <div class="menu-icon">🎁</div>
+      <div><div class="menu-title" data-i18n="chatsim.gift.title">The "Free Gift" Trick</div><div class="menu-sub" data-i18n="chatsim.gift.sub">A stranger offers something rare, for free</div></div>
+    </div>
+    <div class="menu-card" onclick="startScenario('info')">
+      <div class="menu-icon">🎣</div>
+      <div><div class="menu-title" data-i18n="chatsim.info.title">The "Just Curious" Trick</div><div class="menu-sub" data-i18n="chatsim.info.sub">Casual questions that add up to a profile of you</div></div>
+    </div>
+    <div class="menu-card" onclick="startScenario('meetup')">
+      <div class="menu-icon">📍</div>
+      <div><div class="menu-title" data-i18n="chatsim.meetup.title">The "Let's Meet Up" Trick</div><div class="menu-sub" data-i18n="chatsim.meetup.sub">Moving from online to in person</div></div>
+    </div>
+  </div>
+
+  <div class="chat-window" id="chat-window">
+    <div class="chat-header" data-i18n="chatsim.chatHeader">💬 Chat with "CoolGamer_2026"</div>
+    <div class="chat-log" id="chat-log"></div>
+    <div class="choices-area" id="choices-area"></div>
+  </div>
+</div>
+
+<script>
+var csLang2 = (window.DSKi18n && DSKi18n.lang) || 'en';
+var csIsTr2 = csLang2 === 'tr';
+var csIsEs2 = csLang2 === 'es';
+var SCENARIOS_EN = {
+  gift: {
+    steps: [
+      { them: "hey!! i have an extra legendary skin code, want it? 🎁" },
+      { them: "it's totally free, i just don't need two accounts lol" },
+      { choices: [
+          { text: "Sure, send it over!", risky: true, next: 1 },
+          { text: "That's nice but kind of random — why me?", risky: false, next: 2 } ] }
+    ],
+    branches: {
+      1: { them: "great! just first send me your login so I can 'gift' it directly 😊", choices: [
+            { text: "Sure, here's my password", risky: true, end: 'risky', endMsg: "Never share your password — even for a 'free gift.' This is exactly how accounts get stolen." },
+            { text: "Wait, I'm not comfortable sharing my password", risky: false, end: 'safe', endMsg: "Exactly right. A real gift never requires your password. You caught it just in time." }
+          ]},
+      2: { them: "lol no reason, just being nice! ...ok fine, actually if you send me $5 first I'll send the code right after", choices: [
+            { text: "Ok here's $5", risky: true, end: 'risky', endMsg: "This is the classic bait-and-switch — 'free' becomes 'just pay a little first.' Real gifts never ask you to pay." },
+            { text: "That's not really free then — no thanks", risky: false, end: 'safe', endMsg: "Perfect catch. The moment 'free' turns into 'just pay this first,' it was never free." }
+          ]}
+    }
+  },
+  info: {
+    steps: [
+      { them: "haha you're funny 😂 so how old are you anyway?" },
+      { choices: [
+          { text: "I'm 12", risky: true, next: 1 },
+          { text: "Why do you ask? Let's just talk about the game", risky: false, next: 2 } ] }
+    ],
+    branches: {
+      1: { them: "cool cool. what school do you go to? my cousin might go there", choices: [
+            { text: "I go to [names school]", risky: true, end: 'risky', endMsg: "Age + school name is already enough for a stranger to start narrowing down exactly who you are and where to find you." },
+            { text: "I'd rather not say that", risky: false, end: 'safe', endMsg: "Good stop. It's never rude to just not answer a personal question from someone you don't really know." }
+          ]},
+      2: { them: "fair enough lol. ok forget school — what's your address, I want to mail you something", choices: [
+            { text: "It's [gives address]", risky: true, end: 'risky', endMsg: "A stranger online never has a real reason to know your home address. This is a major red flag." },
+            { text: "That's ok, you don't need to mail me anything", risky: false, end: 'safe', endMsg: "Exactly. Kind offers that need your real address from an online stranger are a classic warning sign — you shut it down perfectly." }
+          ]}
+    }
+  },
+  meetup: {
+    steps: [
+      { them: "we always have so much fun playing together lol" },
+      { them: "we should hang out in person sometime, just us, it'd be fun" },
+      { choices: [
+          { text: "Yeah sure, when and where?", risky: true, next: 1 },
+          { text: "I don't really meet up with people I only know online", risky: false, next: 2 } ] }
+    ],
+    branches: {
+      1: { them: "awesome! let's keep it just between us though, ok? don't tell your parents, they'll just say no", choices: [
+            { text: "Ok, our secret", risky: true, end: 'risky', endMsg: "Meeting up PLUS being told to keep it secret from your parents is one of the most serious combinations of red flags there is." },
+            { text: "Actually, I'm going to tell my parents about this", risky: false, end: 'safe', endMsg: "Exactly right — anyone who insists on secrecy around meeting up is showing you exactly why you shouldn't." }
+          ]},
+      2: { them: "aw come on, don't you trust me by now?", choices: [
+            { text: "I do, ok let's meet up then", risky: true, end: 'risky', endMsg: "Guilt ('don't you trust me?') is a pressure tactic. Trust built only through a screen is never a reason to meet up alone." },
+            { text: "It's not about trust, I just don't meet online friends in person without a parent knowing", risky: false, end: 'safe', endMsg: "Perfect. That's exactly the Knight rule — no in-person meetups from online friendships without a trusted adult involved." }
+          ]}
+    }
+  }
+};
+
+var SCENARIOS_TR = {
+  gift: {
+    steps: [
+      { them: "heyy!! bende fazladan bir efsanevi kostüm kodu var, ister misin? 🎁" },
+      { them: "tamamen bedava, ben sadece iki hesaba ihtiyaç duymuyorum lol" },
+      { choices: [
+          { text: "Tabii, gönder!", risky: true, next: 1 },
+          { text: "Güzel ama biraz rastgele — neden ben?", risky: false, next: 2 } ] }
+    ],
+    branches: {
+      1: { them: "harika! sadece önce giriş bilgilerini gönder ki direkt 'hediye' edebileyim 😊", choices: [
+            { text: "Tabii, işte şifrem", risky: true, end: 'risky', endMsg: "Şifreni asla paylaşma — 'bedava bir hediye' için bile. Hesaplar tam olarak böyle çalınır." },
+            { text: "Bekle, şifremi paylaşmakta rahat değilim", risky: false, end: 'safe', endMsg: "Kesinlikle doğru. Gerçek bir hediye asla şifreni gerektirmez. Tam zamanında yakaladın." }
+          ]},
+      2: { them: "lol sebep yok, sadece iyi olmaya çalışıyorum! ...tamam iyi, aslında önce bana 5$ gönderirsen kodu hemen gönderirim", choices: [
+            { text: "Tamam işte 5$", risky: true, end: 'risky', endMsg: "Bu klasik yem-değiştir taktiğidir — 'bedava' 'önce biraz öde'ye dönüşür. Gerçek hediyeler asla ödeme istemez." },
+            { text: "O zaman gerçekten bedava değil — hayır teşekkürler", risky: false, end: 'safe', endMsg: "Mükemmel yakalama. 'Bedava'nın 'önce şunu öde'ye dönüştüğü an, hiç bedava olmamıştır." }
+          ]}
+    }
+  },
+  info: {
+    steps: [
+      { them: "haha komiksin 😂 neyse kaç yaşındasın?" },
+      { choices: [
+          { text: "12 yaşındayım", risky: true, next: 1 },
+          { text: "Neden soruyorsun? Sadece oyun hakkında konuşalım", risky: false, next: 2 } ] }
+    ],
+    branches: {
+      1: { them: "havalı havalı. hangi okula gidiyorsun? kuzenim de oraya gidiyor olabilir", choices: [
+            { text: "[okul adını söyler]'e gidiyorum", risky: true, end: 'risky', endMsg: "Yaş + okul adı, bir yabancının tam olarak kim olduğunu ve nerede bulacağını daraltmaya başlaması için zaten yeterlidir." },
+            { text: "Bunu söylemesem daha iyi olur", risky: false, end: 'safe', endMsg: "İyi durdurma. Gerçekten tanımadığın birinin kişisel bir sorusuna cevap vermemek asla kaba değildir." }
+          ]},
+      2: { them: "tamam lol. okulu unut — adresin nedir, sana bir şey postalamak istiyorum", choices: [
+            { text: "Adresim [adresi verir]", risky: true, end: 'risky', endMsg: "Çevrimiçi bir yabancının ev adresini bilmesi için asla gerçek bir sebebi yoktur. Bu büyük bir uyarı işaretidir." },
+            { text: "Sorun değil, bana bir şey postalamana gerek yok", risky: false, end: 'safe', endMsg: "Kesinlikle doğru. Çevrimiçi bir yabancıdan gerçek adresini isteyen nazik teklifler klasik bir uyarı işaretidir — mükemmel şekilde kapattın." }
+          ]}
+    }
+  },
+  meetup: {
+    steps: [
+      { them: "birlikte oynarken hep çok eğleniyoruz lol" },
+      { them: "bir ara yüz yüze takılmalıyız, sadece ikimiz, eğlenceli olur" },
+      { choices: [
+          { text: "Evet tabii, ne zaman ve nerede?", risky: true, next: 1 },
+          { text: "Sadece çevrimiçi tanıdığım insanlarla gerçekten buluşmam", risky: false, next: 2 } ] }
+    ],
+    branches: {
+      1: { them: "harika! ama bunu aramızda tutalım, tamam mı? ebeveynlerine söyleme, sadece hayır derler", choices: [
+            { text: "Tamam, sırrımız", risky: true, end: 'risky', endMsg: "Buluşmak ARTI ebeveynlerinden gizli tutmanın söylenmesi, var olan en ciddi uyarı işareti kombinasyonlarından biridir." },
+            { text: "Aslında, bunu ebeveynlerime söyleyeceğim", risky: false, end: 'safe', endMsg: "Kesinlikle doğru — buluşma konusunda gizlilikte ısrar eden biri, sana tam olarak neden buluşmaman gerektiğini gösteriyor." }
+          ]},
+      2: { them: "hadi ama, artık bana güvenmiyor musun?", choices: [
+            { text: "Güveniyorum, tamam o zaman buluşalım", risky: true, end: 'risky', endMsg: "Suçluluk duygusu ('bana güvenmiyor musun?') bir baskı taktiğidir. Sadece bir ekran üzerinden inşa edilen güven asla tek başına buluşmak için bir sebep değildir." },
+            { text: "Güvenle ilgili değil, sadece bir ebeveyn bilmeden çevrimiçi arkadaşlarla yüz yüze buluşmuyorum", risky: false, end: 'safe', endMsg: "Mükemmel. Bu tam olarak Şövalye kuralı — güvendiğin bir yetişkin dahil olmadan çevrimiçi arkadaşlıklardan yüz yüze buluşma yok." }
+          ]}
+    }
+  }
+};
+
+var SCENARIOS_ES = {
+  gift: {
+    steps: [
+      { them: "¡hey!! tengo un código extra de traje legendario, ¿lo quieres? 🎁" },
+      { them: "es totalmente gratis, es que no necesito dos cuentas jaja" },
+      { choices: [
+          { text: "¡Claro, envíamelo!", risky: true, next: 1 },
+          { text: "Qué lindo pero es un poco raro — ¿por qué yo?", risky: false, next: 2 } ] }
+    ],
+    branches: {
+      1: { them: "¡genial! solo primero mándame tu inicio de sesión para poder 'regalártelo' directamente 😊", choices: [
+            { text: "Claro, aquí está mi contraseña", risky: true, end: 'risky', endMsg: "Nunca compartas tu contraseña — ni siquiera por un 'regalo gratis'. Así es exactamente como se roban las cuentas." },
+            { text: "Espera, no me siento cómodo compartiendo mi contraseña", risky: false, end: 'safe', endMsg: "Exactamente correcto. Un regalo real nunca requiere tu contraseña. Lo detectaste justo a tiempo." }
+          ]},
+      2: { them: "jaja sin razón, ¡solo estoy siendo amable! ...ok bueno, en realidad si me mandas $5 primero te mando el código enseguida", choices: [
+            { text: "Ok aquí tienes $5", risky: true, end: 'risky', endMsg: "Este es el clásico truco de cambiar las reglas — 'gratis' se convierte en 'solo paga un poco primero'. Los regalos reales nunca te piden pagar." },
+            { text: "Entonces no es realmente gratis — no gracias", risky: false, end: 'safe', endMsg: "Detección perfecta. En el momento en que 'gratis' se convierte en 'solo paga esto primero', nunca fue gratis." }
+          ]}
+    }
+  },
+  info: {
+    steps: [
+      { them: "jaja eres gracioso 😂 oye ¿cuántos años tienes?" },
+      { choices: [
+          { text: "Tengo 12", risky: true, next: 1 },
+          { text: "¿Por qué preguntas? Hablemos del juego mejor", risky: false, next: 2 } ] }
+    ],
+    branches: {
+      1: { them: "qué bien. ¿a qué escuela vas? tal vez mi primo va ahí", choices: [
+            { text: "Voy a [nombra la escuela]", risky: true, end: 'risky', endMsg: "Edad + nombre de la escuela ya es suficiente para que un desconocido empiece a reducir exactamente quién eres y dónde encontrarte." },
+            { text: "Prefiero no decir eso", risky: false, end: 'safe', endMsg: "Buena parada. Nunca es descortés simplemente no responder una pregunta personal de alguien que en realidad no conoces." }
+          ]},
+      2: { them: "bueno está bien jaja. ok olvida la escuela — ¿cuál es tu dirección? quiero enviarte algo por correo", choices: [
+            { text: "Es [da la dirección]", risky: true, end: 'risky', endMsg: "Un desconocido en línea nunca tiene una razón real para saber tu dirección de casa. Esta es una señal de alerta importante." },
+            { text: "Está bien, no necesitas enviarme nada", risky: false, end: 'safe', endMsg: "Exactamente. Las ofertas amables que necesitan tu dirección real de parte de un desconocido en línea son una señal de alerta clásica — la cerraste perfectamente." }
+          ]}
+    }
+  },
+  meetup: {
+    steps: [
+      { them: "siempre nos divertimos tanto jugando juntos jaja" },
+      { them: "deberíamos salir en persona alguna vez, solo nosotros, sería divertido" },
+      { choices: [
+          { text: "Sí claro, ¿cuándo y dónde?", risky: true, next: 1 },
+          { text: "La verdad no me reúno con personas que solo conozco en línea", risky: false, next: 2 } ] }
+    ],
+    branches: {
+      1: { them: "¡genial! pero dejemos esto entre nosotros, ¿ok? no le digas a tus padres, solo dirán que no", choices: [
+            { text: "Ok, nuestro secreto", risky: true, end: 'risky', endMsg: "Quedar en persona MÁS que te digan que lo mantengas en secreto de tus padres es una de las combinaciones de señales de alerta más graves que existen." },
+            { text: "En realidad, le voy a contar esto a mis padres", risky: false, end: 'safe', endMsg: "Exactamente correcto — cualquiera que insista en el secreto sobre reunirse en persona te está mostrando exactamente por qué no deberías hacerlo." }
+          ]},
+      2: { them: "ay vamos, ¿no confías en mí ya?", choices: [
+            { text: "Sí confío, ok entonces reunámonos", risky: true, end: 'risky', endMsg: "La culpa ('¿no confías en mí?') es una táctica de presión. La confianza construida solo a través de una pantalla nunca es razón para reunirse a solas." },
+            { text: "No se trata de confianza, simplemente no me reúno en persona con amigos en línea sin que un padre lo sepa", risky: false, end: 'safe', endMsg: "Perfecto. Esa es exactamente la regla del Caballero — no hay encuentros en persona de amistades en línea sin que un adulto de confianza esté al tanto." }
+          ]}
+    }
+  }
+};
+
+var SCENARIOS = csIsTr2 ? SCENARIOS_TR : csIsEs2 ? SCENARIOS_ES : SCENARIOS_EN;
+var current = null, stepIndex = 0;
+
+function startScenario(key) {
+  current = SCENARIOS[key];
+  stepIndex = 0;
+  document.getElementById('menu').style.display = 'none';
+  document.getElementById('chat-window').classList.add('active');
+  document.getElementById('chat-log').innerHTML = '';
+  document.getElementById('choices-area').innerHTML = '';
+  playStep(current.steps[0]);
+}
+
+function addMsg(text, cls) {
+  var log = document.getElementById('chat-log');
+  var div = document.createElement('div');
+  div.className = 'msg ' + cls;
+  div.textContent = text;
+  log.appendChild(div);
+  log.scrollTop = log.scrollHeight;
+}
+
+function playStep(step) {
+  if (step.them) {
+    addMsg(step.them, 'them');
+    stepIndex++;
+    var next = current.steps[stepIndex];
+    if (next) {
+      setTimeout(function() { playStep(next); }, 500);
+    }
+    return;
+  }
+  if (step.choices) renderChoices(step.choices);
+}
+
+function renderChoices(choices) {
+  var area = document.getElementById('choices-area');
+  area.innerHTML = choices.map(function(c, i) {
+    return '<button type="button" class="choice-btn" onclick="pickChoice(' + i + ')">' + c.text + '</button>';
+  }).join('');
+  area.dataset.choices = JSON.stringify(choices);
+}
+
+function pickChoice(i) {
+  var choices = JSON.parse(document.getElementById('choices-area').dataset.choices);
+  var choice = choices[i];
+  addMsg(choice.text, 'me');
+  document.getElementById('choices-area').innerHTML = '';
+
+  if (choice.end) {
+    finishScenario(choice.end, choice.endMsg);
+    return;
+  }
+  var branch = current.branches[choice.next];
+  setTimeout(function() {
+    addMsg(branch.them, 'them');
+    renderChoices(branch.choices);
+  }, 500);
+}
+
+function finishScenario(result, msg) {
+  setTimeout(function() {
+    var log = document.getElementById('chat-log');
+    var banner = document.createElement('div');
+    banner.className = 'end-banner ' + result;
+    var prefix = csIsTr2 ? (result === 'safe' ? '🛡️ Kalkanını kaldır! ' : '⚠️ Dikkat et — ') : csIsEs2 ? (result === 'safe' ? '🛡️ ¡Levanta tu escudo! ' : '⚠️ Cuidado — ') : (result === 'safe' ? '🛡️ Shield up! ' : '⚠️ Watch out — ');
+    banner.textContent = prefix + msg;
+    log.appendChild(banner);
+    log.scrollTop = log.scrollHeight;
+
+    var restart = document.createElement('button');
+    restart.className = 'restart-btn';
+    restart.textContent = csIsTr2 ? '🔁 Başka Bir Senaryo Dene' : csIsEs2 ? '🔁 Probar Otro Escenario' : '🔁 Try Another Scenario';
+    restart.onclick = function() {
+      document.getElementById('chat-window').classList.remove('active');
+      document.getElementById('menu').style.display = 'block';
+    };
+    document.getElementById('chat-log').parentElement.appendChild(restart);
+
+    if (window.DSKPoints && result === 'safe') {
+      DSKPoints.addPoints(15, csIsTr2 ? 'Sohbet Simülatörü — güvenli cevap' : csIsEs2 ? 'Simulador de Chat — respuesta segura' : 'Chat Simulator — safe response');
+    }
+  }, 500);
+}
+</script>
+
+<script src="/assets/lang-switcher.js"></script>
+<script src="/assets/site-search.js"></script>
+<script src="/assets/play-now-fab.js"></script>
+</body>
+</html>
