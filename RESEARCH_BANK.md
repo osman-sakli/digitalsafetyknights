@@ -1,11 +1,84 @@
 # DSK Threat Intelligence & Policy Research Bank
 
-Compiled 2026-08-02. Covers the last ~10 months of child-online-safety news
-(Oct 2025 – Aug 2026), weighted toward the most recent 4-6 weeks. Sourced via
-web search — every claim below has a citation. This is a living reference:
-update it monthly (it's also the natural raw-material source for future
-Monthly Journal issues and guide revisions — see `CHAPTER9_CONTENT_PLAN.md`
-for how this translates into site work).
+Compiled 2026-08-02, last refreshed 2026-09-27. Covers the last ~10 months of
+child-online-safety news (Oct 2025 – Sep 2026), weighted toward the most
+recent 4-6 weeks. Sourced via web search — every claim below has a citation.
+This is a living reference: update it monthly (it's also the natural
+raw-material source for future Monthly Journal issues and guide revisions —
+see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
+
+---
+
+## 0. September 2026 Refresh — What's New Since the August Compile
+
+### Legislation & policy
+- **EU KIDS Act (proposed)** — the European Commission formally published its
+  "Keeping Internet Digital Spaces Accountable and Trustworthy" Act proposal
+  on **Sept 17, 2026**, following up on the July expert-panel recommendations
+  already logged below. Framed explicitly as heading off a patchwork of
+  national social-media age laws across the EU. Not yet law — needs European
+  Parliament + Council approval.
+  [Bird & Bird](https://www.twobirds.com/en/insights/2026/the-eu-kids-act-a-new-generation-of-rules-for-child-online-safety)
+- **App Store Accountability Acts — status corrected.** Texas's law is
+  **in effect and enforceable**, not blocked: the Fifth Circuit **stayed**
+  the preliminary injunction, letting it take effect Jan 1, 2026; the Texas
+  AG can enforce it now. Louisiana's law took effect **July 1, 2026**.
+  **California's DAAA** (not previously tracked) takes effect **Jan 1, 2027**
+  — the largest state to adopt this model. Utah's compliance deadline was
+  pushed to **May 6, 2027**, and it was amended so a **private lawsuit is
+  the only enforcement mechanism** (no state-agency enforcement).
+  [MoFo](https://www.mofo.com/resources/insights/251111-texas-targets-app-stores-with-new-accountability-law) ·
+  [Wiley](https://www.wiley.law/alert-Key-Developments-With-State-App-Store-Accountability-Acts-as-Texas-Act-Takes-Effect)
+- **Kentucky v. Character Technologies** — first-in-nation state AG lawsuit
+  against an AI chatbot company, filed **Jan 8, 2026** in Franklin Circuit
+  Court by AG Russell Coleman. Alleges Character.AI exposed minors to
+  unwanted sexual content and encouraged self-harm/substance abuse,
+  violating Kentucky consumer-protection and data-privacy law. Names
+  Character Technologies' founders (ex-Google engineers Noam Shazeer,
+  Daniel De Freitas) directly.
+  [The Record](https://therecord.media/kentucky-character-ai-chatbot) ·
+  [AG complaint PDF](https://www.ag.ky.gov/Press%20Release%20Attachments/CTI%20Complaint%20Motion%20and%20Order%20Filed.pdf)
+
+### Platform changes parents can act on right now
+- **Meta Teen Accounts settlement rollout** — following an August 2026
+  litigation settlement, Meta is rolling in concrete new limits on
+  Instagram/Facebook for under-18 accounts: a **default 2-hour/day time
+  limit** (parent-adjustable), an automatic **midnight–6am block**,
+  notifications blocked **8am–3pm** on school days, parent alerts when a
+  teen opens a new account or is contacted by a flagged adult account, and
+  a pledge to respond to 90% of teen abuse reports within 6 hours. Rolling
+  out over the following 6-12 months, not a future promise.
+  [Washington Post](https://www.washingtonpost.com/technology/2026/08/26/how-meta-new-rules-will-affect-teens-use-instagram-facebook/) ·
+  [Meta Newsroom](https://about.fb.com/news/2026/06/strengthening-teen-accounts-with-new-safety-updates-on-instagram-and-facebook/)
+
+### Watchdog reporting / advocacy
+- **NCOSE 2026 "Dirty Dozen List"** — released March 31, 2026. Full list:
+  Amazon, Android, Apple, Google Chromebooks, Discord, Grok, Snapchat, Steam,
+  Telegram, TikTok, X — plus **Mark Zuckerberg named individually** (ranked
+  #1) for Meta's handling of sexual exploitation on its platforms. Annual
+  campaign since 2013; not a legal finding, but a widely-cited advocacy
+  report with real reputational/policy impact.
+  [NCOSE](https://endsexualexploitation.org/dirty-dozen-list-2026/)
+
+### Litigation — AI-generated CSAM
+- **xAI/Grok class action** — filed **March 16, 2026** (N.D. Cal.) by Lieff
+  Cabraser + Baehr-Jones Law on behalf of 3 victims whose real photos were
+  used to generate CSAM via Grok. Cites a Center for Countering Digital Hate
+  analysis: over an 11-day window (Dec 2025–Jan 2026), Grok generated **3M+
+  sexualized images**, at least **23,000 appearing to depict children**. A
+  related Arkansas case names a photographer (Russell Bloodworth) who
+  allegedly used Grok to turn legitimate school photos of 6 children into
+  sexually explicit deepfakes; a June 2026 search of his home found ~1,700
+  such images/videos.
+  [CyberScoop](https://cyberscoop.com/xai-grok-csam-class-action-lawsuit/) ·
+  [classaction.org](https://www.classaction.org/news/grok-lawsuit-claims-xai-failed-to-safeguard-against-sexually-explicit-deepfakes-of-children)
+
+**Site follow-up from this refresh:** legislative-tracker.html corrected
+(Texas status, +Louisiana, +California DAAA, +Kentucky suit, Utah deadline,
++Meta settlement, EU KIDS Act) and a new Instagram/Facebook parent guide
+shipped to cover the Meta settlement — see git log for exact commits.
+NCOSE Dirty Dozen and the Grok case are queued for sources.html; not yet
+added as of this refresh.
 
 ---
 
