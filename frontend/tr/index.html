@@ -6,7 +6,7 @@
 <meta name="description" content="Digital Safety Knights — Protecting children from online predators, harmful AI, gaming risks, and digital threats worldwide.">
 <meta property="og:title" content="Digital Safety Knights (DSK)">
 <meta property="og:description" content="Protecting Kids in the Digital World">
-<meta property="og:image" content="assets/logo.png">
+<meta property="og:image" content="/assets/logo.png">
 <title>Digital Safety Knights (DSK) — Protecting Kids Online</title>
 <link rel="canonical" href="https://digitalsafetyknights.org/tr/">
 <link rel="alternate" hreflang="en" href="https://digitalsafetyknights.org/en/">
@@ -106,7 +106,7 @@
     .nav-sub { gap: 0.9rem 1.1rem; padding: 8px 1rem; }
   }
 
-  .hero { background: linear-gradient(135deg, rgba(6,14,34,0.88) 0%, rgba(13,27,62,0.82) 50%, rgba(15,34,85,0.85) 100%), url('assets/hero-backdrop.jpg') center 65%/cover no-repeat; color: white; text-align: center; padding: 100px 2rem 90px; position: relative; overflow: hidden; }
+  .hero { background: linear-gradient(135deg, rgba(6,14,34,0.88) 0%, rgba(13,27,62,0.82) 50%, rgba(15,34,85,0.85) 100%), url('/assets/hero-backdrop.jpg') center 65%/cover no-repeat; color: white; text-align: center; padding: 100px 2rem 90px; position: relative; overflow: hidden; }
   .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 40%, rgba(201,168,76,0.12) 0%, transparent 65%); pointer-events: none; }
   .hero-content { position: relative; z-index: 2; }
   .hero-logo { position: relative; display: inline-block; margin-bottom: 1.4rem; }
@@ -1372,7 +1372,7 @@
   })();
 
   (function seasonalBadges() {
-    var SEASONS = [{ months: [7, 8], badge: 'assets/icons/seasonal-back-to-school.png' }];
+    var SEASONS = [{ months: [7, 8], badge: '/assets/icons/seasonal-back-to-school.png' }];
     var m = new Date().getMonth();
     var season = SEASONS.find(function(s) { return s.months.indexOf(m) !== -1; });
     if (!season) return;
@@ -1473,7 +1473,7 @@
     };
     var m = new Date().getMonth();
     var pick = MONTHS[m] || (komIsTr ? { id: "sprout", name: "Sprout", tie: "Yeni ay, temelleri öğrenmek (ya da tekrar öğrenmek) için yeni bir şans — Sprout'un bütün meselesi bu." } : komIsEs ? { id: "sprout", name: "Sprout", tie: "Nuevo mes, nueva oportunidad de aprender (o repasar) lo básico — eso es exactamente lo que hace Sprout." } : { id: "sprout", name: "Sprout", tie: "New month, new chance to learn (or re-learn) the basics — that's Sprout's whole thing." });
-    document.getElementById('kom-img').src = 'assets/characters/circles/' + pick.id + '.jpg';
+    document.getElementById('kom-img').src = '/assets/characters/circles/' + pick.id + '.jpg';
     document.getElementById('kom-img').alt = pick.name;
     document.getElementById('kom-name').textContent = pick.name;
     document.getElementById('kom-tie').textContent = pick.tie;
