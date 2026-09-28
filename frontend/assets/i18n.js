@@ -3,20 +3,6 @@
   window.DSKi18n = window.DSKi18n || {};
   var dict = {};
 
-  function detectLang() {
-    try {
-      var langs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || ''];
-      for (var i = 0; i < langs.length; i++) {
-        if (/^tr\b/i.test(langs[i])) return 'tr';
-      }
-      for (var j = 0; j < langs.length; j++) {
-        if (/^es\b/i.test(langs[j])) return 'es';
-      }
-      if (Intl.DateTimeFormat().resolvedOptions().timeZone === 'Europe/Istanbul') return 'tr';
-    } catch (e) {}
-    return null;
-  }
-
   function pathLang() {
     // /en/, /tr/, /es/ — a URL-visible language for SEO/professionalism
     // (hreflang, indexable per-language pages). Wins over everything else:
@@ -29,8 +15,11 @@
 
   var fromPath = pathLang();
   var stored = localStorage.getItem(KEY);
-  var lang = fromPath || stored || detectLang() || 'en';
-  if (fromPath || !stored) localStorage.setItem(KEY, lang); // first visit, or an explicit /xx/ URL: remember it so it's consistent across pages and overridable via the switcher
+  // No browser-language/timezone auto-detection: the bare site is always
+  // English by default. A language only changes on an explicit signal — a
+  // /tr//es/ URL, or a prior pick via the switcher (stored) — never a guess.
+  var lang = fromPath || stored || 'en';
+  if (fromPath) localStorage.setItem(KEY, lang); // landing on an explicit /xx/ URL updates the remembered choice
   window.DSKi18n.lang = lang;
 
   function apply() {
