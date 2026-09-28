@@ -88,6 +88,7 @@
     if (code === current) { menu.classList.remove('open'); return; }
     current = code;
     localStorage.setItem(KEY, code);
+    document.cookie = KEY + '=' + code + '; path=/; max-age=31536000; SameSite=Lax'; // lets the edge geo-redirect skip a returning visitor who already picked
     menu.classList.remove('open');
     sessionStorage.setItem('dsk_lang_transitioning', '1');
     fade.classList.add('show');

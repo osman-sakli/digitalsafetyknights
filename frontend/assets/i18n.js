@@ -19,7 +19,14 @@
   // English by default. A language only changes on an explicit signal — a
   // /tr//es/ URL, or a prior pick via the switcher (stored) — never a guess.
   var lang = fromPath || stored || 'en';
-  if (fromPath) localStorage.setItem(KEY, lang); // landing on an explicit /xx/ URL updates the remembered choice
+  if (fromPath) {
+    localStorage.setItem(KEY, lang); // landing on an explicit /xx/ URL updates the remembered choice
+    // Also a cookie (not just localStorage): the edge (CloudFront Function)
+    // geo-redirects a first-time visitor from Turkey/a Spanish-speaking
+    // country from "/" to "/tr/"or "/es/", and checks for this exact cookie
+    // to skip that redirect on every later visit once a language is set.
+    document.cookie = KEY + '=' + lang + '; path=/; max-age=31536000; SameSite=Lax';
+  }
   window.DSKi18n.lang = lang;
 
   function apply() {
