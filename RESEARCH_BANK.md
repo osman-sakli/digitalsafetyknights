@@ -1,11 +1,58 @@
 # DSK Threat Intelligence & Policy Research Bank
 
-Compiled 2026-08-02, last refreshed 2026-09-27. Covers the last ~10 months of
-child-online-safety news (Oct 2025 – Sep 2026), weighted toward the most
+Compiled 2026-08-02, last refreshed 2026-10-01. Covers the last ~10 months of
+child-online-safety news (Oct 2025 – Oct 2026), weighted toward the most
 recent 4-6 weeks. Sourced via web search — every claim below has a citation.
 This is a living reference: update it monthly (it's also the natural
 raw-material source for future Monthly Journal issues and guide revisions —
 see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
+
+---
+
+## 0a. October 2026 Update — Recovered from a Failed Automated Run
+
+The automated "DSK Content Freshness Scan" routine (runs every 2 days) did
+real, well-sourced research on 2026-09-29 but could not publish it: `git
+push` and the GitHub API both failed with 403 "Resource not accessible by
+integration" — the cloud routine's GitHub App connection has read access to
+this repo but not write access. The commit it prepared was correct but sat
+in an ephemeral container that's since been recycled, so this section
+reconstructs and publishes that work manually. **The underlying permission
+problem is not fixed** — every future routine run will hit the same wall
+until the GitHub App for that connection is given write access (Osman:
+reconnect GitHub from claude.ai settings, or have an org admin reinstall the
+Claude GitHub App with write scope). The daily LinkedIn routine has a
+separate, also-unfixed problem: its environment's network egress policy
+currently allows only GitHub-related hosts, blocking every news domain and
+`api.upload-post.com` itself — it has not actually posted anything since
+2026-09-15 despite "succeeding" every day.
+
+- **California SB 1119 ("Adam's Law")** — signed Sept 10, 2026, named for
+  Adam Raine (died after extensive ChatGPT conversations). Core
+  requirements effective **July 1, 2027**: pre-release child-safety risk
+  assessments for AI companion chatbots, a documented crisis-response
+  protocol, parent notification within 12 hours of a substantial self-harm
+  risk, and child accounts defaulting to 1-hour sessions, a 2-hour daily
+  cap, and disabled push notifications. First independent audit due Jan 1,
+  2029.
+  [ZwillGen](https://www.zwillgen.com/artificial-intelligence/adams-law-california-raises-the-bar-for-child-chatbot-protections/)
+- **California AB 1709** — signed the same day, effective **Jan 1, 2027**.
+  Bars "covered platforms" from showing addictive features (personalized
+  feeds, autoplay) to under-16 users; up to $50,000/minor for knowing
+  violations. Timed to California's Digital Age Assurance Act framework.
+  [Common Sense Media](https://www.commonsensemedia.org/press-releases/common-sense-media-applauds-governor-newsoms-signature-of-ab-1709)
+- **New Jersey Kids Code Act** — signed Aug 11, 2026, effective **Sept 1,
+  2027**. Privacy-by-default/safety-by-design for services likely accessed
+  by minors ($25M+ revenue or 25,000+ users' data processed). Unusual for
+  this legislative wave: a **private right of action**, $5,000/violation,
+  not just AG enforcement.
+  [Hunton](https://www.hunton.com/privacy-and-cybersecurity-law-blog/new-jersey-enacts-the-kids-code-act-with-privacy-by-default-and-safety-by-design-obligations)
+
+**Site follow-up:** all three added to legislative-tracker.html (EN/TR/ES),
+"last reviewed" date corrected (the TR/ES strings had drifted to a
+future-dated "November 2026" from an earlier edit — now Oct 1, 2026 in all
+three languages, matching the real calendar per the journal real-time-cadence
+rule).
 
 ---
 
