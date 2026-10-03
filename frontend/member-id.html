@@ -47,9 +47,18 @@
   .card-back-note strong { color: var(--navy); }
   .no-badge-msg { color: var(--gray); font-size: 0.95rem; }
 
+  .mid-more { max-width: 560px; width: 100%; margin-top: 18px; display: flex; flex-direction: column; gap: 10px; }
+  .action-link { display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: white; border-radius: 12px; text-decoration: none; color: var(--navy); transition: all 0.2s; box-shadow: 0 6px 24px rgba(13,27,62,0.08); }
+  .action-link:hover { background: rgba(201,168,76,0.08); transform: translateX(4px); }
+  .action-link .icon { font-size: 1.4rem; }
+  .action-link .text { flex: 1; }
+  .action-link .text h4 { font-size: 0.92rem; font-weight: 800; }
+  .action-link .text p { font-size: 0.78rem; color: var(--gray); margin-top: 2px; }
+  .action-link .arrow { color: var(--gold); font-weight: 900; }
+
   @media print {
     body { background: white; padding: 0; }
-    .toolbar, .card-back-note { display: none; }
+    .toolbar, .card-back-note, .mid-more { display: none; }
     .card { box-shadow: none; }
   }
 </style>
@@ -68,6 +77,24 @@
 </div>
 
 <div class="card-back-note" id="back-note"></div>
+
+<div class="mid-more">
+  <a href="/knight-council.html" class="action-link">
+    <div class="icon">⚔️</div>
+    <div class="text"><h4 data-i18n="memberid.linkKcH">Knight Council</h4><p data-i18n="memberid.linkKcP">Become a teen ambassador for digital safety</p></div>
+    <div class="arrow">→</div>
+  </a>
+  <a href="/chapters.html" class="action-link">
+    <div class="icon">🌍</div>
+    <div class="text"><h4 data-i18n="memberid.linkChH">Chapters</h4><p data-i18n="memberid.linkChP">Start or join a local chapter in your country</p></div>
+    <div class="arrow">→</div>
+  </a>
+  <a href="/dashboard.html" class="action-link">
+    <div class="icon">📊</div>
+    <div class="text"><h4 data-i18n="memberid.linkDashH">Your Dashboard</h4><p data-i18n="memberid.linkDashP">Track your quests, badges, and streak</p></div>
+    <div class="arrow">→</div>
+  </a>
+</div>
 
 <script>
 const midLang = (window.DSKi18n && DSKi18n.lang) || 'en';

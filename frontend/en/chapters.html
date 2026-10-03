@@ -63,6 +63,15 @@
   .ch-status.ok { display: block; background: #e6f4ea; color: #1e7d3a; }
   .ch-status.err { display: block; background: #fbe9e7; color: #c0392b; }
 
+  #ch-does3-p a { color: var(--navy); font-weight: 800; }
+  .action-link { display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: var(--light); border-radius: 12px; text-decoration: none; color: var(--navy); transition: all 0.2s; }
+  .action-link:hover { background: rgba(201,168,76,0.1); transform: translateX(4px); }
+  .action-link .icon { font-size: 1.4rem; }
+  .action-link .text { flex: 1; }
+  .action-link .text h4 { font-size: 0.92rem; font-weight: 800; }
+  .action-link .text p { font-size: 0.78rem; color: var(--gray); margin-top: 2px; }
+  .action-link .arrow { color: var(--gold); font-weight: 900; }
+
   footer { text-align: center; padding: 2rem; color: var(--gray); font-size: 0.85rem; }
 </style>
 </head>
@@ -136,6 +145,27 @@
     </form>
   </div>
 
+  <div class="ch-section">
+    <h2 id="ch-more-title">More Ways to Get Involved</h2>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <a href="/knight-council.html" class="action-link">
+        <div class="icon">⚔️</div>
+        <div class="text"><h4 id="ch-more-kc-h"></h4><p id="ch-more-kc-p"></p></div>
+        <div class="arrow">→</div>
+      </a>
+      <a href="/dashboard.html" class="action-link">
+        <div class="icon">📊</div>
+        <div class="text"><h4 id="ch-more-dash-h"></h4><p id="ch-more-dash-p"></p></div>
+        <div class="arrow">→</div>
+      </a>
+      <a href="/member-id.html" class="action-link">
+        <div class="icon">🪪</div>
+        <div class="text"><h4 id="ch-more-mid-h"></h4><p id="ch-more-mid-p"></p></div>
+        <div class="arrow">→</div>
+      </a>
+    </div>
+  </div>
+
   <p style="text-align:center;font-size:0.85rem;color:var(--gray);">
     <span id="ch-alt-prompt">Looking to book a session instead of starting a chapter?</span>
     <a href="/school-programs.html" id="ch-alt-link" style="color:var(--navy);font-weight:800;">See School &amp; Organization Programs →</a>
@@ -166,7 +196,7 @@ document.getElementById('ch-does1-p').textContent = chIsTr ? 'Kendi bölgenizdek
 document.getElementById('ch-does2-h').textContent = chIsTr ? 'Yerel Ses' : chIsEs ? 'Voz Local' : 'Local Voice';
 document.getElementById('ch-does2-p').textContent = chIsTr ? 'İçeriğimizi ülkenizin platformlarına, yasalarına ve diline uyarlar — topluluğunuzu en iyi siz bilirsiniz.' : chIsEs ? 'Adapta nuestro contenido a las plataformas, leyes e idioma de tu país — tú conoces mejor a tu comunidad.' : "Adapts our content to your country's platforms, laws, and language — you know your community best.";
 document.getElementById('ch-does3-h').textContent = chIsTr ? 'Yerel Ağ' : chIsEs ? 'Red Local' : 'Local Network';
-document.getElementById('ch-does3-p').textContent = chIsTr ? 'Yerel okulları, ebeveynleri ve gençlik kuruluşlarını daha geniş DSK topluluğuna ve Şövalye Konseyi\'ne bağlar.' : chIsEs ? 'Conecta escuelas locales, padres y organizaciones juveniles con la comunidad más amplia de DSK y el Knight Council.' : 'Connects local schools, parents, and youth organizations into the wider DSK community and Knight Council.';
+document.getElementById('ch-does3-p').innerHTML = chIsTr ? 'Yerel okulları, ebeveynleri ve gençlik kuruluşlarını daha geniş DSK topluluğuna ve <a href="/knight-council.html">Şövalye Konseyi</a>\'ne bağlar.' : chIsEs ? 'Conecta escuelas locales, padres y organizaciones juveniles con la comunidad más amplia de DSK y el <a href="/knight-council.html">Knight Council</a>.' : 'Connects local schools, parents, and youth organizations into the wider DSK community and the <a href="/knight-council.html">Knight Council</a>.';
 document.getElementById('ch-does4-h').textContent = chIsTr ? 'DSK Desteğiyle' : chIsEs ? 'Respaldado por DSK' : 'Backed by DSK';
 document.getElementById('ch-does4-p').textContent = chIsTr ? 'Sıfırdan başlamıyorsunuz — rehberler, görevler, eğitim ve sürekli destek merkez ekipten gelir.' : chIsEs ? 'No empiezas de cero — guías, misiones, capacitación y apoyo continuo vienen del equipo central.' : "You're not starting from zero — guides, quests, training, and ongoing support come from the core team.";
 
@@ -186,6 +216,14 @@ document.getElementById('ch-label-why').textContent = chIsTr ? 'Ülkenizde neden
 document.getElementById('ch-submit').textContent = chIsTr ? 'Şube Başlatmak İçin Başvur' : chIsEs ? 'Solicitar Iniciar un Capítulo' : 'Apply to Start a Chapter';
 document.getElementById('ch-alt-prompt').textContent = chIsTr ? 'Şube başlatmak yerine bir oturum mu ayırtmak istiyorsunuz?' : chIsEs ? '¿Buscas reservar una sesión en lugar de iniciar un capítulo?' : 'Looking to book a session instead of starting a chapter?';
 document.getElementById('ch-alt-link').textContent = chIsTr ? 'Okul ve Kurum Programlarına bakın →' : chIsEs ? 'Ver Programas para Escuelas y Organizaciones →' : 'See School & Organization Programs →';
+
+document.getElementById('ch-more-title').textContent = chIsTr ? 'Daha Fazla Katılım Yolu' : chIsEs ? 'Más Formas de Participar' : 'More Ways to Get Involved';
+document.getElementById('ch-more-kc-h').textContent = chIsTr ? 'Şövalye Konseyi' : chIsEs ? 'Knight Council' : 'Knight Council';
+document.getElementById('ch-more-kc-p').textContent = chIsTr ? 'Dijital güvenlik farkındalığını yaymak için bir genç elçi ol.' : chIsEs ? 'Conviértete en un embajador adolescente de la seguridad digital.' : 'Become a teen ambassador for digital safety.';
+document.getElementById('ch-more-dash-h').textContent = chIsTr ? 'Panelin' : chIsEs ? 'Tu Panel' : 'Your Dashboard';
+document.getElementById('ch-more-dash-p').textContent = chIsTr ? 'Görevlerini, rozetlerini ve serini takip et.' : chIsEs ? 'Sigue tus misiones, insignias y tu racha.' : 'Track your quests, badges, and streak.';
+document.getElementById('ch-more-mid-h').textContent = chIsTr ? 'Üye Kimlik Kartı' : chIsEs ? 'Tarjeta de Miembro' : 'Member ID Card';
+document.getElementById('ch-more-mid-p').textContent = chIsTr ? 'Resmi DSK üyelik kartını yazdır.' : chIsEs ? 'Imprime tu tarjeta oficial de miembro de DSK.' : 'Print your official DSK membership card.';
 
 var CH_EMPTY_H = chIsTr ? 'Henüz şube yok — ülkenizdeki ilk şube siz olun!' : chIsEs ? 'Aún no hay capítulos — ¡sé el primero en tu país!' : 'No chapters yet — be the first in your country!';
 var CH_EMPTY_P = chIsTr ? 'Aşağıdan başvuran ilk kişi olun. Her yeni şube, bu haritada gerçek bir nokta olarak başlar.' : chIsEs ? 'Sé la primera persona en postularte a continuación. Cada nuevo capítulo comienza como un punto real en este mapa.' : "Be the first person to apply below. Every new chapter starts as one real point on this map.";

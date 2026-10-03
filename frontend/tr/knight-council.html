@@ -54,6 +54,15 @@
   .kc-status.ok { display: block; background: #e6f4ea; color: #1e7d3a; }
   .kc-status.err { display: block; background: #fbe9e7; color: #c0392b; }
 
+  .kc-links { display: flex; flex-direction: column; gap: 10px; }
+  .action-link { display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: var(--light); border-radius: 12px; text-decoration: none; color: var(--navy); transition: all 0.2s; }
+  .action-link:hover { background: rgba(201,168,76,0.1); transform: translateX(4px); }
+  .action-link .icon { font-size: 1.4rem; }
+  .action-link .text { flex: 1; }
+  .action-link .text h4 { font-size: 0.92rem; font-weight: 800; }
+  .action-link .text p { font-size: 0.78rem; color: var(--gray); margin-top: 2px; }
+  .action-link .arrow { color: var(--gold); font-weight: 900; }
+
   footer { text-align: center; padding: 2rem; color: var(--gray); font-size: 0.85rem; }
 </style>
 </head>
@@ -109,6 +118,27 @@
       <div class="kc-status" id="kc-status"></div>
     </form>
   </div>
+
+  <div class="kc-section">
+    <h2 id="kc-more-title">More Ways to Get Involved</h2>
+    <div class="kc-links">
+      <a href="/dashboard.html" class="action-link">
+        <div class="icon">📊</div>
+        <div class="text"><h4 id="kc-more-dash-h"></h4><p id="kc-more-dash-p"></p></div>
+        <div class="arrow">→</div>
+      </a>
+      <a href="/chapters.html" class="action-link">
+        <div class="icon">🌍</div>
+        <div class="text"><h4 id="kc-more-ch-h"></h4><p id="kc-more-ch-p"></p></div>
+        <div class="arrow">→</div>
+      </a>
+      <a href="/member-id.html" class="action-link">
+        <div class="icon">🪪</div>
+        <div class="text"><h4 id="kc-more-mid-h"></h4><p id="kc-more-mid-p"></p></div>
+        <div class="arrow">→</div>
+      </a>
+    </div>
+  </div>
 </div>
 
 <footer>⚔️ Digital Safety Knights · digitalsafetyknights.org · © 2026</footer>
@@ -153,6 +183,14 @@ document.getElementById('kc-label-age').textContent = kcIsTr ? 'Yaşın' : kcIsE
 document.getElementById('kc-label-country').textContent = kcIsTr ? 'Ülke' : kcIsEs ? 'País' : 'Country';
 document.getElementById('kc-label-why').textContent = kcIsTr ? 'Neden Şövalye Konseyi\'ne katılmak istiyorsun?' : kcIsEs ? '¿Por qué quieres unirte al Consejo de Caballeros?' : 'Why do you want to join Knight Council?';
 document.getElementById('kc-submit').textContent = kcIsTr ? 'Başvuruyu Gönder' : kcIsEs ? 'Enviar Solicitud' : 'Submit Application';
+
+document.getElementById('kc-more-title').textContent = kcIsTr ? 'Kulübe Katılmanın Diğer Yolları' : kcIsEs ? 'Más Formas de Participar' : 'More Ways to Get Involved';
+document.getElementById('kc-more-dash-h').textContent = kcIsTr ? 'Panelin' : kcIsEs ? 'Tu Panel' : 'Your Dashboard';
+document.getElementById('kc-more-dash-p').textContent = kcIsTr ? 'Görevlerini, rozetlerini ve serini takip et.' : kcIsEs ? 'Sigue tus misiones, insignias y tu racha.' : 'Track your quests, badges, and streak.';
+document.getElementById('kc-more-ch-h').textContent = kcIsTr ? 'Şubeler' : kcIsEs ? 'Capítulos' : 'Chapters';
+document.getElementById('kc-more-ch-p').textContent = kcIsTr ? 'Ülkende bir şube başlat ya da birine katıl.' : kcIsEs ? 'Inicia o únete a un capítulo en tu país.' : 'Start or join a local chapter in your country.';
+document.getElementById('kc-more-mid-h').textContent = kcIsTr ? 'Üye Kimlik Kartı' : kcIsEs ? 'Tarjeta de Miembro' : 'Member ID Card';
+document.getElementById('kc-more-mid-p').textContent = kcIsTr ? 'Resmi DSK üyelik kartını yazdır.' : kcIsEs ? 'Imprime tu tarjeta oficial de miembro de DSK.' : 'Print your official DSK membership card.';
 
 // Purely a rhythm device — these four activities aren't threat zones, so
 // the colors are just borrowed from the same palette for visual variety
