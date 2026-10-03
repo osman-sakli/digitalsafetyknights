@@ -1,11 +1,91 @@
 # DSK Threat Intelligence & Policy Research Bank
 
-Compiled 2026-08-02, last refreshed 2026-10-01. Covers the last ~10 months of
+Compiled 2026-08-02, last refreshed 2026-10-03. Covers the last ~10 months of
 child-online-safety news (Oct 2025 – Oct 2026), weighted toward the most
 recent 4-6 weeks. Sourced via web search — every claim below has a citation.
 This is a living reference: update it monthly (it's also the natural
 raw-material source for future Monthly Journal issues and guide revisions —
 see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
+
+---
+
+## Flagged for review — not yet published
+
+- **(2026-10-03) TikTok/Alabama settlement may warrant its own parent
+  guide**, the way the Meta Teen Accounts settlement got one (see "0a"
+  below). The practical changes (2-hr/day default, midnight curfew,
+  "productive pause" prompts) are concrete and actionable, but currently
+  apply only to Alabama-tied accounts — a guide would need to say so
+  clearly and flag that other states may follow. Not actioned this run
+  (publishing a new guide is outside this routine's scope).
+  [CNBC](https://www.cnbc.com/2026/09/26/tiktok-reaches-first-state-settlement-over-teen-safety-claims.html)
+- **(2026-10-03) Two more federal child-safety bills are moving in Senate
+  Commerce alongside KOSA**: the "Children's Artificial Intelligence Toy
+  Safety Act of 2026" and the "SCREEN Act," both advanced out of committee
+  in August 2026. Neither is currently tracked on legislative-tracker.html
+  and neither fits an existing tracked-law bucket cleanly (not a status
+  change to an existing entry, not a new state in an existing category).
+  Worth tracking as its own new entry once either shows real movement (a
+  floor vote or enactment) rather than just a committee markup.
+  [Commerce Committee](https://www.commerce.senate.gov/press/rep/release/commerce-committee-advances-kids-online-safety-legislation/)
+
+---
+
+## 0b. October 2026 Refresh (Oct 3, 2026)
+
+Automated biennial freshness scan. Confirmed the repo's GitHub write access
+now works (a test commit pushed and was reset cleanly) — the permission
+problem described in the "0a" section below appears resolved, at least for
+this session.
+
+### Correction to site content — stale Louisiana status
+Spot-checking the tracker's App Store Accountability Act entries (the same
+exercise that caught the Texas error before) turned up a second stale fact:
+**Louisiana's App Store Accountability Act was not actually in effect as of
+July 1, 2026**, as legislative-tracker.html stated. Louisiana **HB 977**
+(signed May 15, 2026) delayed the law's effective date by one full year, to
+**July 1, 2027** — the same pattern as Utah's delay, and for the same
+reason (First Amendment litigation pressure on similar statutes elsewhere).
+Texas's and the other tracked App Store Accountability Act statuses were
+re-checked against current reporting and remain accurate as stated.
+[Alston & Bird](https://www.alstonprivacy.com/louisiana-delays-app-store-accountability-effective-date-to-july-2027/) ·
+[JDSupra](https://www.jdsupra.com/legalnews/louisiana-delays-app-store-3163634/)
+
+### New platform settlement — TikTok/Alabama consent decree
+**TikTok reached the first state settlement of a teen-safety lawsuit against
+it**, with Alabama. A Montgomery County circuit judge signed a 5-year
+consent decree on **Sept 25, 2026** (Alabama AG Steve Marshall). TikTok pays
+Alabama **$116.2 million** total ($16.2M in fees/costs due by Oct 25, 2026;
+$100M in restitution due by Nov 9, 2026) — rising to as much as **$300
+million** if 40+ other state AGs (27+ already have active suits) sign
+comparable deals within the settlement's window, giving TikTok a real
+financial incentive to extend the same terms nationally rather than
+litigate state-by-state. Substantive terms, in effect now for Alabama-tied
+accounts of users 13-17: default **2-hour/day** cap, **midnight-6am**
+lockout. Phased in later: "productive pause" prompts at 60/90 cumulative
+minutes (by Jan 25, 2027), removal of cosmetic-surgery filters from teen
+accounts (by Mar 24, 2027), and a non-personalized/chronological feed
+option (by Jun 25, 2027).
+[CNBC](https://www.cnbc.com/2026/09/26/tiktok-reaches-first-state-settlement-over-teen-safety-claims.html) ·
+[CBS News](https://www.cbsnews.com/news/tiktok-alabama-youth-safety-lawsuit-settlement/) ·
+[ppc.land](https://ppc.land/tiktok-must-block-alabama-teens-after-two-hours-a-day-in-116-2m-deal/) ·
+[Alabama AG press release](https://www.alabamaag.gov/attorney-general-marshall-announces-historic-multi-million-dollar-settlement-with-tiktok/)
+
+### Checked, no change needed
+Re-verified against current reporting and found accurate as currently
+stated on the tracker: Texas ASAA (in effect, 5th Circuit stay holding, and
+as of July 2026 SCOTUS declined to intervene — [CCIA](https://ccianet.org/news/2026/07/supreme-court-opts-not-to-intervene-and-block-a-texas-app-store-law-that-likely-violates-first-amendment/)),
+Utah ASAA (May 6, 2027 deadline, private-suit-only enforcement), New York
+SAFE for Kids Act (rules final, Jan 25, 2027 effective date, AG enforcement
+not live until July 24, 2027), Kids Internet and Digital Safety Act (still
+stuck in the Senate — no floor vote since the Aug 2026 committee markup),
+and the EU KIDS Act (still a proposal, not yet adopted by Parliament/Council).
+
+**Site follow-up from this refresh:** legislative-tracker.html corrected
+(Louisiana ASAA status: effect → pending, new date) and extended (+TikTok–
+Alabama settlement, EN/TR/ES) via `python3 infrastructure/build-seo.py`;
+inline JS syntax verified; "last reviewed" date bumped to Oct 3, 2026 in all
+three languages.
 
 ---
 
