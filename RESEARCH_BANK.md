@@ -1,6 +1,6 @@
 # DSK Threat Intelligence & Policy Research Bank
 
-Compiled 2026-08-02, last refreshed 2026-10-03. Covers the last ~10 months of
+Compiled 2026-08-02, last refreshed 2026-10-05. Covers the last ~10 months of
 child-online-safety news (Oct 2025 – Oct 2026), weighted toward the most
 recent 4-6 weeks. Sourced via web search — every claim below has a citation.
 This is a living reference: update it monthly (it's also the natural
@@ -11,6 +11,24 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
 
 ## Flagged for review — not yet published
 
+- **(2026-10-05) "Protecting Kids from Human-Like Chatbots Act" introduced
+  in the House Oct 1, 2026** (Rep. Miller-Meeks, bipartisan) — would bar
+  chatbots from communicating with minors as if human by default: no
+  claiming to be human or a credentialed professional (doctor/counselor),
+  required periodic AI disclosure, no "guilt-tripping" language to keep a
+  child chatting. Not actioned: just introduced, no committee markup yet —
+  same "too early" bar that kept the Children's AI Toy Safety Act/SCREEN
+  Act off the tracker on 2026-10-03. Revisit once it clears committee.
+  [Miller-Meeks press release](https://millermeeks.house.gov/media/press-releases/miller-meeks-introduces-bipartisan-legislation-protect-children-human-chatbots)
+- **(2026-10-05) MDL 3166 — consolidated federal litigation against
+  Roblox, Discord, Snap, and Meta** over alleged child sexual exploitation
+  enabled by weak age/identity verification and easy stranger contact
+  across platforms. Not currently reflected anywhere on the tracker (no
+  Roblox/Discord/Snap entries exist in any tracked bucket, and this is
+  multi-platform consolidated litigation, not a single new state-law
+  entry). Worth a new entry or dedicated page once there's a ruling or
+  major settlement, not a bare MDL consolidation.
+  [Anapol Weiss](https://www.anapolweiss.com/blog/anapol-weiss-lawsuit-alleges-roblox-discord-and-snap-enabled-sexual-exploitation-of-minor-through-platform-designs/)
 - **(2026-10-03) TikTok/Alabama settlement may warrant its own parent
   guide**, the way the Meta Teen Accounts settlement got one (see "0a"
   below). The practical changes (2-hr/day default, midnight curfew,
@@ -28,6 +46,73 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
   Worth tracking as its own new entry once either shows real movement (a
   floor vote or enactment) rather than just a committee markup.
   [Commerce Committee](https://www.commerce.senate.gov/press/rep/release/commerce-committee-advances-kids-online-safety-legislation/)
+
+---
+
+## 0c. October 2026 Refresh (Oct 5, 2026)
+
+Automated biennial freshness scan, ~48 hours after the last one.
+
+### New state — Alabama App Store Accountability Act
+Alabama Gov. Kay Ivey signed **HB 161** on **Feb 17, 2026**, making Alabama
+the fourth state (after Texas, Utah, and Louisiana — California followed in
+September) to require app stores to verify a user's age and get parental
+consent before a minor downloads or buys an app. Effective **Jan 1, 2027**,
+with a carve-out: accounts that already existed as of Oct 2, 2026 have until
+**Oct 1, 2027** to be age-categorized and verified. This was not previously
+tracked on legislative-tracker.html — added as a new STATE entry (EN/TR/ES),
+same bucket/pattern as the existing Texas/Louisiana/Utah/California entries.
+[Loeb & Loeb](https://www.loeb.com/en/insights/passle/2026/02/alabama-becomes-the-fourth-state-to-enact-an-app-store-accountability-act) ·
+[Troutman](https://www.troutmanprivacy.com/2026/02/alabama-enacts-app-store-law/) ·
+[ComplianceHub state roundup](https://compliancehub.wiki/alabama-app-store-age-verification-state-roundup/)
+
+### Spot-checked, no change needed
+- **New Jersey Kids Code Act** — signed Aug 11, 2026 (A4015), effective Sept
+  1, 2027, $5,000-per-violation private right of action. Matches the
+  tracker's existing entry exactly. [Hunton](https://www.hunton.com/privacy-and-cybersecurity-law-blog/new-jersey-enacts-the-kids-code-act-with-privacy-by-default-and-safety-by-design-obligations)
+- **California SB 1119 ("Adam's Law") and AB 1709** — both signed Sept 10,
+  2026 as previously recorded; no legal challenge to either had been filed
+  as of this check, so "pending, not yet in effect" remains accurate.
+  [TCPAWorld](https://tcpaworld.com/2026/09/15/california-opens-the-courthouse-door-adams-law-creates-a-private-right-of-action-against-ai-chatbot-operators-for-actual-damages-and-attorneys-fees/) ·
+  [MDL Update on AB 1709](https://mdlupdate.com/news/california-ab-1709-addictive-feeds-under-16-2026/)
+- **Kentucky v. Character Technologies** — still an active, unresolved state
+  enforcement action; no ruling or settlement yet. Tracker's "court" status
+  remains accurate. [Kentucky Lantern](https://kentuckylantern.com/2026/01/08/kentucky-attorney-generals-lawsuit-says-ai-company-preys-on-youth/)
+- **KOSA / Kids Internet and Digital Safety Act** — still no Senate floor
+  vote since the Aug 5, 2026 committee markup; tracker's "pending" status
+  and date remain accurate.
+
+### Context, not a tracker change
+- Meta's Instagram/Facebook settlement total is now reported around **$18
+  billion** once a separate Texas agreement is added to the ~$16.7B
+  multistate deal approved by Judge Yvonne Gonzalez Rogers in late August
+  2026. The tracker's "Meta Teen Accounts Settlement" entry doesn't quote a
+  dollar figure, only the behavioral changes (2-hr/day cap, etc.), which
+  remain accurate — no edit needed. [CNN](https://www.cnn.com/2026/08/26/tech/meta-states-settle-trial-children) ·
+  [The Hill](https://thehill.com/policy/technology/6053718-meta-pays-states-billions/)
+- The EU KIDS Act proposal (tracked as "pending") has more public detail
+  now than when first logged: under-13s barred from social media/video
+  accounts entirely, 13-14-year-olds limited to parent-supervised
+  "introductory accounts," 15+ get independent accounts only on
+  safety-by-design-compliant platforms, with fines up to 6% of global
+  turnover. Status is unchanged (still a Commission proposal, not adopted
+  by Parliament/Council), so no tracker edit — logged here for future
+  reference. [Davis Wright Tremaine](https://www.dwt.com/blogs/privacy--security-law-blog/2026/09/eu-kids-act-online-child-safety-proposal)
+- The Internet Watch Foundation reports **more photorealistic AI-generated
+  CSAM images assessed in the first 6 months of 2026 (6,310) than in all of
+  2025** combined. Doesn't change the tracker's "45 states criminalize
+  AI-generated CSAM" entry (a legal-status fact, not a volume stat) — noted
+  here as useful context for any future guide on reporting AI-generated
+  imagery. [IWF coverage](https://resultsense.com/news/2026-10-05-iwf-ai-child-abuse-images-2026)
+- The FTC has opened an inquiry into 7 AI companion-chatbot companies,
+  seeking data on how they measure chatbot harms to minors. Relevant
+  backdrop for the already-flagged federal chatbot bills; no existing
+  tracker entry to update.
+
+**Site follow-up from this refresh:** legislative-tracker.html extended
+(+Alabama App Store Accountability Act, EN/TR/ES, STATE bucket) via
+`python3 infrastructure/build-seo.py`; inline JS syntax verified; "last
+refreshed" date bumped to Oct 5, 2026 above.
 
 ---
 
