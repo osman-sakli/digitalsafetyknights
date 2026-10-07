@@ -1,6 +1,6 @@
 # DSK Threat Intelligence & Policy Research Bank
 
-Compiled 2026-08-02, last refreshed 2026-10-05. Covers the last ~10 months of
+Compiled 2026-08-02, last refreshed 2026-10-07. Covers the last ~10 months of
 child-online-safety news (Oct 2025 – Oct 2026), weighted toward the most
 recent 4-6 weeks. Sourced via web search — every claim below has a citation.
 This is a living reference: update it monthly (it's also the natural
@@ -46,6 +46,55 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
   Worth tracking as its own new entry once either shows real movement (a
   floor vote or enactment) rather than just a committee markup.
   [Commerce Committee](https://www.commerce.senate.gov/press/rep/release/commerce-committee-advances-kids-online-safety-legislation/)
+
+---
+
+## 0d. October 2026 Refresh (Oct 7, 2026)
+
+Automated biennial freshness scan, ~48 hours after the last one. No new
+enacted law, settlement, ruling, or policy change turned up since the Oct 5
+refresh — this window was quiet. No tracker edit this run.
+
+### Spot-checked, no change needed
+- **Texas App Store Accountability Act (SB 2420)** — re-confirmed the 5th
+  Circuit's June 4, 2026 stay (superseding its May 28 administrative stay)
+  remains in force; Texas continues to enforce the law. A coalition amicus
+  brief (Washington Legal Foundation et al.) is still urging the Supreme
+  Court to vacate the stay, but no SCOTUS action has happened yet. Tracker's
+  "effect" status remains accurate.
+  [WLF](https://www.wlf.org/2026/06/18/communicating/wlf-urges-supreme-court-to-vacate-fifth-circuit-stay-allowing-texas-to-enforce-app-store-accountability-act/) ·
+  [MoFo](https://www.mofo.com/resources/insights/251111-texas-targets-app-stores-with-new-accountability-law)
+- **KOSA / Kids Internet and Digital Safety Act** — still no Senate floor
+  vote. New context: coverage now frames the likely path as the lame-duck
+  session starting Nov 9, 2026, with sponsors weighing a regular roll-call
+  vote rather than unanimous consent — but the Senate and House still need
+  to reconcile their differing versions regardless. Tracker's "pending"
+  status and date remain accurate; nothing to change until an actual floor
+  vote happens.
+  [BiometricUpdate](https://www.biometricupdate.com/202610/kosa-stalls-in-senate-as-age-assurance-moves-into-online-safety-debate)
+- **EU KIDS Act (proposed)** — still in the post-proposal committee/working-
+  party stage (an Audiovisual and Media Working Party meeting discussed it
+  Oct 2, 2026); no Parliament plenary vote or Council position yet. Tracker's
+  "pending" status remains accurate.
+  [European Commission](https://commission.europa.eu/news-and-media/news/eu-kids-act-helping-children-navigate-safer-online-world-2026-09-17_en)
+
+### Context, not a tracker change
+- Several Roblox child-exploitation cases (part of the already-flagged MDL
+  3166) continue to see judges deny Roblox's motions to compel arbitration
+  under the federal Ending Forced Arbitration of Sexual Assault and Sexual
+  Harassment Act — the most recent widely-reported one from a California
+  Superior Court judge. These rulings predate this refresh window (most from
+  Oct 2025–June 2026) and don't change anything trackable: no Roblox entry
+  exists on legislative-tracker.html, and this is case-law attrition inside
+  an already-flagged MDL, not a new law or settlement.
+  [ABC News](https://abc7.com/post/judge-rules-roblox-keeping-alleged-abuse-case-public-eye/18120674/) ·
+  [Anapol Weiss](https://blog.anapolweiss.com/blog/california-court-denies-robloxs-attempt-to-force-child-exploitation-case-into-arbitration)
+- No new state has joined the App Store Accountability Act wave (Texas,
+  Utah, Louisiana, California, Alabama remain the full set); no state AG
+  beyond Alabama has announced a signed TikTok teen-safety settlement yet.
+
+**Site follow-up from this refresh:** none — nothing material changed since
+Oct 5, 2026. "Last refreshed" date bumped to Oct 7, 2026 above.
 
 ---
 
