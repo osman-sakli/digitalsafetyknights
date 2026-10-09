@@ -1,6 +1,6 @@
 # DSK Threat Intelligence & Policy Research Bank
 
-Compiled 2026-08-02, last refreshed 2026-10-07. Covers the last ~10 months of
+Compiled 2026-08-02, last refreshed 2026-10-09. Covers the last ~10 months of
 child-online-safety news (Oct 2025 – Oct 2026), weighted toward the most
 recent 4-6 weeks. Sourced via web search — every claim below has a citation.
 This is a living reference: update it monthly (it's also the natural
@@ -46,6 +46,57 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
   Worth tracking as its own new entry once either shows real movement (a
   floor vote or enactment) rather than just a committee markup.
   [Commerce Committee](https://www.commerce.senate.gov/press/rep/release/commerce-committee-advances-kids-online-safety-legislation/)
+
+---
+
+## 0e. October 2026 Refresh (Oct 9, 2026)
+
+Automated biennial freshness scan, ~48 hours after the last one. No new
+enacted law, settlement, ruling, or policy change turned up since the Oct 7
+refresh — this window was quiet. No tracker edit this run.
+
+### Spot-checked, no change needed
+- **California App Store Accountability Act (DAAA)** — no court challenge
+  found against California's law specifically (unlike Texas's SB 2420,
+  which remains the one under active litigation). Tracker's "pending,
+  effective January 1, 2027" status remains accurate.
+  [Winston & Strawn](https://www.winston.com/en/insights-news/class-action-lawsuit-filed-against-apple-for-in-app-purchases) ·
+  [DigitalPolicyAlert Texas docket](https://digitalpolicyalert.org/event/40782-computer-and-communications-industry-association-filed-a-brief-with-the-united-states-court-of-appeals-for-the-fifth-circuit-regarding-alleged-first-amendment-violations-of-app-store-accountability-act)
+- **New York SAFE for Kids Act** — NetChoice continues to publicly call the
+  finalized implementing rules unconstitutional but no lawsuit against New
+  York specifically has been filed as of this check (NetChoice's cited wins
+  are against California and Arkansas laws, not New York's). Tracker's
+  "pending, rules finalized, effective Jan 25, 2027" status remains
+  accurate. [NetChoice](https://netchoice.org/new-yorks-final-safe-for-kids-rules-cement-an-unconstitutional-censorship-regime/)
+- **TAKE IT DOWN Act** — FTC enforcement (effective since May 19, 2026)
+  continues: a complaint portal (TakeItDown.ftc.gov) is live, warning
+  letters went to major platforms, and at least one related criminal arrest
+  (EDNY) has occurred. No formal FTC enforcement action or settlement
+  against a platform yet. Tracker's "effect" status remains accurate.
+  [FTC](https://www.ftc.gov/news-events/news/press-releases/2026/05/ftc-begins-enforcing-take-it-down-act) ·
+  [Orrick](https://orrick.com/en/Insights/2026/06/Nonconsensual-Intimate-Images-Online-Take-It-Down-Act-Enforcement-In-Full-Swing)
+
+### Context, not a tracker change
+- Already-flagged items remain unchanged: KOSA still has no Senate floor
+  vote (no confirmed lame-duck floor schedule found); the EU KIDS Act is
+  still in its post-proposal public-feedback stage (closes Nov 26, 2026),
+  not yet before Parliament/Council; the "Protecting Kids from Human-Like
+  Chatbots Act" (introduced Oct 1, 2026) has had no committee action.
+- The UK's planned under-16 social media ban (secondary legislation
+  expected before year-end 2026, in force spring 2027) continues to
+  develop, but Ofcom's required rapid age-assurance assessment had not yet
+  been published as of Oct 9, 2026. This isn't yet reflected on the
+  tracker's existing UK entry (which covers only the CSEA Reporting Duty) —
+  worth watching once Ofcom's assessment and the actual secondary
+  legislation land, but not actionable yet.
+  [Lewis Silkin](https://www.lewissilkin.com/insights/2026/06/15/a-line-in-the-sand-uk-confirms-full-social-media-ban-for-the-under-16s-102n2so) ·
+  [Ofcom age assurance report](https://www.ofcom.org.uk/online-safety/protecting-children/use-of-age-assurance-report-2026)
+- No new state has joined the App Store Accountability Act wave; no new
+  platform settlement beyond what's already logged (Meta multistate,
+  TikTok-Alabama) was found.
+
+**Site follow-up from this refresh:** none — nothing material changed since
+Oct 7, 2026. "Last refreshed" date bumped to Oct 9, 2026 above.
 
 ---
 
