@@ -1,6 +1,6 @@
 # DSK Threat Intelligence & Policy Research Bank
 
-Compiled 2026-08-02, last refreshed 2026-10-09. Covers the last ~10 months of
+Compiled 2026-08-02, last refreshed 2026-10-11. Covers the last ~10 months of
 child-online-safety news (Oct 2025 – Oct 2026), weighted toward the most
 recent 4-6 weeks. Sourced via web search — every claim below has a citation.
 This is a living reference: update it monthly (it's also the natural
@@ -46,6 +46,55 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
   Worth tracking as its own new entry once either shows real movement (a
   floor vote or enactment) rather than just a committee markup.
   [Commerce Committee](https://www.commerce.senate.gov/press/rep/release/commerce-committee-advances-kids-online-safety-legislation/)
+
+---
+
+## 0f. October 2026 Refresh (Oct 11, 2026)
+
+Automated biennial freshness scan, ~48 hours after the last one. No new
+enacted law, settlement, ruling, or policy change turned up since the Oct 9
+refresh — another quiet window. No tracker edit this run.
+
+### Spot-checked, no change needed
+- **Kids Internet and Digital Safety Act / KOSA** — still no Senate floor
+  vote found (searches turned up nothing newer than the Aug 5, 2026
+  Commerce Committee markup already on file). Tracker's "pending" status
+  and date remain accurate.
+  [Punchbowl News](https://punchbowl.news/article/tech/kosa-senate-floor/)
+- **Texas App Store Accountability Act (SB 2420)** — re-confirmed the
+  Supreme Court's July 6, 2026 denial of the emergency application to
+  vacate the Fifth Circuit's stay; the law remains in effect and no further
+  SCOTUS action has happened since. Tracker's "effect" status remains
+  accurate. [MediaPost](https://www.mediapost.com/publications/article/416321/scotus-allows-texas-to-enforce-app-store-restricti.html)
+- **EU KIDS Act (proposed)** — still at "under deliberation": the European
+  Commission's Sept 17, 2026 proposal (COM(2026) 681 final) is with
+  Parliament and Council, no plenary vote or Council position yet.
+  Tracker's "pending" status and date remain accurate.
+  [Digital Policy Alert](https://digitalpolicyalert.org/event/43773-european-commission-submitted-proposal-for-kids-act-to-european-parliament-and-the-council-including-age-verification-requirement-no-com2026-681-final)
+
+### Context, not a tracker change
+- Ofcom's rapid age-assurance assessment for the UK's planned under-16
+  social media ban is still not published; Ofcom has only committed to
+  deliver it to Parliament "by the end of October" 2026. Not yet
+  actionable on the tracker's existing UK entry (which covers only the
+  CSEA Reporting Duty).
+  [Lewis Silkin](https://www.lewissilkin.com/insights/2026/07/16/ofcom-warns-that-tougher-action-is-needed-on-age-assurance-following-publication-102nc4m)
+- No new state has joined the App Store Accountability Act wave; no new
+  platform settlement or ruling beyond what's already logged (Meta
+  multistate, TikTok-Alabama, Kentucky v. Character Technologies) was
+  found. The California child-exploitation ruling against Roblox and the
+  Texas/Discord agreed temporary injunction that turned up in searches both
+  predate this routine's Aug 2, 2026 compile date and are background, not
+  new developments.
+- Already-flagged items remain unchanged: no committee action on the
+  "Protecting Kids from Human-Like Chatbots Act" (introduced Oct 1, 2026);
+  MDL 3166 (Roblox/Discord/Snap/Meta) remains consolidated with no ruling
+  or settlement; no lawsuit against New York's SAFE for Kids Act has been
+  filed despite NetChoice's continued public opposition to the finalized
+  rules.
+
+**Site follow-up from this refresh:** none — nothing material changed since
+Oct 9, 2026. "Last refreshed" date bumped to Oct 11, 2026 above.
 
 ---
 
