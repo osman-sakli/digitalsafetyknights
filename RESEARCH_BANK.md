@@ -1,6 +1,6 @@
 # DSK Threat Intelligence & Policy Research Bank
 
-Compiled 2026-08-02, last refreshed 2026-10-11. Covers the last ~10 months of
+Compiled 2026-08-02, last refreshed 2026-10-13. Covers the last ~10 months of
 child-online-safety news (Oct 2025 – Oct 2026), weighted toward the most
 recent 4-6 weeks. Sourced via web search — every claim below has a citation.
 This is a living reference: update it monthly (it's also the natural
@@ -11,6 +11,19 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
 
 ## Flagged for review — not yet published
 
+- **(2026-10-13) Unsealed NY AG v. TikTok complaint alleges a "placebo"
+  safety feature** — a Oct 7, 2026 court order unsealed parts of New York
+  Attorney General Letitia James's amended complaint (part of her
+  long-running 2024 suit, itself part of the broader multistate TikTok
+  litigation) alleging TikTok ran 2023 experiments putting 63,000+ users,
+  including teens, into test groups where the "Algo Refresh" feed-reset
+  button was non-functional even though the UI showed it as active; an
+  internal TikTok wellbeing product manager reportedly flagged the test as
+  misleading. TikTok disputes the characterization. Not actioned: this is
+  unproven litigation allegation, not a ruling or settlement, and no
+  TikTok-NY entry exists on the tracker to attach a status update to.
+  Revisit if this produces a ruling, settlement, or admission.
+  [Virginia Lawyers Weekly (Reuters-sourced)](https://valawyersweekly.com/2026/10/08/new-york-alleges-tiktok-placedbo-safety-feature-teens/)
 - **(2026-10-05) "Protecting Kids from Human-Like Chatbots Act" introduced
   in the House Oct 1, 2026** (Rep. Miller-Meeks, bipartisan) — would bar
   chatbots from communicating with minors as if human by default: no
@@ -46,6 +59,59 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
   Worth tracking as its own new entry once either shows real movement (a
   floor vote or enactment) rather than just a committee markup.
   [Commerce Committee](https://www.commerce.senate.gov/press/rep/release/commerce-committee-advances-kids-online-safety-legislation/)
+
+---
+
+## 0g. October 2026 Refresh (Oct 13, 2026)
+
+Automated biennial freshness scan, ~48 hours after the last one. No new
+enacted law, settlement, ruling, or policy change turned up since the Oct 11
+refresh — another quiet window. One new litigation development was found
+(unsealed TikTok allegations, logged above under "Flagged for review") but
+it doesn't warrant a tracker edit. No tracker edit this run.
+
+### Spot-checked, no change needed
+- **California AB 1709** — no First Amendment or other legal challenge
+  found against AB 1709 specifically (commentators expect one, drawing on
+  the pattern from California's related SB 976, but none has been filed as
+  of this check). Tracker's "pending, effective January 1, 2027" status
+  remains accurate.
+  [AFS Law](https://www.afslaw.com/perspectives/alerts/california-law-seeking-regulate-social-media-use-minors-raises-first-amendment)
+- **New Jersey Kids Code Act** — same pattern: industry (CCIA) testified
+  against the bill before passage and commentators anticipate a First
+  Amendment challenge once it nears its September 1, 2027 effective date,
+  but no lawsuit has been filed yet. Tracker's "pending, effective
+  September 1, 2027" status remains accurate.
+  [Sheppard Mullin](https://www.sheppard.com/insights/blogs/new-jersey-enacts-a-kids-code-act)
+- **TikTok–Alabama Teen Safety Settlement** — re-confirmed the Sept 25,
+  2026 Montgomery County consent-decree approval and payment/phase-in terms
+  already on file; found no October update suggesting the rollout has
+  stalled or changed. Tracker's "effect" status and description remain
+  accurate.
+  [PPC Land](https://ppc.land/tiktok-must-block-alabama-teens-after-two-hours-a-day-in-116-2m-deal/)
+
+### Context, not a tracker change
+- Two federal AI-chatbot child-safety bills — Sen. Hawley's GUARD Act
+  (Senate Judiciary, cleared committee 22-0 on Apr 29, 2026) and the
+  Cruz-Schatz CHATBOT Act (Senate Commerce, cleared committee unanimously
+  in 2026) — remain stuck after committee: no Senate floor vote found for
+  either. Both predate this routine's Aug 2, 2026 compile date and were not
+  previously logged; noting them here as background rather than adding a
+  new "flagged" entry, since nothing has changed about their status.
+  [ITIF](https://itif.org/publications/2026/06/29/the-guard-act-fails-to-guard-kids-best-interests-on-ai-companions/) ·
+  [Senate Commerce](https://www.commerce.senate.gov/press/rep/release/cruz-schatzs-chatbot-act-advances-to-the-senate-floor/)
+- Already-flagged items remain unchanged: no committee action on the
+  "Protecting Kids from Human-Like Chatbots Act" (introduced Oct 1, 2026);
+  MDL 3166 (Roblox/Discord/Snap/Meta) remains consolidated with no ruling
+  or settlement; no lawsuit against New York's SAFE for Kids Act has been
+  filed despite NetChoice's continued public opposition; Ofcom's UK
+  rapid age-assurance assessment still not published (committed "by end of
+  October 2026"); the EU KIDS Act had its first European Parliament
+  plenary debate on Oct 8, 2026 but remains unamended and in public
+  consultation (closes Nov 26, 2026) — still "pending," no tracker change.
+
+**Site follow-up from this refresh:** none — nothing material changed since
+Oct 11, 2026. "Last refreshed" date bumped to Oct 13, 2026 above.
 
 ---
 
