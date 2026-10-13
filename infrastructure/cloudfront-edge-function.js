@@ -71,7 +71,7 @@ function handler(event) {
 
   var isPrivate = request.uri === '/stats.html' || request.uri === '/content/traffic-stats.json';
   if (isPrivate) {
-    if (headers.authorization && headers.authorization.value === 'Basic b3NtYW46MlJsSlNZdGo5bkVrc3I=') {
+    if (headers.authorization && headers.authorization.value === 'Basic b3NtYW46SHdDZWtnZVkwZnBaTlZCQ2hOc28=') {
       return request;
     }
     return {
