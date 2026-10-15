@@ -1,6 +1,6 @@
 # DSK Threat Intelligence & Policy Research Bank
 
-Compiled 2026-08-02, last refreshed 2026-10-13. Covers the last ~10 months of
+Compiled 2026-08-02, last refreshed 2026-10-15. Covers the last ~10 months of
 child-online-safety news (Oct 2025 – Oct 2026), weighted toward the most
 recent 4-6 weeks. Sourced via web search — every claim below has a citation.
 This is a living reference: update it monthly (it's also the natural
@@ -59,6 +59,60 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
   Worth tracking as its own new entry once either shows real movement (a
   floor vote or enactment) rather than just a committee markup.
   [Commerce Committee](https://www.commerce.senate.gov/press/rep/release/commerce-committee-advances-kids-online-safety-legislation/)
+
+---
+
+## 0h. October 2026 Refresh (Oct 15, 2026)
+
+Automated biennial freshness scan, ~48 hours after the last one. No new
+enacted law, settlement, ruling, or policy change turned up since the Oct 13
+refresh — another quiet window. No tracker edit this run.
+
+### Spot-checked, no change needed
+- **Texas App Store Accountability Act (SB 2420)** — re-confirmed the
+  Supreme Court's July 2026 denial of CCIA's emergency application to
+  vacate the Fifth Circuit's stay remains the last word; the law continues
+  in effect while the Fifth Circuit appeal proceeds on the merits. Tracker's
+  "effect" status remains accurate.
+  [ACLJ](https://aclj.org/school-choice/major-victory-supreme-court-rejects-emergency-bid-to-block-texas-app-store-accountability-act)
+- **Utah App Store Accountability Act** — re-confirmed HB 498's amendment
+  (signed March 18, 2026) removed Attorney General enforcement and pushed
+  the private-right-of-action compliance deadline to May 6, 2027; the
+  CCIA/teen-plaintiffs' First Amendment suit was dismissed by joint
+  stipulation after the amendment. Tracker's "pending, deadline pushed to
+  May 6, 2027; private-lawsuit enforcement only" status remains accurate.
+  [Bloomberg Law](https://news.bloomberglaw.com/litigation/free-speech-suit-over-utah-app-store-act-ends-after-law-changes) ·
+  [Loeb & Loeb](https://www.loeb.com/en/insights/passle/2026/05/update-on-utah-app-store-law--another-waiting-game)
+- **New York SAFE for Kids Act** — no lawsuit against New York specifically
+  found as of this check, despite NetChoice continuing to call the
+  finalized rules "unconstitutional." Tracker's "pending, rules finalized
+  July 2026, effective January 25, 2027" status remains accurate.
+  [NetChoice](https://netchoice.org/new-yorks-final-safe-for-kids-rules-cement-an-unconstitutional-censorship-regime/)
+- **KOSA / Kids Internet and Digital Safety Act** — still no Senate floor
+  vote found; an unverified aggregator report of a possible Sept 30, 2026
+  unanimous-consent attempt could not be confirmed either way. Tracker's
+  "pending" status remains accurate.
+
+### Context, not a tracker change
+- Meta's ~$17-18B multistate teen-safety settlement (already logged) was
+  approved by Judge Yvonne Gonzalez Rogers shortly after filing in late
+  August 2026; no October developments beyond what's already on file.
+  [NPR via NPR Illinois](https://www.nprillinois.org/2026-08-26/meta-states-agree-to-17-billion-settlement-in-child-safety-trial)
+- MDL 3166 (Roblox/Discord/Snap/Meta, already flagged) remains in
+  pretrial/consolidation posture in N.D. Cal.; no merits ruling, Section
+  230 decision, or settlement found.
+  [JPML MDL-3166 docket](https://www.jpml.uscourts.gov/sites/jpml/files/MDL-3166-Transfer_Order-12-25.pdf)
+- EU KIDS Act remains at "pending" — still only a first European Parliament
+  plenary debate (Oct 8, 2026) with no vote scheduled; public consultation
+  still open through Nov 26, 2026.
+  [informat.ro](https://informat.ro/en/eu/kids-act-debate-in-parliament-142578)
+- Already-flagged items remain unchanged: no committee action on the
+  "Protecting Kids from Human-Like Chatbots Act" (introduced Oct 1, 2026);
+  the unsealed NY AG v. TikTok "placebo" allegations remain unresolved
+  litigation, not a ruling or settlement.
+
+**Site follow-up from this refresh:** none — nothing material changed since
+Oct 13, 2026. "Last refreshed" date bumped to Oct 15, 2026 above.
 
 ---
 
