@@ -1,6 +1,6 @@
 # DSK Threat Intelligence & Policy Research Bank
 
-Compiled 2026-08-02, last refreshed 2026-10-15. Covers the last ~10 months of
+Compiled 2026-08-02, last refreshed 2026-10-17. Covers the last ~10 months of
 child-online-safety news (Oct 2025 – Oct 2026), weighted toward the most
 recent 4-6 weeks. Sourced via web search — every claim below has a citation.
 This is a living reference: update it monthly (it's also the natural
@@ -11,6 +11,27 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
 
 ## Flagged for review — not yet published
 
+- **(2026-10-14) Eight states sue OpenAI over ChatGPT child-safety claims**
+  — Arizona, Arkansas, Idaho, Iowa, Kansas, Montana, Nebraska, and West
+  Virginia each filed separate state-court suits against OpenAI on Oct 14,
+  2026, alleging ChatGPT was marketed as appropriate for children under 13
+  and is engineered to be agreeable/engaging in ways that coached some
+  users toward self-harm or violence. Montana's suit adds COPPA-style
+  privacy claims (no age verification or parental consent before
+  collecting data from under-13s); Iowa's invokes its Consumer Fraud Act.
+  OpenAI disputes the characterization and points to existing parental
+  controls. Not actioned: unresolved litigation only hours old relative to
+  the prior refresh, no ruling or settlement, and no OpenAI/ChatGPT entry
+  exists on the tracker to attach a status to — same treatment as MDL 3166
+  below. Revisit if any of the eight suits produces a ruling or
+  settlement, following the same bar that put Kentucky v. Character
+  Technologies on the tracker only once it was a live, named court case
+  (it already is one here, but one new litigation filing isn't yet the
+  "clear-cut, mechanical" update this routine is scoped to — worth a
+  second look next run to decide if it should join Kentucky v. Character
+  Technologies as its own tracker entry).
+  [CNBC](https://www.cnbc.com/2026/10/14/openai-sued-by-8-states-over-chatgpt-safety-concerns-.html) ·
+  [Bloomberg Law](https://news.bloomberglaw.com/us-law-week/half-dozen-states-hit-openai-with-kids-online-safety-lawsuits)
 - **(2026-10-13) Unsealed NY AG v. TikTok complaint alleges a "placebo"
   safety feature** — a Oct 7, 2026 court order unsealed parts of New York
   Attorney General Letitia James's amended complaint (part of her
@@ -59,6 +80,61 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
   Worth tracking as its own new entry once either shows real movement (a
   floor vote or enactment) rather than just a committee markup.
   [Commerce Committee](https://www.commerce.senate.gov/press/rep/release/commerce-committee-advances-kids-online-safety-legislation/)
+
+---
+
+## 0i. October 2026 Refresh (Oct 17, 2026)
+
+Automated biennial freshness scan, ~48 hours after the last one. One new
+litigation development was found (eight states sue OpenAI over ChatGPT
+child-safety claims, logged above under "Flagged for review") but it
+doesn't warrant a tracker edit — no ruling, settlement, or enacted law
+turned up since the Oct 15 refresh. No tracker edit this run.
+
+### Spot-checked, no change needed
+- **Alabama App Store Accountability Act** — no legal challenge found
+  against HB 161 as of this check (unlike Texas/Utah/Louisiana, which all
+  drew suits); it remains on track for its Jan 1, 2027 effective date.
+  Tracker's "pending" status and date remain accurate.
+  [WSFA via WBRC](https://www.wbrc.com/2026/07/08/us-supreme-court-upholds-app-store-age-verification-law-months-before-alabama-law-takes-place/)
+- **California SB 1119 ("Adam's Law")** — re-confirmed no legal challenge
+  has been filed; core child-safety duties remain operative July 1, 2027,
+  with the independent-audit requirement phased in later (Jan 1, 2029, or
+  Jan 1, 2032 for operators under $500M prior-year revenue). Tracker's
+  "pending, effective July 1, 2027" status remains accurate.
+  [Akin Gump](https://www.akingump.com/en/insights/ai-law-and-regulation-tracker/california-enacts-companion-chatbot-child-safety-requirements-sb-1119)
+- **TAKE IT DOWN Act** — re-confirmed FTC enforcement (effective since May
+  19, 2026) continues: the agency's TakeItDown.ftc.gov portal is live and
+  warning letters already went to major platforms; no formal enforcement
+  action or penalty against a named platform found yet. Tracker's
+  "effect" status remains accurate.
+  [FTC](https://www.ftc.gov/news-events/news/press-releases/2026/05/ftc-begins-enforcing-take-it-down-act)
+
+### Context, not a tracker change
+- KOSA/Kids Internet and Digital Safety Act: still no Senate floor vote
+  found; the chamber dispute between the Senate's KOSA language and the
+  House-passed KIDS Act remains unresolved. Tracker's "pending" status
+  remains accurate.
+  [Punchbowl News](https://punchbowl.news/article/tech/kosa-senate-floor/)
+- GUARD Act and CHATBOT Act remain stuck after committee passage (April
+  and 2026 committee votes respectively); no Senate floor vote found for
+  either — unchanged from the Oct 13 refresh's note on these bills.
+- UK under-16 social media ban: still only an announced plan (legislation
+  promised "before Christmas," enforcement targeted for spring 2027); no
+  bill text introduced yet as of this check.
+  [The Register](https://www.theregister.com/2026/01/22/house_of_lords_votes_to_ban_under_16_socmed/)
+- Already-flagged items remain unchanged: MDL 3166 (Roblox/Discord/Snap/
+  Meta) remains consolidated with no ruling or settlement; the unsealed NY
+  AG v. TikTok "placebo" allegations remain unresolved litigation; Ofcom's
+  UK rapid age-assurance assessment still not published (committed "by end
+  of October 2026"); the EU KIDS Act remains in public consultation
+  (closes Nov 26, 2026) with no Parliament vote scheduled.
+
+**Site follow-up from this refresh:** none — the only new item (OpenAI
+multi-state suits) is unresolved litigation filed one day before the prior
+refresh, logged under "Flagged for review" rather than added to the
+tracker, consistent with how MDL 3166 was handled. "Last refreshed" date
+bumped to Oct 17, 2026 above.
 
 ---
 
