@@ -4,3 +4,19 @@ infrastructure/terraform/.terraform/
 infrastructure/terraform/.build/
 infrastructure/terraform/*.tfstate
 infrastructure/terraform/*.tfstate.backup
+
+# OS / editor
+**/.DS_Store
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+*.pem
+!lambda-layer/python/certifi/cacert.pem
