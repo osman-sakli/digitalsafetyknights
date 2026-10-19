@@ -1,6 +1,6 @@
 # DSK Threat Intelligence & Policy Research Bank
 
-Compiled 2026-08-02, last refreshed 2026-10-17. Covers the last ~10 months of
+Compiled 2026-08-02, last refreshed 2026-10-19. Covers the last ~10 months of
 child-online-safety news (Oct 2025 – Oct 2026), weighted toward the most
 recent 4-6 weeks. Sourced via web search — every claim below has a citation.
 This is a living reference: update it monthly (it's also the natural
@@ -80,6 +80,63 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
   Worth tracking as its own new entry once either shows real movement (a
   floor vote or enactment) rather than just a committee markup.
   [Commerce Committee](https://www.commerce.senate.gov/press/rep/release/commerce-committee-advances-kids-online-safety-legislation/)
+
+---
+
+## 0j. October 2026 Refresh (Oct 19, 2026)
+
+Automated biennial freshness scan, ~48 hours after the last one. Another
+quiet window — no new enacted law, settlement, ruling, or policy change
+turned up since the Oct 17 refresh. No tracker edit this run.
+
+### Spot-checked, no change needed
+- **New York SAFE for Kids Act** — re-confirmed the final rules (published
+  in the State Register July 29, 2026) still take effect Jan 25, 2027 with
+  the same substance the tracker describes (algorithmic-feed opt-in,
+  midnight-6am notification block, no mandated verification method, just
+  minimum accuracy/privacy standards). No legal challenge has been filed
+  yet, despite NetChoice publicly criticizing the final rules as an
+  "unconstitutional censorship regime." Tracker's "pending, effective
+  January 25, 2027" status remains accurate.
+  [AG James/Gov. Hochul](https://ag.ny.gov/press-release/2026/attorney-general-james-and-governor-hochul-release-final-safe-kids-act-rules) ·
+  [NetChoice](https://netchoice.org/new-yorks-final-safe-for-kids-rules-cement-an-unconstitutional-censorship-regime/)
+- **New Jersey Kids Code Act** — re-confirmed no lawsuit has been filed
+  against the Aug 11, 2026 law as of this check, though law firms widely
+  expect a NetChoice/CCIA-style First Amendment challenge similar to the
+  pending Maryland and California Age-Appropriate Design Code suits.
+  Tracker's "pending, effective September 1, 2027" status remains
+  accurate; worth a status check again once/if a suit is filed.
+  [Sheppard Mullin](https://www.sheppard.com/insights/blogs/new-jersey-enacts-a-kids-code-act)
+- **MDL 3166 (Roblox/Discord/Snap/Meta)** — re-confirmed still consolidated
+  in N.D. Cal. before Chief Judge Seeborg with no ruling or settlement; one
+  separate (non-MDL) California state-court judge ruled against Roblox on
+  a procedural point in an individual abuse case (Roblox says it will
+  appeal), but that's a single-case ruling, not an MDL-wide development.
+  Still not reflected anywhere on the tracker — same treatment as the Oct
+  17 refresh's "Flagged for review" entry above.
+  [ABC7](https://abc7news.com/post/judge-rules-roblox-keeping-alleged-abuse-case-public-eye/18120674/)
+
+### Context, not a tracker change
+- KOSA/Kids Internet and Digital Safety Act: still no Senate floor vote
+  found; unchanged from the Oct 17 refresh.
+- Texas App Store Accountability Act: no ruling since the Supreme Court's
+  July 2026 denial of CCIA's emergency application; the Fifth Circuit
+  merits appeal is still pending. Unchanged.
+- Meta Teen Accounts: still rolling out (most recent concrete update found
+  is from June 2026 — expanded content-filtering defaults tied to the
+  13+ setting); nothing dated October 2026 turned up. Unchanged.
+- UK under-16 social media ban / Ofcom age-assurance assessment: Ofcom's
+  rapid assessment is still committed for "by end of October 2026" with
+  no publication found yet. EU KIDS Act remains in public consultation
+  with no Parliament vote scheduled. Both unchanged.
+- Already-flagged items remain unchanged: the eight-state OpenAI suits
+  (filed Oct 14) and the unsealed NY AG v. TikTok "placebo" allegations
+  are still unresolved litigation with no ruling or settlement.
+
+**Site follow-up from this refresh:** none — no enacted law, ruling, or
+settlement surfaced that isn't already reflected on the tracker or logged
+under "Flagged for review." "Last refreshed" date bumped to Oct 19, 2026
+above.
 
 ---
 
