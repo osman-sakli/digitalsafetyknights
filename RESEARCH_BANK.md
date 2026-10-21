@@ -1,6 +1,6 @@
 # DSK Threat Intelligence & Policy Research Bank
 
-Compiled 2026-08-02, last refreshed 2026-10-19. Covers the last ~10 months of
+Compiled 2026-08-02, last refreshed 2026-10-21. Covers the last ~10 months of
 child-online-safety news (Oct 2025 – Oct 2026), weighted toward the most
 recent 4-6 weeks. Sourced via web search — every claim below has a citation.
 This is a living reference: update it monthly (it's also the natural
@@ -11,6 +11,31 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
 
 ## Flagged for review — not yet published
 
+- **(2026-10-15) Character Technologies (Character.AI's parent) files
+  Chapter 11 bankruptcy; ~40-state AG coalition intervenes over child-safety
+  terms** — the company behind Character.AI filed for Chapter 11 bankruptcy
+  protection in mid-October 2026 while disclosing plans to license some of
+  its technology to the Walt Disney Company, and cited ongoing state
+  regulatory scrutiny (including Kentucky's lawsuit, already on the
+  tracker as "Kentucky v. Character Technologies") as a factor. A
+  bipartisan coalition of roughly 40 state attorneys general (Kentucky,
+  California, Michigan, Virginia, and others, led by Colorado AG Phil
+  Weiser) filed a notice in the bankruptcy docket — not a new lawsuit —
+  demanding that any court-approved sale of the company's business or
+  assets include enforceable "terms of protection" for children and other
+  users before a buyer can close a deal. Not actioned: this is a
+  bankruptcy-docket notice, not a ruling or settlement, and it doesn't
+  change the status of the existing "Kentucky v. Character Technologies"
+  tracker entry (still filed/pending in Franklin Circuit Court) — but it's
+  a material enough development (company insolvency + a major licensing
+  deal + a large multistate intervention) that it may be worth a dedicated
+  tracker note or guide mention once the bankruptcy court rules on the
+  coalition's conditions or approves/rejects a sale. Also worth checking
+  next run whether the bankruptcy's automatic stay has paused the Kentucky
+  suit itself.
+  [WSMV](https://www.wsmv.com/2026/10/15/kentucky-joins-coalition-characterai-bankruptcy-case/) ·
+  [California AG](https://oag.ca.gov/node/631358) ·
+  [Michigan AG](https://www.michigan.gov/ag/news/press-releases/2026/10/15/attorney-general-nessel-seeks-consumer-protections-in-character-ai-bankruptcy)
 - **(2026-10-14) Eight states sue OpenAI over ChatGPT child-safety claims**
   — Arizona, Arkansas, Idaho, Iowa, Kansas, Montana, Nebraska, and West
   Virginia each filed separate state-court suits against OpenAI on Oct 14,
@@ -80,6 +105,68 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
   Worth tracking as its own new entry once either shows real movement (a
   floor vote or enactment) rather than just a committee markup.
   [Commerce Committee](https://www.commerce.senate.gov/press/rep/release/commerce-committee-advances-kids-online-safety-legislation/)
+
+---
+
+## 0k. October 2026 Refresh (Oct 21, 2026)
+
+Automated biennial freshness scan, ~48 hours after the last one. No new
+enacted law, settlement, or ruling that changes a tracked status; the one
+new substantive finding (Character Technologies' bankruptcy filing) is
+litigation/corporate context, logged under "Flagged for review" above
+rather than as a tracker edit. No tracker edit this run.
+
+### Spot-checked, no change needed
+- **KOSA / Kids Internet and Digital Safety Act** — re-confirmed no Senate
+  floor vote since the Aug 5, 2026 Commerce Committee passage; no October
+  floor action found in Congress.gov-adjacent coverage. Tracker's
+  "pending" status (House passed 267-117 June 29; Senate Commerce advanced
+  an amended version Aug 5) remains accurate.
+  [Akin Gump](https://www.akingump.com/print/v2/content/1136950/senate-commerce-committee-advances-kids-safety-bills-and-punts-ai-markup-to-september.pdf) ·
+  [Washington Times](https://www.washingtontimes.com/news/2026/aug/5/kids-online-safety-bills-head-full-senate-yearslong-effort-rein-big/)
+- **Kentucky v. Character Technologies** — the underlying case is still
+  filed and pending in Franklin Circuit Court; two new procedural
+  developments since the last refresh (an Oct 8 unredacted filing adding
+  specific 2025 chat examples, and Kentucky joining the Oct 14-15
+  multistate bankruptcy-docket coalition — see "Flagged for review" above)
+  don't change the tracker's "court" status or date. No ruling found.
+  [The Star (Oct 9)](https://www.thestar.com.my/tech/tech-news/2026/10/09/characterai-chatbots-encouraged-users-to-cut-and-starve-themselves-kentucky-alleges) ·
+  [WSMV (Oct 15)](https://www.wsmv.com/2026/10/15/kentucky-joins-coalition-characterai-bankruptcy-case/)
+- **Meta Teen Accounts Settlement dollar figure (already logged, not on
+  tracker)** — re-verified against primary-ish sources (CNBC, Hunton law
+  blog, NY AG's own settlement filing) after a search summary suggested
+  Judge Yvonne Gonzalez Rogers had "declined to immediately approve" the
+  deal. That claim doesn't hold up: multiple sources confirm she approved
+  the consent judgment the same day as the Aug 26, 2026 hearing, consistent
+  with what's already on file. No correction needed.
+  [CNBC](https://www.cnbc.com/2026/08/26/meta-social-media-trial-settlement.html) ·
+  [Hunton](https://www.hunton.com/privacy-and-cybersecurity-law-blog/court-approves-meta-settlement-with-29-states-over-alleged-harms-to-children-and-teens)
+
+### Context, not a tracker change
+- MDL 3166 (Roblox/Discord/Snap/Meta, already flagged) remains in
+  pretrial/consolidation posture in N.D. Cal. before Chief Judge Seeborg;
+  arbitration-related appeals to the Ninth Circuit are still pending, no
+  merits ruling or settlement found.
+  [MLex via summary](https://www.mlex.com/articles/2513874/discord-roblox-face-more-lawsuits-in-us-social-media-litigation)
+- EU KIDS Act: Council working-party "examination of the text" sessions
+  were held Oct 19, 20, and 23, 2026, and the text was sent to the European
+  Economic and Social Committee for consultation Oct 13; public
+  consultation remains open through Nov 26, 2026. Still no European
+  Parliament floor vote scheduled. Unchanged from "pending."
+  [Council of the EU document register](https://data.consilium.europa.eu/doc/document/CM-4603-2026-INIT/en/pdf)
+- UK Ofcom's "by end of October 2026" rapid assessment on under-16
+  age-assurance has not yet been published as of this check. Unchanged.
+- No state (Kansas, New Hampshire, Wisconsin, South Dakota, or any other)
+  has been confirmed to have signed a new App Store Accountability Act
+  since Alabama in February 2026. Unchanged.
+- Already-flagged items remain unchanged: the eight-state OpenAI suits
+  (filed Oct 14), the unsealed NY AG v. TikTok "placebo" allegations, and
+  the "Protecting Kids from Human-Like Chatbots Act" (introduced Oct 1)
+  are all still unresolved with no ruling, settlement, or committee action.
+
+**Site follow-up from this refresh:** none — nothing surfaced rose to a
+clear-cut, mechanical tracker update. "Last refreshed" date bumped to Oct
+21, 2026 above.
 
 ---
 
