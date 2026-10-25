@@ -1,6 +1,6 @@
 # DSK Threat Intelligence & Policy Research Bank
 
-Compiled 2026-08-02, last refreshed 2026-10-23. Covers the last ~10 months of
+Compiled 2026-08-02, last refreshed 2026-10-25. Covers the last ~10 months of
 child-online-safety news (Oct 2025 – Oct 2026), weighted toward the most
 recent 4-6 weeks. Sourced via web search — every claim below has a citation.
 This is a living reference: update it monthly (it's also the natural
@@ -117,6 +117,72 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
   Worth tracking as its own new entry once either shows real movement (a
   floor vote or enactment) rather than just a committee markup.
   [Commerce Committee](https://www.commerce.senate.gov/press/rep/release/commerce-committee-advances-kids-online-safety-legislation/)
+
+---
+
+## 0m. October 2026 Refresh (Oct 25, 2026)
+
+Automated biennial freshness scan, ~48 hours after the last one. Another
+quiet window — no enacted law, ruling, or settlement surfaced that isn't
+already reflected on the tracker or logged under "Flagged for review." No
+tracker edit this run.
+
+### Spot-checked, no change needed
+- **Texas App Store Accountability Act** — re-confirmed the tracker's
+  "In effect since Jan 1, 2026 — 5th Circuit stayed the injunction" status.
+  No merits ruling found since the Fifth Circuit's stay-pending-appeal
+  order and the Supreme Court's denial of emergency relief; the underlying
+  First Amendment challenge (CCIA/SEAT v. Paxton) remains pending on
+  appeal. Tracker's "effect" status remains accurate.
+  [MLex](https://www.mlex.com/mlex/articles/2499110) ·
+  [MoFo](https://www.mofo.com/pdf/resources/insights/251111-texas-targets-app-stores-with-new-accountability-law)
+- **Kids Internet and Digital Safety Act / KOSA** — re-confirmed no Senate
+  floor vote found since the Aug 5, 2026 Commerce Committee passage; the
+  House-passed version (no duty-of-care provision) and the Senate's KOSA
+  text (full duty of care) remain unreconciled, per Sen. Blackburn's and
+  Chair Cruz's public statements. Tracker's "pending" status remains
+  accurate.
+  [Washington Times](https://www.washingtontimes.com/news/2026/aug/5/kids-online-safety-bills-head-full-senate-yearslong-effort-rein-big/) ·
+  [Akin Gump](https://www.akingump.com/en/insights/ai-law-and-regulation-tracker/senate-commerce-committee-advances-kids-safety-bills-and-punts-ai-markup-to-september)
+- **California App Store Accountability Act (DAAA)** — searched for a
+  NetChoice/CCIA First Amendment challenge against the DAAA specifically
+  (distinct from California's separate, already-litigated Age-Appropriate
+  Design Code and SB 976 cases). None found. Tracker's "pending, effective
+  January 1, 2027" status remains accurate.
+
+### Context, not a tracker change
+- Character Technologies bankruptcy: no update since the Oct 23 refresh —
+  Disney still the named $20M stalking-horse bidder, auction/sale still
+  targeted for late Nov/early Dec 2026. Unchanged.
+- Eight-state OpenAI suits (filed Oct 14, 2026): still no ruling or
+  settlement found. Unchanged.
+- TikTok–Alabama Teen Safety Settlement: still no other state confirmed to
+  have signed a matching consent decree (the trigger for TikTok's $300M
+  multistate payout tier). Unchanged.
+- Federal AI-chatbot bills (GUARD Act, CHATBOT Act, SAFE KIDS Act,
+  "Protecting Kids from Human-Like Chatbots Act"): no new committee or
+  floor action found for any of them this check. Unchanged.
+  [Schiff Senate](https://www.schiff.senate.gov/news/press-releases/news-sens-schiff-curtis-unveil-new-bipartisan-legislation-to-protect-children-from-ai-chatbot-risks/)
+- **New, not yet tracker-relevant:** UK Ofcom reportedly adopted amendments
+  to its Illegal Content and Protection of Children Codes of Practice
+  adding a "crisis response protocol" duty around Oct 12, 2026, with one
+  source giving a Nov 2, 2026 entry-into-force date — this is additive to,
+  not a replacement of, the CSEA reporting duty already on the tracker,
+  and it isn't in force yet as of this check, so no tracker edit. Worth
+  re-checking once Nov 2 passes.
+  [Digital Policy Alert](https://digitalpolicyalert.org/event/44557-office-of-communications-adopted-amendments-to-illegal-content-codes-of-practice-and-protection-of-children-code-of-practice-to-establish-crisis-response-protocol) ·
+  [Global Dating Insights](https://www.globaldatinginsights.com/featured/ofcom-releases-updated-online-safety-roadmap-for-2026-2027/)
+- **New, not a DSK-tracked jurisdiction:** Australia's Online Safety
+  Amendment (Digital Duty of Care) Bill 2026, including age-based access
+  restrictions, was introduced to the House of Representatives on Oct 15,
+  2026. DSK's INTL tracker rows currently cover only the UK and EU — not
+  yet actioned, flagged here in case Australia becomes relevant to a
+  future guide.
+  [Digital Policy Alert](https://digitalpolicyalert.org/event/44672-online-safety-amendment-digital-duty-of-care-bill-2026-including-age-based-access-restrictions-was-introduced-to-national-assembly)
+
+**Site follow-up from this refresh:** none — nothing surfaced rose to a
+clear-cut, mechanical tracker update. "Last refreshed" date bumped to Oct
+25, 2026 above.
 
 ---
 
