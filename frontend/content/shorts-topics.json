@@ -1,0 +1,723 @@
+{
+  "categories": {
+    "scams": {
+      "label": "Scams & Fake Prizes",
+      "icon": "🎁",
+      "color": "#7a3b0f"
+    },
+    "ai": {
+      "label": "AI Chatbots & Deepfakes",
+      "icon": "🤖",
+      "color": "#1a2f6e"
+    },
+    "strangers": {
+      "label": "Strangers & Catfishing",
+      "icon": "🎭",
+      "color": "#6b1f7c"
+    },
+    "bullying": {
+      "label": "Cyberbullying & Standing Up",
+      "icon": "🤝",
+      "color": "#1b5e3b"
+    },
+    "privacy": {
+      "label": "Passwords & Privacy",
+      "icon": "🔒",
+      "color": "#0f6b66"
+    },
+    "emergency": {
+      "label": "If Something Happens",
+      "icon": "🆘",
+      "color": "#7c1f2b"
+    },
+    "habits": {
+      "label": "Habits & Media Smarts",
+      "icon": "🧠",
+      "color": "#8a6a1f"
+    }
+  },
+  "items": {
+    "scams": [
+      {
+        "id": "002-glitch-free-robux",
+        "title": "Glitch Alert!",
+        "chars": [
+          "shieldy",
+          "glitch",
+          "pixel"
+        ],
+        "available": false
+      },
+      {
+        "id": "004-would-you-tap-iphone",
+        "title": "Would You Tap?",
+        "chars": [
+          "shieldy",
+          "pixel"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-002-free-robux",
+        "title": "Glitch Alert: Free Robux Trap",
+        "chars": [
+          "glitch",
+          "pixel",
+          "shieldy"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-028-hollow-prizes",
+        "title": "Every Prize Was Empty",
+        "chars": [
+          "glitch",
+          "pixel",
+          "shieldy"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-029-too-many-arms",
+        "title": "The Gift With Too Many Hands",
+        "chars": [
+          "glitch",
+          "sprout",
+          "shieldy"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-031-lying-clock",
+        "title": "Hurry Is the Trick",
+        "chars": [
+          "glitch",
+          "pixel",
+          "dame-noble"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-018-loot-box-gamble",
+        "title": "The Loot Box Isn't Luck",
+        "chars": [
+          "glitch",
+          "pixel",
+          "shieldy"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-037-scan-and-sorry",
+        "title": "The Code That Wasn't a Prize",
+        "chars": [
+          "glitch",
+          "pixel",
+          "shieldy"
+        ],
+        "available": false
+      },
+      {
+        "id": "ai-038-plastic-card-trick",
+        "title": "Real Help Never Asks for a Gift Card",
+        "chars": [
+          "glitch",
+          "pixel",
+          "shieldy"
+        ],
+        "available": false
+      },
+      {
+        "id": "ai-039-unfair-trade",
+        "title": "If the Trade Feels Off, Say No",
+        "chars": [
+          "glitch",
+          "pixel",
+          "shieldy"
+        ],
+        "available": false
+      },
+      {
+        "id": "ai-042-support-never-dms-first",
+        "title": "Support Never DMs You First",
+        "chars": [
+          "glitch",
+          "pixel",
+          "shieldy"
+        ],
+        "available": false
+      },
+      {
+        "id": "ai-050-a-prize-that-asks-first",
+        "title": "A Prize That Asks First",
+        "chars": [
+          "bot",
+          "shieldy"
+        ],
+        "available": false
+      },
+      {
+        "id": "ai-057-a-code-can-hide-a-door",
+        "title": "A Code Can Hide a Door",
+        "chars": [
+          "glitch",
+          "bot"
+        ],
+        "available": false
+      }
+    ],
+    "ai": [
+      {
+        "id": "003-bot-vegetarian-sharks",
+        "title": "Bot Says...",
+        "chars": [
+          "shieldy",
+          "bot",
+          "pixel"
+        ],
+        "available": false
+      },
+      {
+        "id": "007-bot-homework",
+        "title": "Bot Says...",
+        "chars": [
+          "shieldy",
+          "bot",
+          "pixel"
+        ],
+        "available": false
+      },
+      {
+        "id": "010-bot-voice-clone",
+        "title": "Bot Says...",
+        "chars": [
+          "shieldy",
+          "bot",
+          "pixel"
+        ],
+        "available": false
+      },
+      {
+        "id": "ai-004-ai-confidently-wrong",
+        "title": "Bot Says: Confidently Wrong",
+        "chars": [
+          "bot",
+          "shieldy"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-005-voice-clone",
+        "title": "Voice Clone Scam: The Family Code Word",
+        "chars": [
+          "glitch",
+          "shieldy"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-022-mirror-always-agrees",
+        "title": "The Friend Who Never Says You're Wrong",
+        "chars": [
+          "pixel",
+          "sprout",
+          "shieldy"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-025-portrait-that-wasnt-me",
+        "title": "That Picture Isn't You — and You're Not in Trouble",
+        "chars": [
+          "sprout",
+          "shieldy",
+          "dame-noble"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-027-voice-shop",
+        "title": "That Voice Might Not Be Theirs",
+        "chars": [
+          "glitch",
+          "sprout",
+          "dame-noble"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-035-answers-for-sale",
+        "title": "Some Answers Are Adverts",
+        "chars": [
+          "bot",
+          "pixel",
+          "dame-noble"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-012-ai-homework-honesty",
+        "title": "AI Helps You Learn, Not Cheat",
+        "chars": [
+          "bot",
+          "pixel",
+          "shieldy"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-014-deepfake-awareness",
+        "title": "Fake Images, Real Crimes",
+        "chars": [
+          "glitch",
+          "shieldy"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-040-only-one-who-gets-you",
+        "title": "A Program Isn't a Friend",
+        "chars": [
+          "bot",
+          "pixel",
+          "shieldy"
+        ],
+        "available": false
+      },
+      {
+        "id": "ai-045-a-video-isnt-a-promise",
+        "title": "A Video Isn't a Promise",
+        "chars": [
+          "pixel",
+          "shieldy"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-047-tricking-a-filter-doesnt-make-it-okay",
+        "title": "Tricking a Filter Doesn't Make It Okay",
+        "chars": [
+          "glitch",
+          "bot"
+        ],
+        "available": true
+      }
+    ],
+    "strangers": [
+      {
+        "id": "006-glitch-what-school",
+        "title": "Glitch Alert!",
+        "chars": [
+          "shieldy",
+          "glitch",
+          "pixel"
+        ],
+        "available": false
+      },
+      {
+        "id": "009-glitch-from-school",
+        "title": "Glitch Alert!",
+        "chars": [
+          "shieldy",
+          "glitch",
+          "pixel"
+        ],
+        "available": false
+      },
+      {
+        "id": "ai-006-stranger-personal-questions",
+        "title": "Grooming Watch: Stranger Asks Personal Questions",
+        "chars": [
+          "glitch",
+          "pixel",
+          "shieldy"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-024-mask-shop",
+        "title": "Anyone Can Wear a Familiar Face",
+        "chars": [
+          "glitch",
+          "pixel",
+          "shieldy"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-030-borrowed-faces",
+        "title": "Made Of Other People's Photos",
+        "chars": [
+          "glitch",
+          "dame-noble",
+          "sprout"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-032-lets-talk-somewhere-else",
+        "title": "“Let's Talk Somewhere Else” Is the Warning",
+        "chars": [
+          "glitch",
+          "pixel",
+          "shieldy"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-033-the-big-shadow",
+        "title": "An Avatar Has No Age",
+        "chars": [
+          "glitch",
+          "sprout",
+          "dame-noble"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-026-door-that-wont-open",
+        "title": "A Friend Wants You to Have Other Friends",
+        "chars": [
+          "pixel",
+          "glitch",
+          "sprout"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-007-fake-friend-request",
+        "title": "Verify Before You Accept",
+        "chars": [
+          "glitch",
+          "pixel",
+          "shieldy"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-010-livestream-stranger",
+        "title": "End It and Tell a Grown-Up",
+        "chars": [
+          "glitch",
+          "shieldy"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-016-not-real-friend",
+        "title": "The Friend Who Was Never Real",
+        "chars": [
+          "pixel",
+          "bot",
+          "glitch",
+          "shieldy"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-020-fake-verified-badge",
+        "title": "A Checkmark Isn't Proof",
+        "chars": [
+          "glitch",
+          "pixel",
+          "shieldy"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-048-a-crowd-of-strangers-overnight",
+        "title": "A Crowd of Strangers Overnight",
+        "chars": [
+          "pixel",
+          "dame-noble"
+        ],
+        "available": true
+      }
+    ],
+    "bullying": [
+      {
+        "id": "ai-034-the-big-button",
+        "title": "Telling the Game Isn't Tattling",
+        "chars": [
+          "sprout",
+          "glitch",
+          "shieldy"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-013-stand-up-for-friend",
+        "title": "Speak Up, Shield Up",
+        "chars": [
+          "dame-noble",
+          "pixel",
+          "shieldy"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-044-a-dare-is-not-a-rule",
+        "title": "A Dare Is Not a Rule",
+        "chars": [
+          "pixel",
+          "sprout",
+          "dame-noble"
+        ],
+        "available": false
+      },
+      {
+        "id": "ai-051-muting-is-not-losing",
+        "title": "Muting Is Not Losing",
+        "chars": [
+          "pixel",
+          "shieldy"
+        ],
+        "available": false
+      },
+      {
+        "id": "ai-052-a-pile-on-is-still-bullying",
+        "title": "A Pile-On Is Still Bullying",
+        "chars": [
+          "sprout",
+          "dame-noble"
+        ],
+        "available": false
+      },
+      {
+        "id": "ai-053-knocking-down-what-someone-built",
+        "title": "Knocking Down What Someone Built",
+        "chars": [
+          "pixel",
+          "dame-noble"
+        ],
+        "available": false
+      },
+      {
+        "id": "ai-054-you-dont-owe-anyone-a-reaction",
+        "title": "You Don't Owe Anyone a Reaction",
+        "chars": [
+          "sprout",
+          "shieldy"
+        ],
+        "available": false
+      }
+    ],
+    "privacy": [
+      {
+        "id": "001-knight-rule-1",
+        "title": "Knight Rule #1",
+        "chars": [
+          "shieldy",
+          "pixel"
+        ],
+        "available": false
+      },
+      {
+        "id": "008-knight-rule-2-passwords",
+        "title": "Knight Rule #2",
+        "chars": [
+          "shieldy",
+          "pixel"
+        ],
+        "available": false
+      },
+      {
+        "id": "ai-001-real-name",
+        "title": "Knight Rule: Real Names Stay Off Chat",
+        "chars": [
+          "pixel",
+          "shieldy"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-003-password-secret",
+        "title": "Passwords Are Secrets",
+        "chars": [
+          "pixel",
+          "shieldy"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-023-whisper-warehouse",
+        "title": "Where Your Secrets Actually Go",
+        "chars": [
+          "sprout",
+          "dame-noble"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-019-smart-toy-listening",
+        "title": "When Your Toy Asks Too Many Questions",
+        "chars": [
+          "bot",
+          "sprout",
+          "shieldy"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-041-one-key-every-door",
+        "title": "One Key Shouldn't Open Every Door",
+        "chars": [
+          "pixel",
+          "shieldy"
+        ],
+        "available": false
+      },
+      {
+        "id": "ai-043-new-app-wants-everything",
+        "title": "A New App Doesn't Need Everything",
+        "chars": [
+          "bot",
+          "sprout",
+          "dame-noble"
+        ],
+        "available": false
+      },
+      {
+        "id": "ai-046-an-app-doesnt-need-your-whole-life",
+        "title": "An App Doesn't Need Your Whole Life",
+        "chars": [
+          "sprout",
+          "dame-noble"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-055-a-game-name-can-lead-home",
+        "title": "A Game Name Can Lead Home",
+        "chars": [
+          "pixel",
+          "dame-noble"
+        ],
+        "available": false
+      },
+      {
+        "id": "ai-056-never-hand-over-the-controller",
+        "title": "Never Hand Over the Controller",
+        "chars": [
+          "glitch",
+          "pixel",
+          "shieldy"
+        ],
+        "available": false
+      }
+    ],
+    "emergency": [
+      {
+        "id": "ai-008-sextortion-awareness",
+        "title": "If Anyone Ever Pressures You, Come Tell Me",
+        "chars": [
+          "shieldy",
+          "dame-noble"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-017-emoji-sos",
+        "title": "The Secret Emoji SOS",
+        "chars": [
+          "sprout",
+          "shieldy",
+          "dame-noble"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-021-screenshot-still-counts",
+        "title": "Disappearing Doesn't Mean Gone",
+        "chars": [
+          "glitch",
+          "dame-noble",
+          "shieldy"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-058-a-hidden-account-is-a-heavy-secret",
+        "title": "A Hidden Account Is a Heavy Secret",
+        "chars": [
+          "sprout",
+          "dame-noble"
+        ],
+        "available": false
+      },
+      {
+        "id": "ai-059-one-call-shouldnt-move-your-key",
+        "title": "One Call Shouldn't Move Your Key",
+        "chars": [
+          "pixel",
+          "bot",
+          "shieldy"
+        ],
+        "available": false
+      }
+    ],
+    "habits": [
+      {
+        "id": "005-badge-friday-1",
+        "title": "Badge Friday!",
+        "chars": [
+          "shieldy",
+          "pixel"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-036-too-short-for-this",
+        "title": "The Age Gate Is There For You",
+        "chars": [
+          "glitch",
+          "pixel",
+          "shieldy"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-009-algorithm-feed",
+        "title": "The Feed Is Built to Keep You Scrolling",
+        "chars": [
+          "pixel",
+          "shieldy"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-011-back-to-school-reset",
+        "title": "The Family Tech Reset",
+        "chars": [
+          "shieldy",
+          "dame-noble",
+          "sprout"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-015-shield-up-squad-finale",
+        "title": "The Shield Up Squad",
+        "chars": [
+          "shieldy",
+          "pixel",
+          "glitch",
+          "bot",
+          "dame-noble",
+          "sprout"
+        ],
+        "available": true
+      },
+      {
+        "id": "ai-049-a-picture-of-words-can-lie-too",
+        "title": "A Picture of Words Can Lie Too",
+        "chars": [
+          "sprout",
+          "pixel",
+          "dame-noble"
+        ],
+        "available": false
+      }
+    ]
+  }
+}

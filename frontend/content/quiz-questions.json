@@ -1,0 +1,1332 @@
+{
+  "scams": {
+    "easy": [
+      {
+        "prompt": "A video promises “free Robux if you enter your password here.” What should you do?",
+        "choices": [
+          {
+            "text": "Enter my password to get the free Robux",
+            "correct": false
+          },
+          {
+            "text": "Ignore it — real currency is never free from outside links",
+            "correct": true
+          },
+          {
+            "text": "Share it with a friend so they get free Robux too",
+            "correct": false
+          },
+          {
+            "text": "Enter a fake password just to see what happens",
+            "correct": false
+          }
+        ],
+        "hint": "Think about who actually benefits if you type in your real password.",
+        "explanation": "No legitimate site or video can give you free in-game currency — the real goal is almost always to steal your login."
+      },
+      {
+        "prompt": "A “loot box” in a game costs real money for a random reward. What is this most similar to?",
+        "choices": [
+          {
+            "text": "A vending machine",
+            "correct": false
+          },
+          {
+            "text": "A slot machine / gambling",
+            "correct": true
+          },
+          {
+            "text": "A library book",
+            "correct": false
+          },
+          {
+            "text": "A gift card",
+            "correct": false
+          }
+        ],
+        "hint": "Think about what you're actually paying for — a guaranteed item, or a random chance at one?",
+        "explanation": "Loot boxes use randomized rewards for money, the same mechanic as gambling — several countries now regulate them as such."
+      },
+      {
+        "prompt": "Someone offers you a “rank boost” if you just give them your password “really quick.” This is:",
+        "choices": [
+          {
+            "text": "A nice gesture from a helpful player",
+            "correct": false
+          },
+          {
+            "text": "Always a scam — no real admin needs your password",
+            "correct": true
+          },
+          {
+            "text": "Fine as long as they seem friendly",
+            "correct": false
+          },
+          {
+            "text": "Only risky if they ask more than once",
+            "correct": false
+          }
+        ],
+        "hint": "Would a real moderator or support account ever actually need your password?",
+        "explanation": "No legitimate moderator, admin, or support account will ever ask for your password — this is one of the oldest scam tricks in gaming."
+      },
+      {
+        "prompt": "A message says “Hurry! This offer expires in 2 minutes!” This kind of pressure is:",
+        "choices": [
+          {
+            "text": "Proof the offer is real and limited",
+            "correct": false
+          },
+          {
+            "text": "A common scam tactic to stop you from thinking it through",
+            "correct": true
+          },
+          {
+            "text": "Only used by legitimate stores",
+            "correct": false
+          },
+          {
+            "text": "Something to ignore only if you're over 13",
+            "correct": false
+          }
+        ],
+        "hint": "Scammers want you to act before you think — why would urgency help them do that?",
+        "explanation": "Fake urgency (“hurry,” countdown timers, “limited time”) is a classic scam tactic designed to stop you from pausing to check if something's real."
+      }
+    ],
+    "hard": [
+      {
+        "prompt": "An account claiming to be “verified customer support” DMs you first about a billing issue. What's the red flag?",
+        "choices": [
+          {
+            "text": "Nothing — support often reaches out first",
+            "correct": false
+          },
+          {
+            "text": "Real support never DMs you first — you have to contact them",
+            "correct": true
+          },
+          {
+            "text": "It's fine if the account has a logo",
+            "correct": false
+          },
+          {
+            "text": "It's only a scam if they ask for money upfront",
+            "correct": false
+          }
+        ],
+        "hint": "Who usually starts the conversation when you actually need help from a real company?",
+        "explanation": "Legitimate support teams respond to tickets you open — they essentially never DM you first out of the blue."
+      },
+      {
+        "prompt": "You see a QR code sticker on a vending machine promising a “free prize.” What's the safest move?",
+        "choices": [
+          {
+            "text": "Scan it — QR codes are always safe",
+            "correct": false
+          },
+          {
+            "text": "Don't scan unknown QR codes in public places — verify the source first",
+            "correct": true
+          },
+          {
+            "text": "Scan it only if it has a cartoon on it",
+            "correct": false
+          },
+          {
+            "text": "Scan it, then close the page fast if it looks wrong",
+            "correct": false
+          }
+        ],
+        "hint": "Could someone have placed a fake sticker over a real QR code?",
+        "explanation": "“QR code swapping” is a real scam — a fake sticker is placed over a legitimate code to redirect you to a malicious site."
+      },
+      {
+        "prompt": "Someone asks you to resolve an “urgent account problem” by buying a gift card and sending the code. Why is this always a red flag?",
+        "choices": [
+          {
+            "text": "Gift cards are a normal way to pay any company",
+            "correct": false
+          },
+          {
+            "text": "Legitimate organizations never ask to be paid in gift cards",
+            "correct": true
+          },
+          {
+            "text": "It's fine if the amount is small",
+            "correct": false
+          },
+          {
+            "text": "It's only suspicious if they ask for more than one card",
+            "correct": false
+          }
+        ],
+        "hint": "Gift cards are nearly untraceable once the code is shared — who benefits from that?",
+        "explanation": "Gift cards are a scammer favorite because once the code is handed over, the money is essentially gone and untraceable — no real company asks to be paid this way."
+      },
+      {
+        "prompt": "What's the single best habit to protect yourself from most online scams?",
+        "choices": [
+          {
+            "text": "Trusting any offer that looks professional",
+            "correct": false
+          },
+          {
+            "text": "Pausing to verify through an official source before acting",
+            "correct": true
+          },
+          {
+            "text": "Acting fast before an offer expires",
+            "correct": false
+          },
+          {
+            "text": "Asking other players in the game if it's real",
+            "correct": false
+          }
+        ],
+        "hint": "Think about what nearly every scam in this topic relied on to work.",
+        "explanation": "Almost every scam tactic — urgency, fake authority, too-good-to-be-true prizes — only works if you act before verifying. Pausing to check is the strongest defense."
+      }
+    ]
+  },
+  "ai": {
+    "easy": [
+      {
+        "prompt": "An AI chatbot gives you an answer in a very confident tone. Does that mean it's correct?",
+        "choices": [
+          {
+            "text": "Yes, confidence means accuracy",
+            "correct": false
+          },
+          {
+            "text": "No — AI sounds equally confident whether right or wrong",
+            "correct": true
+          },
+          {
+            "text": "Only if it's a paid AI tool",
+            "correct": false
+          },
+          {
+            "text": "Only for math questions",
+            "correct": false
+          }
+        ],
+        "hint": "Does AI have a built-in “I'm not sure” voice that sounds different from its confident voice?",
+        "explanation": "AI chatbots state wrong answers in the exact same confident tone as correct ones — always double-check anything that actually matters."
+      },
+      {
+        "prompt": "You use AI to explain a homework concept you're stuck on, in your own words after. Is this cheating?",
+        "choices": [
+          {
+            "text": "Yes, any AI use is cheating",
+            "correct": false
+          },
+          {
+            "text": "No — using AI to understand something is learning, not cheating",
+            "correct": true
+          },
+          {
+            "text": "Only if a teacher finds out",
+            "correct": false
+          },
+          {
+            "text": "Only for essays, not math",
+            "correct": false
+          }
+        ],
+        "hint": "What's the difference between using a tool to understand something, versus copying its full answer?",
+        "explanation": "Using AI to explain a concept you're stuck on is learning. Copy-pasting its full answer as your own is cheating."
+      },
+      {
+        "prompt": "A video appears to show a friend saying something they never actually said. What could this be?",
+        "choices": [
+          {
+            "text": "Definitely real — video never lies",
+            "correct": false
+          },
+          {
+            "text": "Possibly a deepfake — AI can generate realistic fake video today",
+            "correct": true
+          },
+          {
+            "text": "Impossible unless it's a movie studio",
+            "correct": false
+          },
+          {
+            "text": "Only a concern for celebrities",
+            "correct": false
+          }
+        ],
+        "hint": "Does a video looking realistic prove it's real anymore?",
+        "explanation": "AI can now generate realistic fake video or images of real people — if something feels off or out of character, don't trust it just because it looks real."
+      },
+      {
+        "prompt": "An AI companion app always agrees with you and never pushes back. Real friends:",
+        "choices": [
+          {
+            "text": "Also always agree with everything",
+            "correct": false
+          },
+          {
+            "text": "Sometimes push back — that's part of a real friendship",
+            "correct": true
+          },
+          {
+            "text": "Don't need to talk to you at all",
+            "correct": false
+          },
+          {
+            "text": "Are less important than AI apps",
+            "correct": false
+          }
+        ],
+        "hint": "Think of a real friend — do they always just tell you what you want to hear?",
+        "explanation": "AI companion apps are built to always agree with you and make you feel good. Real friends push back sometimes — a program can feel like it “gets you,” but it doesn't actually care about you."
+      }
+    ],
+    "hard": [
+      {
+        "prompt": "A few seconds of someone's voice from a posted video is enough to do what today?",
+        "choices": [
+          {
+            "text": "Nothing, voice can't be copied",
+            "correct": false
+          },
+          {
+            "text": "Clone their voice convincingly with AI",
+            "correct": true
+          },
+          {
+            "text": "Only identify their language",
+            "correct": false
+          },
+          {
+            "text": "Only works with professional recordings",
+            "correct": false
+          }
+        ],
+        "hint": "What's the minimum amount of audio modern AI voice-cloning tools actually need?",
+        "explanation": "It only takes a few seconds of someone's voice to clone it with AI today — this is how voice-clone emergency scams work, calling with a fake panicked voice of someone you know."
+      },
+      {
+        "prompt": "What's the best defense against an AI voice-clone “fake emergency” phone call from a cloned family voice?",
+        "choices": [
+          {
+            "text": "Hanging up immediately with no verification",
+            "correct": false
+          },
+          {
+            "text": "A pre-agreed family code word only real family would know",
+            "correct": true
+          },
+          {
+            "text": "Asking the caller to prove it by talking longer",
+            "correct": false
+          },
+          {
+            "text": "Trusting caller ID",
+            "correct": false
+          }
+        ],
+        "hint": "What's something a cloned voice could never know, even if it sounds exactly right?",
+        "explanation": "A family “code word” nobody else knows is a simple, effective fix — agree on it with your family so you can verify a real emergency instantly."
+      },
+      {
+        "prompt": "A filter app you downloaded asks for camera, contacts, exact location, and microphone access. What should you do?",
+        "choices": [
+          {
+            "text": "Accept all permissions — apps need this to work",
+            "correct": false
+          },
+          {
+            "text": "Ask whether each permission actually relates to what the app does",
+            "correct": true
+          },
+          {
+            "text": "Only worry about camera access",
+            "correct": false
+          },
+          {
+            "text": "Permissions don't matter if the app is popular",
+            "correct": false
+          }
+        ],
+        "hint": "Does a photo filter genuinely need your contacts list and exact location to apply a filter?",
+        "explanation": "Some apps request far more access than their function requires, and some use uploaded photos to train AI models — often buried in terms nobody reads. Only grant what the app's actual purpose needs."
+      },
+      {
+        "prompt": "Someone tells you “tricking the AI content filter is just a fun trick, not really breaking a rule.” Is this true?",
+        "choices": [
+          {
+            "text": "Yes, filters are just for show",
+            "correct": false
+          },
+          {
+            "text": "No — getting around a safety filter on purpose still isn't okay",
+            "correct": true
+          },
+          {
+            "text": "Only true for adults",
+            "correct": false
+          },
+          {
+            "text": "Only true if no one finds out",
+            "correct": false
+          }
+        ],
+        "hint": "Does the reason behind a safety filter stop mattering just because you found a workaround?",
+        "explanation": "Tricking a filter doesn't make unsafe or inappropriate content okay — the filter exists for a reason regardless of whether you can bypass it."
+      }
+    ]
+  },
+  "strangers": {
+    "easy": [
+      {
+        "prompt": "A stranger in a voice chat starts asking your age, school, and what you look like, one after another. This is:",
+        "choices": [
+          {
+            "text": "Normal friendly conversation",
+            "correct": false
+          },
+          {
+            "text": "A red flag — personal questions escalating fast",
+            "correct": true
+          },
+          {
+            "text": "Fine if they seem nice",
+            "correct": false
+          },
+          {
+            "text": "Only a problem if they ask for a photo",
+            "correct": false
+          }
+        ],
+        "hint": "What's the pattern to watch for — one question, or a fast escalation of personal questions?",
+        "explanation": "A stranger who gets too interested in your real-life details, fast, is a red flag. It's never rude to go silent, leave, or block."
+      },
+      {
+        "prompt": "A new online friend suggests moving the conversation to a different, less-monitored app. This is:",
+        "choices": [
+          {
+            "text": "A normal and safe suggestion",
+            "correct": false
+          },
+          {
+            "text": "A warning sign — moving to a private platform is a common tactic",
+            "correct": true
+          },
+          {
+            "text": "Only risky if it's a stranger over 30",
+            "correct": false
+          },
+          {
+            "text": "Fine if you've talked for a week already",
+            "correct": false
+          }
+        ],
+        "hint": "Why would someone want to move a conversation somewhere with less supervision?",
+        "explanation": "“Let's talk somewhere else” is a classic step in online grooming — moving to a private, less-moderated platform."
+      },
+      {
+        "prompt": "Someone online claims to be your age, but a few details don't add up. What should you remember?",
+        "choices": [
+          {
+            "text": "An avatar or profile always shows someone's real age",
+            "correct": false
+          },
+          {
+            "text": "An avatar has no age — you can't verify someone's real age online",
+            "correct": true
+          },
+          {
+            "text": "Voice is always proof of real age",
+            "correct": false
+          },
+          {
+            "text": "Only worry if they admit to lying",
+            "correct": false
+          }
+        ],
+        "hint": "Can anything about an online profile actually prove how old someone really is?",
+        "explanation": "An avatar, username, or profile picture proves nothing about real age — anyone can claim to be any age online."
+      },
+      {
+        "prompt": "A friend request comes from an account using a friend's name and photo, but something feels off. What should you do?",
+        "choices": [
+          {
+            "text": "Accept it — it has their name and photo",
+            "correct": false
+          },
+          {
+            "text": "Verify before you accept — confirm with your real friend first",
+            "correct": true
+          },
+          {
+            "text": "Accept it and ask questions later",
+            "correct": false
+          },
+          {
+            "text": "Ignore the feeling, photos don't lie",
+            "correct": false
+          }
+        ],
+        "hint": "Can a photo or name alone prove an account really belongs to your friend?",
+        "explanation": "Anyone can wear a familiar face online — verify through another channel (texting your actual friend) before accepting."
+      }
+    ],
+    "hard": [
+      {
+        "prompt": "An online “friend” encourages you to stop talking to your other friends so you can be closer. This is:",
+        "choices": [
+          {
+            "text": "A sign of a strong, close friendship",
+            "correct": false
+          },
+          {
+            "text": "An isolation tactic — a real friend wants you to have other friends too",
+            "correct": true
+          },
+          {
+            "text": "Only concerning if they ask you to stop talking to family",
+            "correct": false
+          },
+          {
+            "text": "Normal for best friends",
+            "correct": false
+          }
+        ],
+        "hint": "Why would someone want you to have fewer other people to talk to?",
+        "explanation": "A real friend wants you to have other friends too. Encouraging isolation from everyone else is a common manipulation tactic."
+      },
+      {
+        "prompt": "You suddenly gain a large number of new followers or friend requests overnight from accounts you don't know. This could indicate:",
+        "choices": [
+          {
+            "text": "You're just popular now, no need to think about it",
+            "correct": false
+          },
+          {
+            "text": "A coordinated fake-account swarm worth being cautious about",
+            "correct": true
+          },
+          {
+            "text": "Nothing — this only happens to celebrities",
+            "correct": false
+          },
+          {
+            "text": "Proof your content is good",
+            "correct": false
+          }
+        ],
+        "hint": "Is a sudden crowd of strangers appearing overnight more likely organic growth, or something coordinated?",
+        "explanation": "A crowd of strangers appearing overnight is often coordinated (bots or fake accounts) rather than organic — treat sudden unexplained attention with caution."
+      },
+      {
+        "prompt": "An account has a “verified” checkmark badge. Does that guarantee the account is trustworthy?",
+        "choices": [
+          {
+            "text": "Yes, verified badges can never be faked or misleading",
+            "correct": false
+          },
+          {
+            "text": "No — a checkmark isn't proof of trustworthiness or identity",
+            "correct": true
+          },
+          {
+            "text": "Only untrustworthy if it has zero followers",
+            "correct": false
+          },
+          {
+            "text": "Verified accounts can't be impersonation attempts",
+            "correct": false
+          }
+        ],
+        "hint": "Does a visual badge alone tell you everything about who's actually behind an account?",
+        "explanation": "A checkmark isn't proof — badges can be faked, bought, or simply don't guarantee the account is who or what it claims to be."
+      },
+      {
+        "prompt": "A livestream from a stranger makes you uncomfortable, but you're not sure what to do. The best first move is:",
+        "choices": [
+          {
+            "text": "Stay and watch to see what happens next",
+            "correct": false
+          },
+          {
+            "text": "End it and tell a grown-up",
+            "correct": true
+          },
+          {
+            "text": "Share it with friends first for their opinion",
+            "correct": false
+          },
+          {
+            "text": "Wait until it gets worse before acting",
+            "correct": false
+          }
+        ],
+        "hint": "Does waiting to see “what happens next” in an uncomfortable livestream make things safer or riskier?",
+        "explanation": "If a livestream from a stranger makes you uncomfortable, end it and tell a trusted adult right away — you don't need to wait for things to escalate."
+      }
+    ]
+  },
+  "bullying": {
+    "easy": [
+      {
+        "prompt": "Is using the in-game report button on a stranger who's breaking the rules the same as “tattling” on a friend?",
+        "choices": [
+          {
+            "text": "Yes, reporting is always tattling",
+            "correct": false
+          },
+          {
+            "text": "No — reporting rule-breaking strangers is exactly what the button is for",
+            "correct": true
+          },
+          {
+            "text": "Only if a moderator agrees with you",
+            "correct": false
+          },
+          {
+            "text": "Only for serious crimes",
+            "correct": false
+          }
+        ],
+        "hint": "What's the difference between reporting a stranger breaking platform rules and telling on a friend?",
+        "explanation": "Reporting in-game harassment isn't tattling — it's exactly what the report button is for."
+      },
+      {
+        "prompt": "Is muting someone in a game or chat “losing” to them?",
+        "choices": [
+          {
+            "text": "Yes, muting means you lost the argument",
+            "correct": false
+          },
+          {
+            "text": "No — muting is a tool to protect your own experience",
+            "correct": true
+          },
+          {
+            "text": "Only if they notice you muted them",
+            "correct": false
+          },
+          {
+            "text": "Muting is never allowed",
+            "correct": false
+          }
+        ],
+        "hint": "Who actually benefits when you mute someone bothering you — you, or them?",
+        "explanation": "Muting is not losing — it's a tool, and you're allowed to use it to protect your own experience."
+      },
+      {
+        "prompt": "You see someone being vote-kicked from a game for no real reason. This is:",
+        "choices": [
+          {
+            "text": "Always fair since the group voted",
+            "correct": false
+          },
+          {
+            "text": "A form of bullying, even though it happens inside a game",
+            "correct": true
+          },
+          {
+            "text": "Not a big deal since it's “just a game”",
+            "correct": false
+          },
+          {
+            "text": "Only bullying if it happens more than once",
+            "correct": false
+          }
+        ],
+        "hint": "Does something being inside a game make it not count as bullying?",
+        "explanation": "Vote-kicking someone for no reason, griefing, and rage-bait recording are all bullying — just wearing a game skin."
+      },
+      {
+        "prompt": "If you see bullying happening to someone else in a group chat, what's a real option even if you don't want to confront anyone publicly?",
+        "choices": [
+          {
+            "text": "Do nothing, it's not your business",
+            "correct": false
+          },
+          {
+            "text": "Privately check on the person being targeted",
+            "correct": true
+          },
+          {
+            "text": "Join in so you don't become a target too",
+            "correct": false
+          },
+          {
+            "text": "Wait for a moderator to notice on their own",
+            "correct": false
+          }
+        ],
+        "hint": "Does support have to be public to actually help someone?",
+        "explanation": "You don't have to confront anyone publicly — privately checking on a friend counts completely, and being a supportive bystander is powerful."
+      }
+    ],
+    "hard": [
+      {
+        "prompt": "Someone deliberately destroys another player's in-game build “just for fun.” What is this called, and is it bullying?",
+        "choices": [
+          {
+            "text": "Griefing — and yes, it's a form of bullying",
+            "correct": true
+          },
+          {
+            "text": "Just normal competitive gameplay",
+            "correct": false
+          },
+          {
+            "text": "Only bullying if the builder cries about it",
+            "correct": false
+          },
+          {
+            "text": "Not bullying since no words were used",
+            "correct": false
+          }
+        ],
+        "hint": "Does bullying require insults, or can it also be an action that destroys something someone cares about?",
+        "explanation": "Griefing — wrecking something someone else built on purpose — is a form of bullying, even without a single insulting word."
+      },
+      {
+        "prompt": "A group pressures you with “it's just a dare, everyone's doing it” to do something you're uncomfortable with. What matters most?",
+        "choices": [
+          {
+            "text": "Doing it so you don't seem uncool",
+            "correct": false
+          },
+          {
+            "text": "A dare doesn't override your own judgment — you can say no",
+            "correct": true
+          },
+          {
+            "text": "Only refusing if it's clearly illegal",
+            "correct": false
+          },
+          {
+            "text": "Going along with it since “everyone” is doing it",
+            "correct": false
+          }
+        ],
+        "hint": "Does calling something “a dare” change whether it's actually okay to do?",
+        "explanation": "A dare is not a rule — peer pressure framed as a game doesn't obligate you to do something that feels wrong."
+      },
+      {
+        "prompt": "Someone records you reacting to something upsetting, specifically hoping you'll get angry on camera. You don't owe them:",
+        "choices": [
+          {
+            "text": "An explanation of why you're upset",
+            "correct": false
+          },
+          {
+            "text": "A reaction at all — you're never obligated to perform for someone's bait",
+            "correct": true
+          },
+          {
+            "text": "A polite response first, then you can walk away",
+            "correct": false
+          },
+          {
+            "text": "Nothing, you should always respond to defend yourself",
+            "correct": false
+          }
+        ],
+        "hint": "What is “rage-bait” actually trying to get out of you?",
+        "explanation": "You don't owe anyone a reaction — rage-bait is specifically designed to get an angry response for content, and the strongest move is often not giving it one."
+      },
+      {
+        "prompt": "A friend tells you they're being harassed in a group chat but asks you not to “make a big deal of it.” What's a good balance?",
+        "choices": [
+          {
+            "text": "Respect their wish completely and do nothing at all",
+            "correct": false
+          },
+          {
+            "text": "Quietly support them and encourage reporting, without forcing a public confrontation",
+            "correct": true
+          },
+          {
+            "text": "Publicly call out the harasser immediately regardless of their wishes",
+            "correct": false
+          },
+          {
+            "text": "Tell them it's not a big deal either",
+            "correct": false
+          }
+        ],
+        "hint": "Can you support someone meaningfully without overriding what they're comfortable with?",
+        "explanation": "Being an upstander doesn't mean taking control — quiet, private support and encouraging them to report respects their comfort while still helping."
+      }
+    ]
+  },
+  "privacy": {
+    "easy": [
+      {
+        "prompt": "A gaming username, a school name, and a general location each seem harmless alone. Together, they can:",
+        "choices": [
+          {
+            "text": "Still be completely harmless",
+            "correct": false
+          },
+          {
+            "text": "Let a stranger figure out exactly who you are and where to find you",
+            "correct": true
+          },
+          {
+            "text": "Only matter if shared with a password too",
+            "correct": false
+          },
+          {
+            "text": "Only matter for adults, not kids",
+            "correct": false
+          }
+        ],
+        "hint": "What happens when you combine several “small” identifying details?",
+        "explanation": "Put two or three identifying details together and a stranger can figure out exactly who you are — the rule is nicknames in, identifying details out."
+      },
+      {
+        "prompt": "Who should ever know your password besides you?",
+        "choices": [
+          {
+            "text": "Any close friend who asks nicely",
+            "correct": false
+          },
+          {
+            "text": "At most one trusted adult — nobody else, ever",
+            "correct": true
+          },
+          {
+            "text": "Any game moderator who requests it",
+            "correct": false
+          },
+          {
+            "text": "Anyone offering something in return",
+            "correct": false
+          }
+        ],
+        "hint": "Does being friendly with someone make sharing your password safe?",
+        "explanation": "Your password is for you, and maybe one trusted adult — nobody else, period. Accounts get hacked and friendships change."
+      },
+      {
+        "prompt": "A new app wants access to your camera, contacts, and exact location to use a simple filter feature. What should you check?",
+        "choices": [
+          {
+            "text": "Nothing, just accept to use the app",
+            "correct": false
+          },
+          {
+            "text": "Whether each permission actually relates to what the app does",
+            "correct": true
+          },
+          {
+            "text": "Only the location permission matters",
+            "correct": false
+          },
+          {
+            "text": "Permissions are automatically safe on phones",
+            "correct": false
+          }
+        ],
+        "hint": "Does a filter feature logically need your contacts list?",
+        "explanation": "Review camera, mic, contacts, and location permissions — and turn off anything that doesn't fit what the app actually does."
+      },
+      {
+        "prompt": "A smart toy or speaker keeps asking you unusually personal questions. What should you keep in mind?",
+        "choices": [
+          {
+            "text": "Smart devices can't actually listen or record",
+            "correct": false
+          },
+          {
+            "text": "Some smart devices do listen, and the data can go somewhere you don't expect",
+            "correct": true
+          },
+          {
+            "text": "It's always fine to answer anything a toy asks",
+            "correct": false
+          },
+          {
+            "text": "Only worry about toys with cameras",
+            "correct": false
+          }
+        ],
+        "hint": "Where might the answers you give a “listening” device actually end up?",
+        "explanation": "Smart toys and devices that listen can send data somewhere unexpected — be mindful of what personal details you share with them."
+      }
+    ],
+    "hard": [
+      {
+        "prompt": "You use the same password for your email, your game account, and your social media. What's the risk?",
+        "choices": [
+          {
+            "text": "No risk, it's easier to remember one password",
+            "correct": false
+          },
+          {
+            "text": "One key shouldn't open every door — one breach compromises everything",
+            "correct": true
+          },
+          {
+            "text": "Risk only applies to banking passwords",
+            "correct": false
+          },
+          {
+            "text": "Risk only applies if the password is short",
+            "correct": false
+          }
+        ],
+        "hint": "If one account with that password gets breached, what happens to the others?",
+        "explanation": "Reusing the same password everywhere means one breach compromises every account that shares it — use different passwords, especially for anything important."
+      },
+      {
+        "prompt": "A game username you've used for years contains a shortened version of your real name plus your actual hometown. Why does this matter?",
+        "choices": [
+          {
+            "text": "It doesn't matter if the account is private",
+            "correct": false
+          },
+          {
+            "text": "A game name can lead home — it can be enough to identify or locate you",
+            "correct": true
+          },
+          {
+            "text": "Only matters if you also post your school",
+            "correct": false
+          },
+          {
+            "text": "Usernames can't be searched or linked to anything",
+            "correct": false
+          }
+        ],
+        "hint": "Could someone piece together your identity from a username alone, over enough time?",
+        "explanation": "A game name combining identifying details can lead home — usernames get searched, cross-referenced, and linked more easily than people expect."
+      },
+      {
+        "prompt": "A friend asks to borrow your gaming account “just for an hour” while you watch. What's the safest response?",
+        "choices": [
+          {
+            "text": "Hand over the controller/login since you'll be right there watching",
+            "correct": false
+          },
+          {
+            "text": "Politely decline — never hand over account access, even briefly, even to friends",
+            "correct": true
+          },
+          {
+            "text": "Only a problem if it's a stranger, not a friend",
+            "correct": false
+          },
+          {
+            "text": "Fine as long as you change the password after",
+            "correct": false
+          }
+        ],
+        "hint": "Does watching someone use your account the whole time eliminate the risk of handing over access?",
+        "explanation": "Never hand over the controller — account access, even briefly and even to friends, creates risk you can't fully undo, including friendships changing later."
+      },
+      {
+        "prompt": "You notice an app silently collected far more data than its description mentioned, buried in dense terms you never read. What's the better long-term habit?",
+        "choices": [
+          {
+            "text": "Accept this as unavoidable and move on",
+            "correct": false
+          },
+          {
+            "text": "Periodically review app permissions, since what an app needs rarely requires everything it asks for",
+            "correct": true
+          },
+          {
+            "text": "Only check permissions once, when first installing",
+            "correct": false
+          },
+          {
+            "text": "Assume popular apps are automatically trustworthy",
+            "correct": false
+          }
+        ],
+        "hint": "Is reviewing permissions a one-time task, or something worth repeating?",
+        "explanation": "An app doesn't need your whole life — periodically reviewing permissions (not just once at install) is a strong long-term privacy habit."
+      }
+    ]
+  },
+  "emergency": {
+    "easy": [
+      {
+        "prompt": "If someone online ever pressures you using a secret or image they have of you, you should:",
+        "choices": [
+          {
+            "text": "Stay quiet to avoid trouble",
+            "correct": false
+          },
+          {
+            "text": "Tell a trusted adult right away — you will not be in trouble",
+            "correct": true
+          },
+          {
+            "text": "Pay or comply to make it stop",
+            "correct": false
+          },
+          {
+            "text": "Handle it completely alone",
+            "correct": false
+          }
+        ],
+        "hint": "Does staying quiet about pressure tend to make it better or worse over time?",
+        "explanation": "The pressure never gets better by staying quiet — it only gets worse. You will not be in trouble for telling a trusted adult. Full stop."
+      },
+      {
+        "prompt": "What's a “family emoji SOS” or code word for?",
+        "choices": [
+          {
+            "text": "A fun inside joke with no real purpose",
+            "correct": false
+          },
+          {
+            "text": "A secret signal meaning “come get me” or “call me now,” no questions asked",
+            "correct": true
+          },
+          {
+            "text": "Something only used for pranks",
+            "correct": false
+          },
+          {
+            "text": "A way to share your location publicly",
+            "correct": false
+          }
+        ],
+        "hint": "What do you want to be able to say without having to explain yourself in the moment?",
+        "explanation": "A family code word or emoji means “come get me” or “call me right now” — no questions asked in the moment, just a signal."
+      },
+      {
+        "prompt": "Before blocking or deleting an uncomfortable message, you should:",
+        "choices": [
+          {
+            "text": "Block immediately, nothing else matters",
+            "correct": false
+          },
+          {
+            "text": "Screenshot it first — evidence matters later",
+            "correct": true
+          },
+          {
+            "text": "Reply angrily first",
+            "correct": false
+          },
+          {
+            "text": "Wait a day before doing anything",
+            "correct": false
+          }
+        ],
+        "hint": "If you block first, could you lose your ability to prove what happened?",
+        "explanation": "Screenshot before you block, report, or delete — disappearing messages can still be captured, and evidence matters if this needs to go further."
+      },
+      {
+        "prompt": "Who can you call for free, 24/7, confidential support if you or a friend are in crisis?",
+        "choices": [
+          {
+            "text": "There's no such free resource",
+            "correct": false
+          },
+          {
+            "text": "988, the Suicide & Crisis Lifeline",
+            "correct": true
+          },
+          {
+            "text": "Only a paid therapist",
+            "correct": false
+          },
+          {
+            "text": "Only a school counselor during school hours",
+            "correct": false
+          }
+        ],
+        "hint": "Is there a number that's free, confidential, and available any time of day?",
+        "explanation": "988 — call or text — is the Suicide & Crisis Lifeline, free and confidential, 24/7, for you or for a friend."
+      }
+    ],
+    "hard": [
+      {
+        "prompt": "A friend tells you they're hiding a secret account or a secret from their family, and it sounds like it's weighing on them heavily. What's a good response?",
+        "choices": [
+          {
+            "text": "Promise to never tell anyone no matter what",
+            "correct": false
+          },
+          {
+            "text": "Encourage them to tell a trusted adult, and offer to help them do it",
+            "correct": true
+          },
+          {
+            "text": "Ignore it since it's their private business",
+            "correct": false
+          },
+          {
+            "text": "Tell them to just keep hiding it to avoid conflict",
+            "correct": false
+          }
+        ],
+        "hint": "Is keeping a heavy secret completely alone usually the safest long-term option?",
+        "explanation": "A hidden account or heavy secret often needs a trusted adult involved — encouraging someone to tell, and offering to support them, is more helpful than promising total secrecy."
+      },
+      {
+        "prompt": "Someone calls claiming to be a relative in trouble, urgently asking you to move money or crypto “right now, don't tell anyone.” What should you do?",
+        "choices": [
+          {
+            "text": "Act immediately since it sounds urgent",
+            "correct": false
+          },
+          {
+            "text": "Pause and verify independently — a real emergency survives a phone call to check",
+            "correct": true
+          },
+          {
+            "text": "Comply but ask them to keep it a secret like they asked",
+            "correct": false
+          },
+          {
+            "text": "Only worry if you recognize the voice as fake",
+            "correct": false
+          }
+        ],
+        "hint": "Does genuine secrecy (“don't tell anyone”) combined with urgency usually indicate a real emergency, or a manipulation tactic?",
+        "explanation": "One call shouldn't move your key — a cloned voice can sound exactly right. Pause, hang up, and verify independently before acting on urgent money requests."
+      },
+      {
+        "prompt": "You reported something serious, like exploitation or a threat, through NCMEC's CyberTipline. Who does law enforcement typically treat as the victim?",
+        "choices": [
+          {
+            "text": "The person who reported it",
+            "correct": false
+          },
+          {
+            "text": "The person being exploited or threatened — not the reporter",
+            "correct": true
+          },
+          {
+            "text": "Whoever contacts police first, regardless of role",
+            "correct": false
+          },
+          {
+            "text": "It depends on who's more believable",
+            "correct": false
+          }
+        ],
+        "hint": "Does reporting a crime make the reporter the one in trouble?",
+        "explanation": "Law enforcement treats cases like this as crimes against the victim — not against the person who reports it. Reporting protects you, it doesn't implicate you."
+      },
+      {
+        "prompt": "A disappearing message feature shows a message “deleted” for everyone. Does this mean the evidence is gone?",
+        "choices": [
+          {
+            "text": "Yes, deleted always means permanently gone everywhere",
+            "correct": false
+          },
+          {
+            "text": "Not necessarily — it may have already been seen, saved, or captured before deletion",
+            "correct": true
+          },
+          {
+            "text": "Only matters if the app has no delete feature",
+            "correct": false
+          },
+          {
+            "text": "Disappearing messages can never be screenshotted",
+            "correct": false
+          }
+        ],
+        "hint": "Could someone have already screenshotted or saved something before it “disappeared”?",
+        "explanation": "Disappearing doesn't mean gone — messages can be captured, saved, or already seen by others before or as they vanish. Don't assume it's unrecoverable."
+      }
+    ]
+  },
+  "habits": {
+    "easy": [
+      {
+        "prompt": "Why does a social media feed seem to never run out of new content?",
+        "choices": [
+          {
+            "text": "It's a coincidence",
+            "correct": false
+          },
+          {
+            "text": "Infinite scroll and autoplay are deliberately designed with no natural stopping point",
+            "correct": true
+          },
+          {
+            "text": "Only free apps are built this way",
+            "correct": false
+          },
+          {
+            "text": "It only feels that way, feeds actually do end",
+            "correct": false
+          }
+        ],
+        "hint": "Is the never-ending feed an accident, or a deliberate design choice?",
+        "explanation": "Infinite scroll and autoplay are built on purpose with no natural stopping point — the algorithm's job is to keep you watching as long as possible."
+      },
+      {
+        "prompt": "What is the algorithm behind your feed actually optimizing for?",
+        "choices": [
+          {
+            "text": "Your overall wellbeing",
+            "correct": false
+          },
+          {
+            "text": "Your watch time — how long you stay",
+            "correct": true
+          },
+          {
+            "text": "Showing you only true information",
+            "correct": false
+          },
+          {
+            "text": "Making sure you see everything your friends post",
+            "correct": false
+          }
+        ],
+        "hint": "If an app wants you to stay longer, what does it tend to prioritize showing you?",
+        "explanation": "The algorithm's whole job is to keep you watching as long as possible — not necessarily to make you feel good or to prioritize accurate information."
+      },
+      {
+        "prompt": "A “back-to-school” or seasonal tech reset usually involves checking what, as a family?",
+        "choices": [
+          {
+            "text": "Only how many apps are installed",
+            "correct": false
+          },
+          {
+            "text": "Privacy settings, platform protections, and a family media agreement, together",
+            "correct": true
+          },
+          {
+            "text": "Just deleting old photos",
+            "correct": false
+          },
+          {
+            "text": "Nothing — settings never need rechecking",
+            "correct": false
+          }
+        ],
+        "hint": "Is a device safe forever once it's set up once, or does it need periodic review?",
+        "explanation": "A periodic family tech reset — checking privacy settings, protections, and agreements together — keeps everyone's setup current, not just set-once."
+      },
+      {
+        "prompt": "A screenshot of a “quote” or text message is circulating, but you can't verify where it's actually from. What should you assume?",
+        "choices": [
+          {
+            "text": "It's automatically true if it looks professional",
+            "correct": false
+          },
+          {
+            "text": "A picture of words can lie too — verify before believing or sharing it",
+            "correct": true
+          },
+          {
+            "text": "Screenshots can never be faked",
+            "correct": false
+          },
+          {
+            "text": "Only video can be faked, not text images",
+            "correct": false
+          }
+        ],
+        "hint": "Can text in an image be edited or fabricated just as easily as a fake video?",
+        "explanation": "A picture of words can lie too — fake quote/message screenshots spread misinformation just as effectively as fake video, so verify before sharing."
+      }
+    ],
+    "hard": [
+      {
+        "prompt": "Noticing that a feed's design is built to keep you scrolling is the first step toward what?",
+        "choices": [
+          {
+            "text": "Quitting all social media immediately",
+            "correct": false
+          },
+          {
+            "text": "Not being steered by that design without realizing it",
+            "correct": true
+          },
+          {
+            "text": "Nothing changes just from noticing",
+            "correct": false
+          },
+          {
+            "text": "Blaming yourself for using the app",
+            "correct": false
+          }
+        ],
+        "hint": "Does awareness of a design pattern change how much power it has over you?",
+        "explanation": "Just noticing the infinite-scroll design is honestly the first step to not getting steered by it without realizing — awareness is the starting point, not a fix by itself."
+      },
+      {
+        "prompt": "Why might a platform's “age gate” (confirming you're old enough) actually matter, instead of just being annoying?",
+        "choices": [
+          {
+            "text": "It exists purely to slow you down for no reason",
+            "correct": false
+          },
+          {
+            "text": "It's one of the few checks standing between younger users and content/features meant for older audiences",
+            "correct": true
+          },
+          {
+            "text": "Age gates have no real purpose",
+            "correct": false
+          },
+          {
+            "text": "It only matters for buying things, not content",
+            "correct": false
+          }
+        ],
+        "hint": "What is an age gate actually trying to filter, beyond being a minor inconvenience?",
+        "explanation": "The age gate is there for you — it's an imperfect but real attempt to keep certain content, features, or contact settings appropriate for your age."
+      },
+      {
+        "prompt": "A character's one-off joke in an episode (like “Badge Friday” celebrations) is mainly there to do what?",
+        "choices": [
+          {
+            "text": "Teach a brand-new safety rule every time",
+            "correct": false
+          },
+          {
+            "text": "Celebrate progress and keep engagement positive, not just list dangers",
+            "correct": true
+          },
+          {
+            "text": "Replace the need for any other episodes",
+            "correct": false
+          },
+          {
+            "text": "Confuse viewers on purpose",
+            "correct": false
+          }
+        ],
+        "hint": "Does every single episode need to introduce a new danger to be valuable?",
+        "explanation": "Not every episode needs to teach a new danger — celebrating progress and keeping the tone positive matters too, so the whole experience doesn't feel like a constant warning."
+      },
+      {
+        "prompt": "What's the healthiest way to think about AI's confident-sounding answers, screen time limits, and feed design all together?",
+        "choices": [
+          {
+            "text": "They're all basically the same problem with the same single fix",
+            "correct": false
+          },
+          {
+            "text": "Each involves noticing a design or behavior pattern, then building a specific habit to counter it",
+            "correct": true
+          },
+          {
+            "text": "None of them are worth thinking about individually",
+            "correct": false
+          },
+          {
+            "text": "Only the scariest one (AI) matters",
+            "correct": false
+          }
+        ],
+        "hint": "Is there one single universal fix, or does each pattern need its own specific counter-habit?",
+        "explanation": "Algorithm design, AI's confident tone, and screen habits are related but distinct — each benefits from noticing the specific pattern and building a specific counter-habit, rather than one blanket fix."
+      }
+    ]
+  }
+}

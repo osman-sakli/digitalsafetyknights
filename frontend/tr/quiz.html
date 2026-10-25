@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Test what you know with Digital Safety Knights quizzes — Easy and Hard tiers on scams, AI & deepfakes, strangers, cyberbullying, privacy, and what to do if something happens.">
+<title>Knight's Quiz — Digital Safety Knights</title>
+<link rel="canonical" href="https://digitalsafetyknights.org/tr/quiz.html">
+<link rel="alternate" hreflang="en" href="https://digitalsafetyknights.org/en/quiz.html">
+<link rel="alternate" hreflang="tr" href="https://digitalsafetyknights.org/tr/quiz.html">
+<link rel="alternate" hreflang="es" href="https://digitalsafetyknights.org/es/quiz.html">
+<link rel="alternate" hreflang="x-default" href="https://digitalsafetyknights.org/quiz.html">
+<meta property="og:title" content="Knight's Quiz — Digital Safety Knights">
+<meta property="og:description" content="Easy and Hard tiered quizzes on scams, AI & deepfakes, strangers, cyberbullying, privacy, and what to do if something happens.">
+<meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
+<meta property="og:url" content="https://digitalsafetyknights.org/quiz.html">
+<meta property="og:type" content="website">
+<link rel="icon" href="/assets/favicon.ico">
+<link rel="stylesheet" href="/assets/theme.css">
+<style>
+  :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --white: #fff; --gray: #6c757d; --text: #2d3748; --success: #2a9d8f; --danger: #e63946; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Nunito Sans', 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
+
+  nav { background: var(--navy); position: sticky; top: 0; z-index: 999; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 68px; box-shadow: 0 2px 20px rgba(0,0,0,0.4); }
+  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .nav-logo img { height: 42px; }
+  .nav-logo span { color: var(--gold); font-weight: 900; font-size: 1rem; }
+  .nav-right a { color: #ccd6f6; text-decoration: none; font-size: 0.88rem; font-weight: 700; margin-left: 1.4rem; }
+  .nav-right a:hover { color: var(--gold); }
+
+  .hero { background: linear-gradient(135deg, #1a2f6e, #0d1b3e); color: white; text-align: center; padding: 60px 2rem 45px; }
+  .hero-badge { display: inline-block; background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.4); color: var(--gold); padding: 6px 18px; border-radius: 20px; font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; margin-bottom: 1.2rem; text-transform: uppercase; }
+  .hero h1 { font-size: clamp(1.8rem, 4.2vw, 2.7rem); font-weight: 900; margin-bottom: 0.7rem; }
+  .hero h1 .gold { color: var(--gold); }
+  .hero p { color: #a8b8d8; max-width: 600px; margin: 0 auto; line-height: 1.6; font-size: 0.98rem; }
+
+  .wrap { max-width: 760px; margin: 0 auto; padding: 2.6rem 1.5rem 4rem; }
+
+  .cat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1rem; margin-bottom: 1rem; }
+  .cat-btn { background: white; border: 2px solid #dde2f0; border-radius: 16px; padding: 1.3rem 1rem; text-align: center; cursor: pointer; font-family: inherit; }
+  .cat-btn:hover, .cat-btn.active { border-color: var(--gold); background: rgba(201,168,76,0.08); }
+  .cat-btn .bicon { font-size: 1.8rem; margin-bottom: 0.4rem; }
+  .cat-btn .blabel { font-weight: 800; font-size: 0.88rem; color: var(--navy); }
+
+  .tier-row { display: flex; gap: 1rem; justify-content: center; margin: 1.6rem 0 0.4rem; }
+  .tier-btn { flex: 1; max-width: 220px; background: white; border: 2px solid #dde2f0; border-radius: 14px; padding: 1.1rem; text-align: center; cursor: pointer; font-family: inherit; font-weight: 900; }
+  .tier-btn.easy:hover, .tier-btn.easy.active { border-color: var(--success); background: rgba(42,157,143,0.08); color: var(--success); }
+  .tier-btn.hard:hover, .tier-btn.hard.active { border-color: var(--danger); background: rgba(230,57,70,0.08); color: var(--danger); }
+  .back-link { display: inline-block; margin-bottom: 1.2rem; color: var(--navy); font-weight: 800; font-size: 0.85rem; text-decoration: none; cursor: pointer; }
+
+  .quiz-card { background: white; border-radius: 20px; padding: 2rem; box-shadow: 0 2px 30px rgba(13,27,62,0.09); }
+  .quiz-progress { font-size: 0.78rem; font-weight: 800; color: var(--gray); margin-bottom: 8px; }
+  .quiz-track { height: 6px; background: #e8ecf5; border-radius: 4px; margin-bottom: 1.4rem; overflow: hidden; }
+  .quiz-fill { height: 100%; background: var(--gold); transition: width 0.3s; }
+  .quiz-prompt { font-size: 1.12rem; font-weight: 800; color: var(--navy); line-height: 1.4; margin-bottom: 1.2rem; }
+  .hint-btn { background: none; border: none; color: var(--gold2); background: var(--navy); padding: 5px 12px; border-radius: 10px; font-size: 0.74rem; font-weight: 800; cursor: pointer; margin-bottom: 1rem; }
+  .hint-box { display: none; background: var(--light); border-left: 3px solid var(--gold); border-radius: 8px; padding: 10px 12px; font-size: 0.82rem; color: var(--gray); margin-bottom: 1rem; }
+  .hint-box.open { display: block; }
+  .quiz-choice { display: block; width: 100%; text-align: left; background: var(--light); border: 2px solid transparent; border-radius: 12px; padding: 12px 16px; margin-bottom: 10px; font-size: 0.92rem; font-family: inherit; cursor: pointer; color: var(--text); }
+  .quiz-choice:hover:not(:disabled) { border-color: var(--gold); }
+  .quiz-choice.correct { background: rgba(42,157,143,0.15); border-color: var(--success); font-weight: 800; }
+  .quiz-choice.incorrect { background: rgba(230,57,70,0.1); border-color: var(--danger); }
+  .quiz-choice:disabled { cursor: default; opacity: 0.85; }
+  .explain-box { background: var(--light); border-radius: 12px; padding: 14px 16px; margin: 0.8rem 0 1.2rem; font-size: 0.86rem; line-height: 1.5; color: var(--text); border-left: 3px solid var(--navy); }
+  .quiz-next { display: none; background: var(--gold); color: var(--navy); border: none; padding: 12px 0; width: 100%; border-radius: 14px; font-weight: 900; font-size: 0.95rem; cursor: pointer; }
+  .quiz-next.show { display: block; }
+
+  .result-card { text-align: center; }
+  .result-card .ricon { font-size: 3.2rem; margin-bottom: 0.6rem; }
+  .result-card h2 { font-size: 1.5rem; color: var(--navy); margin-bottom: 0.5rem; }
+  .result-card p { color: var(--gray); margin-bottom: 1.4rem; }
+
+  footer { background: var(--navy); color: #7a8fbb; padding: 2.5rem 2rem; text-align: center; font-size: 0.82rem; margin-top: 2rem; }
+  footer a { color: var(--gold); text-decoration: none; }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 1rem; } .nav-right a { margin-left: 0.7rem; font-size: 0.78rem; }
+    .quiz-card { padding: 1.4rem; }
+  }
+</style>
+<script src="/assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">
+    <img src="/assets/logo.png" alt="DSK">
+    <span>Digital Safety Knights</span>
+  </a>
+  <div class="nav-right">
+    <a href="/" data-i18n="qp.home2">Home</a>
+    <a href="/resources.html" data-i18n="nav.resources">Resources</a>
+    <a href="/topics.html" data-i18n="quiz.navTopics">Videos</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge" data-i18n="quiz.heroBadge">🧠 Knight's Quiz</div>
+  <h1 data-i18n="quiz.heroTitle">Pick a Topic. <span class="gold">Test Your Shield.</span></h1>
+  <p data-i18n="quiz.heroSubtitle">Easy or Hard — 4 quick questions with hints and real explanations. Answer well and earn Knight Points.</p>
+</section>
+
+<div class="wrap" id="quiz-wrap"></div>
+
+<footer>
+  <p>&copy; 2026 Digital Safety Knights. <a href="/">Home</a> · <a href="/resources.html" data-i18n="footer.journalArchive2">Resources</a></p>
+</footer>
+
+<script>
+const QZ_LANG = (window.DSKi18n && DSKi18n.lang) || 'en';
+const CAT_META = {
+  scams:     { icon: '🎁', label: { en: 'Scams & Fake Prizes', tr: 'Dolandırıcılık & Sahte Ödüller', es: 'Estafas y Premios Falsos' } },
+  ai:        { icon: '🤖', label: { en: 'AI Chatbots & Deepfakes', tr: 'Yapay Zeka & Deepfake', es: 'IA y Deepfakes' } },
+  strangers: { icon: '🎭', label: { en: 'Strangers & Catfishing', tr: 'Yabancılar & Sahte Kimlik', es: 'Extraños y Perfiles Falsos' } },
+  bullying:  { icon: '🤝', label: { en: 'Cyberbullying', tr: 'Siber Zorbalık', es: 'Ciberacoso' } },
+  privacy:   { icon: '🔒', label: { en: 'Passwords & Privacy', tr: 'Şifreler & Gizlilik', es: 'Contraseñas y Privacidad' } },
+  emergency: { icon: '🆘', label: { en: 'If Something Happens', tr: 'Bir Şey Olursa', es: 'Si Algo Pasa' } },
+  habits:    { icon: '🧠', label: { en: 'Habits & Media Smarts', tr: 'Alışkanlıklar & Medya Bilinci', es: 'Hábitos y Sentido Mediático' } },
+};
+const L = {
+  pickTopic: { en: 'Pick a topic', tr: 'Bir konu seç', es: 'Elige un tema' },
+  pickTier: { en: 'Easy or Hard?', tr: 'Kolay mı, Zor mu?', es: '¿Fácil o Difícil?' },
+  easy: { en: '🟢 Easy', tr: '🟢 Kolay', es: '🟢 Fácil' },
+  hard: { en: '🔴 Hard', tr: '🔴 Zor', es: '🔴 Difícil' },
+  back: { en: '← Back', tr: '← Geri', es: '← Atrás' },
+  hint: { en: '💡 Need a hint?', tr: '💡 İpucu ister misin?', es: '💡 ¿Necesitas una pista?' },
+  next: { en: 'Next →', tr: 'Sonraki →', es: 'Siguiente →' },
+  finish: { en: 'See My Score', tr: 'Puanımı Gör', es: 'Ver Mi Puntuación' },
+  perfect: { en: 'Perfect Shield!', tr: 'Kusursuz Kalkan!', es: '¡Escudo Perfecto!' },
+  solid: { en: 'Solid Knight Work', tr: 'Sağlam Şövalye İşi', es: 'Buen Trabajo de Caballero' },
+  keepTraining: { en: 'Keep Training', tr: 'Eğitime Devam', es: 'Sigue Entrenando' },
+  tryAgain: { en: 'Try Another Quiz', tr: 'Başka Bir Quiz Dene', es: 'Prueba Otro Quiz' },
+};
+function t(key) { return (L[key] && L[key][QZ_LANG]) || L[key].en; }
+
+let QUIZ_DATA = null;
+let state = { cat: null, tier: null, idx: 0, score: 0, answered: false };
+
+fetch('/content/quiz-questions.json?t=' + Math.floor(Date.now() / 3600000))
+  .then(r => r.json())
+  .then(data => { QUIZ_DATA = data; renderCatPicker(); })
+  .catch(() => { document.getElementById('quiz-wrap').innerHTML = '<p style="text-align:center;color:var(--gray);">Could not load quizzes right now — please refresh.</p>'; });
+
+function renderCatPicker() {
+  const wrap = document.getElementById('quiz-wrap');
+  let html = `<h3 style="text-align:center;color:var(--navy);margin-bottom:1rem;">${t('pickTopic')}</h3><div class="cat-grid">`;
+  Object.keys(CAT_META).forEach(c => {
+    const m = CAT_META[c];
+    html += `<button class="cat-btn" data-cat="${c}"><div class="bicon">${m.icon}</div><div class="blabel">${m.label[QZ_LANG] || m.label.en}</div></button>`;
+  });
+  html += `</div>`;
+  wrap.innerHTML = html;
+  wrap.querySelectorAll('.cat-btn').forEach(btn => {
+    btn.addEventListener('click', () => { state.cat = btn.getAttribute('data-cat'); renderTierPicker(); });
+  });
+}
+
+function renderTierPicker() {
+  const wrap = document.getElementById('quiz-wrap');
+  const m = CAT_META[state.cat];
+  wrap.innerHTML = `
+    <a class="back-link" id="back-to-cats">${t('back')}</a>
+    <h3 style="text-align:center;color:var(--navy);margin-bottom:0.3rem;">${m.icon} ${m.label[QZ_LANG] || m.label.en}</h3>
+    <p style="text-align:center;color:var(--gray);font-size:0.85rem;margin-bottom:0.5rem;">${t('pickTier')}</p>
+    <div class="tier-row">
+      <button class="tier-btn easy" data-tier="easy">${t('easy')}</button>
+      <button class="tier-btn hard" data-tier="hard">${t('hard')}</button>
+    </div>`;
+  document.getElementById('back-to-cats').addEventListener('click', renderCatPicker);
+  wrap.querySelectorAll('.tier-btn').forEach(btn => {
+    btn.addEventListener('click', () => { state.tier = btn.getAttribute('data-tier'); startQuiz(); });
+  });
+}
+
+function startQuiz() {
+  state.idx = 0;
+  state.score = 0;
+  state.answered = false;
+  renderQuestion();
+}
+
+function currentQuestions() { return QUIZ_DATA[state.cat][state.tier]; }
+
+function renderQuestion() {
+  const questions = currentQuestions();
+  const total = questions.length;
+  const q = questions[state.idx];
+  state.answered = false;
+  const wrap = document.getElementById('quiz-wrap');
+  wrap.innerHTML = `
+    <div class="quiz-card">
+      <div class="quiz-progress">${state.idx + 1} / ${total}</div>
+      <div class="quiz-track"><div class="quiz-fill" style="width:${Math.round((state.idx / total) * 100)}%"></div></div>
+      <div class="quiz-prompt">${escapeHtml(q.prompt)}</div>
+      <button class="hint-btn" id="hint-toggle">${t('hint')}</button>
+      <div class="hint-box" id="hint-box">${escapeHtml(q.hint)}</div>
+      <div id="choices-list"></div>
+      <div id="explain-slot"></div>
+      <button class="quiz-next" id="next-btn">${state.idx + 1 >= total ? t('finish') : t('next')}</button>
+    </div>`;
+  document.getElementById('hint-toggle').addEventListener('click', () => {
+    document.getElementById('hint-box').classList.toggle('open');
+  });
+  const list = document.getElementById('choices-list');
+  q.choices.forEach((choice, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'quiz-choice';
+    btn.textContent = choice.text;
+    btn.addEventListener('click', () => selectChoice(i));
+    list.appendChild(btn);
+  });
+  document.getElementById('next-btn').addEventListener('click', () => {
+    state.idx++;
+    if (state.idx >= total) { finishQuiz(); } else { renderQuestion(); }
+  });
+}
+
+function selectChoice(i) {
+  if (state.answered) return;
+  state.answered = true;
+  const q = currentQuestions()[state.idx];
+  const choice = q.choices[i];
+  document.querySelectorAll('#choices-list .quiz-choice').forEach((b, idx) => {
+    b.disabled = true;
+    if (idx === i) b.classList.add(choice.correct ? 'correct' : 'incorrect');
+    if (choice.correct === false && q.choices[idx].correct) b.classList.add('correct');
+  });
+  if (choice.correct) state.score++;
+  document.getElementById('explain-slot').innerHTML = `<div class="explain-box">${choice.correct ? '✅' : '💡'} ${escapeHtml(q.explanation)}</div>`;
+  document.getElementById('next-btn').classList.add('show');
+}
+
+function finishQuiz() {
+  const total = currentQuestions().length;
+  const score = state.score;
+  const pct = score / total;
+  let icon = '🛡️', title = t('keepTraining');
+  if (pct === 1) { icon = '🏆'; title = t('perfect'); }
+  else if (pct >= 0.75) { icon = '⭐'; title = t('solid'); }
+  const m = CAT_META[state.cat];
+  const pointsEarned = score * 10;
+  if (window.DSKPoints) {
+    DSKPoints.addPoints(pointsEarned, `Quiz: ${m.label[QZ_LANG] || m.label.en} (${state.tier})`);
+    DSKPoints.markComboActivity('quest');
+  }
+  const wrap = document.getElementById('quiz-wrap');
+  wrap.innerHTML = `
+    <div class="quiz-card result-card">
+      <div class="ricon">${icon}</div>
+      <h2>${title}</h2>
+      <p>${score} / ${total} — +${pointsEarned} Knight Points</p>
+      <button class="quiz-next show" id="retry-btn">${t('tryAgain')}</button>
+    </div>`;
+  document.getElementById('retry-btn').addEventListener('click', renderCatPicker);
+}
+
+function escapeHtml(s) { return (s || '').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+</script>
+<script src="/assets/lang-switcher.js"></script>
+<script src="/assets/site-search.js"></script>
+<script src="/assets/play-now-fab.js"></script>
+</body>
+</html>
