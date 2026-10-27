@@ -1,6 +1,6 @@
 # DSK Threat Intelligence & Policy Research Bank
 
-Compiled 2026-08-02, last refreshed 2026-10-25. Covers the last ~10 months of
+Compiled 2026-08-02, last refreshed 2026-10-27. Covers the last ~10 months of
 child-online-safety news (Oct 2025 – Oct 2026), weighted toward the most
 recent 4-6 weeks. Sourced via web search — every claim below has a citation.
 This is a living reference: update it monthly (it's also the natural
@@ -11,6 +11,36 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
 
 ## Flagged for review — not yet published
 
+- **(2026-10-07, still generating coverage as of 2026-10-27) Common Sense
+  Media's Youth AI Safety Institute rates ChatGPT's Teen Mode
+  "unacceptable risk" — its worst rating** — an independent safety
+  evaluation (4,000+ test prompts, before and after ChatGPT's August 2026
+  teen-mode launch) found some protections held (e.g. refusing explicit
+  sexual roleplay) but that the headline parental-safety features did not
+  work as advertised: parental alerts for suicide/self-harm/eating-disorder
+  risk did not reliably fire, crisis-response quality was inconsistent (in
+  over a quarter of relevant tests ChatGPT did not point the teen to a
+  hotline or professional help), and in one documented case a new teen
+  account could discuss suicidal ideation, self-harm, and eating disorders
+  for a full hour with no parent notified. Common Sense Media recommends
+  OpenAI pause marketing teen mode and that teens avoid ChatGPT until it's
+  fixed. OpenAI disputes the finding, saying testing may have wrapped
+  before its parental-notification feature was fully active due to a
+  technical rollout issue, and that it's continuing to improve safeguards.
+  Not actioned: this is a third-party safety audit, not a law, ruling, or
+  settlement, so there's no legislative-tracker bucket to attach it to
+  (DSK's only AI-chatbot entry, California SB 1119/"Adam's Law," is a
+  pending state law, not an OpenAI-specific item). But it's exactly the
+  kind of concrete, parent-actionable finding ("don't assume ChatGPT's
+  teen-mode parental alerts will catch a crisis") that could warrant a
+  dedicated guide note or Journal mention — similar to how the Meta Teen
+  Accounts settlement and TikTok–Alabama settlement got guide-worthy flags
+  here. Revisit if OpenAI issues a fix and Common Sense Media or another
+  independent tester re-rates it, or if this feeds a broader AI-chatbot
+  parent guide.
+  [GovTech](https://www.govtech.com/education/k-12/common-sense-media-deems-chatgpts-teen-mode-unsafe-for-students) ·
+  [News4Jax (AP-sourced)](https://www.news4jax.com/business/2026/10/07/some-guardrails-on-chatgpt-for-teens-dont-work-as-promised-watchdog-group-says/) ·
+  [KMPH](https://kmph.com/news/nation-world/openais-chatgpt-for-teens-presents-unacceptable-risk-says-external-safety-report-common-sense-media-school-work)
 - **(2026-10-15) Character Technologies (Character.AI's parent) files
   Chapter 11 bankruptcy; ~40-state AG coalition intervenes over child-safety
   terms** — the company behind Character.AI filed for Chapter 11 bankruptcy
@@ -117,6 +147,72 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
   Worth tracking as its own new entry once either shows real movement (a
   floor vote or enactment) rather than just a committee markup.
   [Commerce Committee](https://www.commerce.senate.gov/press/rep/release/commerce-committee-advances-kids-online-safety-legislation/)
+
+---
+
+## 0n. October 2026 Refresh (Oct 27, 2026)
+
+Automated biennial freshness scan, ~48 hours after the last one. A quiet
+window for mechanical tracker changes — no enacted law, ruling, or
+settlement surfaced that isn't already reflected on the tracker or logged
+under "Flagged for review." The one new substantive finding (Common Sense
+Media's "unacceptable risk" rating of ChatGPT's Teen Mode) is a third-party
+safety audit, not a law/ruling/settlement, so it's logged as a new
+"Flagged for review" entry above rather than a tracker edit. No tracker
+edit this run.
+
+### Spot-checked, no change needed
+- **New York SAFE for Kids Act** — re-confirmed the tracker's "Rules
+  finalized July 2026; effective January 25, 2027" status against the
+  source record: Gov. Hochul and AG James announced final rules on Jul 28,
+  2026 (published in the State Register Jul 29, 2026), with the law taking
+  effect 180 days later. No further rulemaking or litigation found since.
+  Tracker's status remains accurate.
+  [NY AG press release](https://ag.ny.gov/press-release/2026/attorney-general-james-and-governor-hochul-release-final-safe-kids-act-rules) ·
+  [Captain Compliance](https://captaincompliance.com/news/new-york-finalizes-safe-for-kids-act-rules-age-assurance-parental-consent-addictive-feed-restrictions-take-effect-in-2027/)
+- **Alabama / Louisiana App Store Accountability Acts** — re-confirmed
+  against current legal-tracker coverage: Alabama's HB 161 (signed Feb 17,
+  2026) effective Jan 1, 2027, with existing accounts needing
+  age-categorization by Oct 1, 2027; Louisiana's HB 977 delay (signed May
+  15, 2026) pushing its effective date to Jul 1, 2027. Both match the
+  tracker exactly; no change needed.
+  [Loeb & Loeb](https://www.loeb.com/en/insights/passle/2026/02/alabama-becomes-the-fourth-state-to-enact-an-app-store-accountability-act)
+- **Eight-state OpenAI suits (filed Oct 14, 2026)** — re-confirmed the
+  count and state list (Arizona, Arkansas, Idaho, Iowa, Kansas, Montana,
+  Nebraska, West Virginia — Florida's earlier, separate suit from June
+  2026 is not part of this group of eight) and that no ruling has issued.
+  Matches the existing "Flagged for review" entry; unchanged.
+  [Al Jazeera](https://www.aljazeera.com/amp/news/2026/10/15/why-are-eight-us-states-suing-openai) ·
+  [Engadget](https://engadget.com/2287111/iowa-nebraska-and-six-other-states-are-suing-openai-for-endangering-children)
+
+### Context, not a tracker change
+- UK Ofcom's "crisis response protocol" amendments to the Illegal Content
+  and Protection of Children Codes of Practice — confirmed via Ofcom's own
+  published amendment PDFs that these take effect **Nov 2, 2026** (not yet
+  in force as of this check) and remain a *recommended*, not mandatory,
+  measure layered on top of (not replacing) the CSEA reporting duty
+  already on the tracker. Re-check once Nov 2 passes to see whether it
+  becomes concrete enough to note on the INTL row.
+  [Ofcom amended Protection of Children Code (PDF)](https://www.ofcom.org.uk/siteassets/resources/documents/online-safety/protecting-children/illegal-harms/amendments-to-the-protection-of-children-code-of-practice-for-user-to-user-services-incorporating-amendments-issued-12-october-2026-in-force-2-november-2026.pdf) ·
+  [Ofcom statement](https://www.ofcom.org.uk/online-safety/illegal-and-harmful-content/statement-crisis-response-protocol)
+- MDL 3166 (Roblox/Discord/Snap/Meta, already flagged): a Sept 28, 2026
+  MLex report (pre-dating this refresh window but not previously logged
+  here) noted a federal judge stayed all claims and proceedings against X
+  Corp., Roblox, and Discord within the broader social-media-addiction
+  MDL, while denying a transfer motion from X. Still no ruling or
+  settlement on the merits; doesn't change anything trackable. Unchanged.
+- Character Technologies bankruptcy: no update since the Oct 25 refresh —
+  Disney still the named $20M stalking-horse bidder, auction/sale still
+  targeted for late Nov/early Dec 2026; Kentucky's Franklin Circuit Court
+  suit appears to continue despite the bankruptcy filing (state
+  enforcement actions are typically exempted from the automatic stay), but
+  no source yet confirms this specifically for this case. Unchanged.
+- TikTok–Alabama Teen Safety Settlement: still no other state confirmed to
+  have signed a matching consent decree. Unchanged.
+
+**Site follow-up from this refresh:** none — nothing surfaced rose to a
+clear-cut, mechanical tracker update. "Last refreshed" date bumped to Oct
+27, 2026 above.
 
 ---
 
