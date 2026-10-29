@@ -137,6 +137,19 @@
   .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
   .btn-gold { background: var(--gold); color: var(--navy); padding: 15px 36px; border-radius: 32px; font-weight: 900; text-decoration: none; box-shadow: 0 6px 24px rgba(201,168,76,0.45); border: none; cursor: pointer; }
   .btn-ghost { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.25); padding: 15px 36px; border-radius: 32px; font-weight: 700; text-decoration: none; }
+  .btn-workshop { border-color: rgba(201,168,76,0.7); color: var(--gold2); }
+  .nav-cta-workshop { background: transparent !important; color: var(--gold2) !important; border: 1.5px solid rgba(201,168,76,0.6); }
+  .workshop-band { background: linear-gradient(135deg, #0d1b3e 0%, #1a2f6e 100%); color: white; padding: 3rem 2rem; border-top: 3px solid var(--gold); border-bottom: 3px solid var(--gold); }
+  .wb-inner { display: flex; gap: 2.5rem; align-items: center; flex-wrap: wrap; }
+  .wb-text { flex: 1 1 420px; }
+  .wb-eyebrow { display: inline-block; background: rgba(201,168,76,0.14); border: 1px solid rgba(201,168,76,0.45); color: var(--gold2); font-size: 0.74rem; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; padding: 6px 14px; border-radius: 20px; margin-bottom: 0.9rem; }
+  .workshop-band h2 { font-size: clamp(1.5rem, 3.2vw, 2.2rem); font-weight: 900; line-height: 1.2; margin-bottom: 0.8rem; color: white; }
+  .workshop-band p { color: #c3cde6; line-height: 1.7; font-size: 1rem; max-width: 620px; margin-bottom: 1.3rem; }
+  .wb-btns { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+  .wb-link { color: var(--gold2); font-weight: 800; text-decoration: underline; text-underline-offset: 4px; }
+  .wb-facts { flex: 0 1 340px; list-style: none; margin: 0; padding: 1.3rem 1.5rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(201,168,76,0.3); border-radius: 18px; }
+  .wb-facts li { padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); font-weight: 700; font-size: 0.92rem; color: #e9edf7; }
+  .wb-facts li:last-child { border-bottom: none; }
 
   .stats { background: white; padding: 3.5rem 2rem; border-bottom: 1px solid #eee; }
   .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 2rem; max-width: 900px; margin: 0 auto; text-align: center; }
@@ -364,6 +377,7 @@
     </a>
     <div class="nav-actions">
       <a href="/login.html" data-i18n="nav.login">🔐 Login</a>
+      <a href="/school-programs.html#sp-form-title" class="nav-cta nav-cta-workshop" data-i18n="nav.freeWorkshop">🏫 Free Workshop</a>
       <a href="#" class="nav-cta" onclick="openKnightModal();return false;" data-i18n="nav.joinFree">Join Free</a>
       <a href="https://discord.gg/RmMZqnF4e" target="_blank" class="nav-cta" style="background:#5865F2;color:white !important;">💬 Discord</a>
     </div>
@@ -427,6 +441,7 @@
     <div class="hero-btns">
       <a class="btn-gold" href="#" onclick="openKnightModal();return false;" data-i18n="hero.joinBtn">Join the Knights — Free</a>
       <a class="btn-ghost" href="/audit.html" data-i18n="hero.auditBtn">🛡️ Take Family Safety Audit</a>
+      <a class="btn-ghost btn-workshop" href="/school-programs.html#sp-form-title" data-i18n="hero.workshopBtn">🏫 Request a Free Workshop</a>
     </div>
 
     <aside id="news-ticker" aria-label="Digital Safety Watch">
@@ -449,6 +464,26 @@
   </div>
   <div class="stats-ticker"><span class="ticker-dot"></span><span id="ticker-text" data-i18n="ticker.fact1">7 story-driven quests, one for every major threat</span></div>
 </div>
+
+<section class="workshop-band" id="free-workshop">
+  <div class="container wb-inner">
+    <div class="wb-text">
+      <div class="wb-eyebrow" data-i18n="wb.eyebrow">🏫 Free for schools, libraries &amp; community groups</div>
+      <h2 data-i18n="wb.title">We'll teach your students online safety — for free.</h2>
+      <p data-i18n="wb.p">A live 45–60 minute workshop for ages 10–20 on scams, AI chatbots &amp; deepfakes, strangers, cyberbullying, and what to do if something happens. In person (NJ, NY, PA, CT, DE) or on Zoom anywhere. In English or Spanish. No cost, ever.</p>
+      <div class="wb-btns">
+        <a class="btn-gold" href="/school-programs.html#sp-form-title" data-i18n="wb.cta">Request a Free Workshop →</a>
+        <a class="wb-link" href="/school-programs.html" data-i18n="wb.more">See how sessions work</a>
+      </div>
+    </div>
+    <ul class="wb-facts">
+      <li data-i18n="wb.f1">🎤 Live &amp; interactive — not a lecture</li>
+      <li data-i18n="wb.f2">🎬 Built around our own short videos</li>
+      <li data-i18n="wb.f3">📱 Students lock down their own accounts during the session</li>
+      <li data-i18n="wb.f4">📄 Materials &amp; parent guides to keep</li>
+    </ul>
+  </div>
+</section>
 
 <div class="vision-band">
   <span class="parallax-layer p-star" data-speed="0.12" style="top:15%;left:6%;">✦</span>

@@ -10,7 +10,8 @@ Work planned for the next months. Detail lives in the CHAPTER*_PLAN.md and DSK_*
 ## Content
 - [ ] Turkish localization under `/tr` (BTK / İhbarWeb resources, localized character names)
 - [ ] Finish Spanish coverage for all pages in `frontend/es`
-- [ ] Short-video library integration on the site (videos synced from separate bucket)
+- [x] Short-video library integration on the site (videos synced from separate bucket) — `topics.html` + `quiz.html`, daily auto-sync from the render pipeline
+- [ ] Free workshop offer: homepage band + hero/nav CTAs shipped; next is a public "upcoming/past sessions" list once partners agree to be named
 
 ## Engineering
 - [ ] Tests for Lambda handlers (`backend/`) — currently none
