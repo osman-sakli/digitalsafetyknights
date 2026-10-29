@@ -11,9 +11,12 @@ Work planned for the next months. Detail lives in the CHAPTER*_PLAN.md and DSK_*
 - [ ] Turkish localization under `/tr` (BTK / İhbarWeb resources, localized character names)
 - [ ] Finish Spanish coverage for all pages in `frontend/es`
 - [x] Short-video library integration on the site (videos synced from separate bucket) — `topics.html` + `quiz.html`, daily auto-sync from the render pipeline
-- [ ] Free workshop offer: homepage band + hero/nav CTAs shipped; next is a public "upcoming/past sessions" list once partners agree to be named
+- [x] Free workshop offer: homepage band + hero/nav CTAs, QR on the deck's resources slide
+- [ ] Public "recent sessions" list on the site, once partners agree to be named
+- [ ] Outreach list: NJ/NY schools, libraries, PTAs, community orgs — send the poster + proposal
 
 ## Engineering
+- [x] Fix deploy `--delete` wiping generated files (videos/, traffic-stats.json) — see exclude list in deploy.yml
 - [ ] Tests for Lambda handlers (`backend/`) — currently none
 - [ ] Move `backend/*.zip` build artifacts out of git, build them in CI
 - [ ] Rebuild `lambda-layer/` from a pinned `requirements.txt` instead of vendoring
