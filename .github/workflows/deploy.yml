@@ -41,9 +41,12 @@ jobs:
       - name: Deploy HTML/JSON to S3
         run: |
           # content/news-feed.json, content/news-archive.json (dsk-news-feed
-          # Lambda, every 12h) and content/video-library.json
-          # (sync-video-library.py) are written by other systems, not this
-          # repo — excluded here for the same --delete-safety reason as above.
+          # Lambda, every 12h), content/video-library.json
+          # (sync-video-library.py) and content/traffic-stats.json
+          # (dsk-traffic-report Lambda, daily) are written by other systems,
+          # not this repo — excluded here for the same --delete-safety reason
+          # as above. traffic-stats.json was missing from this list, so every
+          # deploy deleted it and stats.html showed nothing (fixed 2026-10-29).
           aws s3 sync frontend/ s3://${{ secrets.S3_BUCKET }}/ \
             --delete \
             --exclude "*" \
@@ -52,6 +55,7 @@ jobs:
             --exclude "content/news-feed.json" \
             --exclude "content/news-archive.json" \
             --exclude "content/video-library.json" \
+            --exclude "content/traffic-stats.json" \
             --cache-control "no-cache"
 
       - name: Invalidate CloudFront cache

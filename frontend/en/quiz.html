@@ -141,7 +141,18 @@ let state = { cat: null, tier: null, idx: 0, score: 0, answered: false };
 
 fetch('/content/quiz-questions.json?t=' + Math.floor(Date.now() / 3600000))
   .then(r => r.json())
-  .then(data => { QUIZ_DATA = data; renderCatPicker(); })
+  .then(data => {
+    QUIZ_DATA = data;
+    // ?topic=<category> lets a video caption, email or workshop slide drop
+    // someone straight into the matching quiz instead of the topic picker.
+    const wanted = new URLSearchParams(location.search).get('topic');
+    if (wanted && CAT_META[wanted] && QUIZ_DATA[wanted]) {
+      state.cat = wanted;
+      renderTierPicker();
+    } else {
+      renderCatPicker();
+    }
+  })
   .catch(() => { document.getElementById('quiz-wrap').innerHTML = '<p style="text-align:center;color:var(--gray);">Could not load quizzes right now — please refresh.</p>'; });
 
 function renderCatPicker() {

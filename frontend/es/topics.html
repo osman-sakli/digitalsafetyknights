@@ -134,12 +134,20 @@ function catLabel(c) { return (CAT_LABELS[c] && CAT_LABELS[c][TL_LANG]) || TOPIC
 let TOPICS_DATA = null;
 let activeCat = 'all';
 let TITLE_BY_ID = {};
+// Which videos actually exist is owned by content/video-library.json, written by
+// infrastructure/sync-video-library.py and the render pipeline — not by the
+// static topic file, so newly rendered shorts appear here without an edit.
+let MEDIA_BY_ID = {};
 
-fetch('/content/shorts-topics.json?t=' + Math.floor(Date.now() / 3600000))
-  .then(r => r.json())
-  .then(data => {
-    TOPICS_DATA = data;
-    Object.values(data.items).flat().forEach(it => { TITLE_BY_ID[it.id] = it.title; });
+const cacheBust = '?t=' + Math.floor(Date.now() / 3600000);
+Promise.all([
+  fetch('/content/shorts-topics.json' + cacheBust).then(r => r.json()),
+  fetch('/content/video-library.json' + cacheBust).then(r => r.json()).catch(() => ({ items: [] })),
+])
+  .then(([topics, library]) => {
+    TOPICS_DATA = topics;
+    (library.items || []).forEach(v => { MEDIA_BY_ID[v.id] = v; });
+    Object.values(topics.items).flat().forEach(it => { TITLE_BY_ID[it.id] = it.title; });
     renderFilters();
     renderSections();
   })
@@ -173,14 +181,15 @@ function renderSections() {
     const meta = TOPICS_DATA.categories[c];
     const items = TOPICS_DATA.items[c] || [];
     if (!items.length) return;
-    const availCount = items.filter(i => i.available).length;
+    const availCount = items.filter(i => MEDIA_BY_ID[i.id]).length;
     html += `<div class="cat-section">
       <div class="cat-heading"><span class="cicon">${meta.icon}</span><h2>${catLabel(c)}</h2><span class="ccount">${availCount} video${availCount === 1 ? '' : 's'}</span></div>
       <div class="short-grid">`;
     items.forEach(it => {
-      if (it.available) {
+      const media = MEDIA_BY_ID[it.id];
+      if (media) {
         html += `<button class="short-card" data-short-id="${it.id}">
-          <img class="short-thumb" src="/shorts/${it.id}.jpg" alt="${escapeAttr(it.title)}" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#1a2f6e,#0d1b3e)'">
+          <img class="short-thumb" src="${media.poster || ''}" alt="${escapeAttr(it.title)}" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#1a2f6e,#0d1b3e)'">
           <div class="short-play">▶</div>
           <div class="short-body"><h4>${escapeHtml(it.title)}</h4></div>
         </button>`;
@@ -206,8 +215,9 @@ function escapeAttr(s) { return escapeHtml(s).replace(/'/g, '&#39;'); }
 function playShort(id) {
   const modal = document.getElementById('videoModal');
   const video = document.getElementById('modalVideo');
-  video.src = `/shorts/${id}.mp4`;
-  video.poster = `/shorts/${id}.jpg`;
+  const media = MEDIA_BY_ID[id] || {};
+  video.src = media.src || '';
+  video.poster = media.poster || '';
   modal.setAttribute('aria-label', TITLE_BY_ID[id] || '');
   modal.classList.add('open');
   video.play().catch(() => {});
