@@ -1,6 +1,6 @@
 # DSK Threat Intelligence & Policy Research Bank
 
-Compiled 2026-08-02, last refreshed 2026-10-27. Covers the last ~10 months of
+Compiled 2026-08-02, last refreshed 2026-10-29. Covers the last ~10 months of
 child-online-safety news (Oct 2025 – Oct 2026), weighted toward the most
 recent 4-6 weeks. Sourced via web search — every claim below has a citation.
 This is a living reference: update it monthly (it's also the natural
@@ -147,6 +147,78 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
   Worth tracking as its own new entry once either shows real movement (a
   floor vote or enactment) rather than just a committee markup.
   [Commerce Committee](https://www.commerce.senate.gov/press/rep/release/commerce-committee-advances-kids-online-safety-legislation/)
+
+---
+
+## 0o. October 2026 Refresh (Oct 29, 2026)
+
+Automated biennial freshness scan, ~48 hours after the last one. Another
+quiet window — searched federal/state legislation, the OpenAI multistate
+suits, the Character.AI bankruptcy, the TikTok–Alabama settlement's
+multistate signing hook, the social-media-addiction MDL, major-platform
+safety announcements, and the EU KIDS Act. Nothing surfaced that isn't
+already reflected on the tracker or logged under "Flagged for review." No
+tracker edit this run.
+
+### Spot-checked, no change needed
+- **California SB 1119 ("Adam's Law")** — re-confirmed against current
+  coverage: signed by Gov. Newsom Sept 10, 2026 as part of a 13-bill
+  child-safety package, core requirements (crisis-response protocol,
+  default session/daily-use caps, parental controls) operative July 1,
+  2027; first independent chatbot audit due by Jan 1, 2029. Matches the
+  tracker's "Signed Sept 10, 2026; core requirements effective July 1,
+  2027" exactly.
+  [Orrick](https://www.orrick.com/en/Insights/2026/10/Examining-Californias-New-AI-Chatbot-Bill-SB-1119) ·
+  [Akin Gump](https://www.akingump.com/print/v2/content/1136628/california-enacts-companion-chatbot-child-safety-requirements-sb-1119.pdf)
+- **Texas App Store Accountability Act** — re-confirmed the 5th Circuit
+  posture: the law remains in effect under the court's stay of the
+  district court's preliminary injunction (administrative stay late May
+  2026, superseded by a stay-pending-appeal order June 4, 2026); no
+  Supreme Court action on CCIA/SEAT's emergency appeals found yet. Matches
+  the tracker's "In effect since Jan 1, 2026 — 5th Circuit stayed the
+  injunction"; unchanged.
+  [MoFo](https://www.mofo.com/resources/insights/251111-texas-targets-app-stores-with-new-accountability-law) ·
+  [Texas Policy Research](https://www.texaspolicyresearch.com/fifth-circuit-keeps-texas-app-store-law-alive/)
+- **Kids Internet and Digital Safety Act (federal)** — re-confirmed no
+  Senate floor vote has occurred since the Aug 5, 2026 Senate Commerce
+  Committee markup; coverage still frames the House-passed KIDS Act and
+  the Senate's own KOSA/COPPA 2.0 track as unreconciled. Matches the
+  tracker's "pending... needs a full Senate vote and reconciliation";
+  unchanged.
+  [EDUCAUSE](https://er.educause.edu/articles/2026/8/house-passes-kids-internet-and-digital-safety-act) ·
+  [Akin Gump](https://www.akingump.com/en/insights/ai-law-and-regulation-tracker/senate-commerce-committee-advances-kids-safety-bills-and-punts-ai-markup-to-september)
+
+### Context, not a tracker change
+- TikTok–Alabama settlement: no second state confirmed to have signed a
+  matching consent decree yet (the $300M multistate payout trigger needs
+  40+ states); Alabama's remains the only signed deal. Unchanged.
+- Character Technologies bankruptcy: Kentucky's AG confirmed (Oct 15
+  coverage) it formally joined the ~40-state coalition filing in the
+  Delaware bankruptcy docket (Case 26-11603) demanding child-safety sale
+  conditions; whether the automatic stay reaches Kentucky's own Franklin
+  Circuit Court suit (vs. the police-power exception for state
+  enforcement) is still unresolved in any source found. Disney remains
+  stalking-horse bidder at $20M; sale still targeted late Nov/early Dec
+  2026. Doesn't change the tracker's "court" status for Kentucky v.
+  Character Technologies.
+  [WSMV](https://www.wsmv.com/2026/10/15/kentucky-joins-coalition-characterai-bankruptcy-case/)
+- Social-media-addiction MDL (Roblox/Discord/Snap/Meta/X): no ruling found
+  past the Sept 23/28, 2026 reports already logged (judge questioning
+  whether Discord/Roblox/X claims belong in the MDL; stay of claims against
+  X/Roblox/Discord). No merits ruling or new settlement since. Unchanged.
+- EU KIDS Act: still a Commission proposal, not law; public feedback
+  period runs through Nov 26, 2026 before it goes to Parliament and
+  Council. Unchanged from the tracker's "pending" status.
+- Platform safety announcements (Instagram, Snapchat, Discord, Roblox): no
+  new October 2026 announcements found beyond what's already reflected on
+  the tracker/guides (Discord's global teen-by-default rollout, Instagram's
+  Teen Accounts/PG-13 defaults). Discord's global age-assurance timing is
+  reported inconsistently across sources (early-2026 vs. H2 2026) but isn't
+  tied to any DSK tracker entry, so not actioned.
+
+**Site follow-up from this refresh:** none — nothing surfaced rose to a
+clear-cut, mechanical tracker update. "Last refreshed" date bumped to Oct
+29, 2026 above.
 
 ---
 
