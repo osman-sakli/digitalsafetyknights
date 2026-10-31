@@ -1,6 +1,6 @@
 # DSK Threat Intelligence & Policy Research Bank
 
-Compiled 2026-08-02, last refreshed 2026-10-29. Covers the last ~10 months of
+Compiled 2026-08-02, last refreshed 2026-10-31. Covers the last ~10 months of
 child-online-safety news (Oct 2025 – Oct 2026), weighted toward the most
 recent 4-6 weeks. Sourced via web search — every claim below has a citation.
 This is a living reference: update it monthly (it's also the natural
@@ -11,7 +11,7 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
 
 ## Flagged for review — not yet published
 
-- **(2026-10-07, still generating coverage as of 2026-10-27) Common Sense
+- **(2026-10-07, still generating coverage as of 2026-10-31) Common Sense
   Media's Youth AI Safety Institute rates ChatGPT's Teen Mode
   "unacceptable risk" — its worst rating** — an independent safety
   evaluation (4,000+ test prompts, before and after ChatGPT's August 2026
@@ -27,7 +27,15 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
   fixed. OpenAI disputes the finding, saying testing may have wrapped
   before its parental-notification feature was fully active due to a
   technical rollout issue, and that it's continuing to improve safeguards.
-  Not actioned: this is a third-party safety audit, not a law, ruling, or
+  **Update (2026-10-31):** no public confirmation of a shipped fix found.
+  OpenAI's fuller rebuttal (same Oct 7 reporting cycle, more detail
+  surfaced since) says much of Common Sense's parental-alert testing
+  happened before the parent/teen account link had finished syncing (a
+  process OpenAI says can take several hours), that the Study Mode
+  "show the answer" exit is an intentional feature rather than a loophole,
+  and that its age-prediction system deliberately weighs multiple signals
+  rather than taking a stated age at face value. No independent re-test
+  found. Not actioned: this is a third-party safety audit, not a law, ruling, or
   settlement, so there's no legislative-tracker bucket to attach it to
   (DSK's only AI-chatbot entry, California SB 1119/"Adam's Law," is a
   pending state law, not an OpenAI-specific item). But it's exactly the
@@ -71,13 +79,37 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
   bidder + a ~40-state AG coalition demanding child-safety sale
   conditions) that it may be worth a dedicated tracker note or guide
   mention once the bankruptcy court rules on the coalition's conditions or
-  approves/rejects the sale. Revisit once the auction/sale hearing
-  happens (targeted for around late Nov/early Dec 2026).
+  approves/rejects the sale. **Update (2026-10-31):** the coalition
+  (reported more precisely as 31 states plus D.C., i.e. "32 states") now
+  objects specifically to the proposed bidding procedures, arguing they
+  set an unfairly high floor for rival bidders — a qualifying competing
+  bid must clear roughly $21.7M (Disney's $20M stalking-horse value plus
+  a $700K break-up fee plus a $1M overbid increment) even though a lower
+  bid (~$15.2M+) would net the estate more once Disney's fee is paid out
+  — and asks the court to lower that floor, cut Disney's fee, and strike
+  pre-petition legal releases the debtor gave Disney and Character.AI's
+  former CEO. The U.S. Trustee separately objected. On Oct 27, Character
+  Technologies asked the court to overrule the objections and approve the
+  procedures largely as proposed (while clarifying the order wouldn't
+  "bless" Disney's full prepetition deal), keeping the $21.7M floor. A
+  bidding-procedures hearing was held Oct 30, 2026 in Delaware bankruptcy
+  court; no ruling/outcome was found in coverage as of this check.
+  Proposed (not court-confirmed) follow-on dates per the debtor's motion:
+  Nov 19 creditors' meeting, Nov 20 bid deadline, Nov 23 auction (if
+  multiple qualified bids), Nov 24 sale hearing. Still not actioned —
+  bankruptcy-docket process, not a ruling/settlement/enacted law, and
+  Kentucky v. Character Technologies' tracker status is unchanged. Revisit
+  once the bidding-procedures ruling and/or sale-hearing outcome are
+  reported (targeted for around late Nov 2026).
   [WSMV](https://www.wsmv.com/2026/10/15/kentucky-joins-coalition-characterai-bankruptcy-case/) ·
   [California AG](https://oag.ca.gov/node/631358) ·
   [Michigan AG](https://www.michigan.gov/ag/news/press-releases/2026/10/15/attorney-general-nessel-seeks-consumer-protections-in-character-ai-bankruptcy) ·
   [The Next Web](https://thenextweb.com/news/character-ai-files-for-bankruptcy-as-disney-bids-20m-for-some-assets) ·
-  [BlogMickey](https://blogmickey.com/2026/10/character-ai-files-for-bankruptcy-disney-leading-bidder-for-assets-after-hiring-former-ceo/)
+  [BlogMickey](https://blogmickey.com/2026/10/character-ai-files-for-bankruptcy-disney-leading-bidder-for-assets-after-hiring-former-ceo/) ·
+  [MLex](https://www.mlex.com/mlex/articles/2542579) ·
+  [ppc.land — bid floor](https://ppc.land/character-ai-keeps-21-7m-bid-floor-for-disney-rivals-despite-32-states/) ·
+  [ppc.land — states object](https://ppc.land/32-states-say-character-ai-sale-rules-block-bids-that-would-beat-disney/) ·
+  [ppc.land — Nov. dates](https://ppc.land/character-ai-faces-creditors-under-oath-on-november-19-a-day-before-bids/)
 - **(2026-10-14) Eight states sue OpenAI over ChatGPT child-safety claims**
   — Arizona, Arkansas, Idaho, Iowa, Kansas, Montana, Nebraska, and West
   Virginia each filed separate state-court suits against OpenAI on Oct 14,
@@ -147,6 +179,63 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
   Worth tracking as its own new entry once either shows real movement (a
   floor vote or enactment) rather than just a committee markup.
   [Commerce Committee](https://www.commerce.senate.gov/press/rep/release/commerce-committee-advances-kids-online-safety-legislation/)
+
+---
+
+## 0p. October 2026 Refresh (Oct 31, 2026)
+
+Automated biennial freshness scan, ~48 hours after the last one. Another
+quiet window for mechanical tracker changes — the one substantive
+development (the Character.AI bankruptcy bidding-procedures dispute) is
+an update to an already-logged "Flagged for review" item, not a new
+ruling, settlement, or enacted law. No tracker edit this run.
+
+### Spot-checked, no change needed
+- **Utah App Store Accountability Act** — re-confirmed the tracker's
+  "Deadline pushed to May 6, 2027; private-lawsuit enforcement only"
+  status against current coverage: Utah amended its original SB 142 via
+  HB 498 (signed ~March 2026), delaying the effective date a year to May
+  6, 2027 and removing state-agency (AG) enforcement entirely, leaving
+  only the statute's private right of action. CCIA voluntarily dismissed
+  its constitutional challenge to the law on April 21, 2026 once the
+  amendment mooted it. Matches the tracker exactly; unchanged.
+  [Wiley](https://www.wileyconnect.com/utah-amends-app-store-accountability-act-asaa-key-obligations-delayed-until-may-6-2027) ·
+  [Alston Privacy](https://www.alstonprivacy.com/challenge-to-utah-s-app-store-accountability-act-voluntarily-dismissed-following-statutory-amendments/)
+- **EU KIDS Act (proposed)** — re-confirmed the tracker's "pending"
+  status and the European Commission's Sept 17, 2026 proposal date; the
+  public-feedback window on the Commission's "Have Your Say" portal runs
+  through Nov 26, 2026 (one secondary listing says Dec 3, but the
+  Commission's own portal and most law-firm/press coverage agree on Nov
+  26) before it goes to Parliament and Council. Still a proposal, not
+  law. Matches the tracker; unchanged.
+  [MLex](https://www.mlex.com/mlex/technology/articles/2533147/eu-kids-act-proposal-open-for-feedback-until-nov-26) ·
+  [Brussels Times](https://www.brusselstimes.com/eu-affairs/2343893/eu-kids-act-draft-sparks-widespread-feedback-push-to-reshape-digital-childhoods/)
+
+### Context, not a tracker change
+- Character Technologies (Character.AI) bankruptcy: material new
+  developments (bidding-procedures fight, Oct 30 hearing) — see the
+  updated "Flagged for review" entry above. Still doesn't change the
+  Kentucky v. Character Technologies tracker entry.
+- Eight-state OpenAI suits (filed Oct 14, 2026): no ruling or settlement
+  found since the last check; still just-filed litigation with no
+  tracker entry to attach to.
+  [cdapress.com](https://cdapress.com/news/2026/oct/15/states-including-idaho-sue-ai-giant-openai-saying-its-popular-chatbot-is-hurting-children-and-deceiving-adults/)
+- TikTok–Alabama settlement: no second state confirmed to have signed a
+  matching consent decree; Alabama remains the only signed deal. Unchanged.
+- Maryland HB 1179 (an App Store Accountability Act for Maryland): still
+  moving through committee as of its most recent recorded action (a
+  tracker service lists an April 24, 2026 update); no passage or
+  governor's signature found. Not yet a "new state enacts" event — worth
+  a check again once/if it's signed.
+  [Maryland General Assembly](https://mgaleg.maryland.gov/mgawebsite/Legislation/Details/HB1179?ys=2026RS)
+- KOSA / Kids Internet and Digital Safety Act (federal): no Senate floor
+  vote found since the Aug 5, 2026 Senate Commerce Committee markup;
+  matches the tracker's "pending... needs a full Senate vote" status.
+  Unchanged (same conclusion as the Oct 29 check).
+
+**Site follow-up from this refresh:** none — nothing surfaced rose to a
+clear-cut, mechanical tracker update. "Last refreshed" date bumped to Oct
+31, 2026 above.
 
 ---
 
