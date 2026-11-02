@@ -143,6 +143,18 @@ fetch('/content/quiz-questions.json?t=' + Math.floor(Date.now() / 3600000))
   .then(r => r.json())
   .then(data => {
     QUIZ_DATA = data;
+    // The question bank was authored with the correct choice written second
+    // almost every time, so unshuffled it can be beaten by always picking B
+    // without reading. Shuffle once per load — the choice objects carry their
+    // own `correct` flag, so indices stay consistent for scoring.
+    Object.values(QUIZ_DATA).forEach(tiers =>
+      Object.values(tiers).forEach(questions =>
+        questions.forEach(q => {
+          for (let i = q.choices.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [q.choices[i], q.choices[j]] = [q.choices[j], q.choices[i]];
+          }
+        })));
     // ?topic=<category> lets a video caption, email or workshop slide drop
     // someone straight into the matching quiz instead of the topic picker.
     const wanted = new URLSearchParams(location.search).get('topic');
