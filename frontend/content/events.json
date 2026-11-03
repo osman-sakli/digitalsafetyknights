@@ -1,0 +1,32 @@
+{
+  "note": "Partner organisations are only named here once they have agreed to be named publicly. Until then, describe the host generically.",
+  "regions": ["New Jersey", "New York", "Pennsylvania"],
+  "events": [
+    {
+      "id": "brick-healthy-lifestyles-2027",
+      "status": "upcoming",
+      "date": "2027-01-28",
+      "dateLabel": "January 28, 2027",
+      "title": "Healthy Lifestyles Fair & STEM Night",
+      "host": "Middle school PTA",
+      "city": "Brick",
+      "state": "NJ",
+      "format": "In person",
+      "audience": "Grades 6–8 and families",
+      "summary": "A hands-on Cyber Safety Challenge booth — students spot scams, compare passwords, and work through cyberbullying scenarios, then take home a Cyber Safety Hero certificate."
+    },
+    {
+      "id": "cc-immigrant-refugee-workshop-2026",
+      "status": "past",
+      "date": "2026-10-29",
+      "dateLabel": "October 29, 2026",
+      "title": "Student Online Safety Workshop",
+      "host": "Community organisation serving immigrant and refugee families",
+      "city": "New York",
+      "state": "NY",
+      "format": "Virtual",
+      "audience": "Ages 10–20 and parents",
+      "summary": "A 60-minute live session on in-game risks, AI chatbots and deepfakes, cyberbullying, privacy settings, and what to do if something happens — delivered in English, with Spanish materials available."
+    }
+  ]
+}
