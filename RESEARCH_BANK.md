@@ -1,6 +1,6 @@
 # DSK Threat Intelligence & Policy Research Bank
 
-Compiled 2026-08-02, last refreshed 2026-10-31. Covers the last ~10 months of
+Compiled 2026-08-02, last refreshed 2026-11-03. Covers the last ~10 months of
 child-online-safety news (Oct 2025 – Oct 2026), weighted toward the most
 recent 4-6 weeks. Sourced via web search — every claim below has a citation.
 This is a living reference: update it monthly (it's also the natural
@@ -179,6 +179,58 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
   Worth tracking as its own new entry once either shows real movement (a
   floor vote or enactment) rather than just a committee markup.
   [Commerce Committee](https://www.commerce.senate.gov/press/rep/release/commerce-committee-advances-kids-online-safety-legislation/)
+
+---
+
+## 0q. November 2026 Refresh (Nov 3, 2026)
+
+Automated biennial freshness scan, ~3 days after the last one. A quiet
+window: every item checked either matches the tracker's existing status or
+is still an unresolved process (no ruling/vote/signature) with nothing new
+to report. No tracker edit this run.
+
+### Spot-checked, no change needed
+- **Texas App Store Accountability Act** — re-confirmed the tracker's "In
+  effect since Jan 1, 2026 — 5th Circuit stayed the injunction" status.
+  Timeline holds: district court enjoined the law Dec 23, 2025; Fifth
+  Circuit granted a stay pending appeal June 4, 2026, letting SB 2420 stay
+  in effect through the appeal; the U.S. Supreme Court declined to vacate
+  that stay on July 6, 2026 (one-line order, no merits ruling). No Fifth
+  Circuit merits decision found since. Matches the tracker; unchanged.
+  [MoFo](https://www.mofo.com/resources/insights/251111-texas-targets-app-stores-with-new-accountability-law) ·
+  [WLF](https://www.wlf.org/case/computer-communications-industry-assn-v-paxton/)
+- **New Jersey Kids Code Act** — checked for a filed legal challenge (the
+  tracker lists it "pending," effective Sept 1, 2027). None found yet;
+  commentary from late August 2026 anticipated a NetChoice-style suit
+  given the active parallel challenges to California's and Maryland's
+  similar design-code laws, but nothing has been filed against the New
+  Jersey law specifically as of this check. Matches the tracker; unchanged.
+  [Sheppard Mullin](https://www.sheppard.com/insights/blogs/new-jersey-enacts-a-kids-code-act) ·
+  [Maryland Matters](https://marylandmatters.org/?p=83039)
+
+### Context, not a tracker change
+- Character Technologies (Character.AI) bankruptcy: the Oct 30, 2026
+  bidding-procedures hearing's outcome (approved as proposed, modified, or
+  continued) was not found in available coverage as of this check — still
+  the same "Flagged for review" item above, unchanged status.
+- Eight-state (plus-growing) OpenAI child-safety suits (filed mid-Oct
+  2026): no ruling found; still just-filed litigation with no tracker
+  entry to attach to.
+- Maryland HB 1179 (a Maryland App Store Accountability Act): still no
+  passage or governor's signature found — same conclusion as the Oct 31
+  check. Worth rechecking once/if it moves out of committee.
+- KOSA / Kids Internet and Digital Safety Act (federal): no Senate floor
+  vote found since the Aug 5, 2026 Senate Commerce Committee markup;
+  matches the tracker's "pending... needs a full Senate vote" status.
+  Unchanged (same conclusion as the Oct 31 check).
+- UK Ofcom/Online Safety Act and EU KIDS Act: no material status change
+  found beyond what's already logged in the Oct 31 entry below (EU
+  feedback window still running through ~Nov 26, 2026; UK children's
+  codes already in force since July 2025 as previously confirmed).
+
+**Site follow-up from this refresh:** none — nothing surfaced rose to a
+clear-cut, mechanical tracker update. "Last refreshed" date bumped to Nov
+3, 2026 above.
 
 ---
 
