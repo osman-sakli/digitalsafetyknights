@@ -65,6 +65,16 @@
   .modal-box { max-width: 380px; width: 100%; }
   .modal-box video { width: 100%; border-radius: 16px; aspect-ratio: 9/16; background: #000; }
   .modal-close { display: block; margin: 14px auto 0; background: var(--gold); color: var(--navy); border: none; padding: 10px 24px; border-radius: 20px; font-weight: 900; cursor: pointer; }
+  .modal-caption { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-top: 10px; color: white; font-size: 0.86rem; font-weight: 700; }
+  .modal-caption span:last-child { color: var(--gold2); font-size: 0.76rem; white-space: nowrap; }
+  .nav-arrow { background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.25); width: 54px; height: 54px; border-radius: 50%; font-size: 2rem; line-height: 1; cursor: pointer; flex-shrink: 0; margin: 0 14px; }
+  .nav-arrow:hover:not(:disabled) { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+  .nav-arrow:disabled { opacity: 0.25; cursor: default; }
+  @media (max-width: 700px) {
+    .nav-arrow { position: absolute; bottom: 18px; margin: 0; width: 48px; height: 48px; font-size: 1.7rem; }
+    .nav-arrow.prev { left: 18px; }
+    .nav-arrow.next { right: 18px; }
+  }
 
   footer { background: var(--navy); color: #7a8fbb; padding: 2.5rem 2rem; text-align: center; font-size: 0.82rem; }
   footer a { color: var(--gold); text-decoration: none; }
@@ -106,10 +116,13 @@
 </section>
 
 <div class="modal-overlay" id="videoModal">
+  <button class="nav-arrow prev" id="prevBtn" aria-label="Previous video">‹</button>
   <div class="modal-box">
     <video id="modalVideo" controls playsinline></video>
+    <div class="modal-caption"><span id="modalTitle"></span><span id="modalCount"></span></div>
     <button class="modal-close" onclick="closeVideoModal()" data-i18n="topics.close">Close</button>
   </div>
+  <button class="nav-arrow next" id="nextBtn" aria-label="Next video">›</button>
 </div>
 
 <footer>
@@ -207,29 +220,90 @@ function renderSections() {
   container.querySelectorAll('.short-card[data-short-id]').forEach(card => {
     card.addEventListener('click', () => playShort(card.getAttribute('data-short-id')));
   });
+  buildPlaylist();
 }
 
 function escapeHtml(s) { return (s || '').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
 function escapeAttr(s) { return escapeHtml(s).replace(/'/g, '&#39;'); }
 
+// Playlist = the playable cards currently on screen, in display order, so
+// next/previous follows what the visitor is actually looking at (including
+// when a single topic filter is active).
+let PLAYLIST = [];
+let playIndex = -1;
+
+function buildPlaylist() {
+  PLAYLIST = Array.from(document.querySelectorAll('.short-card[data-short-id]'))
+    .map(el => el.getAttribute('data-short-id'));
+}
+
 function playShort(id) {
-  const modal = document.getElementById('videoModal');
-  const video = document.getElementById('modalVideo');
-  const media = MEDIA_BY_ID[id] || {};
-  video.src = media.src || '';
-  video.poster = media.poster || '';
-  modal.setAttribute('aria-label', TITLE_BY_ID[id] || '');
-  modal.classList.add('open');
-  video.play().catch(() => {});
+  if (!PLAYLIST.length) buildPlaylist();
+  const idx = PLAYLIST.indexOf(id);
+  playIndex = idx === -1 ? 0 : idx;
+  document.getElementById('videoModal').classList.add('open');
+  loadCurrent();
   if (window.DSKPoints) DSKPoints.markComboActivity('guide');
 }
+
+function loadCurrent() {
+  const id = PLAYLIST[playIndex];
+  if (!id) return;
+  const media = MEDIA_BY_ID[id] || {};
+  const video = document.getElementById('modalVideo');
+  video.src = media.src || '';
+  video.poster = media.poster || '';
+  document.getElementById('modalTitle').textContent = TITLE_BY_ID[id] || '';
+  document.getElementById('modalCount').textContent = (playIndex + 1) + ' / ' + PLAYLIST.length;
+  document.getElementById('prevBtn').disabled = playIndex === 0;
+  document.getElementById('nextBtn').disabled = playIndex === PLAYLIST.length - 1;
+  video.play().catch(() => {});
+}
+
+function step(delta) {
+  const next = playIndex + delta;
+  if (next < 0 || next >= PLAYLIST.length) return;
+  playIndex = next;
+  loadCurrent();
+}
+
 function closeVideoModal() {
-  const modal = document.getElementById('videoModal');
   const video = document.getElementById('modalVideo');
   video.pause();
   video.src = '';
-  modal.classList.remove('open');
+  document.getElementById('videoModal').classList.remove('open');
 }
+
+document.getElementById('prevBtn').addEventListener('click', () => step(-1));
+document.getElementById('nextBtn').addEventListener('click', () => step(1));
+// Roll straight into the next short when one finishes, the way a feed does.
+document.getElementById('modalVideo').addEventListener('ended', () => step(1));
+
+document.addEventListener('keydown', function (e) {
+  if (!document.getElementById('videoModal').classList.contains('open')) return;
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); step(1); }
+  else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); step(-1); }
+  else if (e.key === 'Escape') closeVideoModal();
+});
+
+// Swipe — horizontal or vertical, whichever the thumb does first.
+(function () {
+  const box = document.querySelector('.modal-box');
+  let x0 = null, y0 = null;
+  box.addEventListener('touchstart', e => {
+    x0 = e.changedTouches[0].clientX; y0 = e.changedTouches[0].clientY;
+  }, { passive: true });
+  box.addEventListener('touchend', e => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    const dy = e.changedTouches[0].clientY - y0;
+    const horizontal = Math.abs(dx) > Math.abs(dy);
+    const travel = horizontal ? dx : dy;
+    if (Math.abs(travel) > 60) step(travel < 0 ? 1 : -1);
+    x0 = y0 = null;
+  }, { passive: true });
+})();
+
 document.getElementById('videoModal').addEventListener('click', function(e) {
   if (e.target === this) closeVideoModal();
 });
