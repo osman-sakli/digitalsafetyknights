@@ -19,5 +19,12 @@
     "source": "CNBC",
     "source_url": "https://www.cnbc.com/2026/08/14/data-breaches-surge-2026-ai-cyberattacks.html",
     "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:share:7505805712896385026/"
+  },
+  {
+    "date": "2026-11-04",
+    "topic": "400+ apps disguised as pet/language/workout apps hiding explicit AI deepfake generators",
+    "source": "Wired",
+    "source_url": "https://www.wired.com/story/hundreds-of-mundane-ai-apps-are-hiding-abusive-deepfake-features/",
+    "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:share:7523734748255432704/"
   }
 ]
