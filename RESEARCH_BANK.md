@@ -1,6 +1,6 @@
 # DSK Threat Intelligence & Policy Research Bank
 
-Compiled 2026-08-02, last refreshed 2026-11-03. Covers the last ~10 months of
+Compiled 2026-08-02, last refreshed 2026-11-05. Covers the last ~10 months of
 child-online-safety news (Oct 2025 – Oct 2026), weighted toward the most
 recent 4-6 weeks. Sourced via web search — every claim below has a citation.
 This is a living reference: update it monthly (it's also the natural
@@ -179,6 +179,63 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
   Worth tracking as its own new entry once either shows real movement (a
   floor vote or enactment) rather than just a committee markup.
   [Commerce Committee](https://www.commerce.senate.gov/press/rep/release/commerce-committee-advances-kids-online-safety-legislation/)
+
+---
+
+## 0r. November 2026 Refresh (Nov 5, 2026)
+
+Automated biennial freshness scan, ~48 hours after the last one. Another
+quiet window: every item checked either matches the tracker's existing
+status or is still an unresolved process (no ruling, vote, or signature) with
+nothing new to report since the Nov 3 check. No tracker edit this run.
+
+### Spot-checked, no change needed
+- **KOSA / Kids Internet and Digital Safety Act (federal)** — no Senate
+  floor vote found since the Aug 5, 2026 Senate Commerce Committee markup
+  the tracker already cites. Still needs a full Senate vote and
+  reconciliation with the House-passed version. Matches the tracker's
+  "pending" status; unchanged.
+  [Engadget](https://engadget.com/2231193/senate-advances-the-latest-kids-online-safety-act-out-of-committee) ·
+  [Connecticut Public](https://www.ctpublic.org/news/2026-08-05/kids-online-safety-act-senate-blumenthal-kosa)
+- **Texas App Store Accountability Act** — re-confirmed again: no Fifth
+  Circuit merits ruling found since the Aug 4, 2026 oral argument in
+  CCIA v. Paxton. Briefing is complete (CCIA's answering brief and Texas's
+  reply are both filed) but no opinion yet; the law remains in effect under
+  the existing stay. Matches the tracker's "in effect... 5th Circuit stayed
+  the injunction" status; unchanged.
+  [Wikipedia (case page, docket-sourced)](https://en.wikipedia.org/wiki/Computer_%26_Communications_Industry_Association_v._Paxton) ·
+  [CCIA litigation tracker](https://ccianet.org/litigation/ccia-v-paxton/)
+
+### Context, not a tracker change
+- Character Technologies (Character.AI) bankruptcy: as of Oct 27, 2026 the
+  company asked the Delaware bankruptcy court to overrule a 32-state
+  attorneys-general coalition's objections and approve its bidding
+  procedures (a $20M Disney stalking-horse bid, $21.7M minimum overbid).
+  The Oct 30, 2026 hearing's outcome still isn't in available coverage —
+  same unresolved status as the Oct 31 and Nov 3 checks. Still the same
+  "Flagged for review" item above, unchanged.
+  [PPC Land](https://ppc.land/character-ai-keeps-21-7m-bid-floor-for-disney-rivals-despite-32-states/)
+- Eight-state OpenAI child-safety suits (filed mid-Oct 2026, AR/AZ/ID/MT/
+  IA/KS/WV/NE): still no ruling found; remains just-filed litigation with
+  no tracker entry to attach to.
+  [Bloomberg Law](https://news.bloomberglaw.com/antitrust/half-dozen-states-hit-openai-with-kids-online-safety-lawsuits)
+- Maryland HB 1179 (Maryland App Store Accountability Act): still no
+  passage or governor's signature found — same conclusion as the Oct 31
+  and Nov 3 checks.
+- EU KIDS Act: still proposal stage. The EU's digital chief publicly urged
+  member states in October to prioritize the single EU framework over
+  national patchwork rules, but no Parliament/Council position or adoption
+  found — no change to the tracker's "pending" status.
+  [MLex](https://www.mlex.com/mlex/articles/2536110)
+- Checked Meta's teen-safety rollout and major-platform policy pages
+  (Instagram/Facebook, TikTok, Snapchat, Discord, Roblox) for anything new
+  since early June 2026's global expansion; found nothing dated after that
+  already-logged rollout. No change to the tracker's "Meta Teen Accounts
+  Settlement" entry.
+
+**Site follow-up from this refresh:** none — nothing surfaced rose to a
+clear-cut, mechanical tracker update. "Last refreshed" date bumped to Nov
+5, 2026 above.
 
 ---
 
