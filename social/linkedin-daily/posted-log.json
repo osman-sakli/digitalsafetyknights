@@ -26,5 +26,12 @@
     "source": "Wired",
     "source_url": "https://www.wired.com/story/hundreds-of-mundane-ai-apps-are-hiding-abusive-deepfake-features/",
     "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:share:7523734748255432704/"
+  },
+  {
+    "date": "2026-11-05",
+    "topic": "GhostMap Android flaw lets a malicious app trigger a persistent, unpatched boot loop",
+    "source": "BleepingComputer",
+    "source_url": "https://www.bleepingcomputer.com/news/security/ghostmap-android-flaw-lets-malicious-app-trigger-persistent-boot-loop/",
+    "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:share:7524098620627910657/"
   }
 ]
