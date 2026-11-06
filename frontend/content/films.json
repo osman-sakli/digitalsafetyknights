@@ -20,7 +20,35 @@
         "Sounding certain is not the same as being right — check before you act.",
         "Calling for help is the brave move. You are never in trouble for asking."
       ],
-      "talkPrompt": "Ask at dinner: “If someone online gave you something and asked you to keep it a secret from me, what would you do?”"
+      "talkPrompt": "Ask at dinner: “If someone online gave you something and asked you to keep it a secret from me, what would you do?”",
+      "i18n": {
+        "tr": {
+          "title": "Kayıp Filiz",
+          "ages": "5–10 yaş",
+          "logline": "En küçük Şövalye, fazla cana yakın bir yabancının peşinden gizli bir kapıya doğru gidince Şövalyeler diyarı bir baştan bir başa koşar — ve Filiz, yardım istemenin en cesur hamle olduğunu öğrenir.",
+          "lessons": [
+            "Hediye veren ve bunu sır olarak saklamanı isteyen bir yabancı, uyarı işaretinin ta kendisidir.",
+            "Yeni bir arkadaş seni tenha bir yere götürmek istiyorsa — dur.",
+            "Acele ettirilmek bir uyarı işaretidir.",
+            "Emin konuşmak, haklı olmakla aynı şey değildir — harekete geçmeden önce kontrol et.",
+            "Yardım istemek cesur olandır. Sorduğun için asla başın derde girmez."
+          ],
+          "talkPrompt": "Akşam yemeğinde sorun: “Çevrimiçi biri sana bir şey verse ve bunu benden saklamanı istese ne yapardın?”"
+        },
+        "es": {
+          "title": "El Brote Perdido",
+          "ages": "5 a 10 años",
+          "logline": "Cuando el Caballero más pequeño sigue a un desconocido demasiado amable hacia una puerta secreta, los Caballeros cruzan el reino a toda prisa — y Brote descubre que pedir ayuda es la jugada más valiente de todas.",
+          "lessons": [
+            "Un desconocido que ofrece un regalo y pide que lo mantengas en secreto: esa es la señal de alerta.",
+            "Si un nuevo amigo quiere llevarte a un lugar apartado — detente.",
+            "Que te apuren es una señal de alerta.",
+            "Sonar seguro no es lo mismo que tener razón — verifica antes de actuar.",
+            "Pedir ayuda es lo valiente. Nunca te vas a meter en problemas por preguntar."
+          ],
+          "talkPrompt": "Pregunten en la cena: “Si alguien en internet te diera algo y te pidiera que me lo ocultaras, ¿qué harías?”"
+        }
+      }
     }
   ]
 }

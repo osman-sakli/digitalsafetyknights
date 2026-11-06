@@ -247,10 +247,17 @@ var TOPICS = spIsTr ? [
 
 document.getElementById('sp-title').innerHTML = spIsTr ? '🏫 Okul &amp; Kurum Programları' : spIsEs ? '🏫 Programas para Escuelas y Organizaciones' : '🏫 School &amp; Organization Programs';
 document.getElementById('sp-tagline').textContent = spIsTr
-  ? 'Okullar ve kurumlar için her yerde ücretsiz dijital güvenlik seminerleri ve materyaller — NJ ve komşu eyaletlerde yüz yüze, ya da dünyanın her yerindeki okullar için online. Misyonumuz: nerede yaşarsa yaşasın her çocuk bu eğitimi hak ediyor.'
+  ? 'Okullar ve kurumlar için her yerde ücretsiz dijital güvenlik seminerleri ve materyaller — NJ ve komşu eyaletlerde yüz yüze, ya da dünyanın her yerindeki okullar için çevrimiçi. Misyonumuz: nerede yaşarsa yaşasın her çocuk bu eğitimi hak ediyor.'
   : spIsEs
   ? 'Seminarios y materiales gratuitos de seguridad digital para escuelas y organizaciones en todas partes — en persona en NJ y estados vecinos, o virtual para cualquier escuela del mundo. Nuestra misión: todo niño, donde sea que viva, merece esta educación.'
   : 'Free digital safety seminars and materials for schools and organizations everywhere — in person across NJ and surrounding states, or virtual for any school in the world. Our mission: every child, everywhere, deserves this education.';
+
+document.getElementById('sp-events-title').textContent = spIsTr ? 'Bizi Nerede Bulursunuz' : spIsEs ? 'Dónde nos vas a encontrar' : "Where You'll Find Us";
+document.getElementById('sp-events-lede').innerHTML = spIsTr
+  ? 'Okul fuarlarına, STEM gecelerine ve <strong>New Jersey, New York ve Pennsylvania</strong> genelindeki topluluk etkinliklerine katılıyoruz — hem de satıcı olarak değil, gönüllü olarak. Standı öğrenci kulübümüz yürütüyor: hiçbir şey satılmıyor, ücret alınmıyor ve bütün materyaller ücretsiz.'
+  : spIsEs
+  ? 'Estamos en ferias escolares, noches STEM y eventos comunitarios de <strong>Nueva Jersey, Nueva York y Pensilvania</strong> — y vamos como voluntarios, no como proveedores. El puesto lo atiende nuestro club estudiantil: no se vende nada, no se cobra nada y todo el material es gratuito.'
+  : 'We show up at school fairs, STEM nights, and community events across <strong>New Jersey, New York, and Pennsylvania</strong> — and we come as volunteers, not vendors. Our student club runs the table: nothing is sold, no fee is charged, and every handout is free to take.';
 
 document.getElementById('sp-dsw-title').textContent = spIsTr ? 'Ekim ayında bir Dijital Güvenlik Haftası mı düzenliyorsunuz?' : spIsEs ? '¿Vas a organizar una Semana de Seguridad Digital en octubre?' : 'Running a Digital Safety Week in October?';
 document.getElementById('sp-dsw-sub').textContent = spIsTr ? 'Ücretsiz, hemen uygulanabilir 5 günlük bir plan ve basılabilir poster hazır — hazırlık gerekmez.' : spIsEs ? 'Tenemos un plan gratuito de 5 días listo para usar y un póster imprimible — sin preparación necesaria.' : 'We have a free, ready-to-run 5-day plan and printable poster — no prep needed.';
@@ -379,7 +386,11 @@ document.getElementById('sp-form').addEventListener('submit', function (e) {
     .then(function (data) {
       var list = document.getElementById('sp-events-list');
       if (!list) return;
-      var rows = (data.events || []).map(function (e) {
+      var rows = (data.events || []).map(function (ev) {
+        // Translations ride inside each event under i18n; a missing
+        // language or field falls through to the English original.
+        var e = ev, over = ev.i18n && ev.i18n[lang];
+        if (over) { e = {}; for (var k in ev) e[k] = ev[k]; for (var j in over) e[j] = over[j]; }
         return '<div class="ev">' +
           '<div class="ev-date"><div class="d">' + esc(e.dateLabel) + '</div>' +
           '<span class="ev-badge ' + esc(e.status) + '">' + (L[lang][e.status] || e.status) + '</span></div>' +

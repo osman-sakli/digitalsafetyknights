@@ -148,7 +148,11 @@
     .then(function (r) { return r.json(); })
     .then(function (data) {
       var YT = window.DSKYouTube;
-      document.getElementById('fl-list').innerHTML = (data.films || []).map(function (f, i) {
+      document.getElementById('fl-list').innerHTML = (data.films || []).map(function (film, i) {
+        // Translations ride inside each film under i18n; a missing
+        // language or field falls through to the English original.
+        var f = film, over = film.i18n && film.i18n[lang];
+        if (over) { f = {}; for (var k in film) f[k] = film[k]; for (var j in over) f[j] = over[j]; }
         var ytid = YT ? YT.videoId(f.youtube) : '';
         var yt = f.youtube ? '<a class="fl-btn ghost" href="' + esc(f.youtube) + '" target="_blank" rel="noopener">' + t.watch + '</a>' : '';
         var picker = ytid

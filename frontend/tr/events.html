@@ -168,7 +168,19 @@
     return [e.host, e.city && e.state ? e.city + ', ' + e.state : (e.city || e.state), e.format, e.time, e.audience, e.languages]
       .filter(Boolean).map(esc).join(' · ');
   }
-  function card(e) {
+  // Each event may carry an i18n block; its fields override the English
+  // ones for the current language. A missing language (or a field the
+  // translator left out) falls through to English rather than blanking.
+  function localise(e) {
+    var over = e.i18n && e.i18n[lang];
+    if (!over) return e;
+    var out = {};
+    for (var k in e) out[k] = e[k];
+    for (var j in over) out[j] = over[j];
+    return out;
+  }
+  function card(ev) {
+    var e = localise(ev);
     var html = '<article class="ev-card"><div class="ev-head">' + dateBox(e.date) +
       '<div class="ev-body"><h3>' + esc(e.title) + '<span class="ev-badge ' + esc(e.status) + '">' + (t.badge[e.status] || esc(e.status)) + '</span></h3>' +
       '<div class="ev-meta">' + meta(e) + '</div><p>' + esc(e.summary) + '</p></div></div>';

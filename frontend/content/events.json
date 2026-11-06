@@ -18,7 +18,25 @@
       "format": "In person",
       "audience": "Grades 6–8 and families",
       "summary": "A hands-on Cyber Safety Challenge booth — students spot scams, compare passwords, and work through cyberbullying scenarios, then take home a Cyber Safety Hero certificate. Free printed guides for parents.",
-      "time": "5:00–7:00 PM"
+      "time": "5:00–7:00 PM",
+      "i18n": {
+        "tr": {
+          "dateLabel": "28 Ocak 2027",
+          "title": "Sağlık Fuarı ve STEM + Aileler Gecesi",
+          "host": "Ortaokul aile birliği",
+          "format": "Yüz yüze",
+          "audience": "6–8. sınıflar ve aileler",
+          "summary": "Uygulamalı bir Siber Güvenlik Meydan Okuması standı — öğrenciler dolandırıcılıkları yakalıyor, şifreleri karşılaştırıyor ve siber zorbalık senaryolarını çözüyor, sonra Siber Güvenlik Kahramanı sertifikalarını alıp eve götürüyor. Ebeveynler için ücretsiz basılı rehberler."
+        },
+        "es": {
+          "dateLabel": "28 de enero de 2027",
+          "title": "Feria de Salud y Noche STEM + Familias",
+          "host": "Asociación de padres de una escuela intermedia",
+          "format": "Presencial",
+          "audience": "Grados 6.º a 8.º y familias",
+          "summary": "Un puesto práctico del Desafío de Seguridad Cibernética — los estudiantes detectan estafas, comparan contraseñas y resuelven situaciones de ciberacoso, y se llevan a casa un certificado de Héroe de Seguridad Cibernética. Guías impresas gratuitas para los padres."
+        }
+      }
     },
     {
       "id": "cc-student-workshop-2026",
@@ -35,11 +53,47 @@
       "languages": "English & Spanish",
       "summary": "A 60-minute live session for teens and their parents — the \"free Robux\" trap and other in-game scams, AI chatbots and deepfakes, cyberbullying, privacy settings, and exactly what to do if something happens (screenshot first, tell a trusted adult, where to report). Presented live by our Club Leader, with a bilingual flyer and Spanish materials for families.",
       "images": [
-        { "src": "/assets/events/cc-workshop-presenting.jpg", "alt": "Ayşe presenting the workshop live over Zoom from her desk", "caption": "Ayşe, our Club Leader, presenting the session live over Zoom." },
-        { "src": "/assets/events/cc-workshop-slide-evidence.jpg", "alt": "Workshop slide: Screenshots are evidence — disappearing doesn't mean gone", "caption": "“What to do” slide: screenshot first — disappearing doesn't mean gone." },
-        { "src": "/assets/events/cc-workshop-slide-robux.jpg", "alt": "Workshop slide: The free Robux / V-Bucks trap", "caption": "In-game risks: the “free Robux / V-Bucks” trap." },
-        { "src": "/assets/events/cc-workshop-flyer-es.jpg", "alt": "Spanish-language event flyer: Taller de Seguridad Digital, 11.05.2026, 6:00pm, Zoom", "caption": "The host's bilingual flyer for the session." }
-      ]
+        {
+          "src": "/assets/events/cc-workshop-presenting.jpg",
+          "alt": "Ayşe presenting the workshop live over Zoom from her desk",
+          "caption": "Ayşe, our Club Leader, presenting the session live over Zoom."
+        },
+        {
+          "src": "/assets/events/cc-workshop-slide-evidence.jpg",
+          "alt": "Workshop slide: Screenshots are evidence — disappearing doesn't mean gone",
+          "caption": "“What to do” slide: screenshot first — disappearing doesn't mean gone."
+        },
+        {
+          "src": "/assets/events/cc-workshop-slide-robux.jpg",
+          "alt": "Workshop slide: The free Robux / V-Bucks trap",
+          "caption": "In-game risks: the “free Robux / V-Bucks” trap."
+        },
+        {
+          "src": "/assets/events/cc-workshop-flyer-es.jpg",
+          "alt": "Spanish-language event flyer: Taller de Seguridad Digital, 11.05.2026, 6:00pm, Zoom",
+          "caption": "The host's bilingual flyer for the session."
+        }
+      ],
+      "i18n": {
+        "tr": {
+          "dateLabel": "5 Kasım 2026",
+          "title": "Öğrenciler için Dijital Güvenlik Atölyesi",
+          "host": "Catholic Charities Community Services",
+          "format": "Çevrimiçi (Zoom)",
+          "audience": "Gençler ve ebeveynler",
+          "languages": "İngilizce ve İspanyolca",
+          "summary": "Gençler ve ebeveynleri için 60 dakikalık canlı bir oturum — “bedava Robux” tuzağı ve diğer oyun içi dolandırıcılıklar, yapay zeka sohbet botları ve deepfake'ler, siber zorbalık, gizlilik ayarları ve bir şey olursa tam olarak ne yapılacağı (önce ekran görüntüsü, güvendiğin bir yetişkine söyle, nereye bildirilir). Kulüp Liderimiz tarafından canlı sunuldu; aileler için iki dilli afiş ve İspanyolca materyallerle birlikte."
+        },
+        "es": {
+          "dateLabel": "5 de noviembre de 2026",
+          "title": "Taller de Seguridad Digital para Estudiantes",
+          "host": "Catholic Charities Community Services",
+          "format": "Virtual (Zoom)",
+          "audience": "Adolescentes y padres",
+          "languages": "Inglés y español",
+          "summary": "Una sesión en vivo de 60 minutos para adolescentes y sus padres — la trampa del “Robux gratis” y otras estafas dentro de los juegos, los chatbots de IA y los deepfakes, el ciberacoso, la configuración de privacidad y qué hacer exactamente si algo pasa (captura de pantalla primero, avisar a un adulto de confianza, dónde denunciar). Presentada en vivo por nuestra Líder del Club, con un folleto bilingüe y materiales en español para las familias."
+        }
+      }
     }
   ]
 }
