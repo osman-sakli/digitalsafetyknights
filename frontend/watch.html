@@ -1,5 +1,8 @@
 <!-- Self-hosted on purpose: a YouTube embed would load third-party player
-     code and set cookies, and the site promises no ads and no tracking. -->
+     code and set cookies, and the site promises no ads and no tracking.
+     The channel section at the bottom is a facade (assets/yt-facade.js) —
+     it contacts YouTube only after a deliberate click, so the default page
+     load still makes no third-party request. -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Watch — Digital Safety Knights</title>
@@ -57,6 +60,11 @@
 
   .empty { text-align: center; color: #6c757d; padding: 50px 0; }
   .note { text-align: center; color: #6c757d; font-size: .82rem; margin-top: 34px; line-height: 1.7; }
+
+  .yt-block { max-width: 760px; margin: 52px auto 0; padding-top: 34px; border-top: 1px solid #dfe5f1; text-align: center; }
+  .yt-block h2 { font-size: clamp(1.25rem, 3.4vw, 1.6rem); color: var(--navy); }
+  .yt-block > p { color: #5a6478; font-size: .9rem; line-height: 1.65; max-width: 540px; margin: 10px auto 20px; }
+
   @media (prefers-reduced-motion: reduce) { .card { transition: none; } }
 </style>
 
@@ -81,7 +89,14 @@
 
 <div class="wrap">
   <div class="grid" id="grid"><div class="empty" data-i18n="shorts.loading">Loading…</div></div>
-  <p class="note" data-i18n="shorts.note">These play right here on our own site — nothing is embedded from anywhere else, so nobody is tracking what you watch.</p>
+  <p class="note" data-i18n="shorts.note">These play right here on our own site. Nothing loads from YouTube unless you choose the YouTube player below, so by default nobody is tracking what you watch.</p>
+
+  <section class="yt-block">
+    <h2 class="display" data-i18n="shorts.ytH">Also on our YouTube channel</h2>
+    <p data-i18n="shorts.ytP">Every short, plus the full-length films. Watching here helps the channel grow, which is how other families find us.</p>
+    <div class="yt-facade" data-yt-list="UU_dnFE-8OsXcpiZrF3hL_xg"
+         data-yt-title="Digital Safety Knights"></div>
+  </section>
 </div>
 
 <div class="theatre" id="theatre" role="dialog" aria-modal="true">
@@ -150,3 +165,4 @@
   player.addEventListener('ended', function () { if (items.length > 1) open((at + 1) % items.length); });
 })();
 </script>
+<script src="/assets/yt-facade.js"></script>
