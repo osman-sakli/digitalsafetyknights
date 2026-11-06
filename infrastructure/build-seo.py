@@ -10,6 +10,7 @@ canonical tags — search engines and AI answer engines had no map of it.
 Distribution is the org's actual bottleneck, so this is on the critical path.
 """
 import datetime
+import json
 import os
 import re
 import subprocess
@@ -162,6 +163,47 @@ def lang_url(lang, name):
     return f"{SITE}/{lang}/" if name == "index.html" else f"{SITE}/{lang}/{name}"
 
 
+META_PATH = os.path.join(FRONTEND, "content", "i18n", "meta.json")
+
+
+def load_meta():
+    try:
+        with open(META_PATH) as f:
+            return json.load(f)
+    except (OSError, ValueError):
+        return {}
+
+
+def esc_attr(s):
+    return s.replace("&", "&amp;").replace('"', "&quot;").replace("<", "&lt;")
+
+
+def localise_head(html, lang, name, meta):
+    """Translates what a crawler or a link-preview scraper reads.
+
+    frontend/assets/i18n.js translates the page (and fixes the lang
+    attribute) in the browser, but Facebook, WhatsApp and LinkedIn preview
+    scrapers never run it — without this a /tr/ link previewed in English.
+    Pages with no entry in meta.json keep the English head, which is the
+    correct fallback rather than a wrong translation."""
+    if lang == "en":
+        return html
+    html = re.sub(r'<html\s+lang="[^"]*"', f'<html lang="{lang}"', html, count=1)
+    entry = (meta.get(lang) or {}).get(name)
+    if not entry:
+        return html
+    title, desc = esc_attr(entry["title"]), esc_attr(entry["description"])
+    html = re.sub(r"<title>.*?</title>", f"<title>{title}</title>", html, count=1, flags=re.S)
+    for attr, prop, value in (("name", "description", desc),
+                              ("property", "og:title", title),
+                              ("property", "og:description", desc),
+                              ("name", "twitter:title", title),
+                              ("name", "twitter:description", desc)):
+        pattern = rf'(<meta\s+{attr}="{re.escape(prop)}"\s+content=")[^"]*(")'
+        html = re.sub(pattern, lambda m: m.group(1) + value + m.group(2), html, count=1)
+    return html
+
+
 def write_lang_mirrors(names):
     """Additive, non-destructive URL-visible language layer: /en/, /tr/,
     /es/ mirrors of every indexable page, alongside the existing unprefixed
@@ -177,6 +219,7 @@ def write_lang_mirrors(names):
     same language.
     """
     written = 0
+    meta = load_meta()
     for name in names:
         path = os.path.join(FRONTEND, name)
         with open(path) as f:
@@ -201,6 +244,7 @@ def write_lang_mirrors(names):
             variant = CANON_RE.sub(
                 f'<link rel="canonical" href="{lang_url(lang, name)}">\n', base_html, count=1
             )
+            variant = localise_head(variant, lang, name, meta)
             lang_dir = os.path.join(FRONTEND, lang)
             os.makedirs(lang_dir, exist_ok=True)
             out_path = os.path.join(lang_dir, name)

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mira las películas de Digital Safety Knights — cortometrajes animados gratuitos que enseñan a los niños a reconocer estafas, extraños y manipulación en línea. Una película nueva cada dos semanas.">
+<title>Películas DSK — Digital Safety Knights</title>
+<link rel="canonical" href="https://digitalsafetyknights.org/es/films.html">
+<link rel="alternate" hreflang="en" href="https://digitalsafetyknights.org/en/films.html">
+<link rel="alternate" hreflang="tr" href="https://digitalsafetyknights.org/tr/films.html">
+<link rel="alternate" hreflang="es" href="https://digitalsafetyknights.org/es/films.html">
+<link rel="alternate" hreflang="x-default" href="https://digitalsafetyknights.org/films.html">
+<meta property="og:title" content="Películas DSK — Digital Safety Knights">
+<meta property="og:description" content="Mira las películas de Digital Safety Knights — cortometrajes animados gratuitos que enseñan a los niños a reconocer estafas, extraños y manipulación en línea. Una película nueva cada dos semanas.">
+<meta property="og:image" content="https://digitalsafetyknights.org/films/film-01-the-lost-sprout.jpg">
+<meta property="og:url" content="https://digitalsafetyknights.org/films.html">
+<meta property="og:type" content="video.other">
+<link rel="icon" href="/assets/favicon.ico">
+<link rel="stylesheet" href="/assets/theme.css">
+<script src="/assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
+<style>
+  :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Nunito Sans', 'Segoe UI', system-ui, sans-serif; background: var(--light); color: #2d3748; }
+
+  .fl-hero { background: var(--realm-bg); color: white; padding: 2.8rem 1.5rem 3rem; text-align: center; position: relative; }
+  .fl-hero .eyebrow { color: var(--gold); font-weight: 900; letter-spacing: 2px; font-size: 0.78rem; text-transform: uppercase; }
+  .fl-hero h1 { font-size: 2.1rem; font-weight: 900; margin: 10px 0 10px; }
+  .fl-hero p { color: #cdd7f0; max-width: 620px; margin: 0 auto; line-height: 1.7; font-size: 0.98rem; }
+  .fl-hero a.back { position: absolute; left: 1.5rem; top: 1.5rem; color: #cdd7f0; text-decoration: none; font-weight: 700; font-size: 0.85rem; }
+
+  .fl-wrap { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+
+  .fl-film { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 8px 30px rgba(13,27,62,0.10); margin-bottom: 2rem; }
+  .fl-film video { width: 100%; display: block; background: #04091a; aspect-ratio: 16 / 9; }
+  .fl-body { padding: 1.6rem 1.8rem 1.8rem; }
+  .fl-meta { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 0.7rem; }
+  .fl-chip { font-size: 0.68rem; font-weight: 900; letter-spacing: 0.6px; text-transform: uppercase; padding: 4px 11px; border-radius: 20px; background: var(--light); color: var(--navy); }
+  .fl-chip.ep { background: var(--navy); color: var(--gold2); }
+  .fl-body h2 { color: var(--navy); font-size: 1.5rem; margin-bottom: 0.5rem; }
+  .fl-body .logline { color: #4a5568; font-size: 0.98rem; line-height: 1.7; margin-bottom: 1.2rem; }
+  .fl-lessons { background: var(--light); border-radius: 14px; padding: 1.1rem 1.3rem; margin-bottom: 1.1rem; }
+  .fl-lessons h3 { font-size: 0.72rem; font-weight: 900; letter-spacing: 1.4px; text-transform: uppercase; color: var(--gray); margin-bottom: 0.6rem; }
+  .fl-lessons li { font-size: 0.9rem; color: #4a5568; line-height: 1.65; margin-left: 1.1rem; margin-bottom: 3px; }
+  .fl-talk { border-left: 4px solid var(--gold); background: #fdf9ee; border-radius: 10px; padding: 0.9rem 1.1rem; font-size: 0.9rem; color: #6b4a12; line-height: 1.6; }
+  .fl-actions { margin-top: 1.2rem; display: flex; gap: 10px; flex-wrap: wrap; }
+  .fl-btn { display: inline-block; background: linear-gradient(135deg, var(--gold2), var(--gold)); color: var(--navy); padding: 12px 24px; border-radius: 22px; font-weight: 900; text-decoration: none; font-size: 0.9rem; }
+  .fl-btn.ghost { background: transparent; color: var(--navy); border: 2px solid var(--navy); }
+
+  .fl-next { text-align: center; color: var(--gray); font-size: 0.9rem; background: white; border-radius: 16px; padding: 1.4rem; box-shadow: 0 4px 18px rgba(13,27,62,0.07); }
+  .fl-next b { color: var(--navy); }
+  footer { text-align: center; padding: 2rem; color: var(--gray); font-size: 0.85rem; }
+</style>
+</head>
+<body>
+
+<div class="fl-hero">
+  <a href="/" class="back" data-i18n="qp.home">← Home</a>
+  <div class="eyebrow">Digital Safety Knights</div>
+  <h1 id="fl-title">🎬 DSK Films</h1>
+  <p id="fl-tagline">Full-length animated films for children — a real story, not a lecture. Free, no ads, no sign-up. A new film every two weeks.</p>
+</div>
+
+<div class="fl-wrap">
+  <div id="fl-list"></div>
+  <div class="fl-next" id="fl-next"><b>Next film: in two weeks.</b> New DSK films are released every other Friday — short episodes land daily on our channels in between.</div>
+</div>
+
+<footer>⚔️ Digital Safety Knights · digitalsafetyknights.org · © 2026</footer>
+
+<script>
+(function () {
+  var lang = (window.DSKi18n && DSKi18n.lang) || 'en';
+  var T = {
+    en: { title: '🎬 DSK Films', tagline: 'Full-length animated films for children — a real story, not a lecture. Free, no ads, no sign-up. A new film every two weeks.',
+          lessons: 'What this film teaches', watch: '▶ Watch on YouTube', guides: '📚 Free guides for parents',
+          next: '<b>Next film: in two weeks.</b> New DSK films are released every other Friday — short episodes land daily on our channels in between.',
+          ep: 'Episode', loading: 'Loading…' },
+    tr: { title: '🎬 DSK Filmleri', tagline: 'Çocuklar için uzun metrajlı animasyon filmler — ders değil, gerçek bir hikâye. Ücretsiz, reklamsız, kayıt yok. İki haftada bir yeni film.',
+          lessons: 'Bu film ne öğretiyor', watch: '▶ YouTube\'da izle', guides: '📚 Ebeveynler için ücretsiz rehberler',
+          next: '<b>Sıradaki film: iki hafta sonra.</b> Yeni DSK filmleri iki haftada bir cuma yayınlanır — aradaki günlerde kanallarımızda kısa bölümler var.',
+          ep: 'Bölüm', loading: 'Yükleniyor…' },
+    es: { title: '🎬 Películas DSK', tagline: 'Películas animadas para niños — una historia real, no una lección. Gratis, sin anuncios, sin registro. Una película nueva cada dos semanas.',
+          lessons: 'Lo que enseña esta película', watch: '▶ Ver en YouTube', guides: '📚 Guías gratuitas para padres',
+          next: '<b>Próxima película: en dos semanas.</b> Las nuevas películas DSK se estrenan cada dos viernes — mientras tanto publicamos episodios cortos a diario.',
+          ep: 'Episodio', loading: 'Cargando…' }
+  };
+  var t = T[lang] || T.en;
+  document.getElementById('fl-title').textContent = t.title;
+  document.getElementById('fl-tagline').textContent = t.tagline;
+  document.getElementById('fl-next').innerHTML = t.next;
+
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (m) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m];
+    });
+  }
+
+  fetch('/content/films.json?t=' + Math.floor(Date.now() / 3600000))
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      document.getElementById('fl-list').innerHTML = (data.films || []).map(function (f) {
+        var yt = f.youtube ? '<a class="fl-btn ghost" href="' + esc(f.youtube) + '" target="_blank" rel="noopener">' + t.watch + '</a>' : '';
+        return '<article class="fl-film">' +
+          '<video controls playsinline preload="metadata" poster="' + esc(f.poster) + '">' +
+            '<source src="' + esc(f.src) + '" type="video/mp4">' +
+            (f.captions ? '<track kind="captions" srclang="en" label="English" src="' + esc(f.captions) + '" default>' : '') +
+          '</video>' +
+          '<div class="fl-body">' +
+            '<div class="fl-meta"><span class="fl-chip ep">' + t.ep + ' ' + esc(f.episode) + '</span>' +
+              '<span class="fl-chip">' + esc(f.runtime) + '</span>' +
+              '<span class="fl-chip">' + esc(f.ages) + '</span></div>' +
+            '<h2>' + esc(f.title) + '</h2>' +
+            '<p class="logline">' + esc(f.logline) + '</p>' +
+            '<div class="fl-lessons"><h3>' + t.lessons + '</h3><ul>' +
+              (f.lessons || []).map(function (l) { return '<li>' + esc(l) + '</li>'; }).join('') +
+            '</ul></div>' +
+            (f.talkPrompt ? '<div class="fl-talk">💬 ' + esc(f.talkPrompt) + '</div>' : '') +
+            '<div class="fl-actions">' + yt +
+              '<a class="fl-btn ghost" href="/resources.html">' + t.guides + '</a>' +
+            '</div>' +
+          '</div></article>';
+      }).join('');
+      if (window.DSKPoints) DSKPoints.markComboActivity('game');
+    })
+    .catch(function () {
+      document.getElementById('fl-list').innerHTML = '';
+    });
+})();
+</script>
+<script src="/assets/lang-switcher.js"></script>
+</body>
+</html>
