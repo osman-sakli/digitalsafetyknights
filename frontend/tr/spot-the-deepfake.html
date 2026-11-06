@@ -173,14 +173,14 @@ var SCENARIOS_TR = [
 var SCENARIOS_ES = [
   { icon: '📞', text: "Recibes una llamada y suena exactamente como la voz de tu mamá, en pánico, pidiéndote que envíes dinero de inmediato a un número que no reconoces.", choices: [
       { text: "Es su voz, así que debe ser real — envíalo", correct: false },
-      { text: "Cuelga y llámala de vuelta primero a su número real", correct: true },
+      { text: "Cuelga y vuelve a llamarla primero a su número real", correct: true },
       { text: "Hazle más preguntas a quien llama para estar seguro", correct: false }
     ], explain: "Las herramientas de clonación de voz pueden copiar la voz de una persona real a partir de solo unos segundos de audio en línea. Una petición de dinero urgente y en pánico es la señal más grande — siempre verifica por una segunda forma de contacto separada." },
-  { icon: '🎥', text: "Un video muestra a una celebridad que te gusta recomendando una aplicación de inversión en criptomonedas que nunca habías escuchado, prometiendo enormes ganancias.", choices: [
+  { icon: '🎥', text: "Un video muestra a una celebridad que te gusta recomendando una aplicación de inversión en criptomonedas de la que nunca habías oído hablar, prometiendo enormes ganancias.", choices: [
       { text: "Las celebridades son confiables, así que probablemente esté bien", correct: false },
       { text: "Asume que es falso hasta que se demuestre lo contrario — revisa las cuentas oficiales reales de la celebridad", correct: true },
       { text: "Pruébalo primero con una pequeña cantidad de dinero", correct: false }
-    ], explain: "El intercambio de rostro y voz con IA es extremadamente común en estafas de respaldo falso de celebridades — especialmente para inversiones que prometen ganancias enormes y garantizadas. Las celebridades reales casi nunca promocionan personalmente aplicaciones de cripto al azar." },
+    ], explain: "El intercambio de rostro y voz con IA es extremadamente común en estafas con falsos avales de celebridades — especialmente para inversiones que prometen ganancias enormes y garantizadas. Las celebridades reales casi nunca promocionan personalmente aplicaciones de cripto desconocidas." },
   { icon: '💬', text: "En una videollamada, los movimientos de la boca de la persona parecen ligeramente desincronizados con sus palabras, y nunca parpadea.", choices: [
       { text: "Eso es solo una mala conexión a internet", correct: false },
       { text: "Esa es una señal clásica de un filtro facial de IA en tiempo real o un deepfake", correct: true },
@@ -199,17 +199,17 @@ var SCENARIOS_ES = [
   { icon: '📸', text: "Alguien afirma tener una foto vergonzosa tuya que no recuerdas haberte tomado, y dice que la compartirá a menos que le pagues.", choices: [
       { text: "Paga rápido para que la borren", correct: false },
       { text: "No pagues, no entres en pánico — guarda la evidencia y cuéntaselo a un adulto de confianza de inmediato", correct: true },
-      { text: "Discute con ellos en línea para demostrar que es falsa", correct: false }
+      { text: "Discute con esa persona en línea para demostrar que es falsa", correct: false }
     ], explain: "Esto es una táctica de sextorsión — real o falsificada con IA, pagar nunca garantiza que se detenga, y a menudo lleva a más exigencias. Contarle a un adulto de confianza de inmediato siempre es lo correcto, y nunca es culpa de la víctima." },
-  { icon: '🗞️', text: "Un artículo cita a un científico diciendo algo que suena extremo y fuera de su carácter habitual, sin ningún enlace a de dónde vino realmente la cita.", choices: [
+  { icon: '🗞️', text: "Un artículo cita a un científico diciendo algo que suena extremo y fuera de su carácter habitual, sin ningún enlace que muestre de dónde salió realmente la cita.", choices: [
       { text: "Si está escrito, probablemente sea verdad", correct: false },
-      { text: "Busca la fuente original antes de creer una cita fuera de carácter", correct: true },
+      { text: "Busca la fuente original antes de creer una cita que no suena como esa persona", correct: true },
       { text: "Confía en ello porque el artículo se ve profesional", correct: false }
     ], explain: "Los generadores de texto con IA pueden producir citas muy convincentes pero completamente falsas atribuidas a personas reales. Un artículo de aspecto profesional no es prueba de nada — siempre busca la fuente original y verificable." },
   { icon: '🤖', text: "Un chatbot de IA te dice que está 100% seguro de un dato, con total confianza y sin ninguna duda.", choices: [
-      { text: "Total confianza significa que debe ser correcto", correct: false },
+      { text: "Si lo dice con tanta seguridad, debe ser correcto", correct: false },
       { text: "La IA puede sonar extremadamente segura y aun así estar completamente equivocada", correct: true },
-      { text: "La confianza solo importa en los expertos humanos", correct: false }
+      { text: "La seguridad al hablar solo importa cuando viene de expertos humanos", correct: false }
     ], explain: "Los chatbots de IA suelen estar \"seguros pero equivocados\" — en realidad no saben cuándo están inventando cosas. La confianza no es lo mismo que la precisión; siempre verifica los datos importantes con una fuente real." }
 ];
 

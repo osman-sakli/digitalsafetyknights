@@ -34,7 +34,8 @@
           "host": "Asociación de padres de una escuela intermedia",
           "format": "Presencial",
           "audience": "Grados 6.º a 8.º y familias",
-          "summary": "Un puesto práctico del Desafío de Seguridad Cibernética — los estudiantes detectan estafas, comparan contraseñas y resuelven situaciones de ciberacoso, y se llevan a casa un certificado de Héroe de Seguridad Cibernética. Guías impresas gratuitas para los padres."
+          "time": "5:00–7:00 p. m.",
+          "summary": "Un puesto práctico del Desafío de Seguridad Digital — los estudiantes detectan estafas, comparan contraseñas y analizan escenarios de ciberacoso, y al final se llevan a casa un certificado de Héroe de la Seguridad Digital. Guías impresas gratuitas para los padres."
         }
       }
     },
@@ -109,15 +110,16 @@
           "format": "Virtual (Zoom)",
           "audience": "Adolescentes y padres",
           "languages": "Inglés y español",
-          "summary": "Una sesión en vivo de 60 minutos para adolescentes y sus padres — la trampa del “Robux gratis” y otras estafas dentro de los juegos, los chatbots de IA y los deepfakes, el ciberacoso, la configuración de privacidad y qué hacer exactamente si algo pasa (captura de pantalla primero, avisar a un adulto de confianza, dónde denunciar). Presentada en vivo por nuestra Líder del Club, con un folleto bilingüe y materiales en español para las familias.",
+          "time": "6:00 p. m.",
+          "summary": "Una sesión en vivo de 60 minutos para adolescentes y sus padres — la trampa del “Robux gratis” y otras estafas dentro de los juegos, los chatbots de IA y los deepfakes, el ciberacoso, los ajustes de privacidad y qué hacer exactamente si algo pasa (captura de pantalla primero, avisar a un adulto de confianza, dónde denunciar). Presentada en vivo por nuestra Líder del Club, con un folleto bilingüe y materiales en español para las familias.",
           "images": [
             {
               "alt": "Ayşe presentando el taller en vivo por Zoom desde su escritorio",
               "caption": "Ayşe, nuestra Líder del Club, presentando la sesión en vivo por Zoom."
             },
             {
-              "alt": "Diapositiva del taller: las capturas de pantalla son evidencia — que desaparezca no significa que se haya ido",
-              "caption": "Diapositiva de “qué hacer”: captura de pantalla primero — que desaparezca no significa que se haya ido."
+              "alt": "Diapositiva del taller: las capturas de pantalla son evidencia — que desaparezca no significa que deje de existir",
+              "caption": "Diapositiva de “qué hacer”: captura de pantalla primero — que desaparezca no significa que deje de existir."
             },
             {
               "alt": "Diapositiva del taller: la trampa del Robux / V-Bucks gratis",
@@ -125,7 +127,7 @@
             },
             {
               "alt": "Folleto del evento en español: Taller de Seguridad Digital, 11.05.2026, 6:00 p. m., Zoom",
-              "caption": "El folleto bilingüe que preparó la organización anfitriona."
+              "caption": "El folleto bilingüe de la organización anfitriona para la sesión."
             }
           ]
         }

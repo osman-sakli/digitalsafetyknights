@@ -1411,7 +1411,7 @@
         :
         emLocIsEs ?
         ('📍 ' + (precise ? 'Según tu ubicación, parece que estás en <b>' + name + '</b>' : 'Parece que podrías estar en <b>' + name + '</b>') +
-        ' — tu contacto local se fijó arriba.' +
+        ' — fijamos tu contacto local arriba.' +
         (precise ? '' : ' <button type="button" onclick="emergencyUsePreciseLocation()" style="background:none;border:none;color:var(--danger);font-weight:800;text-decoration:underline;cursor:pointer;font-size:0.85rem;">Usar mi ubicación exacta en su lugar</button>') +
         ' <button type="button" onclick="document.getElementById(\'em-locate-banner\').style.display=\'none\';document.querySelectorAll(\'.em-pinned\').forEach(function(e){e.remove()});" style="background:none;border:none;color:var(--gray);text-decoration:underline;cursor:pointer;font-size:0.85rem;">¿No es correcto? Descartar</button>')
         :
@@ -1490,7 +1490,7 @@
       { icon: '🛡️', text: 'Aile Güvenlik Denetimini tamamla', link: '/audit.html', done: auditDone },
       { icon: '👑', text: '250 Şövalye Puanına ulaş (Nöbetçi)', link: '/quests.html', done: points >= 250 }
     ] : wcIsEs ? [
-      { icon: '🕹️', text: 'Consigue 50+ puntos en el Juego de Clasificación de Mensajes de Shieldy', link: '/game.html', done: gameHigh >= 50 },
+      { icon: '🕹️', text: 'Consigue 50+ puntos en el Juego de Clasificar Mensajes de Shieldy', link: '/game.html', done: gameHigh >= 50 },
       { icon: '🎮', text: 'Completa tu primera Misión', link: '/quests.html', done: questCount >= 1 },
       { icon: '🔥', text: 'Consigue una racha de 3 días seguidos jugando', link: '/quests.html', done: streak >= 3 },
       { icon: '⚔️', text: 'Alcanza 100 Puntos de Caballero', link: '/quests.html', done: points >= 100 },
@@ -1529,13 +1529,13 @@
       6: { id: "glitch", name: "Glitch", tie: "Temmuz Dergisi yabancı tehlikesi sohbet uygulamalarıyla ilgili — ve iyi gizlenmiş bir yabancıyı Glitch'ten daha iyi kimse oynayamaz." },
       7: { id: "shieldy", name: "Shieldy", tie: "Ağustos Dergisi okula dönüş aile sıfırlaması — Shieldy öncülük ediyor." }
     } : komIsEs ? {
-      1: { id: "dame-noble", name: "Dame Noble", tie: "La Revista de Febrero trata sobre el lado emocional del acoso en línea — justo la especialidad de Dama Noble." },
+      1: { id: "dame-noble", name: "Dame Noble", tie: "La Revista de Febrero trata sobre el lado emocional del acoso en línea — justo la especialidad de Dame Noble." },
       2: { id: "pixel", name: "Pixel", tie: "La Revista de Marzo entra de lleno en Roblox — el terreno de Pixel." },
-      3: { id: "bot", name: "Bot", tie: "La Revista de Abril cubre tácticas de manipulación impulsadas por IA — justo el campo de especialización de Bot." },
-      4: { id: "shieldy", name: "Shieldy", tie: "La Revista de Mayo cubre tácticas de sextorsión de rápido avance — la especialidad de Shieldy es detectar las señales de alerta a tiempo." },
+      3: { id: "bot", name: "Bot", tie: "La Revista de Abril cubre tácticas de grooming impulsadas por IA — justo el campo de especialización de Bot." },
+      4: { id: "shieldy", name: "Shieldy", tie: "La Revista de Mayo cubre tácticas de sextorsión que avanzan muy rápido — la especialidad de Shieldy es detectar las señales de alerta a tiempo." },
       5: { id: "bot", name: "Bot", tie: "La Revista de Junio explica cómo se construyen el algoritmo y el feed — territorio puro de Bot." },
-      6: { id: "glitch", name: "Glitch", tie: "La Revista de Julio trata sobre apps de chat con desconocidos peligrosos — y nadie interpreta a un desconocido bien disfrazado mejor que Glitch." },
-      7: { id: "shieldy", name: "Shieldy", tie: "La Revista de Agosto es el reinicio familiar de vuelta al cole — Shieldy lidera la iniciativa." }
+      6: { id: "glitch", name: "Glitch", tie: "La Revista de Julio trata sobre el peligro de los desconocidos en las apps de chat — y nadie interpreta a un desconocido bien disfrazado mejor que Glitch." },
+      7: { id: "shieldy", name: "Shieldy", tie: "La Revista de Agosto es el reinicio familiar de vuelta al colegio — Shieldy lidera la iniciativa." }
     } : {
       1: { id: "dame-noble", name: "Dame Noble", tie: "February's Journal is about the emotional side of online harassment — exactly Dame Noble's specialty." },
       2: { id: "pixel", name: "Pixel", tie: "March's Journal goes inside Roblox — Pixel's home turf." },
@@ -1566,8 +1566,8 @@
       { id: "digital-citizenship",  title: "Dijital Vatandaşlık",   emoji: "🌐" }
     ] : tqIsEs ? [
       { id: "roblox-safety-lab",    title: "Laboratorio de Seguridad de Roblox",     emoji: "🎮" },
-      { id: "ai-threat-awareness",  title: "Conciencia de Amenazas de IA",   emoji: "🤖" },
-      { id: "grooming-watch",       title: "Vigilancia de Manipulación",        emoji: "🚩" },
+      { id: "ai-threat-awareness",  title: "Conciencia sobre Amenazas de IA",   emoji: "🤖" },
+      { id: "grooming-watch",       title: "Vigilancia contra el Grooming",        emoji: "🚩" },
       { id: "parental-controls",    title: "Revisión de Controles Parentales", emoji: "🔧" },
       { id: "family-cyber-defense", title: "Ciberdefensa Familiar",  emoji: "🛡️" },
       { id: "digital-citizenship",  title: "Ciudadanía Digital",   emoji: "🌐" }
@@ -1817,7 +1817,7 @@
           // 409 = already a member; that's a success from the user's side.
           var dup = (res.d.message || '').toLowerCase().indexOf('already') !== -1;
           show(dup, dup
-            ? (isTr ? 'Bu e-posta zaten kayıtlı — zaten üyesin!' : isEs ? 'Ya estás registrado con este correo.' : "You're already a member with this email.")
+            ? (isTr ? 'Bu e-posta zaten kayıtlı — zaten üyesin!' : isEs ? 'Este correo ya está registrado.' : "You're already a member with this email.")
             : (res.d.message || (isTr ? 'Bir şeyler ters gitti.' : isEs ? 'Algo salió mal.' : 'Something went wrong.')));
           btn.disabled = false;
           btn.textContent = isTr ? 'Ücretsiz Katıl →' : isEs ? 'Únete Gratis →' : 'Join Free →';
@@ -1890,7 +1890,7 @@
       if (existing && existing.email) {
         box.innerHTML = '<div style="text-align:center;color:var(--gray);font-size:0.82rem;">' +
           (isTr ? '📬 Haftalık Şövalye Raporu\'na zaten kayıtlısın.'
-            : isEs ? '📬 Ya estás suscrito al Informe Semanal del Caballero.'
+            : isEs ? '📬 Tu correo ya está suscrito al Informe Semanal del Caballero.'
             : "📬 You're already signed up for the Weekly Knight Report.") + '</div>';
         return;
       }
@@ -1908,12 +1908,15 @@
     })();
 
     var level = window.DSKPoints ? DSKPoints.levelForPoints(DSKPoints.getPoints()) : {emoji: '🪖', name: 'Squire'};
+    // knight-points.js carries nameTr/nameEs for every rank; using the
+    // English one here left "un Squire" on the Spanish welcome screen.
+    var levelName = (isTr && level.nameTr) || (isEs && level.nameEs) || level.name;
     document.getElementById('km-welcome-emoji').textContent = level.emoji;
-    document.getElementById('km-welcome-title').textContent = (isTr ? 'Hoş geldin, ' : isEs ? '¡Bienvenido, ' : 'Welcome, ') + name + '!';
+    document.getElementById('km-welcome-title').textContent = (isTr ? 'Hoş geldin, ' : isEs ? '¡Hola, ' : 'Welcome, ') + name + '!';
     document.getElementById('km-welcome-sub').textContent = isTr
-      ? 'Artık resmen bir ' + level.name + '\'sın. İlk göreve hazır mısın?'
-      : isEs ? ('Ya eres oficialmente un ' + level.name + '. ¿Listo para tu primera misión?')
-      : ('You\'re officially a ' + level.name + '. Ready for your first quest?');
+      ? 'Artık resmen bir ' + levelName + '\'sın. İlk göreve hazır mısın?'
+      : isEs ? ('Ya eres oficialmente ' + levelName + '. ¿Te animas a tu primera misión?')
+      : ('You\'re officially a ' + levelName + '. Ready for your first quest?');
   }
 
   function donateCustom() {
@@ -1981,7 +1984,7 @@
     if (email.indexOf('@') === -1) { alert(sIsTr ? 'Lütfen geçerli bir e-posta gir.' : sIsEs ? 'Por favor, ingresa un correo electrónico válido.' : 'Please enter a valid email.'); return; }
 
     var btn = document.querySelector('.submit');
-    btn.textContent = sIsTr ? 'Katılıyor...' : sIsEs ? 'Uniéndote...' : 'Joining...';
+    btn.textContent = sIsTr ? 'Katılıyor...' : sIsEs ? 'Uniéndote…' : 'Joining...';
     btn.disabled = true;
 
     fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/signup', {
@@ -2096,7 +2099,7 @@
       '9 herramientas de seguridad interactivas gratuitas',
       '10 guías familiares descargables',
       'Líneas de ayuda de emergencia para más de 40 países',
-      'Todo en este sitio permanece gratis — siempre'
+      'Todo en este sitio sigue siendo gratis — siempre'
     ] : [
       '7 story-driven quests, one for every major threat',
       '9 free interactive safety tools',

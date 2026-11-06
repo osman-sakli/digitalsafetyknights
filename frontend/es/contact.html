@@ -134,7 +134,7 @@ document.getElementById('ct-opt-school').textContent = ctIsTr ? 'Okul / kurum ta
 document.getElementById('ct-opt-other').textContent = ctIsTr ? 'Diğer' : ctIsEs ? 'Otro' : 'Other';
 document.getElementById('ct-label-message').textContent = ctIsTr ? 'Mesajınız' : ctIsEs ? 'Tu Mensaje' : 'Your Message';
 document.getElementById('ct-label-name').innerHTML = (ctIsTr ? 'Adınız ' : ctIsEs ? 'Tu Nombre ' : 'Your Name ') + '<span style="font-weight:400;color:var(--gray);">' + (ctIsTr ? '(isteğe bağlı)' : ctIsEs ? '(opcional)' : '(optional)') + '</span>';
-document.getElementById('ct-label-email').innerHTML = 'Email <span style="font-weight:400;color:var(--gray);">' + (ctIsTr ? '(isteğe bağlı)' : ctIsEs ? '(opcional)' : '(optional)') + '</span>';
+document.getElementById('ct-label-email').innerHTML = (ctIsTr ? 'E-posta ' : ctIsEs ? 'Correo electrónico ' : 'Email ') + '<span style="font-weight:400;color:var(--gray);">' + (ctIsTr ? '(isteğe bağlı)' : ctIsEs ? '(opcional)' : '(optional)') + '</span>';
 document.getElementById('ct-hint').textContent = ctIsTr ? 'Yanıt almak isterseniz e-postanızı bırakın — aksi halde tamamen anonimdir.' : ctIsEs ? 'Deja tu correo si quieres una respuesta — de lo contrario esto es completamente anónimo.' : "Leave your email if you'd like a reply — otherwise this is completely anonymous.";
 document.getElementById('ct-submit').textContent = ctIsTr ? 'Mesajı Gönder' : ctIsEs ? 'Enviar Mensaje' : 'Send Message';
 

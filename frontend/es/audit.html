@@ -531,7 +531,7 @@
 
     var btn = event.target;
     var originalText = btn.textContent;
-    btn.textContent = auditIsTr ? 'Gönderiliyor...' : auditIsEs ? 'Enviando...' : 'Sending...';
+    btn.textContent = auditIsTr ? 'Gönderiliyor...' : auditIsEs ? 'Enviando…' : 'Sending...';
     btn.disabled = true;
 
     fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/audit-report', {

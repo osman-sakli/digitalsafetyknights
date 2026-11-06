@@ -36,17 +36,17 @@
           "talkPrompt": "Akşam yemeğinde sorun: “Çevrimiçi biri sana bir şey verse ve bunu benden saklamanı istese ne yapardın?”"
         },
         "es": {
-          "title": "El Brote Perdido",
+          "title": "The Lost Sprout",
           "ages": "5 a 10 años",
-          "logline": "Cuando el Caballero más pequeño sigue a un desconocido demasiado amable hacia una puerta secreta, los Caballeros cruzan el reino a toda prisa — y Brote descubre que pedir ayuda es la jugada más valiente de todas.",
+          "logline": "Cuando el Caballero más pequeño sigue a un desconocido demasiado amable hacia una puerta secreta, los Caballeros cruzan el reino a toda prisa — y Sprout descubre que pedir ayuda es la jugada más valiente de todas.",
           "lessons": [
             "Un desconocido que ofrece un regalo y pide que lo mantengas en secreto: esa es la señal de alerta.",
             "Si un nuevo amigo quiere llevarte a un lugar apartado — detente.",
             "Que te apuren es una señal de alerta.",
-            "Sonar seguro no es lo mismo que tener razón — verifica antes de actuar.",
-            "Pedir ayuda es lo valiente. Nunca te vas a meter en problemas por preguntar."
+            "Que alguien suene muy seguro no significa que tenga razón — verifica antes de actuar.",
+            "Pedir ayuda es la jugada valiente. Nunca te vas a meter en problemas por preguntar."
           ],
-          "talkPrompt": "Pregunten en la cena: “Si alguien en internet te diera algo y te pidiera que me lo ocultaras, ¿qué harías?”"
+          "talkPrompt": "Pregunta en la cena: “Si alguien en internet te diera algo y te pidiera que no me lo contaras, ¿qué harías?”"
         }
       }
     }

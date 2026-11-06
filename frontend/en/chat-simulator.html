@@ -218,38 +218,38 @@ var SCENARIOS_TR = {
 var SCENARIOS_ES = {
   gift: {
     steps: [
-      { them: "¡hey!! tengo un código extra de traje legendario, ¿lo quieres? 🎁" },
+      { them: "¡hey!! tengo un código de skin legendario de más, ¿lo quieres? 🎁" },
       { them: "es totalmente gratis, es que no necesito dos cuentas jaja" },
       { choices: [
           { text: "¡Claro, envíamelo!", risky: true, next: 1 },
           { text: "Qué lindo pero es un poco raro — ¿por qué yo?", risky: false, next: 2 } ] }
     ],
     branches: {
-      1: { them: "¡genial! solo primero mándame tu inicio de sesión para poder 'regalártelo' directamente 😊", choices: [
+      1: { them: "¡genial! solo primero mándame tus datos de inicio de sesión para poder 'regalártelo' directamente 😊", choices: [
             { text: "Claro, aquí está mi contraseña", risky: true, end: 'risky', endMsg: "Nunca compartas tu contraseña — ni siquiera por un 'regalo gratis'. Así es exactamente como se roban las cuentas." },
-            { text: "Espera, no me siento cómodo compartiendo mi contraseña", risky: false, end: 'safe', endMsg: "Exactamente correcto. Un regalo real nunca requiere tu contraseña. Lo detectaste justo a tiempo." }
+            { text: "Espera, no me siento bien compartiendo mi contraseña", risky: false, end: 'safe', endMsg: "Exacto. Un regalo real nunca requiere tu contraseña. Lo detectaste justo a tiempo." }
           ]},
       2: { them: "jaja sin razón, ¡solo estoy siendo amable! ...ok bueno, en realidad si me mandas $5 primero te mando el código enseguida", choices: [
             { text: "Ok aquí tienes $5", risky: true, end: 'risky', endMsg: "Este es el clásico truco de cambiar las reglas — 'gratis' se convierte en 'solo paga un poco primero'. Los regalos reales nunca te piden pagar." },
-            { text: "Entonces no es realmente gratis — no gracias", risky: false, end: 'safe', endMsg: "Detección perfecta. En el momento en que 'gratis' se convierte en 'solo paga esto primero', nunca fue gratis." }
+            { text: "Entonces no es realmente gratis — no gracias", risky: false, end: 'safe', endMsg: "¡Bien visto! En el momento en que 'gratis' se convierte en 'solo paga esto primero', nunca fue gratis." }
           ]}
     }
   },
   info: {
     steps: [
-      { them: "jaja eres gracioso 😂 oye ¿cuántos años tienes?" },
+      { them: "jaja me haces reír 😂 oye, ¿cuántos años tienes?" },
       { choices: [
           { text: "Tengo 12", risky: true, next: 1 },
           { text: "¿Por qué preguntas? Hablemos del juego mejor", risky: false, next: 2 } ] }
     ],
     branches: {
       1: { them: "qué bien. ¿a qué escuela vas? tal vez mi primo va ahí", choices: [
-            { text: "Voy a [nombra la escuela]", risky: true, end: 'risky', endMsg: "Edad + nombre de la escuela ya es suficiente para que un desconocido empiece a reducir exactamente quién eres y dónde encontrarte." },
-            { text: "Prefiero no decir eso", risky: false, end: 'safe', endMsg: "Buena parada. Nunca es descortés simplemente no responder una pregunta personal de alguien que en realidad no conoces." }
+            { text: "Voy a [nombra la escuela]", risky: true, end: 'risky', endMsg: "Edad + nombre de la escuela ya es suficiente para que un desconocido empiece a acotar exactamente quién eres y dónde encontrarte." },
+            { text: "Prefiero no decir eso", risky: false, end: 'safe', endMsg: "¡Bien hecho! Nunca es descortés no responder una pregunta personal de alguien que en realidad no conoces." }
           ]},
       2: { them: "bueno está bien jaja. ok olvida la escuela — ¿cuál es tu dirección? quiero enviarte algo por correo", choices: [
             { text: "Es [da la dirección]", risky: true, end: 'risky', endMsg: "Un desconocido en línea nunca tiene una razón real para saber tu dirección de casa. Esta es una señal de alerta importante." },
-            { text: "Está bien, no necesitas enviarme nada", risky: false, end: 'safe', endMsg: "Exactamente. Las ofertas amables que necesitan tu dirección real de parte de un desconocido en línea son una señal de alerta clásica — la cerraste perfectamente." }
+            { text: "Está bien, no necesitas enviarme nada", risky: false, end: 'safe', endMsg: "Exactamente. Una oferta amable de un desconocido en línea que necesita tu dirección real es una señal de alerta clásica — lo cortaste perfecto." }
           ]}
     }
   },
@@ -262,12 +262,12 @@ var SCENARIOS_ES = {
           { text: "La verdad no me reúno con personas que solo conozco en línea", risky: false, next: 2 } ] }
     ],
     branches: {
-      1: { them: "¡genial! pero dejemos esto entre nosotros, ¿ok? no le digas a tus padres, solo dirán que no", choices: [
-            { text: "Ok, nuestro secreto", risky: true, end: 'risky', endMsg: "Quedar en persona MÁS que te digan que lo mantengas en secreto de tus padres es una de las combinaciones de señales de alerta más graves que existen." },
-            { text: "En realidad, le voy a contar esto a mis padres", risky: false, end: 'safe', endMsg: "Exactamente correcto — cualquiera que insista en el secreto sobre reunirse en persona te está mostrando exactamente por qué no deberías hacerlo." }
+      1: { them: "¡genial! pero dejemos esto entre nosotros, ¿ok? no les digas a tus padres, solo dirán que no", choices: [
+            { text: "Ok, nuestro secreto", risky: true, end: 'risky', endMsg: "Quedar en persona Y ADEMÁS que te pidan ocultárselo a tus padres es una de las combinaciones de señales de alerta más graves que existen." },
+            { text: "En realidad, les voy a contar esto a mis padres", risky: false, end: 'safe', endMsg: "Exacto — cualquiera que insista en el secreto sobre reunirse en persona te está mostrando exactamente por qué no deberías hacerlo." }
           ]},
-      2: { them: "ay vamos, ¿no confías en mí ya?", choices: [
-            { text: "Sí confío, ok entonces reunámonos", risky: true, end: 'risky', endMsg: "La culpa ('¿no confías en mí?') es una táctica de presión. La confianza construida solo a través de una pantalla nunca es razón para reunirse a solas." },
+      2: { them: "ay vamos, ¿ya no confías en mí?", choices: [
+            { text: "Sí confío, ok entonces reunámonos", risky: true, end: 'risky', endMsg: "Hacerte sentir culpable ('¿no confías en mí?') es una táctica de presión. La confianza construida solo a través de una pantalla nunca es razón para reunirse a solas." },
             { text: "No se trata de confianza, simplemente no me reúno en persona con amigos en línea sin que un padre lo sepa", risky: false, end: 'safe', endMsg: "Perfecto. Esa es exactamente la regla del Caballero — no hay encuentros en persona de amistades en línea sin que un adulto de confianza esté al tanto." }
           ]}
     }
@@ -339,7 +339,7 @@ function finishScenario(result, msg) {
     var log = document.getElementById('chat-log');
     var banner = document.createElement('div');
     banner.className = 'end-banner ' + result;
-    var prefix = csIsTr2 ? (result === 'safe' ? '🛡️ Kalkanını kaldır! ' : '⚠️ Dikkat et — ') : csIsEs2 ? (result === 'safe' ? '🛡️ ¡Levanta tu escudo! ' : '⚠️ Cuidado — ') : (result === 'safe' ? '🛡️ Shield up! ' : '⚠️ Watch out — ');
+    var prefix = csIsTr2 ? (result === 'safe' ? '🛡️ Kalkanını kaldır! ' : '⚠️ Dikkat et — ') : csIsEs2 ? (result === 'safe' ? '🛡️ ¡Escudo arriba! ' : '⚠️ Cuidado — ') : (result === 'safe' ? '🛡️ Shield up! ' : '⚠️ Watch out — ');
     banner.textContent = prefix + msg;
     log.appendChild(banner);
     log.scrollTop = log.scrollHeight;

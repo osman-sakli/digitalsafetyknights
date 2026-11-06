@@ -17,7 +17,7 @@
   var T = {
     en: { play: 'Play', note: 'Loads from YouTube only when you press play.', open: 'Open on YouTube' },
     tr: { play: 'Oynat', note: 'YouTube yalnızca oynata bastığınızda yüklenir.', open: "YouTube'da aç" },
-    es: { play: 'Reproducir', note: 'Se carga desde YouTube solo cuando presionas reproducir.', open: 'Abrir en YouTube' }
+    es: { play: 'Reproducir', note: 'Solo se carga desde YouTube cuando presionas reproducir.', open: 'Abrir en YouTube' }
   };
 
   function css() {

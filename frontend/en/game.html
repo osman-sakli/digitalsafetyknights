@@ -311,7 +311,7 @@ var MESSAGES_TR = [
 var MESSAGES_ES = [
   { text: "¡hey! solo quedan 10 segundos para reclamar tu Robux gratis, ¡haz clic ahora!!", flag: true, tip: "Truco de urgencia — los premios reales nunca tienen una cuenta regresiva que te presiona a hacer clic rápido." },
   { text: "¿quieres jugar el nivel nuevo juntos después de clases? estaré conectado como a las 4", flag: false, tip: "Un mensaje normal de un amigo sobre jugar más tarde." },
-  { text: "no le digas a tus padres sobre este chat ok? es nuestro secreto", flag: true, tip: "Truco de secreto — las personas de confianza nunca te piden ocultar un chat de tus padres." },
+  { text: "no les digas a tus padres de este chat, ¿ok? es nuestro secreto", flag: true, tip: "Truco de secreto — las personas de confianza nunca te piden ocultar un chat de tus padres." },
   { text: "jaja ese nivel estuvo súper difícil, ¿ya pasaste al jefe?", flag: false, tip: "Conversación amistosa y ordinaria sobre un juego." },
   { text: "¿cuál es tu nombre real y a qué escuela vas?", flag: true, tip: "Truco de información personal — las personas con buenas intenciones en línea no necesitan tu nombre real ni tu escuela." },
   { text: "¡feliz cumpleaños!! espero que tengas un día increíble 🎉", flag: false, tip: "Un mensaje amable y normal — sin señales de alerta." },
@@ -677,7 +677,7 @@ function endGame() {
   try { profile = JSON.parse(localStorage.getItem('dsk_profile') || 'null'); } catch (e) {}
   var loginCta = document.getElementById('login-cta');
   if (profile && profile.email) {
-    loginCta.textContent = gameIsTr ? 'Skorun DSK profiline kaydediliyor...' : gameIsEs ? 'Guardando tu puntaje en tu perfil de DSK...' : 'Saving your score to your DSK profile...';
+    loginCta.textContent = gameIsTr ? 'Skorun DSK profiline kaydediliyor...' : gameIsEs ? 'Guardando tu puntaje en tu perfil de DSK…' : 'Saving your score to your DSK profile...';
     fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/game-score', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

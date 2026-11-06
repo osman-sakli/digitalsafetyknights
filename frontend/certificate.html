@@ -167,7 +167,7 @@ function badgeForCount(n) {
     const level = DSKPoints.levelForPoints(points);
     const streak = DSKPoints.getStreak();
     const gameHigh = parseInt(localStorage.getItem('dsk_game_highscore') || '0', 10);
-    const L = certIsTr ? { rank: 'Rütbe', points: 'Şövalye Puanı', streak: 'Günlük Seri', gameHigh: 'Oyun Yüksek Skoru' } : certIsEs ? { rank: 'Rango', points: 'Puntos de Caballero', streak: 'Racha de Días', gameHigh: 'Puntuación Máxima del Juego' } : { rank: 'Rank', points: 'Knight Points', streak: 'Day Streak', gameHigh: 'Game High Score' };
+    const L = certIsTr ? { rank: 'Rütbe', points: 'Şövalye Puanı', streak: 'Günlük Seri', gameHigh: 'Oyun Yüksek Skoru' } : certIsEs ? { rank: 'Rango', points: 'Puntos de Caballero', streak: 'Racha de Días', gameHigh: 'Puntaje Máximo del Juego' } : { rank: 'Rank', points: 'Knight Points', streak: 'Day Streak', gameHigh: 'Game High Score' };
     document.getElementById('cert-stats').innerHTML = `
       <div class="cert-stat"><div class="num">${level.emoji} ${level.name}</div><div class="lbl">${L.rank}</div></div>
       <div class="cert-stat"><div class="num">${points}</div><div class="lbl">${L.points}</div></div>
