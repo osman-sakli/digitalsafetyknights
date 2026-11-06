@@ -1,5 +1,5 @@
 {
-  "note": "Partner organisations are only named here once they have agreed to be named publicly. Until then, describe the host generically.",
+  "note": "Partner organisations are named here only once they have shared the event publicly themselves (their own flyer, post, or written OK). Until then, describe the host generically. Photos must never show students' faces, names, or chat — presenters, slides, and materials only.",
   "regions": [
     "New Jersey",
     "New York",
@@ -21,17 +21,25 @@
       "time": "5:00–7:00 PM"
     },
     {
-      "id": "cc-immigrant-refugee-workshop-2026",
+      "id": "cc-student-workshop-2026",
       "status": "past",
-      "date": "2026-10-29",
-      "dateLabel": "October 29, 2026",
-      "title": "Student Online Safety Workshop",
-      "host": "Community organisation serving immigrant and refugee families",
-      "city": "New York",
+      "date": "2026-11-05",
+      "dateLabel": "November 5, 2026",
+      "title": "Student Digital Safety Workshop",
+      "host": "Catholic Charities Community Services",
+      "city": "Yonkers",
       "state": "NY",
-      "format": "Virtual",
-      "audience": "Ages 10–20 and parents",
-      "summary": "A 60-minute live session on in-game risks, AI chatbots and deepfakes, cyberbullying, privacy settings, and what to do if something happens — delivered in English, with Spanish materials available."
+      "format": "Virtual (Zoom)",
+      "time": "6:00 PM",
+      "audience": "Teens and parents",
+      "languages": "English & Spanish",
+      "summary": "A 60-minute live session for teens and their parents — the \"free Robux\" trap and other in-game scams, AI chatbots and deepfakes, cyberbullying, privacy settings, and exactly what to do if something happens (screenshot first, tell a trusted adult, where to report). Presented live by our Club Leader, with a bilingual flyer and Spanish materials for families.",
+      "images": [
+        { "src": "/assets/events/cc-workshop-presenting.jpg", "alt": "Ayşe presenting the workshop live over Zoom from her desk", "caption": "Ayşe, our Club Leader, presenting the session live over Zoom." },
+        { "src": "/assets/events/cc-workshop-slide-evidence.jpg", "alt": "Workshop slide: Screenshots are evidence — disappearing doesn't mean gone", "caption": "“What to do” slide: screenshot first — disappearing doesn't mean gone." },
+        { "src": "/assets/events/cc-workshop-slide-robux.jpg", "alt": "Workshop slide: The free Robux / V-Bucks trap", "caption": "In-game risks: the “free Robux / V-Bucks” trap." },
+        { "src": "/assets/events/cc-workshop-flyer-es.jpg", "alt": "Spanish-language event flyer: Taller de Seguridad Digital, 11.05.2026, 6:00pm, Zoom", "caption": "The host's bilingual flyer for the session." }
+      ]
     }
   ]
 }
