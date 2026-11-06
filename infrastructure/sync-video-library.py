@@ -135,7 +135,16 @@ def main(dry_run):
                 item["title_" + lang] = t[lang]
         items.append(item)
 
-    manifest = {"count": len(items), "items": items}
+    # topics.html also lists shorts that have no video yet ("coming soon"
+    # cards), and those have no entry in items[] to carry a translation.
+    # So the manifest publishes the full title map from ai-scripts.json,
+    # not just the rendered subset — that keeps ai-scripts.json the one
+    # place a short's title is written in any language.
+    manifest = {
+        "count": len(items),
+        "items": items,
+        "titles": {k: v for k, v in titles.items() if v.get("tr") or v.get("es")},
+    }
     untranslated = [i["id"] for i in items if "title_tr" not in i or "title_es" not in i]
     if untranslated:
         print(f"WARNING: {len(untranslated)} short(s) have no tr/es title: "

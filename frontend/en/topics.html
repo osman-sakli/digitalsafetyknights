@@ -131,14 +131,19 @@
 
 <script>
 const TL_LANG = (window.DSKi18n && DSKi18n.lang) || 'en';
+let TITLE_MAP = {};
 
 // Title in the current language: the video manifest wins (it is generated
 // from ai-scripts.json and stays in step with it), then the topic entry's
 // own translation for the legacy shorts, then English.
 function shortTitle(it) {
   if (TL_LANG === 'en') return it.title;
+  const fromMap = TITLE_MAP[it.id];
   const media = MEDIA_BY_ID[it.id];
-  return (media && media['title_' + TL_LANG]) || it['title_' + TL_LANG] || it.title;
+  return (fromMap && fromMap[TL_LANG])
+    || (media && media['title_' + TL_LANG])
+    || it['title_' + TL_LANG]
+    || it.title;
 }
 const TL_SOON = { en: 'Coming Soon', tr: 'Yakında', es: 'Próximamente' }[TL_LANG] || 'Coming Soon';
 const TL_ALL = { en: '🌐 All Topics', tr: '🌐 Tüm Konular', es: '🌐 Todos los Temas' }[TL_LANG] || '🌐 All Topics';
@@ -169,6 +174,7 @@ Promise.all([
   .then(([topics, library]) => {
     TOPICS_DATA = topics;
     (library.items || []).forEach(v => { MEDIA_BY_ID[v.id] = v; });
+    TITLE_MAP = library.titles || {};
     Object.values(topics.items).flat().forEach(it => { TITLE_BY_ID[it.id] = shortTitle(it); });
     renderFilters();
     renderSections();
