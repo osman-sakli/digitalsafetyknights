@@ -1,0 +1,26 @@
+{
+  "note": "Long-form DSK films, newest first. The mp4/poster/vtt live under /films/ in S3 and are uploaded by hand — that path is excluded from the deploy's --delete for the same reason videos/ is.",
+  "films": [
+    {
+      "id": "film-01-the-lost-sprout",
+      "episode": 1,
+      "title": "The Lost Sprout",
+      "released": "2026-11-06",
+      "runtime": "4:00",
+      "src": "/films/film-01-the-lost-sprout.mp4",
+      "poster": "/films/film-01-the-lost-sprout.jpg",
+      "captions": "/films/film-01-the-lost-sprout.vtt",
+      "youtube": "",
+      "logline": "When the youngest Knight follows a too-friendly stranger toward a secret door, the Knights race across the realm — and Sprout learns that calling for help is the bravest move of all.",
+      "ages": "Ages 5–10",
+      "lessons": [
+        "A stranger offering a gift and asking you to keep it secret is the warning sign.",
+        "If a new friend wants to take you somewhere private — stop.",
+        "Being rushed is a red flag.",
+        "Sounding certain is not the same as being right — check before you act.",
+        "Calling for help is the brave move. You are never in trouble for asking."
+      ],
+      "talkPrompt": "Ask at dinner: “If someone online gave you something and asked you to keep it a secret from me, what would you do?”"
+    }
+  ]
+}

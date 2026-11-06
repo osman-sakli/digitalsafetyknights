@@ -27,6 +27,7 @@ jobs:
         run: |
           # videos/ is populated by infrastructure/sync-video-library.py from a
           # separate S3 bucket, not from this repo — excluded here so --delete
+          # (films/ holds the long-form films, uploaded by hand for the same reason)
           # doesn't wipe the whole video library on every deploy (this bit us
           # for real on 2026-09-26: the bucket's ACL setting was also stale
           # here, "Bucket owner enforced" doesn't accept --acl at all).
@@ -36,6 +37,7 @@ jobs:
             --exclude "*.html" \
             --exclude "*.json" \
             --exclude "videos/*" \
+            --exclude "films/*" \
             --cache-control "max-age=86400"
 
       - name: Deploy HTML/JSON to S3
@@ -56,6 +58,7 @@ jobs:
             --exclude "content/news-archive.json" \
             --exclude "content/video-library.json" \
             --exclude "content/traffic-stats.json" \
+            --exclude "films/*" \
             --cache-control "no-cache"
 
       - name: Invalidate CloudFront cache
