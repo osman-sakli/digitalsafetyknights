@@ -252,6 +252,10 @@ document.getElementById('sp-tagline').textContent = spIsTr
   ? 'Seminarios y materiales gratuitos de seguridad digital para escuelas y organizaciones en todas partes — en persona en NJ y estados vecinos, o virtual para cualquier escuela del mundo. Nuestra misión: todo niño, donde sea que viva, merece esta educación.'
   : 'Free digital safety seminars and materials for schools and organizations everywhere — in person across NJ and surrounding states, or virtual for any school in the world. Our mission: every child, everywhere, deserves this education.';
 
+document.getElementById('sp-events-all').innerHTML = '<a href="/events.html" style="color:var(--navy);font-weight:800;">' +
+  (spIsTr ? 'Son oturumlardan bütün etkinlikleri ve fotoğrafları görün →'
+   : spIsEs ? 'Ve todos los eventos y fotos de las sesiones recientes →'
+   : 'See all events and photos from recent sessions →') + '</a>';
 document.getElementById('sp-events-title').textContent = spIsTr ? 'Bizi Nerede Bulursunuz' : spIsEs ? 'Dónde nos vas a encontrar' : "Where You'll Find Us";
 document.getElementById('sp-events-lede').innerHTML = spIsTr
   ? 'Okul fuarlarına, STEM gecelerine ve <strong>New Jersey, New York ve Pennsylvania</strong> genelindeki topluluk etkinliklerine katılıyoruz — hem de satıcı olarak değil, gönüllü olarak. Standı öğrenci kulübümüz yürütüyor: hiçbir şey satılmıyor, ücret alınmıyor ve bütün materyaller ücretsiz.'

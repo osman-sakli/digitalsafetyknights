@@ -82,7 +82,25 @@
           "format": "Çevrimiçi (Zoom)",
           "audience": "Gençler ve ebeveynler",
           "languages": "İngilizce ve İspanyolca",
-          "summary": "Gençler ve ebeveynleri için 60 dakikalık canlı bir oturum — “bedava Robux” tuzağı ve diğer oyun içi dolandırıcılıklar, yapay zeka sohbet botları ve deepfake'ler, siber zorbalık, gizlilik ayarları ve bir şey olursa tam olarak ne yapılacağı (önce ekran görüntüsü, güvendiğin bir yetişkine söyle, nereye bildirilir). Kulüp Liderimiz tarafından canlı sunuldu; aileler için iki dilli afiş ve İspanyolca materyallerle birlikte."
+          "summary": "Gençler ve ebeveynleri için 60 dakikalık canlı bir oturum — “bedava Robux” tuzağı ve diğer oyun içi dolandırıcılıklar, yapay zeka sohbet botları ve deepfake'ler, siber zorbalık, gizlilik ayarları ve bir şey olursa tam olarak ne yapılacağı (önce ekran görüntüsü, güvendiğin bir yetişkine söyle, nereye bildirilir). Kulüp Liderimiz tarafından canlı sunuldu; aileler için iki dilli afiş ve İspanyolca materyallerle birlikte.",
+          "images": [
+            {
+              "alt": "Ayşe atölyeyi masasından Zoom üzerinden canlı sunarken",
+              "caption": "Kulüp Liderimiz Ayşe, oturumu Zoom üzerinden canlı sunuyor."
+            },
+            {
+              "alt": "Atölye slaytı: Ekran görüntüleri kanıttır — kaybolması yok olduğu anlamına gelmez",
+              "caption": "“Ne yapmalı” slaytı: önce ekran görüntüsü — kaybolması yok olduğu anlamına gelmez."
+            },
+            {
+              "alt": "Atölye slaytı: bedava Robux / V-Bucks tuzağı",
+              "caption": "Oyun içi riskler: “bedava Robux / V-Bucks” tuzağı."
+            },
+            {
+              "alt": "İspanyolca etkinlik afişi: Taller de Seguridad Digital, 11.05.2026, 18.00, Zoom",
+              "caption": "Ev sahibinin oturum için hazırladığı iki dilli afiş."
+            }
+          ]
         },
         "es": {
           "dateLabel": "5 de noviembre de 2026",
@@ -91,7 +109,25 @@
           "format": "Virtual (Zoom)",
           "audience": "Adolescentes y padres",
           "languages": "Inglés y español",
-          "summary": "Una sesión en vivo de 60 minutos para adolescentes y sus padres — la trampa del “Robux gratis” y otras estafas dentro de los juegos, los chatbots de IA y los deepfakes, el ciberacoso, la configuración de privacidad y qué hacer exactamente si algo pasa (captura de pantalla primero, avisar a un adulto de confianza, dónde denunciar). Presentada en vivo por nuestra Líder del Club, con un folleto bilingüe y materiales en español para las familias."
+          "summary": "Una sesión en vivo de 60 minutos para adolescentes y sus padres — la trampa del “Robux gratis” y otras estafas dentro de los juegos, los chatbots de IA y los deepfakes, el ciberacoso, la configuración de privacidad y qué hacer exactamente si algo pasa (captura de pantalla primero, avisar a un adulto de confianza, dónde denunciar). Presentada en vivo por nuestra Líder del Club, con un folleto bilingüe y materiales en español para las familias.",
+          "images": [
+            {
+              "alt": "Ayşe presentando el taller en vivo por Zoom desde su escritorio",
+              "caption": "Ayşe, nuestra Líder del Club, presentando la sesión en vivo por Zoom."
+            },
+            {
+              "alt": "Diapositiva del taller: las capturas de pantalla son evidencia — que desaparezca no significa que se haya ido",
+              "caption": "Diapositiva de “qué hacer”: captura de pantalla primero — que desaparezca no significa que se haya ido."
+            },
+            {
+              "alt": "Diapositiva del taller: la trampa del Robux / V-Bucks gratis",
+              "caption": "Riesgos dentro del juego: la trampa del “Robux / V-Bucks gratis”."
+            },
+            {
+              "alt": "Folleto del evento en español: Taller de Seguridad Digital, 11.05.2026, 6:00 p. m., Zoom",
+              "caption": "El folleto bilingüe que preparó la organización anfitriona."
+            }
+          ]
         }
       }
     }

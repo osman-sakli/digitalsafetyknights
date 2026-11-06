@@ -177,6 +177,17 @@
     var out = {};
     for (var k in e) out[k] = e[k];
     for (var j in over) out[j] = over[j];
+    // images is the one field that must merge per item rather than be
+    // replaced: the translation carries alt and caption, and the English
+    // entry carries src. A plain overwrite would drop every src.
+    if (over.images && e.images) {
+      out.images = e.images.map(function (im, i) {
+        var t = over.images[i] || {}, merged = {};
+        for (var a in im) merged[a] = im[a];
+        for (var b in t) merged[b] = t[b];
+        return merged;
+      });
+    }
     return out;
   }
   function card(ev) {

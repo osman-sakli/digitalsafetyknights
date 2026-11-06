@@ -175,6 +175,12 @@ var kdLang = (window.DSKi18n && DSKi18n.lang) || 'en';
 var kdIsTr = kdLang === 'tr';
 var kdIsEs = kdLang === 'es';
 
+// "YOU" and "Loading…" are placeholders the duel replaces with the
+// player's nickname and the first question, but they are what shows until
+// then — and on /tr/ and /es/ they were showing in English.
+document.getElementById('knight-name').textContent = kdIsTr ? 'SEN' : kdIsEs ? 'TÚ' : 'YOU';
+document.getElementById('prompt-text').textContent = kdIsTr ? 'Yükleniyor…' : kdIsEs ? 'Cargando…' : 'Loading…';
+
 // ---------- sound (same zero-dependency pattern as game.html) ----------
 var muted = localStorage.getItem('dsk_game_muted') === '1';
 document.getElementById('mute-btn').textContent = muted ? '🔇' : '🔊';

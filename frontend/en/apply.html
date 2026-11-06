@@ -44,34 +44,34 @@
 <body>
 
 <div class="ap-hero">
-  <a href="/team.html" class="back">← Our Team</a>
+  <a href="/team.html" class="back" data-i18n="apply.back">← Our Team</a>
   <div class="eyebrow">Digital Safety Knights</div>
-  <h1>🛡️ Apply to Join Our Team</h1>
-  <p>Tell us a bit about yourself — we're a small team and personally read every application.</p>
+  <h1 data-i18n="apply.title">🛡️ Apply to Join Our Team</h1>
+  <p data-i18n="apply.sub">Tell us a bit about yourself — we're a small team and personally read every application.</p>
 </div>
 
 <div class="ap-wrap">
   <div class="ap-section">
     <form class="ap-form" id="ap-form">
-      <label for="ap-role">Role You're Interested In</label>
+      <label for="ap-role" data-i18n="apply.roleLabel">Role You're Interested In</label>
       <select id="ap-role" required>
-        <option value="school_partnerships">Director, School &amp; Community Partnerships</option>
-        <option value="content_research">Content &amp; Research Lead</option>
-        <option value="community_engagement">Community &amp; Digital Engagement Manager</option>
-        <option value="volunteer_coordinator">Volunteer &amp; Knight Council Coordinator</option>
-        <option value="other">Other / Not Sure Yet</option>
+        <option value="school_partnerships" data-i18n="apply.opt.school">Director, School &amp; Community Partnerships</option>
+        <option value="content_research" data-i18n="apply.opt.content">Content &amp; Research Lead</option>
+        <option value="community_engagement" data-i18n="apply.opt.community">Community &amp; Digital Engagement Manager</option>
+        <option value="volunteer_coordinator" data-i18n="apply.opt.volunteer">Volunteer &amp; Knight Council Coordinator</option>
+        <option value="other" data-i18n="apply.opt.other">Other / Not Sure Yet</option>
       </select>
 
-      <label for="ap-name">Your Name</label>
+      <label for="ap-name" data-i18n="apply.nameLabel">Your Name</label>
       <input type="text" id="ap-name" required maxlength="80">
 
-      <label for="ap-email">Email</label>
+      <label for="ap-email" data-i18n="apply.emailLabel">Email</label>
       <input type="email" id="ap-email" required maxlength="120">
 
-      <label for="ap-message">Tell us about yourself — relevant experience, availability, why this role</label>
+      <label for="ap-message" data-i18n="apply.msgLabel">Tell us about yourself — relevant experience, availability, why this role</label>
       <textarea id="ap-message" maxlength="2000"></textarea>
 
-      <button type="submit" class="ap-submit" id="ap-submit">Submit Application</button>
+      <button type="submit" class="ap-submit" id="ap-submit" data-i18n="apply.submit">Submit Application</button>
       <div class="ap-status" id="ap-status"></div>
     </form>
   </div>
@@ -90,6 +90,8 @@
     }
   }
 })();
+
+function t(key, en) { return window.DSKi18n ? DSKi18n.t(key, en) : en; }
 
 document.getElementById('ap-form').addEventListener('submit', function (e) {
   e.preventDefault();
@@ -117,13 +119,13 @@ document.getElementById('ap-form').addEventListener('submit', function (e) {
       document.getElementById('ap-form').reset();
     } else {
       statusEl.className = 'ap-status err';
-      statusEl.textContent = '❌ ' + (data.message || 'Something went wrong.');
+      statusEl.textContent = '❌ ' + (data.message || t('apply.errGeneric', 'Something went wrong.'));
     }
   })
   .catch(function () {
     submitBtn.disabled = false;
     statusEl.className = 'ap-status err';
-    statusEl.textContent = '❌ Connection error. Please try again.';
+    statusEl.textContent = '❌ ' + t('apply.errConnection', 'Connection error. Please try again.');
   });
 });
 </script>

@@ -436,7 +436,7 @@
   <span class="parallax-layer p-cloud" data-speed="0.18" style="top:70%;left:85%;">☁️</span>
   <span class="parallax-layer p-star" data-speed="0.25" style="top:45%;left:92%;">✦</span>
   <div class="hero-content">
-    <div class="hero-logo"><img src="/assets/characters/cutouts/shieldy-cutout.png" alt="Shieldy, the Digital Safety Knights mascot"><span class="sparkle" aria-hidden="true">✨</span></div>
+    <div class="hero-logo"><img src="/assets/characters/cutouts/shieldy-cutout.png" alt="Shieldy, the Digital Safety Knights mascot" data-i18n-attr="alt:home.shieldyAlt"><span class="sparkle" aria-hidden="true">✨</span></div>
     <div class="hero-badge" data-i18n="hero.badge">🛡️ Global Digital Child Safety Organization</div>
     <h1 data-i18n="hero.title">Protecting Kids in the<br><span class="gold">Digital World</span></h1>
     <p data-i18n="hero.subtitle">From Roblox to AI chatbots, messaging apps to online predators — we equip families with the knowledge and tools to keep children safe online.</p>
@@ -499,7 +499,7 @@
 <a href="/knights.html" style="text-decoration:none;">
 <div class="knights-row">
   <h3>⚔️ Meet the Knights</h3>
-  <p>Six characters. One mission. Tap to meet the whole squad →</p>
+  <p data-i18n="home.knightsRow">Six characters. One mission. Tap to meet the whole squad →</p>
   <div class="knights-strip">
     <div class="knight-card"><img src="/assets/characters/circles/shieldy.jpg" alt="Shieldy"><div class="kname">Shieldy</div></div>
     <div class="knight-card"><img src="/assets/characters/circles/pixel.jpg" alt="Pixel"><div class="kname">Pixel</div></div>
@@ -516,7 +516,7 @@
     <div id="today-quest-widget" style="background:linear-gradient(135deg,var(--navy2),var(--navy));border-radius:22px;padding:2rem 2.2rem;display:flex;align-items:center;gap:1.6rem;flex-wrap:wrap;box-shadow:0 10px 40px rgba(13,27,62,0.2);">
       <div id="tq-emoji" style="font-size:3rem;flex-shrink:0;">🎮</div>
       <div style="flex:1;min-width:220px;">
-        <div style="color:var(--gold);font-weight:800;font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;">Today's Quest · From TikTok? Play it here!</div>
+        <div style="color:var(--gold);font-weight:800;font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;" data-i18n="home.tqEyebrow">Today's Quest · From TikTok? Play it here!</div>
         <h3 id="tq-title" style="color:white;font-size:1.25rem;margin-bottom:2px;" data-i18n="home.tqLoading">Loading today's quest…</h3>
         <p style="color:#cdd6ea;font-size:0.88rem;" data-i18n="home.tqSub">Free, no account needed — takes about 3 minutes.</p>
       </div>
@@ -1055,10 +1055,10 @@
            consent if the address comes from a child under 13. Nothing here
            is required to use the site. -->
       <div id="km-parent-box" style="margin-top:1.6rem;padding-top:1.3rem;border-top:1px solid #e8ecf5;text-align:left;">
-        <div style="font-weight:900;color:var(--navy);font-size:0.9rem;margin-bottom:3px;" id="km-parent-title">👋 Parents — join free</div>
+        <div style="font-weight:900;color:var(--navy);font-size:0.9rem;margin-bottom:3px;" id="km-parent-title" data-i18n="home.kmParentTitle">👋 Parents — join free</div>
         <p style="color:var(--gray);font-size:0.82rem;line-height:1.5;margin-bottom:0.7rem;" id="km-parent-sub" data-i18n="home.kmParentSub">Get the Weekly Knight Report: one real threat and one conversation starter, every week. Unsubscribe anytime.</p>
         <div style="display:flex;gap:0.5rem;flex-wrap:wrap;">
-          <input type="text" id="km-parent-name" maxlength="80" placeholder="Your name" style="flex:1;min-width:120px;padding:11px 13px;border:1.5px solid #dde2f0;border-radius:11px;font-size:0.88rem;font-family:inherit;">
+          <input type="text" id="km-parent-name" maxlength="80" placeholder="Your name" data-i18n-attr="placeholder:home.kmParentNamePh" style="flex:1;min-width:120px;padding:11px 13px;border:1.5px solid #dde2f0;border-radius:11px;font-size:0.88rem;font-family:inherit;">
           <input type="email" id="km-parent-email" maxlength="120" placeholder="Parent's email" style="flex:1.4;min-width:150px;padding:11px 13px;border:1.5px solid #dde2f0;border-radius:11px;font-size:0.88rem;font-family:inherit;">
         </div>
         <button type="button" id="km-parent-btn" onclick="submitParentJoin()" style="width:100%;margin-top:0.6rem;padding:12px;background:var(--navy);color:white;border:none;border-radius:22px;font-weight:900;font-size:0.88rem;cursor:pointer;font-family:inherit;">Join Free →</button>
@@ -1881,11 +1881,15 @@
             : "📬 You're already signed up for the Weekly Knight Report.") + '</div>';
         return;
       }
-      pt.textContent = isTr ? '👋 Ebeveynler — ücretsiz katılın' : isEs ? '👋 Padres — únanse gratis' : '👋 Parents — join free';
+      pt.textContent = window.DSKi18n
+        ? DSKi18n.t('home.kmParentTitle', '👋 Parents — join free')
+        : '👋 Parents — join free';
       ps.textContent = window.DSKi18n
         ? DSKi18n.t('home.kmParentSub', 'Get the Weekly Knight Report: one real threat and one conversation starter, every week. Unsubscribe anytime.')
         : 'Get the Weekly Knight Report: one real threat and one conversation starter, every week. Unsubscribe anytime.';
-      pn.placeholder = isTr ? 'Adınız' : isEs ? 'Tu nombre' : 'Your name';
+      pn.placeholder = window.DSKi18n
+        ? DSKi18n.t('home.kmParentNamePh', 'Your name')
+        : 'Your name';
       pe.placeholder = isTr ? 'Ebeveyn e-postası' : isEs ? 'Correo del padre/madre' : "Parent's email";
       pb.textContent = isTr ? 'Ücretsiz Katıl →' : isEs ? 'Únete Gratis →' : 'Join Free →';
     })();
