@@ -93,7 +93,7 @@
 
   <section class="yt-block">
     <h2 class="display" data-i18n="shorts.ytH">Also on our YouTube channel</h2>
-    <p data-i18n="shorts.ytP">Every short, plus the full-length films. Watching here helps the channel grow, which is how other families find us.</p>
+    <p data-i18n="shorts.ytP">Every short, plus the full-length films. Watching them on YouTube helps the channel grow, which is how other families find us.</p>
     <div class="yt-facade" data-yt-list="UU_dnFE-8OsXcpiZrF3hL_xg"
          data-yt-title="Digital Safety Knights"></div>
   </section>
@@ -117,6 +117,10 @@
   var grid = document.getElementById('grid'), th = document.getElementById('theatre');
   var player = document.getElementById('player'), cap = document.getElementById('cap');
   function esc(t){ var d = document.createElement('div'); d.textContent = t == null ? '' : t; return d.innerHTML; }
+  var wLang = (window.DSKi18n && DSKi18n.lang) || 'en';
+  // sync-video-library.py omits title_tr/title_es rather than writing them
+  // empty, so a missing one falls back to English instead of a blank card.
+  function title(v) { return (wLang !== 'en' && v['title_' + wLang]) || v.title; }
 
   fetch('/content/video-library.json?t=' + Math.floor(Date.now() / 600000))
     .then(function (r) { if (!r.ok) throw new Error('http ' + r.status); return r.json(); })
@@ -127,8 +131,8 @@
         var thumb = v.poster
           ? '<img loading="lazy" src="' + esc(v.poster) + '" alt="">'
           : '<div class="noposter">🛡️</div>';
-        return '<button class="card" data-i="' + i + '" aria-label="' + esc(v.title) + '">' + thumb +
-          '<span class="play">▶</span><span class="meta"><span class="t">' + esc(v.title) +
+        return '<button class="card" data-i="' + i + '" aria-label="' + esc(title(v)) + '">' + thumb +
+          '<span class="play">▶</span><span class="meta"><span class="t">' + esc(title(v)) +
           '</span><span class="d">' + esc(v.date) + '</span></span></button>';
       }).join('');
     })
@@ -143,7 +147,7 @@
     var v = items[i];
     player.src = v.src;
     player.poster = v.poster || '';
-    cap.textContent = v.title;
+    cap.textContent = title(v);
     th.classList.add('open');
     player.play().catch(function () { /* autoplay may be blocked; controls are there */ });
   }

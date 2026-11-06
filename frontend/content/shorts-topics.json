@@ -41,6 +41,8 @@
       {
         "id": "002-glitch-free-robux",
         "title": "Glitch Alert!",
+        "title_tr": "Glitch Alarmı!",
+        "title_es": "¡Alerta Glitch!",
         "chars": [
           "shieldy",
           "glitch",
@@ -51,6 +53,8 @@
       {
         "id": "004-would-you-tap-iphone",
         "title": "Would You Tap?",
+        "title_tr": "Tıklar mıydın?",
+        "title_es": "¿Le darías clic?",
         "chars": [
           "shieldy",
           "pixel"
@@ -170,6 +174,8 @@
       {
         "id": "003-bot-vegetarian-sharks",
         "title": "Bot Says...",
+        "title_tr": "Bot Diyor ki…",
+        "title_es": "Bot dice…",
         "chars": [
           "shieldy",
           "bot",
@@ -180,6 +186,8 @@
       {
         "id": "007-bot-homework",
         "title": "Bot Says...",
+        "title_tr": "Bot Diyor ki…",
+        "title_es": "Bot dice…",
         "chars": [
           "shieldy",
           "bot",
@@ -190,6 +198,8 @@
       {
         "id": "010-bot-voice-clone",
         "title": "Bot Says...",
+        "title_tr": "Bot Diyor ki…",
+        "title_es": "Bot dice…",
         "chars": [
           "shieldy",
           "bot",
@@ -307,6 +317,8 @@
       {
         "id": "006-glitch-what-school",
         "title": "Glitch Alert!",
+        "title_tr": "Glitch Alarmı!",
+        "title_es": "¡Alerta Glitch!",
         "chars": [
           "shieldy",
           "glitch",
@@ -317,6 +329,8 @@
       {
         "id": "009-glitch-from-school",
         "title": "Glitch Alert!",
+        "title_tr": "Glitch Alarmı!",
+        "title_es": "¡Alerta Glitch!",
         "chars": [
           "shieldy",
           "glitch",
@@ -506,6 +520,8 @@
       {
         "id": "001-knight-rule-1",
         "title": "Knight Rule #1",
+        "title_tr": "Şövalye Kuralı 1",
+        "title_es": "Regla del Caballero 1",
         "chars": [
           "shieldy",
           "pixel"
@@ -515,6 +531,8 @@
       {
         "id": "008-knight-rule-2-passwords",
         "title": "Knight Rule #2",
+        "title_tr": "Şövalye Kuralı 2",
+        "title_es": "Regla del Caballero 2",
         "chars": [
           "shieldy",
           "pixel"
@@ -660,6 +678,8 @@
       {
         "id": "005-badge-friday-1",
         "title": "Badge Friday!",
+        "title_tr": "Rozet Cuması!",
+        "title_es": "¡Viernes de Insignia!",
         "chars": [
           "shieldy",
           "pixel"

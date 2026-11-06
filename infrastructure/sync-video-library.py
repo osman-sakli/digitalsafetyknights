@@ -29,8 +29,19 @@ s3 = boto3.client("s3")
 
 
 def titles_by_id():
+    """{scriptId: {en, tr, es}} — the shorts are listed on /tr/ and /es/
+    too, and a title that only exists in English leaves those pages
+    reading half-translated. script_writer.py now requires title_tr and
+    title_es on every new script; older ones were backfilled."""
     try:
-        return {x["id"]: x["title"] for x in json.loads(SCRIPTS.read_text())}
+        out = {}
+        for x in json.loads(SCRIPTS.read_text()):
+            out[x["id"]] = {
+                "en": x["title"],
+                "tr": x.get("title_tr") or "",
+                "es": x.get("title_es") or "",
+            }
+        return out
     except Exception:
         return {}
 
@@ -109,15 +120,26 @@ def main(dry_run):
                         MetadataDirective="REPLACE",
                     )
 
-        items.append({
+        t = titles.get(script_id) or {"en": script_id.replace("-", " ")}
+        item = {
             "id": script_id,
-            "title": titles.get(script_id, script_id.replace("-", " ")),
+            "title": t.get("en") or script_id.replace("-", " "),
             "date": info["date"],
             "src": "/" + dest_mp4,
             "poster": "/" + dest_jpg if has_poster else None,
-        })
+        }
+        # Omitted rather than written empty, so the page's fallback to
+        # English is a missing key instead of a blank caption.
+        for lang in ("tr", "es"):
+            if t.get(lang):
+                item["title_" + lang] = t[lang]
+        items.append(item)
 
     manifest = {"count": len(items), "items": items}
+    untranslated = [i["id"] for i in items if "title_tr" not in i or "title_es" not in i]
+    if untranslated:
+        print(f"WARNING: {len(untranslated)} short(s) have no tr/es title: "
+              f"{', '.join(untranslated[:5])}{' …' if len(untranslated) > 5 else ''}")
     if dry_run:
         print(json.dumps(manifest, indent=2)[:900])
         print(f"\n[dry-run] would copy up to {len(items)} videos")
