@@ -154,10 +154,10 @@ var WHAT = kcIsTr ? [
   {icon:'📝', title:'Geri Bildirim Ver', desc:'Yeni rehberleri ve içerikleri yayınlanmadan önce gerçek bir gencin gözünden incele.'},
   {icon:'🏅', title:'Özel Rozet Kazan', desc:'Knight Council üyeleri için özel bir rozet ve profilinde görünen bir unvan.'}
 ] : kcIsEs ? [
-  {icon:'🗣️', title:'Difunde Conciencia', desc:'Comparte información de seguridad digital con amigos y familias en tu escuela o comunidad.'},
-  {icon:'💬', title:'Ayuda en Discord', desc:'Da la bienvenida a otros jóvenes y familias en nuestro servidor de la comunidad y responde preguntas.'},
-  {icon:'📝', title:'Da tu Opinión', desc:'Revisa nuevas guías y contenido antes de publicarlos, desde la perspectiva real de un adolescente.'},
-  {icon:'🏅', title:'Gana una Insignia Especial', desc:'Una insignia exclusiva para miembros de Knight Council y un título visible en tu perfil.'}
+  {icon:'🗣️', title:'Crea Conciencia', desc:'Comparte información de seguridad digital con amigos y familias en tu escuela o comunidad.'},
+  {icon:'💬', title:'Ayuda en Discord', desc:'Da la bienvenida a otros adolescentes y a sus familias en nuestro servidor de la comunidad y responde sus preguntas.'},
+  {icon:'📝', title:'Da tu Opinión', desc:'Revisa las nuevas guías y contenidos antes de que se publiquen, desde la perspectiva real de un adolescente.'},
+  {icon:'🏅', title:'Gana una Insignia Especial', desc:'Una insignia exclusiva para miembros del Consejo de Caballeros y un título visible en tu perfil.'}
 ] : [
   {icon:'🗣️', title:'Spread Awareness', desc:'Share digital safety information with friends and families in your school or community.'},
   {icon:'💬', title:'Help Out on Discord', desc:'Welcome other teens and families in our community server and answer their questions.'},
@@ -169,16 +169,16 @@ document.getElementById('kc-title').textContent = kcIsTr ? '⚔️ Şövalye Kon
 document.getElementById('kc-tagline').textContent = kcIsTr
   ? 'Kendi topluluğunda dijital güvenlik farkındalığı yaymak isteyen gençler için bir elçilik programı.'
   : kcIsEs
-  ? 'Un programa de embajadores para adolescentes que quieren ayudar a difundir la conciencia sobre seguridad digital en su propia comunidad.'
+  ? 'Un programa de embajadores para adolescentes que quieren ayudar a crear conciencia sobre la seguridad digital en su propia comunidad.'
   : 'A teen ambassador program for young people who want to help spread digital safety awareness in their own communities.';
-document.getElementById('kc-what-title').textContent = kcIsTr ? 'Şövalye Konseyi Üyeleri Ne Yapar' : kcIsEs ? 'Qué Hacen los Miembros del Consejo' : 'What Knight Council Members Do';
-document.getElementById('kc-eligibility-title').textContent = kcIsTr ? 'Kimler Başvurabilir' : kcIsEs ? 'Quién Puede Aplicar' : 'Who Can Apply';
-document.getElementById('kc-form-title').textContent = kcIsTr ? 'Başvur' : kcIsEs ? 'Aplicar' : 'Apply';
-document.getElementById('kc-chip-age').textContent = kcIsTr ? '13–17 Yaş' : kcIsEs ? 'Edades 13–17' : 'Ages 13–17';
-document.getElementById('kc-chip-review').textContent = kcIsTr ? 'Her 2 haftada bir değerlendirilir' : kcIsEs ? 'Revisado cada 2 semanas' : 'Reviewed every 2 weeks';
-document.getElementById('kc-chip-badge').textContent = kcIsTr ? 'Özel Şövalye Konseyi rozeti' : kcIsEs ? 'Insignia especial del Consejo' : 'Special Knight Council badge';
+document.getElementById('kc-what-title').textContent = kcIsTr ? 'Şövalye Konseyi Üyeleri Ne Yapar' : kcIsEs ? 'Qué Hacen los Miembros del Consejo de Caballeros' : 'What Knight Council Members Do';
+document.getElementById('kc-eligibility-title').textContent = kcIsTr ? 'Kimler Başvurabilir' : kcIsEs ? 'Quién Puede Postularse' : 'Who Can Apply';
+document.getElementById('kc-form-title').textContent = kcIsTr ? 'Başvur' : kcIsEs ? 'Postúlate' : 'Apply';
+document.getElementById('kc-chip-age').textContent = kcIsTr ? '13–17 Yaş' : kcIsEs ? '13 a 17 años' : 'Ages 13–17';
+document.getElementById('kc-chip-review').textContent = kcIsTr ? 'Her 2 haftada bir değerlendirilir' : kcIsEs ? 'Revisamos las solicitudes cada 2 semanas' : 'Reviewed every 2 weeks';
+document.getElementById('kc-chip-badge').textContent = kcIsTr ? 'Özel Şövalye Konseyi rozeti' : kcIsEs ? 'Insignia especial del Consejo de Caballeros' : 'Special Knight Council badge';
 document.getElementById('kc-label-name').textContent = kcIsTr ? 'Adın' : kcIsEs ? 'Tu Nombre' : 'Your Name';
-document.getElementById('kc-label-email').textContent = 'Email';
+document.getElementById('kc-label-email').textContent = kcIsTr ? 'E-posta' : kcIsEs ? 'Correo Electrónico' : 'Email';
 document.getElementById('kc-label-age').textContent = kcIsTr ? 'Yaşın' : kcIsEs ? 'Edad' : 'Age';
 document.getElementById('kc-label-country').textContent = kcIsTr ? 'Ülke' : kcIsEs ? 'País' : 'Country';
 document.getElementById('kc-label-why').textContent = kcIsTr ? 'Neden Şövalye Konseyi\'ne katılmak istiyorsun?' : kcIsEs ? '¿Por qué quieres unirte al Consejo de Caballeros?' : 'Why do you want to join Knight Council?';
@@ -186,9 +186,9 @@ document.getElementById('kc-submit').textContent = kcIsTr ? 'Başvuruyu Gönder'
 
 document.getElementById('kc-more-title').textContent = kcIsTr ? 'Kulübe Katılmanın Diğer Yolları' : kcIsEs ? 'Más Formas de Participar' : 'More Ways to Get Involved';
 document.getElementById('kc-more-dash-h').textContent = kcIsTr ? 'Panelin' : kcIsEs ? 'Tu Panel' : 'Your Dashboard';
-document.getElementById('kc-more-dash-p').textContent = kcIsTr ? 'Görevlerini, rozetlerini ve serini takip et.' : kcIsEs ? 'Sigue tus misiones, insignias y tu racha.' : 'Track your quests, badges, and streak.';
+document.getElementById('kc-more-dash-p').textContent = kcIsTr ? 'Görevlerini, rozetlerini ve serini takip et.' : kcIsEs ? 'Sigue tus misiones, insignias y racha.' : 'Track your quests, badges, and streak.';
 document.getElementById('kc-more-ch-h').textContent = kcIsTr ? 'Şubeler' : kcIsEs ? 'Capítulos' : 'Chapters';
-document.getElementById('kc-more-ch-p').textContent = kcIsTr ? 'Ülkende bir şube başlat ya da birine katıl.' : kcIsEs ? 'Inicia o únete a un capítulo en tu país.' : 'Start or join a local chapter in your country.';
+document.getElementById('kc-more-ch-p').textContent = kcIsTr ? 'Ülkende bir şube başlat ya da birine katıl.' : kcIsEs ? 'Inicia un capítulo local en tu país o únete a uno.' : 'Start or join a local chapter in your country.';
 document.getElementById('kc-more-mid-h').textContent = kcIsTr ? 'Üye Kimlik Kartı' : kcIsEs ? 'Tarjeta de Miembro' : 'Member ID Card';
 document.getElementById('kc-more-mid-p').textContent = kcIsTr ? 'Resmi DSK üyelik kartını yazdır.' : kcIsEs ? 'Imprime tu tarjeta oficial de miembro de DSK.' : 'Print your official DSK membership card.';
 

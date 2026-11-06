@@ -162,15 +162,15 @@ const RULES_TR = [
 ];
 
 const RULES_ES = [
-  { id: "bedroom", label: "Los dispositivos se cargan fuera del dormitorio durante la noche", checked: true },
-  { id: "ask-download", label: "Pedir permiso a un padre antes de descargar cualquier app o juego nuevo", checked: true },
+  { id: "bedroom", label: "Cargar los dispositivos fuera del dormitorio durante la noche", checked: true },
+  { id: "ask-download", label: "Pedir permiso a mamá o papá antes de descargar cualquier app o juego nuevo", checked: true },
   { id: "no-password-share", label: "Nunca compartir contraseñas con nadie, incluidos los amigos", checked: true },
-  { id: "tell-adult", label: "Contarle a un adulto de confianza si algo en línea se siente mal — sin castigo por contarlo", checked: true },
-  { id: "no-meetup", label: "Nunca reunirse en persona con un amigo de internet sin un padre presente", checked: true },
-  { id: "friends-only-chat", label: "Mantener la configuración de chat de juegos y apps en Solo Amigos", checked: true },
-  { id: "no-personal-info", label: "Mantener el nombre real, la escuela y la dirección fuera de perfiles y chats públicos", checked: true },
+  { id: "tell-adult", label: "Contarle a un adulto de confianza si algo en línea nos hace sentir mal o raro — sin castigo por contarlo", checked: true },
+  { id: "no-meetup", label: "Nunca reunirse en persona con un amigo de internet sin que mamá o papá esté presente", checked: true },
+  { id: "friends-only-chat", label: "Mantener los ajustes de chat de juegos y apps en Solo Amigos", checked: true },
+  { id: "no-personal-info", label: "Mantener el nombre real, la escuela y la dirección fuera de los perfiles y chats públicos", checked: true },
   { id: "family-codeword", label: "Usar nuestra palabra clave familiar para verificar cualquier llamada o mensaje urgente o inusual", checked: false },
-  { id: "annual-check", label: "Hacer juntos una revisión de privacidad y configuración de 30 minutos una vez al año", checked: false },
+  { id: "annual-check", label: "Hacer juntos, una vez al año, una revisión de 30 minutos de los ajustes de privacidad", checked: false },
   { id: "dinner-free", label: "Nada de teléfonos en la mesa durante la cena", checked: false },
   { id: "one-hour-before-bed", label: "Nada de pantallas durante la última hora antes de dormir", checked: false },
   { id: "ai-honesty", label: "Usar herramientas de IA para aprender, nunca para entregar el trabajo de alguien más (o de otra cosa) como propio", checked: false }
@@ -181,7 +181,7 @@ const maIsTr = maLang === 'tr';
 const maIsEs = maLang === 'es';
 const RULES = maIsTr ? RULES_TR : maIsEs ? RULES_ES : RULES_EN;
 const MA_OUR_FAMILY = maIsTr ? 'Ailemiz' : maIsEs ? 'Nuestra Familia' : 'Our Family';
-const MA_NO_RULES = maIsTr ? 'Henüz kural seçilmedi — geri dön ve en az bir tane seç.' : maIsEs ? 'Aún no se seleccionó ninguna regla — vuelve atrás y elige al menos una.' : 'No rules selected yet — go back and pick at least one.';
+const MA_NO_RULES = maIsTr ? 'Henüz kural seçilmedi — geri dön ve en az bir tane seç.' : maIsEs ? 'Todavía no has elegido ninguna regla — vuelve y elige al menos una.' : 'No rules selected yet — go back and pick at least one.';
 
 const rulesList = document.getElementById('rules-list');
 rulesList.innerHTML = RULES.map(r =>
