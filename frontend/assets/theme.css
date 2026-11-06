@@ -102,12 +102,12 @@ body.realm-body { font-family: var(--font-body); }
 .realm-nav-toggle[aria-expanded="true"] span::before { transform: translateY(6px) rotate(45deg); }
 .realm-nav-toggle[aria-expanded="true"] span::after { transform: translateY(-6px) rotate(-45deg); }
 
-.realm-nav-groups { display: flex; gap: 0.4rem; align-items: center; }
+.realm-nav-groups { display: flex; gap: 1.1rem; align-items: center; flex-wrap: wrap; justify-content: center; }
 .realm-nav-group { position: relative; }
 .realm-nav-group > .rng-label {
   display: flex; align-items: center; gap: 4px;
   background: none; border: none; color: #ccd6f6; font: inherit;
-  font-size: 0.85rem; font-weight: 700; padding: 8px 10px; border-radius: 8px;
+  font-size: 0.95rem; font-weight: 700; padding: 10px 14px; border-radius: 9px;
   cursor: pointer; white-space: nowrap;
 }
 .realm-nav-group > .rng-label:hover, .realm-nav-group > .rng-label[aria-expanded="true"] { color: var(--gold2); background: rgba(255,255,255,0.06); }
@@ -130,8 +130,8 @@ body.realm-body { font-family: var(--font-body); }
 .realm-nav-panel.open { display: block; }
 
 .realm-nav-direct {
-  color: #ccd6f6; text-decoration: none; font-size: 0.85rem; font-weight: 700;
-  padding: 8px 10px; border-radius: 8px; white-space: nowrap;
+  color: #ccd6f6; text-decoration: none; font-size: 0.95rem; font-weight: 700;
+  padding: 10px 14px; border-radius: 9px; white-space: nowrap;
 }
 .realm-nav-direct:hover { color: var(--gold2); background: rgba(255,255,255,0.06); }
 @media (max-width: 900px) { .realm-nav-direct { padding: 13px 12px; font-size: 0.95rem; } }
