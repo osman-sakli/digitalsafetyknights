@@ -80,6 +80,7 @@
 var taLang = (window.DSKi18n && DSKi18n.lang) || 'en';
 var taIsTr = taLang === 'tr';
 var taIsEs = taLang === 'es';
+var taIsFr = taLang === 'fr';
 var BOSSES_EN = [
   { icon: "⏰", name: "The Countdown Goblin", alias: "Urgency", desc: "Shows up screaming that you have ten seconds, that the offer expires now, that you have to act before you can think. The rush IS the trick — it's designed to switch your brain off before it can ask a single good question.",
     defeat: "Beat it by: doing nothing for 60 seconds. Nothing real ever actually expires that fast." },
@@ -131,8 +132,25 @@ var BOSSES_ES = [
     defeat: "Cuéntaselo de inmediato a un adulto de confianza — nunca te meterás en problemas por mostrarle a alguien este mensaje." }
 ];
 
-var BOSSES = taIsTr ? BOSSES_TR : taIsEs ? BOSSES_ES : BOSSES_EN;
-var TA_HOW_TO_BEAT = taIsTr ? "Nasıl yenilir:" : taIsEs ? "Cómo vencerlo:" : "How to beat it:";
+var BOSSES_FR = [
+  { icon: "⏰", name: "Le Gobelin du compte à rebours", alias: "Urgence", desc: "Il débarque en hurlant que tu as dix secondes, que l’offre expire maintenant, qu’il faut agir avant même de réfléchir. La précipitation, C’EST le piège — elle est faite pour éteindre ton cerveau avant qu’il puisse poser une seule bonne question.",
+    defeat: "Ne fais rien pendant 60 secondes. Rien de vrai n’expire aussi vite." },
+  { icon: "🤫", name: "Le Gardien des secrets", alias: "Secret", desc: "Il te demande de cacher « juste ce petit truc » à tes parents. Il présente ça comme de la confiance, comme un privilège, comme « notre petit secret à nous ». Ça n’a jamais vraiment à voir avec la confiance — il s’agit juste de s’assurer qu’aucun adulte ne voie jamais la conversation.",
+    defeat: "Préviens un adulte de confiance dès l’instant où quelqu’un te demande de garder secrète une conversation en ligne." },
+  { icon: "🎣", name: "Le Pêcheur d’infos", alias: "Questions personnelles", desc: "Il demande mine de rien ton prénom, ton âge, ton école, où tu habites — une question qui a l’air inoffensive à la fois, jusqu’à ce que tout, mis bout à bout, forme un portrait complet de toi.",
+    defeat: "Traite ton nom, ton école et ton adresse comme la clé de chez toi — tu ne la donnes pas à quelqu’un juste parce qu’il a demandé gentiment." },
+  { icon: "🎁", name: "Le Fantôme du cadeau", alias: "Trop beau pour être vrai", desc: "Des skins gratuits, des Robux gratuits, un message du genre « tu fais partie des personnes spécialement choisies » — toujours gratuit, toujours énorme, toujours à un seul clic. Ce n’est jamais vraiment gratuit : c’est un hameçon avec un appât qui a l’air très généreux.",
+    defeat: "Rappelle-toi qu’un vrai prix n’a jamais besoin de ton mot de passe pour être réclamé." },
+  { icon: "💸", name: "Le Troll du péage", alias: "Demandes d’argent", desc: "Il demande un petit paiement pour « débloquer » quelque chose, ou une carte cadeau « juste cette fois », ou les données de ta carte bancaire pour « vérifier » que tu es une vraie personne. Ça commence toujours petit — c’est fait exprès.",
+    defeat: "N’envoie jamais d’argent, de carte cadeau ni de données bancaires à quelqu’un que tu ne connais qu’à travers un écran." },
+  { icon: "📍", name: "L’Ombre du rendez-vous", alias: "Se rencontrer en vrai", desc: "Il propose de se voir en vrai, « juste pour passer un moment », en général accompagné d’une demande de ne rien dire à personne. C’est le masque qui compte le plus — celui où le risque cesse d’être seulement en ligne.",
+    defeat: "Ne rencontre jamais en personne quelqu’un venu d’internet sans qu’un adulte de confiance sache exactement où, quand et avec qui." },
+  { icon: "🎭", name: "Le Masque", alias: "Demandes déplacées", desc: "Il demande une photo, il te demande de faire quelque chose devant la caméra, toujours présenté comme normal, comme pas grave, comme quelque chose que tout le monde fait. Ce n’est jamais « pas grave ».",
+    defeat: "Préviens tout de suite un adulte de confiance — tu n’auras jamais d’ennuis pour avoir montré ce message à quelqu’un." }
+];
+
+var BOSSES = taIsTr ? BOSSES_TR : taIsEs ? BOSSES_ES : taIsFr ? BOSSES_FR : BOSSES_EN;
+var TA_HOW_TO_BEAT = taIsTr ? "Nasıl yenilir:" : taIsEs ? "Cómo vencerlo:" : taIsFr ? "Comment s’en défendre :" : "How to beat it:";
 
 var grid = document.getElementById('bossGrid');
 grid.innerHTML = BOSSES.map(function(b) {

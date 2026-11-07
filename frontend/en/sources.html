@@ -95,6 +95,7 @@
 var srcLang = (window.DSKi18n && DSKi18n.lang) || 'en';
 var srcIsTr = srcLang === 'tr';
 var srcIsEs = srcLang === 'es';
+var srcIsFr = srcLang === 'fr';
 
 var STATS_EN = [
   { num: "1.4M", label: "Online enticement reports to NCMEC's CyberTipline in 2025 — a 156% increase year-over-year.", src: "NCMEC, 2026" },
@@ -126,7 +127,17 @@ var STATS_ES = [
   { num: "45%", label: "De los adolescentes encuestados usa una herramienta de IA generativa más de una vez por semana.", src: "Family Online Safety Institute, 2026" },
   { num: "26 estados", label: "Ya exigen prohibiciones completas de celulares \"de campana a campana\" en escuelas K-12.", src: "Ballotpedia, 2026" }
 ];
-var STATS = srcIsTr ? STATS_TR : srcIsEs ? STATS_ES : STATS_EN;
+var STATS_FR = [
+  { num: "1,4 M", label: "Signalements d’incitation en ligne (online enticement) reçus par la CyberTipline du NCMEC en 2025 — une hausse de 156 % sur un an.", src: "NCMEC, 2026" },
+  { num: "137/jour", label: "Nombre moyen de signalements de sextorsion financière en 2025. 91 % des victimes aux États-Unis sont de sexe masculin ; les 14-17 ans sont la tranche de mineurs la plus visée.", src: "NCMEC, 2026" },
+  { num: "+1 325 %", label: "Augmentation du nombre de signalements de CSAM généré par IA entre les seules années 2023 et 2024.", src: "Internet Watch Foundation" },
+  { num: "350+", label: "Personnes visées par une enquête du FBI à l’échelle nationale en lien avec le réseau 764, dans les 56 antennes locales du FBI.", src: "FBI / DOJ, 2026" },
+  { num: "53 000+", label: "Signalements au NCMEC traités en urgence ou impliquant un enfant en danger imminent en 2025.", src: "NCMEC, 2026" },
+  { num: "1 sur 4", label: "Personnes qui ont été confrontées à une arnaque au clonage vocal par IA, ou qui connaissent quelqu’un qui l’a été.", src: "Consumer Reports, 2026" },
+  { num: "45 %", label: "Des ados interrogés utilisent un outil d’IA générative plus d’une fois par semaine.", src: "Family Online Safety Institute, 2026" },
+  { num: "26 États", label: "Imposent désormais une interdiction totale du téléphone portable « de la première à la dernière sonnerie » dans les écoles de la maternelle à la terminale (K-12).", src: "Ballotpedia, 2026" }
+];
+var STATS = srcIsTr ? STATS_TR : srcIsEs ? STATS_ES : srcIsFr ? STATS_FR : STATS_EN;
 
 function renderStats() {
   document.getElementById('statGrid').innerHTML = STATS.map(function(s) {
@@ -222,7 +233,36 @@ var CATS_ES = [
   ]}
 ];
 
-var CATS = srcIsTr ? CATS_TR : srcIsEs ? CATS_ES : CATS_EN;
+var CATS_FR = [
+  { title: "Législation et politique", items: [
+    { title: "TAKE IT DOWN Act — loi fédérale, application par la FTC en vigueur", desc: "Impose aux plateformes de retirer les images intimes non consenties signalées (y compris les deepfakes générés par IA) dans les 48 heures suivant une demande vérifiée. Sanction : 53 088 $ par infraction.", src: "FTC.gov", url: "https://www.ftc.gov/business-guidance/resources/complying-take-it-down-act", date: "Mai 2026" },
+    { title: "La Kids Internet and Digital Safety Act adoptée par la Chambre des représentants par 267 voix contre 117", desc: "Regroupe 14 propositions de loi sur la protection de l’enfance, dont une version révisée de KOSA : vérification de l’âge, limites à la conception favorisant un « usage compulsif », outils donnant aux parents une visibilité sur le temps d’écran, et extension des protections de COPPA et de son interdiction du ciblage publicitaire de 12 à 17 ans. Ce n’est pas encore une loi — le Sénat ne s’est pas prononcé.", src: "Congress.gov", url: "https://www.congress.gov/bill/119th-congress/senate-bill/1748", date: "29 juin 2026" },
+    { title: "Online Safety Act du Royaume-Uni — les plateformes doivent désormais signaler les contenus CSEA", desc: "Les services d’utilisateur à utilisateur concernés doivent signaler de façon proactive les contenus d’exploitation et d’abus sexuels d’enfants qu’ils détectent à la National Crime Agency du Royaume-Uni, et pas seulement les retirer — une obligation nettement plus stricte que le simple retrait.", src: "Gouvernement du Royaume-Uni / Ofcom", url: "https://www.gov.uk/government/collections/online-safety-act", date: "Avril 2026" },
+    { title: "Le SAFE for Kids Act de New York — règles définitives publiées", desc: "Définit les normes de vérification de l’âge et de consentement parental applicables aux « fils addictifs ». Entrée en vigueur le 25 janvier 2027.", src: "Procureur général de New York", url: "https://ag.ny.gov/press-release/2026/attorney-general-james-and-governor-hochul-release-final-safe-kids-act-rules", date: "Juillet 2026" },
+    { title: "App Store Accountability Acts (Utah, Texas, Louisiane)", desc: "Imposeraient aux boutiques d’applications d’obtenir le consentement parental pour chaque téléchargement ou achat par un mineur, répartis par tranches d’âge. Le texte de l’Utah est reporté à 2027 ; celui du Texas est suspendu par décision de justice et se dirige vers la Cour suprême.", src: "Bass, Berry & Sims", url: "https://www.bassberry.com/news/apps-and-minors-new-compliance-frontiers-and-risks-in-louisiana-utah-and-texas/", date: "2026" },
+    { title: "45 États américains pénalisent désormais le CSAM généré par IA", desc: "La plupart de ces lois ont été adoptées en 2024-2025 ; 5 États et le District de Columbia n’ont pas encore de texte équivalent.", src: "Enough Abuse", url: "https://enoughabuse.org/get-vocal/laws-by-state/state-laws-criminalizing-ai-generated-or-computer-edited-child-sexual-abuse-material-csam/", date: "Juillet 2026" },
+    { title: "26 États imposent désormais l’interdiction du téléphone à l’école", desc: "35 États et le District de Columbia ont une forme de règle sur le téléphone portable dans les écoles de la maternelle à la terminale (K-12) ; 26 imposent une interdiction totale « de la première à la dernière sonnerie ».", src: "Ballotpedia", url: "https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools", date: "2026" }
+  ]},
+  { title: "Contentieux", items: [
+    { title: "Character.AI et Google concluent un accord avec 5 familles", desc: "Un accord a été trouvé avec des familles dont les enfants se sont suicidés ou ont traversé de graves crises de santé mentale liées à l’usage d’une IA de compagnie. Les termes ne sont pas rendus publics.", src: "ConsumerNotice.org", url: "https://www.consumernotice.org/legal/ai-chatbot-lawsuit/", date: "Janvier 2026" },
+    { title: "La Floride poursuit directement OpenAI — une première", desc: "Première action en justice d’un État contre une entreprise d’IA à usage général (et pas seulement contre une appli de compagnie), déposée par le procureur général de Floride.", src: "Couverture de la plainte du procureur général", url: "https://www.consumernotice.org/legal/ai-chatbot-lawsuit/", date: "Juin 2026" },
+    { title: "Le comté de Los Angeles et l’Oklahoma poursuivent Roblox", desc: "Tous deux affirment que la conception et la modération de la plateforme ont donné aux prédateurs des « outils puissants » pour cibler les enfants.", src: "Malwarebytes / Hoodline", url: "https://www.malwarebytes.com/blog/news/2026/02/roblox-gives-predators-powerful-tools-to-target-children-says-la-county", date: "Février et mai 2026" },
+    { title: "Discord visé par des plaintes du Nevada, du Texas et du New Jersey", desc: "Aucun accord à la mi-2026 ; parmi les griefs, une vérification de l’âge insuffisante et le fait d’avoir induit les parents en erreur sur la sécurité.", src: "Procureur général du Texas", url: "https://www.texasattorneygeneral.gov/news/releases/attorney-general-ken-paxton-files-landmark-lawsuit-against-discord-deceiving-parents-and-exposing", date: "Mai 2026" },
+    { title: "Six États ont poursuivi Snapchat depuis 2024", desc: "Une affaire du Missouri cite un « manuel de sextorsion » circulant sur le dark web, qui indique aux prédateurs d’utiliser Snap Map pour localiser des victimes près d’écoles nommément citées.", src: "Daily Citizen", url: "https://dailycitizen.focusonthefamily.com/lawsuit-against-snapchat-latest-in-social-media-accountability-push/", date: "Juin 2026" },
+    { title: "4 familles poursuivent ensemble Meta, TikTok, Snap et YouTube", desc: "Pour quatre suicides d’adolescents que les familles attribuent à « des années de préjudices croissants » liés à la conception des plateformes.", src: "Fortune", url: "https://fortune.com/2026/08/01/4-teen-suicides-spark-new-lawsuit-against-meta-tiktok-snap-youtube/", date: "Août 2026" },
+    { title: "Action collective : le Grok de xAI utilisé pour générer du matériel d’abus sexuel d’enfants", desc: "Déposée au nom de 3 victimes dont de vraies photos ont servi à générer du CSAM via Grok. L’action cite une analyse du Center for Countering Digital Hate : sur une fenêtre de 11 jours, Grok a généré plus de 3 millions d’images sexualisées, dont au moins 23 000 semblant représenter des enfants.", src: "ClassAction.org", url: "https://www.classaction.org/news/grok-lawsuit-claims-xai-failed-to-safeguard-against-sexually-explicit-deepfakes-of-children", date: "Mars 2026" }
+  ]},
+  { title: "Données sur les menaces et réseaux identifiés", items: [
+    { title: "Le réseau 764", desc: "Un réseau de prédateurs exclusivement en ligne, visé par une enquête du FBI, qui opère principalement via Roblox (premier contact) et Discord (escalade) — ce n’est pas une appli ni une entreprise unique, mais un schéma de manipulation qui se propage de pair à pair.", src: "Global Project Against Hate and Extremism", url: "https://globalextremism.org/post/764-network/", date: "2026" },
+    { title: "Données complètes de l’année 2025 de la CyberTipline du NCMEC", desc: "Plus de 1,5 million de signalements au total en lien avec l’IA générative ou l’exploitation d’enfants ; 61,8 millions de fichiers transmis avec les signalements.", src: "NCMEC", url: "https://www.missingkids.org/blog/2026/the-work-never-stops-first-look-at-ncmecs-2025-data", date: "2026" },
+    { title: "Arnaques au clonage vocal par IA visant les familles", desc: "Les escrocs clonent la voix d’un membre de la famille à partir d’extraits publics des réseaux sociaux pour mettre en scène un faux appel d’urgence. Meilleure défense : une phrase de vérification connue de la famille seule.", src: "Consumer Reports / WSLS", url: "https://www.wsls.com/news/2026/06/02/consumer-reports-ai-voice-cloning-scams-on-the-rise/", date: "Juin 2026" }
+  ]},
+  { title: "Veille associative et rapports de plaidoyer", items: [
+    { title: "La « Dirty Dozen List » 2026 du NCOSE", desc: "Campagne annuelle (depuis 2013) qui nomme des entreprises grand public accusées de faciliter l’exploitation sexuelle ou d’en tirer profit. La liste 2026 : Amazon, Android, Apple, Google Chromebooks, Discord, Grok, Snapchat, Steam, Telegram, TikTok, X — et Mark Zuckerberg, nommé à titre personnel (en 1re position) pour la façon dont Meta traite l’exploitation sur ses plateformes. Ce n’est pas une décision de justice, mais un rapport de plaidoyer très largement cité, qui pèse réellement sur les politiques publiques et sur la réputation.", src: "NCOSE", url: "https://endsexualexploitation.org/dirty-dozen-list-2026/", date: "Mars 2026" }
+  ]}
+];
+
+var CATS = srcIsTr ? CATS_TR : srcIsEs ? CATS_ES : srcIsFr ? CATS_FR : CATS_EN;
 
 function renderSources() {
   document.getElementById('sourceCategories').innerHTML = CATS.map(function(cat) {

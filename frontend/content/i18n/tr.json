@@ -964,7 +964,7 @@
   "leg.h1": "Mevzuat <span class=\"gold\">Takibi</span>",
   "leg.subtitle": "Bu alandaki haberler genellikle avukatlar için yazılıyor. Bu sayfa ebeveynler için: belirli bir yasa şu anda ailenizi gerçekten koruyor mu, yoksa hâlâ beklemede mi? Sade dil, her ay güncellenir.",
   "leg.legendEffect": "Şu anda yürürlükte",
-  "leg.legendPending": "Geçti, henüz yürürlükte değil",
+  "leg.legendPending": "İlerliyor, henüz yürürlükte değil",
   "leg.legendCourt": "Durduruldu / mahkemede",
   "leg.updateNote": "Kaynaklar ve Araştırma sayfamızla birlikte aylık güncellenir. Son inceleme: 3 Ekim 2026.",
   "leg.federalTitle": "🇺🇸 Federal (ABD)",

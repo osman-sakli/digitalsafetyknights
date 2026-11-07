@@ -163,11 +163,44 @@ const TERMS_ES = [
   { term: "VPN", def: "Una Red Privada Virtual — una herramienta que redirige y cifra el tráfico de internet, ocultando la actividad de navegación y la ubicación ante tu proveedor de internet y algunos sitios web." }
 ];
 
+const TERMS_FR = [
+  { term: "Algorithme / Le fil", def: "Le système automatisé qui décide de ce qui apparaît ensuite sur une plateforme, généralement optimisé pour vous garder devant l’écran le plus longtemps possible plutôt que pour vous montrer ce qui vous est le plus utile." },
+  { term: "Catfishing (usurpation d’identité)", def: "Se faire passer pour quelqu’un d’autre en ligne — un autre âge, un autre genre, une autre identité — le plus souvent pour gagner la confiance de l’autre avant de demander quelque chose de déplacé." },
+  { term: "Filtre de contenu", def: "Un outil (intégré à un jeu, à une appli ou à un routeur) qui bloque automatiquement certains mots, certaines images ou certains sites. Les filtres aident, mais ils ne sont pas parfaits — ils laissent passer le langage codé et les nouvelles astuces." },
+  { term: "COPPA", def: "Le Children’s Online Privacy Protection Act — une loi américaine qui limite la façon dont les entreprises peuvent collecter des données sur les enfants de moins de 13 ans. C’est pour cela que certaines applis demandent une date de naissance avant l’inscription." },
+  { term: "Cyberharcèlement", def: "Le harcèlement ou l’humiliation répétés et délibérés d’une personne par des messages, des publications ou des images. Contrairement au harcèlement en face à face, il peut suivre un enfant jusque chez lui et toucher un public bien plus large, instantanément." },
+  { term: "Deepfake (hypertrucage)", def: "Une photo, une vidéo ou un extrait audio généré ou modifié par IA pour montrer de façon réaliste quelqu’un en train de faire ou de dire quelque chose qui n’est jamais arrivé. De plus en plus difficile à distinguer d’un contenu authentique." },
+  { term: "Message privé (DM)", def: "Un message privé envoyé en tête-à-tête ou dans un petit groupe, en dehors des publications et des commentaires publics — c’est là que se déroulent réellement la plupart des conversations de grooming et d’arnaque, à l’abri des regards." },
+  { term: "Discord", def: "Une appli de chat et de discussion vocale organisée en « serveurs » thématiques. Très liée à des jeux comme Roblox et Minecraft, avec beaucoup moins de protections intégrées pour les mineurs que les jeux eux-mêmes." },
+  { term: "Empreinte numérique", def: "La trace d’informations qui existe en ligne au sujet d’une personne — publications, photos, commentaires, et même données collectées discrètement par les applis — et qui, mises bout à bout, en révèlent bien plus que n’importe quelle publication isolée." },
+  { term: "Doxxing (divulgation de données personnelles)", def: "Publier en ligne les informations privées de quelqu’un (vrai nom, adresse, école, numéro de téléphone) sans son consentement, en général pour harceler, intimider ou mettre en danger cette personne." },
+  { term: "Chiffrement de bout en bout", def: "Une protection technique qui fait que seuls l’expéditeur et le destinataire d’un message peuvent le lire — même l’entreprise qui édite l’appli ne voit pas le contenu. C’est bon pour la vie privée, mais cela veut dire aussi que les adultes ne peuvent pas surveiller ces conversations." },
+  { term: "Finsta", def: "Un « faux Instagram » — un second compte, plus privé (souvent sous un nom d’emprunt), que certains ados utilisent pour publier plus librement, parfois précisément pour cacher ce contenu à leurs parents." },
+  { term: "Grooming (pédopiégeage)", def: "Un processus progressif et délibéré par lequel un adulte gagne la confiance d’un enfant pour faire tomber ses défenses — souvent par des compliments, des cadeaux, des secrets à garder et des demandes qui montent peu à peu." },
+  { term: "Hallucination (IA)", def: "Quand un outil d’IA produit une information fausse tout en paraissant parfaitement sûr de lui et parfaitement fluide. Les hallucinations d’IA sont fréquentes, même sur des faits simples et faciles à vérifier — l’assurance n’est pas l’exactitude." },
+  { term: "Chat intégré au jeu", def: "La messagerie intégrée directement à un jeu vidéo. Il y a souvent un filtre anti-grossièretés de base, mais il repère rarement un langage de grooming élaboré, des termes codés ou l’astuce des chiffres mis à la place des lettres." },
+  { term: "Adresse IP", def: "Une étiquette numérique attribuée à un appareil connecté à internet, qui peut révéler une localisation approximative (en général à l’échelle de la ville). Rarement dangereuse à elle seule, mais c’est une pièce du puzzle dans le doxxing." },
+  { term: "Livestream (direct vidéo)", def: "Une vidéo diffusée en temps réel à des spectateurs, souvent sur des plateformes à chat aléatoire ou à mise en relation avec des inconnus — un lieu d’exposition courant à des inconnus, sans aucun délai pour repérer les problèmes avant qu’ils n’arrivent." },
+  { term: "Made for Kids (contenu destiné aux enfants)", def: "Une désignation YouTube au niveau de la chaîne (utilisée par la chaîne de DSK elle-même) qui désactive certaines collectes de données et la publicité personnalisée, et qui est légalement obligatoire pour les contenus clairement destinés aux enfants." },
+  { term: "Métadonnées", def: "Des données cachées attachées à un fichier — comme l’heure exacte et la position GPS d’une photo au moment de la prise de vue — qui peuvent être visibles par d’autres même quand la photo elle-même ne révèle rien de sensible." },
+  { term: "Contrôle parental", def: "Des paramètres intégrés à un appareil, à une plateforme ou à un routeur, qui permettent à un parent de limiter le temps d’écran, les contenus, les achats ou les contacts venant d’inconnus. La plupart sont désactivés par défaut et doivent être activés." },
+  { term: "Phishing (hameçonnage)", def: "Un message conçu pour amener quelqu’un à livrer un mot de passe, des informations de paiement ou des données personnelles — souvent en se faisant passer pour une marque, un ami ou un proche de confiance, et en créant un sentiment d’urgence." },
+  { term: "Prédateur", def: "Un adulte qui cherche et cible délibérément des enfants en ligne pour les exploiter, en recourant typiquement aux tactiques de grooming pour gagner leur confiance avant d’en venir à des demandes nuisibles." },
+  { term: "Sextorsion", def: "Un chantage dans lequel quelqu’un menace de diffuser une image sexuelle d’une personne, réelle ou générée par IA, à moins d’être payé ou de recevoir d’autres images. L’une des menaces qui progressent le plus vite chez les ados, en particulier chez les garçons." },
+  { term: "Sharenting (surexposition de l’enfant par ses parents)", def: "Des parents qui publient en ligne beaucoup de photos, d’étapes de la vie ou de détails sur leur enfant — avec les meilleures intentions, mais cela construit une empreinte numérique que l’enfant n’a jamais choisie et ne peut pas maîtriser." },
+  { term: "Sockpuppet (faux compte)", def: "Un deuxième (ou troisième) faux compte géré par la même personne, souvent utilisé pour paraître plus crédible, fabriquer un faux consensus ou contourner un blocage." },
+  { term: "Swatting (fausse alerte à la police)", def: "Signaler faussement une urgence à l’adresse de quelqu’un pour déclencher une intervention de police, en général comme forme de harcèlement contre une personne connue seulement par le jeu ou par un conflit en ligne." },
+  { term: "Authentification à deux facteurs (2FA)", def: "Une étape de connexion supplémentaire en plus du mot de passe — en général un code envoyé à un téléphone ou à une appli — qui empêche la plupart des piratages de compte, même si un mot de passe a été volé." },
+  { term: "Clonage vocal", def: "Une parole générée par IA qui imite de façon convaincante la voix d’une personne réelle à partir de quelques secondes d’audio seulement, aujourd’hui assez bonne pour tromper des proches au téléphone." },
+  { term: "VPN", def: "Un réseau privé virtuel (Virtual Private Network) — un outil qui redirige et chiffre le trafic internet, en masquant votre activité de navigation et votre position à votre fournisseur d’accès et à certains sites web." }
+];
+
 const glLang = (window.DSKi18n && DSKi18n.lang) || 'en';
 const glIsTr = glLang === 'tr';
 const glIsEs = glLang === 'es';
-const TERMS = glIsTr ? TERMS_TR : glIsEs ? TERMS_ES : TERMS_EN;
-const GL_NO_MATCH = glIsTr ? 'Bu aramayla eşleşen terim yok.' : glIsEs ? 'Ningún término coincide con esa búsqueda.' : 'No terms match that search.';
+const glIsFr = glLang === 'fr';
+const TERMS = glIsTr ? TERMS_TR : glIsEs ? TERMS_ES : glIsFr ? TERMS_FR : TERMS_EN;
+const GL_NO_MATCH = glIsTr ? 'Bu aramayla eşleşen terim yok.' : glIsEs ? 'Ningún término coincide con esa búsqueda.' : glIsFr ? 'Aucun terme ne correspond à cette recherche.' : 'No terms match that search.';
 
 const list = document.getElementById('g-list');
 const searchEl = document.getElementById('g-search');

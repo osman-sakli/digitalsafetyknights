@@ -177,12 +177,28 @@ const RULES_ES = [
   { id: "ai-honesty", label: "Usar herramientas de IA para aprender, nunca para entregar el trabajo de alguien más (o de otra cosa) como propio", checked: false }
 ];
 
+const RULES_FR = [
+  { id: "bedroom", label: "Recharger les appareils hors de la chambre pendant la nuit", checked: true },
+  { id: "ask-download", label: "Demander à un parent avant de télécharger une nouvelle appli ou un nouveau jeu", checked: true },
+  { id: "no-password-share", label: "Ne jamais communiquer ses mots de passe à qui que ce soit, même à ses amis", checked: true },
+  { id: "tell-adult", label: "Prévenir un adulte de confiance si quelque chose en ligne semble anormal — aucune punition pour l’avoir dit", checked: true },
+  { id: "no-meetup", label: "Ne jamais rencontrer en personne un ami d’internet sans qu’un parent soit présent", checked: true },
+  { id: "friends-only-chat", label: "Garder les paramètres de chat des jeux et des applis sur « Amis uniquement »", checked: true },
+  { id: "no-personal-info", label: "Ne pas mettre son vrai nom, son école ni son adresse dans les profils et les conversations publics", checked: true },
+  { id: "family-codeword", label: "Utiliser notre mot de code familial pour vérifier tout appel ou message urgent ou inhabituel", checked: false },
+  { id: "annual-check", label: "Faire ensemble, une fois par an, une vérification de 30 minutes des paramètres de confidentialité", checked: false },
+  { id: "dinner-free", label: "Pas de téléphone à table pendant les repas", checked: false },
+  { id: "one-hour-before-bed", label: "Pas d’écran pendant la dernière heure avant le coucher", checked: false },
+  { id: "ai-honesty", label: "Utiliser les outils d’IA pour apprendre, jamais pour rendre comme sien le travail de quelqu’un d’autre (ou de quelque chose d’autre)", checked: false }
+];
+
 const maLang = (window.DSKi18n && DSKi18n.lang) || 'en';
 const maIsTr = maLang === 'tr';
 const maIsEs = maLang === 'es';
-const RULES = maIsTr ? RULES_TR : maIsEs ? RULES_ES : RULES_EN;
-const MA_OUR_FAMILY = maIsTr ? 'Ailemiz' : maIsEs ? 'Nuestra Familia' : 'Our Family';
-const MA_NO_RULES = maIsTr ? 'Henüz kural seçilmedi — geri dön ve en az bir tane seç.' : maIsEs ? 'Todavía no has elegido ninguna regla — vuelve y elige al menos una.' : 'No rules selected yet — go back and pick at least one.';
+const maIsFr = maLang === 'fr';
+const RULES = maIsTr ? RULES_TR : maIsEs ? RULES_ES : maIsFr ? RULES_FR : RULES_EN;
+const MA_OUR_FAMILY = maIsTr ? 'Ailemiz' : maIsEs ? 'Nuestra Familia' : maIsFr ? 'Notre famille' : 'Our Family';
+const MA_NO_RULES = maIsTr ? 'Henüz kural seçilmedi — geri dön ve en az bir tane seç.' : maIsEs ? 'Todavía no has elegido ninguna regla — vuelve y elige al menos una.' : maIsFr ? 'Aucune règle sélectionnée pour l’instant — revenez en arrière et choisissez-en au moins une.' : 'No rules selected yet — go back and pick at least one.';
 
 const rulesList = document.getElementById('rules-list');
 rulesList.innerHTML = RULES.map(r =>

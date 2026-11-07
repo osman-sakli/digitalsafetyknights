@@ -83,6 +83,7 @@
 var knLang = (window.DSKi18n && DSKi18n.lang) || 'en';
 var knIsTr = knLang === 'tr';
 var knIsEs = knLang === 'es';
+var knIsFr = knLang === 'fr';
 var KNIGHTS_EN = [
   { id: "shieldy", name: "Shieldy", title: "The Leader", color: "#c9a84c", specialty: "🎮 Gaming & in-app red flags",
     bio: "The one who taught everyone the rules. Calm under pressure, first to notice when something's off, always the one who says the thing out loud that everyone else was quietly worried about.",
@@ -146,7 +147,28 @@ var KNIGHTS_ES = [
     quote: "¿De verdad pensaste que eso era gratis?", note: 220 }
 ];
 
-var KNIGHTS = knIsTr ? KNIGHTS_TR : knIsEs ? KNIGHTS_ES : KNIGHTS_EN;
+var KNIGHTS_FR = [
+  { id: "shieldy", name: "Shieldy", title: "Le Chef", color: "#c9a84c", specialty: "🎮 Jeux et signaux d’alerte dans les applis",
+    bio: "Celui qui a appris les règles à tout le monde. Calme sous la pression, le premier à remarquer quand quelque chose ne va pas, toujours celui qui dit tout haut ce qui inquiétait les autres en silence.",
+    quote: "Bouclier levé.", note: 660 },
+  { id: "pixel", name: "Pixel", title: "Le Joueur", color: "#3EC6C0", specialty: "🕹️ Roblox, PK XD et chat de jeu",
+    bio: "Vit à l’intérieur de tous les jeux qui valent la peine. Connaît par cœur chaque menu de paramètres et repère un échange d’objets truqué à des kilomètres — parce qu’il s’est déjà fait presque prendre une fois.",
+    quote: "Bien essayé. Pas aujourd’hui.", note: 784 },
+  { id: "bot", name: "Bot", title: "L’Analyste", color: "#8fa6c9", specialty: "🤖 Chatbots d’IA et deepfakes",
+    bio: "Comprend exactement comment fonctionne l’IA, et c’est précisément pour ça que Bot ne lui fait jamais totalement confiance. Explique les choses compliquées en une seule phrase, patiemment, autant de fois qu’il le faut.",
+    quote: "Le vrai n’a pas toujours l’air vrai.", note: 523 },
+  { id: "dame-noble", name: "Dame Noble", title: "Le Cœur", color: "#b98a4a", specialty: "💬 Cyberharcèlement et bienveillance",
+    bio: "Celle à qui tout le monde parle vraiment quand quelque chose ne va pas. Prend les émotions aussi au sérieux que les pare-feux, parce qu’elle sait que le mal émotionnel est le plus souvent le vrai mal.",
+    quote: "Tu n’as rien fait de mal. On va régler ça ensemble.", note: 587 },
+  { id: "sprout", name: "Sprout", title: "La Nouvelle Recrue", color: "#7cbf6b", specialty: "🌱 Premiers pas et notions de base",
+    bio: "Vient tout juste de rejoindre les Chevaliers et pose encore les questions que les autres ont trop honte de poser — et c’est exactement pour ça que personne n’enseigne les bases mieux que Sprout.",
+    quote: "Attends, tu peux me réexpliquer encore une fois ?", note: 440 },
+  { id: "glitch", name: "Glitch", title: "Le Rival", color: "#8A5FBF", specialty: "⚠️ Toutes les ruses possibles", rival: true,
+    bio: "Pas un méchant — un avertissement rendu assez sympathique pour un mardi après-midi. Glitch débarque dans chaque quête en essayant toutes les ruses qu’un vrai arnaqueur pourrait utiliser, pour que tu t’entraînes à les repérer d’abord ici, là où il n’y a vraiment rien en jeu.",
+    quote: "Tu croyais vraiment que c’était gratuit ?", note: 220 }
+];
+
+var KNIGHTS = knIsTr ? KNIGHTS_TR : knIsEs ? KNIGHTS_ES : knIsFr ? KNIGHTS_FR : KNIGHTS_EN;
 
 var actx = null;
 function playNote(freq) {
@@ -183,8 +205,8 @@ grid.innerHTML = KNIGHTS.map(function(k) {
     '<div class="knight-title">' + k.title + '</div>' +
     '<div class="knight-specialty">' + k.specialty + '</div>' +
     '<p class="knight-bio">' + k.bio + '</p>' +
-    '<div class="knight-quote">"' + k.quote + '"</div>' +
-    '<div class="tap-hint">🔊 ' + (knIsTr ? 'ses için dokun' : knIsEs ? 'toca para escuchar' : 'tap for sound') + '</div>' +
+    '<div class="knight-quote">' + (knIsFr ? '« ' + k.quote + ' »' : '"' + k.quote + '"') + '</div>' +
+    '<div class="tap-hint">🔊 ' + (knIsTr ? 'ses için dokun' : knIsEs ? 'toca para escuchar' : knIsFr ? 'touche pour le son' : 'tap for sound') + '</div>' +
   '</div>';
 }).join('');
 

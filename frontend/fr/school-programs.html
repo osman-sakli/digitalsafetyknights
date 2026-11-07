@@ -222,6 +222,7 @@
 var spLang = (window.DSKi18n && DSKi18n.lang) || 'en';
 var spIsTr = spLang === 'tr';
 var spIsEs = spLang === 'es';
+var spIsFr = spLang === 'fr';
 
 var TOPICS = spIsTr ? [
   {icon:'🎮', title:'Roblox &amp; Oyun Güvenliği', desc:'Gizlilik ayarları, yabancıları engelleme, oyun içi ne görüyorlar.'},
@@ -237,6 +238,13 @@ var TOPICS = spIsTr ? [
   {icon:'🖼️', title:'Deepfakes e Imágenes Falsas', desc:'Reconocer contenido generado por IA y la Ley TAKE IT DOWN.'},
   {icon:'📱', title:'Controles Parentales', desc:'Configurar correctamente los controles de dispositivos y apps.'},
   {icon:'🛡️', title:'Ciudadanía Digital', desc:'Comportamiento respetuoso en línea y reconocer el peligro.'}
+] : spIsFr ? [
+  {icon:'🎮', title:'Sécurité sur Roblox et dans les jeux', desc:'Les paramètres de confidentialité, bloquer les inconnus, ce que les enfants voient vraiment en jeu.'},
+  {icon:'🤖', title:'Vigilance face à l’IA', desc:'Reconnaître les applis de chat et les plateformes de compagnon d’IA qui ne sont pas sûres.'},
+  {icon:'💬', title:'Signaux d’alerte du grooming', desc:'Les signaux d’alerte sur Discord, Snapchat et Instagram.'},
+  {icon:'🖼️', title:'Deepfakes et fausses images', desc:'Reconnaître les contenus générés par IA, et la loi TAKE IT DOWN.'},
+  {icon:'📱', title:'Contrôle parental', desc:'Configurer correctement les contrôles des appareils et des applis.'},
+  {icon:'🛡️', title:'Citoyenneté numérique', desc:'Un comportement respectueux en ligne, et reconnaître le danger.'}
 ] : [
   {icon:'🎮', title:'Roblox &amp; Gaming Safety', desc:'Privacy settings, blocking strangers, what kids actually see in-game.'},
   {icon:'🤖', title:'AI Awareness', desc:'Recognizing unsafe AI chat apps and companion platforms.'},
@@ -246,85 +254,96 @@ var TOPICS = spIsTr ? [
   {icon:'🛡️', title:'Digital Citizenship', desc:'Respectful online behavior and recognizing danger.'}
 ];
 
-document.getElementById('sp-title').innerHTML = spIsTr ? '🏫 Okul &amp; Kurum Programları' : spIsEs ? '🏫 Programas para Escuelas y Organizaciones' : '🏫 School &amp; Organization Programs';
+document.getElementById('sp-title').innerHTML = spIsTr ? '🏫 Okul &amp; Kurum Programları' : spIsEs ? '🏫 Programas para Escuelas y Organizaciones' : spIsFr ? '🏫 Programmes pour les écoles et les organisations' : '🏫 School &amp; Organization Programs';
 document.getElementById('sp-tagline').textContent = spIsTr
   ? 'Okullar ve kurumlar için her yerde ücretsiz dijital güvenlik seminerleri ve materyaller — NJ ve komşu eyaletlerde yüz yüze, ya da dünyanın her yerindeki okullar için çevrimiçi. Misyonumuz: nerede yaşarsa yaşasın her çocuk bu eğitimi hak ediyor.'
   : spIsEs
   ? 'Seminarios y materiales gratuitos de seguridad digital para escuelas y organizaciones en todas partes — en persona en NJ y estados vecinos, o virtual para cualquier escuela del mundo. Nuestra misión: todo niño, donde sea que viva, merece esta educación.'
+  : spIsFr
+  ? 'Des séminaires et des supports de sécurité numérique gratuits pour les écoles et les organisations partout dans le monde — en présentiel dans le New Jersey et les États voisins, ou à distance pour n’importe quelle école du monde. Notre mission : chaque enfant, où qu’il vive, mérite cette formation.'
   : 'Free digital safety seminars and materials for schools and organizations everywhere — in person across NJ and surrounding states, or virtual for any school in the world. Our mission: every child, everywhere, deserves this education.';
 
 document.getElementById('sp-events-all').innerHTML = '<a href="/events.html" style="color:var(--navy);font-weight:800;">' +
   (spIsTr ? 'Son oturumlardan bütün etkinlikleri ve fotoğrafları görün →'
    : spIsEs ? 'Ver todos los eventos y las fotos de las sesiones recientes →'
+   : spIsFr ? 'Voir tous les événements et les photos des séances récentes →'
    : 'See all events and photos from recent sessions →') + '</a>';
-document.getElementById('sp-events-title').textContent = spIsTr ? 'Bizi Nerede Bulursunuz' : spIsEs ? 'Dónde nos vas a encontrar' : "Where You'll Find Us";
+document.getElementById('sp-events-title').textContent = spIsTr ? 'Bizi Nerede Bulursunuz' : spIsEs ? 'Dónde nos vas a encontrar' : spIsFr ? 'Où nous trouver' : "Where You'll Find Us";
 document.getElementById('sp-events-lede').innerHTML = spIsTr
   ? 'Okul fuarlarına, STEM gecelerine ve <strong>New Jersey, New York ve Pennsylvania</strong> genelindeki topluluk etkinliklerine katılıyoruz — hem de satıcı olarak değil, gönüllü olarak. Standı öğrenci kulübümüz yürütüyor: hiçbir şey satılmıyor, ücret alınmıyor ve bütün materyaller ücretsiz.'
   : spIsEs
   ? 'Estamos en ferias escolares, noches STEM y eventos comunitarios en <strong>Nueva Jersey, Nueva York y Pensilvania</strong> — y vamos como voluntarios, no como vendedores. El puesto lo atiende nuestro club estudiantil: no se vende nada, no se cobra nada y todo el material es gratuito.'
+  : spIsFr
+  ? 'Nous sommes présents dans les salons scolaires, les soirées STEM et les événements associatifs, dans <strong>le New Jersey, l’État de New York et la Pennsylvanie</strong> — et nous venons en bénévoles, pas en prestataires. C’est notre club d’élèves qui tient le stand : rien n’est vendu, aucun frais n’est demandé, et tous les documents sont gratuits à emporter.'
   : 'We show up at school fairs, STEM nights, and community events across <strong>New Jersey, New York, and Pennsylvania</strong> — and we come as volunteers, not vendors. Our student club runs the table: nothing is sold, no fee is charged, and every handout is free to take.';
 
-document.getElementById('sp-dsw-title').textContent = spIsTr ? 'Ekim ayında bir Dijital Güvenlik Haftası mı düzenliyorsunuz?' : spIsEs ? '¿Vas a organizar una Semana de Seguridad Digital en octubre?' : 'Running a Digital Safety Week in October?';
-document.getElementById('sp-dsw-sub').textContent = spIsTr ? 'Ücretsiz, hemen uygulanabilir 5 günlük bir plan ve basılabilir poster hazır — hazırlık gerekmez.' : spIsEs ? 'Tenemos un plan gratuito de 5 días listo para usar y un póster imprimible — no hace falta preparar nada.' : 'We have a free, ready-to-run 5-day plan and printable poster — no prep needed.';
-document.getElementById('sp-dsw-cta').textContent = spIsTr ? 'Ücretsiz Kiti Al →' : spIsEs ? 'Obtener el Kit Gratis →' : 'Get the Free Kit →';
+document.getElementById('sp-dsw-title').textContent = spIsTr ? 'Ekim ayında bir Dijital Güvenlik Haftası mı düzenliyorsunuz?' : spIsEs ? '¿Vas a organizar una Semana de Seguridad Digital en octubre?' : spIsFr ? 'Vous organisez une Semaine de la sécurité numérique en octobre ?' : 'Running a Digital Safety Week in October?';
+document.getElementById('sp-dsw-sub').textContent = spIsTr ? 'Ücretsiz, hemen uygulanabilir 5 günlük bir plan ve basılabilir poster hazır — hazırlık gerekmez.' : spIsEs ? 'Tenemos un plan gratuito de 5 días listo para usar y un póster imprimible — no hace falta preparar nada.' : spIsFr ? 'Nous avons un programme gratuit de cinq jours, prêt à l’emploi, et une affiche imprimable — aucune préparation nécessaire.' : 'We have a free, ready-to-run 5-day plan and printable poster — no prep needed.';
+document.getElementById('sp-dsw-cta').textContent = spIsTr ? 'Ücretsiz Kiti Al →' : spIsEs ? 'Obtener el Kit Gratis →' : spIsFr ? 'Obtenir le kit gratuit →' : 'Get the Free Kit →';
 document.getElementById('sp-principal-note').innerHTML = spIsTr
   ? 'Önce onay mı almanız gerekiyor? Yöneticinizle <a href="/for-principals.html" style="color:var(--navy);font-weight:800;">müdürler için tek sayfalık özetimizi</a> paylaşın.'
   : spIsEs
   ? '¿Necesitas aprobación primero? Comparte nuestro <a href="/for-principals.html" style="color:var(--navy);font-weight:800;">resumen de una página para directores</a> con la dirección de tu escuela.'
+  : spIsFr
+  ? 'Vous devez d’abord obtenir un accord ? Transmettez notre <a href="/for-principals.html" style="color:var(--navy);font-weight:800;">présentation d’une page pour les chefs d’établissement</a> à l’équipe de direction.'
   : 'Need to get sign-off first? Share our <a href="/for-principals.html" style="color:var(--navy);font-weight:800;">one-page overview for principals</a> with your administrator.';
 document.getElementById('sp-chapter-note').innerHTML = spIsTr
   ? 'DSK\'yı sadece bir oturum için değil, uzun vadede ülkenize getirmek mi istiyorsunuz? <a href="/chapters.html" style="color:var(--navy);font-weight:800;">Yerel bir şube başlatmayı</a> düşünün.'
   : spIsEs
   ? '¿Quieres traer DSK a tu país a largo plazo, no solo para una sesión? Considera <a href="/chapters.html" style="color:var(--navy);font-weight:800;">iniciar un capítulo local</a>.'
+  : spIsFr
+  ? 'Vous voulez installer DSK dans votre pays sur le long terme, et pas seulement pour une séance ? Pensez à <a href="/chapters.html" style="color:var(--navy);font-weight:800;">ouvrir une section locale</a>.'
   : 'Want to bring DSK to your country long-term, not just for one session? Consider <a href="/chapters.html" style="color:var(--navy);font-weight:800;">starting a local chapter</a>.';
-document.getElementById('sp-formats-title').textContent = spIsTr ? 'Oturumlar Nasıl İşliyor' : spIsEs ? 'Cómo Funcionan las Sesiones' : 'How Sessions Work';
-document.getElementById('sp-format1-h').textContent = spIsTr ? 'Yüz Yüze' : spIsEs ? 'En Persona' : 'In-Person';
-document.getElementById('sp-format1-p').textContent = spIsTr ? 'Okulunuzda canlı bir toplantı, sınıf atölyesi ya da ebeveyn gecesi sunumu.' : spIsEs ? 'Una asamblea en vivo, un taller en el aula o una presentación para la noche de padres en tu escuela.' : 'A live assembly, classroom workshop, or parent-night presentation at your school.';
-document.getElementById('sp-format1-zone').textContent = spIsTr ? 'NJ, NY, PA, CT ve DE' : spIsEs ? 'NJ, NY, PA, CT y DE' : 'NJ, NY, PA, CT & DE';
-document.getElementById('sp-format2-h').textContent = spIsTr ? 'Online' : spIsEs ? 'Virtual' : 'Virtual';
-document.getElementById('sp-format2-p').textContent = spIsTr ? 'Sınıflar için canlı görüntülü oturum ya da ebeveyn gecesi webinarı — dünyanın her yerindeki herhangi bir okul için, İngilizce, İspanyolca ya da Türkçe.' : spIsEs ? 'Una sesión de videollamada en vivo para clases o un seminario web para la noche de padres — para cualquier escuela, en cualquier parte del mundo, en inglés, español o turco.' : 'A live video-call session for classrooms or a parent-night webinar — for any school, anywhere in the world, in English, Spanish, or Turkish.';
-document.getElementById('sp-format2-zone').textContent = spIsTr ? 'Dünyanın Her Yerinde' : spIsEs ? 'En Todo el Mundo' : 'Anywhere in the World';
-document.getElementById('sp-format3-h').textContent = spIsTr ? 'Sadece Materyal &amp; Rehber' : spIsEs ? 'Solo Materiales y Guías' : 'Materials & Guides Only';
-document.getElementById('sp-format3-p').textContent = spIsTr ? 'Canlı bir oturuma gerek yok mu? Kurumunuza rehberlerimizi, broşürlerimizi ve eğitim materyallerimizi doğrudan gönderelim.' : spIsEs ? '¿No necesitas una sesión en vivo? Enviaremos nuestras guías, folletos y materiales educativos directamente a tu organización.' : "No live session needed? We'll send your organization our guides, handouts, and educational materials directly.";
-document.getElementById('sp-format3-zone').textContent = spIsTr ? 'E-posta, her zaman' : spIsEs ? 'Correo, en cualquier momento' : 'Email, any time';
+document.getElementById('sp-formats-title').textContent = spIsTr ? 'Oturumlar Nasıl İşliyor' : spIsEs ? 'Cómo Funcionan las Sesiones' : spIsFr ? 'Comment se déroulent les séances' : 'How Sessions Work';
+document.getElementById('sp-format1-h').textContent = spIsTr ? 'Yüz Yüze' : spIsEs ? 'En Persona' : spIsFr ? 'En présentiel' : 'In-Person';
+document.getElementById('sp-format1-p').textContent = spIsTr ? 'Okulunuzda canlı bir toplantı, sınıf atölyesi ya da ebeveyn gecesi sunumu.' : spIsEs ? 'Una asamblea en vivo, un taller en el aula o una presentación para la noche de padres en tu escuela.' : spIsFr ? 'Une assemblée scolaire en direct, un atelier en classe ou une présentation lors d’une soirée des parents, dans votre établissement.' : 'A live assembly, classroom workshop, or parent-night presentation at your school.';
+document.getElementById('sp-format1-zone').textContent = spIsTr ? 'NJ, NY, PA, CT ve DE' : spIsEs ? 'NJ, NY, PA, CT y DE' : spIsFr ? 'NJ, NY, PA, CT et DE' : 'NJ, NY, PA, CT & DE';
+document.getElementById('sp-format2-h').textContent = spIsTr ? 'Online' : spIsEs ? 'Virtual' : spIsFr ? 'À distance' : 'Virtual';
+document.getElementById('sp-format2-p').textContent = spIsTr ? 'Sınıflar için canlı görüntülü oturum ya da ebeveyn gecesi webinarı — dünyanın her yerindeki herhangi bir okul için, İngilizce, İspanyolca ya da Türkçe.' : spIsEs ? 'Una sesión de videollamada en vivo para clases o un seminario web para la noche de padres — para cualquier escuela, en cualquier parte del mundo, en inglés, español o turco.' : spIsFr ? 'Une séance en visioconférence en direct pour des classes, ou un webinaire pour une soirée des parents — pour n’importe quelle école, partout dans le monde, en anglais, en espagnol ou en turc.' : 'A live video-call session for classrooms or a parent-night webinar — for any school, anywhere in the world, in English, Spanish, or Turkish.';
+document.getElementById('sp-format2-zone').textContent = spIsTr ? 'Dünyanın Her Yerinde' : spIsEs ? 'En Todo el Mundo' : spIsFr ? 'Partout dans le monde' : 'Anywhere in the World';
+document.getElementById('sp-format3-h').textContent = spIsTr ? 'Sadece Materyal &amp; Rehber' : spIsEs ? 'Solo Materiales y Guías' : spIsFr ? 'Supports et guides uniquement' : 'Materials & Guides Only';
+document.getElementById('sp-format3-p').textContent = spIsTr ? 'Canlı bir oturuma gerek yok mu? Kurumunuza rehberlerimizi, broşürlerimizi ve eğitim materyallerimizi doğrudan gönderelim.' : spIsEs ? '¿No necesitas una sesión en vivo? Enviaremos nuestras guías, folletos y materiales educativos directamente a tu organización.' : spIsFr ? 'Pas besoin de séance en direct ? Nous envoyons directement à votre organisation nos guides, nos documents et nos supports pédagogiques.' : "No live session needed? We'll send your organization our guides, handouts, and educational materials directly.";
+document.getElementById('sp-format3-zone').textContent = spIsTr ? 'E-posta, her zaman' : spIsEs ? 'Correo, en cualquier momento' : spIsFr ? 'Par e-mail, à tout moment' : 'Email, any time';
 
-document.getElementById('sp-audience-title').textContent = spIsTr ? 'Kimlere Sunum Yapıyoruz' : spIsEs ? 'Ante Quién Presentamos' : 'Who We Present To';
-document.getElementById('sp-audience-lede').textContent = spIsTr ? 'Sadece okullar değil — çocuklara, gençlere ya da ailelere hizmet eden, dünyanın her yerindeki her kurum.' : spIsEs ? 'No solo escuelas — cualquier organización que trabaje con niños, adolescentes o familias, en cualquier parte del mundo.' : 'Not just schools — any organization serving kids, teens, or families, anywhere in the world.';
-document.getElementById('sp-chip-students').textContent = spIsTr ? 'Öğrenciler (yaşa uygun)' : spIsEs ? 'Estudiantes (contenido adaptado por edad)' : 'Students (age-adapted)';
-document.getElementById('sp-chip-parents').textContent = spIsTr ? 'Ebeveyn geceleri' : spIsEs ? 'Noches de padres' : 'Parent nights';
-document.getElementById('sp-chip-staff').textContent = spIsTr ? 'Öğretmenler ve personel' : spIsEs ? 'Maestros y personal' : 'Teachers & staff';
-document.getElementById('sp-chip-nonprofit').textContent = spIsTr ? 'Dernekler ve vakıflar' : spIsEs ? 'Organizaciones sin fines de lucro y benéficas' : 'Nonprofits & charities';
-document.getElementById('sp-chip-community').textContent = spIsTr ? 'Topluluk ve gençlik kuruluşları' : spIsEs ? 'Organizaciones comunitarias y juveniles' : 'Community & youth organizations';
+document.getElementById('sp-audience-title').textContent = spIsTr ? 'Kimlere Sunum Yapıyoruz' : spIsEs ? 'Ante Quién Presentamos' : spIsFr ? 'À qui nous nous adressons' : 'Who We Present To';
+document.getElementById('sp-audience-lede').textContent = spIsTr ? 'Sadece okullar değil — çocuklara, gençlere ya da ailelere hizmet eden, dünyanın her yerindeki her kurum.' : spIsEs ? 'No solo escuelas — cualquier organización que trabaje con niños, adolescentes o familias, en cualquier parte del mundo.' : spIsFr ? 'Pas seulement les écoles — toute organisation qui s’adresse aux enfants, aux adolescents ou aux familles, partout dans le monde.' : 'Not just schools — any organization serving kids, teens, or families, anywhere in the world.';
+document.getElementById('sp-chip-students').textContent = spIsTr ? 'Öğrenciler (yaşa uygun)' : spIsEs ? 'Estudiantes (contenido adaptado por edad)' : spIsFr ? 'Élèves (contenu adapté à l’âge)' : 'Students (age-adapted)';
+document.getElementById('sp-chip-parents').textContent = spIsTr ? 'Ebeveyn geceleri' : spIsEs ? 'Noches de padres' : spIsFr ? 'Soirées des parents' : 'Parent nights';
+document.getElementById('sp-chip-staff').textContent = spIsTr ? 'Öğretmenler ve personel' : spIsEs ? 'Maestros y personal' : spIsFr ? 'Enseignants et personnels' : 'Teachers & staff';
+document.getElementById('sp-chip-nonprofit').textContent = spIsTr ? 'Dernekler ve vakıflar' : spIsEs ? 'Organizaciones sin fines de lucro y benéficas' : spIsFr ? 'Associations à but non lucratif et organisations caritatives' : 'Nonprofits & charities';
+document.getElementById('sp-chip-community').textContent = spIsTr ? 'Topluluk ve gençlik kuruluşları' : spIsEs ? 'Organizaciones comunitarias y juveniles' : spIsFr ? 'Organisations communautaires et de jeunesse' : 'Community & youth organizations';
 document.getElementById('sp-kc-note').innerHTML = spIsTr
   ? 'Oturumdan sonra daha fazla dahil olmak isteyen 13-17 yaş arası bir öğrenciniz mi var? Doğrudan gençlik elçi programımız <a href="/knight-council.html" style="color:var(--navy);font-weight:800;">Şövalye Konseyi</a>\'ne başvurabilirler.'
   : spIsEs
   ? '¿Tienes un estudiante de 13 a 17 años que quiere involucrarse más después de la sesión? Puede postularse directamente al <a href="/knight-council.html" style="color:var(--navy);font-weight:800;">Consejo de Caballeros</a>, nuestro programa de embajadores adolescentes.'
+  : spIsFr
+  ? 'Vous avez un élève de 13 à 17 ans qui veut s’investir davantage après la séance ? Il peut postuler directement au <a href="/knight-council.html" style="color:var(--navy);font-weight:800;">Conseil des Chevaliers</a>, notre programme d’ambassadeurs adolescents.'
   : 'Have a student aged 13-17 who wants to get more involved after the session? They can apply directly to <a href="/knight-council.html" style="color:var(--navy);font-weight:800;">Knight Council</a>, our teen ambassador program.';
 
-document.getElementById('sp-topics-title').textContent = spIsTr ? 'Ele Aldığımız Konular' : spIsEs ? 'Temas que Cubrimos' : 'Topics We Cover';
+document.getElementById('sp-topics-title').textContent = spIsTr ? 'Ele Aldığımız Konular' : spIsEs ? 'Temas que Cubrimos' : spIsFr ? 'Les sujets que nous abordons' : 'Topics We Cover';
 document.getElementById('sp-topics-grid').innerHTML = TOPICS.map(function (t) {
   return '<div class="sp-topic"><div class="icon">' + t.icon + '</div><h4>' + t.title + '</h4><p>' + t.desc + '</p></div>';
 }).join('');
 
-document.getElementById('sp-faq-prompt').textContent = spIsTr ? 'Talep etmeden önce sorularınız mı var?' : spIsEs ? '¿Tienes preguntas antes de solicitar una sesión?' : 'Have questions before you request a session?';
-document.getElementById('sp-faq-link').textContent = spIsTr ? 'SSS\'ye bakın →' : spIsEs ? 'Ver nuestras preguntas frecuentes →' : 'See our FAQ →';
-document.getElementById('sp-form-title').textContent = spIsTr ? 'Talepte Bulun' : spIsEs ? 'Enviar Solicitud' : 'Request a Session';
-document.getElementById('sp-form-lede').textContent = spIsTr ? 'Kurumun hakkında biraz bilgi ver, birkaç iş günü içinde sana ulaşalım.' : spIsEs ? 'Cuéntanos un poco sobre tu organización y te contactaremos en unos días hábiles.' : "Tell us a bit about your organization and we'll follow up within a few business days.";
-document.getElementById('sp-label-school').textContent = spIsTr ? 'Okul / Kurum Adı' : spIsEs ? 'Nombre de la Escuela / Organización' : 'School / Organization Name';
-document.getElementById('sp-label-contact').textContent = spIsTr ? 'Adın' : spIsEs ? 'Tu Nombre' : 'Your Name';
+document.getElementById('sp-faq-prompt').textContent = spIsTr ? 'Talep etmeden önce sorularınız mı var?' : spIsEs ? '¿Tienes preguntas antes de solicitar una sesión?' : spIsFr ? 'Vous avez des questions avant de demander une séance ?' : 'Have questions before you request a session?';
+document.getElementById('sp-faq-link').textContent = spIsTr ? 'SSS\'ye bakın →' : spIsEs ? 'Ver nuestras preguntas frecuentes →' : spIsFr ? 'Consulter notre FAQ →' : 'See our FAQ →';
+document.getElementById('sp-form-title').textContent = spIsTr ? 'Talepte Bulun' : spIsEs ? 'Enviar Solicitud' : spIsFr ? 'Demander une séance' : 'Request a Session';
+document.getElementById('sp-form-lede').textContent = spIsTr ? 'Kurumun hakkında biraz bilgi ver, birkaç iş günü içinde sana ulaşalım.' : spIsEs ? 'Cuéntanos un poco sobre tu organización y te contactaremos en unos días hábiles.' : spIsFr ? 'Parlez-nous un peu de votre organisation et nous vous répondrons sous quelques jours ouvrés.' : "Tell us a bit about your organization and we'll follow up within a few business days.";
+document.getElementById('sp-label-school').textContent = spIsTr ? 'Okul / Kurum Adı' : spIsEs ? 'Nombre de la Escuela / Organización' : spIsFr ? 'Nom de l’école ou de l’organisation' : 'School / Organization Name';
+document.getElementById('sp-label-contact').textContent = spIsTr ? 'Adın' : spIsEs ? 'Tu Nombre' : spIsFr ? 'Votre nom' : 'Your Name';
 document.getElementById('sp-label-email').textContent = 'Email';
-document.getElementById('sp-label-phone').textContent = spIsTr ? 'Telefon (opsiyonel)' : spIsEs ? 'Teléfono (opcional)' : 'Phone (optional)';
-document.getElementById('sp-label-grades').textContent = spIsTr ? 'Hedef Kitle / Yaş Grubu (varsa)' : spIsEs ? 'Público / Grupo de Edad (si corresponde)' : 'Audience / Age Group (if applicable)';
-document.getElementById('sp-grades').placeholder = spIsTr ? 'ör. 3-5. Sınıf, ya da "ebeveynler"' : spIsEs ? 'ej. Grados 3-5, o "padres"' : "e.g. Grades 3-5, or 'parents'";
-document.getElementById('sp-label-city').textContent = spIsTr ? 'Şehir' : spIsEs ? 'Ciudad' : 'City';
-document.getElementById('sp-label-state').textContent = spIsTr ? 'Eyalet / Ülke' : spIsEs ? 'Estado / País' : 'State / Country';
-document.getElementById('sp-label-format').textContent = spIsTr ? 'Tercih Edilen Format' : spIsEs ? 'Formato Preferido' : 'Preferred Format';
-document.getElementById('sp-radio-in-person').textContent = spIsTr ? 'Yüz Yüze' : spIsEs ? 'En Persona' : 'In-Person';
-document.getElementById('sp-radio-virtual').textContent = spIsTr ? 'Online' : spIsEs ? 'Virtual' : 'Virtual';
-document.getElementById('sp-radio-either').textContent = spIsTr ? 'Fark Etmez' : spIsEs ? 'Cualquiera' : 'Either';
-document.getElementById('sp-radio-materials').textContent = spIsTr ? 'Sadece materyal gönderin' : spIsEs ? 'Solo enviar materiales' : 'Just send materials';
-document.getElementById('sp-label-message').textContent = spIsTr ? 'Kurumun hakkında ve ne aradığın hakkında bize anlat' : spIsEs ? 'Cuéntanos sobre tu organización y qué estás buscando' : "Tell us about your organization and what you're looking for";
-document.getElementById('sp-submit').textContent = spIsTr ? 'Talebi Gönder' : spIsEs ? 'Enviar Solicitud' : 'Request a Session';
+document.getElementById('sp-label-phone').textContent = spIsTr ? 'Telefon (opsiyonel)' : spIsEs ? 'Teléfono (opcional)' : spIsFr ? 'Téléphone (facultatif)' : 'Phone (optional)';
+document.getElementById('sp-label-grades').textContent = spIsTr ? 'Hedef Kitle / Yaş Grubu (varsa)' : spIsEs ? 'Público / Grupo de Edad (si corresponde)' : spIsFr ? 'Public / tranche d’âge (le cas échéant)' : 'Audience / Age Group (if applicable)';
+document.getElementById('sp-grades').placeholder = spIsTr ? 'ör. 3-5. Sınıf, ya da "ebeveynler"' : spIsEs ? 'ej. Grados 3-5, o "padres"' : spIsFr ? 'ex. du CE2 au CM2, ou « parents »' : "e.g. Grades 3-5, or 'parents'";
+document.getElementById('sp-label-city').textContent = spIsTr ? 'Şehir' : spIsEs ? 'Ciudad' : spIsFr ? 'Ville' : 'City';
+document.getElementById('sp-label-state').textContent = spIsTr ? 'Eyalet / Ülke' : spIsEs ? 'Estado / País' : spIsFr ? 'État / pays' : 'State / Country';
+document.getElementById('sp-label-format').textContent = spIsTr ? 'Tercih Edilen Format' : spIsEs ? 'Formato Preferido' : spIsFr ? 'Format souhaité' : 'Preferred Format';
+document.getElementById('sp-radio-in-person').textContent = spIsTr ? 'Yüz Yüze' : spIsEs ? 'En Persona' : spIsFr ? 'En présentiel' : 'In-Person';
+document.getElementById('sp-radio-virtual').textContent = spIsTr ? 'Online' : spIsEs ? 'Virtual' : spIsFr ? 'À distance' : 'Virtual';
+document.getElementById('sp-radio-either').textContent = spIsTr ? 'Fark Etmez' : spIsEs ? 'Cualquiera' : spIsFr ? 'Peu importe' : 'Either';
+document.getElementById('sp-radio-materials').textContent = spIsTr ? 'Sadece materyal gönderin' : spIsEs ? 'Solo enviar materiales' : spIsFr ? 'Envoyez simplement les supports' : 'Just send materials';
+document.getElementById('sp-label-message').textContent = spIsTr ? 'Kurumun hakkında ve ne aradığın hakkında bize anlat' : spIsEs ? 'Cuéntanos sobre tu organización y qué estás buscando' : spIsFr ? 'Parlez-nous de votre organisation et de ce que vous recherchez' : "Tell us about your organization and what you're looking for";
+document.getElementById('sp-submit').textContent = spIsTr ? 'Talebi Gönder' : spIsEs ? 'Enviar Solicitud' : spIsFr ? 'Demander une séance' : 'Request a Session';
 
 document.getElementById('sp-form').addEventListener('submit', function (e) {
   e.preventDefault();
@@ -361,13 +380,13 @@ document.getElementById('sp-form').addEventListener('submit', function (e) {
       document.getElementById('sp-form').reset();
     } else {
       statusEl.className = 'sp-status err';
-      statusEl.textContent = '❌ ' + (data.message || (spIsTr ? 'Bir hata oluştu.' : spIsEs ? 'Ocurrió un error.' : 'Something went wrong.'));
+      statusEl.textContent = '❌ ' + (data.message || (spIsTr ? 'Bir hata oluştu.' : spIsEs ? 'Ocurrió un error.' : spIsFr ? 'Une erreur s’est produite.' : 'Something went wrong.'));
     }
   })
   .catch(function () {
     submitBtn.disabled = false;
     statusEl.className = 'sp-status err';
-    statusEl.textContent = spIsTr ? '❌ Bağlantı hatası. Lütfen tekrar deneyin.' : spIsEs ? '❌ Error de conexión. Inténtalo de nuevo.' : '❌ Connection error. Please try again.';
+    statusEl.textContent = spIsTr ? '❌ Bağlantı hatası. Lütfen tekrar deneyin.' : spIsEs ? '❌ Error de conexión. Inténtalo de nuevo.' : spIsFr ? '❌ Erreur de connexion. Veuillez réessayer.' : '❌ Connection error. Please try again.';
   });
 });
 </script>
@@ -378,9 +397,10 @@ document.getElementById('sp-form').addEventListener('submit', function (e) {
   var L = {
     en: { upcoming: 'Upcoming', past: 'Completed', invited: 'Invited' },
     tr: { upcoming: 'Yaklaşan', past: 'Tamamlandı', invited: 'Davet edildi' },
+    fr: { upcoming: 'À venir', past: 'Terminé', invited: 'Sur invitation' },
     es: { upcoming: 'Próximo', past: 'Completado', invited: 'Invitado' }
   };
-  var lang = spIsTr ? 'tr' : spIsEs ? 'es' : 'en';
+  var lang = spIsTr ? 'tr' : spIsEs ? 'es' : spIsFr ? 'fr' : 'en';
   var esc = function (t) {
     return String(t || '').replace(/[&<>"']/g, function (m) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m];

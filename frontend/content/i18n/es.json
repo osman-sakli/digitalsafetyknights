@@ -964,7 +964,7 @@
   "leg.h1": "Rastreador <span class=\"gold\">Legislativo</span>",
   "leg.subtitle": "La cobertura de este tema suele estar escrita para abogados. Esta página está escrita para padres: ¿una ley determinada está realmente protegiendo a tu familia ahora mismo, o sigue pendiente? Lenguaje sencillo, actualizado mensualmente.",
   "leg.legendEffect": "Vigente ahora",
-  "leg.legendPending": "Aprobada, aún no vigente",
+  "leg.legendPending": "En trámite, aún no vigente",
   "leg.legendCourt": "Bloqueada / en los tribunales",
   "leg.updateNote": "Actualizado mensualmente junto con nuestra página de Fuentes e Investigación. Última revisión: 3 de octubre de 2026.",
   "leg.federalTitle": "🇺🇸 Federal (EE. UU.)",

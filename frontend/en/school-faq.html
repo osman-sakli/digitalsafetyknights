@@ -105,6 +105,7 @@
 var fqLang = (window.DSKi18n && DSKi18n.lang) || 'en';
 var fqIsTr = fqLang === 'tr';
 var fqIsEs = fqLang === 'es';
+var fqIsFr = fqLang === 'fr';
 
 var FQ_EN = [
   {s: "Is this actually free?", a: 'Yes — no fee, no fundraiser pitch, no sign-up required afterward. Digital Safety Knights is a free nonprofit; see our <a href="/transparency.html">real numbers</a> for exactly what that means in practice.'},
@@ -169,26 +170,49 @@ var FQ_ES = [
   {s: "Mi pregunta no aparece aquí.", a: 'No hay problema — <a href="/contact.html">contáctanos a través de nuestro formulario de contacto</a>, o solicita una sesión directamente en nuestra <a href="/school-programs.html">página de programas</a> y agrega tu pregunta ahí.'}
 ];
 
-var FQ = fqIsTr ? FQ_TR : fqIsEs ? FQ_ES : FQ_EN;
+var FQ_FR = [
+  {s: "Est-ce vraiment gratuit ?", a: 'Oui — pas de frais, pas de proposition de collecte de fonds, pas d’inscription ensuite. Digital Safety Knights est une association à but non lucratif entièrement gratuite ; consultez nos <a href="/transparency.html">chiffres réels</a> pour voir exactement ce que cela signifie en pratique.'},
+  {s: "Qui anime réellement la séance ?", a: 'Les séances sont animées par notre équipe — le plus souvent par Ayşe Saklı, notre responsable du club et cofondatrice, qui conçoit aussi une grande partie de nos contenus vidéo. Consultez notre <a href="/team.html">page équipe complète</a> pour savoir qui fait quoi.'},
+  {s: "Un élève veut continuer à participer après la séance — est-ce possible ?", a: 'Oui — les élèves de 13 à 17 ans peuvent postuler directement au <a href="/knight-council.html">Conseil des Chevaliers</a>, notre programme d’ambassadeurs adolescents. C’est une voie bien réelle et bien vivante pour les jeunes qui veulent faire plus que simplement assister à une séance unique.'},
+  {s: "Travaillez-vous uniquement avec des écoles ?", a: 'Non — nous intervenons dans les écoles, les associations à but non lucratif, les organisations caritatives, les bibliothèques, les groupes confessionnels et toute organisation communautaire qui s’adresse aux enfants, aux adolescents ou aux familles. Consultez notre <a href="/school-programs.html">page des programmes</a> pour avoir le tableau complet.'},
+  {s: "En présentiel ou à distance — que proposez-vous ?", a: 'Les deux. Les séances en présentiel couvrent actuellement le New Jersey et les États voisins (NY, PA, CT et DE). Les séances à distance sont possibles partout dans le monde, par visioconférence — notre mission, c’est que chaque enfant, où qu’il vive, ait accès à cette formation. Si une séance en direct ne convient vraiment pas, nous pouvons aussi envoyer directement nos guides et nos supports à votre organisation.'},
+  {s: "Travaillez-vous avec des écoles en dehors des États-Unis ?", a: 'Oui — par une séance à distance, nous pouvons intervenir auprès d’une école ou d’une organisation de jeunesse partout dans le monde, en anglais, en espagnol ou en turc. Indiquez simplement votre pays et votre fuseau horaire lorsque vous <a href="/school-programs.html">demandez une séance</a>, et nous trouverons ensemble un créneau.'},
+  {s: "Combien de temps dure une séance type ?", a: "La plupart des séances durent de 45 à 60 minutes, et s’adaptent à une heure de cours, à un créneau d’assemblée scolaire ou à un format de soirée des parents. Indiquez-nous vos contraintes horaires lorsque vous demandez une séance et nous nous y adapterons."},
+  {s: "Quel matériel devons-nous prévoir ?", a: "Un vidéoprojecteur ou un écran avec le son, c’est l’idéal, car quelques séquences utilisent de courtes vidéos — mais nous nous adaptons si vous n’en disposez pas. Pour les séances à distance, une installation de visioconférence classique (ordinateur portable, vidéoprojecteur ou tableau numérique interactif) suffit."},
+  {s: "Combien de temps à l’avance faut-il réserver ?", a: 'Quelques semaines de délai nous laissent le plus de souplesse, mais écrivez-nous même si vos délais sont serrés — nous essaierons toujours de trouver une solution. <a href="/school-programs.html">Demandez une séance ici.</a>'},
+  {s: "Y a-t-il une taille de groupe minimale ou maximale ?", a: "Aucune limite fixe — nous avons adapté le même contenu de base pour une seule classe comme pour une assemblée scolaire réunissant tout un niveau. Dites-nous combien de personnes vous attendez et nous ajusterons le format."},
+  {s: "Quels sujets abordez-vous concrètement ?", a: 'La sécurité sur Roblox et dans les jeux vidéo, la vigilance face aux chatbots d’IA, les signaux d’alerte du grooming, les deepfakes et les lois qui protègent désormais les enfants, le contrôle parental et la citoyenneté numérique — le tout toujours adapté à l’âge du public. Retrouvez le détail complet sur notre <a href="/school-programs.html">page des programmes</a>.'},
+  {s: "Le contenu est-il adapté à l’âge des plus jeunes ?", a: "Oui — le contenu est adapté à chaque tranche d’âge. Pour un éventail de niveaux très large (de la maternelle au CM2, par exemple), nous demandons généralement si vous préférez une seule séance commune ou des séances séparées par groupe de niveaux, car le ton et le niveau de détail changent beaucoup sur un tel éventail."},
+  {s: "Collectez-vous des données sur les élèves ?", a: "Non. Les séances ne collectent aucun nom d’élève, aucune adresse e-mail et aucune information personnelle. Si les élèves souhaitent ensuite explorer nos outils en ligne gratuits, ceux-ci fonctionnent déjà avec un simple pseudo, sans aucune donnée personnelle."},
+  {s: "Avez-vous des vérifications d’antécédents ou une politique de protection de l’enfance ?", a: "Nous remplissons volontiers toutes les formalités que votre école ou votre organisation impose déjà aux intervenants extérieurs, qu’il s’agisse de l’accueil des visiteurs, de la vérification des antécédents ou de la protection de l’enfance — indiquez-nous simplement votre procédure lorsque vous demandez une séance."},
+  {s: "Quelle est la différence entre réserver une séance et ouvrir une section locale ?", a: 'Une séance, c’est une seule visite. Une <a href="/chapters.html">section locale</a>, c’est une présence durable, animée sur place — une personne réelle qui représente DSK dans son propre pays, qui organise des séances régulièrement et qui adapte nos contenus à sa communauté. Si vous voulez DSK dans votre pays sur le long terme plutôt qu’une visite unique, c’est la voie à explorer.'},
+  {s: "Je dois d’abord obtenir l’accord de mon chef d’établissement — avez-vous un document pour cela ?", a: 'Oui — une <a href="/for-principals.html">présentation d’une page pour les chefs d’établissement</a> : ce que nous faisons, ce que les élèves apprennent, et pourquoi c’est gratuit et conforme à la loi COPPA. Facile à transférer ou à imprimer.'},
+  {s: "Proposez-vous quelque chose pour la Semaine de la sécurité numérique ou le Mois de la sensibilisation à la cybersécurité ?", a: 'Oui — un <a href="/digital-safety-week.html">Kit de la Semaine de la sécurité numérique</a> gratuit : un programme de cinq jours (une Règle du Chevalier par jour, associée à l’un de nos outils), une affiche imprimable et, en plus, la possibilité de réserver une assemblée scolaire en direct gratuite.'},
+  {s: "Ma question n’a pas de réponse ici.", a: 'Pas de problème — <a href="/contact.html">écrivez-nous via notre formulaire de contact</a>, ou demandez directement une séance sur notre <a href="/school-programs.html">page des programmes</a> en y ajoutant votre question.'}
+];
+
+var FQ = fqIsTr ? FQ_TR : fqIsEs ? FQ_ES : fqIsFr ? FQ_FR : FQ_EN;
 var items = document.querySelectorAll('details.fq-item');
 items.forEach(function (el, i) {
   el.querySelector('summary').textContent = FQ[i].s;
   el.querySelector('.fq-answer').innerHTML = FQ[i].a;
 });
 
-document.getElementById('fq-back').textContent = fqIsTr ? '← Okul ve Kurum Programları' : fqIsEs ? '← Programas para Escuelas y Organizaciones' : '← School & Org Programs';
-document.getElementById('fq-h1').innerHTML = fqIsTr ? '❓ Okul ve Kurum SSS' : fqIsEs ? '❓ Preguntas Frecuentes de Escuelas y Organizaciones' : '❓ Schools &amp; Organizations FAQ';
+document.getElementById('fq-back').textContent = fqIsTr ? '← Okul ve Kurum Programları' : fqIsEs ? '← Programas para Escuelas y Organizaciones' : fqIsFr ? '← Programmes pour les écoles et les organisations' : '← School & Org Programs';
+document.getElementById('fq-h1').innerHTML = fqIsTr ? '❓ Okul ve Kurum SSS' : fqIsEs ? '❓ Preguntas Frecuentes de Escuelas y Organizaciones' : fqIsFr ? '❓ FAQ des écoles et des organisations' : '❓ Schools &amp; Organizations FAQ';
 document.getElementById('fq-tagline').textContent = fqIsTr
   ? 'Okulların, derneklerin ve topluluk gruplarının rezervasyon yapmadan önce genellikle bize sorduğu sorular — baştan cevaplanmış.'
   : fqIsEs
   ? 'Las preguntas que las escuelas, las organizaciones sin fines de lucro y los grupos comunitarios suelen hacernos antes de reservar — respondidas de antemano.'
+  : fqIsFr
+  ? 'Les questions que les écoles, les associations à but non lucratif et les groupes communautaires nous posent le plus souvent avant de réserver — avec les réponses, d’emblée.'
   : 'The questions schools, nonprofits, and community groups usually ask us before booking — answered up front.';
-document.getElementById('fq-g1').textContent = fqIsTr ? 'Temel Bilgiler' : fqIsEs ? 'Lo Básico' : 'The Basics';
-document.getElementById('fq-g2').textContent = fqIsTr ? 'Format ve Lojistik' : fqIsEs ? 'Formato y Logística' : 'Format & Logistics';
-document.getElementById('fq-g3').textContent = fqIsTr ? 'İçerik ve Güvenlik' : fqIsEs ? 'Contenido y Seguridad' : 'Content & Safety';
-document.getElementById('fq-g4').textContent = fqIsTr ? 'Başka Bir Şey mi?' : fqIsEs ? '¿Algo Más?' : 'Something Else?';
-document.getElementById('fq-cta1').textContent = fqIsTr ? '🏫 Oturum Talep Et →' : fqIsEs ? '🏫 Solicitar una Sesión →' : '🏫 Request a Session →';
-document.getElementById('fq-cta2').textContent = fqIsTr ? '✉️ Başka Bir Soru Sor' : fqIsEs ? '✉️ Hacer Otra Pregunta' : '✉️ Ask a Different Question';
+document.getElementById('fq-g1').textContent = fqIsTr ? 'Temel Bilgiler' : fqIsEs ? 'Lo Básico' : fqIsFr ? 'L’essentiel' : 'The Basics';
+document.getElementById('fq-g2').textContent = fqIsTr ? 'Format ve Lojistik' : fqIsEs ? 'Formato y Logística' : fqIsFr ? 'Format et logistique' : 'Format & Logistics';
+document.getElementById('fq-g3').textContent = fqIsTr ? 'İçerik ve Güvenlik' : fqIsEs ? 'Contenido y Seguridad' : fqIsFr ? 'Contenu et sécurité' : 'Content & Safety';
+document.getElementById('fq-g4').textContent = fqIsTr ? 'Başka Bir Şey mi?' : fqIsEs ? '¿Algo Más?' : fqIsFr ? 'Autre chose ?' : 'Something Else?';
+document.getElementById('fq-cta1').textContent = fqIsTr ? '🏫 Oturum Talep Et →' : fqIsEs ? '🏫 Solicitar una Sesión →' : fqIsFr ? '🏫 Demander une séance →' : '🏫 Request a Session →';
+document.getElementById('fq-cta2').textContent = fqIsTr ? '✉️ Başka Bir Soru Sor' : fqIsEs ? '✉️ Hacer Otra Pregunta' : fqIsFr ? '✉️ Poser une autre question' : '✉️ Ask a Different Question';
 </script>
 <script src="/assets/lang-switcher.js"></script>
 </body>

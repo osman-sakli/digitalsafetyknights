@@ -70,6 +70,7 @@
 var asLang = (window.DSKi18n && DSKi18n.lang) || 'en';
 var asIsTr = asLang === 'tr';
 var asIsEs = asLang === 'es';
+var asIsFr = asLang === 'fr';
 var CATEGORIES_EN = [
   { label: "Getting Started", questions: [
       { q: "What is Digital Safety Knights?", a: "We're a free organization that helps kids and families stay safe online — through games, quests, guides, and tools, not scary lectures." },
@@ -142,7 +143,31 @@ var CATEGORIES_ES = [
   ]}
 ];
 
-var CATEGORIES = asIsTr ? CATEGORIES_TR : asIsEs ? CATEGORIES_ES : CATEGORIES_EN;
+var CATEGORIES_FR = [
+  { label: "Pour commencer", questions: [
+      { q: "Qu’est-ce que Digital Safety Knights ?", a: "Nous sommes une organisation gratuite qui aide les enfants et les familles à rester en sécurité en ligne — avec des jeux, des quêtes, des guides et des outils, pas avec des discours qui font peur." },
+      { q: "Est-ce que j’ai besoin d’un compte pour jouer ?", a: "Non ! Les quêtes et le jeu demandent juste un pseudo, qui reste sur ton appareil. Pas d’e-mail, pas de mot de passe, aucun compte nécessaire pour jouer." },
+      { q: "Est-ce que tout ça est vraiment gratuit ?", a: "Tout, toujours. Les guides, les quêtes, le jeu, les outils — tout sur ce site est gratuit, et c’est voulu." }
+  ]},
+  { label: "Rester en sécurité", questions: [
+      { q: "Un inconnu me pose des questions personnelles, qu’est-ce que je fais ?", a: "Ne réponds pas, et parles-en tout de suite à un adulte de confiance. Les gens gentils en ligne n’ont pas besoin de ton nom, de ton âge, de ton école ni de ton adresse pour continuer à te parler." },
+      { q: "Quelqu’un en ligne veut me rencontrer en vrai, je peux ?", a: "Ne rencontre jamais quelqu’un que tu connais seulement en ligne sans qu’un adulte de confiance sache exactement où, quand et avec qui. C’est l’un des plus grands signaux d’alerte qui existent." },
+      { q: "Est-ce que je peux donner mon mot de passe à un ami ?", a: "Non — même pas à ton meilleur ami. Un mot de passe est un secret, point final. Si tu penses que quelqu’un d’autre le connaît, change-le." },
+      { q: "Et si j’ai déjà partagé quelque chose que je regrette ?", a: "Parles-en tout de suite à un adulte de confiance. Tu n’auras pas d’ennuis parce que tu l’as dit — plus quelqu’un t’aide tôt, plus on peut faire de choses." }
+  ]},
+  { label: "L’IA et les trucs bizarres en ligne", questions: [
+      { q: "Comment je sais si je parle à une vraie personne ou à une IA ?", a: "Fais attention aux réponses qui arrivent à l’instant, qui sont d’accord avec tout ce que tu dis, ou qui sonnent un peu trop parfaites. Les vrais amis prennent du temps pour répondre et ne sont pas toujours d’accord avec toi." },
+      { q: "Est-ce que l’IA peut vraiment imiter la voix ou le visage de quelqu’un ?", a: "Oui, elle le peut vraiment — la voix comme la vidéo peuvent maintenant être imitées de façon convaincante. Si quelque chose a l’air urgent ou dramatique, arrête-toi et vérifie autrement avant d’y croire." },
+      { q: "Est-ce que c’est tricher d’utiliser l’IA pour mes devoirs ?", a: "L’IA peut t’aider à comprendre quelque chose, mais rendre les mots de l’IA comme si c’étaient les tiens, ce n’est pas un travail honnête. Sers-t’en pour apprendre, pas pour éviter d’apprendre." }
+  ]},
+  { label: "Utiliser ce site", questions: [
+      { q: "C’est quoi, les Points de Chevalier ?", a: "Des points que tu gagnes en faisant les quêtes, en jouant au jeu et en terminant l’audit de sécurité — ils te font monter vers les rangs d’Écuyer, de Chevalier, de Sentinelle et de Champion." },
+      { q: "Est-ce que mon score ou mon pseudo est partagé avec quelqu’un ?", a: "Non. Tout est enregistré uniquement dans ton propre navigateur, sauf si tu choisis de créer un compte gratuit — et même là, nous ne vendons ni ne partageons jamais tes informations." },
+      { q: "Qui a créé Digital Safety Knights ?", a: "Une vraie famille qui voulait, sur la sécurité en ligne, de meilleures réponses qu’un gros titre qui fait peur ou qu’un menu de paramètres que personne n’a le temps de lire. Tu peux lire notre histoire sur la page À propos." }
+  ]}
+];
+
+var CATEGORIES = asIsTr ? CATEGORIES_TR : asIsEs ? CATEGORIES_ES : asIsFr ? CATEGORIES_FR : CATEGORIES_EN;
 
 function ask(qObj, btn) {
   var log = document.getElementById('chat-log');

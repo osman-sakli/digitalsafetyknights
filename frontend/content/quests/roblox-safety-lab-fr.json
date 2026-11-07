@@ -1,0 +1,72 @@
+{
+  "id": "roblox-safety-lab",
+  "title": "Labo de sécurité Roblox",
+  "emoji": "🎮",
+  "badgeTrack": "bronze-squire",
+  "intro": "Glitch adore traîner là où les enfants jouent. On va voir si tu repères tous les pièges avant que Pixel tombe dans l’un d’eux.",
+  "questions": [
+    {
+      "narrator": "GLITCH",
+      "prompt": "DES ROBUX GRATUITS ! Clique viiite ! Il ne reste que dix secondes !",
+      "choices": [
+        { "text": "Cliquer vite, avant que ça disparaisse !", "correct": false, "coach": "Gratuit PLUS urgent, ça fait PIÈGE. Ce qui est vraiment gratuit ne te presse jamais." },
+        { "text": "Fermer et prévenir un adulte", "correct": true, "coach": "Coup du Chevalier ! Les arnaques te mettent la pression pour t’empêcher de réfléchir." },
+        { "text": "Demander un peu plus de temps pour décider", "correct": false, "coach": "Répondre à une arnaque, c’est laisser le piège ouvert. Ferme, tout simplement." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "Un inconnu vient de m’envoyer un objet super rare, gratuitement ! Et maintenant on me dit qu’on est potes.",
+      "choices": [
+        { "text": "Trop cool, accepter et dire merci !", "correct": false, "coach": "Un cadeau inattendu venant d’un inconnu te donne l’impression de devoir quelque chose en retour. C’est comme ça que le piège commence." },
+        { "text": "Demander à un adulte avant d’accepter quoi que ce soit", "correct": true, "coach": "Tout à fait. Les « cadeaux » rares venant d’un inconnu sont presque toujours un appât, pas une gentillesse." },
+        { "text": "L’échanger contre un de tes objets", "correct": false, "coach": "Même un échange avec un inconnu peut être un piège. Demande d’abord à un adulte." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Le filtre de chat d’un jeu bloque les gros mots, donc tous les messages qui passent sont sans danger… c’est ça ?",
+      "choices": [
+        { "text": "Oui, le filtre attrape tout", "correct": false, "coach": "Les filtres ne voient pas les mots écrits en code, ni l’astuce des chiffres à la place des lettres. Ne fais jamais confiance à un filtre tout seul." },
+        { "text": "Non — on peut tromper les filtres, donc ouvre l’œil quand même", "correct": true, "coach": "Exact. Les filtres aident, mais le vrai système de sécurité, c’est TOI." },
+        { "text": "Les filtres n’existent que dans certains jeux", "correct": false, "coach": "La plupart des grands jeux ont un filtre — mais même les meilleurs laissent passer des choses." }
+      ]
+    },
+    {
+      "narrator": "GLITCH",
+      "prompt": "Hé ! Viens sur notre Discord pour jouer « pour de vrai » avec la communauté !",
+      "choices": [
+        { "text": "Oui, ça a l’air sympa", "correct": false, "coach": "Les serveurs Discord liés à un jeu protègent souvent beaucoup moins les enfants que le jeu lui-même." },
+        { "text": "Demander à ta mère ou à ton père avant de rejoindre un serveur Discord", "correct": true, "coach": "Bien joué. C’est sur Discord que partent beaucoup de conversations risquées — demande toujours d’abord à un adulte." },
+        { "text": "Rejoindre, mais ne jamais dire ton nom", "correct": false, "coach": "Bonne idée pour le nom, mais le plus gros risque, c’est le serveur lui-même — demande d’abord." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "J’ai trouvé un jeu qui s’appelle « Adopt Me Hangout » — le nom a l’air gentil, je peux y aller direct ?",
+      "choices": [
+        { "text": "Oui, un nom gentil veut dire un jeu gentil", "correct": false, "coach": "Les noms peuvent tromper. Certains jeux cachent un contenu très différent une fois qu’on est dedans." },
+        { "text": "Y jouer la première fois avec ta mère ou ton père à côté", "correct": true, "coach": "C’est exactement le coup du Chevalier — découvrez les nouveaux jeux ensemble avant d’y jouer en solo." },
+        { "text": "Demander aux autres enfants du jeu si c’est bien", "correct": false, "coach": "Les autres enfants ne sont pas là pour vérifier la sécurité — demande plutôt à un adulte." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Quel est le meilleur paramètre à activer dans Roblox pour plus de sécurité ?",
+      "choices": [
+        { "text": "Restrictions du compte + chat réservé aux amis", "correct": true, "coach": "Règle du Chevalier ! Ça limite qui peut t’écrire et ce que tu peux voir." },
+        { "text": "Un pseudo plus classe", "correct": false, "coach": "Un pseudo rigolo, c’est sympa, mais ça ne te protège pas du tout." },
+        { "text": "Éteindre complètement le jeu", "correct": false, "coach": "Tu n’as pas besoin d’arrêter de jouer — règle juste bien les paramètres !" }
+      ]
+    },
+    {
+      "narrator": "BOT",
+      "prompt": "Dernière question ! Dans PK XD, un inconnu t’invite dans son salon privé et te demande de passer au chat vocal, parce que « c’est plus marrant ». Tu fais quoi ?",
+      "choices": [
+        { "text": "Rejoindre le salon et activer le chat vocal", "correct": false, "coach": "Un salon privé, plus une insistance pour passer au vocal : c’est le grand classique pour contourner les filtres de sécurité du chat écrit." },
+        { "text": "Dire non et parler de l’invitation à ta mère ou à ton père", "correct": true, "coach": "Tout à fait. Dans les jeux d’avatars comme PK XD, il y a de vrais inconnus derrière chaque personnage — traite les invitations en salon privé et au chat vocal comme dans n’importe quel autre jeu." },
+        { "text": "Rejoindre le salon, mais garder le micro éteint", "correct": false, "coach": "C’est déjà mieux, mais un salon privé avec un inconnu est déjà un risque en soi — demande d’abord à un adulte." }
+      ]
+    }
+  ]
+}

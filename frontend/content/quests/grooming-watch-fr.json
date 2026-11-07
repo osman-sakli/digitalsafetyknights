@@ -1,0 +1,63 @@
+{
+  "id": "grooming-watch",
+  "title": "Veille anti-grooming",
+  "emoji": "🚩",
+  "badgeTrack": "silver-guard",
+  "intro": "Glitch est l’inconnu le mieux déguisé que tu croiseras en ligne. Cette quête t’entraîne à repérer les signaux d’alerte cachés dessous — même quand ils arrivent avec un visage tout gentil.",
+  "questions": [
+    {
+      "narrator": "GLITCH",
+      "prompt": "Salut, ça va ? Tu as quel âge ? Tu vas dans quelle école ?",
+      "choices": [
+        { "text": "Répondre pour de vrai, cette personne a l’air sympa", "correct": false, "coach": "Quand un inconnu pose des questions personnelles, c’est un signal d’alerte — même si le message a l’air super sympa." },
+        { "text": "Ne pas répondre, bloquer, et prévenir un adulte", "correct": true, "coach": "Coup du Chevalier ! Les joueurs sympas n’ont jamais besoin de tes infos personnelles." },
+        { "text": "Donner le nom d’une autre école, au cas où", "correct": false, "coach": "Mieux que la vérité, mais la meilleure réponse, c’est de ne pas répondre du tout — bloque et préviens un adulte." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "Salut ! Moi, c’est—",
+      "choices": [
+        { "text": "Dire ton vrai nom complet", "correct": false, "coach": "Houla houla houla — Règle du Chevalier numéro un ! Ton vrai nom reste EN DEHORS du chat." },
+        { "text": "Donner ton pseudo à la place", "correct": true, "coach": "Les joueurs sympas n’ont pas besoin de ton vrai nom. Le pseudo, et c’est tout !" },
+        { "text": "Demander pourquoi on veut le savoir", "correct": false, "coach": "Tu ne dois aucune explication à un inconnu — ne le donne pas, c’est tout." }
+      ]
+    },
+    {
+      "narrator": "GLITCH",
+      "prompt": "Saluuut ! C’est moi, de ton école ! Accepte-moiii !",
+      "choices": [
+        { "text": "Accepter tout de suite, cette personne dit qu’elle me connaît", "correct": false, "coach": "N’importe qui peut dire « je suis de ton école ». Ça ne prouve rien." },
+        { "text": "Vérifier en vrai, à l’école, avant d’accepter", "correct": true, "coach": "Tout à fait — vérifie en face à face, puis accepte seulement si ça colle." },
+        { "text": "Demander de décrire ta salle de classe", "correct": false, "coach": "Un inconnu peut deviner ce genre de détail. La vraie vérification, c’est de demander en face à face." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Quelqu’un en ligne te dit : « c’est notre secret, ne le dis pas à tes parents ». Qu’est-ce que cette phrase veut dire, en vrai ?",
+      "choices": [
+        { "text": "Ça veut dire qu’on me fait vraiment confiance", "correct": false, "coach": "Cette phrase est l’un des plus gros signaux d’alerte qui existent — elle sert à te couper des autres." },
+        { "text": "C’est un signal d’alerte — les gens de confiance ne demandent pas aux enfants de cacher des choses à leurs parents", "correct": true, "coach": "Exact. « Ne le dis pas à tes parents », c’est ça, le signal — tu as ta réponse." },
+        { "text": "Ce n’est grave que si on le demande deux fois", "correct": false, "coach": "Une seule fois, c’est déjà un signal d’alerte. Parles-en tout de suite à ta mère ou à ton père." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "Quelqu’un que je connais en ligne veut qu’on continue à discuter sur une autre appli, que mes parents ne connaissent pas. Je le fais ?",
+      "choices": [
+        { "text": "Oui, c’est juste une autre appli", "correct": false, "coach": "Passer sur une appli moins surveillée, c’est une tactique très courante pour ne pas se faire repérer. C’est un signal d’alerte." },
+        { "text": "Non — et raconter à ta mère ou à ton père qu’on te l’a demandé", "correct": true, "coach": "Tout à fait. Vouloir aller dans un endroit moins surveillé est un signal d’alerte qui mérite d’être raconté." },
+        { "text": "Changer seulement si l’appli est connue", "correct": false, "coach": "Que l’appli soit connue ou pas, ça ne change rien — c’est la demande elle-même qui est le signal d’alerte." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Tu sens que quelque chose « cloche » en ligne, mais tu n’arrives pas à expliquer quoi. C’est quoi, le coup du Chevalier ?",
+      "choices": [
+        { "text": "Ignorer cette impression, ce n’est probablement rien", "correct": false, "coach": "Fais confiance à cette impression — souvent, ton cerveau a repéré quelque chose avant que tu puisses le nommer." },
+        { "text": "Faire une capture d’écran et prévenir un adulte en qui tu as confiance", "correct": true, "coach": "Règle du Chevalier ! Tu ne risques jamais d’ennuis pour avoir demandé — d’abord la capture d’écran, ensuite tu en parles à quelqu’un." },
+        { "text": "Attendre de voir si ça se reproduit", "correct": false, "coach": "N’attends pas — préviens un adulte en qui tu as confiance dès la première fois que quelque chose te met mal à l’aise." }
+      ]
+    }
+  ]
+}

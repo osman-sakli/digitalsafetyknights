@@ -964,7 +964,7 @@
   "leg.h1": "Suivi <span class=\"gold\">législatif</span>",
   "leg.subtitle": "Ce sujet est d’ordinaire traité dans un langage réservé aux juristes. Cette page, elle, est écrite pour les parents : telle loi protège-t-elle vraiment votre famille en ce moment, ou n’est-elle pas encore entrée en vigueur ? Un langage clair, mis à jour chaque mois.",
   "leg.legendEffect": "En vigueur dès maintenant",
-  "leg.legendPending": "Adoptée, pas encore en vigueur",
+  "leg.legendPending": "En cours, pas encore en vigueur",
   "leg.legendCourt": "Bloquée / devant les tribunaux",
   "leg.updateNote": "Actualisé chaque mois, en même temps que notre page Sources et recherches. Dernière révision : 3 octobre 2026.",
   "leg.federalTitle": "🇺🇸 Niveau fédéral (États-Unis)",

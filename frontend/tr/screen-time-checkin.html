@@ -102,13 +102,14 @@
 var stcLang = (window.DSKi18n && DSKi18n.lang) || 'en';
 var stcIsTr = stcLang === 'tr';
 var stcIsEs = stcLang === 'es';
+var stcIsFr = stcLang === 'fr';
 var MOOD_EMOJI = { great: '😄', good: '🙂', meh: '😐', tired: '😴', stressed: '😣' };
 var HISTORY_KEY = 'dsk_screentime_log';
 var selectedMood = null;
 
 function updateSlider() {
   var v = document.getElementById('hours-slider').value;
-  document.getElementById('hours-val').textContent = v + (stcIsTr ? ' saat' : stcIsEs ? ' horas' : ' hours');
+  document.getElementById('hours-val').textContent = v + (stcIsTr ? ' saat' : stcIsEs ? ' horas' : stcIsFr ? ' heures' : ' hours');
 }
 
 function selectMood(m) {
@@ -123,18 +124,18 @@ function getHistory() {
 }
 
 function saveCheckin() {
-  if (!selectedMood) { alert(stcIsTr ? 'Önce nasıl hissettiğini seç!' : stcIsEs ? '¡Elige primero cómo te sientes!' : 'Pick how you feel first!'); return; }
+  if (!selectedMood) { alert(stcIsTr ? 'Önce nasıl hissettiğini seç!' : stcIsEs ? '¡Elige primero cómo te sientes!' : stcIsFr ? 'Choisis d’abord comment tu te sens\u202f!' : 'Pick how you feel first!'); return; }
   var hours = document.getElementById('hours-slider').value;
   var today = new Date().toISOString().slice(0, 10);
   var history = getHistory().filter(function(h) { return h.date !== today; });
   history.unshift({ date: today, hours: hours, mood: selectedMood });
   localStorage.setItem(HISTORY_KEY, JSON.stringify(history.slice(0, 30)));
   renderHistory();
-  if (window.DSKPoints) DSKPoints.addPoints(5, stcIsTr ? 'Günlük kontrol' : stcIsEs ? 'Registro diario' : 'Daily check-in');
+  if (window.DSKPoints) DSKPoints.addPoints(5, stcIsTr ? 'Günlük kontrol' : stcIsEs ? 'Registro diario' : stcIsFr ? 'Point quotidien' : 'Daily check-in');
 }
 
 function clearHistory() {
-  if (!confirm(stcIsTr ? 'Özel kontrol geçmişini temizle? Bu geri alınamaz.' : stcIsEs ? '¿Borrar tu historial privado de registros? Esto no se puede deshacer.' : 'Clear your private check-in history? This cannot be undone.')) return;
+  if (!confirm(stcIsTr ? 'Özel kontrol geçmişini temizle? Bu geri alınamaz.' : stcIsEs ? '¿Borrar tu historial privado de registros? Esto no se puede deshacer.' : stcIsFr ? 'Effacer ton historique privé\u202f? C’est définitif.' : 'Clear your private check-in history? This cannot be undone.')) return;
   localStorage.removeItem(HISTORY_KEY);
   renderHistory();
 }
@@ -143,13 +144,13 @@ function renderHistory() {
   var history = getHistory().slice(0, 7);
   var list = document.getElementById('history-list');
   if (!history.length) {
-    list.innerHTML = '<div class="history-empty">' + (stcIsTr ? 'Henüz kontrol yok — yukarıdan ilkini kaydet.' : stcIsEs ? 'Todavía no hay registros — guarda el primero arriba.' : 'No check-ins yet — save your first one above.') + '</div>';
+    list.innerHTML = '<div class="history-empty">' + (stcIsTr ? 'Henüz kontrol yok — yukarıdan ilkini kaydet.' : stcIsEs ? 'Todavía no hay registros — guarda el primero arriba.' : stcIsFr ? 'Aucun point enregistré pour l’instant — enregistre le premier ci-dessus.' : 'No check-ins yet — save your first one above.') + '</div>';
     return;
   }
-  var hrsWord = stcIsTr ? 'sa' : stcIsEs ? 'hrs' : 'hrs';
+  var hrsWord = stcIsTr ? 'sa' : stcIsEs ? 'hrs' : stcIsFr ? 'h' : 'hrs';
   list.innerHTML = history.map(function(h) {
     var d = new Date(h.date + 'T00:00:00');
-    return '<div class="history-row"><span>' + d.toLocaleDateString(stcIsTr ? 'tr-TR' : stcIsEs ? 'es-ES' : 'en-US', { month: 'short', day: 'numeric' }) + '</span><span>' + h.hours + ' ' + hrsWord + '</span><span>' + MOOD_EMOJI[h.mood] + '</span></div>';
+    return '<div class="history-row"><span>' + d.toLocaleDateString(stcIsTr ? 'tr-TR' : stcIsEs ? 'es-419' : stcIsFr ? 'fr-FR' : 'en-US', { month: 'short', day: 'numeric' }) + '</span><span>' + h.hours + ' ' + hrsWord + '</span><span>' + MOOD_EMOJI[h.mood] + '</span></div>';
   }).join('');
 }
 

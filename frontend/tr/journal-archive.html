@@ -111,13 +111,26 @@ const ISSUES_ES = [
   { tag: "Salud Mental", thumb: "💜", bg: "#f4eefb", title: "El Impacto Emocional del Acoso en Línea en los Niños", desc: "Consejos de expertos de psicólogos infantiles sobre cómo reconocer el trauma del ciberacoso y apoyar la recuperación de tu hijo o hija.", meta: "Febrero 2026 · 10 min de lectura", file: "february-2026-es.pdf" }
 ];
 
+const ISSUES_FR = [
+  { tag: "Réseaux de prédateurs", thumb: "🕸️", bg: "#f3e6e8", title: "Au cœur de « 764 » : ce que la plus grande enquête du FBI sur l’exploitation d’enfants signifie pour votre famille", desc: "Tous les bureaux locaux du FBI du pays enquêtent sur un réseau décentralisé qui recrute des enfants sur Roblox puis les déplace vers Discord. Voici le schéma d’escalade à reconnaître avant qu’il ne commence.", meta: "Octobre 2026 · 8 min de lecture", file: "october-2026.pdf" },
+  { tag: "Sécurité de l’IA et politiques publiques", thumb: "⚖️", bg: "#eceef8", title: "Le piège de la vérification d’âge : pourquoi « il suffit de vérifier leur âge » ne règle pas la sécurité des chatbots IA", desc: "La Californie veut que les plateformes d’IA vérifient l’âge des mineurs. L’EFF affirme qu’aucune méthode respectueuse de la vie privée n’existe pour le faire. Les deux sont vrais — voici ce que cela signifie pour les parents, dès maintenant.", meta: "Septembre 2026 · 7 min de lecture", file: "september-2026.pdf" },
+  { tag: "Boîte à outils des parents", thumb: "🎒", bg: "#e8f4f2", title: "La rentrée, côté numérique : la remise à zéro technologique de la famille en 30 minutes", desc: "Une liste de contrôle pratique, à faire une fois par an, pour remettre à plat ensemble les paramètres de confidentialité, les protections des plateformes et votre charte familiale du numérique.", meta: "Août 2026 · 6 min de lecture", file: "august-2026.pdf" },
+  { tag: "Le danger des inconnus", thumb: "🎥", bg: "#fdeeee", title: "La faille du direct : les applis de chat aléatoire après Omegle", desc: "Omegle a fermé en 2023 — mais la vidéo aléatoire instantanée avec des inconnus n’a pas disparu, elle a déménagé. Voici où.", meta: "Juillet 2026 · 6 min de lecture", file: "july-2026.pdf" },
+  { tag: "Technologie et algorithmes", thumb: "📱", bg: "#eef1fb", title: "Comment le fil est conçu pour les faire défiler sans fin", desc: "Le défilement infini, la lecture automatique et les récompenses variables, expliqués — et ce qui aide vraiment, au-delà d’une limite de temps d’écran.", meta: "Juin 2026 · 7 min de lecture", file: "june-2026.pdf" },
+  { tag: "Tactiques des prédateurs", thumb: "🔒", bg: "#fdeeee", title: "La menace qui progresse le plus vite : la sextorsion financière des garçons adolescents", desc: "Comment fonctionne l’arnaque, pourquoi la vitesse est l’arme, et exactement quoi faire si c’est déjà en cours.", meta: "Mai 2026 · 7 min de lecture", file: "may-2026.pdf" },
+  { tag: "Sécurité de l’IA", thumb: "🤖", bg: "#eef1fb", title: "Comment les prédateurs utilisent l’IA pour cibler les enfants en 2026", desc: "Une plongée en profondeur dans la nouvelle vague de tactiques de grooming assistées par l’IA, et comment les familles peuvent s’en protéger dès aujourd’hui.", meta: "Avril 2026 · 8 min de lecture", file: "april-2026.pdf" },
+  { tag: "Jeux vidéo", thumb: "🎮", bg: "#eef8ec", title: "Au cœur de Roblox : ce que les parents ne voient pas", desc: "Une enquête sur les canaux de chat cachés, les jeux créés par les utilisateurs et les contenus que votre enfant peut rencontrer.", meta: "Mars 2026 · 6 min de lecture", file: "march-2026.pdf" },
+  { tag: "Santé mentale", thumb: "💜", bg: "#f4eefb", title: "L’impact émotionnel du harcèlement en ligne sur les enfants", desc: "Les conseils de psychologues pour enfants : reconnaître le traumatisme du cyberharcèlement et accompagner la guérison de votre enfant.", meta: "Février 2026 · 10 min de lecture", file: "february-2026.pdf" }
+];
+
 const jaLang = (window.DSKi18n && DSKi18n.lang) || 'en';
 const jaIsTr = jaLang === 'tr';
 const jaIsEs = jaLang === 'es';
-const ISSUES = jaIsTr ? ISSUES_TR : jaIsEs ? ISSUES_ES : ISSUES_EN;
-const JA_ALL_TOPICS = jaIsTr ? '🌐 Tüm Konular' : jaIsEs ? '🌐 Todos los Temas' : '🌐 All Topics';
-const JA_NO_RESULTS = jaIsTr ? 'Bu aramayla eşleşen sayı yok — farklı bir kelime veya konu deneyin.' : jaIsEs ? 'Ningún número coincide con esa búsqueda — prueba con otra palabra o tema.' : 'No issues match that search — try a different word or topic.';
-const JA_DOWNLOAD = jaIsTr ? 'PDF İndir' : jaIsEs ? 'Descargar PDF' : 'Download PDF';
+const jaIsFr = jaLang === 'fr';
+const ISSUES = jaIsTr ? ISSUES_TR : jaIsEs ? ISSUES_ES : jaIsFr ? ISSUES_FR : ISSUES_EN;
+const JA_ALL_TOPICS = jaIsTr ? '🌐 Tüm Konular' : jaIsEs ? '🌐 Todos los Temas' : jaIsFr ? '🌐 Tous les thèmes' : '🌐 All Topics';
+const JA_NO_RESULTS = jaIsTr ? 'Bu aramayla eşleşen sayı yok — farklı bir kelime veya konu deneyin.' : jaIsEs ? 'Ningún número coincide con esa búsqueda — prueba con otra palabra o tema.' : jaIsFr ? 'Aucun numéro ne correspond à cette recherche — essayez un autre mot ou un autre thème.' : 'No issues match that search — try a different word or topic.';
+const JA_DOWNLOAD = jaIsTr ? 'PDF İndir' : jaIsEs ? 'Descargar PDF' : jaIsFr ? 'Télécharger le PDF' : 'Download PDF';
 
 const grid = document.getElementById('j-grid');
 const filtersEl = document.getElementById('j-filters');
