@@ -93,6 +93,7 @@
 var spbLang = (window.DSKi18n && DSKi18n.lang) || 'en';
 var spbIsTr = spbLang === 'tr';
 var spbIsEs = spbLang === 'es';
+var spbIsFr = spbLang === 'fr';
 var ITEMS_EN = [
   { text: 'Nickname or gamer tag', correct: 'share', explain: "A made-up nickname doesn't reveal who you really are." },
   { text: 'Favorite game or hobby', correct: 'share', explain: 'Interests are totally safe to share — that\'s how you find friends with things in common.' },
@@ -138,7 +139,22 @@ var ITEMS_ES = [
   { text: 'Nombre completo y lugar de trabajo de tus padres', correct: 'private', explain: 'Esto puede usarse para ubicar o suplantar a tu familia.' }
 ];
 
-var ITEMS = spbIsTr ? ITEMS_TR : spbIsEs ? ITEMS_ES : ITEMS_EN;
+var ITEMS_FR = [
+  { text: 'Un pseudo ou un nom de joueur', correct: 'share', explain: 'Un pseudo inventé ne dit rien de qui tu es vraiment.' },
+  { text: 'Ton jeu ou ton loisir préféré', correct: 'share', explain: 'Partager tes centres d’intérêt ne pose aucun problème — c’est comme ça qu’on se fait des amis.' },
+  { text: 'Un avatar dessiné', correct: 'share', explain: 'Un avatar dessiné montre ta personnalité sans montrer ton vrai visage.' },
+  { text: 'Le palmarès de ton équipe', correct: 'share', explain: 'Des statistiques de jeu ne permettent pas de t’identifier.' },
+  { text: 'Ton nom et ton prénom', correct: 'private', explain: 'Ton vrai nom est l’un des moyens les plus simples de te retrouver.' },
+  { text: 'Le nom de ton école', correct: 'private', explain: 'Ça indique à un inconnu exactement où te trouver en vrai.' },
+  { text: 'Ton adresse', correct: 'private', explain: 'C’est l’information la plus sensible qui soit — ne la partage jamais en ligne.' },
+  { text: 'Une photo nette de ton visage', correct: 'private', explain: 'Une vraie photo peut être retrouvée, enregistrée et utilisée sans ta permission.' },
+  { text: 'Ton emploi du temps (ex. «\u202fentraînement tous les mardis\u202f»)', correct: 'private', explain: 'Un emploi du temps dit à quelqu’un exactement quand et où te trouver.' },
+  { text: 'Ton numéro de téléphone', correct: 'private', explain: 'Un numéro permet de te contacter, de te localiser ou de se faire passer pour toi.' },
+  { text: 'Ta date de naissance exacte', correct: 'private', explain: 'Avec ton nom, ça suffit souvent pour usurper une identité.' },
+  { text: 'Le nom et le lieu de travail de tes parents', correct: 'private', explain: 'Ça peut servir à localiser ta famille ou à se faire passer pour elle.' }
+];
+
+var ITEMS = spbIsTr ? ITEMS_TR : spbIsEs ? ITEMS_ES : spbIsFr ? ITEMS_FR : ITEMS_EN;
 
 var order = [];
 var placements = {};
@@ -177,7 +193,7 @@ function render() {
   var unplaced = order.filter(function(i) { return placements[i] === undefined; });
   tray.innerHTML = unplaced.length ? unplaced.map(function(i) {
     return '<button type="button" class="item-chip' + (selectedIndex === i ? ' selected' : '') + '" onclick="selectItem(' + i + ')">' + ITEMS[i].text + '</button>';
-  }).join('') : '<span style="color:var(--gray);font-size:0.85rem;">' + (spbIsTr ? 'Tüm öğeler ayıklandı! Sonuçlarını aşağıda kontrol et.' : spbIsEs ? '¡Todos los elementos clasificados! Revisa tus resultados abajo.' : 'All items sorted! Check your results below.') + '</span>';
+  }).join('') : '<span style="color:var(--gray);font-size:0.85rem;">' + (spbIsTr ? 'Tüm öğeler ayıklandı! Sonuçlarını aşağıda kontrol et.' : spbIsEs ? '¡Todos los elementos clasificados! Revisa tus resultados abajo.' : spbIsFr ? 'Tout est trié\u202f! Regarde tes résultats plus bas.' : 'All items sorted! Check your results below.') + '</span>';
 
   ['share', 'private'].forEach(function(bucket) {
     var list = document.getElementById(bucket + '-list');
@@ -196,11 +212,13 @@ function render() {
     (correctCount + ' / ' + ITEMS.length + ' doğru (' + sortedCount + ' ayıklandı)') :
     spbIsEs ?
     (correctCount + ' / ' + ITEMS.length + ' correctos (' + sortedCount + ' clasificados)') :
+    spbIsFr ?
+    (correctCount + ' / ' + ITEMS.length + ' corrects (' + sortedCount + ' triés)') :
     (correctCount + ' / ' + ITEMS.length + ' correct (' + sortedCount + ' sorted)');
 
   if (sortedCount === ITEMS.length && window.DSKPoints && !localStorage.getItem('dsk_safeprofile_done')) {
     localStorage.setItem('dsk_safeprofile_done', '1');
-    DSKPoints.addPoints(correctCount * 3, spbIsTr ? 'Güvenli Profilini Oluştur' : spbIsEs ? 'Construye Tu Perfil Seguro' : 'Build Your Safe Profile');
+    DSKPoints.addPoints(correctCount * 3, spbIsTr ? 'Güvenli Profilini Oluştur' : spbIsEs ? 'Construye Tu Perfil Seguro' : spbIsFr ? 'Crée ton profil sûr' : 'Build Your Safe Profile');
   }
 }
 
