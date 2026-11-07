@@ -129,7 +129,10 @@
     container.innerHTML = shown ? html : '<div class="empty">' + L.none + '</div>';
   }
 
-  fetch('/content/news-archive.json?t=' + Math.floor(Date.now() / 600000))
+  var naLang = (window.DSKi18n && DSKi18n.lang) || 'en';
+  var naKey = naLang === 'en' ? 'news-archive' : 'news-archive-' + naLang;
+  fetch('/content/' + naKey + '.json?t=' + Math.floor(Date.now() / 600000))
+    .then(function (r) { return r.ok ? r : fetch('/content/news-archive.json?t=' + Math.floor(Date.now() / 600000)); })
     .then(function (r) { if (!r.ok) throw new Error('http ' + r.status); return r.json(); })
     .then(function (data) {
       var days = data.days || {};

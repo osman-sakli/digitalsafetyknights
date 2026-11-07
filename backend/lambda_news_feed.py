@@ -1,17 +1,25 @@
-"""Live homepage news feed — 'Digital Safety Watch'.
+"""Live news feed — 'Digital Safety Watch', one per site language.
 
-Runs every 12 hours (EventBridge). Scans English-language Google News RSS
-for child-digital-safety stories, resolves each Google redirect token to
-the REAL publisher URL, live-verifies that URL, writes a short
-plain-language summary for parents, and publishes the result as JSON to
-S3 for the homepage widget to render.
+Runs every 12 hours (EventBridge). For each locale in LOCALES it scans
+that locale's own Google News edition for child-digital-safety stories,
+resolves each Google redirect token to the REAL publisher URL,
+live-verifies that URL, writes a short plain-language summary for parents
+in that language, and publishes the result as JSON to S3 for the page
+widget to render.
 
-Two hard rules, both driven by DSK's ethics guardrails:
+Each language searches its own jurisdiction in its own language rather
+than reading a translation of the English feed — a French parent needs
+the CNIL and the "majorité numérique" law, not a story about the FTC.
+
+Three hard rules, the first two from DSK's ethics guardrails:
   1. Every item carries its real source name and a working link to the
      original reporting. Nothing is presented as DSK's own reporting.
   2. Summaries only restate what the headline/snippet actually says. If
      the LLM call fails for any reason we fall back to the publisher's own
      headline rather than inventing a summary.
+  3. This job reports news; it never writes safety advice. Unreviewed
+     guidance on a child-safety site is worse than none, so the autonomous
+     part of the system is deliberately limited to sourced links.
 
 Pure stdlib (no `requests`) so this deploys as a plain zip, matching
 lambda_monthly_report.py.
@@ -30,8 +38,6 @@ import boto3
 
 BUCKET = "digitalsafetyknights.org"
 CLOUDFRONT_DISTRIBUTION_ID = "E1XP6H2UONLEBO"
-FEED_KEY = "content/news-feed.json"
-ARCHIVE_KEY = "content/news-archive.json"
 FAL_API_KEY_SECRET_ID = "dsk-shorts/fal-api-key"
 ARCHIVE_KEEP_DAYS = 120
 
@@ -45,6 +51,65 @@ QUERIES = [
 ]
 MAX_AGE_DAYS = 3
 TARGET_ITEMS = 6
+
+# One locale per site language. The queries are written in the locale's
+# own language and aimed at its own jurisdiction rather than translated
+# from the English set — a French parent needs the CNIL and the "majorité
+# numérique" law, not a translation of a story about the FTC.
+#
+# English keeps the original, unsuffixed S3 keys so the existing homepage
+# widget and archive page keep working untouched.
+LOCALES = {
+    "en": {
+        "gnews": "&hl=en-US&gl=US&ceid=US:en",
+        "feed_key": "content/news-feed.json",
+        "archive_key": "content/news-archive.json",
+        "language": "English",
+        "queries": QUERIES,
+    },
+    "es": {
+        "gnews": "&hl=es-419&gl=MX&ceid=MX:es-419",
+        "feed_key": "content/news-feed-es.json",
+        "archive_key": "content/news-archive-es.json",
+        "language": "Latin American Spanish",
+        "queries": [
+            "seguridad infantil en internet",
+            "ley redes sociales menores",
+            "chatbot inteligencia artificial niños riesgo",
+            "grooming detención menores internet",
+            "salud mental adolescentes redes sociales",
+            "privacidad datos niños aplicación",
+        ],
+    },
+    "fr": {
+        "gnews": "&hl=fr&gl=FR&ceid=FR:fr",
+        "feed_key": "content/news-feed-fr.json",
+        "archive_key": "content/news-archive-fr.json",
+        "language": "French",
+        "queries": [
+            "sécurité des enfants en ligne",
+            "loi réseaux sociaux mineurs",
+            "intelligence artificielle enfants risque",
+            "pédopiégeage arrestation internet",
+            "santé mentale adolescents réseaux sociaux",
+            "données personnelles enfants application CNIL",
+        ],
+    },
+    "tr": {
+        "gnews": "&hl=tr&gl=TR&ceid=TR:tr",
+        "feed_key": "content/news-feed-tr.json",
+        "archive_key": "content/news-archive-tr.json",
+        "language": "Turkish",
+        "queries": [
+            "çocuk güvenliği internet",
+            "sosyal medya yaş sınırı yasa",
+            "yapay zeka sohbet botu çocuk risk",
+            "çocuk istismarı internet gözaltı",
+            "ergen ruh sağlığı sosyal medya",
+            "çocuk veri gizliliği uygulama",
+        ],
+    },
+}
 MAX_CANDIDATES_TRIED = 22
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
 
@@ -68,14 +133,14 @@ def _fal_api_key():
     return secretsmanager.get_secret_value(SecretId=FAL_API_KEY_SECRET_ID)["SecretString"]
 
 
-def fetch_candidates():
+def fetch_candidates(locale):
     seen_titles = set()
     candidates = []
-    for query in QUERIES:
+    for query in locale["queries"]:
         url = (
             "https://news.google.com/rss/search?q="
             + urllib.parse.quote(f"{query} when:{MAX_AGE_DAYS}d")
-            + "&hl=en-US&gl=US&ceid=US:en"
+            + locale["gnews"]
         )
         try:
             _, body = _http(url)
@@ -156,7 +221,7 @@ def publisher_from_url(url, fallback):
     return fallback or host
 
 
-def summarize(items):
+def summarize(items, language="English"):
     """One LLM call for the whole batch. Returns {title: summary}. On any
     failure returns {} and callers fall back to the publisher's headline —
     we never fabricate a summary."""
@@ -164,8 +229,9 @@ def summarize(items):
         return {}
     listing = "\n".join(f"{i+1}. {it['title']} ({it['source']})" for i, it in enumerate(items))
     system = (
-        "You write one-sentence, plain-language summaries of child-online-safety news for "
-        "parents, for Digital Safety Knights. Calm, precise, factual — never fear-mongering, "
+        f"You write one-sentence, plain-language summaries of child-online-safety news for "
+        f"parents, for Digital Safety Knights. Write every summary in {language}, regardless "
+        f"of the language of the headline. Calm, precise, factual — never fear-mongering, "
         "never hype. Each summary must be understandable by a non-technical parent and must "
         "only restate what the headline itself says. Never add a statistic, name, or claim "
         "that is not in the headline. Max 22 words each. "
@@ -206,8 +272,8 @@ def summarize(items):
         return {}
 
 
-def build_feed():
-    candidates = fetch_candidates()
+def build_feed(locale):
+    candidates = fetch_candidates(locale)
     print(f"{len(candidates)} raw candidates")
     resolved = []
     tried = 0
@@ -223,7 +289,7 @@ def build_feed():
         cand["source"] = publisher_from_url(real_url, cand["source"])
         resolved.append(cand)
 
-    summaries = summarize(resolved)
+    summaries = summarize(resolved, locale["language"])
     items = []
     for cand in resolved:
         items.append(
@@ -238,12 +304,12 @@ def build_feed():
     return items
 
 
-def load_archive():
+def load_archive(archive_key):
     """Reads the existing archive. A missing key is normal on the very first
     run; any other failure is re-raised so we never silently start a fresh
     archive and wipe months of history."""
     try:
-        body = s3.get_object(Bucket=BUCKET, Key=ARCHIVE_KEY)["Body"].read()
+        body = s3.get_object(Bucket=BUCKET, Key=archive_key)["Body"].read()
         data = json.loads(body)
         return data.get("days", {})
     except s3.exceptions.NoSuchKey:
@@ -251,11 +317,11 @@ def load_archive():
         return {}
 
 
-def update_archive(items, today):
+def update_archive(items, today, archive_key):
     """Files today's items under today's date, skipping any URL already
     anywhere in the archive so a story spotted across several 12h runs is
     kept once, on the day it first appeared. Trims to ARCHIVE_KEEP_DAYS."""
-    days = load_archive()
+    days = load_archive(archive_key)
     seen_urls = {it["url"] for day_items in days.values() for it in day_items}
 
     fresh = [it for it in items if it["url"] not in seen_urls]
@@ -275,7 +341,7 @@ def update_archive(items, today):
     }
     s3.put_object(
         Bucket=BUCKET,
-        Key=ARCHIVE_KEY,
+        Key=archive_key,
         Body=json.dumps(payload, ensure_ascii=False, indent=2).encode(),
         ContentType="application/json",
         CacheControl="no-cache",
@@ -284,37 +350,70 @@ def update_archive(items, today):
     return len(fresh), total
 
 
-def handler(event, context):
-    items = build_feed()
+def run_locale(lang, locale, today):
+    """One language's feed. Returns a result dict; never raises, so one
+    locale's bad run cannot stop the other three from publishing."""
+    try:
+        items = build_feed(locale)
+    except Exception as e:  # noqa: BLE001
+        print(f"[{lang}] build failed: {e}")
+        return {"status": "error", "error": str(e)}
+
     if not items:
         # Never overwrite a good feed with an empty one — a transient
-        # Google outage should leave yesterday's links on the homepage.
-        print("No verified items this run — leaving the existing feed in place.")
+        # Google outage should leave yesterday's links on the page.
+        print(f"[{lang}] no verified items — leaving the existing feed in place.")
         return {"status": "no_verified_items"}
 
     payload = {
         "updated": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"),
+        "lang": lang,
         "items": items,
     }
     s3.put_object(
         Bucket=BUCKET,
-        Key=FEED_KEY,
+        Key=locale["feed_key"],
         Body=json.dumps(payload, ensure_ascii=False, indent=2).encode(),
         ContentType="application/json",
         CacheControl="no-cache",
     )
-    today = datetime.date.today().isoformat()
-    added, total = update_archive(items, today)
+    added, total = update_archive(items, today, locale["archive_key"])
+    print(f"[{lang}] published {len(items)} items to {locale['feed_key']}")
+    return {"status": "published", "count": len(items),
+            "archiveAdded": added, "archiveTotal": total}
 
-    cloudfront.create_invalidation(
-        DistributionId=CLOUDFRONT_DISTRIBUTION_ID,
-        InvalidationBatch={
-            "Paths": {"Quantity": 2, "Items": [f"/{FEED_KEY}", f"/{ARCHIVE_KEY}"]},
-            "CallerReference": f"news-feed-{datetime.datetime.utcnow().timestamp()}",
-        },
-    )
-    print(f"Published {len(items)} items to {FEED_KEY}")
-    return {"status": "published", "count": len(items), "archiveAdded": added, "archiveTotal": total}
+
+def handler(event, context):
+    """Runs every locale in LOCALES. An `event` may name a subset, e.g.
+    {"langs": ["fr"]}, which is what a manual re-run of one language uses."""
+    wanted = (event or {}).get("langs") or list(LOCALES)
+    today = datetime.date.today().isoformat()
+    results = {}
+    paths = []
+
+    for lang in wanted:
+        locale = LOCALES.get(lang)
+        if not locale:
+            print(f"[warn] unknown language {lang!r}, skipping")
+            continue
+        results[lang] = run_locale(lang, locale, today)
+        if results[lang]["status"] == "published":
+            paths += [f"/{locale['feed_key']}", f"/{locale['archive_key']}"]
+
+    # One invalidation for everything that actually changed, rather than
+    # one per language — CloudFront charges per path beyond the free tier.
+    if paths:
+        cloudfront.create_invalidation(
+            DistributionId=CLOUDFRONT_DISTRIBUTION_ID,
+            InvalidationBatch={
+                "Paths": {"Quantity": len(paths), "Items": paths},
+                "CallerReference": f"news-feed-{datetime.datetime.utcnow().timestamp()}",
+            },
+        )
+
+    published = [l for l, r in results.items() if r["status"] == "published"]
+    return {"status": "ok" if published else "nothing_published",
+            "published": published, "results": results}
 
 
 if __name__ == "__main__":

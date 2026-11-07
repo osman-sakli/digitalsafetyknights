@@ -69,7 +69,11 @@ resource "aws_lambda_function" "news_feed" {
   role             = aws_iam_role.news_feed.arn
   handler          = "lambda_news_feed.handler"
   runtime          = "python3.12"
-  timeout          = 300
+  # Was 300 when this ran one English feed. It now runs four locales in
+  # sequence, each resolving and live-checking up to 22 Google News
+  # redirects, so the work is roughly four times what the old ceiling was
+  # sized for.
+  timeout          = 900
   memory_size      = 512
   filename         = data.archive_file.news_feed.output_path
   source_code_hash = data.archive_file.news_feed.output_base64sha256
@@ -77,7 +81,7 @@ resource "aws_lambda_function" "news_feed" {
 
 resource "aws_cloudwatch_event_rule" "news_feed" {
   name                = "dsk-news-feed-12h"
-  description         = "Refreshes the homepage Digital Safety Watch feed every 12 hours"
+  description         = "Refreshes the Digital Safety Watch feed, in every site language, every 12 hours"
   schedule_expression = "cron(0 2,14 * * ? *)"
 }
 

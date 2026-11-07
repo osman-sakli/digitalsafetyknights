@@ -1713,7 +1713,12 @@
 
     function esc(s) { var d = document.createElement('div'); d.textContent = s == null ? '' : s; return d.innerHTML; }
 
-    fetch('/content/news-feed.json?t=' + Math.floor(Date.now() / 600000))
+    // One feed per language — each searches its own country's news in
+    // its own language, so this is not a translation of the English one.
+    var nfLang = (window.DSKi18n && DSKi18n.lang) || 'en';
+    var nfKey = nfLang === 'en' ? 'news-feed' : 'news-feed-' + nfLang;
+    fetch('/content/' + nfKey + '.json?t=' + Math.floor(Date.now() / 600000))
+      .then(function (r) { return r.ok ? r : fetch('/content/news-feed.json?t=' + Math.floor(Date.now() / 600000)); })
       .then(function (r) { if (!r.ok) throw new Error('http ' + r.status); return r.json(); })
       .then(function (data) {
         if (!data.items || !data.items.length) throw new Error('empty feed');

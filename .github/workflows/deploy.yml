@@ -42,20 +42,23 @@ jobs:
 
       - name: Deploy HTML/JSON to S3
         run: |
-          # content/news-feed.json, content/news-archive.json (dsk-news-feed
+          # content/news-feed*.json, content/news-archive*.json (dsk-news-feed
           # Lambda, every 12h), content/video-library.json
           # (sync-video-library.py) and content/traffic-stats.json
           # (dsk-traffic-report Lambda, daily) are written by other systems,
           # not this repo — excluded here for the same --delete-safety reason
           # as above. traffic-stats.json was missing from this list, so every
           # deploy deleted it and stats.html showed nothing (fixed 2026-10-29).
+          # The news patterns are globs because the feed is now per language
+          # (news-feed-fr.json and friends); naming them one by one would
+          # have deleted each new locale's file on the next deploy.
           aws s3 sync frontend/ s3://${{ secrets.S3_BUCKET }}/ \
             --delete \
             --exclude "*" \
             --include "*.html" \
             --include "*.json" \
-            --exclude "content/news-feed.json" \
-            --exclude "content/news-archive.json" \
+            --exclude "content/news-feed*.json" \
+            --exclude "content/news-archive*.json" \
             --exclude "content/video-library.json" \
             --exclude "content/traffic-stats.json" \
             --exclude "films/*" \
