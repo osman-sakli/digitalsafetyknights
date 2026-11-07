@@ -175,12 +175,13 @@
 var kdLang = (window.DSKi18n && DSKi18n.lang) || 'en';
 var kdIsTr = kdLang === 'tr';
 var kdIsEs = kdLang === 'es';
+var kdIsFr = kdLang === 'fr';
 
 // "YOU" and "Loading…" are placeholders the duel replaces with the
 // player's nickname and the first question, but they are what shows until
 // then — and on /tr/ and /es/ they were showing in English.
-document.getElementById('knight-name').textContent = kdIsTr ? 'SEN' : kdIsEs ? 'TÚ' : 'YOU';
-document.getElementById('prompt-text').textContent = kdIsTr ? 'Yükleniyor…' : kdIsEs ? 'Cargando…' : 'Loading…';
+document.getElementById('knight-name').textContent = kdIsTr ? 'SEN' : kdIsEs ? 'TÚ' : kdIsFr ? 'TOI' : 'YOU';
+document.getElementById('prompt-text').textContent = kdIsTr ? 'Yükleniyor…' : kdIsEs ? 'Cargando…' : kdIsFr ? 'Chargement…' : 'Loading…';
 
 // ---------- sound (same zero-dependency pattern as game.html) ----------
 var muted = localStorage.getItem('dsk_game_muted') === '1';
@@ -251,6 +252,14 @@ var STR = kdIsTr ? {
   victoryTitle: '¡Derrotaste a Glitch!', victorySub: 'Cada truco, detectado.',
   retryTitle: '¡Muy Cerca!', retrySub: 'Glitch escapó esta vez — pero igual aprendiste cada truco. ¿Listo para la revancha?',
   save: '⬇️ Guardar Tarjeta de Batalla', more: '🎮 Más Misiones'
+} : kdIsFr ? {
+  title: 'Duel du <span class="gold">Chevalier</span>',
+  tagline: 'Glitch te teste avec six pièges bien ficelés. Bonne réponse, tu marques — mauvaise réponse, il marque, mais tu repars avec le bon réflexe dans les deux cas.',
+  realmTitle: 'Royaume 1\u202f: Veille anti-grooming', realmDesc: 'Repère les signaux d\u2019alerte d\u2019un inconnu bien déguisé sur internet.',
+  namePlaceholder: 'Ton nom de Chevalier', start: '⚔️ Commencer le duel', continueBtn: 'Continuer →',
+  victoryTitle: 'Tu as battu Glitch\u202f!', victorySub: 'Chaque piège, repéré.',
+  retryTitle: 'C\u2019était tout près\u202f!', retrySub: 'Glitch s\u2019en tire cette fois — mais tu as appris chaque piège quand même. On remet ça\u202f?',
+  save: '⬇️ Enregistrer ta carte de combat', more: '🎮 Plus de quêtes'
 } : {
   title: "Knight's <span class=\"gold\">Duel</span>",
   tagline: "Glitch is testing you with six sneaky tricks. Answer right to land a hit — answer wrong and he gets a hit in, but you'll always learn the move either way.",
@@ -307,7 +316,7 @@ function startBattle() {
     showScreen('screen-battle');
     renderQuestion();
   }).catch(function() {
-    alert(kdIsTr ? 'Yüklenemedi, tekrar dene.' : kdIsEs ? 'No se pudo cargar, intenta de nuevo.' : 'Could not load, please try again.');
+    alert(kdIsTr ? 'Yüklenemedi, tekrar dene.' : kdIsEs ? 'No se pudo cargar, intenta de nuevo.' : kdIsFr ? 'Chargement impossible, réessaie.' : 'Could not load, please try again.');
   });
 }
 
@@ -371,7 +380,7 @@ function nextRound() {
 function endBattle() {
   if (battleEnded) return;
   battleEnded = true;
-  var pointsLabel = kdIsTr ? "Şövalye Düellosu" : kdIsEs ? 'Duelo de Caballeros' : "Knight's Duel";
+  var pointsLabel = kdIsTr ? "Şövalye Düellosu" : kdIsEs ? 'Duelo de Caballeros' : kdIsFr ? 'Duel du Chevalier' : "Knight's Duel";
   if (window.DSKPoints) {
     DSKPoints.addPoints(correctCount * 10, pointsLabel + ': ' + questData.title);
     DSKPoints.markComboActivity('quest');
@@ -408,7 +417,7 @@ function renderResultCard() {
 
   ctx.font = '900 34px Arial';
   ctx.fillStyle = '#ffffff';
-  var title = kdIsTr ? "GLITCH'İ YENDİM!" : kdIsEs ? '¡DERROTÉ A GLITCH!' : 'I DEFEATED GLITCH!';
+  var title = kdIsTr ? "GLITCH'İ YENDİM!" : kdIsEs ? '¡DERROTÉ A GLITCH!' : kdIsFr ? 'J\u2019AI BATTU GLITCH\u202f!' : 'I DEFEATED GLITCH!';
   ctx.fillText(title, W / 2, 150);
 
   ctx.font = '800 26px Arial';
@@ -428,7 +437,7 @@ function renderResultCard() {
 
   ctx.font = '700 20px Arial';
   ctx.fillStyle = '#e8c56a';
-  ctx.fillText(level.name + ' · ' + correctCount + '/' + questData.questions.length + (kdIsTr ? ' doğru' : kdIsEs ? ' correctas' : ' correct'), W / 2, 495);
+  ctx.fillText(level.name + ' · ' + correctCount + '/' + questData.questions.length + (kdIsTr ? ' doğru' : kdIsEs ? ' correctas' : kdIsFr ? ' correctes' : ' correct'), W / 2, 495);
 
   ctx.font = '600 16px Arial';
   ctx.fillStyle = '#8899bb';

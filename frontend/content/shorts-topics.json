@@ -43,6 +43,7 @@
         "title": "Glitch Alert!",
         "title_tr": "Glitch Alarmı!",
         "title_es": "¡Alerta Glitch!",
+        "title_fr": "Alerte Glitch !",
         "chars": [
           "shieldy",
           "glitch",
@@ -55,6 +56,7 @@
         "title": "Would You Tap?",
         "title_tr": "Tıklar mıydın?",
         "title_es": "¿Le darías clic?",
+        "title_fr": "Tu cliquerais ?",
         "chars": [
           "shieldy",
           "pixel"
@@ -176,6 +178,7 @@
         "title": "Bot Says...",
         "title_tr": "Bot Diyor ki…",
         "title_es": "Bot dice…",
+        "title_fr": "Bot dit…",
         "chars": [
           "shieldy",
           "bot",
@@ -188,6 +191,7 @@
         "title": "Bot Says...",
         "title_tr": "Bot Diyor ki…",
         "title_es": "Bot dice…",
+        "title_fr": "Bot dit…",
         "chars": [
           "shieldy",
           "bot",
@@ -200,6 +204,7 @@
         "title": "Bot Says...",
         "title_tr": "Bot Diyor ki…",
         "title_es": "Bot dice…",
+        "title_fr": "Bot dit…",
         "chars": [
           "shieldy",
           "bot",
@@ -319,6 +324,7 @@
         "title": "Glitch Alert!",
         "title_tr": "Glitch Alarmı!",
         "title_es": "¡Alerta Glitch!",
+        "title_fr": "Alerte Glitch !",
         "chars": [
           "shieldy",
           "glitch",
@@ -331,6 +337,7 @@
         "title": "Glitch Alert!",
         "title_tr": "Glitch Alarmı!",
         "title_es": "¡Alerta Glitch!",
+        "title_fr": "Alerte Glitch !",
         "chars": [
           "shieldy",
           "glitch",
@@ -522,6 +529,7 @@
         "title": "Knight Rule #1",
         "title_tr": "Şövalye Kuralı 1",
         "title_es": "Regla del Caballero 1",
+        "title_fr": "Règle du Chevalier 1",
         "chars": [
           "shieldy",
           "pixel"
@@ -533,6 +541,7 @@
         "title": "Knight Rule #2",
         "title_tr": "Şövalye Kuralı 2",
         "title_es": "Regla del Caballero 2",
+        "title_fr": "Règle du Chevalier 2",
         "chars": [
           "shieldy",
           "pixel"
@@ -680,6 +689,7 @@
         "title": "Badge Friday!",
         "title_tr": "Rozet Cuması!",
         "title_es": "¡Viernes de Insignia!",
+        "title_fr": "Vendredi des badges !",
         "chars": [
           "shieldy",
           "pixel"
