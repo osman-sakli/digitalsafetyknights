@@ -1,6 +1,6 @@
 # DSK Threat Intelligence & Policy Research Bank
 
-Compiled 2026-08-02, last refreshed 2026-11-05. Covers the last ~10 months of
+Compiled 2026-08-02, last refreshed 2026-11-07. Covers the last ~10 months of
 child-online-safety news (Oct 2025 – Oct 2026), weighted toward the most
 recent 4-6 weeks. Sourced via web search — every claim below has a citation.
 This is a living reference: update it monthly (it's also the natural
@@ -100,7 +100,24 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
   bankruptcy-docket process, not a ruling/settlement/enacted law, and
   Kentucky v. Character Technologies' tracker status is unchanged. Revisit
   once the bidding-procedures ruling and/or sale-hearing outcome are
-  reported (targeted for around late Nov 2026).
+  reported (targeted for around late Nov 2026). **Update (2026-11-07):**
+  the bidding-procedures ruling landed. The Delaware bankruptcy court
+  indicated at the Oct 30 hearing it would overrule the state-AG coalition
+  (now reported at 40 states) and U.S. Trustee objections "subject to
+  certain revisions," and on Nov 4, 2026 entered the Bidding Procedures
+  Order (Docket No. 106) doing so — Florida's counsel reportedly kept
+  objecting even after revisions. The Disney stalking-horse agreement
+  ($20M, $700K break-up fee) and the $21.7M minimum competing bid are
+  unchanged, but the follow-on schedule shifted later than the debtor's
+  original motion: sale-objection deadline Nov 18, bid deadline Nov 24
+  (noon ET, was Nov 20), auction Dec 1 (was "Nov 23 if multiple bids"),
+  sale hearing Dec 3–4 (was Nov 24). Still not actioned on the tracker —
+  this is a bankruptcy-sale procedural order, not a ruling on the
+  child-safety-conditions merits the coalition wanted, and Kentucky v.
+  Character Technologies' status is unaffected. Revisit after the Dec 1
+  auction and Dec 3–4 sale hearing.
+  [PPC Land — bidding procedures order](https://ppc.land/judge-to-overrule-40-states-objections-to-character-ais-disney-sale-rules/) ·
+  [Character.AI blog — Chapter 11 update](https://blog.character.ai/chapter-11-update-and-transaction-notice/) ·
   [WSMV](https://www.wsmv.com/2026/10/15/kentucky-joins-coalition-characterai-bankruptcy-case/) ·
   [California AG](https://oag.ca.gov/node/631358) ·
   [Michigan AG](https://www.michigan.gov/ag/news/press-releases/2026/10/15/attorney-general-nessel-seeks-consumer-protections-in-character-ai-bankruptcy) ·
@@ -181,6 +198,79 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
   [Commerce Committee](https://www.commerce.senate.gov/press/rep/release/commerce-committee-advances-kids-online-safety-legislation/)
 
 ---
+
+## 0s. November 2026 Refresh (Nov 7, 2026)
+
+Automated biennial freshness scan, ~48 hours after the last one. Main
+development is procedural (Character.AI bankruptcy bidding-procedures
+order — logged as an update to the existing "Flagged for review" item
+above). No tracker edit this run: every tracker-adjacent item checked
+either matches the site's existing status or is still too unresolved/
+ambiguous to action.
+
+### Spot-checked, no change needed
+- **Utah App Store Accountability Act** — tracker's "Deadline pushed to
+  May 6, 2027; private-lawsuit enforcement only" still matches reality:
+  CCIA's challenge was voluntarily dismissed back in April 2026 once
+  Utah's HB 498 amendments removed state-agency enforcement and pushed
+  the compliance deadline to May 6, 2027, leaving only the law's private
+  right of action. No new litigation or amendment found. Unchanged.
+  [JD Supra](https://www.jdsupra.com/legalnews/challenge-to-utah-s-app-store-6173927/) ·
+  [Bloomberg Law](https://news.bloomberglaw.com/litigation/free-speech-suit-over-utah-app-store-act-ends-after-law-changes)
+- **California App Store Accountability Act / Digital Age Assurance Act
+  (AB 1043)** — tracker's "Effective January 1, 2027" is still accurate;
+  no injunction or delay found since Gov. Newsom signed it Oct 13, 2025.
+  Unchanged.
+  [Mondaq](https://mondaq.com/unitedstates/privacy-protection/1764884/a-deeper-dive-into-californias-app-store-accountability-law)
+- **New York SAFE for Kids Act** — tracker's "Rules finalized July 2026;
+  effective January 25, 2027" still matches: final rules were published
+  in the State Register July 29, 2026, with a 180-day effective date of
+  Jan 25, 2027. No new litigation found yet (commentators still expect a
+  challenge, but none is filed as of this check). Unchanged.
+  [Governor Hochul's office](https://governor.ny.gov/news/governor-hochul-and-attorney-general-james-announce-final-safe-kids-act-rules-protect-children) ·
+  [Common Sense Media](https://www.commonsensemedia.org/press-releases/common-sense-media-child-safety-groups-applaud-final-regulations-under-new-yorks-safe-for-kids-act)
+- **EU KIDS Act (proposed)** — tracker's "European Commission proposal
+  published Sept 17, 2026" still matches; no Parliament/Council
+  movement (trilogue) found beyond the initial submission (COM(2026) 681
+  final). Unchanged.
+  [Digital Policy Alert](https://digitalpolicyalert.org/event/43775-european-commission-submitted-proposal-for-kids-act-to-european-parliament-and-the-council-including-age-verification-requirement-no-com2026-681-final)
+
+### Checked, not actionable (too stale/ambiguous to correct conservatively)
+- **"45 states criminalize AI-generated CSAM"** — no confirmed 46th-state
+  story found; sources from the last few months still converge on 45
+  (with a handful of holdouts, e.g. Maine, still working bills). Left as
+  is rather than guess at a changed count from conflicting secondary
+  sources.
+- **"School phone bans (26 states)"** — found wildly inconsistent counts
+  across sources (27, 33, 41 states) depending on whether "full-day ban,"
+  "any K-12 restriction," or "classroom-only" is being counted, and dates
+  ranging Jan–Mar 2026. Given DSK's conservative mandate, not confident
+  enough in any single current count to correct the tracker's number —
+  flagging for a future run with more time to pin down one consistent,
+  citable methodology (Ballotpedia's tracker looks like the best
+  single source to reconcile against).
+  [Ballotpedia](https://ballotpedia.org/State_policies_on_cellphone_use_in_K-12_public_schools)
+
+### Context, not a tracker change
+- KOSA/Kids Internet and Digital Safety Act: no Senate floor vote found
+  beyond the Aug 5, 2026 committee markup already on the tracker as
+  "pending." Unchanged (re-confirmed after the Nov 5 check).
+- OpenAI 8-state child-safety suits (filed Oct 14, 2026): no ruling found;
+  still just-filed litigation with no tracker bucket.
+- MDL 3166 (Roblox/Discord/Snap/Meta): no merits ruling; only procedural
+  news (a federal judge blocked Roblox's bid to force one case into
+  arbitration). Not yet a tracker-worthy outcome.
+  [Roblox MDL coverage, various outlets]
+- NY AG v. TikTok ("addictive design" suit): most recent development
+  found is from April 2026 (an appellate panel's skepticism of TikTok's
+  motion to dismiss) — nothing new since. No tracker entry exists for
+  this case to update.
+- TAKE IT DOWN Act: FTC enforcement remains at the warning-letter stage
+  (a dozen "nudify" sites warned in May 2026); no first enforcement
+  complaint found yet. Tracker's "FTC enforcement began May 2026" /
+  "effect" status still accurate.
+- GUARD Act / CHATBOT Act (federal AI-chatbot bills): already logged in
+  earlier refreshes as stuck post-committee; no new movement found.
 
 ## 0r. November 2026 Refresh (Nov 5, 2026)
 
