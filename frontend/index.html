@@ -353,7 +353,7 @@
       "url": "https://digitalsafetyknights.org/",
       "name": "Digital Safety Knights",
       "publisher": { "@id": "https://digitalsafetyknights.org/#org" },
-      "inLanguage": ["en","tr","es"]
+      "inLanguage": ["en","tr","es","fr"]
     },
     {
       "@type": "Service",
@@ -1383,10 +1383,13 @@
     var emLocLang = (window.DSKi18n && DSKi18n.lang) || 'en';
     var emLocIsTr = emLocLang === 'tr';
     var emLocIsEs = emLocLang === 'es';
+    var emLocIsFr = emLocLang === 'fr';
     var COUNTRY_NAMES = emLocIsTr ?
       { US: "ABD", CA: "Kanada", MX: "Meksika", BR: "Brezilya", AR: "Arjantin", CL: "Şili", CO: "Kolombiya", PE: "Peru", GB: "Birleşik Krallık", IE: "İrlanda", DE: "Almanya", FR: "Fransa", ES: "İspanya", IT: "İtalya", NL: "Hollanda", SE: "İsveç", TR: "Türkiye", RU: "Rusya", IL: "İsrail", SA: "Suudi Arabistan", AE: "BAE", IN: "Hindistan", PK: "Pakistan", CN: "Çin", JP: "Japonya", KR: "Güney Kore", TH: "Tayland", PH: "Filipinler", VN: "Vietnam", MY: "Malezya", SG: "Singapur", ID: "Endonezya", AU: "Avustralya", NZ: "Yeni Zelanda", ZA: "Güney Afrika", EG: "Mısır", KE: "Kenya", NG: "Nijerya" } :
       emLocIsEs ?
       { US: "EE. UU.", CA: "Canadá", MX: "México", BR: "Brasil", AR: "Argentina", CL: "Chile", CO: "Colombia", PE: "Perú", GB: "el Reino Unido", IE: "Irlanda", DE: "Alemania", FR: "Francia", ES: "España", IT: "Italia", NL: "los Países Bajos", SE: "Suecia", TR: "Turquía", RU: "Rusia", IL: "Israel", SA: "Arabia Saudita", AE: "los EAU", IN: "India", PK: "Pakistán", CN: "China", JP: "Japón", KR: "Corea del Sur", TH: "Tailandia", PH: "Filipinas", VN: "Vietnam", MY: "Malasia", SG: "Singapur", ID: "Indonesia", AU: "Australia", NZ: "Nueva Zelanda", ZA: "Sudáfrica", EG: "Egipto", KE: "Kenia", NG: "Nigeria" } :
+      emLocIsFr ?
+      { US: "aux États-Unis", CA: "au Canada", MX: "au Mexique", BR: "au Brésil", AR: "en Argentine", CL: "au Chili", CO: "en Colombie", PE: "au Pérou", GB: "au Royaume-Uni", IE: "en Irlande", DE: "en Allemagne", FR: "en France", ES: "en Espagne", IT: "en Italie", NL: "aux Pays-Bas", SE: "en Suède", TR: "en Turquie", RU: "en Russie", IL: "en Israël", SA: "en Arabie saoudite", AE: "aux Émirats arabes unis", IN: "en Inde", PK: "au Pakistan", CN: "en Chine", JP: "au Japon", KR: "en Corée du Sud", TH: "en Thaïlande", PH: "aux Philippines", VN: "au Vietnam", MY: "en Malaisie", SG: "à Singapour", ID: "en Indonésie", AU: "en Australie", NZ: "en Nouvelle-Zélande", ZA: "en Afrique du Sud", EG: "en Égypte", KE: "au Kenya", NG: "au Nigeria" } :
       { US: "USA", CA: "Canada", MX: "Mexico", BR: "Brazil", AR: "Argentina", CL: "Chile", CO: "Colombia", PE: "Peru", GB: "the UK", IE: "Ireland", DE: "Germany", FR: "France", ES: "Spain", IT: "Italy", NL: "the Netherlands", SE: "Sweden", TR: "Turkey", RU: "Russia", IL: "Israel", SA: "Saudi Arabia", AE: "the UAE", IN: "India", PK: "Pakistan", CN: "China", JP: "Japan", KR: "South Korea", TH: "Thailand", PH: "the Philippines", VN: "Vietnam", MY: "Malaysia", SG: "Singapore", ID: "Indonesia", AU: "Australia", NZ: "New Zealand", ZA: "South Africa", EG: "Egypt", KE: "Kenya", NG: "Nigeria" };
 
     function pinCountry(code) {
@@ -1415,6 +1418,12 @@
         ' — fijamos tu contacto local arriba.' +
         (precise ? '' : ' <button type="button" onclick="emergencyUsePreciseLocation()" style="background:none;border:none;color:var(--danger);font-weight:800;text-decoration:underline;cursor:pointer;font-size:0.85rem;">Usar mi ubicación exacta en su lugar</button>') +
         ' <button type="button" onclick="document.getElementById(\'em-locate-banner\').style.display=\'none\';document.querySelectorAll(\'.em-pinned\').forEach(function(e){e.remove()});" style="background:none;border:none;color:var(--gray);text-decoration:underline;cursor:pointer;font-size:0.85rem;">¿No es correcto? Descartar</button>')
+        :
+        emLocIsFr ?
+        ('📍 ' + (precise ? 'D’après votre position, vous semblez être <b>' + name + '</b>' : 'Vous êtes peut-être <b>' + name + '</b>') +
+        ' — votre contact local est épinglé en haut.' +
+        (precise ? '' : ' <button type="button" onclick="emergencyUsePreciseLocation()" style="background:none;border:none;color:var(--danger);font-weight:800;text-decoration:underline;cursor:pointer;font-size:0.85rem;">Utiliser plutôt ma position exacte</button>') +
+        ' <button type="button" onclick="document.getElementById(\'em-locate-banner\').style.display=\'none\';document.querySelectorAll(\'.em-pinned\').forEach(function(e){e.remove()});" style="background:none;border:none;color:var(--gray);text-decoration:underline;cursor:pointer;font-size:0.85rem;">Ce n’est pas ça ? Masquer</button>')
         :
         ('📍 ' + (precise ? 'Based on your location, looks like you\'re in <b>' + name + '</b>' : 'Looks like you might be in <b>' + name + '</b>') +
         ' — your local contact is pinned to the top.' +
@@ -1481,6 +1490,7 @@
     var wcLang = (window.DSKi18n && DSKi18n.lang) || 'en';
     var wcIsTr = wcLang === 'tr';
     var wcIsEs = wcLang === 'es';
+    var wcIsFr = wcLang === 'fr';
     var CHALLENGES = wcIsTr ? [
       { icon: '🕹️', text: "Shieldy'nin Mesaj Ayıklama Oyununda 50+ puan yap", link: '/game.html', done: gameHigh >= 50 },
       { icon: '🎮', text: 'İlk Görevini tamamla', link: '/quests.html', done: questCount >= 1 },
@@ -1499,6 +1509,15 @@
       { icon: '🌀', text: 'Desbloquea el Modo Caos (100+ en Difícil)', link: '/game.html', done: hardHigh >= 100 },
       { icon: '🛡️', text: 'Completa la Auditoría de Seguridad Familiar', link: '/audit.html', done: auditDone },
       { icon: '👑', text: 'Alcanza 250 Puntos de Caballero (Centinela)', link: '/quests.html', done: points >= 250 }
+    ] : wcIsFr ? [
+      { icon: '🕹️', text: 'Marque 50 points ou plus au Tri des messages de Shieldy', link: '/game.html', done: gameHigh >= 50 },
+      { icon: '🎮', text: 'Termine ta première quête', link: '/quests.html', done: questCount >= 1 },
+      { icon: '🔥', text: 'Construis une série de 3 jours de jeu', link: '/quests.html', done: streak >= 3 },
+      { icon: '⚔️', text: 'Atteins 100 Points de Chevalier', link: '/quests.html', done: points >= 100 },
+      { icon: '🏅', text: 'Termine 3 quêtes différentes', link: '/quests.html', done: questCount >= 3 },
+      { icon: '🌀', text: 'Débloque le Mode Chaos (100 points ou plus en Difficile)', link: '/game.html', done: hardHigh >= 100 },
+      { icon: '🛡️', text: 'Termine l’Audit de sécurité familiale', link: '/audit.html', done: auditDone },
+      { icon: '👑', text: 'Atteins 250 Points de Chevalier (Sentinelle)', link: '/quests.html', done: points >= 250 }
     ] : [
       { icon: '🕹️', text: 'Score 50+ in Shieldy\'s Message Sort', link: '/game.html', done: gameHigh >= 50 },
       { icon: '🎮', text: 'Complete your first Quest', link: '/quests.html', done: questCount >= 1 },
@@ -1512,15 +1531,16 @@
     var pick = CHALLENGES[isoWeek(new Date()) % CHALLENGES.length];
     document.getElementById('wc-icon').textContent = pick.icon;
     document.getElementById('wc-text').textContent = pick.text;
-    document.getElementById('wc-status').textContent = pick.done ? (wcIsTr ? '✅ Bu hafta yapıldı — harika!' : wcIsEs ? '✅ Hecho esta semana — ¡genial!' : '✅ Done this week — nice!') : (wcIsTr ? 'Henüz tamamlanmadı' : wcIsEs ? 'Aún no completado' : 'Not completed yet');
+    document.getElementById('wc-status').textContent = pick.done ? (wcIsTr ? '✅ Bu hafta yapıldı — harika!' : wcIsEs ? '✅ Hecho esta semana — ¡genial!' : wcIsFr ? '✅ Fait cette semaine — bravo !' : '✅ Done this week — nice!') : (wcIsTr ? 'Henüz tamamlanmadı' : wcIsEs ? 'Aún no completado' : wcIsFr ? 'Pas encore terminé' : 'Not completed yet');
     document.getElementById('wc-link').href = pick.link;
-    document.getElementById('wc-link').textContent = pick.done ? (wcIsTr ? 'Tekrar Oyna →' : wcIsEs ? 'Jugar de Nuevo →' : 'Play Again →') : (wcIsTr ? 'Git →' : wcIsEs ? 'Ir →' : 'Go →');
+    document.getElementById('wc-link').textContent = pick.done ? (wcIsTr ? 'Tekrar Oyna →' : wcIsEs ? 'Jugar de Nuevo →' : wcIsFr ? 'Rejouer →' : 'Play Again →') : (wcIsTr ? 'Git →' : wcIsEs ? 'Ir →' : wcIsFr ? 'Y aller →' : 'Go →');
   })();
 
   (function knightOfMonth() {
     var komLang = (window.DSKi18n && DSKi18n.lang) || 'en';
     var komIsTr = komLang === 'tr';
     var komIsEs = komLang === 'es';
+    var komIsFr = komLang === 'fr';
     var MONTHS = komIsTr ? {
       1: { id: "dame-noble", name: "Dame Noble", tie: "Şubat Dergisi çevrimiçi tacizin duygusal boyutuyla ilgili — tam olarak Dame Noble'ın uzmanlığı." },
       2: { id: "pixel", name: "Pixel", tie: "Mart Dergisi Roblox'un içine giriyor — Pixel'in ana bölgesi." },
@@ -1537,6 +1557,14 @@
       5: { id: "bot", name: "Bot", tie: "La Revista de Junio explica cómo se construyen el algoritmo y el feed — territorio puro de Bot." },
       6: { id: "glitch", name: "Glitch", tie: "La Revista de Julio trata sobre el peligro de los desconocidos en las apps de chat — y nadie interpreta a un desconocido bien disfrazado mejor que Glitch." },
       7: { id: "shieldy", name: "Shieldy", tie: "La Revista de Agosto es el reinicio familiar de vuelta al colegio — Shieldy lidera la iniciativa." }
+    } : komIsFr ? {
+      1: { id: "dame-noble", name: "Dame Noble", tie: "La Revue de février traite du versant émotionnel du harcèlement en ligne — exactement la spécialité de Dame Noble." },
+      2: { id: "pixel", name: "Pixel", tie: "La Revue de mars entre au cœur de Roblox — le terrain de jeu de Pixel." },
+      3: { id: "bot", name: "Bot", tie: "La Revue d’avril passe en revue les tactiques de grooming assistées par l’IA — pile le domaine d’expertise de Bot." },
+      4: { id: "shieldy", name: "Shieldy", tie: "La Revue de mai traite des tactiques de sextorsion qui vont très vite — et la spécialité de Shieldy, c’est de repérer les signaux d’alerte à temps." },
+      5: { id: "bot", name: "Bot", tie: "La Revue de juin décortique la façon dont l’algorithme et le fil d’actualité sont construits — du pur territoire de Bot." },
+      6: { id: "glitch", name: "Glitch", tie: "La Revue de juillet traite des applis de chat et du danger des inconnus — et personne ne joue mieux que Glitch le rôle d’un inconnu bien déguisé." },
+      7: { id: "shieldy", name: "Shieldy", tie: "La Revue d’août, c’est la remise à zéro familiale de la rentrée — et c’est Shieldy qui mène la charge." }
     } : {
       1: { id: "dame-noble", name: "Dame Noble", tie: "February's Journal is about the emotional side of online harassment — exactly Dame Noble's specialty." },
       2: { id: "pixel", name: "Pixel", tie: "March's Journal goes inside Roblox — Pixel's home turf." },
@@ -1547,7 +1575,7 @@
       7: { id: "shieldy", name: "Shieldy", tie: "August's Journal is the back-to-school family reset — Shieldy's leading the charge." }
     };
     var m = new Date().getMonth();
-    var pick = MONTHS[m] || (komIsTr ? { id: "sprout", name: "Sprout", tie: "Yeni ay, temelleri öğrenmek (ya da tekrar öğrenmek) için yeni bir şans — Sprout'un bütün meselesi bu." } : komIsEs ? { id: "sprout", name: "Sprout", tie: "Nuevo mes, nueva oportunidad de aprender (o repasar) lo básico — eso es exactamente lo que hace Sprout." } : { id: "sprout", name: "Sprout", tie: "New month, new chance to learn (or re-learn) the basics — that's Sprout's whole thing." });
+    var pick = MONTHS[m] || (komIsTr ? { id: "sprout", name: "Sprout", tie: "Yeni ay, temelleri öğrenmek (ya da tekrar öğrenmek) için yeni bir şans — Sprout'un bütün meselesi bu." } : komIsEs ? { id: "sprout", name: "Sprout", tie: "Nuevo mes, nueva oportunidad de aprender (o repasar) lo básico — eso es exactamente lo que hace Sprout." } : komIsFr ? { id: "sprout", name: "Sprout", tie: "Nouveau mois, nouvelle occasion d’apprendre (ou de réapprendre) les bases — c’est tout le propos de Sprout." } : { id: "sprout", name: "Sprout", tie: "New month, new chance to learn (or re-learn) the basics — that's Sprout's whole thing." });
     document.getElementById('kom-img').src = '/assets/characters/circles/' + pick.id + '.jpg';
     document.getElementById('kom-img').alt = pick.name;
     document.getElementById('kom-name').textContent = pick.name;
@@ -1558,6 +1586,7 @@
     var tqLang = (window.DSKi18n && DSKi18n.lang) || 'en';
     var tqIsTr = tqLang === 'tr';
     var tqIsEs = tqLang === 'es';
+    var tqIsFr = tqLang === 'fr';
     var QUESTS = tqIsTr ? [
       { id: "roblox-safety-lab",    title: "Roblox Güvenlik Laboratuvarı",     emoji: "🎮" },
       { id: "ai-threat-awareness",  title: "Yapay Zeka Tehdit Farkındalığı",   emoji: "🤖" },
@@ -1572,6 +1601,13 @@
       { id: "parental-controls",    title: "Revisión de Controles Parentales", emoji: "🔧" },
       { id: "family-cyber-defense", title: "Ciberdefensa Familiar",  emoji: "🛡️" },
       { id: "digital-citizenship",  title: "Ciudadanía Digital",   emoji: "🌐" }
+    ] : tqIsFr ? [
+      { id: "roblox-safety-lab",    title: "Labo de sécurité Roblox",     emoji: "🎮" },
+      { id: "ai-threat-awareness",  title: "Vigilance face aux menaces de l’IA",   emoji: "🤖" },
+      { id: "grooming-watch",       title: "Veille anti-grooming",        emoji: "🚩" },
+      { id: "parental-controls",    title: "Bilan du contrôle parental", emoji: "🔧" },
+      { id: "family-cyber-defense", title: "Cyberdéfense familiale",  emoji: "🛡️" },
+      { id: "digital-citizenship",  title: "Citoyenneté numérique",   emoji: "🌐" }
     ] : [
       { id: "roblox-safety-lab",    title: "Roblox Safety Lab",     emoji: "🎮" },
       { id: "ai-threat-awareness",  title: "AI Threat Awareness",   emoji: "🤖" },
@@ -1621,6 +1657,8 @@
       ? { votes: 'oy', thanks: 'Oyun kaydedildi!', fail: 'Oylama şu anda yüklenemedi.', already: 'Bu ay oyunu kullandın', sub: 'Seçimin gelecek ay ne üreteceğimizi belirliyor. Hesap gerekmez.' }
       : pLang === 'es'
       ? { votes: 'votos', thanks: '¡Voto registrado!', fail: 'No se pudo cargar la votación.', already: 'Ya votaste este mes', sub: 'Tu elección define lo que construiremos el próximo mes. No hace falta cuenta.' }
+      : pLang === 'fr'
+      ? { votes: 'votes', thanks: 'Vote enregistré !', fail: 'Impossible de charger le vote pour le moment.', already: 'Vous avez déjà voté ce mois-ci', sub: 'Votre choix détermine ce que nous construirons le mois prochain. Aucun compte nécessaire.' }
       : { votes: 'votes', thanks: 'Vote counted!', fail: "Couldn't load the vote right now.", already: 'You voted this month', sub: 'Your pick shapes what we build next month. No account needed.' };
 
     function esc(t) { var d = document.createElement('div'); d.textContent = t == null ? '' : t; return d.innerHTML; }
@@ -1709,6 +1747,8 @@
       ? { updated: 'Son güncelleme', read: 'Kaynağı oku →', fail: 'Haberler şu anda yüklenemedi.', via: 'Kaynak', watch: 'Dijital Güvenlik Radarı', foot: 'Tüm haber arşivi →' }
       : wLang === 'es'
       ? { updated: 'Actualizado', read: 'Leer la fuente →', fail: 'No se pudieron cargar las noticias ahora.', via: 'Fuente', watch: 'Vigilancia Digital', foot: 'Ver todo el archivo →' }
+      : wLang === 'fr'
+      ? { updated: 'Mis à jour', read: 'Lire la source →', fail: 'Impossible de charger les actualités pour le moment.', via: 'Source', watch: 'Veille Sécurité Numérique', foot: 'Parcourir toutes les archives →' }
       : { updated: 'Updated', read: 'Read the source →', fail: "Couldn't load the news right now.", via: 'Source', watch: 'Digital Safety Watch', foot: 'Browse the full archive →' };
 
     function esc(s) { var d = document.createElement('div'); d.textContent = s == null ? '' : s; return d.innerHTML; }
@@ -1725,7 +1765,7 @@
         var upd = document.getElementById('watch-updated');
         if (upd && data.updated) {
           var d = new Date(data.updated);
-          upd.textContent = L.updated + ': ' + d.toLocaleDateString(wLang === 'tr' ? 'tr-TR' : wLang === 'es' ? 'es-ES' : 'en-US', { month: 'short', day: 'numeric' }) + ', ' + d.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
+          upd.textContent = L.updated + ': ' + d.toLocaleDateString(wLang === 'tr' ? 'tr-TR' : wLang === 'es' ? 'es-419' : wLang === 'fr' ? 'fr-FR' : 'en-US', { month: 'short', day: 'numeric' }) + ', ' + d.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
         }
         if (grid) {
           // Top 3 only — the same items already scroll in the hero's
@@ -1774,7 +1814,7 @@
   // which is why dsk-members stayed at 6 while the primary CTA ran all day.
   // This posts to the existing /signup endpoint and creates a real record.
   window.submitParentJoin = function () {
-    var l = kmLang(), isTr = l === 'tr', isEs = l === 'es';
+    var l = kmLang(), isTr = l === 'tr', isEs = l === 'es', isFr = l === 'fr';
     var nameEl = document.getElementById('km-parent-name');
     var mailEl = document.getElementById('km-parent-email');
     var btn = document.getElementById('km-parent-btn');
@@ -1790,11 +1830,12 @@
     if (!name || !email || email.indexOf('@') === -1) {
       show(false, isTr ? 'Lütfen adını ve geçerli bir e-posta gir.'
         : isEs ? 'Ingresa tu nombre y un correo válido.'
+        : isFr ? 'Indiquez un nom et une adresse e-mail valide.'
         : 'Please enter a name and a valid email.');
       return;
     }
     btn.disabled = true;
-    btn.textContent = isTr ? 'Kaydediliyor…' : isEs ? 'Guardando…' : 'Joining…';
+    btn.textContent = isTr ? 'Kaydediliyor…' : isEs ? 'Guardando…' : isFr ? 'Inscription…' : 'Joining…';
 
     fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/signup', {
       method: 'POST',
@@ -1814,26 +1855,27 @@
             '<div style="text-align:center;padding:0.6rem 0;">' +
             '<div style="font-size:1.9rem;">📬</div>' +
             '<div style="font-weight:900;color:var(--navy);margin:4px 0 3px;">' +
-            (isTr ? 'Katıldın!' : isEs ? '¡Te uniste!' : "You're in!") + '</div>' +
+            (isTr ? 'Katıldın!' : isEs ? '¡Te uniste!' : isFr ? 'C’est fait !' : "You're in!") + '</div>' +
             '<div style="color:var(--gray);font-size:0.83rem;line-height:1.5;">' +
             (isTr ? 'İlk Haftalık Şövalye Raporu e-postana gelecek.'
               : isEs ? 'El primer Informe Semanal del Caballero llegará a tu correo.'
+              : isFr ? 'Votre premier Rapport hebdomadaire du Chevalier est en route.'
               : "Your first Weekly Knight Report is on its way.") + '</div></div>';
         } else {
           // 409 = already a member; that's a success from the user's side.
           var dup = (res.d.message || '').toLowerCase().indexOf('already') !== -1;
           show(dup, dup
-            ? (isTr ? 'Bu e-posta zaten kayıtlı — zaten üyesin!' : isEs ? 'Este correo ya está registrado.' : "You're already a member with this email.")
-            : (res.d.message || (isTr ? 'Bir şeyler ters gitti.' : isEs ? 'Algo salió mal.' : 'Something went wrong.')));
+            ? (isTr ? 'Bu e-posta zaten kayıtlı — zaten üyesin!' : isEs ? 'Este correo ya está registrado.' : isFr ? 'Cette adresse e-mail est déjà enregistrée comme membre.' : "You're already a member with this email.")
+            : (res.d.message || (isTr ? 'Bir şeyler ters gitti.' : isEs ? 'Algo salió mal.' : isFr ? 'Une erreur s’est produite.' : 'Something went wrong.')));
           btn.disabled = false;
-          btn.textContent = isTr ? 'Ücretsiz Katıl →' : isEs ? 'Únete Gratis →' : 'Join Free →';
+          btn.textContent = isTr ? 'Ücretsiz Katıl →' : isEs ? 'Únete Gratis →' : isFr ? 'Adhérer gratuitement →' : 'Join Free →';
         }
       })
       .catch(function (e) {
         console.error('parent join', e);
-        show(false, isTr ? 'Bağlantı hatası. Lütfen tekrar dene.' : isEs ? 'Error de conexión. Inténtalo de nuevo.' : 'Connection error. Please try again.');
+        show(false, isTr ? 'Bağlantı hatası. Lütfen tekrar dene.' : isEs ? 'Error de conexión. Inténtalo de nuevo.' : isFr ? 'Erreur de connexion. Veuillez réessayer.' : 'Connection error. Please try again.');
         btn.disabled = false;
-        btn.textContent = isTr ? 'Ücretsiz Katıl →' : isEs ? 'Únete Gratis →' : 'Join Free →';
+        btn.textContent = isTr ? 'Ücretsiz Katıl →' : isEs ? 'Únete Gratis →' : isFr ? 'Adhérer gratuitement →' : 'Join Free →';
       });
   };
 
@@ -1862,13 +1904,13 @@
 
   function submitKnightName() {
     var l = kmLang();
-    var isTr = l === 'tr', isEs = l === 'es';
+    var isTr = l === 'tr', isEs = l === 'es', isFr = l === 'fr';
     var nameEl = document.getElementById('km-nickname');
     var name = nameEl.value.trim();
     var errEl = document.getElementById('km-error');
     if (name.length < 2) {
       errEl.style.display = 'block';
-      errEl.textContent = isTr ? 'Lütfen en az 2 karakterli bir isim gir.' : isEs ? 'Ingresa un nombre de al menos 2 caracteres.' : 'Please enter a name with at least 2 characters.';
+      errEl.textContent = isTr ? 'Lütfen en az 2 karakterli bir isim gir.' : isEs ? 'Ingresa un nombre de al menos 2 caracteres.' : isFr ? 'Choisis un nom d’au moins 2 caractères.' : 'Please enter a name with at least 2 characters.';
       return;
     }
     errEl.style.display = 'none';
@@ -1876,7 +1918,7 @@
 
     var isNew = !localStorage.getItem('dsk_knight_points');
     if (window.DSKPoints) {
-      DSKPoints.addPoints(10, isTr ? 'Hoş geldin bonusu' : isEs ? 'Bono de bienvenida' : 'Welcome bonus');
+      DSKPoints.addPoints(10, isTr ? 'Hoş geldin bonusu' : isEs ? 'Bono de bienvenida' : isFr ? 'Bonus de bienvenue' : 'Welcome bonus');
     }
 
     document.getElementById('km-step-name').style.display = 'none';
@@ -1897,6 +1939,7 @@
         box.innerHTML = '<div style="text-align:center;color:var(--gray);font-size:0.82rem;">' +
           (isTr ? '📬 Haftalık Şövalye Raporu\'na zaten kayıtlısın.'
             : isEs ? '📬 Tu correo ya está suscrito al Informe Semanal del Caballero.'
+            : isFr ? '📬 Cette adresse est déjà abonnée au Rapport hebdomadaire du Chevalier.'
             : "📬 You're already signed up for the Weekly Knight Report.") + '</div>';
         return;
       }
@@ -1909,19 +1952,20 @@
       pn.placeholder = window.DSKi18n
         ? DSKi18n.t('home.kmParentNamePh', 'Your name')
         : 'Your name';
-      pe.placeholder = isTr ? 'Ebeveyn e-postası' : isEs ? 'Correo del padre/madre' : "Parent's email";
-      pb.textContent = isTr ? 'Ücretsiz Katıl →' : isEs ? 'Únete Gratis →' : 'Join Free →';
+      pe.placeholder = isTr ? 'Ebeveyn e-postası' : isEs ? 'Correo del padre/madre' : isFr ? 'E-mail du parent' : "Parent's email";
+      pb.textContent = isTr ? 'Ücretsiz Katıl →' : isEs ? 'Únete Gratis →' : isFr ? 'Adhérer gratuitement →' : 'Join Free →';
     })();
 
     var level = window.DSKPoints ? DSKPoints.levelForPoints(DSKPoints.getPoints()) : {emoji: '🪖', name: 'Squire'};
     // knight-points.js carries nameTr/nameEs for every rank; using the
     // English one here left "un Squire" on the Spanish welcome screen.
-    var levelName = (isTr && level.nameTr) || (isEs && level.nameEs) || level.name;
+    var levelName = (isTr && level.nameTr) || (isEs && level.nameEs) || (isFr && level.nameFr) || level.name;
     document.getElementById('km-welcome-emoji').textContent = level.emoji;
-    document.getElementById('km-welcome-title').textContent = (isTr ? 'Hoş geldin, ' : isEs ? '¡Hola, ' : 'Welcome, ') + name + '!';
+    document.getElementById('km-welcome-title').textContent = (isTr ? 'Hoş geldin, ' : isEs ? '¡Hola, ' : isFr ? 'Bienvenue, ' : 'Welcome, ') + name + (isFr ? ' !' : '!');
     document.getElementById('km-welcome-sub').textContent = isTr
       ? 'Artık resmen bir ' + levelName + '\'sın. İlk göreve hazır mısın?'
       : isEs ? ('Ya eres oficialmente ' + levelName + '. ¿Te animas a tu primera misión?')
+      : isFr ? ('Te voilà officiellement ' + levelName + '. On part pour ta première quête ?')
       : ('You\'re officially a ' + levelName + '. Ready for your first quest?');
   }
 
@@ -1929,11 +1973,12 @@
     var dcLang = (window.DSKi18n && DSKi18n.lang) || 'en';
     var dcIsTr = dcLang === 'tr';
     var dcIsEs = dcLang === 'es';
-    var amt = prompt(dcIsTr ? 'Bağış miktarını USD olarak gir (minimum 1$):' : dcIsEs ? 'Ingresa el monto de la donación en USD (mínimo $1):' : 'Enter donation amount in USD (minimum $1):');
+    var dcIsFr = dcLang === 'fr';
+    var amt = prompt(dcIsTr ? 'Bağış miktarını USD olarak gir (minimum 1$):' : dcIsEs ? 'Ingresa el monto de la donación en USD (mínimo $1):' : dcIsFr ? 'Indiquez le montant de votre don en USD (minimum 1 $) :' : 'Enter donation amount in USD (minimum $1):');
     if (!amt) return;
     var amount = parseFloat(amt);
     if (isNaN(amount) || amount < 1) {
-      alert(dcIsTr ? 'Lütfen 1$ veya daha fazla geçerli bir miktar gir.' : dcIsEs ? 'Ingresa un monto válido de $1 o más.' : 'Please enter a valid amount of $1 or more.');
+      alert(dcIsTr ? 'Lütfen 1$ veya daha fazla geçerli bir miktar gir.' : dcIsEs ? 'Ingresa un monto válido de $1 o más.' : dcIsFr ? 'Indiquez un montant valide de 1 $ ou plus.' : 'Please enter a valid amount of $1 or more.');
       return;
     }
     donate(Math.round(amount));
@@ -1943,14 +1988,15 @@
     var dLang2 = (window.DSKi18n && DSKi18n.lang) || 'en';
     var dIsTr2 = dLang2 === 'tr';
     var dIsEs2 = dLang2 === 'es';
+    var dIsFr2 = dLang2 === 'fr';
     var profile = null;
     try { profile = JSON.parse(localStorage.getItem('dsk_profile') || 'null'); } catch (e) {}
-    var email = (profile && profile.email) || prompt(dIsTr2 ? 'Makbuz için e-postanı gir:' : dIsEs2 ? 'Ingresa tu correo electrónico para el recibo:' : 'Enter your email for the receipt:');
+    var email = (profile && profile.email) || prompt(dIsTr2 ? 'Makbuz için e-postanı gir:' : dIsEs2 ? 'Ingresa tu correo electrónico para el recibo:' : dIsFr2 ? 'Indiquez votre adresse e-mail pour le reçu :' : 'Enter your email for the receipt:');
     if (!email || email.indexOf('@') === -1) {
-      alert(dIsTr2 ? 'Lütfen geçerli bir e-posta adresi gir.' : dIsEs2 ? 'Ingresa una dirección de correo electrónico válida.' : 'Please enter a valid email address.');
+      alert(dIsTr2 ? 'Lütfen geçerli bir e-posta adresi gir.' : dIsEs2 ? 'Ingresa una dirección de correo electrónico válida.' : dIsFr2 ? 'Indiquez une adresse e-mail valide.' : 'Please enter a valid email address.');
       return;
     }
-    var name = (profile && profile.name) || prompt(dIsTr2 ? 'Adın (ya da "Anonim"):' : dIsEs2 ? 'Tu nombre (o "Anónimo"):' : 'Your name (or "Anonymous"):') || (dIsTr2 ? 'Anonim Bağışçı' : dIsEs2 ? 'Donante Anónimo' : 'Anonymous Donor');
+    var name = (profile && profile.name) || prompt(dIsTr2 ? 'Adın (ya da "Anonim"):' : dIsEs2 ? 'Tu nombre (o "Anónimo"):' : dIsFr2 ? 'Votre nom (ou « Anonyme ») :' : 'Your name (or "Anonymous"):') || (dIsTr2 ? 'Anonim Bağışçı' : dIsEs2 ? 'Donante Anónimo' : dIsFr2 ? 'Anonyme' : 'Anonymous Donor');
 
     fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/donate', {
       method: 'POST',
@@ -1970,12 +2016,13 @@
         var dLang = (window.DSKi18n && DSKi18n.lang) || 'en';
         var dIsTr = dLang === 'tr';
         var dIsEs = dLang === 'es';
-        alert('❌ ' + (data.message || (dIsTr ? 'Ödeme oluşturulamadı. Lütfen tekrar deneyin.' : dIsEs ? 'No se pudo crear el pago. Por favor, inténtalo de nuevo.' : 'Could not create payment. Please try again.')));
+        var dIsFr = dLang === 'fr';
+        alert('❌ ' + (data.message || (dIsTr ? 'Ödeme oluşturulamadı. Lütfen tekrar deneyin.' : dIsEs ? 'No se pudo crear el pago. Por favor, inténtalo de nuevo.' : dIsFr ? 'Le paiement n’a pas pu être créé. Veuillez réessayer.' : 'Could not create payment. Please try again.')));
       }
     })
     .catch(function(err) {
       var errLang = (window.DSKi18n && DSKi18n.lang) || 'en';
-      alert(errLang === 'tr' ? '❌ Bağlantı hatası. Lütfen tekrar deneyin.' : errLang === 'es' ? '❌ Error de conexión. Por favor, inténtalo de nuevo.' : '❌ Connection error. Please try again.');
+      alert(errLang === 'tr' ? '❌ Bağlantı hatası. Lütfen tekrar deneyin.' : errLang === 'es' ? '❌ Error de conexión. Por favor, inténtalo de nuevo.' : errLang === 'fr' ? '❌ Erreur de connexion. Veuillez réessayer.' : '❌ Connection error. Please try again.');
       console.error(err);
     });
   }
@@ -1984,13 +2031,14 @@
     var sLang = (window.DSKi18n && DSKi18n.lang) || 'en';
     var sIsTr = sLang === 'tr';
     var sIsEs = sLang === 'es';
+    var sIsFr = sLang === 'fr';
     var name  = document.getElementById('f-name').value.trim();
     var email = document.getElementById('f-email').value.trim();
-    if (!name || !email) { alert(sIsTr ? 'Lütfen adını ve e-postanı gir.' : sIsEs ? 'Por favor, ingresa tu nombre y correo electrónico.' : 'Please enter your name and email.'); return; }
-    if (email.indexOf('@') === -1) { alert(sIsTr ? 'Lütfen geçerli bir e-posta gir.' : sIsEs ? 'Por favor, ingresa un correo electrónico válido.' : 'Please enter a valid email.'); return; }
+    if (!name || !email) { alert(sIsTr ? 'Lütfen adını ve e-postanı gir.' : sIsEs ? 'Por favor, ingresa tu nombre y correo electrónico.' : sIsFr ? 'Indiquez votre nom et votre adresse e-mail.' : 'Please enter your name and email.'); return; }
+    if (email.indexOf('@') === -1) { alert(sIsTr ? 'Lütfen geçerli bir e-posta gir.' : sIsEs ? 'Por favor, ingresa un correo electrónico válido.' : sIsFr ? 'Indiquez une adresse e-mail valide.' : 'Please enter a valid email.'); return; }
 
     var btn = document.querySelector('.submit');
-    btn.textContent = sIsTr ? 'Katılıyor...' : sIsEs ? 'Uniéndote…' : 'Joining...';
+    btn.textContent = sIsTr ? 'Katılıyor...' : sIsEs ? 'Uniéndote…' : sIsFr ? 'Inscription…' : 'Joining...';
     btn.disabled = true;
 
     fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/signup', {
@@ -2010,14 +2058,14 @@
         document.getElementById('f-name').value = '';
         document.getElementById('f-email').value = '';
         setTimeout(closeModal, 4000);
-      } else { alert(data.message || (sIsTr ? 'Bir şeyler ters gitti.' : sIsEs ? 'Algo salió mal.' : 'Something went wrong.')); }
+      } else { alert(data.message || (sIsTr ? 'Bir şeyler ters gitti.' : sIsEs ? 'Algo salió mal.' : sIsFr ? 'Une erreur s’est produite.' : 'Something went wrong.')); }
     })
     .catch(function(err) {
-      alert(sIsTr ? 'Bağlantı hatası. Lütfen tekrar deneyin.' : sIsEs ? 'Error de conexión. Por favor, inténtalo de nuevo.' : 'Connection error. Please try again.');
+      alert(sIsTr ? 'Bağlantı hatası. Lütfen tekrar deneyin.' : sIsEs ? 'Error de conexión. Por favor, inténtalo de nuevo.' : sIsFr ? 'Erreur de connexion. Veuillez réessayer.' : 'Connection error. Please try again.');
       console.error(err);
     })
     .finally(function() {
-      btn.textContent = sIsTr ? 'Şövalyelere Katıl — Ücretsiz →' : sIsEs ? 'Únete a los Caballeros — Gratis →' : 'Join the Knights — Free →';
+      btn.textContent = sIsTr ? 'Şövalyelere Katıl — Ücretsiz →' : sIsEs ? 'Únete a los Caballeros — Gratis →' : sIsFr ? 'Rejoignez les Chevaliers — c’est gratuit →' : 'Join the Knights — Free →';
       btn.disabled = false;
     });
   }
@@ -2094,6 +2142,7 @@
     var tickerLang = (window.DSKi18n && DSKi18n.lang) || 'en';
     var tickerIsTr = tickerLang === 'tr';
     var tickerIsEs = tickerLang === 'es';
+    var tickerIsFr = tickerLang === 'fr';
     var facts = tickerIsTr ? [
       '7 hikaye tabanlı görev, her büyük tehdidi kapsar',
       '9 ücretsiz interaktif güvenlik aracı',
@@ -2106,6 +2155,12 @@
       '10 guías familiares descargables',
       'Líneas de ayuda de emergencia para más de 40 países',
       'Todo en este sitio sigue siendo gratis — siempre'
+    ] : tickerIsFr ? [
+      '7 quêtes narratives, une pour chaque grande menace',
+      '9 outils de sécurité interactifs gratuits',
+      '10 guides familiaux à télécharger',
+      'Des lignes d’urgence pour plus de 40 pays',
+      'Tout sur ce site reste gratuit — pour toujours'
     ] : [
       '7 story-driven quests, one for every major threat',
       '9 free interactive safety tools',

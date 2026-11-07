@@ -90,7 +90,9 @@
   var L = aLang === 'tr'
     ? { via: 'Kaynak', read: 'Haberi oku →', fail: 'Arşiv yüklenemedi.', none: 'Aramanla eşleşen haber yok.', stories: 'haber', days: 'gün', total: '{n} haber · {d} gün', locale: 'tr-TR' }
     : aLang === 'es'
-    ? { via: 'Fuente', read: 'Leer la noticia →', fail: 'No se pudo cargar el archivo.', none: 'Ninguna noticia coincide con tu búsqueda.', stories: 'noticias', days: 'días', total: '{n} noticias · {d} días', locale: 'es-ES' }
+    ? { via: 'Fuente', read: 'Leer la noticia →', fail: 'No se pudo cargar el archivo.', none: 'Ninguna noticia coincide con tu búsqueda.', stories: 'noticias', days: 'días', total: '{n} noticias · {d} días', locale: 'es-419' }
+    : aLang === 'fr'
+    ? { via: 'Source', read: 'Lire l’article →', fail: 'Impossible de charger les archives.', none: 'Aucun article ne correspond à ta recherche.', stories: 'articles', days: 'jours', total: '{n} articles · {d} jours', locale: 'fr-FR' }
     : { via: 'Source', read: 'Read the story →', fail: "Couldn't load the archive.", none: 'No stories match your search.', stories: 'stories', days: 'days', total: '{n} stories · {d} days', locale: 'en-US' };
 
   function esc(s) { var d = document.createElement('div'); d.textContent = s == null ? '' : s; return d.innerHTML; }

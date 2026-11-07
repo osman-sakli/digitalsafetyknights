@@ -65,6 +65,7 @@
 const certLang = (window.DSKi18n && DSKi18n.lang) || 'en';
 const certIsTr = certLang === 'tr';
 const certIsEs = certLang === 'es';
+const certIsFr = certLang === 'fr';
 const PROGRESS_KEY = "dsk_progress";
 const NICKNAME_KEY = "dsk_nickname";
 const EMBLEM_KEY = "dsk_emblem";
@@ -95,7 +96,7 @@ function badgeForCount(n) {
   catch (e) { progress = { completed: {} }; }
   const n = Object.keys(progress.completed || {}).length;
   const badge = badgeForCount(n);
-  const today = new Date().toLocaleDateString(certIsTr ? 'tr-TR' : certIsEs ? 'es-ES' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+  const today = new Date().toLocaleDateString(certIsTr ? 'tr-TR' : certIsEs ? 'es-419' : certIsFr ? 'fr-FR' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
   const el = document.getElementById('cert-content');
   if (!nickname || !badge) {

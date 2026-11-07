@@ -100,6 +100,7 @@
 const midLang = (window.DSKi18n && DSKi18n.lang) || 'en';
 const midIsTr = midLang === 'tr';
 const midIsEs = midLang === 'es';
+const midIsFr = midLang === 'fr';
 const NICKNAME_KEY = "dsk_nickname";
 const EMBLEM_KEY = "dsk_emblem";
 
@@ -146,7 +147,7 @@ function escapeHtml(str) {
   const streak = DSKPoints.getStreak();
   const memberId = DSKPoints.getMemberId();
   const since = DSKPoints.getMemberSince();
-  const sinceFmt = new Date(since).toLocaleDateString(midIsTr ? 'tr-TR' : midIsEs ? 'es-ES' : 'en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+  const sinceFmt = new Date(since).toLocaleDateString(midIsTr ? 'tr-TR' : midIsEs ? 'es-419' : midIsFr ? 'fr-FR' : 'en-US', { year: 'numeric', month: 'short', day: 'numeric' });
 
   let emblem = { color: 'linear-gradient(135deg, var(--gold2), var(--gold))', symbol: '🛡️' };
   try {

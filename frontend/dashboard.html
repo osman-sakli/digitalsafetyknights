@@ -282,6 +282,7 @@
   var dashLang = (window.DSKi18n && DSKi18n.lang) || 'en';
   var dashIsTr = dashLang === 'tr';
   var dashIsEs = dashLang === 'es';
+var dashIsFr = dashLang === 'fr';
   // badge.id values must stay in English — they're matched against profile.badges from the server, not displayed as-is for the label
   var ALL_BADGES = dashIsTr ? [
     {id: 'Bronze Squire', label: 'Bronz Yaver', icon: '🪙', class: 'b-bronze', desc: "DSK'ya katıldı"},
@@ -329,7 +330,7 @@
 
     if (profile.joined_at) {
       var d = new Date(profile.joined_at);
-      document.getElementById('memberSince').textContent = d.toLocaleDateString(dashIsTr ? 'tr-TR' : dashIsEs ? 'es-ES' : 'en-US', {month: 'short', year: 'numeric'});
+      document.getElementById('memberSince').textContent = d.toLocaleDateString(dashIsTr ? 'tr-TR' : dashIsEs ? 'es-419' : dashIsFr ? 'fr-FR' : 'en-US', {month: 'short', year: 'numeric'});
     }
 
     document.getElementById('statGuides').textContent = (profile.guides_downloaded || []).length;
