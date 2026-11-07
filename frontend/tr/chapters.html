@@ -180,55 +180,58 @@
 var chLang = (window.DSKi18n && DSKi18n.lang) || 'en';
 var chIsTr = chLang === 'tr';
 var chIsEs = chLang === 'es';
+var chIsFr = chLang === 'fr';
 
-document.getElementById('ch-title').innerHTML = chIsTr ? '🌍 Şubeler' : chIsEs ? '🌍 Capítulos' : '🌍 Chapters';
+document.getElementById('ch-title').innerHTML = chIsTr ? '🌍 Şubeler' : chIsEs ? '🌍 Capítulos' : chIsFr ? '🌍 Sections locales' : '🌍 Chapters';
 document.getElementById('ch-tagline').textContent = chIsTr
   ? 'Kendi ülkelerinde okullara ve topluluklara dijital güvenlik eğitimi götüren yerel Şövalyelerden oluşan dünya çapında bir ağ. Misyonumuz: nerede yaşarsa yaşasın her çocuk bu eğitimi hak ediyor — ve bir şube, bunu evine getirmeye istekli tek bir kişiyle başlar.'
   : chIsEs
   ? 'Una red mundial de Knights locales que llevan educación en seguridad digital a escuelas y comunidades en su propio país. Nuestra misión: todo niño, donde sea que viva, merece esta educación — y un capítulo comienza con una sola persona dispuesta a traerla a casa.'
+  : chIsFr
+  ? 'Un réseau mondial de Chevaliers locaux qui apportent l’éducation à la sécurité numérique aux écoles et aux communautés de leur propre pays. Notre mission : chaque enfant, partout, mérite cette éducation — et une section locale commence par une seule personne prête à l’apporter chez elle.'
   : 'A worldwide network of local Knights bringing digital safety education to schools and communities in their own country. Our mission: every child, everywhere, deserves this education — and a chapter starts with one person willing to bring it home.';
 
-document.getElementById('ch-active-title').textContent = chIsTr ? 'Aktif Şubeler' : chIsEs ? 'Capítulos Activos' : 'Active Chapters';
-document.getElementById('ch-active-lede').textContent = chIsTr ? 'Gerçek insanların yönettiği gerçek şubeler — canlı güncellenir, asla uydurma bir sayı değil.' : chIsEs ? 'Capítulos reales, dirigidos por personas reales — actualizados en vivo, nunca un número inventado.' : 'Real chapters, run by real people — updated live, never a made-up number.';
+document.getElementById('ch-active-title').textContent = chIsTr ? 'Aktif Şubeler' : chIsEs ? 'Capítulos Activos' : chIsFr ? 'Sections locales actives' : 'Active Chapters';
+document.getElementById('ch-active-lede').textContent = chIsTr ? 'Gerçek insanların yönettiği gerçek şubeler — canlı güncellenir, asla uydurma bir sayı değil.' : chIsEs ? 'Capítulos reales, dirigidos por personas reales — actualizados en vivo, nunca un número inventado.' : chIsFr ? 'De vraies sections locales, animées par de vraies personnes — mises à jour en direct, jamais un chiffre inventé.' : 'Real chapters, run by real people — updated live, never a made-up number.';
 
-document.getElementById('ch-does-title').textContent = chIsTr ? 'Bir Şube Ne Yapar' : chIsEs ? 'Qué Hace un Capítulo' : 'What a Chapter Does';
-document.getElementById('ch-does1-h').textContent = chIsTr ? 'Yerel Oturumlar' : chIsEs ? 'Sesiones Locales' : 'Local Sessions';
-document.getElementById('ch-does1-p').textContent = chIsTr ? 'Kendi bölgenizdeki okullarda ve topluluk gruplarında DSK\'yı temsil eder — materyallerimizi ve eğitimimizi kullanarak siz liderlik edersiniz.' : chIsEs ? 'Representa a DSK en escuelas y grupos comunitarios de tu zona — tú lideras, usando nuestros materiales y capacitación.' : 'Represents DSK at schools and community groups in your area — you lead, using our materials and training.';
-document.getElementById('ch-does2-h').textContent = chIsTr ? 'Yerel Ses' : chIsEs ? 'Voz Local' : 'Local Voice';
-document.getElementById('ch-does2-p').textContent = chIsTr ? 'İçeriğimizi ülkenizin platformlarına, yasalarına ve diline uyarlar — topluluğunuzu en iyi siz bilirsiniz.' : chIsEs ? 'Adapta nuestro contenido a las plataformas, leyes e idioma de tu país — tú conoces mejor a tu comunidad.' : "Adapts our content to your country's platforms, laws, and language — you know your community best.";
-document.getElementById('ch-does3-h').textContent = chIsTr ? 'Yerel Ağ' : chIsEs ? 'Red Local' : 'Local Network';
-document.getElementById('ch-does3-p').innerHTML = chIsTr ? 'Yerel okulları, ebeveynleri ve gençlik kuruluşlarını daha geniş DSK topluluğuna ve <a href="/knight-council.html">Şövalye Konseyi</a>\'ne bağlar.' : chIsEs ? 'Conecta escuelas locales, padres y organizaciones juveniles con la comunidad más amplia de DSK y el <a href="/knight-council.html">Consejo de Caballeros</a>.' : 'Connects local schools, parents, and youth organizations into the wider DSK community and the <a href="/knight-council.html">Consejo de Caballeros</a>.';
-document.getElementById('ch-does4-h').textContent = chIsTr ? 'DSK Desteğiyle' : chIsEs ? 'Respaldado por DSK' : 'Backed by DSK';
-document.getElementById('ch-does4-p').textContent = chIsTr ? 'Sıfırdan başlamıyorsunuz — rehberler, görevler, eğitim ve sürekli destek merkez ekipten gelir.' : chIsEs ? 'No empiezas de cero — guías, misiones, capacitación y apoyo continuo vienen del equipo central.' : "You're not starting from zero — guides, quests, training, and ongoing support come from the core team.";
+document.getElementById('ch-does-title').textContent = chIsTr ? 'Bir Şube Ne Yapar' : chIsEs ? 'Qué Hace un Capítulo' : chIsFr ? 'Ce que fait une section locale' : 'What a Chapter Does';
+document.getElementById('ch-does1-h').textContent = chIsTr ? 'Yerel Oturumlar' : chIsEs ? 'Sesiones Locales' : chIsFr ? 'Séances locales' : 'Local Sessions';
+document.getElementById('ch-does1-p').textContent = chIsTr ? 'Kendi bölgenizdeki okullarda ve topluluk gruplarında DSK\'yı temsil eder — materyallerimizi ve eğitimimizi kullanarak siz liderlik edersiniz.' : chIsEs ? 'Representa a DSK en escuelas y grupos comunitarios de tu zona — tú lideras, usando nuestros materiales y capacitación.' : chIsFr ? 'Représente DSK dans les écoles et les groupes communautaires de votre région — c’est vous qui animez, avec nos supports et notre formation.' : 'Represents DSK at schools and community groups in your area — you lead, using our materials and training.';
+document.getElementById('ch-does2-h').textContent = chIsTr ? 'Yerel Ses' : chIsEs ? 'Voz Local' : chIsFr ? 'Voix locale' : 'Local Voice';
+document.getElementById('ch-does2-p').textContent = chIsTr ? 'İçeriğimizi ülkenizin platformlarına, yasalarına ve diline uyarlar — topluluğunuzu en iyi siz bilirsiniz.' : chIsEs ? 'Adapta nuestro contenido a las plataformas, leyes e idioma de tu país — tú conoces mejor a tu comunidad.' : chIsFr ? 'Adapte nos contenus aux plateformes, aux lois et à la langue de votre pays — personne ne connaît votre communauté mieux que vous.' : "Adapts our content to your country's platforms, laws, and language — you know your community best.";
+document.getElementById('ch-does3-h').textContent = chIsTr ? 'Yerel Ağ' : chIsEs ? 'Red Local' : chIsFr ? 'Réseau local' : 'Local Network';
+document.getElementById('ch-does3-p').innerHTML = chIsTr ? 'Yerel okulları, ebeveynleri ve gençlik kuruluşlarını daha geniş DSK topluluğuna ve <a href="/knight-council.html">Şövalye Konseyi</a>\'ne bağlar.' : chIsEs ? 'Conecta escuelas locales, padres y organizaciones juveniles con la comunidad más amplia de DSK y el <a href="/knight-council.html">Consejo de Caballeros</a>.' : chIsFr ? 'Relie les écoles locales, les parents et les organisations de jeunesse à l’ensemble de la communauté DSK et au <a href="/knight-council.html">Conseil des Chevaliers</a>.' : 'Connects local schools, parents, and youth organizations into the wider DSK community and the <a href="/knight-council.html">Consejo de Caballeros</a>.';
+document.getElementById('ch-does4-h').textContent = chIsTr ? 'DSK Desteğiyle' : chIsEs ? 'Respaldado por DSK' : chIsFr ? 'Avec le soutien de DSK' : 'Backed by DSK';
+document.getElementById('ch-does4-p').textContent = chIsTr ? 'Sıfırdan başlamıyorsunuz — rehberler, görevler, eğitim ve sürekli destek merkez ekipten gelir.' : chIsEs ? 'No empiezas de cero — guías, misiones, capacitación y apoyo continuo vienen del equipo central.' : chIsFr ? 'Vous ne partez pas de zéro — guides, quêtes, formation et accompagnement continu viennent de l’équipe centrale.' : "You're not starting from zero — guides, quests, training, and ongoing support come from the core team.";
 
-document.getElementById('ch-form-title').textContent = chIsTr ? 'Bir Şube Başlat' : chIsEs ? 'Iniciar un Capítulo' : 'Start a Chapter';
-document.getElementById('ch-form-lede').textContent = chIsTr ? 'Kendinizden ve ülkenizden bahsedin. Bu gerçek bir sorumluluktur, sadece bir kayıt değil — her başvuruyu kişisel olarak inceliyoruz ve genellikle birkaç soru ya da kısa bir görüşmeyle takip ediyoruz.' : chIsEs ? 'Cuéntanos sobre ti y tu país. Esto es una responsabilidad real, no solo un registro — revisamos cada solicitud personalmente y normalmente hacemos seguimiento con algunas preguntas o una breve llamada.' : "Tell us about yourself and your country. This is a real responsibility, not just a signup — we review every application personally and usually follow up with a few questions or a short call.";
-document.getElementById('ch-label-name').textContent = chIsTr ? 'Adın' : chIsEs ? 'Tu Nombre' : 'Your Name';
+document.getElementById('ch-form-title').textContent = chIsTr ? 'Bir Şube Başlat' : chIsEs ? 'Iniciar un Capítulo' : chIsFr ? 'Créer une section locale' : 'Start a Chapter';
+document.getElementById('ch-form-lede').textContent = chIsTr ? 'Kendinizden ve ülkenizden bahsedin. Bu gerçek bir sorumluluktur, sadece bir kayıt değil — her başvuruyu kişisel olarak inceliyoruz ve genellikle birkaç soru ya da kısa bir görüşmeyle takip ediyoruz.' : chIsEs ? 'Cuéntanos sobre ti y tu país. Esto es una responsabilidad real, no solo un registro — revisamos cada solicitud personalmente y normalmente hacemos seguimiento con algunas preguntas o una breve llamada.' : chIsFr ? 'Parlez-nous de vous et de votre pays. C’est une vraie responsabilité, pas une simple inscription — nous lisons chaque candidature personnellement et nous revenons généralement vers vous avec quelques questions ou un court appel.' : "Tell us about yourself and your country. This is a real responsibility, not just a signup — we review every application personally and usually follow up with a few questions or a short call.";
+document.getElementById('ch-label-name').textContent = chIsTr ? 'Adın' : chIsEs ? 'Tu Nombre' : chIsFr ? 'Votre nom' : 'Your Name';
 document.getElementById('ch-label-email').textContent = 'Email';
-document.getElementById('ch-label-country').textContent = chIsTr ? 'Ülke' : chIsEs ? 'País' : 'Country';
-document.getElementById('ch-label-city').textContent = chIsTr ? 'Şehir (opsiyonel)' : chIsEs ? 'Ciudad (opcional)' : 'City (optional)';
-document.getElementById('ch-label-role').textContent = chIsTr ? 'Siz Kimsiniz...' : chIsEs ? 'Eres...' : 'You Are A...';
-document.getElementById('ch-role-parent').textContent = chIsTr ? 'Ebeveyn' : chIsEs ? 'Padre/Madre' : 'Parent';
-document.getElementById('ch-role-teacher').textContent = chIsTr ? 'Öğretmen / Eğitimci' : chIsEs ? 'Maestro/a / Educador/a' : 'Teacher / Educator';
-document.getElementById('ch-role-student').textContent = chIsTr ? 'Öğrenci (18+)' : chIsEs ? 'Estudiante (18+)' : 'Student (18+)';
-document.getElementById('ch-role-community').textContent = chIsTr ? 'Topluluk / Gençlik Kuruluşu Lideri' : chIsEs ? 'Líder Comunitario / de Organización Juvenil' : 'Community / Youth Organization Leader';
-document.getElementById('ch-role-other').textContent = chIsTr ? 'Diğer' : chIsEs ? 'Otro' : 'Other';
-document.getElementById('ch-label-why').textContent = chIsTr ? 'Ülkenizde neden bir Digital Safety Knights şubesi başlatmak istiyorsunuz?' : chIsEs ? '¿Por qué quieres iniciar un capítulo de Digital Safety Knights en tu país?' : 'Why do you want to start a Digital Safety Knights chapter in your country?';
-document.getElementById('ch-submit').textContent = chIsTr ? 'Şube Başlatmak İçin Başvur' : chIsEs ? 'Postularme para Iniciar un Capítulo' : 'Apply to Start a Chapter';
-document.getElementById('ch-alt-prompt').textContent = chIsTr ? 'Şube başlatmak yerine bir oturum mu ayırtmak istiyorsunuz?' : chIsEs ? '¿Buscas reservar una sesión en lugar de iniciar un capítulo?' : 'Looking to book a session instead of starting a chapter?';
-document.getElementById('ch-alt-link').textContent = chIsTr ? 'Okul ve Kurum Programlarına bakın →' : chIsEs ? 'Ver Programas para Escuelas y Organizaciones →' : 'See School & Organization Programs →';
+document.getElementById('ch-label-country').textContent = chIsTr ? 'Ülke' : chIsEs ? 'País' : chIsFr ? 'Pays' : 'Country';
+document.getElementById('ch-label-city').textContent = chIsTr ? 'Şehir (opsiyonel)' : chIsEs ? 'Ciudad (opcional)' : chIsFr ? 'Ville (facultatif)' : 'City (optional)';
+document.getElementById('ch-label-role').textContent = chIsTr ? 'Siz Kimsiniz...' : chIsEs ? 'Eres...' : chIsFr ? 'Votre rôle' : 'You Are A...';
+document.getElementById('ch-role-parent').textContent = chIsTr ? 'Ebeveyn' : chIsEs ? 'Padre/Madre' : chIsFr ? 'Parent' : 'Parent';
+document.getElementById('ch-role-teacher').textContent = chIsTr ? 'Öğretmen / Eğitimci' : chIsEs ? 'Maestro/a / Educador/a' : chIsFr ? 'Enseignement ou éducation' : 'Teacher / Educator';
+document.getElementById('ch-role-student').textContent = chIsTr ? 'Öğrenci (18+)' : chIsEs ? 'Estudiante (18+)' : chIsFr ? 'Études (18 ans et plus)' : 'Student (18+)';
+document.getElementById('ch-role-community').textContent = chIsTr ? 'Topluluk / Gençlik Kuruluşu Lideri' : chIsEs ? 'Líder Comunitario / de Organización Juvenil' : chIsFr ? 'Responsable d’une association ou d’un groupe de jeunes' : 'Community / Youth Organization Leader';
+document.getElementById('ch-role-other').textContent = chIsTr ? 'Diğer' : chIsEs ? 'Otro' : chIsFr ? 'Autre' : 'Other';
+document.getElementById('ch-label-why').textContent = chIsTr ? 'Ülkenizde neden bir Digital Safety Knights şubesi başlatmak istiyorsunuz?' : chIsEs ? '¿Por qué quieres iniciar un capítulo de Digital Safety Knights en tu país?' : chIsFr ? 'Pourquoi voulez-vous créer une section locale Digital Safety Knights dans votre pays ?' : 'Why do you want to start a Digital Safety Knights chapter in your country?';
+document.getElementById('ch-submit').textContent = chIsTr ? 'Şube Başlatmak İçin Başvur' : chIsEs ? 'Postularme para Iniciar un Capítulo' : chIsFr ? 'Postuler pour créer une section locale' : 'Apply to Start a Chapter';
+document.getElementById('ch-alt-prompt').textContent = chIsTr ? 'Şube başlatmak yerine bir oturum mu ayırtmak istiyorsunuz?' : chIsEs ? '¿Buscas reservar una sesión en lugar de iniciar un capítulo?' : chIsFr ? 'Vous cherchez plutôt à réserver une séance qu’à créer une section locale ?' : 'Looking to book a session instead of starting a chapter?';
+document.getElementById('ch-alt-link').textContent = chIsTr ? 'Okul ve Kurum Programlarına bakın →' : chIsEs ? 'Ver Programas para Escuelas y Organizaciones →' : chIsFr ? 'Voir les programmes pour les écoles et les organisations →' : 'See School & Organization Programs →';
 
-document.getElementById('ch-more-title').textContent = chIsTr ? 'Daha Fazla Katılım Yolu' : chIsEs ? 'Más Formas de Participar' : 'More Ways to Get Involved';
-document.getElementById('ch-more-kc-h').textContent = chIsTr ? 'Şövalye Konseyi' : chIsEs ? 'Consejo de Caballeros' : 'Knight Council';
-document.getElementById('ch-more-kc-p').textContent = chIsTr ? 'Dijital güvenlik farkındalığını yaymak için bir genç elçi ol.' : chIsEs ? 'Conviértete en un embajador adolescente de la seguridad digital.' : 'Become a teen ambassador for digital safety.';
-document.getElementById('ch-more-dash-h').textContent = chIsTr ? 'Panelin' : chIsEs ? 'Tu Panel' : 'Your Dashboard';
-document.getElementById('ch-more-dash-p').textContent = chIsTr ? 'Görevlerini, rozetlerini ve serini takip et.' : chIsEs ? 'Sigue tus misiones, insignias y tu racha.' : 'Track your quests, badges, and streak.';
-document.getElementById('ch-more-mid-h').textContent = chIsTr ? 'Üye Kimlik Kartı' : chIsEs ? 'Tarjeta de Miembro' : 'Member ID Card';
-document.getElementById('ch-more-mid-p').textContent = chIsTr ? 'Resmi DSK üyelik kartını yazdır.' : chIsEs ? 'Imprime tu tarjeta oficial de miembro de DSK.' : 'Print your official DSK membership card.';
+document.getElementById('ch-more-title').textContent = chIsTr ? 'Daha Fazla Katılım Yolu' : chIsEs ? 'Más Formas de Participar' : chIsFr ? 'D’autres façons de participer' : 'More Ways to Get Involved';
+document.getElementById('ch-more-kc-h').textContent = chIsTr ? 'Şövalye Konseyi' : chIsEs ? 'Consejo de Caballeros' : chIsFr ? 'Conseil des Chevaliers' : 'Knight Council';
+document.getElementById('ch-more-kc-p').textContent = chIsTr ? 'Dijital güvenlik farkındalığını yaymak için bir genç elçi ol.' : chIsEs ? 'Conviértete en un embajador adolescente de la seguridad digital.' : chIsFr ? 'Devenez porte-parole ado de la sécurité numérique.' : 'Become a teen ambassador for digital safety.';
+document.getElementById('ch-more-dash-h').textContent = chIsTr ? 'Panelin' : chIsEs ? 'Tu Panel' : chIsFr ? 'Votre tableau de bord' : 'Your Dashboard';
+document.getElementById('ch-more-dash-p').textContent = chIsTr ? 'Görevlerini, rozetlerini ve serini takip et.' : chIsEs ? 'Sigue tus misiones, insignias y tu racha.' : chIsFr ? 'Suivez vos quêtes, vos badges et votre série.' : 'Track your quests, badges, and streak.';
+document.getElementById('ch-more-mid-h').textContent = chIsTr ? 'Üye Kimlik Kartı' : chIsEs ? 'Tarjeta de Miembro' : chIsFr ? 'Carte de membre' : 'Member ID Card';
+document.getElementById('ch-more-mid-p').textContent = chIsTr ? 'Resmi DSK üyelik kartını yazdır.' : chIsEs ? 'Imprime tu tarjeta oficial de miembro de DSK.' : chIsFr ? 'Imprimez votre carte officielle de membre DSK.' : 'Print your official DSK membership card.';
 
-var CH_EMPTY_H = chIsTr ? 'Henüz şube yok — ülkenizdeki ilk şube siz olun!' : chIsEs ? 'Aún no hay capítulos — ¡sé el primero en tu país!' : 'No chapters yet — be the first in your country!';
-var CH_EMPTY_P = chIsTr ? 'Aşağıdan başvuran ilk kişi olun. Her yeni şube, bu haritada gerçek bir nokta olarak başlar.' : chIsEs ? 'Sé el primero en postularte a continuación. Cada nuevo capítulo comienza como un punto real en este mapa.' : "Be the first person to apply below. Every new chapter starts as one real point on this map.";
-var CH_SINCE = chIsTr ? 'yılından beri' : chIsEs ? 'desde' : 'since';
+var CH_EMPTY_H = chIsTr ? 'Henüz şube yok — ülkenizdeki ilk şube siz olun!' : chIsEs ? 'Aún no hay capítulos — ¡sé el primero en tu país!' : chIsFr ? 'Pas encore de section locale — soyez la première personne de votre pays !' : 'No chapters yet — be the first in your country!';
+var CH_EMPTY_P = chIsTr ? 'Aşağıdan başvuran ilk kişi olun. Her yeni şube, bu haritada gerçek bir nokta olarak başlar.' : chIsEs ? 'Sé el primero en postularte a continuación. Cada nuevo capítulo comienza como un punto real en este mapa.' : chIsFr ? 'Soyez la première personne à postuler ci-dessous. Chaque nouvelle section locale commence par un point réel sur cette carte.' : "Be the first person to apply below. Every new chapter starts as one real point on this map.";
+var CH_SINCE = chIsTr ? 'yılından beri' : chIsEs ? 'desde' : chIsFr ? 'depuis' : 'since';
 
 fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/chapters-list')
   .then(function (r) { return r.json(); })
@@ -277,13 +280,13 @@ document.getElementById('ch-form').addEventListener('submit', function (e) {
       document.getElementById('ch-form').reset();
     } else {
       statusEl.className = 'ch-status err';
-      statusEl.textContent = '❌ ' + (data.message || (chIsTr ? 'Bir hata oluştu.' : chIsEs ? 'Ocurrió un error.' : 'Something went wrong.'));
+      statusEl.textContent = '❌ ' + (data.message || (chIsTr ? 'Bir hata oluştu.' : chIsEs ? 'Ocurrió un error.' : chIsFr ? 'Une erreur est survenue.' : 'Something went wrong.'));
     }
   })
   .catch(function () {
     submitBtn.disabled = false;
     statusEl.className = 'ch-status err';
-    statusEl.textContent = chIsTr ? '❌ Bağlantı hatası. Lütfen tekrar deneyin.' : chIsEs ? '❌ Error de conexión. Inténtalo de nuevo.' : '❌ Connection error. Please try again.';
+    statusEl.textContent = chIsTr ? '❌ Bağlantı hatası. Lütfen tekrar deneyin.' : chIsEs ? '❌ Error de conexión. Inténtalo de nuevo.' : chIsFr ? '❌ Erreur de connexion. Veuillez réessayer.' : '❌ Connection error. Please try again.';
   });
 });
 </script>

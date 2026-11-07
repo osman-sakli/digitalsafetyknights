@@ -1,0 +1,63 @@
+{
+  "id": "digital-citizenship",
+  "title": "Citoyenneté numérique",
+  "emoji": "🌐",
+  "badgeTrack": "gold-sentinel",
+  "intro": "Glitch n’est pas la seule chose à surveiller — être Chevalier, ce n’est pas seulement se défendre, c’est aussi la façon dont tu traites les autres en ligne. Dernière quête, on y va !",
+  "questions": [
+    {
+      "narrator": "BOT",
+      "prompt": "J’ai fini toute ta rédaction à ta place ! Tu n’as plus qu’à copier-coller.",
+      "choices": [
+        { "text": "Copier tel quel et rendre la rédaction", "correct": false, "coach": "Une IA peut t’aider à apprendre, mais rendre son travail comme si c’était le tien n’est pas honnête — et en plus, une IA se trompe parfois avec beaucoup d’assurance." },
+        { "text": "S’en servir pour comprendre, puis écrire ta propre réponse", "correct": true, "coach": "Tout à fait — une IA est un outil pour apprendre, pas un remplaçant de ton propre travail." },
+        { "text": "Copier, mais changer quelques mots", "correct": false, "coach": "Ça ne devient pas ton travail pour autant — sers-toi de l’IA pour comprendre, puis rédige la tienne." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "Quelqu’un de ma classe se fait embêter dans notre groupe de discussion. Ce n’est pas moi que ça touche, donc ce n’est pas mon problème, si ?",
+      "choices": [
+        { "text": "Oui, ne pas s’en mêler", "correct": false, "coach": "Regarder sans rien dire, ça laisse la situation continuer. Un Chevalier prend la parole, ou en parle à un adulte de confiance." },
+        { "text": "Prévenir un adulte de confiance, ou prendre sa défense", "correct": true, "coach": "C’est exactement le coup du Chevalier — défendre les autres, c’est ça, la vraie citoyenneté numérique." },
+        { "text": "Quitter le groupe discrètement", "correct": false, "coach": "Partir ne protège que toi — un Chevalier veille aussi sur les autres." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Tu as une photo gênante d’un ami. Est-ce que c’est correct de l’envoyer dans un groupe pour faire rire ?",
+      "choices": [
+        { "text": "Oui, c’est juste une blague entre amis", "correct": false, "coach": "Partager la photo de quelqu’un sans son accord peut vraiment lui faire du mal, même « pour rire »." },
+        { "text": "Non — demande-lui d’abord son accord, toujours", "correct": true, "coach": "Tout à fait. L’accord compte, même pour une photo qui a l’air inoffensive." },
+        { "text": "L’envoyer seulement à des gens qui le connaissent déjà", "correct": false, "coach": "Ce qui compte, c’est l’accord, pas qui voit la photo — demande toujours avant." }
+      ]
+    },
+    {
+      "narrator": "GLITCH",
+      "prompt": "Deux comptes différents t’écrivent sans arrêt, mais leur façon d’écrire se ressemble vraiment. À quoi faut-il penser ?",
+      "choices": [
+        { "text": "À rien, ce sont probablement juste deux amis", "correct": false, "coach": "Une même personne peut gérer plusieurs comptes pour avoir l’air plus fiable, ou pour contourner un blocage." },
+        { "text": "Ça pourrait être la même personne — en parler à un adulte de confiance", "correct": true, "coach": "Bien vu. Repérer ce genre de détail, c’est exactement le réflexe de Chevalier qu’on entraîne ici." },
+        { "text": "Demander aux deux comptes de prouver qu’ils sont différents", "correct": false, "coach": "Ne mène pas l’enquête de ton côté — parles-en plutôt à un adulte de confiance." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "Je ne suis pas d’accord avec quelqu’un en ligne, et ça m’énerve vraiment. Comment un Chevalier répondrait ?",
+      "choices": [
+        { "text": "Répondre avec une méchanceté", "correct": false, "coach": "Répondre sous le coup de la colère fait presque toujours monter la dispute, et ça peut te faire autant de mal qu’à l’autre." },
+        { "text": "S’éloigner, se calmer, et voir si ça vaut vraiment la peine de répondre", "correct": true, "coach": "Tout à fait — un Chevalier garde le contrôle du moment, au lieu de se laisser contrôler par lui." },
+        { "text": "Demander à tes amis de s’y mettre aussi", "correct": false, "coach": "Se liguer à plusieurs contre quelqu’un, c’est du harcèlement, même quand on pense avoir raison." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Qu’est-ce que « Bouclier levé » veut vraiment dire, quand on est Chevalier du numérique ?",
+      "choices": [
+        { "text": "Ne protéger que toi en ligne", "correct": false, "coach": "Ça va plus loin que toi — un Chevalier protège aussi les autres." },
+        { "text": "Te protéger ET veiller sur les autres en ligne", "correct": true, "coach": "C’est exactement ça. Bouclier levé — pour toi, et pour les gens autour de toi." },
+        { "text": "Éviter Internet complètement", "correct": false, "coach": "Être Chevalier, c’est utiliser Internet intelligemment, pas l’éviter." }
+      ]
+    }
+  ]
+}

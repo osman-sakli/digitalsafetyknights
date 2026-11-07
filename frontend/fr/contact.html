@@ -110,34 +110,39 @@
 var ctLang = (window.DSKi18n && DSKi18n.lang) || 'en';
 var ctIsTr = ctLang === 'tr';
 var ctIsEs = ctLang === 'es';
+var ctIsFr = ctLang === 'fr';
 
-document.getElementById('ct-title').textContent = ctIsTr ? '✉️ Bize Ulaşın' : ctIsEs ? '✉️ Contáctanos' : '✉️ Contact Us';
+document.getElementById('ct-title').textContent = ctIsTr ? '✉️ Bize Ulaşın' : ctIsEs ? '✉️ Contáctanos' : ctIsFr ? '✉️ Nous contacter' : '✉️ Contact Us';
 document.getElementById('ct-tagline').textContent = ctIsTr
   ? 'Bir soru, bir endişe, sitede bozuk bir şey — küçük ekibimizden gerçek bir kişi gelen her mesajı okur.'
   : ctIsEs
   ? 'Una pregunta, una inquietud, algo roto en el sitio — una persona real de nuestro pequeño equipo lee cada mensaje.'
+  : ctIsFr
+  ? 'Une question, une inquiétude, quelque chose qui ne marche pas sur le site — une vraie personne de notre petite équipe lit chaque message.'
   : "A question, a concern, something broken on the site — a real person on our small team reads every message.";
 
 document.getElementById('ct-emergency').innerHTML = ctIsTr
   ? 'Bir çocuk anlık tehlikedeyse lütfen önce yerel acil servisleri arayın — bu form 7/24 izlenmez, insanlar tarafından kontrol edilir. <a href="/#emergency">Ülkeye göre acil durum kaynaklarımıza</a> bakın.'
   : ctIsEs
   ? 'Si un niño está en peligro inmediato, contacta primero a los servicios de emergencia locales — este formulario lo revisan personas, no está monitoreado 24/7. Consulta nuestros <a href="/#emergency">recursos de emergencia por país</a>.'
+  : ctIsFr
+  ? 'Si un enfant est en danger immédiat, contactez d’abord les services d’urgence de votre pays — ce formulaire est relu par des personnes, il n’est pas surveillé 24h/24. Consultez nos <a href="/#emergency">ressources d’urgence par pays</a>.'
   : 'If a child is in immediate danger, please contact local emergency services first — this form is checked by humans, not monitored 24/7. See our <a href="/#emergency">emergency resources by country</a>.';
 
-document.getElementById('ct-direct').innerHTML = (ctIsTr ? 'E-postayı mı tercih edersiniz? Doğrudan yazın: ' : ctIsEs ? '¿Prefieres el correo? Escríbenos directamente a ' : 'Prefer email? Write to us directly at ')
+document.getElementById('ct-direct').innerHTML = (ctIsTr ? 'E-postayı mı tercih edersiniz? Doğrudan yazın: ' : ctIsEs ? '¿Prefieres el correo? Escríbenos directamente a ' : ctIsFr ? 'Vous préférez l’e-mail\u202f? Écrivez-nous directement à ' : 'Prefer email? Write to us directly at ')
   + '<a href="mailto:team@digitalsafetyknights.org">team@digitalsafetyknights.org</a>';
 
-document.getElementById('ct-label-category').textContent = ctIsTr ? 'Bu ne hakkında?' : ctIsEs ? '¿De qué se trata?' : "What's this about?";
-document.getElementById('ct-opt-safety').textContent = ctIsTr ? 'Çocuğumla ilgili bir güvenlik endişesi' : ctIsEs ? 'Una preocupación de seguridad sobre mi hijo/a' : 'A safety concern about my child';
-document.getElementById('ct-opt-bug').textContent = ctIsTr ? 'Sitede bozuk bir şey' : ctIsEs ? 'Algo roto en el sitio' : 'Something broken on the site';
-document.getElementById('ct-opt-feedback').textContent = ctIsTr ? 'İçeriğimiz hakkında geri bildirim' : ctIsEs ? 'Comentarios sobre nuestro contenido' : 'Feedback on our content';
-document.getElementById('ct-opt-school').textContent = ctIsTr ? 'Okul / kurum talebi' : ctIsEs ? 'Consulta de escuela / organización' : 'School / organization inquiry';
-document.getElementById('ct-opt-other').textContent = ctIsTr ? 'Diğer' : ctIsEs ? 'Otro' : 'Other';
-document.getElementById('ct-label-message').textContent = ctIsTr ? 'Mesajınız' : ctIsEs ? 'Tu Mensaje' : 'Your Message';
-document.getElementById('ct-label-name').innerHTML = (ctIsTr ? 'Adınız ' : ctIsEs ? 'Tu Nombre ' : 'Your Name ') + '<span style="font-weight:400;color:var(--gray);">' + (ctIsTr ? '(isteğe bağlı)' : ctIsEs ? '(opcional)' : '(optional)') + '</span>';
-document.getElementById('ct-label-email').innerHTML = (ctIsTr ? 'E-posta ' : ctIsEs ? 'Correo electrónico ' : 'Email ') + '<span style="font-weight:400;color:var(--gray);">' + (ctIsTr ? '(isteğe bağlı)' : ctIsEs ? '(opcional)' : '(optional)') + '</span>';
-document.getElementById('ct-hint').textContent = ctIsTr ? 'Yanıt almak isterseniz e-postanızı bırakın — aksi halde tamamen anonimdir.' : ctIsEs ? 'Deja tu correo si quieres una respuesta — de lo contrario esto es completamente anónimo.' : "Leave your email if you'd like a reply — otherwise this is completely anonymous.";
-document.getElementById('ct-submit').textContent = ctIsTr ? 'Mesajı Gönder' : ctIsEs ? 'Enviar Mensaje' : 'Send Message';
+document.getElementById('ct-label-category').textContent = ctIsTr ? 'Bu ne hakkında?' : ctIsEs ? '¿De qué se trata?' : ctIsFr ? 'C’est à quel sujet\u202f?' : "What's this about?";
+document.getElementById('ct-opt-safety').textContent = ctIsTr ? 'Çocuğumla ilgili bir güvenlik endişesi' : ctIsEs ? 'Una preocupación de seguridad sobre mi hijo/a' : ctIsFr ? 'Une inquiétude concernant la sécurité de mon enfant' : 'A safety concern about my child';
+document.getElementById('ct-opt-bug').textContent = ctIsTr ? 'Sitede bozuk bir şey' : ctIsEs ? 'Algo roto en el sitio' : ctIsFr ? 'Quelque chose ne marche pas sur le site' : 'Something broken on the site';
+document.getElementById('ct-opt-feedback').textContent = ctIsTr ? 'İçeriğimiz hakkında geri bildirim' : ctIsEs ? 'Comentarios sobre nuestro contenido' : ctIsFr ? 'Un retour sur nos contenus' : 'Feedback on our content';
+document.getElementById('ct-opt-school').textContent = ctIsTr ? 'Okul / kurum talebi' : ctIsEs ? 'Consulta de escuela / organización' : ctIsFr ? 'Une demande d’école ou d’association' : 'School / organization inquiry';
+document.getElementById('ct-opt-other').textContent = ctIsTr ? 'Diğer' : ctIsEs ? 'Otro' : ctIsFr ? 'Autre' : 'Other';
+document.getElementById('ct-label-message').textContent = ctIsTr ? 'Mesajınız' : ctIsEs ? 'Tu Mensaje' : ctIsFr ? 'Votre message' : 'Your Message';
+document.getElementById('ct-label-name').innerHTML = (ctIsTr ? 'Adınız ' : ctIsEs ? 'Tu Nombre ' : ctIsFr ? 'Votre nom ' : 'Your Name ') + '<span style="font-weight:400;color:var(--gray);">' + (ctIsTr ? '(isteğe bağlı)' : ctIsEs ? '(opcional)' : ctIsFr ? '(facultatif)' : '(optional)') + '</span>';
+document.getElementById('ct-label-email').innerHTML = (ctIsTr ? 'E-posta ' : ctIsEs ? 'Correo electrónico ' : ctIsFr ? 'Adresse e-mail ' : 'Email ') + '<span style="font-weight:400;color:var(--gray);">' + (ctIsTr ? '(isteğe bağlı)' : ctIsEs ? '(opcional)' : ctIsFr ? '(facultatif)' : '(optional)') + '</span>';
+document.getElementById('ct-hint').textContent = ctIsTr ? 'Yanıt almak isterseniz e-postanızı bırakın — aksi halde tamamen anonimdir.' : ctIsEs ? 'Deja tu correo si quieres una respuesta — de lo contrario esto es completamente anónimo.' : ctIsFr ? 'Laissez votre e-mail si vous souhaitez une réponse — sinon, ce message est totalement anonyme.' : "Leave your email if you'd like a reply — otherwise this is completely anonymous.";
+document.getElementById('ct-submit').textContent = ctIsTr ? 'Mesajı Gönder' : ctIsEs ? 'Enviar Mensaje' : ctIsFr ? 'Envoyer le message' : 'Send Message';
 
 document.getElementById('ct-form').addEventListener('submit', function (e) {
   e.preventDefault();
@@ -165,13 +170,13 @@ document.getElementById('ct-form').addEventListener('submit', function (e) {
       document.getElementById('ct-form').reset();
     } else {
       statusEl.className = 'ct-status err';
-      statusEl.textContent = '❌ ' + (data.message || (ctIsTr ? 'Bir hata oluştu.' : ctIsEs ? 'Ocurrió un error.' : 'Something went wrong.'));
+      statusEl.textContent = '❌ ' + (data.message || (ctIsTr ? 'Bir hata oluştu.' : ctIsEs ? 'Ocurrió un error.' : ctIsFr ? 'Un problème est survenu.' : 'Something went wrong.'));
     }
   })
   .catch(function () {
     submitBtn.disabled = false;
     statusEl.className = 'ct-status err';
-    statusEl.textContent = ctIsTr ? '❌ Bağlantı hatası. Lütfen tekrar deneyin.' : ctIsEs ? '❌ Error de conexión. Inténtalo de nuevo.' : '❌ Connection error. Please try again.';
+    statusEl.textContent = ctIsTr ? '❌ Bağlantı hatası. Lütfen tekrar deneyin.' : ctIsEs ? '❌ Error de conexión. Inténtalo de nuevo.' : ctIsFr ? '❌ Erreur de connexion. Veuillez réessayer.' : '❌ Connection error. Please try again.';
   });
 });
 </script>

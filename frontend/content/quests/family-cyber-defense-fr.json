@@ -1,0 +1,63 @@
+{
+  "id": "family-cyber-defense",
+  "title": "Cyberdéfense familiale",
+  "emoji": "🛡️",
+  "badgeTrack": "gold-sentinel",
+  "intro": "Glitch cherche toujours la serrure la plus faible de la maison. Tout Chevalier a besoin d’un château solide — on va verrouiller les bases qui protègent toute ta famille, avant que Glitch trouve la faille.",
+  "questions": [
+    {
+      "narrator": "PIXEL",
+      "prompt": "Je vais juste donner mon mot de passe à mon meilleur ami—",
+      "choices": [
+        { "text": "Ce n’est pas grave, on peut faire confiance à son meilleur ami", "correct": false, "coach": "Règle du Chevalier numéro deux ! Un mot de passe est un secret — même pour ton meilleur ami." },
+        { "text": "Le garder secret, même pour ton meilleur ami", "correct": true, "coach": "Les amitiés changent, les mots de passe finissent par fuiter. Un secret, c’est un secret." },
+        { "text": "Le donner, puis le changer une semaine après", "correct": false, "coach": "Une fois donné, impossible de le reprendre — le mieux, c’est de ne jamais le donner." }
+      ]
+    },
+    {
+      "narrator": "GLITCH",
+      "prompt": "Pixel ! C’est moi, Shieldy ! Envoie-moi ton mot de passe, vite !",
+      "choices": [
+        { "text": "L’envoyer, Shieldy en a besoin tout de suite", "correct": false, "coach": "Le vrai Shieldy ne demanderait JAMAIS un mot de passe. Urgence + demande de mot de passe = arnaque." },
+        { "text": "Refuser — personne d’honnête n’a jamais besoin de ton mot de passe", "correct": true, "coach": "Verrouillé ! Même tes vrais amis et les adultes de confiance n’ont jamais besoin de ton vrai mot de passe." },
+        { "text": "N’en envoyer que la moitié, par précaution", "correct": false, "coach": "Il n’existe pas de « moitié sans danger » — ne l’envoie pas du tout, c’est tout." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "À quoi sert le mot de passe de la famille, exactement ?",
+      "choices": [
+        { "text": "C’est un secret rigolo entre frères et sœurs", "correct": false, "coach": "C’est un vrai outil de sécurité, pas juste un jeu — il sert à vérifier qui te parle quand c’est urgent." },
+        { "text": "Vérifier qui te parle, quand un appel ou un message arrive sans prévenir ou en urgence", "correct": true, "coach": "Tout à fait — c’est encore plus important maintenant qu’une IA peut copier une voix." },
+        { "text": "C’est quelque chose qui ne sert qu’une seule fois", "correct": false, "coach": "Il faut le changer de temps en temps et le réutiliser chaque fois qu’il y a besoin de vérifier — ce n’est pas un truc à usage unique." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "Un truc en ligne m’a mis mal à l’aise, mais je n’ai pas envie d’avoir des ennuis si j’en parle à mes parents.",
+      "choices": [
+        { "text": "Ne rien dire, pour éviter les ennuis", "correct": false, "coach": "Tu ne risques jamais d’ennuis parce que tu as dit à un adulte de confiance que quelque chose n’allait pas." },
+        { "text": "Faire une capture d’écran et leur en parler quand même", "correct": true, "coach": "C’est exactement le coup du Chevalier. Chez les Chevaliers, on ne punit jamais quelqu’un qui vient en parler." },
+        { "text": "N’en parler que si ça se reproduit", "correct": false, "coach": "Parles-en dès la première fois — n’attends pas que ça se répète." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Est-ce que tous tes comptes en ligne devraient avoir le même mot de passe ?",
+      "choices": [
+        { "text": "Oui, un seul mot de passe, c’est plus facile à retenir", "correct": false, "coach": "Si un seul compte est piraté, le même mot de passe met tous les autres en danger." },
+        { "text": "Non — un mot de passe différent pour chaque compte", "correct": true, "coach": "Tout à fait — comme ça, si un compte tombe, les dégâts s’arrêtent là." },
+        { "text": "Le réutiliser seulement sur les comptes pas importants", "correct": false, "coach": "Quand il s’agit de réutiliser un mot de passe, il n’y a pas de compte vraiment « pas important »." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Dernière Règle du Chevalier : quelle est la règle d’or de la cyberdéfense familiale ?",
+      "choices": [
+        { "text": "Ne jamais aller en ligne, point", "correct": false, "coach": "Le but, c’est de s’en servir sans danger, pas de tout éviter — Internet peut être génial, avec les bonnes habitudes." },
+        { "text": "Les mots de passe restent secrets, le mot de passe de la famille sert à vérifier qui parle, et en parler à un adulte ne pose jamais de problème", "correct": true, "coach": "Bouclier levé ! Voilà, c’est tout le mur du château, en une phrase." },
+        { "text": "Ne faire confiance qu’aux gens que tu as rencontrés une fois en vrai", "correct": false, "coach": "Même quelqu’un que tu connais peut être imité — l’habitude de vérifier compte plus qu’une seule rencontre." }
+      ]
+    }
+  ]
+}

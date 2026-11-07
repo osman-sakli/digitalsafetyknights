@@ -1,0 +1,64 @@
+{
+  "id": "parental-controls",
+  "title": "Bilan du contrôle parental",
+  "emoji": "🔧",
+  "badgeTrack": "silver-guard",
+  "forParents": true,
+  "intro": "Glitch compte bien sur le fait que les familles ne prennent jamais vraiment le temps d’ouvrir le menu des paramètres. Cette quête est pour les adultes — à faire avec ton enfant, ou de ton côté — dans les deux cas, tu en ressors avec une vraie liste de réglages à faire, celle qui ferme les portes préférées de Glitch, et pas seulement avec de bonnes intentions.",
+  "questions": [
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Ton enfant joue à Roblox. Quel est le paramètre le plus important à vérifier en premier ?",
+      "choices": [
+        { "text": "Restrictions du compte + chat réglé sur « Amis uniquement »", "correct": true, "coach": "Tout à fait — c’est ce qui limite le plus les contacts avec des inconnus." },
+        { "text": "La qualité graphique du jeu", "correct": false, "coach": "Les graphismes ne changent rien à la sécurité — les paramètres, si." },
+        { "text": "Le nombre d’amis sur le compte", "correct": false, "coach": "Le nombre d’amis n’est pas le signal à regarder — ce sont les paramètres de chat et les restrictions." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Le chat Roblox de ton enfant a l’air tout propre quand tu le regardes. Est-ce que ça veut dire que tout va bien ?",
+      "choices": [
+        { "text": "Oui, un chat propre veut dire zéro risque", "correct": false, "coach": "Beaucoup de conversations risquées se passent dans les salons privés à l’intérieur du jeu, ou sur des serveurs Discord liés que tu n’as jamais vus." },
+        { "text": "Pas forcément — vérifie aussi s’il y a des serveurs Discord liés", "correct": true, "coach": "Exact. Le chat visible ne montre qu’une partie du tableau." },
+        { "text": "Oui, du moment que l’enfant a moins de 13 ans", "correct": false, "coach": "L’âge ne change rien à ce qui est visible — il faut quand même regarder au-delà du chat évident." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Quelle est la meilleure façon de savoir à quels jeux ton enfant joue vraiment ?",
+      "choices": [
+        { "text": "Lui demander la liste de ses jeux préférés", "correct": false, "coach": "Les enfants ne citent souvent que les jeux qu’ils pensent que tu vas accepter." },
+        { "text": "T’asseoir à côté et regarder pendant 10 minutes", "correct": true, "coach": "La règle des 10 minutes : tu apprends plus en regardant qu’en posant des questions." },
+        { "text": "Regarder la note en étoiles de l’appli", "correct": false, "coach": "Les notes ne disent rien de ce qui se passe vraiment dans des contenus créés par les joueurs." }
+      ]
+    },
+    {
+      "narrator": "GLITCH",
+      "prompt": "Hé ! Je viens d’offrir à ton enfant un cadeau très cher dans le jeu — on ne se connaît pas du tout en vrai, mais maintenant ça mérite bien un petit retour, non ? Quelle est la bonne réaction ?",
+      "choices": [
+        { "text": "Laisser l’enfant garder le cadeau, après tout c’est gratuit", "correct": false, "coach": "Les cadeaux inattendus venant d’un inconnu sont un outil de grooming bien documenté — ça mérite une discussion tout de suite." },
+        { "text": "Le traiter comme un signal d’alerte et en parler tout de suite", "correct": true, "coach": "Tout à fait. Les cadeaux créent une impression de dette, et les prédateurs s’en servent." },
+        { "text": "S’inquiéter seulement si ça se reproduit", "correct": false, "coach": "Une seule fois suffit pour en parler — n’attends pas que ça devienne une habitude." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Les enfants de moins de 13 ans devraient-ils être sur Discord ?",
+      "choices": [
+        { "text": "Oui, si c’est lié à un jeu auquel ils jouent déjà", "correct": false, "coach": "Discord protège beaucoup moins les mineurs, peu importe comment ils sont arrivés là." },
+        { "text": "Non — avant 13 ans, Discord, c’est non, sans discussion", "correct": true, "coach": "Exact. Si c’est déjà le cas, passez la liste des serveurs en revue ensemble et supprimez ceux que vous n’avez pas vérifiés." },
+        { "text": "Seulement en indiquant un faux âge", "correct": false, "coach": "Un faux âge n’ajoute aucune protection réelle — les protections prévues par la plateforme ne s’appliquent plus." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Quel réglage toute famille devrait-elle faire ensemble, une fois par an ?",
+      "choices": [
+        { "text": "Une révision de 30 minutes des paramètres de confidentialité et des applis, à faire ensemble", "correct": true, "coach": "Exactement — une fois par an, court, et à plusieurs : ça marche toujours mieux qu’un grand discours unique." },
+        { "text": "Une interdiction du téléphone plus longue", "correct": false, "coach": "Interdire ne suffit pas : ça n’apprend pas aux enfants à juger par eux-mêmes." },
+        { "text": "Rien, les paramètres n’ont pas besoin d’être revus", "correct": false, "coach": "Les applis et les risques changent — un point une fois par an, ça compte." }
+      ]
+    }
+  ]
+}

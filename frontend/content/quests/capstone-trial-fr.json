@@ -1,0 +1,90 @@
+{
+  "id": "capstone-trial",
+  "title": "L’Épreuve du Chevalier",
+  "emoji": "🏆",
+  "badgeTrack": "digital-knight",
+  "intro": "Tu as fait l’entraînement de toutes les quêtes de l’Académie. Cette dernière épreuve rassemble les choix les plus difficiles des six — réussis-la, et tu repars avec le titre complet de Chevalier du numérique.",
+  "questions": [
+    {
+      "narrator": "GLITCH",
+      "prompt": "DES ROBUX GRATUITS ! Clique viiite ! Il ne reste que dix secondes !",
+      "choices": [
+        { "text": "Cliquer vite, avant que ça disparaisse !", "correct": false, "coach": "Gratuit PLUS urgent, ça fait PIÈGE. Ce qui est vraiment gratuit ne te presse jamais." },
+        { "text": "Fermer et prévenir un adulte", "correct": true, "coach": "Coup du Chevalier ! Les arnaques te mettent la pression pour t’empêcher de réfléchir." },
+        { "text": "Demander un peu plus de temps pour décider", "correct": false, "coach": "Répondre à une arnaque, c’est laisser le piège ouvert. Ferme, tout simplement." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Quel est le meilleur paramètre à activer dans Roblox pour plus de sécurité ?",
+      "choices": [
+        { "text": "Restrictions du compte + chat réservé aux amis", "correct": true, "coach": "Règle du Chevalier ! Ça limite qui peut t’écrire et ce que tu peux voir." },
+        { "text": "Un pseudo plus classe", "correct": false, "coach": "Un pseudo rigolo, c’est sympa, mais ça ne te protège pas du tout." },
+        { "text": "Éteindre complètement le jeu", "correct": false, "coach": "Tu n’as pas besoin d’arrêter de jouer — règle juste bien les paramètres !" }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Quelqu’un en ligne te dit : « c’est notre secret, ne le dis pas à tes parents ». Qu’est-ce que cette phrase veut dire, en vrai ?",
+      "choices": [
+        { "text": "Ça veut dire qu’on me fait vraiment confiance", "correct": false, "coach": "Cette phrase est l’un des plus gros signaux d’alerte qui existent — elle sert à te couper des autres." },
+        { "text": "C’est un signal d’alerte — les gens de confiance ne demandent pas aux enfants de cacher des choses à leurs parents", "correct": true, "coach": "Exact. « Ne le dis pas à tes parents », c’est ça, le signal — tu as ta réponse." },
+        { "text": "Ce n’est grave que si on le demande deux fois", "correct": false, "coach": "Une seule fois, c’est déjà un signal d’alerte. Parles-en tout de suite à ta mère ou à ton père." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "Quelqu’un que je connais en ligne veut qu’on continue à discuter sur une autre appli, que mes parents ne connaissent pas. Je le fais ?",
+      "choices": [
+        { "text": "Oui, c’est juste une autre appli", "correct": false, "coach": "Passer sur une appli moins surveillée, c’est une tactique très courante pour ne pas se faire repérer. C’est un signal d’alerte." },
+        { "text": "Non — et raconter à ta mère ou à ton père qu’on te l’a demandé", "correct": true, "coach": "Tout à fait. Vouloir aller dans un endroit moins surveillé est un signal d’alerte qui mérite d’être raconté." },
+        { "text": "Changer seulement si l’appli est connue", "correct": false, "coach": "Que l’appli soit connue ou pas, ça ne change rien — c’est la demande elle-même qui est le signal d’alerte." }
+      ]
+    },
+    {
+      "narrator": "BOT",
+      "prompt": "Pour tes devoirs : la capitale de l’Australie, c’est Sydney ! Fais-moi confiance.",
+      "choices": [
+        { "text": "L’écrire, puisque Bot l’a dit", "correct": false, "coach": "En fait, c’est Canberra ! Bot a l’air très assuré, et Bot se trompe complètement — du grand classique." },
+        { "text": "Vérifier d’abord dans un manuel, ou demander au professeur", "correct": true, "coach": "Coup du Chevalier ! Quand une IA te donne une info pour tes devoirs, vérifie toujours dans une source fiable." },
+        { "text": "Écrire autre chose au hasard", "correct": false, "coach": "Deviner, ce n’est pas vérifier — va voir une vraie source." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Un appel arrive, et la voix ressemble exactement à celle de ta mère, qui te demande d’envoyer de l’argent très vite. C’est quoi, le coup du Chevalier ?",
+      "choices": [
+        { "text": "Envoyer l’argent — c’est la voix de maman, donc c’est forcément vrai", "correct": false, "coach": "Une IA peut copier une voix avec seulement quelques secondes d’enregistrement. La voix toute seule ne prouve plus rien." },
+        { "text": "Demander d’abord le mot de passe de la famille", "correct": true, "coach": "Parfait. Un mot de passe que seule ta famille connaît bat n’importe quelle imitation de voix." },
+        { "text": "Rappeler tout de suite le même numéro", "correct": false, "coach": "Les arnaqueurs peuvent aussi truquer les numéros — vérifie autrement, avec le mot de passe de la famille par exemple." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Quel réglage toute famille devrait-elle faire ensemble, une fois par an ?",
+      "choices": [
+        { "text": "Une révision de 30 minutes des paramètres de confidentialité et des applis, à faire ensemble", "correct": true, "coach": "Exactement — une fois par an, court, et à plusieurs : ça marche toujours mieux qu’un grand discours unique." },
+        { "text": "Une interdiction du téléphone plus longue", "correct": false, "coach": "Interdire ne suffit pas : ça n’apprend pas aux enfants à juger par eux-mêmes." },
+        { "text": "Rien, les paramètres n’ont pas besoin d’être revus", "correct": false, "coach": "Les applis et les risques changent — un point une fois par an, ça compte." }
+      ]
+    },
+    {
+      "narrator": "PIXEL",
+      "prompt": "Quelqu’un de ma classe se fait embêter dans notre groupe de discussion. Ce n’est pas moi que ça touche, donc ce n’est pas mon problème, si ?",
+      "choices": [
+        { "text": "Oui, ne pas s’en mêler", "correct": false, "coach": "Regarder sans rien dire, ça laisse la situation continuer. Un Chevalier prend la parole, ou en parle à un adulte de confiance." },
+        { "text": "Prévenir un adulte de confiance, ou prendre sa défense", "correct": true, "coach": "C’est exactement le coup du Chevalier — défendre les autres, c’est ça, la vraie citoyenneté numérique." },
+        { "text": "Quitter le groupe discrètement", "correct": false, "coach": "Partir ne protège que toi — un Chevalier veille aussi sur les autres." }
+      ]
+    },
+    {
+      "narrator": "SHIELDY",
+      "prompt": "Qu’est-ce que « Bouclier levé » veut vraiment dire, quand on est Chevalier du numérique ?",
+      "choices": [
+        { "text": "Ne protéger que toi en ligne", "correct": false, "coach": "Ça va plus loin que toi — un Chevalier protège aussi les autres." },
+        { "text": "Te protéger ET veiller sur les autres en ligne", "correct": true, "coach": "C’est exactement ça. Bouclier levé — pour toi, et pour les gens autour de toi." },
+        { "text": "Éviter Internet complètement", "correct": false, "coach": "Être Chevalier, c’est utiliser Internet intelligemment, pas l’éviter." }
+      ]
+    }
+  ]
+}
