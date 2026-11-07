@@ -85,6 +85,7 @@
 var stdLang = (window.DSKi18n && DSKi18n.lang) || 'en';
 var stdIsTr = stdLang === 'tr';
 var stdIsEs = stdLang === 'es';
+var stdIsFr = stdLang === 'fr';
 var SCENARIOS_EN = [
   { icon: '📞', text: "You get a call and it sounds exactly like your mom's voice, panicked, asking you to send money right now to a number you don't recognize.", choices: [
       { text: "It's her voice, so it must be real — send it", correct: false },
@@ -214,7 +215,50 @@ var SCENARIOS_ES = [
     ], explain: "Los chatbots de IA suelen estar \"seguros pero equivocados\" — en realidad no saben cuándo están inventando cosas. La confianza no es lo mismo que la precisión; siempre verifica los datos importantes con una fuente real." }
 ];
 
-var SCENARIOS = stdIsTr ? SCENARIOS_TR : stdIsEs ? SCENARIOS_ES : SCENARIOS_EN;
+var SCENARIOS_FR = [
+  { icon: '📞', text: "Tu reçois un appel et la voix est exactement celle de ta mère, paniquée, qui te demande d’envoyer de l’argent tout de suite à un numéro que tu ne connais pas.", choices: [
+      { text: "C’est sa voix, donc c’est forcément vrai — envoie l’argent", correct: false },
+      { text: "Raccroche et rappelle-la d’abord sur son vrai numéro", correct: true },
+      { text: "Pose d’autres questions à la personne qui appelle pour en avoir la certitude", correct: false }
+    ], explain: "Les outils de clonage vocal peuvent copier la voix d’une personne réelle à partir de quelques secondes d’audio trouvées en ligne. Une demande d’argent urgente et paniquée est l’indice le plus révélateur — vérifie toujours par un deuxième moyen de contact, différent du premier." },
+  { icon: '🎥', text: "Une vidéo montre une célébrité que tu aimes bien en train de recommander une appli d’investissement en cryptomonnaies dont tu n’as jamais entendu parler, en promettant des gains énormes.", choices: [
+      { text: "Les célébrités sont dignes de confiance, donc il n’y a probablement aucun problème", correct: false },
+      { text: "Considère que c’est truqué jusqu’à preuve du contraire — va voir les vrais comptes officiels de la célébrité", correct: true },
+      { text: "Essaie d’abord avec une petite somme d’argent", correct: false }
+    ], explain: "Le remplacement du visage et de la voix par IA est extrêmement courant dans les arnaques à la fausse recommandation de célébrité — surtout pour des investissements qui promettent des gains énormes et garantis. Les vraies célébrités ne font presque jamais la promotion personnelle d’applis de cryptomonnaies inconnues." },
+  { icon: '💬', text: "Dans un appel vidéo, les mouvements de la bouche de la personne semblent légèrement décalés par rapport à ses paroles, et elle ne cligne jamais des yeux.", choices: [
+      { text: "C’est juste une mauvaise connexion internet", correct: false },
+      { text: "C’est un signe classique d’un filtre de visage par IA en temps réel, ou d’un deepfake", correct: true },
+      { text: "Laisse tomber, les appels vidéo ont toujours l’air bizarres", correct: false }
+    ], explain: "Un mauvais synchronisme des lèvres et un clignement des yeux peu naturel (ou totalement absent) sont deux des défauts visuels les plus fréquents dans les appels vidéo deepfake en direct — la technologie n’a pas encore complètement résolu ces problèmes." },
+  { icon: '🖼️', text: "Tu vois une photo choquante d’un événement d’actualité qui semble trop dramatique pour être vraie, avec des mains ou des détails d’arrière-plan légèrement déformés.", choices: [
+      { text: "Partage-la tout de suite, c’est important", correct: false },
+      { text: "Regarde de près les mains, les textes et les motifs d’arrière-plan, puis vérifie auprès d’une vraie source d’information", correct: true },
+      { text: "Ne la partage que si elle récolte d’abord beaucoup de mentions J’aime", correct: false }
+    ], explain: "Les générateurs d’images par IA ont encore souvent du mal avec les mains, les textes en arrière-plan et les motifs qui se répètent. Vérifier auprès d’une vraie source d’information avant de partager une image spectaculaire est toujours le choix le plus prudent." },
+  { icon: '🎮', text: "Un « ami » dans ton jeu préféré t’envoie un message vocal qui sonne un peu robotique et qui répète bizarrement deux fois la même phrase.", choices: [
+      { text: "Les vraies personnes n’ont jamais une voix robotique, donc il n’y a pas de problème", correct: false },
+      { text: "Une formulation répétée bizarrement et un ton robotique sans relief peuvent signifier que l’audio est généré par IA", correct: true },
+      { text: "Monte le volume pour vérifier", correct: false }
+    ], explain: "Les générateurs de voix par IA peuvent encore sonner un peu plats ou répéter des formulations qui ne sont pas naturelles. Si un « ami » a soudain une voix différente ou se comporte bizarrement, ça vaut la peine de vérifier par un autre moyen." },
+  { icon: '📸', text: "Quelqu’un affirme avoir une photo gênante de toi que tu ne te souviens pas avoir prise, et menace de la partager si tu ne paies pas.", choices: [
+      { text: "Paie vite pour que la photo soit supprimée", correct: false },
+      { text: "Ne paie pas, ne panique pas — garde les preuves et parles-en tout de suite à un adulte de confiance", correct: true },
+      { text: "Discute en ligne avec cette personne pour prouver que la photo est truquée", correct: false }
+    ], explain: "C’est une tactique de sextorsion — que la photo soit réelle ou truquée par IA, payer ne garantit jamais que ça s’arrête, et ça mène souvent à de nouvelles exigences. En parler tout de suite à un adulte de confiance est toujours la bonne décision, et ce n’est jamais la faute de la victime." },
+  { icon: '🗞️', text: "Un article cite un scientifique qui aurait dit quelque chose d’extrême et qui ne lui ressemble pas du tout, sans aucun lien vers la source réelle de la citation.", choices: [
+      { text: "Si c’est écrit, c’est probablement vrai", correct: false },
+      { text: "Cherche la source d’origine avant de croire une citation qui ne ressemble pas à la personne citée", correct: true },
+      { text: "Fais-y confiance parce que l’article a l’air professionnel", correct: false }
+    ], explain: "Les générateurs de texte par IA peuvent produire des citations très convaincantes mais complètement inventées, attribuées à de vraies personnes. Un article qui a l’air professionnel ne prouve rien — cherche toujours la source d’origine, celle que tu peux vérifier." },
+  { icon: '🤖', text: "Un chatbot d’IA te dit qu’une information est vraie à 100 %, avec une assurance totale et sans la moindre hésitation.", choices: [
+      { text: "Une assurance totale, ça veut dire que c’est forcément exact", correct: false },
+      { text: "L’IA peut avoir l’air extrêmement sûre d’elle tout en se trompant complètement", correct: true },
+      { text: "L’assurance ne compte que chez les experts humains", correct: false }
+    ], explain: "Les chatbots d’IA sont souvent « sûrs d’eux et complètement faux » — ils ne savent pas vraiment quand ils inventent. L’assurance n’est pas l’exactitude ; vérifie toujours une information importante auprès d’une vraie source." }
+];
+
+var SCENARIOS = stdIsTr ? SCENARIOS_TR : stdIsEs ? SCENARIOS_ES : stdIsFr ? SCENARIOS_FR : SCENARIOS_EN;
 var idx = 0, score = 0;
 
 function renderScenario() {
@@ -228,7 +272,7 @@ function renderScenario() {
       '<div class="scenario-text">' + s.text + '</div>' +
       '<div id="choices"></div>' +
       '<div class="explain-box" id="explain-box"></div>' +
-      '<button class="next-btn" id="next-btn" onclick="nextScenario()">' + (stdIsTr ? 'Devam Et →' : stdIsEs ? 'Continuar →' : 'Continue →') + '</button>' +
+      '<button class="next-btn" id="next-btn" onclick="nextScenario()">' + (stdIsTr ? 'Devam Et →' : stdIsEs ? 'Continuar →' : stdIsFr ? 'Continuer →' : 'Continue →') + '</button>' +
     '</div>';
   var choicesEl = document.getElementById('choices');
   choicesEl.innerHTML = s.choices.map(function(c, i) {
@@ -260,7 +304,7 @@ function showEnd() {
   document.getElementById('end-score').textContent = score + '/' + SCENARIOS.length;
   document.getElementById('end-screen').classList.add('show');
   if (window.DSKPoints) {
-    DSKPoints.addPoints(score * 5, stdIsTr ? 'Sahte Görüntüyü Bul' : stdIsEs ? 'Detecta el Deepfake' : 'Spot the Deepfake');
+    DSKPoints.addPoints(score * 5, stdIsTr ? 'Sahte Görüntüyü Bul' : stdIsEs ? 'Detecta el Deepfake' : stdIsFr ? 'Repère le deepfake' : 'Spot the Deepfake');
   }
 }
 
