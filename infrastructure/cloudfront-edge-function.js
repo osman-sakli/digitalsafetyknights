@@ -12,8 +12,9 @@
 // Edge guard, three jobs:
 //   1. Password-gate the private traffic pages.
 //   2. Reject vulnerability probes before they reach the origin.
-//   3. Geo-route first-time visitors to /tr/ (Turkey) or /es/ (Spanish-
-//      speaking countries) on unprefixed page requests, so the base site
+//   3. Geo-route first-time visitors to /tr/ (Turkey), /es/ (Spanish-
+//      speaking countries) or /fr/ (French-speaking countries) on
+//      unprefixed page requests, so the base site
 //      reads as English by default and language is not guessed from the
 //      visitor's browser settings (which was actively wrong for people
 //      whose device language/timezone didn't match where they are).
@@ -44,9 +45,22 @@ var ES_COUNTRIES = {
   GT: 1, HN: 1, MX: 1, NI: 1, PA: 1, PY: 1, PE: 1, ES: 1, UY: 1, VE: 1, PR: 1
 };
 
+// French-speaking countries where French is an official language and the
+// realistic reading language of a parent searching for this. Deliberately
+// not every country with French status: Canada is excluded because the
+// majority language is English and Québec visitors can switch in one tap,
+// and the Maghreb is excluded because Arabic is the first language there
+// (an Arabic edition would be the honest answer, not a French redirect).
+var FR_COUNTRIES = {
+  FR: 1, BE: 1, CH: 1, LU: 1, MC: 1,
+  SN: 1, CI: 1, ML: 1, BF: 1, NE: 1, TG: 1, BJ: 1, GN: 1, GA: 1, CG: 1,
+  CD: 1, CM: 1, TD: 1, CF: 1, BI: 1, RW: 1, MG: 1, KM: 1, DJ: 1,
+  HT: 1, GP: 1, MQ: 1, GF: 1, RE: 1, YT: 1, NC: 1, PF: 1
+};
+
 var SKIP_PREFIXES = [
   '/assets/', '/guides/', '/journal/', '/content/', '/videos/',
-  '/monthly-report/', '/en/', '/tr/', '/es/'
+  '/monthly-report/', '/en/', '/tr/', '/es/', '/fr/'
 ];
 
 function handler(event) {
@@ -93,6 +107,7 @@ function handler(event) {
     var target = null;
     if (country === 'TR') { target = 'tr'; }
     else if (ES_COUNTRIES[country]) { target = 'es'; }
+    else if (FR_COUNTRIES[country]) { target = 'fr'; }
 
     if (target) {
       var qs = request.querystring ? Object.keys(request.querystring).map(function (k2) {

@@ -133,7 +133,7 @@ Sitemap: {SITE}/sitemap.xml
 
 CANON_RE = re.compile(r'<link rel="canonical"[^>]*>\n?')
 HREFLANG_RE = re.compile(r'<link rel="alternate" hreflang="[^"]*"[^>]*>\n?')
-LANGS = ["en", "tr", "es"]
+LANGS = ["en", "es", "fr", "tr"]
 
 
 def inject_canonicals(names):

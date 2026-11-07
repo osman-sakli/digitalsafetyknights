@@ -1,10 +1,14 @@
 (function() {
   if (document.getElementById('dsk-lang-switcher')) return;
   var KEY = 'dsk_lang';
+  // Order is deliberate and set by the owner: English, Spanish, French,
+  // Turkish — roughly the size of the audience each one reaches, not the
+  // order they were added in.
   var LANGS = [
     { code: 'en', label: 'English', flag: '🇺🇸', ready: true },
-    { code: 'tr', label: 'Türkçe', flag: '🇹🇷', ready: true },
-    { code: 'es', label: 'Español', flag: '🇪🇸', ready: true }
+    { code: 'es', label: 'Español', flag: '🇪🇸', ready: true },
+    { code: 'fr', label: 'Français', flag: '🇫🇷', ready: true },
+    { code: 'tr', label: 'Türkçe', flag: '🇹🇷', ready: true }
   ];
 
   // If the page has its own nav actions row (index.html: .nav-actions,
@@ -37,9 +41,12 @@
   document.head.appendChild(style);
 
   var current = localStorage.getItem(KEY) || 'en';
-  var LS_ARIA = current === 'tr' ? 'Dil seç' : current === 'es' ? 'Elegir idioma' : 'Choose language';
-  var LS_SOON = current === 'tr' ? 'Yakında' : current === 'es' ? 'Pronto' : 'Soon';
-  var LS_COMING_SOON = current === 'tr' ? ' yakında geliyor!' : current === 'es' ? ' estará disponible pronto!' : ' is coming soon!';
+  var LS_ARIA = current === 'tr' ? 'Dil seç' : current === 'es' ? 'Elegir idioma'
+    : current === 'fr' ? 'Choisir la langue' : 'Choose language';
+  var LS_SOON = current === 'tr' ? 'Yakında' : current === 'es' ? 'Pronto'
+    : current === 'fr' ? 'Bientôt' : 'Soon';
+  var LS_COMING_SOON = current === 'tr' ? ' yakında geliyor!' : current === 'es' ? ' estará disponible pronto!'
+    : current === 'fr' ? ' arrive bientôt !' : ' is coming soon!';
 
   var wrap = document.createElement('div');
   wrap.id = 'dsk-lang-switcher';
@@ -96,7 +103,7 @@
     // reloading in place, so the URL bar itself reflects the chosen
     // language (a real, indexable, shareable URL) instead of only an
     // invisible localStorage flag.
-    var bare = location.pathname.replace(/^\/(en|tr|es)(\/|$)/, '/');
+    var bare = location.pathname.replace(/^\/(en|es|fr|tr)(\/|$)/, '/');
     var dest = bare === '/' ? '/' + code + '/' : '/' + code + bare;
     setTimeout(function () { location.href = dest + location.search + location.hash; }, 220);
   });

@@ -9,7 +9,7 @@
     // landing on a prefixed URL is an explicit choice, and it's remembered
     // via localStorage so unprefixed pages you navigate to next (most
     // internal links are still unprefixed) stay in the same language.
-    var m = /^\/(en|tr|es)(\/|$)/.exec(location.pathname);
+    var m = /^\/(en|es|fr|tr)(\/|$)/.exec(location.pathname);
     return m ? m[1] : null;
   }
 
