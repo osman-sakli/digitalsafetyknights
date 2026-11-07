@@ -29,17 +29,18 @@ s3 = boto3.client("s3")
 
 
 def titles_by_id():
-    """{scriptId: {en, tr, es}} — the shorts are listed on /tr/ and /es/
-    too, and a title that only exists in English leaves those pages
-    reading half-translated. script_writer.py now requires title_tr and
-    title_es on every new script; older ones were backfilled."""
+    """{scriptId: {en, es, fr, tr}} — the shorts are listed on every
+    language mirror, and a title that only exists in English leaves those
+    pages reading half-translated. script_writer.py requires all three
+    translations on every new script; older ones were backfilled."""
     try:
         out = {}
         for x in json.loads(SCRIPTS.read_text()):
             out[x["id"]] = {
                 "en": x["title"],
-                "tr": x.get("title_tr") or "",
                 "es": x.get("title_es") or "",
+                "fr": x.get("title_fr") or "",
+                "tr": x.get("title_tr") or "",
             }
         return out
     except Exception:
@@ -130,7 +131,7 @@ def main(dry_run):
         }
         # Omitted rather than written empty, so the page's fallback to
         # English is a missing key instead of a blank caption.
-        for lang in ("tr", "es"):
+        for lang in ("es", "fr", "tr"):
             if t.get(lang):
                 item["title_" + lang] = t[lang]
         items.append(item)
@@ -143,11 +144,13 @@ def main(dry_run):
     manifest = {
         "count": len(items),
         "items": items,
-        "titles": {k: v for k, v in titles.items() if v.get("tr") or v.get("es")},
+        "titles": {k: v for k, v in titles.items()
+                   if v.get("es") or v.get("fr") or v.get("tr")},
     }
-    untranslated = [i["id"] for i in items if "title_tr" not in i or "title_es" not in i]
+    untranslated = [i["id"] for i in items
+                    if any("title_" + l not in i for l in ("es", "fr", "tr"))]
     if untranslated:
-        print(f"WARNING: {len(untranslated)} short(s) have no tr/es title: "
+        print(f"WARNING: {len(untranslated)} short(s) are missing a translated title: "
               f"{', '.join(untranslated[:5])}{' …' if len(untranslated) > 5 else ''}")
     if dry_run:
         print(json.dumps(manifest, indent=2)[:900])

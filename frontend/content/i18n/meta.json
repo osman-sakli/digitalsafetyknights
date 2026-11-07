@@ -355,5 +355,183 @@
       "title": "Videos Cortos — Digital Safety Knights",
       "description": "Cortometrajes animados que enseñan a los niños a mantenerse seguros en línea. Uno nuevo cada día. Sin anuncios, sin rastreo."
     }
+  },
+  "fr": {
+    "index.html": {
+      "title": "Digital Safety Knights (DSK) — Protéger les enfants en ligne",
+      "description": "Digital Safety Knights : une organisation éducative gratuite qui protège les enfants des prédateurs en ligne, de l’IA nuisible et des risques des jeux vidéo."
+    },
+    "about.html": {
+      "title": "À propos des fondateurs — Digital Safety Knights",
+      "description": "Les fondateurs de Digital Safety Knights : pourquoi nous avons créé une organisation gratuite de sécurité numérique des enfants, et pourquoi elle le restera."
+    },
+    "academy.html": {
+      "title": "Académie des Chevaliers — Digital Safety Knights",
+      "description": "L’Académie des Chevaliers : un parcours guidé à travers les six quêtes et tous les guides, qui se termine par l’épreuve finale du Chevalier."
+    },
+    "ask-shieldy.html": {
+      "title": "Demandez à Shieldy — Digital Safety Knights",
+      "description": "Demandez à Shieldy : touchez une question, recevez une réponse claire déjà rédigée. Aucun chat IA ouvert, aucun texte libre, juste les réponses de Shieldy."
+    },
+    "audit.html": {
+      "title": "Audit de sécurité familiale — Digital Safety Knights",
+      "description": "L’Audit de sécurité familiale : une liste de vérification gratuite et notée, en six sections, pour voir où en est la sécurité numérique de votre famille."
+    },
+    "case-studies.html": {
+      "title": "Ce qui est arrivé à… — Digital Safety Knights",
+      "description": "« Ce qui est arrivé à… » : des cas fictifs, racontés avec retenue, qui montrent comment un danger en ligne se déroule vraiment et comment le repérer à temps."
+    },
+    "chapters.html": {
+      "title": "Sections locales — Digital Safety Knights",
+      "description": "Les sections locales de Digital Safety Knights : un réseau mondial de bénévoles qui apportent l’éducation à la sécurité numérique aux écoles. Lancez la vôtre."
+    },
+    "chat-simulator.html": {
+      "title": "Simulateur de conversation — Digital Safety Knights",
+      "description": "Simulateur de conversation : entraînez-vous sur une conversation à risque scénarisée et choisissez quoi répondre, sans aucun danger réel."
+    },
+    "contact.html": {
+      "title": "Nous contacter — Digital Safety Knights",
+      "description": "Signalez une inquiétude, posez une question ou dites-nous si quelque chose ne marche pas : une personne réelle de l’équipe DSK lit chaque message."
+    },
+    "digital-safety-week.html": {
+      "title": "Kit de la Semaine de la sécurité numérique — Digital Safety Knights",
+      "description": "Un plan gratuit de cinq jours pour les écoles : une Règle du Chevalier par jour, une affiche imprimable et, en option, une intervention gratuite devant les élèves."
+    },
+    "events.html": {
+      "title": "Événements — Digital Safety Knights",
+      "description": "Où retrouver Digital Safety Knights : les prochaines fêtes d’école et événements associatifs, avec des photos de nos ateliers récents pour élèves et familles."
+    },
+    "films.html": {
+      "title": "Films DSK — Digital Safety Knights",
+      "description": "Regardez les films de Digital Safety Knights : des courts métrages animés gratuits qui apprennent aux enfants à repérer arnaques, inconnus et manipulation."
+    },
+    "footprint-calculator.html": {
+      "title": "Calculateur d’empreinte numérique — Digital Safety Knights",
+      "description": "Calculateur d’empreinte numérique : découvrez tout ce qu’un profil fictif révèle sur son propriétaire une fois les petits détails mis bout à bout."
+    },
+    "for-principals.html": {
+      "title": "Pour les directions d’école — Digital Safety Knights",
+      "description": "Une page de présentation pour les directions : ce qu’est Digital Safety Knights, ce que les élèves apprennent, et pourquoi c’est gratuit et conforme à COPPA."
+    },
+    "game.html": {
+      "title": "Le tri des messages de Shieldy — Digital Safety Knights",
+      "description": "Le tri des messages de Shieldy : un jeu d’arcade gratuit, rapide et amusant. Faites glisser Shieldy entre les couloirs pour trier les messages à temps."
+    },
+    "glitch-detector.html": {
+      "title": "Détecteur de Glitch — Digital Safety Knights",
+      "description": "Collez un message suspect ou envoyez une capture d’écran : Shieldy vous montrera les signaux d’alerte, un par un. Gratuit, privé, sans aucun compte à créer."
+    },
+    "glossary.html": {
+      "title": "Glossaire de la sécurité numérique — Digital Safety Knights",
+      "description": "Un glossaire en langage clair des termes que tout parent devrait connaître : grooming (pédopiégeage), sextorsion, deepfake et d’autres, définis au même endroit."
+    },
+    "journal-archive.html": {
+      "title": "Archives du Journal — Digital Safety Knights",
+      "description": "Parcourez et recherchez tous les anciens numéros du Journal mensuel de DSK : chaque dossier, chaque conseil et chaque actualité depuis le tout premier numéro."
+    },
+    "knight-chronicles.html": {
+      "title": "Chroniques du Chevalier — Digital Safety Knights",
+      "description": "Les Chroniques du Chevalier : une courte histoire en bande dessinée, publiée chaque mois en même temps que le Journal mensuel de Digital Safety Knights."
+    },
+    "knight-council.html": {
+      "title": "Conseil des Chevaliers — Digital Safety Knights",
+      "description": "Le Conseil des Chevaliers : un programme d’ambassadeurs pour les 13-17 ans qui veulent faire connaître la sécurité numérique dans leur propre entourage."
+    },
+    "knight-duel.html": {
+      "title": "Duel du Chevalier — Digital Safety Knights",
+      "description": "Le Duel du Chevalier : affrontez Glitch et les autres tricheurs dans un jeu de combat rapide et amusant sur la sécurité. Gratuit, sans téléchargement ni compte."
+    },
+    "knights.html": {
+      "title": "Rencontrez les Chevaliers — Digital Safety Knights",
+      "description": "Rencontrez les six personnages de Digital Safety Knights : Shieldy, Pixel, Bot, Dame Noble, Sprout, et Glitch, le rival dont tous les autres se méfient."
+    },
+    "legislative-tracker.html": {
+      "title": "Suivi législatif — Digital Safety Knights",
+      "description": "Un suivi en langage clair : quelles lois sur la sécurité des enfants en ligne sont déjà en vigueur, lesquelles sont en attente, et ce que chacune change pour vous."
+    },
+    "media-agreement.html": {
+      "title": "Générateur de charte familiale du numérique — Digital Safety Knights",
+      "description": "Composez ensemble une charte familiale du numérique personnalisable, puis imprimez-la ou enregistrez-la comme un document que votre famille signera vraiment."
+    },
+    "myth-vs-fact.html": {
+      "title": "Mythe ou réalité — Digital Safety Knights",
+      "description": "Mythe ou réalité : des réponses courtes et faciles à partager aux questions que les parents se posent vraiment, le soir, sur la sécurité en ligne de leurs enfants."
+    },
+    "news-archive.html": {
+      "title": "Archives de l’actualité — Digital Safety Knights",
+      "description": "Une archive jour par jour de l’actualité de la sécurité des enfants en ligne, avec le lien vers l’article d’origine pour chacune des informations citées."
+    },
+    "origin-story.html": {
+      "title": "Notre histoire — Digital Safety Knights",
+      "description": "Comment Digital Safety Knights a commencé : l’histoire derrière le bouclier, de la première inquiétude d’une famille à une organisation gratuite ouverte à tous."
+    },
+    "password-dojo.html": {
+      "title": "Dojo des mots de passe — Digital Safety Knights",
+      "description": "Le Dojo des mots de passe : entraînez-vous à créer un mot de passe vraiment solide. Rien de ce que vous tapez n’est enregistré ni envoyé où que ce soit."
+    },
+    "privacy-simulator.html": {
+      "title": "Simulateur de confidentialité — Digital Safety Knights",
+      "description": "Simulateur de confidentialité : entraînez-vous à verrouiller les réglages d’un jeu ou d’un réseau social fictif, sans risque, avant de le faire pour de vrai."
+    },
+    "quests.html": {
+      "title": "Quêtes — Digital Safety Knights",
+      "description": "Lancez une quête Digital Safety Knights : des scénarios de sécurité interactifs et gratuits pour les enfants, sans inscription et sans aucun compte à créer."
+    },
+    "quiz.html": {
+      "title": "Quiz du Chevalier — Digital Safety Knights",
+      "description": "Les quiz Digital Safety Knights : niveaux facile et difficile sur les arnaques, l’IA et les deepfakes, les inconnus, le cyberharcèlement et la vie privée."
+    },
+    "resources.html": {
+      "title": "Centre de ressources — Digital Safety Knights",
+      "description": "Le Centre de ressources DSK : tous les guides, quêtes, outils et numéros du journal au même endroit. Gratuit, pour les parents, les enfants et les enseignants."
+    },
+    "safe-profile-builder.html": {
+      "title": "Créez votre profil sûr — Digital Safety Knights",
+      "description": "Créez votre profil sûr : apprenez à distinguer ce qui peut être partagé en ligne de ce qui doit rester privé, en triant les informations une par une."
+    },
+    "school-faq.html": {
+      "title": "FAQ écoles et organisations — Digital Safety Knights",
+      "description": "Les questions que posent le plus souvent les écoles, les associations et les structures locales avant de réserver une séance gratuite de Digital Safety Knights."
+    },
+    "school-programs.html": {
+      "title": "Programmes pour écoles et organisations — Digital Safety Knights",
+      "description": "Réservez un séminaire gratuit de Digital Safety Knights pour votre école ou votre association : sur place dans le New Jersey, ou en visio partout dans le monde."
+    },
+    "screen-time-checkin.html": {
+      "title": "Point quotidien sur le temps d’écran — Digital Safety Knights",
+      "description": "Un point quotidien et privé sur le temps d’écran de votre famille. Tout reste sur votre appareil : personne d’autre ne peut le voir, pas même DSK."
+    },
+    "shieldys-journal.html": {
+      "title": "Le journal de Shieldy — Digital Safety Knights",
+      "description": "Le journal de Shieldy : les notes à la première personne de la mascotte de Digital Safety Knights. Plus court et plus léger que le Journal mensuel."
+    },
+    "sources.html": {
+      "title": "Sources et recherches — Digital Safety Knights",
+      "description": "Chaque statistique et chaque affirmation sur les menaces, sourcée et datée : NCMEC, FBI, FTC, procureurs généraux et recherches indépendantes, revues chaque mois."
+    },
+    "spot-the-deepfake.html": {
+      "title": "Repérez le deepfake — Digital Safety Knights",
+      "description": "Repérez le deepfake : un quiz en situation qui apprend aux enfants les vrais indices des vidéos, des sons et des images truqués par l’intelligence artificielle."
+    },
+    "tactic-almanac.html": {
+      "title": "Almanach des tactiques — Digital Safety Knights",
+      "description": "L’Almanach des tactiques : les ruses de Glitch, devenues des adversaires que l’on peut battre. Jamais de vraies personnes, toujours de vrais signaux d’alerte."
+    },
+    "team.html": {
+      "title": "Notre équipe — Digital Safety Knights",
+      "description": "Découvrez l’équipe de direction de Digital Safety Knights et les postes que nous cherchons à pourvoir à mesure que l’organisation grandit."
+    },
+    "topics.html": {
+      "title": "Parcourir par thème — Digital Safety Knights",
+      "description": "Parcourez toutes les vidéos courtes de Digital Safety Knights par thème : arnaques, IA et deepfakes, inconnus, cyberharcèlement, mots de passe et vie privée."
+    },
+    "transparency.html": {
+      "title": "Nos vrais chiffres — Digital Safety Knights",
+      "description": "Aucune statistique inventée. Les chiffres réels et à jour derrière Digital Safety Knights : membres, outils, langues et contenus, mis à jour automatiquement."
+    },
+    "watch.html": {
+      "title": "Vidéos courtes — Digital Safety Knights",
+      "description": "Des courts métrages animés qui apprennent aux enfants à rester en sécurité en ligne. Un nouveau film chaque jour. Sans publicité et sans aucun pistage."
+    }
   }
 }

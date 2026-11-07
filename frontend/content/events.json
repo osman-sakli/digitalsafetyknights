@@ -36,6 +36,15 @@
           "audience": "Grados 6.º a 8.º y familias",
           "time": "5:00–7:00 p. m.",
           "summary": "Un puesto práctico del Desafío de Seguridad Digital — los estudiantes detectan estafas, comparan contraseñas y analizan escenarios de ciberacoso, y al final se llevan a casa un certificado de Héroe de la Seguridad Digital. Guías impresas gratuitas para los padres."
+        },
+        "fr": {
+          "dateLabel": "28 janvier 2027",
+          "title": "Salon de la santé et soirée STEM + Familles",
+          "host": "Association de parents d’élèves d’un collège",
+          "format": "En présentiel",
+          "audience": "Classes de 6e à 4e et familles",
+          "time": "17h00–19h00",
+          "summary": "Un stand pratique du Défi Sécurité Numérique — les élèves repèrent les arnaques, comparent des mots de passe et travaillent sur des scénarios de cyberharcèlement, puis repartent avec un diplôme de Héros de la Sécurité Numérique. Guides imprimés gratuits pour les parents."
         }
       }
     },
@@ -128,6 +137,34 @@
             {
               "alt": "Folleto del evento en español: Taller de Seguridad Digital, 11.05.2026, 6:00 p. m., Zoom",
               "caption": "El folleto bilingüe de la organización anfitriona para la sesión."
+            }
+          ]
+        },
+        "fr": {
+          "dateLabel": "5 novembre 2026",
+          "title": "Atelier de sécurité numérique pour élèves",
+          "host": "Catholic Charities Community Services",
+          "format": "En ligne (Zoom)",
+          "audience": "Adolescents et parents",
+          "languages": "Anglais et espagnol",
+          "time": "18h00",
+          "summary": "Une séance en direct d’une heure pour les adolescents et leurs parents — le piège des « Robux gratuits » et les autres arnaques dans les jeux, les chatbots IA et les deepfakes, le cyberharcèlement, les paramètres de confidentialité, et exactement quoi faire si quelque chose arrive (capture d’écran d’abord, en parler à un adulte de confiance, où signaler). Animée en direct par notre responsable du club, avec un flyer bilingue et des supports en espagnol pour les familles.",
+          "images": [
+            {
+              "alt": "Ayşe anime l’atelier en direct sur Zoom depuis son bureau",
+              "caption": "Ayşe, notre responsable du club, anime la séance en direct sur Zoom."
+            },
+            {
+              "alt": "Diapositive de l’atelier : les captures d’écran sont des preuves — disparaître ne veut pas dire effacé",
+              "caption": "Diapositive « quoi faire » : capture d’écran d’abord — disparaître ne veut pas dire effacé."
+            },
+            {
+              "alt": "Diapositive de l’atelier : le piège des Robux / V-Bucks gratuits",
+              "caption": "Risques dans les jeux : le piège des « Robux / V-Bucks gratuits »."
+            },
+            {
+              "alt": "Flyer de l’événement en espagnol : Taller de Seguridad Digital, 11.05.2026, 18h00, Zoom",
+              "caption": "Le flyer bilingue de l’organisation qui nous accueillait."
             }
           ]
         }

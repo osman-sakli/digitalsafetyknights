@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Parcourez toutes les vidéos courtes de Digital Safety Knights par thème : arnaques, IA et deepfakes, inconnus, cyberharcèlement, mots de passe et vie privée.">
+<title>Parcourir par thème — Digital Safety Knights</title>
+<link rel="canonical" href="https://digitalsafetyknights.org/fr/topics.html">
+<link rel="alternate" hreflang="en" href="https://digitalsafetyknights.org/en/topics.html">
+<link rel="alternate" hreflang="es" href="https://digitalsafetyknights.org/es/topics.html">
+<link rel="alternate" hreflang="fr" href="https://digitalsafetyknights.org/fr/topics.html">
+<link rel="alternate" hreflang="tr" href="https://digitalsafetyknights.org/tr/topics.html">
+<link rel="alternate" hreflang="x-default" href="https://digitalsafetyknights.org/topics.html">
+<meta property="og:title" content="Parcourir par thème — Digital Safety Knights">
+<meta property="og:description" content="Parcourez toutes les vidéos courtes de Digital Safety Knights par thème : arnaques, IA et deepfakes, inconnus, cyberharcèlement, mots de passe et vie privée.">
+<meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
+<meta property="og:url" content="https://digitalsafetyknights.org/topics.html">
+<meta property="og:type" content="website">
+<link rel="icon" href="/assets/favicon.ico">
+<link rel="stylesheet" href="/assets/theme.css">
+<style>
+  :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --white: #fff; --gray: #6c757d; --text: #2d3748; --success: #2a9d8f; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Nunito Sans', 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
+
+  nav { background: var(--navy); position: sticky; top: 0; z-index: 999; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 68px; box-shadow: 0 2px 20px rgba(0,0,0,0.4); }
+  .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .nav-logo img { height: 42px; }
+  .nav-logo span { color: var(--gold); font-weight: 900; font-size: 1rem; }
+  .nav-right a { color: #ccd6f6; text-decoration: none; font-size: 0.88rem; font-weight: 700; margin-left: 1.4rem; }
+  .nav-right a:hover { color: var(--gold); }
+
+  .hero { background: linear-gradient(135deg, #1a2f6e, #0d1b3e); color: white; text-align: center; padding: 70px 2rem 55px; }
+  .hero-badge { display: inline-block; background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.4); color: var(--gold); padding: 6px 18px; border-radius: 20px; font-size: 0.72rem; font-weight: 700; letter-spacing: 2px; margin-bottom: 1.4rem; text-transform: uppercase; }
+  .hero h1 { font-size: clamp(1.9rem, 4.5vw, 3rem); font-weight: 900; margin-bottom: 0.9rem; }
+  .hero h1 .gold { color: var(--gold); }
+  .hero p { color: #a8b8d8; max-width: 640px; margin: 0 auto; line-height: 1.7; font-size: 1.02rem; }
+
+  section { padding: 3rem 2rem; }
+  .container { max-width: 1200px; margin: 0 auto; }
+
+  .filters { display: flex; gap: 0.6rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.6rem; }
+  .filter-chip { background: white; border: 2px solid #dde2f0; color: var(--navy); padding: 9px 20px; border-radius: 20px; font-weight: 800; font-size: 0.85rem; cursor: pointer; }
+  .filter-chip.active, .filter-chip:hover { border-color: var(--gold); background: rgba(201,168,76,0.1); }
+
+  .cat-section { margin-bottom: 3rem; }
+  .cat-heading { display: flex; align-items: center; gap: 12px; margin-bottom: 1.2rem; }
+  .cat-heading .cicon { font-size: 1.8rem; }
+  .cat-heading h2 { font-size: 1.3rem; font-weight: 900; color: var(--navy); }
+  .cat-heading .ccount { font-size: 0.78rem; color: var(--gray); font-weight: 700; background: white; padding: 3px 10px; border-radius: 10px; }
+
+  .short-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 1.1rem; }
+  .short-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 20px rgba(13,27,62,0.08); cursor: pointer; border: none; text-align: left; font-family: inherit; position: relative; }
+  .short-card:hover { transform: translateY(-3px); }
+  .short-thumb { width: 100%; aspect-ratio: 9/16; background: linear-gradient(135deg, #1a2f6e, #0d1b3e); object-fit: cover; display: block; }
+  .short-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 46px; height: 46px; border-radius: 50%; background: rgba(13,27,62,0.72); color: var(--gold2); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; pointer-events: none; }
+  .short-body { padding: 10px 12px 12px; }
+  .short-body h4 { font-size: 0.82rem; color: var(--navy); line-height: 1.3; font-weight: 800; }
+  .short-card.soon { opacity: 0.6; cursor: default; }
+  .short-card.soon .short-play { display: none; }
+  .soon-badge { position: absolute; top: 8px; right: 8px; background: var(--gold); color: var(--navy); font-size: 0.6rem; font-weight: 900; padding: 3px 8px; border-radius: 8px; text-transform: uppercase; }
+
+  .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(5,9,25,0.88); z-index: 2000; align-items: center; justify-content: center; padding: 20px; }
+  .modal-overlay.open { display: flex; }
+  .modal-box { max-width: 380px; width: 100%; }
+  .modal-box video { width: 100%; border-radius: 16px; aspect-ratio: 9/16; background: #000; }
+  .modal-close { display: block; margin: 14px auto 0; background: var(--gold); color: var(--navy); border: none; padding: 10px 24px; border-radius: 20px; font-weight: 900; cursor: pointer; }
+  .modal-caption { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-top: 10px; color: white; font-size: 0.86rem; font-weight: 700; }
+  .modal-caption span:last-child { color: var(--gold2); font-size: 0.76rem; white-space: nowrap; }
+  .nav-arrow { background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.25); width: 54px; height: 54px; border-radius: 50%; font-size: 2rem; line-height: 1; cursor: pointer; flex-shrink: 0; margin: 0 14px; }
+  .nav-arrow:hover:not(:disabled) { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+  .nav-arrow:disabled { opacity: 0.25; cursor: default; }
+  @media (max-width: 700px) {
+    .nav-arrow { position: absolute; bottom: 18px; margin: 0; width: 48px; height: 48px; font-size: 1.7rem; }
+    .nav-arrow.prev { left: 18px; }
+    .nav-arrow.next { right: 18px; }
+  }
+
+  footer { background: var(--navy); color: #7a8fbb; padding: 2.5rem 2rem; text-align: center; font-size: 0.82rem; }
+  footer a { color: var(--gold); text-decoration: none; }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 1rem; } .nav-right a { margin-left: 0.7rem; font-size: 0.78rem; }
+    section { padding: 2.2rem 1.2rem; }
+    .short-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0.8rem; }
+  }
+</style>
+<script src="/assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">
+    <img src="/assets/logo.png" alt="DSK">
+    <span>Digital Safety Knights</span>
+  </a>
+  <div class="nav-right">
+    <a href="/" data-i18n="qp.home2">Home</a>
+    <a href="/resources.html" data-i18n="nav.resources">Resources</a>
+    <a href="/quests.html" data-i18n="res.navQuests">Quests</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge" data-i18n="topics.heroBadge">🎬 Video Library</div>
+  <h1 data-i18n="topics.heroTitle">Browse Every Short —<br><span class="gold">By Topic</span></h1>
+  <p data-i18n="topics.heroSubtitle">Every Digital Safety Knights video we've ever made, sorted by what it's actually about — so you can find exactly the lesson you need, not just whatever posted today.</p>
+</section>
+
+<section>
+  <div class="container">
+    <div class="filters" id="cat-filters"></div>
+    <div id="cat-sections"></div>
+  </div>
+</section>
+
+<div class="modal-overlay" id="videoModal">
+  <button class="nav-arrow prev" id="prevBtn" aria-label="Previous video">‹</button>
+  <div class="modal-box">
+    <video id="modalVideo" controls playsinline></video>
+    <div class="modal-caption"><span id="modalTitle"></span><span id="modalCount"></span></div>
+    <button class="modal-close" onclick="closeVideoModal()" data-i18n="topics.close">Close</button>
+  </div>
+  <button class="nav-arrow next" id="nextBtn" aria-label="Next video">›</button>
+</div>
+
+<footer>
+  <p>&copy; 2026 Digital Safety Knights. <a href="/">Home</a> · <a href="/resources.html" data-i18n="footer.journalArchive2">Resources</a></p>
+</footer>
+
+<script>
+const TL_LANG = (window.DSKi18n && DSKi18n.lang) || 'en';
+let TITLE_MAP = {};
+
+// Title in the current language: the video manifest wins (it is generated
+// from ai-scripts.json and stays in step with it), then the topic entry's
+// own translation for the legacy shorts, then English.
+function shortTitle(it) {
+  if (TL_LANG === 'en') return it.title;
+  const fromMap = TITLE_MAP[it.id];
+  const media = MEDIA_BY_ID[it.id];
+  return (fromMap && fromMap[TL_LANG])
+    || (media && media['title_' + TL_LANG])
+    || it['title_' + TL_LANG]
+    || it.title;
+}
+const TL_SOON = { en: 'Coming Soon', tr: 'Yakında', es: 'Próximamente' }[TL_LANG] || 'Coming Soon';
+const TL_ALL = { en: '🌐 All Topics', tr: '🌐 Tüm Konular', es: '🌐 Todos los Temas' }[TL_LANG] || '🌐 All Topics';
+const CAT_LABELS = {
+  scams: { en: 'Scams & Fake Prizes', tr: 'Dolandırıcılık & Sahte Ödüller', es: 'Estafas y Premios Falsos' },
+  ai: { en: 'AI Chatbots & Deepfakes', tr: 'Yapay Zeka Sohbet & Deepfake', es: 'Chatbots de IA y Deepfakes' },
+  strangers: { en: 'Strangers & Catfishing', tr: 'Yabancılar & Sahte Kimlik', es: 'Desconocidos y Perfiles Falsos' },
+  bullying: { en: 'Cyberbullying & Standing Up', tr: 'Siber Zorbalık & Karşı Durmak', es: 'Ciberacoso y Cómo Defender a Otros' },
+  privacy: { en: 'Passwords & Privacy', tr: 'Şifreler & Gizlilik', es: 'Contraseñas y Privacidad' },
+  emergency: { en: 'If Something Happens', tr: 'Bir Şey Olursa', es: 'Si Algo Pasa' },
+  habits: { en: 'Habits & Media Smarts', tr: 'Alışkanlıklar & Medya Bilinci', es: 'Hábitos y Sentido Mediático' },
+};
+function catLabel(c) { return (CAT_LABELS[c] && CAT_LABELS[c][TL_LANG]) || TOPICS_DATA.categories[c].label; }
+
+let TOPICS_DATA = null;
+let activeCat = 'all';
+let TITLE_BY_ID = {};
+// Which videos actually exist is owned by content/video-library.json, written by
+// infrastructure/sync-video-library.py and the render pipeline — not by the
+// static topic file, so newly rendered shorts appear here without an edit.
+let MEDIA_BY_ID = {};
+
+const cacheBust = '?t=' + Math.floor(Date.now() / 3600000);
+Promise.all([
+  fetch('/content/shorts-topics.json' + cacheBust).then(r => r.json()),
+  fetch('/content/video-library.json' + cacheBust).then(r => r.json()).catch(() => ({ items: [] })),
+])
+  .then(([topics, library]) => {
+    TOPICS_DATA = topics;
+    (library.items || []).forEach(v => { MEDIA_BY_ID[v.id] = v; });
+    TITLE_MAP = library.titles || {};
+    Object.values(topics.items).flat().forEach(it => { TITLE_BY_ID[it.id] = shortTitle(it); });
+    renderFilters();
+    renderSections();
+  })
+  .catch(() => {
+    document.getElementById('cat-sections').innerHTML = '<p style="text-align:center;color:var(--gray);">Could not load the video library right now — please refresh.</p>';
+  });
+
+function renderFilters() {
+  const cats = Object.keys(TOPICS_DATA.categories);
+  const filtersEl = document.getElementById('cat-filters');
+  let html = `<button class="filter-chip active" data-cat="all">${TL_ALL}</button>`;
+  cats.forEach(c => {
+    const meta = TOPICS_DATA.categories[c];
+    html += `<button class="filter-chip" data-cat="${c}">${meta.icon} ${catLabel(c)}</button>`;
+  });
+  filtersEl.innerHTML = html;
+  filtersEl.querySelectorAll('.filter-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      activeCat = chip.getAttribute('data-cat');
+      filtersEl.querySelectorAll('.filter-chip').forEach(c => c.classList.toggle('active', c === chip));
+      renderSections();
+    });
+  });
+}
+
+function renderSections() {
+  const cats = activeCat === 'all' ? Object.keys(TOPICS_DATA.categories) : [activeCat];
+  const container = document.getElementById('cat-sections');
+  let html = '';
+  cats.forEach(c => {
+    const meta = TOPICS_DATA.categories[c];
+    const items = TOPICS_DATA.items[c] || [];
+    if (!items.length) return;
+    const availCount = items.filter(i => MEDIA_BY_ID[i.id]).length;
+    html += `<div class="cat-section">
+      <div class="cat-heading"><span class="cicon">${meta.icon}</span><h2>${catLabel(c)}</h2><span class="ccount">${availCount} video${availCount === 1 ? '' : 's'}</span></div>
+      <div class="short-grid">`;
+    items.forEach(it => {
+      const media = MEDIA_BY_ID[it.id];
+      if (media) {
+        html += `<button class="short-card" data-short-id="${it.id}">
+          <img class="short-thumb" src="${media.poster || ''}" alt="${escapeAttr(shortTitle(it))}" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#1a2f6e,#0d1b3e)'">
+          <div class="short-play">▶</div>
+          <div class="short-body"><h4>${escapeHtml(shortTitle(it))}</h4></div>
+        </button>`;
+      } else {
+        html += `<div class="short-card soon">
+          <span class="soon-badge">${TL_SOON}</span>
+          <div class="short-thumb"></div>
+          <div class="short-body"><h4>${escapeHtml(shortTitle(it))}</h4></div>
+        </div>`;
+      }
+    });
+    html += `</div></div>`;
+  });
+  container.innerHTML = html || '<p style="text-align:center;color:var(--gray);">No videos in this topic yet.</p>';
+  container.querySelectorAll('.short-card[data-short-id]').forEach(card => {
+    card.addEventListener('click', () => playShort(card.getAttribute('data-short-id')));
+  });
+  buildPlaylist();
+}
+
+function escapeHtml(s) { return (s || '').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+function escapeAttr(s) { return escapeHtml(s).replace(/'/g, '&#39;'); }
+
+// Playlist = the playable cards currently on screen, in display order, so
+// next/previous follows what the visitor is actually looking at (including
+// when a single topic filter is active).
+let PLAYLIST = [];
+let playIndex = -1;
+
+function buildPlaylist() {
+  PLAYLIST = Array.from(document.querySelectorAll('.short-card[data-short-id]'))
+    .map(el => el.getAttribute('data-short-id'));
+}
+
+function playShort(id) {
+  if (!PLAYLIST.length) buildPlaylist();
+  const idx = PLAYLIST.indexOf(id);
+  playIndex = idx === -1 ? 0 : idx;
+  document.getElementById('videoModal').classList.add('open');
+  loadCurrent();
+  if (window.DSKPoints) DSKPoints.markComboActivity('guide');
+}
+
+function loadCurrent() {
+  const id = PLAYLIST[playIndex];
+  if (!id) return;
+  const media = MEDIA_BY_ID[id] || {};
+  const video = document.getElementById('modalVideo');
+  video.src = media.src || '';
+  video.poster = media.poster || '';
+  document.getElementById('modalTitle').textContent = TITLE_BY_ID[id] || '';
+  document.getElementById('modalCount').textContent = (playIndex + 1) + ' / ' + PLAYLIST.length;
+  document.getElementById('prevBtn').disabled = playIndex === 0;
+  document.getElementById('nextBtn').disabled = playIndex === PLAYLIST.length - 1;
+  video.play().catch(() => {});
+}
+
+function step(delta) {
+  const next = playIndex + delta;
+  if (next < 0 || next >= PLAYLIST.length) return;
+  playIndex = next;
+  loadCurrent();
+}
+
+function closeVideoModal() {
+  const video = document.getElementById('modalVideo');
+  video.pause();
+  video.src = '';
+  document.getElementById('videoModal').classList.remove('open');
+}
+
+document.getElementById('prevBtn').addEventListener('click', () => step(-1));
+document.getElementById('nextBtn').addEventListener('click', () => step(1));
+// Roll straight into the next short when one finishes, the way a feed does.
+document.getElementById('modalVideo').addEventListener('ended', () => step(1));
+
+document.addEventListener('keydown', function (e) {
+  if (!document.getElementById('videoModal').classList.contains('open')) return;
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); step(1); }
+  else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); step(-1); }
+  else if (e.key === 'Escape') closeVideoModal();
+});
+
+// Swipe — horizontal or vertical, whichever the thumb does first.
+(function () {
+  const box = document.querySelector('.modal-box');
+  let x0 = null, y0 = null;
+  box.addEventListener('touchstart', e => {
+    x0 = e.changedTouches[0].clientX; y0 = e.changedTouches[0].clientY;
+  }, { passive: true });
+  box.addEventListener('touchend', e => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    const dy = e.changedTouches[0].clientY - y0;
+    const horizontal = Math.abs(dx) > Math.abs(dy);
+    const travel = horizontal ? dx : dy;
+    if (Math.abs(travel) > 60) step(travel < 0 ? 1 : -1);
+    x0 = y0 = null;
+  }, { passive: true });
+})();
+
+document.getElementById('videoModal').addEventListener('click', function(e) {
+  if (e.target === this) closeVideoModal();
+});
+</script>
+<script src="/assets/lang-switcher.js"></script>
+<script src="/assets/site-search.js"></script>
+<script src="/assets/play-now-fab.js"></script>
+</body>
+</html>

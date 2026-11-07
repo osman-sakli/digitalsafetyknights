@@ -47,6 +47,19 @@
             "Pedir ayuda es la jugada valiente. Nunca te vas a meter en problemas por preguntar."
           ],
           "talkPrompt": "Pregunta en la cena: “Si alguien en internet te diera algo y te pidiera que no me lo contaras, ¿qué harías?”"
+        },
+        "fr": {
+          "title": "La Petite Pousse perdue",
+          "ages": "5 à 10 ans",
+          "logline": "Quand le plus jeune des Chevaliers suit un inconnu un peu trop gentil vers une porte secrète, les Chevaliers traversent le royaume à toute allure — et Sprout découvre qu’appeler à l’aide est le geste le plus courageux de tous.",
+          "lessons": [
+            "Un inconnu qui offre un cadeau et demande de garder le secret : voilà le signal d’alerte.",
+            "Si un nouvel ami veut t’emmener dans un endroit à l’écart — arrête-toi.",
+            "Qu’on te presse, c’est un signal d’alerte.",
+            "Avoir l’air sûr de soi n’est pas la même chose qu’avoir raison — vérifie avant d’agir.",
+            "Appeler à l’aide, c’est le geste courageux. Tu n’auras jamais d’ennuis pour avoir demandé."
+          ],
+          "talkPrompt": "À table, demandez : « Si quelqu’un sur internet te donnait quelque chose et te demandait de me le cacher, tu ferais quoi ? »"
         }
       }
     }

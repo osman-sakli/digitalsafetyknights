@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Où retrouver Digital Safety Knights : les prochaines fêtes d’école et événements associatifs, avec des photos de nos ateliers récents pour élèves et familles.">
+<title>Événements — Digital Safety Knights</title>
+<link rel="canonical" href="https://digitalsafetyknights.org/fr/events.html">
+<link rel="alternate" hreflang="en" href="https://digitalsafetyknights.org/en/events.html">
+<link rel="alternate" hreflang="es" href="https://digitalsafetyknights.org/es/events.html">
+<link rel="alternate" hreflang="fr" href="https://digitalsafetyknights.org/fr/events.html">
+<link rel="alternate" hreflang="tr" href="https://digitalsafetyknights.org/tr/events.html">
+<link rel="alternate" hreflang="x-default" href="https://digitalsafetyknights.org/events.html">
+<meta property="og:title" content="Événements — Digital Safety Knights">
+<meta property="og:description" content="Où retrouver Digital Safety Knights : les prochaines fêtes d’école et événements associatifs, avec des photos de nos ateliers récents pour élèves et familles.">
+<meta property="og:image" content="https://digitalsafetyknights.org/assets/events/cc-workshop-presenting.jpg">
+<meta property="og:url" content="https://digitalsafetyknights.org/events.html">
+<meta property="og:type" content="website">
+<link rel="icon" href="/assets/favicon.ico">
+<link rel="stylesheet" href="/assets/theme.css">
+<script src="/assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
+<style>
+  :root { --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a; --light: #f4f6fb; --gray: #6c757d; --success: #2a9d8f; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Nunito Sans', 'Segoe UI', system-ui, sans-serif; background: var(--light); color: #2d3748; }
+
+  .ev-hero { background: var(--realm-bg); color: white; padding: 3rem 1.5rem 3.5rem; text-align: center; position: relative; overflow: hidden; }
+  .ev-hero .eyebrow { color: var(--gold); font-weight: 900; letter-spacing: 2px; font-size: 0.8rem; text-transform: uppercase; }
+  .ev-hero h1 { font-size: 2.2rem; font-weight: 900; margin: 10px 0 12px; }
+  .ev-hero p { color: #cdd7f0; max-width: 620px; margin: 0 auto; line-height: 1.7; font-size: 1rem; }
+  .ev-hero a.back { position: absolute; left: 1.5rem; top: 1.5rem; color: #cdd7f0; text-decoration: none; font-weight: 700; font-size: 0.85rem; }
+
+  .ev-wrap { max-width: 920px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+  .ev-section-title { display: flex; align-items: center; gap: 12px; margin: 0 0 1rem; }
+  .ev-section-title h2 { color: var(--navy); font-size: 1.3rem; }
+  .ev-section-title .count { background: var(--navy); color: var(--gold2); font-size: 0.72rem; font-weight: 900; padding: 3px 10px; border-radius: 12px; }
+  .ev-section { margin-bottom: 2.6rem; }
+
+  .ev-card { background: white; border-radius: 18px; box-shadow: 0 6px 24px rgba(13,27,62,0.08); margin-bottom: 1.2rem; overflow: hidden; }
+  .ev-card .ev-head { display: flex; gap: 1.2rem; padding: 1.5rem 1.7rem; align-items: flex-start; }
+  .ev-date { flex-shrink: 0; text-align: center; background: var(--light); border-radius: 12px; padding: 10px 12px; min-width: 76px; }
+  .ev-date .m { font-size: 0.68rem; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; color: var(--gray); }
+  .ev-date .d { font-size: 1.6rem; font-weight: 900; color: var(--navy); line-height: 1.1; }
+  .ev-date .y { font-size: 0.68rem; color: var(--gray); font-weight: 700; }
+  .ev-body { flex: 1; min-width: 0; }
+  .ev-body h3 { color: var(--navy); font-size: 1.12rem; margin-bottom: 4px; }
+  .ev-meta { color: var(--gray); font-size: 0.82rem; font-weight: 700; margin-bottom: 8px; line-height: 1.6; }
+  .ev-body p { color: #4a5568; font-size: 0.9rem; line-height: 1.65; }
+  .ev-badge { display: inline-block; font-size: 0.66rem; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; margin-left: 6px; vertical-align: middle; }
+  .ev-badge.upcoming { background: #fdf3dc; color: #8a6d2a; border: 1px solid var(--gold); }
+  .ev-badge.past { background: #e6f4ea; color: #1e7d3a; }
+  .ev-badge.invited { background: #eef1f8; color: var(--navy); }
+
+  .ev-photos { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 8px; padding: 0 1.7rem 1.5rem; }
+  .ev-photos button { border: none; padding: 0; background: var(--light); border-radius: 12px; overflow: hidden; cursor: pointer; aspect-ratio: 4 / 3; }
+  .ev-photos button:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+  .ev-photos img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .25s ease; }
+  .ev-photos button:hover img { transform: scale(1.04); }
+  .ev-photos-label { padding: 0 1.7rem 0.6rem; font-size: 0.72rem; font-weight: 900; letter-spacing: 1.2px; text-transform: uppercase; color: var(--gray); }
+
+  .ev-empty { color: var(--gray); font-size: 0.9rem; background: white; border-radius: 14px; padding: 1.2rem 1.4rem; }
+
+  .ev-cta { text-align: center; margin-top: 1rem; }
+  .ev-btn { display: inline-block; background: linear-gradient(135deg, var(--gold2), var(--gold)); color: var(--navy); padding: 14px 30px; border-radius: 25px; font-weight: 900; text-decoration: none; margin: 0 6px 8px; }
+  .ev-btn.ghost { background: transparent; color: var(--navy); border: 2px solid var(--navy); }
+
+  .ev-privacy { max-width: 680px; margin: 2rem auto 0; font-size: 0.8rem; color: var(--gray); line-height: 1.65; text-align: center; }
+
+  /* lightbox */
+  .lb { position: fixed; inset: 0; background: rgba(4,9,26,0.9); display: none; align-items: center; justify-content: center; z-index: 1000; padding: 2rem; }
+  .lb.open { display: flex; }
+  .lb img { max-width: 100%; max-height: 88vh; border-radius: 10px; box-shadow: 0 20px 60px rgba(0,0,0,0.6); }
+  .lb .lb-cap { position: absolute; bottom: 1.2rem; left: 50%; transform: translateX(-50%); color: #cdd7f0; font-size: 0.85rem; text-align: center; max-width: 80vw; }
+  .lb .lb-x { position: absolute; top: 1rem; right: 1.2rem; background: none; border: none; color: white; font-size: 2rem; cursor: pointer; line-height: 1; }
+
+  @media (max-width: 600px) {
+    .ev-card .ev-head { flex-direction: column; gap: 0.8rem; }
+    .ev-date { display: flex; gap: 8px; align-items: baseline; min-width: 0; padding: 8px 12px; }
+    .ev-date .d { font-size: 1.2rem; }
+  }
+  @media (prefers-reduced-motion: reduce) { .ev-photos img { transition: none; } }
+  footer { text-align: center; padding: 2rem; color: var(--gray); font-size: 0.85rem; }
+</style>
+</head>
+<body>
+
+<div class="ev-hero">
+  <a href="/" class="back" data-i18n="qp.home">← Home</a>
+  <div class="eyebrow">Digital Safety Knights</div>
+  <h1 id="ev-title">📅 Events</h1>
+  <p id="ev-tagline">Where we show up — school fairs, STEM nights, and live workshops for students and families. Always free, always as volunteers.</p>
+</div>
+
+<div class="ev-wrap">
+
+  <div class="ev-section">
+    <div class="ev-section-title"><h2 id="ev-upcoming-title">Upcoming</h2><span class="count" id="ev-upcoming-count"></span></div>
+    <div id="ev-upcoming"></div>
+  </div>
+
+  <div class="ev-section">
+    <div class="ev-section-title"><h2 id="ev-past-title">Recent Sessions</h2><span class="count" id="ev-past-count"></span></div>
+    <div id="ev-past"></div>
+  </div>
+
+  <div class="ev-cta">
+    <a class="ev-btn" href="/school-programs.html" id="ev-cta-book">🏫 Invite Us to Your School or Event</a>
+    <a class="ev-btn ghost" href="/school-faq.html" id="ev-cta-faq">❓ Read the FAQ</a>
+  </div>
+
+  <p class="ev-privacy" id="ev-privacy">Photos never show students' faces, names, or chat — only our presenters, slides, and event materials. We name a host organization only when they have shared the event publicly themselves.</p>
+</div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo">
+  <button class="lb-x" id="lb-x" aria-label="Close">×</button>
+  <img id="lb-img" alt="">
+  <div class="lb-cap" id="lb-cap"></div>
+</div>
+
+<footer>⚔️ Digital Safety Knights · digitalsafetyknights.org · © 2026</footer>
+
+<script>
+(function () {
+  var lang = (window.DSKi18n && DSKi18n.lang) || 'en';
+  var T = {
+    en: { title: '📅 Events', tagline: 'Where we show up — school fairs, STEM nights, and live workshops for students and families. Always free, always as volunteers.',
+          upcoming: 'Upcoming', past: 'Recent Sessions', photos: 'Photos from the session',
+          badge: { upcoming: 'Upcoming', past: 'Completed', invited: 'Invited' },
+          noUpcoming: 'Nothing scheduled right now — invite us and this list fills up.', noPast: 'Our first sessions are coming soon.',
+          book: '🏫 Invite Us to Your School or Event', faq: '❓ Read the FAQ',
+          privacy: "Photos never show students' faces, names, or chat — only our presenters, slides, and event materials. We name a host organization only when they have shared the event publicly themselves.",
+          months: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'] },
+    tr: { title: '📅 Etkinlikler', tagline: 'Nerede olduğumuz — okul fuarları, STEM geceleri ve öğrenciler ile aileler için canlı atölyeler. Her zaman ücretsiz, her zaman gönüllü olarak.',
+          upcoming: 'Yaklaşan', past: 'Son Oturumlar', photos: 'Oturumdan fotoğraflar',
+          badge: { upcoming: 'Yaklaşan', past: 'Tamamlandı', invited: 'Davet edildi' },
+          noUpcoming: 'Şu an planlanmış bir etkinlik yok — bizi davet edin, liste dolsun.', noPast: 'İlk oturumlarımız çok yakında.',
+          book: '🏫 Bizi Okulunuza veya Etkinliğinize Davet Edin', faq: '❓ SSS\'yi Okuyun',
+          privacy: 'Fotoğraflarda öğrencilerin yüzleri, isimleri veya sohbetleri asla görünmez — yalnızca sunucularımız, slaytlar ve etkinlik materyalleri. Ev sahibi kurumu yalnızca etkinliği kendileri herkese açık paylaştıysa isimlendiririz.',
+          months: ['Oca','Şub','Mar','Nis','May','Haz','Tem','Ağu','Eyl','Eki','Kas','Ara'] },
+    es: { title: '📅 Eventos', tagline: 'Dónde nos vas a encontrar — ferias escolares, noches STEM y talleres en vivo para estudiantes y familias. Siempre gratis, siempre como voluntarios.',
+          upcoming: 'Próximos', past: 'Sesiones Recientes', photos: 'Fotos de la sesión',
+          badge: { upcoming: 'Próximo', past: 'Completado', invited: 'Invitado' },
+          noUpcoming: 'Nada programado por ahora — invítanos y esta lista se llena.', noPast: 'Nuestras primeras sesiones llegan pronto.',
+          book: '🏫 Invítanos a tu Escuela o Evento', faq: '❓ Lee las Preguntas Frecuentes',
+          privacy: 'Las fotos nunca muestran rostros, nombres ni chats de estudiantes — solo nuestros presentadores, nuestras diapositivas y los materiales del evento. Nombramos a la organización anfitriona solo cuando ella misma ha compartido el evento públicamente.',
+          months: ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'] },
+    fr: { title: '📅 Événements', tagline: 'Où nous trouver — salons scolaires, soirées STEM et ateliers en direct pour les élèves et les familles. Toujours gratuit, toujours en bénévoles.',
+          upcoming: 'À venir', past: 'Séances récentes', photos: 'Photos de la séance',
+          badge: { upcoming: 'À venir', past: 'Terminé', invited: 'Invités' },
+          noUpcoming: 'Rien de prévu pour l\'instant — invitez-nous et cette liste se remplira.', noPast: 'Nos premières séances arrivent bientôt.',
+          book: '🏫 Invitez-nous dans votre école ou à votre événement', faq: '❓ Lire la foire aux questions',
+          privacy: 'Les photos ne montrent jamais le visage, le nom ni les conversations des élèves — uniquement nos intervenants, nos diapositives et les supports de l\'événement. Nous nommons l\'organisation qui nous accueille seulement lorsqu\'elle a elle-même rendu l\'événement public.',
+          months: ['Jan','Fév','Mar','Avr','Mai','Juin','Juil','Août','Sep','Oct','Nov','Déc'] }
+  };
+  var t = T[lang] || T.en;
+  document.getElementById('ev-title').textContent = t.title;
+  document.getElementById('ev-tagline').textContent = t.tagline;
+  document.getElementById('ev-upcoming-title').textContent = t.upcoming;
+  document.getElementById('ev-past-title').textContent = t.past;
+  document.getElementById('ev-cta-book').textContent = t.book;
+  document.getElementById('ev-cta-faq').textContent = t.faq;
+  document.getElementById('ev-privacy').textContent = t.privacy;
+
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (m) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m];
+    });
+  }
+  function dateBox(iso) {
+    var p = (iso || '').split('-');
+    if (p.length !== 3) return '<div class="ev-date"><div class="d">' + esc(iso) + '</div></div>';
+    return '<div class="ev-date"><div class="m">' + t.months[parseInt(p[1], 10) - 1] + '</div><div class="d">' + parseInt(p[2], 10) + '</div><div class="y">' + p[0] + '</div></div>';
+  }
+  function meta(e) {
+    return [e.host, e.city && e.state ? e.city + ', ' + e.state : (e.city || e.state), e.format, e.time, e.audience, e.languages]
+      .filter(Boolean).map(esc).join(' · ');
+  }
+  // Each event may carry an i18n block; its fields override the English
+  // ones for the current language. A missing language (or a field the
+  // translator left out) falls through to English rather than blanking.
+  function localise(e) {
+    var over = e.i18n && e.i18n[lang];
+    if (!over) return e;
+    var out = {};
+    for (var k in e) out[k] = e[k];
+    for (var j in over) out[j] = over[j];
+    // images is the one field that must merge per item rather than be
+    // replaced: the translation carries alt and caption, and the English
+    // entry carries src. A plain overwrite would drop every src.
+    if (over.images && e.images) {
+      out.images = e.images.map(function (im, i) {
+        var t = over.images[i] || {}, merged = {};
+        for (var a in im) merged[a] = im[a];
+        for (var b in t) merged[b] = t[b];
+        return merged;
+      });
+    }
+    return out;
+  }
+  function card(ev) {
+    var e = localise(ev);
+    var html = '<article class="ev-card"><div class="ev-head">' + dateBox(e.date) +
+      '<div class="ev-body"><h3>' + esc(e.title) + '<span class="ev-badge ' + esc(e.status) + '">' + (t.badge[e.status] || esc(e.status)) + '</span></h3>' +
+      '<div class="ev-meta">' + meta(e) + '</div><p>' + esc(e.summary) + '</p></div></div>';
+    if (e.images && e.images.length) {
+      html += '<div class="ev-photos-label">' + t.photos + '</div><div class="ev-photos">' +
+        e.images.map(function (im, i) {
+          return '<button type="button" data-src="' + esc(im.src) + '" data-cap="' + esc(im.caption || im.alt || '') + '">' +
+            '<img src="' + esc(im.src) + '" alt="' + esc(im.alt || '') + '" loading="' + (i < 2 ? 'eager' : 'lazy') + '"></button>';
+        }).join('') + '</div>';
+    }
+    return html + '</article>';
+  }
+
+  var lb = document.getElementById('lb'), lbImg = document.getElementById('lb-img'), lbCap = document.getElementById('lb-cap');
+  function openLb(src, cap) { lbImg.src = src; lbImg.alt = cap; lbCap.textContent = cap; lb.classList.add('open'); document.getElementById('lb-x').focus(); }
+  function closeLb() { lb.classList.remove('open'); lbImg.src = ''; }
+  document.getElementById('lb-x').addEventListener('click', closeLb);
+  lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeLb(); });
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('.ev-photos button');
+    if (b) openLb(b.getAttribute('data-src'), b.getAttribute('data-cap'));
+  });
+
+  fetch('/content/events.json?t=' + Math.floor(Date.now() / 3600000))
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      var all = data.events || [];
+      var up = all.filter(function (e) { return e.status !== 'past'; }).sort(function (a, b) { return a.date < b.date ? -1 : 1; });
+      var past = all.filter(function (e) { return e.status === 'past'; }).sort(function (a, b) { return a.date > b.date ? -1 : 1; });
+      document.getElementById('ev-upcoming').innerHTML = up.length ? up.map(card).join('') : '<div class="ev-empty">' + t.noUpcoming + '</div>';
+      document.getElementById('ev-past').innerHTML = past.length ? past.map(card).join('') : '<div class="ev-empty">' + t.noPast + '</div>';
+      document.getElementById('ev-upcoming-count').textContent = up.length || '';
+      document.getElementById('ev-past-count').textContent = past.length || '';
+    })
+    .catch(function () {
+      document.getElementById('ev-upcoming').innerHTML = '<div class="ev-empty">' + t.noUpcoming + '</div>';
+      document.getElementById('ev-past').innerHTML = '<div class="ev-empty">' + t.noPast + '</div>';
+    });
+})();
+</script>
+<script src="/assets/lang-switcher.js"></script>
+</body>
+</html>
