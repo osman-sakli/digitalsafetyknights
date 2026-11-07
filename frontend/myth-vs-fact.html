@@ -164,14 +164,15 @@ function hideFact(i) {
 }
 function shareFact(i) {
   const p = PAIRS[i];
-  const mythWord = isTr ? 'Efsane' : isEs ? 'Mito' : 'Myth';
-  const factWord = isTr ? 'Gerçek' : isEs ? 'Realidad' : 'Fact';
-  const text = mythWord + ': ' + p.myth + '\n\n' + factWord + ': ' + p.fact + '\n\n— Digital Safety Knights (digitalsafetyknights.org)';
+  const mythWord = isTr ? 'Efsane' : isEs ? 'Mito' : isFr ? 'Mythe' : 'Myth';
+  const factWord = isTr ? 'Gerçek' : isEs ? 'Realidad' : isFr ? 'Réalité' : 'Fact';
+  const colon = isFr ? ' : ' : ': ';
+  const text = mythWord + colon + p.myth + '\n\n' + factWord + colon + p.fact + '\n\n— Digital Safety Knights (digitalsafetyknights.org)';
   if (navigator.share) {
     navigator.share({ text: text }).catch(function() {});
   } else if (navigator.clipboard) {
     navigator.clipboard.writeText(text).then(function() {
-      if (window.DSKPoints && window.DSKPoints.showToast) window.DSKPoints.showToast(isTr ? 'Panoya kopyalandı!' : isEs ? '¡Copiado al portapapeles!' : 'Copied to clipboard!');
+      if (window.DSKPoints && window.DSKPoints.showToast) window.DSKPoints.showToast(isTr ? 'Panoya kopyalandı!' : isEs ? '¡Copiado al portapapeles!' : isFr ? 'Copié dans le presse-papiers !' : 'Copied to clipboard!');
     });
   }
 }

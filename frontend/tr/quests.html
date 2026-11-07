@@ -369,7 +369,9 @@ function showPicker() {
   const metaLang = window.DSKi18n ? DSKi18n.lang : 'en';
   const needsMeta = QUESTS.some(q => !q.meta);
   if (needsMeta) {
-    Promise.all(QUESTS.map(q => q.meta ? Promise.resolve() : fetch(metaLang === 'tr' ? `content/quests/${q.id}-tr.json` : metaLang === 'es' ? `content/quests/${q.id}-es.json` : q.file).then(r => r.json()).then(data => { q.meta = data; q.data = data; })))
+    Promise.all(QUESTS.map(q => q.meta ? Promise.resolve() : fetch(metaLang === 'en' ? q.file : `content/quests/${q.id}-${metaLang}.json`)
+      .then(r => r.ok ? r : fetch(q.file))
+      .then(r => r.json()).then(data => { q.meta = data; q.data = data; })))
       .then(() => showPicker());
   }
 }
@@ -388,10 +390,8 @@ function startQuest(q) {
   const tier = getQuestTier();
   const isForParents = q.meta && q.meta.forParents;
   let variantFile = q.file;
-  if (lang === 'tr') {
-    variantFile = `content/quests/${q.id}-tr.json`;
-  } else if (lang === 'es') {
-    variantFile = `content/quests/${q.id}-es.json`;
+  if (lang !== 'en') {
+    variantFile = `content/quests/${q.id}-${lang}.json`;
   } else if (tier !== "standard" && !isForParents) {
     variantFile = `content/quests/${q.id}-${tier}.json`;
   }

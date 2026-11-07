@@ -12,16 +12,19 @@
   var MEMBER_ID_KEY = 'dsk_member_id';
 
   var LEVELS = [
-    { name: 'Squire', nameTr: 'Yaver', nameEs: 'Escudero', emoji: '🪖', min: 0 },
-    { name: 'Knight', nameTr: 'Şövalye', nameEs: 'Caballero', emoji: '⚔️', min: 100 },
-    { name: 'Sentinel', nameTr: 'Nöbetçi', nameEs: 'Centinela', emoji: '🛡️', min: 250 },
-    { name: 'Champion', nameTr: 'Şampiyon', nameEs: 'Campeón', emoji: '👑', min: 500 }
+    { name: 'Squire', nameTr: 'Yaver', nameEs: 'Escudero', nameFr: 'Écuyer', emoji: '🪖', min: 0 },
+    { name: 'Knight', nameTr: 'Şövalye', nameEs: 'Caballero', nameFr: 'Chevalier', emoji: '⚔️', min: 100 },
+    { name: 'Sentinel', nameTr: 'Nöbetçi', nameEs: 'Centinela', nameFr: 'Sentinelle', emoji: '🛡️', min: 250 },
+    { name: 'Champion', nameTr: 'Şampiyon', nameEs: 'Campeón', nameFr: 'Champion', emoji: '👑', min: 500 }
   ];
 
   function curLang() { return (global.DSKi18n && global.DSKi18n.lang) || 'en'; }
   function isTr() { return curLang() === 'tr'; }
   function isEs() { return curLang() === 'es'; }
-  function levelName(level) { var l = curLang(); return l === 'tr' ? level.nameTr : l === 'es' ? level.nameEs : level.name; }
+  function levelName(level) {
+    var l = curLang();
+    return level['name' + l.charAt(0).toUpperCase() + l.slice(1)] || level.name;
+  }
 
   function todayStr() { return new Date().toISOString().slice(0, 10); }
   function currentNickname() { return localStorage.getItem('dsk_nickname') || 'Knight'; }

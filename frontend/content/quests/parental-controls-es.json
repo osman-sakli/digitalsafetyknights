@@ -12,7 +12,7 @@
       "choices": [
         { "text": "Restricciones de Cuenta + chat configurado solo para Amigos", "correct": true, "coach": "Exactamente — esto es lo que más limita el contacto con desconocidos." },
         { "text": "La calidad gráfica del juego", "correct": false, "coach": "Los gráficos no afectan en nada la seguridad — los ajustes sí." },
-        { "text": "Cuántos amigos tiene", "correct": false, "coach": "El número de amigos no es la señal de seguridad — lo son la ajustes de chat y las restricciones." }
+        { "text": "Cuántos amigos tiene", "correct": false, "coach": "El número de amigos no es la señal de seguridad — lo son los ajustes de chat y las restricciones." }
       ]
     },
     {

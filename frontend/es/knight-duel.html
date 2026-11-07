@@ -276,7 +276,7 @@ document.getElementById('download-btn').textContent = STR.save;
 document.querySelectorAll('.btn-ghost').forEach(function(b){ if (b.textContent.indexOf('Quests')!==-1 || b.textContent.indexOf('Görev')!==-1 || b.textContent.indexOf('Misiones')!==-1) b.textContent = STR.more; });
 
 // ---------- battle state ----------
-var QUEST_FILE = kdIsTr ? 'content/quests/grooming-watch-tr.json' : kdIsEs ? 'content/quests/grooming-watch-es.json' : 'content/quests/grooming-watch.json';
+var QUEST_FILE = kdLang === 'en' ? 'content/quests/grooming-watch.json' : 'content/quests/grooming-watch-' + kdLang + '.json';
 var questData = null;
 var qIndex = 0;
 var villainHP = 100;
