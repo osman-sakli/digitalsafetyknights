@@ -1,0 +1,1035 @@
+{
+  "id": "sentinel",
+  "track": "Sentinel",
+  "ages": "14–17",
+  "emoji": "🛡️",
+  "level": "High school",
+  "tagline": "The two hours that cover what actually happens to teenagers online — and exactly what to do about it.",
+  "format": {
+    "sessions": 2,
+    "minutesEach": 60,
+    "totalMinutes": 120,
+    "delivery": "Live on Zoom, one week apart",
+    "groupSize": "Up to 40 per session for discussion; up to 150 for assembly format",
+    "passMark": 80,
+    "examQuestions": 25,
+    "examMinutes": 25,
+    "retakes": "Unlimited, 24 hours apart"
+  },
+  "outcomes": [
+    "Name the four manipulation levers — urgency, secrecy, flattery, fear — and spot them in a live message.",
+    "Describe the financial sextortion script stage by stage, and state the three moves that end it.",
+    "Judge an image or voice clip on provenance rather than on how real it looks.",
+    "Harden their own accounts: passkeys, app-based 2FA, recovery routes, and a real passphrase.",
+    "Know their own digital footprint and the specific removal routes available to a minor.",
+    "Report correctly to the right body — CyberTipline, Take It Down, the platform, a trusted adult.",
+    "Act as a bystander in a group chat without becoming the next target.",
+    "State the legal reality of forwarding an intimate image of a classmate."
+  ],
+  "prerequisites": "None. Students do not need an account, a login, or any prior DSK material.",
+  "materials": [
+    "A device per student is useful for Session 2 (the account-hardening segment) but not required — the facilitator can demonstrate.",
+    "The one-page Knight's Card handout, printed or shared as PDF.",
+    "Nothing is installed and no account is created. No student data leaves the room."
+  ],
+  "sessions": [
+    {
+      "n": 1,
+      "title": "What Is Actually Coming For You",
+      "subtitle": "The threat landscape, named precisely",
+      "goal": "By the end of this hour a student can name the four manipulation levers and recognise them inside a message written to look ordinary.",
+      "segments": [
+        {
+          "minutes": "0–4",
+          "label": "Open with the one question",
+          "slides": [
+            1,
+            2
+          ]
+        },
+        {
+          "minutes": "4–10",
+          "label": "Why your age group specifically",
+          "slides": [
+            3,
+            4
+          ]
+        },
+        {
+          "minutes": "10–25",
+          "label": "Financial sextortion, stage by stage",
+          "slides": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        {
+          "minutes": "25–35",
+          "label": "AI: deepfakes, nudify apps, cloned voices",
+          "slides": [
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "minutes": "35–43",
+          "label": "The scams built for teenagers",
+          "slides": [
+            16,
+            17,
+            18
+          ]
+        },
+        {
+          "minutes": "43–51",
+          "label": "AI companions and the agreement trap",
+          "slides": [
+            19,
+            20
+          ]
+        },
+        {
+          "minutes": "51–60",
+          "label": "The four levers, and what comes next",
+          "slides": [
+            21,
+            22,
+            23
+          ]
+        }
+      ],
+      "slides": [
+        {
+          "kind": "title",
+          "eyebrow": "Digital Safety Knights · Sentinel Certification",
+          "title": "What Is Actually Coming For You",
+          "subtitle": "Session 1 of 2 · 60 minutes",
+          "notes": "Do not open with a safety lecture. Open by telling them what this is not: it is not a talk about screen time, it is not a talk about how phones are bad, and nobody is going to tell them to get off the internet. Say that out loud in the first thirty seconds — it buys you the rest of the hour. Then: 'Everything in the next two hours is something that happened to someone your age this year, in this country.'"
+        },
+        {
+          "kind": "poll",
+          "eyebrow": "Start here",
+          "title": "Has a stranger ever messaged you first?",
+          "ask": "Hands up — or type 1 in the chat — if someone you have never met has slid into your DMs, your game chat, or your comments.",
+          "bullets": [
+            "Almost every hand goes up. That is the point.",
+            "Nobody is going to be asked who, or what they said."
+          ],
+          "callout": "Being contacted is not a mistake you made. What happens next is the only part you control.",
+          "notes": "This is the single most important framing move in the whole course. Teenagers do not report sextortion because they believe being targeted proves they were stupid. Breaking that belief in minute three is what makes the rest land. Never ask a student to describe their own experience in front of the group — if someone volunteers, thank them, do not probe, and move on. Have the facilitator's private channel open so anyone can message you alone."
+        },
+        {
+          "kind": "stat",
+          "eyebrow": "The scale",
+          "title": "1.4 million",
+          "subtitle": "Online enticement reports to NCMEC's CyberTipline in 2025 — up 156% in a single year.",
+          "bullets": [
+            "137 financial sextortion reports a day, on average.",
+            "91% of US victims are male.",
+            "Ages 14 to 17 are the most targeted minor group."
+          ],
+          "source": "NCMEC, 2026",
+          "notes": "Pause on '91% are male'. The room will be surprised — most of them have absorbed a story where this is something that happens to girls. Boys in the room are being told, maybe for the first time, that they are the primary target. That reframing is the reason this slide exists. Do not rush it."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "Why you",
+          "title": "You are not targeted because you are careless",
+          "bullets": [
+            "You have accounts that are old enough to have real content in them.",
+            "You have social graphs — followers who can be used as leverage.",
+            "You have enough independence to act without asking anyone.",
+            "And you have more to lose socially than a nine-year-old does."
+          ],
+          "callout": "Every one of those is a normal part of being fifteen. None of them is a flaw.",
+          "notes": "Teenagers are the hardest age group to teach this to precisely because the standard talk insults them. This slide says: you are targeted because of the things that make you competent, not the things that make you naive. Say it in those words."
+        },
+        {
+          "kind": "section",
+          "eyebrow": "Part one",
+          "title": "Financial sextortion",
+          "subtitle": "The most common serious thing that happens to someone your age online.",
+          "notes": "Signpost clearly: 'I am going to walk you through the exact script. Not a summary — the script. Because once you have seen it written down, you cannot un-see it when it arrives.' Content warning is unnecessary and counterproductive at this age if delivered heavily; one calm sentence is enough: 'This part is about pressure around images. If you need to step out for a minute, go, and come back.'"
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "Stage 1",
+          "title": "The approach looks like luck",
+          "bullets": [
+            "A new follower. Attractive profile, a few posts, some mutual follows that look real.",
+            "They message first, and they are warm immediately.",
+            "They are from somewhere just far enough away to make meeting impossible.",
+            "They move fast to a second app — Snapchat, Telegram, Discord, Instagram DMs."
+          ],
+          "callout": "The app change is stage one's only real tell. Ask yourself: why does this need to happen somewhere else?",
+          "notes": "The mutual follows are often bought, or are other victims' accounts. Make the point that a hacked or purchased account can produce a social graph that looks completely genuine. The move off-platform matters because the new app has weaker reporting, disappearing messages, or both — and because it breaks the evidence trail."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "Stage 2",
+          "title": "They go first",
+          "bullets": [
+            "They send an image — sometimes stolen, increasingly AI-generated.",
+            "Now there is a debt. Reciprocity is the lever.",
+            "They are patient for hours, not weeks. This is a business.",
+            "The moment they have something, the tone changes mid-conversation."
+          ],
+          "callout": "Nobody who actually likes you needs a photo in the first six hours.",
+          "notes": "The speed is a critical teaching point and separates this from grooming, which the younger tracks cover. Financial sextortion crews run dozens of conversations simultaneously and are optimising for volume — they often go from first message to threat in under an hour. Students expect a long build-up and so do not recognise the fast version."
+        },
+        {
+          "kind": "scenario",
+          "eyebrow": "Stage 3 · the real wording",
+          "title": "\"I have everything. Your followers. Your school.\"",
+          "bullets": [
+            "A screenshot of your follower list, or your mum's profile.",
+            "A countdown. \"You have 20 minutes.\"",
+            "A number. Usually small at first — $50, a gift card, crypto.",
+            "\"Don't tell anyone or I'll send it right now.\""
+          ],
+          "callout": "Every single element on this slide is a manipulation lever, not a capability.",
+          "notes": "Walk through why each one is theatre. The follower screenshot proves only that your followers are public. The countdown exists because thinking kills the scam. The small amount exists because they want a first payment — once you have paid, the number goes up, every time, without exception. Ask the room: 'What is the one instruction on this slide that is only there to help them?' Answer: don't tell anyone."
+        },
+        {
+          "kind": "rules",
+          "eyebrow": "The three moves",
+          "title": "What ends it",
+          "bullets": [
+            "1 · Do not pay. Not one dollar. Paying has never once stopped it — it marks you as someone who pays.",
+            "2 · Stop replying, screenshot everything, and do not delete the account yet.",
+            "3 · Tell one adult, and report. Tonight, not tomorrow."
+          ],
+          "callout": "Within an hour of telling someone, it is almost always over. The threat only works in silence.",
+          "notes": "Point two often surprises them: the instinct is to nuke the account. Screenshots are what let NCMEC and the platform act, and the account is where the evidence lives. Blocking first, deleting later. And be explicit on point three: 'The adult does not have to be your parent. A teacher, a coach, an aunt, a school counsellor. One adult.' The real reason this slide works is the last line — give them the statistic that it ends, because the fear is that it never does."
+        },
+        {
+          "kind": "activity",
+          "eyebrow": "4 minutes",
+          "title": "Write the reply you would actually send",
+          "ask": "You get the message on the last slide. In the chat, privately to me: what is the first thing you type back?",
+          "bullets": [
+            "Most people write something that negotiates. That is the normal human response.",
+            "Read a few anonymously. Then show what each one gives away.",
+            "The correct answer is: nothing. You do not type back at all."
+          ],
+          "notes": "Collect in the private chat so nobody is exposed. This activity works because almost everyone's instinct — 'please don't', 'I'll pay tomorrow', 'I'm underage, this is illegal' — tells the offender the threat is landing. Saying 'I'm a minor' is the one that feels clever and is the worst: to a financial sextortion crew that is confirmation they picked a profitable target, and to the small number who are not financially motivated it is worse again."
+        },
+        {
+          "kind": "section",
+          "eyebrow": "Part two",
+          "title": "AI",
+          "subtitle": "The year the evidence stopped being evidence.",
+          "notes": "Transition line: 'Everything so far assumed they needed something from you. The next part does not.'"
+        },
+        {
+          "kind": "stat",
+          "eyebrow": "Where this is going",
+          "title": "+1,325%",
+          "subtitle": "Increase in AI-generated child sexual abuse material reported between 2023 and 2024 alone.",
+          "bullets": [
+            "1 in 4 people have hit an AI voice-cloning scam, or know someone who has.",
+            "45% of surveyed teens use a generative AI tool more than once a week."
+          ],
+          "source": "Internet Watch Foundation · Consumer Reports, 2026 · Family Online Safety Institute, 2026",
+          "notes": "Do not dwell on the first number as a horror statistic — use it for one specific conclusion, on the next slide: a sextortion threat no longer requires that you ever sent anything."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "The consequence",
+          "title": "\"I never sent anything\" is no longer a defence",
+          "bullets": [
+            "Nudify apps generate a fake intimate image from an ordinary clothed photo.",
+            "Your Instagram grid is enough input. So is the school yearbook.",
+            "Which means the threat can arrive with no prior conversation at all.",
+            "And it means a classmate can do this, not just a stranger overseas."
+          ],
+          "callout": "The response is identical: don't pay, screenshot, report, tell someone.",
+          "notes": "This is the slide that changes behaviour, because it removes the last reason to stay silent. Students who have sent nothing still believe a fake image will destroy them. Say plainly: schools, police and NCMEC in 2026 know this is happening and know images are generated. You are not going to have to prove your innocence alone. If the classmate case comes up — and it will — flag that it is covered in Session 2 under the law, and that the victim's route is Take It Down either way."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "How to judge a file now",
+          "title": "Stop looking at the image. Look at its history.",
+          "bullets": [
+            "Where did it first appear, and who posted it first?",
+            "Does any account that is not reposting have it?",
+            "Is there a second, independent source for the same claim?",
+            "Does the voice on the call know the family code word?"
+          ],
+          "callout": "Detection by eye is over. Provenance is the only durable skill.",
+          "notes": "Hand-wave the old checklist — six fingers, weird teeth, blurry hands — and say why: it was already unreliable in 2024 and is useless now. Then give them the family code word as a concrete action item for tonight: one word nobody posts anywhere, used to verify any urgent request by voice or video. It is the single highest-value thing a family can do in two minutes, and it defeats voice cloning completely."
+        },
+        {
+          "kind": "activity",
+          "eyebrow": "5 minutes · pairs",
+          "title": "Provenance drill",
+          "ask": "A video of a teacher at your school saying something outrageous is going round the group chat. You have 90 seconds. What do you check, in order?",
+          "bullets": [
+            "Who posted it first in this chat — and where did they get it?",
+            "Does it exist anywhere outside this chat?",
+            "Is there a reason someone would want this to be believed?",
+            "What happens to the teacher if it's fake and you forward it?"
+          ],
+          "notes": "The fourth question is the one worth landing. The usual framing of deepfake education is 'don't get fooled'. The more useful framing for a sixteen-year-old is 'don't be the distribution'. Forwarding is the harm."
+        },
+        {
+          "kind": "section",
+          "eyebrow": "Part three",
+          "title": "The scams built for you",
+          "subtitle": "Not the ones built for your grandfather.",
+          "notes": "Quick energy change here — the room has had twenty-five minutes of heavy material. This section can be faster and lighter. You can take examples from the room."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "Four that work on teenagers",
+          "title": "Each one pays you for access",
+          "bullets": [
+            "Job offers — \"$400 a week, work from your phone.\" You are being recruited as a money mule, and that is a crime you commit.",
+            "Account flipping — \"let me borrow your account to boost it.\" They sell it, or run scams from it to your friends.",
+            "Gaming middlemen — cheap skins, cheap Robux, cheap V-Bucks, a \"trusted trader\" who goes first.",
+            "Concert and sneaker resale — a real listing, a fake seller, a payment method with no reversal."
+          ],
+          "callout": "The common thread: a stranger wants you to move money or access in a way that cannot be undone.",
+          "notes": "The money mule one deserves real weight, because it is the only item in the whole course where the student ends up charged with something. Teenagers are recruited specifically because they have clean records and a bank account. 'Let me put money in your account and you send most of it on' is laundering, and being sixteen does not make it not laundering. Say it that directly."
+        },
+        {
+          "kind": "rules",
+          "eyebrow": "The test that works on all four",
+          "title": "Irreversible + urgent + a stranger = stop",
+          "bullets": [
+            "Gift cards, crypto, Zelle, Cash App, wire — all final. That is why they are asked for.",
+            "Real deals do not expire in four minutes.",
+            "\"Go first and I'll send it right after\" has never once been followed by the second half."
+          ],
+          "notes": "If you have time, flip it into a game: call out a scenario, the room shouts which of the three conditions it hits. Energy up before the last heavy section."
+        },
+        {
+          "kind": "section",
+          "eyebrow": "Part four",
+          "title": "AI companions",
+          "subtitle": "The part nobody warned you about, because it is new.",
+          "notes": "This is the segment that distinguishes the Sentinel track from the younger ones, and the one teachers most often tell us afterwards they had not thought about. Take it seriously rather than dismissively — a chunk of the room is using these apps daily, and if you mock it they will stop listening."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "The design, not the danger",
+          "title": "It agrees with you because that is the product",
+          "bullets": [
+            "An AI friend has no interests of its own to get in the way of yours.",
+            "It never has a bad day, never calls you out, never leaves.",
+            "A real friend disagreeing with you is a feature. Here, it is a bug they removed.",
+            "It is also, legally and practically, logged. That conversation is on a server."
+          ],
+          "callout": "Something that always agrees cannot tell you when you are wrong — which is most of what friends are for.",
+          "notes": "Two specific risks to name without moralising. One: these systems have told people in crisis to do dangerous things, because agreement is the optimisation target. If you are in a bad place, an AI companion is the wrong tool, and 988 is the right one — it is free, it is 24/7, and text works. Two: anything typed into a companion app is retained, and has shown up in breaches. The practical line: 'Don't tell it anything you'd mind a stranger reading.'"
+        },
+        {
+          "kind": "rules",
+          "eyebrow": "Session 1 · the whole hour in one slide",
+          "title": "The four levers",
+          "bullets": [
+            "Urgency — a clock exists to stop you thinking.",
+            "Secrecy — \"don't tell anyone\" is the single most reliable red flag there is.",
+            "Flattery — sudden, intense, specific attention from someone who has not earned it.",
+            "Fear — a threat about what others will think, which is the only real weapon they have."
+          ],
+          "callout": "Every scam, every grooming attempt, every sextortion script in this hour used at least two of these. None of them worked without at least one.",
+          "notes": "This is the slide to put on the screen and leave up. Make the room find the levers in the examples you already covered — the countdown, the app switch, the too-friendly new follower, the 'your followers will see this'. If they can do that, Session 1 worked."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "Before next week",
+          "title": "Two things to do tonight",
+          "bullets": [
+            "Agree a family code word. One word, never posted anywhere, used to verify any urgent voice or video request.",
+            "Pick your one adult. Decide now, while nothing is wrong, who you would tell."
+          ],
+          "callout": "Bring your phone next week. Session 2 is hands-on.",
+          "notes": "Both of these are deliberately tiny and deliberately not about settings — they are about having decided in advance. The 'pick your one adult' exercise is the highest-value thirty seconds in the course, because the barrier in a real incident is never knowledge, it is the hesitation about who to go to."
+        },
+        {
+          "kind": "recap",
+          "eyebrow": "End of Session 1",
+          "title": "Nobody is in trouble for asking for help",
+          "bullets": [
+            "If something on this list is happening to you right now, tell someone tonight.",
+            "CyberTipline.org · report.cybertip.org — NCMEC, 24/7",
+            "988 — call or text, free and confidential, any time",
+            "TakeItDown.NCMEC.org — to get an image taken off platforms, if you are under 18"
+          ],
+          "callout": "Questions in the chat, or message me privately. Both are fine.",
+          "notes": "Always end a session on this slide and always leave it up while people file out or linger on the call. A meaningful share of disclosures happen in the five minutes after a session ends, not during it. Stay on the call for ten minutes after you finish."
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "title": "The Counter-Moves",
+      "subtitle": "Hands on your own accounts",
+      "goal": "By the end of this hour a student has hardened their own accounts, knows their own footprint, and has rehearsed exactly what to do on the worst night.",
+      "segments": [
+        {
+          "minutes": "0–5",
+          "label": "Recap and the one rule",
+          "slides": [
+            1,
+            2
+          ]
+        },
+        {
+          "minutes": "5–17",
+          "label": "Account hardening, live, on their own phones",
+          "slides": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "minutes": "17–27",
+          "label": "Your footprint, and how to shrink it",
+          "slides": [
+            8,
+            9,
+            10,
+            11
+          ]
+        },
+        {
+          "minutes": "27–38",
+          "label": "The worst-night protocol",
+          "slides": [
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "minutes": "38–47",
+          "label": "Being the bystander who helps",
+          "slides": [
+            16,
+            17,
+            18
+          ]
+        },
+        {
+          "minutes": "47–54",
+          "label": "The law, stated plainly",
+          "slides": [
+            19,
+            20,
+            21
+          ]
+        },
+        {
+          "minutes": "54–60",
+          "label": "The Oath, and the exam",
+          "slides": [
+            22,
+            23,
+            24
+          ]
+        }
+      ],
+      "slides": [
+        {
+          "kind": "title",
+          "eyebrow": "Digital Safety Knights · Sentinel Certification",
+          "title": "The Counter-Moves",
+          "subtitle": "Session 2 of 2 · 60 minutes · bring your phone",
+          "notes": "Open by naming the difference: 'Last week was what happens. This week you actually change things. By the end of the hour your accounts will be in a better state than they are right now.' Then confirm everyone has a device, and that anyone who doesn't can follow along and do it after."
+        },
+        {
+          "kind": "poll",
+          "eyebrow": "90 seconds",
+          "title": "Who did the two things?",
+          "ask": "Code word agreed? One adult picked? Type 1, 2, both, or neither.",
+          "bullets": [
+            "No judgement on 'neither' — but do it in the next sixty seconds, now, while I wait.",
+            "Then: what were the four levers?"
+          ],
+          "callout": "Urgency · Secrecy · Flattery · Fear",
+          "notes": "Actually wait the sixty seconds in silence. It feels long and it is the only way the homework gets done. Then take the four levers from the room rather than reading them out — it is a thirty-second check that Session 1 stuck, and if the room cannot produce them, spend two more minutes before moving on."
+        },
+        {
+          "kind": "section",
+          "eyebrow": "Part one · 12 minutes",
+          "title": "Lock the doors",
+          "subtitle": "Phones out. We are doing this together, right now.",
+          "notes": "This segment is the most popular part of the whole course and the reason schools rebook. It works only if you actually do it live and actually wait for people to finish each step. Do not narrate settings — do them."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "Step 1",
+          "title": "Passkeys, where they are offered",
+          "bullets": [
+            "A passkey is your face or fingerprint standing in for a password.",
+            "It cannot be phished, because there is no password to hand over.",
+            "Google, Apple, Microsoft, Instagram, TikTok, Discord all support them now.",
+            "Turn it on for your email first. Email is the master key to everything else."
+          ],
+          "callout": "If someone has your email, they have every account that can email you a reset link.",
+          "notes": "Email-first is the sequencing point that most security talks get wrong. Walk the room through enabling a passkey on their primary email account and wait for it. If a school's devices are managed and this is blocked, say so and move to step 2 — in a managed-device school, 2FA is the segment that matters."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "Step 2",
+          "title": "Two-factor — but not by text",
+          "bullets": [
+            "SMS codes can be stolen by SIM swap and by phishing pages that relay them.",
+            "Use an authenticator app, or a passkey, or a hardware key.",
+            "Save your backup codes somewhere that is not the phone — a parent's safe, a drawer.",
+            "Do this on: email, then the account with your photos, then your bank or payment app."
+          ],
+          "callout": "SMS 2FA is much better than nothing. An app is much better than SMS.",
+          "notes": "Do not let the perfect beat the good here — if a student only ever turns on SMS 2FA, that still defeats the overwhelming majority of account takeovers. Say the nuance and then make everyone do something."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "Step 3",
+          "title": "The recovery route is the real door",
+          "bullets": [
+            "Check your recovery email and recovery phone right now. Is the old number still there?",
+            "Remove any recovery address you no longer control.",
+            "Check 'where you're logged in' and sign out everything you don't recognise.",
+            "Check which apps you granted access to in 2022 and forgot about."
+          ],
+          "callout": "Most teen accounts are not hacked. They are recovered, by someone who answered the recovery question.",
+          "notes": "This slide catches the real-world case: an ex-partner, a sibling, a former friend who still has the recovery route or who knows the answer to a security question whose answer is on their public profile. Name that case out loud — it is far more common in this age group than a stranger brute-forcing anything."
+        },
+        {
+          "kind": "rules",
+          "eyebrow": "Step 4",
+          "title": "Passwords, in one slide",
+          "bullets": [
+            "Four random unrelated words beat a short mangled one. \"otter-blanket-lamp-ninety\" is stronger than \"P@ssw0rd!23\".",
+            "Never reuse the one on your email anywhere else.",
+            "A password manager is not a luxury — your browser already has one, free.",
+            "Nothing in a password should be findable on your profile. Not the dog, not the team, not the year."
+          ],
+          "callout": "You need to personally remember exactly two passwords: your phone, and your password manager.",
+          "notes": "The site has a Password Dojo at digitalsafetyknights.org/password-dojo.html that tests a passphrase without transmitting it anywhere — point them there, and say explicitly that it runs in their browser and sends nothing, because a room of sixteen-year-olds is right to be suspicious of a website that asks for a password."
+        },
+        {
+          "kind": "section",
+          "eyebrow": "Part two · 10 minutes",
+          "title": "What is already out there",
+          "subtitle": "Your footprint is bigger than your posts.",
+          "notes": "Transition: 'You've just locked the doors. Now let's look at what is already outside the house.'"
+        },
+        {
+          "kind": "activity",
+          "eyebrow": "4 minutes · do it now",
+          "title": "Search yourself properly",
+          "ask": "Your full name in quotes, plus your town. Then your name plus your school. Then reverse-image-search your profile picture.",
+          "bullets": [
+            "Check images, not just the web tab.",
+            "Check what your own public profile shows a logged-out stranger.",
+            "Look at who is tagged, and what their accounts show about you."
+          ],
+          "callout": "Nobody has to share what they found. Do look.",
+          "notes": "Hard rule: never ask students to report results to the group. Some of them are going to find something upsetting — an old account, a photo they did not know existed, a parent's post about them. Say in advance that if anyone finds something they want help with, message you privately or stay after. Then hold that promise."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "The removal routes",
+          "title": "You have more rights than you think",
+          "bullets": [
+            "TakeItDown.NCMEC.org — free, for anyone who was under 18 in the image. It uses a hash, so you never upload the image itself.",
+            "StopNCII.org — the same idea for over-18s.",
+            "Google has a removal request form for images of minors, and for doxxing content.",
+            "Every major platform has a dedicated minor-safety reporting path that is faster than the normal one."
+          ],
+          "callout": "Take It Down works even if the image is a fake, and even if you never sent anything.",
+          "notes": "The hash point is worth slowing down on, because the fear that stops people using Take It Down is 'I would have to send the picture to someone'. You do not. The tool computes a fingerprint on your own device and only the fingerprint is shared. Knowing that single fact is often what makes a student willing to use it."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "Going forward",
+          "title": "Three habits that cost you nothing",
+          "bullets": [
+            "Audit followers twice a year. Anyone you cannot place, remove.",
+            "Turn off precise location on social apps, and check whether your posts carry it.",
+            "Before posting: would this be fine if a college admissions officer, a coach, and a stranger all saw it?"
+          ],
+          "callout": "Not \"post nothing\". Post deliberately.",
+          "notes": "Resist the urge to tell them to lock everything down to nothing. Many of them have real reasons for a public account — art, sport, music, a small business. The teachable skill is deliberateness, not withdrawal, and framing it as withdrawal is what makes teenagers tune this material out."
+        },
+        {
+          "kind": "section",
+          "eyebrow": "Part three · 11 minutes",
+          "title": "The worst night",
+          "subtitle": "Rehearsed now, so it is automatic then.",
+          "notes": "Set up honestly: 'Statistically, this will happen to someone in this room, or to someone they know. The difference between a bad night and a catastrophe is whether you had already decided what to do.'"
+        },
+        {
+          "kind": "rules",
+          "eyebrow": "Five steps, in order",
+          "title": "The protocol",
+          "bullets": [
+            "1 · Stop replying. Mid-sentence is fine.",
+            "2 · Screenshot everything — the profile, the username, the threats, the payment details.",
+            "3 · Do not pay, and do not delete your account yet.",
+            "4 · Report: the platform, and CyberTipline.org. Take It Down if an image exists.",
+            "5 · Tell your one adult. Tonight."
+          ],
+          "callout": "In that order. Step 5 is not last in importance — it is just the one that works best once you have the screenshots.",
+          "notes": "Make the room say the five steps back to you. Then ask the trick question: 'Which step do you skip if you are embarrassed?' None. The embarrassment is the weapon, and the protocol is built to work while you are embarrassed."
+        },
+        {
+          "kind": "activity",
+          "eyebrow": "5 minutes · the hardest one",
+          "title": "Script the sentence",
+          "ask": "Write the actual words you would use to tell an adult. Not a summary — the sentence.",
+          "bullets": [
+            "\"Something happened online and I need help and I need you to not freak out.\"",
+            "\"I'm in trouble with something online. I didn't do anything illegal. Can you sit down?\"",
+            "Text counts. Leaving a note counts. It does not have to be out loud."
+          ],
+          "callout": "The knowledge is never the problem. The first sentence is.",
+          "notes": "This activity is the single thing that most changes outcomes, and it is the one facilitators most often cut for time. Do not cut it. Have two or three read theirs out if they are willing. Then tell them the thing they need to hear: almost every parent's reaction to this, after the first ten seconds, is relief that they were told."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "If the adult gets it wrong",
+          "title": "You are allowed a second adult",
+          "bullets": [
+            "Some adults react badly first. That is about their fear, not your fault.",
+            "A school counsellor, a different relative, a coach — any of them counts.",
+            "988 will talk to you about this, right now, free, and you do not need to be in crisis to call.",
+            "NCMEC's CyberTipline takes reports from young people directly."
+          ],
+          "callout": "One adult reacting badly does not mean telling was wrong. It means try the next one.",
+          "notes": "This slide exists because the standard advice — 'tell a trusted adult' — collapses the moment the first adult shouts. Students who have had that experience have concluded the advice is a lie. Pre-empting it is what keeps the advice credible."
+        },
+        {
+          "kind": "section",
+          "eyebrow": "Part four · 9 minutes",
+          "title": "When it is not you",
+          "subtitle": "The group chat problem.",
+          "notes": "Energy lifts here. This is the segment where the room has the most to say — leave room for it."
+        },
+        {
+          "kind": "scenario",
+          "eyebrow": "Scenario",
+          "title": "An image of someone in your year lands in the chat",
+          "bullets": [
+            "Forwarding it — even to one person, even to say \"look what they did\" — makes you part of the distribution.",
+            "Screenshotting \"as evidence\" and keeping it on your phone is not the help you think it is.",
+            "Saying nothing in the chat lets the room believe everyone is fine with it."
+          ],
+          "callout": "Do: don't forward. Leave or mute. Message the person directly, once. Tell an adult.",
+          "notes": "The 'message them directly, once' move is the practical core. Public defence in a group chat often escalates and makes the target the centre of more attention. A single private message — 'I saw it, I didn't send it on, are you okay' — is what victims in our sessions consistently say would have mattered most."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "Being useful",
+          "title": "What actually helps someone in it",
+          "bullets": [
+            "Believe them immediately. The first reaction they get determines whether there is a second conversation.",
+            "Do not ask to see it. Do not ask what they were thinking.",
+            "Say the two facts: it ends, and nobody is in trouble for asking for help.",
+            "Offer to be in the room while they tell an adult. Then be in the room."
+          ],
+          "callout": "You do not have to fix it. You have to be the person who did not make it worse.",
+          "notes": "Frame this as a skill, not kindness — the room responds better. 'This is a thing you can be competent at.'"
+        },
+        {
+          "kind": "section",
+          "eyebrow": "Part five · 7 minutes",
+          "title": "The law, stated plainly",
+          "subtitle": "Because nobody tells you this part until it is too late.",
+          "notes": "Deliver this flat and factual. No scare tone. The goal is information, and a scared room retains less of it."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "Three things worth knowing",
+          "title": "The parts that surprise people",
+          "bullets": [
+            "An intimate image of a classmate under 18 is child sexual abuse material. Sending it, holding it, or asking for it are all offences — including when you are also under 18.",
+            "The TAKE IT DOWN Act now requires platforms to remove non-consensual intimate images, including AI-generated ones, within 48 hours of a valid report.",
+            "26 states now mandate bell-to-bell phone bans in K-12 schools — the legal environment around all of this is moving fast."
+          ],
+          "source": "Ballotpedia, 2026 · TAKE IT DOWN Act",
+          "notes": "The first bullet lands hardest and is the one students genuinely do not know: 'but we're the same age' is not a defence, and neither is 'they sent it to me'. State it once, plainly, without a lecture attached, and let it sit. Then immediately give the constructive version on the next slide so the room does not leave this segment only frightened."
+        },
+        {
+          "kind": "rules",
+          "eyebrow": "So",
+          "title": "Three lines that keep you clear",
+          "bullets": [
+            "If an image of a minor arrives: do not forward it, do not save it, tell an adult.",
+            "If someone asks you to move money for them: no, regardless of the story.",
+            "If an account that is not yours asks to use your account: no."
+          ],
+          "callout": "All three are \"no\", and all three are free.",
+          "notes": "Ending the legal segment on three one-word answers is deliberate — it converts a frightening topic into something that feels manageable."
+        },
+        {
+          "kind": "rules",
+          "eyebrow": "The Sentinel's Oath",
+          "title": "What you are certifying",
+          "bullets": [
+            "I will not be rushed. A clock is a tactic.",
+            "I will not keep a stranger's secret.",
+            "I will judge a file by where it came from, not by how real it looks.",
+            "I will not pay, and I will not forward.",
+            "I will tell someone — and I know who, and I know tonight.",
+            "And when it is not me, I will be the one who did not make it worse."
+          ],
+          "notes": "Read it once yourself, then invite the room to read it with you. It sounds corny described in advance and it does not land that way in the room — it is the moment the two hours become a commitment rather than information. This is the text printed on the certificate."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "The exam",
+          "title": "25 questions · 25 minutes · 80% to pass",
+          "bullets": [
+            "Everything on it came from these two hours. Nothing is a trick.",
+            "Open book. We are testing whether you can apply it, not whether you memorised it.",
+            "Unlimited retakes, 24 hours apart. Failing it once costs you nothing.",
+            "Pass it and your certificate is issued immediately, with your name on it."
+          ],
+          "callout": "digitalsafetyknights.org/certification-exam.html",
+          "notes": "Tell them the pass rate is high and that this is deliberate — the exam exists to make the material stick, not to filter anyone out. For a paid school cohort, this is where you explain the proctoring arrangement and the verification code on the certificate."
+        },
+        {
+          "kind": "recap",
+          "eyebrow": "End of Session 2",
+          "title": "Nobody is in trouble for asking for help",
+          "bullets": [
+            "CyberTipline.org — NCMEC, 24/7",
+            "988 — call or text, free and confidential",
+            "TakeItDown.NCMEC.org — image removal, under 18",
+            "digitalsafetyknights.org — everything we make, free, in four languages"
+          ],
+          "callout": "I'm staying on this call for ten minutes. Message me privately about anything.",
+          "notes": "Stay. Actually stay the ten minutes, every time, with your camera on. In our sessions, disclosures come after the end far more often than during."
+        }
+      ]
+    }
+  ],
+  "exam": {
+    "passMark": 80,
+    "minutes": 25,
+    "shuffle": true,
+    "questions": [
+      {
+        "topic": "Sextortion",
+        "q": "A stranger you met on Instagram two hours ago has an image of you and is demanding $50 in gift cards within 20 minutes. What is the correct first move?",
+        "choices": [
+          "Stop replying, screenshot everything, and tell an adult tonight",
+          "Tell them you are a minor so they stop",
+          "Delete your account immediately",
+          "Pay the $50 — it is a small amount and ends it"
+        ],
+        "answer": 0,
+        "why": "Paying marks you as someone who pays and the demand always escalates. Deleting the account destroys the evidence. Saying you are a minor confirms to the offender that they chose a profitable target."
+      },
+      {
+        "topic": "Sextortion",
+        "q": "Which age group is most targeted by financial sextortion, and which gender makes up most US victims?",
+        "choices": [
+          "Ages 10–13, mostly female",
+          "Ages 14–17, mostly male",
+          "Ages 18–24, evenly split",
+          "Ages 14–17, mostly female"
+        ],
+        "answer": 1,
+        "why": "NCMEC's 2026 figures show 14–17 is the most targeted minor group and 91% of US victims are male — the opposite of what most people assume."
+      },
+      {
+        "topic": "Sextortion",
+        "q": "Why do offenders insist you keep the situation secret?",
+        "choices": [
+          "Because the police only accept reports from adults",
+          "Because telling someone is actually against platform rules",
+          "Because secrecy is their only real weapon — the threat stops working once an adult knows",
+          "Because they are worried about their own privacy"
+        ],
+        "answer": 2,
+        "why": "\"Don't tell anyone\" is the instruction that exists purely to help the offender. Almost all of these cases end within hours of an adult being told."
+      },
+      {
+        "topic": "Sextortion",
+        "q": "You have screenshots of a sextortion threat. What should you NOT do yet?",
+        "choices": [
+          "Block the account",
+          "Tell a teacher",
+          "Report to CyberTipline.org",
+          "Delete the account the threats came to"
+        ],
+        "answer": 3,
+        "why": "Block, yes — delete, not yet. The account is where the evidence lives, and NCMEC and the platform need it to act."
+      },
+      {
+        "topic": "Manipulation levers",
+        "q": "A message reads: \"I can get you tickets but my seller needs the cash in the next 10 minutes or they go to someone else — don't tell your parents, they'll ruin it.\" Which levers are being used?",
+        "choices": [
+          "Urgency and secrecy",
+          "Fear only",
+          "None — this is a normal sales message",
+          "Flattery and fear only"
+        ],
+        "answer": 0,
+        "why": "The 10-minute clock is urgency and \"don't tell your parents\" is secrecy. Legitimate transactions need neither."
+      },
+      {
+        "topic": "Manipulation levers",
+        "q": "Which of these is the single most reliable red flag in any online conversation?",
+        "choices": [
+          "They have fewer than 100 followers",
+          "They ask you to keep the conversation secret from your parents",
+          "They type in a different language sometimes",
+          "Their profile picture looks professionally taken"
+        ],
+        "answer": 1,
+        "why": "A request for secrecy from an adult or a stranger is the red flag itself. It needs no other evidence to act on."
+      },
+      {
+        "topic": "Manipulation levers",
+        "q": "A new follower is extremely complimentary within the first few messages and then suggests moving to a different app. What is the significant part?",
+        "choices": [
+          "Nothing — switching apps is normal",
+          "The compliments — nobody is that nice",
+          "The app switch, because the new app has weaker reporting and breaks the evidence trail",
+          "Their follower count"
+        ],
+        "answer": 2,
+        "why": "The move off-platform is the practical tell: it is chosen for disappearing messages, weaker reporting, and the loss of your evidence trail."
+      },
+      {
+        "topic": "AI",
+        "q": "A sextortion threat arrives with an intimate image of you, but you have never sent anyone anything. What is most likely, and what do you do?",
+        "choices": [
+          "You must have been hacked, so change your password and wait",
+          "Reply to explain that the image is fake",
+          "It must be a mistaken identity — ignore it",
+          "It is likely AI-generated from your ordinary photos; the response is the same — don't pay, screenshot, report, tell someone"
+        ],
+        "answer": 3,
+        "why": "Nudify tools generate fake intimate images from clothed photos, so \"I never sent anything\" is no longer a defence. The protocol does not change, and Take It Down works on fakes too."
+      },
+      {
+        "topic": "AI",
+        "q": "What is the most durable way to judge whether a shocking image or video is real?",
+        "choices": [
+          "Check the provenance — who posted it first, where it first appeared, and whether an independent source has it",
+          "Zoom in on the edges for blurring",
+          "Ask an AI tool whether it is AI",
+          "Count the fingers and check the teeth"
+        ],
+        "answer": 0,
+        "why": "Visual tells were already unreliable and are now useless. Provenance — origin and independent corroboration — is the skill that still works."
+      },
+      {
+        "topic": "AI",
+        "q": "You get a call from a voice that sounds exactly like a parent, urgently asking you to send money. What is the best check?",
+        "choices": [
+          "Ask a question only they would know the answer to from their public profile",
+          "Use the family code word",
+          "Call the same number back",
+          "Ask them to repeat the request"
+        ],
+        "answer": 1,
+        "why": "Voice cloning needs only seconds of audio, and numbers can be spoofed. A code word that is never posted anywhere defeats it completely. Anything findable on a profile does not."
+      },
+      {
+        "topic": "AI",
+        "q": "Why is an AI companion that agrees with everything you say a problem?",
+        "choices": [
+          "It is illegal for under-18s",
+          "It uses too much data",
+          "Constant agreement is the product design, so it cannot tell you when you are wrong — which is most of what friends are for",
+          "It is always factually inaccurate"
+        ],
+        "answer": 2,
+        "why": "Agreement is the optimisation target, not a sign of a good relationship — and in a crisis, agreement is exactly the wrong response. 988 is the right tool then."
+      },
+      {
+        "topic": "AI",
+        "q": "What should you assume about anything you type into an AI chatbot or companion app?",
+        "choices": [
+          "It is end-to-end encrypted by law",
+          "It is only used to improve your own replies",
+          "It is deleted when you close the app",
+          "It is stored on a server, may be reviewed, and has shown up in breaches"
+        ],
+        "answer": 3,
+        "why": "Treat it as logged. The practical rule: don't type anything you would mind a stranger reading."
+      },
+      {
+        "topic": "Scams",
+        "q": "Someone offers you $400 a week to receive money in your bank account and forward most of it on. What is happening?",
+        "choices": [
+          "You are being recruited as a money mule, which is a crime you would be committing",
+          "A scam, but one that only costs you if you pay a fee",
+          "A normal freelance arrangement",
+          "A legitimate remote job"
+        ],
+        "answer": 0,
+        "why": "This is money laundering, and being under 18 does not change that. Teenagers are recruited specifically because they have clean records and a bank account."
+      },
+      {
+        "topic": "Scams",
+        "q": "Which test catches almost every scam aimed at teenagers?",
+        "choices": [
+          "Whether the account has a blue check",
+          "Irreversible payment + urgency + a stranger",
+          "Whether the website has HTTPS",
+          "Whether their grammar is poor"
+        ],
+        "answer": 1,
+        "why": "Gift cards, crypto, Zelle and wires are requested precisely because they cannot be reversed. Combine that with a clock and a stranger and the answer is always stop."
+      },
+      {
+        "topic": "Scams",
+        "q": "A \"trusted trader\" in a game offers a cheap skin but wants you to send first. Why is this structured that way?",
+        "choices": [
+          "To avoid transaction fees",
+          "To check you are a real player",
+          "Because \"go first and I'll send right after\" is the whole scam — the second half never comes",
+          "Because the platform requires it"
+        ],
+        "answer": 2,
+        "why": "Going first is the scam. No legitimate trade requires one side to take all the risk."
+      },
+      {
+        "topic": "Scams",
+        "q": "A friend asks to borrow your social account \"to boost it\". What is the realistic outcome?",
+        "choices": [
+          "Nothing — it is harmless",
+          "You lose access for a day",
+          "Your follower count goes up",
+          "The account gets sold, or used to run scams against your own friends"
+        ],
+        "answer": 3,
+        "why": "Account access is the product being harvested. The scams that follow go to the people who trust you, which is what makes them work."
+      },
+      {
+        "topic": "Account security",
+        "q": "Which account should you secure FIRST, and why?",
+        "choices": [
+          "Your email, because anyone with it can reset every other account",
+          "Your bank, because that is where the money is",
+          "Your most-used social app",
+          "The one with your photos, because that is what gets leaked"
+        ],
+        "answer": 0,
+        "why": "Email is the master key. Every account that can send you a reset link is only as secure as the inbox that receives it."
+      },
+      {
+        "topic": "Account security",
+        "q": "Why is an authenticator app better than SMS for two-factor authentication?",
+        "choices": [
+          "It is faster",
+          "SMS codes can be stolen by SIM swap and relayed by phishing pages",
+          "SMS costs money",
+          "It works without internet"
+        ],
+        "answer": 1,
+        "why": "SMS 2FA is far better than nothing, but an app or a passkey removes the two attacks that actually get used against this age group."
+      },
+      {
+        "topic": "Account security",
+        "q": "Which of these is the strongest password?",
+        "choices": [
+          "Instagram2026!",
+          "P@ssw0rd!23",
+          "otter-blanket-lamp-ninety",
+          "MyDogBuddy2011"
+        ],
+        "answer": 2,
+        "why": "Length and randomness beat symbol substitution. The others are either a known pattern or built from information that is findable on a public profile."
+      },
+      {
+        "topic": "Account security",
+        "q": "Most compromised teen accounts are not technically hacked. What usually happens instead?",
+        "choices": [
+          "They are brute-forced",
+          "Malware on the school network",
+          "The platform leaks them",
+          "Someone who knows them uses the recovery route, or answers a security question from public information"
+        ],
+        "answer": 3,
+        "why": "An old recovery number, a stale recovery email, or a security answer that is on your profile is the common route — frequently used by someone the student knows."
+      },
+      {
+        "topic": "Footprint",
+        "q": "You are 16 and an intimate image of you — real or AI-generated — is circulating. Which tool is designed for exactly this?",
+        "choices": [
+          "TakeItDown.NCMEC.org",
+          "A Google DMCA takedown",
+          "Reporting it to your mobile provider",
+          "StopNCII.org"
+        ],
+        "answer": 0,
+        "why": "Take It Down is NCMEC's service for anyone who was under 18 in the image. StopNCII is the equivalent for adults."
+      },
+      {
+        "topic": "Footprint",
+        "q": "Do you have to upload the image itself to use Take It Down?",
+        "choices": [
+          "Yes, and it is reviewed by a moderator",
+          "No — your device computes a hash and only the hash is shared",
+          "Yes, but it is deleted after 24 hours",
+          "Only if you want it removed from more than one platform"
+        ],
+        "answer": 1,
+        "why": "The hash is computed on your own device and the image never leaves it. This is the fact that most often unblocks someone who is afraid to use the tool."
+      },
+      {
+        "topic": "Bystander",
+        "q": "An intimate image of someone in your year lands in your group chat. Which of these is NOT a safe or helpful response?",
+        "choices": [
+          "Tell a trusted adult",
+          "Don't forward it, and leave or mute the chat",
+          "Screenshot it to keep as evidence on your phone",
+          "Message the person privately, once, to say you saw it and didn't pass it on"
+        ],
+        "answer": 2,
+        "why": "Holding an intimate image of a minor is an offence regardless of your reason for keeping it. Evidence gathering is the adults' and the platform's job, not yours."
+      },
+      {
+        "topic": "Bystander",
+        "q": "A friend tells you they are being sextorted. What is the most useful first response?",
+        "choices": [
+          "Tell them to delete all their accounts",
+          "Ask what they were thinking",
+          "Ask to see the messages so you can judge how bad it is",
+          "Believe them immediately, say that it ends and that nobody is in trouble for asking for help, and offer to be there while they tell an adult"
+        ],
+        "answer": 3,
+        "why": "The first reaction a victim gets determines whether there is a second conversation. Asking to see it, or asking what they were thinking, ends the disclosure."
+      },
+      {
+        "topic": "The law",
+        "q": "You are 16. A classmate sends you an intimate image of another 16-year-old. What is the legal reality?",
+        "choices": [
+          "It is child sexual abuse material — sending, holding or requesting it are all offences, including for minors",
+          "It is only an offence if you forward it",
+          "It is a school discipline matter but not a legal one",
+          "Nothing applies because everyone involved is the same age"
+        ],
+        "answer": 0,
+        "why": "\"We're the same age\" and \"they sent it to me\" are not defences. The correct move is: do not forward, do not save, tell an adult."
+      }
+    ]
+  },
+  "certificate": {
+    "title": "Certified Digital Safety Sentinel",
+    "subtitle": "Completed the two-hour Digital Safety Knights Sentinel programme and passed the Sentinel examination.",
+    "oath": "I will not be rushed. I will not keep a stranger's secret. I will judge a file by where it came from. I will not pay, and I will not forward. I will tell someone. And when it is not me, I will be the one who did not make it worse.",
+    "rank": "Sentinel"
+  }
+}

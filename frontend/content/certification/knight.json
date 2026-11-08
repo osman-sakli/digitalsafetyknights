@@ -1,0 +1,931 @@
+{
+  "id": "knight",
+  "track": "Knight",
+  "ages": "10–13",
+  "emoji": "⚔️",
+  "level": "Upper elementary & middle school",
+  "tagline": "Ninety minutes that teach a ten-to-thirteen-year-old to spot the trick before it works — in the games and apps they are actually in.",
+  "format": {
+    "sessions": 2,
+    "minutesEach": 45,
+    "totalMinutes": 90,
+    "delivery": "Live on Zoom, one week apart",
+    "groupSize": "Up to 30 per session for discussion; up to 120 for assembly format",
+    "passMark": 80,
+    "examQuestions": 18,
+    "examMinutes": 20,
+    "retakes": "Unlimited, 24 hours apart"
+  },
+  "outcomes": [
+    "Name the four levers — urgency, secrecy, flattery, fear — and point to them inside a real game message.",
+    "Explain why free-Robux offers, free-skin sites and \"go first and I'll send after\" are all the same trick in different clothes.",
+    "Describe grooming as a four-stage pattern — friendly, special, secret, somewhere private — and name the move to another app as the tell.",
+    "State the rule on meeting someone from online in person, and the only version of it that is allowed.",
+    "Recognise that an AI can sound completely certain and be completely wrong, and check anything surprising elsewhere.",
+    "Use a family code word to defeat a cloned voice, and judge a picture by where it came from rather than how real it looks.",
+    "Set friends-only chat, account restrictions and two-factor on their own accounts, and build a password out of four random words.",
+    "Say what their own public profile shows a stranger, and shrink it on purpose.",
+    "Do the bystander move in a group chat, and ask before sharing anybody's photo.",
+    "Know the one sentence that ends any secret: stop, and tell a grown-up — every single time, never in trouble for it."
+  ],
+  "prerequisites": "None. No account, no login, and no prior DSK material. Children who have played the Academy quests will already know Shieldy, Glitch and Bot, but nothing in the course depends on it.",
+  "materials": [
+    "A device per child for the Session 2 settings race. Where devices are not allowed, the facilitator shares a screen and each child writes down their three steps to do at home.",
+    "The one-page Knight's Card handout, printed or shared as PDF.",
+    "A short note home after Session 1 — the family code word needs a parent in the room to work.",
+    "Nothing is installed and no account is created. No child's data leaves the room."
+  ],
+  "sessions": [
+    {
+      "n": 1,
+      "title": "The Tricks and Who Uses Them",
+      "subtitle": "The patterns, named — and a game to prove you can spot them",
+      "goal": "By the end of this session a child can name the four levers, find them in an ordinary-looking message, and recite the four stages of a stranger pretending to be a friend.",
+      "segments": [
+        {
+          "minutes": "0–3",
+          "label": "Open, and the one question",
+          "slides": [
+            1,
+            2
+          ]
+        },
+        {
+          "minutes": "3–8",
+          "label": "How often this happens, and why your age",
+          "slides": [
+            3,
+            4
+          ]
+        },
+        {
+          "minutes": "8–17",
+          "label": "The four levers, and a spot-the-red-flag round",
+          "slides": [
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "minutes": "17–25",
+          "label": "The money tricks built for gamers",
+          "slides": [
+            8,
+            9,
+            10
+          ]
+        },
+        {
+          "minutes": "25–34",
+          "label": "When the trick is a person",
+          "slides": [
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "minutes": "34–42",
+          "label": "AI: confident, cloned, and faked",
+          "slides": [
+            16,
+            17,
+            18,
+            19,
+            20
+          ]
+        },
+        {
+          "minutes": "42–45",
+          "label": "The four levers again, and two things tonight",
+          "slides": [
+            21,
+            22
+          ]
+        }
+      ],
+      "slides": [
+        {
+          "kind": "title",
+          "eyebrow": "Digital Safety Knights · Knight Certification",
+          "title": "The Tricks and Who Uses Them",
+          "subtitle": "Session 1 of 2 · 45 minutes",
+          "notes": "Open by saying what this is not: nobody is going to be told that games are bad, that phones are bad, or to get off the internet. Then set it up as a contest — \"I am going to show you every trick, and then I am going to find out whether you can beat them\" — because this band will give you forty-five minutes for a game and about four for a lecture. Say once, plainly, that nobody will be asked what has happened to them personally."
+        },
+        {
+          "kind": "poll",
+          "eyebrow": "Hands up",
+          "title": "Has someone you have never met ever talked to you in a game?",
+          "ask": "Hands up — or type 1 in the chat — if a player you don't know in real life has messaged you, added you, or talked to you in a game.",
+          "bullets": [
+            "Nearly every hand goes up. Roblox, Fortnite, Minecraft servers, Discord, YouTube comments.",
+            "Nobody is going to be asked who it was, or what they said."
+          ],
+          "callout": "Being talked to is not a mistake you made. What happens next is the only part that is yours.",
+          "notes": "This slide exists to pull apart \"something happened to me\" and \"I did something wrong\", because ten-to-thirteens fuse those two completely and that fusion is why they stay quiet. Expect two or three children to start telling the whole story out loud — thank them, say \"hold that one and come and tell me after\", and move on inside ten seconds; a disclosure must never happen in front of the group. Say out loud that your private chat is open, and mean it."
+        },
+        {
+          "kind": "stat",
+          "eyebrow": "How often this happens",
+          "title": "1.4 million",
+          "subtitle": "Reports of people trying to trick children online, made to NCMEC's CyberTipline in 2025 — up 156% in a single year.",
+          "bullets": [
+            "That is not a story about one unlucky kid.",
+            "It is a job somebody does, all day, with a copied-and-pasted message.",
+            "They send it to thousands of people and wait for one reply."
+          ],
+          "source": "NCMEC, 2026",
+          "notes": "Turn 1.4 million into something an eleven-year-old can hold: roughly four thousand reports a day, or about three every minute. The idea to land is not fear but mass production — \"the person who sent that message did not choose you, they chose everybody\" — which both removes the shame and explains why the tricks are predictable enough to spot. Do not linger; the number is a setup for the next slide, not the lesson."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "Why your age",
+          "title": "You are not a target because you are silly",
+          "bullets": [
+            "You have your own account now, and often your own phone.",
+            "You are good at games, which gives a stranger a reason to talk to you.",
+            "You can say yes to things without asking anybody first.",
+            "And you really, really do not want to lose your account."
+          ],
+          "callout": "Every one of those is a normal part of being eleven. None of them is a flaw.",
+          "notes": "Children in this band have heard a version of \"be careful, you're too young to understand\" and have stopped listening to it, so flip the frame: they are targeted for their independence and their skill, not their ignorance. The last bullet is the one they nod at — fear of losing an account with years of items in it is the lever most used on this age group, far more than anything else. Say it in those words and you have the room."
+        },
+        {
+          "kind": "section",
+          "eyebrow": "Part one",
+          "title": "The four levers",
+          "subtitle": "Every single trick in this session uses at least one of them.",
+          "notes": "Tell them outright that this is the only thing worth memorising today, and that once they have these four they can work out any new trick themselves without you. Promise the game that comes straight after — this age will sit still through four definitions if they know a competition is two minutes away."
+        },
+        {
+          "kind": "rules",
+          "eyebrow": "Learn these four",
+          "title": "Urgency · Secrecy · Flattery · Fear",
+          "bullets": [
+            "Urgency — a clock. \"Ten seconds left!\" A clock is there to stop you thinking.",
+            "Secrecy — \"don't tell your parents.\" This is the biggest red flag there is, on its own, with nothing else needed.",
+            "Flattery — somebody is suddenly very nice, very fast, and very specific about it.",
+            "Fear — \"you'll lose your account\", \"you'll get in trouble\", \"everyone will see\"."
+          ],
+          "callout": "Real friends, real games and real prizes need none of the four.",
+          "notes": "Do these as four quick call-and-response beats rather than a read-aloud: say the lever, then take an example from a game somebody in the room plays. Slow down on secrecy and state it with no exceptions, because a ten-year-old will immediately hunt for the case where a secret is fine. The common wrong answer is \"but birthday surprises are secret\" — accept it cheerfully, then sharpen the rule to \"a stranger, or any grown-up, asking you to keep something from your parents\", which is the version that actually protects them."
+        },
+        {
+          "kind": "activity",
+          "eyebrow": "6 minutes · spot the red flag",
+          "title": "Round one",
+          "ask": "I'll read out a message. Shout — or type — which lever it is using. First right answer takes the point.",
+          "bullets": [
+            "\"FREE ROBUX — claim it in the next 10 seconds!\" → urgency.",
+            "\"You're way better at this game than my other friends.\" → flattery.",
+            "\"Don't tell your mum, she'll take your account away.\" → secrecy, and fear.",
+            "\"Log in here or your account gets deleted tonight.\" → fear, and urgency."
+          ],
+          "notes": "Keep score on screen; this band will compete ferociously for a point that is worth nothing. The best moment is when a message stacks two levers and two children shout different answers — stop and say both are right, because real messages stack, and the stacking is itself the tell. If the room has gone quiet, switch from shouting to the chat so the less confident children can win one too."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "Part two · the money tricks",
+          "title": "There is no free Robux. There has never been free Robux.",
+          "bullets": [
+            "Every generator, every \"click to claim\", every link in a YouTube comment: the same trick.",
+            "What they actually want is your login, so they can sell your account and your items.",
+            "Free-skin and free-V-Bucks sites work in exactly the same way.",
+            "A real giveaway happens inside the game, run by the game, and never asks for your password."
+          ],
+          "callout": "If a thing is free AND urgent, it is a trap. Free things do not need a clock.",
+          "notes": "Do not be surprised when a child insists a generator worked for a friend — the honest answer is that the friend either got nothing or lost their account weeks later and never connected the two events. Name Roblox, Fortnite and Minecraft out loud rather than saying \"online offers\", because a child who hears the generic phrase files it as nothing to do with them. The last bullet is the practical test they can carry: a real event is inside the game and never asks you to log in somewhere else."
+        },
+        {
+          "kind": "rules",
+          "eyebrow": "The trade rule",
+          "title": "\"Go first and I'll send after\" — never, not once",
+          "bullets": [
+            "Not for a rare pet. Not for a skin. Not for a middleman who \"everyone trusts\".",
+            "A trader with a lovely profile and fifty thousand followers is still a stranger.",
+            "The second half of that sentence has never once happened to anybody."
+          ],
+          "callout": "If a trade only works when one person takes all the risk, the risk is the trade.",
+          "notes": "This is the most immediately useful rule in the session, because item scamming is close to universal in this band and almost never reported — children are embarrassed about a lost pet or skin and assume an adult will say it does not matter. Say explicitly that losing something in a game is a real thing that happened and is worth telling someone about. Ask who has lost something in a trade and you will get more hands than you expect, which does the teaching for you."
+        },
+        {
+          "kind": "activity",
+          "eyebrow": "5 minutes · two truths and a lie",
+          "title": "Which message is the fake?",
+          "ask": "Three messages. Two are really from the game. One is a scam. Vote 1, 2 or 3.",
+          "bullets": [
+            "1 · \"Your Roblox Premium renews on the 14th. You can manage it in Settings.\"",
+            "2 · \"ROBLOX SECURITY: unusual login detected. Verify your password at this link within 30 minutes or your account will be deleted.\"",
+            "3 · \"A friend request from Mia_Crafts is waiting in your inbox.\""
+          ],
+          "callout": "Number 2. Three giveaways: a link, a clock, and a password.",
+          "notes": "Run a second set if you have the minutes, because the skill visibly improves on the second round. Some children will pick number three because the name is unfamiliar — use it rather than correcting it: an unknown friend request is something to be careful about, but it is not an attack, and learning the difference between \"be careful\" and \"this is an attack\" is exactly the judgement you are building. Finish by pulling the general rule out of them instead of stating it: real services never ask for a password through a link in a message."
+        },
+        {
+          "kind": "section",
+          "eyebrow": "Part three",
+          "title": "When the trick is a person",
+          "subtitle": "Not a pop-up. A friend.",
+          "notes": "Change gear here — slower, quieter, no scoring, no jokes. Say plainly that this part is about somebody pretending to be a friend, that it is much rarer than the money tricks, and that it has a pattern you can learn. Keeping it factual and pattern-shaped is precisely what stops this segment frightening a room of eleven-year-olds."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "The four stages",
+          "title": "Friendly → special → secret → somewhere private",
+          "bullets": [
+            "Friendly. They are kind, they play with you, they are on your side.",
+            "Special. You are the only one who understands them. You are their best friend already.",
+            "Secret. \"This is just between us.\" Now your parents are outside it.",
+            "Somewhere private. A different app, a private server, a DM, a voice call."
+          ],
+          "callout": "It is always in that order. Which means you can see it coming at stage two.",
+          "notes": "Teach it as a named four-stage pattern and make the room say the four words back to you, because a sequence is something this age can actually hold while a vague warning is not. The question that lands hardest is \"which is the first stage you could notice?\" — the answer you want is stage two, because being made to feel uniquely special is strange and children can feel strange before they can explain it. Never ask whether anyone recognises the pattern from their own life; if a child's face changes, note who it was and find them afterwards."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "The tell",
+          "title": "\"Let's talk somewhere else\" is the whole thing",
+          "bullets": [
+            "Roblox chat → Discord. Game chat → Snapchat. Comments → DMs. Text → voice call.",
+            "The new place has fewer rules, weaker filters, and no record of what was said.",
+            "A real friend from school does not need the conversation moved to where nobody can see it."
+          ],
+          "callout": "You do not have to work out why they want to move. The asking is the answer.",
+          "notes": "This is the highest-value sentence in the session, because it gives a child something to act on without having to judge an adult's intentions — which is the part they cannot do and should never be asked to. Name the actual hop they will meet: Roblox to Discord is by far the most common one in this age group. If a child objects that their whole friend group is on Discord, agree immediately — the rule is about somebody you met online asking to move, not about the app."
+        },
+        {
+          "kind": "rules",
+          "eyebrow": "The line that does not move",
+          "title": "You never meet someone from online in person",
+          "bullets": [
+            "Not at the park. Not at the shops. Not \"with a friend so it's safer\".",
+            "Not if you have played together every day for two years.",
+            "Not if they say they are your age — nobody online has ever proved their age to you.",
+            "If you want to meet an online friend, a parent arranges it and adults are there. That is the only version."
+          ],
+          "callout": "Two years of messages is not two years of knowing somebody.",
+          "notes": "Expect pushback and expect it to be sincere: many children in this band have genuine, years-long friendships inside games, and waving those away makes the rule sound ignorant and gets it ignored. Concede the friendship, hold the line on the meeting — the danger is not that the friend is certainly fake, it is that you have no way at all to know, and the cost of being wrong once is too high. Always give them the parent-arranged version, because a rule with no permitted path simply gets broken in secret."
+        },
+        {
+          "kind": "scenario",
+          "eyebrow": "The one rule for the hardest moment",
+          "title": "A photo, or a secret",
+          "bullets": [
+            "It might be somebody you have never met. It might be somebody you have.",
+            "It might be dressed up as a dare, a game, a trade, or proof that you are really friends.",
+            "You will not be in trouble. The person who asked is the one in trouble."
+          ],
+          "callout": "If anyone ever asks you for a photo, or sends you one, or says keep it secret from your parents — that is the moment you stop and tell a grown-up, every single time, and you are never in trouble for it.",
+          "notes": "Read the callout once, exactly as it is written, and then stop: do not elaborate, do not add examples, and do not follow questions into detail. For this age the complete and correct teaching is the rule plus the reassurance, and anything beyond it belongs to a safeguarding lead in private rather than to a group of thirty. If a child discloses here, use your prepared line — \"thank you for telling me, let's talk just the two of us in a minute\" — and follow your setting's safeguarding procedure the moment the session ends."
+        },
+        {
+          "kind": "section",
+          "eyebrow": "Part four",
+          "title": "AI",
+          "subtitle": "Very confident. Not always right. Sometimes not even a person.",
+          "notes": "Lift the energy back up — this is the segment children enjoy, and they arrive knowing more about these tools than most of the adults in the building. Ask who has used one this week before you teach anything; the hands tell you what level to pitch at, and it is usually higher than you expected."
+        },
+        {
+          "kind": "stat",
+          "eyebrow": "Where we already are",
+          "title": "1 in 4",
+          "subtitle": "People who have hit an AI voice-cloning scam, or who know somebody who has.",
+          "bullets": [
+            "45% of surveyed teenagers use an AI tool more than once a week.",
+            "So AI is not coming. It is already in your homework and already on your phone."
+          ],
+          "source": "Consumer Reports, 2026 · Family Online Safety Institute, 2026",
+          "notes": "Use the one-in-four figure to make voice cloning feel ordinary rather than science-fiction, because the barrier to the code word is a child quietly deciding this could never happen in their family. Make the fraction physical: a quarter of this class is about eight people, so point at eight of them. Then move straight on — the number exists to earn you the code-word slide, not to scare anyone."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "Bot's favourite trick",
+          "title": "An AI can be completely certain and completely wrong",
+          "bullets": [
+            "It does not know things. It predicts what an answer usually looks like.",
+            "\"The capital of Australia is Sydney\" — delivered with total confidence. It is Canberra.",
+            "It will invent a book, a score, a date or a quote, and never mention that it guessed."
+          ],
+          "callout": "Sounding sure and being right are two different things. Check anything surprising somewhere else.",
+          "notes": "Bot is the Academy mascot for exactly this, so use the name — children who have played the quests will finish the Canberra line for you. Then get one volunteer to ask an AI tool something they are personally expert in, a game or a team or a show, and let them catch the mistake themselves; nothing you say convinces this age as fast as catching it out once in front of everyone. The belief to dismantle is that a confident tone and a tidy paragraph are evidence."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "The voice on the phone",
+          "title": "A few seconds of audio is enough to copy a voice",
+          "bullets": [
+            "Your voice is in every video you post, every voice note, every clip from the match.",
+            "So \"it sounded exactly like Mum\" is no longer proof that it was Mum.",
+            "The fix takes two minutes and costs nothing: a family code word."
+          ],
+          "callout": "One word. Never posted anywhere. Anybody urgent on a phone has to say it.",
+          "notes": "This is the homework, so make it specific: tonight, with a parent, choose one word that is not a pet, not a school, not a team and not anything findable on a profile. Say out loud that it works both ways — a child can use it to check a call claiming to be a parent, which is the version that matters most here. Give them the exact sentence to use in the moment, \"What's our word?\" and nothing else, because a cloned voice will try to talk around it."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "Fake pictures",
+          "title": "Stop judging the picture. Judge where it came from.",
+          "bullets": [
+            "Counting fingers and hunting for weird hands does not work any more.",
+            "Ask instead: who posted it first, and where did they get it?",
+            "Does it exist anywhere outside this one group chat?",
+            "And if it is fake and you forward it, you are the reason it spread."
+          ],
+          "callout": "Provenance means where a thing came from. It is the only check that still works.",
+          "notes": "Teach the word provenance properly — this age likes a real word with a real meaning and will use it for weeks. The fourth bullet is the one that changes behaviour: the standard lesson is \"don't get fooled\", but the version that matters at eleven is \"don't be the one who forwarded it\". Practise it on something harmless, like a fake clip about a game update, so the skill gets rehearsed without a heavy scenario attached."
+        },
+        {
+          "kind": "rules",
+          "eyebrow": "The whole session in one slide",
+          "title": "Find the levers in today's examples",
+          "bullets": [
+            "\"Ten seconds left\" — which lever?",
+            "\"Don't tell your mum\" — which lever?",
+            "\"You're better than my other friends\" — which lever?",
+            "\"Your account gets deleted tonight\" — which lever?"
+          ],
+          "callout": "Urgency · Secrecy · Flattery · Fear. Every single thing today used at least one of them.",
+          "notes": "Leave this slide up and take every answer from the room rather than reading them out; if they can do all four cold, Session 1 has worked and you are allowed to finish early. The stacked examples are deliberate — \"don't tell your mum, she'll take your account\" is secrecy plus fear, and spotting two at once is the real skill. Finish with the room naming the four in unison, which sounds corny when described and works every time."
+        },
+        {
+          "kind": "recap",
+          "eyebrow": "End of Session 1",
+          "title": "Nobody is ever in trouble for telling",
+          "bullets": [
+            "Two things tonight: agree a family code word, and decide which grown-up you would tell.",
+            "Bring a device next week — Session 2 is hands-on, and there is a race.",
+            "CyberTipline.org — where anybody, including a young person, can report.",
+            "And the short version of all of it: tell a trusted adult."
+          ],
+          "callout": "Questions out loud, or message me privately. Both are completely fine.",
+          "notes": "Always end on this slide and leave it up while the room packs away or lingers on the call. In this band almost every disclosure arrives in the few minutes after you say \"that's it\" — so stay on the call ten minutes, keep your camera on, and do not start tidying. Choosing the grown-up in advance is the highest-value thirty seconds of the whole course, because in a real incident the obstacle is never knowledge, it is the pause about who to go to."
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "title": "How a Knight Fights Back",
+      "subtitle": "Hands on your own settings, your own chats, your own worst night",
+      "goal": "By the end of this session a child has changed three settings on their own account, knows what a stranger can see, has rehearsed the bystander move, and has written the first sentence they would use to tell a grown-up.",
+      "segments": [
+        {
+          "minutes": "0–3",
+          "label": "Recap, and the four levers back from the room",
+          "slides": [
+            1,
+            2
+          ]
+        },
+        {
+          "minutes": "3–14",
+          "label": "The settings race, live on their own devices",
+          "slides": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "minutes": "14–20",
+          "label": "What a stranger can already see",
+          "slides": [
+            8,
+            9
+          ]
+        },
+        {
+          "minutes": "20–29",
+          "label": "The group chat, and the bystander move",
+          "slides": [
+            10,
+            11,
+            12,
+            13
+          ]
+        },
+        {
+          "minutes": "29–32",
+          "label": "AI and your homework",
+          "slides": [
+            14
+          ]
+        },
+        {
+          "minutes": "32–40",
+          "label": "The worst moment, rehearsed",
+          "slides": [
+            15,
+            16,
+            17,
+            18,
+            19
+          ]
+        },
+        {
+          "minutes": "40–45",
+          "label": "The Oath, and the exam",
+          "slides": [
+            20,
+            21,
+            22
+          ]
+        }
+      ],
+      "slides": [
+        {
+          "kind": "title",
+          "eyebrow": "Digital Safety Knights · Knight Certification",
+          "title": "How a Knight Fights Back",
+          "subtitle": "Session 2 of 2 · 45 minutes · bring a device",
+          "notes": "Open by naming the difference: \"Last week you learned the tricks. Today you actually change things, and by the end of the lesson your accounts will be safer than they are right now.\" Check who has a device and pair up anybody who does not, so nobody sits the race out. Set the one rule for the hour before you start — phones go face down the second you say \"screens down\" — or you will lose the room inside the first segment."
+        },
+        {
+          "kind": "poll",
+          "eyebrow": "90 seconds",
+          "title": "Who did the two things?",
+          "ask": "Code word agreed? Grown-up chosen? Type 1, 2, both or neither. Then tell me the four levers.",
+          "bullets": [
+            "Nobody gets told off for \"neither\" — but text a parent about the code word now, while I wait.",
+            "Then the four levers, from you, not from me."
+          ],
+          "callout": "Urgency · Secrecy · Flattery · Fear",
+          "notes": "Actually wait the ninety seconds in silence; it feels far longer than it is, and it is the only reason the homework ever gets done. Take the four levers from the room, and if they cannot produce all four, spend two minutes re-teaching before you go on, because everything else today assumes them. Expect \"neither\" to be the majority and do not treat it as failure — a child who texts a parent during your silence has just done the homework."
+        },
+        {
+          "kind": "section",
+          "eyebrow": "Part one · 11 minutes",
+          "title": "Lock the doors",
+          "subtitle": "Devices out. We are doing this together, right now.",
+          "notes": "This segment is the reason schools rebook, and it only works if you genuinely do it live and genuinely wait for the slowest child to finish each step. Do not narrate settings off a slide — put your own screen up and move at the pace of the room, not the pace of the clock. If devices are not permitted, hand out the Knight's Card and have every child write their three steps down to do at home with a parent."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "Step 1 · the two settings that matter most",
+          "title": "Friends-only chat, and account restrictions",
+          "bullets": [
+            "Roblox: Settings → Privacy. Set chat and messages to Friends. Turn on Account Restrictions if you are under 13.",
+            "Minecraft: in your Microsoft family settings, turn multiplayer chat down to friends only.",
+            "Discord: Privacy & Safety → turn off direct messages from server members, and set friend requests to friends-of-friends.",
+            "YouTube: turn comment notifications off, and never reply to a comment asking you to message somewhere else."
+          ],
+          "callout": "One setting removes most strangers from your life. It takes about forty seconds.",
+          "notes": "Expect the complaint that friends-only chat ruins the game, and answer it honestly: it changes almost nothing about playing and removes nearly every unwanted message, which is a trade most of them will take once they have lived with it for a week. Platform menus move, so walk each path yourself the week you teach and tell the room that if their menu looks different the setting is still there, under privacy. Warn them in advance that Account Restrictions on Roblox gives under-13s a much smaller curated game list, or they will switch it straight back off on the bus home."
+        },
+        {
+          "kind": "activity",
+          "eyebrow": "5 minutes · the settings race",
+          "title": "Three settings. Fastest table wins.",
+          "ask": "On your own device, right now: chat to friends-only, two-factor on, and check who can send you a friend request. Shout when you have all three.",
+          "bullets": [
+            "A point for each one done. Double points for helping somebody else finish.",
+            "If you cannot find a menu, put your hand up — that is not losing.",
+            "Nobody shows anybody their screen. Your settings are yours."
+          ],
+          "notes": "The double points for helping is what turns this from a race into the thing you actually want, which is the confident children teaching everybody else. Walk the room and find the child who has quietly done nothing: usually it is a borrowed or school-managed device, occasionally a parent-locked account, and the right response is a Knight's Card and a quiet word rather than attention. State the no-looking-at-screens rule out loud before you start, and do not inspect or photograph any screen yourself."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "Step 2",
+          "title": "Two-factor: a code as well as a password",
+          "bullets": [
+            "With it on, somebody knowing your password is no longer enough to get in.",
+            "Roblox, Fortnite, Discord, Minecraft, Google, TikTok — all of them have it, free.",
+            "Roblox even gives you a free item for turning it on, which tells you how much they want you to.",
+            "A code from an app is better than a code by text message, but either one beats nothing."
+          ],
+          "callout": "This is the single setting that stops account theft — which is the thing that actually happens to people your age.",
+          "notes": "Lead with account theft rather than safety, because losing an account holding years of items is the loss this band genuinely fears, and that fear is doing useful work for you here. Keep the app-versus-SMS nuance to one sentence; a ten-minute detour into SIM swapping will lose the room entirely and changes nothing they will do tonight. Have the Roblox free-item detail ready, because it converts more children than any argument you can make."
+        },
+        {
+          "kind": "rules",
+          "eyebrow": "Step 3",
+          "title": "A password is four random words",
+          "bullets": [
+            "otter-blanket-lamp-ninety beats P@ssw0rd123, and is easier to remember.",
+            "Four words with nothing to do with each other, and nothing to do with you.",
+            "Nothing in it should be findable on your profile: not the dog, not the team, not your birthday.",
+            "And never use your email password anywhere else, ever."
+          ],
+          "callout": "Long and random beats short and clever. Always.",
+          "notes": "Build one together out of four random nouns shouted from the room, then ask for it back ten minutes later and let them notice they still remember it — the demonstration does all the convincing. The common wrong answer is that swapping letters for symbols is clever; the honest reply is that the machines guessing passwords learned that trick before these children were born. Point them at digitalsafetyknights.org/password-dojo.html and say explicitly that it runs inside their own browser and sends nothing anywhere, because a room this age is quite right to distrust a website that asks for a password."
+        },
+        {
+          "kind": "activity",
+          "eyebrow": "4 minutes · the stranger's view",
+          "title": "What does your profile show somebody who is not your friend?",
+          "ask": "Log out, or open your own profile in a private window. What can a complete stranger see?",
+          "bullets": [
+            "Your username. Your picture. Your friends list. Your groups.",
+            "A school jumper in a photo. Your street in a background. Your town in your bio.",
+            "Which of those would you hand to a stranger at a bus stop?"
+          ],
+          "callout": "Nobody has to share what they found. Do look.",
+          "notes": "Say the hard rule before you begin: nobody reports their findings to the group, and nobody looks at anybody else's screen. Children regularly find something here that upsets them — an old account, a photo a relative posted, a friends list full of people they cannot place — so promise a private route for help afterwards and then honour it. The bus-stop question is what makes it click, because it turns an abstract privacy idea into a physical one they can picture."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "Why it matters",
+          "title": "A stranger does not need much to sound like they know you",
+          "bullets": [
+            "Your school, your town and your first name is enough to open with \"hey, aren't you in Year 7 at—\".",
+            "Your friends list is how somebody pretends to be a friend of a friend.",
+            "A photo taken at your front door shows a stranger your front door."
+          ],
+          "callout": "You do not have to delete your life. Just decide what is public on purpose.",
+          "notes": "Do not tell this band to lock everything down to nothing: plenty of them have real reasons for a visible account — a team, a channel, a creator page — and a rule of total withdrawal is one they will simply ignore. The teachable skill is deliberateness, which is that every public thing is public because they chose it. If somebody asks about their Roblox profile specifically, point out that the friends list is usually the most revealing part of it and is also the easiest thing to restrict."
+        },
+        {
+          "kind": "section",
+          "eyebrow": "Part two · 9 minutes",
+          "title": "The group chat",
+          "subtitle": "The thing that actually happens most.",
+          "notes": "Energy lifts here and the room will have a great deal to say, so leave space for it rather than talking over it. Set the boundary first: nobody is named, nobody reads out a real message, and you are discussing situations rather than people — otherwise this segment turns into a live airing of a current class dispute and you lose control of it."
+        },
+        {
+          "kind": "scenario",
+          "eyebrow": "Scenario",
+          "title": "Thirty messages about one person who is still in the chat",
+          "bullets": [
+            "It started as a joke. It is not a joke any more, and everybody can tell.",
+            "Laughing with a reaction emoji is joining in. Everybody can see who reacted.",
+            "Saying nothing lets the chat believe the whole group agrees.",
+            "Screenshotting it to send to somebody else is spreading it further, whatever your reason was."
+          ],
+          "ask": "You are in that chat tonight. What do you actually do?",
+          "notes": "Take real answers and expect the first one to be \"leave the chat\" — accept it, then push: leaving protects you and does absolutely nothing for the person being piled on. The answer you are steering towards is on the next slide, so do not give it away; this age remembers the move they worked out themselves far better than the one you announced. If the room starts describing a live incident, stop it gently and say you will hear about that one afterwards."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "The bystander move",
+          "title": "One private message is worth more than anything you post in the chat",
+          "bullets": [
+            "Message the person directly, once: \"I saw it. I didn't join in. Are you okay?\"",
+            "Do not defend them publicly in the chat — it usually makes the pile-on bigger.",
+            "Do not react, do not reply, do not forward. Then mute or leave.",
+            "Then tell a grown-up. Not to get anybody in trouble — to make it stop."
+          ],
+          "callout": "You do not have to fix it. You have to be the one who did not make it worse.",
+          "notes": "Frame this as a skill rather than as kindness, because a ten-to-thirteen-year-old will accept being competent at something far more readily than being told to be nice. The private message is both the safest move and the one that children who have been piled on describe afterwards as the thing that would have mattered most — say both halves out loud, because this room is genuinely afraid of becoming the next target. Give them the words verbatim: composing \"are you okay\" is hard when you are eleven and frightened."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "Before you post",
+          "title": "Ask first. Every time. Even when it's funny.",
+          "bullets": [
+            "A photo of somebody else is theirs as well as yours.",
+            "\"Can I post this?\" takes one second and ends almost every argument before it starts.",
+            "A screenshot of a private chat is exactly the same rule.",
+            "And if somebody asks you to take something down, you take it down. You do not negotiate."
+          ],
+          "callout": "Consent is just asking first. It is not complicated and it is not optional.",
+          "notes": "Make it concrete with the case this band actually creates: the unflattering photo dropped into a group chat as a joke, which is where most of the fallout in a Year 6 or Year 7 class begins. Insist on the last bullet, because the usual response to a takedown request at this age is an argument about whether the photo is really that bad. Flip it once — ask how it feels when the photo is of them — and let the room answer rather than answering for them."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "Part three · 3 minutes",
+          "title": "Using AI on your homework without cheating",
+          "bullets": [
+            "Asking it to explain something you did not understand: completely fine, and genuinely useful.",
+            "Asking it to write the thing and handing that in: that is cheating, and your teacher can usually tell.",
+            "It is also confidently wrong quite often, so the copied answer may be wrong as well as cheating.",
+            "The honest test: could you explain every sentence you handed in?"
+          ],
+          "callout": "Use it as a tutor, not as a ghostwriter.",
+          "notes": "Do not moralise; this age responds far better to the test at the bottom of the slide than to a speech about integrity. The point worth making is that the cheating and the inaccuracy are one problem, not two — you cannot check work you do not understand, so copying is also how you end up handing in something wrong. If your school has a written AI policy, read the actual sentence out, because this question properly belongs to their teacher and naming the real rule is more useful than your opinion."
+        },
+        {
+          "kind": "section",
+          "eyebrow": "Part four · 8 minutes",
+          "title": "The worst moment",
+          "subtitle": "Practised now, so it is automatic then.",
+          "notes": "Set it up calmly and without drama: \"Something online will go wrong for somebody in this room one day, and the difference between a bad evening and a disaster is whether you already knew what to do.\" Keep your voice flat and procedural through this whole segment — this age takes its emotional temperature from you, and a rehearsed procedure is reassuring in a way that a warning never is."
+        },
+        {
+          "kind": "rules",
+          "eyebrow": "Five steps, in order",
+          "title": "The Knight's protocol",
+          "bullets": [
+            "1 · Stop replying. Mid-sentence is fine. You owe them nothing.",
+            "2 · Screenshot it — the messages, the username, the profile.",
+            "3 · Do not pay, do not send anything, and do not delete your account.",
+            "4 · Block and report inside the app. Then CyberTipline.org.",
+            "5 · Tell your grown-up. Tonight, not next week."
+          ],
+          "callout": "Step 5 is not last because it matters least. It is last because the screenshots make it easier.",
+          "notes": "Make the room say the five steps back to you, then ask the trick question — \"which step do you skip if you are embarrassed?\" — and let them arrive at none. Step three surprises them every single time, because the instinct at this age is to delete the whole account and hope the problem vanishes with it, so explain plainly that the account is where the proof lives. Repeat that telling somebody is a step in a procedure, not a confession of anything."
+        },
+        {
+          "kind": "activity",
+          "eyebrow": "4 minutes · the hardest one",
+          "title": "Write the actual sentence",
+          "ask": "Write down the real words you would use to tell a grown-up. Not what it is about — the first sentence.",
+          "bullets": [
+            "\"Something happened online and I need help and I need you to not shout.\"",
+            "\"I think I've messed something up online. Can you sit down with me?\"",
+            "A text counts. A note on the kitchen table counts. It does not have to be out loud."
+          ],
+          "callout": "Knowing what to do was never the hard part. The first sentence is.",
+          "notes": "This is the activity facilitators cut for time and it is the one that most changes outcomes, so protect it even if you have to drop a settings step. Have two or three read theirs out if they are willing, then tell the room the thing they most need to hear: almost every parent's reaction, after the first ten seconds, is relief at having been told. The written version matters especially at this age, because a child who cannot say it out loud will absolutely send a text."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "If it goes wrong",
+          "title": "You are allowed a second grown-up",
+          "bullets": [
+            "Some adults panic first. That is about their fear, not your fault.",
+            "A teacher, a head of year, a grandparent, an aunt, a coach — any of them counts.",
+            "The rule is not \"tell your parents\". The rule is \"tell a grown-up who will help\".",
+            "And CyberTipline.org takes reports from young people directly."
+          ],
+          "callout": "One grown-up reacting badly does not mean telling was wrong. It means try the next one.",
+          "notes": "This slide exists because \"tell a trusted adult\" collapses the first time an adult shouts, and children who have had that experience quietly conclude the whole lesson was a lie. Pre-empting it is the thing that keeps the advice credible for the rest of their lives. Have two named, specific people in your setting ready to say out loud, because a child will use a name long before they will use a category."
+        },
+        {
+          "kind": "stat",
+          "eyebrow": "Does reporting actually do anything?",
+          "title": "53,000+",
+          "subtitle": "Reports NCMEC treated as urgent, or as involving a child in immediate danger, in 2025.",
+          "bullets": [
+            "Real people read these. They do not go into a void.",
+            "Which is why a screenshot and a report beat a deleted account, every time."
+          ],
+          "source": "NCMEC, 2026",
+          "notes": "This band genuinely believes that reporting is pointless theatre, and that belief is the whole reason they do not do it — so answer it with a number rather than with reassurance. Keep the tone matter-of-fact and move on briskly; the slide is here to defeat cynicism, not to dwell on danger. If somebody asks what actually happens after a report, the honest answer is that it reaches people whose entire job is to act on it."
+        },
+        {
+          "kind": "rules",
+          "eyebrow": "The Knight's Oath",
+          "title": "What you are certifying",
+          "bullets": [
+            "I will not be rushed. A clock is a trick.",
+            "I will not keep a stranger's secret, and I will not meet one.",
+            "I will check where a thing came from before I believe it or pass it on.",
+            "I will never hand over a password, and I will never go first.",
+            "And I will tell a grown-up — I know who, and I know it is tonight."
+          ],
+          "notes": "Read it once yourself, then invite the room to read it with you. It sounds corny described in advance and it does not land that way at all — this age takes an oath seriously if the adult does, so do not grin your way through it. This is the text printed on the certificate, so read it as the thing they are about to earn rather than as a closing slide."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "The exam",
+          "title": "18 questions · 20 minutes · 80% to pass",
+          "bullets": [
+            "Everything on it came from these two sessions. Nothing is a trick question.",
+            "Open book. We are checking that you can use it, not that you memorised it.",
+            "Unlimited retakes, a day apart. Getting it wrong once costs you nothing.",
+            "Pass, and your certificate is issued straight away with your name on it."
+          ],
+          "callout": "digitalsafetyknights.org/certification-exam.html",
+          "notes": "Say that the pass rate is high and that this is deliberate — the exam exists to make the material stick, not to sort the room. Children in this band worry hard about the eighty per cent, so do the arithmetic out loud for them: fifteen out of eighteen, and they can take it again tomorrow. For a school cohort, this is also where you explain the retake arrangement and the verification code printed on the certificate."
+        },
+        {
+          "kind": "recap",
+          "eyebrow": "End of Session 2",
+          "title": "Nobody is ever in trouble for telling",
+          "bullets": [
+            "If anything on this list is happening right now, tell somebody today.",
+            "CyberTipline.org — report any time, including as a young person.",
+            "Tell a trusted adult. That is the short version of all ninety minutes.",
+            "digitalsafetyknights.org — everything we make, free, in four languages."
+          ],
+          "callout": "I'm staying on for ten minutes. Come and talk to me, or message me privately.",
+          "notes": "Stay. Actually stay the ten minutes, every single time, with your camera on and nothing else going on in the background. In our sessions with this age group, disclosures arrive after the end far more often than during, and the child who is waiting to speak to you will wait until the room has completely emptied. Leave this slide up the whole time."
+        }
+      ]
+    }
+  ],
+  "exam": {
+    "passMark": 80,
+    "minutes": 20,
+    "shuffle": true,
+    "questions": [
+      {
+        "topic": "The four levers",
+        "q": "A player you met in a Roblox game messages you: \"My cousin works at Roblox and can get you 10,000 Robux, but you have to tell me your password in the next five minutes and don't tell your mum or she'll ruin it.\" Which levers is this using?",
+        "choices": [
+          "Urgency and secrecy",
+          "Fear only",
+          "None — it is a normal offer",
+          "Flattery only"
+        ],
+        "answer": 0,
+        "why": "The five-minute clock is urgency and \"don't tell your mum\" is secrecy. A real Roblox event happens inside the game, never asks for a password, and never needs a clock."
+      },
+      {
+        "topic": "The four levers",
+        "q": "Of these four things somebody online might say, which one is a red flag all on its own, with no other evidence needed?",
+        "choices": [
+          "\"I live in a different country\"",
+          "\"Keep this secret from your parents\"",
+          "\"I'm not very good at this level\"",
+          "\"I play this game a lot\""
+        ],
+        "answer": 1,
+        "why": "A stranger or a grown-up asking you to hide something from your parents is the red flag itself. You do not need to work out why they asked — the asking is the answer."
+      },
+      {
+        "topic": "Game scams",
+        "q": "A trader in a game has a great profile and tons of followers. They say: \"Send me your pet first and I'll send the skin right after — everyone trusts me.\" What should you do?",
+        "choices": [
+          "Send a cheaper item first as a test",
+          "Ask them to go first instead and then trade",
+          "Do not trade at all — \"go first\" is the whole scam",
+          "Send it, since lots of people trust them"
+        ],
+        "answer": 2,
+        "why": "The second half of \"go first and I'll send after\" never arrives. A nice profile and a big follower count are easy to buy, and a trade that only works if one person takes all the risk is not a trade."
+      },
+      {
+        "topic": "Game scams",
+        "q": "You get a message: \"ROBLOX SECURITY: unusual login detected. Verify your password at this link within 30 minutes or your account will be deleted.\" What is the right move?",
+        "choices": [
+          "Reply asking whether it is really Roblox",
+          "Delete your account before they can",
+          "Click the link and change your password quickly",
+          "Do not click it, do not type your password anywhere, screenshot it and tell a grown-up"
+        ],
+        "answer": 3,
+        "why": "A link, a clock and a password request together are always a scam. Real services never ask for your password through a link in a message, and screenshotting before you tell someone is step two of the protocol."
+      },
+      {
+        "topic": "Strangers who act like friends",
+        "q": "What is the order of the four stages when somebody online is pretending to be a friend?",
+        "choices": [
+          "Friendly → special → secret → somewhere private",
+          "Special → secret → friendly → somewhere private",
+          "Private → secret → special → friendly",
+          "Secret → friendly → private → special"
+        ],
+        "answer": 0,
+        "why": "It runs friendly, then special, then secret, then somewhere private — always in that order. Because it is a pattern, you can notice it at stage two, when you are suddenly the only person who understands them."
+      },
+      {
+        "topic": "Strangers who act like friends",
+        "q": "Someone you only know from a Minecraft server says: \"Let's stop talking here and move to Discord — it's way better.\" What is the significant part?",
+        "choices": [
+          "That they did not say please",
+          "The request to move, because the new place has weaker filters and leaves no record",
+          "Nothing — switching apps is completely normal",
+          "That Discord is a bad app"
+        ],
+        "answer": 1,
+        "why": "The move off the game is the tell: it is chosen for fewer rules, weaker filters and no record of what gets said. You do not have to work out their reason — the asking is the answer."
+      },
+      {
+        "topic": "Meeting in person",
+        "q": "You have played with someone almost every day for two years. They say they are 12, they live one town over, and they suggest meeting at the shopping centre on Saturday. What is correct?",
+        "choices": [
+          "Go, since two years is long enough to know somebody",
+          "Go, but take a friend so it is safer",
+          "Say no, and if you ever want to meet an online friend, a parent arranges it with adults there",
+          "Go, but only in a busy place"
+        ],
+        "answer": 2,
+        "why": "Two years of messages is not two years of knowing somebody, and nobody online has ever proved their age to you. The only permitted version is a parent arranging it with adults present."
+      },
+      {
+        "topic": "Photos and secrets",
+        "q": "Someone in a Discord server asks you to send a photo of yourself, and says to keep it between the two of you. What do you do?",
+        "choices": [
+          "Block them and say nothing to anybody",
+          "Send something harmless so they do not get annoyed",
+          "Say no but keep chatting to them",
+          "Stop, and tell a grown-up — every single time, and you are never in trouble for it"
+        ],
+        "answer": 3,
+        "why": "If anyone ever asks you for a photo, or sends you one, or says keep it secret from your parents, that is the moment you stop and tell a grown-up. You are never in trouble for it — the person who asked is the one in trouble."
+      },
+      {
+        "topic": "AI",
+        "q": "You ask an AI tool a question for your homework and it gives you a confident, tidy answer that sounds slightly surprising. What should you do?",
+        "choices": [
+          "Check it against a textbook, a teacher or another real source",
+          "Ask the AI the same question again",
+          "Ask the AI whether it is sure",
+          "Use it — it sounded completely sure"
+        ],
+        "answer": 0,
+        "why": "An AI does not know things; it predicts what an answer usually looks like. It can be completely certain and completely wrong — and asking it again just gets you another guess."
+      },
+      {
+        "topic": "AI",
+        "q": "You get a call and the voice sounds exactly like your dad, urgently asking you to do something right now. What is the best check?",
+        "choices": [
+          "Ask something only he would know from his public profile",
+          "Ask for the family code word and nothing else",
+          "Call the same number straight back",
+          "Ask him to say your name"
+        ],
+        "answer": 1,
+        "why": "A few seconds of audio is enough to copy a voice, and phone numbers can be faked. A code word that is never posted anywhere defeats it completely — anything findable on a profile does not."
+      },
+      {
+        "topic": "AI",
+        "q": "A shocking photo is going round your group chat. What is the best way to judge whether it is real?",
+        "choices": [
+          "Count the fingers and look for odd-looking hands",
+          "Zoom in on the edges for blurring",
+          "Check where it came from — who posted it first, and whether it exists outside this one chat",
+          "Ask the person who sent it whether it is real"
+        ],
+        "answer": 2,
+        "why": "Looking for visual mistakes stopped working. Provenance — where a picture came from and whether anybody independent has it — is the only check that still holds. And if it is fake and you forward it, you are the reason it spread."
+      },
+      {
+        "topic": "AI",
+        "q": "Which of these is using an AI tool honestly for your homework?",
+        "choices": [
+          "Asking it to write the answer and changing a few words",
+          "Asking it for the answer and copying it without reading it",
+          "Asking it to write your paragraph and handing that in",
+          "Asking it to explain a bit you did not understand, then writing your own answer"
+        ],
+        "answer": 3,
+        "why": "Use it as a tutor, not as a ghostwriter. The honest test is whether you could explain every sentence you handed in — and because AI is confidently wrong quite often, a copied answer may be wrong as well as cheating."
+      },
+      {
+        "topic": "Account settings",
+        "q": "Strangers keep messaging you in Roblox. Which single change removes most of them?",
+        "choices": [
+          "Setting chat and messages to Friends only, and turning on Account Restrictions if you are under 13",
+          "Playing only at night",
+          "Deleting your profile picture",
+          "Changing your username to something cooler"
+        ],
+        "answer": 0,
+        "why": "Friends-only chat takes about forty seconds, changes almost nothing about playing the game, and removes nearly every unwanted message. A username change protects you from nothing at all."
+      },
+      {
+        "topic": "Account settings",
+        "q": "Why is two-factor authentication the setting that most protects your account?",
+        "choices": [
+          "It hides your username from strangers",
+          "Knowing your password is no longer enough for somebody to get in",
+          "It stops other players messaging you",
+          "It makes your password longer"
+        ],
+        "answer": 1,
+        "why": "Two-factor adds a code as well as a password, so a stolen password on its own is useless. It is the single setting that stops account theft, which is the thing that actually happens to people this age."
+      },
+      {
+        "topic": "Account settings",
+        "q": "Which of these is the strongest password?",
+        "choices": [
+          "Buddy2013!",
+          "P@ssw0rd123",
+          "otter-blanket-lamp-ninety",
+          "MinecraftFan2014"
+        ],
+        "answer": 2,
+        "why": "Four random unrelated words beat a short password with symbols swapped in, and they are easier to remember. The others are either a known pattern or built from a pet, a game or a birthday that is findable on a profile."
+      },
+      {
+        "topic": "Your profile",
+        "q": "You log out and look at your own profile the way a stranger sees it. Which of these is usually the most revealing part?",
+        "choices": [
+          "How many games you have played",
+          "Your account's join date",
+          "Your username",
+          "Your friends list"
+        ],
+        "answer": 3,
+        "why": "A friends list is how somebody pretends to be a friend of a friend. It is also one of the easiest things to restrict, which makes it the first thing worth checking."
+      },
+      {
+        "topic": "Group chats",
+        "q": "Thirty messages in your group chat are piling on one person, and that person is still in the chat. What is the most useful thing you can do?",
+        "choices": [
+          "Message the person privately once, do not forward anything, then tell a grown-up",
+          "React with a laughing emoji so you do not stand out",
+          "Defend them loudly in the chat",
+          "Screenshot it and forward it to another chat so people know"
+        ],
+        "answer": 0,
+        "why": "One private message — \"I saw it, I didn't join in, are you okay?\" — is what people who have been piled on say would have mattered most, and it is also the safest move. Defending them publicly usually makes the pile-on bigger, and a reaction emoji is joining in."
+      },
+      {
+        "topic": "Sharing other people",
+        "q": "You have a genuinely funny photo of a friend. What is the rule before you post it to the group chat?",
+        "choices": [
+          "Post it — if it is funny, nobody minds",
+          "Ask them first, and if they ever ask you to take it down, take it down",
+          "Post it, and delete it later if they complain",
+          "Post it but crop their face a bit"
+        ],
+        "answer": 1,
+        "why": "A photo of somebody else is theirs as well as yours. \"Can I post this?\" takes one second and ends most arguments before they start — and a takedown request is not something you negotiate."
+      }
+    ]
+  },
+  "certificate": {
+    "title": "Certified Digital Safety Knight",
+    "subtitle": "Completed the ninety-minute Digital Safety Knights certification, Knight track, and passed the Knight examination.",
+    "oath": "I will not be rushed — a clock is a trick. I will not keep a stranger's secret, and I will not meet one. I will check where a thing came from before I believe it or pass it on. I will never hand over a password, and I will never go first. And I will tell a grown-up — I know who, and I know it is tonight.",
+    "rank": "Knight"
+  }
+}

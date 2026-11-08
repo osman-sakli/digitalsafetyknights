@@ -30,14 +30,19 @@ EXCLUDE = {
     "member-id.html",
     "unsubscribe.html",
     "stats.html",
+    # The presenter deck is a tool, not a document: everything on it is
+    # rendered client-side from content/certification/*.json, so a crawler
+    # sees an empty shell. certification.html is the indexable surface for it.
+    "certification-slides.html",
 }
 
 # Rough priority tiers — the homepage and the pages we actually want found.
 HIGH = {"index.html", "resources.html", "school-programs.html", "quests.html",
         "news-archive.html", "legislative-tracker.html", "sources.html",
-        "chapters.html"}
+        "chapters.html", "certification.html"}
 MEDIUM = {"knights.html", "academy.html", "game.html", "audit.html",
-          "knight-council.html", "journal-archive.html", "glossary.html"}
+          "knight-council.html", "journal-archive.html", "glossary.html",
+          "certification-exam.html"}
 
 
 def page_url(name):

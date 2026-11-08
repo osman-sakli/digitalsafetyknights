@@ -1,0 +1,662 @@
+{
+  "id": "squire",
+  "track": "Squire",
+  "ages": "6–9",
+  "emoji": "🗡️",
+  "level": "Lower elementary",
+  "tagline": "Two short, noisy half-hours that give a six-year-old five rules, three warning words, and one grown-up to tell.",
+  "format": {
+    "sessions": 2,
+    "minutesEach": 30,
+    "totalMinutes": 60,
+    "delivery": "Live on Zoom, one week apart",
+    "groupSize": "Up to 25 per session so every child can be seen and heard; up to 60 with a second adult in the room",
+    "passMark": 80,
+    "examQuestions": 12,
+    "examMinutes": 15,
+    "retakes": "Unlimited, 24 hours apart"
+  },
+  "outcomes": [
+    "Say the five Knight Rules out loud from memory.",
+    "Keep their name, their school and their street off a game or a chat.",
+    "Treat a password as a secret that only a grown-up at home may know.",
+    "Spot \"free\" plus \"hurry\" as a trap, in Robux, V-Bucks, skins and pop-ups.",
+    "Name the three things a trick says — \"Hurry up!\", \"Keep it a secret\", \"You're so special\".",
+    "Know that \"keep this a secret from your parents\" is always wrong, and tell straight away.",
+    "Say no to meeting a game friend in real life, every time.",
+    "Ask a grown-up to turn on friends-only chat.",
+    "Realise an AI helper can sound very sure and still be wrong.",
+    "Say one sentence out loud that asks a grown-up for help — and know they are never in trouble for asking."
+  ],
+  "prerequisites": "None. Children do not need an account, a login, a reading level above Year 2, or any prior DSK material. A grown-up should be nearby for the Zoom call.",
+  "materials": [
+    "One sheet of paper and a pencil or crayons per child, for the drawing activity in Session 1. Nothing is written down — they draw.",
+    "Room to stand up next to the screen. Two of the activities need that.",
+    "The Knight's Toolkit poster of the five Knight Rules, printed and on the wall if you can.",
+    "Nothing is installed and no account is created. No child's data leaves the room."
+  ],
+  "sessions": [
+    {
+      "n": 1,
+      "title": "Secrets, Strangers and Shiny Prizes",
+      "subtitle": "The five Knight Rules, one at a time",
+      "goal": "By the end of this half-hour a child can say all five Knight Rules out loud and point at a \"free, hurry\" prize and call it a trap.",
+      "segments": [
+        {
+          "minutes": "0–3",
+          "label": "Hello, and one question with hands up",
+          "slides": [
+            1,
+            2
+          ]
+        },
+        {
+          "minutes": "3–8",
+          "label": "Rule 1 — your name is yours",
+          "slides": [
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "minutes": "8–12",
+          "label": "Rule 2 — a password is a secret",
+          "slides": [
+            6,
+            7
+          ]
+        },
+        {
+          "minutes": "12–18",
+          "label": "Rule 3 — free plus hurry means trap",
+          "slides": [
+            8,
+            9,
+            10
+          ]
+        },
+        {
+          "minutes": "18–24",
+          "label": "Rule 4 — you never meet, and you never keep that secret",
+          "slides": [
+            11,
+            12
+          ]
+        },
+        {
+          "minutes": "24–30",
+          "label": "Rule 5, draw your grown-up, say all five",
+          "slides": [
+            13,
+            14,
+            15
+          ]
+        }
+      ],
+      "slides": [
+        {
+          "kind": "title",
+          "eyebrow": "Digital Safety Knights · Squire Certification",
+          "title": "Secrets, Strangers and Shiny Prizes",
+          "subtitle": "Session 1 of 2 · 30 minutes",
+          "notes": "Say your name, show Shieldy on screen, and tell them the one thing that matters: nobody is going to be told to stop playing their games. Children this age arrive braced for a telling-off, and the first thirty seconds decide whether they listen or go quiet. Then say what today is: \"Five rules. That's the whole list. By the end you will know all five by heart.\" Keep your face bright and your voice slow — slower than feels natural on a video call."
+        },
+        {
+          "kind": "poll",
+          "eyebrow": "Hands up",
+          "title": "Who plays a game with other people in it?",
+          "ask": "Hands right up in the air so I can see them. Keep them up! Now wiggle your fingers if you have ever played with someone you have never met in real life.",
+          "bullets": [
+            "Nearly every hand goes up. Say so, out loud, happily.",
+            "Nobody has to say which game or who they played with."
+          ],
+          "callout": "Playing with people you have never met is normal. Today is about what to do when one of them is tricky.",
+          "notes": "Hands-up polls work far better than chat at this age, and they wake the room up on a video call where everyone has been sitting still. Call out two or three children by name — \"Hands up high, Amara, brilliant\" — because being seen in the first minute is what keeps a seven-year-old with you for the next twenty-nine. Do not ask any child to name a game friend or describe a conversation. If one starts to, say \"We'll keep that just for you and your grown-up\" and move straight on."
+        },
+        {
+          "kind": "section",
+          "eyebrow": "Part one",
+          "title": "The five Knight Rules",
+          "subtitle": "Five rules. That is all a Squire needs.",
+          "notes": "Hold up five fingers and keep doing that all session — the hand becomes the memory aid, and children will copy it without being asked. Count the rules off on your fingers every time you finish one. Say \"one down, four to go\" after each, because a visible countdown stops them wondering how much longer this lasts."
+        },
+        {
+          "kind": "rules",
+          "eyebrow": "Knight Rule 1",
+          "title": "Your name, your school and your street stay offline",
+          "bullets": [
+            "Your first name only, or a nickname. Never your whole name.",
+            "Never your school. Never your street. Never your house number.",
+            "Nice people in a game do not need any of it to play with you."
+          ],
+          "callout": "If someone needs to know where you live, they are not just playing a game.",
+          "notes": "The last bullet is the one to say twice, because children assume a question deserves an answer — it is how school and home work. Give them the permission plainly: \"You are allowed to not answer. You can just carry on playing.\" Use concrete examples rather than the word \"information\": my school's name, my road, my house number, the park I go to. Abstractions like \"personal details\" mean nothing to a six-year-old."
+        },
+        {
+          "kind": "activity",
+          "eyebrow": "2 minutes · thumbs",
+          "title": "Thumbs up, thumbs down",
+          "ask": "Thumb UP if it is fine to tell a player in a game. Thumb DOWN if it stays secret. Go fast!",
+          "bullets": [
+            "My favourite colour. My favourite animal. My best dinner.",
+            "My school. My street. My whole name. My photo.",
+            "That I am good at building. That I have a dog called Bear."
+          ],
+          "callout": "Fun things about you: fine. Things that help someone find you: no.",
+          "notes": "Run it quickly and do not explain every item — the rhythm is what teaches it. Deliberately put one wobbly item in, like \"I have a dog called Bear\", because a password-reset hint and a dog's name are the same thing and this is the age to plant that. Expect a couple of children to get it wrong and look worried; say \"Good guess, and now you know\" and keep the pace up. Never single out a child who got one wrong."
+        },
+        {
+          "kind": "rules",
+          "eyebrow": "Knight Rule 2",
+          "title": "A password is a secret — even from friends",
+          "bullets": [
+            "A password is like the key to your front door.",
+            "You would not give your front door key to someone in a game.",
+            "A grown-up at home can know it. That is the only person."
+          ],
+          "callout": "Not your best friend. Not your cousin. Not the nice player who helped you yesterday.",
+          "notes": "Best friends are the real case at this age — passwords get traded as a sign of trust in the playground, and then the account is emptied by somebody else entirely. Say the \"not your best friend\" line gently, because some of the room has already done it and you do not want them to feel caught. Add the fix out loud: \"If you have told a friend your password, that is okay. Just ask your grown-up to help you change it tonight.\""
+        },
+        {
+          "kind": "activity",
+          "eyebrow": "1 minute · shout it",
+          "title": "Who is allowed to know your password?",
+          "ask": "I am going to ask, and you are going to shout the answer at your screen. Ready? WHO is allowed to know your password?",
+          "bullets": [
+            "The answer you want shouted back: \"A GROWN-UP AT HOME!\"",
+            "Ask it three times, getting louder each time.",
+            "Then quietly: \"and nobody in a game, ever.\""
+          ],
+          "notes": "Shouting at a screen is enormously popular and takes sixty seconds. It also solves the mute problem — ask them to unmute for the shout and then mute again, or just let them shout at a muted microphone, which works just as well for the memory. The drop to a quiet voice at the end is a real technique: the change in volume is what makes the last line stick."
+        },
+        {
+          "kind": "rules",
+          "eyebrow": "Knight Rule 3",
+          "title": "\"Free!\" plus \"Hurry!\" means trap",
+          "bullets": [
+            "FREE ROBUX. FREE V-BUCKS. FREE SKINS. CLICK QUICK!",
+            "Real free things never rush you.",
+            "A trap wants you to click before you think."
+          ],
+          "callout": "Free + hurry = trap. Say it with me.",
+          "notes": "This is the slide most children in the room have already met in real life, so let them tell you — \"Who has seen one of these?\" — and watch the hands go up. Keep the formula to exactly four words, because a four-word rule is what they will still have next year. Do not get drawn into which websites are real and which are fake; the test is the hurry, not the website."
+        },
+        {
+          "kind": "scenario",
+          "eyebrow": "Glitch is trying it",
+          "title": "\"FREE ROBUX! Click now — quick quick quick!\"",
+          "bullets": [
+            "It is shiny. It is free. It has a timer on it.",
+            "It wants your password, or your grown-up's card.",
+            "Glitch is not giving anything away. Glitch is taking."
+          ],
+          "callout": "Close it. Tell a grown-up. That is the whole move.",
+          "notes": "Play Glitch properly — a silly, greedy, hurrying voice — because a villain the room can laugh at is a villain they can say no to. The laughter is doing the work here: a child who finds the trick ridiculous is much harder to rush than a child who finds it frightening. Then land the two-step move, close it and tell a grown-up, and make sure \"tell a grown-up\" is attached to every single trick you show today."
+        },
+        {
+          "kind": "activity",
+          "eyebrow": "3 minutes · stand up",
+          "title": "Stand up if it is a trap",
+          "ask": "Everybody stand up next to your screen. I will read one out. If it is a TRAP, jump. If it is fine, sit down.",
+          "bullets": [
+            "\"Free skins, but only for the next 60 seconds!\" — jump",
+            "\"Do you want to be on my team?\" — sit down",
+            "\"Send me your password and I'll give you 1000 Robux\" — jump",
+            "\"Nice building!\" — sit down",
+            "\"Click this link to get a free pet, quick!\" — jump"
+          ],
+          "notes": "Physical movement at the twelve-minute mark is not a treat, it is what buys you the second half of the session — bodies at this age go stiff and attention goes with them. Make sure a grown-up has checked there is room to jump; on Zoom you cannot see trip hazards. Include the two harmless ones deliberately, because a child who learns that every message is dangerous either stops playing or stops listening, and neither is what you want."
+        },
+        {
+          "kind": "rules",
+          "eyebrow": "Knight Rule 4",
+          "title": "You never meet a game friend in real life",
+          "bullets": [
+            "Not at the park. Not at the shop. Not at a friend's house.",
+            "Not even if you have played together for a whole year.",
+            "A person in a game stays in the game."
+          ],
+          "callout": "If someone asks to meet you, that is the moment you tell a grown-up.",
+          "notes": "Expect the honest objection and welcome it: \"But he IS my friend.\" Do not argue the friendship — agree that playing together is real, and separate it from meeting. \"You can be real gaming friends forever and never meet. Meeting is the only part that is not allowed.\" Avoid the words \"stranger danger\" and avoid any description of what a bad grown-up might do; at this age the rule does the protecting, not the reason behind it."
+        },
+        {
+          "kind": "scenario",
+          "eyebrow": "The most important slide today",
+          "title": "\"Keep this a secret from your mum and dad\"",
+          "bullets": [
+            "A grown-up who says this is wrong. Every time.",
+            "A big kid who says this is wrong. Every time.",
+            "It does not matter how nice they have been to you.",
+            "You tell your grown-up straight away — today, not later."
+          ],
+          "callout": "Nice people never ask you to keep a secret from your parents.",
+          "notes": "Slow right down here and say it in a calm, ordinary voice — no drama, no scary tone, because the goal is a child who can repeat this without feeling frightened. Make the distinction they will ask about: a surprise party is a surprise everybody will know about soon, and this is different because it is meant to stay hidden forever. This is the slide where a child is most likely to start telling you something personal; if that happens, say warmly \"That sounds important — I want your grown-up to hear that one properly, not me on a screen\", note it for the teacher or host, and move on without asking a single follow-up question. Never probe in front of the group."
+        },
+        {
+          "kind": "rules",
+          "eyebrow": "Knight Rule 5",
+          "title": "Telling a grown-up is never the wrong move",
+          "bullets": [
+            "You are never in trouble for telling.",
+            "You are never in trouble for asking.",
+            "Not even if you clicked the thing. Not even if you told them your name.",
+            "If the first grown-up is busy, tell the next one."
+          ],
+          "callout": "Telling early makes it small. Waiting makes it big.",
+          "notes": "This is the rule that makes the other four work, so give it the most warmth of anything you say today. The barrier for this age is never knowledge, it is the fear of being told off or of losing the game — so name that fear out loud: \"You will not have your game taken away for telling the truth.\" Say the \"not even if you already clicked it\" line slowly, because a child who has already made a mistake is exactly who this sentence is for."
+        },
+        {
+          "kind": "activity",
+          "eyebrow": "3 minutes · draw it",
+          "title": "Draw your grown-up",
+          "ask": "Get your paper. Draw the grown-up you would tell. Then draw a second one, in case the first one is at work.",
+          "bullets": [
+            "It can be a mum, a dad, a nan, an auntie, a teacher, a carer.",
+            "Stick it somewhere you will see it. On the fridge is perfect.",
+            "Hold it up to the camera when you are done!"
+          ],
+          "callout": "Two grown-ups. Decided today, while nothing is wrong.",
+          "notes": "Deciding in advance is the whole point — in a real incident the hesitation is never about what to do, it is about who to go to. Insist on the second grown-up, because the first one is sometimes the problem and this is the only safe way to cover that without ever saying so. Let them hold the drawings up and praise every single one by name; the holding-up is what makes them keep it. If a child cannot think of anybody, say \"Your teacher counts, and so does the grown-up sitting with you right now\" and move on quickly."
+        },
+        {
+          "kind": "recap",
+          "eyebrow": "End of Session 1",
+          "title": "Five rules, on five fingers",
+          "bullets": [
+            "1 · Your name, your school and your street stay offline.",
+            "2 · A password is a secret — a grown-up at home only.",
+            "3 · Free plus hurry means trap.",
+            "4 · You never meet a game friend in real life.",
+            "5 · Telling a grown-up is never the wrong move.",
+            "Next week: the three things a trick always says."
+          ],
+          "callout": "Say them with me, on your fingers. Then go and tell your grown-up all five.",
+          "notes": "Do the full count-through on fingers at least twice, and the second time leave gaps for them to fill in — that is the real test of whether the half-hour worked. Give them one job for the week and only one: teach all five rules to somebody at home. It is a tiny task, it gets the rules said out loud three or four more times, and it brings the household in without asking the parents to do anything. Stay on the call for five minutes afterwards with your camera on, because a child who wants to tell you something will come back at the very end."
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "title": "What a Squire Does About It",
+      "subtitle": "Three warning words, one safe setting, and the sentence you say out loud",
+      "goal": "By the end of this half-hour a child can name the three things a trick says, knows an AI can be sure and wrong, and has said their asking-for-help sentence out loud at least once.",
+      "segments": [
+        {
+          "minutes": "0–3",
+          "label": "Hello again, and a quick finger check",
+          "slides": [
+            1,
+            2
+          ]
+        },
+        {
+          "minutes": "3–11",
+          "label": "The three things a trick says",
+          "slides": [
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "minutes": "11–17",
+          "label": "Make your own game safer",
+          "slides": [
+            8,
+            9
+          ]
+        },
+        {
+          "minutes": "17–22",
+          "label": "When a robot is sure and wrong",
+          "slides": [
+            10,
+            11
+          ]
+        },
+        {
+          "minutes": "22–27",
+          "label": "The four Squire moves, and the words to say",
+          "slides": [
+            12,
+            13
+          ]
+        },
+        {
+          "minutes": "27–30",
+          "label": "The Oath, and the exam",
+          "slides": [
+            14,
+            15
+          ]
+        }
+      ],
+      "slides": [
+        {
+          "kind": "title",
+          "eyebrow": "Digital Safety Knights · Squire Certification",
+          "title": "What a Squire Does About It",
+          "subtitle": "Session 2 of 2 · 30 minutes · bring paper and a pencil",
+          "notes": "Open by naming the difference, in words they will follow: \"Last week you learned the five rules. Today you learn what to DO.\" Ask who taught the five rules to somebody at home and make a real fuss of the hands that go up. Check whether anyone is new this week — if so, give them the five rules on five fingers in forty seconds before you start, because every single thing today sits on top of them."
+        },
+        {
+          "kind": "poll",
+          "eyebrow": "Fingers up",
+          "title": "How many rules can you remember?",
+          "ask": "Hold up a finger for every Knight Rule you can remember. Now let's say them together — I'll start each one and you finish it.",
+          "bullets": [
+            "\"Your name, your school and your street stay...\" (offline!)",
+            "\"A password is a...\" (secret!)",
+            "\"Free plus hurry means...\" (trap!)",
+            "\"You never meet a game friend in...\" (real life!)",
+            "\"Telling a grown-up is never...\" (the wrong move!)"
+          ],
+          "callout": "Five out of five. You are already most of the way to Squire.",
+          "notes": "The fill-in-the-gap format is far more reliable than asking them to recite, and it means the quiet children join in too. If the room genuinely cannot produce three or more of the five, spend two extra minutes here and shorten the AI segment later — the rules matter more than anything else in this session. Praise the room as a whole rather than individuals for this one, so nobody who forgot feels exposed."
+        },
+        {
+          "kind": "section",
+          "eyebrow": "Part one",
+          "title": "The three things a trick says",
+          "subtitle": "Learn these three and you can hear a trick coming.",
+          "notes": "Frame it as a superpower rather than a warning: \"Tricks are not clever. They always say one of three things, and once you know the three, you can hear them coming.\" Hold up three fingers and keep that gesture going for the whole segment, the same way you used five last week. Tell them there are only three and that you will say each one lots of times — predictability keeps this age calm."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "Trick word 1",
+          "title": "\"Hurry up!\"",
+          "bullets": [
+            "\"Quick, before it's gone!\" \"Only 10 seconds left!\"",
+            "A hurry is there to stop you thinking.",
+            "A Squire who is being hurried does the opposite: stops."
+          ],
+          "callout": "Nothing good ever runs out in ten seconds.",
+          "notes": "This is the easiest of the three for a six-year-old to spot, so start here and let them win. Connect it straight back to last week's \"free plus hurry means trap\" so the new idea lands on something they already own. Give them the physical move to go with it — hands off the screen, sit back, go and find a grown-up — because \"stop and think\" is an instruction a child this age cannot actually perform, and \"take your hands off\" is one they can."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "Trick word 2",
+          "title": "\"Keep it a secret\"",
+          "bullets": [
+            "\"Don't tell your mum.\" \"This is just between us.\"",
+            "This is the biggest warning sign there is.",
+            "You do not have to keep it. It was never your secret."
+          ],
+          "callout": "A secret from your parents is the warning sign itself.",
+          "notes": "The line that unlocks children here is \"it was never your secret\" — at this age a promise feels binding, and a child who has said \"I promise\" believes they must keep it. Say plainly that a promise to keep a secret from parents does not count and never counted. Keep your voice level and matter-of-fact; this is the sentence you want them to be able to repeat at the dinner table without any fear attached to it."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "Trick word 3",
+          "title": "\"You're so special\"",
+          "bullets": [
+            "\"You're the best player I've ever seen.\" \"You're my only real friend.\"",
+            "Said by someone who has only just met you.",
+            "Real friends say nice things slowly, over a long time."
+          ],
+          "callout": "Too nice, too fast, from somebody new. That is the warning sign.",
+          "notes": "This is the hardest of the three, because it asks a child to be careful about something that feels lovely — and because children are praised constantly by kind adults, so praise is not suspicious to them. The distinguishing feature to teach is speed, not kindness: a brand-new person being enormously nice within minutes. Be careful to say that compliments from people they know are completely fine, or you will have a room of children who flinch at being told they are good at something."
+        },
+        {
+          "kind": "activity",
+          "eyebrow": "3 minutes · shout which one",
+          "title": "Which trick is it?",
+          "ask": "I read the message. You shout which one: HURRY, SECRET, or SPECIAL!",
+          "bullets": [
+            "\"Free pet! The link closes in one minute!\" — HURRY",
+            "\"You are the most amazing builder I've ever met and we only just met.\" — SPECIAL",
+            "\"Don't tell your mum we're chatting.\" — SECRET",
+            "\"You're my best friend, quick, send me your password before my game closes!\" — all three at once",
+            "\"Want to be on my team?\" — none! That is just somebody being friendly."
+          ],
+          "notes": "The fourth item is the one worth slowing down for, because real tricks stack all three and a child who spots a stack is genuinely safe. The fifth exists to keep the room from becoming frightened of ordinary friendliness; make sure you end the drill on it. If the shouting gets chaotic, switch to three fingers — one, two, three — held up instead of voices, which works just as well and settles the room."
+        },
+        {
+          "kind": "section",
+          "eyebrow": "Part two",
+          "title": "Make your own game safer",
+          "subtitle": "One setting, one job for a grown-up.",
+          "notes": "Change gear here — the first eleven minutes have been loud and this part is calmer and more practical. Say up front that this bit has a job for the grown-up sitting with them, so the adults in the room start paying attention. Do not attempt to walk children through menus live; at this age the setting is the parent's job and the child's job is to ask for it."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "The one setting",
+          "title": "Friends-only chat",
+          "bullets": [
+            "It means only your real friends can message you.",
+            "It does not stop you playing. You can still play with everybody.",
+            "Ask your grown-up to turn it on tonight. That is your job this week."
+          ],
+          "callout": "Your game stays fun. The strangers stop being able to type at you.",
+          "notes": "The second bullet is the important one — children refuse safety settings they believe will cut them off from their friends, so deal with that before they can worry about it. Give the grown-ups one concrete sentence to search for: the parental or privacy controls in the game's own settings, under who can chat or message. If a child says they are not allowed to change anything, that is the right answer and tell them so: their job is to ask, and the grown-up's job is to decide."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "Part three · meet Bot",
+          "title": "A robot can sound very sure and still be wrong",
+          "bullets": [
+            "An AI helper always answers. It never says \"I don't know\".",
+            "It can say something wrong in a very confident voice.",
+            "Sounding sure is not the same as being right.",
+            "Anything important: check with a grown-up or a real book."
+          ],
+          "callout": "Bot is helpful. Bot is also sometimes wrong. Both are true.",
+          "notes": "Pitch Bot as well-meaning rather than sneaky — Glitch is the villain and Bot is not, and blurring them leaves children frightened of homework tools they will use every week. The idea to land is confidence without knowledge, which is genuinely new to a six-year-old, for whom a sure voice has always meant a correct answer. Keep the example harmless and funny rather than factual-sounding; the feeling you want is \"check it\", not \"don't use it\"."
+        },
+        {
+          "kind": "activity",
+          "eyebrow": "2 minutes · thumbs",
+          "title": "Catch the robot",
+          "ask": "I will say something in my most confident robot voice. Thumbs UP if it is right, thumbs DOWN if the robot has got it wrong.",
+          "bullets": [
+            "\"Cats have four legs.\" — up",
+            "\"The moon is made of cheese. I am absolutely certain.\" — down",
+            "\"There are eight days in a week. Definitely.\" — down",
+            "\"Fish live in water.\" — up"
+          ],
+          "callout": "Did you notice? The robot sounded exactly as sure when it was wrong.",
+          "notes": "Use the same flat, certain robot voice for the true and the false ones — that identical delivery is the entire teaching point and the children will spot it themselves if you do it properly. Then ask the question on the callout and wait for them to realise it; the realisation is worth far more than you explaining it. Keep the false claims obviously silly so no child leaves with a new wrong fact."
+        },
+        {
+          "kind": "rules",
+          "eyebrow": "Part four",
+          "title": "The four Squire moves",
+          "bullets": [
+            "1 · STOP. Hands off the screen.",
+            "2 · Don't click. Don't answer. Don't send anything.",
+            "3 · Tell your grown-up. Today, not tomorrow.",
+            "4 · Remember you are not in trouble. Not even a bit."
+          ],
+          "callout": "Four moves, every single time, for every single trick.",
+          "notes": "Give each move a hand action and do all four together twice — palms up and away for stop, hands behind the back for don't click, a point to the door for tell, and a thumbs-up to themselves for not in trouble. Children this age remember sequences through their bodies far better than through words, and the actions survive long after the slide is forgotten. Make the point that it is the same four moves for everything, because one procedure they can actually recall beats five they cannot."
+        },
+        {
+          "kind": "activity",
+          "eyebrow": "3 minutes · say it out loud",
+          "title": "Practise the sentence",
+          "ask": "Everybody say this with me, three times, getting louder: \"Something happened on my game and I need some help.\"",
+          "bullets": [
+            "That is the whole sentence. You do not need to explain anything first.",
+            "You can say it at breakfast. You can say it at bedtime.",
+            "You can write it on paper and hand it over, if saying it is hard."
+          ],
+          "callout": "Ten words. That is all it takes to get help.",
+          "notes": "This is the single highest-value three minutes in the whole Squire track, and it is the one facilitators cut when they are running late — do not cut it. The knowledge is never the problem at this age; starting the conversation is, and a sentence they have already said out loud three times is one they can produce when they are upset. Offer the written option sincerely, because some children in the room will never say it aloud and a note pushed across a table works perfectly well. Say the thing their grown-ups would want them to hear: almost every grown-up's first feeling, after the first few seconds, is being glad they were told."
+        },
+        {
+          "kind": "rules",
+          "eyebrow": "The Squire's Oath",
+          "title": "Say it out loud to be a Squire",
+          "bullets": [
+            "I keep my name and my school to myself.",
+            "I never keep a secret from my grown-up.",
+            "When something feels wrong, I tell someone straight away."
+          ],
+          "callout": "Stand up, say it with me, and you are a Squire.",
+          "notes": "Have everybody stand for this and read it one line at a time, leaving a gap for the room to repeat each line after you. It sounds corny when you describe it beforehand and it does not feel that way in the room — this is the moment the half-hour turns from a lesson into something they have chosen. These three lines are the text printed on the certificate, so read them exactly as written. Then clap for them, properly and for a few seconds; a room of six-year-olds will remember the clap longer than the slides."
+        },
+        {
+          "kind": "recap",
+          "eyebrow": "End of Session 2",
+          "title": "You are never in trouble for asking for help",
+          "bullets": [
+            "Your exam is 12 questions and you get 15 minutes. All of it came from these two half-hours.",
+            "A grown-up can read the questions out to you if you want.",
+            "If you do not pass, you can try again tomorrow, as many times as you like.",
+            "Pass it and your Squire certificate has your own name on it."
+          ],
+          "callout": "If something on your game is worrying you right now, tell your grown-up today. Nobody is in trouble for asking.",
+          "notes": "Say the retake line twice and mean it — fear of failing is real at this age and it is the thing that stops a child starting the exam at all. Tell the grown-ups openly that reading the questions aloud is allowed and expected, because the exam is testing the safety ideas and not the reading. End on the callout and leave it on screen. Stay on the call with your camera on for five or ten minutes afterwards: at every age, including this one, the child who needs to tell somebody something turns up after the session has finished, not during it."
+        }
+      ]
+    }
+  ],
+  "exam": {
+    "passMark": 80,
+    "minutes": 15,
+    "shuffle": true,
+    "questions": [
+      {
+        "topic": "Knight Rule 1",
+        "q": "A new player asks what school you go to. What do you do?",
+        "choices": [
+          "Don't tell them, and tell a grown-up",
+          "Tell them a little bit",
+          "Tell them"
+        ],
+        "answer": 0,
+        "why": "Nice people in a game never need to know your school. Your school, your street and your whole name always stay offline."
+      },
+      {
+        "topic": "Knight Rule 1",
+        "q": "Which one is safe to say in a game?",
+        "choices": [
+          "My street name",
+          "My favourite animal",
+          "My house number"
+        ],
+        "answer": 1,
+        "why": "Fun things about you are fine. Things that help someone find you are not."
+      },
+      {
+        "topic": "Knight Rule 2",
+        "q": "Who is allowed to know your password?",
+        "choices": [
+          "The nice player who helped you",
+          "Your best friend",
+          "A grown-up at home"
+        ],
+        "answer": 2,
+        "why": "A password is like your front door key. Only a grown-up at home gets it — not even your best friend."
+      },
+      {
+        "topic": "Knight Rule 3",
+        "q": "A pop-up says \"FREE ROBUX! HURRY!\" What is it?",
+        "choices": [
+          "A trap",
+          "A real prize",
+          "A game update"
+        ],
+        "answer": 0,
+        "why": "Free plus hurry means trap. Real free things never rush you."
+      },
+      {
+        "topic": "Knight Rule 3",
+        "q": "A player gives you a free skin. Then they say you owe them. What now?",
+        "choices": [
+          "Keep it quiet",
+          "Tell a grown-up",
+          "Give them something back"
+        ],
+        "answer": 1,
+        "why": "A surprise gift from a stranger is often a trick to make you feel like you owe them. Tell a grown-up before you do anything."
+      },
+      {
+        "topic": "Secrets",
+        "q": "Someone says \"keep this a secret from your mum and dad\". What is that?",
+        "choices": [
+          "Kind of them",
+          "Fine if they are nice",
+          "Always wrong — tell straight away"
+        ],
+        "answer": 2,
+        "why": "That sentence is the warning sign itself. It was never your secret, so you do not have to keep it."
+      },
+      {
+        "topic": "Knight Rule 4",
+        "q": "A game friend asks to meet you at the park. What do you say?",
+        "choices": [
+          "No, and tell a grown-up",
+          "Only if it is close by",
+          "Yes, we are friends"
+        ],
+        "answer": 0,
+        "why": "A person from a game stays in the game. Being asked to meet is the moment you tell a grown-up."
+      },
+      {
+        "topic": "\"Hurry up!\"",
+        "q": "Why does a trick say \"you only have 10 seconds\"?",
+        "choices": [
+          "To be helpful",
+          "To stop you thinking",
+          "Because it is true"
+        ],
+        "answer": 1,
+        "why": "A hurry is there to make you click before you think. Take your hands off the screen and go and find a grown-up."
+      },
+      {
+        "topic": "\"You're so special\"",
+        "q": "Someone you just met says you are the best player ever and their only friend. What is that?",
+        "choices": [
+          "A new best friend",
+          "A joke",
+          "A trick"
+        ],
+        "answer": 2,
+        "why": "Too nice, too fast, from somebody brand new is a warning sign. Real friends say nice things slowly, over a long time."
+      },
+      {
+        "topic": "Friends-only chat",
+        "q": "What does friends-only chat do?",
+        "choices": [
+          "Only your real friends can message you",
+          "Nobody can play with you",
+          "It makes the game faster"
+        ],
+        "answer": 0,
+        "why": "You can still play with everybody. Strangers just cannot type at you any more. Ask your grown-up to turn it on."
+      },
+      {
+        "topic": "AI",
+        "q": "A robot helper answers your question. Can it be wrong?",
+        "choices": [
+          "No, robots know everything",
+          "Yes, even when it sounds very sure",
+          "Only sometimes on school days"
+        ],
+        "answer": 1,
+        "why": "Sounding sure is not the same as being right. For anything important, check with a grown-up or a real book."
+      },
+      {
+        "topic": "Knight Rule 5",
+        "q": "You told a grown-up about something scary online. Are you in trouble?",
+        "choices": [
+          "Maybe a little",
+          "Yes",
+          "No — never"
+        ],
+        "answer": 2,
+        "why": "You are never in trouble for telling, and never in trouble for asking. Not even if you already clicked the thing."
+      }
+    ]
+  },
+  "certificate": {
+    "title": "Certified Digital Safety Squire",
+    "subtitle": "Completed the two-part Digital Safety Knights Squire programme and passed the Squire examination.",
+    "oath": "I keep my name and my school to myself. I never keep a secret from my grown-up. When something feels wrong, I tell someone straight away.",
+    "rank": "Squire"
+  }
+}

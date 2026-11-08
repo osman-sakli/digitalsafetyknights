@@ -176,6 +176,14 @@
     "watch.html": {
       "title": "Kısa Videolar — Digital Safety Knights",
       "description": "Çocuklara çevrimiçi güvende kalmayı öğreten kısa animasyon filmler. Her gün yenisi. Reklam yok, takip yok."
+    },
+    "certification.html": {
+      "title": "Sertifika Programı — Digital Safety Knights",
+      "description": "İki saatlik, canlı çevrimiçi dijital güvenlik sertifika programı — bir saat artı bir saat. 6 yaşından yetişkine dört ayrı yaş programı; sunumlar, eğitmen kılavuzu, sınav ve sertifika. Öğretim ücretsiz."
+    },
+    "certification-exam.html": {
+      "title": "Sertifika Sınavı — Digital Safety Knights",
+      "description": "Digital Safety Knights sertifika sınavına girin: dört yaş programı, geçmek için %80, sınırsız tekrar, ücretsiz. Cevaplarınız cihazınızdan hiç çıkmaz."
     }
   },
   "es": {
@@ -354,6 +362,14 @@
     "watch.html": {
       "title": "Videos Cortos — Digital Safety Knights",
       "description": "Cortometrajes animados que enseñan a los niños a mantenerse seguros en línea. Uno nuevo cada día. Sin anuncios, sin rastreo."
+    },
+    "certification.html": {
+      "title": "Programa de Certificación — Digital Safety Knights",
+      "description": "Una certificación en seguridad digital de dos horas, en vivo por internet y gratuita, en cuatro niveles por edad desde los 6 años hasta adultos: con diapositivas, guía para el facilitador, examen y certificado."
+    },
+    "certification-exam.html": {
+      "title": "Examen de Certificación — Digital Safety Knights",
+      "description": "Presenta el examen de certificación de Digital Safety Knights: cuatro niveles por edad, 80 % para aprobar, intentos ilimitados y gratis. Tus respuestas nunca salen de tu dispositivo."
     }
   },
   "fr": {
@@ -532,6 +548,14 @@
     "watch.html": {
       "title": "Vidéos courtes — Digital Safety Knights",
       "description": "Des courts métrages animés qui apprennent aux enfants à rester en sécurité en ligne. Un nouveau film chaque jour. Sans publicité et sans aucun pistage."
+    },
+    "certification.html": {
+      "title": "Programme de certification — Digital Safety Knights",
+      "description": "Une certification en sécurité numérique de deux heures, animée en direct en ligne et gratuite, en quatre parcours par âge de 6 ans à l’adulte : diapositives, guide de l’animateur, examen et certificat."
+    },
+    "certification-exam.html": {
+      "title": "Examen de certification — Digital Safety Knights",
+      "description": "Passez l’examen de certification Digital Safety Knights : quatre parcours par âge, 80 % pour réussir, tentatives illimitées, gratuit. Vos réponses ne quittent jamais votre appareil."
     }
   }
 }

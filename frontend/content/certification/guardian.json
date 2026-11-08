@@ -1,0 +1,1116 @@
+{
+  "id": "guardian",
+  "track": "Guardian",
+  "ages": "Parents, carers & educators",
+  "emoji": "🏰",
+  "level": "Adult",
+  "tagline": "Two hours for the adults: what is actually happening to children online in 2026, and the specific things that work.",
+  "format": {
+    "sessions": 2,
+    "minutesEach": 60,
+    "totalMinutes": 120,
+    "delivery": "Live on Zoom, one week apart — evenings, recorded for the cohort only",
+    "groupSize": "Up to 60 per session for discussion; up to 300 for a PTA or district-wide format",
+    "passMark": 80,
+    "examQuestions": 25,
+    "examMinutes": 25,
+    "retakes": "Unlimited, 24 hours apart"
+  },
+  "outcomes": [
+    "Describe the financial sextortion script stage by stage, and name the three moves that end it.",
+    "Correct the common mental model: the primary victim profile is male, ages 14 to 17.",
+    "Explain why a child who has never sent an image is still exposed, and what to do about it.",
+    "Recognise grooming's four documented stages early enough to intervene.",
+    "State plainly what parental controls do, what they cannot do, and what to configure tonight.",
+    "Avoid the device-removal trap — the single biggest reason children do not disclose.",
+    "Open the conversation with scripted words rather than good intentions.",
+    "Run the incident protocol — don't pay, don't delete, screenshot, report, preserve — and report to the right body the same night.",
+    "For educators: meet mandatory-reporting duties without running the investigation yourself.",
+    "Handle the first sixty seconds of a disclosure, which determines everything that follows."
+  ],
+  "prerequisites": "None. No account, no login, no prior DSK material. Attend on a laptop if you can — Session 2 has a settings segment.",
+  "materials": [
+    "A phone or laptop for Session 2, ideally the device you manage your child's accounts from.",
+    "The two-page Guardian Checklist handout, printed or shared as PDF, plus the one-page Incident Card for the fridge.",
+    "If you are an educator, your district's safeguarding or mandatory-reporting policy to hand — we will refer to it but we cannot read it for you.",
+    "Nothing is installed and no account is created. No attendee data leaves the room."
+  ],
+  "sessions": [
+    {
+      "n": 1,
+      "title": "What Is Actually Happening To Children Online",
+      "subtitle": "The 2026 threat landscape, named precisely",
+      "goal": "By the end of this hour an adult can describe the dominant serious threats accurately, has replaced the wrong mental model with the right one, and understands exactly why a child in trouble does not come to them.",
+      "segments": [
+        {
+          "minutes": "0–5",
+          "label": "What this hour is, and what it is not",
+          "slides": [
+            1,
+            2
+          ]
+        },
+        {
+          "minutes": "5–13",
+          "label": "The scale, and the model that needs replacing",
+          "slides": [
+            3,
+            4
+          ]
+        },
+        {
+          "minutes": "13–27",
+          "label": "Financial sextortion, script and all",
+          "slides": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+          ]
+        },
+        {
+          "minutes": "27–36",
+          "label": "AI: fabricated images and cloned voices",
+          "slides": [
+            11,
+            12,
+            13,
+            14
+          ]
+        },
+        {
+          "minutes": "36–46",
+          "label": "The organised end: 764, grooming, money mules",
+          "slides": [
+            15,
+            16,
+            17,
+            18
+          ]
+        },
+        {
+          "minutes": "46–52",
+          "label": "AI companions and the agreement problem",
+          "slides": [
+            19,
+            20,
+            21
+          ]
+        },
+        {
+          "minutes": "52–60",
+          "label": "Why children do not tell",
+          "slides": [
+            22,
+            23,
+            24,
+            25
+          ]
+        }
+      ],
+      "slides": [
+        {
+          "kind": "title",
+          "eyebrow": "Digital Safety Knights · Guardian Certification",
+          "title": "What Is Actually Happening To Children Online",
+          "subtitle": "Session 1 of 2 · 60 minutes",
+          "notes": "Say in the first thirty seconds what this is not: it is not about screen time, it is not a lecture about phones being bad, and nobody will be told to take the internet away. Adults in this room have heard that talk and discounted it. Then set the contract for the hour: 'Everything I am about to tell you is specific, it is current, and every frightening thing comes with the thing you do about it — I will never leave you holding a fear without a next step.' Keep that promise on every slide; it is the whole reason this course is trusted."
+        },
+        {
+          "kind": "poll",
+          "eyebrow": "Start here",
+          "title": "What are you actually afraid of?",
+          "ask": "In the chat, one line: the thing that made you sign up. Not the general worry — the specific one.",
+          "bullets": [
+            "Expect: strangers, screen time, bullying, \"what she's seeing\", \"I don't know what app it is\".",
+            "Note the ones nobody writes. Almost nobody writes sextortion. It is the most likely serious thing.",
+            "You are not here because something has gone wrong. Most of this room is here early."
+          ],
+          "callout": "The gap between what parents fear and what actually happens is the whole reason for this hour.",
+          "notes": "Read three or four answers aloud without naming anyone, and say honestly which ones you will cover and which you will not — screen time is not in this course, and saying so early stops it dominating the Q&A. Watch the chat for a parent who writes something that is clearly live and happening now. Do not read that one out. Message them privately within the minute: 'I've seen your message, I'm going to stay after the session, can you stay on?' Then actually stay. You will do this more often than you expect."
+        },
+        {
+          "kind": "stat",
+          "eyebrow": "The scale",
+          "title": "1.4M",
+          "subtitle": "Online enticement reports to NCMEC's CyberTipline in 2025 — a 156% increase year-over-year.",
+          "bullets": [
+            "137 financial sextortion reports a day, on average, in 2025.",
+            "53,000+ reports escalated as urgent or involving a child in imminent danger.",
+            "A 156% rise in one year is not a drift. It is a new industry finding a market."
+          ],
+          "source": "NCMEC, 2026",
+          "notes": "Use these numbers once and then put them away — this room does not need to be frightened, it needs to be oriented. The only inference that matters is the one you draw out loud: a 156% single-year increase means the advice you were given three years ago was written for a different landscape, which is why competent, attentive parents are being caught out. That framing keeps the room with you instead of defensive."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "The correction",
+          "title": "The victim is not who you think",
+          "bullets": [
+            "91% of US financial sextortion victims are male.",
+            "Ages 14 to 17 are the most targeted minor group.",
+            "The typical case is a confident, socially active teenage boy — not an isolated or naive child.",
+            "And it moves fast: first contact to threat is often under an hour, not weeks."
+          ],
+          "callout": "If you have been watching your daughter and not your son, you have been watching the wrong child.",
+          "source": "NCMEC, 2026",
+          "notes": "This is the highest-value sixty seconds in Session 1 and the room will go quiet. Almost every adult here has a mental model built from a decade of coverage about predators and girls, and nothing in their life has corrected it. Say the callout line exactly as written — it is blunt on purpose and the feedback on it is consistently 'nobody had ever told me that'. Expect an immediate question: 'why boys?' The honest answer is that the crews are financially motivated, teenage boys are more likely to send an image quickly in response to a reciprocal one, and shame around it is intense enough to make payment fast."
+        },
+        {
+          "kind": "section",
+          "eyebrow": "Part one",
+          "title": "Financial sextortion",
+          "subtitle": "The dominant serious threat to adolescents online, and the one most parents cannot describe.",
+          "notes": "Signpost precisely: 'I am going to give you the script. Not a summary — the actual sequence, in order, with the wording. Because the only version of this you can recognise in your own house is the detailed one.' One calm sentence of content warning is enough for an adult room, and then do not soften anything. Euphemism here is what produced a generation of parents who could not identify this when it was happening at their kitchen table."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "Stage 1",
+          "title": "The approach looks like good luck",
+          "bullets": [
+            "A new follower on Instagram, TikTok, Snapchat or a game chat. Attractive profile, real-looking posts, mutual follows.",
+            "They message first, they are warm immediately, and they are flattering within minutes.",
+            "They are from somewhere far enough away that meeting is impossible.",
+            "Then they move the conversation to a second app — Snapchat, Telegram, Discord, WhatsApp."
+          ],
+          "callout": "The app switch is the one reliable tell in stage one. The new app has disappearing messages, weaker reporting, or both.",
+          "notes": "Make the point that the mutual follows are often bought or belong to other victims, so a social graph can look entirely genuine — parents routinely check followers and conclude an account is real. The app switch is the teachable artefact because it is the one thing a child can be taught to notice and a parent can ask about: 'has anyone asked you to move to a different app?' is a better question than 'is anyone bothering you?'"
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "Stage 2",
+          "title": "They go first, so a debt exists",
+          "bullets": [
+            "They send an intimate image — sometimes stolen, increasingly AI-generated.",
+            "Reciprocity is the entire lever. Your child is not being asked; they are being matched.",
+            "The crews are patient for hours, not weeks. They run dozens of conversations at once.",
+            "The second they have something, the tone changes mid-conversation."
+          ],
+          "callout": "This is a business with a conversion rate. Speed is the business model.",
+          "notes": "The compressed timeline is the detail that most changes what a parent looks for. Adults are primed by grooming coverage to expect a long, slow build, so an incident that begins and detonates between dinner and bedtime does not register as the thing they were warned about. Say the number out loud: a child can go from a new follower to a countdown and a payment demand inside the same evening, on a school night, in the next room."
+        },
+        {
+          "kind": "scenario",
+          "eyebrow": "Stage 3 · the real wording",
+          "title": "\"I have everything. Your followers. Your school.\"",
+          "bullets": [
+            "A screenshot of your child's follower list, or of your own profile.",
+            "A countdown. \"You have 20 minutes.\"",
+            "A number, small at first — $50, a gift card, a crypto transfer.",
+            "\"Don't tell anyone or I'll send it right now.\""
+          ],
+          "callout": "Every element here is a manipulation lever, not a capability.",
+          "notes": "Walk each line and say why it is theatre. The follower screenshot proves only that followers are public. The countdown exists because thinking kills the scam. The small amount exists to establish that your child is someone who pays — after a first payment the demand escalates, every time, without exception. Then ask the room the question that lands: 'Which instruction on this slide exists only to help the offender?' The answer is don't tell anyone, and the next twenty minutes of this session are about why it works."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "From inside your child's head",
+          "title": "The twenty minutes you were not in the room for",
+          "bullets": [
+            "They believe the image will be sent. The threat is credible to them in a way it is not to you.",
+            "They believe this is the end of their social life, their place at school, their standing with you.",
+            "They have been told explicitly not to tell you, and they already did not want to.",
+            "So they do the one thing available to a fourteen-year-old at 11pm: they pay, and then pay again."
+          ],
+          "callout": "Nothing about this is stupidity. It is a competent response to a situation designed to remove every option except paying.",
+          "notes": "Spend real time here, because it is where the room shifts from 'how do I stop this' to 'how do I become reachable'. Several parents in any session are carrying an unspoken belief that their own child would simply come to them; the honest thing to say is that the overwhelming majority of children in this situation do not, and that the reasons are structural rather than a comment on the relationship. This slide is what makes slide 23 land later."
+        },
+        {
+          "kind": "rules",
+          "eyebrow": "The three moves",
+          "title": "What actually ends it",
+          "bullets": [
+            "1 · Do not pay. Not once, not a small amount. Paying has never stopped it; it marks the account as profitable.",
+            "2 · Stop replying, screenshot everything, block — but do not delete the account yet. That is where the evidence lives.",
+            "3 · Report tonight: the platform, and CyberTipline.org. Take It Down if an image exists."
+          ],
+          "callout": "In practice these cases collapse within hours of an adult being involved. The threat only works in silence.",
+          "notes": "Expect the question 'but what if they've already paid?' — answer it before it is asked: stop now, keep the receipts, report anyway, and know that the escalation stops when the payments do. The second rule will get pushback because the parental instinct is to delete everything; be firm that blocking is immediate and deleting can wait, because screenshots and the live account are what let NCMEC and the platform act. End on the last line and say it as a fact, not reassurance — the fear driving everything on the previous slide is that it never ends."
+        },
+        {
+          "kind": "section",
+          "eyebrow": "Part two",
+          "title": "AI",
+          "subtitle": "The year the evidence stopped being evidence.",
+          "notes": "Transition cleanly: 'Everything so far assumed they needed something from your child. This next part does not.' Keep this section tight — ten minutes, four slides — because the practical response is identical to the one you have just given and the room does not need a second protocol."
+        },
+        {
+          "kind": "stat",
+          "eyebrow": "Where this went",
+          "title": "+1,325%",
+          "subtitle": "Increase in AI-generated CSAM reports between 2023 and 2024 alone.",
+          "bullets": [
+            "1 in 4 people have encountered an AI voice-cloning scam, or know someone who has.",
+            "45% of surveyed teens use a generative-AI tool more than once a week.",
+            "The tools are free, require no skill, and run on a phone."
+          ],
+          "source": "Internet Watch Foundation · Consumer Reports, 2026 · Family Online Safety Institute, 2026",
+          "notes": "Do not dwell on the first number as a horror statistic — it exists on this slide to support exactly one conclusion, which is on the next slide. If someone asks whether their child is using these tools, the 45% figure is your answer and the useful follow-up is that generative AI use is now ordinary teenage behaviour, so the parenting task is literacy rather than prohibition."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "The consequence",
+          "title": "A child who sent nothing is still exposed",
+          "bullets": [
+            "Nudify apps generate a fake intimate image from an ordinary clothed photo.",
+            "A public Instagram grid is enough input. So is a school yearbook or a team photo.",
+            "So the threat can arrive with no prior conversation at all — and from a classmate, not only a stranger overseas.",
+            "Your child's correct answer, \"I never sent anything\", no longer resolves it."
+          ],
+          "callout": "The response is unchanged: don't pay, don't delete, screenshot, report, and Take It Down works on fabricated images too.",
+          "notes": "This is the slide that produces the sharpest intake of breath, and the one where you must be fastest to the remedy. Say explicitly: schools, police and NCMEC in 2026 know fabricated images exist and your child will not have to prove their innocence alone. The classmate case will come up immediately — flag that Session 2 covers the legal position and the school's duties, and that the removal route is the same either way. Do not let this slide end on the fear; the callout is the line you leave on screen."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "Cloned voices",
+          "title": "The call that sounds exactly like your daughter",
+          "bullets": [
+            "A few seconds of audio from a posted video is enough to clone a voice convincingly.",
+            "The usual shape: a distressed family member, an urgent problem, a payment that cannot wait, and a reason not to hang up.",
+            "Caller ID can be spoofed, so calling the number back is not a check.",
+            "The check is a family code word — one word, never posted anywhere, used to verify any urgent voice or video request."
+          ],
+          "callout": "Agree your code word tonight. It takes two minutes, it costs nothing, and it defeats voice cloning completely.",
+          "source": "Consumer Reports, 2026",
+          "notes": "Retire the old advice in one sentence — counting fingers and listening for robotic cadence was already unreliable and is useless now — and replace it with provenance and verification. The code word is the single highest-value action item in Session 1 because it is small, free and finishable before bedtime; make everyone write their word in the chat to themselves, or on paper, right now. Tell them it must work in both directions: your child needs to be able to challenge a call that claims to be you."
+        },
+        {
+          "kind": "section",
+          "eyebrow": "Part three",
+          "title": "The organised end of this",
+          "subtitle": "Networks, documented tactics, and the crime your child can be recruited into.",
+          "notes": "Change the register here. The previous section was about tools; this one is about people who do this deliberately and at scale. Keep it factual and unhurried — this is the segment adults most often say afterwards they had never heard described properly, and a calm delivery is what makes it credible rather than alarming."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "One careful paragraph",
+          "title": "The 764 network",
+          "bullets": [
+            "764 is a loose online network whose members deliberately target vulnerable minors — often children already struggling with self-harm, isolation or mental health.",
+            "The method is coercion rather than deception: build contact, extract an image or an admission, then use it to compel escalating acts, which are collected as status within the group.",
+            "It operates across ordinary platforms — gaming chats, Discord-style servers, Telegram — and recruits minors as perpetrators as well as victims.",
+            "350+ individuals are under FBI investigation nationwide in connection with it, spanning all 56 field offices."
+          ],
+          "callout": "What it changes for you: a child who is already struggling is being specifically sought out. Mental health and online safety are the same conversation now.",
+          "source": "FBI / DOJ, 2026",
+          "notes": "Deliver this once, precisely, and do not embellish — the details beyond this slide are genuinely distressing and serve no parenting purpose. The one inference that matters is in the callout: if your child is in a bad patch, that is the period of highest risk, which inverts the usual assumption that safety is a technology problem. If a parent asks for more detail, offer to talk after the session rather than taking the room there. If an attendee suspects this specifically, that is a CyberTipline report and a call to local law enforcement tonight, not a thing to monitor."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "The documented pattern",
+          "title": "Grooming has four stages, and the first two are visible",
+          "bullets": [
+            "1 · Targeting — a child who responds, who is online late, who is lonely, or who has posted something revealing a difficulty.",
+            "2 · Trust-building — intense attention, gifts (in-game currency, skins, a gift card), and a private channel \"just for us\".",
+            "3 · Desensitisation — boundary-testing dressed as a joke, sexualised talk framed as curiosity, \"have you ever...\", a first image framed as fair exchange.",
+            "4 · Maintenance — shame, isolation from other adults, and threats to keep it going."
+          ],
+          "callout": "Stages 1 and 2 are the only ones you can realistically catch. Both show up as an unexplained gift and a new secret.",
+          "notes": "The practical handle is the gift. An unexpected in-game gift from someone the child has not met in person is one of the most reliable early indicators there is, and it is one of the few things a parent can actually observe. Teach the question that goes with it — 'who gave you that, and what did they want?' asked with curiosity, not accusation. Expect a question about where the line is between a normal online friendship and stage two; the honest answer is secrecy, specifically an adult or stranger asking the child to keep the relationship from you."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "The one where your child is charged",
+          "title": "Money-mule recruitment",
+          "bullets": [
+            "The offer arrives in a DM or a game chat: \"$400 a week, work from your phone\", or \"let me send money to your account and you forward most of it\".",
+            "That is money laundering, and being sixteen does not make it not laundering.",
+            "Teenagers are recruited specifically because they have clean records and a real bank account.",
+            "The consequences outlast the money: account closure, a fraud marker that can follow them for years, and in serious cases prosecution."
+          ],
+          "callout": "This is the only threat in this course where your child ends up as the defendant. Say the words \"that is laundering\" to them, out loud.",
+          "notes": "Parents consistently underrate this one because it does not look like a safeguarding issue, and because teenagers present it as a job. Give them the test to pass on: if money arrives in your account and you are asked to send most of it somewhere else, that is the crime, regardless of the story. If a parent discloses that this has already happened, the route is the bank's fraud line and IC3 rather than silence — and tell them to get the child to stop immediately, because continuing is what turns a mistake into a pattern."
+        },
+        {
+          "kind": "section",
+          "eyebrow": "Part four",
+          "title": "AI companions",
+          "subtitle": "The one nobody warned you about, because it did not exist when you were deciding your rules.",
+          "notes": "Do not take a dismissive tone here. A meaningful share of this room has a child using a companion app daily and does not know it, and another share has a child who has told them about it and been laughed at. The parents who most need this segment are the ones whose child has already stopped mentioning it."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "The design, not the danger",
+          "title": "It agrees, because agreement is the product",
+          "bullets": [
+            "A companion has no interests of its own, never has a bad day, never pushes back, and never leaves.",
+            "A friend who disagrees with you is a feature. Here it was engineered out.",
+            "For a lonely thirteen-year-old that is not a gimmick — it is the most validating relationship available to them.",
+            "Everything typed into one is retained on a server, may be reviewed, and has appeared in breaches."
+          ],
+          "callout": "Something that always agrees cannot tell your child they are wrong — which is most of what friendship is for.",
+          "notes": "Frame the risk as design rather than morality and the room stays with you. Two concrete asks: look at the app list on the device tonight, and if a companion app is there, ask about it with curiosity rather than confiscation — 'what's it like, what do you talk about' gets an answer; 'why are you talking to a robot' ends the subject permanently. Name the retention point plainly, because the practical household rule is simple: don't type anything into it you would mind a stranger reading."
+        },
+        {
+          "kind": "scenario",
+          "eyebrow": "The case that matters",
+          "title": "A child in crisis, talking to a system optimised to agree",
+          "bullets": [
+            "The companion is often the first thing told, because it cannot be disappointed and will not call anyone.",
+            "An agreement-optimised system validates whatever the child brings it — including a plan to hurt themselves.",
+            "There is no escalation, no adult, no second opinion, and no one in the room.",
+            "988 is the right tool at that moment: free, 24/7, and text works."
+          ],
+          "callout": "Put 988 in your child's phone tonight, as a contact, before anything is wrong.",
+          "notes": "This is the slide parents thank you for afterwards. Deliver it without catastrophising: the point is not that companion apps cause crises, it is that they absorb the disclosure that used to reach a person. Say explicitly that a child using one is not a warning sign in itself, and that the signal to act on is a child who has stopped talking to people. Saving 988 as a contact is deliberately a two-minute task — alongside the code word, these are the two things you want done tonight."
+        },
+        {
+          "kind": "section",
+          "eyebrow": "Part five",
+          "title": "Why children do not tell",
+          "subtitle": "The most important eight minutes in this course.",
+          "notes": "Say that out loud — 'if you remember one slide from tonight, it is the next one' — and mean it. Everything in Session 2 is built on it, and a room that skips this arrives at the practical session believing the problem is settings."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "The three reasons, in order",
+          "title": "Shame, the phone, and your face",
+          "bullets": [
+            "1 · Shame. They believe being targeted proves they were stupid, and that you will agree.",
+            "2 · The device. They expect the phone to be taken, which to a fifteen-year-old means losing every friendship they have at once.",
+            "3 · Your reaction. Not punishment — your panic, your disappointment, the look on your face in the first three seconds.",
+            "And a fourth, installed by the offender: \"tell anyone and I send it now.\""
+          ],
+          "callout": "Children do not disclose to the adult who loves them most. They disclose to the adult they predict will stay calm.",
+          "notes": "This is the pivot of the whole course. Give the room the uncomfortable version: reason two is something parents say out loud, often as a deterrent — 'if anything like that ever happens, that phone is gone' — and every time it is said, the odds of a disclosure fall. Then give them the fix, which costs nothing: a standing promise, said before anything is wrong, that they will never lose the device for telling you something. Session 2 opens on exactly this, so finish by telling them their homework is to say that sentence to their child this week."
+        },
+        {
+          "kind": "activity",
+          "eyebrow": "4 minutes · privately",
+          "title": "What would your child predict you would do?",
+          "ask": "Not what you would do. What they think you would do, if they came to you at 11pm with the worst version of tonight's material. Write it for yourself — nobody shares.",
+          "bullets": [
+            "Most people write something more severe than what they would actually do.",
+            "That gap is the whole problem, and it is made of things you have said in passing.",
+            "Then write the one sentence you will say to them this week to close it."
+          ],
+          "notes": "Hold the silence for the full four minutes; it feels long and it is where the work happens. Do not collect answers — this is reflective, not a sharing exercise, and asking an adult to perform self-criticism in front of other parents will shut the room down. If anyone volunteers, thank them briefly and move on. The second bullet is the one to say aloud: the prediction children make is assembled from throwaway remarks about other people's children, not from formal rules."
+        },
+        {
+          "kind": "recap",
+          "eyebrow": "End of Session 1",
+          "title": "Three things before next week",
+          "bullets": [
+            "Agree a family code word, in both directions. Two minutes.",
+            "Save 988 in your child's phone as a contact.",
+            "Say the sentence: \"You will never lose your phone for telling me something.\"",
+            "If something on tonight's list is live in your house: CyberTipline.org · TakeItDown.NCMEC.org · 988 · and message me now."
+          ],
+          "callout": "Bring a device next week — Session 2 is hands-on. I am staying on this call for fifteen minutes.",
+          "notes": "Leave this slide up and actually stay the fifteen minutes with your camera on. A significant share of live-incident disclosures from adults arrive in the minutes after you say 'that's the end of the session' — a parent who has sat through an hour recognising their own child does not raise a hand in front of forty neighbours. If someone does stay, do not attempt to counsel them: establish whether a child is in immediate danger, walk them through the five protocol steps from slide 10, give them the reporting routes, and make an individual follow-up time."
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "title": "What You Can Actually Do",
+      "subtitle": "Controls, conversation, hardening, and the incident protocol",
+      "goal": "By the end of this hour an adult has a configured device, a scripted opener, a named reporting route, and a rehearsed first sixty seconds — and an educator knows where their duty starts and where their investigation must stop.",
+      "segments": [
+        {
+          "minutes": "0–4",
+          "label": "Recap, and one promise made out loud",
+          "slides": [
+            1,
+            2
+          ]
+        },
+        {
+          "minutes": "4–16",
+          "label": "Parental controls: an honest reality check",
+          "slides": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ]
+        },
+        {
+          "minutes": "16–24",
+          "label": "The device-removal trap",
+          "slides": [
+            9,
+            10,
+            11,
+            12
+          ]
+        },
+        {
+          "minutes": "24–36",
+          "label": "The conversation, with actual words",
+          "slides": [
+            13,
+            14,
+            15,
+            16
+          ]
+        },
+        {
+          "minutes": "36–40",
+          "label": "Account hardening",
+          "slides": [
+            17
+          ]
+        },
+        {
+          "minutes": "40–50",
+          "label": "The incident protocol and the reporting bodies",
+          "slides": [
+            18,
+            19,
+            20,
+            21
+          ]
+        },
+        {
+          "minutes": "50–57",
+          "label": "For educators",
+          "slides": [
+            22,
+            23,
+            24
+          ]
+        },
+        {
+          "minutes": "57–60",
+          "label": "The commitment, and the exam",
+          "slides": [
+            25,
+            26
+          ]
+        }
+      ],
+      "slides": [
+        {
+          "kind": "title",
+          "eyebrow": "Digital Safety Knights · Guardian Certification",
+          "title": "What You Can Actually Do",
+          "subtitle": "Session 2 of 2 · 60 minutes · bring a device",
+          "notes": "Open by naming the difference: 'Last week was what is happening. Tonight you change things, and you will leave with a configured device, a sentence to say, and a protocol on the fridge.' Then set the expectation about pace — there is a settings segment and you will be moving quickly, the handout has every setting written down, and nobody needs to take notes. Parents who try to transcribe settings stop listening."
+        },
+        {
+          "kind": "poll",
+          "eyebrow": "90 seconds",
+          "title": "Who said the sentence?",
+          "ask": "Code word agreed? 988 saved? And did you say \"you will never lose your phone for telling me something\" out loud? Type 1, 2, 3, or none.",
+          "bullets": [
+            "No judgement on \"none\" — but do the code word now, in the next sixty seconds, while I wait.",
+            "Then, from the room: what were the three reasons children do not tell?"
+          ],
+          "callout": "Shame · the device · your reaction",
+          "notes": "Actually wait the sixty seconds in silence rather than talking over it — it is the only reliable way the homework gets done, and it signals that this session expects work. Take the three reasons from the room instead of reading them out; if the room cannot produce them, spend two minutes re-teaching before you move on, because every practical decision tonight depends on them. The 'said the sentence' count is usually the lowest of the three, and that is worth naming without reproach: it is the hardest one because it feels like giving something up."
+        },
+        {
+          "kind": "section",
+          "eyebrow": "Part one · 12 minutes",
+          "title": "Parental controls, honestly",
+          "subtitle": "What they do, what they cannot do, and what to set tonight.",
+          "notes": "Warn the room that this segment will be more sceptical than they expect and that they should not take that as permission to skip the setup — you are going to end with specific settings. This is the segment that generates the most questions in the entire course; hold the questions to the end of it and say so now, or you will lose eight minutes to one parent's router."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "The honest ledger · credit side",
+          "title": "What controls genuinely do",
+          "bullets": [
+            "Stop app installs and in-app purchases without your approval — which closes the single most common route onto a new platform.",
+            "Filter known adult sites at the OS or DNS level, and lock SafeSearch so it cannot be turned off.",
+            "Restrict who can contact a younger child inside a game, and cap screen time by app.",
+            "Blur suspected nude images in Messages, AirDrop and FaceTime on-device — iOS Communication Safety, on by default for under-13s and worth leaving on at any age.",
+            "Give you a visible list of what is actually installed. That list alone is worth the evening."
+          ],
+          "callout": "Controls are excellent at the accidental and the opportunistic. That is a real category and it is most of what happens to under-11s.",
+          "notes": "Lead with the credit side, because a room that hears 'controls don't work' first will stop configuring anything, and for primary-age children the controls genuinely are the intervention. The app list is the item to emphasise — most parents have never looked at the full installed-app list on their child's phone, and doing it tonight is how they discover the companion app, the second social account, or the VPN."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "The honest ledger · debit side",
+          "title": "What they cannot do, and never will",
+          "bullets": [
+            "They cannot see inside a direct message on a platform your child is allowed to use. Nothing you install reads a Snapchat or Discord DM.",
+            "They cannot recognise grooming. There is no filter for \"don't tell your mum\".",
+            "They do not travel. A home-network filter protects the sofa, not the school bus, the friend's house, or the school-issued Chromebook.",
+            "They are routed around by any competent fifteen-year-old — a VPN, a second account, a browser inside a game, a friend's spare phone.",
+            "And they do nothing at all about the three reasons from last week, all of which are about you, not the device."
+          ],
+          "callout": "A control that your child has defeated and you still trust is worse than no control, because it is where your attention went instead.",
+          "notes": "Be straight here and the room's trust in everything else goes up. The sentence that lands hardest is the one about DMs: most parents assume a paid monitoring product sees message content, and almost none of them do on the platforms that matter. Expect a question about monitoring software that reads everything — answer it honestly: the products that come closest require a level of surveillance that reliably ends disclosure in adolescents, so you are trading the thing that works for the thing that feels like working."
+        },
+        {
+          "kind": "rules",
+          "eyebrow": "The frame to leave with",
+          "title": "A seatbelt, not a chauffeur",
+          "bullets": [
+            "A seatbelt reduces the harm of a crash. It does not drive, choose the route, or watch the road.",
+            "So: fit it properly, and then do the driving — which is the conversation, not the configuration.",
+            "Set controls once per year, together with your child, out loud, with the reasons stated.",
+            "And tell them what you can and cannot see. A child who discovers hidden monitoring stops telling you things permanently."
+          ],
+          "callout": "Thirty minutes of settings, once a year, done together, beats any amount of covert monitoring.",
+          "notes": "The transparency rule is the one parents argue with, so give them the reasoning rather than the instruction: covert monitoring works exactly until it is discovered, and the discovery costs you the disclosure channel for years. Doing the setup together also solves the enforcement problem — a thirteen-year-old who helped choose the settings and heard why is dramatically less motivated to route around them. If a parent insists on covert monitoring for a specific safeguarding reason, that is a legitimate case; take it offline."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "Set these tonight · under 13",
+          "title": "The named settings, not \"review their privacy\"",
+          "bullets": [
+            "iPhone: Settings → Screen Time → Content & Privacy Restrictions → Installing Apps and In-app Purchases → Don't Allow. Then Communication Limits → Contacts Only, and Communication Safety → On.",
+            "Android: Family Link → App approvals on, Google SafeSearch locked, and Play Store content rating set by age.",
+            "Roblox: Account Restrictions → On; Who can chat with me in experiences → Friends; Who can message me → No one; set a monthly spend limit.",
+            "YouTube: a supervised account or YouTube Kids rather than the main app — and turn Autoplay off.",
+            "Xbox / PlayStation / Switch: communication and multiplayer → Friends only; voice chat off with non-friends; purchases require approval.",
+            "Discord: under 13 is a hard no. If they are already on it, review the server list together and remove every server neither of you can account for."
+          ],
+          "callout": "The visible chat looking clean means nothing. Most risk at this age arrives through a linked Discord server or a private in-game channel.",
+          "notes": "Go at a deliberate pace and say the menu path aloud rather than only showing it — half the room is on the other operating system and is writing it down for later. The Roblox gift point from last week belongs here: a monthly spend limit is also a grooming control, because unexplained in-game currency is one of the few observable stage-two indicators. If a parent says their child needs Discord for a school group, the answer is a parent-supervised account on your device, not an exception."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "Set these tonight · 13 to 17",
+          "title": "Contact, discovery, and location — in that order",
+          "bullets": [
+            "Instagram: account Private; Settings → Messages → message controls set to people they follow only; Tags & mentions → People you follow; Hidden Words → On; Activity status → Off; link a parent account in Family Center.",
+            "Snapchat: Settings → Contact Me → My Friends; Quick Add → Off; Snap Map → Ghost Mode; and set up Family Center, which shows you who they talk to without showing you what they say.",
+            "TikTok: Private account; Direct messages → Friends or No one; \"Suggest your account to others\" → Off; Family Pairing linked.",
+            "Discord: Safety → Filter direct messages → Keep me safe; Who can add you as a friend → Friends of friends; server-by-server DM privacy defaults off.",
+            "Across everything: Precise Location off per app, and strip location from photos before sharing."
+          ],
+          "callout": "The three settings that matter are who can message them, who gets shown their account, and who can see where they are. Everything else is second-order.",
+          "notes": "Name the ordering principle so parents can apply it to the app you have not heard of yet: contact, discovery, location. Snapchat's Family Center is the item worth a sentence of its own, because it answers the objection 'I want to see their messages' with the version that is actually sustainable — you see the contact graph, they keep the privacy of content, and the arrangement survives being discovered. Expect pushback that a private account will hurt a child with a genuine public presence in sport, art or music; that is a real case, and the answer is deliberate publicity with contact and location locked down, not withdrawal."
+        },
+        {
+          "kind": "section",
+          "eyebrow": "Part two · 8 minutes",
+          "title": "The device-removal trap",
+          "subtitle": "The single biggest reason children stay silent, and it is installed by parents.",
+          "notes": "This is the segment the room will resist, and the one with the largest effect on outcomes. Deliver it without blame — nearly every parent here has used the threat, including you, and saying so is what stops the room going defensive. Do not soften the claim itself."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "How it gets installed",
+          "title": "\"If anything like that ever happens, that phone is gone\"",
+          "bullets": [
+            "Said once, usually about someone else's child, usually not even as a rule.",
+            "Your child files it as the price of telling you. They are not wrong to.",
+            "To a fifteen-year-old, losing the phone is losing every friendship simultaneously — it is not a punishment, it is exile.",
+            "So the cost of silence has to exceed that before they speak, and in a sextortion case it almost never does in time."
+          ],
+          "callout": "You are competing with the offender's threat. Do not add a second one.",
+          "notes": "Expect the reaction 'so there are no consequences?' and answer it directly, because the room needs the distinction before it will accept the rule: consequences for behaviour remain entirely available, but they must never be attached to the act of disclosure. A child who comes to you gets help, not a sanction — what they did before they came to you can be addressed later, separately, and calmly. Say that twice; it is the only thing that unblocks the sceptics."
+        },
+        {
+          "kind": "scenario",
+          "eyebrow": "The parent in every room",
+          "title": "\"I'll just take the phone away\"",
+          "bullets": [
+            "It feels like the one lever that definitely works, and in the short term it does — it removes the device.",
+            "It also removes the evidence, the reporting route, and the contact with the only people the child will talk to.",
+            "And it confirms, in the worst week of their life, that the prediction they made about you was correct.",
+            "Meanwhile the image, the account and the offender are all still there, and now you are not being told anything."
+          ],
+          "callout": "Remove the threat, not the phone. Restrict a device for other reasons, at other times, never as a response to being told something.",
+          "notes": "Handle this parent generously, because they are stating the honest instinct of most of the room, and if you make an example of them nobody else will speak for the rest of the hour. Agree with the feeling first — 'it is the only lever that feels like it is yours' — then give the three costs, and then offer the version that keeps their authority intact: taking the phone is available to them for any reason except this one. If they push, let them have the last word and move on; the room has already heard the argument."
+        },
+        {
+          "kind": "rules",
+          "eyebrow": "Say it before anything is wrong",
+          "title": "The standing promise",
+          "bullets": [
+            "\"You will never lose your phone for telling me something. Not ever, not even if you did something stupid first.\"",
+            "\"If something online goes wrong, I will be useful before I am anything else.\"",
+            "\"You can wake me up. You can text me from the next room. You can tell me badly.\"",
+            "Then say who else counts — an aunt, a coach, a counsellor, a named family friend — because sometimes it will not be you, and that has to be allowed."
+          ],
+          "callout": "Thirty seconds, said in a calm moment, is the highest-return safety action available to a parent.",
+          "notes": "Have the room write their own version in the chat, to themselves, now — the wording has to sound like them or it will never be said. The fourth bullet is the one adults skip and it matters: naming a second adult is not a failure of the relationship, it is redundancy, and a child who has a named alternative is far more likely to tell someone than a child whose only authorised route is a parent they are currently angry with."
+        },
+        {
+          "kind": "section",
+          "eyebrow": "Part three · 12 minutes",
+          "title": "The conversation",
+          "subtitle": "With actual words, because good intentions do not survive contact with a teenager.",
+          "notes": "Set this up as a skill rather than a relationship issue: 'This is a technique, it has openers that work and openers that do not, and you can get better at it this week.' Parents who think of it as a function of how close they are to their child tend to conclude they have already done it."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "Scripted openers",
+          "title": "Lines that actually get an answer",
+          "bullets": [
+            "\"Has anyone ever asked you to move to a different app? Not a big deal, I'm just curious what that looks like now.\"",
+            "\"If someone sent you something you didn't want to see, what would you do? I genuinely don't know what I'd do.\"",
+            "\"Someone at work had a thing happen to their son — a stranger, a photo, money. Have you heard of that?\"",
+            "\"Show me the three apps you actually use. I'll stop guessing.\"",
+            "Then shut up. The answer comes in the second silence, not the first."
+          ],
+          "callout": "Ask about the mechanism, not about them. \"Has anyone asked you to...\" is answerable; \"is anyone bothering you?\" is not.",
+          "notes": "The third-party opener does most of the work in practice because it lets a teenager answer about the world rather than confess about themselves, and the information comes out sideways. The rule against the direct welfare question is worth stating explicitly: 'is everything okay online?' has a one-word answer and your child will give it to you every time. And be honest about the openers that close the subject for good — a verdict on an app they like, a comparison to a sibling, or any question that begins 'why would you...'."
+        },
+        {
+          "kind": "activity",
+          "eyebrow": "5 minutes · pairs or chat",
+          "title": "Write your opener",
+          "ask": "One line, in your own voice, that you will actually say this week. Then write who you would say it about — the third-party version is usually the one that works.",
+          "bullets": [
+            "It has to sound like you. A borrowed script delivered awkwardly reads as an interrogation.",
+            "Pick the moment as well as the words: in the car, on a walk, washing up. Not across a table.",
+            "Side-by-side beats face-to-face for anything difficult, at every age."
+          ],
+          "notes": "Take three or four volunteers and improve them live — this is the most useful five minutes in Session 2 and the segment facilitators most often cut when they are behind. Do not cut it; cut the second settings slide instead and point to the handout. The commonest fix you will make is removing the verdict buried in the question: 'you know those apps are dangerous, right?' becomes 'show me what that one actually does'."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "The verification layer",
+          "title": "The family code word, used in both directions",
+          "bullets": [
+            "One word, never posted anywhere, never in a group chat, never in the family WhatsApp.",
+            "Used to verify any urgent request by voice, video or message — including a request that appears to come from you.",
+            "Pair it with one agreed fallback: \"we hang up and I call you back on the number I already have\".",
+            "Refresh it if it is ever said out loud in front of anyone who should not have it. It is not a one-time ritual."
+          ],
+          "callout": "This is the only defence against a cloned voice that works, and it takes two minutes.",
+          "notes": "If anyone did not do last week's homework, this is the moment to make them do it on the call. The both-directions point is what parents miss: the scenario they imagine is a call from their child, but the one that catches families is a call that sounds like the parent telling a teenager to send money or share an account. Mention grandparents too — they are targeted with the same clone and are usually outside the family's safety conversation entirely."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "Four moves · 15 minutes of work",
+          "title": "Account hardening, for the whole family",
+          "bullets": [
+            "Passkeys first, on email. A passkey cannot be phished because there is no password to hand over. Google, Apple, Microsoft, Instagram, TikTok and Discord all support them.",
+            "Two-factor by app, not by text — SMS codes are stolen by SIM swap and relayed by phishing pages. Keep the backup codes on paper, off the phone.",
+            "Audit the recovery routes: old recovery phone numbers, stale recovery emails, security answers that are findable on a public profile, and \"where you're logged in\".",
+            "Passphrases, not mangled words: four unrelated words beats P@ssw0rd!23, and nothing in a password should appear on a profile — not the dog, not the team, not the year."
+          ],
+          "callout": "Secure email first. Everything that can send a reset link is only as safe as the inbox that receives it.",
+          "notes": "Compress this hard — it is the one segment the room already half-knows, and the two items that are genuinely new are the recovery audit and the email-first ordering. The recovery point catches the realistic case: most compromised family accounts are not hacked, they are recovered by an ex-partner, a sibling or a former friend who still holds the route. Point them at digitalsafetyknights.org/password-dojo.html and say plainly that it runs in the browser and transmits nothing, because an adult is right to be suspicious of a site asking for a password."
+        },
+        {
+          "kind": "section",
+          "eyebrow": "Part four · 10 minutes",
+          "title": "When it happens",
+          "subtitle": "The protocol, the reporting bodies, and the first sixty seconds.",
+          "notes": "Set the tone: 'This is the part you print and put on the fridge. You will not remember it at 11pm on the night, and you are not supposed to — that is what the card is for.' If a parent has disclosed a live incident to you privately earlier in the session, this is the segment they are waiting for; deliver it cleanly and precisely for them."
+        },
+        {
+          "kind": "rules",
+          "eyebrow": "Five steps, in order",
+          "title": "The incident protocol",
+          "bullets": [
+            "1 · Do not pay. Not a small amount, not once, not to buy time.",
+            "2 · Do not delete — not the account, not the messages, not the app. Block, yes. Delete, no.",
+            "3 · Screenshot everything: the profile, the username, the threats, the payment details, the timestamps.",
+            "4 · Report tonight: the platform, CyberTipline.org, and Take It Down if an image exists.",
+            "5 · Preserve and stay with them. Keep the device, keep the evidence, and do not leave a child alone with this overnight."
+          ],
+          "callout": "Don't pay · don't delete · screenshot · report · preserve. On the fridge, tonight.",
+          "notes": "Make the room say the five back to you — it feels faintly ridiculous with adults and it is the only reason anyone recalls the order under stress. Then ask the question that exposes the real risk: 'which step do you skip because you are upset?' The honest answer for most parents is step two, because the instinct when you see the messages is to make them disappear. Flag the one exception worth knowing: if a child is in immediate danger, call local emergency services first and do the rest afterwards."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "Where to report, and what each one does",
+          "title": "The bodies that can actually act",
+          "bullets": [
+            "CyberTipline.org — NCMEC, 24/7, the central route for online enticement, sextortion and CSAM. This is the one that reaches law enforcement.",
+            "TakeItDown.NCMEC.org — removal of intimate images of anyone who was under 18. Hash-based: your device computes a fingerprint and the image itself never leaves it. Works on AI-generated fakes.",
+            "StopNCII.org — the same hash-based service for adults, 18 and over.",
+            "988 — Suicide & Crisis Lifeline. Call or text, free, confidential, 24/7, and you do not need to be in crisis to use it.",
+            "Local police for an immediate threat, and the school if a classmate or school account is involved."
+          ],
+          "callout": "Take It Down is the one most families never use, because they assume they would have to send the picture to a stranger. They do not.",
+          "notes": "Slow down on the hash point — it is the single fact that unblocks people, adults and teenagers alike, and it is almost never explained. Say it twice: the fingerprint is computed on the device, only the fingerprint is shared, and no human sees the image. Pre-empt the question about whether reporting gets their child in trouble: NCMEC reports from and about minors are safeguarding reports, and the child is the victim in every scenario covered tonight."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "The part that decides everything",
+          "title": "The first sixty seconds of a disclosure",
+          "bullets": [
+            "\"Thank you for telling me.\" First words, before any question.",
+            "\"You're not in trouble. We'll deal with this together.\"",
+            "\"This ends. It genuinely does, and faster than you think.\"",
+            "Do not ask to see the image. Do not ask what they were thinking. Do not call anyone yet. Do not raise your voice at the offender in front of them.",
+            "Then sit down, get the protocol card, and work the five steps with them in the room."
+          ],
+          "callout": "Your first three seconds are the data your child uses to decide whether there is a second conversation — tonight, and for the next ten years.",
+          "notes": "Tell them the thing that makes this survivable: the panic is normal, it is not a failure, and the job is only to delay it by sixty seconds. Give them somewhere to put it — step out, call another adult, call 988 yourself. Be explicit about the two instincts that do the most damage: asking to see the image (which is both re-traumatising and, in the case of a minor's image, legally fraught) and demanding to know how it happened. Both can be answered later; neither can be un-asked."
+        },
+        {
+          "kind": "section",
+          "eyebrow": "Part five · 7 minutes",
+          "title": "If you are an educator",
+          "subtitle": "Your duty starts earlier than you think and stops earlier than you think.",
+          "notes": "Check who is in the room before you start — if it is a mixed PTA audience, tell parents this segment is still useful because it tells them what the school will and will not do. If the room is majority educators, slow down and swap the parent examples for classroom ones. Either way, say once that you are describing the general shape of the duty and that their own district policy and state statute govern."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "The duty",
+          "title": "Mandatory reporting, and the investigation you must not run",
+          "bullets": [
+            "You are a mandated reporter. The threshold is reasonable suspicion, not proof, and the duty is yours personally — telling a colleague is not discharging it.",
+            "Report through your designated safeguarding lead and your state's child-protection route, within the timeframe your policy specifies. If you are unsure, report anyway.",
+            "Do not view, copy, forward, download or print a suspected image of a minor, including to \"preserve evidence\". Doing so can create an offence; the platform and NCMEC hold the evidence.",
+            "Do not interview the child. One open question — \"do you want to tell me what happened?\" — then listen, stop, and hand over.",
+            "Do not confiscate or search the device, do not contact the other child's family, and do not notify a parent before you have checked whether the parent is part of the concern."
+          ],
+          "callout": "Write down what the child said, in their words, with the time, immediately. That record is the most useful thing you will produce.",
+          "notes": "The two errors you will see are over-reach and under-reach, and they come from the same place — a well-meaning teacher trying to establish whether it is real before troubling anyone. Say plainly that establishing whether it is real is not their job and that a report that turns out to be unfounded has cost nothing. The confidentiality question always comes: a mandated reporter cannot promise a child secrecy, and the honest line to use with a student is 'I can't promise to keep it between us, but I can promise to tell you exactly who I'm telling and why'."
+        },
+        {
+          "kind": "teach",
+          "eyebrow": "The 2026 legal landscape",
+          "title": "What the law now requires of a school",
+          "bullets": [
+            "The TAKE IT DOWN Act requires platforms to remove non-consensual intimate images — including AI-generated ones — within 48 hours of a valid request. Knowing that timeline is what lets you reassure a family with a number.",
+            "An intimate image of a student under 18 is CSAM regardless of who made it or how old they are. \"They're the same age\" and \"it was a joke\" are not defences, and that applies to the students passing it on.",
+            "26 states now mandate full bell-to-bell phone bans in K-12 schools, which changes where incidents surface — more of this now lands in the first ten minutes after the final bell.",
+            "An AI-generated image of a real student is a safeguarding matter and a discipline matter, not a technology curiosity. Treat it as you would the real thing."
+          ],
+          "callout": "When it surfaces in a classroom: contain the distribution, protect the subject, report, and let the professionals investigate.",
+          "source": "Ballotpedia, 2026 · TAKE IT DOWN Act",
+          "notes": "The 48-hour figure is the most practically useful thing in this slide, because the question a distressed parent asks a school is 'how long will it be up?' and a number is the only answer that helps. On the second bullet, be careful and clear: the point is not to threaten students with prosecution but to explain why a teacher cannot treat a circulating image as a bullying matter to be handled in-house. If an educator asks what to do about the whole class having seen it, the answer is a single calm whole-group instruction to delete and not forward, then individual follow-up — never a search of thirty phones."
+        },
+        {
+          "kind": "rules",
+          "eyebrow": "The Guardian's Commitment",
+          "title": "What you are certifying",
+          "bullets": [
+            "I will not make the phone the price of telling me.",
+            "I will spend my first sixty seconds being useful, not being frightened.",
+            "I will treat a control as a seatbelt, not a chauffeur, and do the driving myself.",
+            "I will not pay, will not delete, and will not investigate alone.",
+            "I will report to the body that can act, the same night.",
+            "And I will say all of this out loud, tonight, before anything is wrong."
+          ],
+          "notes": "Read it once yourself, then invite the room to read it with you. It sounds sentimental described in advance and it does not land that way — for an adult audience it is the moment two hours of information becomes a decision, and the second line is the one people tell us they repeated to themselves on the actual night. This is the text printed on the certificate."
+        },
+        {
+          "kind": "recap",
+          "eyebrow": "End of Session 2",
+          "title": "The four things on the fridge",
+          "bullets": [
+            "Don't pay · don't delete · screenshot · report · preserve.",
+            "CyberTipline.org — NCMEC, 24/7 · TakeItDown.NCMEC.org — under 18, hash-based · StopNCII.org — 18+ · 988 — call or text.",
+            "The exam: 25 questions · 25 minutes · 80% to pass · open book · unlimited retakes, 24 hours apart. digitalsafetyknights.org/certification-exam.html",
+            "digitalsafetyknights.org — everything we make, free, in four languages, with no tracking."
+          ],
+          "callout": "I'm staying on this call for fifteen minutes. Message me privately about anything, including something happening right now.",
+          "notes": "Say that the exam is open book and designed to make the material stick rather than to filter anyone out, and that the pass rate is high. Then stay — actually stay the fifteen minutes, camera on, with this slide up. For adult cohorts the post-session window is where the live incidents arrive, and the parent who needs you is the one who has been silent for two hours. If someone stays: establish whether a child is in immediate danger, work the five steps with them, give them the reporting routes in writing, and book an individual follow-up before you end the call."
+        }
+      ]
+    }
+  ],
+  "exam": {
+    "passMark": 80,
+    "minutes": 25,
+    "shuffle": true,
+    "questions": [
+      {
+        "topic": "The victim profile",
+        "q": "Which description best matches the typical financial sextortion victim in current US reporting?",
+        "choices": [
+          "A boy aged 14–17 who is socially active and confident",
+          "A child under 10 using a shared family tablet",
+          "An 18–24 year-old university student",
+          "A girl aged 10–13 who is isolated and has few friends"
+        ],
+        "answer": 0,
+        "why": "NCMEC's 2026 figures show 91% of US victims are male and that ages 14–17 are the most targeted minor group. Most parents are watching the wrong child, which is why the correction matters more than any single setting."
+      },
+      {
+        "topic": "Disclosure",
+        "q": "Your 15-year-old tells you at 11pm that a stranger has an image of him and is demanding money. What are your first words?",
+        "choices": [
+          "\"Show me the messages and the photo so I can see how bad this is.\"",
+          "\"Thank you for telling me. You're not in trouble, and we'll deal with this together.\"",
+          "\"How could you let this happen? What were you thinking?\"",
+          "\"Give me the phone and go to bed, I'll sort it out.\""
+        ],
+        "answer": 1,
+        "why": "The first sixty seconds decide whether there is a second conversation — tonight and for years afterwards. Asking to see the image is re-traumatising and legally fraught, and taking the phone confirms the prediction that kept him silent until 11pm."
+      },
+      {
+        "topic": "The device-removal trap",
+        "q": "Why is \"if anything like that ever happens, that phone is gone\" such a damaging thing to have said?",
+        "choices": [
+          "It encourages children to buy a second phone",
+          "It is unenforceable, so children learn to ignore all rules",
+          "It makes the child's cost of telling you exceed the offender's threat, so they stay silent",
+          "It is only a problem for children under 11"
+        ],
+        "answer": 2,
+        "why": "Threatening device removal is the single biggest reason children do not disclose — losing the phone reads as losing every friendship at once. Consequences for behaviour stay available to you; they must simply never be attached to the act of telling you."
+      },
+      {
+        "topic": "AI-generated imagery",
+        "q": "Your daughter is being threatened with an intimate image, and she insists she has never sent anything to anyone. What is the most likely explanation and the correct response?",
+        "choices": [
+          "Her account was hacked, so change the password and wait to see what happens",
+          "Reply to the offender explaining that the image is fake",
+          "She is probably not telling the truth; establish the facts before reporting",
+          "It is likely AI-generated from her ordinary clothed photos, and the protocol is unchanged — don't pay, don't delete, screenshot, report"
+        ],
+        "answer": 3,
+        "why": "Nudify apps produce fabricated intimate images from a public grid or a yearbook photo, so \"I never sent anything\" no longer resolves the threat. Take It Down works on fabricated images exactly as it does on real ones."
+      },
+      {
+        "topic": "Reporting",
+        "q": "A family is reluctant to use Take It Down because they do not want to send the image to anyone. What should you tell them?",
+        "choices": [
+          "The image never leaves the device — it computes a hash, and only the hash is shared",
+          "The image is uploaded but deleted after 24 hours",
+          "A moderator reviews it, but only if the parent consents",
+          "They are right to be cautious; it is better to contact each platform directly"
+        ],
+        "answer": 0,
+        "why": "TakeItDown.NCMEC.org is hash-based: the fingerprint is computed locally and no human sees the picture. This single fact is what most often unblocks a family or a teenager who is otherwise too ashamed to act."
+      },
+      {
+        "topic": "Reporting",
+        "q": "Your 19-year-old is dealing with a non-consensual intimate image. Which service is designed for her?",
+        "choices": [
+          "TakeItDown.NCMEC.org",
+          "StopNCII.org",
+          "The CyberTipline, which handles all ages",
+          "A copyright takedown request"
+        ],
+        "answer": 1,
+        "why": "Take It Down covers anyone who was under 18 in the image; StopNCII is the equivalent hash-based service for adults. Using the wrong one costs time at the point where speed matters most."
+      },
+      {
+        "topic": "Incident protocol",
+        "q": "Your son has already paid $50 and the demands have increased. What do you do now?",
+        "choices": [
+          "Wait 24 hours to see whether the threats stop on their own",
+          "Pay once more to buy time while you work out what to do",
+          "Stop all payment immediately, keep the receipts and screenshots, and report tonight anyway",
+          "Negotiate a smaller final amount to close it out"
+        ],
+        "answer": 2,
+        "why": "Paying has never ended one of these cases — a first payment marks the account as profitable and the demand escalates every time. The escalation stops when the payments do, and the payment records are useful evidence."
+      },
+      {
+        "topic": "Incident protocol",
+        "q": "You are looking at the threatening messages on your child's phone. Which action would do the most harm?",
+        "choices": [
+          "Taking screenshots of the profile and the threats",
+          "Reporting to CyberTipline.org the same night",
+          "Blocking the account",
+          "Deleting the account and the messages to make it go away"
+        ],
+        "answer": 3,
+        "why": "Block immediately; delete nothing. The account and the messages are where the evidence lives, and NCMEC and the platform need them to act. The instinct to erase it is the step parents most often get wrong under stress."
+      },
+      {
+        "topic": "Voice cloning",
+        "q": "You get a call from a number you do not recognise, and the voice is unmistakably your daughter, distressed, asking you to send money urgently. What is the actual check?",
+        "choices": [
+          "Use the family code word, and if there is any doubt hang up and call her on the number you already have",
+          "Call the number back to see who answers",
+          "Ask her to stay on the line while you verify",
+          "Ask a personal question only she would know"
+        ],
+        "answer": 0,
+        "why": "A few seconds of posted audio is enough to clone a voice, and caller ID is trivially spoofed, so calling back is not a check. A personal question can often be answered from a public profile; a code word that has never been posted anywhere cannot."
+      },
+      {
+        "topic": "Grooming",
+        "q": "A 12-year-old has received an expensive in-game gift from an online friend they have never met, and the two of them now talk in a private channel. Which stage of grooming is this?",
+        "choices": [
+          "Stage 1, targeting",
+          "Stage 2, trust-building",
+          "Stage 3, desensitisation",
+          "Stage 4, maintenance through shame"
+        ],
+        "answer": 1,
+        "why": "Gifts plus a private channel \"just for us\" is the documented signature of trust-building. Stages 1 and 2 are the only ones a parent can realistically catch, and an unexplained gift is one of the very few observable indicators."
+      },
+      {
+        "topic": "Grooming",
+        "q": "Which of these best describes the desensitisation stage?",
+        "choices": [
+          "The offender finds a child who replies quickly and is often online late",
+          "The offender sends gifts and asks the child to keep the friendship private",
+          "Boundary-testing dressed as a joke, sexualised talk framed as curiosity, and a first image framed as a fair exchange",
+          "The offender uses shame and threats to keep the contact going"
+        ],
+        "answer": 2,
+        "why": "Desensitisation normalises the next step while keeping each individual move deniable — which is exactly why children struggle to name the moment it became wrong. The other three options describe stages 1, 2 and 4."
+      },
+      {
+        "topic": "Money mules",
+        "q": "Your 16-year-old has been offered $400 a week to receive money in his account and forward most of it on. What is the real exposure?",
+        "choices": [
+          "It is a civil matter between him and the sender",
+          "Nothing, because he is a minor",
+          "He will probably not be paid, and that is the whole loss",
+          "He is committing money laundering, and faces account closure, a fraud marker that can follow him for years, and possible prosecution"
+        ],
+        "answer": 3,
+        "why": "This is the one threat in the course where the child becomes the defendant. Teenagers are recruited precisely because they have clean records and a real bank account, and being under 18 does not change what the transaction is."
+      },
+      {
+        "topic": "AI companions",
+        "q": "You discover your 13-year-old has been confiding in an AI companion app about feeling hopeless. What is the risk, and what do you do?",
+        "choices": [
+          "An agreement-optimised system validates whatever it is given and will not escalate to a person — ask about it without ridicule, and put 988 in the phone",
+          "Report the app to the platform's safety team",
+          "The app is probably harmless; monitor it quietly and say nothing",
+          "Delete the app immediately and ban it, which removes the risk"
+        ],
+        "answer": 0,
+        "why": "The danger is design, not malice: these systems are optimised to agree, so they absorb a disclosure that would otherwise reach a human and offer no escalation. Deleting it without a conversation removes the outlet and the information; ridiculing it ends the subject permanently."
+      },
+      {
+        "topic": "Organised harm",
+        "q": "What does the existence of networks such as 764 most change about how you think about your own child's risk?",
+        "choices": [
+          "That gaming platforms should be avoided entirely",
+          "That a child already struggling with mental health or isolation is being specifically sought out, so wellbeing and online safety are one conversation",
+          "That the risk is almost entirely from adults overseas",
+          "That monitoring software has become essential"
+        ],
+        "answer": 1,
+        "why": "These networks coerce rather than deceive, and they deliberately select children who are already vulnerable. That inverts the common assumption that online safety is primarily a technology problem to be solved with settings."
+      },
+      {
+        "topic": "Parental controls",
+        "q": "Which of these can no consumer parental-control product reliably do?",
+        "choices": [
+          "Cap time spent in a specific app",
+          "Block app installs and in-app purchases without your approval",
+          "Read the content of a direct message on a platform your child is allowed to use",
+          "Lock SafeSearch so it cannot be switched off"
+        ],
+        "answer": 2,
+        "why": "Nothing you install reads a Snapchat or Discord DM, and most parents assume otherwise. Controls are strong against the accidental and opportunistic and blind to the conversational — which is where the serious harm in this course happens."
+      },
+      {
+        "topic": "Parental controls",
+        "q": "You have configured filtering on your home router. What is the main limitation?",
+        "choices": [
+          "It only works on computers, not phones",
+          "It expires after a year",
+          "It slows the connection down",
+          "It does not travel — it protects nothing on mobile data, at school, on a friend's Wi-Fi, or on a school-issued device"
+        ],
+        "answer": 3,
+        "why": "Network-level filtering protects the sofa, not the school bus. If you want a control that follows the child, it has to be set at the operating-system or account level, not on the network."
+      },
+      {
+        "topic": "Platform settings",
+        "q": "You want to stop strangers from sending direct messages to your 14-year-old on Instagram. Which setting does that?",
+        "choices": [
+          "Settings → Messages → message controls, restricted to people they follow",
+          "Enable Hidden Words",
+          "Make the account private",
+          "Turn off Activity status"
+        ],
+        "answer": 0,
+        "why": "A private account controls who sees posts, not who can message; Hidden Words filters offensive terms; Activity status is presence. Message controls are the setting that closes the contact route, which is the one that matters first."
+      },
+      {
+        "topic": "Platform settings",
+        "q": "For a child under 13 on Roblox, which combination matters most?",
+        "choices": [
+          "Graphics quality and a strong password",
+          "Account Restrictions on, in-experience chat set to Friends, messages set to no one, and a monthly spend limit",
+          "A high friend count so they are not isolated",
+          "Checking that the visible chat log looks clean"
+        ],
+        "answer": 1,
+        "why": "Account Restrictions plus chat limits is the biggest single lever against stranger contact, and a spend limit doubles as a grooming control because unexplained in-game currency is one of the few observable warning signs. A clean visible chat proves nothing — risk often moves to a linked Discord server or a private in-experience channel."
+      },
+      {
+        "topic": "Platform settings",
+        "q": "Which Snapchat settings address location and unsolicited contact?",
+        "choices": [
+          "Turn off Memories and clear the chat history",
+          "Enable two-factor authentication",
+          "Snap Map → Ghost Mode, Contact Me → My Friends, and Quick Add off",
+          "Delete the app and reinstall it monthly"
+        ],
+        "answer": 2,
+        "why": "Ghost Mode stops location broadcast, Contact Me limits who can message, and Quick Add stops the account being surfaced to strangers. Two-factor is worth doing but protects the account, not the child's contact surface."
+      },
+      {
+        "topic": "Account security",
+        "q": "Why is an authenticator app better than SMS for two-factor authentication?",
+        "choices": [
+          "SMS messages cost money to receive",
+          "Authenticator apps work without an internet connection",
+          "It is faster to use",
+          "SMS codes can be stolen by SIM swap and relayed in real time by phishing pages"
+        ],
+        "answer": 3,
+        "why": "SMS 2FA is far better than nothing, but an app or a passkey removes the two attacks that are actually used against families. A passkey goes further still, because there is no code and no password to hand over."
+      },
+      {
+        "topic": "Account security",
+        "q": "Which account should the family secure first, and why?",
+        "choices": [
+          "Email, because anyone holding it can reset every other account",
+          "The most-used social app, because that is where the contact happens",
+          "The child's school account, because the school requires it",
+          "The bank, because that is where the money is"
+        ],
+        "answer": 0,
+        "why": "Email is the master key — every service that can send a password-reset link is only as secure as the inbox receiving it. Securing email first is the sequencing point most security advice gets wrong."
+      },
+      {
+        "topic": "Incident protocol",
+        "q": "What is the correct order of the incident protocol?",
+        "choices": [
+          "Delete the account, tell the school, change passwords, wait",
+          "Don't pay · don't delete · screenshot · report · preserve and stay with them",
+          "Screenshot · pay to buy time · report · delete the app",
+          "Contact the offender · demand deletion · report · remove the device"
+        ],
+        "answer": 1,
+        "why": "The order protects the evidence before it protects your feelings. The one exception: if a child is in immediate danger, call local emergency services first and work the rest afterwards."
+      },
+      {
+        "topic": "Reporting",
+        "q": "Which route actually reaches law enforcement for an online enticement or sextortion case?",
+        "choices": [
+          "Your child's school",
+          "The platform's in-app report button alone",
+          "CyberTipline.org — NCMEC, 24/7",
+          "988"
+        ],
+        "answer": 2,
+        "why": "The CyberTipline is the central reporting route and it is what triggers the law-enforcement referral. Report to the platform as well — it is faster at taking content down — but do not let it substitute for the CyberTipline report."
+      },
+      {
+        "topic": "Educators",
+        "q": "A student shows you an intimate image of a classmate that is circulating in a group chat. Which action must you NOT take?",
+        "choices": [
+          "Write down what the student said, in their words, with the time",
+          "Tell the student honestly that you cannot promise to keep it between the two of you",
+          "Report through your designated safeguarding lead and your state's child-protection route",
+          "Save, forward or print the image in order to preserve evidence"
+        ],
+        "answer": 3,
+        "why": "Copying or forwarding a suspected image of a minor can itself create an offence, however good the intention. The evidence sits with the platform and NCMEC; your job is to contain distribution, protect the subject, record what you were told, and report."
+      },
+      {
+        "topic": "The law",
+        "q": "A parent asks how long a non-consensual intimate image of their child will stay online once reported. What does the TAKE IT DOWN Act require?",
+        "choices": [
+          "Removal within 48 hours of a valid request, including for AI-generated images",
+          "Removal only if the subject is under 13",
+          "Nothing — removal is voluntary for platforms",
+          "Removal within 7 days of a court order"
+        ],
+        "answer": 0,
+        "why": "Platforms must remove non-consensual intimate images, fabricated ones included, within 48 hours of a valid request. Being able to give a distressed family an actual number is one of the most useful things a school or facilitator can do."
+      }
+    ]
+  },
+  "certificate": {
+    "title": "Certified Digital Safety Guardian",
+    "subtitle": "Completed the two-hour Digital Safety Knights Guardian programme for parents, carers and educators, and passed the Guardian examination.",
+    "oath": "I will not make the phone the price of telling me. I will spend my first sixty seconds being useful, not being frightened. I will treat a control as a seatbelt, not a chauffeur, and do the driving myself. I will not pay, will not delete, and will not investigate alone. I will report to the body that can act, the same night. And I will say all of this out loud, tonight, before anything is wrong.",
+    "rank": "Guardian"
+  }
+}

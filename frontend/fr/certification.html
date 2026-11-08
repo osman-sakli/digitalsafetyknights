@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programme de certification — Digital Safety Knights</title>
+<link rel="canonical" href="https://digitalsafetyknights.org/fr/certification.html">
+<link rel="alternate" hreflang="en" href="https://digitalsafetyknights.org/en/certification.html">
+<link rel="alternate" hreflang="es" href="https://digitalsafetyknights.org/es/certification.html">
+<link rel="alternate" hreflang="fr" href="https://digitalsafetyknights.org/fr/certification.html">
+<link rel="alternate" hreflang="tr" href="https://digitalsafetyknights.org/tr/certification.html">
+<link rel="alternate" hreflang="x-default" href="https://digitalsafetyknights.org/certification.html">
+<meta name="description" content="Une certification en sécurité numérique de deux heures, animée en direct en ligne et gratuite, en quatre parcours par âge de 6 ans à l’adulte : diapositives, guide de l’animateur, examen et certificat.">
+<meta property="og:title" content="Programme de certification — Digital Safety Knights">
+<meta property="og:description" content="Une certification en sécurité numérique de deux heures, animée en direct en ligne et gratuite, en quatre parcours par âge de 6 ans à l’adulte : diapositives, guide de l’animateur, examen et certificat.">
+<meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
+<meta property="og:url" content="https://digitalsafetyknights.org/certification.html">
+<meta property="og:type" content="website">
+<link rel="icon" href="/assets/favicon.ico">
+<link rel="stylesheet" href="/assets/theme.css">
+<script src="/assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
+<style>
+  :root {
+    --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a;
+    --light: #f4f6fb; --white: #fff; --danger: #e63946; --success: #2a9d8f;
+    --gray: #6c757d; --text: #2d3748; --teal: #3EC6C0; --purple: #8A5FBF;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Nunito Sans', 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
+  a { color: inherit; }
+  [hidden] { display: none !important; }
+
+  .ct-hero { background: var(--realm-bg, linear-gradient(140deg, #0d1b3e, #1a2f6e)); color: #fff; padding: 3rem 1.5rem 3.4rem; text-align: center; }
+  .ct-hero .back { position: absolute; left: 18px; top: 16px; color: #aebbd6; text-decoration: none; font-size: 0.82rem; font-weight: 700; }
+  .ct-hero .eyebrow { color: var(--gold); font-weight: 900; letter-spacing: 2.4px; font-size: 0.74rem; text-transform: uppercase; }
+  .ct-hero h1 { font-size: clamp(1.8rem, 6vw, 2.5rem); font-weight: 900; margin: 11px 0 14px; text-wrap: balance; }
+  .ct-hero p { color: #c3cee6; max-width: 56ch; margin: 0 auto; line-height: 1.75; font-size: 1rem; }
+  .ct-chips { display: flex; gap: 9px; justify-content: center; flex-wrap: wrap; margin-top: 22px; }
+  .ct-chips span { background: rgba(255,255,255,0.1); border: 1px solid rgba(201,168,76,0.4); color: var(--gold2); font-weight: 800; font-size: 0.8rem; padding: 7px 14px; border-radius: 20px; }
+  .ct-hero .cta-row { display: flex; gap: 11px; justify-content: center; flex-wrap: wrap; margin-top: 26px; }
+  .btn { background: var(--gold); color: var(--navy); border: none; border-radius: 12px; padding: 13px 22px; font: inherit; font-weight: 900; cursor: pointer; text-decoration: none; display: inline-block; }
+  .btn.ghost { background: transparent; color: var(--gold2); border: 2px solid rgba(201,168,76,0.6); }
+  .btn.navy { background: var(--navy); color: #fff; }
+  .btn.outline { background: transparent; color: var(--navy); border: 2px solid #d7dded; }
+
+  .wrap { max-width: 980px; margin: 0 auto; padding: 44px 18px 30px; }
+  .sec-eyebrow { color: var(--gold); font-weight: 900; letter-spacing: 2px; font-size: 0.72rem; text-transform: uppercase; }
+  h2.sec { font-size: clamp(1.4rem, 4vw, 1.85rem); color: var(--navy); margin: 8px 0 10px; text-wrap: balance; }
+  p.sec-lead { color: var(--gray); line-height: 1.8; font-size: 0.97rem; max-width: 64ch; }
+
+  /* how it works */
+  .steps { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-top: 26px; }
+  .step { background: var(--white); border-radius: 16px; padding: 20px; box-shadow: 0 2px 18px rgba(13,27,62,0.07); }
+  .step .n { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--navy); color: var(--gold2); font-weight: 900; font-size: 0.85rem; margin-bottom: 12px; }
+  .step h3 { font-size: 1rem; color: var(--navy); margin-bottom: 6px; }
+  .step p { font-size: 0.87rem; color: var(--gray); line-height: 1.65; }
+
+  /* tracks */
+  .tracks { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); margin-top: 26px; }
+  .tk { background: var(--white); border-radius: 18px; padding: 22px; box-shadow: 0 2px 18px rgba(13,27,62,0.07); border-top: 5px solid var(--gold); display: flex; flex-direction: column; }
+  .tk.t-squire { border-top-color: var(--teal); }
+  .tk.t-knight { border-top-color: var(--gold); }
+  .tk.t-sentinel { border-top-color: var(--navy2); }
+  .tk.t-guardian { border-top-color: var(--purple); }
+  .tk .em { font-size: 2rem; line-height: 1; }
+  .tk h3 { font-size: 1.2rem; color: var(--navy); margin: 10px 0 2px; }
+  .tk .ages { font-size: 0.74rem; font-weight: 900; letter-spacing: 1.4px; text-transform: uppercase; color: var(--gray); }
+  .tk .len { font-size: 0.82rem; font-weight: 800; color: var(--navy2); margin: 10px 0 10px; }
+  .tk > p { font-size: 0.88rem; color: var(--gray); line-height: 1.68; }
+  .tk ul { list-style: none; margin: 14px 0 0; display: flex; flex-direction: column; gap: 7px; }
+  .tk ul li { font-size: 0.85rem; line-height: 1.5; padding-left: 20px; position: relative; color: var(--text); }
+  .tk ul li::before { content: "◆"; position: absolute; left: 0; color: var(--gold); font-size: 0.68em; top: 0.3em; }
+  .tk .tk-links { margin-top: auto; padding-top: 18px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .tk .tk-links a { font-size: 0.8rem; font-weight: 800; text-decoration: none; padding: 8px 13px; border-radius: 10px; background: var(--light); color: var(--navy); }
+  .tk .tk-links a.main { background: var(--navy); color: #fff; }
+
+  /* curriculum */
+  details.cur { background: var(--white); border-radius: 14px; margin-top: 12px; box-shadow: 0 2px 14px rgba(13,27,62,0.06); overflow: hidden; }
+  details.cur > summary { cursor: pointer; padding: 16px 20px; font-weight: 900; color: var(--navy); font-size: 0.97rem; display: flex; align-items: center; gap: 10px; list-style: none; }
+  details.cur > summary::-webkit-details-marker { display: none; }
+  details.cur > summary::after { content: "+"; margin-left: auto; color: var(--gold); font-size: 1.3rem; font-weight: 900; line-height: 1; }
+  details.cur[open] > summary::after { content: "−"; }
+  details.cur .cur-body { padding: 0 20px 20px; }
+  .cur-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+  .cur-table th { text-align: left; background: var(--light); color: var(--navy); padding: 8px 11px; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.2px; }
+  .cur-table td { padding: 8px 11px; border-bottom: 1px solid #edf0f7; vertical-align: top; line-height: 1.55; }
+  .cur-table td:first-child { white-space: nowrap; font-weight: 800; color: var(--navy2); font-variant-numeric: tabular-nums; }
+  .cur-h { font-weight: 900; color: var(--navy); font-size: 0.92rem; margin: 18px 0 6px; }
+  .cur-h:first-child { margin-top: 0; }
+  .cur-goal { font-size: 0.85rem; color: var(--gray); line-height: 1.65; margin-bottom: 10px; }
+
+  /* pricing */
+  #school { scroll-margin-top: 20px; }
+  .price-grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); margin-top: 26px; align-items: start; }
+  .pc { background: var(--white); border-radius: 18px; padding: 24px; box-shadow: 0 2px 18px rgba(13,27,62,0.07); border: 2px solid transparent; }
+  .pc.feature { border-color: var(--gold); position: relative; }
+  .pc.feature .tag { position: absolute; top: -12px; left: 22px; background: var(--gold); color: var(--navy); font-weight: 900; font-size: 0.68rem; letter-spacing: 1.4px; text-transform: uppercase; padding: 4px 11px; border-radius: 20px; }
+  .pc h3 { font-size: 1.12rem; color: var(--navy); }
+  .pc .amt { font-size: 2.1rem; font-weight: 900; color: var(--navy); margin: 12px 0 2px; line-height: 1; }
+  .pc .amt small { font-size: 0.82rem; font-weight: 800; color: var(--gray); }
+  .pc .amt-sub { font-size: 0.8rem; color: var(--gray); font-weight: 700; }
+  .pc ul { list-style: none; margin: 18px 0 0; display: flex; flex-direction: column; gap: 9px; }
+  .pc ul li { font-size: 0.87rem; line-height: 1.55; padding-left: 24px; position: relative; }
+  .pc ul li::before { content: "✓"; position: absolute; left: 0; color: var(--success); font-weight: 900; }
+  .pc .pc-cta { margin-top: 20px; }
+  .pc .pc-cta .btn { width: 100%; text-align: center; }
+
+  .waiver { background: #eafaf7; border-left: 5px solid var(--success); border-radius: 0 14px 14px 0; padding: 18px 22px; margin-top: 22px; }
+  .waiver b { color: #156b60; }
+  .waiver p { font-size: 0.9rem; line-height: 1.75; color: #1d5a53; }
+
+  .promise { background: var(--navy); color: #c3cee6; border-radius: 18px; padding: 24px 26px; margin-top: 26px; }
+  .promise h3 { color: var(--gold2); font-size: 1.05rem; margin-bottom: 10px; }
+  .promise p { font-size: 0.9rem; line-height: 1.8; }
+  .promise p + p { margin-top: 10px; }
+
+  /* faq */
+  details.fq { background: var(--white); border-radius: 13px; margin-top: 10px; box-shadow: 0 2px 12px rgba(13,27,62,0.05); }
+  details.fq > summary { cursor: pointer; padding: 15px 19px; font-weight: 800; color: var(--navy); font-size: 0.93rem; list-style: none; display: flex; gap: 10px; }
+  details.fq > summary::-webkit-details-marker { display: none; }
+  details.fq > summary::after { content: "+"; margin-left: auto; color: var(--gold); font-size: 1.2rem; font-weight: 900; }
+  details.fq[open] > summary::after { content: "−"; }
+  details.fq p { padding: 0 19px 17px; font-size: 0.88rem; line-height: 1.75; color: #46536c; }
+  details.fq p a { color: var(--navy2); font-weight: 800; }
+
+  .band { background: var(--white); }
+  .band .wrap { padding-top: 44px; padding-bottom: 44px; }
+
+  .closer { background: var(--navy); color: #fff; text-align: center; padding: 3rem 1.5rem; }
+  .closer h2 { font-size: clamp(1.4rem, 4.5vw, 1.95rem); color: var(--gold2); margin-bottom: 12px; text-wrap: balance; }
+  .closer p { color: #b9c6e2; max-width: 52ch; margin: 0 auto 22px; line-height: 1.75; font-size: 0.95rem; }
+
+  footer { text-align: center; padding: 2rem; color: var(--gray); font-size: 0.85rem; }
+  :focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+</style>
+</head>
+<body>
+
+<div class="ct-hero" style="position:relative;">
+  <a class="back" href="/school-programs.html" data-i18n="crt.back">← School &amp; Org Programs</a>
+  <div class="eyebrow" data-i18n="crt.eyebrow">Digital Safety Knights</div>
+  <h1 data-i18n="crt.h1">🎓 Digital Safety Certification</h1>
+  <p data-i18n="crt.sub">Two hours, taught live online as one hour plus one hour a week apart, ending in a certificate. Four age tracks, from a six-year-old to a staff room. The teaching is free — for every school, in every country, always.</p>
+  <div class="ct-chips">
+    <span data-i18n="crt.chip1">⏱️ 1 hour + 1 hour</span>
+    <span data-i18n="crt.chip2">💻 Live on Zoom</span>
+    <span data-i18n="crt.chip3">🎖️ Certificate on passing</span>
+    <span data-i18n="crt.chip4">🌍 EN · ES · FR · TR</span>
+  </div>
+  <div class="cta-row">
+    <a class="btn" href="/school-programs.html#sp-form-title" data-i18n="crt.ctaBook">🏫 Book a free cohort →</a>
+    <a class="btn ghost" href="#tracks" data-i18n="crt.ctaTracks">See the four tracks</a>
+  </div>
+</div>
+
+<!-- ───────── HOW IT WORKS ───────── -->
+<div class="wrap">
+  <div class="sec-eyebrow" data-i18n="crt.howEyebrow">How it works</div>
+  <h2 class="sec" data-i18n="crt.howH">Four steps, two weeks, one certificate</h2>
+  <p class="sec-lead" data-i18n="crt.howLead">The same shape for every age group. Only the length, the language and the content change.</p>
+  <div class="steps">
+    <div class="step">
+      <span class="n">1</span>
+      <h3 data-i18n="crt.s1h">Pick a track</h3>
+      <p data-i18n="crt.s1p">Choose the age band. A class sits one track together; a parent evening sits the Guardian track.</p>
+    </div>
+    <div class="step">
+      <span class="n">2</span>
+      <h3 data-i18n="crt.s2h">Session 1 — what happens</h3>
+      <p data-i18n="crt.s2p">The threats, named precisely and age-appropriately. One hour, live, with the room talking back.</p>
+    </div>
+    <div class="step">
+      <span class="n">3</span>
+      <h3 data-i18n="crt.s3h">Session 2 — what to do</h3>
+      <p data-i18n="crt.s3p">A week later. Hands-on: settings changed, protocols rehearsed, the first sentence to an adult scripted.</p>
+    </div>
+    <div class="step">
+      <span class="n">4</span>
+      <h3 data-i18n="crt.s4h">The exam, then the certificate</h3>
+      <p data-i18n="crt.s4p">Open book, 80% to pass, unlimited free retakes. Pass and the certificate is issued with your name on it.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ───────── TRACKS ───────── -->
+<div class="band">
+<div class="wrap" id="tracks" style="scroll-margin-top:16px;">
+  <div class="sec-eyebrow" data-i18n="crt.tracksEyebrow">The four tracks</div>
+  <h2 class="sec" data-i18n="crt.tracksH">The same course, pitched four ways</h2>
+  <p class="sec-lead" data-i18n="crt.tracksLead">A 2-hour block is right for a teenager and wrong for a seven-year-old, so the younger tracks are shorter and the exam is shorter with them. What a child is told also changes by band: the Sentinel track names sextortion and the law outright, the Knight track stops at “if anyone ever asks you for a photo, that is the moment you tell a grown-up”, and the Squire track never goes near it.</p>
+
+  <div class="tracks">
+    <div class="tk t-squire">
+      <span class="em">🗡️</span>
+      <h3 data-i18n="crt.sqH">Squire</h3>
+      <div class="ages" data-i18n="crt.sqAges">Ages 6–9 · lower elementary</div>
+      <div class="len" data-i18n="crt.sqLen">2 × 30 minutes · 12-question exam</div>
+      <p data-i18n="crt.sqP">Secrets, strangers and shiny prizes. Taught with hands up and voices out — an interaction every three minutes, because that is how this age learns.</p>
+      <ul>
+        <li data-i18n="crt.sqL1">Your name, school and address stay offline</li>
+        <li data-i18n="crt.sqL2">“Free” plus “hurry” is always a trap</li>
+        <li data-i18n="crt.sqL3">“Keep it a secret from your parents” is always wrong</li>
+        <li data-i18n="crt.sqL4">Never meet someone from a game in real life</li>
+        <li data-i18n="crt.sqL5">Telling a grown-up is never the wrong answer</li>
+      </ul>
+      <div class="tk-links">
+        <a class="main" href="/certification-slides.html?track=squire&amp;session=1" data-i18n="crt.linkDeck">▶ Deck</a>
+        <a href="/certification-slides.html?track=squire&amp;view=guide" data-i18n="crt.linkGuide">📋 Guide</a>
+        <a href="/certification-exam.html?track=squire" data-i18n="crt.linkExam">✍️ Exam</a>
+      </div>
+    </div>
+
+    <div class="tk t-knight">
+      <span class="em">⚔️</span>
+      <h3 data-i18n="crt.knH">Knight</h3>
+      <div class="ages" data-i18n="crt.knAges">Ages 10–13 · upper elementary &amp; middle</div>
+      <div class="len" data-i18n="crt.knLen">2 × 45 minutes · 18-question exam</div>
+      <p data-i18n="crt.knP">The Roblox, Discord and first-phone years. The tricks get named, and in Session 2 the settings get changed live on their own devices.</p>
+      <ul>
+        <li data-i18n="crt.knL1">The four levers: urgency, secrecy, flattery, fear</li>
+        <li data-i18n="crt.knL2">Free-Robux scams and “go first and I’ll send after”</li>
+        <li data-i18n="crt.knL3">Grooming as a four-stage pattern you can name</li>
+        <li data-i18n="crt.knL4">AI that sounds certain and is wrong · voice cloning</li>
+        <li data-i18n="crt.knL5">Group-chat bullying, and what a bystander does</li>
+      </ul>
+      <div class="tk-links">
+        <a class="main" href="/certification-slides.html?track=knight&amp;session=1" data-i18n="crt.linkDeck">▶ Deck</a>
+        <a href="/certification-slides.html?track=knight&amp;view=guide" data-i18n="crt.linkGuide">📋 Guide</a>
+        <a href="/certification-exam.html?track=knight" data-i18n="crt.linkExam">✍️ Exam</a>
+      </div>
+    </div>
+
+    <div class="tk t-sentinel">
+      <span class="em">🛡️</span>
+      <h3 data-i18n="crt.seH">Sentinel</h3>
+      <div class="ages" data-i18n="crt.seAges">Ages 14–17 · high school</div>
+      <div class="len" data-i18n="crt.seLen">2 × 60 minutes · 25-question exam</div>
+      <p data-i18n="crt.seP">The full landscape, no euphemism. This is the track built for the age group the data says is most targeted — and it treats them as competent, not careless.</p>
+      <ul>
+        <li data-i18n="crt.seL1">Financial sextortion: the script, stage by stage</li>
+        <li data-i18n="crt.seL2">Nudify apps — why “I never sent anything” is no defence</li>
+        <li data-i18n="crt.seL3">Judging a file by provenance, not by appearance</li>
+        <li data-i18n="crt.seL4">Passkeys, app-based 2FA, recovery routes, footprint</li>
+        <li data-i18n="crt.seL5">The law on forwarding an image of a classmate</li>
+      </ul>
+      <div class="tk-links">
+        <a class="main" href="/certification-slides.html?track=sentinel&amp;session=1" data-i18n="crt.linkDeck">▶ Deck</a>
+        <a href="/certification-slides.html?track=sentinel&amp;view=guide" data-i18n="crt.linkGuide">📋 Guide</a>
+        <a href="/certification-exam.html?track=sentinel" data-i18n="crt.linkExam">✍️ Exam</a>
+      </div>
+    </div>
+
+    <div class="tk t-guardian">
+      <span class="em">🏰</span>
+      <h3 data-i18n="crt.guH">Guardian</h3>
+      <div class="ages" data-i18n="crt.guAges">Parents, carers &amp; educators</div>
+      <div class="len" data-i18n="crt.guLen">2 × 60 minutes · 25-question exam</div>
+      <p data-i18n="crt.guP">Written for an adult who is frightened and short on time. Every alarming fact is followed immediately by what to do about it — no lecture, no “the internet is dangerous”.</p>
+      <ul>
+        <li data-i18n="crt.guL1">What is actually happening in 2026, with sources</li>
+        <li data-i18n="crt.guL2">Why children don’t tell — and the device-removal trap</li>
+        <li data-i18n="crt.guL3">Parental controls: a seatbelt, not a chauffeur</li>
+        <li data-i18n="crt.guL4">The first sixty seconds of a disclosure</li>
+        <li data-i18n="crt.guL5">Reporting routes, and an educator’s duties</li>
+      </ul>
+      <div class="tk-links">
+        <a class="main" href="/certification-slides.html?track=guardian&amp;session=1" data-i18n="crt.linkDeck">▶ Deck</a>
+        <a href="/certification-slides.html?track=guardian&amp;view=guide" data-i18n="crt.linkGuide">📋 Guide</a>
+        <a href="/certification-exam.html?track=guardian" data-i18n="crt.linkExam">✍️ Exam</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ───────── CURRICULUM ───────── -->
+<div class="wrap">
+  <div class="sec-eyebrow" data-i18n="crt.curEyebrow">The programme, minute by minute</div>
+  <h2 class="sec" data-i18n="crt.curH">Nothing here is a mystery before you book</h2>
+  <p class="sec-lead" data-i18n="crt.curLead">Every run sheet, every slide and every facilitator note is published. Read it before you decide, hand it to an administrator for sign-off, or print it and run the course yourself without us.</p>
+  <div id="cur-root" style="margin-top:22px;">
+    <p style="color:var(--gray);font-size:0.9rem;" id="cur-loading" data-i18n="crt.curLoading">Loading the run sheets…</p>
+  </div>
+  <div class="row" style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;">
+    <a class="btn navy" href="/certification-slides.html" data-i18n="crt.curAllDecks">🎬 All decks &amp; facilitator guides</a>
+    <a class="btn outline" href="/certification-exam.html" data-i18n="crt.curSitExam">✍️ Sit an exam now</a>
+  </div>
+</div>
+
+<!-- ───────── PRICING ───────── -->
+<div class="band">
+<div class="wrap" id="school">
+  <div class="sec-eyebrow" data-i18n="crt.priceEyebrow">Two ways to get it</div>
+  <h2 class="sec" data-i18n="crt.priceH">The teaching is free. Only a verified credential costs anything.</h2>
+  <p class="sec-lead" data-i18n="crt.priceLead">Our live sessions have always been free and they stay free — that is not changing, and there is no paid version of the teaching. What some schools have asked us for is something different: a longer programme, a proctored exam, and certificates we can actually stand behind if a parent or a district asks. That takes administration, and the fee below is what covers it.</p>
+
+  <div class="price-grid">
+    <div class="pc">
+      <h3 data-i18n="crt.freeH">Open Certification</h3>
+      <div class="amt" data-i18n="crt.freeAmt">Free</div>
+      <div class="amt-sub" data-i18n="crt.freeSub">Forever, for anyone, anywhere</div>
+      <ul>
+        <li data-i18n="crt.freeL1">A live 2-hour cohort for your class, on request</li>
+        <li data-i18n="crt.freeL2">Every slide deck and facilitator guide, free to download and run yourself</li>
+        <li data-i18n="crt.freeL3">The exam, open book, with unlimited retakes</li>
+        <li data-i18n="crt.freeL4">A self-issued certificate with the student’s name on it</li>
+        <li data-i18n="crt.freeL5">English, Spanish, French or Turkish</li>
+        <li data-i18n="crt.freeL6">No account, no login, no student data collected</li>
+      </ul>
+      <div class="pc-cta">
+        <a class="btn navy" href="/school-programs.html#sp-form-title" data-i18n="crt.freeCta">Book a free cohort →</a>
+      </div>
+    </div>
+
+    <div class="pc feature">
+      <span class="tag" data-i18n="crt.schoolTag">For schools that need it</span>
+      <h3 data-i18n="crt.schoolH">School Certification Programme</h3>
+      <div class="amt" data-i18n="crt.schoolAmt">$6 <small>per student</small></div>
+      <div class="amt-sub" data-i18n="crt.schoolSub">$120 minimum · $600 cap per school · one school year</div>
+      <ul>
+        <li data-i18n="crt.schoolL1"><b>Four hours, not two</b> — 4 × 60-minute live sessions over four weeks</li>
+        <li data-i18n="crt.schoolL2">A pre- and post-assessment, so you can show what changed</li>
+        <li data-i18n="crt.schoolL3">A proctored exam sitting, scheduled with your teacher</li>
+        <li data-i18n="crt.schoolL4">Verified certificates issued from your roster, each with a reference we can confirm on request</li>
+        <li data-i18n="crt.schoolL5">A class report for the teacher — topics mastered, topics to revisit</li>
+        <li data-i18n="crt.schoolL6">A “Digital Safety Certified” seal for your school’s website</li>
+        <li data-i18n="crt.schoolL7">A parent-evening Guardian session included at no extra cost</li>
+      </ul>
+      <div class="pc-cta">
+        <a class="btn" href="/school-programs.html#sp-form-title" data-i18n="crt.schoolCta">Enquire about certification →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="waiver">
+    <p data-i18n="crt.waiver"><b>The fee is waived in full for any school that asks.</b> No application, no means test, no questions, and we will not ask you to justify it — Title I schools, public schools anywhere in the world, and any organisation for whom $120 is a real obstacle. Say so in the enquiry form and the programme is free. We would rather certify a thousand students for nothing than turn one school away over money.</p>
+  </div>
+
+  <div class="promise">
+    <h3 data-i18n="crt.promiseH">Why there is a fee at all, stated plainly</h3>
+    <p data-i18n="crt.promiseP1">A certificate that nobody checks is a PDF. The moment a school wants to put a credential in a student file, show it to a district, or publish a seal on its website, somebody has to hold a roster, proctor a sitting, keep a reference, and answer the phone when a parent rings in two years' time. That is administration, and it is the only thing we charge for.</p>
+    <p data-i18n="crt.promiseP2">What has not changed: our workshops are free, our materials are free, the self-issued certificate is free, and we still come to your school as volunteers rather than vendors. Nothing that was free yesterday costs money today.</p>
+  </div>
+</div>
+</div>
+
+<!-- ───────── FAQ ───────── -->
+<div class="wrap">
+  <div class="sec-eyebrow" data-i18n="crt.faqEyebrow">Before you ask</div>
+  <h2 class="sec" data-i18n="crt.faqH">The questions schools actually send us</h2>
+  <div style="margin-top:20px;">
+    <details class="fq"><summary data-i18n="crt.q1">Is the free version a cut-down version?</summary>
+      <p data-i18n="crt.a1">No. The free cohort is the whole two-hour course, the whole exam and a real certificate with the student's name on it. The paid programme is <em>longer</em> and <em>verified</em> — it is not the same course with the good parts added back.</p></details>
+
+    <details class="fq"><summary data-i18n="crt.q2">What is the difference between a self-issued and a verified certificate?</summary>
+      <p data-i18n="crt.a2">A self-issued certificate records that the exam was passed in that student's browser. We did not watch them sit it, so we cannot vouch for who did. A verified certificate comes from a roster you gave us, a sitting your teacher proctored, and a reference we can confirm if someone asks. Both are real; only one is something a district can rely on.</p></details>
+
+    <details class="fq"><summary data-i18n="crt.q3">Can we just run the course ourselves?</summary>
+      <p data-i18n="crt.a3">Yes, and you do not need to tell us. Every <a href="/certification-slides.html">deck and facilitator guide</a> is published with the full run sheet and every presenter note. Print it, share it, translate it, adapt it for your room. If you want the exam too, it is already live. We would rather a teacher in a country we will never visit runs this next Tuesday than wait for us.</p></details>
+
+    <details class="fq"><summary data-i18n="crt.q4">Is any student data collected?</summary>
+      <p data-i18n="crt.a4">Not in the free version. The exam runs entirely in the browser: the name, the answers and the result never leave the device, there is no account and there is no server. For the paid programme we necessarily hold a roster of names so that certificates can be issued and verified — nothing else, never shared, and deleted at the end of the school year unless you ask us to keep it.</p></details>
+
+    <details class="fq"><summary data-i18n="crt.q5">How much is each session, really? Our timetable is 45 minutes.</summary>
+      <p data-i18n="crt.a5">The Knight track is built for exactly that — 2 × 45 minutes. The Sentinel and Guardian tracks are 60 but will compress to 45 if you tell us in advance which segment to drop; the facilitator guide marks the timings so you can see what gets cut. The Squire track is 2 × 30, because a 60-minute online session with six-year-olds does not work and we are not going to pretend otherwise.</p></details>
+
+    <details class="fq"><summary data-i18n="crt.q6">Who teaches it?</summary>
+      <p data-i18n="crt.a6">Our team — most often Ayşe Saklı, our Club Leader and Co-Founder. See the <a href="/team.html">team page</a> for who's who. Students aged 13–17 who want to keep going after the course can apply to <a href="/knight-council.html">Knight Council</a>.</p></details>
+
+    <details class="fq"><summary data-i18n="crt.q7">What if a student discloses something during a session?</summary>
+      <p data-i18n="crt.a7">It happens, and the guides are written for it. We never ask a student to describe their own experience in front of a group, we keep a private channel open throughout, and we stay on the call for ten minutes after the end — in our sessions disclosures come after the end far more often than during. Anything that needs escalating goes to your designated safeguarding lead immediately, and we do not run an investigation ourselves.</p></details>
+
+    <details class="fq"><summary data-i18n="crt.q8">Is the certificate an accredited qualification?</summary>
+      <p data-i18n="crt.a8">No, and we will not claim otherwise. It is a certificate of completion from a nonprofit, not a credential from an awarding body. It belongs on a classroom wall, in a portfolio, or in a student file as evidence that the training happened. If anyone tells you a two-hour online course is an accredited qualification, be suspicious of them.</p></details>
+  </div>
+</div>
+
+<div class="closer">
+  <h2 data-i18n="crt.closerH">Pick a track and look at the actual slides</h2>
+  <p data-i18n="crt.closerP">Everything is published — the run sheets, the presenter notes, the answer key, the exam. You can read the whole course before you speak to us, and you can run it without us if you'd rather.</p>
+  <div style="display:flex;gap:11px;justify-content:center;flex-wrap:wrap;">
+    <a class="btn" href="/certification-slides.html" data-i18n="crt.closerCta1">🎬 Open the decks</a>
+    <a class="btn ghost" href="/school-programs.html#sp-form-title" data-i18n="crt.closerCta2">🏫 Book a free cohort</a>
+  </div>
+</div>
+
+<footer>⚔️ Digital Safety Knights · digitalsafetyknights.org · © 2026</footer>
+
+<script src="/assets/lang-switcher.js"></script>
+<script src="/assets/site-search.js"></script>
+<script src="/assets/play-now-fab.js"></script>
+<script>
+/* Build the per-track curriculum accordions from the same JSON the decks and
+   the exam read, so a change to a run sheet never has to be mirrored here. */
+(function () {
+  'use strict';
+  var TRACKS = ['squire', 'knight', 'sentinel', 'guardian'];
+
+  function t(key, fallback) {
+    return (window.DSKi18n && DSKi18n.t) ? DSKi18n.t(key, fallback) : fallback;
+  }
+  function esc(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  function render(all) {
+    var root = document.getElementById('cur-root');
+    var L = {
+      session: t('crt.curSession', 'Session'),
+      goal: t('crt.curGoal', 'Goal'),
+      minutes: t('crt.curMinutes', 'Minutes'),
+      segment: t('crt.curSegment', 'Segment'),
+      slides: t('crt.curSlides', 'Slides'),
+      exam: t('crt.curExam', 'Examination'),
+      examFmt: t('crt.curExamFmt', '{n} questions · {m} minutes · {p}% to pass · open book · unlimited retakes'),
+      openDeck: t('crt.curOpenDeck', 'Open deck'),
+      openGuide: t('crt.curOpenGuide', 'Full facilitator guide')
+    };
+
+    root.innerHTML = all.map(function (d) {
+      var f = d.format || {};
+      var head = (d.emoji || '') + ' ' + esc(d.track) + ' — ' + esc(d.ages) +
+        ' · ' + f.sessions + ' × ' + f.minutesEach + ' min';
+
+      var body = (d.sessions || []).map(function (s) {
+        var rows = (s.segments || []).map(function (sg) {
+          return '<tr><td>' + esc(sg.minutes) + '</td><td>' + esc(sg.label) + '</td><td>' +
+            (sg.slides || []).length + '</td></tr>';
+        }).join('');
+        return '<div class="cur-h">' + L.session + ' ' + s.n + ' — ' + esc(s.title) + '</div>' +
+          (s.goal ? '<div class="cur-goal"><b>' + L.goal + '.</b> ' + esc(s.goal) + '</div>' : '') +
+          '<div style="overflow-x:auto;"><table class="cur-table"><thead><tr><th>' + L.minutes +
+          '</th><th>' + L.segment + '</th><th>' + L.slides + '</th></tr></thead><tbody>' +
+          rows + '</tbody></table></div>';
+      }).join('');
+
+      var ex = d.exam || {};
+      body += '<div class="cur-h">' + L.exam + '</div><div class="cur-goal">' +
+        L.examFmt.replace('{n}', (ex.questions || []).length)
+                 .replace('{m}', ex.minutes || 25)
+                 .replace('{p}', ex.passMark || 80) + '</div>' +
+        '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;">' +
+        '<a class="btn navy" style="font-size:0.8rem;padding:9px 15px;" href="/certification-slides.html?track=' +
+        d.id + '&session=1">▶ ' + L.openDeck + '</a>' +
+        '<a class="btn outline" style="font-size:0.8rem;padding:9px 15px;" href="/certification-slides.html?track=' +
+        d.id + '&view=guide">📋 ' + L.openGuide + '</a></div>';
+
+      return '<details class="cur"><summary>' + head + '</summary><div class="cur-body">' + body + '</div></details>';
+    }).join('');
+  }
+
+  // Render straight away: DSKi18n.t is synchronous and falls back to the
+  // English string when the dictionary has not arrived. i18n.js only fires
+  // dsk-i18n-ready for non-English locales, so waiting on it would stall the
+  // English page forever — instead re-render once the dictionary lands.
+  var loaded = null;
+  function start() {
+    if (loaded) { render(loaded); return; }
+    Promise.all(TRACKS.map(function (id) {
+      return fetch('/content/certification/' + id + '.json')
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .catch(function () { return null; });
+    })).then(function (all) {
+      all = all.filter(Boolean);
+      if (!all.length) {
+        document.getElementById('cur-loading').textContent =
+          t('crt.curFail', 'The run sheets could not be loaded. Open the decks page instead.');
+        return;
+      }
+      loaded = all;
+      render(all);
+    });
+  }
+
+  start();
+  document.addEventListener('dsk-i18n-ready', start, { once: true });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certification Slides — Digital Safety Knights</title>
+<link rel="canonical" href="https://digitalsafetyknights.org/certification-slides.html">
+<meta name="description" content="The live presenter deck and facilitator guide for the Digital Safety Knights certification programme — four age tracks, two sessions each.">
+<meta name="robots" content="noindex, follow">
+<meta property="og:title" content="Certification Slides — Digital Safety Knights">
+<meta property="og:description" content="The live presenter deck and facilitator guide for the Digital Safety Knights certification programme.">
+<meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
+<meta property="og:url" content="https://digitalsafetyknights.org/certification-slides.html">
+<meta property="og:type" content="website">
+<link rel="icon" href="/assets/favicon.ico">
+<style>
+  :root {
+    --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a;
+    --light: #f4f6fb; --white: #fff; --danger: #e63946; --success: #2a9d8f;
+    --gray: #6c757d; --text: #2d3748; --teal: #3EC6C0; --purple: #8A5FBF;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Nunito Sans', 'Segoe UI', system-ui, sans-serif; background: #070e24; color: var(--text); }
+  a { color: inherit; }
+  [hidden] { display: none !important; }
+
+  /* ───────── Picker ───────── */
+  #picker { max-width: 920px; margin: 0 auto; padding: 40px 20px 80px; color: #e8edf8; }
+  #picker .back { color: #8fa3cc; text-decoration: none; font-size: 0.85rem; font-weight: 700; }
+  #picker h1 { font-size: 1.9rem; color: var(--gold2); margin: 18px 0 8px; }
+  #picker .sub { color: #a8b8d8; font-size: 0.95rem; line-height: 1.7; max-width: 620px; margin-bottom: 28px; }
+  .track-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .track-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(201,168,76,0.3); border-radius: 16px; padding: 20px; }
+  .track-card h2 { font-size: 1.15rem; color: var(--gold2); display: flex; align-items: center; gap: 9px; }
+  .track-card .ages { font-size: 0.78rem; font-weight: 800; color: #8fa3cc; text-transform: uppercase; letter-spacing: 1px; margin: 6px 0 10px; }
+  .track-card p { font-size: 0.86rem; color: #c3cee6; line-height: 1.6; margin-bottom: 14px; }
+  .track-card .links { display: flex; flex-wrap: wrap; gap: 8px; }
+  .track-card .links a { background: var(--gold); color: var(--navy); text-decoration: none; font-weight: 800; font-size: 0.8rem; padding: 8px 13px; border-radius: 10px; }
+  .track-card .links a.ghost { background: transparent; color: var(--gold2); border: 1px solid rgba(201,168,76,0.5); }
+  #picker .howto { margin-top: 30px; background: rgba(255,255,255,0.04); border-radius: 14px; padding: 18px 20px; font-size: 0.85rem; color: #c3cee6; line-height: 1.8; }
+  #picker .howto strong { color: var(--gold2); }
+  kbd { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 5px; padding: 1px 6px; font-size: 0.78rem; font-family: ui-monospace, monospace; }
+
+  /* ───────── Deck ───────── */
+  #deck { position: fixed; inset: 0; display: flex; flex-direction: column; background: #070e24; }
+  .stage { flex: 1; display: flex; align-items: center; justify-content: center; padding: 3vh 4vw; min-height: 0; }
+  .slide { width: 100%; max-width: 1100px; max-height: 100%; overflow-y: auto; }
+
+  .s-eyebrow { color: var(--gold); font-weight: 900; letter-spacing: 2.5px; font-size: clamp(0.62rem, 1.1vw, 0.8rem); text-transform: uppercase; margin-bottom: 14px; }
+  .s-title { color: #fff; font-weight: 900; line-height: 1.12; text-wrap: balance; font-size: clamp(1.5rem, 4.4vw, 3.1rem); }
+  .s-sub { color: #b9c6e2; font-size: clamp(0.95rem, 1.7vw, 1.3rem); line-height: 1.55; margin-top: 16px; max-width: 46ch; }
+  .s-bullets { list-style: none; margin-top: 26px; display: flex; flex-direction: column; gap: 14px; }
+  .s-bullets li { color: #e3e9f6; font-size: clamp(0.95rem, 1.65vw, 1.32rem); line-height: 1.5; padding-left: 34px; position: relative; }
+  .s-bullets li::before { content: "◆"; position: absolute; left: 0; top: 0.08em; color: var(--gold); font-size: 0.75em; }
+  .s-callout { margin-top: 30px; background: rgba(201,168,76,0.14); border-left: 5px solid var(--gold); border-radius: 0 12px 12px 0; padding: 16px 22px; color: var(--gold2); font-weight: 800; font-size: clamp(0.95rem, 1.6vw, 1.26rem); line-height: 1.5; }
+  .s-ask { margin-top: 24px; background: rgba(62,198,192,0.14); border-left: 5px solid var(--teal); border-radius: 0 12px 12px 0; padding: 16px 22px; color: #8fe6e2; font-weight: 800; font-size: clamp(0.95rem, 1.6vw, 1.26rem); line-height: 1.5; }
+  .s-source { margin-top: 22px; color: #7f91b4; font-size: clamp(0.7rem, 1vw, 0.84rem); font-style: italic; }
+  .s-bignum { color: var(--gold2); font-weight: 900; line-height: 1; font-size: clamp(3.2rem, 12vw, 9rem); font-variant-numeric: tabular-nums; }
+
+  /* per-kind treatments */
+  .slide[data-kind="title"], .slide[data-kind="section"], .slide[data-kind="stat"] { text-align: center; }
+  .slide[data-kind="title"] .s-sub, .slide[data-kind="section"] .s-sub, .slide[data-kind="stat"] .s-sub { margin-left: auto; margin-right: auto; }
+  .slide[data-kind="section"] .s-title { color: var(--gold2); font-size: clamp(2rem, 6.5vw, 4.4rem); }
+  .slide[data-kind="rules"] .s-bullets li::before { content: "▸"; color: var(--teal); }
+  .slide[data-kind="scenario"] .s-bullets li::before { content: "✕"; color: var(--danger); font-size: 0.85em; }
+  .slide[data-kind="activity"] .s-eyebrow { color: var(--teal); }
+  .slide[data-kind="recap"] .s-bullets li::before { content: "✚"; color: var(--success); }
+  .slide[data-kind="recap"] .s-title { color: var(--success); }
+
+  /* ───────── Chrome ───────── */
+  .bar { background: #050a1b; border-top: 1px solid rgba(255,255,255,0.09); padding: 9px 14px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 0.78rem; color: #8fa3cc; }
+  .bar .who { font-weight: 900; color: var(--gold); letter-spacing: 0.5px; }
+  .bar .seg { color: #c3cee6; }
+  .bar .spacer { flex: 1; }
+  .bar button, .bar a.btn { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: #dbe3f3; border-radius: 8px; padding: 6px 11px; font: inherit; font-weight: 800; cursor: pointer; text-decoration: none; }
+  .bar button:hover, .bar a.btn:hover { background: rgba(201,168,76,0.25); border-color: var(--gold); }
+  .bar button[aria-pressed="true"] { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+  .bar .count { font-variant-numeric: tabular-nums; font-weight: 900; color: #fff; }
+  .progress { height: 4px; background: rgba(255,255,255,0.1); }
+  .progress > i { display: block; height: 100%; background: var(--gold); transition: width 0.22s ease; }
+
+  #notes { background: #0f1830; border-top: 2px solid var(--gold); padding: 16px 22px; max-height: 32vh; overflow-y: auto; }
+  #notes .lbl { color: var(--gold); font-weight: 900; font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 7px; }
+  #notes p { color: #d6ddee; font-size: 0.95rem; line-height: 1.68; max-width: 90ch; }
+  #notes .none { color: #70809f; font-style: italic; }
+
+  :focus-visible { outline: 3px solid var(--gold2); outline-offset: 2px; }
+
+  /* ───────── Facilitator guide (print) ───────── */
+  #guide { background: #fff; color: var(--text); max-width: 860px; margin: 0 auto; padding: 36px 30px 90px; }
+  #guide .g-head { border-bottom: 4px solid var(--navy); padding-bottom: 16px; margin-bottom: 24px; }
+  #guide .g-head .eyebrow { color: var(--gold); font-weight: 900; letter-spacing: 2px; font-size: 0.72rem; text-transform: uppercase; }
+  #guide h1 { font-size: 1.8rem; color: var(--navy); margin: 7px 0 6px; }
+  #guide .g-meta { color: var(--gray); font-size: 0.85rem; }
+  #guide h2 { font-size: 1.3rem; color: var(--navy); margin: 34px 0 4px; padding-top: 18px; border-top: 2px solid var(--light); }
+  #guide h2:first-of-type { border-top: none; }
+  #guide .g-goal { background: var(--light); border-left: 4px solid var(--gold); padding: 11px 15px; font-size: 0.88rem; line-height: 1.6; margin: 12px 0 18px; }
+  #guide table { width: 100%; border-collapse: collapse; margin: 12px 0 22px; font-size: 0.84rem; }
+  #guide th { text-align: left; background: var(--navy); color: #fff; padding: 7px 10px; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; }
+  #guide td { padding: 7px 10px; border-bottom: 1px solid #e6eaf3; vertical-align: top; }
+  #guide td:first-child { white-space: nowrap; font-weight: 800; font-variant-numeric: tabular-nums; color: var(--navy2); }
+  #guide .g-slide { border: 1px solid #e2e7f1; border-radius: 10px; padding: 14px 16px; margin-bottom: 12px; break-inside: avoid; }
+  #guide .g-slide .n { display: inline-block; background: var(--navy); color: var(--gold2); font-weight: 900; font-size: 0.7rem; padding: 2px 8px; border-radius: 20px; margin-right: 8px; }
+  #guide .g-slide .kind { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--gray); font-weight: 900; }
+  #guide .g-slide h3 { font-size: 1.02rem; color: var(--navy); margin: 7px 0 5px; }
+  #guide .g-slide ul { margin: 8px 0 0 20px; font-size: 0.85rem; line-height: 1.6; }
+  #guide .g-slide .co { margin-top: 9px; font-size: 0.85rem; font-weight: 800; color: #8a6d16; background: #fdf6e3; padding: 8px 12px; border-radius: 7px; }
+  #guide .g-slide .sc { font-size: 0.85rem; background: #e8f9f8; color: #166c68; padding: 8px 12px; border-radius: 7px; margin-top: 9px; font-weight: 700; }
+  #guide .g-slide .nt { margin-top: 10px; padding-top: 9px; border-top: 1px dashed #cfd7e6; font-size: 0.85rem; line-height: 1.68; color: #3d4a63; }
+  #guide .g-slide .nt b { color: var(--navy); }
+  #guide .g-print { background: var(--navy); color: #fff; border: none; border-radius: 10px; padding: 11px 20px; font: inherit; font-weight: 900; cursor: pointer; margin-bottom: 20px; }
+  #guide .g-back { color: var(--gray); font-size: 0.85rem; text-decoration: none; font-weight: 700; }
+
+  @media print {
+    body { background: #fff; }
+    #guide { max-width: none; padding: 0; }
+    #guide .g-print, #guide .g-back, #guide .noprint { display: none !important; }
+    #guide h2 { break-before: page; }
+    #guide h2:first-of-type { break-before: avoid; }
+  }
+  @media (max-width: 600px) {
+    .bar { font-size: 0.72rem; gap: 8px; }
+    .bar .hide-sm { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════ TRACK PICKER ══════════ -->
+<div id="picker" hidden>
+  <a class="back" href="/certification.html">← Certification Programme</a>
+  <h1>🎬 Presenter Decks &amp; Facilitator Guides</h1>
+  <p class="sub">Four age tracks, two sessions each. Open a deck to present live on Zoom, or open the facilitator guide for the minute-by-minute run sheet with every presenter note printed.</p>
+  <div class="track-grid" id="track-grid"></div>
+  <div class="howto">
+    <strong>Presenting:</strong> <kbd>→</kbd> <kbd>Space</kbd> next · <kbd>←</kbd> back · <kbd>N</kbd> presenter notes ·
+    <kbd>F</kbd> fullscreen · <kbd>G</kbd> facilitator guide · <kbd>Home</kbd> / <kbd>End</kbd> jump.<br>
+    <strong>Share only the deck:</strong> keep notes <em>off</em> on the shared screen and open a second window with <kbd>N</kbd> on for yourself.<br>
+    <strong>No internet in the room?</strong> Open the facilitator guide and print to PDF — it contains every slide and every note.
+  </div>
+</div>
+
+<!-- ══════════ DECK ══════════ -->
+<div id="deck" hidden>
+  <div class="stage"><div class="slide" id="slide" tabindex="-1"></div></div>
+  <div class="progress"><i id="prog"></i></div>
+  <div class="bar">
+    <span class="who" id="bar-who"></span>
+    <span class="seg hide-sm" id="bar-seg"></span>
+    <span class="spacer"></span>
+    <button type="button" id="btn-prev" aria-label="Previous slide">←</button>
+    <span class="count"><span id="bar-i">1</span>/<span id="bar-n">1</span></span>
+    <button type="button" id="btn-next" aria-label="Next slide">→</button>
+    <button type="button" id="btn-notes" aria-pressed="false" title="Presenter notes (N)">📝 <span class="hide-sm">Notes</span></button>
+    <button type="button" id="btn-full" title="Fullscreen (F)">⛶</button>
+    <a class="btn" id="btn-guide" href="#" title="Facilitator guide (G)">📋 <span class="hide-sm">Guide</span></a>
+    <a class="btn hide-sm" href="/certification-slides.html">⇤ Tracks</a>
+  </div>
+  <div id="notes" hidden><div class="lbl">Presenter notes</div><p id="notes-body"></p></div>
+</div>
+
+<!-- ══════════ FACILITATOR GUIDE ══════════ -->
+<div id="guide" hidden>
+  <a class="g-back" id="guide-back" href="/certification-slides.html">← All decks</a>
+  <div class="g-head">
+    <div class="eyebrow">Digital Safety Knights · Facilitator Guide</div>
+    <h1 id="g-title"></h1>
+    <div class="g-meta" id="g-meta"></div>
+  </div>
+  <button type="button" class="g-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
+  <div id="g-body"></div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  var TRACKS = [
+    { id: 'squire',   emoji: '🗡️', name: 'Squire',   ages: '6–9',   blurb: 'Two 30-minute sessions. Secrets, strangers and shiny prizes — taught with hands up, not slides read out.' },
+    { id: 'knight',   emoji: '⚔️', name: 'Knight',   ages: '10–13', blurb: 'Two 45-minute sessions. The Roblox, Discord and first-phone years, with the tricks named and the settings changed live.' },
+    { id: 'sentinel', emoji: '🛡️', name: 'Sentinel', ages: '14–17', blurb: 'Two 60-minute sessions. The full threat landscape for high school, and the counter-moves, hands on their own accounts.' },
+    { id: 'guardian', emoji: '🏰', name: 'Guardian', ages: 'Parents & educators', blurb: 'Two 60-minute sessions. What is actually happening, and what an adult can actually do about it.' }
+  ];
+
+  var qs = new URLSearchParams(location.search);
+  var trackId = (qs.get('track') || '').toLowerCase();
+  var sessionN = parseInt(qs.get('session') || '1', 10);
+  var wantGuide = qs.get('view') === 'guide';
+
+  var el = function (id) { return document.getElementById(id); };
+  var esc = function (s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  };
+
+  /* ───────── Picker ───────── */
+  function showPicker() {
+    el('track-grid').innerHTML = TRACKS.map(function (t) {
+      return '<div class="track-card">' +
+        '<h2>' + t.emoji + ' ' + esc(t.name) + '</h2>' +
+        '<div class="ages">Ages ' + esc(t.ages) + '</div>' +
+        '<p>' + esc(t.blurb) + '</p>' +
+        '<div class="links">' +
+          '<a href="?track=' + t.id + '&session=1">▶ Session 1</a>' +
+          '<a href="?track=' + t.id + '&session=2">▶ Session 2</a>' +
+          '<a class="ghost" href="?track=' + t.id + '&view=guide">📋 Guide</a>' +
+        '</div></div>';
+    }).join('');
+    el('picker').hidden = false;
+    document.title = 'Certification Slides — Digital Safety Knights';
+  }
+
+  function fail(msg) {
+    el('picker').hidden = false;
+    el('track-grid').insertAdjacentHTML('beforebegin',
+      '<p style="background:rgba(230,57,70,0.18);border-left:4px solid #e63946;padding:12px 16px;border-radius:0 10px 10px 0;color:#ffc2c7;margin-bottom:18px;font-size:0.9rem;">' + esc(msg) + '</p>');
+  }
+
+  if (!trackId || !TRACKS.some(function (t) { return t.id === trackId; })) { showPicker(); return; }
+
+  /* ───────── Load ───────── */
+  fetch('/content/certification/' + trackId + '.json')
+    .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function (data) { wantGuide ? renderGuide(data) : renderDeck(data); })
+    .catch(function (e) { fail('Could not load the ' + trackId + ' track (' + e.message + '). Pick a deck below.'); });
+
+  /* ───────── Deck ───────── */
+  function renderDeck(data) {
+    var sess = (data.sessions || []).filter(function (s) { return s.n === sessionN; })[0] || data.sessions[0];
+    var slides = sess.slides || [];
+    if (!slides.length) { fail('That session has no slides yet.'); return; }
+
+    var i = 0, notesOn = false;
+    el('deck').hidden = false;
+    el('bar-n').textContent = slides.length;
+    el('bar-who').textContent = (data.emoji || '') + ' ' + data.track + ' · Session ' + sess.n;
+    el('btn-guide').href = '?track=' + trackId + '&view=guide';
+    document.title = data.track + ' S' + sess.n + ' — DSK Certification';
+
+    // which timed segment a 1-based slide number falls in
+    function segmentFor(n) {
+      var segs = sess.segments || [];
+      for (var k = 0; k < segs.length; k++) {
+        if ((segs[k].slides || []).indexOf(n) !== -1) return segs[k].minutes + ' · ' + segs[k].label;
+      }
+      return sess.title;
+    }
+
+    function body(s) {
+      var h = '';
+      if (s.eyebrow) h += '<div class="s-eyebrow">' + esc(s.eyebrow) + '</div>';
+      if (s.kind === 'stat') {
+        h += '<div class="s-bignum">' + esc(s.title) + '</div>';
+        if (s.subtitle) h += '<div class="s-sub">' + esc(s.subtitle) + '</div>';
+      } else {
+        if (s.title) h += '<h2 class="s-title">' + esc(s.title) + '</h2>';
+        if (s.subtitle) h += '<div class="s-sub">' + esc(s.subtitle) + '</div>';
+      }
+      if (s.ask) h += '<div class="s-ask">' + esc(s.ask) + '</div>';
+      if (s.bullets && s.bullets.length) {
+        h += '<ul class="s-bullets">' + s.bullets.map(function (b) {
+          return '<li>' + esc(b) + '</li>';
+        }).join('') + '</ul>';
+      }
+      if (s.callout) h += '<div class="s-callout">' + esc(s.callout) + '</div>';
+      if (s.source) h += '<div class="s-source">Source: ' + esc(s.source) + '</div>';
+      return h;
+    }
+
+    function draw() {
+      var s = slides[i];
+      var node = el('slide');
+      node.setAttribute('data-kind', s.kind || 'teach');
+      node.innerHTML = body(s);
+      node.scrollTop = 0;
+      el('bar-i').textContent = i + 1;
+      el('bar-seg').textContent = segmentFor(i + 1);
+      el('prog').style.width = ((i + 1) / slides.length * 100) + '%';
+      el('notes-body').innerHTML = s.notes
+        ? esc(s.notes)
+        : '<span class="none">No note for this slide.</span>';
+      el('btn-prev').disabled = i === 0;
+      el('btn-next').disabled = i === slides.length - 1;
+      try { history.replaceState(null, '', '?track=' + trackId + '&session=' + sess.n + '&s=' + (i + 1)); } catch (e) {}
+    }
+
+    function go(n) { i = Math.max(0, Math.min(slides.length - 1, n)); draw(); }
+
+    var start = parseInt(qs.get('s') || '1', 10);
+    if (start > 1 && start <= slides.length) i = start - 1;
+
+    el('btn-prev').onclick = function () { go(i - 1); };
+    el('btn-next').onclick = function () { go(i + 1); };
+    el('btn-notes').onclick = function () {
+      notesOn = !notesOn;
+      el('notes').hidden = !notesOn;
+      el('btn-notes').setAttribute('aria-pressed', String(notesOn));
+    };
+    el('btn-full').onclick = function () {
+      document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen();
+    };
+
+    document.addEventListener('keydown', function (e) {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+      var k = e.key;
+      if (k === 'ArrowRight' || k === ' ' || k === 'PageDown') { e.preventDefault(); go(i + 1); }
+      else if (k === 'ArrowLeft' || k === 'PageUp') { e.preventDefault(); go(i - 1); }
+      else if (k === 'Home') { e.preventDefault(); go(0); }
+      else if (k === 'End') { e.preventDefault(); go(slides.length - 1); }
+      else if (k === 'n' || k === 'N') { el('btn-notes').click(); }
+      else if (k === 'f' || k === 'F') { el('btn-full').click(); }
+      else if (k === 'g' || k === 'G') { location.href = '?track=' + trackId + '&view=guide'; }
+    });
+
+    // swipe on tablets
+    var x0 = null;
+    el('deck').addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+    el('deck').addEventListener('touchend', function (e) {
+      if (x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0;
+      if (Math.abs(dx) > 55) go(i + (dx < 0 ? 1 : -1));
+      x0 = null;
+    }, { passive: true });
+
+    draw();
+  }
+
+  /* ───────── Facilitator guide ───────── */
+  function renderGuide(data) {
+    el('guide').hidden = false;
+    var f = data.format || {};
+    el('g-title').textContent = (data.emoji || '') + ' ' + data.track + ' Track — Facilitator Guide';
+    el('g-meta').textContent = 'Ages ' + data.ages + ' · ' + f.sessions + ' sessions × ' + f.minutesEach +
+      ' minutes · ' + (f.delivery || 'Live online') + ' · Exam: ' + f.examQuestions + ' questions, ' + f.passMark + '% to pass';
+    document.title = data.track + ' Facilitator Guide — DSK';
+
+    var h = '';
+
+    if (data.tagline) h += '<p style="font-size:0.95rem;line-height:1.7;margin-bottom:18px;">' + esc(data.tagline) + '</p>';
+
+    if (data.outcomes && data.outcomes.length) {
+      h += '<h2>Learning outcomes</h2><div class="g-goal">By the end of the programme a participant can:</div><ol style="margin-left:20px;font-size:0.88rem;line-height:1.75;">' +
+        data.outcomes.map(function (o) { return '<li>' + esc(o) + '</li>'; }).join('') + '</ol>';
+      if (data.prerequisites) h += '<p style="margin-top:14px;font-size:0.86rem;color:#6c757d;"><b>Prerequisites:</b> ' + esc(data.prerequisites) + '</p>';
+      if (data.materials && data.materials.length) {
+        h += '<p style="margin-top:12px;font-size:0.86rem;"><b>What you need:</b></p><ul style="margin-left:20px;font-size:0.86rem;line-height:1.7;">' +
+          data.materials.map(function (m) { return '<li>' + esc(m) + '</li>'; }).join('') + '</ul>';
+      }
+    }
+
+    (data.sessions || []).forEach(function (sess) {
+      h += '<h2>Session ' + sess.n + ' — ' + esc(sess.title) + '</h2>';
+      if (sess.subtitle) h += '<p style="color:#6c757d;font-size:0.9rem;margin-top:3px;">' + esc(sess.subtitle) + '</p>';
+      if (sess.goal) h += '<div class="g-goal"><b>Goal.</b> ' + esc(sess.goal) + '</div>';
+
+      if (sess.segments && sess.segments.length) {
+        h += '<table><thead><tr><th>Minutes</th><th>Segment</th><th>Slides</th></tr></thead><tbody>' +
+          sess.segments.map(function (sg) {
+            return '<tr><td>' + esc(sg.minutes) + '</td><td>' + esc(sg.label) + '</td><td>' + (sg.slides || []).join(', ') + '</td></tr>';
+          }).join('') + '</tbody></table>';
+      }
+
+      (sess.slides || []).forEach(function (s, idx) {
+        h += '<div class="g-slide">' +
+          '<span class="n">' + (idx + 1) + '</span><span class="kind">' + esc(s.kind || 'teach') + '</span>' +
+          '<h3>' + esc(s.title || '') + '</h3>' +
+          (s.subtitle ? '<div style="font-size:0.88rem;color:#6c757d;">' + esc(s.subtitle) + '</div>' : '') +
+          (s.ask ? '<div class="sc">Ask the room: ' + esc(s.ask) + '</div>' : '') +
+          (s.bullets && s.bullets.length ? '<ul>' + s.bullets.map(function (b) { return '<li>' + esc(b) + '</li>'; }).join('') + '</ul>' : '') +
+          (s.callout ? '<div class="co">' + esc(s.callout) + '</div>' : '') +
+          (s.source ? '<div style="font-size:0.78rem;color:#6c757d;font-style:italic;margin-top:7px;">Source: ' + esc(s.source) + '</div>' : '') +
+          (s.notes ? '<div class="nt"><b>Facilitator note.</b> ' + esc(s.notes) + '</div>' : '') +
+          '</div>';
+      });
+    });
+
+    var ex = data.exam || {};
+    if (ex.questions && ex.questions.length) {
+      h += '<h2>Examination — answer key</h2>' +
+        '<div class="g-goal">' + ex.questions.length + ' questions · ' + (ex.minutes || 25) + ' minutes · ' +
+        (ex.passMark || 80) + '% to pass · open book · unlimited retakes 24 hours apart. ' +
+        'Students sit it at <b>digitalsafetyknights.org/certification-exam.html?track=' + esc(data.id) + '</b>. ' +
+        'Do not hand this key to students.</div>';
+      ex.questions.forEach(function (q, n) {
+        h += '<div class="g-slide"><span class="n">Q' + (n + 1) + '</span><span class="kind">' + esc(q.topic || '') + '</span>' +
+          '<h3>' + esc(q.q) + '</h3><ul style="list-style:none;margin-left:0;">' +
+          (q.choices || []).map(function (c, ci) {
+            var right = ci === q.answer;
+            return '<li style="padding:3px 0;' + (right ? 'font-weight:900;color:#1d7a6f;' : '') + '">' +
+              (right ? '✓ ' : '○ ') + esc(c) + '</li>';
+          }).join('') + '</ul>' +
+          (q.why ? '<div class="nt"><b>Why.</b> ' + esc(q.why) + '</div>' : '') + '</div>';
+      });
+    }
+
+    var cert = data.certificate || {};
+    if (cert.oath) {
+      h += '<h2>The oath printed on the certificate</h2><div class="g-goal" style="font-style:italic;">' + esc(cert.oath) + '</div>';
+    }
+
+    h += '<h2>Always close on this</h2><div class="g-goal">' +
+      'Nobody is in trouble for asking for help. CyberTipline.org · 988 (call or text) · TakeItDown.NCMEC.org. ' +
+      'Stay on the call for ten minutes after you finish — in our sessions, disclosures come after the end far more often than during.' +
+      '</div>';
+
+    el('g-body').innerHTML = h;
+  }
+})();
+</script>
+</body>
+</html>

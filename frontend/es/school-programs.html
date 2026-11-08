@@ -102,6 +102,17 @@
     </div>
   </div>
 
+  <div class="sp-section" style="background:var(--navy);box-shadow:0 6px 24px rgba(13,27,62,0.3);">
+    <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+      <div style="font-size:2rem;">🎓</div>
+      <div style="flex:1;min-width:220px;">
+        <h2 style="color:var(--gold2);margin-bottom:4px;" id="sp-cert-title">Want your students certified, not just taught?</h2>
+        <p style="color:#c3cee6;font-size:0.9rem;" id="sp-cert-sub">A two-hour course taught live online — one hour plus one hour a week apart — ending in a certificate. Four age tracks, from a six-year-old to a staff room. Free, and every slide is published.</p>
+      </div>
+      <a href="/certification.html" style="background:var(--gold);color:var(--navy);padding:12px 22px;border-radius:22px;font-weight:900;text-decoration:none;white-space:nowrap;" id="sp-cert-cta">See the Programme →</a>
+    </div>
+  </div>
+
   <div class="sp-section">
     <h2 id="sp-formats-title">How Sessions Work</h2>
     <div class="sp-formats">
@@ -280,6 +291,9 @@ document.getElementById('sp-events-lede').innerHTML = spIsTr
 document.getElementById('sp-dsw-title').textContent = spIsTr ? 'Ekim ayında bir Dijital Güvenlik Haftası mı düzenliyorsunuz?' : spIsEs ? '¿Vas a organizar una Semana de Seguridad Digital en octubre?' : spIsFr ? 'Vous organisez une Semaine de la sécurité numérique en octobre ?' : 'Running a Digital Safety Week in October?';
 document.getElementById('sp-dsw-sub').textContent = spIsTr ? 'Ücretsiz, hemen uygulanabilir 5 günlük bir plan ve basılabilir poster hazır — hazırlık gerekmez.' : spIsEs ? 'Tenemos un plan gratuito de 5 días listo para usar y un póster imprimible — no hace falta preparar nada.' : spIsFr ? 'Nous avons un programme gratuit de cinq jours, prêt à l’emploi, et une affiche imprimable — aucune préparation nécessaire.' : 'We have a free, ready-to-run 5-day plan and printable poster — no prep needed.';
 document.getElementById('sp-dsw-cta').textContent = spIsTr ? 'Ücretsiz Kiti Al →' : spIsEs ? 'Obtener el Kit Gratis →' : spIsFr ? 'Obtenir le kit gratuit →' : 'Get the Free Kit →';
+document.getElementById('sp-cert-title').textContent = spIsTr ? 'Öğrencilerinize sertifika da verelim mi?' : spIsEs ? '¿Quieres que tus estudiantes salgan certificados?' : spIsFr ? 'Vous voulez que vos élèves soient certifiés ?' : 'Want your students certified, not just taught?';
+document.getElementById('sp-cert-sub').textContent = spIsTr ? 'Canlı çevrimiçi iki saatlik bir kurs — bir hafta arayla bir saat artı bir saat — sonunda sertifika. 6 yaşından yetişkine dört ayrı yaş programı. Ücretsiz, ve bütün sunumlar yayında.' : spIsEs ? 'Un curso de dos horas en vivo por internet — una hora más una hora, con una semana de diferencia — que termina en un certificado. Cuatro niveles por edad, desde los 6 años hasta adultos. Gratis, y todas las diapositivas son públicas.' : spIsFr ? 'Un cours de deux heures en direct en ligne — une heure plus une heure, à une semaine d’intervalle — qui se termine par un certificat. Quatre parcours par âge, de 6 ans à l’adulte. Gratuit, et toutes les diapositives sont publiées.' : 'A two-hour course taught live online — one hour plus one hour a week apart — ending in a certificate. Four age tracks, from a six-year-old to a staff room. Free, and every slide is published.';
+document.getElementById('sp-cert-cta').textContent = spIsTr ? 'Programa Göz At →' : spIsEs ? 'Ver el Programa →' : spIsFr ? 'Voir le programme →' : 'See the Programme →';
 document.getElementById('sp-principal-note').innerHTML = spIsTr
   ? 'Önce onay mı almanız gerekiyor? Yöneticinizle <a href="/for-principals.html" style="color:var(--navy);font-weight:800;">müdürler için tek sayfalık özetimizi</a> paylaşın.'
   : spIsEs

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certification Exam — Digital Safety Knights</title>
+<link rel="canonical" href="https://digitalsafetyknights.org/certification-exam.html">
+<link rel="alternate" hreflang="en" href="https://digitalsafetyknights.org/en/certification-exam.html">
+<link rel="alternate" hreflang="es" href="https://digitalsafetyknights.org/es/certification-exam.html">
+<link rel="alternate" hreflang="fr" href="https://digitalsafetyknights.org/fr/certification-exam.html">
+<link rel="alternate" hreflang="tr" href="https://digitalsafetyknights.org/tr/certification-exam.html">
+<link rel="alternate" hreflang="x-default" href="https://digitalsafetyknights.org/certification-exam.html">
+<meta name="description" content="Sit the Digital Safety Knights certification exam — four age tracks, 80% to pass, unlimited retakes, free. Your answers never leave your device.">
+<meta property="og:title" content="Certification Exam — Digital Safety Knights">
+<meta property="og:description" content="Sit the Digital Safety Knights certification exam. 80% to pass, unlimited retakes, free.">
+<meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
+<meta property="og:url" content="https://digitalsafetyknights.org/certification-exam.html">
+<meta property="og:type" content="website">
+<link rel="icon" href="/assets/favicon.ico">
+<link rel="stylesheet" href="/assets/theme.css">
+<script src="/assets/i18n.js"></script>
+<style>
+  :root {
+    --navy: #0d1b3e; --navy2: #1a2f6e; --gold: #c9a84c; --gold2: #e8c56a;
+    --light: #f4f6fb; --white: #fff; --danger: #e63946; --success: #2a9d8f;
+    --gray: #6c757d; --text: #2d3748; --teal: #3EC6C0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Nunito Sans', 'Segoe UI', system-ui, sans-serif; background: var(--light); color: var(--text); }
+  a { color: inherit; }
+  [hidden] { display: none !important; }
+  .wrap { max-width: 740px; margin: 0 auto; padding: 26px 18px 90px; }
+
+  .topbar { background: var(--navy); padding: 13px 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .topbar a.brand { color: var(--gold); font-weight: 900; text-decoration: none; font-size: 1rem; }
+  .topbar a.home { color: #cdd6ea; text-decoration: none; font-size: 0.84rem; font-weight: 700; }
+
+  h1 { font-size: 1.65rem; color: var(--navy); line-height: 1.2; text-wrap: balance; }
+  .eyebrow { color: var(--gold); font-weight: 900; letter-spacing: 2px; font-size: 0.72rem; text-transform: uppercase; margin-bottom: 8px; }
+  .lead { color: var(--gray); font-size: 0.95rem; line-height: 1.7; margin-top: 10px; }
+
+  .card { background: var(--white); border-radius: 16px; padding: 22px; box-shadow: 0 2px 20px rgba(13,27,62,0.08); margin-top: 18px; }
+  .btn { background: var(--gold); color: var(--navy); border: none; border-radius: 12px; padding: 14px 22px; font: inherit; font-weight: 900; cursor: pointer; text-decoration: none; display: inline-block; text-align: center; }
+  .btn:disabled { opacity: 0.45; cursor: not-allowed; }
+  .btn.navy { background: var(--navy); color: #fff; }
+  .btn.ghost { background: transparent; color: var(--navy); border: 2px solid #dfe4ee; }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+
+  label.fl { display: block; font-size: 0.8rem; font-weight: 900; color: var(--navy); margin-bottom: 6px; }
+  input[type="text"], select { width: 100%; padding: 13px 15px; font: inherit; border: 2px solid #dfe4ee; border-radius: 12px; color: var(--navy); font-weight: 700; background: var(--white); }
+  input[type="text"]:focus, select:focus { outline: none; border-color: var(--gold); }
+  .hint { font-size: 0.78rem; color: var(--gray); margin-top: 7px; line-height: 1.6; }
+
+  .privacy { background: #eef9f8; border-left: 4px solid var(--teal); border-radius: 0 12px 12px 0; padding: 13px 16px; font-size: 0.84rem; line-height: 1.65; color: #176b66; margin-top: 16px; }
+
+  /* exam */
+  .ex-top { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 0.8rem; font-weight: 800; color: var(--gray); }
+  .ex-top .t { margin-left: auto; font-variant-numeric: tabular-nums; background: var(--navy); color: var(--gold2); padding: 5px 11px; border-radius: 20px; }
+  .ex-top .t.low { background: var(--danger); color: #fff; }
+  .track-rail { height: 7px; background: #e2e6ef; border-radius: 4px; overflow: hidden; margin: 12px 0 20px; }
+  .track-rail > i { display: block; height: 100%; background: var(--gold); transition: width 0.25s ease; }
+  .q-topic { font-size: 0.7rem; font-weight: 900; letter-spacing: 1.6px; text-transform: uppercase; color: var(--gold); }
+  .q-text { font-size: 1.12rem; color: var(--navy); font-weight: 800; line-height: 1.45; margin: 9px 0 18px; text-wrap: pretty; }
+  .choices { display: flex; flex-direction: column; gap: 10px; }
+  .choice { display: flex; align-items: flex-start; gap: 12px; background: var(--light); border: 2px solid transparent; border-radius: 13px; padding: 14px 16px; cursor: pointer; font-size: 0.95rem; line-height: 1.5; text-align: left; font: inherit; color: var(--text); width: 100%; }
+  .choice:hover { border-color: #ccd5e8; }
+  .choice.sel { border-color: var(--gold); background: #fdf7e8; font-weight: 700; }
+  .choice .ltr { flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: var(--white); border: 2px solid #ccd5e8; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 0.78rem; color: var(--navy); }
+  .choice.sel .ltr { background: var(--gold); border-color: var(--gold); }
+
+  /* result */
+  .score-ring { width: 128px; height: 128px; border-radius: 50%; margin: 0 auto 14px; display: flex; align-items: center; justify-content: center; flex-direction: column; font-weight: 900; color: #fff; }
+  .score-ring.pass { background: linear-gradient(135deg, #3fc0b1, var(--success)); }
+  .score-ring.fail { background: linear-gradient(135deg, #f08a92, var(--danger)); }
+  .score-ring .pct { font-size: 2.1rem; line-height: 1; font-variant-numeric: tabular-nums; }
+  .score-ring .of { font-size: 0.72rem; opacity: 0.9; margin-top: 3px; }
+  .rv { border-radius: 12px; padding: 14px 16px; margin-bottom: 10px; border-left: 4px solid; }
+  .rv.ok { background: #eafaf7; border-color: var(--success); }
+  .rv.no { background: #fdeef0; border-color: var(--danger); }
+  .rv .n { font-size: 0.7rem; font-weight: 900; letter-spacing: 1.4px; text-transform: uppercase; color: var(--gray); }
+  .rv .q { font-weight: 800; color: var(--navy); font-size: 0.93rem; line-height: 1.45; margin: 5px 0 8px; }
+  .rv .a { font-size: 0.86rem; line-height: 1.6; margin-bottom: 3px; }
+  .rv .a b { color: var(--navy); }
+  .rv .why { font-size: 0.85rem; line-height: 1.62; color: #46536c; margin-top: 8px; padding-top: 8px; border-top: 1px dashed rgba(0,0,0,0.12); }
+
+  /* certificate */
+  #cert-sheet { background: var(--white); border: 14px solid var(--navy); border-radius: 4px; padding: 40px 34px; text-align: center; position: relative; margin-top: 18px; }
+  #cert-sheet::after { content: ""; position: absolute; inset: 7px; border: 2px solid var(--gold); border-radius: 2px; pointer-events: none; }
+  #cert-sheet .c-emblem { font-size: 3.1rem; line-height: 1; }
+  #cert-sheet .c-org { color: var(--gold); font-weight: 900; letter-spacing: 3px; font-size: 0.72rem; text-transform: uppercase; margin: 12px 0 18px; }
+  #cert-sheet .c-pre { color: var(--gray); font-size: 0.8rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+  #cert-sheet .c-name { font-size: clamp(1.5rem, 6vw, 2.3rem); font-weight: 900; color: var(--navy); margin: 8px 0 14px; line-height: 1.15; border-bottom: 2px solid var(--gold); display: inline-block; padding: 0 16px 8px; }
+  #cert-sheet .c-title { font-size: clamp(1.05rem, 3.6vw, 1.45rem); font-weight: 900; color: var(--navy2); line-height: 1.3; }
+  #cert-sheet .c-desc { color: var(--gray); font-size: 0.86rem; line-height: 1.65; max-width: 44ch; margin: 12px auto 0; }
+  #cert-sheet .c-oath { font-style: italic; color: #46536c; font-size: 0.84rem; line-height: 1.7; max-width: 48ch; margin: 20px auto 0; background: var(--light); border-radius: 10px; padding: 14px 18px; }
+  #cert-sheet .c-foot { display: flex; justify-content: space-between; gap: 16px; margin-top: 26px; padding-top: 16px; border-top: 1px solid #e2e6ef; font-size: 0.72rem; color: var(--gray); text-align: left; flex-wrap: wrap; }
+  #cert-sheet .c-foot b { display: block; color: var(--navy); font-size: 0.8rem; }
+  #cert-sheet .c-code { font-family: ui-monospace, monospace; letter-spacing: 1px; }
+  .cert-note { font-size: 0.78rem; color: var(--gray); line-height: 1.65; margin-top: 14px; }
+
+  footer { text-align: center; padding: 2rem; color: var(--gray); font-size: 0.85rem; }
+
+  :focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+
+  @media print {
+    body { background: #fff; }
+    .topbar, footer, .noprint, .cert-note { display: none !important; }
+    .wrap { padding: 0; max-width: none; }
+    #cert-sheet { border-width: 10px; box-shadow: none; margin: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar noprint">
+  <a class="brand" href="/">⚔️ Digital Safety Knights</a>
+  <a class="home" href="/certification.html">Certification Programme →</a>
+</div>
+
+<div class="wrap">
+
+  <!-- ══════ START ══════ -->
+  <section id="screen-start" hidden>
+    <div class="eyebrow">Certification Exam</div>
+    <h1 id="start-h1">Sit the exam</h1>
+    <p class="lead" id="start-lead"></p>
+
+    <div class="card">
+      <div style="margin-bottom:16px;">
+        <label class="fl" for="f-track">Which track did you complete?</label>
+        <select id="f-track"></select>
+      </div>
+      <div>
+        <label class="fl" for="f-name">Name for the certificate</label>
+        <input type="text" id="f-name" maxlength="42" autocomplete="name" placeholder="e.g. Ayşe Saklı">
+        <p class="hint">This is printed on your certificate. A first name is fine. It is never sent anywhere — see below.</p>
+      </div>
+      <div class="privacy">
+        <b>Nothing you type here leaves your device.</b> There is no account, no login and no server.
+        Your name, your answers and your result are held in this browser only, and the certificate is
+        rendered on your own machine. Close the tab and it is gone.
+      </div>
+      <div class="row">
+        <button type="button" class="btn" id="btn-begin">Begin the exam →</button>
+        <a class="btn ghost" href="/certification.html">Review the material first</a>
+      </div>
+    </div>
+
+    <div class="card" id="prev-pass" hidden>
+      <div class="eyebrow">Already passed</div>
+      <p class="lead" id="prev-text"></p>
+      <div class="row"><button type="button" class="btn navy" id="btn-prev-cert">View my certificate</button></div>
+    </div>
+  </section>
+
+  <!-- ══════ EXAM ══════ -->
+  <section id="screen-exam" hidden>
+    <div class="ex-top">
+      <span id="ex-track"></span>
+      <span>Question <b id="ex-i">1</b> of <b id="ex-n">25</b></span>
+      <span class="t" id="ex-timer">25:00</span>
+    </div>
+    <div class="track-rail"><i id="ex-prog"></i></div>
+
+    <div class="card">
+      <div class="q-topic" id="q-topic"></div>
+      <div class="q-text" id="q-text"></div>
+      <div class="choices" id="q-choices"></div>
+      <div class="row">
+        <button type="button" class="btn ghost" id="btn-back">← Back</button>
+        <button type="button" class="btn" id="btn-fwd">Next →</button>
+      </div>
+      <p class="hint">Open book — you may look things up. Unanswered questions are marked wrong, so answer every one.</p>
+    </div>
+  </section>
+
+  <!-- ══════ RESULT ══════ -->
+  <section id="screen-result" hidden>
+    <div class="card" style="text-align:center;">
+      <div class="score-ring" id="r-ring"><span class="pct" id="r-pct">0%</span><span class="of" id="r-of"></span></div>
+      <h1 id="r-h1"></h1>
+      <p class="lead" id="r-lead" style="max-width:48ch;margin:12px auto 0;"></p>
+      <div class="row" style="justify-content:center;" id="r-actions"></div>
+    </div>
+    <h2 style="font-size:1.1rem;color:var(--navy);margin:26px 0 12px;">Every question, with the reasoning</h2>
+    <div id="r-review"></div>
+  </section>
+
+  <!-- ══════ CERTIFICATE ══════ -->
+  <section id="screen-cert" hidden>
+    <div class="row noprint" style="margin-top:0;">
+      <button type="button" class="btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+      <a class="btn ghost" href="/certification.html">← Certification Programme</a>
+    </div>
+    <div id="cert-sheet">
+      <div class="c-emblem" id="c-emblem">🛡️</div>
+      <div class="c-org">Digital Safety Knights</div>
+      <div class="c-pre">This certifies that</div>
+      <div class="c-name" id="c-name">—</div>
+      <div class="c-title" id="c-title">—</div>
+      <div class="c-desc" id="c-desc"></div>
+      <div class="c-oath" id="c-oath"></div>
+      <div class="c-foot">
+        <div><b id="c-date">—</b>Date of award</div>
+        <div><b id="c-score">—</b>Examination result</div>
+        <div><b class="c-code" id="c-code">—</b>Certificate reference</div>
+      </div>
+    </div>
+    <p class="cert-note">
+      This is a <b>self-issued</b> certificate: it records that this exam was passed in this browser, and
+      Digital Safety Knights has not independently verified who sat it. It is designed for a student's own
+      record, a portfolio, or a classroom wall. Schools that need a <b>verified</b> credential — issued from a
+      roster, with a proctored sitting and a reference we can confirm — should use the
+      <a href="/certification.html#school">School Certification Programme</a>.
+    </p>
+  </section>
+
+</div>
+
+<footer class="noprint">⚔️ Digital Safety Knights · digitalsafetyknights.org · © 2026</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  var TRACKS = [
+    { id: 'squire',   emoji: '🗡️', name: 'Squire',   ages: 'ages 6–9' },
+    { id: 'knight',   emoji: '⚔️', name: 'Knight',   ages: 'ages 10–13' },
+    { id: 'sentinel', emoji: '🛡️', name: 'Sentinel', ages: 'ages 14–17' },
+    { id: 'guardian', emoji: '🏰', name: 'Guardian', ages: 'parents & educators' }
+  ];
+  var STORE = 'dsk_cert_passes';
+
+  var el = function (id) { return document.getElementById(id); };
+  var esc = function (s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  };
+  function show(id) {
+    ['screen-start', 'screen-exam', 'screen-result', 'screen-cert'].forEach(function (s) {
+      el(s).hidden = s !== id;
+    });
+    window.scrollTo(0, 0);
+  }
+  function load() { try { return JSON.parse(localStorage.getItem(STORE) || '{}'); } catch (e) { return {}; } }
+  function save(o) { try { localStorage.setItem(STORE, JSON.stringify(o)); } catch (e) {} }
+
+  // Short reference derived from the name, track and date. Deterministic so a
+  // reprint of the same certificate carries the same reference — it is a record
+  // locator, deliberately not a proof of identity (see the note on the sheet).
+  function reference(name, track, iso) {
+    var seed = name + '|' + track + '|' + iso, h = 2166136261;
+    for (var i = 0; i < seed.length; i++) {
+      h ^= seed.charCodeAt(i);
+      h = (h * 16777619) >>> 0;
+    }
+    var out = '', alpha = '23456789ABCDEFGHJKLMNPQRSTUVWXYZ', v = h;
+    for (var k = 0; k < 6; k++) { out += alpha.charAt(v % 32); v = Math.floor(v / 32) || (h >>> (k + 1)); }
+    return 'DSK-' + track.slice(0, 3).toUpperCase() + '-' + out;
+  }
+
+  // A choice that refers to the others by position ("all of the above") cannot
+  // be moved, so such a question keeps its authored order.
+  var POSITIONAL = /\b(all|none|both)\s+of\s+the\s+(above|below)\b|\ball of these\b/i;
+
+  function shuffleChoices(q) {
+    var ch = (q.choices || []).slice();
+    if (ch.length < 2 || ch.some(function (c) { return POSITIONAL.test(c); })) return q;
+    var order = ch.map(function (_, i) { return i; });
+    for (var i = order.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1)), t = order[i];
+      order[i] = order[j]; order[j] = t;
+    }
+    var out = {};
+    Object.keys(q).forEach(function (k) { out[k] = q[k]; });
+    out.choices = order.map(function (o) { return ch[o]; });
+    out.answer = order.indexOf(q.answer);
+    return out;
+  }
+
+  var qs = new URLSearchParams(location.search);
+  var picked = (qs.get('track') || '').toLowerCase();
+  if (!TRACKS.some(function (t) { return t.id === picked; })) picked = '';
+
+  /* ───────── Start screen ───────── */
+  el('f-track').innerHTML = TRACKS.map(function (t) {
+    return '<option value="' + t.id + '"' + (t.id === picked ? ' selected' : '') + '>' +
+      t.emoji + ' ' + esc(t.name) + ' — ' + esc(t.ages) + '</option>';
+  }).join('');
+
+  function trackOf(id) {
+    return TRACKS.filter(function (t) { return t.id === id; })[0] || TRACKS[2];
+  }
+
+  function refreshStart() {
+    var t = trackOf(el('f-track').value);
+    el('start-h1').textContent = t.emoji + ' ' + t.name + ' Examination';
+    el('start-lead').textContent = 'The exam for the ' + t.name + ' track (' + t.ages +
+      '). 80% to pass, open book, unlimited retakes. Pass it and your certificate is issued immediately, ' +
+      'with your name on it, right here in this browser.';
+    var passes = load(), p = passes[t.id];
+    el('prev-pass').hidden = !p;
+    if (p) {
+      el('prev-text').textContent = 'You passed the ' + t.name + ' exam on ' + p.date +
+        ' with ' + p.pct + '%. You can reprint that certificate, or sit the exam again to improve the score.';
+    }
+    try { history.replaceState(null, '', '?track=' + t.id); } catch (e) {}
+  }
+  el('f-track').addEventListener('change', refreshStart);
+  refreshStart();
+
+  var nameSaved = '';
+  try { nameSaved = (JSON.parse(localStorage.getItem('dsk_profile') || 'null') || {}).name || ''; } catch (e) {}
+  if (nameSaved) el('f-name').value = nameSaved;
+
+  el('btn-prev-cert').onclick = function () {
+    var t = trackOf(el('f-track').value), p = load()[t.id];
+    if (p) drawCert(p);
+  };
+
+  show('screen-start');
+
+  /* ───────── Exam ───────── */
+  var data = null, qsList = [], answers = [], at = 0, deadline = 0, tick = null, student = '';
+
+  el('btn-begin').onclick = function () {
+    student = (el('f-name').value || '').trim().replace(/\s+/g, ' ');
+    if (student.length < 2) { el('f-name').focus(); alert('Please enter a name for the certificate.'); return; }
+    var id = el('f-track').value;
+    el('btn-begin').disabled = true;
+    el('btn-begin').textContent = 'Loading…';
+    fetch('/content/certification/' + id + '.json')
+      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .then(function (d) {
+        data = d;
+        var ex = d.exam || {};
+        qsList = (ex.questions || []).slice();
+        if (!qsList.length) throw new Error('no questions');
+        if (ex.shuffle !== false) {
+          for (var i = qsList.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1)), tmp = qsList[i];
+            qsList[i] = qsList[j]; qsList[j] = tmp;
+          }
+          // Shuffle the choices too, not just the question order. Without this
+          // a student who notices the correct answer keeps landing in the same
+          // position can pass without reading anything — and authored question
+          // banks drift towards one position on their own.
+          qsList = qsList.map(shuffleChoices);
+        }
+        answers = qsList.map(function () { return null; });
+        at = 0;
+        startExam(ex.minutes || 25);
+      })
+      .catch(function (e) {
+        el('btn-begin').disabled = false;
+        el('btn-begin').textContent = 'Begin the exam →';
+        alert('Could not load that exam (' + e.message + '). Please try again in a moment.');
+      });
+  };
+
+  function startExam(minutes) {
+    var t = trackOf(el('f-track').value);
+    el('ex-track').textContent = t.emoji + ' ' + t.name;
+    el('ex-n').textContent = qsList.length;
+    deadline = Date.now() + minutes * 60000;
+    clearInterval(tick);
+    tick = setInterval(timerTick, 1000);
+    timerTick();
+    show('screen-exam');
+    drawQ();
+  }
+
+  function timerTick() {
+    var left = Math.max(0, deadline - Date.now());
+    var m = Math.floor(left / 60000), s = Math.floor(left % 60000 / 1000);
+    var node = el('ex-timer');
+    node.textContent = m + ':' + (s < 10 ? '0' : '') + s;
+    node.className = 't' + (left < 120000 ? ' low' : '');
+    if (left === 0) { clearInterval(tick); grade(true); }
+  }
+
+  function drawQ() {
+    var q = qsList[at];
+    el('ex-i').textContent = at + 1;
+    el('ex-prog').style.width = ((at + 1) / qsList.length * 100) + '%';
+    el('q-topic').textContent = q.topic || '';
+    el('q-text').textContent = q.q;
+    el('q-choices').innerHTML = (q.choices || []).map(function (c, i) {
+      return '<button type="button" class="choice' + (answers[at] === i ? ' sel' : '') + '" data-i="' + i + '">' +
+        '<span class="ltr">' + 'ABCD'.charAt(i) + '</span><span>' + esc(c) + '</span></button>';
+    }).join('');
+    Array.prototype.forEach.call(el('q-choices').querySelectorAll('.choice'), function (b) {
+      b.onclick = function () {
+        answers[at] = parseInt(b.getAttribute('data-i'), 10);
+        drawQ();
+      };
+    });
+    el('btn-back').disabled = at === 0;
+    el('btn-fwd').textContent = at === qsList.length - 1 ? 'Finish and grade →' : 'Next →';
+  }
+
+  el('btn-back').onclick = function () { if (at > 0) { at--; drawQ(); } };
+  el('btn-fwd').onclick = function () {
+    if (at < qsList.length - 1) { at++; drawQ(); return; }
+    var blank = answers.filter(function (a) { return a === null; }).length;
+    if (blank && !confirm(blank + ' question' + (blank > 1 ? 's are' : ' is') +
+      ' unanswered and will be marked wrong. Grade anyway?')) return;
+    grade(false);
+  };
+
+  /* ───────── Grading ───────── */
+  function grade(ranOut) {
+    clearInterval(tick);
+    var right = 0;
+    qsList.forEach(function (q, i) { if (answers[i] === q.answer) right++; });
+    var pct = Math.round(right / qsList.length * 100);
+    var pass = pct >= ((data.exam || {}).passMark || 80);
+    var t = trackOf(el('f-track').value);
+
+    el('r-ring').className = 'score-ring ' + (pass ? 'pass' : 'fail');
+    el('r-pct').textContent = pct + '%';
+    el('r-of').textContent = right + ' of ' + qsList.length;
+    el('r-h1').textContent = pass
+      ? '🎉 Passed — you are a certified ' + t.name
+      : (ranOut ? '⏳ Time ran out' : 'Not quite — ' + pct + '%');
+    el('r-lead').textContent = pass
+      ? 'Your certificate is ready. Read through the questions below anyway — the reasoning on the ones you got right is worth as much as the ones you did not.'
+      : 'You need ' + ((data.exam || {}).passMark || 80) + '% to pass. Nothing is lost: read the reasoning on every question below, then sit it again. Retakes are unlimited and free.';
+
+    el('r-actions').innerHTML = pass
+      ? '<button type="button" class="btn" id="r-cert">🏅 Get my certificate</button>' +
+        '<a class="btn ghost" href="/certification.html">← Programme</a>'
+      : '<button type="button" class="btn" id="r-again">Sit it again</button>' +
+        '<a class="btn ghost" href="/certification-slides.html?track=' + t.id + '&view=guide">📋 Review the material</a>';
+
+    el('r-review').innerHTML = qsList.map(function (q, i) {
+      var ok = answers[i] === q.answer;
+      return '<div class="rv ' + (ok ? 'ok' : 'no') + '">' +
+        '<div class="n">' + (ok ? '✓ Correct' : '✕ Incorrect') + ' · Q' + (i + 1) + (q.topic ? ' · ' + esc(q.topic) : '') + '</div>' +
+        '<div class="q">' + esc(q.q) + '</div>' +
+        (ok ? '' : '<div class="a">Your answer: ' + (answers[i] === null ? '<i>left blank</i>' : esc(q.choices[answers[i]])) + '</div>') +
+        '<div class="a"><b>Correct:</b> ' + esc(q.choices[q.answer]) + '</div>' +
+        (q.why ? '<div class="why">' + esc(q.why) + '</div>' : '') +
+        '</div>';
+    }).join('');
+
+    show('screen-result');
+
+    if (pass) {
+      var iso = new Date().toISOString().slice(0, 10);
+      var rec = {
+        track: t.id, trackName: t.name, emoji: t.emoji, name: student, pct: pct,
+        right: right, total: qsList.length,
+        date: new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }),
+        iso: iso, code: reference(student, t.id, iso),
+        certTitle: (data.certificate || {}).title || ('Certified Digital Safety ' + t.name),
+        certSub: (data.certificate || {}).subtitle || '',
+        oath: (data.certificate || {}).oath || ''
+      };
+      var all = load();
+      if (!all[t.id] || all[t.id].pct <= pct) { all[t.id] = rec; save(all); }
+      el('r-cert').onclick = function () { drawCert(rec); };
+    } else {
+      el('r-again').onclick = function () { location.reload(); };
+    }
+  }
+
+  /* ───────── Certificate ───────── */
+  function drawCert(rec) {
+    el('c-emblem').textContent = rec.emoji || '🛡️';
+    el('c-name').textContent = rec.name;
+    el('c-title').textContent = rec.certTitle;
+    el('c-desc').textContent = rec.certSub;
+    el('c-oath').textContent = rec.oath ? '“' + rec.oath + '”' : '';
+    el('c-oath').hidden = !rec.oath;
+    el('c-date').textContent = rec.date;
+    el('c-score').textContent = rec.pct + '% (' + rec.right + '/' + rec.total + ')';
+    el('c-code').textContent = rec.code;
+    document.title = rec.certTitle + ' — ' + rec.name;
+    show('screen-cert');
+  }
+})();
+</script>
+</body>
+</html>
