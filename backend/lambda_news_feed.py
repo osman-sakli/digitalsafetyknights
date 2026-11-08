@@ -96,12 +96,28 @@ RELEVANCE = {
 _WORD_EDGE = r"[^0-9A-Za-z\u00c0-\u024f]"
 
 
+# Keys that are a prefix of an unrelated common word, so they have to match a
+# whole word and nothing longer. Everything else matches from a word start so
+# suffixes still count, which is what agglutinative Turkish needs: "çocuk"
+# must reach "çocuklar" and "çocukların", "oyun" must reach "oyunlarda".
+WHOLE_WORD_ONLY = {
+    "ai",      # aid, air, aim
+    "app",     # happened — and "apple"
+    "ia",      # social, especial, media
+    "jeu",     # jeune, jeunes, jeunesse
+    "veri",    # verildi, verilen, vermek
+    "game",    # gamete; also keeps "games"/"gaming" as their own keys
+    "web",     # webinar is fine either way, but keep it tight
+    "ado",     # adopter, adoption
+    "anne",    # (tr) anne is a whole word; annelik is fine too, but keep tight
+}
+
+
 def _relevance_pattern(keys):
     parts = []
     for k in keys:
         esc = re.escape(k)
-        # A short key must be the whole word; a longer one may take suffixes.
-        parts.append(f"(?<!\\w){esc}(?!\\w)" if len(k.replace(" ", "")) <= 5
+        parts.append(f"(?<!\\w){esc}(?!\\w)" if k in WHOLE_WORD_ONLY
                      else f"(?<!\\w){esc}")
     return re.compile("|".join(parts), re.IGNORECASE)
 
@@ -110,16 +126,123 @@ _RELEVANCE_RE = {lang: _relevance_pattern(keys) for lang, keys in RELEVANCE.item
 
 
 def _fold(text):
-    """Lowercase for matching, and drop the combining dot that Python leaves
-    behind when it lowercases Turkish "İ" — without this, a headline reading
-    "İnternet" lowercases to "i̇nternet" and never matches "internet"."""
-    return unicodedata.normalize("NFKD", text.lower()).replace("\u0307", "")
+    """Lowercase for matching, and drop the combining dot Python leaves behind
+    when it lowercases Turkish "İ" — without that, "İnternet" lowercases to
+    "i̇nternet" and never matches "internet".
+
+    Deliberately NOT NFKD: decomposing split "ç" into c + combining cedilla,
+    so every accented keyword in all four languages — çocuk, données, niños —
+    silently matched nothing. Only the stray dot is removed."""
+    return text.lower().replace("\u0307", "")
 
 
 def is_relevant(title, lang):
     """True if the headline carries any digital, AI or gaming signal."""
     pattern = _RELEVANCE_RE.get(lang)
     return bool(pattern and pattern.search(_fold(html.unescape(title))))
+
+
+# The digital signal alone is not enough: "Yapay zekâda yeni dönem: eğitim,
+# altyapı ve 10 milyar dolarlık hedef" passes it and is an AI investment
+# story with no child in it. Turkish and French child-AI coverage is thinner
+# than English, so the AI and gaming queries pull in general tech news to
+# fill the gap. A headline has to name a child, a teenager, a parent or a
+# school as well.
+AUDIENCE = {
+    "en": ["child", "children", "childhood", "kid", "kids", "teen", "teens", "teenager",
+           "teenagers", "minor", "minors", "student", "students", "pupil", "pupils", "school",
+           "schools", "parent", "parents", "family", "families", "youth", "young", "boy", "boys",
+           "girl", "girls", "toddler", "infant", "under-16", "under-13", "under 16", "under 13",
+           "age verification", "age check", "classroom", "paediatric", "pediatric"],
+    "es": ["niño", "niños", "niña", "niñas", "menor", "menores", "adolescente", "adolescentes",
+           "hijo", "hijos", "hija", "hijas", "infantil", "infancia", "niñez", "estudiante",
+           "estudiantes", "alumno", "alumnos", "escuela", "escuelas", "colegio", "padres",
+           "madres", "familia", "familias", "juventud", "joven", "jóvenes", "aula",
+           "verificación de edad"],
+    "fr": ["enfant", "enfants", "enfance", "mineur", "mineurs", "mineure", "mineures", "ado",
+           "ados", "adolescent", "adolescents", "adolescente", "adolescentes", "élève", "élèves",
+           "école", "écoles", "scolaire", "collège", "lycée", "parent", "parents", "famille",
+           "familles", "jeune", "jeunes", "jeunesse", "moins de 16", "moins de 15", "moins de 13",
+           "vérification de l'âge"],
+    "tr": ["çocuk", "çocuklar", "çocukluk", "genç", "gençler", "gençlik", "ergen", "ergenler",
+           "öğrenci", "öğrenciler", "okul", "okullar", "ebeveyn", "ebeveynler", "veli", "veliler",
+           "aile", "aileler", "bebek", "evlat", "yaş altı", "yaş sınırı", "reşit olmayan",
+           "akran", "sınıf", "lise", "ortaokul", "ilkokul", "anne", "baba"],
+}
+
+_AUDIENCE_RE = {lang: _relevance_pattern(keys) for lang, keys in AUDIENCE.items()}
+
+
+def names_a_child(title, lang):
+    """True if the headline is about children, teenagers, parents or schools."""
+    pattern = _AUDIENCE_RE.get(lang)
+    return bool(pattern and pattern.search(_fold(html.unescape(title))))
+
+
+# Google News returns the same story from several publishers, and the first
+# gated run filled three of six French slots with the same California lawsuit
+# and two of six Turkish slots with the same Tekirdag police warning. URL
+# de-duplication does not catch it because the URLs differ, so compare the
+# headlines themselves.
+_STOP = {
+    "the", "a", "an", "of", "to", "and", "or", "in", "on", "for", "with", "at", "by", "from",
+    "is", "are", "be", "as", "that", "this", "it", "its", "new", "says", "after", "over",
+    "la", "le", "les", "el", "los", "las", "un", "una", "une", "des", "du", "de", "y", "et",
+    "en", "con", "para", "por", "que", "se", "sur", "pour", "dans", "aux", "au", "ve", "ile",
+    "icin", "için", "bir", "da", "de", "ki", "mi", "ne",
+}
+
+
+def _title_tokens(title):
+    words = re.findall(r"[0-9a-z\u00c0-\u024f]+", _fold(html.unescape(title)))
+    return {w for w in words if w not in _STOP and len(w) > 2}
+
+
+def _entities(title):
+    """The named things in a headline: capitalised words, plus the platform
+    and company names that carry the story. Case is taken from the original
+    title, so this has to run before folding."""
+    words = re.findall(r"[0-9A-Za-z\u00c0-\u024f']+", html.unescape(title))
+    out = set()
+    for w in words:
+        low = w.lower()
+        if low in _BRANDS:
+            out.add(low)
+        elif len(w) > 2 and w[0].isupper() and not w.isupper() and low not in _STOP:
+            out.add(low)
+    return out
+
+
+_BRANDS = {
+    "google", "meta", "tiktok", "snapchat", "instagram", "facebook", "youtube", "roblox",
+    "discord", "minecraft", "fortnite", "apple", "amazon", "microsoft", "openai", "whatsapp",
+    "telegram", "twitch", "x", "california", "texas", "florida", "utah", "australia", "ncmec",
+    "ftc", "cnil", "ofcom", "eu", "ue", "unicef",
+}
+
+
+def is_near_duplicate(title, kept_titles, threshold=0.45, entity_floor=3):
+    """Two tests, because one is not enough.
+
+    Jaccard overlap on meaningful words catches the obvious rewrites. It
+    cannot catch all of them: measured against real pairs from this feed,
+    same-story overlap ran as low as 0.267 while genuinely different stories
+    reached 0.333, so the two classes are not separable by a threshold and
+    tuning one lower would start collapsing distinct stories. The second test
+    is the named things — three or more shared proper nouns or platform names
+    means Google News has handed us the same wire story from another
+    publisher, which is exactly how the French feed ended up with the
+    California lawsuit three times."""
+    tokens = _title_tokens(title)
+    ents = _entities(title)
+    for other in kept_titles:
+        o_tokens = _title_tokens(other)
+        if tokens and o_tokens:
+            if len(tokens & o_tokens) / len(tokens | o_tokens) >= threshold:
+                return True
+        if len(ents & _entities(other)) >= entity_floor:
+            return True
+    return False
 
 
 MAX_AGE_DAYS = 3
@@ -189,7 +312,10 @@ LOCALES = {
         ],
     },
 }
-MAX_CANDIDATES_TRIED = 22
+# The three filters run before any URL resolution, so they cost nothing and
+# only survivors get resolved. Raised from 22 to give the stricter gates
+# enough headroom to still fill six slots.
+MAX_CANDIDATES_TRIED = 32
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36"
 
 s3 = boto3.client("s3")
@@ -405,11 +531,21 @@ def summarize(items, language="English"):
 def build_feed(locale, lang):
     candidates = fetch_candidates(locale)
     print(f"{len(candidates)} raw candidates")
-    kept = [c for c in candidates if is_relevant(c["title"], lang)]
+    kept, titles = [], []
     for c in candidates:
-        if c not in kept:
-            print(f"[drop] off-topic for {lang}: {c['title'][:70]}")
-    print(f"{len(kept)} candidates carry a digital/AI/gaming signal")
+        title = c["title"]
+        if not is_relevant(title, lang):
+            print(f"[drop] no digital/AI/gaming signal: {title[:66]}")
+            continue
+        if not names_a_child(title, lang):
+            print(f"[drop] not about children: {title[:66]}")
+            continue
+        if is_near_duplicate(title, titles):
+            print(f"[drop] same story already kept: {title[:66]}")
+            continue
+        kept.append(c)
+        titles.append(title)
+    print(f"{len(kept)} of {len(candidates)} candidates survived the filters")
     candidates = kept
     resolved = []
     tried = 0
