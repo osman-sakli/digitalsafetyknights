@@ -18,7 +18,7 @@ import json
 import pathlib
 
 SRC = pathlib.Path("/Users/osmansakli/digitalsafetyknights/frontend/content/certification")
-OUT = pathlib.Path("/Users/osmansakli/Desktop/DSK Sertifika Programi/Ek - Tek Dosya (tarayicida sunum ve yazdirma).html")
+OUT = pathlib.Path("/Users/osmansakli/Desktop/DIGITAL SAFETY KNIGHTS-ALL/DSK Certification Programme/7 - Everything in One File (browser, no PowerPoint).html")
 ORDER = ["squire", "knight", "sentinel", "guardian"]
 
 TRACK_COLOR = {"squire": "#3EC6C0", "knight": "#c9a84c",

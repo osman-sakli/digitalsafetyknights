@@ -28,7 +28,11 @@ from docx.oxml.ns import qn
 from docx.shared import Inches as DInches, Pt as DPt, RGBColor as DColor
 
 SRC = pathlib.Path("/Users/osmansakli/digitalsafetyknights/frontend/content/certification")
-DEST = pathlib.Path("/Users/osmansakli/Desktop/DSK Sertifika Programi")
+# Osman keeps everything DSK under one Desktop folder and asked for the pack
+# to live there rather than loose on the Desktop. Names are English because
+# the pack gets shared with English-speaking schools; the one Turkish file is
+# the internal how-to, named so it is obvious it is not for sharing.
+DEST = pathlib.Path("/Users/osmansakli/Desktop/DIGITAL SAFETY KNIGHTS-ALL/DSK Certification Programme")
 ORDER = ["squire", "knight", "sentinel", "guardian"]
 
 NAVY = RGBColor(0x0D, 0x1B, 0x3E)
@@ -58,6 +62,9 @@ GLYPH = {
 }
 DEFAULT_GLYPH = ("◆", GOLD)
 
+# The site's Turkish rank names. Used only by the internal Turkish notes —
+# the shared English documents must not carry them, which is what put
+# "Squire (Yaver)" into a pack bound for an American school.
 TR = {
     "squire": "Yaver", "knight": "Şövalye",
     "sentinel": "Nöbetçi", "guardian": "Muhafız",
@@ -655,10 +662,6 @@ OVERRIDES = {
     # Guardian covers mandatory reporting instead; the bystander move is
     # taught to students, not to the adults.
     ("The bystander move (a student skill)", "guardian"): False,
-    # Genuinely absent from Sentinel: its AI segment is deepfakes, voice
-    # cloning and companions. The "an AI will state a wrong fact with total
-    # confidence, so verify anything surprising" lesson is in Knight only.
-    ("AI that sounds certain and is wrong", "sentinel"): False,
 }
 
 
@@ -694,11 +697,11 @@ def teaching_doc(tracks, out):
         f"{sum(len(s['slides']) for d in tracks for s in d['sessions'])} slides · "
         f"{sum(len(d['exam']['questions']) for d in tracks)} exam questions",
     )
-    rich(doc, "Bu dosya nedir.  ",
-         "Programda neyi öğrettiğimiz ve bütün başlıklar. Önce konu tablosu: hangi konu "
-         "hangi yaş grubunda işleniyor. Sonra her parçanın her oturumunun bütün slayt "
-         "başlıkları, dakikasıyla, sırasıyla. Slaytların metni ve sunucu notları için "
-         "parça klasörlerindeki “Egitmen Kilavuzu” dosyalarına bakın.",
+    rich(doc, "What this document is.  ",
+         "What the programme teaches, and every heading in it. First the topic table: "
+         "which topic is taught in which age band. Then every slide title of every "
+         "session, in order, under its timed segment. For the slide text itself and the "
+         "presenter notes, see the \u201cFacilitator Guide\u201d in each track folder.",
          size=10, fill="F4F6FB", bar="C9A84C", space_after=12)
 
     # ── the matrix ──
@@ -751,7 +754,7 @@ def teaching_doc(tracks, out):
     # ── headings, track by track ──
     for d in tracks:
         f = d["format"]
-        heading(doc, f"{d.get('emoji','')} {d['track']} ({TR[d['id']]}) — every heading",
+        heading(doc, f"{d.get('emoji','')} {d['track']} — every heading",
                 size=16, page_break=True)
         para(doc, f"Ages {d['ages']} · {f['sessions']} × {f['minutesEach']} minutes · "
                   f"{f['examQuestions']}-question exam · {f['passMark']}% to pass",
@@ -832,13 +835,6 @@ def teaching_doc(tracks, out):
          "someone from a game, and telling a grown-up is never the wrong answer. The only "
          "resource is a trusted adult.",
          size=10, fill="F4F6FB", bar="3EC6C0", space_after=9)
-    rich(doc, "One gap worth knowing about.  ",
-         "The lesson that an AI will state a wrong fact with complete confidence, so "
-         "anything surprising has to be checked elsewhere, is taught in the Knight track "
-         "and not in Sentinel — whose AI segment covers deepfakes, voice cloning and AI "
-         "companions instead. For 14–17s using AI for homework that is arguably a miss, "
-         "and it would take one slide to fix.",
-         size=10, fill="FDF6E3", bar="E63946", space_after=9)
     rich(doc, "In every session, at every age.  ",
          "No student is ever asked to describe their own experience in front of the group. "
          "A private channel to the facilitator stays open throughout. We stay on the call "
@@ -851,6 +847,87 @@ def teaching_doc(tracks, out):
     doc.save(str(out))
 
 
+def internal_notes_doc(tracks, out):
+    """The Turkish operating notes. Kept out of the shared documents and named
+    so it is obvious it stays behind — Osman shares this pack with
+    English-speaking schools."""
+    doc = new_doc(
+        "TÜRKÇE NOTLAR — Sertifika Paketi",
+        "Bu dosya paylaşılmak için değil. Paketin nasıl kullanılacağı, neyin "
+        "paylaşılacağı ve neyin sizde kalacağı.",
+        "Digital Safety Knights · iç kullanım",
+        warn="Bu dosyayı okula göndermeyin. Paketteki diğer bütün dosyalar İngilizce ve paylaşılabilir.",
+    )
+
+    heading(doc, "Hangi dosya ne işe yarıyor", before=8)
+    rich(doc, "1 - Programme Overview and Pricing.  ",
+         "Okula/müdüre gönderilecek genel tanıtım: dört parça, dakika dakika akış, "
+         "fiyatlandırma, dürüst sınırlar. Tek dosya göndereceksen bu.", size=10, space_after=4)
+    rich(doc, "2 - What We Teach - Topics and Headings.  ",
+         "Konu tablosu (hangi konu hangi yaşta) ve 172 slayt başlığının tamamı. "
+         "“Tam olarak ne anlatıyorsunuz?” diye soran müdüre bu gider.", size=10, space_after=4)
+    rich(doc, "Parça klasörleri (3-6).  ",
+         "Her birinde iki PowerPoint, eğitmen kılavuzu, öğrenci sınavı ve cevap "
+         "anahtarı. İlk grup Sentinel (14-17), İngilizce, canlı Zoom.", size=10, space_after=4)
+    rich(doc, "7 - Everything in One File.  ",
+         "PowerPoint'siz bir makinede tarayıcıda sunmak ya da tek dosya e-postalamak "
+         "için. İçinde cevap anahtarı da var, öğrenciye verme.", size=10, space_after=10)
+
+    heading(doc, "Sunarken")
+    bullets(doc, [
+        "PowerPoint → Slide Show → Presenter View. Notlar sizde kalır, oda görmez. "
+        "Zoom'da ekran paylaşırken mutlaka bunu kullanın.",
+        "Oturum 1 ile Oturum 2 arasında bir hafta olsun; ikinci oturum telefonla "
+        "yapılıyor, öğrencilere getirmelerini önceden söyleyin.",
+        "Bitişte on dakika çağrıda kalın. Açılmalar oturum sırasında değil, "
+        "bittikten sonra geliyor.",
+        "Hiçbir öğrenciye grubun önünde kendi yaşadığını anlattırmayın. "
+        "Baştan özel mesaj kanalını açık tutun.",
+        "Ciddi bir şey çıkarsa okulun çocuk koruma sorumlusuna aynı gün gider. "
+        "Soruşturmayı kendiniz yürütmeyin.",
+    ], size=10)
+
+    heading(doc, "Sınav ve sertifika")
+    bullets(doc, [
+        "Geçme notu %80, açık kitap, tekrar sınırsız. Amaç elemek değil, kalıcı olması.",
+        "Online sınav soruları VE şıkları karıştırıyor — kâğıttaki A/B/C/D öğrencinin "
+        "ekranıyla uyuşmaz. Harfe değil, cevap metnine göre değerlendirin.",
+        "Online sınav: digitalsafetyknights.org/certification-exam.html — kendisi "
+        "değerlendirip sertifikayı basıyor, hiçbir veri cihazdan çıkmıyor.",
+        "Ücretsiz sertifika “kendi düzenlediği” sertifika: sınavı kimin girdiğini "
+        "doğrulamıyoruz. Okulun doğrulanmış belgeye ihtiyacı varsa ücretli program.",
+    ], size=10)
+
+    heading(doc, "Fiyat, tek satırda")
+    rich(doc, "Öğretim ücretsiz, hep ücretsiz kalacak.  ",
+         "Ücret sadece okulun isteğe bağlı doğrulanmış belgesinde: öğrenci başına "
+         "6 USD, en az 120 USD, okul başına 600 USD üst sınır — ve isteyen her okul "
+         "için tamamen kaldırılıyor. Sitede “volunteers, not vendors” yazıyor ve bu "
+         "doğru kalsın diye ücret öğretime değil, belgenin idaresine bağlandı.",
+         size=10, fill="FDF6E3", bar="C9A84C", space_after=8)
+
+    heading(doc, "Yaş bandı politikası — en önemli kısım")
+    rich(doc, "Tabloda “–” olan yerler eksiklik değil, karar.  ",
+         "Sentinel (14-17) cinsel şantajı, nudify uygulamalarını ve yasayı açık açık "
+         "adlandırıyor. Knight (10-13) tek bir cümlede duruyor ve slaydın notu "
+         "sunucuya “bir kez oku, açma, soruları detaya taşıma” diyor. Squire (6-9) "
+         "konuya hiç yaklaşmıyor. Bir yaş grubuna diğerinin materyalini anlatmayın.",
+         size=10, fill="F4F6FB", bar="1A2F6E", space_after=8)
+
+    heading(doc, "Paketi yeniden üretmek")
+    rich(doc, "İçerik tek kaynaktan geliyor.  ",
+         "frontend/content/certification/*.json. Bir slaydı ya da soruyu değiştirmek "
+         "istersen orada değiştir, sonra şu ikisini çalıştır — hem Office dosyaları "
+         "hem site aynı kaynaktan yenilenir, birbirinden kopmaz:",
+         size=10, space_after=4)
+    para(doc, "python3 infrastructure/build-certification-office.py", size=9.5,
+         font="Menlo", fill="F4F6FB", space_after=2)
+    para(doc, "python3 infrastructure/build-certification-onefile.py", size=9.5,
+         font="Menlo", fill="F4F6FB", space_after=8)
+
+    doc.save(str(out))
+
+
 def overview_doc(tracks, out):
     doc = new_doc(
         "Digital Safety Certification — Programme Overview",
@@ -859,24 +936,24 @@ def overview_doc(tracks, out):
         "Digital Safety Knights · digitalsafetyknights.org/certification.html",
     )
 
-    heading(doc, "Nasıl kullanılır", before=8)
-    rich(doc, "Her parça için beş dosya var.  ",
-         "İki PowerPoint (her oturum için bir tane), bir eğitmen kılavuzu (Word), "
-         "öğrenciye verilecek sınav (Word) ve ayrı bir cevap anahtarı (Word). "
-         "Parça klasörlerinin içinde duruyorlar.", size=10, space_after=5)
-    rich(doc, "Sunucu notları PowerPoint'in içinde.  ",
-         "Her slaytın notu, PowerPoint'in kendi “Konuşmacı Notları” alanında. "
-         "Sunum Görünümü'nde (Slide Show → Presenter View) siz görürsünüz, oda görmez. "
-         "Zoom'da ekran paylaşırken bu yüzden Presenter View kullanın.", size=10,
-         space_after=5)
-    rich(doc, "Cevap anahtarını öğrenciye vermeyin.  ",
-         "“Sinav - Cevap Anahtari” dosyaları ayrı tutuldu, tam bu yüzden. "
-         "Öğrenciye “Sinav - Ogrenci” dosyası verilir; o dosyada cevap yok.", size=10,
-         space_after=5)
-    rich(doc, "Dil.  ",
-         "Ders içeriği İngilizce yazıldı, çünkü ilk grup İngilizce olacak. Canlı oturum "
-         "Türkçe, İspanyolca ve Fransızca da verilebilir; sitedeki tanıtım sayfası dört "
-         "dilde yayında.", size=10, space_after=12)
+    heading(doc, "How this pack is organised", before=8)
+    rich(doc, "Five files per track.  ",
+         "Two PowerPoint decks (one per session), a facilitator guide, a student exam, "
+         "and a separate answer key. They sit in the numbered track folders.",
+         size=10, space_after=5)
+    rich(doc, "Presenter notes are inside the PowerPoint.  ",
+         "Every slide carries its note in PowerPoint's own Notes pane. Use Slide Show → "
+         "Presenter View: you see the note, the room does not. That is what to use when "
+         "sharing your screen on Zoom.", size=10, space_after=5)
+    rich(doc, "Do not hand the answer key to students.  ",
+         "That is why it is a separate file. Students get the \u201cExam (Student Copy)\u201d, "
+         "which contains no answers, or they sit it online at "
+         "digitalsafetyknights.org/certification-exam.html, which marks it and issues the "
+         "certificate automatically.", size=10, space_after=5)
+    rich(doc, "Language.  ",
+         "The course content is written in English. The live session can also be delivered "
+         "in Spanish, French or Turkish, and the programme page on our website is published "
+         "in all four.", size=10, space_after=12)
 
     heading(doc, "The four tracks")
     t = doc.add_table(rows=1, cols=5)
@@ -894,7 +971,7 @@ def overview_doc(tracks, out):
     for d in tracks:
         f = d["format"]
         cells = t.add_row().cells
-        vals = (f"{d.get('emoji','')} {d['track']} ({TR[d['id']]})",
+        vals = (f"{d.get('emoji','')} {d['track']}",
                 d["ages"],
                 f"{f['sessions']} × {f['minutesEach']} min",
                 f"{f['examQuestions']} questions",
@@ -942,7 +1019,7 @@ def overview_doc(tracks, out):
 
     for d in tracks:
         f = d["format"]
-        para(doc, f"{d.get('emoji','')} {d['track']} ({TR[d['id']]}) · ages {d['ages']} · "
+        para(doc, f"{d.get('emoji','')} {d['track']} · ages {d['ages']} · "
                   f"{f['sessions']} × {f['minutesEach']} min",
              size=13, bold=True, color=DColor(0x0D, 0x1B, 0x3E), font=HEAD_FONT,
              space_before=14, space_after=3)
@@ -1037,31 +1114,43 @@ def overview_doc(tracks, out):
 def main():
     tracks = [json.loads((SRC / f"{t}.json").read_text()) for t in ORDER]
 
-    if DEST.exists():
-        shutil.rmtree(DEST)
-    DEST.mkdir(parents=True)
+    # Only remove what this script generates. An earlier version rmtree'd the
+    # whole destination, which is fine when the folder is ours and destructive
+    # the moment Osman drops something of his own in beside it.
+    DEST.mkdir(parents=True, exist_ok=True)
+    for old in list(DEST.glob("*.docx")) + list(DEST.glob("*.pptx")) + list(DEST.glob("*.html")):
+        old.unlink()
+    for d in tracks:
+        for pat in (f"*{d['track']} (*", f"*- {d['track']} *"):
+            for folder in DEST.glob(pat):
+                if folder.is_dir():
+                    shutil.rmtree(folder)
 
     made = []
-    overview_doc(tracks, DEST / "0a - Program Ozeti ve Fiyatlandirma.docx")
-    made.append("0a - Program Ozeti ve Fiyatlandirma.docx")
-    teaching_doc(tracks, DEST / "0b - Ne Ogretiyoruz - Konular ve Basliklar.docx")
-    made.append("0b - Ne Ogretiyoruz - Konular ve Basliklar.docx")
+    internal_notes_doc(tracks, DEST / "0 - TURKCE NOTLAR (paylasmayin).docx")
+    made.append("0 - TURKCE NOTLAR (paylasmayin).docx")
+    overview_doc(tracks, DEST / "1 - Programme Overview and Pricing.docx")
+    made.append("1 - Programme Overview and Pricing.docx")
+    teaching_doc(tracks, DEST / "2 - What We Teach - Topics and Headings.docx")
+    made.append("2 - What We Teach - Topics and Headings.docx")
 
     for n, d in enumerate(tracks, 1):
-        folder = DEST / f"{n} - {d['track']} ({TR[d['id']]}) - {d['ages'].replace('–','-')}"
+        ages = d["ages"].replace("–", "-")
+        ages = ages if "Parents" in ages else f"ages {ages}"
+        folder = DEST / f"{n + 2} - {d['track']} ({ages})"
         folder.mkdir()
         label = d["track"]
         for sess in d["sessions"]:
-            out = folder / f"{label} - Oturum {sess['n']} - Slaytlar.pptx"
+            out = folder / f"{label} - Session {sess['n']} - Slides.pptx"
             cnt = build_deck(d, sess, out)
             made.append(f"{folder.name}/{out.name}  ({cnt} slides)")
-        g = folder / f"{label} - Egitmen Kilavuzu.docx"
+        g = folder / f"{label} - Facilitator Guide.docx"
         guide_doc(d, g)
         made.append(f"{folder.name}/{g.name}")
-        s = folder / f"{label} - Sinav - Ogrenci.docx"
+        s = folder / f"{label} - Exam (Student Copy).docx"
         exam_doc(d, s, with_answers=False)
         made.append(f"{folder.name}/{s.name}")
-        k = folder / f"{label} - Sinav - Cevap Anahtari.docx"
+        k = folder / f"{label} - Exam (Answer Key).docx"
         exam_doc(d, k, with_answers=True)
         made.append(f"{folder.name}/{k.name}")
 

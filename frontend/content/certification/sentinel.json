@@ -12,7 +12,7 @@
     "delivery": "Live on Zoom, one week apart",
     "groupSize": "Up to 40 per session for discussion; up to 150 for assembly format",
     "passMark": 80,
-    "examQuestions": 25,
+    "examQuestions": 27,
     "examMinutes": 25,
     "retakes": "Unlimited, 24 hours apart"
   },
@@ -20,6 +20,8 @@
     "Name the four manipulation levers — urgency, secrecy, flattery, fear — and spot them in a live message.",
     "Describe the financial sextortion script stage by stage, and state the three moves that end it.",
     "Judge an image or voice clip on provenance rather than on how real it looks.",
+    "Treat a confident AI answer as unchecked, and verify anything they intend to rely on.",
+    "Name voice chat, in-game gifts and the move to Discord as where first contact actually happens.",
     "Harden their own accounts: passkeys, app-based 2FA, recovery routes, and a real passphrase.",
     "Know their own digital footprint and the specific removal routes available to a minor.",
     "Report correctly to the right body — CyberTipline, Take It Down, the platform, a trusted adult.",
@@ -48,7 +50,7 @@
           ]
         },
         {
-          "minutes": "4–10",
+          "minutes": "4–9",
           "label": "Why your age group specifically",
           "slides": [
             3,
@@ -56,7 +58,7 @@
           ]
         },
         {
-          "minutes": "10–25",
+          "minutes": "9–23",
           "label": "Financial sextortion, stage by stage",
           "slides": [
             5,
@@ -68,40 +70,42 @@
           ]
         },
         {
-          "minutes": "25–35",
-          "label": "AI: deepfakes, nudify apps, cloned voices",
+          "minutes": "23–34",
+          "label": "AI: fakes, cloned voices, and confident nonsense",
           "slides": [
             11,
             12,
             13,
             14,
-            15
+            15,
+            16
           ]
         },
         {
-          "minutes": "35–43",
-          "label": "The scams built for teenagers",
+          "minutes": "34–45",
+          "label": "Gaming and the scams built for teenagers",
           "slides": [
-            16,
             17,
-            18
-          ]
-        },
-        {
-          "minutes": "43–51",
-          "label": "AI companions and the agreement trap",
-          "slides": [
+            18,
             19,
             20
           ]
         },
         {
-          "minutes": "51–60",
-          "label": "The four levers, and what comes next",
+          "minutes": "45–52",
+          "label": "AI companions and the agreement trap",
           "slides": [
             21,
-            22,
-            23
+            22
+          ]
+        },
+        {
+          "minutes": "52–60",
+          "label": "The four levers, and what comes next",
+          "slides": [
+            23,
+            24,
+            25
           ]
         }
       ],
@@ -280,11 +284,37 @@
           "notes": "The fourth question is the one worth landing. The usual framing of deepfake education is 'don't get fooled'. The more useful framing for a sixteen-year-old is 'don't be the distribution'. Forwarding is the harm."
         },
         {
+          "kind": "teach",
+          "eyebrow": "The other AI problem",
+          "title": "It will be completely wrong, completely confidently",
+          "bullets": [
+            "An AI does not know when it does not know. There is no hesitation in the output.",
+            "It invents citations, statutes, dates and quotes that look exactly like real ones.",
+            "The more specific and obscure your question, the more likely the answer is fabricated.",
+            "And it will keep agreeing with you if you push back, which is not the same as being right."
+          ],
+          "callout": "Use it to understand something, then check anything you are going to rely on. A confident answer is not a checked answer.",
+          "notes": "This is the slide that matters most for the age group that is actually using AI for coursework, and it is deliberately not a cheating lecture — frame it as a competence issue, because that is what lands. Ask the room for a time an AI told them something wrong; you will get examples immediately and they will be better than yours. The link back to the deepfake segment is the point of the whole AI section: with an image you check where it came from, with a claim you check whether anyone else says it. Same skill, different object."
+        },
+        {
           "kind": "section",
           "eyebrow": "Part three",
           "title": "The scams built for you",
           "subtitle": "Not the ones built for your grandfather.",
           "notes": "Quick energy change here — the room has had twenty-five minutes of heavy material. This section can be faster and lighter. You can take examples from the room."
+        },
+        {
+          "kind": "scenario",
+          "eyebrow": "Where it actually happens",
+          "title": "The game is the front door",
+          "bullets": [
+            "Voice chat in a lobby is an unrecorded conversation with strangers, and nobody is moderating it.",
+            "A trade, a gift or a carry creates a debt — that is the opening, not the kindness.",
+            "\"Add me on Discord\" moves it somewhere your parents have never heard of and nothing is logged.",
+            "A server you were invited to by one person you met in a match is not a friend group."
+          ],
+          "callout": "Three settings tonight: voice chat to friends only, invites to friends only, and your profile off public.",
+          "notes": "Gaming is where the first contact overwhelmingly happens for this age group and it is the segment students most expect you to get wrong, so use the right nouns — lobby, carry, trade, server, VC — or you lose them in a sentence. The move to Discord is the same off-platform tell as the Instagram-to-Snapchat move earlier in the hour; say so explicitly and the four levers slide at the end does its own work. Do not moralise about gaming itself: the room contains people who are good at it and it is the fastest way to lose the hour."
         },
         {
           "kind": "teach",
@@ -1023,6 +1053,30 @@
         ],
         "answer": 0,
         "why": "\"We're the same age\" and \"they sent it to me\" are not defences. The correct move is: do not forward, do not save, tell an adult."
+      },
+      {
+        "topic": "AI",
+        "q": "You ask an AI for a statistic for a school assignment and it gives you a precise figure with a source. What should you do?",
+        "choices": [
+          "Use it — it cited a source, so it has been checked",
+          "Find the source itself and confirm the figure is really in it",
+          "Ask the AI again to see if it gives the same answer",
+          "Use it but reword the sentence"
+        ],
+        "answer": 1,
+        "why": "AI systems invent citations that look exactly like real ones, and asking again often just repeats the invention. A confident answer is not a checked answer."
+      },
+      {
+        "topic": "Gaming",
+        "q": "Someone you met in a match gives you a valuable item for free, then asks you to add them on Discord. What is happening?",
+        "choices": [
+          "They want to trade again later",
+          "They are being generous and want to keep playing with you",
+          "The gift creates a debt and the app switch moves the conversation somewhere unlogged and unsupervised",
+          "Nothing — Discord is where gamers talk"
+        ],
+        "answer": 2,
+        "why": "Generosity followed by a move off-platform is the same opening as the too-friendly new follower: the gift is the hook, and the new app has weaker reporting and no record."
       }
     ]
   },
