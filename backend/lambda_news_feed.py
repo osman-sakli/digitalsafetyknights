@@ -72,22 +72,31 @@ QUERIES = [
 # "game" catches "gaming", "veriler" catches "verilerinin".
 RELEVANCE = {
     "en": ["online", "internet", "social media", "app", "apps", "ai", "artificial intelligence",
+           "tech", "technology", "site", "sites", "website", "websites", "messaging", "chat",
+           "device", "devices", "tablet", "livestream", "streaming", "metaverse", "account",
+           "password", "bullying", "esports",
            "chatbot", "deepfake", "nudify", "gaming", "game", "games", "roblox", "discord",
            "minecraft", "fortnite", "smartphone", "phone", "screen", "cyber", "digital",
            "platform", "tiktok", "instagram", "snapchat", "youtube", "data", "privacy",
            "sextortion", "grooming", "web"],
     "es": ["en línea", "en linea", "internet", "redes sociales", "aplicación", "app", "apps",
+           "tecnología", "sitio", "sitios", "web", "mensajería", "chat", "dispositivo",
+           "dispositivos", "tableta", "transmisión", "cuenta", "contraseña", "acoso",
            "ia", "inteligencia artificial", "chatbot", "deepfake", "videojuego", "videojuegos",
            "juego", "juegos", "roblox", "discord", "minecraft", "fortnite", "celular", "móvil",
            "pantalla", "ciber", "digital", "plataforma", "tiktok", "instagram", "snapchat",
            "youtube", "datos", "privacidad", "sextorsión", "grooming", "web"],
     "fr": ["en ligne", "internet", "réseaux sociaux", "application", "appli", "ia",
+           "technologie", "site", "sites", "messagerie", "chat", "appareil", "appareils",
+           "tablette", "diffusion", "compte", "mot de passe", "harcèlement", "écrans",
            "intelligence artificielle", "chatbot", "deepfake", "hypertrucage", "jeu vidéo",
            "jeux vidéo", "jeu", "jeux", "roblox", "discord", "minecraft", "fortnite",
            "smartphone", "téléphone", "écran", "cyber", "numérique", "plateforme", "tiktok",
            "instagram", "snapchat", "youtube", "données", "vie privée", "pédopiégeage",
            "sextorsion", "web"],
     "tr": ["çevrimiçi", "çevrim içi", "internet", "sosyal medya", "uygulama", "yapay zeka",
+           "teknoloji", "site", "siteler", "mesaj", "sohbet", "hesap", "şifre", "cihaz",
+           "tablet", "yayın", "zorbalık", "paylaşım", "ağ", "medya",
            "yapay zekâ", "sohbet botu", "deepfake", "oyun", "roblox", "discord", "minecraft",
            "fortnite", "telefon", "ekran", "siber", "dijital", "platform", "tiktok", "instagram",
            "snapchat", "youtube", "veri", "veriler", "gizlilik", "şantaj", "kandırma", "web"],
@@ -247,6 +256,8 @@ def is_near_duplicate(title, kept_titles, threshold=0.45, entity_floor=3):
 
 MAX_AGE_DAYS = 3
 TARGET_ITEMS = 6
+# Below this, keep the previous feed rather than publishing a thin one.
+MIN_ITEMS = 4
 
 # One locale per site language. The queries are written in the locale's
 # own language and aimed at its own jurisdiction rather than translated
@@ -631,11 +642,13 @@ def run_locale(lang, locale, today):
         print(f"[{lang}] build failed: {e}")
         return {"status": "error", "error": str(e)}
 
-    if not items:
-        # Never overwrite a good feed with an empty one — a transient
-        # Google outage should leave yesterday's links on the page.
-        print(f"[{lang}] no verified items — leaving the existing feed in place.")
-        return {"status": "no_verified_items"}
+    if len(items) < MIN_ITEMS:
+        # Never replace a healthy feed with a thin one. A transient Google
+        # outage, or a quiet news day in a smaller language, should leave
+        # yesterday's six links on the page rather than publish two.
+        print(f"[{lang}] only {len(items)} verified item(s), need {MIN_ITEMS} — "
+              "leaving the existing feed in place.")
+        return {"status": "too_few_items", "count": len(items)}
 
     payload = {
         "updated": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"),
