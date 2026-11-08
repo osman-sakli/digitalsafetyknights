@@ -280,6 +280,7 @@
   <div class="sec-eyebrow" data-i18n="crt.curEyebrow">The programme, minute by minute</div>
   <h2 class="sec" data-i18n="crt.curH">Nothing here is a mystery before you book</h2>
   <p class="sec-lead" data-i18n="crt.curLead">Every run sheet, every slide and every facilitator note is published. Read it before you decide, hand it to an administrator for sign-off, or print it and run the course yourself without us.</p>
+  <p id="cur-en-note" hidden style="background:#fdf6e3;border-left:4px solid var(--gold);border-radius:0 12px 12px 0;padding:13px 17px;font-size:0.86rem;line-height:1.7;color:#7a610f;margin-top:20px;"></p>
   <div id="cur-root" style="margin-top:22px;">
     <p style="color:var(--gray);font-size:0.9rem;" id="cur-loading" data-i18n="crt.curLoading">Loading the run sheets…</p>
   </div>
@@ -420,10 +421,29 @@
       openGuide: t('crt.curOpenGuide', 'Full facilitator guide')
     };
 
+    // The track JSON is authored in English, so the accordion head takes its
+    // name and age line from the same localised keys as the cards above it —
+    // otherwise a Turkish reader sees "Yaver" on the card and "Squire" in the
+    // accordion directly below.
+    var PFX = { squire: 'sq', knight: 'kn', sentinel: 'se', guardian: 'gu' };
+
+    // Read the card's own rendered text rather than calling t() — i18n.js
+    // returns the fallback, never the dictionary, when the language is
+    // English, so t() would have dropped the exam count on the English page.
+    // The card is already correct in every language, so reuse it.
+    function fromCard(pfx, suffix, fallback) {
+      var el = document.querySelector('[data-i18n="crt.' + pfx + suffix + '"]');
+      var s = el ? el.textContent.trim() : '';
+      return s || fallback;
+    }
+
     root.innerHTML = all.map(function (d) {
       var f = d.format || {};
-      var head = (d.emoji || '') + ' ' + esc(d.track) + ' — ' + esc(d.ages) +
-        ' · ' + f.sessions + ' × ' + f.minutesEach + ' min';
+      var pfx = PFX[d.id];
+      var mins = f.sessions + ' × ' + f.minutesEach + ' min';
+      var head = (d.emoji || '') + ' ' +
+        esc(pfx ? fromCard(pfx, 'H', d.track) : d.track) + ' — ' +
+        esc(pfx ? fromCard(pfx, 'Len', mins) : mins);
 
       var body = (d.sessions || []).map(function (s) {
         var rows = (s.segments || []).map(function (sg) {
@@ -475,8 +495,23 @@
     });
   }
 
+  // Say out loud, in the reader's own language, that the published slides are
+  // English for now — and that the live session is not. Leaving a Turkish
+  // school to work that out from a half-English accordion is worse than
+  // telling them.
+  function enNote() {
+    var lang = (window.DSKi18n && DSKi18n.lang) || 'en';
+    if (lang === 'en') return;
+    var txt = t('crt.curEnNote', '');
+    if (!txt) return;
+    var node = document.getElementById('cur-en-note');
+    node.textContent = txt;
+    node.hidden = false;
+  }
+
   start();
-  document.addEventListener('dsk-i18n-ready', start, { once: true });
+  enNote();
+  document.addEventListener('dsk-i18n-ready', function () { start(); enNote(); }, { once: true });
 })();
 </script>
 </body>
