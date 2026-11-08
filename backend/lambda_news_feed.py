@@ -29,6 +29,7 @@ import html
 import json
 import os
 import re
+import unicodedata
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -41,14 +42,86 @@ CLOUDFRONT_DISTRIBUTION_ID = "E1XP6H2UONLEBO"
 FAL_API_KEY_SECRET_ID = "dsk-shorts/fal-api-key"
 ARCHIVE_KEEP_DAYS = 120
 
+# AI and gaming get two slots each: Osman wants both foregrounded, and they
+# are where the threat is actually moving. The rest of the set is the policy,
+# enforcement and privacy ground the feed has always covered.
 QUERIES = [
     "child online safety",
     "kids social media law",
-    "AI chatbot child safety",
-    "child online predator arrest",
+    "AI chatbot child safety risk",
+    "AI deepfake nudify images minors",
+    "children online gaming predators Roblox",
+    "video game scam children Robux",
     "teen social media mental health",
     "children data privacy app",
 ]
+
+# A title has to carry at least one of these to be published. Google News
+# answers a broad child-safety query with whatever is topical, and the first
+# four-language run proved it: the French feed picked up a coach crash in the
+# Ain that killed a seven-year-old, and the Turkish feed picked up three
+# regional youth-programme stories. Neither has anything to do with digital
+# safety, and a road fatality on a child-online-safety feed is worse than an
+# empty slot.
+#
+# Matching is by word, not substring, because a plain substring test is wrong
+# in every one of our four languages: "veri" (data) sits inside "verildi"
+# (was given), "jeu" inside "jeunes", "app" inside "happened", "ai" inside
+# "aid". Short keys (<= 5 letters) must match a whole word; longer keys match
+# from a word start so suffixes still count — "oyun" catches "oyunlar",
+# "game" catches "gaming", "veriler" catches "verilerinin".
+RELEVANCE = {
+    "en": ["online", "internet", "social media", "app", "apps", "ai", "artificial intelligence",
+           "chatbot", "deepfake", "nudify", "gaming", "game", "games", "roblox", "discord",
+           "minecraft", "fortnite", "smartphone", "phone", "screen", "cyber", "digital",
+           "platform", "tiktok", "instagram", "snapchat", "youtube", "data", "privacy",
+           "sextortion", "grooming", "web"],
+    "es": ["en línea", "en linea", "internet", "redes sociales", "aplicación", "app", "apps",
+           "ia", "inteligencia artificial", "chatbot", "deepfake", "videojuego", "videojuegos",
+           "juego", "juegos", "roblox", "discord", "minecraft", "fortnite", "celular", "móvil",
+           "pantalla", "ciber", "digital", "plataforma", "tiktok", "instagram", "snapchat",
+           "youtube", "datos", "privacidad", "sextorsión", "grooming", "web"],
+    "fr": ["en ligne", "internet", "réseaux sociaux", "application", "appli", "ia",
+           "intelligence artificielle", "chatbot", "deepfake", "hypertrucage", "jeu vidéo",
+           "jeux vidéo", "jeu", "jeux", "roblox", "discord", "minecraft", "fortnite",
+           "smartphone", "téléphone", "écran", "cyber", "numérique", "plateforme", "tiktok",
+           "instagram", "snapchat", "youtube", "données", "vie privée", "pédopiégeage",
+           "sextorsion", "web"],
+    "tr": ["çevrimiçi", "çevrim içi", "internet", "sosyal medya", "uygulama", "yapay zeka",
+           "yapay zekâ", "sohbet botu", "deepfake", "oyun", "roblox", "discord", "minecraft",
+           "fortnite", "telefon", "ekran", "siber", "dijital", "platform", "tiktok", "instagram",
+           "snapchat", "youtube", "veri", "veriler", "gizlilik", "şantaj", "kandırma", "web"],
+}
+
+_WORD_EDGE = r"[^0-9A-Za-z\u00c0-\u024f]"
+
+
+def _relevance_pattern(keys):
+    parts = []
+    for k in keys:
+        esc = re.escape(k)
+        # A short key must be the whole word; a longer one may take suffixes.
+        parts.append(f"(?<!\\w){esc}(?!\\w)" if len(k.replace(" ", "")) <= 5
+                     else f"(?<!\\w){esc}")
+    return re.compile("|".join(parts), re.IGNORECASE)
+
+
+_RELEVANCE_RE = {lang: _relevance_pattern(keys) for lang, keys in RELEVANCE.items()}
+
+
+def _fold(text):
+    """Lowercase for matching, and drop the combining dot that Python leaves
+    behind when it lowercases Turkish "İ" — without this, a headline reading
+    "İnternet" lowercases to "i̇nternet" and never matches "internet"."""
+    return unicodedata.normalize("NFKD", text.lower()).replace("\u0307", "")
+
+
+def is_relevant(title, lang):
+    """True if the headline carries any digital, AI or gaming signal."""
+    pattern = _RELEVANCE_RE.get(lang)
+    return bool(pattern and pattern.search(_fold(html.unescape(title))))
+
+
 MAX_AGE_DAYS = 3
 TARGET_ITEMS = 6
 
@@ -76,7 +149,9 @@ LOCALES = {
             "seguridad infantil en internet",
             "ley redes sociales menores",
             "chatbot inteligencia artificial niños riesgo",
-            "grooming detención menores internet",
+            "deepfake imágenes IA menores",
+            "videojuegos niños depredadores en línea",
+            "estafa Robux Roblox niños",
             "salud mental adolescentes redes sociales",
             "privacidad datos niños aplicación",
         ],
@@ -89,8 +164,10 @@ LOCALES = {
         "queries": [
             "sécurité des enfants en ligne",
             "loi réseaux sociaux mineurs",
-            "intelligence artificielle enfants risque",
-            "pédopiégeage arrestation internet",
+            "intelligence artificielle enfants risque chatbot",
+            "deepfake images IA mineurs",
+            "jeux vidéo enfants prédateurs en ligne",
+            "arnaque Robux Roblox enfants",
             "santé mentale adolescents réseaux sociaux",
             "données personnelles enfants application CNIL",
         ],
@@ -101,10 +178,12 @@ LOCALES = {
         "archive_key": "content/news-archive-tr.json",
         "language": "Turkish",
         "queries": [
-            "çocuk güvenliği internet",
+            "çocuk güvenliği internet sosyal medya",
             "sosyal medya yaş sınırı yasa",
             "yapay zeka sohbet botu çocuk risk",
-            "çocuk istismarı internet gözaltı",
+            "yapay zeka deepfake çocuk görüntü",
+            "çocuk çevrimiçi oyun risk Roblox",
+            "Robux dolandırıcılık çocuk oyun",
             "ergen ruh sağlığı sosyal medya",
             "çocuk veri gizliliği uygulama",
         ],
@@ -221,6 +300,46 @@ def publisher_from_url(url, fallback):
     return fallback or host
 
 
+# "Write every summary in Turkish" is not an instruction that produces
+# Turkish a Turkish parent would write. These are the house rules for each
+# language — the same ones the site's own translations follow — so the feed
+# reads as though a person in that country wrote it, not as though English
+# was run through a translator. Osman asked for this explicitly: real
+# grammar rules and everyday usage, every day, in all four.
+STYLE = {
+    "English": (
+        "Plain international English, lightly British (realise, organisation). "
+        "Everyday register: write the way a parent would say it out loud, not "
+        "the way a press release would. No officialese."
+    ),
+    "Latin American Spanish": (
+        "Latin American Spanish (es-419), never peninsular: no vosotros, and use "
+        "computadora/celular rather than ordenador/móvil. Address the reader "
+        "impersonally or in third person, not with usted. Decimal comma and a "
+        "point or thin space for thousands (1,4 millones). A space before the "
+        "percent sign (80 %). Everyday register, as a Mexican or Colombian parent "
+        "would actually say it."
+    ),
+    "French": (
+        "Metropolitan French, vouvoiement. Typography matters and is usually what "
+        "gives a translation away: a narrow no-break space before : ; ! ? and %, "
+        "and inside « » which replace English quotation marks. Decimal comma "
+        "(1,4 million). Watch the contraction trap — « de » before an infinitive "
+        "never becomes « du »: « avant de partager », never « avant du partager ». "
+        "Everyday register, as a parent in France would say it."
+    ),
+    "Turkish": (
+        "Turkish with formal siz for the reader. Never calque English word order — "
+        "rebuild the sentence with the verb at the end where Turkish wants it. "
+        "No comma before « ve ». The percent sign comes first (%80, not 80%). "
+        "Apostrophe before case suffixes on proper nouns and acronyms (ABD'de, "
+        "NCMEC'e, TikTok'ta). Settled DSK terminology: çevrimiçi (not online), "
+        "dolandırıcılık, kandırma for grooming, yapay zeka, sohbet botu, veri "
+        "gizliliği. Everyday register, as a Turkish parent would actually say it."
+    ),
+}
+
+
 def summarize(items, language="English"):
     """One LLM call for the whole batch. Returns {title: summary}. On any
     failure returns {} and callers fall back to the publisher's headline —
@@ -234,7 +353,9 @@ def summarize(items, language="English"):
         f"of the language of the headline. Calm, precise, factual — never fear-mongering, "
         "never hype. Each summary must be understandable by a non-technical parent and must "
         "only restate what the headline itself says. Never add a statistic, name, or claim "
-        "that is not in the headline. Max 22 words each. "
+        "that is not in the headline. Do not echo the headline back — a summary that repeats "
+        "it word for word is useless, so say what it means for a family. Max 22 words each.\n\n"
+        f"How to write {language}: {STYLE.get(language, '')}\n\n"
         'Reply with ONLY a JSON array of objects: [{"n": 1, "summary": "..."}] and nothing else.'
     )
     body = json.dumps(
@@ -264,17 +385,32 @@ def summarize(items, language="English"):
         out = {}
         for row in json.loads(match.group(0)):
             idx = int(row["n"]) - 1
-            if 0 <= idx < len(items):
-                out[items[idx]["title"]] = row["summary"].strip()
+            if not 0 <= idx < len(items):
+                continue
+            title = items[idx]["title"]
+            summary = row["summary"].strip()
+            # A summary that is just the headline again adds nothing, and the
+            # widget already shows the headline above it. Dropping it falls
+            # back to headline-only, which is honest; printing it twice is not.
+            if summary.lower().rstrip(".") == html.unescape(title).lower().rstrip("."):
+                print(f"[warn] echoed headline, dropping summary: {title[:60]}")
+                continue
+            out[title] = summary
         return out
     except Exception as e:  # noqa: BLE001 — degrade to headlines, never invent
         print(f"[warn] summarize failed, falling back to headlines: {e}")
         return {}
 
 
-def build_feed(locale):
+def build_feed(locale, lang):
     candidates = fetch_candidates(locale)
     print(f"{len(candidates)} raw candidates")
+    kept = [c for c in candidates if is_relevant(c["title"], lang)]
+    for c in candidates:
+        if c not in kept:
+            print(f"[drop] off-topic for {lang}: {c['title'][:70]}")
+    print(f"{len(kept)} candidates carry a digital/AI/gaming signal")
+    candidates = kept
     resolved = []
     tried = 0
     for cand in candidates:
@@ -354,7 +490,7 @@ def run_locale(lang, locale, today):
     """One language's feed. Returns a result dict; never raises, so one
     locale's bad run cannot stop the other three from publishing."""
     try:
-        items = build_feed(locale)
+        items = build_feed(locale, lang)
     except Exception as e:  # noqa: BLE001
         print(f"[{lang}] build failed: {e}")
         return {"status": "error", "error": str(e)}
