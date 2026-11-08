@@ -320,6 +320,10 @@ LOCALES = {
             "Robux dolandırıcılık çocuk oyun",
             "ergen ruh sağlığı sosyal medya",
             "çocuk veri gizliliği uygulama",
+            "çocuk siber zorbalık",
+            "çocuk ekran süresi bağımlılık",
+            "ebeveyn kontrolü uygulama çocuk",
+            "okulda siber güvenlik eğitimi öğrenci",
         ],
     },
 }
@@ -587,6 +591,16 @@ def build_feed(locale, lang):
     return items
 
 
+def published_count(feed_key):
+    """How many items the live feed currently holds. A missing or unreadable
+    feed counts as zero, so a first run always publishes."""
+    try:
+        body = s3.get_object(Bucket=BUCKET, Key=feed_key)["Body"].read()
+        return len(json.loads(body).get("items", []))
+    except Exception:  # noqa: BLE001 — absent or malformed both mean "nothing good there"
+        return 0
+
+
 def load_archive(archive_key):
     """Reads the existing archive. A missing key is normal on the very first
     run; any other failure is re-raised so we never silently start a fresh
@@ -643,12 +657,19 @@ def run_locale(lang, locale, today):
         return {"status": "error", "error": str(e)}
 
     if len(items) < MIN_ITEMS:
-        # Never replace a healthy feed with a thin one. A transient Google
+        # Never replace a healthy feed with a thin one: a transient Google
         # outage, or a quiet news day in a smaller language, should leave
-        # yesterday's six links on the page rather than publish two.
-        print(f"[{lang}] only {len(items)} verified item(s), need {MIN_ITEMS} — "
-              "leaving the existing feed in place.")
-        return {"status": "too_few_items", "count": len(items)}
+        # yesterday's six links up rather than publish two. But only if what
+        # is already there is actually better — the first version of this
+        # check compared against a constant and so defended a one-item
+        # Turkish feed against a three-item replacement.
+        live = published_count(locale["feed_key"])
+        if live >= len(items):
+            print(f"[{lang}] only {len(items)} verified item(s) and {live} already "
+                  "published — leaving the existing feed in place.")
+            return {"status": "too_few_items", "count": len(items), "live": live}
+        print(f"[{lang}] only {len(items)} item(s), but better than the {live} "
+              "currently published — publishing.")
 
     payload = {
         "updated": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"),
