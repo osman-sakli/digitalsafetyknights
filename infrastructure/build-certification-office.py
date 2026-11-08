@@ -595,6 +595,262 @@ def exam_doc(d, out, with_answers):
     doc.save(str(out))
 
 
+# ──────────── what we teach: topics and headings ────────────
+#
+# Each topic is matched against the track's own JSON, so the matrix follows
+# the content instead of being asserted alongside it. Keyword matching gets a
+# few rows wrong, though, and a wrong tick in a document a principal reads is
+# worse than no matrix — so every questionable row was checked against the
+# slides by hand and corrected in OVERRIDES below, with the slide named.
+TOPICS = [
+    ("Strangers and unsolicited contact", ["stranger", "messaged you first", "new follower", "never met"]),
+    ("Grooming as a named, four-stage pattern", ["grooming", "four-stage", "trust-building"]),
+    ("“Keep it secret” as the red flag", ["secret", "don't tell your parents"]),
+    ("Being moved to another app", ["another app", "different app", "second app", "off-platform"]),
+    ("Never meeting someone from online", ["meet", "in person", "somewhere private"]),
+    ("Financial sextortion, stage by stage", ["sextortion"]),
+    ("AI-generated intimate images (nudify apps)", ["nudify", "fake intimate", "generated intimate"]),
+    ("Free-currency scams (Robux, skins, V-Bucks)", ["robux", "v-bucks", "free skin", "skins"]),
+    ("“Go first and I’ll send after”", ["go first"]),
+    ("Irreversible payment (gift cards, crypto, Zelle)", ["gift card", "crypto", "zelle", "cash app", "irreversible"]),
+    ("Money-mule recruitment", ["money mule", "launder"]),
+    ("Urgency and countdowns as a tactic", ["urgency", "hurry", "countdown", "rushed", "clock is"]),
+    ("Passwords and passphrases", ["password", "passphrase", "four random"]),
+    ("Two-factor authentication and passkeys", ["two-factor", "2fa", "passkey", "authenticator"]),
+    ("Account recovery as the real way in", ["recovery email", "recovery phone", "recovery route", "security question"]),
+    ("Privacy and safety settings, named", ["friends-only", "account restrictions", "private account",
+                                           "settings →", "family center", "family pairing", "lock the doors"]),
+    ("Your own digital footprint", ["footprint", "search yourself", "public profile", "logged-out"]),
+    ("Location sharing", ["location", "ghost mode", "snap map"]),
+    ("AI that sounds certain and is wrong", ["100% certain", "sounds certain", "confidence isn't proof",
+                                             "double check", "confidently wrong"]),
+    ("AI voice cloning and the family code word", ["code word", "voice clon", "cloned voice"]),
+    ("Deepfakes: judge provenance, not appearance", ["provenance", "deepfake", "where it came from", "posted it first"]),
+    ("AI companions and systems built to agree", ["companion", "agrees with", "always agree"]),
+    ("Cyberbullying and group chats", ["cyberbully", "group chat", "picked on", "bullying"]),
+    ("The bystander move (a student skill)", ["bystander", "don't forward", "speak up", "did not make it worse"]),
+    ("Consent before sharing anyone’s photo", ["consent", "ask them first", "ask first", "do not forward"]),
+    ("Screen time and balance", ["screen time", "screen-time", "autoplay", "offline time"]),
+    ("Telling a trusted adult — never in trouble", ["trusted adult", "tell a grown-up", "one adult", "never in trouble"]),
+    ("Reporting routes (CyberTipline, Take It Down, 988)", ["cybertipline", "takeitdown", "take it down", "stopncii", "988"]),
+    ("The law and real consequences", ["offence", "mandated reporter", "take it down act", "csam",
+                                       "child sexual abuse material"]),
+    ("Parental controls, honestly assessed", ["parental control", "family link", "seatbelt"]),
+    ("Why a child does not tell", ["why children do not tell", "device-removal", "take the phone",
+                                   "first sentence", "second adult"]),
+    ("The first sixty seconds of a disclosure", ["first sixty seconds", "thank you for telling me", "disclosure"]),
+]
+
+# (topic, track) -> True/False, each checked against the slides by hand.
+OVERRIDES = {
+    # Sentinel S2 #3-#11 are the settings segment: passkeys, 2FA, recovery,
+    # logged-in devices, follower audit, precise location off.
+    ("Privacy and safety settings, named", "sentinel"): True,
+    # Sentinel S2 #17 "An image of someone in your year lands in the chat"
+    # and #21 "Three lines that keep you clear".
+    ("Consent before sharing anyone’s photo", "sentinel"): True,
+    # Sentinel S2 #14 "Script the sentence" — "the knowledge is never the
+    # problem, the first sentence is" — and #15 "You are allowed a second adult".
+    ("Why a child does not tell", "sentinel"): True,
+    # Guardian covers mandatory reporting instead; the bystander move is
+    # taught to students, not to the adults.
+    ("The bystander move (a student skill)", "guardian"): False,
+    # Genuinely absent from Sentinel: its AI segment is deepfakes, voice
+    # cloning and companions. The "an AI will state a wrong fact with total
+    # confidence, so verify anything surprising" lesson is in Knight only.
+    ("AI that sounds certain and is wrong", "sentinel"): False,
+}
+
+
+def taught_text(d):
+    """Only what is actually taught: the slides, the exam and the outcomes.
+
+    Scanning the whole track object swept in the logistics metadata too, and
+    Squire's groupSize note — "up to 60 with a second adult in the room" —
+    matched the "second adult" keyword and put a tick against "why a child
+    does not tell" in a track that never discusses it.
+    """
+    parts = [json.dumps(d.get("outcomes", []), ensure_ascii=False),
+             json.dumps(d.get("sessions", []), ensure_ascii=False),
+             json.dumps(d.get("exam", {}), ensure_ascii=False),
+             json.dumps(d.get("certificate", {}), ensure_ascii=False)]
+    return " ".join(parts).lower()
+
+
+def covers(d, topic, keys):
+    key = (topic, d["id"])
+    if key in OVERRIDES:
+        return OVERRIDES[key]
+    blob = taught_text(d)
+    return any(k.lower() in blob for k in keys)
+
+
+def teaching_doc(tracks, out):
+    doc = new_doc(
+        "What We Teach — Topics and Headings",
+        "Every topic the certification programme covers, which age band covers it, and "
+        "the title of every slide in order. The one document to send a head teacher.",
+        "Digital Safety Knights · 4 tracks · "
+        f"{sum(len(s['slides']) for d in tracks for s in d['sessions'])} slides · "
+        f"{sum(len(d['exam']['questions']) for d in tracks)} exam questions",
+    )
+    rich(doc, "Bu dosya nedir.  ",
+         "Programda neyi öğrettiğimiz ve bütün başlıklar. Önce konu tablosu: hangi konu "
+         "hangi yaş grubunda işleniyor. Sonra her parçanın her oturumunun bütün slayt "
+         "başlıkları, dakikasıyla, sırasıyla. Slaytların metni ve sunucu notları için "
+         "parça klasörlerindeki “Egitmen Kilavuzu” dosyalarına bakın.",
+         size=10, fill="F4F6FB", bar="C9A84C", space_after=12)
+
+    # ── the matrix ──
+    heading(doc, "Topic coverage by age band", before=6)
+    para(doc, "A tick means the track teaches it outright. A dash is deliberate, not an "
+              "oversight — what a child is told is banded on purpose, and the policy is "
+              "stated at the end of this document.",
+         size=9.5, color=DColor(0x6C, 0x75, 0x7D), space_after=7)
+
+    t = doc.add_table(rows=1, cols=5)
+    t.style = "Table Grid"
+    widths = (4.05, 0.72, 0.72, 0.72, 0.72)
+    heads = ["Topic"] + [f"{d['track']}\n{d['ages']}" for d in tracks]
+    for c, txt, w in zip(t.rows[0].cells, heads, widths):
+        c.width = DInches(w)
+        p = c.paragraphs[0]
+        p.alignment = WD_ALIGN_PARAGRAPH.LEFT if txt == "Topic" else WD_ALIGN_PARAGRAPH.CENTER
+        shade(p._p, "0D1B3E")
+        r = p.add_run(txt)
+        r.bold = True
+        r.font.size = DPt(7.5)
+        r.font.name = HEAD_FONT
+        r.font.color.rgb = DColor(0xFF, 0xFF, 0xFF)
+
+    for topic, keys in TOPICS:
+        cells = t.add_row().cells
+        cells[0].width = DInches(widths[0])
+        p = cells[0].paragraphs[0]
+        p.paragraph_format.space_after = DPt(1)
+        r = p.add_run(topic)
+        r.font.size = DPt(9)
+        r.font.name = BODY_FONT
+        for n, d in enumerate(tracks, 1):
+            yes = covers(d, topic, keys)
+            cells[n].width = DInches(widths[n])
+            cp = cells[n].paragraphs[0]
+            cp.alignment = WD_ALIGN_PARAGRAPH.CENTER
+            cp.paragraph_format.space_after = DPt(1)
+            rr = cp.add_run("✓" if yes else "–")
+            rr.bold = yes
+            rr.font.size = DPt(10)
+            rr.font.name = BODY_FONT
+            rr.font.color.rgb = DColor(0x1D, 0x7A, 0x6F) if yes else DColor(0xB0, 0xB8, 0xC6)
+
+    counts = ", ".join(
+        f"{d['track']} {sum(1 for tp, k in TOPICS if covers(d, tp, k))}" for d in tracks)
+    para(doc, f"Topics per track — {counts} of {len(TOPICS)}.",
+         size=9, italic=True, color=DColor(0x6C, 0x75, 0x7D), space_before=6, space_after=4)
+
+    # ── headings, track by track ──
+    for d in tracks:
+        f = d["format"]
+        heading(doc, f"{d.get('emoji','')} {d['track']} ({TR[d['id']]}) — every heading",
+                size=16, page_break=True)
+        para(doc, f"Ages {d['ages']} · {f['sessions']} × {f['minutesEach']} minutes · "
+                  f"{f['examQuestions']}-question exam · {f['passMark']}% to pass",
+             size=9.5, bold=True, color=DColor(0x6C, 0x75, 0x7D), space_after=8)
+
+        para(doc, "What a participant can do afterwards", size=11, bold=True,
+             font=HEAD_FONT, space_after=3)
+        bullets(doc, d.get("outcomes", []), size=9.5, indent=0.26)
+
+        for sess in d["sessions"]:
+            para(doc, f"Session {sess['n']} — {sess['title']}", size=12, bold=True,
+                 color=DColor(0x1A, 0x2F, 0x6E), font=HEAD_FONT,
+                 space_before=13, space_after=2)
+            if sess.get("goal"):
+                rich(doc, "Goal.  ", sess["goal"], size=9.5, fill="F4F6FB",
+                     bar="C9A84C", space_after=6)
+            slides = sess.get("slides", [])
+            for sg in sess.get("segments", []):
+                para(doc, f"{sg['minutes']} min  ·  {sg['label']}", size=10, bold=True,
+                     color=DColor(0x0D, 0x1B, 0x3E), font=HEAD_FONT,
+                     space_before=7, space_after=2)
+                for n in sg.get("slides", []):
+                    if not 1 <= n <= len(slides):
+                        continue
+                    sl = slides[n - 1]
+                    p = doc.add_paragraph()
+                    p.paragraph_format.left_indent = DInches(0.3)
+                    p.paragraph_format.space_after = DPt(1)
+                    a = p.add_run(f"{n}. ")
+                    a.bold = True
+                    a.font.size = DPt(9.5)
+                    a.font.name = BODY_FONT
+                    a.font.color.rgb = DColor(0x1A, 0x2F, 0x6E)
+                    b = p.add_run(sl.get("title", ""))
+                    b.font.size = DPt(9.5)
+                    b.font.name = BODY_FONT
+                    c = p.add_run(f"   [{sl.get('kind', 'teach')}]")
+                    c.font.size = DPt(8)
+                    c.font.name = BODY_FONT
+                    c.font.color.rgb = DColor(0x8A, 0x93, 0xA6)
+
+        ex = d.get("exam", {})
+        para(doc, "Exam — what it tests", size=12, bold=True,
+             color=DColor(0x1A, 0x2F, 0x6E), font=HEAD_FONT, space_before=13, space_after=3)
+        seen, order = set(), []
+        for q in ex.get("questions", []):
+            tp = q.get("topic", "")
+            if tp and tp not in seen:
+                seen.add(tp)
+                order.append(tp)
+        counts = {tp: sum(1 for q in ex["questions"] if q.get("topic") == tp) for tp in order}
+        bullets(doc, [f"{tp} — {counts[tp]} question{'s' if counts[tp] > 1 else ''}"
+                      for tp in order], size=9.5, indent=0.26)
+
+    # ── the banding policy ──
+    heading(doc, "What is said at which age, and why", page_break=True)
+    rich(doc, "This is the part to read before booking.  ",
+         "The dashes in the table are a safeguarding decision, not a shortcut. The same "
+         "danger is taught at every age; how much of it is named changes.", space_after=9)
+    rich(doc, "Sentinel (14–17) and Guardian (adults).  ",
+         "Financial sextortion is named and walked through stage by stage, including the "
+         "actual wording of the threat. Nudify apps are named, so that a student who sent "
+         "nothing understands they can still be targeted. The law on forwarding an image "
+         "of a classmate is stated plainly. 988, Take It Down and StopNCII are given.",
+         size=10, fill="F4F6FB", bar="1A2F6E", space_after=7)
+    rich(doc, "Knight (10–13).  ",
+         "Grooming is taught as a four-stage pattern and the move to another app is named "
+         "as the tell. The image and secrecy danger is covered in exactly one sentence — "
+         "“if anyone ever asks you for a photo, or sends you one, or says keep it secret "
+         "from your parents, that is the moment you stop and tell a grown-up, every single "
+         "time, and you are never in trouble for it” — and the facilitator note instructs "
+         "the presenter to read it once and not elaborate or follow questions into detail. "
+         "Sextortion is not named. The resources given are CyberTipline and a trusted adult.",
+         size=10, fill="F4F6FB", bar="C9A84C", space_after=7)
+    rich(doc, "Squire (6–9).  ",
+         "Never goes near it. Five rules: your name and school stay offline, a password is "
+         "a secret only a parent is told, “free” plus “hurry” is a trap, you never meet "
+         "someone from a game, and telling a grown-up is never the wrong answer. The only "
+         "resource is a trusted adult.",
+         size=10, fill="F4F6FB", bar="3EC6C0", space_after=9)
+    rich(doc, "One gap worth knowing about.  ",
+         "The lesson that an AI will state a wrong fact with complete confidence, so "
+         "anything surprising has to be checked elsewhere, is taught in the Knight track "
+         "and not in Sentinel — whose AI segment covers deepfakes, voice cloning and AI "
+         "companions instead. For 14–17s using AI for homework that is arguably a miss, "
+         "and it would take one slide to fix.",
+         size=10, fill="FDF6E3", bar="E63946", space_after=9)
+    rich(doc, "In every session, at every age.  ",
+         "No student is ever asked to describe their own experience in front of the group. "
+         "A private channel to the facilitator stays open throughout. We stay on the call "
+         "for ten minutes after the end, because disclosures come after the end far more "
+         "often than during. Anything that needs escalating goes to the school's designated "
+         "safeguarding lead immediately, and we do not run an investigation ourselves. "
+         "Every session closes on the same line: nobody is in trouble for asking for help.",
+         size=10, fill="EAFAF7", bar="2A9D8F")
+
+    doc.save(str(out))
+
+
 def overview_doc(tracks, out):
     doc = new_doc(
         "Digital Safety Certification — Programme Overview",
@@ -786,8 +1042,10 @@ def main():
     DEST.mkdir(parents=True)
 
     made = []
-    overview_doc(tracks, DEST / "0 - Program Ozeti ve Fiyatlandirma.docx")
-    made.append("0 - Program Ozeti ve Fiyatlandirma.docx")
+    overview_doc(tracks, DEST / "0a - Program Ozeti ve Fiyatlandirma.docx")
+    made.append("0a - Program Ozeti ve Fiyatlandirma.docx")
+    teaching_doc(tracks, DEST / "0b - Ne Ogretiyoruz - Konular ve Basliklar.docx")
+    made.append("0b - Ne Ogretiyoruz - Konular ve Basliklar.docx")
 
     for n, d in enumerate(tracks, 1):
         folder = DEST / f"{n} - {d['track']} ({TR[d['id']]}) - {d['ages'].replace('–','-')}"
