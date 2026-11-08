@@ -47,5 +47,12 @@
     "source": "BleepingComputer",
     "source_url": "https://www.bleepingcomputer.com/news/security/qnap-says-hackers-breaching-nas-devices-in-plex2shell-attacks/",
     "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:share:7524821238524035072/"
+  },
+  {
+    "date": "2026-11-08",
+    "topic": "800+ exposed instances of Artex, an autonomous AI hacking tool, found open on the internet; linked to real attacks on banks and an MSP",
+    "source": "TechCrunch",
+    "source_url": "https://techcrunch.com/2026/11/06/hundreds-of-artex-ai-hacking-tools-found-publicly-exposed-to-the-web/",
+    "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:share:7525184141693239297/"
   }
 ]
