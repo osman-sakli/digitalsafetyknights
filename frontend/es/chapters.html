@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Capítulos — Digital Safety Knights</title>
+<title>Secciones Locales — Digital Safety Knights</title>
 <link rel="canonical" href="https://digitalsafetyknights.org/es/chapters.html">
 <link rel="alternate" hreflang="en" href="https://digitalsafetyknights.org/en/chapters.html">
 <link rel="alternate" hreflang="es" href="https://digitalsafetyknights.org/es/chapters.html">
 <link rel="alternate" hreflang="fr" href="https://digitalsafetyknights.org/fr/chapters.html">
 <link rel="alternate" hreflang="tr" href="https://digitalsafetyknights.org/tr/chapters.html">
 <link rel="alternate" hreflang="x-default" href="https://digitalsafetyknights.org/chapters.html">
-<meta name="description" content="Capítulos de Digital Safety Knights: una red mundial de voluntarios locales que lleva la educación en seguridad digital a escuelas y comunidades. Abre un capítulo en tu país.">
-<meta property="og:title" content="Capítulos — Digital Safety Knights">
-<meta property="og:description" content="Capítulos de Digital Safety Knights: una red mundial de voluntarios locales que lleva la educación en seguridad digital a escuelas y comunidades. Abre un capítulo en tu país.">
+<meta name="description" content="Las secciones locales de Digital Safety Knights: una red mundial de voluntarios que lleva la educación en seguridad digital a escuelas y comunidades. Abre una sección en tu país.">
+<meta property="og:title" content="Secciones Locales — Digital Safety Knights">
+<meta property="og:description" content="Las secciones locales de Digital Safety Knights: una red mundial de voluntarios que lleva la educación en seguridad digital a escuelas y comunidades. Abre una sección en tu país.">
 <meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
 <meta property="og:url" content="https://digitalsafetyknights.org/chapters.html">
 <meta property="og:type" content="website">
@@ -54,6 +54,10 @@
   .ch-does h4 { color: var(--navy); font-size: 0.9rem; margin-bottom: 3px; }
   .ch-does p { color: var(--gray); font-size: 0.8rem; line-height: 1.5; }
 
+  .ch-hint { font-size: .8rem; color: var(--gray); line-height: 1.55; margin: -6px 0 4px; }
+  .ch-check { display: flex; gap: 10px; align-items: flex-start; background: var(--light); border-radius: 10px; padding: 12px 14px; font-size: .86rem; line-height: 1.55; font-weight: 400; cursor: pointer; }
+  .ch-check input { margin-top: 3px; flex-shrink: 0; width: 17px; height: 17px; accent-color: var(--gold); }
+  .ch-check a { color: var(--navy2); font-weight: 800; }
   .ch-form label { display: block; font-weight: 800; font-size: 0.85rem; color: var(--navy); margin: 1rem 0 6px; }
   .ch-form input, .ch-form select, .ch-form textarea { width: 100%; padding: 12px 14px; border: 2px solid #dfe4ee; border-radius: 10px; font-size: 0.95rem; font-family: inherit; }
   .ch-form textarea { min-height: 100px; resize: vertical; }
@@ -105,7 +109,7 @@
 
   <div class="ch-section">
     <h2 id="ch-form-title">Start a Chapter</h2>
-    <p class="lede" id="ch-form-lede">Tell us about yourself and your country. This is a real responsibility, not just a signup — we review every application personally and usually follow up with a few questions or a short call.</p>
+    <p class="lede" id="ch-form-lede">Tell us about yourself and your country. This is a real responsibility, not just a signup — read the <a href="/chapter-standards.html">Chapter Standards</a> first, because we check every one of them. We review every application personally, contact your reference ourselves, and always follow up with a video call.</p>
     <form class="ch-form" id="ch-form">
       <div class="row2">
         <div>
@@ -138,8 +142,21 @@
         <option value="other" id="ch-role-other">Other</option>
       </select>
 
+      <label for="ch-host" id="ch-label-host">Host organisation — the school, NGO, library or youth group whose children these would be</label>
+      <input type="text" id="ch-host" required maxlength="160">
+      <p class="ch-hint" id="ch-hint-host">Required. We do not approve anyone who would gather children themselves — sessions run through an organisation that already has its own child-protection policy and its own responsible adult in the room.</p>
+
+      <label for="ch-ref" id="ch-label-ref">Reference there we can contact — name, role and email</label>
+      <input type="text" id="ch-ref" required maxlength="200">
+      <p class="ch-hint" id="ch-hint-ref">Required. A head teacher, director or supervisor. We will email them ourselves, and we will tell you when we do.</p>
+
       <label for="ch-why" id="ch-label-why">Why do you want to start a Digital Safety Knights chapter in your country?</label>
       <textarea id="ch-why" required minlength="20" maxlength="1500"></textarea>
+
+      <label class="ch-check"><input type="checkbox" id="ch-age" required>
+        <span id="ch-label-age">I am 18 or over.</span></label>
+      <label class="ch-check"><input type="checkbox" id="ch-rules" required>
+        <span id="ch-label-rules">I have read the <a href="/chapter-standards.html" target="_blank" rel="noopener">Chapter Standards</a> and I accept all eight rules — including that I will never work with children outside a host organisation or have one-to-one contact with a child.</span></label>
 
       <button type="submit" class="ch-submit" id="ch-submit">Apply to Start a Chapter</button>
       <div class="ch-status" id="ch-status"></div>
@@ -252,6 +269,16 @@ fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/chapters-list
     el.innerHTML = '<div class="ch-empty"><div class="emoji">🌱</div><h3>' + CH_EMPTY_H + '</h3><p>' + CH_EMPTY_P + '</p></div>';
   });
 
+// The vetting fields. Nobody represents DSK in front of children without a
+// host organisation that is already responsible for them and a reference we
+// can actually call — see /chapter-standards.html.
+document.getElementById('ch-label-host').textContent = chIsTr ? 'Ev sahibi kurum — bu çocukların bağlı olduğu okul, dernek, kütüphane ya da gençlik kuruluşu' : chIsEs ? 'Organización anfitriona: la escuela, ONG, biblioteca o grupo juvenil al que pertenecen esos niños' : chIsFr ? 'Organisation d’accueil — l’école, l’association, la bibliothèque ou le groupe de jeunes dont il s’agit' : 'Host organisation — the school, NGO, library or youth group whose children these would be';
+document.getElementById('ch-hint-host').textContent = chIsTr ? 'Zorunlu. Çocukları kendi başına toplayacak kimseyi onaylamıyoruz — oturumlar, kendi çocuk koruma politikası ve odada kendi sorumlu yetişkini olan bir kurum aracılığıyla yapılır.' : chIsEs ? 'Obligatorio. No aprobamos a nadie que reúna a los niños por su cuenta: las sesiones se realizan a través de una organización que ya tiene su propia política de protección infantil y su propio adulto responsable en la sala.' : chIsFr ? 'Obligatoire. Nous n’approuvons personne qui rassemblerait des enfants de sa propre initiative : les séances passent par une organisation qui a déjà sa politique de protection de l’enfance et son propre adulte responsable dans la salle.' : 'Required. We do not approve anyone who would gather children themselves — sessions run through an organisation that already has its own child-protection policy and its own responsible adult in the room.';
+document.getElementById('ch-label-ref').textContent = chIsTr ? 'Oradan iletişime geçebileceğimiz bir referans — ad, görev ve e-posta' : chIsEs ? 'Una referencia allí con quien podamos comunicarnos: nombre, cargo y correo' : chIsFr ? 'Une personne de référence que nous pouvons contacter — nom, fonction et e-mail' : 'Reference there we can contact — name, role and email';
+document.getElementById('ch-hint-ref').textContent = chIsTr ? 'Zorunlu. Okul müdürü, kurum yöneticisi ya da üstünüz. Kendimiz e-posta atacağız ve attığımızda size haber vereceğiz.' : chIsEs ? 'Obligatorio. Un director, una directora de la organización o tu supervisor. Les escribiremos nosotros mismos, y te avisaremos cuando lo hagamos.' : chIsFr ? 'Obligatoire. Un chef d’établissement, un directeur d’association ou votre responsable. Nous les contacterons nous-mêmes, et nous vous dirons quand.' : 'Required. A head teacher, director or supervisor. We will email them ourselves, and we will tell you when we do.';
+document.getElementById('ch-label-age').textContent = chIsTr ? '18 yaşından büyüğüm.' : chIsEs ? 'Tengo 18 años o más.' : chIsFr ? 'J’ai 18 ans ou plus.' : 'I am 18 or over.';
+document.getElementById('ch-label-rules').innerHTML = (chIsTr ? '<a href="/chapter-standards.html" target="_blank" rel="noopener">Şube Standartları</a>nı okudum ve sekiz kuralın tamamını kabul ediyorum — çocuklarla asla ev sahibi kurum dışında çalışmayacağım ve bir çocukla asla birebir temas kurmayacağım dahil.' : chIsEs ? 'He leído las <a href="/chapter-standards.html" target="_blank" rel="noopener">Normas para Secciones Locales</a> y acepto las ocho reglas, incluida la de no trabajar nunca con niños fuera de una organización anfitriona ni tener contacto individual con un niño.' : chIsFr ? 'J’ai lu les <a href="/chapter-standards.html" target="_blank" rel="noopener">Normes des sections locales</a> et j’accepte les huit règles, y compris celle de ne jamais travailler avec des enfants en dehors d’une organisation d’accueil ni avoir de contact en tête-à-tête avec un enfant.' : 'I have read the <a href="/chapter-standards.html" target="_blank" rel="noopener">Chapter Standards</a> and I accept all eight rules — including that I will never work with children outside a host organisation or have one-to-one contact with a child.');
+
 document.getElementById('ch-form').addEventListener('submit', function (e) {
   e.preventDefault();
   var submitBtn = document.getElementById('ch-submit');
@@ -268,6 +295,10 @@ document.getElementById('ch-form').addEventListener('submit', function (e) {
       country: document.getElementById('ch-country').value.trim(),
       city: document.getElementById('ch-city').value.trim(),
       role: document.getElementById('ch-role').value,
+      host: document.getElementById('ch-host').value.trim(),
+      reference: document.getElementById('ch-ref').value.trim(),
+      over18: document.getElementById('ch-age').checked,
+      accepted_standards: document.getElementById('ch-rules').checked,
       why: document.getElementById('ch-why').value.trim()
     })
   })

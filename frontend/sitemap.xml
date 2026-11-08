@@ -49,6 +49,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://digitalsafetyknights.org/chapter-standards.html</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
     <loc>https://digitalsafetyknights.org/chapters.html</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>

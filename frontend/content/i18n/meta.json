@@ -26,8 +26,8 @@
       "description": "Başına Ne Geldi — gerçek çevrimiçi güvenlik senaryolarının nasıl geliştiğini ve zamanında nasıl fark edileceğini gösteren, özenle kurgulanmış vaka incelemeleri."
     },
     "chapters.html": {
-      "title": "Temsilcilikler — Digital Safety Knights",
-      "description": "Digital Safety Knights temsilcilikleri: dijital güvenlik eğitimini okullara ve topluluklara ulaştıran dünya çapında bir gönüllü ağı. Kendi ülkenizde bir temsilcilik başlatın."
+      "title": "Şubeler — Digital Safety Knights",
+      "description": "Digital Safety Knights şubeleri: dijital güvenlik eğitimini okullara ve topluluklara ulaştıran dünya çapında bir gönüllü ağı. Kendi ülkenizde bir şube başlatın."
     },
     "chat-simulator.html": {
       "title": "Sohbet Simülatörü — Digital Safety Knights",
@@ -184,6 +184,10 @@
     "certification-exam.html": {
       "title": "Sertifika Sınavı — Digital Safety Knights",
       "description": "Digital Safety Knights sertifika sınavına girin: dört yaş programı, geçmek için %80, sınırsız tekrar, ücretsiz. Cevaplarınız cihazınızdan hiç çıkmaz."
+    },
+    "chapter-standards.html": {
+      "title": "Şube Standartları ve Çocuk Güvenliği — Digital Safety Knights",
+      "description": "Adımıza şube yürütecek herkesten istediklerimiz: pazarlıksız sekiz çocuk koruma kuralı, bir başvuruyu nasıl doğruladığımız, ne verdiğimiz, ne vermediğimiz ve bir şubeyi ne bitirir."
     }
   },
   "es": {
@@ -212,8 +216,8 @@
       "description": "Qué Le Pasó A — casos ficticios y cuidadosamente tratados que muestran cómo ocurren de verdad las situaciones de seguridad en línea y cómo detectarlas a tiempo."
     },
     "chapters.html": {
-      "title": "Capítulos — Digital Safety Knights",
-      "description": "Capítulos de Digital Safety Knights: una red mundial de voluntarios locales que lleva la educación en seguridad digital a escuelas y comunidades. Abre un capítulo en tu país."
+      "title": "Secciones Locales — Digital Safety Knights",
+      "description": "Las secciones locales de Digital Safety Knights: una red mundial de voluntarios que lleva la educación en seguridad digital a escuelas y comunidades. Abre una sección en tu país."
     },
     "chat-simulator.html": {
       "title": "Simulador de Chat — Digital Safety Knights",
@@ -370,6 +374,10 @@
     "certification-exam.html": {
       "title": "Examen de Certificación — Digital Safety Knights",
       "description": "Presenta el examen de certificación de Digital Safety Knights: cuatro niveles por edad, 80 % para aprobar, intentos ilimitados y gratis. Tus respuestas nunca salen de tu dispositivo."
+    },
+    "chapter-standards.html": {
+      "title": "Normas para Secciones Locales y Protección Infantil — Digital Safety Knights",
+      "description": "Lo que exigimos a quien dirija una sección local en nuestro nombre: las ocho reglas de protección infantil no negociables, cómo verificamos a cada solicitante, qué damos, qué no, y qué pone fin a una sección."
     }
   },
   "fr": {
@@ -556,6 +564,10 @@
     "certification-exam.html": {
       "title": "Examen de certification — Digital Safety Knights",
       "description": "Passez l’examen de certification Digital Safety Knights : quatre parcours par âge, 80 % pour réussir, tentatives illimitées, gratuit. Vos réponses ne quittent jamais votre appareil."
+    },
+    "chapter-standards.html": {
+      "title": "Normes des sections locales et protection de l’enfance — Digital Safety Knights",
+      "description": "Ce que nous exigeons de toute personne animant une section en notre nom : les huit règles non négociables de protection de l’enfance, notre procédure de vérification, ce que nous donnons, ce que nous ne donnons pas, et ce qui met fin à une section."
     }
   }
 }
