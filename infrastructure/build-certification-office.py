@@ -898,13 +898,19 @@ def internal_notes_doc(tracks, out):
         "doğrulamıyoruz. Okulun doğrulanmış belgeye ihtiyacı varsa ücretli program.",
     ], size=10)
 
-    heading(doc, "Fiyat, tek satırda")
-    rich(doc, "Öğretim ücretsiz, hep ücretsiz kalacak.  ",
-         "Ücret sadece okulun isteğe bağlı doğrulanmış belgesinde: öğrenci başına "
-         "6 USD, en az 120 USD, okul başına 600 USD üst sınır — ve isteyen her okul "
-         "için tamamen kaldırılıyor. Sitede “volunteers, not vendors” yazıyor ve bu "
-         "doğru kalsın diye ücret öğretime değil, belgenin idaresine bağlandı.",
+    heading(doc, "Ücret, tek satırda")
+    rich(doc, "Hiçbir şey ücretli değil.  ",
+         "Kurs da, sertifikalar da, dört oturumluk uzun sürüm de. Ücretli bir katman yok. "
+         "Önceden bir fiyatlandırma hazırlanmıştı (öğrenci başına 6 USD) ama Osman "
+         "2026-11-09'da kaldırdı — sitede, Office paketinde ve SSS'lerde hiçbir yerde "
+         "ücretten söz edilmiyor. Biri bizim adımıza para isterse o biz değiliz.",
          size=10, fill="FDF6E3", bar="C9A84C", space_after=8)
+    rich(doc, "Yine de önceden ayarlanması gereken tek şey.  ",
+         "Gözetimli sınav, listeden düzenlenen ve teyit edebileceğimiz referanslı "
+         "sertifikalar, ve okul sitesine mühür. Bunlar da ücretsiz, sadece rezervasyon "
+         "sırasında istenmesi gerekiyor — self-servis sertifikada sınava kimin girdiğini "
+         "görmediğimiz için teyit edemiyoruz.",
+         size=10, space_after=8)
 
     heading(doc, "Yaş bandı politikası — en önemli kısım")
     rich(doc, "Tabloda “–” olan yerler eksiklik değil, karar.  ",
@@ -1054,35 +1060,35 @@ def overview_doc(tracks, out):
              space_before=7, space_after=3)
         bullets(doc, d.get("outcomes", []), size=9.5, indent=0.28)
 
-    heading(doc, "What is free, and what is not", page_break=True)
-    rich(doc, "Free, forever, for anyone, anywhere.  ",
-         "The live two-hour cohort, every slide deck and facilitator guide, the exam with "
-         "unlimited retakes, and a self-issued certificate carrying the student's name. "
-         "English, Spanish, French or Turkish. No account, no login, no student data "
-         "collected — the online exam runs entirely in the browser.",
+    heading(doc, "What it costs", page_break=True)
+    rich(doc, "Nothing. Not the course, not the certificates, not the longer version.  ",
+         "We are a nonprofit and this is what we exist to do. There is no paid tier, no "
+         "upgrade and nothing held back. A school that wants the two-hour course, the "
+         "four-session version, verified certificates for every student and a parent "
+         "evening on top pays nothing for any of it.",
          fill="EAFAF7", bar="2A9D8F", space_after=8)
-    rich(doc, "School Certification Programme — $6 per student, $120 minimum, "
-              "$600 capped per school, one school year.  ",
-         "Four hours instead of two (4 × 60 minutes over four weeks), a pre- and "
-         "post-assessment so you can show what changed, a proctored sitting scheduled with "
-         "your teacher, verified certificates issued from your roster each carrying a "
-         "reference we can confirm on request, a class report for the teacher, a "
-         "“Digital Safety Certified” seal for your school's website, and a parent-evening "
-         "Guardian session at no extra cost.",
+    rich(doc, "What is included, free.  ",
+         "A live cohort for your class; or 4 × 60 minutes over four weeks if you want the "
+         "longer version. Every slide deck and facilitator guide. The exam, open book, with "
+         "unlimited retakes. A certificate with each student's name on it. A pre- and "
+         "post-assessment. A class report for the teacher. A parent-evening Guardian "
+         "session. English, Spanish, French or Turkish. No account, no login, and no "
+         "student data collected by the self-serve route.",
+         space_after=8)
+    rich(doc, "One thing worth asking for in advance.  ",
+         "A proctored sitting, certificates issued from your roster each carrying a "
+         "reference we can confirm, and a \u201cDigital Safety Certified\u201d seal for your "
+         "website. Also free \u2014 it just needs arranging, because the self-serve "
+         "certificate is issued in the student's own browser and we did not watch them sit "
+         "the exam. If you need a credential an authority can rely on, say so when you book.",
          fill="FDF6E3", bar="C9A84C", space_after=8)
-    rich(doc, "The fee is waived in full for any school that asks.  ",
-         "No application, no means test, no questions, and we will not ask you to justify "
-         "it. We would rather certify a thousand students for nothing than turn one school "
-         "away over money.",
-         fill="F4F6FB", bar="1A2F6E", space_after=8)
-    rich(doc, "Why there is a fee at all.  ",
-         "A certificate that nobody checks is a PDF. The moment a school wants to put a "
-         "credential in a student file, show it to an authority, or publish a seal on its "
-         "website, somebody has to hold a roster, proctor a sitting, keep a reference and "
-         "answer the phone when a parent rings in two years' time. That is administration, "
-         "and it is the only thing we charge for. Our workshops are free, our materials are "
-         "free, the self-issued certificate is free, and we still come to your school as "
-         "volunteers rather than vendors.",
+    rich(doc, "Why we say this so loudly.  ",
+         "Child online safety has a small industry around it now, and a head teacher with a "
+         "budget line and no time is an easy sell. We would rather you compared us to a "
+         "quote and found the free option was not the lesser one. We take donations, and "
+         "that is the only money involved anywhere \u2014 we come as volunteers rather than "
+         "vendors, and if anyone ever asks you to pay for something in our name, that is "
+         "not us.",
          space_after=10)
 
     heading(doc, "Honest limits")
@@ -1129,8 +1135,8 @@ def main():
     made = []
     internal_notes_doc(tracks, DEST / "0 - TURKCE NOTLAR (paylasmayin).docx")
     made.append("0 - TURKCE NOTLAR (paylasmayin).docx")
-    overview_doc(tracks, DEST / "1 - Programme Overview and Pricing.docx")
-    made.append("1 - Programme Overview and Pricing.docx")
+    overview_doc(tracks, DEST / "1 - Programme Overview.docx")
+    made.append("1 - Programme Overview.docx")
     teaching_doc(tracks, DEST / "2 - What We Teach - Topics and Headings.docx")
     made.append("2 - What We Teach - Topics and Headings.docx")
 

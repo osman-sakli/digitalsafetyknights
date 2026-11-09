@@ -330,19 +330,25 @@ DOC = f"""<!DOCTYPE html>
   <div class="toc">{toc}</div>
 
   <div class="pricing">
-    <h2>What is free, and what is not</h2>
-    <p><b>Free, forever, for anyone:</b> the live two-hour cohort, every deck and facilitator
-    guide, the exam with unlimited retakes, and a self-issued certificate carrying the
-    student's name. English, Spanish, French or Turkish. No account, no login, no student
-    data collected.</p>
-    <p><b>School Certification Programme — $6 per student, $120 minimum, $600 capped per
-    school, one school year:</b> four hours instead of two (4 × 60 min over four weeks),
-    a pre- and post-assessment, a proctored sitting, verified certificates issued from
-    your roster each with a reference we can confirm, a class report for the teacher,
-    a website seal, and a parent-evening Guardian session included.</p>
-    <p><b>The fee is waived in full for any school that asks</b> — no application, no means
-    test, no questions. The fee buys administration of a credential, never the teaching;
-    the teaching does not have a price and is not going to get one.</p>
+    <h2>What it costs</h2>
+    <p><b>Nothing. Not the course, not the certificates, not the longer version.</b> We are a
+    nonprofit and this is what we exist to do. There is no paid tier, no upgrade and nothing
+    held back — a school that wants the two-hour course, the four-session version, verified
+    certificates for every student and a parent evening on top pays nothing for any of it.</p>
+    <p><b>Included, free:</b> a live cohort for your class, or 4 × 60 minutes over four weeks
+    if you want the longer version; every slide deck and facilitator guide; the exam, open
+    book, with unlimited retakes; a certificate with each student's name on it; a pre- and
+    post-assessment; a class report for the teacher; a parent-evening Guardian session.
+    English, Spanish, French or Turkish. No account, no login, no student data collected by
+    the self-serve route.</p>
+    <p><b>One thing worth arranging in advance:</b> a proctored sitting, certificates issued
+    from your roster each carrying a reference we can confirm, and a “Digital Safety
+    Certified” seal for your website. Also free — it just needs asking for, because the
+    self-serve certificate is issued in the student's own browser and we did not watch them
+    sit the exam.</p>
+    <p>We take donations, and that is the only money involved anywhere. We come as volunteers
+    rather than vendors. If anyone ever asks you to pay for something in our name, that is
+    not us — please tell us.</p>
   </div>
 
 {"".join(track_section(d) for d in tracks)}
