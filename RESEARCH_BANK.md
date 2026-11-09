@@ -1,6 +1,6 @@
 # DSK Threat Intelligence & Policy Research Bank
 
-Compiled 2026-08-02, last refreshed 2026-11-07. Covers the last ~10 months of
+Compiled 2026-08-02, last refreshed 2026-11-09. Covers the last ~10 months of
 child-online-safety news (Oct 2025 – Oct 2026), weighted toward the most
 recent 4-6 weeks. Sourced via web search — every claim below has a citation.
 This is a living reference: update it monthly (it's also the natural
@@ -196,6 +196,81 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
   Worth tracking as its own new entry once either shows real movement (a
   floor vote or enactment) rather than just a committee markup.
   [Commerce Committee](https://www.commerce.senate.gov/press/rep/release/commerce-committee-advances-kids-online-safety-legislation/)
+
+---
+
+## 0t. November 2026 Refresh (Nov 9, 2026)
+
+Automated biennial freshness scan, ~48 hours after the last one. Quiet
+window again — the Character.AI bankruptcy procedural thread, the
+KOSA/lame-duck situation, the Meta/TikTok settlements, the eight-state
+OpenAI suits, and the EU KIDS Act proposal are all unchanged from the Nov
+7 check. One previously-unlogged item surfaced (a new First Amendment
+challenge to Alabama's app-store law, filed in the ~10-day gap between
+this routine's checks) but it doesn't change that law's "pending" status
+since it isn't effective yet either way. No tracker edit this run.
+
+### Spot-checked, no change needed
+- **Alabama App Store Accountability Act** — tracker's "pending ...
+  effective Jan 1, 2027" is still accurate, but there IS new context to
+  log: CCIA sued Alabama officials (around Oct 28, 2026) to block HB 161
+  before it takes effect, arguing its age-verification/parental-consent
+  mandate violates the First Amendment — the same playbook CCIA used
+  against Texas, Utah, and Louisiana. This closes a gap in our own
+  tracking: the Oct 17 and Oct 27 refreshes both explicitly noted "no
+  legal challenge found" for Alabama, and no refresh since has caught
+  that one now exists. Doesn't change the tracker's status (the law isn't
+  in effect yet regardless of the suit, same as how a challenge didn't
+  change Louisiana's or Utah's "pending" status before this), so no site
+  edit — but worth having the AG-coalition pattern complete: Texas, Utah,
+  Louisiana, and now Alabama have all drawn a CCIA suit; only California's
+  AB 1043/DAAA and New York's SAFE for Kids Act haven't (yet) as of this
+  check.
+  [MLex](https://www.mlex.com/mlex/articles/2543760) ·
+  [MLex](https://www.mlex.com/mlex/articles/2543750) ·
+  [IDTechWire](https://idtechwire.com/ccia-sues-to-block-alabamas-app-store-age-verification-law/)
+- **Louisiana App Store Accountability Act** — re-confirmed "Delayed one
+  year via HB 977 ... now effective July 1, 2027" still matches; no new
+  litigation or further delay found.
+  [JD Supra](https://www.jdsupra.com/legalnews/louisiana-delays-app-store-3163634/) ·
+  [Alston Privacy](https://www.alstonprivacy.com/louisiana-delays-app-store-accountability-effective-date-to-july-2027/)
+- **Kentucky v. Character Technologies** — tracker's "Filed Jan 8, 2026,
+  Franklin Circuit Court" / status "court" still accurate; no merits
+  ruling found, and the Delaware bankruptcy proceeding (already tracked
+  above under "Flagged for review") hasn't stayed or otherwise changed
+  this case's status.
+  [Bloomberg Law](https://news.bloomberglaw.com/antitrust/kentucky-lawsuit-offers-blueprint-for-states-to-sue-ai-chatbots)
+
+### Context, not a tracker change
+- A bipartisan coalition of 45 state attorneys general (led in part by
+  California AG Rob Bonta) sent a letter to Congress on Nov 4, 2026 via
+  NAAG urging passage of the Senate's KOSA text specifically — reiterating
+  the same ask (keep the duty-of-care standard, preserve states' own
+  enforcement authority) that earlier 40-AG coalition letters made back
+  in February and May 2026. Pure advocacy, no vote or markup attached;
+  doesn't change the tracker's "pending" status for the Kids Internet and
+  Digital Safety Act.
+  [NAAG](https://www.naag.org/press-releases/bipartisan-coalition-of-attorneys-general-urges-congress-to-advance-senate-kids-online-safety-act/) ·
+  [California AG](https://oag.ca.gov/news/press-releases/attorney-general-bonta-any-federal-legislation-protect-kids-online-must-allow)
+- KOSA/Kids Internet and Digital Safety Act: still no Senate floor vote;
+  the Senate returns from pro forma sessions for lame-duck business today
+  (Nov 9, 2026) per the already-logged Oct reporting, but no vote has
+  happened as of this check.
+- Texas App Store Accountability Act (CCIA v. Paxton): still no Fifth
+  Circuit merits ruling found since the completed briefing noted in
+  earlier refreshes; law remains in effect under the existing stay.
+- Meta Teen Accounts Settlement: no news since the Aug 26, 2026 court
+  approval; rollout timeline (non-personalized feeds within 4 months,
+  broader compliance within 6, age-assurance within 1 year of approval)
+  unchanged.
+- Eight-state OpenAI suits and Florida's separate suit: still no ruling
+  found.
+- EU KIDS Act (proposed): still proposal stage, no Parliament/Council
+  position found beyond the Sept 17, 2026 Commission text.
+
+**Site follow-up from this refresh:** none — nothing surfaced rose to a
+clear-cut, mechanical tracker update. "Last refreshed" date bumped to Nov
+9, 2026 above.
 
 ---
 
