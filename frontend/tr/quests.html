@@ -206,12 +206,12 @@
 
 <script>
 const QUESTS = [
-  { id: "roblox-safety-lab",     file: "content/quests/roblox-safety-lab.json" },
-  { id: "ai-threat-awareness",   file: "content/quests/ai-threat-awareness.json" },
-  { id: "grooming-watch",        file: "content/quests/grooming-watch.json" },
-  { id: "parental-controls",     file: "content/quests/parental-controls.json" },
-  { id: "family-cyber-defense",  file: "content/quests/family-cyber-defense.json" },
-  { id: "digital-citizenship",   file: "content/quests/digital-citizenship.json" },
+  { id: "roblox-safety-lab",     file: "/content/quests/roblox-safety-lab.json" },
+  { id: "ai-threat-awareness",   file: "/content/quests/ai-threat-awareness.json" },
+  { id: "grooming-watch",        file: "/content/quests/grooming-watch.json" },
+  { id: "parental-controls",     file: "/content/quests/parental-controls.json" },
+  { id: "family-cyber-defense",  file: "/content/quests/family-cyber-defense.json" },
+  { id: "digital-citizenship",   file: "/content/quests/digital-citizenship.json" },
 ];
 
 const TIER_KEY = "dsk_quest_tier";
@@ -369,7 +369,7 @@ function showPicker() {
   const metaLang = window.DSKi18n ? DSKi18n.lang : 'en';
   const needsMeta = QUESTS.some(q => !q.meta);
   if (needsMeta) {
-    Promise.all(QUESTS.map(q => q.meta ? Promise.resolve() : fetch(metaLang === 'en' ? q.file : `content/quests/${q.id}-${metaLang}.json`)
+    Promise.all(QUESTS.map(q => q.meta ? Promise.resolve() : fetch(metaLang === 'en' ? q.file : `/content/quests/${q.id}-${metaLang}.json`)
       .then(r => r.ok ? r : fetch(q.file))
       .then(r => r.json()).then(data => { q.meta = data; q.data = data; })))
       .then(() => showPicker());
@@ -391,9 +391,9 @@ function startQuest(q) {
   const isForParents = q.meta && q.meta.forParents;
   let variantFile = q.file;
   if (lang !== 'en') {
-    variantFile = `content/quests/${q.id}-${lang}.json`;
+    variantFile = `/content/quests/${q.id}-${lang}.json`;
   } else if (tier !== "standard" && !isForParents) {
-    variantFile = `content/quests/${q.id}-${tier}.json`;
+    variantFile = `/content/quests/${q.id}-${tier}.json`;
   }
 
   if (variantFile === q.file && q.data) {
