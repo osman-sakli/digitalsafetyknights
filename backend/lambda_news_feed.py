@@ -436,9 +436,33 @@ def verify_link_is_live(url):
         return False
 
 
+# A social platform is not a publisher. Google News sometimes hands back an
+# item whose source is "Instagram" or "X", and one went out on the Turkish
+# feed: a child-safety site citing Instagram as its source undermines the
+# first rule this module is written to keep, which is that every item names
+# its real publisher and links to the original reporting.
+NOT_A_PUBLISHER = {
+    "instagram", "facebook", "twitter", "x", "x.com", "tiktok", "youtube",
+    "reddit", "pinterest", "linkedin", "threads", "telegram", "whatsapp",
+    "snapchat", "tumblr", "vk", "weibo", "discord",
+}
+
+
+def _social(name):
+    n = (name or "").strip().lower().replace(".com", "").replace("www.", "")
+    return n in NOT_A_PUBLISHER
+
+
 def publisher_from_url(url, fallback):
+    """The publisher name to print. Prefers the name Google News gives, falls
+    back to the hostname, and refuses a social platform in either slot."""
     host = (urllib.parse.urlparse(url).hostname or "").replace("www.", "")
-    return fallback or host
+    if fallback and not _social(fallback):
+        return fallback
+    if host and not _social(host.split(".")[0]):
+        return host
+    return ""
+
 
 
 # "Write every summary in Turkish" is not an instruction that produces
@@ -573,7 +597,11 @@ def build_feed(locale, lang):
             print(f"[skip] unresolvable/dead: {cand['title'][:60]}")
             continue
         cand["url"] = real_url
-        cand["source"] = publisher_from_url(real_url, cand["source"])
+        publisher = publisher_from_url(real_url, cand["source"])
+        if not publisher:
+            print(f"[skip] not original reporting ({cand['source']}): {cand['title'][:50]}")
+            continue
+        cand["source"] = publisher
         resolved.append(cand)
 
     summaries = summarize(resolved, locale["language"])
