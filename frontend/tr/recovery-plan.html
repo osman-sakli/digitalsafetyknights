@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Toparlanma Planı — Olan oldu. Buradan başlayın.</title>
+<link rel="canonical" href="https://digitalsafetyknights.org/tr/recovery-plan.html">
+<link rel="alternate" hreflang="en" href="https://digitalsafetyknights.org/en/recovery-plan.html">
+<link rel="alternate" hreflang="es" href="https://digitalsafetyknights.org/es/recovery-plan.html">
+<link rel="alternate" hreflang="fr" href="https://digitalsafetyknights.org/fr/recovery-plan.html">
+<link rel="alternate" hreflang="tr" href="https://digitalsafetyknights.org/tr/recovery-plan.html">
+<link rel="alternate" hreflang="x-default" href="https://digitalsafetyknights.org/recovery-plan.html">
+<meta name="description" content="Çocuğunuzla ilgili çevrimiçi bir şey oldu. İlk bir saatte ne yapılacağı, neyin durumu kötüleştirdiği ve tam olarak kime bildirileceği — şantaj, dolaşan bir görüntü, kandırma, dolandırıcılık, zorbalık. Ücretsiz, kayıt yok.">
+<meta property="og:title" content="Toparlanma Planı — Olan oldu. Buradan başlayın.">
+<meta property="og:description" content="Çocuğunuzla ilgili çevrimiçi bir şey oldu. İlk bir saatte ne yapılacağı, neyin durumu kötüleştirdiği ve tam olarak kime bildirileceği — şantaj, dolaşan bir görüntü, kandırma, dolandırıcılık, zorbalık. Ücretsiz, kayıt yok.">
+<meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
+<meta property="og:url" content="https://digitalsafetyknights.org/recovery-plan.html">
+<meta property="og:type" content="website">
+<link rel="icon" href="/assets/favicon.ico">
+<link rel="stylesheet" href="/assets/theme.css">
+<script src="/assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
+<style>
+  :root { --navy:#0d1b3e; --navy2:#1a2f6e; --gold:#c9a84c; --gold2:#e8c56a;
+          --light:#f4f6fb; --gray:#6c757d; --danger:#e63946; --success:#2a9d8f; --teal:#3EC6C0; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Nunito Sans','Segoe UI',system-ui,sans-serif; background:var(--light); color:#2d3748; line-height:1.7; }
+  a { color:inherit; }
+
+  .rp-hero { background:linear-gradient(140deg,#0d1b3e,#1a2f6e); color:#fff; padding:2.6rem 1.5rem 2.8rem; text-align:center; position:relative; }
+  .rp-hero .back { position:absolute; left:18px; top:15px; color:#aebbd6; text-decoration:none; font-size:.82rem; font-weight:700; }
+  .rp-hero .eyebrow { color:var(--gold); font-weight:900; letter-spacing:2.4px; font-size:.72rem; text-transform:uppercase; }
+  .rp-hero h1 { font-size:clamp(1.65rem,5.2vw,2.3rem); font-weight:900; margin:10px 0 12px; text-wrap:balance; }
+  .rp-hero p { color:#c3cee6; max-width:56ch; margin:0 auto; font-size:.98rem; }
+
+  .wrap { max-width:840px; margin:0 auto; padding:30px 18px 70px; }
+
+  .now { background:#fff; border:3px solid var(--danger); border-radius:16px; padding:20px 23px; }
+  .now h2 { color:#8d1f28; font-size:1.1rem; margin-bottom:8px; }
+  .now p { font-size:.95rem; }
+  .now a { color:var(--navy2); font-weight:800; }
+
+  h2.sec { font-size:clamp(1.25rem,3.6vw,1.6rem); color:var(--navy); margin:36px 0 6px; text-wrap:balance; }
+  p.sub { color:var(--gray); font-size:.93rem; margin-bottom:14px; }
+
+  .sixty { background:var(--navy); color:#dbe3f3; border-radius:16px; padding:23px 26px; margin-top:16px; }
+  .sixty h3 { color:var(--gold2); font-size:1.08rem; margin-bottom:4px; }
+  .sixty .why { color:#9fb0d0; font-size:.88rem; margin-bottom:14px; }
+  .sixty ol { list-style:none; counter-reset:x; display:flex; flex-direction:column; gap:11px; }
+  .sixty ol li { padding-left:38px; position:relative; font-size:.95rem; }
+  .sixty ol li::before { counter-increment:x; content:counter(x); position:absolute; left:0; top:2px; width:25px; height:25px; border-radius:50%; background:var(--gold); color:var(--navy); font-weight:900; font-size:.78rem; display:flex; align-items:center; justify-content:center; }
+  .sixty ol li b { color:#fff; }
+  .sixty .say { background:rgba(255,255,255,.08); border-left:4px solid var(--gold); border-radius:0 10px 10px 0; padding:12px 16px; margin-top:14px; font-size:.93rem; font-style:italic; color:#e8eefb; }
+
+  .trap { background:#fdf6e3; border-left:5px solid var(--gold); border-radius:0 14px 14px 0; padding:19px 23px; margin-top:16px; }
+  .trap h3 { color:#8a6d16; font-size:1.05rem; margin-bottom:6px; }
+  .trap p { font-size:.93rem; }
+  .trap p + p { margin-top:9px; }
+  .trap b { color:#6b5410; }
+
+  details.br { background:#fff; border-radius:14px; margin-top:12px; box-shadow:0 2px 14px rgba(13,27,62,.06); overflow:hidden; }
+  details.br > summary { cursor:pointer; padding:17px 20px; font-weight:900; color:var(--navy); font-size:1rem; line-height:1.4; list-style:none; display:flex; gap:12px; align-items:flex-start; }
+  details.br > summary::-webkit-details-marker { display:none; }
+  details.br > summary .ic { flex-shrink:0; font-size:1.2rem; }
+  details.br > summary .tx { flex:1; }
+  details.br > summary::after { content:"+"; color:var(--gold); font-size:1.4rem; font-weight:900; line-height:1; flex-shrink:0; }
+  details.br[open] > summary::after { content:"−"; }
+  details.br .body { padding:0 20px 22px; }
+
+  .blk { margin-top:16px; }
+  .blk h4 { font-size:.72rem; font-weight:900; letter-spacing:1.8px; text-transform:uppercase; margin-bottom:7px; }
+  .blk.do h4 { color:var(--success); }
+  .blk.dont h4 { color:var(--danger); }
+  .blk.rep h4 { color:var(--navy2); }
+  .blk ul { list-style:none; display:flex; flex-direction:column; gap:7px; }
+  .blk ul li { font-size:.92rem; padding-left:23px; position:relative; line-height:1.6; }
+  .blk.do ul li::before { content:"✓"; position:absolute; left:0; color:var(--success); font-weight:900; }
+  .blk.dont ul li::before { content:"✕"; position:absolute; left:0; color:var(--danger); font-weight:900; }
+  .blk.rep ul li::before { content:"→"; position:absolute; left:0; color:var(--navy2); font-weight:900; }
+  .blk ul li a { color:var(--navy2); font-weight:800; }
+  .blk ul li b { color:var(--navy); }
+  .script { background:var(--light); border-radius:11px; padding:13px 16px; margin-top:13px; font-size:.91rem; font-style:italic; color:#46536c; line-height:1.65; }
+  .script b { font-style:normal; color:var(--navy); display:block; font-size:.72rem; letter-spacing:1.6px; text-transform:uppercase; margin-bottom:5px; }
+
+  .week { display:grid; gap:13px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); margin-top:16px; }
+  .wk { background:#fff; border-radius:13px; padding:17px 19px; box-shadow:0 2px 14px rgba(13,27,62,.06); border-top:4px solid var(--teal); }
+  .wk h4 { color:var(--navy); font-size:.95rem; margin-bottom:5px; }
+  .wk p { font-size:.88rem; color:#46536c; }
+
+  .closing { background:var(--navy); color:#c3cee6; border-radius:16px; padding:23px 26px; margin-top:34px; }
+  .closing h3 { color:var(--gold2); margin-bottom:9px; }
+  .closing p { font-size:.94rem; }
+  .closing p + p { margin-top:10px; }
+
+  .acts { display:flex; gap:10px; flex-wrap:wrap; margin-top:26px; }
+  .btn { background:var(--gold); color:var(--navy); border:none; border-radius:12px; padding:13px 22px; font:inherit; font-weight:900; cursor:pointer; text-decoration:none; display:inline-block; }
+  .btn.ghost { background:transparent; color:var(--navy); border:2px solid #d7dded; }
+
+  footer { text-align:center; padding:2rem; color:var(--gray); font-size:.85rem; }
+  :focus-visible { outline:3px solid var(--gold); outline-offset:2px; }
+
+  @media print {
+    body { background:#fff; }
+    .rp-hero { background:#0d1b3e !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+    .acts, .noprint { display:none !important; }
+    details.br { box-shadow:none; border:1px solid #ccc; break-inside:avoid; }
+    details.br > summary::after { content:""; }
+    details.br .body { display:block !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="rp-hero">
+  <a class="back" href="/resources.html" data-i18n="rp.back">← Resources</a>
+  <div class="eyebrow">Digital Safety Knights</div>
+  <h1 data-i18n="rp.h1">It already happened. Start here.</h1>
+  <p data-i18n="rp.sub">Almost everything written about children and the internet is about prevention. This page is for afterwards — the first hour, what not to do, and exactly who to report to. No sign-up, nothing to buy, no account.</p>
+</div>
+
+<div class="wrap">
+
+  <div class="now">
+    <h2 data-i18n="rp.dangerH">If a child is in immediate physical danger</h2>
+    <p data-i18n="rp.dangerP">Call your local emergency number now, before you read anything else on this page. If a child has said they want to end their life, in the US call or text <b>988</b>; elsewhere, your country's crisis line is on our <a href="/#emergency">emergency help list</a>. Nothing on this page is more urgent than that call.</p>
+  </div>
+
+  <h2 class="sec" data-i18n="rp.sixtyH">Before anything else: the first sixty seconds</h2>
+  <p class="sub" data-i18n="rp.sixtySub">Whatever happened, this part is the same — and it matters more than every practical step that follows. Your first reaction is the data your child uses to decide whether there will be a second conversation.</p>
+
+  <div class="sixty">
+    <h3 data-i18n="rp.sixtyTitle">Say these, in this order</h3>
+    <div class="why" data-i18n="rp.sixtyWhy">The panic is normal and it is not a failure. The job is only to delay it by sixty seconds.</div>
+    <ol>
+      <li data-i18n="rp.s1"><b>"Thank you for telling me."</b> First words, before any question. This is the whole hinge.</li>
+      <li data-i18n="rp.s2"><b>"You're not in trouble. We'll deal with this together."</b> Say it even if they did something wrong. Especially then.</li>
+      <li data-i18n="rp.s3"><b>"This ends. It genuinely does, and faster than you think."</b> They believe it is permanent. It is almost never permanent.</li>
+      <li data-i18n="rp.s4"><b>Then stop talking and let them finish.</b> Do not fill the silence, and do not start solving it out loud yet.</li>
+    </ol>
+    <div class="say" data-i18n="rp.sixtyNot">What not to say, however much you want to: "Let me see it." "What were you thinking?" "How could you not know?" "Who else have you told?" Each one ends the disclosure, and the next one will not come.</div>
+  </div>
+
+  <div class="trap">
+    <h3 data-i18n="rp.trapH">The one mistake that costs the most</h3>
+    <p data-i18n="rp.trapP1">Do not take the phone away as a response to being told. It feels like the one lever that is genuinely yours, and in the short term it works — it removes the device. It also removes the evidence, the reporting route, and the contact with the only people your child will talk to.</p>
+    <p data-i18n="rp.trapP2">And it confirms, in the worst week of their life, that the prediction they made about you was right. The next child who hears about it learns the same lesson. Meanwhile the image, the account and the person are all still there, and now you are not being told anything.</p>
+    <p data-i18n="rp.trapP3"><b>Remove the threat, not the phone.</b> Restricting a device is still available to you, for other reasons, at other times — just never as the answer to being told something.</p>
+  </div>
+
+  <h2 class="sec" data-i18n="rp.whatH">What happened?</h2>
+  <p class="sub" data-i18n="rp.whatSub">Open the one that fits. Each is written to be done in order, starting now. If more than one fits, start with the one highest on this list.</p>
+
+  <!-- 1 · sextortion -->
+  <details class="br">
+    <summary><span class="ic">🚨</span><span class="tx" data-i18n="rp.b1s">Someone is threatening to share a private image of my child unless they pay or send more</span></summary>
+    <div class="body">
+      <div class="blk do">
+        <h4 data-i18n="rp.doH">Do this now, in order</h4>
+        <ul>
+          <li data-i18n="rp.b1d1"><b>Do not pay. Not any amount.</b> Paying has never been shown to end it — it identifies your child as someone who pays, and the demand returns, larger.</li>
+          <li data-i18n="rp.b1d2"><b>Stop all replies.</b> Mid-sentence is fine. Every reply, including threats to call the police, tells them the pressure is working.</li>
+          <li data-i18n="rp.b1d3"><b>Screenshot everything first</b> — the profile, the username and its exact spelling, the threats, the payment details or wallet address, the dates.</li>
+          <li data-i18n="rp.b1d4"><b>Then block, but do not delete the account.</b> The account is where the evidence lives, and investigators need it.</li>
+          <li data-i18n="rp.b1d5"><b>Report it</b> — see below. Then sit with your child while they do the last step, rather than doing it in another room.</li>
+        </ul>
+      </div>
+      <div class="blk dont">
+        <h4 data-i18n="rp.dontH">Do not</h4>
+        <ul>
+          <li data-i18n="rp.b1n1">Ask to see the image, or ask your child to send it to you. You do not need it, and holding an intimate image of a minor can itself be an offence.</li>
+          <li data-i18n="rp.b1n2">Message the offender yourself, or try to negotiate, warn or frighten them.</li>
+          <li data-i18n="rp.b1n3">Delete the account, the app or the messages before anything is reported.</li>
+          <li data-i18n="rp.b1n4">Tell your child they must keep it from the other parent, a sibling or the school. Secrecy is the thing that was being used against them.</li>
+        </ul>
+      </div>
+      <div class="blk rep">
+        <h4 data-i18n="rp.repH">Report to</h4>
+        <ul>
+          <li data-i18n="rp.b1r1"><b><a href="https://report.cybertip.org" target="_blank" rel="noopener">CyberTipline (NCMEC)</a></b> — takes reports from anywhere in the world, 24 hours a day, and works directly with the platforms.</li>
+          <li data-i18n="rp.b1r2"><b><a href="https://takeitdown.ncmec.org" target="_blank" rel="noopener">Take It Down</a></b> — if an image exists, this gets it removed. Your child's device computes a fingerprint and only the fingerprint is shared; the image itself never leaves their phone. It works for anyone who was under 18 in the image, it works on AI-generated fakes, and the site itself is available in 85 languages including Turkish, Spanish and French.</li>
+          <li data-i18n="rp.b1r3"><b>The platform itself</b> — use its minor-safety or child-exploitation reporting path, which is faster than the ordinary one.</li>
+          <li data-i18n="rp.b1r4"><b>Your national hotline or police</b> — the list by country is on our <a href="/#emergency">emergency help page</a>.</li>
+        </ul>
+      </div>
+      <div class="script" data-i18n="rp.b1script"><b>If your child is the one holding the phone</b>"You do not owe this person anything, and you are not the one in trouble here. We are going to stop answering, take pictures of everything, and tell the people whose job this is. I am not going to look at the photo. I am not angry with you."</div>
+    </div>
+  </details>
+
+  <!-- 2 · image circulating -->
+  <details class="br">
+    <summary><span class="ic">📸</span><span class="tx" data-i18n="rp.b2s">A private image of my child is being passed around — or someone made a fake one with AI</span></summary>
+    <div class="body">
+      <div class="blk do">
+        <h4 data-i18n="rp.doH2">Do this now, in order</h4>
+        <ul>
+          <li data-i18n="rp.b2d1"><b>Start the removal first.</b> <a href="https://takeitdown.ncmec.org" target="_blank" rel="noopener">Take It Down</a> for anyone who was under 18 in the image, <a href="https://stopncii.org" target="_blank" rel="noopener">StopNCII.org</a> for 18 and over. Both are free, both work from a fingerprint rather than the image, and both cover AI-generated fakes.</li>
+          <li data-i18n="rp.b2d2"><b>Tell the school, in writing, today</b> — if any pupil has it. Ask specifically what they will do about the children who are sharing it. A school that knows has duties; a school that was never told does not.</li>
+          <li data-i18n="rp.b2d3"><b>Record where you saw it</b> — the platform, the account names, the group, the dates. Note it; do not download it.</li>
+          <li data-i18n="rp.b2d4"><b>Report to the platform and to your national hotline.</b></li>
+          <li data-i18n="rp.b2d5"><b>Say the AI part out loud to your child.</b> If the image is fabricated, they are often more frightened than if it were real, because they think nobody will believe them. Schools and police in 2026 know fabricated images exist and are common.</li>
+        </ul>
+      </div>
+      <div class="blk dont">
+        <h4 data-i18n="rp.dontH2">Do not</h4>
+        <ul>
+          <li data-i18n="rp.b2n1">Download, save, forward or print the image, even to preserve evidence. For an image of a minor this can create an offence. The platforms and the hotlines hold the evidence.</li>
+          <li data-i18n="rp.b2n2">Contact the family of the child who shared it yourself. Let the school or the police do that.</li>
+          <li data-i18n="rp.b2n3">Move your child to a new school, new phone or new account in the first 48 hours. That decision deserves a calmer week than this one.</li>
+          <li data-i18n="rp.b2n4">Ask who else has seen it. You cannot find out, and the question tells your child the audience is what matters.</li>
+        </ul>
+      </div>
+      <div class="blk rep">
+        <h4 data-i18n="rp.repH2">Report to</h4>
+        <ul>
+          <li data-i18n="rp.b2r1"><b><a href="https://takeitdown.ncmec.org" target="_blank" rel="noopener">takeitdown.ncmec.org</a></b> — under-18 image removal, hash-based, free.</li>
+          <li data-i18n="rp.b2r2"><b><a href="https://stopncii.org" target="_blank" rel="noopener">stopncii.org</a></b> — the same thing for adults.</li>
+          <li data-i18n="rp.b2r3"><b><a href="https://report.cybertip.org" target="_blank" rel="noopener">CyberTipline</a></b>, and your country's hotline from our <a href="/#emergency">emergency list</a>.</li>
+          <li data-i18n="rp.b2r4"><b>The school's designated safeguarding lead</b>, by email, so there is a record of when they were told.</li>
+        </ul>
+      </div>
+    </div>
+  </details>
+
+  <!-- 3 · grooming -->
+  <details class="br">
+    <summary><span class="ic">🎭</span><span class="tx" data-i18n="rp.b3s">My child has been talking to an adult who hid who they were</span></summary>
+    <div class="body">
+      <div class="blk do">
+        <h4 data-i18n="rp.doH3">Do this now, in order</h4>
+        <ul>
+          <li data-i18n="rp.b3d1"><b>Preserve the conversation before anything else.</b> Screenshot from the beginning, not just the recent part — the early messages are where the pattern shows, and they are what investigators need.</li>
+          <li data-i18n="rp.b3d2"><b>Do not confront the account.</b> If they realise they are discovered they delete everything, and they move on to the next child with their history intact.</li>
+          <li data-i18n="rp.b3d3"><b>Report to your national child-protection hotline or police, and to <a href="https://report.cybertip.org" target="_blank" rel="noopener">CyberTipline</a>.</b> This is the category where reporting most often protects children other than your own.</li>
+          <li data-i18n="rp.b3d4"><b>Ask one open question and then stop:</b> "Do you want to tell me what happened?" Then listen. Do not interview.</li>
+          <li data-i18n="rp.b3d5"><b>Find out whether a meeting was arranged or happened.</b> That single fact changes what the police need to do and how fast.</li>
+        </ul>
+      </div>
+      <div class="blk dont">
+        <h4 data-i18n="rp.dontH3">Do not</h4>
+        <ul>
+          <li data-i18n="rp.b3n1">Blame your child for not seeing it. These approaches are designed by adults to defeat exactly the judgement a twelve-year-old has.</li>
+          <li data-i18n="rp.b3n2">Pose as your child to gather more, or run your own investigation. It damages the real one.</li>
+          <li data-i18n="rp.b3n3">Describe the person as a monster in front of your child. They may have felt real affection, and hearing it called disgusting makes them hide the rest.</li>
+          <li data-i18n="rp.b3n4">Assume nothing happened because no meeting took place. Ask the hotline, not the internet.</li>
+        </ul>
+      </div>
+      <div class="script" data-i18n="rp.b3script"><b>What helps a child hear</b>"This person did this on purpose, and they are good at it. You are not stupid and you are not in trouble. The adult who lied is the one who did something wrong, not you."</div>
+    </div>
+  </details>
+
+  <!-- 4 · money / account -->
+  <details class="br">
+    <summary><span class="ic">💳</span><span class="tx" data-i18n="rp.b4s">My child lost money, or an account was taken over</span></summary>
+    <div class="body">
+      <div class="blk do">
+        <h4 data-i18n="rp.doH4">Do this now, in order</h4>
+        <ul>
+          <li data-i18n="rp.b4d1"><b>Contact the bank or payment provider immediately</b> and say the word "fraud". Card payments can sometimes be reversed; gift cards, crypto and instant transfers usually cannot, but the window is measured in hours, so call before you finish reading this.</li>
+          <li data-i18n="rp.b4d2"><b>Secure the email account first</b>, not the one that was hacked. Email is the master key — whoever has it can reset everything else.</li>
+          <li data-i18n="rp.b4d3"><b>Change passwords from a different device</b>, in case the first one has something on it. Turn on app-based two-factor authentication, not SMS.</li>
+          <li data-i18n="rp.b4d4"><b>Check the recovery routes</b>, not just the password: recovery email, recovery phone, trusted devices, and any app granted access years ago. Most teenage accounts are not broken into, they are recovered.</li>
+          <li data-i18n="rp.b4d5"><b>Warn the friends.</b> A stolen account's real value is the trust it has with the people in it.</li>
+        </ul>
+      </div>
+      <div class="blk dont">
+        <h4 data-i18n="rp.dontH4">Do not</h4>
+        <ul>
+          <li data-i18n="rp.b4n1">Pay anything else, including a "fee" to release the first amount or recover the account. That is the second half of the same scam.</li>
+          <li data-i18n="rp.b4n2">Use a phone number or link from the message itself. Find the bank's number independently.</li>
+          <li data-i18n="rp.b4n3">Let it become a secret because the amount was small or embarrassing. The amount is not the point; the method will be used again.</li>
+          <li data-i18n="rp.b4n4">Ignore a "job" that involved receiving money and passing most of it on. That is money-mule recruitment, your child may be the one charged, and it needs reporting rather than hiding.</li>
+        </ul>
+      </div>
+      <div class="blk rep">
+        <h4 data-i18n="rp.repH4">Report to</h4>
+        <ul>
+          <li data-i18n="rp.b4r1"><b>The bank or payment app</b>, first and fastest.</li>
+          <li data-i18n="rp.b4r2"><b>The platform</b> where it happened — the game, the marketplace, the social app.</li>
+          <li data-i18n="rp.b4r3"><b>Your national fraud or cybercrime body</b> — in the US <a href="https://reportfraud.ftc.gov" target="_blank" rel="noopener">reportfraud.ftc.gov</a> and <a href="https://ic3.gov" target="_blank" rel="noopener">ic3.gov</a>; elsewhere, see our <a href="/#emergency">emergency list</a>.</li>
+        </ul>
+      </div>
+    </div>
+  </details>
+
+  <!-- 5 · bullying -->
+  <details class="br">
+    <summary><span class="ic">💬</span><span class="tx" data-i18n="rp.b5s">My child is being bullied, harassed or deliberately excluded online</span></summary>
+    <div class="body">
+      <div class="blk do">
+        <h4 data-i18n="rp.doH5">Do this now, in order</h4>
+        <ul>
+          <li data-i18n="rp.b5d1"><b>Screenshot it, with the dates and the account names visible.</b> Group chats get deleted the moment an adult is mentioned.</li>
+          <li data-i18n="rp.b5d2"><b>Report it to the school in writing</b>, even if it happened entirely outside school hours, and ask what their policy requires them to do. Keep the email.</li>
+          <li data-i18n="rp.b5d3"><b>Mute or leave rather than argue</b>, and block the accounts. Then report them to the platform — a reported account is throttled; a blocked one is not.</li>
+          <li data-i18n="rp.b5d4"><b>Ask your child what outcome they want</b> before you act on their behalf. Adults escalating without warning is the most common reason a child stops telling them things.</li>
+          <li data-i18n="rp.b5d5"><b>Watch for the signs that this is now about more than the bullying</b> — not eating, not sleeping, not going to school, talking about not being here. If that is where you are, use a crisis line today, not a school meeting next week.</li>
+        </ul>
+      </div>
+      <div class="blk dont">
+        <h4 data-i18n="rp.dontH5">Do not</h4>
+        <ul>
+          <li data-i18n="rp.b5n1">Say "just ignore it" or "turn it off". For a thirteen-year-old that is the equivalent of being told to leave town.</li>
+          <li data-i18n="rp.b5n2">Reply or post anything from your child's account, or from yours, to the people doing it.</li>
+          <li data-i18n="rp.b5n3">Take the phone. That is isolation added to isolation — see the warning above.</li>
+          <li data-i18n="rp.b5n4">Contact the other children's parents directly as a first step, however reasonable it feels.</li>
+        </ul>
+      </div>
+    </div>
+  </details>
+
+  <!-- 6 · my child did it -->
+  <details class="br">
+    <summary><span class="ic">⚖️</span><span class="tx" data-i18n="rp.b6s">My child is the one who shared, forwarded or said something harmful</span></summary>
+    <div class="body">
+      <div class="blk do">
+        <h4 data-i18n="rp.doH6">Do this now, in order</h4>
+        <ul>
+          <li data-i18n="rp.b6d1"><b>Stop the spread.</b> Delete what they posted, ask them to tell anyone they sent it to to delete it, and do not forward it to anyone else — including to show someone what happened.</li>
+          <li data-i18n="rp.b6d2"><b>If it is an intimate image of another child, treat it as serious from the first minute.</b> Sending, holding or asking for one is an offence in most countries even when both children are minors. Get advice from your national hotline or a lawyer rather than guessing.</li>
+          <li data-i18n="rp.b6d3"><b>Tell the school before the school tells you.</b> It changes everything about how it is handled, and it is the single most useful thing you can do for your child here.</li>
+          <li data-i18n="rp.b6d4"><b>Make them face what it did to the other person</b>, without destroying them. Both halves matter. A child who is only punished learns to hide better.</li>
+          <li data-i18n="rp.b6d5"><b>Find out whether they were pressured.</b> Children who forward are often being pressured themselves, and that is a different problem with a different answer.</li>
+        </ul>
+      </div>
+      <div class="blk dont">
+        <h4 data-i18n="rp.dontH6">Do not</h4>
+        <ul>
+          <li data-i18n="rp.b6n1">Keep a copy to "prove the context". Holding it is the offence.</li>
+          <li data-i18n="rp.b6n2">Decide it was just a joke because your child says it was. Ask the other family's position from the school, not from your child.</li>
+          <li data-i18n="rp.b6n3">Let the punishment be the whole response. They still need to understand the harm, and they still need you.</li>
+          <li data-i18n="rp.b6n4">Assume a child cannot be charged. In many countries they can, and age is not a defence.</li>
+        </ul>
+      </div>
+      <div class="script" data-i18n="rp.b6script"><b>Both halves, in one breath</b>"What you did hurt a real person and we are going to put that right as far as we can. You are still my child and I am not going anywhere. Those two things are both true."</div>
+    </div>
+  </details>
+
+  <h2 class="sec" data-i18n="rp.weekH">The week after</h2>
+  <p class="sub" data-i18n="rp.weekSub">The practical part is usually done in a day. This part is where the outcome is actually decided.</p>
+  <div class="week">
+    <div class="wk"><h4 data-i18n="rp.w1h">Go back to it once, calmly</h4><p data-i18n="rp.w1p">Two or three days later, when nobody is panicking: "I have been thinking about it. Is there anything you did not tell me because you thought I would react badly?" There usually is.</p></div>
+    <div class="wk"><h4 data-i18n="rp.w2h">Do not make them the family story</h4><p data-i18n="rp.w2p">Tell the adults who need to know and no one else. Being discussed is its own injury, and children find out that they were.</p></div>
+    <div class="wk"><h4 data-i18n="rp.w3h">Keep one record</h4><p data-i18n="rp.w3p">A single note with dates: what happened, who you told, what each one said, reference numbers. You will need it if anyone asks later, and you will not remember.</p></div>
+    <div class="wk"><h4 data-i18n="rp.w4h">Decide about settings later, not now</h4><p data-i18n="rp.w4p">Changing the rules in the same week reads as punishment, whatever you call it. Do it in a fortnight, together, and explain which risk each change addresses.</p></div>
+    <div class="wk"><h4 data-i18n="rp.w5h">Get help for your child, and for you</h4><p data-i18n="rp.w5p">A counsellor, the school, your doctor, a helpline. Parents in this position routinely carry guilt that does nothing for anyone. You did not cause this.</p></div>
+    <div class="wk"><h4 data-i18n="rp.w6h">Expect it to come back</h4><p data-i18n="rp.w6p">Weeks later something reminds them and it lands again. That is normal and not a relapse. The second conversation is easier than the first.</p></div>
+  </div>
+
+  <div class="closing">
+    <h3 data-i18n="rp.closeH">The thing we most want you to take from this page</h3>
+    <p data-i18n="rp.closeP1">Children almost never conceal what happened because they do not know the rules. They conceal it because of what they expect the adult to do — shout, blame, take the phone, tell everyone, or fall apart. Nearly every outcome on this page turns on that one prediction being wrong.</p>
+    <p data-i18n="rp.closeP2">Which means the most protective thing available to you costs nothing and takes a second: being the adult who says thank you for telling me, and means it.</p>
+    <p data-i18n="rp.closeP3">And if you are reading this before anything has happened — print it, or put it somewhere you will find it. Nobody looks calmly for a page like this at two in the morning.</p>
+  </div>
+
+  <div class="acts noprint">
+    <button type="button" class="btn" onclick="window.print()" data-i18n="rp.print">🖨️ Print this, or save it as a PDF</button>
+    <a class="btn ghost" href="/#emergency" data-i18n="rp.emergency">🆘 Reporting lines by country</a>
+    <a class="btn ghost" href="/certification.html" data-i18n="rp.learn">🎓 Learn it properly — free course</a>
+  </div>
+
+</div>
+
+<footer>⚔️ Digital Safety Knights · digitalsafetyknights.org · © 2026</footer>
+
+<script src="/assets/lang-switcher.js"></script>
+<script src="/assets/site-search.js"></script>
+<script src="/assets/play-now-fab.js"></script>
+</body>
+</html>

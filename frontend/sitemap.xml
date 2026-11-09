@@ -211,6 +211,12 @@
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://digitalsafetyknights.org/recovery-plan.html</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://digitalsafetyknights.org/resources.html</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>weekly</changefreq>

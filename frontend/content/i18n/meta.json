@@ -188,6 +188,10 @@
     "chapter-standards.html": {
       "title": "Şube Standartları ve Çocuk Güvenliği — Digital Safety Knights",
       "description": "Adımıza şube yürütecek herkesten istediklerimiz: pazarlıksız sekiz çocuk koruma kuralı, bir başvuruyu nasıl doğruladığımız, ne verdiğimiz, ne vermediğimiz ve bir şubeyi ne bitirir."
+    },
+    "recovery-plan.html": {
+      "title": "Toparlanma Planı — Olan oldu. Buradan başlayın.",
+      "description": "Çocuğunuzla ilgili çevrimiçi bir şey oldu. İlk bir saatte ne yapılacağı, neyin durumu kötüleştirdiği ve tam olarak kime bildirileceği — şantaj, dolaşan bir görüntü, kandırma, dolandırıcılık, zorbalık. Ücretsiz, kayıt yok."
     }
   },
   "es": {
@@ -378,6 +382,10 @@
     "chapter-standards.html": {
       "title": "Normas para Secciones Locales y Protección Infantil — Digital Safety Knights",
       "description": "Lo que exigimos a quien dirija una sección local en nuestro nombre: las ocho reglas de protección infantil no negociables, cómo verificamos a cada solicitante, qué damos, qué no, y qué pone fin a una sección."
+    },
+    "recovery-plan.html": {
+      "title": "El Plan de Recuperación — Ya pasó. Empieza aquí.",
+      "description": "Ya pasó algo en línea con tu hijo. Qué hacer en la primera hora, qué empeora las cosas y exactamente a quién reportarlo: sextorsión, una imagen que circula, grooming, una estafa, acoso. Gratis, sin registro."
     }
   },
   "fr": {
@@ -568,6 +576,10 @@
     "chapter-standards.html": {
       "title": "Normes des sections locales et protection de l’enfance — Digital Safety Knights",
       "description": "Ce que nous exigeons de toute personne animant une section en notre nom : les huit règles non négociables de protection de l’enfance, notre procédure de vérification, ce que nous donnons, ce que nous ne donnons pas, et ce qui met fin à une section."
+    },
+    "recovery-plan.html": {
+      "title": "Le Plan de Rétablissement — C’est déjà arrivé. Commencez ici.",
+      "description": "Quelque chose est déjà arrivé à votre enfant en ligne. Quoi faire dans la première heure, ce qui aggrave les choses, et à qui signaler précisément : sextorsion, une image qui circule, pédopiégeage, une arnaque, du harcèlement. Gratuit, sans inscription."
     }
   }
 }
