@@ -68,5 +68,12 @@
     "source": "TechCrunch",
     "source_url": "https://techcrunch.com/2026/11/09/meta-expands-instagrams-ai-age-guessing-tech-globally",
     "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:share:7525910287254855680/"
+  },
+  {
+    "date": "2026-11-11",
+    "topic": "Google patches eighth actively-exploited Chrome zero-day of 2026 (CVE-2026-125350), a use-after-free bug in Chrome's XML handling",
+    "source": "BleepingComputer",
+    "source_url": "https://www.bleepingcomputer.com/news/security/google-patches-eighth-chrome-zero-day-exploited-in-attacks-this-year/",
+    "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:share:7526272284794372097/"
   }
 ]
