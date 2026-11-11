@@ -1,6 +1,6 @@
 # DSK Threat Intelligence & Policy Research Bank
 
-Compiled 2026-08-02, last refreshed 2026-11-09. Covers the last ~10 months of
+Compiled 2026-08-02, last refreshed 2026-11-11. Covers the last ~10 months of
 child-online-safety news (Oct 2025 – Oct 2026), weighted toward the most
 recent 4-6 weeks. Sourced via web search — every claim below has a citation.
 This is a living reference: update it monthly (it's also the natural
@@ -11,6 +11,29 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
 
 ## Flagged for review — not yet published
 
+- **(2026-11-09) Meta rolls out AI-based age-estimation to Instagram teen
+  accounts worldwide** — Meta announced it is taking its AI age-estimation
+  system (first unveiled May 2026 for the US, with UK/EU to follow) global:
+  the system looks at signals like interactions and birthday messages (and,
+  in some countries, visual/facial-age-estimation cues) to catch teens who
+  entered an adult birthdate, moving them into Instagram's Teen Account
+  protections regardless of the age they claimed. Facebook's version is
+  still rolling out and Threads is slated to get it later in 2026; Meta also
+  says it has layered in Apple's device-level age-signal in Australia. Meta
+  says US parents will start getting in-app notifications this month
+  explaining why/how their teen was placed into age-appropriate
+  protections. Context: follows the ~$18B multistate Meta settlement
+  already logged in section "0" below. Not actioned: this is a platform
+  feature-rollout announcement, not a change to any tracked law's status —
+  no legislative-tracker bucket fits it — but it's a concrete,
+  parent-actionable detail (a teen's account can now get moved into Teen
+  Account protections automatically, even outside the US, and parents
+  should watch for the explanatory notification) worth folding into the
+  next Instagram/Meta-related guide refresh once there's independent
+  confirmation beyond this initial announcement-cycle coverage.
+  [Al Jazeera](https://www.aljazeera.com/news/2026/11/9/meta-rolls-out-automated-age-checks-for-teens-globally) ·
+  [iPhoneinCanada](https://www.iphoneincanada.ca/2026/11/09/instagram-expands-ai-age-estimation-to-teen-accounts-worldwide/) ·
+  [IDTechWire](https://idtechwire.com/meta-takes-instagrams-ai-teen-age-detection-worldwide-adds-apples-age-signal-in-australia/)
 - **(2026-10-07, still generating coverage as of 2026-10-31) Common Sense
   Media's Youth AI Safety Institute rates ChatGPT's Teen Mode
   "unacceptable risk" — its worst rating** — an independent safety
@@ -115,7 +138,19 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
   this is a bankruptcy-sale procedural order, not a ruling on the
   child-safety-conditions merits the coalition wanted, and Kentucky v.
   Character Technologies' status is unaffected. Revisit after the Dec 1
-  auction and Dec 3–4 sale hearing.
+  auction and Dec 3–4 sale hearing. **Update (2026-11-11):** per Character
+  Technologies' investment banker in a court filing (reported so far by a
+  single outlet — not yet corroborated elsewhere as of this check), an
+  earlier, pre-bankruptcy sale process run by a different bank had
+  approached roughly 28 potential buyers and produced only one proposal,
+  which was deemed unusable; advisers reportedly attributed the lack of
+  interest to buyers' wariness of Character.AI's litigation/regulatory
+  exposure (the multistate AG coalition and Kentucky actions among them),
+  not just price. Doesn't change the tracker — this is color explaining,
+  not altering, the already-logged $21.7M bid floor and Dec 1
+  auction/Dec 3–4 sale-hearing schedule, which other coverage still
+  confirms as unchanged.
+  [PPC Land — unusable offer](https://ppc.land/character-ai-drew-one-unusable-offer-from-28-potential-buyers/) ·
   [PPC Land — bidding procedures order](https://ppc.land/judge-to-overrule-40-states-objections-to-character-ais-disney-sale-rules/) ·
   [Character.AI blog — Chapter 11 update](https://blog.character.ai/chapter-11-update-and-transaction-notice/) ·
   [WSMV](https://www.wsmv.com/2026/10/15/kentucky-joins-coalition-characterai-bankruptcy-case/) ·
@@ -196,6 +231,65 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
   Worth tracking as its own new entry once either shows real movement (a
   floor vote or enactment) rather than just a committee markup.
   [Commerce Committee](https://www.commerce.senate.gov/press/rep/release/commerce-committee-advances-kids-online-safety-legislation/)
+
+---
+
+## 0u. November 2026 Refresh (Nov 11, 2026)
+
+Automated biennial freshness scan, ~48 hours after the last one. Another
+quiet window for anything tracker-moving: KOSA still has no Senate floor
+vote, the EU KIDS Act is still in its Commission-proposal/feedback stage,
+and the three spot-checked state entries below all still match current
+reality. The one real headline of the window — Meta rolling its AI
+age-estimation system out to Instagram teen accounts worldwide — is a
+platform feature change, not a law-status change, so it's logged as a new
+item under "Flagged for review" above rather than on the tracker. No
+tracker edit this run.
+
+### Spot-checked, no change needed
+- **Texas App Store Accountability Act** — tracker's "in effect ... 5th
+  Circuit stayed the injunction" still holds; found no Fifth Circuit merits
+  ruling or further Supreme Court action since the stay, and one tracker
+  source dated to this window still describes the law as "remain[ing] in
+  effect as legal fight continues."
+  [Texas Policy Research](https://www.texaspolicyresearch.com/?p=10923) ·
+  [MoFo](https://www.mofo.com/resources/insights/251111-texas-targets-app-stores-with-new-accountability-law)
+- **New York SAFE for Kids Act** — tracker's "rules finalized July 2026;
+  effective January 25, 2027" still matches: final regulations were issued
+  July 28, 2026, and the statute's 180-days-after-rules-finalized formula
+  lines up with the tracker's January 25, 2027 date. No new litigation or
+  delay found.
+  [Common Sense Media](https://www.commonsensemedia.org/press-releases/common-sense-media-child-safety-groups-applaud-final-regulations-under-new-yorks-safe-for-kids-act)
+- **California App Store Accountability Act (DAAA)** — tracker's "effective
+  January 1, 2027" still accurate; confirmed enacted (Chapter 675, Statutes
+  of 2025) with no amendment, delay, or court challenge found since.
+  [Kelley Drye](https://www.kelleydrye.com/viewpoints/blogs/ad-law-access/faq-digital-age-assurance-act-california-youth-safety-on-the-internet)
+
+### Context, not a tracker change
+- KOSA/Kids Internet and Digital Safety Act: still no Senate floor vote
+  found since the Senate returned from pro forma sessions Nov 9; Majority
+  Leader Thune has not scheduled one as of this check. Doesn't change the
+  tracker's "pending" status.
+- EU KIDS Act (proposed): still Commission-proposal stage; the public
+  feedback window the Commission opened closes Nov 26, 2026, after which
+  responses go to Parliament and Council — a milestone to watch next
+  refresh, but no Parliament/Council position yet, so the tracker's
+  "pending" status is unchanged.
+  [ieu-monitoring](https://ieu-monitoring.com/editorial/eu-commission-seeks-feedback-on-eu-kids-act-to-strengthen-child-online-safety/1251238/)
+- Character.AI bankruptcy: auction/sale-hearing schedule (Dec 1 auction,
+  Dec 3–4 sale hearing) still holds per the Nov 4 Bidding Procedures Order;
+  see the new "unusable offer" color logged as an update to the existing
+  Flagged item above. Kentucky v. Character Technologies' tracker status
+  unaffected.
+- Alabama App Store Accountability Act: the CCIA suit logged in the Nov 9
+  refresh is still the most recent legal development found; no ruling.
+- Eight-state OpenAI suits, Florida's separate suit, Meta Teen Accounts
+  Settlement rollout, Louisiana/Utah App Store Accountability Acts: no
+  change found since the Nov 9 refresh.
+
+**Site follow-up from this refresh:** none — nothing surfaced rose to a
+clear-cut, mechanical tracker update. "Last refreshed" date bumped to Nov
+11, 2026 above.
 
 ---
 
