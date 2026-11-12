@@ -21,6 +21,7 @@
   function curLang() { return (global.DSKi18n && global.DSKi18n.lang) || 'en'; }
   function isTr() { return curLang() === 'tr'; }
   function isEs() { return curLang() === 'es'; }
+  function isFr() { return curLang() === 'fr'; }
   function levelName(level) {
     var l = curLang();
     return level['name' + l.charAt(0).toUpperCase() + l.slice(1)] || level.name;
@@ -74,7 +75,8 @@
     recordFamilyProfile(total);
     var newLevel = levelForPoints(total);
     var l = curLang();
-    var pointsLabel = l === 'tr' ? 'Şövalye Puanı' : l === 'es' ? 'Puntos de Caballero' : 'Knight Points';
+    var pointsLabel = l === 'tr' ? 'Şövalye Puanı' : l === 'es' ? 'Puntos de Caballero'
+      : l === 'fr' ? 'Points de Chevalier' : 'Knight Points';
     showToast('+' + amount + ' ' + pointsLabel + (reason ? ' — ' + reason : ''));
     if (newLevel.name !== oldLevel.name) {
       setTimeout(function () { showRankUpCeremony(newLevel); }, 900);
@@ -85,11 +87,18 @@
   // ---------- rank-up ceremony (full-screen moment) ----------
   function showRankUpCeremony(newLevel) {
     var l = curLang();
-    var title = l === 'tr' ? 'SEVİYE ATLADIN!' : l === 'es' ? '¡SUBISTE DE NIVEL!' : 'RANK UP!';
-    var sub = l === 'tr' ? ('Artık bir ' + newLevel.name + ' oldun.')
-      : l === 'es' ? ('Ahora eres un ' + newLevel.name + '.')
-      : ('You are now a ' + newLevel.name + '.');
-    var cta = l === 'tr' ? 'Devam Et' : l === 'es' ? 'Continuar' : 'Continue';
+    var title = l === 'tr' ? 'SEVİYE ATLADIN!' : l === 'es' ? '¡SUBISTE DE NIVEL!'
+      : l === 'fr' ? 'NOUVEAU RANG !' : 'RANK UP!';
+    // levelName() is right here and was not being used: the ceremony told a
+    // Turkish child "Artık bir Knight oldun". French takes no article before a
+    // rank, which also sidesteps Sentinelle being feminine.
+    var rank = levelName(newLevel);
+    var sub = l === 'tr' ? ('Artık bir ' + rank + ' oldun.')
+      : l === 'es' ? ('Ahora eres un ' + rank + '.')
+      : l === 'fr' ? ('Tu es maintenant ' + rank + '.')
+      : ('You are now a ' + rank + '.');
+    var cta = l === 'tr' ? 'Devam Et' : l === 'es' ? 'Continuar'
+      : l === 'fr' ? 'Continuer' : 'Continue';
 
     var overlay = document.createElement('div');
     overlay.setAttribute('role', 'dialog');
@@ -111,11 +120,14 @@
     subEl.textContent = sub;
     subEl.style.cssText = 'margin-top:8px;font-size:1.1rem;font-weight:700;';
 
-    var shareText = l === 'tr' ? ('⚔️ Digital Safety Knights\'ta ' + newLevel.name + ' seviyesine ulaştım!')
-      : l === 'es' ? ('⚔️ ¡Alcancé el rango de ' + newLevel.name + ' en Digital Safety Knights!')
-      : ('⚔️ I just became a ' + newLevel.name + ' at Digital Safety Knights!');
-    var shareLabel = l === 'tr' ? '📤 Paylaş' : l === 'es' ? '📤 Compartir' : '📤 Share';
-    var shareCopiedLabel = l === 'tr' ? '✅ Kopyalandı!' : l === 'es' ? '✅ ¡Copiado!' : '✅ Copied!';
+    var shareText = l === 'tr' ? ('⚔️ Digital Safety Knights\'ta ' + rank + ' seviyesine ulaştım!')
+      : l === 'es' ? ('⚔️ ¡Alcancé el rango de ' + rank + ' en Digital Safety Knights!')
+      : l === 'fr' ? ('⚔️ Je viens de devenir ' + rank + ' chez Digital Safety Knights !')
+      : ('⚔️ I just became a ' + rank + ' at Digital Safety Knights!');
+    var shareLabel = l === 'tr' ? '📤 Paylaş' : l === 'es' ? '📤 Compartir'
+      : l === 'fr' ? '📤 Partager' : '📤 Share';
+    var shareCopiedLabel = l === 'tr' ? '✅ Kopyalandı!' : l === 'es' ? '✅ ¡Copiado!'
+      : l === 'fr' ? '✅ Copié !' : '✅ Copied!';
 
     var btnRow = document.createElement('div');
     btnRow.style.cssText = 'display:flex;gap:10px;justify-content:center;margin-top:26px;flex-wrap:wrap;';
@@ -225,10 +237,12 @@
 
     var l = curLang();
     var bonus = 5;
-    var reason = l === 'tr' ? (count + ' günlük seri') : l === 'es' ? ('Racha de ' + count + ' días') : (count + '-day streak');
+    var reason = l === 'tr' ? (count + ' günlük seri') : l === 'es' ? ('Racha de ' + count + ' días')
+      : l === 'fr' ? ('Série de ' + count + ' jours') : (count + '-day streak');
     if (count > 0 && count % 7 === 0) {
       bonus += 20;
-      reason = l === 'tr' ? (count + ' günlük seri kilometre taşı!') : l === 'es' ? ('¡Hito de racha de ' + count + ' días!') : (count + '-day streak milestone!');
+      reason = l === 'tr' ? (count + ' günlük seri kilometre taşı!') : l === 'es' ? ('¡Hito de racha de ' + count + ' días!')
+        : l === 'fr' ? ('Palier de série de ' + count + ' jours !') : (count + '-day streak milestone!');
     }
     addPoints(bonus, reason);
     return { count: count, isNew: true };
@@ -249,6 +263,7 @@
       var l = curLang();
       var comboMsg = l === 'tr' ? 'Kombo Görev Günü! Tek ziyarette Görev + Oyun + Rehber'
         : l === 'es' ? '¡Día de Combo! Misión + Juego + Guía en una sola visita'
+        : l === 'fr' ? 'Journée Combo ! Quête + Jeu + Guide en une seule visite'
         : 'Combo Quest Day! Quest + Game + Guide in one visit';
       addPoints(30, comboMsg);
     }
