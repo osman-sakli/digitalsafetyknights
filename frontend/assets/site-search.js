@@ -4,6 +4,7 @@
   var ssLang = (window.DSKi18n && DSKi18n.lang) || 'en';
   var ssIsTr = ssLang === 'tr';
   var ssIsEs = ssLang === 'es';
+  var ssIsFr = ssLang === 'fr';
 
   var INDEX_EN = [
     { title: "Home", url: "/", icon: "🏠", kw: "homepage start hero" },
@@ -131,11 +132,53 @@
     { title: "Panel", url: "/dashboard.html", icon: "📊", kw: "mi cuenta progreso puntos insignias dashboard" }
   ];
 
-  var INDEX = ssIsTr ? INDEX_TR : ssIsEs ? INDEX_ES : INDEX_EN;
-  var SS_PLACEHOLDER = ssIsTr ? "Görev, araç, rehber ara…" : ssIsEs ? "Busca misiones, herramientas, guías…" : "Search quests, tools, guides…";
-  var SS_NO_MATCH = ssIsTr ? "Eşleşme yok — farklı bir kelime deneyin." : ssIsEs ? "Sin resultados — prueba otra palabra." : "No matches — try a different word.";
-  var SS_ARIA = ssIsTr ? "Siteyi ara" : ssIsEs ? "Buscar en el sitio" : "Search the site";
-  var SS_CLOSE_ARIA = ssIsTr ? "Kapat" : ssIsEs ? "Cerrar" : "Close";
+  var INDEX_FR = [
+    { title: "Accueil", url: "/", icon: "🏠", kw: "accueil page principale début debut hero home" },
+    { title: "Menaces courantes", url: "/#threats", icon: "⚠️", kw: "menaces roblox ia chatbots grooming prédateurs predateurs messageries applis dangers" },
+    { title: "Audit de sécurité familiale", url: "/audit.html", icon: "🛡️", kw: "audit sécurité securite famille appareil réseau reseau gestion des applis rapport noté liste de contrôle" },
+    { title: "Quêtes interactives", url: "/quests.html", icon: "🎮", kw: "quêtes quetes roblox pk xd ia menace grooming cyberdéfense citoyenneté numérique badges quest" },
+    { title: "Le tri des messages de Shieldy (jeu)", url: "/game.html", icon: "🕹️", kw: "arcade jeu trier tri messages signal d’alerte signaux d’alerte classement jouer" },
+    { title: "Détecteur de Glitch", url: "/glitch-detector.html", icon: "🔍", kw: "détecteur detecteur coller message capture d’écran ecran vérifier signal d’alerte privé arnaque" },
+    { title: "Simulateur de conversation", url: "/chat-simulator.html", icon: "💬", kw: "simulateur chat entraînement entrainement conversation choix embranchements sûr risqué" },
+    { title: "Dojo des mots de passe", url: "/password-dojo.html", icon: "🔐", kw: "mot de passe solidité solidite ceinture rang test password" },
+    { title: "Simulateur de paramètres de confidentialité", url: "/privacy-simulator.html", icon: "⚙️", kw: "appli fictive confidentialité confidentialite paramètres parametres entraînement verrouiller" },
+    { title: "Repérer le deepfake", url: "/spot-the-deepfake.html", icon: "🎭", kw: "reperer quiz ia faux vrai situation deepfake hypertrucage" },
+    { title: "Calculateur d’empreinte numérique", url: "/footprint-calculator.html", icon: "👣", kw: "empreinte numerique exposition partager profil flouter net" },
+    { title: "Demander à Shieldy", url: "/ask-shieldy.html", icon: "🛡️", kw: "faq questions réponses reponses chat mascotte" },
+    { title: "Créer un profil sûr", url: "/safe-profile-builder.html", icon: "🗂️", kw: "creer profil sur trier partager privé prive éléments" },
+    { title: "Point sur le temps d’écran", url: "/screen-time-checkin.html", icon: "📱", kw: "temps d’écran ecran heures humeur privé local réflexion" },
+    { title: "Rencontrer les Chevaliers", url: "/knights.html", icon: "⚔️", kw: "chevaliers shieldy pixel bot dame noble sprout glitch personnages équipe" },
+    { title: "Almanach des tactiques", url: "/tactic-almanac.html", icon: "📖", kw: "tactiques prédateurs predateurs signaux d’alerte encyclopédie encyclopedie référence" },
+    { title: "Le journal de Shieldy", url: "/shieldys-journal.html", icon: "🛡️", kw: "histoires pour enfants journal" },
+    { title: "BD Knight Chronicles", url: "/knight-chronicles.html", icon: "💥", kw: "bd bande dessinée dessinee histoire chroniques chronicles" },
+    { title: "Notre histoire", url: "/origin-story.html", icon: "📖", kw: "fondation histoire mission origine origin" },
+    { title: "À propos des fondateurs", url: "/about.html", icon: "👋", kw: "a propos osman ayse fondateurs équipe equipe about" },
+    { title: "Centre de ressources", url: "/resources.html", icon: "📚", kw: "tout guides quêtes quetes outils histoires parents enfants ados enseignants éducateurs" },
+    { title: "Guide Snapchat pour les parents (PDF, en anglais)", url: "/guides/snapchat-parent-guide.pdf", icon: "👻", kw: "snapchat snap map quick add mode fantôme fantome guide télécharger telecharger" },
+    { title: "Guide Discord pour les parents (PDF, en anglais)", url: "/guides/discord-parent-guide.pdf", icon: "💬", kw: "discord confidentialité confidentialite serveurs centre familial guide télécharger telecharger 764" },
+    { title: "Guide Instagram et Facebook pour les parents (PDF, en anglais)", url: "/guides/instagram-facebook-parent-guide.pdf", icon: "📸", kw: "instagram facebook meta comptes ado supervision parentale contrôle parental guide télécharger telecharger" },
+    { title: "Guide Roblox pour les parents (PDF, en anglais)", url: "/guides/roblox-parent-guide.pdf", icon: "🎮", kw: "roblox confidentialité confidentialite chat verrouillage guide télécharger telecharger" },
+    { title: "L’IA en toute sécurité pour les enfants (PDF, en anglais)", url: "/guides/safe-ai-usage-guide.pdf", icon: "🤖", kw: "ia outils enfants sécurité securite guide télécharger telecharger" },
+    { title: "Sécurité sur iPhone et Android (PDF, en anglais)", url: "/guides/iphone-android-safety.pdf", icon: "📱", kw: "securite temps d’écran ecran restrictions applis appareil guide télécharger telecharger" },
+    { title: "Guide pour parler avec vos enfants (PDF, en anglais)", url: "/guides/talk-to-your-kids-guide.pdf", icon: "💬", kw: "scripts de conversation adapté à l’âge guide télécharger telecharger" },
+    { title: "Liste de contrôle de cybersécurité familiale (PDF, en anglais)", url: "/guides/family-cybersecurity-checklist.pdf", icon: "🔐", kw: "controle cybersecurite mots de passe vpn filtrage dns guide télécharger telecharger" },
+    { title: "Guide de réaction en cas d’incident (PDF, en anglais)", url: "/guides/incident-response-guide.pdf", icon: "🆘", kw: "reaction incident que faire il s’est passé quelque chose guide télécharger telecharger" },
+    { title: "La trousse du Chevalier (PDF, en anglais)", url: "/guides/knights-toolkit.pdf", icon: "🖨️", kw: "trousse affiche imprimable planche d’autocollants marque-pages télécharger telecharger" },
+    { title: "Journal mensuel DSK", url: "/#journal", icon: "📰", kw: "revue journal histoires analyse des menaces articles mensuels" },
+    { title: "Sources et recherches", url: "/sources.html", icon: "📊", kw: "sources citations statistiques données donnees ncmec fbi ftc recherche législation legislation procès" },
+    { title: "Suivi législatif", url: "/legislative-tracker.html", icon: "⚖️", kw: "loi législation legislatif legislation kosa kids act take it down magasin d’applis statut en attente en vigueur" },
+    { title: "Archives d’actualités", url: "/news-archive.html", icon: "🗞️", kw: "actualités actualites archives quotidien titres presse sources veille sécurité numérique digital safety watch" },
+    { title: "Sections locales", url: "/chapters.html", icon: "🌍", kw: "sections section locale monde mondial créer une section pays bénévole benevole chapters" },
+    { title: "Aide d’urgence et lignes d’écoute", url: "/#emergency", icon: "🆘", kw: "urgence aide ligne d’écoute ecoute crise pays région urgent" },
+    { title: "Connexion", url: "/login.html", icon: "🔐", kw: "se connecter compte login" },
+    { title: "Tableau de bord", url: "/dashboard.html", icon: "📊", kw: "mon compte progression points badges dashboard" }
+  ];
+
+  var INDEX = ssIsTr ? INDEX_TR : ssIsEs ? INDEX_ES : ssIsFr ? INDEX_FR : INDEX_EN;
+  var SS_PLACEHOLDER = ssIsTr ? "Görev, araç, rehber ara…" : ssIsEs ? "Busca misiones, herramientas, guías…" : ssIsFr ? "Rechercher des quêtes, des outils, des guides…" : "Search quests, tools, guides…";
+  var SS_NO_MATCH = ssIsTr ? "Eşleşme yok — farklı bir kelime deneyin." : ssIsEs ? "Sin resultados — prueba otra palabra." : ssIsFr ? "Aucun résultat — un autre mot, peut-être ?" : "No matches — try a different word.";
+  var SS_ARIA = ssIsTr ? "Siteyi ara" : ssIsEs ? "Buscar en el sitio" : ssIsFr ? "Rechercher sur le site" : "Search the site";
+  var SS_CLOSE_ARIA = ssIsTr ? "Kapat" : ssIsEs ? "Cerrar" : ssIsFr ? "Fermer" : "Close";
 
   var style = document.createElement('style');
   style.textContent =

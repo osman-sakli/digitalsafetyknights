@@ -1,0 +1,1332 @@
+{
+  "scams": {
+    "easy": [
+      {
+        "prompt": "Un video promete “Robux gratis si escribes tu contraseña aquí”. ¿Qué deberías hacer?",
+        "choices": [
+          {
+            "text": "Escribir mi contraseña para recibir los Robux gratis",
+            "correct": false
+          },
+          {
+            "text": "Ignorarlo — los enlaces externos nunca regalan moneda de verdad",
+            "correct": true
+          },
+          {
+            "text": "Compartirlo con un amigo para que también reciba Robux gratis",
+            "correct": false
+          },
+          {
+            "text": "Escribir una contraseña falsa solo para ver qué pasa",
+            "correct": false
+          }
+        ],
+        "hint": "Piensa quién sale ganando de verdad si escribes tu contraseña real.",
+        "explanation": "Ningún sitio ni video legítimo puede regalarte moneda del juego — lo que de verdad buscan casi siempre es robarte la cuenta."
+      },
+      {
+        "prompt": "Una “caja de botín” en un juego cuesta dinero real y te da un premio al azar. ¿A qué se parece más?",
+        "choices": [
+          {
+            "text": "Una máquina expendedora",
+            "correct": false
+          },
+          {
+            "text": "Una tragamonedas / las apuestas",
+            "correct": true
+          },
+          {
+            "text": "Un libro de la biblioteca",
+            "correct": false
+          },
+          {
+            "text": "Una tarjeta de regalo",
+            "correct": false
+          }
+        ],
+        "hint": "Piensa qué estás pagando en realidad — ¿un objeto garantizado o solo la suerte de que te toque?",
+        "explanation": "Las cajas de botín dan premios al azar a cambio de dinero, la misma mecánica de las apuestas — varios países ya las regulan como tales."
+      },
+      {
+        "prompt": "Alguien te ofrece “subirte de rango” si le pasas tu contraseña “rapidito”. Esto es:",
+        "choices": [
+          {
+            "text": "Un lindo gesto de un jugador que quiere ayudar",
+            "correct": false
+          },
+          {
+            "text": "Siempre una estafa — ningún admin de verdad necesita tu contraseña",
+            "correct": true
+          },
+          {
+            "text": "Algo que está bien mientras parezca amigable",
+            "correct": false
+          },
+          {
+            "text": "Arriesgado solo si te la pide más de una vez",
+            "correct": false
+          }
+        ],
+        "hint": "¿Un moderador o una cuenta de soporte de verdad necesitaría alguna vez tu contraseña?",
+        "explanation": "Ningún moderador, admin ni cuenta de soporte legítima te va a pedir nunca tu contraseña — es uno de los trucos de estafa más viejos de los videojuegos."
+      },
+      {
+        "prompt": "“¡Apúrate! ¡Esta oferta vence en 2 minutos!”, dice un mensaje. Este tipo de presión es:",
+        "choices": [
+          {
+            "text": "Una prueba de que la oferta es real y limitada",
+            "correct": false
+          },
+          {
+            "text": "Una táctica común de estafa para que no lo pienses bien",
+            "correct": true
+          },
+          {
+            "text": "Algo que solo usan las tiendas legítimas",
+            "correct": false
+          },
+          {
+            "text": "Algo que solo debes ignorar si tienes más de 13 años",
+            "correct": false
+          }
+        ],
+        "hint": "Los estafadores quieren que actúes antes de pensar — ¿cómo les ayuda la urgencia a lograrlo?",
+        "explanation": "La urgencia falsa (“apúrate”, cuentas regresivas, “por tiempo limitado”) es una táctica clásica de estafa, pensada para que no te detengas a comprobar si algo es real."
+      }
+    ],
+    "hard": [
+      {
+        "prompt": "Una cuenta que dice ser “atención al cliente verificada” te escribe primero por mensaje directo sobre un problema con un cobro. ¿Cuál es la señal de alerta?",
+        "choices": [
+          {
+            "text": "Ninguna — la atención al cliente suele escribir primero",
+            "correct": false
+          },
+          {
+            "text": "La atención al cliente real nunca te escribe primero — tú tienes que contactarla",
+            "correct": true
+          },
+          {
+            "text": "Ninguna, si la cuenta tiene un logo",
+            "correct": false
+          },
+          {
+            "text": "Solo es estafa si te piden dinero por adelantado",
+            "correct": false
+          }
+        ],
+        "hint": "Cuando de verdad necesitas ayuda de una empresa real, ¿quién suele empezar la conversación?",
+        "explanation": "Los equipos de soporte legítimos responden a las solicitudes que tú abres — prácticamente nunca te escriben primero de la nada."
+      },
+      {
+        "prompt": "Ves una calcomanía con un código QR en una máquina expendedora que promete un “premio gratis”. ¿Cuál es la jugada más segura?",
+        "choices": [
+          {
+            "text": "Escanearlo — los códigos QR siempre son seguros",
+            "correct": false
+          },
+          {
+            "text": "No escanear QR desconocidos en lugares públicos — primero verificar su origen",
+            "correct": true
+          },
+          {
+            "text": "Escanearlo solo si tiene un dibujito",
+            "correct": false
+          },
+          {
+            "text": "Escanearlo y cerrar la página rápido si algo se ve raro",
+            "correct": false
+          }
+        ],
+        "hint": "¿Alguien podría haber pegado una calcomanía falsa encima de un código QR real?",
+        "explanation": "El “cambiazo de códigos QR” es una estafa real — pegan una calcomanía falsa encima de un código legítimo para mandarte a un sitio malicioso."
+      },
+      {
+        "prompt": "Alguien te pide que resuelvas un “problema urgente con tu cuenta” comprando una tarjeta de regalo y mandándole el código. ¿Por qué esto siempre es una señal de alerta?",
+        "choices": [
+          {
+            "text": "Las tarjetas de regalo son una forma normal de pagarle a cualquier empresa",
+            "correct": false
+          },
+          {
+            "text": "Las organizaciones legítimas nunca piden que les paguen con tarjetas de regalo",
+            "correct": true
+          },
+          {
+            "text": "No pasa nada si el monto es pequeño",
+            "correct": false
+          },
+          {
+            "text": "Solo es sospechoso si te piden más de una tarjeta",
+            "correct": false
+          }
+        ],
+        "hint": "Una vez que se comparte el código, una tarjeta de regalo es casi imposible de rastrear — ¿a quién le conviene eso?",
+        "explanation": "Las tarjetas de regalo son las favoritas de los estafadores porque, una vez que entregas el código, el dinero prácticamente desaparece sin dejar rastro — ninguna empresa real pide que le paguen así."
+      },
+      {
+        "prompt": "¿Cuál es el mejor hábito de todos para protegerte de la mayoría de las estafas en línea?",
+        "choices": [
+          {
+            "text": "Confiar en cualquier oferta que se vea profesional",
+            "correct": false
+          },
+          {
+            "text": "Hacer una pausa y verificar en una fuente oficial antes de actuar",
+            "correct": true
+          },
+          {
+            "text": "Actuar rápido antes de que la oferta venza",
+            "correct": false
+          },
+          {
+            "text": "Preguntarles a otros jugadores de la partida si es real",
+            "correct": false
+          }
+        ],
+        "hint": "Piensa en qué necesitaban casi todas las estafas de este tema para funcionar.",
+        "explanation": "Casi todas las tácticas de estafa — la urgencia, la autoridad falsa, los premios demasiado buenos para ser verdad — solo funcionan si actúas antes de verificar. Detenerte a comprobar es la mejor defensa."
+      }
+    ]
+  },
+  "ai": {
+    "easy": [
+      {
+        "prompt": "Un chatbot de IA te da una respuesta con un tono muy seguro. ¿Eso significa que es correcta?",
+        "choices": [
+          {
+            "text": "Sí, si suena seguro es que tiene razón",
+            "correct": false
+          },
+          {
+            "text": "No — la IA suena igual de segura cuando acierta y cuando se equivoca",
+            "correct": true
+          },
+          {
+            "text": "Solo si es una herramienta de IA de pago",
+            "correct": false
+          },
+          {
+            "text": "Solo en las preguntas de matemáticas",
+            "correct": false
+          }
+        ],
+        "hint": "¿La IA tiene un tono especial de “quizás me equivoque” que suene distinto a su tono seguro?",
+        "explanation": "Los chatbots de IA dan las respuestas equivocadas con el mismo tono seguro que las correctas — siempre vuelve a comprobar lo que de verdad importa."
+      },
+      {
+        "prompt": "Usas la IA para que te explique un tema de la tarea que no entiendes, y después lo escribes con tus propias palabras. ¿Eso es hacer trampa?",
+        "choices": [
+          {
+            "text": "Sí, usar IA siempre es hacer trampa",
+            "correct": false
+          },
+          {
+            "text": "No — usar la IA para entender algo es aprender, no hacer trampa",
+            "correct": true
+          },
+          {
+            "text": "Solo si se entera el maestro",
+            "correct": false
+          },
+          {
+            "text": "Solo en los ensayos, no en matemáticas",
+            "correct": false
+          }
+        ],
+        "hint": "¿Qué diferencia hay entre usar una herramienta para entender algo y copiar su respuesta completa?",
+        "explanation": "Usar la IA para que te explique un tema que no entiendes es aprender. Copiar y pegar su respuesta completa como si fuera tuya es hacer trampa."
+      },
+      {
+        "prompt": "Un video parece mostrar a un amigo tuyo diciendo algo que en realidad nunca dijo. ¿Qué podría ser?",
+        "choices": [
+          {
+            "text": "Seguro que es real — un video nunca miente",
+            "correct": false
+          },
+          {
+            "text": "Quizás un deepfake — hoy la IA puede crear videos falsos muy realistas",
+            "correct": true
+          },
+          {
+            "text": "Imposible, a menos que lo haya hecho un estudio de cine",
+            "correct": false
+          },
+          {
+            "text": "Algo que solo les pasa a los famosos",
+            "correct": false
+          }
+        ],
+        "hint": "Hoy en día, ¿que un video se vea realista sigue probando que es real?",
+        "explanation": "La IA ya puede crear imágenes o videos falsos muy realistas de personas reales — si algo te parece raro o no va con esa persona, no lo creas solo porque se ve real."
+      },
+      {
+        "prompt": "Una app de compañía con IA siempre te da la razón y nunca te lleva la contraria. Los amigos de verdad:",
+        "choices": [
+          {
+            "text": "También te dan la razón en todo, siempre",
+            "correct": false
+          },
+          {
+            "text": "A veces te llevan la contraria — eso es parte de una amistad real",
+            "correct": true
+          },
+          {
+            "text": "No necesitan hablar contigo para nada",
+            "correct": false
+          },
+          {
+            "text": "Son menos importantes que las apps de IA",
+            "correct": false
+          }
+        ],
+        "hint": "Piensa en un amigo de verdad — ¿siempre te dice solo lo que quieres oír?",
+        "explanation": "Las apps de compañía con IA están hechas para darte siempre la razón y hacerte sentir bien. Los amigos de verdad a veces te llevan la contraria — puede parecer que un programa “te entiende”, pero en realidad no le importas."
+      }
+    ],
+    "hard": [
+      {
+        "prompt": "Hoy en día, ¿qué se puede hacer con solo unos segundos de la voz de alguien sacados de un video publicado?",
+        "choices": [
+          {
+            "text": "Nada, la voz no se puede copiar",
+            "correct": false
+          },
+          {
+            "text": "Clonar su voz con IA de forma convincente",
+            "correct": true
+          },
+          {
+            "text": "Solo saber qué idioma habla",
+            "correct": false
+          },
+          {
+            "text": "Solo funciona con grabaciones profesionales",
+            "correct": false
+          }
+        ],
+        "hint": "¿Cuánto audio necesitan, como mínimo, las herramientas actuales de clonación de voz con IA?",
+        "explanation": "Hoy bastan unos segundos de la voz de alguien para clonarla con IA — así funcionan las estafas de emergencia con voz clonada: llaman con la voz falsa y asustada de alguien que conoces."
+      },
+      {
+        "prompt": "¿Cuál es la mejor defensa contra una llamada de “emergencia falsa” con la voz de alguien de tu familia clonada por IA?",
+        "choices": [
+          {
+            "text": "Colgar de inmediato sin verificar nada",
+            "correct": false
+          },
+          {
+            "text": "Una palabra clave acordada de antemano que solo tu familia de verdad conocería",
+            "correct": true
+          },
+          {
+            "text": "Pedirle a quien llama que lo demuestre hablando más tiempo",
+            "correct": false
+          },
+          {
+            "text": "Confiar en el identificador de llamadas",
+            "correct": false
+          }
+        ],
+        "hint": "¿Qué es algo que una voz clonada nunca podría saber, aunque suene idéntica?",
+        "explanation": "Una “palabra clave” familiar que nadie más conozca es una solución simple y eficaz — elíjanla en familia para poder confirmar al instante si una emergencia es real."
+      },
+      {
+        "prompt": "Una app de filtros que descargaste te pide acceso a la cámara, los contactos, tu ubicación exacta y el micrófono. ¿Qué deberías hacer?",
+        "choices": [
+          {
+            "text": "Aceptar todos los permisos — las apps los necesitan para funcionar",
+            "correct": false
+          },
+          {
+            "text": "Preguntarte si cada permiso tiene que ver con lo que hace la app",
+            "correct": true
+          },
+          {
+            "text": "Preocuparte solo por el acceso a la cámara",
+            "correct": false
+          },
+          {
+            "text": "Los permisos no importan si la app es popular",
+            "correct": false
+          }
+        ],
+        "hint": "¿De verdad un filtro de fotos necesita tu lista de contactos y tu ubicación exacta para poner un filtro?",
+        "explanation": "Algunas apps piden mucho más acceso del que necesitan para funcionar, y algunas usan las fotos que subes para entrenar modelos de IA — muchas veces escondido en términos y condiciones que nadie lee. Da solo los permisos que la app realmente necesita para lo que hace."
+      },
+      {
+        "prompt": "Alguien te dice: “Engañar al filtro de contenido de la IA es solo un truco divertido, no es romper ninguna regla de verdad”. ¿Es cierto?",
+        "choices": [
+          {
+            "text": "Sí, los filtros son puro adorno",
+            "correct": false
+          },
+          {
+            "text": "No — saltarse un filtro de seguridad a propósito sigue sin estar bien",
+            "correct": true
+          },
+          {
+            "text": "Solo es cierto para los adultos",
+            "correct": false
+          },
+          {
+            "text": "Solo es cierto si nadie se entera",
+            "correct": false
+          }
+        ],
+        "hint": "¿La razón de ser de un filtro de seguridad deja de importar solo porque encontraste cómo saltártelo?",
+        "explanation": "Engañar a un filtro no hace que el contenido peligroso o inapropiado esté bien — el filtro existe por una razón, puedas saltártelo o no."
+      }
+    ]
+  },
+  "strangers": {
+    "easy": [
+      {
+        "prompt": "Un desconocido en un chat de voz empieza a preguntarte tu edad, tu escuela y cómo te ves, una pregunta tras otra. Esto es:",
+        "choices": [
+          {
+            "text": "Una conversación amistosa normal",
+            "correct": false
+          },
+          {
+            "text": "Una señal de alerta — preguntas cada vez más personales, y rápido",
+            "correct": true
+          },
+          {
+            "text": "Algo que está bien si parece buena gente",
+            "correct": false
+          },
+          {
+            "text": "Un problema solo si te pide una foto",
+            "correct": false
+          }
+        ],
+        "hint": "¿Qué patrón hay que vigilar — una sola pregunta, o preguntas cada vez más personales, una tras otra?",
+        "explanation": "Un desconocido que se interesa demasiado, y demasiado rápido, en los detalles de tu vida real es una señal de alerta. Nunca es de mala educación dejar de contestar, salirte o bloquear."
+      },
+      {
+        "prompt": "Un nuevo amigo en línea te propone pasar la conversación a otra app, con menos supervisión. Esto es:",
+        "choices": [
+          {
+            "text": "Una propuesta normal y segura",
+            "correct": false
+          },
+          {
+            "text": "Una señal de alerta — pasarse a una plataforma privada es una táctica común",
+            "correct": true
+          },
+          {
+            "text": "Arriesgado solo si es un desconocido de más de 30 años",
+            "correct": false
+          },
+          {
+            "text": "Algo que está bien si ya llevan una semana hablando",
+            "correct": false
+          }
+        ],
+        "hint": "¿Por qué alguien querría llevar una conversación a un lugar con menos supervisión?",
+        "explanation": "“Hablemos en otro lado” es un paso clásico del grooming en línea — pasarse a una plataforma privada y con menos moderación."
+      },
+      {
+        "prompt": "Alguien en línea dice tener tu edad, pero hay detalles que no cuadran. ¿Qué deberías recordar?",
+        "choices": [
+          {
+            "text": "Un avatar o un perfil siempre muestra la edad real de alguien",
+            "correct": false
+          },
+          {
+            "text": "Un avatar no tiene edad — en línea no puedes comprobar la edad real de nadie",
+            "correct": true
+          },
+          {
+            "text": "La voz siempre demuestra la edad real",
+            "correct": false
+          },
+          {
+            "text": "Solo hay que preocuparse si admite que mintió",
+            "correct": false
+          }
+        ],
+        "hint": "¿Hay algo en un perfil en línea que pueda probar de verdad cuántos años tiene alguien?",
+        "explanation": "Un avatar, un nombre de usuario o una foto de perfil no demuestran nada sobre la edad real — en línea, cualquiera puede decir que tiene la edad que quiera."
+      },
+      {
+        "prompt": "Te llega una solicitud de amistad de una cuenta con el nombre y la foto de un amigo, pero algo te da mala espina. ¿Qué deberías hacer?",
+        "choices": [
+          {
+            "text": "Aceptarla — tiene su nombre y su foto",
+            "correct": false
+          },
+          {
+            "text": "Verificar antes de aceptar — confirmarlo primero con tu amigo de verdad",
+            "correct": true
+          },
+          {
+            "text": "Aceptarla y hacer preguntas después",
+            "correct": false
+          },
+          {
+            "text": "Ignorar esa sensación, las fotos no mienten",
+            "correct": false
+          }
+        ],
+        "hint": "¿Una foto o un nombre bastan para probar que una cuenta es de verdad de tu amigo?",
+        "explanation": "En línea, cualquiera puede usar una cara conocida — verifica por otro medio (mandándole un mensaje a tu amigo de verdad) antes de aceptar."
+      }
+    ],
+    "hard": [
+      {
+        "prompt": "Un “amigo” en línea te anima a dejar de hablar con tus otros amigos para que tengan una amistad más cercana. Esto es:",
+        "choices": [
+          {
+            "text": "Una señal de una amistad fuerte y cercana",
+            "correct": false
+          },
+          {
+            "text": "Una táctica de aislamiento — un amigo de verdad quiere que también tengas otros amigos",
+            "correct": true
+          },
+          {
+            "text": "Preocupante solo si te pide que dejes de hablar con tu familia",
+            "correct": false
+          },
+          {
+            "text": "Algo normal entre mejores amigos",
+            "correct": false
+          }
+        ],
+        "hint": "¿Por qué alguien querría que tuvieras menos personas con quién hablar?",
+        "explanation": "Un amigo de verdad quiere que también tengas otros amigos. Empujarte a alejarte de todos los demás es una táctica común de manipulación."
+      },
+      {
+        "prompt": "De la noche a la mañana te llegan un montón de nuevos seguidores o solicitudes de amistad de cuentas que no conoces. Esto podría indicar:",
+        "choices": [
+          {
+            "text": "Que ahora eres popular, no hay nada que pensar",
+            "correct": false
+          },
+          {
+            "text": "Una ola coordinada de cuentas falsas con la que conviene tener cuidado",
+            "correct": true
+          },
+          {
+            "text": "Nada — esto solo les pasa a los famosos",
+            "correct": false
+          },
+          {
+            "text": "Una prueba de que tu contenido es bueno",
+            "correct": false
+          }
+        ],
+        "hint": "Si de la noche a la mañana aparece una multitud de desconocidos, ¿es más probable que sea un crecimiento natural o algo coordinado?",
+        "explanation": "Una multitud de desconocidos que aparece de la noche a la mañana suele ser algo coordinado (bots o cuentas falsas), no natural — toma con cautela la atención repentina que no tiene explicación."
+      },
+      {
+        "prompt": "Una cuenta tiene la insignia de “verificada”. ¿Eso garantiza que sea confiable?",
+        "choices": [
+          {
+            "text": "Sí, las insignias de verificación nunca pueden ser falsas ni engañosas",
+            "correct": false
+          },
+          {
+            "text": "No — una insignia no prueba que la cuenta sea confiable ni quién está detrás",
+            "correct": true
+          },
+          {
+            "text": "Solo es poco confiable si tiene cero seguidores",
+            "correct": false
+          },
+          {
+            "text": "Una cuenta verificada no puede estar suplantando a nadie",
+            "correct": false
+          }
+        ],
+        "hint": "¿Una insignia te dice por sí sola todo sobre quién está realmente detrás de una cuenta?",
+        "explanation": "Una insignia no es una prueba — se puede falsificar o comprar, o sencillamente no garantiza que la cuenta sea quien (o lo que) dice ser."
+      },
+      {
+        "prompt": "Una transmisión en vivo de un desconocido te incomoda, pero no sabes bien qué hacer. La mejor primera jugada es:",
+        "choices": [
+          {
+            "text": "Quedarte mirando para ver qué pasa después",
+            "correct": false
+          },
+          {
+            "text": "Cerrarla y contárselo a un adulto",
+            "correct": true
+          },
+          {
+            "text": "Compartirla primero con tus amigos para ver qué opinan",
+            "correct": false
+          },
+          {
+            "text": "Esperar a que empeore antes de hacer algo",
+            "correct": false
+          }
+        ],
+        "hint": "En una transmisión en vivo que te incomoda, ¿esperar a ver “qué pasa después” hace las cosas más seguras o más arriesgadas?",
+        "explanation": "Si una transmisión en vivo de un desconocido te incomoda, ciérrala y cuéntaselo enseguida a un adulto de confianza — no necesitas esperar a que la cosa empeore."
+      }
+    ]
+  },
+  "bullying": {
+    "easy": [
+      {
+        "prompt": "¿Usar el botón de reporte del juego con un desconocido que rompe las reglas es lo mismo que “acusar” a un amigo?",
+        "choices": [
+          {
+            "text": "Sí, reportar siempre es acusar",
+            "correct": false
+          },
+          {
+            "text": "No — el botón sirve justamente para reportar a desconocidos que rompen las reglas",
+            "correct": true
+          },
+          {
+            "text": "Solo si un moderador está de acuerdo contigo",
+            "correct": false
+          },
+          {
+            "text": "Solo cuando se trata de delitos graves",
+            "correct": false
+          }
+        ],
+        "hint": "¿Qué diferencia hay entre reportar a un desconocido que rompe las reglas de la plataforma y acusar a un amigo?",
+        "explanation": "Reportar el acoso dentro de un juego no es acusar — para eso está justamente el botón de reporte."
+      },
+      {
+        "prompt": "¿Silenciar a alguien en un juego o en un chat es “perder” contra esa persona?",
+        "choices": [
+          {
+            "text": "Sí, silenciar significa que perdiste la discusión",
+            "correct": false
+          },
+          {
+            "text": "No — silenciar es una herramienta para proteger tu propia experiencia",
+            "correct": true
+          },
+          {
+            "text": "Solo si la otra persona nota que la silenciaste",
+            "correct": false
+          },
+          {
+            "text": "Silenciar nunca está permitido",
+            "correct": false
+          }
+        ],
+        "hint": "Cuando silencias a alguien que te molesta, ¿quién sale ganando de verdad — tú o esa persona?",
+        "explanation": "Silenciar no es perder — es una herramienta, y puedes usarla para proteger tu propia experiencia."
+      },
+      {
+        "prompt": "Ves que expulsan a alguien de una partida por votación sin ningún motivo real. Esto es:",
+        "choices": [
+          {
+            "text": "Siempre justo, porque el grupo votó",
+            "correct": false
+          },
+          {
+            "text": "Una forma de acoso, aunque pase dentro de un juego",
+            "correct": true
+          },
+          {
+            "text": "No es para tanto, porque es “solo un juego”",
+            "correct": false
+          },
+          {
+            "text": "Acoso solo si pasa más de una vez",
+            "correct": false
+          }
+        ],
+        "hint": "¿Que algo pase dentro de un juego hace que no cuente como acoso?",
+        "explanation": "Expulsar a alguien por votación sin motivo, el griefing y grabar a alguien para hacerlo enojar (rage-bait): todo eso es acoso — solo que con skin de videojuego."
+      },
+      {
+        "prompt": "Si ves que están acosando a alguien en un chat grupal, ¿qué opción real tienes aunque no quieras enfrentar a nadie en público?",
+        "choices": [
+          {
+            "text": "No hacer nada, no es asunto tuyo",
+            "correct": false
+          },
+          {
+            "text": "Preguntarle en privado a la persona atacada cómo está",
+            "correct": true
+          },
+          {
+            "text": "Unirte para no convertirte tú también en blanco",
+            "correct": false
+          },
+          {
+            "text": "Esperar a que un moderador se dé cuenta por su cuenta",
+            "correct": false
+          }
+        ],
+        "hint": "¿El apoyo tiene que ser público para ayudar de verdad a alguien?",
+        "explanation": "No tienes que enfrentar a nadie en público — si le escribes en privado a un amigo para ver cómo está, eso ya cuenta, y mucho. Ser un testigo que apoya tiene un gran poder."
+      }
+    ],
+    "hard": [
+      {
+        "prompt": "Alguien destruye a propósito lo que otro jugador construyó en el juego, “solo por diversión”. ¿Cómo se llama esto? ¿Es acoso?",
+        "choices": [
+          {
+            "text": "Griefing — y sí, es una forma de acoso",
+            "correct": true
+          },
+          {
+            "text": "Solo una forma normal de competir en el juego",
+            "correct": false
+          },
+          {
+            "text": "Acoso solo si quien lo construyó llora por eso",
+            "correct": false
+          },
+          {
+            "text": "No es acoso, porque no se dijo ni una palabra",
+            "correct": false
+          }
+        ],
+        "hint": "¿El acoso necesita insultos, o también puede ser una acción que destruye algo que a alguien le importa?",
+        "explanation": "El griefing — destruir a propósito algo que otra persona construyó — es una forma de acoso, aunque no haya ni un solo insulto."
+      },
+      {
+        "prompt": "Un grupo te presiona con “es solo un reto, todos lo hacen” para que hagas algo que te incomoda. ¿Qué es lo más importante?",
+        "choices": [
+          {
+            "text": "Hacerlo para no quedar mal con el grupo",
+            "correct": false
+          },
+          {
+            "text": "Un reto no manda sobre tu propio criterio — puedes decir que no",
+            "correct": true
+          },
+          {
+            "text": "Negarte solo si es claramente ilegal",
+            "correct": false
+          },
+          {
+            "text": "Seguir la corriente, porque “todos” lo hacen",
+            "correct": false
+          }
+        ],
+        "hint": "¿Llamar a algo “un reto” cambia si de verdad está bien hacerlo?",
+        "explanation": "Un reto no es una regla — la presión de grupo disfrazada de juego no te obliga a hacer algo que sientes que está mal."
+      },
+      {
+        "prompt": "Alguien te graba reaccionando a algo que te molesta, con la idea de que te enojes frente a la cámara. No le debes:",
+        "choices": [
+          {
+            "text": "Una explicación de por qué te molesta",
+            "correct": false
+          },
+          {
+            "text": "Ninguna reacción — nunca tienes por qué darle a nadie el show que busca",
+            "correct": true
+          },
+          {
+            "text": "Primero una respuesta amable, y después ya te puedes ir",
+            "correct": false
+          },
+          {
+            "text": "Nada, pero siempre deberías responder para defenderte",
+            "correct": false
+          }
+        ],
+        "hint": "¿Qué es lo que el “rage-bait” intenta sacarte en realidad?",
+        "explanation": "No le debes una reacción a nadie — el rage-bait está hecho justamente para sacarte una respuesta enojada y convertirla en contenido, y muchas veces la mejor jugada es no dársela."
+      },
+      {
+        "prompt": "Un amigo te cuenta que lo están acosando en un chat grupal, pero te pide que no “armes un escándalo”. ¿Cuál sería un buen equilibrio?",
+        "choices": [
+          {
+            "text": "Respetar su deseo por completo y no hacer absolutamente nada",
+            "correct": false
+          },
+          {
+            "text": "Apoyarlo en silencio y animarlo a reportar, sin forzar un enfrentamiento público",
+            "correct": true
+          },
+          {
+            "text": "Exponer al acosador en público de inmediato, quiera tu amigo o no",
+            "correct": false
+          },
+          {
+            "text": "Decirle que, para ti, tampoco es para tanto",
+            "correct": false
+          }
+        ],
+        "hint": "¿Puedes apoyar de verdad a alguien sin pasar por encima de lo que le parece bien?",
+        "explanation": "Dar la cara por alguien no significa tomar el control — apoyar en silencio y en privado, y animar a reportar, respeta lo que la otra persona quiere y aun así ayuda."
+      }
+    ]
+  },
+  "privacy": {
+    "easy": [
+      {
+        "prompt": "Un nombre de usuario de un juego, el nombre de una escuela y una ubicación aproximada parecen inofensivos cada uno por separado. Juntos, pueden:",
+        "choices": [
+          {
+            "text": "Seguir siendo totalmente inofensivos",
+            "correct": false
+          },
+          {
+            "text": "Hacer que un desconocido sepa exactamente quién eres y dónde encontrarte",
+            "correct": true
+          },
+          {
+            "text": "Importar solo si también compartes una contraseña",
+            "correct": false
+          },
+          {
+            "text": "Importar solo para los adultos, no para los niños",
+            "correct": false
+          }
+        ],
+        "hint": "¿Qué pasa cuando juntas varios datos “pequeños” que te identifican?",
+        "explanation": "Junta dos o tres datos que te identifican y un desconocido puede descubrir exactamente quién eres — la regla es: apodos sí, datos que te identifiquen no."
+      },
+      {
+        "prompt": "¿Quién más, aparte de ti, debería saber tu contraseña?",
+        "choices": [
+          {
+            "text": "Cualquier amigo cercano que te la pida bien",
+            "correct": false
+          },
+          {
+            "text": "Como mucho, un adulto de confianza — nadie más, nunca",
+            "correct": true
+          },
+          {
+            "text": "Cualquier moderador de un juego que te la pida",
+            "correct": false
+          },
+          {
+            "text": "Cualquiera que te ofrezca algo a cambio",
+            "correct": false
+          }
+        ],
+        "hint": "¿Llevarte bien con alguien hace que sea seguro compartirle tu contraseña?",
+        "explanation": "Tu contraseña es para ti, y quizás para un adulto de confianza — para nadie más, punto. Las cuentas se hackean y las amistades cambian."
+      },
+      {
+        "prompt": "Una app nueva quiere acceso a tu cámara, tus contactos y tu ubicación exacta para usar una simple función de filtros. ¿Qué deberías revisar?",
+        "choices": [
+          {
+            "text": "Nada, solo aceptar para poder usar la app",
+            "correct": false
+          },
+          {
+            "text": "Si cada permiso tiene que ver de verdad con lo que hace la app",
+            "correct": true
+          },
+          {
+            "text": "Solo el permiso de ubicación, que es el que importa",
+            "correct": false
+          },
+          {
+            "text": "En los teléfonos, los permisos son seguros automáticamente",
+            "correct": false
+          }
+        ],
+        "hint": "¿Tiene lógica que una función de filtros necesite tu lista de contactos?",
+        "explanation": "Revisa los permisos de cámara, micrófono, contactos y ubicación — y desactiva todo lo que no tenga que ver con lo que la app hace de verdad."
+      },
+      {
+        "prompt": "Un juguete o un altavoz inteligente no para de hacerte preguntas extrañamente personales. ¿Qué deberías tener en cuenta?",
+        "choices": [
+          {
+            "text": "Los dispositivos inteligentes en realidad no pueden escuchar ni grabar",
+            "correct": false
+          },
+          {
+            "text": "Algunos dispositivos inteligentes sí escuchan, y los datos pueden terminar donde no te imaginas",
+            "correct": true
+          },
+          {
+            "text": "Siempre está bien contestar todo lo que pregunte un juguete",
+            "correct": false
+          },
+          {
+            "text": "Preocuparte solo por los juguetes que tienen cámara",
+            "correct": false
+          }
+        ],
+        "hint": "¿Adónde podrían ir a parar las respuestas que le das a un aparato que “escucha”?",
+        "explanation": "Los juguetes y dispositivos inteligentes que escuchan pueden mandar datos a lugares inesperados — piensa bien qué detalles personales les cuentas."
+      }
+    ],
+    "hard": [
+      {
+        "prompt": "Usas la misma contraseña para tu correo, tu cuenta del juego y tus redes sociales. ¿Cuál es el riesgo?",
+        "choices": [
+          {
+            "text": "Ninguno, es más fácil recordar una sola contraseña",
+            "correct": false
+          },
+          {
+            "text": "Una llave no debería abrir todas las puertas — una sola filtración lo expone todo",
+            "correct": true
+          },
+          {
+            "text": "El riesgo es solo para las contraseñas del banco",
+            "correct": false
+          },
+          {
+            "text": "Solo hay riesgo si la contraseña es corta",
+            "correct": false
+          }
+        ],
+        "hint": "Si se filtra la contraseña de una de esas cuentas, ¿qué pasa con las demás?",
+        "explanation": "Usar la misma contraseña en todas partes significa que una sola filtración pone en riesgo todas las cuentas que la usan — usa contraseñas distintas, sobre todo para lo importante."
+      },
+      {
+        "prompt": "El nombre de usuario que usas desde hace años en un juego incluye una versión corta de tu nombre real y el nombre de la ciudad donde vives. ¿Por qué importa esto?",
+        "choices": [
+          {
+            "text": "No importa si la cuenta es privada",
+            "correct": false
+          },
+          {
+            "text": "Un nombre de juego puede llevar hasta tu casa — puede bastar para identificarte o ubicarte",
+            "correct": true
+          },
+          {
+            "text": "Solo importa si también publicas tu escuela",
+            "correct": false
+          },
+          {
+            "text": "Los nombres de usuario no se pueden buscar ni conectar con nada",
+            "correct": false
+          }
+        ],
+        "hint": "Con el tiempo suficiente, ¿alguien podría descubrir quién eres solo a partir de un nombre de usuario?",
+        "explanation": "Un nombre de juego que junta datos que te identifican puede llevar hasta tu casa — los nombres de usuario se buscan, se cruzan y se conectan con más facilidad de lo que la gente cree."
+      },
+      {
+        "prompt": "Un amigo te pide prestada tu cuenta del juego “solo por una hora” mientras tú miras. ¿Cuál es la respuesta más segura?",
+        "choices": [
+          {
+            "text": "Pasarle el control o la cuenta, total vas a estar ahí mirando",
+            "correct": false
+          },
+          {
+            "text": "Decir que no con amabilidad — nunca prestes tu cuenta, ni por un rato, ni siquiera a tus amigos",
+            "correct": true
+          },
+          {
+            "text": "Solo es un problema si es un desconocido, no un amigo",
+            "correct": false
+          },
+          {
+            "text": "Está bien mientras cambies la contraseña después",
+            "correct": false
+          }
+        ],
+        "hint": "¿Mirar todo el tiempo cómo alguien usa tu cuenta elimina el riesgo de darle acceso?",
+        "explanation": "Nunca pases el control — dar acceso a tu cuenta, aunque sea por un rato y aunque sea a un amigo, crea riesgos que no puedes deshacer del todo, como que esa amistad cambie más adelante."
+      },
+      {
+        "prompt": "Te das cuenta de que una app recopiló en silencio muchos más datos de los que decía su descripción, algo escondido en términos larguísimos que nunca leíste. ¿Cuál es el mejor hábito a largo plazo?",
+        "choices": [
+          {
+            "text": "Aceptar que no se puede evitar y seguir adelante",
+            "correct": false
+          },
+          {
+            "text": "Revisar los permisos de las apps cada cierto tiempo, porque una app rara vez necesita todo lo que pide",
+            "correct": true
+          },
+          {
+            "text": "Revisar los permisos solo una vez, al instalar la app",
+            "correct": false
+          },
+          {
+            "text": "Dar por hecho que las apps populares son confiables automáticamente",
+            "correct": false
+          }
+        ],
+        "hint": "¿Revisar los permisos es algo de una sola vez, o vale la pena repetirlo?",
+        "explanation": "Una app no necesita tu vida entera — revisar los permisos cada cierto tiempo (no solo una vez al instalarla) es un muy buen hábito de privacidad a largo plazo."
+      }
+    ]
+  },
+  "emergency": {
+    "easy": [
+      {
+        "prompt": "Si alguna vez alguien en línea te presiona con un secreto o una imagen tuya que tiene, deberías:",
+        "choices": [
+          {
+            "text": "No decir nada para no meterte en problemas",
+            "correct": false
+          },
+          {
+            "text": "Contárselo enseguida a un adulto de confianza — no te vas a meter en problemas",
+            "correct": true
+          },
+          {
+            "text": "Pagar o hacer lo que pide para que pare",
+            "correct": false
+          },
+          {
+            "text": "Resolverlo sin ayuda de nadie",
+            "correct": false
+          }
+        ],
+        "hint": "¿Callar la presión suele mejorar las cosas con el tiempo, o empeorarlas?",
+        "explanation": "La presión nunca mejora si no dices nada — solo empeora. No te vas a meter en problemas por contárselo a un adulto de confianza. Punto."
+      },
+      {
+        "prompt": "¿Para qué sirve un “emoji SOS familiar” o una palabra clave?",
+        "choices": [
+          {
+            "text": "Un chiste privado divertido que no sirve para nada",
+            "correct": false
+          },
+          {
+            "text": "Una señal secreta que significa “ven a buscarme” o “llámame ya”, sin preguntas",
+            "correct": true
+          },
+          {
+            "text": "Algo que solo se usa para hacer bromas",
+            "correct": false
+          },
+          {
+            "text": "Una forma de compartir tu ubicación en público",
+            "correct": false
+          }
+        ],
+        "hint": "¿Qué te gustaría poder decir sin tener que dar explicaciones en ese momento?",
+        "explanation": "Una palabra clave o un emoji familiar significa “ven a buscarme” o “llámame ahora mismo” — sin preguntas en ese momento, solo una señal."
+      },
+      {
+        "prompt": "Antes de bloquear o borrar un mensaje que te incomoda, deberías:",
+        "choices": [
+          {
+            "text": "Bloquear de inmediato, lo demás no importa",
+            "correct": false
+          },
+          {
+            "text": "Tomar primero una captura de pantalla — la evidencia importa después",
+            "correct": true
+          },
+          {
+            "text": "Primero contestarle con enojo",
+            "correct": false
+          },
+          {
+            "text": "Esperar un día antes de hacer cualquier cosa",
+            "correct": false
+          }
+        ],
+        "hint": "Si bloqueas primero, ¿podrías perder la forma de demostrar lo que pasó?",
+        "explanation": "Toma una captura de pantalla antes de bloquear, reportar o borrar — los mensajes que desaparecen también se pueden capturar, y la evidencia importa si esto tiene que llegar más lejos."
+      },
+      {
+        "prompt": "¿A quién puedes llamar para recibir apoyo gratis, confidencial y a toda hora si tú o un amigo están en crisis?",
+        "choices": [
+          {
+            "text": "No existe un recurso gratuito así",
+            "correct": false
+          },
+          {
+            "text": "La línea de crisis gratuita de tu país",
+            "correct": true
+          },
+          {
+            "text": "Solo a un terapeuta de pago",
+            "correct": false
+          },
+          {
+            "text": "Solo al orientador escolar en horario de clases",
+            "correct": false
+          }
+        ],
+        "hint": "¿Existe un número gratuito, confidencial y disponible a cualquier hora del día?",
+        "explanation": "Casi todos los países tienen una línea de crisis gratis, confidencial y abierta a toda hora: en España es el 024 y en Estados Unidos, el 988. La de tu país está en la lista «Ayuda de Emergencia para Padres» de nuestra página de inicio. Si hay peligro inmediato, llama al número de emergencias."
+      }
+    ],
+    "hard": [
+      {
+        "prompt": "Un amigo te cuenta que le está ocultando a su familia una cuenta secreta o un secreto, y parece que eso le pesa mucho. ¿Cuál sería una buena respuesta?",
+        "choices": [
+          {
+            "text": "Prometerle que nunca le vas a contar a nadie, pase lo que pase",
+            "correct": false
+          },
+          {
+            "text": "Animarlo a contárselo a un adulto de confianza y ofrecerte a ayudarlo",
+            "correct": true
+          },
+          {
+            "text": "Ignorarlo, porque es un asunto privado suyo",
+            "correct": false
+          },
+          {
+            "text": "Decirle que lo siga ocultando para evitar problemas",
+            "correct": false
+          }
+        ],
+        "hint": "Cargar con un secreto pesado sin ayuda de nadie, ¿suele ser lo más seguro a largo plazo?",
+        "explanation": "Una cuenta oculta o un secreto pesado muchas veces necesita que intervenga un adulto de confianza — animar a alguien a contarlo, y ofrecerle tu apoyo, ayuda más que prometer secretismo total."
+      },
+      {
+        "prompt": "Alguien llama diciendo que es un familiar en problemas y te pide con urgencia que transfieras dinero o criptomonedas “ahora mismo, y no le digas a nadie”. ¿Qué deberías hacer?",
+        "choices": [
+          {
+            "text": "Actuar de inmediato, porque suena tan urgente",
+            "correct": false
+          },
+          {
+            "text": "Parar y verificar por tu cuenta — una emergencia real aguanta una llamada para confirmar",
+            "correct": true
+          },
+          {
+            "text": "Hacerle caso y guardar el secreto, tal como te pidió",
+            "correct": false
+          },
+          {
+            "text": "Preocuparte solo si te das cuenta de que la voz es falsa",
+            "correct": false
+          }
+        ],
+        "hint": "Pedir secretismo (“no le digas a nadie”) junto con urgencia, ¿suele indicar una emergencia real o una táctica de manipulación?",
+        "explanation": "Una sola llamada no debería bastar para que muevas tu dinero — una voz clonada puede sonar idéntica. Haz una pausa, cuelga y verifica por tu cuenta antes de hacerle caso a un pedido urgente de dinero."
+      },
+      {
+        "prompt": "Reportaste algo grave, como un caso de explotación o una amenaza, a través de la CyberTipline del NCMEC. ¿A quién suelen tratar las autoridades como la víctima?",
+        "choices": [
+          {
+            "text": "A la persona que lo reportó",
+            "correct": false
+          },
+          {
+            "text": "A la persona explotada o amenazada — no a quien lo reportó",
+            "correct": true
+          },
+          {
+            "text": "A quien llame primero a la policía, sin importar su papel",
+            "correct": false
+          },
+          {
+            "text": "Depende de quién sea más creíble",
+            "correct": false
+          }
+        ],
+        "hint": "¿Reportar un delito mete en problemas a quien lo reporta?",
+        "explanation": "Las autoridades tratan estos casos como delitos contra la víctima — no contra la persona que los reporta. Reportar te protege; no te hace culpable."
+      },
+      {
+        "prompt": "Con la función de mensajes que desaparecen, un mensaje se muestra como “eliminado” para todos. ¿Eso significa que la evidencia ya no existe?",
+        "choices": [
+          {
+            "text": "Sí, eliminado siempre quiere decir borrado de todas partes, sin vuelta atrás",
+            "correct": false
+          },
+          {
+            "text": "No necesariamente — alguien pudo verlo, guardarlo o capturarlo antes de que se borrara",
+            "correct": true
+          },
+          {
+            "text": "Solo importa si la app no tiene opción de borrar",
+            "correct": false
+          },
+          {
+            "text": "A un mensaje que desaparece nunca se le puede tomar captura de pantalla",
+            "correct": false
+          }
+        ],
+        "hint": "¿Alguien podría haber tomado una captura de pantalla o guardado algo antes de que “desapareciera”?",
+        "explanation": "Que desaparezca no significa que ya no exista — otras personas pueden capturar, guardar o ver los mensajes antes de que se borren, o mientras se borran. No des por hecho que no se puede recuperar."
+      }
+    ]
+  },
+  "habits": {
+    "easy": [
+      {
+        "prompt": "¿Por qué parece que el feed de una red social nunca se queda sin contenido nuevo?",
+        "choices": [
+          {
+            "text": "Es pura casualidad",
+            "correct": false
+          },
+          {
+            "text": "El desplazamiento infinito y la reproducción automática se diseñan a propósito sin un punto natural para parar",
+            "correct": true
+          },
+          {
+            "text": "Solo las apps gratis están hechas así",
+            "correct": false
+          },
+          {
+            "text": "Solo lo parece, en realidad los feeds sí se acaban",
+            "correct": false
+          }
+        ],
+        "hint": "¿El feed que nunca se acaba es un accidente o una decisión de diseño hecha a propósito?",
+        "explanation": "El desplazamiento infinito y la reproducción automática están hechos a propósito sin un punto natural para parar — el trabajo del algoritmo es que sigas mirando el mayor tiempo posible."
+      },
+      {
+        "prompt": "¿Qué busca lograr en realidad el algoritmo que arma tu feed?",
+        "choices": [
+          {
+            "text": "Tu bienestar en general",
+            "correct": false
+          },
+          {
+            "text": "Tu tiempo mirando — cuánto te quedas",
+            "correct": true
+          },
+          {
+            "text": "Mostrarte solo información verdadera",
+            "correct": false
+          },
+          {
+            "text": "Que veas todo lo que publican tus amigos",
+            "correct": false
+          }
+        ],
+        "hint": "Si una app quiere que te quedes más tiempo, ¿qué suele mostrarte primero?",
+        "explanation": "Todo el trabajo del algoritmo es que sigas mirando el mayor tiempo posible — no necesariamente hacerte sentir bien ni darle prioridad a la información correcta."
+      },
+      {
+        "prompt": "En un reinicio tecnológico de “regreso a clases” o de cada temporada, ¿qué suelen revisar en familia?",
+        "choices": [
+          {
+            "text": "Solo cuántas apps hay instaladas",
+            "correct": false
+          },
+          {
+            "text": "Ajustes de privacidad, protecciones de las plataformas y acuerdo familiar de medios, todo junto",
+            "correct": true
+          },
+          {
+            "text": "Solo borrar las fotos viejas",
+            "correct": false
+          },
+          {
+            "text": "Nada — nunca hace falta volver a revisar los ajustes",
+            "correct": false
+          }
+        ],
+        "hint": "¿Un dispositivo queda seguro para siempre después de configurarlo una vez, o hay que revisarlo cada cierto tiempo?",
+        "explanation": "Un reinicio tecnológico en familia cada cierto tiempo — revisar en conjunto los ajustes de privacidad, las protecciones y los acuerdos — mantiene todo al día para todos, en lugar de dejarlo listo una vez y olvidarse."
+      },
+      {
+        "prompt": "Circula una captura de pantalla de una “frase” o de un mensaje de texto, pero no puedes comprobar de dónde salió realmente. ¿Qué deberías suponer?",
+        "choices": [
+          {
+            "text": "Es verdad automáticamente si se ve profesional",
+            "correct": false
+          },
+          {
+            "text": "Una imagen con palabras también puede mentir — verifica antes de creerla o compartirla",
+            "correct": true
+          },
+          {
+            "text": "Las capturas de pantalla nunca se pueden falsificar",
+            "correct": false
+          },
+          {
+            "text": "Solo los videos se pueden falsificar, no las imágenes con texto",
+            "correct": false
+          }
+        ],
+        "hint": "¿El texto de una imagen se puede editar o inventar tan fácil como un video falso?",
+        "explanation": "Una imagen con palabras también puede mentir — las capturas de pantalla falsas de frases o mensajes difunden desinformación igual que un video falso, así que verifica antes de compartir."
+      }
+    ],
+    "hard": [
+      {
+        "prompt": "Si te das cuenta de que un feed está diseñado para que sigas deslizando la pantalla, ¿hacia qué das el primer paso?",
+        "choices": [
+          {
+            "text": "Dejar todas las redes sociales de inmediato",
+            "correct": false
+          },
+          {
+            "text": "No dejarte manejar por ese diseño sin darte cuenta",
+            "correct": true
+          },
+          {
+            "text": "Nada cambia solo por darte cuenta",
+            "correct": false
+          },
+          {
+            "text": "Echarte la culpa por usar la app",
+            "correct": false
+          }
+        ],
+        "hint": "¿Darte cuenta de un patrón de diseño cambia cuánto poder tiene sobre ti?",
+        "explanation": "La verdad, solo con notar el diseño de desplazamiento infinito ya das el primer paso para que no te maneje sin que te des cuenta — ser consciente es el punto de partida, no una solución por sí sola."
+      },
+      {
+        "prompt": "¿Por qué el “control de edad” de una plataforma (confirmar que tienes la edad suficiente) podría importar de verdad, y no ser solo una molestia?",
+        "choices": [
+          {
+            "text": "Existe solo para frenarte sin ningún motivo",
+            "correct": false
+          },
+          {
+            "text": "Es uno de los pocos controles entre los usuarios más jóvenes y el contenido o las funciones para un público mayor",
+            "correct": true
+          },
+          {
+            "text": "Los controles de edad no tienen ningún propósito real",
+            "correct": false
+          },
+          {
+            "text": "Solo importa para comprar cosas, no para el contenido",
+            "correct": false
+          }
+        ],
+        "hint": "Más allá de ser una pequeña molestia, ¿qué intenta filtrar en realidad un control de edad?",
+        "explanation": "El control de edad está ahí para cuidarte — es un intento imperfecto, pero real, de que cierto contenido, funciones o ajustes de contacto sean adecuados para tu edad."
+      },
+      {
+        "prompt": "Un chiste suelto de un personaje en un episodio (como las celebraciones del “Viernes de Insignia”), ¿para qué está ahí principalmente?",
+        "choices": [
+          {
+            "text": "Para enseñar una regla de seguridad nueva cada vez",
+            "correct": false
+          },
+          {
+            "text": "Para celebrar los avances y mantener un tono positivo, no solo enumerar peligros",
+            "correct": true
+          },
+          {
+            "text": "Para que ya no hagan falta otros episodios",
+            "correct": false
+          },
+          {
+            "text": "Para confundir al público a propósito",
+            "correct": false
+          }
+        ],
+        "hint": "¿Cada episodio tiene que presentar un peligro nuevo para valer la pena?",
+        "explanation": "No todos los episodios tienen que enseñar un peligro nuevo — celebrar los avances y mantener un tono positivo también importa, para que todo no se sienta como una advertencia constante."
+      },
+      {
+        "prompt": "Si piensas a la vez en las respuestas de la IA que suenan tan seguras, en los límites de tiempo de pantalla y en el diseño de los feeds, ¿cuál es la forma más sana de verlo?",
+        "choices": [
+          {
+            "text": "Básicamente son el mismo problema, con una sola solución para todo",
+            "correct": false
+          },
+          {
+            "text": "En cada caso hay que notar un patrón de diseño o de conducta y crear un hábito concreto para contrarrestarlo",
+            "correct": true
+          },
+          {
+            "text": "No vale la pena pensar en ninguno por separado",
+            "correct": false
+          },
+          {
+            "text": "Solo importa el que más miedo da (la IA)",
+            "correct": false
+          }
+        ],
+        "hint": "¿Hay una sola solución que sirva para todo, o cada patrón necesita su propio hábito para contrarrestarlo?",
+        "explanation": "El diseño de los algoritmos, el tono seguro de la IA y los hábitos de pantalla están relacionados, pero son distintos — en cada uno ayuda notar el patrón concreto y crear un hábito concreto para contrarrestarlo, en lugar de buscar una sola solución para todo."
+      }
+    ]
+  }
+}

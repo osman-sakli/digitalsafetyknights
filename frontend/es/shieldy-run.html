@@ -255,6 +255,7 @@ $('b-start').textContent = S.start; $('b-again').textContent = S.again; $('t-ove
 $('b-arc1').textContent = S.arcade; $('b-arc2').textContent = S.arcade;
 $('t-nogl').textContent = S.noGL; $('b-nogl').textContent = S.noGLbtn;
 $('t-hint').textContent = fine ? S.hintKeys : S.hint;
+{ const A = { en: ['Sound', 'Left', 'Jump', 'Right'], tr: ['Ses', 'Sola', 'Zıpla', 'Sağa'], es: ['Sonido', 'Izquierda', 'Saltar', 'Derecha'], fr: ['Son', 'Gauche', 'Sauter', 'Droite'] }[lang]; ['b-snd', 'p-l', 'p-j', 'p-r'].forEach((id, i) => $(id).setAttribute('aria-label', A[i])); }
 
 /* ───────────── renderer ───────────── */
 let renderer;

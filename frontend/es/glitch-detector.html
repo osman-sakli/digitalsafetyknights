@@ -125,8 +125,10 @@
 var gdLang = (window.DSKi18n && DSKi18n.lang) || 'en';
 var gdIsTr = gdLang === 'tr';
 var gdIsEs = gdLang === 'es';
+var gdIsFr = gdLang === 'fr';
+document.getElementById('preview-img').alt = gdIsTr ? 'Yüklenen ekran görüntüsü' : gdIsEs ? 'Captura de pantalla subida' : gdIsFr ? 'Capture d’écran importée' : 'Uploaded screenshot';
 
-// Regexes match English, Turkish, and Spanish trigger phrases all at once, since a
+// Regexes match English, Turkish, Spanish, and French trigger phrases all at once, since a
 // pasted message can arrive in any language regardless of the site's UI
 // language — only the displayed title/explain text changes with the locale.
 const PATTERN_DEFS = [
@@ -135,75 +137,89 @@ const PATTERN_DEFS = [
     titleEn: "Urgency — the hurry-up trick",
     titleTr: "Aciliyet — acele ettirme numarası",
     titleEs: "Urgencia — el truco de apurarte",
+    titleFr: "Urgence — le coup du «\u202fdépêche-toi\u202f»",
     explainEn: "Real offers don't need you to act in seconds. Urgency is designed to stop you from thinking clearly.",
     explainTr: "Gerçek teklifler saniyeler içinde harekete geçmeni gerektirmez. Aciliyet, net düşünmeni engellemek için tasarlanmıştır.",
     explainEs: "Las ofertas reales no necesitan que actúes en segundos. La urgencia está diseñada para impedir que pienses con claridad.",
-    regex: /\b(hurry|only \d+\s*(seconds?|minutes?|hours?)( left)?|act now|right now|limited time|before it'?s gone|last chance|expires? (soon|today)|don'?t wait|going fast|almost (out of time|gone)|won'?t last long|time('?s| is) running out|acele et|sadece \d+\s*(saniye|dakika|saat)|hemen (şimdi|tıkla)|son şans|kaçırma|çabuk ol|az kaldı|süre doluyor|hemen harekete geç|urgente|date prisa|apúrate|solo quedan? \d+\s*(segundos?|minutos?|horas?)|actúa ahora|ahora mismo|tiempo limitado|antes de que se acabe|última oportunidad|ultima oportunidad|expira (pronto|hoy)|no esperes|se está acabando|el tiempo se agota)\b/i
+    explainFr: "Les vraies offres n’ont pas besoin que tu réagisses en quelques secondes. L’urgence est faite pour t’empêcher de réfléchir calmement.",
+    regex: /\b(hurry|only \d+\s*(seconds?|minutes?|hours?)( left)?|act now|right now|limited time|before it'?s gone|last chance|expires? (soon|today)|don'?t wait|going fast|almost (out of time|gone)|won'?t last long|time('?s| is) running out|acele et|sadece \d+\s*(saniye|dakika|saat)|hemen (şimdi|tıkla)|son şans|kaçırma|çabuk ol|az kaldı|süre doluyor|hemen harekete geç|urgente|date prisa|apúrate|solo quedan? \d+\s*(segundos?|minutos?|horas?)|actúa ahora|ahora mismo|tiempo limitado|antes de que se acabe|última oportunidad|ultima oportunidad|expira (pronto|hoy)|no esperes|se está acabando|el tiempo se agota|d[ée]p[êe]che-toi|fais vite|(il ne reste|plus) que \d+\s*(secondes?|minutes?|heures?)|agis (maintenant|vite)|tout de suite|offre limit[ée]e|dur[ée]e limit[ée]e|derni[èe]re chance|expire (bient[ôo]t|aujourd['’]hui|ce soir)|n['’]attends pas|le temps presse|avant qu['’]il (ne )?soit trop tard)\b/i
   },
   {
     key: "secrecy",
     titleEn: "Secrecy — the 'don't tell' trick",
     titleTr: "Gizlilik — 'söyleme' numarası",
     titleEs: "Secreto — el truco de 'no le digas a nadie'",
+    titleFr: "Secret — le coup du «\u202fne dis rien\u202f»",
     explainEn: "Trusted people never ask you to keep secrets from your parents. Coded phrases warning that a parent is nearby are also a sign the conversation isn't meant for grown-ups to see.",
     explainTr: "Güvenilir insanlar asla ebeveynlerinden sır saklamanı istemez. Bir ebeveynin yakında olduğunu uyaran şifreli ifadeler de, konuşmanın yetişkinlerin görmesi için olmadığının bir işaretidir.",
     explainEs: "Las personas de confianza nunca te piden que guardes secretos de tus padres. Las frases en clave que avisan que un padre está cerca también son una señal de que la conversación no está pensada para que la vean los adultos.",
-    regex: /\b(don'?t tell (your )?(parents|mom|dad|mum)|our secret|our little secret|just between us|keep this (a )?secret|keep (this )?quiet|delete this (after|when)|erase (this|our) (chat|conversation)|no one (needs to|has to) know|don'?t show (your )?(mom|dad|parents)|\bkpc\b|\bcd9\b|\bp911\b|\bpaw\b|\bpal\b|\bpir\b|\bpos\b|\bmos\b|ebeveynlerine söyleme|anneme söyleme|babama söyleme|aramızda kalsın|bizim sırrımız|kimse bilmesin|bunu sil|sohbeti sil|no le digas a (tu mamá|tu mama|tu papá|tu papa|tus padres)|nuestro secreto|nuestro pequeño secreto|solo entre nosotros|guarda(lo)? en secreto|mantén esto en secreto|no se lo digas a nadie|borra (esto|la conversación|el chat)|nadie (necesita|tiene que) saberlo|no le muestres a (tu mamá|tu mama|tu papá|tu papa|tus padres))\b/i
+    explainFr: "Les personnes de confiance ne te demandent jamais de cacher des secrets à tes parents. Les phrases codées qui préviennent qu’un parent est à côté montrent aussi que la conversation n’est pas faite pour être vue par des adultes.",
+    regex: /\b(don'?t tell (your )?(parents|mom|dad|mum)|our secret|our little secret|just between us|keep this (a )?secret|keep (this )?quiet|delete this (after|when)|erase (this|our) (chat|conversation)|no one (needs to|has to) know|don'?t show (your )?(mom|dad|parents)|\bkpc\b|\bcd9\b|\bp911\b|\bpaw\b|\bpal\b|\bpir\b|\bpos\b|\bmos\b|ebeveynlerine söyleme|anneme söyleme|babama söyleme|aramızda kalsın|bizim sırrımız|kimse bilmesin|bunu sil|sohbeti sil|no le digas a (tu mamá|tu mama|tu papá|tu papa|tus padres)|nuestro secreto|nuestro pequeño secreto|solo entre nosotros|guarda(lo)? en secreto|mantén esto en secreto|no se lo digas a nadie|borra (esto|la conversación|el chat)|nadie (necesita|tiene que) saberlo|no le muestres a (tu mamá|tu mama|tu papá|tu papa|tus padres)|(ne )?(le |leur )?dis (rien|pas)( [çc]a)? (à|a) (tes parents|ta m[èe]re|ton p[èe]re|ta maman|ton papa|personne)|notre (petit )?secret|(reste|juste|seulement) entre nous|qu['’]entre nous|garde (le|[çc]a) secret|garde [çc]a pour toi|personne ne doit (le )?savoir|efface (ce message|cette conversation|notre conversation|la conversation|le chat|notre chat|nos messages)|ne (le |la |les )?montre (pas|rien) (à|a) (tes parents|ta m[èe]re|ton p[èe]re|ta maman|ton papa))\b/i
   },
   {
     key: "personal",
     titleEn: "Personal questions from a stranger",
     titleTr: "Bir yabancıdan kişisel sorular",
     titleEs: "Preguntas personales de un desconocido",
+    titleFr: "Questions personnelles d’un inconnu",
     explainEn: "Nice people online don't need your real name, age, gender, school, or address. Sharing this is how strangers build a profile on you.",
     explainTr: "İyi niyetli insanların çevrimiçi gerçek adına, yaşına, cinsiyetine, okuluna veya adresine ihtiyacı olmaz. Bunu paylaşmak, yabancıların senin hakkında bir profil oluşturmasına yol açar.",
     explainEs: "Las personas con buenas intenciones en línea no necesitan tu nombre real, edad, género, escuela o dirección. Compartir esto es cómo los desconocidos arman un perfil sobre ti.",
-    regex: /\b(how old are you|how old r u|your age|what('?s| is) your (real )?name|tell me your (real )?name|give me your (real )?name|need your (real )?name|say your (real )?name|your (real )?name|what school do you go to|wat skool|your school|where do you live|where do u live|your location|are (you|your parents) home alone|is anyone home|send (a|your) (photo|pic|selfie)|your address|what('?s| is) your (number|gender)|your (phone )?number|\basl\b|\brumorf\b|kaç yaşındasın|gerçek adın ne|hangi okula gidiyorsun|nerede oturuyorsun|adresin ne|telefon numaran ne|evde yalnız mısın|cuántos años tienes|qué edad tienes|cuál es tu (nombre real|nombre)|dime tu nombre|dame tu nombre|a qué escuela vas|dónde vives|tu ubicación|estás solo en casa|tus padres están en casa|envía(me)? (una foto|un selfie|una selfie)|cuál es tu dirección|tu dirección|cuál es tu número|tu número de teléfono|cuál es tu género)\b/i
+    explainFr: "Les gens bien intentionnés en ligne n’ont pas besoin de ton vrai nom, de ton âge, de ton genre, de ton école ou de ton adresse. C’est avec ces infos que des inconnus construisent ton profil, morceau par morceau.",
+    regex: /\b(how old are you|how old r u|your age|what('?s| is) your (real )?name|tell me your (real )?name|give me your (real )?name|need your (real )?name|say your (real )?name|your (real )?name|what school do you go to|wat skool|your school|where do you live|where do u live|your location|are (you|your parents) home alone|is anyone home|send (a|your) (photo|pic|selfie)|your address|what('?s| is) your (number|gender)|your (phone )?number|\basl\b|\brumorf\b|kaç yaşındasın|gerçek adın ne|hangi okula gidiyorsun|nerede oturuyorsun|adresin ne|telefon numaran ne|evde yalnız mısın|cuántos años tienes|qué edad tienes|cuál es tu (nombre real|nombre)|dime tu nombre|dame tu nombre|a qué escuela vas|dónde vives|tu ubicación|estás solo en casa|tus padres están en casa|envía(me)? (una foto|un selfie|una selfie)|cuál es tu dirección|tu dirección|cuál es tu número|tu número de teléfono|cuál es tu género|quel [âa]ge (as-tu|tu as|t['’]as)|(tu as|t['’]as) quel [âa]ge|c['’]est quoi ton (vrai )?(nom|pr[ée]nom)|comment tu t['’]appelles|dis-moi ton (vrai )?(nom|pr[ée]nom)|quel est ton (vrai )?(nom|pr[ée]nom)|quelle [ée]cole|o[ùu] (tu habites|habites-tu|tu vis)|ton adresse|ton num[ée]ro( de t[ée]l[ée]phone| de portable)?|(tu es|t['’]es) seule? (à|a) la maison|tes parents sont (à|a) la maison|il y a quelqu['’]un chez toi|envoie(-moi)? (une photo|un selfie|ta photo)|(tu es|t['’]es) (une )?fille ou (un )?gar[çc]on)\b/i
   },
   {
     key: "toogood",
     titleEn: "Too-good-to-be-true offer",
     titleTr: "Gerçek olamayacak kadar iyi teklif",
     titleEs: "Oferta demasiado buena para ser verdad",
+    titleFr: "Offre trop belle pour être vraie",
     explainEn: "Free prizes, gift cards, and 'you won' messages are almost always designed to get you to click without thinking.",
     explainTr: "Bedava ödüller, hediye kartları ve 'kazandın' mesajları neredeyse her zaman düşünmeden tıklamanı sağlamak için tasarlanmıştır.",
     explainEs: "Los premios gratis, las tarjetas de regalo y los mensajes de 'ganaste' casi siempre están diseñados para que hagas clic sin pensar.",
-    regex: /\b(free (robux|v-?bucks|gift card|money|iphone|nitro|skin(s)?|followers)|you'?ve? won|you (have|been) been selected|claim (your|now)|click here|verify your account|congratulations you|giveaway|no verification needed|bedava robux|bedava hediye kartı|kazandın|özel seçildin|hemen tıkla|hesabını doğrula|gratis (robux|v-?bucks|tarjeta de regalo|dinero|iphone|skins?|seguidores)|has ganado|fuiste seleccionado|reclama (ahora|tu premio)|haz clic aquí|haz clic aqui|verifica tu cuenta|felicidades (has )?ganaste|sorteo gratis|sin verificación necesaria)\b/i
+    explainFr: "Les cadeaux gratuits, les cartes cadeaux et les messages «\u202ftu as gagné\u202f» sont presque toujours faits pour te faire cliquer sans réfléchir.",
+    regex: /\b(free (robux|v-?bucks|gift card|money|iphone|nitro|skin(s)?|followers)|you'?ve? won|you (have|been) been selected|claim (your|now)|click here|verify your account|congratulations you|giveaway|no verification needed|bedava robux|bedava hediye kartı|kazandın|özel seçildin|hemen tıkla|hesabını doğrula|gratis (robux|v-?bucks|tarjeta de regalo|dinero|iphone|skins?|seguidores)|has ganado|fuiste seleccionado|reclama (ahora|tu premio)|haz clic aquí|haz clic aqui|verifica tu cuenta|felicidades (has )?ganaste|sorteo gratis|sin verificación necesaria|(robux|v-?bucks|skins?|nitro|iphone|abonn[ée]s|followers) gratuits?|cartes? cadeaux? gratuites?|cadeaux? gratuits?|(tu as|t['’]as|vous avez) gagn[ée] (un|une|des|le|la|les|\d+)|tu fais partie des gagnants|f[ée]licitations,? (tu|vous)|clique (ici|maintenant|vite|sur ce lien)|v[ée]rifie ton compte|r[ée]clame (ton (cadeau|prix|lot)|maintenant|vite)|concours gratuit|sans v[ée]rification)\b/i
   },
   {
     key: "money",
     titleEn: "Money, gift cards, or password requests",
     titleTr: "Para, hediye kartı veya şifre istekleri",
     titleEs: "Solicitudes de dinero, tarjetas de regalo o contraseñas",
+    titleFr: "Demandes d’argent, de cartes cadeaux ou de mot de passe",
     explainEn: "No real person or company will ever ask a kid to send money, gift card codes, or a password over chat.",
     explainTr: "Gerçek hiçbir kişi veya şirket, bir çocuktan sohbet üzerinden para, hediye kartı kodu veya şifre göndermesini asla istemez.",
     explainEs: "Ninguna persona o empresa real le pedirá jamás a un niño que envíe dinero, códigos de tarjetas de regalo o una contraseña por chat.",
-    regex: /\b(send money|gift card code|steam (gift )?card|itunes (gift )?card|wire transfer|send (your )?password|verify your password|pay (now|immediately)|venmo|cash ?app|paypal ?me|apple ?pay me|bitcoin|crypto ?wallet|seed phrase|read (me|out) the code|para gönder|hediye kartı kodu|şifreni gönder|şifreni doğrula|hemen öde|envía(me)? dinero|código de (la )?tarjeta de regalo|tarjeta de (steam|itunes)|transferencia (bancaria|de dinero)|envía(me)? (tu )?contraseña|verifica tu contraseña|paga (ahora|de inmediato)|billetera (cripto|de criptomonedas)|frase semilla|léeme el código)\b/i
+    explainFr: "Aucune vraie personne ni aucune vraie entreprise ne demandera jamais à un enfant d’envoyer de l’argent, des codes de cartes cadeaux ou un mot de passe par message.",
+    regex: /\b(send money|gift card code|steam (gift )?card|itunes (gift )?card|wire transfer|send (your )?password|verify your password|pay (now|immediately)|venmo|cash ?app|paypal ?me|apple ?pay me|bitcoin|crypto ?wallet|seed phrase|read (me|out) the code|para gönder|hediye kartı kodu|şifreni gönder|şifreni doğrula|hemen öde|envía(me)? dinero|código de (la )?tarjeta de regalo|tarjeta de (steam|itunes)|transferencia (bancaria|de dinero)|envía(me)? (tu )?contraseña|verifica tu contraseña|paga (ahora|de inmediato)|billetera (cripto|de criptomonedas)|frase semilla|léeme el código|envoie(-moi)? (de l['’]argent|des sous|ton mot de passe|le code|tes identifiants)|code (de la |de ta |d['’]une )?carte cadeau|carte (steam|itunes|google play|psn)|paysafecard|virement|donne(-moi)? ton mot de passe|v[ée]rifie ton mot de passe|(paie|paye) (maintenant|tout de suite|imm[ée]diatement)|portefeuille crypto|phrase de r[ée]cup[ée]ration|(lis|donne)-moi le code)\b/i
   },
   {
     key: "meetup",
     titleEn: "Wants to meet up or move somewhere less supervised",
     titleTr: "Buluşmak veya daha az denetlenen bir yere taşınmak istiyor",
     titleEs: "Quiere reunirse o pasar a un lugar con menos supervisión",
+    titleFr: "Veut te rencontrer ou continuer ailleurs, là où c’est moins surveillé",
     explainEn: "Moving to a different app, or asking to meet in person, is a common way to get around parental supervision. Never agree — always tell a trusted adult first.",
     explainTr: "Farklı bir uygulamaya taşınmak ya da yüz yüze buluşmayı istemek, ebeveyn denetimini aşmanın yaygın bir yoludur. Asla kabul etme — her zaman önce güvendiğin bir yetişkine söyle.",
     explainEs: "Pasarse a otra aplicación, o pedir reunirse en persona, es una forma común de evitar la supervisión de los padres. Nunca aceptes — cuéntaselo siempre primero a un adulto de confianza.",
-    regex: /\b(let'?s meet up|meet me at|i'?ll pick you up|come to my house|don'?t bring anyone|meet in real life|\blmirl\b|\bmirl\b|move (this|our chat) to (a different|another) app|add me on (kik|snap|whatsapp|telegram)|buluşalım|seni almaya gelirim|evime gel|kimseyi getirme|yüz yüze buluşalım|başka bir uygulamaya geçelim|reunámonos|encuéntrame en|paso por ti|ven a mi casa|no traigas a nadie|reunámonos en persona|cambiemos (esto|nuestro chat) a otra app|agrégame en (kik|snap|whatsapp|telegram))\b/i
+    explainFr: "Passer sur une autre appli, ou proposer de se voir en vrai, c’est une technique courante pour échapper à la surveillance des parents. N’accepte jamais — parles-en toujours d’abord à un adulte de confiance.",
+    regex: /\b(let'?s meet up|meet me at|i'?ll pick you up|come to my house|don'?t bring anyone|meet in real life|\blmirl\b|\bmirl\b|move (this|our chat) to (a different|another) app|add me on (kik|snap|whatsapp|telegram)|buluşalım|seni almaya gelirim|evime gel|kimseyi getirme|yüz yüze buluşalım|başka bir uygulamaya geçelim|reunámonos|encuéntrame en|paso por ti|ven a mi casa|no traigas a nadie|reunámonos en persona|cambiemos (esto|nuestro chat) a otra app|agrégame en (kik|snap|whatsapp|telegram)|on se (voit|retrouve) (en vrai|devant|au parc|chez)|on peut se voir|(se )?(voir|rencontrer) en vrai|rejoins-moi|retrouve-moi|je (passe|viens) te chercher|viens chez moi|n['’]am[èe]ne personne|viens seule?|on (continue|passe) sur (snap|snapchat|whatsapp|telegram|kik|discord|insta)|ajoute-moi sur (kik|snap|snapchat|whatsapp|telegram|discord|insta)|change(ons|r)? d['’]appli|passons sur une autre appli)\b/i
   },
   {
     key: "sexual",
     titleEn: "Requests for photos or getting undressed on camera",
     titleTr: "Fotoğraf veya kamerada soyunma istekleri",
     titleEs: "Solicitudes de fotos o de desvestirse frente a la cámara",
+    titleFr: "Demandes de photos ou de se déshabiller devant la caméra",
     explainEn: "Any request for a photo of your body, or slang asking you to get undressed or 'show' yourself on camera, is never something a nice person asks a kid. Don't respond — screenshot it and tell a trusted adult right away.",
     explainTr: "Vücudunun bir fotoğrafını isteyen ya da kamerada soyunmanı veya kendini 'göstermeni' isteyen herhangi bir istek, iyi niyetli birinin bir çocuktan asla istemeyeceği bir şeydir. Cevap verme — ekran görüntüsü al ve hemen güvendiğin bir yetişkine söyle.",
     explainEs: "Cualquier solicitud de una foto de tu cuerpo, o jerga que te pida desvestirte o 'mostrarte' frente a la cámara, nunca es algo que una persona buena le pide a un niño. No respondas — toma una captura de pantalla y cuéntaselo a un adulto de confianza de inmediato.",
-    regex: /\b(get naked|take your clothes off|show me your|turn on your camera (for me)?|i'?ll pay you for (pics|photos)|send (a )?(nude|naked)|\bgnoc\b|\bgypo\b|\biwsn\b|\btdtm\b|\bnifoc\b|\bwtto\b|soyun|kameranı aç|çıplak fotoğraf gönder|desnúdate|quítate la ropa|muéstrame tu|enciende tu cámara( para mí)?|te pago por (fotos|pics)|envía(me)? una foto (desnuda|desnudo))\b/i
+    explainFr: "Toute demande de photo de ton corps, ou tout mot d’argot qui te demande de te déshabiller ou de te «\u202fmontrer\u202f» devant la caméra, ce n’est jamais quelque chose qu’une personne bien intentionnée demande à un enfant. Ne réponds pas — fais une capture d’écran et parles-en tout de suite à un adulte de confiance.",
+    regex: /\b(get naked|take your clothes off|show me your|turn on your camera (for me)?|i'?ll pay you for (pics|photos)|send (a )?(nude|naked)|\bgnoc\b|\bgypo\b|\biwsn\b|\btdtm\b|\bnifoc\b|\bwtto\b|soyun|kameranı aç|çıplak fotoğraf gönder|desnúdate|quítate la ropa|muéstrame tu|enciende tu cámara( para mí)?|te pago por (fotos|pics)|envía(me)? una foto (desnuda|desnudo)|d[ée]shabille-toi|enl[èe]ve (tes v[êe]tements|ton haut|ton t-shirt)|montre-moi (ton|ta|tes)|allume ta (cam[ée]ra|cam|webcam)|je te (paie|paye) pour (des |tes )?photos|envoie(-moi)? (des |un |une )?nudes?|photo de toi nue?|envoie(-moi)? une photo (nue|de toi nue?))\b/i
   }
 ];
 
 const PATTERNS = PATTERN_DEFS.map(function(p) {
-  return { key: p.key, title: gdIsTr ? p.titleTr : gdIsEs ? p.titleEs : p.titleEn, explain: gdIsTr ? p.explainTr : gdIsEs ? p.explainEs : p.explainEn, regex: p.regex };
+  return { key: p.key, title: gdIsTr ? p.titleTr : gdIsEs ? p.titleEs : gdIsFr ? p.titleFr : p.titleEn, explain: gdIsTr ? p.explainTr : gdIsEs ? p.explainEs : gdIsFr ? p.explainFr : p.explainEn, regex: p.regex };
 });
 
 function checkMessage() {
@@ -239,6 +255,17 @@ function checkMessage() {
       verdictClass = "clear"; icon = "🤔"; title = "Sin Señales de Alerta Evidentes";
       sub = "No se detectó nada — pero Shieldy no puede detectarlo todo. Si de todos modos se siente raro, pregúntale a un adulto igualmente.";
     }
+  } else if (gdIsFr) {
+    if (matches.length >= 2) {
+      verdictClass = "trap"; icon = "🚩"; title = `${matches.length} signaux d’alerte repérés\u202f!`;
+      sub = "Ça ressemble à un piège. Ne clique pas, ne réponds pas et ne partage rien — montre-le à un adulte de confiance.";
+    } else if (matches.length === 1) {
+      verdictClass = "careful"; icon = "⚠️"; title = "1 signal d’alerte repéré";
+      sub = "Méfie-toi de celui-là. En cas de doute, demande à un adulte de confiance avant de faire quoi que ce soit.";
+    } else {
+      verdictClass = "clear"; icon = "🤔"; title = "Aucun signal d’alerte évident";
+      sub = "Rien n’a sauté aux yeux — mais Shieldy ne peut pas tout repérer. Si ça te paraît quand même bizarre, demande à un adulte.";
+    }
   } else {
     if (matches.length >= 2) {
       verdictClass = "trap"; icon = "🚩"; title = `${matches.length} Red Flags Found!`;
@@ -270,8 +297,8 @@ function checkMessage() {
   }
 
   html += `
-    <p class="share-hint">${gdIsTr ? '📸 Shieldy\'nin bunu nasıl yakaladığını göstermek için bu kartın ekran görüntüsünü al — ve öğrendiğini paylaş!' : gdIsEs ? '📸 Toma una captura de esta tarjeta para mostrar cómo lo detectó Shieldy — ¡y comparte lo que aprendiste!' : '📸 Screenshot this card to show how Shieldy caught it — and share what you learned!'}</p>
-    <button class="reset-btn" onclick="resetChecker()">${gdIsTr ? 'Başka Bir Mesaj Kontrol Et' : gdIsEs ? 'Revisar Otro Mensaje' : 'Check Another Message'}</button>
+    <p class="share-hint">${gdIsTr ? '📸 Shieldy\'nin bunu nasıl yakaladığını göstermek için bu kartın ekran görüntüsünü al — ve öğrendiğini paylaş!' : gdIsEs ? '📸 Toma una captura de esta tarjeta para mostrar cómo lo detectó Shieldy — ¡y comparte lo que aprendiste!' : gdIsFr ? '📸 Fais une capture d’écran de cette carte pour montrer comment Shieldy a analysé ce message — et partage ce que tu as appris\u202f!' : '📸 Screenshot this card to show how Shieldy caught it — and share what you learned!'}</p>
+    <button class="reset-btn" onclick="resetChecker()">${gdIsTr ? 'Başka Bir Mesaj Kontrol Et' : gdIsEs ? 'Revisar Otro Mensaje' : gdIsFr ? 'Vérifier un autre message' : 'Check Another Message'}</button>
   `;
 
   resultEl.innerHTML = html;
@@ -317,10 +344,10 @@ document.getElementById('image-input').addEventListener('change', async function
 
   try {
     await loadTesseract();
-    const { data } = await Tesseract.recognize(file, gdIsTr ? 'tur' : gdIsEs ? 'spa' : 'eng');
+    const { data } = await Tesseract.recognize(file, gdIsTr ? 'tur' : gdIsEs ? 'spa' : gdIsFr ? 'fra' : 'eng');
     document.getElementById('message-input').value = data.text.trim();
   } catch (err) {
-    status.textContent = gdIsTr ? "O görüntüden metin okunamadı — bunun yerine mesajı yapıştırmayı dene." : gdIsEs ? "No se pudo leer el texto de esa imagen — intenta pegar el mensaje en su lugar." : "Couldn't read text from that image — try pasting the message instead.";
+    status.textContent = gdIsTr ? "O görüntüden metin okunamadı — bunun yerine mesajı yapıştırmayı dene." : gdIsEs ? "No se pudo leer el texto de esa imagen — intenta pegar el mensaje en su lugar." : gdIsFr ? "Impossible de lire le texte de cette image — essaie plutôt de coller le message." : "Couldn't read text from that image — try pasting the message instead.";
     setTimeout(() => { status.style.display = 'none'; }, 4000);
     document.getElementById('check-btn').disabled = false;
     return;

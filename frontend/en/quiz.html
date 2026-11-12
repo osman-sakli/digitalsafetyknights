@@ -107,41 +107,48 @@
 <div class="wrap" id="quiz-wrap"></div>
 
 <footer>
-  <p>&copy; 2026 Digital Safety Knights. <a href="/">Home</a> · <a href="/resources.html" data-i18n="footer.journalArchive2">Resources</a></p>
+  <p>&copy; 2026 Digital Safety Knights. <a href="/" data-i18n="qp.home2">Home</a> · <a href="/resources.html" data-i18n="footer.journalArchive2">Resources</a></p>
 </footer>
 
 <script>
 const QZ_LANG = (window.DSKi18n && DSKi18n.lang) || 'en';
 const CAT_META = {
-  scams:     { icon: '🎁', label: { en: 'Scams & Fake Prizes', tr: 'Dolandırıcılık & Sahte Ödüller', es: 'Estafas y Premios Falsos' } },
-  ai:        { icon: '🤖', label: { en: 'AI Chatbots & Deepfakes', tr: 'Yapay Zeka & Deepfake', es: 'Chatbots de IA y Deepfakes' } },
-  strangers: { icon: '🎭', label: { en: 'Strangers & Catfishing', tr: 'Yabancılar & Sahte Kimlik', es: 'Desconocidos y Perfiles Falsos' } },
-  bullying:  { icon: '🤝', label: { en: 'Cyberbullying', tr: 'Siber Zorbalık', es: 'Ciberacoso' } },
-  privacy:   { icon: '🔒', label: { en: 'Passwords & Privacy', tr: 'Şifreler & Gizlilik', es: 'Contraseñas y Privacidad' } },
-  emergency: { icon: '🆘', label: { en: 'If Something Happens', tr: 'Bir Şey Olursa', es: 'Si Algo Pasa' } },
-  habits:    { icon: '🧠', label: { en: 'Habits & Media Smarts', tr: 'Alışkanlıklar & Medya Bilinci', es: 'Hábitos y Sentido Mediático' } },
+  scams:     { icon: '🎁', label: { en: 'Scams & Fake Prizes', tr: 'Dolandırıcılık ve Sahte Ödüller', es: 'Estafas y Premios Falsos', fr: 'Arnaques et faux cadeaux' } },
+  ai:        { icon: '🤖', label: { en: 'AI Chatbots & Deepfakes', tr: 'Yapay Zeka Sohbet Botları ve Deepfake', es: 'Chatbots de IA y Deepfakes', fr: 'Chatbots d’IA et deepfakes' } },
+  strangers: { icon: '🎭', label: { en: 'Strangers & Catfishing', tr: 'Yabancılar ve Sahte Kimlik', es: 'Desconocidos y Perfiles Falsos', fr: 'Inconnus et faux profils' } },
+  bullying:  { icon: '🤝', label: { en: 'Cyberbullying', tr: 'Siber Zorbalık', es: 'Ciberacoso', fr: 'Cyberharcèlement' } },
+  privacy:   { icon: '🔒', label: { en: 'Passwords & Privacy', tr: 'Şifreler ve Gizlilik', es: 'Contraseñas y Privacidad', fr: 'Mots de passe et vie privée' } },
+  emergency: { icon: '🆘', label: { en: 'If Something Happens', tr: 'Bir Şey Olursa', es: 'Si Algo Pasa', fr: 'Si quelque chose arrive' } },
+  habits:    { icon: '🧠', label: { en: 'Habits & Media Smarts', tr: 'Alışkanlıklar ve Medya Bilinci', es: 'Hábitos y Sentido Mediático', fr: 'Habitudes et esprit critique' } },
 };
 const L = {
-  pickTopic: { en: 'Pick a topic', tr: 'Bir konu seç', es: 'Elige un tema' },
-  pickTier: { en: 'Easy or Hard?', tr: 'Kolay mı, Zor mu?', es: '¿Fácil o Difícil?' },
-  easy: { en: '🟢 Easy', tr: '🟢 Kolay', es: '🟢 Fácil' },
-  hard: { en: '🔴 Hard', tr: '🔴 Zor', es: '🔴 Difícil' },
-  back: { en: '← Back', tr: '← Geri', es: '← Atrás' },
-  hint: { en: '💡 Need a hint?', tr: '💡 İpucu ister misin?', es: '💡 ¿Necesitas una pista?' },
-  next: { en: 'Next →', tr: 'Sonraki →', es: 'Siguiente →' },
-  finish: { en: 'See My Score', tr: 'Puanımı Gör', es: 'Ver Mi Puntaje' },
-  perfect: { en: 'Perfect Shield!', tr: 'Kusursuz Kalkan!', es: '¡Escudo Perfecto!' },
-  solid: { en: 'Solid Knight Work', tr: 'Sağlam Şövalye İşi', es: 'Buen Trabajo de Caballero' },
-  keepTraining: { en: 'Keep Training', tr: 'Eğitime Devam', es: 'Sigue Entrenando' },
-  tryAgain: { en: 'Try Another Quiz', tr: 'Başka Bir Quiz Dene', es: 'Prueba Otro Quiz' },
+  pickTopic: { en: 'Pick a topic', tr: 'Bir konu seç', es: 'Elige un tema', fr: 'Choisis un thème' },
+  pickTier: { en: 'Easy or Hard?', tr: 'Kolay mı, Zor mu?', es: '¿Fácil o Difícil?', fr: 'Facile ou difficile ?' },
+  easy: { en: '🟢 Easy', tr: '🟢 Kolay', es: '🟢 Fácil', fr: '🟢 Facile' },
+  hard: { en: '🔴 Hard', tr: '🔴 Zor', es: '🔴 Difícil', fr: '🔴 Difficile' },
+  back: { en: '← Back', tr: '← Geri', es: '← Atrás', fr: '← Retour' },
+  hint: { en: '💡 Need a hint?', tr: '💡 İpucu ister misin?', es: '💡 ¿Necesitas una pista?', fr: '💡 Besoin d’un indice ?' },
+  next: { en: 'Next →', tr: 'Sonraki →', es: 'Siguiente →', fr: 'Suivant →' },
+  finish: { en: 'See My Score', tr: 'Puanımı Gör', es: 'Ver Mi Puntaje', fr: 'Voir mon score' },
+  perfect: { en: 'Perfect Shield!', tr: 'Kusursuz Kalkan!', es: '¡Escudo Perfecto!', fr: 'Bouclier parfait !' },
+  solid: { en: 'Solid Knight Work', tr: 'Sağlam Şövalye İşi', es: 'Buen Trabajo de Caballero', fr: 'Du beau travail de chevalier' },
+  keepTraining: { en: 'Keep Training', tr: 'Eğitime Devam', es: 'Sigue Entrenando', fr: 'Continue l’entraînement' },
+  kp: { en: 'Knight Points', tr: 'Şövalye Puanı', es: 'Puntos de Caballero', fr: 'Points de Chevalier' },
+  loadErr: { en: 'Could not load quizzes right now — please refresh.', tr: 'Quizler şu anda yüklenemedi, lütfen sayfayı yenile.', es: 'No se pudieron cargar los quizzes en este momento. Vuelve a cargar la página.', fr: 'Impossible de charger les quiz pour le moment. Recharge la page.' },
+  tryAgain: { en: 'Try Another Quiz', tr: 'Başka Bir Quiz Dene', es: 'Prueba Otro Quiz', fr: 'Essaie un autre quiz' },
 };
 function t(key) { return (L[key] && L[key][QZ_LANG]) || L[key].en; }
 
 let QUIZ_DATA = null;
 let state = { cat: null, tier: null, idx: 0, score: 0, answered: false };
 
-fetch('/content/quiz-questions.json?t=' + Math.floor(Date.now() / 3600000))
-  .then(r => r.json())
+// Each language has its own copy of the bank with the same shape and the
+// same `correct` flags; English is the fallback if a copy fails to load.
+const QZ_BUST = '?t=' + Math.floor(Date.now() / 3600000);
+const QZ_FILE = ['tr', 'es', 'fr'].includes(QZ_LANG) ? '/content/quiz-questions-' + QZ_LANG + '.json' : '/content/quiz-questions.json';
+fetch(QZ_FILE + QZ_BUST)
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .catch(() => fetch('/content/quiz-questions.json' + QZ_BUST).then(r => r.json()))
   .then(data => {
     QUIZ_DATA = data;
     // The question bank was authored with the correct choice written second
@@ -166,7 +173,7 @@ fetch('/content/quiz-questions.json?t=' + Math.floor(Date.now() / 3600000))
       renderCatPicker();
     }
   })
-  .catch(() => { document.getElementById('quiz-wrap').innerHTML = '<p style="text-align:center;color:var(--gray);">Could not load quizzes right now — please refresh.</p>'; });
+  .catch(() => { document.getElementById('quiz-wrap').innerHTML = '<p style="text-align:center;color:var(--gray);">' + t('loadErr') + '</p>'; });
 
 function renderCatPicker() {
   const wrap = document.getElementById('quiz-wrap');
@@ -267,7 +274,7 @@ function finishQuiz() {
   const m = CAT_META[state.cat];
   const pointsEarned = score * 10;
   if (window.DSKPoints) {
-    DSKPoints.addPoints(pointsEarned, `Quiz: ${m.label[QZ_LANG] || m.label.en} (${state.tier})`);
+    DSKPoints.addPoints(pointsEarned, `Quiz: ${m.label[QZ_LANG] || m.label.en} (${t(state.tier).replace(/^\S+\s/, '')})`);
     DSKPoints.markComboActivity('quest');
   }
   const wrap = document.getElementById('quiz-wrap');
@@ -275,7 +282,7 @@ function finishQuiz() {
     <div class="quiz-card result-card">
       <div class="ricon">${icon}</div>
       <h2>${title}</h2>
-      <p>${score} / ${total} — +${pointsEarned} Knight Points</p>
+      <p>${score} / ${total} — +${pointsEarned} ${t('kp')}</p>
       <button class="quiz-next show" id="retry-btn">${t('tryAgain')}</button>
     </div>`;
   document.getElementById('retry-btn').addEventListener('click', renderCatPicker);

@@ -122,6 +122,7 @@
 const acLang = (window.DSKi18n && DSKi18n.lang) || 'en';
 const acIsTr = acLang === 'tr';
 const acIsEs = acLang === 'es';
+const acIsFr = acLang === 'fr';
 
 const STEPS_EN = [
   { kind: "quest", type: "quest", id: "roblox-safety-lab", title: "Quest: Roblox Safety Lab", icon: "🎮", href: "/quests.html?quest=roblox-safety-lab" },
@@ -168,7 +169,22 @@ const STEPS_ES = [
   { kind: "guide", type: "guide", id: "incident-response-guide", title: "Guía: Guía de Respuesta ante Incidentes", icon: "📥", href: "https://digitalsafetyknights.org/guides/incident-response-guide-es.pdf" }
 ];
 
-const STEPS = acIsTr ? STEPS_TR : acIsEs ? STEPS_ES : STEPS_EN;
+const STEPS_FR = [
+  { kind: "quest", type: "quest", id: "roblox-safety-lab", title: "Quête\u202f: Labo de sécurité Roblox", icon: "🎮", href: "/quests.html?quest=roblox-safety-lab" },
+  { kind: "guide", type: "guide", id: "roblox-parent-guide", title: "Guide\u202f: Guide Roblox pour les parents", icon: "📥", href: "https://digitalsafetyknights.org/guides/roblox-parent-guide.pdf" },
+  { kind: "quest", type: "quest", id: "grooming-watch", title: "Quête\u202f: Veille anti-grooming", icon: "🚩", href: "/quests.html?quest=grooming-watch" },
+  { kind: "guide", type: "guide", id: "talk-to-your-kids-guide", title: "Guide\u202f: Guide pour parler avec vos enfants", icon: "📥", href: "https://digitalsafetyknights.org/guides/talk-to-your-kids-guide.pdf" },
+  { kind: "quest", type: "quest", id: "ai-threat-awareness", title: "Quête\u202f: Vigilance face aux menaces de l’IA", icon: "🤖", href: "/quests.html?quest=ai-threat-awareness" },
+  { kind: "guide", type: "guide", id: "safe-ai-usage-guide", title: "Guide\u202f: L’IA en toute sécurité pour les enfants", icon: "📥", href: "https://digitalsafetyknights.org/guides/safe-ai-usage-guide.pdf" },
+  { kind: "quest", type: "quest", id: "family-cyber-defense", title: "Quête\u202f: Cyberdéfense familiale", icon: "🛡️", href: "/quests.html?quest=family-cyber-defense" },
+  { kind: "guide", type: "guide", id: "family-cybersecurity-checklist", title: "Guide\u202f: Liste de contrôle de cybersécurité familiale", icon: "📥", href: "https://digitalsafetyknights.org/guides/family-cybersecurity-checklist.pdf" },
+  { kind: "quest", type: "quest", id: "parental-controls", title: "Quête\u202f: Bilan du contrôle parental", icon: "🔧", href: "/quests.html?quest=parental-controls" },
+  { kind: "guide", type: "guide", id: "iphone-android-safety", title: "Guide\u202f: Sécurité sur iPhone et Android", icon: "📥", href: "https://digitalsafetyknights.org/guides/iphone-android-safety.pdf" },
+  { kind: "quest", type: "quest", id: "digital-citizenship", title: "Quête\u202f: Citoyenneté numérique", icon: "🌐", href: "/quests.html?quest=digital-citizenship" },
+  { kind: "guide", type: "guide", id: "incident-response-guide", title: "Guide\u202f: Guide de réaction en cas d’incident", icon: "📥", href: "https://digitalsafetyknights.org/guides/incident-response-guide.pdf" }
+];
+
+const STEPS = acIsTr ? STEPS_TR : acIsEs ? STEPS_ES : acIsFr ? STEPS_FR : STEPS_EN;
 const AC_L = acIsTr ? {
   quest: "Görev", guide: "Rehber", play: "Oyna →", read: "Oku →",
   stepsComplete: (n, total) => n + " / " + total + " adım tamamlandı",
@@ -189,6 +205,16 @@ const AC_L = acIsTr ? {
   passedMsg: " — obtuviste todo el camino de la Academia de Caballeros y 100 Puntos de Caballero de bonificación.",
   failMsg: " — repasa las misiones de arriba e intenta el Juicio de nuevo cuando quieras.",
   shieldUp: "¡Escudo arriba! 🛡️", close: "Cerrar"
+} : acIsFr ? {
+  quest: "Quête", guide: "Guide", play: "Jouer →", read: "Lire →",
+  stepsComplete: (n, total) => n + " / " + total + " étapes terminées",
+  capstone: "Défi final", trial: "L’Épreuve du Chevalier", locked: "Verrouillé", begin: "Commencer →",
+  loading: "Chargement de l’Épreuve…", questionOf: (i, n) => "QUESTION " + i + " SUR " + n, continueBtn: "Continuer →",
+  graduated: "Diplôme en poche — te voilà Chevalier du numérique\u202f!", almost: "Tu y es presque\u202f!",
+  correctOf: (s, n) => s + " / " + n + " bonnes réponses",
+  passedMsg: " — tu as terminé tout le parcours de l’Académie des Chevaliers et gagné 100 Points de Chevalier en bonus.",
+  failMsg: " — revois les quêtes ci-dessus et retente l’Épreuve quand tu veux.",
+  shieldUp: "Bouclier levé\u202f! 🛡️", close: "Fermer"
 } : {
   quest: "Quest", guide: "Guide", play: "Play →", read: "Read →",
   stepsComplete: (n, total) => n + " / " + total + " steps complete",
@@ -231,8 +257,8 @@ function render() {
   document.getElementById('ap-fill').style.width = Math.round((doneCount / STEPS.length) * 100) + "%";
   document.getElementById('ap-count').textContent = AC_L.stepsComplete(doneCount, STEPS.length);
 
-  const questPrefix = acIsTr ? 'Görev: ' : acIsEs ? 'Misión: ' : 'Quest: ';
-  const guidePrefix = acIsTr ? 'Rehber: ' : acIsEs ? 'Guía: ' : 'Guide: ';
+  const questPrefix = acIsTr ? 'Görev: ' : acIsEs ? 'Misión: ' : acIsFr ? 'Quête\u202f: ' : 'Quest: ';
+  const guidePrefix = acIsTr ? 'Rehber: ' : acIsEs ? 'Guía: ' : acIsFr ? 'Guide\u202f: ' : 'Guide: ';
   const path = document.getElementById('path');
   path.innerHTML = STEPS.map((step, i) => {
     const done = isStepDone(step);
@@ -338,7 +364,7 @@ function finishCapstone() {
   const body = document.getElementById('quiz-body');
   if (passed) {
     localStorage.setItem('dsk_academy_graduated', '1');
-    if (window.DSKPoints) DSKPoints.addPoints(100, acIsTr ? "Şövalye Akademisi Mezunu" : acIsEs ? "Graduado de la Academia de Caballeros" : "Knight Academy Graduate");
+    if (window.DSKPoints) DSKPoints.addPoints(100, acIsTr ? "Şövalye Akademisi Mezunu" : acIsEs ? "Graduado de la Academia de Caballeros" : acIsFr ? "Diplôme de l’Académie des Chevaliers" : "Knight Academy Graduate");
   }
   body.innerHTML = '<div class="grad-result">' +
     '<div class="gicon">' + (passed ? '🏆' : '🛡️') + '</div>' +

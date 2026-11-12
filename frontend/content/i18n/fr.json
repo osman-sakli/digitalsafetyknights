@@ -1502,5 +1502,8 @@
   "arc.dash.h": "Shieldy Dash",
   "arc.dash.p": "Un seul bouton. Les messages arrivent en volant : lève le bouclier contre les pièges, laisse passer tes amis. Ça accélère.",
   "arc.run.h": "Shieldy Run 3D",
-  "arc.run.p": "Un vrai jeu de course en 3D. Fonce avec Shieldy sur la route du château, saute les caisses, ramasse les pièces. Et lis chaque message : passe dans ceux de tes amis, contourne les pièges."
+  "arc.run.p": "Un vrai jeu de course en 3D. Fonce avec Shieldy sur la route du château, saute les caisses, ramasse les pièces. Et lis chaque message : passe dans ceux de tes amis, contourne les pièges.",
+  "arc.favAria": "Ajouter aux favoris",
+  "arc.filterAria": "Filtrer",
+  "qp.defaultNick": "Chevalier"
 }

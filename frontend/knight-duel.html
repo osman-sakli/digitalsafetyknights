@@ -164,7 +164,7 @@
   <h1 id="retry-title">So Close!</h1>
   <p id="retry-sub" style="color:#cdd6ea;">Glitch got away this time — but you still learned every trick. Ready for a rematch?</p>
   <div class="btn-row">
-    <button class="btn-gold" onclick="location.reload()">⚔️ Try Again</button>
+    <button class="btn-gold" id="retry-btn" onclick="location.reload()">⚔️ Try Again</button>
     <button class="btn-ghost" onclick="location.href='/quests.html'">🎮 More Quests</button>
   </div>
 </div>
@@ -242,7 +242,7 @@ var STR = kdIsTr ? {
   realmTitle: 'Bölge 1: Kandırma (Grooming) Nöbeti', realmDesc: 'İyi gizlenmiş bir yabancının kullandığı uyarı işaretlerini fark et.',
   namePlaceholder: 'Şövalye adın', start: '⚔️ Düelloyu Başlat', continueBtn: 'Devam Et →',
   victoryTitle: "Glitch'i Yendin!", victorySub: 'Her hile, fark edildi.',
-  retryTitle: 'Çok Yaklaştın!', retrySub: "Glitch bu sefer kaçtı — ama yine de her hileyi öğrendin. Rövanş için hazır mısın?",
+  retryBtn: '⚔️ Tekrar dene', retryTitle: 'Çok Yaklaştın!', retrySub: "Glitch bu sefer kaçtı — ama yine de her hileyi öğrendin. Rövanş için hazır mısın?",
   save: '⬇️ Savaş Kartını Kaydet', more: '🎮 Daha Fazla Görev'
 } : kdIsEs ? {
   title: 'Duelo de <span class="gold">Caballeros</span>',
@@ -250,7 +250,7 @@ var STR = kdIsTr ? {
   realmTitle: 'Reino 1: Vigilancia contra el Grooming', realmDesc: 'Detecta las señales de alerta que usa un desconocido bien disfrazado en internet.',
   namePlaceholder: 'Tu nombre de Caballero', start: '⚔️ Comenzar Duelo', continueBtn: 'Continuar →',
   victoryTitle: '¡Derrotaste a Glitch!', victorySub: 'Cada truco, detectado.',
-  retryTitle: '¡Muy Cerca!', retrySub: 'Glitch escapó esta vez — pero igual aprendiste cada truco. ¿Listo para la revancha?',
+  retryBtn: '⚔️ Intentar de nuevo', retryTitle: '¡Muy Cerca!', retrySub: 'Glitch escapó esta vez — pero igual aprendiste cada truco. ¿Vamos por la revancha?',
   save: '⬇️ Guardar Tarjeta de Batalla', more: '🎮 Más Misiones'
 } : kdIsFr ? {
   title: 'Duel du <span class="gold">Chevalier</span>',
@@ -258,7 +258,7 @@ var STR = kdIsTr ? {
   realmTitle: 'Royaume 1\u202f: Veille anti-grooming', realmDesc: 'Repère les signaux d\u2019alerte d\u2019un inconnu bien déguisé sur internet.',
   namePlaceholder: 'Ton nom de Chevalier', start: '⚔️ Commencer le duel', continueBtn: 'Continuer →',
   victoryTitle: 'Tu as battu Glitch\u202f!', victorySub: 'Chaque piège, repéré.',
-  retryTitle: 'C\u2019était tout près\u202f!', retrySub: 'Glitch s\u2019en tire cette fois — mais tu as appris chaque piège quand même. On remet ça\u202f?',
+  retryBtn: '⚔️ Réessayer', retryTitle: 'C\u2019était tout près\u202f!', retrySub: 'Glitch s\u2019en tire cette fois — mais tu as appris chaque piège quand même. On remet ça\u202f?',
   save: '⬇️ Enregistrer ta carte de combat', more: '🎮 Plus de quêtes'
 } : {
   title: "Knight's <span class=\"gold\">Duel</span>",
@@ -266,7 +266,7 @@ var STR = kdIsTr ? {
   realmTitle: 'Realm 1: Grooming Watch', realmDesc: 'Spot the red flags a well-disguised stranger uses online.',
   namePlaceholder: 'Your Knight name', start: '⚔️ Start Battle', continueBtn: 'Continue →',
   victoryTitle: 'You Defeated Glitch!', victorySub: 'Every trick, spotted.',
-  retryTitle: 'So Close!', retrySub: "Glitch got away this time — but you still learned every trick. Ready for a rematch?",
+  retryBtn: '⚔️ Try Again', retryTitle: 'So Close!', retrySub: "Glitch got away this time — but you still learned every trick. Ready for a rematch?",
   save: '⬇️ Save Battle Card', more: '🎮 More Quests'
 };
 
@@ -281,6 +281,7 @@ document.getElementById('victory-title').textContent = STR.victoryTitle;
 document.getElementById('victory-sub').textContent = STR.victorySub;
 document.getElementById('retry-title').textContent = STR.retryTitle;
 document.getElementById('retry-sub').textContent = STR.retrySub;
+document.getElementById('retry-btn').textContent = STR.retryBtn;
 document.getElementById('download-btn').textContent = STR.save;
 document.querySelectorAll('.btn-ghost').forEach(function(b){ if (b.textContent.indexOf('Quests')!==-1 || b.textContent.indexOf('Görev')!==-1 || b.textContent.indexOf('Misiones')!==-1) b.textContent = STR.more; });
 

@@ -98,6 +98,7 @@
 var csLang2 = (window.DSKi18n && DSKi18n.lang) || 'en';
 var csIsTr2 = csLang2 === 'tr';
 var csIsEs2 = csLang2 === 'es';
+var csIsFr2 = csLang2 === 'fr';
 var SCENARIOS_EN = {
   gift: {
     steps: [
@@ -275,7 +276,66 @@ var SCENARIOS_ES = {
   }
 };
 
-var SCENARIOS = csIsTr2 ? SCENARIOS_TR : csIsEs2 ? SCENARIOS_ES : SCENARIOS_EN;
+var SCENARIOS_FR = {
+  gift: {
+    steps: [
+      { them: "salut !! j’ai un code de skin légendaire en trop, tu le veux ? 🎁" },
+      { them: "c’est gratuit hein, j’ai juste pas besoin de deux comptes mdr" },
+      { choices: [
+          { text: "Grave, envoie-le !", risky: true, next: 1 },
+          { text: "C’est sympa mais un peu chelou — pourquoi moi ?", risky: false, next: 2 } ] }
+    ],
+    branches: {
+      1: { them: "trop bien ! par contre envoie-moi d’abord tes identifiants, comme ça je te l’« offre » direct sur ton compte 😊", choices: [
+            { text: "Ok, voilà mon mot de passe", risky: true, end: 'risky', endMsg: "Ne donne jamais ton mot de passe — même pour un « cadeau gratuit ». C’est exactement comme ça qu’on se fait voler son compte." },
+            { text: "Attends, je le sens pas de donner mon mot de passe", risky: false, end: 'safe', endMsg: "Exactement. Un vrai cadeau n’a jamais besoin de ton mot de passe. Tu l’as repéré juste à temps." }
+          ]},
+      2: { them: "mdr pour rien, je suis sympa c’est tout ! …bon ok, en vrai si tu m’envoies 5 € d’abord, je t’envoie le code juste après", choices: [
+            { text: "Ok, je t’envoie les 5 €", risky: true, end: 'risky', endMsg: "C’est le coup classique de l’appât : « gratuit » devient « paie juste un petit truc avant ». Un vrai cadeau ne te demande jamais de payer." },
+            { text: "Ben c’est pas vraiment gratuit alors — non merci", risky: false, end: 'safe', endMsg: "Bien vu ! Dès que « gratuit » devient « paie juste ça d’abord », ça n’a jamais été gratuit." }
+          ]}
+    }
+  },
+  info: {
+    steps: [
+      { them: "mdr t’es trop drôle 😂 et sinon t’as quel âge ?" },
+      { choices: [
+          { text: "J’ai 12 ans", risky: true, next: 1 },
+          { text: "Pourquoi tu demandes ? On parle plutôt du jeu", risky: false, next: 2 } ] }
+    ],
+    branches: {
+      1: { them: "ah ok cool. t’es dans quel collège ? mon cousin y est peut-être", choices: [
+            { text: "Je suis au [nom du collège]", risky: true, end: 'risky', endMsg: "Ton âge + le nom de ton collège, ça suffit déjà à un inconnu pour commencer à deviner exactement qui tu es et où te trouver." },
+            { text: "Je préfère pas le dire", risky: false, end: 'safe', endMsg: "Bien joué. Ce n’est jamais impoli de ne pas répondre à une question perso de quelqu’un que tu ne connais pas vraiment." }
+          ]},
+      2: { them: "ok ok mdr. bon laisse tomber le collège — c’est quoi ton adresse ? je veux t’envoyer un truc par la poste", choices: [
+            { text: "C’est [tu donnes ton adresse]", risky: true, end: 'risky', endMsg: "Un inconnu sur internet n’a jamais de vraie raison de connaître ton adresse. C’est un énorme signal d’alerte." },
+            { text: "C’est bon, t’as pas besoin de m’envoyer quoi que ce soit", risky: false, end: 'safe', endMsg: "Exactement. Une gentille proposition d’un inconnu en ligne qui a besoin de ta vraie adresse, c’est un signal d’alerte classique — et tu as coupé court direct, parfait." }
+          ]}
+    }
+  },
+  meetup: {
+    steps: [
+      { them: "on s’éclate trop quand on joue ensemble mdr" },
+      { them: "faudrait qu’on se voie en vrai un de ces jours, juste nous deux, ce serait trop bien" },
+      { choices: [
+          { text: "Ouais grave, quand et où ?", risky: true, next: 1 },
+          { text: "Je vois pas en vrai les gens que je connais que sur internet", risky: false, next: 2 } ] }
+    ],
+    branches: {
+      1: { them: "trop cool ! mais ça reste entre nous, ok ? le dis pas à tes parents, ils vont juste dire non", choices: [
+            { text: "Ok, c’est notre secret", risky: true, end: 'risky', endMsg: "Un rendez-vous en vrai ET qu’on te demande de le cacher à tes parents : c’est l’une des pires combinaisons de signaux d’alerte qui existent." },
+            { text: "En fait, je vais en parler à mes parents", risky: false, end: 'safe', endMsg: "Exactement — quelqu’un qui insiste pour garder un rendez-vous secret te montre précisément pourquoi tu ne devrais pas y aller." }
+          ]},
+      2: { them: "oh allez, depuis le temps tu me fais toujours pas confiance ?", choices: [
+            { text: "Si si, ok on se voit alors", risky: true, end: 'risky', endMsg: "La culpabilisation (« tu me fais pas confiance ? ») est une technique de pression. Une confiance construite uniquement à travers un écran n’est jamais une raison de se voir en tête-à-tête." },
+            { text: "C’est pas une question de confiance, je vois juste pas mes amis d’internet en vrai sans qu’un parent soit au courant", risky: false, end: 'safe', endMsg: "Parfait. C’est exactement la règle du Chevalier : pas de rendez-vous en vrai avec quelqu’un rencontré en ligne sans qu’un adulte de confiance soit dans la boucle." }
+          ]}
+    }
+  }
+};
+
+var SCENARIOS = csIsTr2 ? SCENARIOS_TR : csIsEs2 ? SCENARIOS_ES : csIsFr2 ? SCENARIOS_FR : SCENARIOS_EN;
 var current = null, stepIndex = 0;
 
 function startScenario(key) {
@@ -340,14 +400,14 @@ function finishScenario(result, msg) {
     var log = document.getElementById('chat-log');
     var banner = document.createElement('div');
     banner.className = 'end-banner ' + result;
-    var prefix = csIsTr2 ? (result === 'safe' ? '🛡️ Kalkanını kaldır! ' : '⚠️ Dikkat et — ') : csIsEs2 ? (result === 'safe' ? '🛡️ ¡Escudo arriba! ' : '⚠️ Cuidado — ') : (result === 'safe' ? '🛡️ Shield up! ' : '⚠️ Watch out — ');
+    var prefix = csIsTr2 ? (result === 'safe' ? '🛡️ Kalkanını kaldır! ' : '⚠️ Dikkat et — ') : csIsEs2 ? (result === 'safe' ? '🛡️ ¡Escudo arriba! ' : '⚠️ Cuidado — ') : csIsFr2 ? (result === 'safe' ? '🛡️ Bouclier levé\u202f! ' : '⚠️ Attention — ') : (result === 'safe' ? '🛡️ Shield up! ' : '⚠️ Watch out — ');
     banner.textContent = prefix + msg;
     log.appendChild(banner);
     log.scrollTop = log.scrollHeight;
 
     var restart = document.createElement('button');
     restart.className = 'restart-btn';
-    restart.textContent = csIsTr2 ? '🔁 Başka Bir Senaryo Dene' : csIsEs2 ? '🔁 Probar Otro Escenario' : '🔁 Try Another Scenario';
+    restart.textContent = csIsTr2 ? '🔁 Başka Bir Senaryo Dene' : csIsEs2 ? '🔁 Probar Otro Escenario' : csIsFr2 ? '🔁 Essayer un autre scénario' : '🔁 Try Another Scenario';
     restart.onclick = function() {
       document.getElementById('chat-window').classList.remove('active');
       document.getElementById('menu').style.display = 'block';
@@ -355,7 +415,7 @@ function finishScenario(result, msg) {
     document.getElementById('chat-log').parentElement.appendChild(restart);
 
     if (window.DSKPoints && result === 'safe') {
-      DSKPoints.addPoints(15, csIsTr2 ? 'Sohbet Simülatörü — güvenli cevap' : csIsEs2 ? 'Simulador de Chat — respuesta segura' : 'Chat Simulator — safe response');
+      DSKPoints.addPoints(15, csIsTr2 ? 'Sohbet Simülatörü — güvenli cevap' : csIsEs2 ? 'Simulador de Chat — respuesta segura' : csIsFr2 ? 'Simulateur de Chat — réponse sûre' : 'Chat Simulator — safe response');
     }
   }, 500);
 }

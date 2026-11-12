@@ -78,6 +78,7 @@
 var fcLang = (window.DSKi18n && DSKi18n.lang) || 'en';
 var fcIsTr = fcLang === 'tr';
 var fcIsEs = fcLang === 'es';
+var fcIsFr = fcLang === 'fr';
 var ITEMS_EN = [
   { id: 'firstname', label: 'First name', weight: 1 },
   { id: 'fullname', label: 'Full real name', weight: 3 },
@@ -123,8 +124,23 @@ var ITEMS_ES = [
   { id: 'phone', label: 'Número de teléfono', weight: 4 }
 ];
 
-var ITEMS = fcIsTr ? ITEMS_TR : fcIsEs ? ITEMS_ES : ITEMS_EN;
-var FC_WEIGHT = fcIsTr ? 'ağırlık' : fcIsEs ? 'peso' : 'weight';
+var ITEMS_FR = [
+  { id: 'firstname', label: 'Prénom', weight: 1 },
+  { id: 'fullname', label: 'Vrai prénom et nom de famille', weight: 3 },
+  { id: 'age', label: 'Âge exact ou date d’anniversaire', weight: 2 },
+  { id: 'school', label: 'Nom de l’école', weight: 3 },
+  { id: 'city', label: 'Ville ou quartier', weight: 3 },
+  { id: 'address', label: 'Adresse de la maison', weight: 5 },
+  { id: 'photo', label: 'Une photo nette du visage', weight: 3 },
+  { id: 'schedule', label: 'Habitudes de la semaine (par ex. «\u202fà l’entraînement tous les mardis à 16\u00a0h\u202f»)', weight: 4 },
+  { id: 'family', label: 'Prénoms des membres de la famille', weight: 3 },
+  { id: 'vacation', label: 'Localisation en direct / posts du genre «\u202fen vacances en ce moment\u202f»', weight: 4 },
+  { id: 'pet', label: 'Nom de l’animal de compagnie (souvent réutilisé comme réponse à une question secrète)', weight: 1 },
+  { id: 'phone', label: 'Numéro de téléphone', weight: 4 }
+];
+
+var ITEMS = fcIsTr ? ITEMS_TR : fcIsEs ? ITEMS_ES : fcIsFr ? ITEMS_FR : ITEMS_EN;
+var FC_WEIGHT = fcIsTr ? 'ağırlık' : fcIsEs ? 'peso' : fcIsFr ? 'poids' : 'weight';
 
 var MAX_SCORE = ITEMS.reduce(function(sum, i) { return sum + i.weight; }, 0);
 
@@ -160,6 +176,12 @@ function update() {
     else if (pct < 0.5) { label = 'Empezando a definirse'; desc = 'Un desconocido paciente podría empezar a adivinar quién es esta persona.'; }
     else if (pct < 0.75) { label = 'Reconocible'; desc = 'Esto es suficiente para que alguien identifique e incluso ubique a esta persona.'; }
     else { label = 'Totalmente expuesto'; desc = 'Un desconocido realmente podría encontrar, reconocer y predecir dónde encontrar a esta persona en la vida real.'; }
+  } else if (fcIsFr) {
+    if (pct === 0) { label = 'Rien de partagé pour l’instant'; desc = 'Un inconnu qui rassemblerait tout ça ne saurait… rien.'; }
+    else if (pct < 0.25) { label = 'À peine visible'; desc = 'Encore plutôt anonyme — un inconnu n’a presque rien à se mettre sous la dent.'; }
+    else if (pct < 0.5) { label = 'Ça se précise'; desc = 'Un inconnu patient pourrait commencer à deviner de qui il s’agit.'; }
+    else if (pct < 0.75) { label = 'Reconnaissable'; desc = 'C’est assez pour que quelqu’un identifie cette personne, et la retrouve même.'; }
+    else { label = 'Totalement à découvert'; desc = 'Un inconnu pourrait vraiment retrouver cette personne, la reconnaître et deviner où la croiser dans la vraie vie.'; }
   } else {
     if (pct === 0) { label = 'Nothing shared yet'; desc = 'A stranger piecing this together would know... nothing.'; }
     else if (pct < 0.25) { label = 'Barely visible'; desc = 'Still pretty anonymous — a stranger has almost nothing to work with.'; }
@@ -173,7 +195,7 @@ function update() {
 
   if (pct >= 0.75 && window.DSKPoints && !localStorage.getItem('dsk_footprint_done')) {
     localStorage.setItem('dsk_footprint_done', '1');
-    DSKPoints.addPoints(15, fcIsTr ? 'Dijital Ayak İzi Hesaplayıcı' : fcIsEs ? 'Calculadora de Huella Digital' : 'Digital Footprint Calculator');
+    DSKPoints.addPoints(15, fcIsTr ? 'Dijital Ayak İzi Hesaplayıcı' : fcIsEs ? 'Calculadora de Huella Digital' : fcIsFr ? 'Calculateur d’empreinte numérique' : 'Digital Footprint Calculator');
   }
 }
 

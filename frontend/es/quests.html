@@ -292,6 +292,13 @@ function saveNickname() {
   showPicker();
 }
 
+// The picker can be drawn before the dictionary arrives (returning players go
+// straight to it), so redraw whatever is on screen once it lands.
+document.addEventListener('dsk-i18n-ready', () => {
+  if (!document.getElementById('picker-screen').classList.contains('hidden')) showPicker();
+  if (!document.getElementById('nickname-screen').classList.contains('hidden')) renderEmblemPicker();
+}, { once: true });
+
 function showPicker() {
   document.getElementById('nickname-screen').classList.add('hidden');
   document.getElementById('player-screen').classList.add('hidden');
@@ -304,7 +311,7 @@ function showPicker() {
     const classroomTitle = window.DSKi18n ? DSKi18n.t('qp.classroomPicker', 'Pick a quest to project') : 'Pick a quest to project';
     document.getElementById('picker-greeting').textContent = classroomTitle;
   } else {
-    const nick = localStorage.getItem(NICKNAME_KEY) || "Knight";
+    const nick = localStorage.getItem(NICKNAME_KEY) || (window.DSKi18n ? DSKi18n.t('qp.defaultNick', 'Knight') : 'Knight');
     const emblem = getEmblem();
     const welcomeText = (window.DSKi18n ? DSKi18n.t('qp.welcomeBack', 'Welcome back, {n}!') : 'Welcome back, {n}!').replace('{n}', nick);
     document.getElementById('picker-greeting').innerHTML =

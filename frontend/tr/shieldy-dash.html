@@ -292,6 +292,7 @@
 
   var snd = true, ac = null;
   try { snd = localStorage.getItem('dsk_dash_snd') !== '0'; } catch (e) {}
+  $('b-snd').setAttribute('aria-label', ({ en: 'Sound', tr: 'Ses', es: 'Sonido', fr: 'Son' })[lang]);
   function paintSnd() { $('b-snd').textContent = snd ? '🔊' : '🔇'; }
   $('b-snd').onclick = function () { snd = !snd; try { localStorage.setItem('dsk_dash_snd', snd ? '1' : '0'); } catch (e) {} paintSnd(); };
   paintSnd();

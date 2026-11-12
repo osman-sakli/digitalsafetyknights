@@ -44,12 +44,17 @@
         if (dict[key] != null) el.setAttribute(attr, dict[key]);
       });
     });
+    // Only Turkish and Spanish PDFs exist (frontend/guides, frontend/journal).
+    // Pointing a French reader at a -fr.pdf that was never made is a 404, so
+    // any other language keeps the English PDF. Add a language here only once
+    // its PDFs are in both folders.
+    var PDF_LANGS = { tr: 1, es: 1 };
     document.querySelectorAll('a[href*="/guides/"], a[href*="/journal/"]').forEach(function(a) {
       var href = a.getAttribute('href');
-      var suffix = '-' + lang + '.pdf';
-      if (/\.pdf$/i.test(href) && href.slice(-suffix.length).toLowerCase() !== suffix) {
-        a.setAttribute('href', href.replace(/(-[a-z]{2})?\.pdf$/i, suffix));
-      }
+      if (!/\.pdf$/i.test(href)) return;
+      var suffix = PDF_LANGS[lang] ? '-' + lang + '.pdf' : '.pdf';
+      var want = href.replace(/(-(?:tr|es|fr))?\.pdf$/i, suffix);
+      if (want !== href) a.setAttribute('href', want);
     });
   }
 

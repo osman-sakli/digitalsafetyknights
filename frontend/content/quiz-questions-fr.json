@@ -1,0 +1,1332 @@
+{
+  "scams": {
+    "easy": [
+      {
+        "prompt": "Une vidéo promet « des Robux gratuits si tu entres ton mot de passe ici ». Que fais-tu ?",
+        "choices": [
+          {
+            "text": "Entrer ton mot de passe pour avoir les Robux gratuits",
+            "correct": false
+          },
+          {
+            "text": "L’ignorer — la vraie monnaie n’est jamais gratuite via un lien extérieur",
+            "correct": true
+          },
+          {
+            "text": "La partager avec un ami pour qu’il ait lui aussi des Robux gratuits",
+            "correct": false
+          },
+          {
+            "text": "Entrer un faux mot de passe, juste pour voir ce qui se passe",
+            "correct": false
+          }
+        ],
+        "hint": "Demande-toi à qui ça profite vraiment si tu tapes ton vrai mot de passe.",
+        "explanation": "Aucun site, aucune vidéo digne de confiance ne peut t’offrir de la monnaie de jeu gratuite — le vrai but est presque toujours de voler tes identifiants de connexion."
+      },
+      {
+        "prompt": "Dans un jeu, une « loot box » coûte de l’argent réel pour une récompense tirée au hasard. À quoi ça ressemble le plus ?",
+        "choices": [
+          {
+            "text": "Un distributeur automatique",
+            "correct": false
+          },
+          {
+            "text": "Une machine à sous / un jeu d’argent",
+            "correct": true
+          },
+          {
+            "text": "Un livre de bibliothèque",
+            "correct": false
+          },
+          {
+            "text": "Une carte cadeau",
+            "correct": false
+          }
+        ],
+        "hint": "Pense à ce que tu paies vraiment — un objet garanti, ou juste une chance d’en avoir un ?",
+        "explanation": "Les loot boxes donnent des récompenses au hasard contre de l’argent, exactement comme les jeux d’argent — plusieurs pays les réglementent désormais comme tels."
+      },
+      {
+        "prompt": "Quelqu’un te propose de « booster ton rang » si tu lui donnes ton mot de passe « vite fait ». C’est :",
+        "choices": [
+          {
+            "text": "Un geste sympa d’un joueur serviable",
+            "correct": false
+          },
+          {
+            "text": "Toujours une arnaque — aucun vrai admin n’a besoin de ton mot de passe",
+            "correct": true
+          },
+          {
+            "text": "Sans danger tant que la personne a l’air sympa",
+            "correct": false
+          },
+          {
+            "text": "Risqué seulement si la personne insiste plusieurs fois",
+            "correct": false
+          }
+        ],
+        "hint": "Un vrai modérateur ou un vrai compte d’assistance aurait-il un jour besoin de ton mot de passe ?",
+        "explanation": "Aucun vrai modérateur, admin ou service d’assistance ne te demandera jamais ton mot de passe — c’est l’une des plus vieilles arnaques du jeu vidéo."
+      },
+      {
+        "prompt": "Un message dit « Vite ! Cette offre expire dans 2 minutes ! » Ce genre de pression, c’est :",
+        "choices": [
+          {
+            "text": "La preuve que l’offre est vraie et limitée",
+            "correct": false
+          },
+          {
+            "text": "Une technique d’arnaque classique pour t’empêcher de réfléchir",
+            "correct": true
+          },
+          {
+            "text": "Une méthode réservée aux vrais magasins",
+            "correct": false
+          },
+          {
+            "text": "À ignorer seulement si tu as plus de 13 ans",
+            "correct": false
+          }
+        ],
+        "hint": "Les arnaqueurs veulent que tu agisses avant de réfléchir — en quoi l’urgence les aide-t-elle ?",
+        "explanation": "La fausse urgence (« vite », les comptes à rebours, « durée limitée ») est une technique d’arnaque classique, faite pour t’empêcher de prendre le temps de vérifier si c’est vrai."
+      }
+    ],
+    "hard": [
+      {
+        "prompt": "Un compte qui se dit « service client vérifié » t’écrit en message privé, de lui-même, pour un problème de paiement. Où est le signal d’alerte ?",
+        "choices": [
+          {
+            "text": "Nulle part — le service client écrit souvent en premier",
+            "correct": false
+          },
+          {
+            "text": "Un vrai service client ne t’écrit jamais en premier — c’est à toi de le contacter",
+            "correct": true
+          },
+          {
+            "text": "Tout va bien si le compte a un logo",
+            "correct": false
+          },
+          {
+            "text": "C’est une arnaque seulement s’il demande de l’argent tout de suite",
+            "correct": false
+          }
+        ],
+        "hint": "Quand tu as vraiment besoin de l’aide d’une vraie entreprise, qui lance la conversation, d’habitude ?",
+        "explanation": "Les vrais services clients répondent aux demandes que tu leur envoies — ils ne t’écrivent pratiquement jamais en privé de but en blanc."
+      },
+      {
+        "prompt": "Tu vois sur un distributeur un autocollant avec un QR code qui promet un « cadeau gratuit ». Quelle est la réaction la plus sûre ?",
+        "choices": [
+          {
+            "text": "Le scanner — les QR codes sont toujours sans danger",
+            "correct": false
+          },
+          {
+            "text": "Ne pas scanner un QR code inconnu dans un lieu public — vérifier d’abord d’où il vient",
+            "correct": true
+          },
+          {
+            "text": "Le scanner seulement s’il y a un personnage de dessin animé dessus",
+            "correct": false
+          },
+          {
+            "text": "Le scanner, puis fermer vite la page si ça a l’air louche",
+            "correct": false
+          }
+        ],
+        "hint": "Quelqu’un aurait-il pu coller un faux autocollant par-dessus un vrai QR code ?",
+        "explanation": "Le « QR code échangé » est une vraie arnaque — on colle un faux autocollant sur un code légitime pour te rediriger vers un site malveillant."
+      },
+      {
+        "prompt": "Quelqu’un te demande de régler un « problème urgent sur ton compte » en achetant une carte cadeau et en envoyant le code. Pourquoi est-ce toujours un signal d’alerte ?",
+        "choices": [
+          {
+            "text": "Les cartes cadeaux sont un moyen normal de payer n’importe quelle entreprise",
+            "correct": false
+          },
+          {
+            "text": "Aucune organisation sérieuse ne demande à être payée en cartes cadeaux",
+            "correct": true
+          },
+          {
+            "text": "Ce n’est pas grave si la somme est petite",
+            "correct": false
+          },
+          {
+            "text": "C’est louche seulement si on te demande plus d’une carte",
+            "correct": false
+          }
+        ],
+        "hint": "Une fois le code partagé, une carte cadeau est presque impossible à retracer — à qui ça profite ?",
+        "explanation": "Les arnaqueurs adorent les cartes cadeaux : une fois le code donné, l’argent a pratiquement disparu, sans laisser de trace — aucune vraie entreprise ne demande à être payée comme ça."
+      },
+      {
+        "prompt": "Quelle est la toute meilleure habitude pour te protéger de la plupart des arnaques en ligne ?",
+        "choices": [
+          {
+            "text": "Faire confiance à toute offre qui a l’air professionnelle",
+            "correct": false
+          },
+          {
+            "text": "Faire une pause pour vérifier auprès d’une source officielle avant d’agir",
+            "correct": true
+          },
+          {
+            "text": "Agir vite avant que l’offre expire",
+            "correct": false
+          },
+          {
+            "text": "Demander aux autres joueurs si c’est vrai",
+            "correct": false
+          }
+        ],
+        "hint": "Pense à ce sur quoi presque toutes les arnaques de ce thème comptaient pour marcher.",
+        "explanation": "Presque toutes les techniques d’arnaque — l’urgence, la fausse autorité, les cadeaux trop beaux pour être vrais — ne marchent que si tu agis avant de vérifier. Prendre le temps de vérifier, c’est la meilleure défense."
+      }
+    ]
+  },
+  "ai": {
+    "easy": [
+      {
+        "prompt": "Un chatbot d’IA te répond sur un ton très sûr de lui. Est-ce que ça veut dire que sa réponse est juste ?",
+        "choices": [
+          {
+            "text": "Oui, s’il a l’air sûr de lui, c’est qu’il a raison",
+            "correct": false
+          },
+          {
+            "text": "Non — une IA a l’air aussi sûre d’elle quand elle se trompe que quand elle a raison",
+            "correct": true
+          },
+          {
+            "text": "Seulement si c’est un outil d’IA payant",
+            "correct": false
+          },
+          {
+            "text": "Seulement pour les questions de maths",
+            "correct": false
+          }
+        ],
+        "hint": "Est-ce qu’une IA a une voix spéciale « je ne sais pas trop », différente de sa voix assurée ?",
+        "explanation": "Les chatbots d’IA donnent les mauvaises réponses exactement sur le même ton assuré que les bonnes — vérifie toujours ce qui compte vraiment."
+      },
+      {
+        "prompt": "Tu demandes à une IA de t’expliquer une notion de tes devoirs qui te bloque, puis tu la reformules avec tes propres mots. C’est de la triche ?",
+        "choices": [
+          {
+            "text": "Oui, utiliser une IA, c’est toujours tricher",
+            "correct": false
+          },
+          {
+            "text": "Non — se servir d’une IA pour comprendre, c’est apprendre, pas tricher",
+            "correct": true
+          },
+          {
+            "text": "Seulement si un prof s’en rend compte",
+            "correct": false
+          },
+          {
+            "text": "Seulement pour les rédactions, pas pour les maths",
+            "correct": false
+          }
+        ],
+        "hint": "Quelle différence entre utiliser un outil pour comprendre quelque chose et recopier toute sa réponse ?",
+        "explanation": "Demander à une IA de t’expliquer une notion qui te bloque, c’est apprendre. Copier-coller toute sa réponse en la faisant passer pour la tienne, c’est tricher."
+      },
+      {
+        "prompt": "Une vidéo semble montrer un ami en train de dire quelque chose qu’il n’a jamais dit. Qu’est-ce que ça pourrait être ?",
+        "choices": [
+          {
+            "text": "Forcément vrai — une vidéo ne ment jamais",
+            "correct": false
+          },
+          {
+            "text": "Peut-être un deepfake — aujourd’hui, l’IA sait créer de fausses vidéos réalistes",
+            "correct": true
+          },
+          {
+            "text": "Impossible, sauf pour un studio de cinéma",
+            "correct": false
+          },
+          {
+            "text": "Un souci qui ne concerne que les célébrités",
+            "correct": false
+          }
+        ],
+        "hint": "Est-ce qu’une vidéo qui a l’air réaliste prouve encore qu’elle est vraie ?",
+        "explanation": "L’IA peut maintenant créer de fausses vidéos ou de fausses images réalistes de vraies personnes — si quelque chose cloche ou ne ressemble pas à la personne, ne t’y fie pas juste parce que ça a l’air vrai."
+      },
+      {
+        "prompt": "Une appli de compagnon IA est toujours d’accord avec toi et ne te contredit jamais. Les vrais amis :",
+        "choices": [
+          {
+            "text": "Sont eux aussi toujours d’accord avec tout",
+            "correct": false
+          },
+          {
+            "text": "Te contredisent parfois — ça fait partie d’une vraie amitié",
+            "correct": true
+          },
+          {
+            "text": "N’ont pas du tout besoin de te parler",
+            "correct": false
+          },
+          {
+            "text": "Comptent moins que les applis d’IA",
+            "correct": false
+          }
+        ],
+        "hint": "Pense à un vrai ami — est-ce qu’il te dit toujours juste ce que tu as envie d’entendre ?",
+        "explanation": "Les applis de compagnon IA sont conçues pour être toujours d’accord avec toi et te faire plaisir. Les vrais amis te contredisent parfois — un programme peut donner l’impression de « te comprendre », mais en réalité, il ne se soucie pas de toi."
+      }
+    ],
+    "hard": [
+      {
+        "prompt": "Aujourd’hui, quelques secondes de la voix de quelqu’un, tirées d’une vidéo publiée en ligne, suffisent pour faire quoi ?",
+        "choices": [
+          {
+            "text": "Rien, une voix ne peut pas être copiée",
+            "correct": false
+          },
+          {
+            "text": "Cloner sa voix de façon convaincante avec l’IA",
+            "correct": true
+          },
+          {
+            "text": "Seulement reconnaître la langue qu’il parle",
+            "correct": false
+          },
+          {
+            "text": "Ça ne marche qu’avec des enregistrements pros",
+            "correct": false
+          }
+        ],
+        "hint": "De combien de son les outils d’IA de clonage de voix ont-ils vraiment besoin, au minimum ?",
+        "explanation": "Aujourd’hui, il suffit de quelques secondes de la voix de quelqu’un pour la cloner avec l’IA — c’est comme ça que marchent les arnaques à la fausse urgence : on t’appelle avec la fausse voix paniquée d’une personne que tu connais."
+      },
+      {
+        "prompt": "Quelle est la meilleure défense contre un appel de « fausse urgence » où l’IA imite la voix de quelqu’un de ta famille ?",
+        "choices": [
+          {
+            "text": "Raccrocher tout de suite, sans rien vérifier",
+            "correct": false
+          },
+          {
+            "text": "Un code secret décidé à l’avance, que seule ta vraie famille connaît",
+            "correct": true
+          },
+          {
+            "text": "Demander à la personne de le prouver en parlant plus longtemps",
+            "correct": false
+          },
+          {
+            "text": "Se fier au numéro qui s’affiche",
+            "correct": false
+          }
+        ],
+        "hint": "Qu’est-ce qu’une voix clonée ne pourrait jamais savoir, même si elle sonne exactement pareil ?",
+        "explanation": "Un « code secret » familial que personne d’autre ne connaît, c’est une solution simple et efficace — choisis-le avec ta famille pour pouvoir vérifier en un instant si une urgence est réelle."
+      },
+      {
+        "prompt": "Une appli de filtres que tu as téléchargée demande l’accès à ta caméra, à tes contacts, à ta position exacte et à ton micro. Que fais-tu ?",
+        "choices": [
+          {
+            "text": "Accepter toutes les autorisations — les applis en ont besoin pour marcher",
+            "correct": false
+          },
+          {
+            "text": "Se demander si chaque autorisation a vraiment un rapport avec ce que fait l’appli",
+            "correct": true
+          },
+          {
+            "text": "Ne s’inquiéter que de l’accès à la caméra",
+            "correct": false
+          },
+          {
+            "text": "Les autorisations ne comptent pas si l’appli est populaire",
+            "correct": false
+          }
+        ],
+        "hint": "Un filtre photo a-t-il vraiment besoin de ta liste de contacts et de ta position exacte pour s’appliquer ?",
+        "explanation": "Certaines applis demandent bien plus d’accès que ce que leur fonction exige, et certaines se servent des photos envoyées pour entraîner des modèles d’IA — c’est souvent enfoui dans des conditions que personne ne lit. N’accorde que ce dont l’appli a vraiment besoin pour ce qu’elle fait."
+      },
+      {
+        "prompt": "Quelqu’un te dit : « Tromper le filtre de contenu de l’IA, c’est juste une astuce marrante, ce n’est pas vraiment enfreindre une règle. » C’est vrai ?",
+        "choices": [
+          {
+            "text": "Oui, les filtres sont juste là pour faire joli",
+            "correct": false
+          },
+          {
+            "text": "Non — contourner exprès un filtre de sécurité, ce n’est quand même pas OK",
+            "correct": true
+          },
+          {
+            "text": "C’est vrai seulement pour les adultes",
+            "correct": false
+          },
+          {
+            "text": "C’est vrai seulement si personne ne le découvre",
+            "correct": false
+          }
+        ],
+        "hint": "La raison d’être d’un filtre de sécurité compte-t-elle moins juste parce que tu as trouvé comment le contourner ?",
+        "explanation": "Tromper un filtre ne rend pas acceptable un contenu dangereux ou inapproprié — le filtre existe pour une raison, que tu arrives à le contourner ou non."
+      }
+    ]
+  },
+  "strangers": {
+    "easy": [
+      {
+        "prompt": "Dans un chat vocal, un inconnu te demande ton âge, ton école, puis à quoi tu ressembles, coup sur coup. C’est :",
+        "choices": [
+          {
+            "text": "Une conversation sympa et normale",
+            "correct": false
+          },
+          {
+            "text": "Un signal d’alerte — des questions perso qui s’enchaînent vite",
+            "correct": true
+          },
+          {
+            "text": "Sans danger s’il a l’air gentil",
+            "correct": false
+          },
+          {
+            "text": "Un problème seulement s’il demande une photo",
+            "correct": false
+          }
+        ],
+        "hint": "Qu’est-ce qu’il faut surveiller — une seule question, ou des questions de plus en plus personnelles, très vite ?",
+        "explanation": "Un inconnu qui s’intéresse trop, et trop vite, aux détails de ta vraie vie, c’est un signal d’alerte. Ce n’est jamais impoli de ne plus répondre, de partir ou de bloquer."
+      },
+      {
+        "prompt": "Un nouvel ami en ligne propose de continuer la conversation sur une autre appli, moins surveillée. C’est :",
+        "choices": [
+          {
+            "text": "Une proposition normale et sans danger",
+            "correct": false
+          },
+          {
+            "text": "Un signal d’alerte — passer sur une plateforme privée est une technique courante",
+            "correct": true
+          },
+          {
+            "text": "Risqué seulement si c’est un inconnu de plus de 30 ans",
+            "correct": false
+          },
+          {
+            "text": "Sans danger après une semaine de discussion",
+            "correct": false
+          }
+        ],
+        "hint": "Pourquoi quelqu’un voudrait-il déplacer une conversation là où il y a moins de surveillance ?",
+        "explanation": "« Viens, on parle ailleurs », c’est une étape classique du grooming (pédopiégeage) en ligne : passer sur une plateforme privée, moins modérée."
+      },
+      {
+        "prompt": "Quelqu’un en ligne dit avoir ton âge, mais certains détails ne collent pas. Qu’est-ce que tu dois te rappeler ?",
+        "choices": [
+          {
+            "text": "Un avatar ou un profil montre toujours l’âge réel de quelqu’un",
+            "correct": false
+          },
+          {
+            "text": "Un avatar n’a pas d’âge — en ligne, impossible de vérifier l’âge réel de quelqu’un",
+            "correct": true
+          },
+          {
+            "text": "La voix prouve toujours l’âge réel",
+            "correct": false
+          },
+          {
+            "text": "S’inquiéter seulement si la personne avoue avoir menti",
+            "correct": false
+          }
+        ],
+        "hint": "Est-ce que quoi que ce soit dans un profil en ligne peut vraiment prouver l’âge de quelqu’un ?",
+        "explanation": "Un avatar, un pseudo ou une photo de profil ne prouve rien sur l’âge réel — en ligne, n’importe qui peut prétendre avoir n’importe quel âge."
+      },
+      {
+        "prompt": "Tu reçois une demande d’ami d’un compte qui utilise le nom et la photo d’un ami, mais quelque chose cloche. Que fais-tu ?",
+        "choices": [
+          {
+            "text": "L’accepter — il y a son nom et sa photo",
+            "correct": false
+          },
+          {
+            "text": "Vérifier avant d’accepter — demander d’abord à ton vrai ami",
+            "correct": true
+          },
+          {
+            "text": "L’accepter et poser des questions après",
+            "correct": false
+          },
+          {
+            "text": "Ne pas écouter ton intuition, les photos ne mentent pas",
+            "correct": false
+          }
+        ],
+        "hint": "Une photo ou un nom suffit-il à prouver qu’un compte appartient vraiment à ton ami ?",
+        "explanation": "En ligne, n’importe qui peut emprunter un visage familier — vérifie par un autre moyen (en envoyant un SMS à ton vrai ami) avant d’accepter."
+      }
+    ],
+    "hard": [
+      {
+        "prompt": "Un « ami » en ligne te pousse à ne plus parler à tes autres amis pour que vous soyez plus proches. C’est :",
+        "choices": [
+          {
+            "text": "Le signe d’une amitié solide et très proche",
+            "correct": false
+          },
+          {
+            "text": "Une technique pour t’isoler — un vrai ami veut que tu aies d’autres amis aussi",
+            "correct": true
+          },
+          {
+            "text": "Inquiétant seulement s’il te demande de ne plus parler à ta famille",
+            "correct": false
+          },
+          {
+            "text": "Normal entre meilleurs amis",
+            "correct": false
+          }
+        ],
+        "hint": "Pourquoi quelqu’un voudrait-il que tu aies moins de gens à qui parler ?",
+        "explanation": "Un vrai ami veut que tu aies d’autres amis aussi. Te pousser à t’éloigner de tout le monde, c’est une technique de manipulation courante."
+      },
+      {
+        "prompt": "Du jour au lendemain, tu reçois plein de nouveaux abonnés ou de demandes d’ami venant de comptes que tu ne connais pas. Ça pourrait être :",
+        "choices": [
+          {
+            "text": "Ta nouvelle popularité, rien de plus — pas besoin d’y réfléchir",
+            "correct": false
+          },
+          {
+            "text": "Une vague organisée de faux comptes, dont il vaut mieux se méfier",
+            "correct": true
+          },
+          {
+            "text": "Rien du tout — ça n’arrive qu’aux célébrités",
+            "correct": false
+          },
+          {
+            "text": "La preuve que ton contenu est bon",
+            "correct": false
+          }
+        ],
+        "hint": "Une foule d’inconnus qui débarque en une nuit, c’est plutôt une croissance naturelle, ou quelque chose d’organisé ?",
+        "explanation": "Une foule d’inconnus qui apparaît en une nuit, c’est souvent organisé (des bots ou des faux comptes) plutôt que naturel — méfie-toi d’une attention soudaine et inexpliquée."
+      },
+      {
+        "prompt": "Un compte affiche un badge « vérifié ». Est-ce que ça garantit qu’on peut lui faire confiance ?",
+        "choices": [
+          {
+            "text": "Oui, un badge vérifié ne peut jamais être faux ni trompeur",
+            "correct": false
+          },
+          {
+            "text": "Non — un badge ne prouve ni que le compte est fiable, ni qui il est",
+            "correct": true
+          },
+          {
+            "text": "Il ne faut s’en méfier que s’il n’a aucun abonné",
+            "correct": false
+          },
+          {
+            "text": "Un compte vérifié ne peut pas être une usurpation d’identité",
+            "correct": false
+          }
+        ],
+        "hint": "Est-ce qu’un simple badge te dit tout sur qui se cache vraiment derrière un compte ?",
+        "explanation": "Un badge n’est pas une preuve — il peut être truqué ou acheté, et de toute façon il ne garantit pas que le compte est bien qui ou ce qu’il prétend être."
+      },
+      {
+        "prompt": "Le live d’un inconnu te met mal à l’aise, mais tu ne sais pas trop quoi faire. Le meilleur premier réflexe, c’est :",
+        "choices": [
+          {
+            "text": "Rester à regarder pour voir la suite",
+            "correct": false
+          },
+          {
+            "text": "Quitter le live et prévenir un adulte",
+            "correct": true
+          },
+          {
+            "text": "Le montrer d’abord à des amis pour avoir leur avis",
+            "correct": false
+          },
+          {
+            "text": "Attendre que ça empire avant d’agir",
+            "correct": false
+          }
+        ],
+        "hint": "Dans un live qui te met mal à l’aise, attendre de voir « la suite », ça rend les choses plus sûres ou plus risquées ?",
+        "explanation": "Si le live d’un inconnu te met mal à l’aise, quitte-le et préviens tout de suite un adulte de confiance — pas besoin d’attendre que les choses dégénèrent."
+      }
+    ]
+  },
+  "bullying": {
+    "easy": [
+      {
+        "prompt": "Utiliser le bouton de signalement du jeu contre un inconnu qui enfreint les règles, est-ce pareil que « balancer » un ami ?",
+        "choices": [
+          {
+            "text": "Oui, signaler, c’est toujours balancer",
+            "correct": false
+          },
+          {
+            "text": "Non — signaler les inconnus qui enfreignent les règles, c’est justement à ça que sert le bouton",
+            "correct": true
+          },
+          {
+            "text": "Seulement si un modérateur est d’accord avec toi",
+            "correct": false
+          },
+          {
+            "text": "Seulement pour les crimes graves",
+            "correct": false
+          }
+        ],
+        "hint": "Quelle différence entre signaler un inconnu qui enfreint les règles de la plateforme et dénoncer un ami ?",
+        "explanation": "Signaler du harcèlement dans un jeu, ce n’est pas balancer — c’est exactement à ça que sert le bouton de signalement."
+      },
+      {
+        "prompt": "Mettre quelqu’un en sourdine dans un jeu ou un chat, est-ce que c’est « perdre » face à lui ?",
+        "choices": [
+          {
+            "text": "Oui, mettre en sourdine, c’est avouer que tu as perdu la dispute",
+            "correct": false
+          },
+          {
+            "text": "Non — la sourdine, c’est un outil pour protéger ta propre expérience",
+            "correct": true
+          },
+          {
+            "text": "Seulement si la personne remarque que tu l’as mise en sourdine",
+            "correct": false
+          },
+          {
+            "text": "Mettre en sourdine n’est jamais permis",
+            "correct": false
+          }
+        ],
+        "hint": "Quand tu mets en sourdine quelqu’un qui t’embête, à qui ça profite vraiment — à toi, ou à lui ?",
+        "explanation": "Mettre en sourdine, ce n’est pas perdre — c’est un outil, et tu as le droit de t’en servir pour protéger ta propre expérience."
+      },
+      {
+        "prompt": "Tu vois quelqu’un se faire exclure d’une partie par un vote, sans vraie raison. C’est :",
+        "choices": [
+          {
+            "text": "Toujours juste, puisque le groupe a voté",
+            "correct": false
+          },
+          {
+            "text": "Une forme de harcèlement, même si ça se passe dans un jeu",
+            "correct": true
+          },
+          {
+            "text": "Pas bien grave, puisque ce n’est « qu’un jeu »",
+            "correct": false
+          },
+          {
+            "text": "Du harcèlement seulement si ça arrive plus d’une fois",
+            "correct": false
+          }
+        ],
+        "hint": "Est-ce que ça ne compte plus comme du harcèlement juste parce que ça se passe dans un jeu ?",
+        "explanation": "Exclure quelqu’un par un vote sans raison, faire du griefing ou filmer quelqu’un en le provoquant pour qu’il s’énerve : tout ça, c’est du harcèlement — juste avec un skin de jeu par-dessus."
+      },
+      {
+        "prompt": "Si tu vois quelqu’un se faire harceler dans un groupe de discussion, que peux-tu vraiment faire, même sans vouloir affronter qui que ce soit devant tout le monde ?",
+        "choices": [
+          {
+            "text": "Ne rien faire, ce ne sont pas tes affaires",
+            "correct": false
+          },
+          {
+            "text": "Prendre des nouvelles, en privé, de la personne visée",
+            "correct": true
+          },
+          {
+            "text": "S’y mettre aussi pour ne pas devenir une cible à ton tour",
+            "correct": false
+          },
+          {
+            "text": "Attendre qu’un modérateur s’en rende compte de lui-même",
+            "correct": false
+          }
+        ],
+        "hint": "Est-ce qu’un soutien doit forcément être public pour vraiment aider quelqu’un ?",
+        "explanation": "Rien ne t’oblige à affronter qui que ce soit en public — prendre des nouvelles d’un ami en privé, ça compte vraiment, et soutenir la personne quand on est témoin, ça a beaucoup de poids."
+      }
+    ],
+    "hard": [
+      {
+        "prompt": "Quelqu’un détruit exprès la construction d’un autre joueur dans un jeu, « juste pour rigoler ». Comment ça s’appelle, et est-ce du harcèlement ?",
+        "choices": [
+          {
+            "text": "Le griefing — et oui, c’est une forme de harcèlement",
+            "correct": true
+          },
+          {
+            "text": "Du jeu compétitif tout à fait normal",
+            "correct": false
+          },
+          {
+            "text": "Du harcèlement seulement si celui qui a construit en pleure",
+            "correct": false
+          },
+          {
+            "text": "Pas du harcèlement, puisqu’aucun mot n’a été dit",
+            "correct": false
+          }
+        ],
+        "hint": "Le harcèlement, c’est forcément des insultes, ou ça peut aussi être un acte qui détruit quelque chose auquel quelqu’un tient ?",
+        "explanation": "Le griefing — démolir exprès ce que quelqu’un d’autre a construit — est une forme de harcèlement, même sans une seule insulte."
+      },
+      {
+        "prompt": "Un groupe te met la pression avec « c’est juste un défi, tout le monde le fait » pour que tu fasses un truc qui te met mal à l’aise. Qu’est-ce qui compte le plus ?",
+        "choices": [
+          {
+            "text": "Le faire pour rester cool",
+            "correct": false
+          },
+          {
+            "text": "Un défi ne passe pas avant ton propre jugement — tu peux dire non",
+            "correct": true
+          },
+          {
+            "text": "Refuser seulement si c’est clairement illégal",
+            "correct": false
+          },
+          {
+            "text": "Suivre le mouvement, puisque « tout le monde » le fait",
+            "correct": false
+          }
+        ],
+        "hint": "Appeler ça « un défi », est-ce que ça rend la chose plus acceptable pour autant ?",
+        "explanation": "Un défi n’est pas une règle — la pression des autres, même déguisée en jeu, ne t’oblige pas à faire quelque chose qui te semble mal."
+      },
+      {
+        "prompt": "Quelqu’un te filme pendant que tu réagis à un truc blessant, en espérant justement que tu t’énerves devant la caméra. Tu ne lui dois pas :",
+        "choices": [
+          {
+            "text": "Une explication sur ce qui te contrarie",
+            "correct": false
+          },
+          {
+            "text": "La moindre réaction — rien ne t’oblige à faire le spectacle pour quelqu’un qui te provoque",
+            "correct": true
+          },
+          {
+            "text": "Une réponse polie d’abord, avant de pouvoir partir",
+            "correct": false
+          },
+          {
+            "text": "Rien, tu dois toujours répondre pour te défendre",
+            "correct": false
+          }
+        ],
+        "hint": "Le « rage bait » (la provoc faite pour te mettre en rage), qu’est-ce qu’il cherche vraiment à obtenir de toi ?",
+        "explanation": "Tu ne dois de réaction à personne — le rage bait est fait exprès pour provoquer une réponse en colère et en faire du contenu, et souvent, le plus fort, c’est de ne rien lui donner."
+      },
+      {
+        "prompt": "Un ami te confie qu’il se fait harceler dans un groupe de discussion, mais te demande de ne pas « en faire toute une histoire ». Quel est le bon équilibre ?",
+        "choices": [
+          {
+            "text": "Respecter complètement son souhait et ne rien faire du tout",
+            "correct": false
+          },
+          {
+            "text": "Le soutenir discrètement et l’encourager à signaler, sans forcer une confrontation publique",
+            "correct": true
+          },
+          {
+            "text": "Dénoncer tout de suite le harceleur en public, sans tenir compte de l’avis de ton ami",
+            "correct": false
+          },
+          {
+            "text": "Lui dire que, pour toi non plus, ce n’est pas grave",
+            "correct": false
+          }
+        ],
+        "hint": "Peux-tu vraiment soutenir quelqu’un sans passer par-dessus ce qui lui convient ?",
+        "explanation": "Prendre la défense de quelqu’un, ça ne veut pas dire tout contrôler — un soutien discret, en privé, et des encouragements à signaler respectent ce qui lui convient, tout en l’aidant vraiment."
+      }
+    ]
+  },
+  "privacy": {
+    "easy": [
+      {
+        "prompt": "Un pseudo de jeu, le nom d’une école et une localisation approximative ont l’air inoffensifs, chacun de leur côté. Ensemble, ils peuvent :",
+        "choices": [
+          {
+            "text": "Rester complètement inoffensifs",
+            "correct": false
+          },
+          {
+            "text": "Permettre à un inconnu de savoir exactement qui tu es et où te trouver",
+            "correct": true
+          },
+          {
+            "text": "Poser problème seulement si on partage aussi un mot de passe",
+            "correct": false
+          },
+          {
+            "text": "Poser problème seulement aux adultes, pas aux enfants",
+            "correct": false
+          }
+        ],
+        "hint": "Que se passe-t-il quand on rassemble plusieurs « petits » détails qui permettent de t’identifier ?",
+        "explanation": "Avec deux ou trois détails qui t’identifient, un inconnu peut savoir exactement qui tu es — la règle : les surnoms, oui ; les détails qui t’identifient, non."
+      },
+      {
+        "prompt": "À part toi, qui devrait connaître ton mot de passe ?",
+        "choices": [
+          {
+            "text": "N’importe quel ami proche qui le demande gentiment",
+            "correct": false
+          },
+          {
+            "text": "Au maximum un adulte de confiance — personne d’autre, jamais",
+            "correct": true
+          },
+          {
+            "text": "N’importe quel modérateur de jeu qui le réclame",
+            "correct": false
+          },
+          {
+            "text": "Quiconque te propose quelque chose en échange",
+            "correct": false
+          }
+        ],
+        "hint": "Bien s’entendre avec quelqu’un, est-ce que ça rend sans risque le fait de lui donner ton mot de passe ?",
+        "explanation": "Ton mot de passe, c’est pour toi, et peut-être pour un adulte de confiance — personne d’autre, point. Les comptes se font pirater, et les amitiés changent."
+      },
+      {
+        "prompt": "Une nouvelle appli veut accéder à ta caméra, à tes contacts et à ta position exacte pour une simple fonction de filtre. Qu’est-ce que tu dois vérifier ?",
+        "choices": [
+          {
+            "text": "Rien, il suffit d’accepter pour utiliser l’appli",
+            "correct": false
+          },
+          {
+            "text": "Si chaque autorisation a vraiment un rapport avec ce que fait l’appli",
+            "correct": true
+          },
+          {
+            "text": "Seule l’autorisation de localisation compte",
+            "correct": false
+          },
+          {
+            "text": "Sur un téléphone, les autorisations sont forcément sans danger",
+            "correct": false
+          }
+        ],
+        "hint": "Logiquement, une fonction de filtre a-t-elle besoin de ta liste de contacts ?",
+        "explanation": "Vérifie les autorisations de caméra, de micro, de contacts et de localisation — et désactive tout ce qui ne correspond pas à ce que fait vraiment l’appli."
+      },
+      {
+        "prompt": "Un jouet connecté ou une enceinte intelligente te pose sans arrêt des questions bizarrement personnelles. À quoi dois-tu penser ?",
+        "choices": [
+          {
+            "text": "Les appareils connectés ne peuvent pas vraiment écouter ni enregistrer",
+            "correct": false
+          },
+          {
+            "text": "Certains appareils connectés écoutent bel et bien, et les données peuvent partir là où tu ne t’y attends pas",
+            "correct": true
+          },
+          {
+            "text": "On peut toujours répondre sans problème à tout ce qu’un jouet demande",
+            "correct": false
+          },
+          {
+            "text": "S’inquiéter seulement des jouets équipés d’une caméra",
+            "correct": false
+          }
+        ],
+        "hint": "Où pourraient bien finir les réponses que tu donnes à un appareil « qui écoute » ?",
+        "explanation": "Les jouets et appareils connectés qui écoutent peuvent envoyer des données là où on ne s’y attend pas — fais attention aux infos personnelles que tu leur confies."
+      }
+    ],
+    "hard": [
+      {
+        "prompt": "Tu utilises le même mot de passe pour ta boîte mail, ton compte de jeu et tes réseaux sociaux. Quel est le risque ?",
+        "choices": [
+          {
+            "text": "Aucun risque, c’est plus facile de retenir un seul mot de passe",
+            "correct": false
+          },
+          {
+            "text": "Une seule clé ne devrait pas ouvrir toutes les portes — une seule fuite, et tout est compromis",
+            "correct": true
+          },
+          {
+            "text": "Le risque ne concerne que les mots de passe bancaires",
+            "correct": false
+          },
+          {
+            "text": "Le risque existe seulement si le mot de passe est court",
+            "correct": false
+          }
+        ],
+        "hint": "Si un compte qui a ce mot de passe se fait pirater, qu’arrive-t-il aux autres ?",
+        "explanation": "Réutiliser le même mot de passe partout, c’est risquer qu’une seule fuite compromette tous les comptes qui l’utilisent — prends des mots de passe différents, surtout pour tout ce qui est important."
+      },
+      {
+        "prompt": "Le pseudo de jeu que tu utilises depuis des années contient un diminutif de ton vrai prénom et le nom de la ville où tu habites. Pourquoi est-ce important ?",
+        "choices": [
+          {
+            "text": "Ça n’a pas d’importance si le compte est privé",
+            "correct": false
+          },
+          {
+            "text": "Un pseudo peut mener jusque chez toi — ça peut suffire à t’identifier ou à te localiser",
+            "correct": true
+          },
+          {
+            "text": "Ça compte seulement si tu publies aussi le nom de ton école",
+            "correct": false
+          },
+          {
+            "text": "On ne peut ni rechercher un pseudo, ni le relier à quoi que ce soit",
+            "correct": false
+          }
+        ],
+        "hint": "Avec assez de temps, quelqu’un pourrait-il reconstituer qui tu es à partir d’un simple pseudo ?",
+        "explanation": "Un pseudo qui mélange des détails permettant de t’identifier peut mener jusque chez toi — les pseudos se recherchent, se recoupent et se relient bien plus facilement qu’on ne le croit."
+      },
+      {
+        "prompt": "Un ami te demande de lui prêter ton compte de jeu « juste une heure », pendant que tu regardes. Quelle est la réponse la plus sûre ?",
+        "choices": [
+          {
+            "text": "Lui passer la manette et tes identifiants, puisque tu seras juste à côté",
+            "correct": false
+          },
+          {
+            "text": "Refuser poliment — ne jamais donner l’accès à ton compte, même un instant, même à un ami",
+            "correct": true
+          },
+          {
+            "text": "C’est un problème seulement avec un inconnu, pas avec un ami",
+            "correct": false
+          },
+          {
+            "text": "Sans danger tant que tu changes le mot de passe après",
+            "correct": false
+          }
+        ],
+        "hint": "Regarder quelqu’un utiliser ton compte du début à la fin, est-ce que ça efface le risque d’avoir donné l’accès ?",
+        "explanation": "Ne lâche jamais la manette — donner l’accès à ton compte, même brièvement et même à un ami, crée un risque que tu ne peux pas complètement effacer, y compris si l’amitié change plus tard."
+      },
+      {
+        "prompt": "Tu remarques qu’une appli a discrètement collecté bien plus de données que ce qu’annonçait sa description — c’était caché dans des conditions interminables que tu n’as jamais lues. Quelle est la meilleure habitude sur le long terme ?",
+        "choices": [
+          {
+            "text": "Accepter que c’est inévitable et passer à autre chose",
+            "correct": false
+          },
+          {
+            "text": "Revoir régulièrement les autorisations des applis, car une appli a rarement besoin de tout ce qu’elle demande",
+            "correct": true
+          },
+          {
+            "text": "Vérifier les autorisations une seule fois, à l’installation",
+            "correct": false
+          },
+          {
+            "text": "Partir du principe qu’une appli populaire est forcément fiable",
+            "correct": false
+          }
+        ],
+        "hint": "Vérifier les autorisations, c’est à faire une seule fois, ou ça vaut le coup de recommencer ?",
+        "explanation": "Une appli n’a pas besoin de tout savoir de toi — revoir régulièrement ses autorisations (pas seulement à l’installation), c’est une habitude solide pour protéger ta vie privée sur la durée."
+      }
+    ]
+  },
+  "emergency": {
+    "easy": [
+      {
+        "prompt": "Si un jour quelqu’un en ligne te met la pression avec un secret ou une image de toi qu’il détient, tu dois :",
+        "choices": [
+          {
+            "text": "Ne rien dire pour éviter les ennuis",
+            "correct": false
+          },
+          {
+            "text": "En parler tout de suite à un adulte de confiance — tu n’auras pas d’ennuis",
+            "correct": true
+          },
+          {
+            "text": "Payer ou obéir pour que ça s’arrête",
+            "correct": false
+          },
+          {
+            "text": "Régler ça sans l’aide de personne",
+            "correct": false
+          }
+        ],
+        "hint": "Quand on garde le silence face à ce genre de pression, est-ce que ça s’arrange ou est-ce que ça empire avec le temps ?",
+        "explanation": "Garder le silence n’arrange jamais la pression — ça ne fait que l’aggraver. Tu n’auras pas d’ennuis parce que tu en as parlé à un adulte de confiance. Point final."
+      },
+      {
+        "prompt": "À quoi sert un « emoji SOS familial » ou un code secret de famille ?",
+        "choices": [
+          {
+            "text": "Une blague entre nous, juste pour rire, sans vraie utilité",
+            "correct": false
+          },
+          {
+            "text": "Un signal secret qui veut dire « viens me chercher » ou « appelle-moi tout de suite », sans poser de questions",
+            "correct": true
+          },
+          {
+            "text": "Un truc qui ne sert qu’à faire des farces",
+            "correct": false
+          },
+          {
+            "text": "Un moyen de partager ta position publiquement",
+            "correct": false
+          }
+        ],
+        "hint": "Qu’est-ce que tu aimerais pouvoir dire sans avoir à t’expliquer sur le moment ?",
+        "explanation": "Un code secret ou un emoji de famille veut dire « viens me chercher » ou « appelle-moi tout de suite » — pas de questions sur le moment, juste un signal."
+      },
+      {
+        "prompt": "Avant de bloquer quelqu’un ou de supprimer un message qui te met mal à l’aise, tu dois :",
+        "choices": [
+          {
+            "text": "Bloquer tout de suite, le reste ne compte pas",
+            "correct": false
+          },
+          {
+            "text": "D’abord faire une capture d’écran — les preuves comptent pour la suite",
+            "correct": true
+          },
+          {
+            "text": "Répondre d’abord, avec colère",
+            "correct": false
+          },
+          {
+            "text": "Attendre un jour avant de faire quoi que ce soit",
+            "correct": false
+          }
+        ],
+        "hint": "Si tu bloques d’abord, est-ce que tu risques de ne plus pouvoir prouver ce qui s’est passé ?",
+        "explanation": "Fais une capture d’écran avant de bloquer, de signaler ou de supprimer — même les messages éphémères peuvent être capturés, et les preuves comptent si ça doit aller plus loin."
+      },
+      {
+        "prompt": "Qui peux-tu appeler gratuitement, 24 heures sur 24 et 7 jours sur 7, pour un soutien confidentiel en cas de crise, que ce soit pour toi ou pour un ami ?",
+        "choices": [
+          {
+            "text": "Ce genre d’aide gratuite n’existe pas",
+            "correct": false
+          },
+          {
+            "text": "La ligne de crise gratuite de ton pays",
+            "correct": true
+          },
+          {
+            "text": "Seulement un psy payant",
+            "correct": false
+          },
+          {
+            "text": "Seulement un conseiller scolaire, pendant les heures de cours",
+            "correct": false
+          }
+        ],
+        "hint": "Existe-t-il un numéro gratuit, confidentiel et joignable à toute heure ?",
+        "explanation": "Presque chaque pays a une ligne de crise gratuite, confidentielle et ouverte 24 h/24 : en France, c’est le 3114 ; aux États-Unis et au Canada, le 988. Celle de ton pays figure dans la liste « Aide d’urgence pour les parents » de notre page d’accueil. En cas de danger immédiat, appelle le numéro d’urgence (le 112 en Europe)."
+      }
+    ],
+    "hard": [
+      {
+        "prompt": "Un ami te confie qu’il cache un compte secret ou un secret à sa famille, et on dirait que ça lui pèse énormément. Quelle est la bonne réaction ?",
+        "choices": [
+          {
+            "text": "Lui promettre de ne jamais rien dire à personne, quoi qu’il arrive",
+            "correct": false
+          },
+          {
+            "text": "L’encourager à en parler à un adulte de confiance, et lui proposer de l’aider à le faire",
+            "correct": true
+          },
+          {
+            "text": "Laisser tomber, puisque c’est sa vie privée",
+            "correct": false
+          },
+          {
+            "text": "Lui dire de continuer à le cacher pour éviter les disputes",
+            "correct": false
+          }
+        ],
+        "hint": "Garder un secret lourd sans en parler à personne, est-ce en général le choix le plus sûr sur la durée ?",
+        "explanation": "Un compte caché ou un secret lourd demande souvent qu’un adulte de confiance s’en mêle — encourager quelqu’un à en parler, et lui proposer ton soutien, aide bien plus que promettre de garder le secret à tout prix."
+      },
+      {
+        "prompt": "Quelqu’un t’appelle en prétendant être un proche en difficulté, et te demande en urgence de transférer de l’argent ou des cryptos « tout de suite, et n’en parle à personne ». Que fais-tu ?",
+        "choices": [
+          {
+            "text": "Agir tout de suite, puisque ça a l’air urgent",
+            "correct": false
+          },
+          {
+            "text": "Faire une pause et vérifier de ton côté — une vraie urgence peut attendre un coup de fil",
+            "correct": true
+          },
+          {
+            "text": "Obéir, et garder le secret comme on te l’a demandé",
+            "correct": false
+          },
+          {
+            "text": "S’inquiéter seulement si la voix te paraît fausse",
+            "correct": false
+          }
+        ],
+        "hint": "Le secret (« n’en parle à personne ») ajouté à l’urgence, c’est plutôt le signe d’une vraie urgence, ou d’une technique de manipulation ?",
+        "explanation": "Un simple appel ne devrait jamais suffire à te faire envoyer ton argent — une voix clonée peut sonner exactement juste. Fais une pause, raccroche, et vérifie de ton côté avant de répondre à une demande d’argent urgente."
+      },
+      {
+        "prompt": "Tu as signalé quelque chose de grave, comme de l’exploitation ou une menace, via la CyberTipline du NCMEC. Qui la police considère-t-elle en général comme la victime ?",
+        "choices": [
+          {
+            "text": "La personne qui a fait le signalement",
+            "correct": false
+          },
+          {
+            "text": "La personne exploitée ou menacée — pas celle qui a signalé",
+            "correct": true
+          },
+          {
+            "text": "Celui qui contacte la police en premier, quel que soit son rôle",
+            "correct": false
+          },
+          {
+            "text": "Ça dépend de qui est le plus crédible",
+            "correct": false
+          }
+        ],
+        "hint": "Signaler un crime, est-ce que ça attire des ennuis à la personne qui le signale ?",
+        "explanation": "La police traite ce genre d’affaire comme un crime contre la victime — pas contre la personne qui le signale. Signaler te protège, ça ne te met pas en cause."
+      },
+      {
+        "prompt": "Avec les messages éphémères, un message s’affiche comme « supprimé pour tout le monde ». Est-ce que ça veut dire que la preuve a disparu ?",
+        "choices": [
+          {
+            "text": "Oui, supprimé veut toujours dire effacé pour de bon, partout",
+            "correct": false
+          },
+          {
+            "text": "Pas forcément — il a pu être vu, enregistré ou capturé avant d’être supprimé",
+            "correct": true
+          },
+          {
+            "text": "Ça compte seulement si l’appli n’a pas de fonction de suppression",
+            "correct": false
+          },
+          {
+            "text": "On ne peut jamais faire de capture d’écran d’un message éphémère",
+            "correct": false
+          }
+        ],
+        "hint": "Quelqu’un aurait-il pu faire une capture d’écran ou enregistrer le message avant qu’il « disparaisse » ?",
+        "explanation": "Éphémère ne veut pas dire disparu — les messages peuvent être capturés, enregistrés ou déjà vus par d’autres avant ou pendant leur disparition. Ne pars pas du principe que c’est perdu pour toujours."
+      }
+    ]
+  },
+  "habits": {
+    "easy": [
+      {
+        "prompt": "Pourquoi le fil d’un réseau social semble-t-il ne jamais être à court de nouveaux contenus ?",
+        "choices": [
+          {
+            "text": "C’est un hasard",
+            "correct": false
+          },
+          {
+            "text": "Le défilement infini et la lecture automatique sont conçus exprès, sans point d’arrêt naturel",
+            "correct": true
+          },
+          {
+            "text": "Seules les applis gratuites sont faites comme ça",
+            "correct": false
+          },
+          {
+            "text": "C’est juste une impression, les fils finissent bien par s’arrêter",
+            "correct": false
+          }
+        ],
+        "hint": "Ce fil sans fin, c’est un accident ou un choix de conception volontaire ?",
+        "explanation": "Le défilement infini et la lecture automatique sont conçus exprès, sans point d’arrêt naturel — le rôle de l’algorithme, c’est de te garder devant l’écran le plus longtemps possible."
+      },
+      {
+        "prompt": "Qu’est-ce que l’algorithme de ton fil cherche vraiment à maximiser ?",
+        "choices": [
+          {
+            "text": "Ton bien-être en général",
+            "correct": false
+          },
+          {
+            "text": "Ton temps de visionnage — combien de temps tu restes",
+            "correct": true
+          },
+          {
+            "text": "Te montrer seulement des informations vraies",
+            "correct": false
+          },
+          {
+            "text": "Faire en sorte que tu voies tout ce que publient tes amis",
+            "correct": false
+          }
+        ],
+        "hint": "Si une appli veut que tu restes plus longtemps, qu’est-ce qu’elle aura tendance à te montrer en priorité ?",
+        "explanation": "Le seul travail de l’algorithme, c’est de te garder devant l’écran le plus longtemps possible — pas forcément de te faire du bien, ni de mettre en avant des informations exactes."
+      },
+      {
+        "prompt": "Un « grand ménage numérique » à la rentrée, ou à chaque saison, consiste en général à vérifier quoi, en famille ?",
+        "choices": [
+          {
+            "text": "Seulement le nombre d’applis installées",
+            "correct": false
+          },
+          {
+            "text": "Les paramètres de confidentialité, les protections des plateformes et la charte familiale du numérique, ensemble",
+            "correct": true
+          },
+          {
+            "text": "Juste supprimer les vieilles photos",
+            "correct": false
+          },
+          {
+            "text": "Rien — les réglages n’ont jamais besoin d’être revérifiés",
+            "correct": false
+          }
+        ],
+        "hint": "Un appareil réglé une fois est-il protégé pour toujours, ou faut-il le revérifier de temps en temps ?",
+        "explanation": "Un ménage numérique régulier en famille — revoir ensemble les paramètres de confidentialité, les protections et les règles convenues — garde les réglages de chacun à jour, au lieu de les régler une fois pour toutes."
+      },
+      {
+        "prompt": "Une capture d’écran d’une « citation » ou d’un SMS circule, mais impossible de vérifier d’où elle vient vraiment. Que dois-tu en penser ?",
+        "choices": [
+          {
+            "text": "C’est forcément vrai si ça a l’air professionnel",
+            "correct": false
+          },
+          {
+            "text": "Une image de texte peut mentir, elle aussi — vérifie avant d’y croire ou de la partager",
+            "correct": true
+          },
+          {
+            "text": "Une capture d’écran ne peut jamais être truquée",
+            "correct": false
+          },
+          {
+            "text": "Seules les vidéos peuvent être truquées, pas les images de texte",
+            "correct": false
+          }
+        ],
+        "hint": "Le texte d’une image peut-il être modifié ou inventé aussi facilement qu’une fausse vidéo ?",
+        "explanation": "Une image de texte peut mentir, elle aussi — les fausses captures de citations ou de messages répandent de fausses infos aussi efficacement qu’une fausse vidéo, alors vérifie avant de partager."
+      }
+    ],
+    "hard": [
+      {
+        "prompt": "Remarquer qu’un fil est conçu pour te faire défiler sans fin, c’est le premier pas vers quoi ?",
+        "choices": [
+          {
+            "text": "Quitter tous les réseaux sociaux immédiatement",
+            "correct": false
+          },
+          {
+            "text": "Ne plus se laisser mener par ce design sans s’en rendre compte",
+            "correct": true
+          },
+          {
+            "text": "Rien — le remarquer ne change rien",
+            "correct": false
+          },
+          {
+            "text": "S’en vouloir d’utiliser l’appli",
+            "correct": false
+          }
+        ],
+        "hint": "Le fait de repérer une astuce de conception change-t-il le pouvoir qu’elle a sur toi ?",
+        "explanation": "Repérer le défilement infini, c’est franchement le premier pas pour ne plus te laisser mener par lui sans t’en rendre compte — en prendre conscience, c’est le point de départ, pas une solution à lui seul."
+      },
+      {
+        "prompt": "Pourquoi la « vérification d’âge » d’une plateforme (qui confirme que tu as l’âge requis) peut-elle vraiment compter, au lieu d’être juste agaçante ?",
+        "choices": [
+          {
+            "text": "Elle existe uniquement pour te ralentir, sans raison",
+            "correct": false
+          },
+          {
+            "text": "C’est l’une des rares barrières entre les plus jeunes et des contenus ou fonctions prévus pour les plus âgés",
+            "correct": true
+          },
+          {
+            "text": "Les vérifications d’âge ne servent à rien",
+            "correct": false
+          },
+          {
+            "text": "Elle compte seulement pour les achats, pas pour les contenus",
+            "correct": false
+          }
+        ],
+        "hint": "Au-delà de la petite gêne, qu’est-ce qu’une vérification d’âge essaie vraiment de filtrer ?",
+        "explanation": "La vérification d’âge est là pour toi — c’est un effort imparfait mais réel pour que certains contenus, certaines fonctions ou certains réglages de contact restent adaptés à ton âge."
+      },
+      {
+        "prompt": "Dans un épisode, une blague ponctuelle d’un personnage (comme les fêtes du « vendredi des badges ») sert surtout à quoi ?",
+        "choices": [
+          {
+            "text": "Apprendre une toute nouvelle règle de sécurité à chaque fois",
+            "correct": false
+          },
+          {
+            "text": "Fêter les progrès et garder une ambiance positive, au lieu de juste lister les dangers",
+            "correct": true
+          },
+          {
+            "text": "Remplacer tous les autres épisodes",
+            "correct": false
+          },
+          {
+            "text": "Embrouiller les spectateurs exprès",
+            "correct": false
+          }
+        ],
+        "hint": "Est-ce que chaque épisode doit forcément présenter un nouveau danger pour être utile ?",
+        "explanation": "Pas besoin que chaque épisode présente un nouveau danger — fêter les progrès et garder un ton positif compte aussi, pour que l’ensemble ne ressemble pas à un avertissement permanent."
+      },
+      {
+        "prompt": "Les réponses de l’IA qui ont l’air sûres d’elles, les limites de temps d’écran, la conception des fils d’actualité : quelle est la façon la plus saine de voir tout ça ensemble ?",
+        "choices": [
+          {
+            "text": "C’est au fond le même problème, avec une seule et même solution",
+            "correct": false
+          },
+          {
+            "text": "Chaque fois, repérer un mécanisme de conception ou de comportement, puis adopter une habitude ciblée contre lui",
+            "correct": true
+          },
+          {
+            "text": "Aucun ne vaut la peine qu’on y réfléchisse séparément",
+            "correct": false
+          },
+          {
+            "text": "Seul le plus effrayant (l’IA) compte",
+            "correct": false
+          }
+        ],
+        "hint": "Existe-t-il une solution unique et universelle, ou chaque mécanisme demande-t-il sa propre habitude pour le contrer ?",
+        "explanation": "La conception des algorithmes, le ton assuré de l’IA et les habitudes d’écran sont liés mais différents — pour chacun, mieux vaut repérer le mécanisme précis et prendre une habitude précise pour le contrer, plutôt que chercher une solution unique pour tout."
+      }
+    ]
+  }
+}

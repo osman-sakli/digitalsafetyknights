@@ -1502,5 +1502,8 @@
   "arc.dash.h": "Shieldy Dash",
   "arc.dash.p": "Tek tuş. Mesajlar uçarak gelir — tuzaklara karşı kalkanı kaldır, arkadaşlarını geçir. Gittikçe hızlanır.",
   "arc.run.h": "Shieldy Run 3D",
-  "arc.run.p": "Gerçek bir 3D koşu oyunu. Shieldy ile kale yolunda koş, sandıkların üstünden atla, altınları topla. Her mesajı da oku: arkadaşlarının içinden geç, tuzakların etrafından dolaş."
+  "arc.run.p": "Gerçek bir 3D koşu oyunu. Shieldy ile kale yolunda koş, sandıkların üstünden atla, altınları topla. Her mesajı da oku: arkadaşlarının içinden geç, tuzakların etrafından dolaş.",
+  "arc.favAria": "Favorilere ekle",
+  "arc.filterAria": "Filtrele",
+  "qp.defaultNick": "Şövalye"
 }

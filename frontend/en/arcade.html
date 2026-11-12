@@ -405,6 +405,14 @@
     c.querySelector('.n').textContent = n;
   });
 
+  // Screen-reader labels: the star buttons and the filter group have no
+  // visible text, so data-i18n can't reach them.
+  function labelControls() {
+    document.querySelectorAll('.fav').forEach(function (b) { b.setAttribute('aria-label', t('arc.favAria', 'Favourite')); });
+    document.querySelector('.chips').setAttribute('aria-label', t('arc.filterAria', 'Filter'));
+  }
+  labelControls();
+
   function boot() {
     if (window.DSKPoints && DSKPoints.checkStreak) DSKPoints.checkStreak();
     paintProgress();
@@ -418,6 +426,7 @@
   document.addEventListener('dsk-i18n-ready', function () {
     paintProgress();
     document.querySelectorAll('.badge').forEach(function (b) { b.textContent = t('arc.new', 'New'); });
+    labelControls();
   }, { once: true });
 })();
 </script>

@@ -1,0 +1,1332 @@
+{
+  "scams": {
+    "easy": [
+      {
+        "prompt": "Bir video “şifreni buraya yazarsan bedava Robux” vaat ediyor. Ne yapmalısın?",
+        "choices": [
+          {
+            "text": "Bedava Robux almak için şifreni yaz",
+            "correct": false
+          },
+          {
+            "text": "Görmezden gel — gerçek oyun parası dış linklerden asla bedava gelmez",
+            "correct": true
+          },
+          {
+            "text": "Bir arkadaşınla paylaş, o da bedava Robux kazansın",
+            "correct": false
+          },
+          {
+            "text": "Ne olacağını görmek için sahte bir şifre yaz",
+            "correct": false
+          }
+        ],
+        "hint": "Gerçek şifreni yazarsan bundan asıl kimin kazançlı çıkacağını düşün.",
+        "explanation": "Hiçbir güvenilir site ya da video sana bedava oyun parası veremez — asıl amaç neredeyse her zaman giriş bilgilerini çalmaktır."
+      },
+      {
+        "prompt": "Bir oyundaki “ganimet kutusu” (loot box) rastgele bir ödül için gerçek para istiyor. Bu en çok neye benzer?",
+        "choices": [
+          {
+            "text": "Yiyecek otomatına",
+            "correct": false
+          },
+          {
+            "text": "Kumar makinesine, yani kumara",
+            "correct": true
+          },
+          {
+            "text": "Kütüphane kitabına",
+            "correct": false
+          },
+          {
+            "text": "Hediye kartına",
+            "correct": false
+          }
+        ],
+        "hint": "Aslında ne için para ödüyorsun: kesin gelecek bir eşya için mi, yoksa onu rastgele kazanma şansı için mi?",
+        "explanation": "Ganimet kutuları para karşılığında rastgele ödül verir, yani kumarla aynı mantıkla çalışır — birkaç ülke artık onları kumar gibi yasalarla düzenliyor."
+      },
+      {
+        "prompt": "Biri, şifreni “bir dakikalığına” verirsen sana “rank atlatma” teklif ediyor. Bu durum için hangisi doğru?",
+        "choices": [
+          {
+            "text": "Yardımsever bir oyuncudan gelen güzel bir jest",
+            "correct": false
+          },
+          {
+            "text": "Her zaman dolandırıcılık — hiçbir gerçek admin şifreni istemez",
+            "correct": true
+          },
+          {
+            "text": "Dostça biri gibi görünüyorsa sorun yok",
+            "correct": false
+          },
+          {
+            "text": "Sadece birden fazla kez isterse riskli olur",
+            "correct": false
+          }
+        ],
+        "hint": "Gerçek bir moderatörün ya da destek hesabının şifrene hiç ihtiyacı olur mu?",
+        "explanation": "Hiçbir gerçek moderatör, admin ya da destek hesabı şifreni asla istemez — bu, oyun dünyasının en eski dolandırıcılık numaralarından biridir."
+      },
+      {
+        "prompt": "Bir mesajda “Acele et! Bu teklif 2 dakika içinde bitiyor!” yazıyor. Bu tür bir baskı için hangisi doğru?",
+        "choices": [
+          {
+            "text": "Teklifin gerçek ve sınırlı olduğunun kanıtıdır",
+            "correct": false
+          },
+          {
+            "text": "Durup düşünmeni engellemek için kullanılan yaygın bir dolandırıcılık taktiğidir",
+            "correct": true
+          },
+          {
+            "text": "Sadece gerçek mağazaların kullandığı bir yöntemdir",
+            "correct": false
+          },
+          {
+            "text": "Sadece 13 yaşından büyüksen görmezden gelmen gereken bir şeydir",
+            "correct": false
+          }
+        ],
+        "hint": "Dolandırıcılar sen düşünmeden harekete geçmeni ister — acele ettirmek bunu neden kolaylaştırır?",
+        "explanation": "Sahte aciliyet (“acele et”, geri sayım sayaçları, “sınırlı süre”), durup bir şeyin gerçek olup olmadığını kontrol etmeni engellemek için kullanılan klasik bir dolandırıcılık taktiğidir."
+      }
+    ],
+    "hard": [
+      {
+        "prompt": "“Onaylı müşteri desteği” olduğunu söyleyen bir hesap, bir ödeme sorunu hakkında sana ilk mesajı kendisi atıyor. Buradaki uyarı işareti ne?",
+        "choices": [
+          {
+            "text": "Hiçbir şey — destek ekipleri genelde önce kendileri yazar",
+            "correct": false
+          },
+          {
+            "text": "Gerçek destek sana asla ilk yazmaz — onlara senin ulaşman gerekir",
+            "correct": true
+          },
+          {
+            "text": "Hesabın logosu varsa sorun yok",
+            "correct": false
+          },
+          {
+            "text": "Sadece peşin para isterlerse dolandırıcılıktır",
+            "correct": false
+          }
+        ],
+        "hint": "Gerçek bir şirketten yardıma ihtiyacın olduğunda konuşmayı genelde kim başlatır?",
+        "explanation": "Gerçek destek ekipleri senin açtığın destek taleplerine yanıt verir — durup dururken sana ilk yazmaları neredeyse hiç olmaz."
+      },
+      {
+        "prompt": "Bir otomatın üstünde “bedava ödül” vaat eden bir QR kod etiketi görüyorsun. En güvenli hamle ne?",
+        "choices": [
+          {
+            "text": "Okut — QR kodlar her zaman güvenlidir",
+            "correct": false
+          },
+          {
+            "text": "Herkese açık yerlerde bilmediğin QR kodları okutma — önce kaynağını doğrula",
+            "correct": true
+          },
+          {
+            "text": "Sadece üstünde çizgi film karakteri varsa okut",
+            "correct": false
+          },
+          {
+            "text": "Okut, sayfa tuhaf görünürse hemen kapat",
+            "correct": false
+          }
+        ],
+        "hint": "Biri gerçek bir QR kodun üstüne sahte bir etiket yapıştırmış olabilir mi?",
+        "explanation": "“QR kod değiştirme” gerçek bir dolandırıcılık yöntemidir — seni zararlı bir siteye yönlendirmek için gerçek kodun üstüne sahte bir etiket yapıştırılır."
+      },
+      {
+        "prompt": "Biri, “acil bir hesap sorununu” çözmek için bir hediye kartı alıp kodunu göndermeni istiyor. Bu neden her zaman bir uyarı işaretidir?",
+        "choices": [
+          {
+            "text": "Hediye kartı, her şirkete ödeme yapmanın normal bir yoludur",
+            "correct": false
+          },
+          {
+            "text": "Gerçek kurumlar asla hediye kartıyla ödeme istemez",
+            "correct": true
+          },
+          {
+            "text": "Tutar küçükse sorun yok",
+            "correct": false
+          },
+          {
+            "text": "Sadece birden fazla kart isterlerse şüphelidir",
+            "correct": false
+          }
+        ],
+        "hint": "Kod bir kez paylaşıldı mı, hediye kartı neredeyse hiç iz bırakmaz — bundan kim kazançlı çıkar?",
+        "explanation": "Dolandırıcılar hediye kartlarına bayılır, çünkü kod bir kez verildi mi para adeta buhar olur ve izi sürülemez — hiçbir gerçek şirket bu şekilde ödeme istemez."
+      },
+      {
+        "prompt": "Çevrimiçi dolandırıcılıkların çoğundan korunmak için tek bir alışkanlık seçecek olsan, en iyisi hangisi olurdu?",
+        "choices": [
+          {
+            "text": "Profesyonel görünen her teklife güvenmek",
+            "correct": false
+          },
+          {
+            "text": "Harekete geçmeden önce durup resmi bir kaynaktan doğrulamak",
+            "correct": true
+          },
+          {
+            "text": "Teklifin süresi dolmadan hemen harekete geçmek",
+            "correct": false
+          },
+          {
+            "text": "Oyundaki diğer oyunculara gerçek olup olmadığını sormak",
+            "correct": false
+          }
+        ],
+        "hint": "Bu konudaki neredeyse her dolandırıcılığın işe yaramak için neye dayandığını düşün.",
+        "explanation": "Neredeyse her dolandırıcılık taktiği — aciliyet, sahte yetkililer, gerçek olamayacak kadar iyi ödüller — ancak sen doğrulamadan harekete geçersen işe yarar. Durup kontrol etmek en güçlü savunmadır."
+      }
+    ]
+  },
+  "ai": {
+    "easy": [
+      {
+        "prompt": "Bir yapay zeka sohbet botu sana çok kendinden emin bir tonla cevap veriyor. Bu, cevabın doğru olduğu anlamına mı gelir?",
+        "choices": [
+          {
+            "text": "Evet, kendinden emin olmak doğru olmak demektir",
+            "correct": false
+          },
+          {
+            "text": "Hayır — yapay zeka yanılırken de haklıyken de aynı özgüvenle konuşur",
+            "correct": true
+          },
+          {
+            "text": "Sadece ücretli bir yapay zeka aracıysa",
+            "correct": false
+          },
+          {
+            "text": "Sadece matematik sorularında",
+            "correct": false
+          }
+        ],
+        "hint": "Yapay zekanın, kendinden emin sesinden farklı duyulan ayrı bir “emin değilim” sesi var mı?",
+        "explanation": "Yapay zeka sohbet botları yanlış cevapları da doğrular kadar kendinden emin bir tonla söyler — gerçekten önemli olan her şeyi mutlaka bir kez daha kontrol et."
+      },
+      {
+        "prompt": "Ödevde takıldığın bir konuyu yapay zekaya açıklatıyorsun, sonra kendi cümlelerinle yazıyorsun. Bu kopya çekmek sayılır mı?",
+        "choices": [
+          {
+            "text": "Evet, yapay zekanın her türlü kullanımı kopyadır",
+            "correct": false
+          },
+          {
+            "text": "Hayır — bir şeyi anlamak için yapay zeka kullanmak kopya değil, öğrenmektir",
+            "correct": true
+          },
+          {
+            "text": "Sadece öğretmen fark ederse",
+            "correct": false
+          },
+          {
+            "text": "Sadece kompozisyonlarda, matematikte değil",
+            "correct": false
+          }
+        ],
+        "hint": "Bir aracı bir şeyi anlamak için kullanmakla, verdiği cevabın tamamını kopyalamak arasındaki fark ne?",
+        "explanation": "Takıldığın bir konuyu yapay zekaya açıklatmak öğrenmektir. Cevabın tamamını kopyalayıp kendininmiş gibi sunmak ise kopyadır."
+      },
+      {
+        "prompt": "Bir videoda bir arkadaşın, aslında hiç söylemediği bir şeyi söylüyor gibi görünüyor. Bu ne olabilir?",
+        "choices": [
+          {
+            "text": "Kesinlikle gerçek — video asla yalan söylemez",
+            "correct": false
+          },
+          {
+            "text": "Bir deepfake olabilir — yapay zeka artık gerçekçi sahte videolar üretebiliyor",
+            "correct": true
+          },
+          {
+            "text": "Bir film stüdyosu yapmadıysa imkânsız",
+            "correct": false
+          },
+          {
+            "text": "Sadece ünlüleri ilgilendiren bir konu",
+            "correct": false
+          }
+        ],
+        "hint": "Bir videonun gerçekçi görünmesi artık gerçek olduğunu kanıtlar mı?",
+        "explanation": "Yapay zeka artık gerçek insanların gerçekçi sahte videolarını ya da görüntülerini üretebiliyor — bir şey tuhaf geliyorsa ya da o kişiye hiç benzemiyorsa, sırf gerçek görünüyor diye ona güvenme."
+      },
+      {
+        "prompt": "Bir yapay zeka arkadaş uygulaması sana hep hak veriyor ve asla itiraz etmiyor. Peki gerçek arkadaşlar?",
+        "choices": [
+          {
+            "text": "Onlar da her şeye hep hak verir",
+            "correct": false
+          },
+          {
+            "text": "Bazen itiraz eder — bu, gerçek arkadaşlığın bir parçasıdır",
+            "correct": true
+          },
+          {
+            "text": "Seninle hiç konuşmak zorunda değildir",
+            "correct": false
+          },
+          {
+            "text": "Yapay zeka uygulamalarından daha az önemlidir",
+            "correct": false
+          }
+        ],
+        "hint": "Gerçek bir arkadaşını düşün — sana hep sadece duymak istediklerini mi söyler?",
+        "explanation": "Yapay zeka arkadaş uygulamaları sana hep hak vermek ve seni iyi hissettirmek için tasarlanır. Gerçek arkadaşlar bazen itiraz eder — bir program seni “anlıyormuş” gibi hissettirebilir ama aslında seni umursamaz."
+      }
+    ],
+    "hard": [
+      {
+        "prompt": "Birinin paylaşılan bir videodaki birkaç saniyelik sesi bugün ne yapmaya yeter?",
+        "choices": [
+          {
+            "text": "Hiçbir şeye, ses kopyalanamaz",
+            "correct": false
+          },
+          {
+            "text": "Onun sesini yapay zekayla ikna edici şekilde klonlamaya",
+            "correct": true
+          },
+          {
+            "text": "Sadece hangi dili konuştuğunu anlamaya",
+            "correct": false
+          },
+          {
+            "text": "Sadece profesyonel kayıtlarda işe yarar",
+            "correct": false
+          }
+        ],
+        "hint": "Günümüzün yapay zeka ses klonlama araçları aslında en az ne kadar sese ihtiyaç duyuyor?",
+        "explanation": "Bugün birinin sesini yapay zekayla klonlamak için birkaç saniyelik ses yeter — ses klonuyla yapılan acil durum dolandırıcılıkları da böyle işler: Tanıdığın birinin panik içindeki sahte sesiyle seni ararlar."
+      },
+      {
+        "prompt": "Yapay zekayla klonlanmış bir aile üyesinin sesiyle gelen “sahte acil durum” aramasına karşı en iyi savunma ne?",
+        "choices": [
+          {
+            "text": "Hiç doğrulamadan telefonu hemen kapatmak",
+            "correct": false
+          },
+          {
+            "text": "Sadece gerçek ailenin bileceği, önceden belirlenmiş bir aile kod kelimesi",
+            "correct": true
+          },
+          {
+            "text": "Arayandan daha uzun konuşarak kanıtlamasını istemek",
+            "correct": false
+          },
+          {
+            "text": "Ekranda görünen numaraya güvenmek",
+            "correct": false
+          }
+        ],
+        "hint": "Klonlanmış bir ses, tıpatıp aynı duyulsa bile neyi asla bilemez?",
+        "explanation": "Kimsenin bilmediği bir aile “kod kelimesi” basit ve etkili bir çözümdür — gerçek bir acil durumu anında doğrulayabilmek için ailenle birlikte bir tane belirle."
+      },
+      {
+        "prompt": "İndirdiğin bir filtre uygulaması kamerana, rehberine, tam konumuna ve mikrofonuna erişim istiyor. Ne yapmalısın?",
+        "choices": [
+          {
+            "text": "Tüm izinleri ver — uygulamaların çalışması için bunlar gerekir",
+            "correct": false
+          },
+          {
+            "text": "Her iznin, uygulamanın yaptığı işle gerçekten ilgili olup olmadığını sorgula",
+            "correct": true
+          },
+          {
+            "text": "Sadece kamera erişimini dert et",
+            "correct": false
+          },
+          {
+            "text": "Uygulama popülerse izinlerin önemi yok",
+            "correct": false
+          }
+        ],
+        "hint": "Bir fotoğraf filtresinin, filtre uygulamak için gerçekten rehberine ve tam konumuna ihtiyacı var mı?",
+        "explanation": "Bazı uygulamalar işlevlerinin gerektirdiğinden çok daha fazla erişim ister, bazıları da yüklenen fotoğrafları yapay zeka modellerini eğitmek için kullanır — çoğu zaman da bunu kimsenin okumadığı kullanım koşullarının arasına gizler. Sadece uygulamanın asıl amacının gerektirdiği izinleri ver."
+      },
+      {
+        "prompt": "Biri sana “yapay zekanın içerik filtresini kandırmak sadece eğlenceli bir numara, aslında kural çiğnemek sayılmaz” diyor. Bu doğru mu?",
+        "choices": [
+          {
+            "text": "Evet, filtreler sadece göstermelik",
+            "correct": false
+          },
+          {
+            "text": "Hayır — bir güvenlik filtresini bilerek aşmak yine de doğru değil",
+            "correct": true
+          },
+          {
+            "text": "Sadece yetişkinler için doğru",
+            "correct": false
+          },
+          {
+            "text": "Sadece kimse fark etmezse doğru",
+            "correct": false
+          }
+        ],
+        "hint": "Bir yolunu buldun diye, güvenlik filtresinin var olma sebebi önemini yitirir mi?",
+        "explanation": "Filtreyi kandırmak, güvensiz ya da uygunsuz içeriği kabul edilebilir yapmaz — onu aşabilsen de aşamasan da filtre bir sebeple orada."
+      }
+    ]
+  },
+  "strangers": {
+    "easy": [
+      {
+        "prompt": "Sesli sohbette bir yabancı arka arkaya yaşını, okulunu ve nasıl göründüğünü sormaya başlıyor. Bu durum için hangisi doğru?",
+        "choices": [
+          {
+            "text": "Normal, arkadaşça bir sohbet",
+            "correct": false
+          },
+          {
+            "text": "Bir uyarı işareti — kişisel sorular çok hızlı tırmanıyor",
+            "correct": true
+          },
+          {
+            "text": "İyi biri gibi görünüyorsa sorun yok",
+            "correct": false
+          },
+          {
+            "text": "Sadece fotoğraf isterse sorun olur",
+            "correct": false
+          }
+        ],
+        "hint": "Asıl dikkat etmen gereken ne: tek bir soru mu, yoksa art arda hızla gelen kişisel sorular mı?",
+        "explanation": "Gerçek hayatına dair ayrıntılarla çok hızlı ve çok fazla ilgilenen bir yabancı bir uyarı işaretidir. Susmak, sohbetten çıkmak ya da engellemek asla kabalık değildir."
+      },
+      {
+        "prompt": "Çevrimiçi tanıştığın yeni bir arkadaş, sohbeti başka, daha az denetlenen bir uygulamaya taşımayı öneriyor. Bu durum için hangisi doğru?",
+        "choices": [
+          {
+            "text": "Normal ve güvenli bir öneri",
+            "correct": false
+          },
+          {
+            "text": "Bir uyarı işareti — özel bir platforma geçmek yaygın bir taktiktir",
+            "correct": true
+          },
+          {
+            "text": "Sadece 30 yaşından büyük bir yabancıysa riskli",
+            "correct": false
+          },
+          {
+            "text": "Zaten bir haftadır konuşuyorsanız sorun yok",
+            "correct": false
+          }
+        ],
+        "hint": "Biri neden bir sohbeti daha az denetlenen bir yere taşımak ister?",
+        "explanation": "“Başka bir yerde konuşalım”, çevrimiçi kandırmanın (grooming) klasik adımlarından biridir: sohbeti özel, daha az denetlenen bir platforma taşımak."
+      },
+      {
+        "prompt": "Çevrimiçi biri seninle yaşıt olduğunu söylüyor ama bazı ayrıntılar birbirini tutmuyor. Neyi unutmamalısın?",
+        "choices": [
+          {
+            "text": "Avatar ya da profil, birinin gerçek yaşını her zaman gösterir",
+            "correct": false
+          },
+          {
+            "text": "Avatarın yaşı yoktur — çevrimiçi birinin gerçek yaşını doğrulayamazsın",
+            "correct": true
+          },
+          {
+            "text": "Ses, gerçek yaşın her zaman kanıtıdır",
+            "correct": false
+          },
+          {
+            "text": "Sadece yalan söylediğini itiraf ederse endişelen",
+            "correct": false
+          }
+        ],
+        "hint": "Çevrimiçi bir profildeki herhangi bir şey, birinin gerçekte kaç yaşında olduğunu kanıtlayabilir mi?",
+        "explanation": "Avatar, kullanıcı adı ya da profil fotoğrafı gerçek yaş hakkında hiçbir şey kanıtlamaz — çevrimiçi herkes istediği yaşta olduğunu söyleyebilir."
+      },
+      {
+        "prompt": "Bir arkadaşının adını ve fotoğrafını kullanan bir hesaptan arkadaşlık isteği aldın ama içine sinmeyen bir şey var. Ne yapmalısın?",
+        "choices": [
+          {
+            "text": "Kabul et — adı da fotoğrafı da onun",
+            "correct": false
+          },
+          {
+            "text": "Kabul etmeden önce doğrula — önce gerçek arkadaşına sor",
+            "correct": true
+          },
+          {
+            "text": "Kabul et, soruları sonra sorarsın",
+            "correct": false
+          },
+          {
+            "text": "İçindeki hissi boş ver, fotoğraflar yalan söylemez",
+            "correct": false
+          }
+        ],
+        "hint": "Tek başına bir fotoğraf ya da isim, hesabın gerçekten arkadaşına ait olduğunu kanıtlayabilir mi?",
+        "explanation": "Çevrimiçi herkes tanıdık bir yüzü maske gibi takabilir — kabul etmeden önce başka bir yoldan (gerçek arkadaşına mesaj atarak) doğrula."
+      }
+    ],
+    "hard": [
+      {
+        "prompt": "Çevrimiçi bir “arkadaş”, daha yakın olabilmeniz için diğer arkadaşlarınla konuşmayı bırakmanı istiyor. Bu durum için hangisi doğru?",
+        "choices": [
+          {
+            "text": "Güçlü, yakın bir arkadaşlığın işareti",
+            "correct": false
+          },
+          {
+            "text": "Bir yalnızlaştırma taktiği — gerçek bir arkadaş başka arkadaşların da olmasını ister",
+            "correct": true
+          },
+          {
+            "text": "Sadece ailenle konuşmayı bırakmanı isterse endişe verici",
+            "correct": false
+          },
+          {
+            "text": "En iyi arkadaşlar arasında normal",
+            "correct": false
+          }
+        ],
+        "hint": "Biri neden konuşabileceğin insanların azalmasını ister?",
+        "explanation": "Gerçek bir arkadaş başka arkadaşların da olmasını ister. Seni herkesten uzaklaştırmaya çalışmak yaygın bir manipülasyon taktiğidir."
+      },
+      {
+        "prompt": "Tanımadığın hesaplardan bir gecede birdenbire çok sayıda yeni takipçi ya da arkadaşlık isteği alıyorsun. Bu ne anlama gelebilir?",
+        "choices": [
+          {
+            "text": "Artık popülersin, kafa yormaya gerek yok",
+            "correct": false
+          },
+          {
+            "text": "Dikkatli olmanı gerektiren, organize bir sahte hesap akını",
+            "correct": true
+          },
+          {
+            "text": "Hiçbir şey — bu sadece ünlülerin başına gelir",
+            "correct": false
+          },
+          {
+            "text": "İçeriğinin iyi olduğunun kanıtı",
+            "correct": false
+          }
+        ],
+        "hint": "Bir gecede birden beliren yabancı kalabalığı daha çok doğal bir büyümeye mi benziyor, yoksa organize bir işe mi?",
+        "explanation": "Bir gecede ortaya çıkan yabancı kalabalığı çoğu zaman doğal değil, organizedir (botlar ya da sahte hesaplar) — ani ve açıklanamayan ilgiye karşı temkinli ol."
+      },
+      {
+        "prompt": "Bir hesabın yanında “onaylı” tiki var. Bu, hesabın güvenilir olduğunu garanti eder mi?",
+        "choices": [
+          {
+            "text": "Evet, onay rozetleri asla taklit edilemez ya da yanıltıcı olamaz",
+            "correct": false
+          },
+          {
+            "text": "Hayır — tik, güvenilirliğin ya da kimliğin kanıtı değildir",
+            "correct": true
+          },
+          {
+            "text": "Sadece hiç takipçisi yoksa güvenilmezdir",
+            "correct": false
+          },
+          {
+            "text": "Onaylı hesaplar taklit hesap olamaz",
+            "correct": false
+          }
+        ],
+        "hint": "Tek başına bir rozet, hesabın arkasında gerçekte kimin olduğu hakkında sana her şeyi söyler mi?",
+        "explanation": "Tik bir kanıt değildir — rozetler taklit edilebilir, satın alınabilir ya da zaten hesabın iddia ettiği kişi veya şey olduğunu garanti etmez."
+      },
+      {
+        "prompt": "Bir yabancının canlı yayını seni rahatsız ediyor ama ne yapacağından emin değilsin. Atabileceğin en iyi ilk adım ne?",
+        "choices": [
+          {
+            "text": "Kal ve sonra ne olacağını izle",
+            "correct": false
+          },
+          {
+            "text": "Yayını kapat ve bir yetişkine söyle",
+            "correct": true
+          },
+          {
+            "text": "Önce fikirlerini almak için arkadaşlarınla paylaş",
+            "correct": false
+          },
+          {
+            "text": "Bir şey yapmadan önce işlerin kötüleşmesini bekle",
+            "correct": false
+          }
+        ],
+        "hint": "Seni rahatsız eden bir canlı yayında “sonra ne olacak” diye beklemek işleri daha güvenli mi yapar, daha riskli mi?",
+        "explanation": "Bir yabancının canlı yayını seni rahatsız ediyorsa yayını kapat ve hemen güvendiğin bir yetişkine söyle — işlerin kötüye gitmesini beklemene gerek yok."
+      }
+    ]
+  },
+  "bullying": {
+    "easy": [
+      {
+        "prompt": "Oyunda kuralları çiğneyen bir yabancıya karşı bildir düğmesini kullanmak, bir arkadaşını “ispiyonlamakla” aynı şey mi?",
+        "choices": [
+          {
+            "text": "Evet, bildirmek her zaman ispiyonculuktur",
+            "correct": false
+          },
+          {
+            "text": "Hayır — o düğme tam da kuralları çiğneyen yabancıları bildirmek için var",
+            "correct": true
+          },
+          {
+            "text": "Sadece bir moderatör sana hak verirse",
+            "correct": false
+          },
+          {
+            "text": "Sadece ciddi suçlar için",
+            "correct": false
+          }
+        ],
+        "hint": "Platform kurallarını çiğneyen bir yabancıyı bildirmekle bir arkadaşını ispiyonlamak arasındaki fark ne?",
+        "explanation": "Oyunda sana sataşanları bildirmek ispiyonculuk değildir — bildir düğmesi tam da bunun için var."
+      },
+      {
+        "prompt": "Bir oyunda ya da sohbette birini sessize almak, ona “yenilmek” mi demek?",
+        "choices": [
+          {
+            "text": "Evet, sessize almak tartışmayı kaybettin demektir",
+            "correct": false
+          },
+          {
+            "text": "Hayır — sessize almak, kendi deneyimini korumak için bir araçtır",
+            "correct": true
+          },
+          {
+            "text": "Sadece onu sessize aldığını fark ederse",
+            "correct": false
+          },
+          {
+            "text": "Sessize almak hiçbir zaman serbest değildir",
+            "correct": false
+          }
+        ],
+        "hint": "Seni rahatsız eden birini sessize aldığında asıl kim kazançlı çıkar — sen mi, o mu?",
+        "explanation": "Sessize almak yenilmek değildir — bu bir araçtır ve kendi deneyimini korumak için onu kullanmaya hakkın var."
+      },
+      {
+        "prompt": "Birinin ortada hiçbir sebep yokken oylamayla oyundan atıldığını görüyorsun. Bu durum için hangisi doğru?",
+        "choices": [
+          {
+            "text": "Grup oy verdiği için her zaman adildir",
+            "correct": false
+          },
+          {
+            "text": "Oyunun içinde olsa bile bir zorbalık türüdür",
+            "correct": true
+          },
+          {
+            "text": "“Sadece bir oyun” olduğu için önemli değildir",
+            "correct": false
+          },
+          {
+            "text": "Sadece birden fazla kez olursa zorbalıktır",
+            "correct": false
+          }
+        ],
+        "hint": "Bir şey oyunun içinde oluyor diye zorbalık sayılmaz mı?",
+        "explanation": "Birini sebepsiz yere oylamayla oyundan atmak, griefing yapmak ve birini kızdırıp tepkisini videoya çekmek (rage-bait) — hepsi zorbalıktır, sadece üstlerine bir oyun skin'i giymişlerdir."
+      },
+      {
+        "prompt": "Bir grup sohbetinde başka birine zorbalık yapıldığını görüyorsun ama kimseyle herkesin önünde yüzleşmek istemiyorsun. Gerçekten yapabileceğin bir şey ne?",
+        "choices": [
+          {
+            "text": "Hiçbir şey yapma, seni ilgilendirmez",
+            "correct": false
+          },
+          {
+            "text": "Hedef alınan kişiye özelden yazıp nasıl olduğunu sor",
+            "correct": true
+          },
+          {
+            "text": "Sen de hedef olmamak için onlara katıl",
+            "correct": false
+          },
+          {
+            "text": "Bir moderatörün kendiliğinden fark etmesini bekle",
+            "correct": false
+          }
+        ],
+        "hint": "Destek olmanın gerçekten işe yaraması için herkesin önünde olması mı gerekir?",
+        "explanation": "Kimseyle herkesin önünde yüzleşmek zorunda değilsin — bir arkadaşına özelden nasıl olduğunu sormak da tamamen sayılır ve destek olan bir tanık olmak çok güçlü bir şeydir."
+      }
+    ],
+    "hard": [
+      {
+        "prompt": "Biri, başka bir oyuncunun oyunda inşa ettiği yapıyı “sırf eğlencesine” bilerek yıkıyor. Buna ne denir ve bu zorbalık mı?",
+        "choices": [
+          {
+            "text": "Griefing — ve evet, bir zorbalık türüdür",
+            "correct": true
+          },
+          {
+            "text": "Sadece normal, rekabetçi bir oyun",
+            "correct": false
+          },
+          {
+            "text": "Sadece yapının sahibi ağlarsa zorbalık",
+            "correct": false
+          },
+          {
+            "text": "Tek kelime edilmediği için zorbalık değil",
+            "correct": false
+          }
+        ],
+        "hint": "Zorbalık için hakaret mi gerekir, yoksa birinin değer verdiği bir şeyi yok eden bir davranış da zorbalık olabilir mi?",
+        "explanation": "Griefing, yani başkasının yaptığı bir şeyi bilerek bozmak, tek bir hakaret içermese bile bir zorbalık türüdür."
+      },
+      {
+        "prompt": "Bir grup, içine sinmeyen bir şeyi yapman için “bu sadece bir cesaret oyunu, herkes yapıyor” diye sana baskı yapıyor. En önemli olan ne?",
+        "choices": [
+          {
+            "text": "Sıkıcı biri sanılmamak için yapmak",
+            "correct": false
+          },
+          {
+            "text": "Cesaret oyunu kendi kararının önüne geçemez — hayır diyebilirsin",
+            "correct": true
+          },
+          {
+            "text": "Sadece açıkça yasa dışıysa reddetmek",
+            "correct": false
+          },
+          {
+            "text": "“Herkes” yapıyor diye sen de yapmak",
+            "correct": false
+          }
+        ],
+        "hint": "Bir şeye “cesaret oyunu” demek, onu yapmanın gerçekten doğru olup olmadığını değiştirir mi?",
+        "explanation": "Cesaret oyunu bir kural değildir — oyun gibi sunulan akran baskısı, seni içine sinmeyen bir şeyi yapmak zorunda bırakmaz."
+      },
+      {
+        "prompt": "Biri, kamerada sinirlenmeni umarak, seni üzen bir şeye verdiğin tepkiyi kayda alıyor. Ona neyi borçlu değilsin?",
+        "choices": [
+          {
+            "text": "Neden üzgün olduğuna dair bir açıklamayı",
+            "correct": false
+          },
+          {
+            "text": "Herhangi bir tepkiyi — kimsenin oltasına gelip şov yapmak zorunda değilsin",
+            "correct": true
+          },
+          {
+            "text": "Önce kibar bir cevabı, sonra çekip gidebilirsin",
+            "correct": false
+          },
+          {
+            "text": "Hiçbir şey — kendini savunmak için her zaman cevap vermelisin",
+            "correct": false
+          }
+        ],
+        "hint": "“Öfke tuzağı” (rage-bait) senden aslında ne koparmaya çalışıyor?",
+        "explanation": "Kimseye tepki borçlu değilsin — öfke tuzağı, içerik çıkarmak için senden sinirli bir tepki koparmak üzere kurulur ve çoğu zaman en güçlü hamle ona hiç tepki vermemektir."
+      },
+      {
+        "prompt": "Bir arkadaşın, bir grup sohbetinde kendisine sürekli sataşıldığını anlatıyor ama senden “olayı büyütmemeni” istiyor. Doğru denge ne?",
+        "choices": [
+          {
+            "text": "İsteğine tamamen saygı duy ve hiçbir şey yapma",
+            "correct": false
+          },
+          {
+            "text": "Herkesin önünde bir yüzleşmeye zorlamadan sessizce destek ol ve bildirmesi için cesaretlendir",
+            "correct": true
+          },
+          {
+            "text": "Ne istediğine bakmadan sataşan kişiyi hemen herkesin önünde teşhir et",
+            "correct": false
+          },
+          {
+            "text": "Sen de ona bunun büyütülecek bir şey olmadığını söyle",
+            "correct": false
+          }
+        ],
+        "hint": "Birinin kendini rahat hissettiği sınırları çiğnemeden ona gerçekten destek olabilir misin?",
+        "explanation": "Arkadaşının yanında durmak, kontrolü ele almak demek değildir — sessizce, özelden destek olmak ve bildirmesi için cesaretlendirmek hem onun sınırlarına saygı gösterir hem de gerçekten yardım eder."
+      }
+    ]
+  },
+  "privacy": {
+    "easy": [
+      {
+        "prompt": "Bir oyun kullanıcı adı, bir okul adı ve kabaca bir konum tek başlarına zararsız görünür. Peki hepsi bir araya gelince?",
+        "choices": [
+          {
+            "text": "Yine de tamamen zararsız olabilir",
+            "correct": false
+          },
+          {
+            "text": "Bir yabancının tam olarak kim olduğunu ve seni nerede bulacağını çözmesini sağlayabilir",
+            "correct": true
+          },
+          {
+            "text": "Sadece bir şifreyle birlikte paylaşılırsa önemli olur",
+            "correct": false
+          },
+          {
+            "text": "Sadece yetişkinler için önemlidir, çocuklar için değil",
+            "correct": false
+          }
+        ],
+        "hint": "Seni tanıtan birkaç “küçük” ayrıntıyı bir araya getirince ne olur?",
+        "explanation": "Seni tanıtan iki üç ayrıntıyı yan yana koyunca bir yabancı tam olarak kim olduğunu çözebilir — kural basit: takma ad evet, seni ele veren ayrıntılar hayır."
+      },
+      {
+        "prompt": "Şifreni senden başka kim bilmeli?",
+        "choices": [
+          {
+            "text": "Kibarca isteyen her yakın arkadaş",
+            "correct": false
+          },
+          {
+            "text": "En fazla güvendiğin bir yetişkin — başka hiç kimse, asla",
+            "correct": true
+          },
+          {
+            "text": "İsteyen her oyun moderatörü",
+            "correct": false
+          },
+          {
+            "text": "Karşılığında bir şey teklif eden herkes",
+            "correct": false
+          }
+        ],
+        "hint": "Biriyle aranın iyi olması, şifreni onunla paylaşmayı güvenli yapar mı?",
+        "explanation": "Şifren senindir, belki bir de güvendiğin bir yetişkinin — başka hiç kimsenin değil, nokta. Hesaplar hacklenir, arkadaşlıklar değişir."
+      },
+      {
+        "prompt": "Yeni bir uygulama, basit bir filtre özelliği için kamerana, rehberine ve tam konumuna erişmek istiyor. Neyi kontrol etmelisin?",
+        "choices": [
+          {
+            "text": "Hiçbir şeyi — uygulamayı kullanmak için kabul etmen yeter",
+            "correct": false
+          },
+          {
+            "text": "Her iznin, uygulamanın yaptığı işle gerçekten ilgili olup olmadığını",
+            "correct": true
+          },
+          {
+            "text": "Sadece konum izni önemlidir",
+            "correct": false
+          },
+          {
+            "text": "Telefonlarda izinler zaten kendiliğinden güvenlidir",
+            "correct": false
+          }
+        ],
+        "hint": "Bir filtre özelliğinin mantıken rehberine ihtiyacı olur mu?",
+        "explanation": "Kamera, mikrofon, rehber ve konum izinlerini gözden geçir ve uygulamanın gerçekte yaptığı işe uymayan her şeyi kapat."
+      },
+      {
+        "prompt": "Akıllı bir oyuncak ya da hoparlör sana sürekli alışılmadık derecede kişisel sorular soruyor. Neyi aklında tutmalısın?",
+        "choices": [
+          {
+            "text": "Akıllı cihazlar aslında dinleyemez ya da kayıt yapamaz",
+            "correct": false
+          },
+          {
+            "text": "Bazı akıllı cihazlar gerçekten dinler ve veriler hiç beklemediğin yerlere gidebilir",
+            "correct": true
+          },
+          {
+            "text": "Bir oyuncağın sorduğu her şeye cevap vermenin hiçbir sakıncası yoktur",
+            "correct": false
+          },
+          {
+            "text": "Sadece kameralı oyuncaklar için endişelen",
+            "correct": false
+          }
+        ],
+        "hint": "“Dinleyen” bir cihaza verdiğin cevaplar aslında nereye gidiyor olabilir?",
+        "explanation": "Dinleyen akıllı oyuncaklar ve cihazlar verileri beklenmedik yerlere gönderebilir — onlarla hangi kişisel bilgileri paylaştığına dikkat et."
+      }
+    ],
+    "hard": [
+      {
+        "prompt": "E-postan, oyun hesabın ve sosyal medyan için aynı şifreyi kullanıyorsun. Risk ne?",
+        "choices": [
+          {
+            "text": "Risk yok, tek bir şifreyi hatırlamak daha kolay",
+            "correct": false
+          },
+          {
+            "text": "Tek bir anahtar her kapıyı açmamalı — bir hesap ele geçirilirse hepsi tehlikeye girer",
+            "correct": true
+          },
+          {
+            "text": "Risk sadece banka şifreleri için geçerli",
+            "correct": false
+          },
+          {
+            "text": "Risk sadece şifre kısaysa geçerli",
+            "correct": false
+          }
+        ],
+        "hint": "O şifreyi kullanan hesaplardan biri ele geçirilirse diğerlerine ne olur?",
+        "explanation": "Aynı şifreyi her yerde kullanmak, tek bir hesap ele geçirildiğinde o şifreyi kullanan bütün hesapların tehlikeye girmesi demektir — özellikle önemli olan her şey için farklı şifreler kullan."
+      },
+      {
+        "prompt": "Yıllardır kullandığın bir oyun kullanıcı adında gerçek adının kısaltması ve yaşadığın şehrin adı var. Bu neden önemli?",
+        "choices": [
+          {
+            "text": "Hesap gizliyse önemi yok",
+            "correct": false
+          },
+          {
+            "text": "Bir oyun adı eve kadar götürebilir — seni tanımaya ya da bulmaya yetebilir",
+            "correct": true
+          },
+          {
+            "text": "Sadece okulunu da paylaşırsan önemli",
+            "correct": false
+          },
+          {
+            "text": "Kullanıcı adları aranamaz ya da hiçbir şeye bağlanamaz",
+            "correct": false
+          }
+        ],
+        "hint": "Biri yeterince zaman ayırırsa, sadece bir kullanıcı adından kim olduğunu parça parça çıkarabilir mi?",
+        "explanation": "Seni tanıtan ayrıntıları birleştiren bir oyun adı eve kadar götürebilir — kullanıcı adları insanların sandığından çok daha kolay aranır, karşılaştırılır ve birbirine bağlanır."
+      },
+      {
+        "prompt": "Bir arkadaşın, sen de yanında izlerken oyun hesabını “sadece bir saatliğine” ödünç istiyor. En güvenli cevap ne?",
+        "choices": [
+          {
+            "text": "Nasılsa yanında izleyeceksin, kumandayı ya da giriş bilgilerini ver",
+            "correct": false
+          },
+          {
+            "text": "Kibarca reddet — hesabına erişimi kısa süreliğine bile, arkadaşına bile asla verme",
+            "correct": true
+          },
+          {
+            "text": "Sadece yabancıysa sorun olur, arkadaşsa olmaz",
+            "correct": false
+          },
+          {
+            "text": "Sonra şifreyi değiştireceksen sorun yok",
+            "correct": false
+          }
+        ],
+        "hint": "Birinin hesabını kullanmasını baştan sona izlemek, erişimi vermenin riskini ortadan kaldırır mı?",
+        "explanation": "Kumandayı asla teslim etme — hesap erişimini kısa süreliğine ve arkadaşına bile versen, tamamen geri alamayacağın bir risk yaratırsın; arkadaşlıkların zamanla değişebilmesi de buna dahil."
+      },
+      {
+        "prompt": "Bir uygulamanın, açıklamasında yazandan çok daha fazla veriyi sessizce topladığını fark ediyorsun — bu bilgi, hiç okumadığın karmaşık kullanım koşullarının arasına gömülmüş. Uzun vadede hangisi daha iyi bir alışkanlık?",
+        "choices": [
+          {
+            "text": "Bunu kaçınılmaz kabul edip yoluna devam etmek",
+            "correct": false
+          },
+          {
+            "text": "Uygulama izinlerini düzenli olarak gözden geçirmek, çünkü bir uygulama istediği her şeye nadiren gerçekten ihtiyaç duyar",
+            "correct": true
+          },
+          {
+            "text": "İzinleri sadece bir kez, ilk yüklerken kontrol etmek",
+            "correct": false
+          },
+          {
+            "text": "Popüler uygulamaların kendiliğinden güvenilir olduğunu varsaymak",
+            "correct": false
+          }
+        ],
+        "hint": "İzinleri gözden geçirmek bir kerelik bir iş mi, yoksa tekrar etmeye değer bir şey mi?",
+        "explanation": "Bir uygulamanın senin bütün hayatına ihtiyacı yok — izinleri düzenli olarak gözden geçirmek (sadece yüklerken bir kez değil) uzun vadede güçlü bir gizlilik alışkanlığıdır."
+      }
+    ]
+  },
+  "emergency": {
+    "easy": [
+      {
+        "prompt": "Çevrimiçi biri, senin hakkında bildiği bir sırla ya da elindeki bir görüntünle sana baskı yaparsa ne yapmalısın?",
+        "choices": [
+          {
+            "text": "Başın belaya girmesin diye sessiz kal",
+            "correct": false
+          },
+          {
+            "text": "Hemen güvendiğin bir yetişkine söyle — başın belaya girmeyecek",
+            "correct": true
+          },
+          {
+            "text": "Dursun diye para öde ya da dediğini yap",
+            "correct": false
+          },
+          {
+            "text": "Her şeyi tamamen tek başına hallet",
+            "correct": false
+          }
+        ],
+        "hint": "Baskı hakkında sessiz kalmak zamanla durumu iyileştirir mi, kötüleştirir mi?",
+        "explanation": "Sessiz kalınca baskı asla hafiflemez — sadece daha da kötüleşir. Güvendiğin bir yetişkine anlattığın için başın belaya girmeyecek. Nokta."
+      },
+      {
+        "prompt": "Ailece belirlenen bir “SOS emojisi” ya da kod kelime ne işe yarar?",
+        "choices": [
+          {
+            "text": "Gerçek bir amacı olmayan, eğlenceli bir aile içi şaka",
+            "correct": false
+          },
+          {
+            "text": "Hiç soru sorulmadan “gel beni al” ya da “beni hemen ara” anlamına gelen gizli bir işaret",
+            "correct": true
+          },
+          {
+            "text": "Sadece eşek şakaları için kullanılan bir şey",
+            "correct": false
+          },
+          {
+            "text": "Konumunu herkese açık paylaşmanın bir yolu",
+            "correct": false
+          }
+        ],
+        "hint": "O an kendini açıklamak zorunda kalmadan ne söyleyebilmek istersin?",
+        "explanation": "Ailece belirlenen bir kod kelime ya da emoji “gel beni al” veya “beni hemen ara” demektir — o an hiç soru sorulmaz, sadece bir işarettir."
+      },
+      {
+        "prompt": "Seni rahatsız eden bir mesajı silmeden ya da göndereni engellemeden önce ne yapmalısın?",
+        "choices": [
+          {
+            "text": "Hemen engelle, gerisi önemli değil",
+            "correct": false
+          },
+          {
+            "text": "Önce ekran görüntüsünü al — kanıt sonra önemli olur",
+            "correct": true
+          },
+          {
+            "text": "Önce sinirli bir cevap yaz",
+            "correct": false
+          },
+          {
+            "text": "Bir şey yapmadan önce bir gün bekle",
+            "correct": false
+          }
+        ],
+        "hint": "Önce engellersen, olanları kanıtlama şansını kaybedebilir misin?",
+        "explanation": "Engellemeden, bildirmeden ya da silmeden önce ekran görüntüsü al — kaybolan mesajlar bile kaydedilebilir ve iş daha ileri giderse kanıt çok önemli olur."
+      },
+      {
+        "prompt": "Sen ya da bir arkadaşın kriz yaşıyorsa ücretsiz, 7/24 ve gizli destek için kimi arayabilirsin?",
+        "choices": [
+          {
+            "text": "Böyle ücretsiz bir destek yok",
+            "correct": false
+          },
+          {
+            "text": "Ülkendeki ücretsiz kriz hattı",
+            "correct": true
+          },
+          {
+            "text": "Sadece ücretli bir terapist",
+            "correct": false
+          },
+          {
+            "text": "Sadece okul saatlerinde rehber öğretmen",
+            "correct": false
+          }
+        ],
+        "hint": "Ücretsiz, gizli ve günün her saati ulaşılabilen bir numara var mı?",
+        "explanation": "Neredeyse her ülkede ücretsiz, gizli ve 7/24 açık bir kriz hattı var; ABD'de bu hat 988. Kendi ülkendekini ana sayfamızdaki “Ebeveynler için Acil Yardım” listesinde bulabilirsin. Hayati bir tehlike varsa hemen 112'yi ara."
+      }
+    ],
+    "hard": [
+      {
+        "prompt": "Bir arkadaşın, ailesinden gizli bir hesabı ya da bir sırrı olduğunu anlatıyor ve bu ona çok ağır geliyor gibi görünüyor. İyi bir tepki ne olur?",
+        "choices": [
+          {
+            "text": "Ne olursa olsun kimseye söylemeyeceğine söz ver",
+            "correct": false
+          },
+          {
+            "text": "Güvendiği bir yetişkine anlatması için cesaretlendir ve bunda ona yardım etmeyi teklif et",
+            "correct": true
+          },
+          {
+            "text": "Onun özel meselesi olduğu için görmezden gel",
+            "correct": false
+          },
+          {
+            "text": "Tartışma çıkmasın diye saklamaya devam etmesini söyle",
+            "correct": false
+          }
+        ],
+        "hint": "Ağır bir sırrı tamamen tek başına taşımak, uzun vadede genelde en güvenli seçenek midir?",
+        "explanation": "Gizli bir hesap ya da ağır bir sır çoğu zaman güvenilen bir yetişkinin işin içine girmesini gerektirir — birini anlatmaya cesaretlendirmek ve ona destek olmayı teklif etmek, sırrı tamamen saklayacağına söz vermekten çok daha faydalıdır."
+      },
+      {
+        "prompt": "Biri seni arayıp başı dertte olan bir akraban olduğunu söylüyor ve “hemen şimdi, kimseye söyleme” diyerek acilen para ya da kripto göndermeni istiyor. Ne yapmalısın?",
+        "choices": [
+          {
+            "text": "Acil gibi göründüğü için hemen harekete geç",
+            "correct": false
+          },
+          {
+            "text": "Dur ve kendin ayrıca doğrula — gerçek bir acil durum, kontrol için yapılacak tek bir aramayı bekleyebilir",
+            "correct": true
+          },
+          {
+            "text": "Dediğini yap ve istediği gibi bunu sır olarak sakla",
+            "correct": false
+          },
+          {
+            "text": "Sadece sesin sahte olduğunu anlarsan endişelen",
+            "correct": false
+          }
+        ],
+        "hint": "“Kimseye söyleme” diye istenen gizlilik ile aciliyet bir araya gelince, bu genelde gerçek bir acil duruma mı işaret eder, yoksa bir manipülasyon taktiğine mi?",
+        "explanation": "Tek bir arama paranı yerinden oynatmamalı — klonlanmış bir ses tıpatıp aynı çıkabilir. Acil para isteklerine uymadan önce dur, telefonu kapat ve kendin ayrıca doğrula."
+      },
+      {
+        "prompt": "İstismar ya da tehdit gibi ciddi bir şeyi NCMEC'in CyberTipline'ı üzerinden bildirdin. Polis genelde kimi mağdur olarak görür?",
+        "choices": [
+          {
+            "text": "Bildirimi yapan kişiyi",
+            "correct": false
+          },
+          {
+            "text": "İstismar edilen ya da tehdit edilen kişiyi — bildireni değil",
+            "correct": true
+          },
+          {
+            "text": "Rolü ne olursa olsun polisle ilk iletişime geçeni",
+            "correct": false
+          },
+          {
+            "text": "Kimin daha inandırıcı olduğuna bağlı",
+            "correct": false
+          }
+        ],
+        "hint": "Bir suçu bildirmek, bildiren kişinin başını belaya sokar mı?",
+        "explanation": "Polis bu tür olayları mağdura karşı işlenmiş suçlar olarak ele alır, bildiren kişiye karşı değil. Bildirmek seni korur, seni suçlu durumuna düşürmez."
+      },
+      {
+        "prompt": "Kaybolan mesaj özelliği bir mesajı herkes için “silindi” olarak gösteriyor. Bu, kanıtın yok olduğu anlamına mı gelir?",
+        "choices": [
+          {
+            "text": "Evet, silindi demek her yerden kalıcı olarak gitti demektir",
+            "correct": false
+          },
+          {
+            "text": "Her zaman değil — silinmeden önce görülmüş, kaydedilmiş ya da ekran görüntüsü alınmış olabilir",
+            "correct": true
+          },
+          {
+            "text": "Sadece uygulamada silme özelliği yoksa önemli",
+            "correct": false
+          },
+          {
+            "text": "Kaybolan mesajların ekran görüntüsü asla alınamaz",
+            "correct": false
+          }
+        ],
+        "hint": "Biri, mesaj “kaybolmadan” önce ekran görüntüsünü almış ya da kaydetmiş olabilir mi?",
+        "explanation": "Kaybolmak, yok olmak demek değildir — mesajlar kaybolmadan önce ya da kaybolurken ekran görüntüsüyle yakalanabilir, kaydedilebilir ya da başkaları tarafından çoktan görülmüş olabilir. Geri getirilemeyeceğini varsayma."
+      }
+    ]
+  },
+  "habits": {
+    "easy": [
+      {
+        "prompt": "Sosyal medya akışında yeni içerik neden hiç bitmiyor gibi görünür?",
+        "choices": [
+          {
+            "text": "Bu bir tesadüf",
+            "correct": false
+          },
+          {
+            "text": "Sonsuz kaydırma ve otomatik oynatma, doğal bir durma noktası olmasın diye bilerek tasarlanır",
+            "correct": true
+          },
+          {
+            "text": "Sadece ücretsiz uygulamalar böyle yapılır",
+            "correct": false
+          },
+          {
+            "text": "Sadece öyle hissettiriyor, akışlar aslında biter",
+            "correct": false
+          }
+        ],
+        "hint": "Hiç bitmeyen akış bir kaza mı, yoksa bilerek yapılmış bir tasarım tercihi mi?",
+        "explanation": "Sonsuz kaydırma ve otomatik oynatma, doğal bir durma noktası olmasın diye bilerek böyle yapılır — algoritmanın işi seni olabildiğince uzun süre izlemede tutmaktır."
+      },
+      {
+        "prompt": "Akışının arkasındaki algoritma aslında neyi hedefliyor?",
+        "choices": [
+          {
+            "text": "Genel olarak iyi hissetmeni",
+            "correct": false
+          },
+          {
+            "text": "İzleme süreni — ne kadar uzun kaldığını",
+            "correct": true
+          },
+          {
+            "text": "Sana sadece doğru bilgileri göstermeyi",
+            "correct": false
+          },
+          {
+            "text": "Arkadaşlarının paylaştığı her şeyi görmeni",
+            "correct": false
+          }
+        ],
+        "hint": "Bir uygulama daha uzun kalmanı istiyorsa, sana neyi göstermeye öncelik verir?",
+        "explanation": "Algoritmanın tek işi seni olabildiğince uzun süre izlemede tutmaktır — illa ki seni iyi hissettirmek ya da doğru bilgiye öncelik vermek değil."
+      },
+      {
+        "prompt": "“Okula dönüş” ya da mevsimlik bir teknoloji sıfırlamasında genelde ailece neler kontrol edilir?",
+        "choices": [
+          {
+            "text": "Sadece kaç uygulamanın yüklü olduğu",
+            "correct": false
+          },
+          {
+            "text": "Gizlilik ayarları, platform korumaları ve aile medya anlaşması, hep birlikte",
+            "correct": true
+          },
+          {
+            "text": "Sadece eski fotoğrafları silmek",
+            "correct": false
+          },
+          {
+            "text": "Hiçbir şey — ayarların asla yeniden kontrol edilmesi gerekmez",
+            "correct": false
+          }
+        ],
+        "hint": "Bir cihaz bir kez kurulunca sonsuza dek güvenli mi kalır, yoksa ara ara gözden geçirilmesi mi gerekir?",
+        "explanation": "Ailece düzenli aralıklarla bir teknoloji sıfırlaması yapmak — gizlilik ayarlarını, korumaları ve anlaşmaları birlikte kontrol etmek — herkesin ayarlarını güncel tutar; böylece hiçbir şey bir kez yapılıp unutulmaz."
+      },
+      {
+        "prompt": "Bir “alıntının” ya da mesajın ekran görüntüsü elden ele dolaşıyor ama gerçekte nereden geldiğini doğrulayamıyorsun. Ne düşünmelisin?",
+        "choices": [
+          {
+            "text": "Profesyonel görünüyorsa kendiliğinden doğrudur",
+            "correct": false
+          },
+          {
+            "text": "Yazının fotoğrafı da yalan söyleyebilir — inanmadan ya da paylaşmadan önce doğrula",
+            "correct": true
+          },
+          {
+            "text": "Ekran görüntüleri asla sahte olamaz",
+            "correct": false
+          },
+          {
+            "text": "Sadece videolar sahte olabilir, yazı görselleri olamaz",
+            "correct": false
+          }
+        ],
+        "hint": "Bir görseldeki yazı da sahte bir video kadar kolay düzenlenebilir ya da uydurulabilir mi?",
+        "explanation": "Yazının fotoğrafı da yalan söyleyebilir — sahte alıntı ya da mesaj ekran görüntüleri yanlış bilgiyi sahte videolar kadar etkili yayar, bu yüzden paylaşmadan önce doğrula."
+      }
+    ],
+    "hard": [
+      {
+        "prompt": "Bir akışın seni kaydırmaya devam ettirmek için tasarlandığını fark etmek, neyin ilk adımıdır?",
+        "choices": [
+          {
+            "text": "Tüm sosyal medyayı hemen bırakmanın",
+            "correct": false
+          },
+          {
+            "text": "O tasarımın seni farkında olmadan yönlendirmesine izin vermemenin",
+            "correct": true
+          },
+          {
+            "text": "Hiçbir şeyin — sadece fark etmekle hiçbir şey değişmez",
+            "correct": false
+          },
+          {
+            "text": "Uygulamayı kullandığın için kendini suçlamanın",
+            "correct": false
+          }
+        ],
+        "hint": "Bir tasarım kalıbının farkında olmak, onun senin üzerindeki gücünü değiştirir mi?",
+        "explanation": "Sonsuz kaydırma tasarımını fark etmek bile, farkında olmadan onun yönlendirmesine kapılmamanın gerçekten ilk adımıdır — farkındalık bir başlangıç noktasıdır, tek başına bir çözüm değil."
+      },
+      {
+        "prompt": "Bir platformdaki “yaş kontrolü” (yeterince büyük olduğunu onayladığın adım) neden sadece can sıkıcı bir engel değil de gerçekten önemli olabilir?",
+        "choices": [
+          {
+            "text": "Hiçbir sebebi yok, sadece seni yavaşlatmak için var",
+            "correct": false
+          },
+          {
+            "text": "Küçük kullanıcılarla büyüklere yönelik içerik ve özellikler arasında duran az sayıdaki kontrolden biri",
+            "correct": true
+          },
+          {
+            "text": "Yaş kontrollerinin gerçek bir amacı yok",
+            "correct": false
+          },
+          {
+            "text": "Sadece alışverişte önemli, içerikte değil",
+            "correct": false
+          }
+        ],
+        "hint": "Yaş kontrolü, küçük bir zahmet olmanın ötesinde aslında neyi filtrelemeye çalışıyor?",
+        "explanation": "Yaş kontrolü senin için var — bazı içerikleri, özellikleri ya da iletişim ayarlarını yaşına uygun tutmaya yönelik kusurlu ama gerçek bir çaba."
+      },
+      {
+        "prompt": "Bir bölümde bir karakterin yaptığı tek seferlik bir şaka (“Rozet Cuması” kutlamaları gibi) esas olarak ne işe yarar?",
+        "choices": [
+          {
+            "text": "Her seferinde yepyeni bir güvenlik kuralı öğretmeye",
+            "correct": false
+          },
+          {
+            "text": "Sadece tehlikeleri sıralamak yerine ilerlemeyi kutlamaya ve havayı olumlu tutmaya",
+            "correct": true
+          },
+          {
+            "text": "Başka hiçbir bölüme gerek bırakmamaya",
+            "correct": false
+          },
+          {
+            "text": "İzleyicilerin kafasını bilerek karıştırmaya",
+            "correct": false
+          }
+        ],
+        "hint": "Değerli olması için her bölümün yeni bir tehlike anlatması mı gerekir?",
+        "explanation": "Her bölümün yeni bir tehlike öğretmesi gerekmez — ilerlemeyi kutlamak ve havayı olumlu tutmak da önemlidir, böylece her şey bitmek bilmeyen bir uyarı gibi hissettirmez."
+      },
+      {
+        "prompt": "Yapay zekanın kendinden emin cevaplarını, ekran süresi sınırlarını ve akış tasarımını birlikte düşünmenin en sağlıklı yolu ne?",
+        "choices": [
+          {
+            "text": "Hepsi temelde aynı sorun ve tek bir ortak çözümü var",
+            "correct": false
+          },
+          {
+            "text": "Her birinde bir tasarım ya da davranış kalıbını fark edip ona karşı özel bir alışkanlık geliştirmek gerekir",
+            "correct": true
+          },
+          {
+            "text": "Hiçbiri tek tek düşünmeye değmez",
+            "correct": false
+          },
+          {
+            "text": "Sadece en korkutucu olanı (yapay zeka) önemli",
+            "correct": false
+          }
+        ],
+        "hint": "Her şeye uyan tek bir çözüm mü var, yoksa her kalıbın kendine özel bir karşı alışkanlığa mı ihtiyacı var?",
+        "explanation": "Algoritma tasarımı, yapay zekanın kendinden emin tonu ve ekran alışkanlıkları birbiriyle bağlantılı ama farklı şeylerdir — her birinde işe yarayan, herkese uyan tek bir çözüm değil; o kalıbı fark edip ona özel bir karşı alışkanlık geliştirmektir."
+      }
+    ]
+  }
+}

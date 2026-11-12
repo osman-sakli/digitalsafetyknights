@@ -394,6 +394,7 @@
   var auditLang = (window.DSKi18n && DSKi18n.lang) || 'en';
   var auditIsTr = auditLang === 'tr';
   var auditIsEs = auditLang === 'es';
+  var auditIsFr = auditLang === 'fr';
   var TOTAL = 35;
   var checkedItems = [];
 
@@ -463,6 +464,24 @@
         badge.className = 'badge-earned grade-C';
         msg.textContent = 'Tu familia necesita mejoras de seguridad importantes. Empieza con nuestras Guías de Seguridad Familiar — cada paso cuenta.';
       }
+    } else if (auditIsFr) {
+      if (score >= 80) {
+        badge.textContent = '🏅 EXCELLENT — Niveau Sentinelle d’or';
+        badge.className = 'badge-earned grade-A';
+        msg.textContent = 'Votre famille dispose d’une excellente configuration de sécurité numérique. Continuez comme ça !';
+      } else if (score >= 60) {
+        badge.textContent = '🥈 BIEN — Niveau Garde d’argent';
+        badge.className = 'badge-earned grade-B';
+        msg.textContent = 'Une base solide, mais quelques lacunes importantes restent à combler. Consultez les recommandations ci-dessous.';
+      } else if (score >= 40) {
+        badge.textContent = '⚠️ À AMÉLIORER — Écuyer de bronze';
+        badge.className = 'badge-earned grade-B';
+        msg.textContent = 'Vous avez commencé, mais plusieurs mesures de sécurité essentielles demandent votre attention. Pas d’inquiétude — DSK a les ressources pour vous aider.';
+      } else {
+        badge.textContent = '🚨 ACTION REQUISE';
+        badge.className = 'badge-earned grade-C';
+        msg.textContent = 'Votre famille a besoin d’améliorations importantes en matière de sécurité. Commencez par nos Guides de sécurité pour les familles — chaque étape compte.';
+      }
     } else {
       if (score >= 80) {
         badge.textContent = '🏅 EXCELLENT — Gold Sentinel Level';
@@ -489,6 +508,8 @@
         '<div class="rec-item"><div class="icon">🎉</div><div class="text"><strong>Mükemmel skor!</strong> Aileniz iyi korunuyor. Bir DSK eğitimcisi olmayı ve diğer ailelere yardım etmeyi düşünün.</div></div>' :
         auditIsEs ?
         '<div class="rec-item"><div class="icon">🎉</div><div class="text"><strong>¡Puntaje perfecto!</strong> Tu familia está bien protegida. Considera convertirte en educador de DSK y ayudar a otras familias.</div></div>' :
+        auditIsFr ?
+        '<div class="rec-item"><div class="icon">🎉</div><div class="text"><strong>Score parfait !</strong> Votre famille est bien protégée. Pourquoi ne pas rejoindre l’équipe pédagogique de DSK pour aider d’autres familles ?</div></div>' :
         '<div class="rec-item"><div class="icon">🎉</div><div class="text"><strong>Perfect score!</strong> Your family is well protected. Consider becoming a DSK educator and helping other families.</div></div>';
     } else {
       var top5 = unchecked.slice(0, 5);
@@ -500,6 +521,8 @@
           ('<div class="rec-item"><div class="icon">📚</div><div class="text"><strong>Ve ' + (unchecked.length - 5) + ' madde daha</strong> — adım adım yardım için <a href="/#guides">Aile Güvenlik Rehberlerimizi</a> indirin.</div></div>') :
           auditIsEs ?
           ('<div class="rec-item"><div class="icon">📚</div><div class="text"><strong>Y ' + (unchecked.length - 5) + ' elementos más</strong> — descarga nuestras <a href="/#guides">Guías de Seguridad Familiar</a> para ayuda paso a paso.</div></div>') :
+          auditIsFr ?
+          ('<div class="rec-item"><div class="icon">📚</div><div class="text"><strong>Et ' + (unchecked.length - 5) + ' autres points</strong> — téléchargez nos <a href="/#guides">Guides de sécurité pour les familles</a> pour une aide étape par étape.</div></div>') :
           ('<div class="rec-item"><div class="icon">📚</div><div class="text"><strong>And ' + (unchecked.length - 5) + ' more items</strong> — download our <a href="/#guides">Family Safety Guides</a> for step-by-step help.</div></div>');
       }
     }
@@ -510,14 +533,14 @@
 
     if (window.DSKPoints && !localStorage.getItem('dsk_audit_points_awarded')) {
       localStorage.setItem('dsk_audit_points_awarded', '1');
-      DSKPoints.addPoints(50, auditIsTr ? 'Aile Güvenlik Denetimi tamamlandı' : auditIsEs ? 'Auditoría de Seguridad Familiar completada' : 'Family Safety Audit completed');
+      DSKPoints.addPoints(50, auditIsTr ? 'Aile Güvenlik Denetimi tamamlandı' : auditIsEs ? 'Auditoría de Seguridad Familiar completada' : auditIsFr ? 'Audit de sécurité familiale terminé' : 'Family Safety Audit completed');
     }
   }
 
   function emailReport() {
-    var email = prompt(auditIsTr ? 'Bu raporu almak için e-postanı gir:' : auditIsEs ? 'Ingresa tu correo electrónico para recibir este informe:' : 'Enter your email to receive this report:');
+    var email = prompt(auditIsTr ? 'Bu raporu almak için e-postanı gir:' : auditIsEs ? 'Ingresa tu correo electrónico para recibir este informe:' : auditIsFr ? 'Saisissez votre adresse e-mail pour recevoir ce rapport :' : 'Enter your email to receive this report:');
     if (!email || email.indexOf('@') === -1) {
-      alert(auditIsTr ? 'Lütfen geçerli bir e-posta adresi gir.' : auditIsEs ? 'Ingresa una dirección de correo electrónico válida.' : 'Please enter a valid email address.');
+      alert(auditIsTr ? 'Lütfen geçerli bir e-posta adresi gir.' : auditIsEs ? 'Ingresa una dirección de correo electrónico válida.' : auditIsFr ? 'Veuillez saisir une adresse e-mail valide.' : 'Please enter a valid email address.');
       return;
     }
 
@@ -532,7 +555,7 @@
 
     var btn = event.target;
     var originalText = btn.textContent;
-    btn.textContent = auditIsTr ? 'Gönderiliyor...' : auditIsEs ? 'Enviando…' : 'Sending...';
+    btn.textContent = auditIsTr ? 'Gönderiliyor...' : auditIsEs ? 'Enviando…' : auditIsFr ? 'Envoi en cours…' : 'Sending...';
     btn.disabled = true;
 
     fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/audit-report', {
@@ -549,13 +572,13 @@
     .then(function(r) { return r.json(); })
     .then(function(data) {
       if (data.success) {
-        alert(auditIsTr ? ('✅ Rapor gönderildi! ' + email + ' adresindeki gelen kutunu kontrol et') : auditIsEs ? ('✅ ¡Informe enviado! Revisa tu bandeja de entrada en ' + email) : ('✅ Report sent! Check your inbox at ' + email));
+        alert(auditIsTr ? ('✅ Rapor gönderildi! ' + email + ' adresindeki gelen kutunu kontrol et') : auditIsEs ? ('✅ ¡Informe enviado! Revisa tu bandeja de entrada en ' + email) : auditIsFr ? ('✅ Rapport envoyé ! Consultez votre boîte de réception : ' + email) : ('✅ Report sent! Check your inbox at ' + email));
       } else {
-        alert('❌ ' + (data.message || (auditIsTr ? 'Gönderilemedi. Lütfen tekrar deneyin.' : auditIsEs ? 'No se pudo enviar. Por favor, inténtalo de nuevo.' : 'Could not send. Please try again.')));
+        alert('❌ ' + (data.message || (auditIsTr ? 'Gönderilemedi. Lütfen tekrar deneyin.' : auditIsEs ? 'No se pudo enviar. Por favor, inténtalo de nuevo.' : auditIsFr ? 'L’envoi a échoué. Veuillez réessayer.' : 'Could not send. Please try again.')));
       }
     })
     .catch(function(err) {
-      alert(auditIsTr ? '❌ Bağlantı hatası. Lütfen tekrar deneyin.' : auditIsEs ? '❌ Error de conexión. Por favor, inténtalo de nuevo.' : '❌ Connection error. Please try again.');
+      alert(auditIsTr ? '❌ Bağlantı hatası. Lütfen tekrar deneyin.' : auditIsEs ? '❌ Error de conexión. Por favor, inténtalo de nuevo.' : auditIsFr ? '❌ Erreur de connexion. Veuillez réessayer.' : '❌ Connection error. Please try again.');
       console.error(err);
     })
     .finally(function() {

@@ -1028,7 +1028,7 @@
             "correct": false
           },
           {
-            "text": "988, the Suicide & Crisis Lifeline",
+            "text": "A free crisis line — 988 in the US",
             "correct": true
           },
           {
@@ -1041,7 +1041,7 @@
           }
         ],
         "hint": "Is there a number that's free, confidential, and available any time of day?",
-        "explanation": "988 — call or text — is the Suicide & Crisis Lifeline, free and confidential, 24/7, for you or for a friend."
+        "explanation": "In the US it's 988 — call or text — the Suicide & Crisis Lifeline: free, confidential, 24/7, for you or for a friend. Most countries have their own; find yours in the Emergency Help list on our homepage."
       }
     ],
     "hard": [

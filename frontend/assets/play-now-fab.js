@@ -13,8 +13,8 @@
   document.head.appendChild(style);
 
   var pfLang = (window.DSKi18n && DSKi18n.lang) || 'en';
-  var PF_ARIA = pfLang === 'tr' ? "Shieldy'nin Mesaj Sınıflandırmasını Oyna" : pfLang === 'es' ? "Juega la Clasificación de Mensajes de Shieldy" : "Play Shieldy's Message Sort";
-  var PF_LABEL = pfLang === 'tr' ? "Shieldy'nin Oyununu Oyna →" : pfLang === 'es' ? "Juega el Juego de Shieldy →" : "Play Shieldy's Game →";
+  var PF_ARIA = pfLang === 'tr' ? "Shieldy'nin Mesaj Ayırma Oyununu oyna" : pfLang === 'es' ? "Jugar a Clasifica Mensajes con Shieldy" : pfLang === 'fr' ? "Jouer au Tri des messages de Shieldy" : "Play Shieldy's Message Sort";
+  var PF_LABEL = pfLang === 'tr' ? "Shieldy'nin Oyununu Oyna →" : pfLang === 'es' ? "Juega el Juego de Shieldy →" : pfLang === 'fr' ? "Joue au jeu de Shieldy →" : "Play Shieldy's Game →";
 
   var wrap = document.createElement('div');
   wrap.id = 'dsk-play-fab';
