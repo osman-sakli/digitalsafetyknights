@@ -1467,7 +1467,7 @@
   "arc.back": "← Kaynaklar",
   "arc.eyebrow": "Digital Safety Knights",
   "arc.h1": "🕹️ Oyun Salonu",
-  "arc.sub": "Bu konuda ustalaşmanın on beş yolu; hepsi ücretsiz, hepsi tarayıcınızda. Her biri Şövalye Puanı kazandırıyor. Hesap yok, reklam yok ve burada yaptığınız hiçbir şey hiçbir yere gönderilmiyor.",
+  "arc.sub": "Bu konuda ustalaştıran oyunlar, quizler ve simülatörler; hepsi ücretsiz, hepsi tarayıcınızda. Her biri Şövalye Puanı kazandırıyor. Hesap yok, reklam yok ve burada yaptığınız hiçbir şey hiçbir yere gönderilmiyor.",
   "arc.pointsLabel": "Şövalye Puanı",
   "arc.rankLabel": "Rütbe",
   "arc.streakLabel": "Seri",
@@ -1496,7 +1496,9 @@
   "arc.academy.p": "Bütün görevler sırayla, sonunda Şövalye Sınavı. Bitirirsen mezun olursun.",
   "nav.arcade": "🕹️ Oyun Salonu",
   "footer.arcade": "🕹️ Oyun Salonu",
-  "res.arcade.h": "On beşi tek yerde: Oyun Salonu",
+  "res.arcade.h": "Oynanabilen her şey tek yerde: Oyun Salonu",
   "res.arcade.p": "Elimizdeki bütün oyunlar, quizler ve simülatörler; Şövalye Puanınız, seriniz ve favorilerinizle birlikte. Hesap yok, reklam yok, izleme yok.",
-  "res.arcade.cta": "Oyun Salonu'nu aç →"
+  "res.arcade.cta": "Oyun Salonu'nu aç →",
+  "arc.dash.h": "Shieldy Dash",
+  "arc.dash.p": "Tek tuş. Mesajlar uçarak gelir — tuzaklara karşı kalkanı kaldır, arkadaşlarını geçir. Gittikçe hızlanır."
 }

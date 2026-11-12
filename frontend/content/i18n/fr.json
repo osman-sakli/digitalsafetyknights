@@ -1467,7 +1467,7 @@
   "arc.back": "← Ressources",
   "arc.eyebrow": "Digital Safety Knights",
   "arc.h1": "🕹️ L’Arcade",
-  "arc.sub": "Quinze façons de progresser, toutes gratuites et toutes dans votre navigateur. Chacune rapporte des Points de Chevalier. Pas de compte, pas de publicité, et rien de ce que vous faites ici n’est envoyé où que ce soit.",
+  "arc.sub": "Des jeux, des quiz et des simulateurs pour progresser, tous gratuits et tous dans votre navigateur. Chacun rapporte des Points de Chevalier. Pas de compte, pas de publicité, et rien de ce que vous faites ici n’est envoyé où que ce soit.",
   "arc.pointsLabel": "Points de Chevalier",
   "arc.rankLabel": "Rang",
   "arc.streakLabel": "Série",
@@ -1496,7 +1496,9 @@
   "arc.academy.p": "Toutes les quêtes dans l’ordre, jusqu’à l’Épreuve du Chevalier. Terminez-la et vous êtes diplômé.",
   "nav.arcade": "🕹️ L’Arcade",
   "footer.arcade": "🕹️ L’Arcade",
-  "res.arcade.h": "Les quinze au même endroit : L’Arcade",
+  "res.arcade.h": "Tout ce qui se joue, au même endroit : L’Arcade",
   "res.arcade.p": "Tous nos jeux, quiz et simulateurs, avec vos Points de Chevalier, votre série et vos favoris. Pas de compte, pas de publicité, aucun suivi.",
-  "res.arcade.cta": "Ouvrir L’Arcade →"
+  "res.arcade.cta": "Ouvrir L’Arcade →",
+  "arc.dash.h": "Shieldy Dash",
+  "arc.dash.p": "Un seul bouton. Les messages arrivent en volant : lève le bouclier contre les pièges, laisse passer tes amis. Ça accélère."
 }

@@ -195,7 +195,11 @@
     },
     "arcade.html": {
       "title": "Oyun Salonu — Digital Safety Knights",
-      "description": "Digital Safety Knights'tan on beş ücretsiz çevrimiçi güvenlik oyunu, quizi ve simülatörü. Şövalye Puanı kazanın, serinizi sürdürün — hesap yok, reklam yok ve hiçbir şey izlenmiyor."
+      "description": "Digital Safety Knights'tan ücretsiz çevrimiçi güvenlik oyunları, quizleri ve simülatörleri. Şövalye Puanı kazanın, serinizi sürdürün — hesap yok, reklam yok ve hiçbir şey izlenmiyor."
+    },
+    "shieldy-dash.html": {
+      "title": "Shieldy Dash — Digital Safety Knights",
+      "description": "Shieldy Dash — ücretsiz, tek tuşlu bir refleks oyunu. Mesajlar gelir: tuzaklara karşı kalkanı kaldır, arkadaşlarını geçir. Hesap yok, reklam yok, izleme yok."
     }
   },
   "es": {
@@ -393,7 +397,11 @@
     },
     "arcade.html": {
       "title": "El Arcade — Digital Safety Knights",
-      "description": "Quince juegos, cuestionarios y simuladores gratuitos de seguridad en línea de Digital Safety Knights. Gana Puntos de Caballero y mantén tu racha: sin cuenta, sin anuncios y sin rastreo."
+      "description": "Juegos, cuestionarios y simuladores gratuitos de seguridad en línea de Digital Safety Knights. Gana Puntos de Caballero y mantén tu racha: sin cuenta, sin anuncios y sin rastreo."
+    },
+    "shieldy-dash.html": {
+      "title": "Shieldy Dash — Digital Safety Knights",
+      "description": "Shieldy Dash: un juego de reflejos gratuito de un solo botón. Llegan mensajes: levanta el escudo contra las trampas y deja pasar a tus amigos. Sin cuenta, sin anuncios, sin rastreo."
     }
   },
   "fr": {
@@ -591,7 +599,11 @@
     },
     "arcade.html": {
       "title": "L’Arcade — Digital Safety Knights",
-      "description": "Quinze jeux, quiz et simulateurs gratuits sur la sécurité en ligne, par Digital Safety Knights. Gagnez des Points de Chevalier et gardez votre série : sans compte, sans publicité et sans aucun suivi."
+      "description": "Jeux, quiz et simulateurs gratuits sur la sécurité en ligne, par Digital Safety Knights. Gagnez des Points de Chevalier et gardez votre série : sans compte, sans publicité et sans aucun suivi."
+    },
+    "shieldy-dash.html": {
+      "title": "Shieldy Dash — Digital Safety Knights",
+      "description": "Shieldy Dash : un jeu de réflexes gratuit à un seul bouton. Les messages arrivent : lève le bouclier contre les pièges, laisse passer tes amis. Sans compte, sans publicité, sans suivi."
     }
   }
 }

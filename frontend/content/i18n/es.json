@@ -1467,7 +1467,7 @@
   "arc.back": "← Recursos",
   "arc.eyebrow": "Digital Safety Knights",
   "arc.h1": "🕹️ El Arcade",
-  "arc.sub": "Quince formas de mejorar en esto, todas gratis y todas en tu navegador. Cada una te da Puntos de Caballero. Sin cuenta, sin anuncios, y nada de lo que haces aquí se envía a ningún lado.",
+  "arc.sub": "Juegos, cuestionarios y simuladores para mejorar en esto, todos gratis y todos en tu navegador. Cada uno te da Puntos de Caballero. Sin cuenta, sin anuncios, y nada de lo que haces aquí se envía a ningún lado.",
   "arc.pointsLabel": "Puntos de Caballero",
   "arc.rankLabel": "Rango",
   "arc.streakLabel": "Racha",
@@ -1496,7 +1496,9 @@
   "arc.academy.p": "Todas las misiones en orden, hasta la Prueba del Caballero. Si la terminas, te graduás.",
   "nav.arcade": "🕹️ El Arcade",
   "footer.arcade": "🕹️ El Arcade",
-  "res.arcade.h": "Los quince en un solo lugar: El Arcade",
+  "res.arcade.h": "Todo lo que se puede jugar, en un solo lugar: El Arcade",
   "res.arcade.p": "Todos los juegos, cuestionarios y simuladores que tenemos, con tus Puntos de Caballero, tu racha y tus favoritos. Sin cuenta, sin anuncios, sin rastreo.",
-  "res.arcade.cta": "Abrir El Arcade →"
+  "res.arcade.cta": "Abrir El Arcade →",
+  "arc.dash.h": "Shieldy Dash",
+  "arc.dash.p": "Un solo botón. Llegan mensajes volando: levanta el escudo contra las trampas y deja pasar a tus amigos. Se pone rápido."
 }

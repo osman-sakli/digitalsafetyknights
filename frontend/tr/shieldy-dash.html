@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Shieldy Dash — Digital Safety Knights</title>
+<link rel="canonical" href="https://digitalsafetyknights.org/tr/shieldy-dash.html">
+<link rel="alternate" hreflang="en" href="https://digitalsafetyknights.org/en/shieldy-dash.html">
+<link rel="alternate" hreflang="es" href="https://digitalsafetyknights.org/es/shieldy-dash.html">
+<link rel="alternate" hreflang="fr" href="https://digitalsafetyknights.org/fr/shieldy-dash.html">
+<link rel="alternate" hreflang="tr" href="https://digitalsafetyknights.org/tr/shieldy-dash.html">
+<link rel="alternate" hreflang="x-default" href="https://digitalsafetyknights.org/shieldy-dash.html">
+<meta name="description" content="Shieldy Dash — ücretsiz, tek tuşlu bir refleks oyunu. Mesajlar gelir: tuzaklara karşı kalkanı kaldır, arkadaşlarını geçir. Hesap yok, reklam yok, izleme yok.">
+<meta property="og:title" content="Shieldy Dash — Digital Safety Knights">
+<meta property="og:description" content="Shieldy Dash — ücretsiz, tek tuşlu bir refleks oyunu. Mesajlar gelir: tuzaklara karşı kalkanı kaldır, arkadaşlarını geçir. Hesap yok, reklam yok, izleme yok.">
+<meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
+<meta property="og:url" content="https://digitalsafetyknights.org/shieldy-dash.html">
+<meta property="og:type" content="website">
+<link rel="icon" href="/assets/favicon.ico">
+<script src="/assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
+<style>
+  :root { --navy:#0d1b3e; --gold:#c9a84c; --gold2:#e8c56a; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { height:100%; }
+  body { font-family:'Nunito Sans','Segoe UI',system-ui,sans-serif; background:#070e24; color:#fff; display:flex; flex-direction:column; align-items:center; overscroll-behavior:none; }
+  [hidden] { display:none !important; }
+  .bar { width:100%; max-width:480px; display:flex; justify-content:space-between; align-items:center; padding:10px 14px; font-size:.82rem; font-weight:800; }
+  .bar a { color:#aebbd6; text-decoration:none; }
+  .bar span { color:var(--gold); }
+  .stage { position:relative; width:100%; max-width:480px; flex:1; min-height:0; }
+  canvas { position:absolute; inset:0; width:100%; height:100%; display:block; touch-action:none; user-select:none; -webkit-user-select:none; border-radius:14px 14px 0 0; }
+  .ov { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; padding:20px; background:rgba(7,14,36,.86); border-radius:14px 14px 0 0; }
+  .card { background:#fff; color:#2d3748; border-radius:18px; padding:24px 22px; max-width:360px; width:100%; text-align:center; max-height:100%; overflow-y:auto; }
+  .card h1 { font-size:1.5rem; color:var(--navy); margin-bottom:8px; }
+  .card p { font-size:.92rem; line-height:1.6; color:#46536c; }
+  .card .big { font-size:2.4rem; font-weight:900; color:var(--navy); line-height:1.1; font-variant-numeric:tabular-nums; }
+  .card .best { font-size:.8rem; font-weight:800; color:#6c757d; margin-bottom:12px; }
+  .card ul { list-style:none; text-align:left; margin:12px 0 4px; display:flex; flex-direction:column; gap:8px; }
+  .card li { background:#f4f6fb; border-left:4px solid #e63946; border-radius:0 10px 10px 0; padding:9px 12px; font-size:.84rem; line-height:1.5; }
+  .card li.friend { border-left-color:var(--gold); }
+  .card li b { color:var(--navy); }
+  .btn { display:block; width:100%; margin-top:12px; background:var(--gold); color:var(--navy); border:none; border-radius:12px; padding:14px; font:inherit; font-weight:900; font-size:1rem; cursor:pointer; text-decoration:none; }
+  .btn.ghost { background:transparent; border:2px solid #dfe4ee; color:var(--navy); font-size:.88rem; padding:11px; }
+  :focus-visible { outline:3px solid var(--gold2); outline-offset:2px; }
+</style>
+</head>
+<body>
+<div class="bar"><a href="/arcade.html" id="t-back">← Arcade</a><span>🛡️ Shieldy Dash</span></div>
+<div class="stage" id="stage">
+  <canvas id="c" aria-label="Shieldy Dash"></canvas>
+
+  <div class="ov" id="ov-title">
+    <div class="card">
+      <h1>🛡️ Shieldy Dash</h1>
+      <p id="t-how"></p>
+      <button type="button" class="btn" id="b-start"></button>
+    </div>
+  </div>
+
+  <div class="ov" id="ov-over" hidden>
+    <div class="card">
+      <h1 id="t-over"></h1>
+      <div class="big" id="o-score">0</div>
+      <div class="best" id="o-best"></div>
+      <p id="t-missed"></p>
+      <ul id="o-list"></ul>
+      <button type="button" class="btn" id="b-again"></button>
+      <a class="btn ghost" href="/arcade.html" id="b-arcade"></a>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ───────── words, in four languages ─────────
+     Red flags are grouped by the lever they pull, because the end screen
+     tells the player which lever beat them. Nothing here names a photo or
+     anything a six-year-old should not meet on an all-ages page. */
+  var W = {
+    en: {
+      how: 'Messages are coming at Shieldy. Read each one. HOLD the screen (or Space) to raise the shield against a trick — and let your friends through. Three mistakes and the run ends.',
+      start: 'Start', again: 'Play again', arcade: '← Back to the Arcade', back: '← Arcade',
+      over: 'Shieldy needs a rest', best: 'Best', missed: 'What got past you:',
+      hold: 'HOLD = shield', blocked: 'Blocked!', oops: 'That was a friend!', reason: 'Shieldy Dash',
+      lever: { urgency: 'Urgency', secrecy: 'Secrecy', flattery: 'Flattery', fear: 'Fear' },
+      rule: {
+        urgency: 'A clock is a trick. Real things do not expire in ten seconds.',
+        secrecy: '"Don\'t tell" is the red flag itself.',
+        flattery: 'Sudden compliments, then a request. That order is the trick.',
+        fear: 'A threat only works in silence. Tell a grown-up.',
+        friend: 'Not everything is a threat — some of those were friends.'
+      },
+      red: {
+        urgency: ['FREE ROBUX! Only 10 seconds left!', 'Click NOW or lose your account!', 'Last chance! Offer ends in 1 minute!'],
+        secrecy: ['Don\'t tell your parents about this.', 'This is our little secret, ok?', 'Delete this chat after reading.'],
+        flattery: ['You\'re my favorite! Send me your phone number?', 'You\'re special. Let\'s chat on another app.', 'I only trust you. What\'s your address?'],
+        fear: ['Give me your skins or I\'ll get you banned!', 'Your account is hacked! Send me your password.', 'Do it or I\'ll tell everyone your secret.']
+      },
+      safe: ['Want to play after homework?', 'Grandma says hi! 👋', 'Practice is at 5 today.', 'Nice goal in the match!', 'Did you finish the math sheet?', 'Mom: dinner\'s ready!', 'Happy birthday!! 🎂', 'Movie night on Friday?', 'Your library book is due.', 'Good luck on your test!', 'Can I borrow your notes?', 'Team photo is tomorrow.']
+    },
+    tr: {
+      how: 'Shieldy\'ye mesajlar geliyor. Her birini oku. Bir tuzağa karşı kalkanı kaldırmak için ekrana BASILI TUT (ya da Boşluk) — arkadaşlarını ise geçir. Üç hatada tur biter.',
+      start: 'Başla', again: 'Tekrar oyna', arcade: '← Oyun Salonu\'na dön', back: '← Oyun Salonu',
+      over: 'Shieldy\'nin dinlenmesi lazım', best: 'En iyi', missed: 'Seni geçenler:',
+      hold: 'BASILI TUT = kalkan', blocked: 'Engellendi!', oops: 'O bir arkadaştı!', reason: 'Shieldy Dash',
+      lever: { urgency: 'Acele', secrecy: 'Sır', flattery: 'İltifat', fear: 'Korku' },
+      rule: {
+        urgency: 'Geri sayım bir tuzaktır. Gerçek şeyler on saniyede bitmez.',
+        secrecy: '"Kimseye söyleme" cümlesi, kırmızı bayrağın ta kendisidir.',
+        flattery: 'Önce ani iltifat, sonra bir istek. Tuzak bu sıradadır.',
+        fear: 'Tehdit yalnızca sessizlikte işe yarar. Bir büyüğe söyle.',
+        friend: 'Her şey tehdit değildir — onların bazıları arkadaştı.'
+      },
+      red: {
+        urgency: ['BEDAVA ROBUX! Son 10 saniye!', 'HEMEN tıkla yoksa hesabın silinir!', 'Son şans! Teklif 1 dakikada bitiyor!'],
+        secrecy: ['Bunu annenle babana söyleme.', 'Bu aramızda küçük bir sır, tamam mı?', 'Okuyunca bu sohbeti sil.'],
+        flattery: ['En sevdiğim sensin! Telefon numaranı atsana?', 'Sen özelsin. Başka bir uygulamada konuşalım.', 'Sadece sana güveniyorum. Adresin ne?'],
+        fear: ['Skinlerini ver yoksa seni banlatırım!', 'Hesabın çalındı! Şifreni bana gönder.', 'Yap, yoksa sırrını herkese söylerim.']
+      },
+      safe: ['Ödevden sonra oynayalım mı?', 'Anneannenin selamı var! 👋', 'Antrenman bugün 5\'te.', 'Maçtaki gol harikaydı!', 'Matematik ödevini bitirdin mi?', 'Annen: Yemek hazır!', 'Doğum günün kutlu olsun!! 🎂', 'Cuma film gecesi yapalım mı?', 'Kütüphane kitabının süresi doluyor.', 'Sınavında başarılar!', 'Notlarını ödünç alabilir miyim?', 'Takım fotoğrafı yarın.']
+    },
+    es: {
+      how: 'A Shieldy le llegan mensajes. Lee cada uno. MANTÉN presionada la pantalla (o Espacio) para levantar el escudo contra una trampa, y deja pasar a tus amigos. Con tres errores termina la partida.',
+      start: 'Empezar', again: 'Jugar otra vez', arcade: '← Volver al Arcade', back: '← Arcade',
+      over: 'Shieldy necesita un descanso', best: 'Mejor', missed: 'Lo que se te pasó:',
+      hold: 'MANTÉN = escudo', blocked: '¡Bloqueado!', oops: '¡Era un amigo!', reason: 'Shieldy Dash',
+      lever: { urgency: 'Urgencia', secrecy: 'Secreto', flattery: 'Halagos', fear: 'Miedo' },
+      rule: {
+        urgency: 'Un reloj es una trampa. Lo real no se acaba en diez segundos.',
+        secrecy: '"No le digas a nadie" es la señal de alerta en sí.',
+        flattery: 'Halagos de repente y luego un pedido. Ese orden es la trampa.',
+        fear: 'Una amenaza solo funciona en silencio. Cuéntaselo a un adulto.',
+        friend: 'No todo es una amenaza: algunos de esos eran amigos.'
+      },
+      red: {
+        urgency: ['¡ROBUX GRATIS! ¡Solo quedan 10 segundos!', '¡Haz clic YA o pierdes tu cuenta!', '¡Última oportunidad! La oferta termina en 1 minuto.'],
+        secrecy: ['No les cuentes esto a tus papás.', 'Este es nuestro secretito, ¿ok?', 'Borra este chat después de leerlo.'],
+        flattery: ['¡Eres mi persona favorita! ¿Me pasas tu número?', 'Eres especial. Hablemos en otra app.', 'Solo confío en ti. ¿Cuál es tu dirección?'],
+        fear: ['¡Dame tus skins o hago que te baneen!', '¡Hackearon tu cuenta! Mándame tu contraseña.', 'Hazlo o le cuento tu secreto a todos.']
+      },
+      safe: ['¿Jugamos después de la tarea?', '¡La abuela te manda saludos! 👋', 'El entrenamiento es hoy a las 5.', '¡Golazo en el partido!', '¿Terminaste la hoja de mate?', 'Mamá: ¡la cena está lista!', '¡¡Feliz cumpleaños!! 🎂', '¿Noche de película el viernes?', 'Tu libro de la biblioteca vence pronto.', '¡Suerte en tu examen!', '¿Me prestas tus apuntes?', 'La foto del equipo es mañana.']
+    },
+    fr: {
+      how: 'Des messages arrivent sur Shieldy. Lis chacun d’eux. MAINTIENS l’écran appuyé (ou Espace) pour lever le bouclier contre un piège — et laisse passer tes amis. Trois erreurs et la partie s’arrête.',
+      start: 'Commencer', again: 'Rejouer', arcade: '← Retour à l’Arcade', back: '← Arcade',
+      over: 'Shieldy a besoin d’une pause', best: 'Record', missed: 'Ce qui t’a échappé :',
+      hold: 'MAINTIENS = bouclier', blocked: 'Bloqué !', oops: 'C’était un ami !', reason: 'Shieldy Dash',
+      lever: { urgency: 'Urgence', secrecy: 'Secret', flattery: 'Flatterie', fear: 'Peur' },
+      rule: {
+        urgency: 'Un compte à rebours est un piège. Le vrai ne disparaît pas en dix secondes.',
+        secrecy: '« Ne dis rien » : le signal d’alerte, c’est cette phrase.',
+        flattery: 'Des compliments soudains, puis une demande. Le piège est dans cet ordre.',
+        fear: 'Une menace ne marche que dans le silence. Parles-en à un adulte.',
+        friend: 'Tout n’est pas une menace : certains étaient des amis.'
+      },
+      red: {
+        urgency: ['ROBUX GRATUITS ! Plus que 10 secondes !', 'Clique MAINTENANT ou tu perds ton compte !', 'Dernière chance ! L’offre finit dans 1 minute !'],
+        secrecy: ['Ne dis rien à tes parents.', 'C’est notre petit secret, d’accord ?', 'Supprime cette conversation après l’avoir lue.'],
+        flattery: ['C’est toi que je préfère ! Tu m’envoies ton numéro ?', 'Tu n’es pas comme les autres. On parle sur une autre appli ?', 'Je ne fais confiance qu’à toi. C’est quoi ton adresse ?'],
+        fear: ['Donne-moi tes skins ou je te fais bannir !', 'Ton compte est piraté ! Envoie-moi ton mot de passe.', 'Fais-le ou je dis ton secret à tout le monde.']
+      },
+      safe: ['On joue après les devoirs ?', 'Mamie te fait un coucou ! 👋', 'L’entraînement est à 17 h aujourd’hui.', 'Super but pendant le match !', 'Tu as fini la fiche de maths ?', 'Maman : à table !', 'Joyeux anniversaire !! 🎂', 'Soirée film vendredi ?', 'Ton livre de bibliothèque est à rendre.', 'Bonne chance pour ton contrôle !', 'Tu me prêtes tes notes ?', 'La photo d’équipe, c’est demain.']
+    }
+  };
+
+  var lang = (window.DSKi18n && DSKi18n.lang) || 'en';
+  if (!W[lang]) lang = 'en';
+  document.documentElement.setAttribute('lang', lang);
+  var S = W[lang];
+  // French typography: a narrow no-break space before ! ? : ; — applied once
+  // here rather than typed into every string above.
+  if (lang === 'fr') {
+    var nb = function (s) { return s.replace(/ ([!?:;»])/g, ' $1').replace(/« /g, '« '); };
+    (function walk(o) { for (var k in o) { if (typeof o[k] === 'string') o[k] = nb(o[k]); else walk(o[k]); } })(S);
+  }
+  var LEVERS = ['urgency', 'secrecy', 'flattery', 'fear'];
+
+  var $ = function (id) { return document.getElementById(id); };
+  $('t-back').textContent = S.back; $('t-how').textContent = S.how;
+  $('b-start').textContent = S.start; $('b-again').textContent = S.again;
+  $('b-arcade').textContent = S.arcade; $('t-over').textContent = S.over;
+  $('t-missed').textContent = S.missed;
+
+  /* ───────── canvas ───────── */
+  var cv = $('c'), cx = cv.getContext('2d'), Wd = 0, Ht = 0, dpr = 1;
+  function resize() {
+    var r = $('stage').getBoundingClientRect();
+    dpr = Math.min(2, window.devicePixelRatio || 1);
+    Wd = Math.max(240, r.width); Ht = Math.max(320, r.height);
+    cv.width = Math.round(Wd * dpr); cv.height = Math.round(Ht * dpr);
+    cx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    if (g.cur) g.cur.lines = null;
+  }
+
+  /* ───────── state ───────── */
+  var BEST_KEY = 'dsk_dash_best';
+  var g = { mode: 'title', score: 0, hearts: 3, combo: 0, n: 0, cur: null, wait: 0,
+            shield: false, flash: null, shake: 0, bg: 0, missed: {}, deckR: [], deckS: [], parts: [] };
+  var reduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function shuffled(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+  function nextMsg() {
+    var red = Math.random() < 0.55;
+    if (red) {
+      if (!g.deckR.length) { var all = []; LEVERS.forEach(function (l) { S.red[l].forEach(function (t) { all.push({ text: t, lever: l }); }); }); g.deckR = shuffled(all); }
+      var m = g.deckR.pop(); return { text: m.text, red: true, lever: m.lever };
+    }
+    if (!g.deckS.length) g.deckS = shuffled(S.safe);
+    return { text: g.deckS.pop(), red: false };
+  }
+
+  function start() {
+    g.mode = 'play'; g.score = 0; g.hearts = 3; g.combo = 0; g.n = 0; g.cur = null; g.wait = 0.5;
+    g.flash = null; g.shake = 0; g.missed = {}; g.deckR = []; g.deckS = []; g.parts = []; g.shield = false;
+    $('ov-title').hidden = true; $('ov-over').hidden = true;
+  }
+
+  function spawn() {
+    var m = nextMsg();
+    // Travel time is the reading time. It starts generous and tightens.
+    m.T = Math.max(1.15, 2.7 - g.n * 0.045); m.t = 0; m.lines = null;
+    g.cur = m; g.n++;
+  }
+
+  function burst(color) {
+    if (reduced) return;
+    for (var i = 0; i < 14; i++) { var a = Math.random() * Math.PI * 2, v = 60 + Math.random() * 160; g.parts.push({ x: Wd / 2, y: Ht - 150, vx: Math.cos(a) * v, vy: Math.sin(a) * v - 60, t: 0.6, c: color }); }
+  }
+
+  function resolve() {
+    var m = g.cur, blocked = g.shield; g.cur = null; g.wait = 0.28;
+    if (m.red && blocked) { g.combo++; g.score += 10 + Math.min(g.combo, 10) * 2; g.flash = { c: '#2a9d8f', t: 0.7, s: S.blocked }; burst('#e8c56a'); }
+    else if (!m.red && !blocked) { g.combo++; g.score += 5; }
+    else {
+      g.hearts--; g.combo = 0; g.shake = reduced ? 0 : 0.3;
+      var k = m.red ? m.lever : 'friend';
+      g.missed[k] = (g.missed[k] || 0) + 1;
+      g.flash = m.red ? { c: '#e63946', t: 1.0, s: S.lever[m.lever] + '!' } : { c: '#c9a84c', t: 1.0, s: S.oops };
+      if (g.hearts <= 0) end();
+    }
+  }
+
+  function end() {
+    g.mode = 'over';
+    var best = 0; try { best = parseInt(localStorage.getItem(BEST_KEY) || '0', 10); } catch (e) {}
+    if (g.score > best) { best = g.score; try { localStorage.setItem(BEST_KEY, String(best)); } catch (e) {} }
+    $('o-score').textContent = g.score;
+    $('o-best').textContent = S.best + ': ' + best;
+    var list = $('o-list'); list.innerHTML = '';
+    LEVERS.concat(['friend']).forEach(function (k) {
+      if (!g.missed[k]) return;
+      var li = document.createElement('li');
+      if (k === 'friend') li.className = 'friend';
+      var b = document.createElement('b');
+      b.textContent = (k === 'friend' ? S.oops : S.lever[k]) + ' ×' + g.missed[k] + ' — ';
+      li.appendChild(b); li.appendChild(document.createTextNode(S.rule[k]));
+      list.appendChild(li);
+    });
+    $('ov-over').hidden = false;
+    if (window.DSKPoints) {
+      var pts = Math.min(15, Math.floor(g.score / 50));
+      if (pts > 0) DSKPoints.addPoints(pts, S.reason);
+      if (DSKPoints.markComboActivity) DSKPoints.markComboActivity('game');
+    }
+  }
+
+  /* ───────── input: one button ───────── */
+  function down(e) { if (g.mode === 'play') { g.shield = true; if (e && e.preventDefault) e.preventDefault(); } }
+  function up() { g.shield = false; }
+  cv.addEventListener('pointerdown', down);
+  window.addEventListener('pointerup', up);
+  window.addEventListener('pointercancel', up);
+  window.addEventListener('blur', up);
+  window.addEventListener('keydown', function (e) { if (e.code === 'Space') { if (g.mode === 'play') e.preventDefault(); down(); } });
+  window.addEventListener('keyup', function (e) { if (e.code === 'Space') up(); });
+  $('b-start').onclick = start; $('b-again').onclick = start;
+
+  /* ───────── drawing ───────── */
+  function rr(x, y, w, h, r) { cx.beginPath(); cx.moveTo(x + r, y); cx.arcTo(x + w, y, x + w, y + h, r); cx.arcTo(x + w, y + h, x, y + h, r); cx.arcTo(x, y + h, x, y, r); cx.arcTo(x, y, x + w, y, r); cx.closePath(); }
+  function wrap(text, maxW) {
+    var words = text.split(' '), lines = [], line = '';
+    for (var i = 0; i < words.length; i++) { var t = line ? line + ' ' + words[i] : words[i]; if (cx.measureText(t).width > maxW && line) { lines.push(line); line = words[i]; } else line = t; }
+    if (line) lines.push(line); return lines;
+  }
+
+  function drawShieldy(x, y, bob) {
+    // The yellow knight: deliberately simple shapes.
+    cx.save(); cx.translate(x, y + bob);
+    cx.fillStyle = 'rgba(0,0,0,.25)'; cx.beginPath(); cx.ellipse(0, 46, 30, 7, 0, 0, 7); cx.fill();
+    cx.fillStyle = '#f4c430'; rr(-24, -6, 48, 46, 14); cx.fill();                    // body
+    cx.fillStyle = '#f7d354'; cx.beginPath(); cx.arc(0, -20, 24, 0, 7); cx.fill();   // helmet
+    cx.fillStyle = '#0d1b3e'; rr(-15, -26, 30, 10, 5); cx.fill();                    // visor
+    cx.fillStyle = '#fff'; cx.beginPath(); cx.arc(-6, -21, 2.4, 0, 7); cx.arc(6, -21, 2.4, 0, 7); cx.fill();
+    cx.fillStyle = '#e63946'; cx.beginPath(); cx.moveTo(0, -44); cx.lineTo(7, -56); cx.lineTo(-7, -56); cx.closePath(); cx.fill(); // plume
+    cx.restore();
+  }
+  function drawShield(x, y, k) {
+    if (k <= 0) return;
+    cx.save(); cx.globalAlpha = 0.25 + 0.75 * k;
+    cx.strokeStyle = '#e8c56a'; cx.lineWidth = 7; cx.lineCap = 'round';
+    cx.beginPath(); cx.arc(x, y, 62, Math.PI * 1.12, Math.PI * 1.88); cx.stroke();
+    cx.strokeStyle = 'rgba(232,197,106,.35)'; cx.lineWidth = 16;
+    cx.beginPath(); cx.arc(x, y, 62, Math.PI * 1.12, Math.PI * 1.88); cx.stroke();
+    cx.restore();
+  }
+
+  var shieldK = 0, clock = 0;
+  function frame(dt) {
+    clock += dt;
+    if (g.mode === 'play') {
+      g.bg += dt * (140 + g.n * 3);
+      if (!g.cur) { g.wait -= dt; if (g.wait <= 0) spawn(); }
+      else { g.cur.t += dt; if (g.cur.t >= g.cur.T) resolve(); }
+    }
+    shieldK += ((g.shield ? 1 : 0) - shieldK) * Math.min(1, dt * 18);
+    if (g.flash) { g.flash.t -= dt; if (g.flash.t <= 0) g.flash = null; }
+    if (g.shake > 0) g.shake -= dt;
+
+    cx.save();
+    if (g.shake > 0) cx.translate((Math.random() - 0.5) * 10, (Math.random() - 0.5) * 10);
+
+    var grad = cx.createLinearGradient(0, 0, 0, Ht);
+    grad.addColorStop(0, '#0d1b3e'); grad.addColorStop(1, '#1a2f6e');
+    cx.fillStyle = grad; cx.fillRect(-10, -10, Wd + 20, Ht + 20);
+    // the road, scrolling towards the player
+    cx.strokeStyle = 'rgba(255,255,255,.08)'; cx.lineWidth = 3; cx.setLineDash([26, 30]); cx.lineDashOffset = -g.bg;
+    [0.2, 0.8].forEach(function (f) { cx.beginPath(); cx.moveTo(Wd * f, 0); cx.lineTo(Wd * f, Ht); cx.stroke(); });
+    cx.setLineDash([]);
+
+    var sx = Wd / 2, sy = Ht - 110;
+
+    // the message: no colour hint — it has to be read
+    if (g.cur) {
+      var m = g.cur, bw = Math.min(Wd - 36, 380), fs = Math.max(15, Math.min(19, Wd / 22));
+      cx.font = '800 ' + fs + 'px "Nunito Sans","Segoe UI",system-ui,sans-serif';
+      if (!m.lines) m.lines = wrap(m.text, bw - 60);
+      var bh = 30 + m.lines.length * (fs + 6);
+      var p = m.t / m.T, y = -bh + (sy - 96 + bh) * p * p * (3 - 2 * p) * 0.5 + (sy - 96 + bh) * p * 0.5;
+      cx.fillStyle = '#fff'; rr(sx - bw / 2, y, bw, bh, 16); cx.fill();
+      cx.fillStyle = '#b8c2d6'; cx.beginPath(); cx.arc(sx - bw / 2 + 24, y + bh / 2, 11, 0, 7); cx.fill();
+      cx.fillStyle = '#0d1b3e'; cx.textBaseline = 'top'; cx.textAlign = 'left';
+      m.lines.forEach(function (ln, i) { cx.fillText(ln, sx - bw / 2 + 46, y + 15 + i * (fs + 6)); });
+      // time-left bar under the bubble
+      cx.fillStyle = 'rgba(255,255,255,.25)'; rr(sx - bw / 2, y + bh + 6, bw, 4, 2); cx.fill();
+      cx.fillStyle = '#e8c56a'; rr(sx - bw / 2, y + bh + 6, bw * (1 - p), 4, 2); cx.fill();
+    }
+
+    drawShield(sx, sy - 10, shieldK);
+    drawShieldy(sx, sy, g.mode === 'play' ? Math.sin(clock * 12) * 3 : 0);
+
+    // particles
+    for (var i = g.parts.length - 1; i >= 0; i--) { var q = g.parts[i]; q.t -= dt; if (q.t <= 0) { g.parts.splice(i, 1); continue; } q.x += q.vx * dt; q.y += q.vy * dt; q.vy += 420 * dt; cx.globalAlpha = Math.min(1, q.t * 2); cx.fillStyle = q.c; cx.fillRect(q.x, q.y, 5, 5); }
+    cx.globalAlpha = 1;
+
+    // HUD
+    cx.textBaseline = 'top'; cx.font = '900 20px "Nunito Sans","Segoe UI",system-ui,sans-serif';
+    cx.textAlign = 'left'; cx.fillStyle = '#fff';
+    var hearts = ''; for (var h = 0; h < 3; h++) hearts += h < g.hearts ? '♥' : '♡';
+    cx.fillStyle = '#ff6b78'; cx.fillText(hearts, 14, 12);
+    cx.textAlign = 'right'; cx.fillStyle = '#e8c56a'; cx.fillText(String(g.score), Wd - 14, 12);
+    if (g.combo >= 3) { cx.font = '900 13px "Nunito Sans",system-ui,sans-serif'; cx.fillStyle = '#8fe6e2'; cx.fillText('×' + g.combo, Wd - 14, 38); }
+
+    if (g.mode === 'play' && g.n <= 3 && !g.flash) {
+      cx.textAlign = 'center'; cx.font = '900 14px "Nunito Sans",system-ui,sans-serif'; cx.fillStyle = 'rgba(255,255,255,.75)';
+      cx.fillText(S.hold, sx, Ht - 34);
+    }
+    if (g.flash) {
+      cx.textAlign = 'center'; cx.font = '900 26px "Nunito Sans",system-ui,sans-serif';
+      cx.globalAlpha = Math.min(1, g.flash.t * 2.5); cx.fillStyle = g.flash.c;
+      cx.fillText(g.flash.s, sx, sy - 150); cx.globalAlpha = 1;
+    }
+    cx.restore();
+  }
+
+  var last = 0;
+  function loop(ts) {
+    var dt = Math.min(0.05, (ts - last) / 1000 || 0); last = ts;
+    frame(dt); requestAnimationFrame(loop);
+  }
+  document.addEventListener('visibilitychange', function () { if (document.hidden) up(); });
+  window.addEventListener('resize', resize);
+  resize(); requestAnimationFrame(loop);
+
+  // Read-only view of the run, so the game can be driven end to end in a test.
+  window.ShieldyDash = { state: function () { return { mode: g.mode, score: g.score, hearts: g.hearts, combo: g.combo, n: g.n, cur: g.cur ? { red: g.cur.red, lever: g.cur.lever || null, left: g.cur.T - g.cur.t } : null, missed: g.missed }; } };
+})();
+</script>
+</body>
+</html>

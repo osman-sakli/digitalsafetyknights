@@ -10,9 +10,9 @@
 <link rel="alternate" hreflang="fr" href="https://digitalsafetyknights.org/fr/arcade.html">
 <link rel="alternate" hreflang="tr" href="https://digitalsafetyknights.org/tr/arcade.html">
 <link rel="alternate" hreflang="x-default" href="https://digitalsafetyknights.org/arcade.html">
-<meta name="description" content="Quinze jeux, quiz et simulateurs gratuits sur la sécurité en ligne, par Digital Safety Knights. Gagnez des Points de Chevalier et gardez votre série : sans compte, sans publicité et sans aucun suivi.">
+<meta name="description" content="Jeux, quiz et simulateurs gratuits sur la sécurité en ligne, par Digital Safety Knights. Gagnez des Points de Chevalier et gardez votre série : sans compte, sans publicité et sans aucun suivi.">
 <meta property="og:title" content="L’Arcade — Digital Safety Knights">
-<meta property="og:description" content="Quinze jeux, quiz et simulateurs gratuits sur la sécurité en ligne, par Digital Safety Knights. Gagnez des Points de Chevalier et gardez votre série : sans compte, sans publicité et sans aucun suivi.">
+<meta property="og:description" content="Jeux, quiz et simulateurs gratuits sur la sécurité en ligne, par Digital Safety Knights. Gagnez des Points de Chevalier et gardez votre série : sans compte, sans publicité et sans aucun suivi.">
 <meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
 <meta property="og:url" content="https://digitalsafetyknights.org/arcade.html">
 <meta property="og:type" content="website">
@@ -91,7 +91,7 @@
   <a class="back" href="/resources.html" data-i18n="arc.back">← Resources</a>
   <div class="eyebrow" data-i18n="arc.eyebrow">Digital Safety Knights</div>
   <h1 data-i18n="arc.h1">🕹️ The Arcade</h1>
-  <p data-i18n="arc.sub">Fifteen ways to get better at this, all free and all in your browser. Every one of them earns Knight Points. No account, no ads, and nothing you do here is sent anywhere.</p>
+  <p data-i18n="arc.sub">Games, quizzes and simulators that make you better at this — all free, all in your browser. Every one of them earns Knight Points. No account, no ads, and nothing you do here is sent anywhere.</p>
 </div>
 
 <div class="wrap">
@@ -116,7 +116,7 @@
   </div>
 
   <div class="chips" role="group" aria-label="Filter">
-    <button type="button" class="chip" data-filter="all" aria-pressed="true"><span data-i18n="arc.allCat">Everything</span> <span class="n">15</span></button>
+    <button type="button" class="chip" data-filter="all" aria-pressed="true"><span data-i18n="arc.allCat">Everything</span> <span class="n"></span></button>
     <button type="button" class="chip" data-filter="play" aria-pressed="false"><span data-i18n="arc.playCat">🎮 Games</span> <span class="n">4</span></button>
     <button type="button" class="chip" data-filter="quest" aria-pressed="false"><span data-i18n="arc.questCat">⚔️ Quests &amp; quizzes</span> <span class="n">3</span></button>
     <button type="button" class="chip" data-filter="sim" aria-pressed="false"><span data-i18n="arc.simCat">🧪 Try it safely</span> <span class="n">4</span></button>
@@ -133,6 +133,13 @@
   <div class="grid" id="ar-grid">
 
     <!-- ── games ── -->
+    <div class="tile" data-cat="play" data-id="dash">
+      <button type="button" class="fav" aria-pressed="false" aria-label="Favourite">★</button>
+      <a href="/shieldy-dash.html"><span class="ic">🏃</span>
+        <h3 data-i18n="arc.dash.h">Shieldy Dash</h3>
+        <p data-i18n="arc.dash.p">One button. Messages fly in — raise the shield against the tricks, let your friends through. It gets fast.</p>
+        <span class="go" data-i18n="arc.play">Play →</span></a>
+    </div>
     <div class="tile" data-cat="play" data-id="game">
       <button type="button" class="fav" aria-pressed="false" aria-label="Favourite">★</button>
       <a href="/game.html"><span class="ic">🛡️</span>
@@ -262,7 +269,7 @@
   'use strict';
   var FAV_KEY = 'dsk_arcade_favs';
   var RECENT_KEY = 'dsk_arcade_recent';
-  var NEW_IDS = ['duel', 'deepfake'];
+  var NEW_IDS = ['dash'];
   var RECENT_MAX = 4;
 
   function t(k, f) { return (window.DSKi18n && DSKi18n.t) ? DSKi18n.t(k, f) : f; }
