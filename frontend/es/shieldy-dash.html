@@ -46,13 +46,14 @@
 </style>
 </head>
 <body>
-<div class="bar"><a href="/arcade.html" id="t-back">← Arcade</a><span>🛡️ Shieldy Dash</span></div>
+<div class="bar"><a href="/arcade.html" id="t-back">← Arcade</a><span>🛡️ Shieldy Dash</span><button type="button" id="b-snd" aria-label="Sound" style="background:none;border:none;font-size:1.1rem;cursor:pointer;padding:2px 4px;">🔊</button></div>
 <div class="stage" id="stage">
   <canvas id="c" aria-label="Shieldy Dash"></canvas>
 
   <div class="ov" id="ov-title">
     <div class="card">
-      <h1>🛡️ Shieldy Dash</h1>
+      <img src="/assets/arcade/shieldy-shield.webp" alt="" width="131" height="200" style="height:150px;width:auto;margin-top:-6px;">
+      <h1>Shieldy Dash</h1>
       <p id="t-how"></p>
       <button type="button" class="btn" id="b-start"></button>
     </div>
@@ -60,6 +61,7 @@
 
   <div class="ov" id="ov-over" hidden>
     <div class="card">
+      <img src="/assets/arcade/glitch-laugh.webp" alt="" width="148" height="200" style="height:104px;width:auto;">
       <h1 id="t-over"></h1>
       <div class="big" id="o-score">0</div>
       <div class="best" id="o-best"></div>
@@ -198,7 +200,7 @@
   /* ───────── state ───────── */
   var BEST_KEY = 'dsk_dash_best';
   var g = { mode: 'title', score: 0, hearts: 3, combo: 0, n: 0, cur: null, wait: 0,
-            shield: false, flash: null, shake: 0, bg: 0, missed: {}, deckR: [], deckS: [], parts: [] };
+            shield: false, flash: null, shake: 0, missed: {}, deckR: [], deckS: [], parts: [] };
   var reduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function shuffled(a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
@@ -227,24 +229,25 @@
 
   function burst(color) {
     if (reduced) return;
-    for (var i = 0; i < 14; i++) { var a = Math.random() * Math.PI * 2, v = 60 + Math.random() * 160; g.parts.push({ x: Wd / 2, y: Ht - 150, vx: Math.cos(a) * v, vy: Math.sin(a) * v - 60, t: 0.6, c: color }); }
+    for (var i = 0; i < 14; i++) { var a = Math.random() * Math.PI * 2, v = 60 + Math.random() * 160; g.parts.push({ x: Wd / 2, y: Ht * 0.55, vx: Math.cos(a) * v, vy: Math.sin(a) * v - 60, t: 0.6, c: color }); }
   }
 
   function resolve() {
     var m = g.cur, blocked = g.shield; g.cur = null; g.wait = 0.28;
-    if (m.red && blocked) { g.combo++; g.score += 10 + Math.min(g.combo, 10) * 2; g.flash = { c: '#2a9d8f', t: 0.7, s: S.blocked }; burst('#e8c56a'); }
-    else if (!m.red && !blocked) { g.combo++; g.score += 5; }
+    if (m.red && blocked) { g.combo++; g.score += 10 + Math.min(g.combo, 10) * 2; g.flash = { c: '#7dffb0', t: 0.7, s: S.blocked }; burst('#e8c56a'); react('block'); }
+    else if (!m.red && !blocked) { g.combo++; g.score += 5; react('pass'); }
     else {
       g.hearts--; g.combo = 0; g.shake = reduced ? 0 : 0.3;
       var k = m.red ? m.lever : 'friend';
       g.missed[k] = (g.missed[k] || 0) + 1;
-      g.flash = m.red ? { c: '#e63946', t: 1.0, s: S.lever[m.lever] + '!' } : { c: '#c9a84c', t: 1.0, s: S.oops };
+      g.flash = m.red ? { c: '#ff7a85', t: 1.0, s: S.lever[m.lever] + '!' } : { c: '#ffd76a', t: 1.0, s: S.oops };
+      react(m.red ? 'trick' : 'friend');
       if (g.hearts <= 0) end();
     }
   }
 
   function end() {
-    g.mode = 'over';
+    g.mode = 'over'; SFX.over();
     var best = 0; try { best = parseInt(localStorage.getItem(BEST_KEY) || '0', 10); } catch (e) {}
     if (g.score > best) { best = g.score; try { localStorage.setItem(BEST_KEY, String(best)); } catch (e) {} }
     $('o-score').textContent = g.score;
@@ -278,99 +281,159 @@
   window.addEventListener('keyup', function (e) { if (e.code === 'Space') up(); });
   $('b-start').onclick = start; $('b-again').onclick = start;
 
-  /* ───────── drawing ───────── */
+  /* ───────── art and sound ─────────
+     The characters are the ones from the films (see infrastructure/
+     build-arcade-art.py). If an image fails to load the game still runs —
+     it just draws without that sprite. */
+  var ART = {}, ART_BASE = '/assets/arcade/';
+  ['bg-castle-road', 'shieldy-ready', 'shieldy-shield', 'shieldy-oops', 'shieldy-cheer', 'glitch-laugh', 'glitch-grr']
+    .forEach(function (n) { var im = new Image(); im.src = ART_BASE + n + '.webp'; ART[n] = im; });
+  function ok(im) { return im && im.complete && im.naturalWidth > 0; }
+
+  var snd = true, ac = null;
+  try { snd = localStorage.getItem('dsk_dash_snd') !== '0'; } catch (e) {}
+  function paintSnd() { $('b-snd').textContent = snd ? '🔊' : '🔇'; }
+  $('b-snd').onclick = function () { snd = !snd; try { localStorage.setItem('dsk_dash_snd', snd ? '1' : '0'); } catch (e) {} paintSnd(); };
+  paintSnd();
+  function tone(freqs, dur, type, vol) {
+    if (!snd) return;
+    try {
+      ac = ac || new (window.AudioContext || window.webkitAudioContext)();
+      var t0 = ac.currentTime, o = ac.createOscillator(), gn = ac.createGain();
+      o.type = type || 'triangle';
+      freqs.forEach(function (f, i) { o.frequency.setValueAtTime(f, t0 + i * dur / freqs.length); });
+      gn.gain.setValueAtTime(vol || 0.12, t0); gn.gain.exponentialRampToValueAtTime(0.001, t0 + dur);
+      o.connect(gn); gn.connect(ac.destination); o.start(t0); o.stop(t0 + dur);
+    } catch (e) {}
+  }
+  var SFX = {
+    block: function () { tone([523, 784, 1047], 0.22, 'triangle', 0.14); },
+    pass: function () { tone([660, 880], 0.12, 'sine', 0.07); },
+    oops: function () { tone([220, 147], 0.35, 'sawtooth', 0.09); },
+    over: function () { tone([392, 330, 262, 196], 0.7, 'triangle', 0.12); }
+  };
+
   function rr(x, y, w, h, r) { cx.beginPath(); cx.moveTo(x + r, y); cx.arcTo(x + w, y, x + w, y + h, r); cx.arcTo(x + w, y + h, x, y + h, r); cx.arcTo(x, y + h, x, y, r); cx.arcTo(x, y, x + w, y, r); cx.closePath(); }
   function wrap(text, maxW) {
     var words = text.split(' '), lines = [], line = '';
     for (var i = 0; i < words.length; i++) { var t = line ? line + ' ' + words[i] : words[i]; if (cx.measureText(t).width > maxW && line) { lines.push(line); line = words[i]; } else line = t; }
     if (line) lines.push(line); return lines;
   }
-
-  function drawShieldy(x, y, bob) {
-    // The yellow knight: deliberately simple shapes.
-    cx.save(); cx.translate(x, y + bob);
-    cx.fillStyle = 'rgba(0,0,0,.25)'; cx.beginPath(); cx.ellipse(0, 46, 30, 7, 0, 0, 7); cx.fill();
-    cx.fillStyle = '#f4c430'; rr(-24, -6, 48, 46, 14); cx.fill();                    // body
-    cx.fillStyle = '#f7d354'; cx.beginPath(); cx.arc(0, -20, 24, 0, 7); cx.fill();   // helmet
-    cx.fillStyle = '#0d1b3e'; rr(-15, -26, 30, 10, 5); cx.fill();                    // visor
-    cx.fillStyle = '#fff'; cx.beginPath(); cx.arc(-6, -21, 2.4, 0, 7); cx.arc(6, -21, 2.4, 0, 7); cx.fill();
-    cx.fillStyle = '#e63946'; cx.beginPath(); cx.moveTo(0, -44); cx.lineTo(7, -56); cx.lineTo(-7, -56); cx.closePath(); cx.fill(); // plume
-    cx.restore();
-  }
-  function drawShield(x, y, k) {
-    if (k <= 0) return;
-    cx.save(); cx.globalAlpha = 0.25 + 0.75 * k;
-    cx.strokeStyle = '#e8c56a'; cx.lineWidth = 7; cx.lineCap = 'round';
-    cx.beginPath(); cx.arc(x, y, 62, Math.PI * 1.12, Math.PI * 1.88); cx.stroke();
-    cx.strokeStyle = 'rgba(232,197,106,.35)'; cx.lineWidth = 16;
-    cx.beginPath(); cx.arc(x, y, 62, Math.PI * 1.12, Math.PI * 1.88); cx.stroke();
-    cx.restore();
+  function sprite(im, cxm, bottom, h) {           // draw by centre-x and feet
+    if (!ok(im)) return;
+    var w = h * im.naturalWidth / im.naturalHeight;
+    cx.drawImage(im, cxm - w / 2, bottom - h, w, h);
   }
 
-  var shieldK = 0, clock = 0;
+  var clock = 0, pose = 'ready', poseT = 0, villain = null, flies = [];
+  for (var fi = 0; fi < 16; fi++) flies.push({ x: Math.random(), y: Math.random(), s: 0.4 + Math.random(), p: Math.random() * 6 });
+
+  function react(kind) {            // called from resolve()
+    if (kind === 'block') { pose = 'cheer'; poseT = 0.5; villain = { im: 'glitch-grr', t: 0.9 }; SFX.block(); }
+    else if (kind === 'pass') { SFX.pass(); }
+    else { pose = 'oops'; poseT = 0.75; if (kind === 'trick') villain = { im: 'glitch-laugh', t: 1.1 }; SFX.oops(); }
+  }
+
   function frame(dt) {
     clock += dt;
     if (g.mode === 'play') {
-      g.bg += dt * (140 + g.n * 3);
       if (!g.cur) { g.wait -= dt; if (g.wait <= 0) spawn(); }
       else { g.cur.t += dt; if (g.cur.t >= g.cur.T) resolve(); }
     }
-    shieldK += ((g.shield ? 1 : 0) - shieldK) * Math.min(1, dt * 18);
+    if (poseT > 0) { poseT -= dt; if (poseT <= 0) pose = 'ready'; }
+    if (villain) { villain.t -= dt; if (villain.t <= 0) villain = null; }
     if (g.flash) { g.flash.t -= dt; if (g.flash.t <= 0) g.flash = null; }
     if (g.shake > 0) g.shake -= dt;
 
     cx.save();
     if (g.shake > 0) cx.translate((Math.random() - 0.5) * 10, (Math.random() - 0.5) * 10);
 
-    var grad = cx.createLinearGradient(0, 0, 0, Ht);
-    grad.addColorStop(0, '#0d1b3e'); grad.addColorStop(1, '#1a2f6e');
-    cx.fillStyle = grad; cx.fillRect(-10, -10, Wd + 20, Ht + 20);
-    // the road, scrolling towards the player
-    cx.strokeStyle = 'rgba(255,255,255,.08)'; cx.lineWidth = 3; cx.setLineDash([26, 30]); cx.lineDashOffset = -g.bg;
-    [0.2, 0.8].forEach(function (f) { cx.beginPath(); cx.moveTo(Wd * f, 0); cx.lineTo(Wd * f, Ht); cx.stroke(); });
-    cx.setLineDash([]);
+    // background, cover-fitted; the portal's position follows the same mapping
+    var bg = ART['bg-castle-road'], px = Wd / 2, py = Ht * 0.45;
+    if (ok(bg)) {
+      var sc = Math.max(Wd / bg.naturalWidth, Ht / bg.naturalHeight);
+      var bw0 = bg.naturalWidth * sc, bh0 = bg.naturalHeight * sc, bx = (Wd - bw0) / 2, by = (Ht - bh0) / 2;
+      cx.drawImage(bg, bx - 8, by - 8, bw0 + 16, bh0 + 16);
+      px = bx + bw0 * 0.5; py = by + bh0 * 0.452;
+    } else { cx.fillStyle = '#16264f'; cx.fillRect(-10, -10, Wd + 20, Ht + 20); }
+    // the portal breathes
+    var pulse = 0.5 + 0.5 * Math.sin(clock * 3);
+    var pg = cx.createRadialGradient(px, py, 2, px, py, 46 + pulse * 14);
+    pg.addColorStop(0, 'rgba(140,220,255,' + (0.5 + pulse * 0.25) + ')'); pg.addColorStop(1, 'rgba(140,220,255,0)');
+    cx.fillStyle = pg; cx.beginPath(); cx.arc(px, py, 60 + pulse * 14, 0, 7); cx.fill();
+    // fireflies
+    if (!reduced) flies.forEach(function (f) {
+      var fx = (f.x + Math.sin(clock * 0.4 * f.s + f.p) * 0.04) * Wd, fy = ((f.y + clock * 0.012 * f.s) % 1) * Ht * 0.8;
+      cx.globalAlpha = 0.35 + 0.35 * Math.sin(clock * 2 * f.s + f.p); cx.fillStyle = '#ffe9a8';
+      cx.beginPath(); cx.arc(fx, fy, 1.6 * f.s, 0, 7); cx.fill();
+    });
+    cx.globalAlpha = 1;
+    // top shade so the HUD reads on any part of the sky
+    var tg = cx.createLinearGradient(0, 0, 0, 90); tg.addColorStop(0, 'rgba(7,14,36,.75)'); tg.addColorStop(1, 'rgba(7,14,36,0)');
+    cx.fillStyle = tg; cx.fillRect(-10, -10, Wd + 20, 100);
 
-    var sx = Wd / 2, sy = Ht - 110;
+    var sx = Wd / 2, feet = Ht - 14, hS = Math.min(Ht * 0.36, 300);
+    var bob = (g.mode === 'play' && pose === 'ready' && !g.shield) ? Math.sin(clock * 9) * 3 : 0;
 
-    // the message: no colour hint — it has to be read
-    if (g.cur) {
-      var m = g.cur, bw = Math.min(Wd - 36, 380), fs = Math.max(15, Math.min(19, Wd / 22));
-      cx.font = '800 ' + fs + 'px "Nunito Sans","Segoe UI",system-ui,sans-serif';
-      if (!m.lines) m.lines = wrap(m.text, bw - 60);
-      var bh = 30 + m.lines.length * (fs + 6);
-      var p = m.t / m.T, y = -bh + (sy - 96 + bh) * p * p * (3 - 2 * p) * 0.5 + (sy - 96 + bh) * p * 0.5;
-      cx.fillStyle = '#fff'; rr(sx - bw / 2, y, bw, bh, 16); cx.fill();
-      cx.fillStyle = '#b8c2d6'; cx.beginPath(); cx.arc(sx - bw / 2 + 24, y + bh / 2, 11, 0, 7); cx.fill();
-      cx.fillStyle = '#0d1b3e'; cx.textBaseline = 'top'; cx.textAlign = 'left';
-      m.lines.forEach(function (ln, i) { cx.fillText(ln, sx - bw / 2 + 46, y + 15 + i * (fs + 6)); });
-      // time-left bar under the bubble
-      cx.fillStyle = 'rgba(255,255,255,.25)'; rr(sx - bw / 2, y + bh + 6, bw, 4, 2); cx.fill();
-      cx.fillStyle = '#e8c56a'; rr(sx - bw / 2, y + bh + 6, bw * (1 - p), 4, 2); cx.fill();
+    // villain peeks in beside the portal
+    if (villain && ok(ART[villain.im])) {
+      var vk = Math.min(1, (villain.t > 0.25 ? 1 : villain.t / 0.25)), vh = hS * 0.62;
+      cx.globalAlpha = vk; sprite(ART[villain.im], Wd - vh * 0.42 + (1 - vk) * 60, py + vh * 0.75, vh); cx.globalAlpha = 1;
     }
 
-    drawShield(sx, sy - 10, shieldK);
-    drawShieldy(sx, sy, g.mode === 'play' ? Math.sin(clock * 12) * 3 : 0);
+    // the message flies out of the portal and grows as it nears — no colour
+    // hint on it: it has to be read
+    if (g.cur) {
+      var m = g.cur, bw = Math.min(Wd - 28, 390), fs = Math.max(15, Math.min(19, Wd / 21));
+      cx.font = '800 ' + fs + 'px "Nunito Sans","Segoe UI",system-ui,sans-serif';
+      if (!m.lines) m.lines = wrap(m.text, bw - 66);
+      var bh = 32 + m.lines.length * (fs + 6);
+      var p = m.t / m.T, e = 1 - Math.pow(1 - Math.min(1, p * 2.4), 3);      // pops to full size early, so it is readable
+      var k = 0.45 + 0.55 * e, endY = feet - hS - bh / 2 - 6;
+      var mx = px + (sx - px) * e, my = py + (endY - py) * (0.25 * e + 0.75 * p);
+      cx.save(); cx.translate(mx, my); cx.scale(k, k);
+      cx.shadowColor = 'rgba(0,0,0,.45)'; cx.shadowBlur = 18; cx.shadowOffsetY = 6;
+      cx.fillStyle = '#fff'; rr(-bw / 2, -bh / 2, bw, bh, 18); cx.fill();
+      cx.shadowColor = 'transparent';
+      cx.fillStyle = '#e9edf6'; cx.beginPath(); cx.arc(-bw / 2 + 27, 0, 14, 0, 7); cx.fill();
+      cx.font = '15px system-ui'; cx.textAlign = 'center'; cx.textBaseline = 'middle'; cx.fillText('✉️', -bw / 2 + 27, 1);
+      cx.font = '800 ' + fs + 'px "Nunito Sans","Segoe UI",system-ui,sans-serif';
+      cx.fillStyle = '#0d1b3e'; cx.textBaseline = 'top'; cx.textAlign = 'left';
+      m.lines.forEach(function (ln, i) { cx.fillText(ln, -bw / 2 + 50, -bh / 2 + 16 + i * (fs + 6)); });
+      cx.fillStyle = 'rgba(13,27,62,.12)'; rr(-bw / 2 + 14, bh / 2 - 9, bw - 28, 4, 2); cx.fill();
+      cx.fillStyle = p > 0.75 ? '#e63946' : '#c9a84c'; rr(-bw / 2 + 14, bh / 2 - 9, (bw - 28) * (1 - p), 4, 2); cx.fill();
+      cx.restore();
+    }
+
+    // Shieldy
+    var which = g.shield && g.mode === 'play' ? 'shieldy-shield' : 'shieldy-' + pose;
+    cx.fillStyle = 'rgba(0,0,0,.35)'; cx.beginPath(); cx.ellipse(sx, feet - 4, hS * 0.3, hS * 0.05, 0, 0, 7); cx.fill();
+    sprite(ART[which] && ok(ART[which]) ? ART[which] : ART['shieldy-ready'], sx, feet + bob - (pose === 'cheer' ? Math.sin((0.5 - poseT) / 0.5 * Math.PI) * 26 : 0), hS);
 
     // particles
-    for (var i = g.parts.length - 1; i >= 0; i--) { var q = g.parts[i]; q.t -= dt; if (q.t <= 0) { g.parts.splice(i, 1); continue; } q.x += q.vx * dt; q.y += q.vy * dt; q.vy += 420 * dt; cx.globalAlpha = Math.min(1, q.t * 2); cx.fillStyle = q.c; cx.fillRect(q.x, q.y, 5, 5); }
+    for (var i = g.parts.length - 1; i >= 0; i--) { var q = g.parts[i]; q.t -= dt; if (q.t <= 0) { g.parts.splice(i, 1); continue; } q.x += q.vx * dt; q.y += q.vy * dt; q.vy += 420 * dt; cx.globalAlpha = Math.min(1, q.t * 2); cx.fillStyle = q.c; cx.beginPath(); cx.arc(q.x, q.y, 3.5, 0, 7); cx.fill(); }
     cx.globalAlpha = 1;
 
     // HUD
-    cx.textBaseline = 'top'; cx.font = '900 20px "Nunito Sans","Segoe UI",system-ui,sans-serif';
-    cx.textAlign = 'left'; cx.fillStyle = '#fff';
-    var hearts = ''; for (var h = 0; h < 3; h++) hearts += h < g.hearts ? '♥' : '♡';
-    cx.fillStyle = '#ff6b78'; cx.fillText(hearts, 14, 12);
-    cx.textAlign = 'right'; cx.fillStyle = '#e8c56a'; cx.fillText(String(g.score), Wd - 14, 12);
-    if (g.combo >= 3) { cx.font = '900 13px "Nunito Sans",system-ui,sans-serif'; cx.fillStyle = '#8fe6e2'; cx.fillText('×' + g.combo, Wd - 14, 38); }
+    cx.textBaseline = 'top'; cx.textAlign = 'left'; cx.font = '900 24px system-ui';
+    for (var h = 0; h < 3; h++) { cx.fillStyle = h < g.hearts ? '#ff5d6c' : 'rgba(255,255,255,.28)'; cx.fillText('♥', 14 + h * 26, 10); }
+    var sc2 = String(g.score); cx.font = '900 20px "Nunito Sans",system-ui,sans-serif';
+    var sw = cx.measureText(sc2).width + 26;
+    cx.fillStyle = 'rgba(7,14,36,.6)'; rr(Wd - sw - 12, 9, sw, 32, 16); cx.fill();
+    cx.fillStyle = '#e8c56a'; cx.textAlign = 'center'; cx.fillText(sc2, Wd - 12 - sw / 2, 15);
+    if (g.combo >= 3) { cx.font = '900 14px "Nunito Sans",system-ui,sans-serif'; cx.fillStyle = '#8fe6e2'; cx.textAlign = 'right'; cx.fillText('×' + g.combo, Wd - 16, 46); }
 
     if (g.mode === 'play' && g.n <= 3 && !g.flash) {
-      cx.textAlign = 'center'; cx.font = '900 14px "Nunito Sans",system-ui,sans-serif'; cx.fillStyle = 'rgba(255,255,255,.75)';
-      cx.fillText(S.hold, sx, Ht - 34);
+      cx.textAlign = 'center'; cx.font = '900 14px "Nunito Sans",system-ui,sans-serif';
+      var hw = cx.measureText(S.hold).width + 24;
+      cx.fillStyle = 'rgba(7,14,36,.7)'; rr(sx - hw / 2, 58, hw, 28, 14); cx.fill();
+      cx.fillStyle = '#fff'; cx.fillText(S.hold, sx, 65);
     }
     if (g.flash) {
-      cx.textAlign = 'center'; cx.font = '900 26px "Nunito Sans",system-ui,sans-serif';
-      cx.globalAlpha = Math.min(1, g.flash.t * 2.5); cx.fillStyle = g.flash.c;
-      cx.fillText(g.flash.s, sx, sy - 150); cx.globalAlpha = 1;
+      cx.textAlign = 'center'; cx.font = '900 30px "Nunito Sans",system-ui,sans-serif';
+      cx.globalAlpha = Math.min(1, g.flash.t * 2.5);
+      cx.lineWidth = 6; cx.strokeStyle = 'rgba(7,14,36,.85)'; cx.strokeText(g.flash.s, sx, Ht * 0.3);
+      cx.fillStyle = g.flash.c; cx.fillText(g.flash.s, sx, Ht * 0.3); cx.globalAlpha = 1;
     }
     cx.restore();
   }
