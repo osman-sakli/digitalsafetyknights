@@ -42,7 +42,9 @@ HIGH = {"index.html", "resources.html", "school-programs.html", "quests.html",
         "chapters.html", "certification.html",
         # A parent searching "my child is being blackmailed with a photo" at
         # two in the morning is the highest-value search this site can answer.
-        "recovery-plan.html"}
+        "recovery-plan.html",
+        # The games hub: fifteen things that were buried in a list of 37 cards.
+        "arcade.html"}
 MEDIUM = {"knights.html", "academy.html", "game.html", "audit.html",
           "knight-council.html", "journal-archive.html", "glossary.html",
           "certification-exam.html"}

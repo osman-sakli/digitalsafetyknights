@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Arcade — Digital Safety Knights</title>
+<link rel="canonical" href="https://digitalsafetyknights.org/en/arcade.html">
+<link rel="alternate" hreflang="en" href="https://digitalsafetyknights.org/en/arcade.html">
+<link rel="alternate" hreflang="es" href="https://digitalsafetyknights.org/es/arcade.html">
+<link rel="alternate" hreflang="fr" href="https://digitalsafetyknights.org/fr/arcade.html">
+<link rel="alternate" hreflang="tr" href="https://digitalsafetyknights.org/tr/arcade.html">
+<link rel="alternate" hreflang="x-default" href="https://digitalsafetyknights.org/arcade.html">
+<meta name="description" content="Fifteen free online safety games, quizzes and simulators from Digital Safety Knights. Earn Knight Points, keep a streak, no account and no ads — and nothing you do here is tracked.">
+<meta property="og:title" content="The Arcade — Digital Safety Knights">
+<meta property="og:description" content="Fifteen free games, quizzes and simulators that teach online safety. Earn Knight Points. No account, no ads, no tracking.">
+<meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
+<meta property="og:url" content="https://digitalsafetyknights.org/arcade.html">
+<meta property="og:type" content="website">
+<link rel="icon" href="/assets/favicon.ico">
+<link rel="stylesheet" href="/assets/theme.css">
+<script src="/assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
+<style>
+  :root { --navy:#0d1b3e; --navy2:#1a2f6e; --gold:#c9a84c; --gold2:#e8c56a;
+          --light:#f4f6fb; --gray:#6c757d; --danger:#e63946; --success:#2a9d8f;
+          --teal:#3EC6C0; --purple:#8A5FBF; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Nunito Sans','Segoe UI',system-ui,sans-serif; background:var(--light); color:#2d3748; }
+  a { color:inherit; }
+  [hidden] { display:none !important; }
+
+  .ar-hero { background:linear-gradient(140deg,#0d1b3e,#1a2f6e); color:#fff; padding:2.4rem 1.5rem 2.6rem; text-align:center; position:relative; overflow:hidden; }
+  .ar-hero::after { content:""; position:absolute; right:-70px; top:-70px; width:260px; height:260px; background:radial-gradient(circle,rgba(201,168,76,.22),transparent 70%); }
+  .ar-hero .back { position:absolute; left:18px; top:15px; color:#aebbd6; text-decoration:none; font-size:.82rem; font-weight:700; z-index:2; }
+  .ar-hero .eyebrow { color:var(--gold); font-weight:900; letter-spacing:2.4px; font-size:.72rem; text-transform:uppercase; }
+  .ar-hero h1 { font-size:clamp(1.8rem,6vw,2.5rem); font-weight:900; margin:10px 0 11px; text-wrap:balance; }
+  .ar-hero p { color:#c3cee6; max-width:54ch; margin:0 auto; font-size:.97rem; line-height:1.7; }
+
+  .wrap { max-width:1020px; margin:0 auto; padding:0 18px 70px; }
+
+  /* progress card */
+  .prog { background:#fff; border-radius:18px; box-shadow:0 6px 26px rgba(13,27,62,.1); padding:20px 24px; margin-top:-28px; position:relative; z-index:3;
+          display:flex; align-items:center; gap:22px; flex-wrap:wrap; }
+  .prog .ring { flex-shrink:0; }
+  .prog .nums { display:flex; gap:26px; flex-wrap:wrap; flex:1; min-width:200px; }
+  .prog .nums > div { min-width:84px; }
+  .prog .k { font-size:.68rem; font-weight:900; letter-spacing:1.6px; text-transform:uppercase; color:var(--gray); }
+  .prog .v { font-size:1.5rem; font-weight:900; color:var(--navy); line-height:1.2; font-variant-numeric:tabular-nums; }
+  .prog .v small { font-size:.8rem; font-weight:800; color:var(--gray); }
+  .prog .note { font-size:.8rem; color:var(--gray); line-height:1.6; max-width:30ch; }
+
+  /* chips */
+  .chips { display:flex; gap:8px; flex-wrap:wrap; margin:26px 0 4px; }
+  .chip { background:#fff; border:2px solid #dfe4ee; border-radius:20px; padding:8px 15px; font:inherit; font-size:.82rem; font-weight:800; color:var(--navy); cursor:pointer; }
+  .chip[aria-pressed="true"] { border-color:var(--gold); background:#fdf7e8; }
+  .chip .n { color:var(--gray); font-weight:700; }
+
+  h2.row { font-size:.72rem; font-weight:900; letter-spacing:1.8px; text-transform:uppercase; color:var(--gray); margin:28px 0 10px; }
+
+  .grid { display:grid; gap:14px; grid-template-columns:repeat(auto-fill,minmax(228px,1fr)); }
+
+  .tile { background:#fff; border-radius:16px; box-shadow:0 2px 16px rgba(13,27,62,.07); overflow:hidden; display:flex; flex-direction:column; position:relative; border-top:4px solid var(--tc,var(--gold)); }
+  .tile[data-cat="play"]  { --tc:var(--gold); }
+  .tile[data-cat="quest"] { --tc:var(--purple); }
+  .tile[data-cat="sim"]   { --tc:var(--teal); }
+  .tile[data-cat="check"] { --tc:var(--navy2); }
+  .tile > a { text-decoration:none; color:inherit; padding:18px 18px 16px; display:flex; flex-direction:column; gap:7px; flex:1; }
+  .tile .ic { font-size:1.9rem; line-height:1; }
+  .tile h3 { font-size:1rem; color:var(--navy); line-height:1.3; padding-right:26px; }
+  .tile p { font-size:.83rem; color:var(--gray); line-height:1.6; flex:1; }
+  .tile .go { font-size:.8rem; font-weight:900; color:var(--navy2); margin-top:4px; }
+  .tile .fav { position:absolute; top:12px; right:10px; background:none; border:none; font-size:1.05rem; line-height:1; cursor:pointer; padding:4px; color:#cfd6e4; }
+  .tile .fav[aria-pressed="true"] { color:var(--gold); }
+  .tile .badge { position:absolute; top:14px; right:40px; background:var(--success); color:#fff; font-size:.6rem; font-weight:900; letter-spacing:1.2px; text-transform:uppercase; padding:3px 7px; border-radius:10px; }
+  .tile.hide { display:none; }
+
+  .empty { font-size:.86rem; color:var(--gray); background:#fff; border-radius:14px; padding:16px 19px; line-height:1.65; }
+
+  .promise { background:var(--navy); color:#c3cee6; border-radius:16px; padding:20px 24px; margin-top:34px; font-size:.9rem; line-height:1.75; }
+  .promise b { color:var(--gold2); }
+
+  footer { text-align:center; padding:2rem; color:var(--gray); font-size:.85rem; }
+  :focus-visible { outline:3px solid var(--gold); outline-offset:2px; }
+  @media (max-width:560px) { .prog { margin-top:-20px; padding:17px 19px; gap:16px; } .prog .nums { gap:18px; } }
+</style>
+</head>
+<body>
+
+<div class="ar-hero">
+  <a class="back" href="/resources.html" data-i18n="arc.back">← Resources</a>
+  <div class="eyebrow" data-i18n="arc.eyebrow">Digital Safety Knights</div>
+  <h1 data-i18n="arc.h1">🕹️ The Arcade</h1>
+  <p data-i18n="arc.sub">Fifteen ways to get better at this, all free and all in your browser. Every one of them earns Knight Points. No account, no ads, and nothing you do here is sent anywhere.</p>
+</div>
+
+<div class="wrap">
+
+  <div class="prog">
+    <div class="ring" id="ar-ring"></div>
+    <div class="nums">
+      <div>
+        <div class="k" data-i18n="arc.pointsLabel">Knight Points</div>
+        <div class="v" id="ar-points">0</div>
+      </div>
+      <div>
+        <div class="k" data-i18n="arc.rankLabel">Rank</div>
+        <div class="v" id="ar-rank" style="font-size:1.15rem;">—</div>
+      </div>
+      <div>
+        <div class="k" data-i18n="arc.streakLabel">Streak</div>
+        <div class="v" id="ar-streak">0 <small>days</small></div>
+      </div>
+    </div>
+    <p class="note" id="ar-note" data-i18n="arc.progNote">Your points live in this browser only. There is no login, and no leaderboard unless you choose to put your name on one.</p>
+  </div>
+
+  <div class="chips" role="group" aria-label="Filter">
+    <button type="button" class="chip" data-filter="all" aria-pressed="true"><span data-i18n="arc.allCat">Everything</span> <span class="n">15</span></button>
+    <button type="button" class="chip" data-filter="play" aria-pressed="false"><span data-i18n="arc.playCat">🎮 Games</span> <span class="n">4</span></button>
+    <button type="button" class="chip" data-filter="quest" aria-pressed="false"><span data-i18n="arc.questCat">⚔️ Quests &amp; quizzes</span> <span class="n">3</span></button>
+    <button type="button" class="chip" data-filter="sim" aria-pressed="false"><span data-i18n="arc.simCat">🧪 Try it safely</span> <span class="n">4</span></button>
+    <button type="button" class="chip" data-filter="check" aria-pressed="false"><span data-i18n="arc.checkCat">📋 Check yourself</span> <span class="n">4</span></button>
+  </div>
+
+  <h2 class="row" id="ar-recent-h" hidden data-i18n="arc.recent">Pick up where you left off</h2>
+  <div class="grid" id="ar-recent" hidden></div>
+
+  <h2 class="row" id="ar-fav-h" hidden data-i18n="arc.favs">Your favourites</h2>
+  <div class="grid" id="ar-favs" hidden></div>
+
+  <h2 class="row" id="ar-all-h" data-i18n="arc.all">Everything</h2>
+  <div class="grid" id="ar-grid">
+
+    <!-- ── games ── -->
+    <div class="tile" data-cat="play" data-id="game">
+      <button type="button" class="fav" aria-pressed="false" aria-label="Favourite">★</button>
+      <a href="/game.html"><span class="ic">🛡️</span>
+        <h3 data-i18n="res.game.h">Shieldy's Message Sort</h3>
+        <p data-i18n="res.game.p">Our own arcade-style game — sort real messages into "safe" and "red flag" before time runs out.</p>
+        <span class="go" data-i18n="arc.play">Play →</span></a>
+    </div>
+    <div class="tile" data-cat="play" data-id="duel">
+      <button type="button" class="fav" aria-pressed="false" aria-label="Favourite">★</button>
+      <a href="/knight-duel.html"><span class="ic">⚔️</span>
+        <h3 data-i18n="arc.duel.h">Knight's Duel</h3>
+        <p data-i18n="arc.duel.p">Two Knights, one scenario, and a timer. Call the red flag faster than your opponent does.</p>
+        <span class="go" data-i18n="arc.play">Play →</span></a>
+    </div>
+    <div class="tile" data-cat="play" data-id="glitch">
+      <button type="button" class="fav" aria-pressed="false" aria-label="Favourite">★</button>
+      <a href="/glitch-detector.html"><span class="ic">🔍</span>
+        <h3 data-i18n="res.glitch.h">Glitch Detector</h3>
+        <p data-i18n="res.glitch.p">Spot the trick in a message before Glitch gets away with it.</p>
+        <span class="go" data-i18n="arc.play">Play →</span></a>
+    </div>
+    <div class="tile" data-cat="play" data-id="deepfake">
+      <button type="button" class="fav" aria-pressed="false" aria-label="Favourite">★</button>
+      <a href="/spot-the-deepfake.html"><span class="ic">🎭</span>
+        <h3 data-i18n="res.deepfake.h">Spot the Deepfake</h3>
+        <p data-i18n="res.deepfake.p">Real or generated? Decide fast, then find out what actually gave it away.</p>
+        <span class="go" data-i18n="arc.play">Play →</span></a>
+    </div>
+
+    <!-- ── quests & quizzes ── -->
+    <div class="tile" data-cat="quest" data-id="quests">
+      <button type="button" class="fav" aria-pressed="false" aria-label="Favourite">★</button>
+      <a href="/quests.html"><span class="ic">🎮</span>
+        <h3 data-i18n="res.quests.h">Interactive Quests</h3>
+        <p data-i18n="res.quests.p">Short branching scenarios with a badge at the end. Three reading levels.</p>
+        <span class="go" data-i18n="arc.start">Start →</span></a>
+    </div>
+    <div class="tile" data-cat="quest" data-id="quiz">
+      <button type="button" class="fav" aria-pressed="false" aria-label="Favourite">★</button>
+      <a href="/quiz.html"><span class="ic">🧠</span>
+        <h3 data-i18n="res.quiz.h">Knight's Quiz</h3>
+        <p data-i18n="res.quiz.p">Ten questions, instant answers, and the reasoning behind each one.</p>
+        <span class="go" data-i18n="arc.start">Start →</span></a>
+    </div>
+    <div class="tile" data-cat="quest" data-id="academy">
+      <button type="button" class="fav" aria-pressed="false" aria-label="Favourite">★</button>
+      <a href="/academy.html"><span class="ic">🎓</span>
+        <h3 data-i18n="arc.academy.h">The Knight Academy</h3>
+        <p data-i18n="arc.academy.p">Every quest in order, ending in the Knight's Trial. Finish it and you graduate.</p>
+        <span class="go" data-i18n="arc.start">Start →</span></a>
+    </div>
+
+    <!-- ── try it safely ── -->
+    <div class="tile" data-cat="sim" data-id="chatsim">
+      <button type="button" class="fav" aria-pressed="false" aria-label="Favourite">★</button>
+      <a href="/chat-simulator.html"><span class="ic">💬</span>
+        <h3 data-i18n="res.chatsim.h">Chat Simulator</h3>
+        <p data-i18n="res.chatsim.p">A conversation that goes wrong, safely. See the tells as they happen.</p>
+        <span class="go" data-i18n="arc.try">Try it →</span></a>
+    </div>
+    <div class="tile" data-cat="sim" data-id="privsim">
+      <button type="button" class="fav" aria-pressed="false" aria-label="Favourite">★</button>
+      <a href="/privacy-simulator.html"><span class="ic">⚙️</span>
+        <h3 data-i18n="res.privsim.h">Privacy Settings Simulator</h3>
+        <p data-i18n="res.privsim.p">Change a setting and watch what a stranger can suddenly see.</p>
+        <span class="go" data-i18n="arc.try">Try it →</span></a>
+    </div>
+    <div class="tile" data-cat="sim" data-id="profile">
+      <button type="button" class="fav" aria-pressed="false" aria-label="Favourite">★</button>
+      <a href="/safe-profile-builder.html"><span class="ic">🗂️</span>
+        <h3 data-i18n="res.profilebuilder.h">Build Your Safe Profile</h3>
+        <p data-i18n="res.profilebuilder.p">Build a profile field by field and see which choices give you away.</p>
+        <span class="go" data-i18n="arc.try">Try it →</span></a>
+    </div>
+    <div class="tile" data-cat="sim" data-id="pwdojo">
+      <button type="button" class="fav" aria-pressed="false" aria-label="Favourite">★</button>
+      <a href="/password-dojo.html"><span class="ic">🔐</span>
+        <h3 data-i18n="res.pwdojo.h">Password Dojo</h3>
+        <p data-i18n="res.pwdojo.p">Test a passphrase and see it get stronger. It runs in your browser and sends nothing.</p>
+        <span class="go" data-i18n="arc.try">Try it →</span></a>
+    </div>
+
+    <!-- ── check yourself ── -->
+    <div class="tile" data-cat="check" data-id="footprint">
+      <button type="button" class="fav" aria-pressed="false" aria-label="Favourite">★</button>
+      <a href="/footprint-calculator.html"><span class="ic">👣</span>
+        <h3 data-i18n="res.footprint.h">Digital Footprint Calculator</h3>
+        <p data-i18n="res.footprint.p">Work out how much of you is already findable, and what to pull back.</p>
+        <span class="go" data-i18n="arc.check">Check →</span></a>
+    </div>
+    <div class="tile" data-cat="check" data-id="screentime">
+      <button type="button" class="fav" aria-pressed="false" aria-label="Favourite">★</button>
+      <a href="/screen-time-checkin.html"><span class="ic">📱</span>
+        <h3 data-i18n="res.screentime.h">Screen-Time Check-In</h3>
+        <p data-i18n="res.screentime.p">Not a lecture about minutes — a look at whether it still feels like your choice.</p>
+        <span class="go" data-i18n="arc.check">Check →</span></a>
+    </div>
+    <div class="tile" data-cat="check" data-id="audit">
+      <button type="button" class="fav" aria-pressed="false" aria-label="Favourite">★</button>
+      <a href="/audit.html"><span class="ic">🏠</span>
+        <h3 data-i18n="res.audit.h">Family Safety Audit</h3>
+        <p data-i18n="res.audit.p">A five-minute checklist that scores your home and tells you the three things to fix first.</p>
+        <span class="go" data-i18n="arc.check">Check →</span></a>
+    </div>
+    <div class="tile" data-cat="check" data-id="askshieldy">
+      <button type="button" class="fav" aria-pressed="false" aria-label="Favourite">★</button>
+      <a href="/ask-shieldy.html"><span class="ic">🤖</span>
+        <h3 data-i18n="res.askshieldy.h">Ask Shieldy</h3>
+        <p data-i18n="res.askshieldy.p">Ask a question in your own words and get a straight answer.</p>
+        <span class="go" data-i18n="arc.ask">Ask →</span></a>
+    </div>
+
+  </div>
+
+  <p class="empty" id="ar-none" hidden data-i18n="arc.noneInFilter">Nothing in that category yet.</p>
+
+  <div class="promise">
+    <p data-i18n="arc.promise"><b>Why there is no sign-up here.</b> Points, streaks and favourites are kept in this browser and nowhere else. We do not know who you are, we do not count you, and there is nothing to delete later. If you clear your browser you lose your points — that is the trade, and we think it is the right one.</p>
+  </div>
+
+</div>
+
+<footer>⚔️ Digital Safety Knights · digitalsafetyknights.org · © 2026</footer>
+
+<script>
+(function () {
+  'use strict';
+  var FAV_KEY = 'dsk_arcade_favs';
+  var RECENT_KEY = 'dsk_arcade_recent';
+  var NEW_IDS = ['duel', 'deepfake'];
+  var RECENT_MAX = 4;
+
+  function t(k, f) { return (window.DSKi18n && DSKi18n.t) ? DSKi18n.t(k, f) : f; }
+  function read(key) { try { return JSON.parse(localStorage.getItem(key) || '[]'); } catch (e) { return []; } }
+  function write(key, v) { try { localStorage.setItem(key, JSON.stringify(v)); } catch (e) {} }
+
+  var tiles = Array.prototype.slice.call(document.querySelectorAll('#ar-grid .tile'));
+  var byId = {};
+  tiles.forEach(function (el) { byId[el.getAttribute('data-id')] = el; });
+
+  /* ── progress header ── */
+  function paintProgress() {
+    var P = window.DSKPoints;
+    if (!P) return;
+    var pts = P.getPoints();
+    var lvl = P.levelForPoints(pts);
+    document.getElementById('ar-points').textContent = pts;
+    document.getElementById('ar-rank').textContent = (lvl.emoji || '') + ' ' +
+      (lvl['name' + (DSKi18n.lang || 'en').charAt(0).toUpperCase() + (DSKi18n.lang || 'en').slice(1)] || lvl.name);
+    var st = P.getStreak();
+    // "1 days" is the sort of thing that makes a page look unfinished.
+    document.getElementById('ar-streak').innerHTML = st +
+      ' <small>' + (st === 1 ? t('arc.streakDay', 'day') : t('arc.streakDays', 'days')) + '</small>';
+    P.renderLevelRing(document.getElementById('ar-ring'), pts);
+  }
+
+  /* ── "new" badges ── */
+  NEW_IDS.forEach(function (id) {
+    var el = byId[id];
+    if (!el) return;
+    var b = document.createElement('span');
+    b.className = 'badge';
+    b.textContent = t('arc.new', 'New');
+    el.appendChild(b);
+  });
+
+  /* ── favourites ── */
+  function paintFavs() {
+    var favs = read(FAV_KEY);
+    tiles.forEach(function (el) {
+      var on = favs.indexOf(el.getAttribute('data-id')) !== -1;
+      el.querySelector('.fav').setAttribute('aria-pressed', String(on));
+    });
+    var row = document.getElementById('ar-favs');
+    row.innerHTML = '';
+    favs.forEach(function (id) {
+      if (byId[id]) row.appendChild(cloneTile(byId[id]));
+    });
+    var any = row.children.length > 0;
+    row.hidden = !any;
+    document.getElementById('ar-fav-h').hidden = !any;
+  }
+
+  // A row copy, without the star — the original tile below stays the control.
+  function cloneTile(el) {
+    var c = el.cloneNode(true);
+    var f = c.querySelector('.fav');
+    if (f) f.remove();
+    c.classList.remove('hide');
+    return c;
+  }
+
+  tiles.forEach(function (el) {
+    el.querySelector('.fav').addEventListener('click', function () {
+      var id = el.getAttribute('data-id');
+      var favs = read(FAV_KEY);
+      var i = favs.indexOf(id);
+      if (i === -1) favs.push(id); else favs.splice(i, 1);
+      write(FAV_KEY, favs);
+      paintFavs();
+    });
+  });
+
+  /* ── recently played ── */
+  function paintRecent() {
+    var rec = read(RECENT_KEY);
+    var row = document.getElementById('ar-recent');
+    row.innerHTML = '';
+    rec.forEach(function (id) {
+      if (byId[id]) row.appendChild(cloneTile(byId[id]));
+    });
+    var any = row.children.length > 0;
+    row.hidden = !any;
+    document.getElementById('ar-recent-h').hidden = !any;
+  }
+
+  tiles.forEach(function (el) {
+    el.querySelector('a').addEventListener('click', function () {
+      var id = el.getAttribute('data-id');
+      var rec = read(RECENT_KEY).filter(function (x) { return x !== id; });
+      rec.unshift(id);
+      write(RECENT_KEY, rec.slice(0, RECENT_MAX));
+    });
+  });
+
+  /* ── category filter ── */
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  function applyFilter(cat) {
+    var shown = 0;
+    tiles.forEach(function (el) {
+      var hit = cat === 'all' || el.getAttribute('data-cat') === cat;
+      el.classList.toggle('hide', !hit);
+      if (hit) shown++;
+    });
+    chips.forEach(function (c) {
+      c.setAttribute('aria-pressed', String(c.getAttribute('data-filter') === cat));
+    });
+    document.getElementById('ar-none').hidden = shown > 0;
+    document.getElementById('ar-all-h').textContent = cat === 'all'
+      ? t('arc.all', 'Everything')
+      : (chips.filter(function (c) { return c.getAttribute('data-filter') === cat; })[0]
+          .querySelector('span').textContent);
+  }
+  chips.forEach(function (c) {
+    c.addEventListener('click', function () { applyFilter(c.getAttribute('data-filter')); });
+  });
+
+  /* ── chip counts, from the tiles themselves rather than hardcoded ── */
+  chips.forEach(function (c) {
+    var cat = c.getAttribute('data-filter');
+    var n = cat === 'all' ? tiles.length
+      : tiles.filter(function (el) { return el.getAttribute('data-cat') === cat; }).length;
+    c.querySelector('.n').textContent = n;
+  });
+
+  function boot() {
+    if (window.DSKPoints && DSKPoints.checkStreak) DSKPoints.checkStreak();
+    paintProgress();
+    paintFavs();
+    paintRecent();
+  }
+
+  boot();
+  // i18n.js only fires this for non-English locales; repaint so the rank name
+  // and the "days"/"New" labels pick up the dictionary when it lands.
+  document.addEventListener('dsk-i18n-ready', function () {
+    paintProgress();
+    document.querySelectorAll('.badge').forEach(function (b) { b.textContent = t('arc.new', 'New'); });
+  }, { once: true });
+})();
+</script>
+<script src="/assets/lang-switcher.js"></script>
+<script src="/assets/site-search.js"></script>
+<script src="/assets/play-now-fab.js"></script>
+</body>
+</html>

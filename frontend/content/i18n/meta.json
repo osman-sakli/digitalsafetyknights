@@ -192,6 +192,10 @@
     "recovery-plan.html": {
       "title": "Toparlanma Planı — Olan oldu. Buradan başlayın.",
       "description": "Çocuğunuzla ilgili çevrimiçi bir şey oldu. İlk bir saatte ne yapılacağı, neyin durumu kötüleştirdiği ve tam olarak kime bildirileceği — şantaj, dolaşan bir görüntü, kandırma, dolandırıcılık, zorbalık. Ücretsiz, kayıt yok."
+    },
+    "arcade.html": {
+      "title": "Oyun Salonu — Digital Safety Knights",
+      "description": "Digital Safety Knights'tan on beş ücretsiz çevrimiçi güvenlik oyunu, quizi ve simülatörü. Şövalye Puanı kazanın, serinizi sürdürün — hesap yok, reklam yok ve hiçbir şey izlenmiyor."
     }
   },
   "es": {
@@ -386,6 +390,10 @@
     "recovery-plan.html": {
       "title": "El Plan de Recuperación — Ya pasó. Empieza aquí.",
       "description": "Ya pasó algo en línea con tu hijo. Qué hacer en la primera hora, qué empeora las cosas y exactamente a quién reportarlo: sextorsión, una imagen que circula, grooming, una estafa, acoso. Gratis, sin registro."
+    },
+    "arcade.html": {
+      "title": "El Arcade — Digital Safety Knights",
+      "description": "Quince juegos, cuestionarios y simuladores gratuitos de seguridad en línea de Digital Safety Knights. Gana Puntos de Caballero y mantén tu racha: sin cuenta, sin anuncios y sin rastreo."
     }
   },
   "fr": {
@@ -580,6 +588,10 @@
     "recovery-plan.html": {
       "title": "Le Plan de Rétablissement — C’est déjà arrivé. Commencez ici.",
       "description": "Quelque chose est déjà arrivé à votre enfant en ligne. Quoi faire dans la première heure, ce qui aggrave les choses, et à qui signaler précisément : sextorsion, une image qui circule, pédopiégeage, une arnaque, du harcèlement. Gratuit, sans inscription."
+    },
+    "arcade.html": {
+      "title": "L’Arcade — Digital Safety Knights",
+      "description": "Quinze jeux, quiz et simulateurs gratuits sur la sécurité en ligne, par Digital Safety Knights. Gagnez des Points de Chevalier et gardez votre série : sans compte, sans publicité et sans aucun suivi."
     }
   }
 }
