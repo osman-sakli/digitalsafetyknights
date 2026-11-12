@@ -1500,5 +1500,7 @@
   "res.arcade.p": "Todos los juegos, cuestionarios y simuladores que tenemos, con tus Puntos de Caballero, tu racha y tus favoritos. Sin cuenta, sin anuncios, sin rastreo.",
   "res.arcade.cta": "Abrir El Arcade →",
   "arc.dash.h": "Shieldy Dash",
-  "arc.dash.p": "Un solo botón. Llegan mensajes volando: levanta el escudo contra las trampas y deja pasar a tus amigos. Se pone rápido."
+  "arc.dash.p": "Un solo botón. Llegan mensajes volando: levanta el escudo contra las trampas y deja pasar a tus amigos. Se pone rápido.",
+  "arc.run.h": "Shieldy Run 3D",
+  "arc.run.p": "Un juego de carreras en 3D de verdad. Corre con Shieldy por el camino del castillo, salta las cajas y junta las monedas. Y lee cada mensaje: pasa por los de tus amigos y esquiva las trampas."
 }

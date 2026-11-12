@@ -200,6 +200,10 @@
     "shieldy-dash.html": {
       "title": "Shieldy Dash — Digital Safety Knights",
       "description": "Shieldy Dash — ücretsiz, tek tuşlu bir refleks oyunu. Mesajlar gelir: tuzaklara karşı kalkanı kaldır, arkadaşlarını geçir. Hesap yok, reklam yok, izleme yok."
+    },
+    "shieldy-run.html": {
+      "title": "Shieldy Run 3D — Digital Safety Knights",
+      "description": "Shieldy Run — ücretsiz bir 3D koşu oyunu. Sandıkların üstünden atla, altınları topla, arkadaşlarının mesajlarının içinden geç ve tuzakların etrafından dolaş. Hesap yok, reklam yok, izleme yok."
     }
   },
   "es": {
@@ -402,6 +406,10 @@
     "shieldy-dash.html": {
       "title": "Shieldy Dash — Digital Safety Knights",
       "description": "Shieldy Dash: un juego de reflejos gratuito de un solo botón. Llegan mensajes: levanta el escudo contra las trampas y deja pasar a tus amigos. Sin cuenta, sin anuncios, sin rastreo."
+    },
+    "shieldy-run.html": {
+      "title": "Shieldy Run 3D — Digital Safety Knights",
+      "description": "Shieldy Run: un juego de carreras en 3D gratuito. Salta las cajas, junta las monedas, pasa por los mensajes de tus amigos y esquiva las trampas. Sin cuenta, sin anuncios, sin rastreo."
     }
   },
   "fr": {
@@ -604,6 +612,10 @@
     "shieldy-dash.html": {
       "title": "Shieldy Dash — Digital Safety Knights",
       "description": "Shieldy Dash : un jeu de réflexes gratuit à un seul bouton. Les messages arrivent : lève le bouclier contre les pièges, laisse passer tes amis. Sans compte, sans publicité, sans suivi."
+    },
+    "shieldy-run.html": {
+      "title": "Shieldy Run 3D — Digital Safety Knights",
+      "description": "Shieldy Run : un jeu de course en 3D gratuit. Saute les caisses, ramasse les pièces, passe dans les messages de tes amis et contourne les pièges. Sans compte, sans publicité, sans suivi."
     }
   }
 }

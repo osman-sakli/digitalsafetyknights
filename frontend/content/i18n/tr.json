@@ -1491,7 +1491,7 @@
   "arc.noneInFilter": "Bu kategoride henüz bir şey yok.",
   "arc.promise": "<b>Burada neden kayıt yok.</b> Puanlar, seriler ve favoriler bu tarayıcıda, başka hiçbir yerde tutulmuyor. Kim olduğunuzu bilmiyoruz, sizi saymıyoruz ve sonradan silinecek bir şey yok. Tarayıcınızı temizlerseniz puanlarınızı kaybedersiniz — takas bu, ve doğru takas olduğunu düşünüyoruz.",
   "arc.duel.h": "Şövalye Düellosu",
-  "arc.duel.p": "İki Şövalye, tek senaryo ve bir sayaç. Kırmızı bayrağı rakibinden önce söyle.",
+  "arc.duel.p": "İki Şövalye, tek senaryo ve bir sayaç. Uyarı işaretini rakibinden önce bul.",
   "arc.academy.h": "Şövalye Akademisi",
   "arc.academy.p": "Bütün görevler sırayla, sonunda Şövalye Sınavı. Bitirirsen mezun olursun.",
   "nav.arcade": "🕹️ Oyun Salonu",
@@ -1500,5 +1500,7 @@
   "res.arcade.p": "Elimizdeki bütün oyunlar, quizler ve simülatörler; Şövalye Puanınız, seriniz ve favorilerinizle birlikte. Hesap yok, reklam yok, izleme yok.",
   "res.arcade.cta": "Oyun Salonu'nu aç →",
   "arc.dash.h": "Shieldy Dash",
-  "arc.dash.p": "Tek tuş. Mesajlar uçarak gelir — tuzaklara karşı kalkanı kaldır, arkadaşlarını geçir. Gittikçe hızlanır."
+  "arc.dash.p": "Tek tuş. Mesajlar uçarak gelir — tuzaklara karşı kalkanı kaldır, arkadaşlarını geçir. Gittikçe hızlanır.",
+  "arc.run.h": "Shieldy Run 3D",
+  "arc.run.p": "Gerçek bir 3D koşu oyunu. Shieldy ile kale yolunda koş, sandıkların üstünden atla, altınları topla. Her mesajı da oku: arkadaşlarının içinden geç, tuzakların etrafından dolaş."
 }

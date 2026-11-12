@@ -1500,5 +1500,7 @@
   "res.arcade.p": "Tous nos jeux, quiz et simulateurs, avec vos Points de Chevalier, votre série et vos favoris. Pas de compte, pas de publicité, aucun suivi.",
   "res.arcade.cta": "Ouvrir L’Arcade →",
   "arc.dash.h": "Shieldy Dash",
-  "arc.dash.p": "Un seul bouton. Les messages arrivent en volant : lève le bouclier contre les pièges, laisse passer tes amis. Ça accélère."
+  "arc.dash.p": "Un seul bouton. Les messages arrivent en volant : lève le bouclier contre les pièges, laisse passer tes amis. Ça accélère.",
+  "arc.run.h": "Shieldy Run 3D",
+  "arc.run.p": "Un vrai jeu de course en 3D. Fonce avec Shieldy sur la route du château, saute les caisses, ramasse les pièces. Et lis chaque message : passe dans ceux de tes amis, contourne les pièges."
 }

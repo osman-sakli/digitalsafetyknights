@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Shieldy Run 3D — Digital Safety Knights</title>
+<link rel="canonical" href="https://digitalsafetyknights.org/es/shieldy-run.html">
+<link rel="alternate" hreflang="en" href="https://digitalsafetyknights.org/en/shieldy-run.html">
+<link rel="alternate" hreflang="es" href="https://digitalsafetyknights.org/es/shieldy-run.html">
+<link rel="alternate" hreflang="fr" href="https://digitalsafetyknights.org/fr/shieldy-run.html">
+<link rel="alternate" hreflang="tr" href="https://digitalsafetyknights.org/tr/shieldy-run.html">
+<link rel="alternate" hreflang="x-default" href="https://digitalsafetyknights.org/shieldy-run.html">
+<meta name="description" content="Shieldy Run: un juego de carreras en 3D gratuito. Salta las cajas, junta las monedas, pasa por los mensajes de tus amigos y esquiva las trampas. Sin cuenta, sin anuncios, sin rastreo.">
+<meta property="og:title" content="Shieldy Run 3D — Digital Safety Knights">
+<meta property="og:description" content="Shieldy Run: un juego de carreras en 3D gratuito. Salta las cajas, junta las monedas, pasa por los mensajes de tus amigos y esquiva las trampas. Sin cuenta, sin anuncios, sin rastreo.">
+<meta property="og:image" content="https://digitalsafetyknights.org/assets/logo.png">
+<meta property="og:url" content="https://digitalsafetyknights.org/shieldy-run.html">
+<meta property="og:type" content="website">
+<link rel="icon" href="/assets/favicon.ico">
+<link rel="modulepreload" href="/assets/vendor/three-0.170.0/three.module.min.js">
+<script src="/assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
+<style>
+  :root { --navy:#0d1b3e; --gold:#c9a84c; --gold2:#e8c56a; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { height:100%; overflow:hidden; background:#081440; }
+  body { font-family:'Nunito Sans','Segoe UI',system-ui,sans-serif; color:#fff; overscroll-behavior:none; -webkit-user-select:none; user-select:none; }
+  [hidden] { display:none !important; }
+  #c { position:fixed; inset:0; width:100%; height:100%; display:block; touch-action:none; }
+
+  #hud { position:fixed; inset:0; pointer-events:none; }
+  .top { position:absolute; left:0; right:0; top:0; display:flex; align-items:center; gap:12px; padding:calc(10px + env(safe-area-inset-top)) 14px 10px; background:linear-gradient(rgba(5,10,30,.7),rgba(5,10,30,0)); }
+  .top a, .top button { pointer-events:auto; }
+  .top a { color:#dfe6f5; text-decoration:none; font-weight:800; font-size:.85rem; }
+  .hearts { font-size:1.35rem; letter-spacing:2px; color:#ff5d6c; text-shadow:0 2px 4px rgba(0,0,0,.4); }
+  .hearts i { font-style:normal; color:rgba(255,255,255,.3); }
+  .score { margin-left:auto; display:flex; gap:8px; font-weight:900; font-variant-numeric:tabular-nums; }
+  .score span { background:rgba(5,10,30,.6); border-radius:16px; padding:5px 12px; font-size:1rem; }
+  .score #h-score { color:var(--gold2); }
+  .score b { font-weight:900; }
+  .cn { display:inline-block; width:.95em; height:.95em; border-radius:50%; vertical-align:-.12em; margin-right:5px; background:radial-gradient(circle at 35% 35%,#fff3b0,#e8b93a 55%,#a87a12); box-shadow:inset 0 0 0 2px rgba(120,80,0,.35); }
+  @media (max-width:520px) { .top { gap:8px; padding-left:10px; padding-right:10px; } .top .lbl { display:none; } .top a { font-size:1.2rem; } .hearts { font-size:1.15rem; letter-spacing:1px; } .score { gap:6px; } .score span { padding:4px 9px; font-size:.92rem; } }
+  #b-snd { background:none; border:none; font-size:1.15rem; cursor:pointer; }
+
+  #msgs { position:absolute; left:50%; transform:translateX(-50%); top:calc(58px + env(safe-area-inset-top)); width:min(94vw,460px); display:flex; flex-direction:column; gap:8px; }
+  .msg { background:#fffaf0; color:var(--navy); border-radius:14px; padding:10px 13px; display:flex; gap:10px; align-items:center; box-shadow:0 6px 18px rgba(0,0,0,.35); font-weight:800; font-size:clamp(.92rem,3.6vw,1.05rem); line-height:1.35; transition:transform .2s, opacity .3s; }
+  .msg b { flex-shrink:0; width:30px; height:30px; border-radius:50%; background:var(--navy); color:var(--gold2); display:flex; align-items:center; justify-content:center; font-size:1rem; }
+  .msg .ar { flex-shrink:0; font-size:1.2rem; }
+  .msg.good { background:#d9fbe8; } .msg.bad { background:#ffe1e4; } .msg.gone { opacity:0; transform:scale(.9); }
+  #flash { position:absolute; left:0; right:0; top:38%; text-align:center; font-weight:900; font-size:clamp(1.6rem,7vw,2.4rem); -webkit-text-stroke:6px rgba(5,10,30,.85); paint-order:stroke fill; opacity:0; transition:opacity .15s; }
+  #flash small { display:block; font-size:clamp(.9rem,3.6vw,1.05rem); -webkit-text-stroke:4px rgba(5,10,30,.85); margin-top:6px; color:#fff; max-width:440px; margin-left:auto; margin-right:auto; padding:0 16px; }
+  #hint { position:absolute; left:0; right:0; bottom:calc(18px + env(safe-area-inset-bottom)); text-align:center; }
+  #hint span { background:rgba(5,10,30,.7); border-radius:16px; padding:7px 14px; font-weight:900; font-size:.9rem; }
+  .pad { position:absolute; bottom:calc(14px + env(safe-area-inset-bottom)); width:64px; height:64px; border-radius:50%; background:rgba(255,255,255,.16); border:2px solid rgba(255,255,255,.35); color:#fff; font-size:1.6rem; pointer-events:auto; touch-action:none; }
+  #p-l { left:14px; } #p-r { right:14px; } #p-j { left:50%; transform:translateX(-50%); bottom:calc(84px + env(safe-area-inset-bottom)); width:56px; height:56px; font-size:1.3rem; }
+  @media (pointer:fine) { .pad { display:none; } }
+
+  .ov { position:fixed; inset:0; display:flex; align-items:center; justify-content:center; padding:20px; background:rgba(6,12,36,.72); }
+  .card { background:#fff; color:#2d3748; border-radius:20px; padding:22px 22px; max-width:390px; width:100%; text-align:center; max-height:100%; overflow-y:auto; box-shadow:0 18px 50px rgba(0,0,0,.45); }
+  .card img { height:140px; width:auto; margin-top:-4px; }
+  .card h1 { font-size:1.6rem; color:var(--navy); margin:4px 0 8px; }
+  .card p { font-size:.92rem; line-height:1.6; color:#46536c; }
+  .card .big { font-size:2.5rem; font-weight:900; color:var(--navy); line-height:1.1; font-variant-numeric:tabular-nums; }
+  .card .sub { font-size:.82rem; font-weight:800; color:#6c757d; margin-bottom:10px; }
+  .card ul { list-style:none; text-align:left; margin:10px 0 2px; display:flex; flex-direction:column; gap:8px; }
+  .card li { background:#f4f6fb; border-left:4px solid #e63946; border-radius:0 10px 10px 0; padding:9px 12px; font-size:.84rem; line-height:1.5; }
+  .card li.ok { border-left-color:#2a9d8f; }
+  .card li b { color:var(--navy); }
+  .btn { display:block; width:100%; margin-top:12px; background:var(--gold); color:var(--navy); border:none; border-radius:12px; padding:14px; font:inherit; font-weight:900; font-size:1.02rem; cursor:pointer; text-decoration:none; }
+  .btn.ghost { background:transparent; border:2px solid #dfe4ee; color:var(--navy); font-size:.88rem; padding:11px; }
+  .load { height:10px; background:#e7ebf4; border-radius:6px; overflow:hidden; margin:14px 0 10px; }
+  .load i { display:block; height:100%; width:0; background:linear-gradient(90deg,var(--gold2),var(--gold)); transition:width .2s; }
+  :focus-visible { outline:3px solid var(--gold2); outline-offset:2px; }
+</style>
+</head>
+<body>
+<canvas id="c" aria-label="Shieldy Run"></canvas>
+
+<div id="hud" hidden>
+  <div class="top">
+    <a href="/arcade.html" id="t-back"><span aria-hidden="true">←</span> <span class="lbl" id="t-back-l">Arcade</span></a>
+    <div class="hearts" id="h-hearts"></div>
+    <div class="score"><span id="h-coins"><i class="cn" aria-hidden="true"></i><b id="h-cn">0</b></span><span id="h-score">0</span></div>
+    <button type="button" id="b-snd" aria-label="Sound">🔊</button>
+  </div>
+  <div id="msgs" aria-live="polite"></div>
+  <div id="flash"></div>
+  <div id="hint"><span id="t-hint"></span></div>
+  <button type="button" class="pad" id="p-l" aria-label="Left">◀</button>
+  <button type="button" class="pad" id="p-j" aria-label="Jump">▲</button>
+  <button type="button" class="pad" id="p-r" aria-label="Right">▶</button>
+</div>
+
+<div class="ov" id="ov-load">
+  <div class="card">
+    <img src="/assets/arcade/shieldy-ready.webp" alt="" width="106" height="200">
+    <h1>Shieldy Run</h1>
+    <div class="load"><i id="ld"></i></div>
+    <p id="t-load"></p>
+  </div>
+</div>
+
+<div class="ov" id="ov-title" hidden>
+  <div class="card">
+    <img src="/assets/arcade/shieldy-shield.webp" alt="" width="131" height="200">
+    <h1>Shieldy Run</h1>
+    <p id="t-how"></p>
+    <button type="button" class="btn" id="b-start"></button>
+    <a class="btn ghost" href="/arcade.html" id="b-arc1"></a>
+  </div>
+</div>
+
+<div class="ov" id="ov-over" hidden>
+  <div class="card">
+    <img src="/assets/arcade/glitch-laugh.webp" alt="" width="148" height="200" style="height:110px" id="o-img">
+    <h1 id="t-over"></h1>
+    <div class="big" id="o-score">0</div>
+    <div class="sub" id="o-sub"></div>
+    <p id="t-tricks" style="font-weight:800;color:#0d1b3e;"></p>
+    <ul id="o-list"></ul>
+    <button type="button" class="btn" id="b-again"></button>
+    <a class="btn ghost" href="/arcade.html" id="b-arc2"></a>
+  </div>
+</div>
+
+<div class="ov" id="ov-nogl" hidden>
+  <div class="card">
+    <img src="/assets/arcade/shieldy-oops.webp" alt="" width="124" height="200">
+    <p id="t-nogl" style="margin:10px 0 4px"></p>
+    <a class="btn" href="/shieldy-dash.html" id="b-nogl"></a>
+  </div>
+</div>
+
+<script nomodule>document.getElementById('ov-load').hidden = true; document.getElementById('ov-nogl').hidden = false;</script>
+<script type="module">
+import * as THREE from '/assets/vendor/three-0.170.0/three.module.min.js';
+import { GLTFLoader } from '/assets/vendor/three-0.170.0/GLTFLoader.js';
+
+/* ───────────── words ─────────────
+   The message pools are the same all-ages set as Shieldy Dash: nothing that
+   names a photo. Red flags are grouped by the lever they pull, because the
+   end screen tells the player which lever got them. */
+const W = {
+  en: {
+    how: 'Run through the castle with Shieldy. Swipe ← → (or the arrow keys) to change lane and swipe ↑ (or Space) to jump the crates. Messages float up the road — read them at the top of the screen. Run INTO a friend\'s message, steer AROUND a trick. Three hits and the run is over.',
+    start: 'Start running', again: 'Run again', arcade: '← Back to the Arcade', back: 'Arcade',
+    loading: 'Building the castle…', loadErr: 'Part of the castle didn\'t load. Check your connection and reload the page.', over: 'Shieldy needs a rest', best: 'Best', coins: 'coins',
+    tricks: 'Tricks you fell for:', noTricks: 'You did not fall for a single trick. The crates stopped you, not the tricks.',
+    friend: 'Friend! +100', dodged: 'Dodged! +25', crate: 'Ouch!',
+    hint: 'Swipe ← → to move · ↑ to jump', hintKeys: '← → move · ↑ or Space to jump',
+    noGL: 'This device can\'t run the 3D game. The 2D version works everywhere:', noGLbtn: 'Play Shieldy Dash →',
+    reason: 'Shieldy Run',
+    lever: { urgency: 'Urgency', secrecy: 'Secrecy', flattery: 'Flattery', fear: 'Fear' },
+    rule: {
+      urgency: 'A clock is a trick. Real things do not expire in ten seconds.',
+      secrecy: '"Don\'t tell" is the red flag itself.',
+      flattery: 'Sudden compliments, then a request. That order is the trick.',
+      fear: 'A threat only works in silence. Tell a grown-up.'
+    },
+    red: {
+      urgency: ['FREE ROBUX! Only 10 seconds left!', 'Click NOW or lose your account!', 'Last chance! Offer ends in 1 minute!'],
+      secrecy: ['Don\'t tell your parents about this.', 'This is our little secret, ok?', 'Delete this chat after reading.'],
+      flattery: ['You\'re my favorite! Send me your phone number?', 'You\'re special. Let\'s chat on another app.', 'I only trust you. What\'s your address?'],
+      fear: ['Give me your skins or I\'ll get you banned!', 'Your account is hacked! Send me your password.', 'Do it or I\'ll tell everyone your secret.']
+    },
+    safe: ['Want to play after homework?', 'Grandma says hi! 👋', 'Practice is at 5 today.', 'Nice goal in the match!', 'Did you finish the math sheet?', 'Mom: dinner\'s ready!', 'Happy birthday!! 🎂', 'Movie night on Friday?', 'Good luck on your test!', 'Can I borrow your notes?', 'Team photo is tomorrow.']
+  },
+  tr: {
+    how: 'Shieldy ile kalenin içinden koş. Şerit değiştirmek için ← → kaydır (ya da ok tuşları), sandıkların üstünden atlamak için ↑ kaydır (ya da Boşluk). Yolda mesajlar süzülür — ekranın üstünde oku. Arkadaşının mesajının İÇİNDEN geç, tuzağın ETRAFINDAN dolaş. Üç darbede koşu biter.',
+    start: 'Koşmaya başla', again: 'Tekrar koş', arcade: '← Oyun Salonu\'na dön', back: 'Oyun Salonu',
+    loading: 'Kale kuruluyor…', loadErr: 'Kalenin bir kısmı yüklenemedi. Bağlantını kontrol edip sayfayı yenile.', over: 'Shieldy\'nin dinlenmesi lazım', best: 'En iyi', coins: 'altın',
+    tricks: 'Düştüğün tuzaklar:', noTricks: 'Tek bir tuzağa bile düşmedin. Seni sandıklar durdurdu, tuzaklar değil.',
+    friend: 'Arkadaş! +100', dodged: 'Atlattın! +25', crate: 'Ah!',
+    hint: 'Hareket için ← → kaydır · zıplamak için ↑', hintKeys: '← → hareket · ↑ ya da Boşluk zıpla',
+    noGL: 'Bu cihaz 3D oyunu çalıştıramıyor. 2D sürüm her yerde çalışır:', noGLbtn: 'Shieldy Dash\'i oyna →',
+    reason: 'Shieldy Run',
+    lever: { urgency: 'Acele', secrecy: 'Sır', flattery: 'İltifat', fear: 'Korku' },
+    rule: {
+      urgency: 'Geri sayım bir tuzaktır. Gerçek şeyler on saniyede bitmez.',
+      secrecy: '“Kimseye söyleme” cümlesi, uyarı işaretinin ta kendisidir.',
+      flattery: 'Önce ani iltifat, sonra bir istek. Tuzak bu sıradadır.',
+      fear: 'Tehdit yalnızca sessizlikte işe yarar. Bir büyüğe söyle.'
+    },
+    red: {
+      urgency: ['BEDAVA ROBUX! Son 10 saniye!', 'HEMEN tıkla yoksa hesabın silinir!', 'Son şans! Teklif 1 dakikada bitiyor!'],
+      secrecy: ['Bunu annenle babana söyleme.', 'Bu aramızda küçük bir sır, tamam mı?', 'Okuyunca bu sohbeti sil.'],
+      flattery: ['En sevdiğim sensin! Telefon numaranı atsana?', 'Sen özelsin. Başka bir uygulamada konuşalım.', 'Sadece sana güveniyorum. Adresin ne?'],
+      fear: ['Skinlerini ver yoksa seni banlatırım!', 'Hesabın çalındı! Şifreni bana gönder.', 'Yap, yoksa sırrını herkese söylerim.']
+    },
+    safe: ['Ödevden sonra oynayalım mı?', 'Anneannenin selamı var! 👋', 'Antrenman bugün 5\'te.', 'Maçtaki gol harikaydı!', 'Matematik ödevini bitirdin mi?', 'Annen: Yemek hazır!', 'Doğum günün kutlu olsun!! 🎂', 'Cuma film gecesi yapalım mı?', 'Sınavında başarılar!', 'Notlarını ödünç alabilir miyim?', 'Takım fotoğrafı yarın.']
+  },
+  es: {
+    how: 'Corre por el castillo con Shieldy. Desliza ← → (o usa las flechas) para cambiar de carril y desliza ↑ (o Espacio) para saltar las cajas. Por el camino flotan mensajes: léelos arriba en la pantalla. Pasa POR el mensaje de un amigo y esquiva las trampas. Con tres golpes se acaba la carrera.',
+    start: 'Empezar a correr', again: 'Correr otra vez', arcade: '← Volver al Arcade', back: 'Arcade',
+    loading: 'Construyendo el castillo…', loadErr: 'Una parte del castillo no se cargó. Revisa tu conexión y vuelve a cargar la página.', over: 'Shieldy necesita un descanso', best: 'Mejor', coins: 'monedas',
+    tricks: 'Trampas en las que caíste:', noTricks: 'No caíste en ninguna trampa. Te frenaron las cajas, no las trampas.',
+    friend: '¡Amigo! +100', dodged: '¡Esquivada! +25', crate: '¡Auch!',
+    hint: 'Desliza ← → para moverte · ↑ para saltar', hintKeys: '← → moverte · ↑ o Espacio para saltar',
+    noGL: 'Este dispositivo no puede ejecutar el juego en 3D. La versión 2D funciona en todos lados:', noGLbtn: 'Jugar Shieldy Dash →',
+    reason: 'Shieldy Run',
+    lever: { urgency: 'Urgencia', secrecy: 'Secretismo', flattery: 'Halagos', fear: 'Miedo' },
+    rule: {
+      urgency: 'Un reloj es una trampa. Lo real no se acaba en diez segundos.',
+      secrecy: '«No le digas a nadie» es la señal de alerta en sí.',
+      flattery: 'Halagos de repente y luego un pedido. Ese orden es la trampa.',
+      fear: 'Una amenaza solo funciona en silencio. Cuéntaselo a un adulto.'
+    },
+    red: {
+      urgency: ['¡ROBUX GRATIS! ¡Solo quedan 10 segundos!', '¡Haz clic YA o pierdes tu cuenta!', '¡Última oportunidad! La oferta termina en 1 minuto.'],
+      secrecy: ['No les cuentes esto a tus papás.', 'Este es nuestro secretito, ¿ok?', 'Borra este chat después de leerlo.'],
+      flattery: ['¡Eres mi persona favorita! ¿Me pasas tu número?', 'Eres especial. Hablemos en otra app.', 'Solo confío en ti. ¿Cuál es tu dirección?'],
+      fear: ['¡Dame tus skins o hago que te baneen!', '¡Hackearon tu cuenta! Mándame tu contraseña.', 'Hazlo o le cuento tu secreto a todos.']
+    },
+    safe: ['¿Jugamos después de la tarea?', '¡La abuela te manda saludos! 👋', 'El entrenamiento es hoy a las 5.', '¡Golazo en el partido!', '¿Terminaste la hoja de mate?', 'Mamá: ¡la cena está lista!', '¡¡Feliz cumpleaños!! 🎂', '¿Noche de película el viernes?', '¡Suerte en tu examen!', '¿Me prestas tus apuntes?', 'La foto del equipo es mañana.']
+  },
+  fr: {
+    how: 'Cours dans le château avec Shieldy. Glisse ← → (ou les flèches) pour changer de voie et glisse ↑ (ou Espace) pour sauter les caisses. Des messages flottent sur la route : lis-les en haut de l’écran. Passe DANS le message d’un ami, contourne les pièges. Trois chocs et la course s’arrête.',
+    start: 'C’est parti', again: 'Rejouer', arcade: '← Retour à l’Arcade', back: 'Arcade',
+    loading: 'Construction du château…', loadErr: 'Une partie du château n’a pas chargé. Vérifie ta connexion et recharge la page.', over: 'Shieldy a besoin d’une pause', best: 'Record', coins: 'pièces',
+    tricks: 'Les pièges qui ont marché :', noTricks: 'Aucun piège n’a marché sur toi. Ce sont les caisses qui ont mis fin à ta course.',
+    friend: 'Un ami ! +100', dodged: 'Évité ! +25', crate: 'Aïe !',
+    hint: 'Glisse ← → pour bouger · ↑ pour sauter', hintKeys: '← → bouger · ↑ ou Espace pour sauter',
+    noGL: 'Cet appareil ne peut pas lancer le jeu en 3D. La version 2D marche partout :', noGLbtn: 'Jouer à Shieldy Dash →',
+    reason: 'Shieldy Run',
+    lever: { urgency: 'Urgence', secrecy: 'Secret', flattery: 'Flatterie', fear: 'Peur' },
+    rule: {
+      urgency: 'Un compte à rebours est un piège. Le vrai ne disparaît pas en dix secondes.',
+      secrecy: '« Ne dis rien » : le signal d’alerte, c’est cette phrase.',
+      flattery: 'Des compliments soudains, puis une demande. Le piège est dans cet ordre.',
+      fear: 'Une menace ne marche que dans le silence. Parles-en à un adulte.'
+    },
+    red: {
+      urgency: ['ROBUX GRATUITS ! Plus que 10 secondes !', 'Clique MAINTENANT ou tu perds ton compte !', 'Dernière chance ! L’offre finit dans 1 minute !'],
+      secrecy: ['Ne dis rien à tes parents.', 'C’est notre petit secret, d’accord ?', 'Supprime cette conversation après l’avoir lue.'],
+      flattery: ['C’est toi que je préfère ! Tu m’envoies ton numéro ?', 'Tu n’es pas comme les autres. On parle sur une autre appli ?', 'Je ne fais confiance qu’à toi. C’est quoi ton adresse ?'],
+      fear: ['Donne-moi tes skins ou je te fais bannir !', 'Ton compte est piraté ! Envoie-moi ton mot de passe.', 'Fais-le ou je dis ton secret à tout le monde.']
+    },
+    safe: ['On joue après les devoirs ?', 'Mamie te fait un coucou ! 👋', 'L’entraînement est à 17 h aujourd’hui.', 'Super but pendant le match !', 'Tu as fini la fiche de maths ?', 'Maman : à table !', 'Joyeux anniversaire !! 🎂', 'Soirée film vendredi ?', 'Bonne chance pour ton contrôle !', 'Tu me prêtes tes notes ?', 'La photo d’équipe, c’est demain.']
+  }
+};
+let lang = (window.DSKi18n && DSKi18n.lang) || 'en';
+if (!W[lang]) lang = 'en';
+document.documentElement.lang = lang;
+const S = W[lang];
+if (lang === 'fr') {   // narrow no-break space before ! ? : ; — once, here
+  const nb = s => s.replace(/ ([!?:;»])/g, ' $1').replace(/« /g, '« ');
+  (function walk(o) { for (const k in o) { if (typeof o[k] === 'string') o[k] = nb(o[k]); else walk(o[k]); } })(S);
+}
+const LEVERS = ['urgency', 'secrecy', 'flattery', 'fear'];
+const $ = id => document.getElementById(id);
+const fine = matchMedia('(pointer:fine)').matches;
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+$('t-back-l').textContent = S.back; $('t-back').setAttribute('aria-label', S.back); $('t-load').textContent = S.loading; $('t-how').textContent = S.how;
+$('b-start').textContent = S.start; $('b-again').textContent = S.again; $('t-over').textContent = S.over;
+$('b-arc1').textContent = S.arcade; $('b-arc2').textContent = S.arcade;
+$('t-nogl').textContent = S.noGL; $('b-nogl').textContent = S.noGLbtn;
+$('t-hint').textContent = fine ? S.hintKeys : S.hint;
+
+/* ───────────── renderer ───────────── */
+let renderer;
+try {
+  renderer = new THREE.WebGLRenderer({ canvas: $('c'), antialias: true, powerPreference: 'high-performance' });
+} catch (e) {
+  $('ov-load').hidden = true; $('ov-nogl').hidden = false;
+  throw e;
+}
+renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, fine ? 1.75 : 1.5));
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.08;
+
+const scene = new THREE.Scene();
+const FOG = 0x8a5f8e;
+scene.fog = new THREE.Fog(FOG, 38, 118);
+scene.background = (() => {
+  const c = document.createElement('canvas'); c.width = 4; c.height = 512;
+  const g = c.getContext('2d'), gr = g.createLinearGradient(0, 0, 0, 512);
+  gr.addColorStop(0, '#060f36'); gr.addColorStop(0.38, '#1d2a6e'); gr.addColorStop(0.55, '#6a4f92');
+  gr.addColorStop(0.66, '#c27d8a'); gr.addColorStop(1, '#f2b070');
+  g.fillStyle = gr; g.fillRect(0, 0, 4, 512);
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+})();
+
+const camera = new THREE.PerspectiveCamera(60, 1, 0.1, 400);
+scene.add(new THREE.HemisphereLight(0xcbd9ff, 0x4b3a2c, 1.75));
+const sun = new THREE.DirectionalLight(0xffe0b5, 1.7); sun.position.set(4, 10, 6); scene.add(sun);
+
+function glowTexture(inner, outer) {
+  const c = document.createElement('canvas'); c.width = c.height = 128;
+  const g = c.getContext('2d'), gr = g.createRadialGradient(64, 64, 2, 64, 64, 64);
+  gr.addColorStop(0, inner); gr.addColorStop(1, outer);
+  g.fillStyle = gr; g.fillRect(0, 0, 128, 128);
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+}
+const GLOW = glowTexture('rgba(255,225,150,1)', 'rgba(255,190,90,0)');
+const SPARK = glowTexture('rgba(255,250,210,1)', 'rgba(255,210,90,0)');
+
+// stars and a moon, beyond the fog
+{
+  const n = 500, pos = new Float32Array(n * 3);
+  for (let i = 0; i < n; i++) {
+    const a = Math.random() * Math.PI - Math.PI, el = 0.18 + Math.random() * 1.2, r = 220;
+    pos[i * 3] = Math.cos(a) * Math.cos(el) * r; pos[i * 3 + 1] = Math.sin(el) * r; pos[i * 3 + 2] = Math.sin(a) * Math.cos(el) * r;
+  }
+  const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  scene.add(new THREE.Points(g, new THREE.PointsMaterial({ color: 0xfff6e0, size: 1.1, fog: false, sizeAttenuation: true, transparent: true, opacity: 0.85 })));
+  const moon = new THREE.Sprite(new THREE.SpriteMaterial({ map: glowTexture('rgba(255,250,235,1)', 'rgba(255,240,210,0)'), fog: false, depthWrite: false }));
+  moon.position.set(-60, 85, -230); moon.scale.set(40, 40, 1); scene.add(moon);
+}
+
+/* ───────────── loading ───────────── */
+const manager = new THREE.LoadingManager();
+manager.onProgress = (_u, done, total) => { $('ld').style.width = Math.round(done / total * 100) + '%'; };
+let loadFailed = false;
+manager.onError = () => { loadFailed = true; $('t-load').textContent = S.loadErr; };
+const gl = new GLTFLoader(manager), tl = new THREE.TextureLoader(manager);
+const A = '/assets/arcade3d/';
+const M = {};
+function tiled(name, rx, ry) {
+  const t = tl.load(A + 'tex-' + name + '.webp');
+  t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(rx, ry); t.colorSpace = THREE.SRGBColorSpace;
+  t.anisotropy = Math.min(8, renderer.capabilities.getMaxAnisotropy());
+  return t;
+}
+function prep(gltf, height, tint) {
+  const root = gltf.scene;
+  root.traverse(o => {
+    if (!o.isMesh) return;
+    o.geometry.computeVertexNormals();
+    const map = o.material.map; if (map) map.colorSpace = THREE.SRGBColorSpace;
+    o.material = new THREE.MeshStandardMaterial({ map, roughness: 0.62, metalness: 0.08, color: tint || 0xffffff });
+  });
+  const b = new THREE.Box3().setFromObject(root), sz = b.getSize(new THREE.Vector3());
+  root.scale.setScalar(height / sz.y);
+  const b2 = new THREE.Box3().setFromObject(root), c = b2.getCenter(new THREE.Vector3());
+  root.position.set(-c.x, -b2.min.y, -c.z);
+  const g = new THREE.Group(); g.add(root); return g;
+}
+const TINT = { shieldy: 0xffdf85 };
+const SIZES = { shieldy: 1.7, glitch: 1.8, crate: 1.0, lantern: 3.3, tower: 1, coin: 0.72 };
+Object.keys(SIZES).forEach(n => gl.load(A + n + '.glb', g => { M[n] = prep(g, SIZES[n], TINT[n]); }));
+
+/* ───────────── world ───────────── */
+const LANE = 2.3, ROAD_W = 7.4, SPAN = 230, Z0 = 12;
+const T = { road: tiled('road', 2.4, SPAN / 3.1), grass: tiled('grass', 3, SPAN / 3.0), wallL: tiled('wall', SPAN / 3.2, 1), wallR: tiled('wall', SPAN / 3.2, 1) };
+function strip(w, map, x) {
+  const m = new THREE.Mesh(new THREE.PlaneGeometry(w, SPAN), new THREE.MeshStandardMaterial({ map, roughness: 0.95 }));
+  m.rotation.x = -Math.PI / 2; m.position.set(x, 0, Z0 - SPAN / 2); scene.add(m); return m;
+}
+strip(ROAD_W, T.road, 0);
+strip(10, T.grass, -(ROAD_W / 2 + 5)); strip(10, T.grass, ROAD_W / 2 + 5);
+// road kerbs
+[-1, 1].forEach(s => {
+  const k = new THREE.Mesh(new THREE.BoxGeometry(0.35, 0.22, SPAN), new THREE.MeshStandardMaterial({ color: 0xc9b48a, roughness: 0.9 }));
+  k.position.set(s * (ROAD_W / 2 + 0.1), 0.11, Z0 - SPAN / 2); scene.add(k);
+});
+function wall(map, side) {
+  const m = new THREE.Mesh(new THREE.PlaneGeometry(SPAN, 3.4), new THREE.MeshStandardMaterial({ map, roughness: 0.9 }));
+  m.rotation.y = side < 0 ? Math.PI / 2 : -Math.PI / 2;
+  m.position.set(side * 10.4, 1.7, Z0 - SPAN / 2); scene.add(m);
+  // crenellations along the top, as one merged strip of blocks
+  const blocks = new THREE.InstancedMesh(new THREE.BoxGeometry(0.7, 0.6, 0.9), new THREE.MeshStandardMaterial({ color: 0xa7b2c8, roughness: 0.9 }), Math.ceil(SPAN / 1.8));
+  const d = new THREE.Object3D();
+  for (let i = 0; i < blocks.count; i++) { d.position.set(side * 10.6, 3.7, Z0 - i * 1.8); d.updateMatrix(); blocks.setMatrixAt(i, d.matrix); }
+  scene.add(blocks); return blocks;
+}
+const crenL = wall(T.wallL, -1), crenR = wall(T.wallR, 1);
+
+// scenery that scrolls past and wraps round: lanterns at the kerb, towers behind the walls
+const scenery = [];
+function addScenery(make, every, count) { for (let i = 0; i < count; i++) { const o = make(i); o.position.z = Z0 - i * every; o.userData.span = every * count; scene.add(o); scenery.push(o); } }
+
+/* ───────────── state ───────────── */
+const BEST_KEY = 'dsk_run_best';
+const g = {
+  mode: 'loading', speed: 0, dist: 0, bonus: 0, coins: 0, hearts: 3, invuln: 0,
+  lane: 0, x: 0, y: 0, vy: 0, squash: 0, phase: 0, rowIn: 30, rows: 0, msgActive: null,
+  missed: {}, trapsSeen: 0, deckR: [], deckS: [], items: [], shake: 0, glitchT: 0, glitchSide: 1, t: 0
+};
+let player, glitch, shadow;
+
+function shuffled(a) { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+function nextRed() {
+  if (!g.deckR.length) { const all = []; LEVERS.forEach(l => S.red[l].forEach(t => all.push({ text: t, lever: l }))); g.deckR = shuffled(all); }
+  return g.deckR.pop();
+}
+function nextSafe() { if (!g.deckS.length) g.deckS = shuffled(S.safe); return g.deckS.pop(); }
+
+/* ───────────── message signs ─────────────
+   The sign in the world carries a letter; the words are in the HUD card with
+   the same letter, because on a phone held upright a 3D sign is too small to
+   read in time. The sign is the same for a friend and a trick — the only way
+   to tell them apart is to read. */
+function signMesh(letter) {
+  const c = document.createElement('canvas'); c.width = 512; c.height = 320;
+  const x = c.getContext('2d');
+  x.fillStyle = '#fffaf0'; x.strokeStyle = '#c9a84c'; x.lineWidth = 16;
+  const r = 40; x.beginPath(); x.moveTo(r + 8, 8); x.arcTo(504, 8, 504, 312, r); x.arcTo(504, 312, 8, 312, r); x.arcTo(8, 312, 8, 8, r); x.arcTo(8, 8, 504, 8, r); x.closePath(); x.fill(); x.stroke();
+  x.fillStyle = '#0d1b3e'; x.beginPath(); x.arc(160, 160, 118, 0, 7); x.fill();
+  x.fillStyle = '#e8c56a'; x.font = '900 176px system-ui,sans-serif'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText(letter, 160, 172);
+  // an envelope, drawn rather than an emoji so it looks the same on every phone
+  x.save(); x.translate(378, 160); x.fillStyle = '#ffffff'; x.strokeStyle = '#0d1b3e'; x.lineWidth = 12; x.lineJoin = 'round';
+  x.beginPath(); x.rect(-86, -58, 172, 116); x.fill(); x.stroke();
+  x.beginPath(); x.moveTo(-86, -58); x.lineTo(0, 10); x.lineTo(86, -58); x.stroke(); x.restore();
+  const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = 4;
+  const grp = new THREE.Group();
+  const halo = new THREE.Sprite(new THREE.SpriteMaterial({ map: GLOW, color: 0xbfe6ff, transparent: true, opacity: 0.55, depthWrite: false, blending: THREE.AdditiveBlending }));
+  halo.scale.set(3.6, 2.8, 1); halo.position.y = 2.05; grp.add(halo);
+  const p = new THREE.Mesh(new THREE.PlaneGeometry(2.05, 1.28), new THREE.MeshBasicMaterial({ map: tex, transparent: true, side: THREE.DoubleSide }));
+  p.position.y = 2.05; grp.add(p);
+  grp.userData.dispose = () => { tex.dispose(); p.geometry.dispose(); p.material.dispose(); halo.material.dispose(); };
+  return grp;
+}
+
+const ARROW = { '-1': '⬅', '0': '⬆', '1': '➡' };
+const arrowFor = lane => ARROW[String(Math.sign(lane - g.lane))];
+function showCards(signs) {
+  const box = $('msgs'); box.innerHTML = '';
+  signs.forEach(s => {
+    const d = document.createElement('div'); d.className = 'msg';
+    const b = document.createElement('b'); b.textContent = s.letter;
+    const ar = document.createElement('span'); ar.className = 'ar'; ar.textContent = arrowFor(s.lane); s.ar = ar;
+    const t = document.createElement('span'); t.textContent = s.text;
+    d.append(b, ar, t); box.appendChild(d); s.card = d;
+  });
+}
+
+/* ───────────── spawning ───────────── */
+const SPAWN_Z = -105;
+function add(kind, lane, obj, extra) {
+  obj.position.set(lane * LANE, (extra && extra.y) || 0, SPAWN_Z + ((extra && extra.dz) || 0));
+  scene.add(obj);
+  const it = Object.assign({ kind, lane, obj, done: false }, extra || {}); g.items.push(it); return it;
+}
+function spawnRow() {
+  g.rows++;
+  const lanes = shuffled([-1, 0, 1]);
+  // a message row about every third row, never two at once
+  if (g.rows > 2 && g.rows % 4 === 3 && !g.msgActive) {
+    const r = Math.random(), signs = [];
+    if (r < 0.55) {            // a choice: one trick, one friend
+      const red = nextRed();
+      signs.push({ trap: true, text: red.text, lever: red.lever, lane: lanes[0] });
+      signs.push({ trap: false, text: nextSafe(), lane: lanes[1] });
+    } else if (r < 0.8) { const red = nextRed(); signs.push({ trap: true, text: red.text, lever: red.lever, lane: lanes[0] }); }
+    else signs.push({ trap: false, text: nextSafe(), lane: lanes[0] });
+    shuffled(['A', 'B']).slice(0, signs.length).forEach((L, i) => signs[i].letter = L);
+    signs.sort((a, b) => a.letter < b.letter ? -1 : 1);
+    signs.forEach(s => { s.item = add('sign', s.lane, signMesh(s.letter), { sign: s }); });
+    g.msgActive = signs; showCards(signs);
+    g.rowIn = 34; return;
+  }
+  const r = Math.random();
+  if (r < 0.4 && M.crate) {
+    const n = Math.random() < 0.4 ? 2 : 1;
+    for (let i = 0; i < n; i++) add('crate', lanes[i], M.crate.clone());
+    if (Math.random() < 0.5) {   // coins arcing over the first crate: jump for them
+      for (let k = 0; k < 5; k++) { const dz = (k - 2) * 1.5; add('coin', lanes[0], M.coin.clone(), { dz, y: 1.2 + 1.5 * (1 - Math.pow((k - 2) / 2.4, 2)) }); }
+    }
+  } else if (M.coin) {
+    const lane = lanes[0];
+    for (let k = 0; k < 7; k++) add('coin', lane, M.coin.clone(), { dz: -k * 1.6, y: 0.85 });
+  }
+  g.rowIn = 16 + Math.random() * 9;
+}
+
+/* ───────────── sound ───────────── */
+let snd = true, ac = null;
+try { snd = localStorage.getItem('dsk_run_snd') !== '0'; } catch (e) {}
+const paintSnd = () => { $('b-snd').textContent = snd ? '🔊' : '🔇'; };
+$('b-snd').onclick = () => { snd = !snd; try { localStorage.setItem('dsk_run_snd', snd ? '1' : '0'); } catch (e) {} paintSnd(); };
+paintSnd();
+function tone(freqs, dur, type, vol) {
+  if (!snd) return;
+  try {
+    ac = ac || new (window.AudioContext || window.webkitAudioContext)();
+    const t0 = ac.currentTime, o = ac.createOscillator(), gn = ac.createGain();
+    o.type = type || 'triangle';
+    freqs.forEach((f, i) => o.frequency.setValueAtTime(f, t0 + i * dur / freqs.length));
+    gn.gain.setValueAtTime(vol || 0.1, t0); gn.gain.exponentialRampToValueAtTime(0.001, t0 + dur);
+    o.connect(gn); gn.connect(ac.destination); o.start(t0); o.stop(t0 + dur);
+  } catch (e) {}
+}
+const SFX = {
+  coin: () => tone([988, 1319], 0.1, 'square', 0.035),
+  jump: () => tone([330, 520], 0.16, 'triangle', 0.06),
+  friend: () => tone([523, 659, 784, 1047], 0.32, 'triangle', 0.12),
+  dodge: () => tone([660, 880], 0.14, 'sine', 0.07),
+  hit: () => tone([220, 140], 0.36, 'sawtooth', 0.08),
+  over: () => tone([392, 330, 262, 196], 0.8, 'triangle', 0.11)
+};
+
+/* ───────────── sparkles ───────────── */
+const sparks = [];
+for (let i = 0; i < 40; i++) {
+  const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: SPARK, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending }));
+  s.visible = false; scene.add(s); sparks.push({ s, t: 0, v: new THREE.Vector3() });
+}
+function burst(x, y, z, n, color, size) {
+  if (reduced) n = Math.ceil(n / 3);
+  let k = 0;
+  for (const p of sparks) {
+    if (p.t > 0) continue;
+    p.t = 0.6 + Math.random() * 0.3; p.s.visible = true; p.s.position.set(x, y, z);
+    p.s.material.color.set(color || 0xffe08a); p.s.scale.setScalar(size || 0.35);
+    p.v.set((Math.random() - 0.5) * 5, 2 + Math.random() * 4, (Math.random() - 0.5) * 3);
+    if (++k >= n) break;
+  }
+}
+
+/* ───────────── HUD ───────────── */
+let lastHud = '';
+function hud() {
+  if (g.msgActive) g.msgActive.forEach(s => { const a = arrowFor(s.lane); if (s.ar && s.ar.textContent !== a) s.ar.textContent = a; });
+  const score = Math.floor(g.dist / 2) + g.bonus;
+  const k = g.hearts + '|' + score + '|' + g.coins;
+  if (k === lastHud) return; lastHud = k;
+  let h = ''; for (let i = 0; i < 3; i++) h += i < g.hearts ? '♥' : '<i>♥</i>';
+  $('h-hearts').innerHTML = h; $('h-score').textContent = score; $('h-cn').textContent = g.coins;
+}
+let flashTimer = 0;
+function flash(text, color, sub) {
+  const f = $('flash'); f.innerHTML = '';
+  const s = document.createElement('span'); s.textContent = text; s.style.color = color; f.appendChild(s);
+  if (sub) { const sm = document.createElement('small'); sm.textContent = sub; f.appendChild(sm); }
+  f.style.opacity = 1; flashTimer = sub ? 2.2 : 0.9;
+}
+
+/* ───────────── input ───────────── */
+function act(cmd) {
+  if (g.mode !== 'play') return;
+  if (cmd === 'left') g.lane = Math.max(-1, g.lane - 1);
+  else if (cmd === 'right') g.lane = Math.min(1, g.lane + 1);
+  else if (cmd === 'jump' && g.y <= 0.001) { g.vy = 8.2; SFX.jump(); }
+  $('hint').hidden = true;
+}
+addEventListener('keydown', e => {
+  const m = { ArrowLeft: 'left', KeyA: 'left', ArrowRight: 'right', KeyD: 'right', ArrowUp: 'jump', KeyW: 'jump', Space: 'jump' }[e.code];
+  if (m && g.mode === 'play') { e.preventDefault(); if (!e.repeat) act(m); }
+});
+let sw = null;
+$('c').addEventListener('pointerdown', e => { sw = { x: e.clientX, y: e.clientY }; });
+addEventListener('pointerup', e => {
+  if (!sw) return;
+  const dx = e.clientX - sw.x, dy = e.clientY - sw.y; sw = null;
+  if (Math.abs(dx) > 28 && Math.abs(dx) > Math.abs(dy)) act(dx < 0 ? 'left' : 'right');
+  else if (dy < -28 || (Math.abs(dx) < 12 && Math.abs(dy) < 12)) act('jump');
+});
+[['p-l', 'left'], ['p-r', 'right'], ['p-j', 'jump']].forEach(([id, c]) => $(id).addEventListener('pointerdown', e => { e.stopPropagation(); e.preventDefault(); act(c); }));
+
+/* ───────────── run lifecycle ───────────── */
+function clearItems() { g.items.forEach(it => { scene.remove(it.obj); if (it.obj.userData.dispose) it.obj.userData.dispose(); }); g.items = []; }
+function start() {
+  if (snd) { try { ac = ac || new (window.AudioContext || window.webkitAudioContext)(); if (ac.state === 'suspended') ac.resume(); } catch (e) {} }
+  clearItems();
+  Object.assign(g, { mode: 'play', speed: 12.5, dist: 0, bonus: 0, coins: 0, hearts: 3, invuln: 0, lane: 0, x: 0, y: 0, vy: 0, squash: 0,
+    rowIn: 22, rows: 0, msgActive: null, missed: {}, trapsSeen: 0, shake: 0, glitchT: 0, t: 0 });
+  $('msgs').innerHTML = ''; $('flash').style.opacity = 0; lastHud = '';
+  $('ov-title').hidden = true; $('ov-over').hidden = true; $('hud').hidden = false; $('hint').hidden = false;
+  hud();
+}
+$('b-start').onclick = start; $('b-again').onclick = start;
+
+function end() {
+  g.mode = 'over'; SFX.over();
+  const score = Math.floor(g.dist / 2) + g.bonus;
+  let best = 0; try { best = parseInt(localStorage.getItem(BEST_KEY) || '0', 10); } catch (e) {}
+  if (score > best) { best = score; try { localStorage.setItem(BEST_KEY, String(best)); } catch (e) {} }
+  $('o-score').textContent = score;
+  $('o-sub').textContent = S.best + ': ' + best + ' · ' + g.coins + ' ' + S.coins;
+  const list = $('o-list'); list.innerHTML = '';
+  const fell = LEVERS.filter(l => g.missed[l]);
+  $('t-tricks').textContent = fell.length ? S.tricks : '';
+  if (fell.length) fell.forEach(l => {
+    const li = document.createElement('li'); const b = document.createElement('b');
+    b.textContent = S.lever[l] + ' ×' + g.missed[l] + ' — '; li.append(b, document.createTextNode(S.rule[l])); list.appendChild(li);
+  });
+  else { const li = document.createElement('li'); li.className = 'ok'; li.textContent = S.noTricks; list.appendChild(li); }
+  $('o-img').src = fell.length ? '/assets/arcade/glitch-laugh.webp' : '/assets/arcade/shieldy-cheer.webp';
+  $('hud').hidden = true; $('ov-over').hidden = false; $('b-again').focus();
+  if (window.DSKPoints) {
+    const pts = Math.min(20, Math.floor(score / 150));
+    if (pts > 0) DSKPoints.addPoints(pts, S.reason);
+    if (DSKPoints.markComboActivity) DSKPoints.markComboActivity('game');
+  }
+}
+
+function hurt() {
+  g.hearts--; g.invuln = 1.3; g.shake = reduced ? 0 : 0.35; SFX.hit();
+  if (g.hearts <= 0) end();
+}
+
+/* ───────────── per-frame ───────────── */
+function resolveSign(it) {
+  const s = it.sign, inLane = g.lane === s.lane && Math.abs(g.x - s.lane * LANE) < 1.2;
+  if (s.trap) {
+    g.trapsSeen++;
+    if (inLane) {
+      g.missed[s.lever] = (g.missed[s.lever] || 0) + 1;
+      if (s.card) s.card.classList.add('bad');
+      flash(lang === 'es' ? '¡' + S.lever[s.lever] + '!' : S.lever[s.lever] + (lang === 'fr' ? '\u202f!' : '!'), '#ff7a85', S.rule[s.lever]);
+      g.glitchT = 2.2; g.glitchSide = s.lane >= 0 ? -1 : 1;
+      hurt();
+    } else { g.bonus += 25; if (s.card) s.card.classList.add('good'); flash(S.dodged, '#8fe6e2'); SFX.dodge(); }
+  } else if (inLane) {
+    g.bonus += 100; if (s.card) s.card.classList.add('good');
+    flash(S.friend, '#7dffb0'); SFX.friend(); burst(g.x, 1.6, -0.5, 18, 0x9dffb8);
+  } else if (s.card) s.card.classList.add('gone');
+  if (g.msgActive && g.msgActive.every(x => x.item.done)) {
+    const act = g.msgActive; g.msgActive = null;
+    setTimeout(() => { if (!g.msgActive) act.forEach(x => x.card && x.card.classList.add('gone')); setTimeout(() => { if (!g.msgActive) $('msgs').innerHTML = ''; }, 300); }, 900);
+  }
+}
+
+function update(dt) {
+  g.t += dt;
+  const playing = g.mode === 'play';
+  const v = playing ? g.speed : (g.mode === 'title' ? 7 : 0);
+  if (playing) g.speed = Math.min(24, 12.5 + g.t * 0.1);
+  const dz = v * dt;
+  g.dist += playing ? dz : 0;
+
+  // the world slides toward the camera
+  T.road.offset.y += dz / (SPAN / T.road.repeat.y);
+  T.grass.offset.y += dz / (SPAN / T.grass.repeat.y);
+  T.wallL.offset.x += dz / 3.2; T.wallR.offset.x -= dz / 3.2;
+  crenL.position.z = crenR.position.z = (crenL.position.z + dz) % 1.8;
+  scenery.forEach(o => { o.position.z += dz; if (o.position.z > Z0 + 4) o.position.z -= o.userData.span; });
+
+  if (playing) { g.rowIn -= dz; if (g.rowIn <= 0) spawnRow(); }
+
+  // player
+  const tx = g.lane * LANE;
+  g.x += (tx - g.x) * Math.min(1, dt * 12);
+  if (g.y > 0 || g.vy > 0) {
+    g.vy -= 24 * dt; g.y += g.vy * dt;
+    if (g.y <= 0) { g.y = 0; g.vy = 0; g.squash = 0.16; }
+  }
+  g.squash = Math.max(0, g.squash - dt * 0.9);
+  g.phase += dt * (v * 0.62 + 1.5);
+  if (player) {
+    const bob = g.y > 0 ? 0 : Math.abs(Math.sin(g.phase)) * 0.13;
+    player.position.set(g.x, g.y + bob, 0);
+    player.rotation.z = Math.sin(g.phase) * 0.05 - (tx - g.x) * 0.12;
+    player.rotation.x = g.y > 0 ? -0.15 : 0.06;
+    const s = 1 - g.squash; player.scale.set(1 + g.squash * 0.5, s, 1 + g.squash * 0.5);
+    if (g.invuln > 0) { g.invuln -= dt; player.visible = Math.floor(g.invuln * 12) % 2 === 0; } else player.visible = true;
+    shadow.position.x = g.x; shadow.scale.setScalar(1 - Math.min(0.5, g.y * 0.18));
+  }
+
+  // items
+  for (let i = g.items.length - 1; i >= 0; i--) {
+    const it = g.items[i];
+    it.obj.position.z += dz;
+    const z = it.obj.position.z;
+    if (it.kind === 'coin') { it.obj.rotation.y += dt * 4; }
+    if (it.kind === 'sign') it.obj.children[1].position.y = 2.05 + Math.sin(g.t * 2 + it.lane) * 0.06;
+    if (playing && !it.done) {
+      const near = Math.abs(z) < 0.75, same = Math.abs(g.x - it.lane * LANE) < 1.1;
+      if (it.kind === 'coin' && near && same && Math.abs((g.y + 0.8) - it.obj.position.y) < 1.1) {
+        it.done = true; g.coins++; g.bonus += 5; SFX.coin(); burst(it.obj.position.x, it.obj.position.y + 0.3, z, 4, 0xffe08a, 0.24);
+        scene.remove(it.obj); g.items.splice(i, 1); continue;
+      }
+      if (it.kind === 'crate' && near && same && g.y < 0.95 && g.invuln <= 0) {
+        it.done = true; flash(S.crate, '#ffd76a'); hurt(); if (g.mode !== 'play') return;
+      }
+      if (it.kind === 'sign' && z > 0) { it.done = true; resolveSign(it); if (g.mode !== 'play') return; }
+    }
+    if (z > Z0 - 2) { scene.remove(it.obj); if (it.obj.userData.dispose) it.obj.userData.dispose(); g.items.splice(i, 1); }
+  }
+
+  // Glitch pops up at the roadside when a trick gets through
+  if (glitch) {
+    if (g.glitchT > 0) {
+      g.glitchT -= dt;
+      const k = Math.min(1, (2.2 - g.glitchT) / 0.35) * Math.min(1, g.glitchT / 0.35);
+      glitch.visible = true;
+      glitch.position.set(g.glitchSide * 4.4, -1.9 + 1.9 * k + Math.abs(Math.sin(g.t * 10)) * 0.15 * k, -7);
+      glitch.rotation.y = -g.glitchSide * 0.5;
+    } else glitch.visible = false;
+  }
+
+  // sparkles
+  for (const p of sparks) {
+    if (p.t <= 0) continue;
+    p.t -= dt; p.v.y -= 9 * dt; p.s.position.addScaledVector(p.v, dt); p.s.position.z += dz;
+    p.s.material.opacity = Math.min(1, p.t * 2); if (p.t <= 0) p.s.visible = false;
+  }
+
+  // camera follows, a little behind and above
+  const portrait = camera.aspect < 1;
+  camera.position.set(g.x * 0.45, (portrait ? 3.7 : 3.3) + g.y * 0.25, portrait ? 6.9 : 6.6);
+  if (g.shake > 0) { g.shake -= dt; camera.position.x += (Math.random() - 0.5) * 0.3; camera.position.y += (Math.random() - 0.5) * 0.3; }
+  camera.lookAt(g.x * 0.55, 1.1, -9);
+
+  if (flashTimer > 0) { flashTimer -= dt; if (flashTimer <= 0) $('flash').style.opacity = 0; }
+  if (playing) hud();
+}
+
+function resize() {
+  const w = innerWidth, h = innerHeight;
+  renderer.setSize(w, h, false);
+  camera.aspect = w / h; camera.fov = camera.aspect < 1 ? 74 : 58; camera.updateProjectionMatrix();
+}
+addEventListener('resize', resize); resize();
+
+manager.onLoad = () => {
+  if (loadFailed || !M.shieldy || !M.glitch || !M.lantern || !M.tower) { $('t-load').textContent = S.loadErr; return; }
+  // turn him round to face down the road; the turn sits on its own group so it
+  // pivots on his centre and the lean/tilt below stay in the camera's frame
+  M.shieldy.rotation.y = Math.PI; player = new THREE.Group(); player.add(M.shieldy); scene.add(player);
+  shadow = new THREE.Mesh(new THREE.CircleGeometry(0.62, 28), new THREE.MeshBasicMaterial({ color: 0x000000, transparent: true, opacity: 0.32, depthWrite: false }));
+  shadow.rotation.x = -Math.PI / 2; shadow.position.y = 0.02; scene.add(shadow);
+  glitch = M.glitch; glitch.visible = false; scene.add(glitch);
+  addScenery(i => {
+    const o = M.lantern.clone(); o.position.x = (i % 2 ? 1 : -1) * (ROAD_W / 2 + 0.75);
+    const halo = new THREE.Sprite(new THREE.SpriteMaterial({ map: GLOW, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: 0.9 }));
+    halo.scale.set(2.2, 2.2, 1); halo.position.y = 3.0; o.add(halo); return o;
+  }, 7, 20);   // 140 units: the fog hides anything further
+  addScenery(i => {
+    const o = M.tower.clone(), s = 6.5 + Math.random() * 4;
+    o.scale.setScalar(s); o.rotation.y = Math.random() * 6.28;
+    o.position.x = (i % 2 ? 1 : -1) * (13 + Math.random() * 4); return o;
+  }, 13, 11);
+  $('ov-load').hidden = true; $('ov-title').hidden = false; $('b-start').focus();
+  g.mode = 'title';
+};
+
+let last = performance.now();
+renderer.setAnimationLoop(() => {
+  const now = performance.now(), dt = Math.min(0.05, (now - last) / 1000); last = now;
+  if (!document.hidden) { update(dt); renderer.render(scene, camera); }
+});
+
+// Read-only view of the run plus the same inputs a player has, so the game
+// can be driven end to end in a test.
+window.ShieldyRun = {
+  state: () => ({ mode: g.mode, speed: g.speed, t: g.t, lane: g.lane, x: g.x, y: g.y, hearts: g.hearts, coins: g.coins, dist: g.dist, bonus: g.bonus, missed: g.missed,
+    items: g.items.filter(i => !i.done).map(i => ({ kind: i.kind, lane: i.lane, z: i.obj.position.z, trap: i.sign ? i.sign.trap : undefined })) }),
+  input: act, step: (dt) => update(dt), render: () => renderer.render(scene, camera),
+  info: () => ({ calls: renderer.info.render.calls, triangles: renderer.info.render.triangles })
+};
+</script>
+</body>
+</html>

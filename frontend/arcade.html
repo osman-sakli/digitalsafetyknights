@@ -74,6 +74,9 @@
   .tile .fav[aria-pressed="true"] { color:var(--gold); }
   .tile .badge { position:absolute; top:14px; right:40px; background:var(--success); color:#fff; font-size:.6rem; font-weight:900; letter-spacing:1.2px; text-transform:uppercase; padding:3px 7px; border-radius:10px; }
   .tile.hide { display:none; }
+  /* the one 3D game gets a frame from the game itself, and two columns */
+  .tile .cover { display:block; width:calc(100% + 36px); max-width:none; height:150px; object-fit:cover; margin:-18px -18px 6px; background:#0d1b3e; }
+  @media (min-width:560px) { .tile.feature { grid-column:span 2; } .tile.feature .cover { height:180px; } }
 
   .empty { font-size:.86rem; color:var(--gray); background:#fff; border-radius:14px; padding:16px 19px; line-height:1.65; }
 
@@ -133,6 +136,13 @@
   <div class="grid" id="ar-grid">
 
     <!-- ── games ── -->
+    <div class="tile feature" data-cat="play" data-id="run">
+      <button type="button" class="fav" aria-pressed="false" aria-label="Favourite">★</button>
+      <a href="/shieldy-run.html"><img class="cover" src="/assets/arcade/run-cover.webp" alt="" width="720" height="360" loading="lazy">
+        <h3 data-i18n="arc.run.h">Shieldy Run 3D</h3>
+        <p data-i18n="arc.run.p">A real 3D runner. Race Shieldy down the castle road, jump the crates, grab the coins. And read every message: run into your friends, steer around the tricks.</p>
+        <span class="go" data-i18n="arc.play">Play →</span></a>
+    </div>
     <div class="tile" data-cat="play" data-id="dash">
       <button type="button" class="fav" aria-pressed="false" aria-label="Favourite">★</button>
       <a href="/shieldy-dash.html"><img src="/assets/arcade/shieldy-shield.webp" alt="" width="59" height="90" loading="lazy" style="height:90px;width:auto;align-self:flex-start;margin:-4px 0 -2px;">
@@ -269,7 +279,7 @@
   'use strict';
   var FAV_KEY = 'dsk_arcade_favs';
   var RECENT_KEY = 'dsk_arcade_recent';
-  var NEW_IDS = ['dash'];
+  var NEW_IDS = ['run', 'dash'];
   var RECENT_MAX = 4;
 
   function t(k, f) { return (window.DSKi18n && DSKi18n.t) ? DSKi18n.t(k, f) : f; }
