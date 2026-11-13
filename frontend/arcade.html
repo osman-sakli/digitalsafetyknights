@@ -136,6 +136,13 @@
   <div class="grid" id="ar-grid">
 
     <!-- ── games ── -->
+    <div class="tile feature" data-cat="play" data-id="toss">
+      <button type="button" class="fav" aria-pressed="false" aria-label="Favourite">★</button>
+      <a href="/shield-toss.html"><img class="cover" src="/assets/arcade/toss-cover.webp" alt="" width="780" height="300" loading="lazy">
+        <h3 data-i18n="arc.toss.h">Shield Toss 3D</h3>
+        <p data-i18n="arc.toss.p">Friends walk up to the castle gate with messages, but Glitch can look like any of them. Read, then throw your shield at the tricks.</p>
+        <span class="go" data-i18n="arc.play">Play →</span></a>
+    </div>
     <div class="tile feature" data-cat="play" data-id="run">
       <button type="button" class="fav" aria-pressed="false" aria-label="Favourite">★</button>
       <a href="/shieldy-run.html"><img class="cover" src="/assets/arcade/run-cover.webp" alt="" width="720" height="360" loading="lazy">
@@ -279,7 +286,7 @@
   'use strict';
   var FAV_KEY = 'dsk_arcade_favs';
   var RECENT_KEY = 'dsk_arcade_recent';
-  var NEW_IDS = ['run', 'dash'];
+  var NEW_IDS = ['toss', 'run', 'dash'];
   var RECENT_MAX = 4;
 
   function t(k, f) { return (window.DSKi18n && DSKi18n.t) ? DSKi18n.t(k, f) : f; }

@@ -47,7 +47,7 @@ HIGH = {"index.html", "resources.html", "school-programs.html", "quests.html",
         "arcade.html"}
 MEDIUM = {"knights.html", "academy.html", "game.html", "audit.html",
           "knight-council.html", "journal-archive.html", "glossary.html",
-          "certification-exam.html", "shieldy-dash.html", "shieldy-run.html"}
+          "certification-exam.html", "shieldy-dash.html", "shieldy-run.html", "shield-toss.html"}
 
 
 def page_url(name):

@@ -204,6 +204,10 @@
     "shieldy-run.html": {
       "title": "Shieldy Run 3D — Digital Safety Knights",
       "description": "Shieldy Run — ücretsiz bir 3D koşu oyunu. Sandıkların üstünden atla, altınları topla, arkadaşlarının mesajlarının içinden geç ve tuzakların etrafından dolaş. Hesap yok, reklam yok, izleme yok."
+    },
+    "shield-toss.html": {
+      "title": "Shield Toss 3D — Digital Safety Knights",
+      "description": "Shield Toss — ücretsiz bir 3D oyun. Arkadaşlar kale kapısına mesajlarla geliyor ama Glitch herhangi birinin kılığına girebilir. Oku, sonra kalkanını tuzaklara fırlat. Hesap yok, reklam yok, izleme yok."
     }
   },
   "es": {
@@ -410,6 +414,10 @@
     "shieldy-run.html": {
       "title": "Shieldy Run 3D — Digital Safety Knights",
       "description": "Shieldy Run: un juego de carreras en 3D gratuito. Salta las cajas, junta las monedas, pasa por los mensajes de tus amigos y esquiva las trampas. Sin cuenta, sin anuncios, sin rastreo."
+    },
+    "shield-toss.html": {
+      "title": "Shield Toss 3D — Digital Safety Knights",
+      "description": "Shield Toss: un juego en 3D gratuito. Llegan amigos a la puerta del castillo con mensajes, pero Glitch puede verse igualito a cualquiera. Lee y luego lanza tu escudo a las trampas. Sin cuenta, sin anuncios, sin rastreo."
     }
   },
   "fr": {
@@ -616,6 +624,10 @@
     "shieldy-run.html": {
       "title": "Shieldy Run 3D — Digital Safety Knights",
       "description": "Shieldy Run : un jeu de course en 3D gratuit. Saute les caisses, ramasse les pièces, passe dans les messages de tes amis et contourne les pièges. Sans compte, sans publicité, sans suivi."
+    },
+    "shield-toss.html": {
+      "title": "Shield Toss 3D — Digital Safety Knights",
+      "description": "Shield Toss : un jeu en 3D gratuit. Des amis arrivent à la porte du château avec des messages, mais Glitch peut prendre l’apparence de n’importe lequel. Lis, puis lance ton bouclier sur les pièges. Sans compte, sans publicité, sans suivi."
     }
   }
 }

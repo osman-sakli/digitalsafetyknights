@@ -1505,5 +1505,7 @@
   "arc.run.p": "Un vrai jeu de course en 3D. Fonce avec Shieldy sur la route du château, saute les caisses, ramasse les pièces. Et lis chaque message : passe dans ceux de tes amis, contourne les pièges.",
   "arc.favAria": "Ajouter aux favoris",
   "arc.filterAria": "Filtrer",
-  "qp.defaultNick": "Chevalier"
+  "qp.defaultNick": "Chevalier",
+  "arc.toss.h": "Shield Toss 3D",
+  "arc.toss.p": "Des amis arrivent à la porte du château avec des messages, mais Glitch peut prendre l’apparence de n’importe lequel. Lis, puis lance ton bouclier sur les pièges."
 }

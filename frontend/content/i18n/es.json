@@ -1505,5 +1505,7 @@
   "arc.run.p": "Un juego de carreras en 3D de verdad. Corre con Shieldy por el camino del castillo, salta las cajas y junta las monedas. Y lee cada mensaje: pasa por los de tus amigos y esquiva las trampas.",
   "arc.favAria": "Añadir a favoritos",
   "arc.filterAria": "Filtrar",
-  "qp.defaultNick": "Caballero"
+  "qp.defaultNick": "Caballero",
+  "arc.toss.h": "Shield Toss 3D",
+  "arc.toss.p": "Llegan amigos a la puerta del castillo con mensajes, pero Glitch puede verse igualito a cualquiera. Lee y luego lanza tu escudo a las trampas."
 }

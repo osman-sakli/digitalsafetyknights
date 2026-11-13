@@ -1505,5 +1505,7 @@
   "arc.run.p": "Gerçek bir 3D koşu oyunu. Shieldy ile kale yolunda koş, sandıkların üstünden atla, altınları topla. Her mesajı da oku: arkadaşlarının içinden geç, tuzakların etrafından dolaş.",
   "arc.favAria": "Favorilere ekle",
   "arc.filterAria": "Filtrele",
-  "qp.defaultNick": "Şövalye"
+  "qp.defaultNick": "Şövalye",
+  "arc.toss.h": "Shield Toss 3D",
+  "arc.toss.p": "Arkadaşlar kale kapısına mesajlarla geliyor ama Glitch herhangi birinin kılığına girebilir. Oku, sonra kalkanını tuzaklara fırlat."
 }

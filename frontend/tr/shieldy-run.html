@@ -135,6 +135,7 @@
 <script type="module">
 import * as THREE from '/assets/lib/three-0.170.0/three.module.min.js';
 import { GLTFLoader } from '/assets/lib/three-0.170.0/GLTFLoader.js';
+import { LEVERS, POOLS } from '/assets/arcade-messages.js';
 
 /* ───────────── words ─────────────
    The message pools are the same all-ages set as Shieldy Dash: nothing that
@@ -149,21 +150,8 @@ const W = {
     friend: 'Friend! +100', dodged: 'Dodged! +25', crate: 'Ouch!',
     hint: 'Swipe ← → to move · ↑ to jump', hintKeys: '← → move · ↑ or Space to jump',
     noGL: 'This device can\'t run the 3D game. The 2D version works everywhere:', noGLbtn: 'Play Shieldy Dash →',
+    shieldUp: 'Shield up!', shieldSub: 'It stops crates, not tricks. Keep reading.',
     reason: 'Shieldy Run',
-    lever: { urgency: 'Urgency', secrecy: 'Secrecy', flattery: 'Flattery', fear: 'Fear' },
-    rule: {
-      urgency: 'A clock is a trick. Real things do not expire in ten seconds.',
-      secrecy: '"Don\'t tell" is the red flag itself.',
-      flattery: 'Sudden compliments, then a request. That order is the trick.',
-      fear: 'A threat only works in silence. Tell a grown-up.'
-    },
-    red: {
-      urgency: ['FREE ROBUX! Only 10 seconds left!', 'Click NOW or lose your account!', 'Last chance! Offer ends in 1 minute!'],
-      secrecy: ['Don\'t tell your parents about this.', 'This is our little secret, ok?', 'Delete this chat after reading.'],
-      flattery: ['You\'re my favorite! Send me your phone number?', 'You\'re special. Let\'s chat on another app.', 'I only trust you. What\'s your address?'],
-      fear: ['Give me your skins or I\'ll get you banned!', 'Your account is hacked! Send me your password.', 'Do it or I\'ll tell everyone your secret.']
-    },
-    safe: ['Want to play after homework?', 'Grandma says hi! 👋', 'Practice is at 5 today.', 'Nice goal in the match!', 'Did you finish the math sheet?', 'Mom: dinner\'s ready!', 'Happy birthday!! 🎂', 'Movie night on Friday?', 'Good luck on your test!', 'Can I borrow your notes?', 'Team photo is tomorrow.']
   },
   tr: {
     how: 'Shieldy ile kalenin içinden koş. Şerit değiştirmek için ← → kaydır (ya da ok tuşları), sandıkların üstünden atlamak için ↑ kaydır (ya da Boşluk). Yolda mesajlar süzülür — ekranın üstünde oku. Arkadaşının mesajının İÇİNDEN geç, tuzağın ETRAFINDAN dolaş. Üç darbede koşu biter.',
@@ -173,21 +161,8 @@ const W = {
     friend: 'Arkadaş! +100', dodged: 'Atlattın! +25', crate: 'Ah!',
     hint: 'Hareket için ← → kaydır · zıplamak için ↑', hintKeys: '← → hareket · ↑ ya da Boşluk zıpla',
     noGL: 'Bu cihaz 3D oyunu çalıştıramıyor. 2D sürüm her yerde çalışır:', noGLbtn: 'Shieldy Dash\'i oyna →',
+    shieldUp: 'Kalkan aktif!', shieldSub: 'Sandıkları durdurur, tuzakları değil. Okumaya devam et.',
     reason: 'Shieldy Run',
-    lever: { urgency: 'Acele', secrecy: 'Sır', flattery: 'İltifat', fear: 'Korku' },
-    rule: {
-      urgency: 'Geri sayım bir tuzaktır. Gerçek şeyler on saniyede bitmez.',
-      secrecy: '“Kimseye söyleme” cümlesi, uyarı işaretinin ta kendisidir.',
-      flattery: 'Önce ani iltifat, sonra bir istek. Tuzak bu sıradadır.',
-      fear: 'Tehdit yalnızca sessizlikte işe yarar. Bir büyüğe söyle.'
-    },
-    red: {
-      urgency: ['BEDAVA ROBUX! Son 10 saniye!', 'HEMEN tıkla yoksa hesabın silinir!', 'Son şans! Teklif 1 dakikada bitiyor!'],
-      secrecy: ['Bunu annenle babana söyleme.', 'Bu aramızda küçük bir sır, tamam mı?', 'Okuyunca bu sohbeti sil.'],
-      flattery: ['En sevdiğim sensin! Telefon numaranı atsana?', 'Sen özelsin. Başka bir uygulamada konuşalım.', 'Sadece sana güveniyorum. Adresin ne?'],
-      fear: ['Skinlerini ver yoksa seni banlatırım!', 'Hesabın çalındı! Şifreni bana gönder.', 'Yap, yoksa sırrını herkese söylerim.']
-    },
-    safe: ['Ödevden sonra oynayalım mı?', 'Anneannenin selamı var! 👋', 'Antrenman bugün 5\'te.', 'Maçtaki gol harikaydı!', 'Matematik ödevini bitirdin mi?', 'Annen: Yemek hazır!', 'Doğum günün kutlu olsun!! 🎂', 'Cuma film gecesi yapalım mı?', 'Sınavında başarılar!', 'Notlarını ödünç alabilir miyim?', 'Takım fotoğrafı yarın.']
   },
   es: {
     how: 'Corre por el castillo con Shieldy. Desliza ← → (o usa las flechas) para cambiar de carril y desliza ↑ (o Espacio) para saltar las cajas. Por el camino flotan mensajes: léelos arriba en la pantalla. Pasa POR el mensaje de un amigo y esquiva las trampas. Con tres golpes se acaba la carrera.',
@@ -197,21 +172,8 @@ const W = {
     friend: '¡Amigo! +100', dodged: '¡Esquivada! +25', crate: '¡Auch!',
     hint: 'Desliza ← → para moverte · ↑ para saltar', hintKeys: '← → moverte · ↑ o Espacio para saltar',
     noGL: 'Este dispositivo no puede ejecutar el juego en 3D. La versión 2D funciona en todos lados:', noGLbtn: 'Jugar Shieldy Dash →',
+    shieldUp: '¡Escudo arriba!', shieldSub: 'Detiene las cajas, no las trampas. Sigue leyendo.',
     reason: 'Shieldy Run',
-    lever: { urgency: 'Urgencia', secrecy: 'Secretismo', flattery: 'Halagos', fear: 'Miedo' },
-    rule: {
-      urgency: 'Un reloj es una trampa. Lo real no se acaba en diez segundos.',
-      secrecy: '«No le digas a nadie» es la señal de alerta en sí.',
-      flattery: 'Halagos de repente y luego un pedido. Ese orden es la trampa.',
-      fear: 'Una amenaza solo funciona en silencio. Cuéntaselo a un adulto.'
-    },
-    red: {
-      urgency: ['¡ROBUX GRATIS! ¡Solo quedan 10 segundos!', '¡Haz clic YA o pierdes tu cuenta!', '¡Última oportunidad! La oferta termina en 1 minuto.'],
-      secrecy: ['No les cuentes esto a tus papás.', 'Este es nuestro secretito, ¿ok?', 'Borra este chat después de leerlo.'],
-      flattery: ['¡Eres mi persona favorita! ¿Me pasas tu número?', 'Eres especial. Hablemos en otra app.', 'Solo confío en ti. ¿Cuál es tu dirección?'],
-      fear: ['¡Dame tus skins o hago que te baneen!', '¡Hackearon tu cuenta! Mándame tu contraseña.', 'Hazlo o le cuento tu secreto a todos.']
-    },
-    safe: ['¿Jugamos después de la tarea?', '¡La abuela te manda saludos! 👋', 'El entrenamiento es hoy a las 5.', '¡Golazo en el partido!', '¿Terminaste la hoja de mate?', 'Mamá: ¡la cena está lista!', '¡¡Feliz cumpleaños!! 🎂', '¿Noche de película el viernes?', '¡Suerte en tu examen!', '¿Me prestas tus apuntes?', 'La foto del equipo es mañana.']
   },
   fr: {
     how: 'Cours dans le château avec Shieldy. Glisse ← → (ou les flèches) pour changer de voie et glisse ↑ (ou Espace) pour sauter les caisses. Des messages flottent sur la route : lis-les en haut de l’écran. Passe DANS le message d’un ami, contourne les pièges. Trois chocs et la course s’arrête.',
@@ -221,32 +183,18 @@ const W = {
     friend: 'Un ami ! +100', dodged: 'Évité ! +25', crate: 'Aïe !',
     hint: 'Glisse ← → pour bouger · ↑ pour sauter', hintKeys: '← → bouger · ↑ ou Espace pour sauter',
     noGL: 'Cet appareil ne peut pas lancer le jeu en 3D. La version 2D marche partout :', noGLbtn: 'Jouer à Shieldy Dash →',
+    shieldUp: 'Bouclier levé !', shieldSub: 'Il arrête les caisses, pas les pièges. Continue à lire.',
     reason: 'Shieldy Run',
-    lever: { urgency: 'Urgence', secrecy: 'Secret', flattery: 'Flatterie', fear: 'Peur' },
-    rule: {
-      urgency: 'Un compte à rebours est un piège. Le vrai ne disparaît pas en dix secondes.',
-      secrecy: '« Ne dis rien » : le signal d’alerte, c’est cette phrase.',
-      flattery: 'Des compliments soudains, puis une demande. Le piège est dans cet ordre.',
-      fear: 'Une menace ne marche que dans le silence. Parles-en à un adulte.'
-    },
-    red: {
-      urgency: ['ROBUX GRATUITS ! Plus que 10 secondes !', 'Clique MAINTENANT ou tu perds ton compte !', 'Dernière chance ! L’offre finit dans 1 minute !'],
-      secrecy: ['Ne dis rien à tes parents.', 'C’est notre petit secret, d’accord ?', 'Supprime cette conversation après l’avoir lue.'],
-      flattery: ['C’est toi que je préfère ! Tu m’envoies ton numéro ?', 'Tu n’es pas comme les autres. On parle sur une autre appli ?', 'Je ne fais confiance qu’à toi. C’est quoi ton adresse ?'],
-      fear: ['Donne-moi tes skins ou je te fais bannir !', 'Ton compte est piraté ! Envoie-moi ton mot de passe.', 'Fais-le ou je dis ton secret à tout le monde.']
-    },
-    safe: ['On joue après les devoirs ?', 'Mamie te fait un coucou ! 👋', 'L’entraînement est à 17 h aujourd’hui.', 'Super but pendant le match !', 'Tu as fini la fiche de maths ?', 'Maman : à table !', 'Joyeux anniversaire !! 🎂', 'Soirée film vendredi ?', 'Bonne chance pour ton contrôle !', 'Tu me prêtes tes notes ?', 'La photo d’équipe, c’est demain.']
   }
 };
 let lang = (window.DSKi18n && DSKi18n.lang) || 'en';
 if (!W[lang]) lang = 'en';
 document.documentElement.lang = lang;
-const S = W[lang];
+const S = Object.assign({}, W[lang], JSON.parse(JSON.stringify(POOLS[lang])));
 if (lang === 'fr') {   // narrow no-break space before ! ? : ; — once, here
   const nb = s => s.replace(/ ([!?:;»])/g, ' $1').replace(/« /g, '« ');
   (function walk(o) { for (const k in o) { if (typeof o[k] === 'string') o[k] = nb(o[k]); else walk(o[k]); } })(S);
 }
-const LEVERS = ['urgency', 'secrecy', 'flattery', 'fear'];
 const $ = id => document.getElementById(id);
 const fine = matchMedia('(pointer:fine)').matches;
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -338,7 +286,7 @@ function prep(gltf, height, tint) {
   const g = new THREE.Group(); g.add(root); return g;
 }
 const TINT = { shieldy: 0xffdf85 };
-const SIZES = { shieldy: 1.7, glitch: 1.8, crate: 1.0, lantern: 3.3, tower: 1, coin: 0.72 };
+const SIZES = { shieldy: 1.7, glitch: 1.8, crate: 1.0, barrel: 0.95, shield: 0.95, lantern: 3.3, tower: 1, coin: 0.72 };
 Object.keys(SIZES).forEach(n => gl.load(A + n + '.glb', g => { M[n] = prep(g, SIZES[n], TINT[n]); }));
 
 /* ───────────── world ───────────── */
@@ -376,9 +324,10 @@ const BEST_KEY = 'dsk_run_best';
 const g = {
   mode: 'loading', speed: 0, dist: 0, bonus: 0, coins: 0, hearts: 3, invuln: 0,
   lane: 0, x: 0, y: 0, vy: 0, squash: 0, phase: 0, rowIn: 30, rows: 0, msgActive: null,
-  missed: {}, trapsSeen: 0, deckR: [], deckS: [], items: [], shake: 0, glitchT: 0, glitchSide: 1, t: 0
+  missed: {}, trapsSeen: 0, deckR: [], deckS: [], items: [], shake: 0, glitchT: 0, glitchSide: 1, t: 0,
+  power: 0, lastPower: 0, chase: 0, chaseNext: 18, throwIn: 0, nextMile: 1000, hitLog: []
 };
-let player, glitch, shadow;
+let player, glitch, shadow, bubble, chaser, speedLines, baseFov = 58;
 
 function shuffled(a) { a = a.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
 function nextRed() {
@@ -452,6 +401,13 @@ function spawnRow() {
     g.rowIn = 34; return;
   }
   const r = Math.random();
+  if (g.rows > 5 && r > 0.82 && M.barrel) {   // a barrel rolling down the road at you, faster than the road
+    const outer = new THREE.Group(), inner = M.barrel.clone(); inner.position.y = -0.47; outer.add(inner);
+    const it = add('barrel', lanes[0], outer, { y: 0.47 });
+    // some hop into the next lane halfway down, so watch it, not just its lane
+    if (Math.random() < 0.5) { const n = lanes[0] + (lanes[0] === 1 ? -1 : lanes[0] === -1 ? 1 : (Math.random() < 0.5 ? -1 : 1)); it.hopTo = n; }
+    g.rowIn = Math.max(18, g.speed * 0.9) + Math.random() * 6; return;
+  }
   if (r < 0.4 && M.crate) {
     const n = Math.random() < 0.4 ? 2 : 1;
     for (let i = 0; i < n; i++) add('crate', lanes[i], M.crate.clone());
@@ -461,8 +417,15 @@ function spawnRow() {
   } else if (M.coin) {
     const lane = lanes[0];
     for (let k = 0; k < 7; k++) add('coin', lane, M.coin.clone(), { dz: -k * 1.6, y: 0.85 });
+    if (M.shield && g.t - g.lastPower > 24 && g.power <= 0 && Math.random() < 0.6) {   // the gold shield, in another lane
+      g.lastPower = g.t;
+      const o = new THREE.Group(), sh = M.shield.clone(); o.add(sh);
+      const halo = new THREE.Sprite(new THREE.SpriteMaterial({ map: GLOW, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: 0.9 }));
+      halo.scale.set(2.1, 2.1, 1); halo.position.y = 0.5; o.add(halo);
+      add('power', lanes[1], o, { y: 0.75, dz: -6 });
+    }
   }
-  g.rowIn = 16 + Math.random() * 9;
+  g.rowIn = Math.max(16, g.speed * 0.85) + Math.random() * 9;   // at speed a jump covers ~16, so leave room to land
 }
 
 /* ───────────── sound ───────────── */
@@ -488,25 +451,34 @@ const SFX = {
   friend: () => tone([523, 659, 784, 1047], 0.32, 'triangle', 0.12),
   dodge: () => tone([660, 880], 0.14, 'sine', 0.07),
   hit: () => tone([220, 140], 0.36, 'sawtooth', 0.08),
-  over: () => tone([392, 330, 262, 196], 0.8, 'triangle', 0.11)
+  over: () => tone([392, 330, 262, 196], 0.8, 'triangle', 0.11),
+  power: () => tone([523, 784, 1047, 1568], 0.45, 'square', 0.06),
+  smash: () => tone([180, 90], 0.18, 'square', 0.07),
+  laugh: () => tone([620, 520, 620, 520, 420], 0.5, 'square', 0.04)
 };
 
 /* ───────────── sparkles ───────────── */
 const sparks = [];
-for (let i = 0; i < 40; i++) {
+for (let i = 0; i < 90; i++) {
   const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: SPARK, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending }));
-  s.visible = false; scene.add(s); sparks.push({ s, t: 0, v: new THREE.Vector3() });
+  s.visible = false; scene.add(s); sparks.push({ s, t: 0, v: new THREE.Vector3(), grav: 9, still: false });
 }
-function burst(x, y, z, n, color, size) {
+function burst(x, y, z, n, color, size, speed, grav, still) {
   if (reduced) n = Math.ceil(n / 3);
   let k = 0;
   for (const p of sparks) {
     if (p.t > 0) continue;
     p.t = 0.6 + Math.random() * 0.3; p.s.visible = true; p.s.position.set(x, y, z);
     p.s.material.color.set(color || 0xffe08a); p.s.scale.setScalar(size || 0.35);
-    p.v.set((Math.random() - 0.5) * 5, 2 + Math.random() * 4, (Math.random() - 0.5) * 3);
+    const sp = speed || 1; p.grav = grav == null ? 9 : grav; p.still = !!still;
+    p.v.set((Math.random() - 0.5) * 5 * sp, (2 + Math.random() * 4) * sp, (Math.random() - 0.5) * 3 * sp);
     if (++k >= n) break;
   }
+}
+
+function fireworks() {
+  const cols = [0xffd76a, 0x8fe6ff, 0xff8fb1, 0xa8ff9a];
+  for (let i = 0; i < 3; i++) setTimeout(() => burst((Math.random() - 0.5) * 10, 10 + Math.random() * 3, -30, 22, cols[i % 4], 0.6, 1.6, 3, true), i * 260);
 }
 
 /* ───────────── HUD ───────────── */
@@ -555,7 +527,9 @@ function start() {
   if (snd) { try { ac = ac || new (window.AudioContext || window.webkitAudioContext)(); if (ac.state === 'suspended') ac.resume(); } catch (e) {} }
   clearItems();
   Object.assign(g, { mode: 'play', speed: 12.5, dist: 0, bonus: 0, coins: 0, hearts: 3, invuln: 0, lane: 0, x: 0, y: 0, vy: 0, squash: 0,
-    rowIn: 22, rows: 0, msgActive: null, missed: {}, trapsSeen: 0, shake: 0, glitchT: 0, t: 0 });
+    rowIn: 22, rows: 0, msgActive: null, missed: {}, trapsSeen: 0, shake: 0, glitchT: 0, t: 0,
+    power: 0, lastPower: 0, chase: 0, chaseNext: 18, throwIn: 0, nextMile: 1000, hitLog: [] });
+  if (chaser) chaser.visible = false; if (bubble) bubble.visible = false;
   $('msgs').innerHTML = ''; $('flash').style.opacity = 0; lastHud = '';
   $('ov-title').hidden = true; $('ov-over').hidden = true; $('hud').hidden = false; $('hint').hidden = false;
   hud();
@@ -629,6 +603,30 @@ function update(dt) {
   scenery.forEach(o => { o.position.z += dz; if (o.position.z > Z0 + 4) o.position.z -= o.userData.span; });
 
   if (playing) { g.rowIn -= dz; if (g.rowIn <= 0) spawnRow(); }
+  if (playing) {
+    const score = Math.floor(g.dist / 2) + g.bonus;
+    if (score >= g.nextMile) { flash(g.nextMile + '!', '#ffd76a'); fireworks(); SFX.friend(); g.nextMile += 1000; }
+    if (g.power > 0) g.power -= dt;
+    // Glitch shows up on the road ahead now and then and throws crates back at you
+    if (g.chase <= 0 && g.t > g.chaseNext && !g.msgActive) { g.chase = 7.5; g.throwIn = 1.4; SFX.laugh(); }
+    if (g.chase > 0) {
+      g.chase -= dt; g.throwIn -= dt;
+      if (g.throwIn <= 0 && g.chase > 1.2 && !g.msgActive && M.crate) {
+        g.throwIn = 1.15 + Math.random() * 0.5;
+        // only into a lane with room around the landing spot, so one jump (or
+        // one lane change) always gets you past it
+        const land = chaser.position.z + 0.5 + g.speed * 0.55;
+        const lane = shuffled([-1, 0, 1]).find(l => !g.items.some(o => !o.done && o.lane === l && o.kind !== 'coin' && Math.abs(o.obj.position.z - land) < 11));
+        if (lane !== undefined) {
+          const it = add('crate', lane, M.crate.clone());
+          it.obj.position.set(chaser.position.x, 1.6, chaser.position.z + 0.5);
+          it.thrown = true; it.fly = { t: 0, dur: 0.55, x0: chaser.position.x, x1: lane * LANE }; it.spin = (Math.random() - 0.5) * 8;
+          chaser.userData.throwT = 0.3;
+        }
+      }
+      if (g.chase <= 0) g.chaseNext = g.t + 24 + Math.random() * 10;
+    }
+  }
 
   // player
   const tx = g.lane * LANE;
@@ -654,16 +652,59 @@ function update(dt) {
     const it = g.items[i];
     it.obj.position.z += dz;
     const z = it.obj.position.z;
-    if (it.kind === 'coin') { it.obj.rotation.y += dt * 4; }
+    if (it.kind === 'coin') {
+      it.obj.rotation.y += dt * 4;
+      if (g.power > 0 && playing && z > -14 && z < 0.6) {   // the gold shield pulls coins in
+        it.obj.position.x += (g.x - it.obj.position.x) * Math.min(1, dt * 7);
+        it.obj.position.y += (g.y + 0.8 - it.obj.position.y) * Math.min(1, dt * 7);
+        it.lane = Math.round(it.obj.position.x / LANE);
+        if (z > -1.4) it.obj.position.z = Math.min(it.obj.position.z, 0);
+      }
+    }
+    if (it.kind === 'power') { it.obj.children[0].rotation.y += dt * 3; it.obj.position.y = 0.75 + Math.sin(g.t * 4) * 0.12; }
+    if (it.fly) {   // a crate Glitch threw: an arc, then a bump when it lands
+      it.fly.t += dt / it.fly.dur; const k = Math.min(1, it.fly.t);
+      it.obj.position.x = it.fly.x0 + (it.fly.x1 - it.fly.x0) * k;
+      it.obj.position.y = 1.6 * (1 - k) + 2.6 * Math.sin(k * Math.PI);
+      it.obj.rotation.x += it.spin * dt; it.obj.rotation.z += it.spin * 0.6 * dt;
+      if (k >= 1) { it.obj.position.y = 0; it.obj.rotation.set(0, 0, 0); it.fly = null; burst(it.obj.position.x, 0.2, z, 6, 0xc9a06a, 0.3); }
+    }
+    if (it.kind === 'barrel') {
+      // rolls faster than the road only while the road ahead of it is clear, and
+      // not on the last stretch, so it never parks right behind a crate and you
+      // can time the final approach like any other obstacle
+      const clear = l => !g.items.some(o => o !== it && !o.done && o.kind !== 'coin' && o.lane === l && o.obj.position.z > it.obj.position.z && o.obj.position.z - it.obj.position.z < 18);   // 18: a jump at top speed covers ~16
+      const roll = playing && it.obj.position.z < -22 && clear(it.lane) ? 6 * dt : 0;
+      const roomBoth = l => !g.items.some(o => o !== it && !o.done && o.kind !== 'coin' && o.lane === l && Math.abs(o.obj.position.z - it.obj.position.z) < 18);
+      if (it.hopTo !== undefined && !it.hopK && it.obj.position.z > -42 && !roomBoth(it.hopTo)) it.hopTo = undefined;
+      it.obj.position.z += roll;
+      it.obj.rotation.x += (dz + roll) / 0.47;
+      if (it.hopTo !== undefined && it.obj.position.z > -42) {   // the hop: a little arc into the next lane
+        it.hopK = Math.min(1, (it.hopK || 0) + dt * 2.2);
+        it.obj.position.x = (it.lane + (it.hopTo - it.lane) * it.hopK) * LANE;
+        it.obj.position.y = 0.47 + Math.sin(it.hopK * Math.PI) * 1.1;
+        if (it.hopK >= 1) { it.lane = it.hopTo; it.hopTo = undefined; it.hopped = true; it.obj.position.y = 0.47; burst(it.obj.position.x, 0.2, it.obj.position.z, 5, 0xc9a06a, 0.3); }
+      }
+    }
     if (it.kind === 'sign') it.obj.children[1].position.y = 2.05 + Math.sin(g.t * 2 + it.lane) * 0.06;
     if (playing && !it.done) {
-      const near = Math.abs(z) < 0.75, same = Math.abs(g.x - it.lane * LANE) < 1.1;
+      const near = Math.abs(z) < 0.75, same = Math.abs(g.x - (it.kind === 'barrel' ? it.obj.position.x : it.lane * LANE)) < 1.1;
       if (it.kind === 'coin' && near && same && Math.abs((g.y + 0.8) - it.obj.position.y) < 1.1) {
         it.done = true; g.coins++; g.bonus += 5; SFX.coin(); burst(it.obj.position.x, it.obj.position.y + 0.3, z, 4, 0xffe08a, 0.24);
         scene.remove(it.obj); g.items.splice(i, 1); continue;
       }
-      if (it.kind === 'crate' && near && same && g.y < 0.95 && g.invuln <= 0) {
-        it.done = true; flash(S.crate, '#ffd76a'); hurt(); if (g.mode !== 'play') return;
+      if ((it.kind === 'crate' || it.kind === 'barrel') && !it.fly && near && same && g.y < 0.95 && (g.invuln <= 0 || g.power > 0)) {
+        it.done = true;
+        if (g.power > 0) {   // the gold shield smashes it
+          g.bonus += 10; SFX.smash(); burst(it.obj.position.x, 0.6, z, 14, 0xc9a06a, 0.32, 1.3);
+          scene.remove(it.obj); g.items.splice(i, 1); continue;
+        }
+        g.hitLog.push({ kind: it.kind + (it.thrown ? ':thrown' : '') + (it.hopped ? ':hopped' : ''), t: +g.t.toFixed(1), y: +g.y.toFixed(2), vy: +g.vy.toFixed(1), x: +g.x.toFixed(2), ix: +it.obj.position.x.toFixed(2), iz: +z.toFixed(2) });
+        flash(S.crate, '#ffd76a'); hurt(); if (g.mode !== 'play') return;
+      }
+      if (it.kind === 'power' && near && same) {
+        it.done = true; g.power = 6.5; SFX.power(); flash(S.shieldUp, '#ffd76a', S.shieldSub);
+        burst(g.x, 1.4, 0, 22, 0xffe08a, 0.35, 1.2); scene.remove(it.obj); g.items.splice(i, 1); continue;
       }
       if (it.kind === 'sign' && z > 0) { it.done = true; resolveSign(it); if (g.mode !== 'play') return; }
     }
@@ -681,10 +722,44 @@ function update(dt) {
     } else glitch.visible = false;
   }
 
+  // Glitch on the road ahead: runs away from you, turns round to throw
+  if (chaser) {
+    if (g.chase > 0 && playing) {
+      chaser.visible = true;
+      const enter = Math.min(1, (7.5 - g.chase) / 0.8), leave = Math.min(1, g.chase / 0.8);
+      // he cruises far enough ahead that a crate he throws lands about a second
+      // before it reaches you, even at top speed
+      chaser.position.z = -66 + 30 * Math.min(enter, leave);
+      chaser.position.x += (Math.sin(g.t * 0.9) * LANE - chaser.position.x) * Math.min(1, dt * 2);
+      chaser.position.y = Math.abs(Math.sin(g.t * 9)) * 0.55;
+      chaser.userData.throwT = Math.max(0, (chaser.userData.throwT || 0) - dt);
+      chaser.rotation.y = chaser.userData.throwT > 0 ? 0 : Math.PI;
+    } else chaser.visible = false;
+  }
+  // the gold shield bubble
+  if (bubble) {
+    bubble.visible = g.power > 0 && (g.power > 1.2 || Math.floor(g.power * 10) % 2 === 0);
+    bubble.position.set(g.x, g.y + 0.85, 0); bubble.scale.setScalar(1 + Math.sin(g.t * 8) * 0.04); bubble.children[1].rotation.y += dt * 1.6; bubble.children[1].rotation.x += dt * 0.7;
+  }
+  // speed lines once you are really moving
+  if (speedLines) {
+    const a = playing ? THREE.MathUtils.clamp((g.speed - 15) / 7, 0, 1) : 0;
+    speedLines.visible = a > 0.01; speedLines.material.opacity = a * 0.45;
+    if (speedLines.visible) {
+      const pos = speedLines.geometry.attributes.position;
+      for (let i = 0; i < pos.count; i += 2) {
+        let z = pos.getZ(i) + v * dt * 2.4;
+        if (z > 6) z -= 40;
+        pos.setZ(i, z); pos.setZ(i + 1, z - 2.6);
+      }
+      pos.needsUpdate = true;
+    }
+  }
+
   // sparkles
   for (const p of sparks) {
     if (p.t <= 0) continue;
-    p.t -= dt; p.v.y -= 9 * dt; p.s.position.addScaledVector(p.v, dt); p.s.position.z += dz;
+    p.t -= dt; p.v.y -= p.grav * dt; p.s.position.addScaledVector(p.v, dt); if (!p.still) p.s.position.z += dz;
     p.s.material.opacity = Math.min(1, p.t * 2); if (p.t <= 0) p.s.visible = false;
   }
 
@@ -693,6 +768,8 @@ function update(dt) {
   camera.position.set(g.x * 0.45, (portrait ? 3.7 : 3.3) + g.y * 0.25, portrait ? 6.9 : 6.6);
   if (g.shake > 0) { g.shake -= dt; camera.position.x += (Math.random() - 0.5) * 0.3; camera.position.y += (Math.random() - 0.5) * 0.3; }
   camera.lookAt(g.x * 0.55, 1.1, -9);
+  const fov = baseFov + (playing ? (g.speed - 12.5) * 0.5 : 0);
+  if (Math.abs(camera.fov - fov) > 0.05) { camera.fov = fov; camera.updateProjectionMatrix(); }
 
   if (flashTimer > 0) { flashTimer -= dt; if (flashTimer <= 0) $('flash').style.opacity = 0; }
   if (playing) hud();
@@ -701,18 +778,34 @@ function update(dt) {
 function resize() {
   const w = innerWidth, h = innerHeight;
   renderer.setSize(w, h, false);
-  camera.aspect = w / h; camera.fov = camera.aspect < 1 ? 74 : 58; camera.updateProjectionMatrix();
+  camera.aspect = w / h; baseFov = camera.aspect < 1 ? 74 : 58; camera.fov = baseFov; camera.updateProjectionMatrix();
 }
 addEventListener('resize', resize); resize();
 
 manager.onLoad = () => {
-  if (loadFailed || !M.shieldy || !M.glitch || !M.lantern || !M.tower) { $('t-load').textContent = S.loadErr; return; }
+  if (loadFailed || !M.shieldy || !M.glitch || !M.lantern || !M.tower || !M.barrel || !M.shield) { $('t-load').textContent = S.loadErr; return; }
   // turn him round to face down the road; the turn sits on its own group so it
   // pivots on his centre and the lean/tilt below stay in the camera's frame
   M.shieldy.rotation.y = Math.PI; player = new THREE.Group(); player.add(M.shieldy); scene.add(player);
   shadow = new THREE.Mesh(new THREE.CircleGeometry(0.62, 28), new THREE.MeshBasicMaterial({ color: 0x000000, transparent: true, opacity: 0.32, depthWrite: false }));
   shadow.rotation.x = -Math.PI / 2; shadow.position.y = 0.02; scene.add(shadow);
   glitch = M.glitch; glitch.visible = false; scene.add(glitch);
+  chaser = M.glitch.clone(); chaser.scale.setScalar(1.9); chaser.visible = false; scene.add(chaser);   // a big Glitch, readable from far off
+  // a cyan force field: gold would vanish against a golden knight
+  bubble = new THREE.Group();
+  bubble.add(new THREE.Mesh(new THREE.SphereGeometry(1.2, 28, 18), new THREE.MeshBasicMaterial({ color: 0x7fe3ff, transparent: true, opacity: 0.2, blending: THREE.AdditiveBlending, depthWrite: false })));
+  bubble.add(new THREE.Mesh(new THREE.IcosahedronGeometry(1.24, 1), new THREE.MeshBasicMaterial({ color: 0xbff4ff, wireframe: true, transparent: true, opacity: 0.55, blending: THREE.AdditiveBlending, depthWrite: false })));
+  bubble.visible = false; scene.add(bubble);
+  {
+    const n = 26, pos = new Float32Array(n * 6);
+    for (let i = 0; i < n; i++) {
+      const side = i % 2 ? 1 : -1, x = side * (2.8 + Math.random() * 4), y = 0.4 + Math.random() * 4.5, z = 6 - Math.random() * 40;
+      pos.set([x, y, z, x, y, z - 2.6], i * 6);
+    }
+    const geo = new THREE.BufferGeometry(); geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+    speedLines = new THREE.LineSegments(geo, new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0, blending: THREE.AdditiveBlending, depthWrite: false, fog: false }));
+    speedLines.visible = false; scene.add(speedLines);
+  }
   addScenery(i => {
     const o = M.lantern.clone(); o.position.x = (i % 2 ? 1 : -1) * (ROAD_W / 2 + 0.75);
     const halo = new THREE.Sprite(new THREE.SpriteMaterial({ map: GLOW, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: 0.9 }));
@@ -737,7 +830,8 @@ renderer.setAnimationLoop(() => {
 // can be driven end to end in a test.
 window.ShieldyRun = {
   state: () => ({ mode: g.mode, speed: g.speed, t: g.t, lane: g.lane, x: g.x, y: g.y, hearts: g.hearts, coins: g.coins, dist: g.dist, bonus: g.bonus, missed: g.missed,
-    items: g.items.filter(i => !i.done).map(i => ({ kind: i.kind, lane: i.lane, z: i.obj.position.z, trap: i.sign ? i.sign.trap : undefined })) }),
+    power: g.power, chase: g.chase, hitLog: g.hitLog,
+    items: g.items.filter(i => !i.done).map(i => ({ kind: i.kind, lane: i.lane, x: i.obj.position.x, z: i.obj.position.z, flying: !!i.fly, trap: i.sign ? i.sign.trap : undefined })) }),
   input: act, step: (dt) => update(dt), render: () => renderer.render(scene, camera),
   info: () => ({ calls: renderer.info.render.calls, triangles: renderer.info.render.triangles })
 };

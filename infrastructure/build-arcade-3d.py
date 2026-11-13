@@ -41,6 +41,17 @@ MODELS = {
                 "top and two glowing warm windows, cartoon fairy-tale style. " + PROP, 512, 0.4),
     "coin":    ("A thick round gold coin with a raised shield emblem and a lightning bolt in the "
                 "middle, shiny, cartoon game pickup. " + PROP, 256, 0.08),
+    # Shield Toss: the friends who walk up to the gate (and whom Glitch disguises
+    # himself as), Sprout cheering from the wall, and the shield Shieldy throws.
+    "bot":     ("ref:bot.jpg", 512, 0.4),
+    "pixel":   ("ref:pixel.jpg", 512, 0.4),
+    "dame":    ("ref:dame-noble.jpg", 512, 0.4),
+    "sprout":  ("ref:sprout.jpg", 512, 0.22),
+    "shield":  ("A round golden knight's shield seen from the front, slightly angled, navy blue rim, "
+                "a big white lightning bolt emblem in the middle, shiny, cartoon game item. " + PROP, 512, 0.2),
+    # Shieldy Run: something that rolls across the lanes.
+    "barrel":  ("A sturdy round wooden barrel lying on its side, dark iron hoops, cartoon castle "
+                "style. " + PROP, 512, 0.2),
 }
 TEXTURES = {
     "road":  "Seamless tileable texture, straight top-down view, of a fairy-tale castle cobblestone "
