@@ -1,6 +1,6 @@
 # DSK Threat Intelligence & Policy Research Bank
 
-Compiled 2026-08-02, last refreshed 2026-11-11. Covers the last ~10 months of
+Compiled 2026-08-02, last refreshed 2026-11-13. Covers the last ~10 months of
 child-online-safety news (Oct 2025 – Oct 2026), weighted toward the most
 recent 4-6 weeks. Sourced via web search — every claim below has a citation.
 This is a living reference: update it monthly (it's also the natural
@@ -10,6 +10,31 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
 ---
 
 ## Flagged for review — not yet published
+
+- **(2026-11-06, Ofcom-confirmed) Snapchat disables "Find Friends"/friend-suggestion
+  feature by default for UK under-18 users** — part of an anti-grooming change
+  Snap first promised in May 2026; Ofcom confirmed the rollout began Nov 6 and
+  said it will monitor completion through November, with enforcement (fines up
+  to 10% of global qualifying revenue) on the table under the UK Online Safety
+  Act's child-safety duties if platforms don't address grooming risk. Not
+  actioned: this is a UK-specific platform feature change, not a US
+  legislative-tracker status change, and DSK's tracker has no Snapchat entry —
+  but it's a concrete, parent-actionable detail (friend-suggestion/stranger-add
+  features are a known grooming vector) worth folding into a future
+  Snapchat-safety guide note.
+  [The Star](https://www.thestar.com.my/tech/tech-news/2026/11/06/snapchat-starts-disabling-friend-finder-feature-for-uk-children-regulator-says) ·
+  [Khaleej Times](https://www.khaleejtimes.com/snapchat-switches-off-friend-suggestions-for-uk-children-amid-online-grooming-fears)
+- **(Oct 2026 announcement, Dec 2026/Jan 2027 rollout) Roblox adds mandatory
+  facial age-estimation for chat features** — Roblox is replacing its parent-PIN
+  system with "parent-privilege" accounts (effective November 2026) and will
+  require AI-driven facial age-estimation (via vendor Persona) to unlock
+  private/expanded chat, starting in Australia, New Zealand, and the
+  Netherlands in early December 2026 before a global rollout in January 2027.
+  Not actioned: platform feature rollout, not a tracked law; no Roblox entry on
+  DSK's tracker. Parent-actionable once it reaches the US (expect a face-scan
+  prompt before teens can use expanded chat) — worth a guide note once the
+  January 2027 global rollout is confirmed.
+  [Yahoo/various wire](https://www.yahoo.com/news/articles/roblox-announces-measures-strengthen-protections-120013165.html)
 
 - **(2026-11-09) Meta rolls out AI-based age-estimation to Instagram teen
   accounts worldwide** — Meta announced it is taking its AI age-estimation
@@ -231,6 +256,75 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
   Worth tracking as its own new entry once either shows real movement (a
   floor vote or enactment) rather than just a committee markup.
   [Commerce Committee](https://www.commerce.senate.gov/press/rep/release/commerce-committee-advances-kids-online-safety-legislation/)
+
+---
+
+## 0v. November 2026 Refresh (Nov 13, 2026)
+
+Automated biennial freshness scan, ~48 hours after the last one. A genuinely
+quiet 48-hour window: general search for news dated specifically Nov 11-13
+turned up almost nothing new relative to late Oct/early Nov's flurry
+(Character.AI bankruptcy fight, Meta's Nov 9 announcement, Snapchat's Nov 6
+Ofcom update). Both priority spot-checks (Texas 5th Circuit, Alabama CCIA
+suit) confirm the tracker's current status is still accurate. No tracker
+edit this run.
+
+### Spot-checked, no change needed
+- **Texas App Store Accountability Act** — tracker's "in effect ... 5th
+  Circuit stayed the injunction" still holds. The stay (granted June 4, 2026)
+  and SCOTUS's refusal to vacate it (~July 2026) are unchanged; an Aug 4, 2026
+  oral argument was calendared on the merits appeal (Students Engaged in
+  Advancing Texas v. Paxton / CCIA v. Paxton, 5th Cir. No. 25-51073) but no
+  resulting merits opinion was found in any search through Nov 13.
+  [CCIA litigation page](https://ccianet.org/litigation/ccia-v-paxton/) ·
+  [5th Cir. stay order](https://www.ca5.uscourts.gov/opinions/pub/25/25-51073-CV0.pdf) ·
+  [Texas Policy Research](https://www.texaspolicyresearch.com/?p=10923)
+- **Alabama App Store Accountability Act / CCIA First Amendment suit** —
+  tracker's "pending, effective Jan 1, 2027" status is unaffected. CCIA's
+  First Amendment suit against Alabama officials (filed ~Oct 28, 2026) is
+  still freshly pending — no hearing date, briefing schedule, or ruling found.
+  [MLex](https://www.mlex.com/mlex/articles/2543760) ·
+  [IDTechWire](https://idtechwire.com/ccia-sues-to-block-alabamas-app-store-age-verification-law/)
+
+### Context, not a tracker change
+- KOSA/Kids Internet and Digital Safety Act: still no Senate floor vote;
+  Thune was re-elected Senate GOP leader Nov 10 after the party's election
+  losses, but that's unrelated to KOSA scheduling specifically. A bill
+  tracker dated Nov 4 still shows it "25% of the way to law," with duty-of-care
+  language the remaining sticking point between the House and Senate versions.
+  Doesn't change the tracker's "pending" status.
+  [PBS NewsHour](https://www.pbs.org/newshour/politics/senate-republicans-vote-to-keep-thune-as-leader-after-election-wipeout)
+- EU KIDS Act (proposed): sources disagree on the public-feedback-window close
+  date — most English-language coverage says Nov 26, 2026, but a Commission
+  events listing shows Dec 3, 2026, possibly reflecting an extension not yet
+  reflected everywhere. Either way, still Commission-proposal stage with no
+  Parliament/Council position yet, so the tracker's "pending" status is
+  unchanged; worth checking the Commission's "Have Your Say" portal directly
+  next refresh for the authoritative date.
+  [Brussels Times](https://www.brusselstimes.com/eu-affairs/2343893/eu-kids-act-draft-sparks-widespread-feedback-push-to-reshape-digital-childhoods/) ·
+  [EU Agenda listing](https://euagenda.eu/events/2026/12/03/child-online-safety-keeping-digital-spaces-accountable-and-trustworthy-eu-kids-act-commission-adoption)
+- Character.AI bankruptcy: no ruling yet — the Dec 1, 2026 auction and Dec
+  3–4 sale hearing (per the Nov 4 Bidding Procedures Order) are still weeks
+  out; most recent confirmed docket activity remains late Oct/early Nov
+  (coalition now reported at 39 states + DC in one source, a minor variance
+  on the "40 states" figure already logged, not a new development). Kentucky
+  v. Character Technologies' tracker status unaffected. Revisit after Dec 1–4.
+- UK Online Safety Act enforcement: Ofcom opened a formal investigation into
+  TikTok UK over possible Section 12 (age-assurance) non-compliance on Oct 29,
+  2026 — a different duty than the tracker's existing "CSEA Reporting Duty"
+  entry, and still an open investigation, not a finding or fine. No tracker
+  bucket fits an open investigation yet; revisit if it produces a ruling.
+  [Ofcom industry bulletin](https://www.ofcom.org.uk/online-safety/protecting-children/online-safety-industry-bulletin-october-2026)
+- Eight-state OpenAI suits, Meta Teen Accounts Settlement rollout,
+  Louisiana/Utah App Store Accountability Acts, TikTok-Alabama settlement
+  (no new states confirmed joining): no change found since the Nov 11
+  refresh.
+
+**Site follow-up from this refresh:** none — nothing surfaced rose to a
+clear-cut, mechanical tracker update. Two new platform-feature items (Snapchat
+UK friend-finder default-off, Roblox facial age-estimation) logged under
+"Flagged for review" above rather than actioned. "Last refreshed" date bumped
+to Nov 13, 2026 above.
 
 ---
 
