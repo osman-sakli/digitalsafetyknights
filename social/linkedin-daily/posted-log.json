@@ -89,5 +89,12 @@
     "source": "TechCrunch",
     "source_url": "https://techcrunch.com/2026/11/09/waymo-robotaxis-kept-illegally-passing-school-buses-after-software-fix-feds-say/",
     "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:share:7527019432171212800/"
+  },
+  {
+    "date": "2026-11-14",
+    "topic": "Breach at AI infrastructure vendor Fireworks AI cascaded downstream: Uber notifying thousands of drivers their license data was stolen, while Notion's AI chat transcripts were separately exposed through the same vendor",
+    "source": "TechCrunch",
+    "source_url": "https://techcrunch.com/2026/11/13/uber-confirms-hackers-stole-thousands-of-drivers-license-information-in-data-breach/",
+    "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:share:7527359625965518848/"
   }
 ]
