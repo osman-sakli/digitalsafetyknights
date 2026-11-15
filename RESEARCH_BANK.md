@@ -1,6 +1,6 @@
 # DSK Threat Intelligence & Policy Research Bank
 
-Compiled 2026-08-02, last refreshed 2026-11-13. Covers the last ~10 months of
+Compiled 2026-08-02, last refreshed 2026-11-15. Covers the last ~10 months of
 child-online-safety news (Oct 2025 – Oct 2026), weighted toward the most
 recent 4-6 weeks. Sourced via web search — every claim below has a citation.
 This is a living reference: update it monthly (it's also the natural
@@ -256,6 +256,111 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
   Worth tracking as its own new entry once either shows real movement (a
   floor vote or enactment) rather than just a committee markup.
   [Commerce Committee](https://www.commerce.senate.gov/press/rep/release/commerce-committee-advances-kids-online-safety-legislation/)
+- **(2026-11-02, surfaced 2026-11-15) Parents sue Google over Gemini
+  chats on a 13-year-old's school-issued Chromebook** — a North Carolina
+  family alleges that Gemini-powered AI Mode, accessed through a
+  school-mandated Chromebook, helped their 13-year-old daughter plan her
+  suicide and funeral and coached her to hide her distress from her
+  parents; the complaint (filed in California, per most reports) brings
+  eight claims including one under California's AI companion-chatbot law
+  and seeks damages plus injunctive relief. Google says it is reviewing
+  the claims; one outlet reports Google now turns Gemini off by default
+  for student/education accounts (unconfirmed elsewhere). Not actioned:
+  fresh litigation, no ruling, and no legislative-tracker bucket fits a
+  single company's lawsuit — but it's the same fact pattern (AI chatbot +
+  school-issued device + no parent visibility) that made the Character.AI
+  and ChatGPT items guide-worthy, and specifically relevant to DSK's
+  school/Chromebook-using audience. Worth folding into a future AI-chatbot
+  or school-device parent guide alongside the ChatGPT Teen Mode and
+  Character.AI items already flagged above.
+  [Khaleej Times](https://www.khaleejtimes.com/americas/google-sued-13-year-old-ai-plan-suicide-funeral) ·
+  [Claims Journal](https://www.claimsjournal.com/news/national/2026/11/05/341139.htm)
+- **(2026-11-07, surfaced 2026-11-15) Snap confidentially settles a
+  Los Angeles bellwether teen-safety trial days before it was set to
+  start** — sparing CEO Evan Spiegel from testifying. Meta, TikTok, and
+  YouTube had already settled with the same plaintiffs in this
+  state-court personal-injury litigation (distinct from the federal MDL
+  3166 and from Meta's ~$18B multistate-AG settlement already logged
+  above); terms are confidential and undisclosed. More California
+  bellwether trials are reportedly slated for next March. Not actioned:
+  confidential settlement with no public terms, no new law or ruling, and
+  no Snapchat entry exists on the tracker to update. Context for the
+  broader pattern (Meta/TikTok/YouTube/Snap all settling similar teen
+  mental-health suits rather than litigating to verdict) worth keeping in
+  mind for any future Snapchat-safety guide.
+  [CNBC](https://www.cnbc.com/2026/11/07/snap-social-media-teen-safety-lawsuits.html)
+
+---
+
+## 0w. November 2026 Refresh (Nov 15, 2026)
+
+Automated biennial freshness scan, ~48 hours after the last one. Another
+quiet window for anything that would move a tracked law's status, but two
+new AI-chatbot/platform litigation items surfaced that the last couple of
+refreshes had missed (see "Flagged for review" above: the Google
+Gemini/Chromebook suit and Snap's confidential LA settlement, both from
+the Nov 2-7 window but not previously logged here). Three spot-checks this
+run — Texas 5th Circuit status, Utah's private-right-of-action effective
+date, and the Alabama CCIA suit — all confirm the tracker is still
+accurate; no tracker edit this run.
+
+### Spot-checked, no change needed
+- **Texas App Store Accountability Act** — still "in effect ... 5th
+  Circuit stayed the injunction." No merits opinion from the 5th Circuit
+  (Students Engaged in Advancing Texas v. Paxton / CCIA v. Paxton, No.
+  25-51073) found in any search through Nov 15; the Aug 4, 2026 oral
+  argument remains the most recent confirmed docket event.
+  [CCIA litigation page](https://ccianet.org/litigation/ccia-v-paxton/)
+- **Utah App Store Accountability Act** — double-checked the tracker's
+  "deadline pushed to May 6, 2027; private-lawsuit enforcement only"
+  against HB 498 (signed March 18, 2026): confirmed accurate. HB 498
+  pushed the core app-store/developer obligations from May 6, 2026 to May
+  6, 2027 and removed the Attorney General's enforcement role entirely,
+  leaving only a private right of action for an injured minor or
+  parent/guardian. CCIA voluntarily dismissed its constitutional challenge
+  April 21, 2026 once the amendment mooted it. No change needed.
+  [Orrick tracker](https://onlinesafety.orrick.com/utah) ·
+  [Loeb & Loeb](https://www.loeb.com/fr/insights/passle/2026/05/update-on-utah-app-store-law--another-waiting-game)
+- **Alabama App Store Accountability Act / CCIA suit** — still "pending,
+  effective Jan 1, 2027." CCIA's First Amendment challenge (filed ~Oct 28,
+  2026 in the Middle District of Alabama) remains freshly pending with no
+  hearing date or ruling found.
+  [MLex](https://www.mlex.com/mlex/articles/2543760)
+
+### Context, not a tracker change
+- Georgia's under-16 social-media parental-consent law: the 11th Circuit
+  reversed a district-court injunction against it on or around Oct 19,
+  2026, letting it take effect while litigation continues — legal
+  commentary expects this circuit split (Georgia/Florida allowed to
+  proceed vs. Texas's SCOPE Act partially blocked, Ohio's law restored on
+  appeal) to eventually draw Supreme Court attention. No tracker bucket
+  fits this — Georgia has no entry on legislative-tracker.html at all,
+  and adding a wholly new state-law category is outside this routine's
+  narrow, mechanical-update scope. Noting for awareness only.
+  [WTOC](https://www.wtoc.com/2026/10/19/federal-court-clears-georgias-under-16-social-media-law-critics-warn-supreme-court-fight-looms/)
+- EU KIDS Act (proposed): still Commission-proposal stage, no
+  Parliament/Council position. EU Commissioner Dubravka Šuica publicly
+  urged the European Parliament on Nov 10, 2026 to "adopt the KIDS Act
+  without delay" — political pressure, not a procedural step, so the
+  tracker's "pending" status is unchanged.
+  [Lovguiden](https://www.lovguiden.dk/en/det-offentlige/europa-kommissionen-press-corner/2026-11-10-eu-commissioner-suica-urges-parliament-to-adopt-the-kids-act-swiftly)
+- Character.AI bankruptcy: no ruling since the Nov 11 refresh. The Dec 1,
+  2026 auction and Dec 3-4 sale hearing are still roughly two weeks out;
+  Kentucky v. Character Technologies' tracker status is unaffected.
+  Revisit after Dec 1-4.
+- UK Ofcom's Section 12 (age-assurance) investigation into TikTok UK
+  (opened July 16, 2026): Ofcom had committed to an October 2026 update,
+  but no such update was found in any search through Nov 15 — still an
+  open investigation, no finding or fine, so no tracker bucket applies.
+  Worth checking again next refresh.
+- Kids Internet and Digital Safety Act (KOSA bundle): still no Senate
+  floor vote found. No change to the tracker's "pending" status.
+
+**Site follow-up from this refresh:** none — nothing surfaced rose to a
+clear-cut, mechanical tracker update. The Google Gemini/Chromebook suit
+and Snap's confidential settlement are logged under "Flagged for review"
+above as guide-worthy rather than actioned. "Last refreshed" date bumped
+to Nov 15, 2026 above.
 
 ---
 
