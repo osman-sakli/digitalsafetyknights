@@ -96,5 +96,12 @@
     "source": "TechCrunch",
     "source_url": "https://techcrunch.com/2026/11/13/uber-confirms-hackers-stole-thousands-of-drivers-license-information-in-data-breach/",
     "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:share:7527359625965518848/"
+  },
+  {
+    "date": "2026-11-16",
+    "topic": "AI is finding software vulnerabilities and writing patches faster than humans can verify them, and researchers showed an AI agent weaponized a brand-new Firefox patch into a working exploit in under an hour",
+    "source": "CSO Online",
+    "source_url": "https://www.csoonline.com/article/4248687/ai-written-patches-are-becoming-attack-maps-for-hackers.html",
+    "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:share:7528085497051648001/"
   }
 ]
