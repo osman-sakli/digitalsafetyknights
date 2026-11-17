@@ -168,15 +168,12 @@ renderer.outputColorSpace = THREE.SRGBColorSpace;
 renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.08;
 const scene = new THREE.Scene();
 scene.fog = new THREE.Fog(0x8a5f8e, 30, 95);
-scene.background = (() => {
-  const c = document.createElement('canvas'); c.width = 4; c.height = 512;
-  const g = c.getContext('2d'), gr = g.createLinearGradient(0, 0, 0, 512);
-  gr.addColorStop(0, '#060f36'); gr.addColorStop(0.38, '#1d2a6e'); gr.addColorStop(0.55, '#6a4f92'); gr.addColorStop(0.66, '#c27d8a'); gr.addColorStop(1, '#f2b070');
-  g.fillStyle = gr; g.fillRect(0, 0, 4, 512);
-  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
-})();
+const skyC = document.createElement('canvas'); skyC.width = 4; skyC.height = 512;
+const skyT = new THREE.CanvasTexture(skyC); skyT.colorSpace = THREE.SRGBColorSpace; scene.background = skyT;
+const SKY_AT = [0, 0.38, 0.55, 0.66, 1];
+function paintSky(cols) { const x = skyC.getContext('2d'), gr = x.createLinearGradient(0, 0, 0, 512); cols.forEach((c, i) => gr.addColorStop(SKY_AT[i], '#' + c.getHexString())); x.fillStyle = gr; x.fillRect(0, 0, 4, 512); skyT.needsUpdate = true; }
 const camera = new THREE.PerspectiveCamera(55, 1, 0.1, 400);
-scene.add(new THREE.HemisphereLight(0xcbd9ff, 0x4b3a2c, 1.75));
+const hemi = new THREE.HemisphereLight(0xcbd9ff, 0x4b3a2c, 1.75); scene.add(hemi);
 const sun = new THREE.DirectionalLight(0xffe0b5, 1.7); sun.position.set(4, 10, 6); scene.add(sun);
 function glowTexture(inner, outer) {
   const c = document.createElement('canvas'); c.width = c.height = 128;
@@ -186,11 +183,13 @@ function glowTexture(inner, outer) {
 }
 const GLOW = glowTexture('rgba(255,225,150,1)', 'rgba(255,190,90,0)');
 const SPARK = glowTexture('rgba(255,250,210,1)', 'rgba(255,210,90,0)');
+const SOFT = glowTexture('rgba(255,255,255,1)', 'rgba(255,255,255,0)');
+let starsM;
 {
   const n = 500, pos = new Float32Array(n * 3);
   for (let i = 0; i < n; i++) { const a = Math.random() * Math.PI * 2, el = 0.18 + Math.random() * 1.2, r = 230; pos[i * 3] = Math.cos(a) * Math.cos(el) * r; pos[i * 3 + 1] = Math.sin(el) * r; pos[i * 3 + 2] = Math.sin(a) * Math.cos(el) * r; }
   const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-  scene.add(new THREE.Points(g, new THREE.PointsMaterial({ color: 0xfff6e0, size: 1.1, fog: false, transparent: true, opacity: 0.85 })));
+  starsM = new THREE.PointsMaterial({ color: 0xfff6e0, size: 1.1, fog: false, transparent: true, opacity: 0.85 }); scene.add(new THREE.Points(g, starsM));
 }
 
 /* ───────────── loading ───────────── */
@@ -210,26 +209,55 @@ function prep(gltf, height, tint) {
   root.position.set(-c.x, -b2.min.y, -c.z);
   const g = new THREE.Group(); g.add(root); return g;
 }
-const SIZES = { shieldy: 1.7, glitch: 1.7, bot: 1.6, pixel: 1.55, dame: 1.7, sprout: 1.0, crate: 1.0, barrel: 0.95, lantern: 3.3, tower: 1 };
+const SIZES = { shieldy: 1.7, glitch: 1.7, bot: 1.6, pixel: 1.55, dame: 1.7, sprout: 1.0, crate: 1.0, barrel: 0.95, lantern: 3.3, tower: 1,
+  fountain: 1.9, blossom: 5.5, flowers: 0.9, pine: 8, mushroom: 2, deadtree: 5.5, ruin: 2.6, crystal: 2.2, rock: 5 };
 Object.keys(SIZES).forEach(n => gl.load(A + n + '.glb', g => { M[n] = prep(g, SIZES[n], n === 'shieldy' ? 0xffdf85 : 0); }));
 
 /* ───────────── the castle grounds: four yards in a row, a gate between each ───────────── */
 const HALF = 11, ZL = 30, START_Z = 3, LEN = ZL * 4 + 24, FAR = -(ZL * 4) + 6;
 const gateZ = i => -(i + 1) * ZL + 6;             // gate at the far end of yard i
 const yardMid = i => -i * ZL - 9;
-const T = { road: tiled('road', 1.6, LEN / 3.1), grass: tiled('grass', 7, LEN / 3.2), wall: tiled('wall', LEN / 3.2, 1), wallS: tiled('wall', 2.4, 1) };
+const T = { wallS: tiled('wall', 2.4, 1) };
 function flat(w, l, map, x, z, y) { const m = new THREE.Mesh(new THREE.PlaneGeometry(w, l), new THREE.MeshStandardMaterial({ map, roughness: 0.95 })); m.rotation.x = -Math.PI / 2; m.position.set(x, y || 0, z); scene.add(m); return m; }
-flat(HALF * 2 + 4, LEN, T.grass, 0, 10 - LEN / 2);
-flat(5, LEN, T.road, 0, 10 - LEN / 2, 0.01);
-{ const m = new THREE.Mesh(new THREE.PlaneGeometry(260, LEN + 160), new THREE.MeshStandardMaterial({ color: 0x2f4a36, roughness: 1 })); m.rotation.x = -Math.PI / 2; m.position.set(0, -0.03, 10 - LEN / 2); scene.add(m); }   // the land outside the walls, so no edge shows the sky
-[-1, 1].forEach(s => { const w = new THREE.Mesh(new THREE.PlaneGeometry(LEN, 3.4), new THREE.MeshStandardMaterial({ map: T.wall, roughness: 0.9 })); w.rotation.y = s < 0 ? Math.PI / 2 : -Math.PI / 2; w.position.set(s * (HALF + 1), 1.7, 10 - LEN / 2); scene.add(w); });
+
+/* Four places, not one: a garden, a forest, a marsh and storm rocks. The scenery darkens
+   as the trick on Sprout does. Each has its own ground, path, sky, light, fog and weather. */
+const C3 = h => new THREE.Color(h);
+const ZONES = [
+  { ground: 'grass', road: 'road', wall: 0xffffff, out: 0x3f7a3a, sky: ['2f74d8', '6aaaf0', 'a9d6f7', 'ffe6bb', 'ffd596'], fog: 0xc4e0f4, near: 34, far: 92, hemiS: 0xeef6ff, hemiG: 0x6f8040, hemi: 2.15, sun: 0xfff1cf, sunI: 2.1, stars: 0 },
+  { ground: 'forest', road: 'dirt', wall: 0x9fb8a8, out: 0x16301f, sky: ['04121f', '0b2e3c', '1f5a55', '5f8f6c', 'c9c083'], fog: 0x1d4644, near: 20, far: 78, hemiS: 0xa6dcd4, hemiG: 0x1d2a1c, hemi: 1.45, sun: 0xc4ecc9, sunI: 0.95, stars: 0.55 },
+  { ground: 'marsh', road: 'planks', wall: 0x8f9a94, out: 0x2c3a34, sky: ['1b2231', '3b4759', '6d7b87', '94a4a0', 'b4c0af'], fog: 0x8c9c9d, near: 7, far: 44, hemiS: 0xc3d2d4, hemiG: 0x2a3328, hemi: 1.3, sun: 0xcfd8d8, sunI: 0.6, stars: 0 },
+  { ground: 'rock', road: 'slate', wall: 0x7a6f95, out: 0x140d1c, sky: ['05030f', '160a2e', '3a1552', '6a1f5a', 'a13a4a'], fog: 0x2a1238, near: 18, far: 76, hemiS: 0xbba6ff, hemiG: 0x1a0f1c, hemi: 1.2, sun: 0xdcacff, sunI: 0.85, stars: 0.9 }
+].map(Z => Object.assign(Z, { sky: Z.sky.map(h => C3('#' + h)), fog: C3(Z.fog), hemiS: C3(Z.hemiS), hemiG: C3(Z.hemiG), sun: C3(Z.sun) }));
+const yardTop = i => i ? gateZ(i - 1) : START_Z + 7, yardEnd = i => i < 3 ? gateZ(i) : FAR - 16;
+ZONES.forEach((Z, i) => {
+  const z0 = yardTop(i), z1 = yardEnd(i), len = z0 - z1, mid = (z0 + z1) / 2;
+  flat(HALF * 2 + 4, len, tiled(Z.ground, 7, len / 3.2), 0, mid);
+  flat(5, len, tiled(Z.road, 1.6, len / 3.1), 0, mid, 0.01);
+  { const m = new THREE.Mesh(new THREE.PlaneGeometry(260, len), new THREE.MeshStandardMaterial({ color: Z.out, roughness: 1 })); m.rotation.x = -Math.PI / 2; m.position.set(0, -0.03, mid); scene.add(m); }   // the land outside the walls
+  [-1, 1].forEach(sd => { const w = new THREE.Mesh(new THREE.PlaneGeometry(len, 3.4), new THREE.MeshStandardMaterial({ map: tiled('wall', len / 3.2, 1), roughness: 0.9, color: Z.wall })); w.rotation.y = sd < 0 ? Math.PI / 2 : -Math.PI / 2; w.position.set(sd * (HALF + 1), 1.7, mid); scene.add(w); });
+});
+{ const m = new THREE.Mesh(new THREE.PlaneGeometry(260, 80), new THREE.MeshStandardMaterial({ color: ZONES[0].out, roughness: 1 })); m.rotation.x = -Math.PI / 2; m.position.set(0, -0.03, START_Z + 47); scene.add(m); }
+// where you stand decides the weather: pure in the middle of a yard, blended across each gate
+const mix = { a: 0, b: 0, k: 0, key: '' }, tmpC = new THREE.Color(), skyMix = SKY_AT.map(() => new THREE.Color());
+function paintZone(z) {
+  const t = (6 - z) / ZL - 0.5, a = Math.max(0, Math.min(3, Math.floor(t))), b = Math.min(3, a + 1), k = THREE.MathUtils.smoothstep(t - a, 0.36, 0.64);
+  mix.a = a; mix.b = b; mix.k = k;
+  const key = a + ':' + Math.round(k * 40); if (key === mix.key) return; mix.key = key;
+  const A = ZONES[a], B = ZONES[b], L = (x, y) => x + (y - x) * k;
+  scene.fog.color.lerpColors(A.fog, B.fog, k); scene.fog.near = L(A.near, B.near); scene.fog.far = L(A.far, B.far);
+  hemi.color.lerpColors(A.hemiS, B.hemiS, k); hemi.groundColor.lerpColors(A.hemiG, B.hemiG, k); mix.hemi = L(A.hemi, B.hemi); hemi.intensity = mix.hemi;
+  sun.color.lerpColors(A.sun, B.sun, k); sun.intensity = L(A.sunI, B.sunI); starsM.opacity = L(A.stars, B.stars);
+  skyMix.forEach((c, i) => c.lerpColors(A.sky[i], B.sky[i], k)); paintSky(skyMix);
+}
+paintZone(START_Z);
 { const w = new THREE.Mesh(new THREE.PlaneGeometry(HALF * 2 + 2, 3.4), new THREE.MeshStandardMaterial({ map: T.wallS, roughness: 0.9 })); w.rotation.y = Math.PI; w.position.set(0, 1.7, START_Z + 5); scene.add(w); }
 const gates = [];
 
 /* ───────────── state ───────────── */
 const g = { mode: 'loading', t: 0, x: 0, z: START_Z, face: Math.PI, phase: 0, ix: 0, iz: 0, chapter: 0, found: [], talked: {}, open: [false, false, false], trust: 0, ending: null, busy: null, near: null, toastT: 0, lean: 0 };
 let player, shadow;
-const npcs = [], clues = [], sparks = [];
+const npcs = [], clues = [], sparks = [], blockers = [], scenery = [], glows = [], amb = [], flies = [], drops = [];
 const dlg = { lines: [], i: 0, id: null, q: 0, who: null, after: null };
 
 /* ───────────── sound and buzz ───────────── */
@@ -242,6 +270,11 @@ function tone(freqs, dur, type, vol) {
   try { ac = ac || new (window.AudioContext || window.webkitAudioContext)(); const t0 = ac.currentTime, o = ac.createOscillator(), gn = ac.createGain(); o.type = type || 'triangle';
     freqs.forEach((f, i) => o.frequency.setValueAtTime(f, t0 + i * dur / freqs.length)); gn.gain.setValueAtTime(vol || 0.1, t0); gn.gain.exponentialRampToValueAtTime(0.001, t0 + dur);
     o.connect(gn); gn.connect(ac.destination); o.start(t0); o.stop(t0 + dur); } catch (e) {}
+}
+function thunder() {
+  if (!snd || !ac) return;
+  try { const n = ac.sampleRate * 1.6, buf = ac.createBuffer(1, n, ac.sampleRate), d = buf.getChannelData(0); for (let i = 0; i < n; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / n, 2.2);
+    const src = ac.createBufferSource(), lp = ac.createBiquadFilter(), gn = ac.createGain(); src.buffer = buf; lp.type = 'lowpass'; lp.frequency.value = 160; gn.gain.value = 0.5; src.connect(lp); lp.connect(gn); gn.connect(ac.destination); src.start(); } catch (e) {}
 }
 const buzz = p => { if (snd && navigator.vibrate) { try { navigator.vibrate(p); } catch (e) {} } };
 const SFX = { clue: () => tone([784, 1047, 1319], 0.28, 'triangle', 0.09), talk: () => tone([520, 620], 0.1, 'sine', 0.05), gate: () => tone([392, 523, 659, 784], 0.5, 'triangle', 0.1),
@@ -441,7 +474,7 @@ function update(dt) {
       nz = Math.min(nz, START_Z + 3.5);
       // an open gate is only as wide as its arch
       for (let i = 0; i < 3; i++) if (Math.abs(nz - gateZ(i)) < 1.0 && Math.abs(nx) > 2.6) { if (Math.abs(g.z - gateZ(i)) >= 1.0) nz = g.z; else nx = THREE.MathUtils.clamp(nx, -2.6, 2.6); }
-      for (const n of npcs) { const dx = nx - n.x, dz = nz - n.z, d = Math.hypot(dx, dz), r = n.door ? 1.6 : 0.95; if (d < r && d > 0.001) { nx = n.x + dx / d * r; nz = n.z + dz / d * r; } }
+      for (const n of blockers) { const dx = nx - n.x, dz = nz - n.z, d = Math.hypot(dx, dz), r = n.r || (n.door ? 1.6 : 0.95); if (d < r && d > 0.001) { nx = n.x + dx / d * r; nz = n.z + dz / d * r; } }
       g.x = nx; g.z = nz; g.phase += dt * 11;
       const want = Math.atan2(ix, iz); let df = want - g.face; df = Math.atan2(Math.sin(df), Math.cos(df)); g.face += df * Math.min(1, dt * 12);
     }
@@ -468,10 +501,49 @@ function update(dt) {
   for (const G of gates) G.bar.material.opacity = 0.34 + Math.sin(g.t * 3) * 0.1;
   if (g.glitchFly > 0) { g.glitchFly += dt; const k = g.glitchFly, o = M.glitch; o.position.y = 9 * k - 3 * k * k; o.position.x += dt * 5; o.position.z -= dt * 6; o.rotation.y += dt * 10; o.rotation.z += dt * 4; if (k > 2.5) { o.visible = false; g.glitchFly = 0; } if (Math.random() < 0.5) burst(o.position.x, o.position.y + 0.8, o.position.z, 1, 0xc18bff); }
   for (const p of sparks) { if (p.t <= 0) continue; p.t -= dt; p.v.y -= 9 * dt; p.s.position.addScaledVector(p.v, dt); p.s.material.opacity = Math.min(1, p.t * 2); if (p.t <= 0) p.s.visible = false; }
+  paintZone(g.z); live(dt);
   const portrait = camera.aspect < 1;
   camera.position.set(g.x * (portrait ? 0.93 : 0.85), portrait ? 5.8 : 6.6, g.z + (portrait ? 6.4 : 8.2));
   camera.lookAt(g.x * (portrait ? 0.97 : 0.92), 1, g.z - (portrait ? 4.5 : 3));
   if (g.toastT > 0) { g.toastT -= dt; if (g.toastT <= 0) $('toast').style.opacity = 0; }
+}
+/* ───────────── what moves in each place ───────────── */
+const rnd = (a, b) => a + Math.random() * (b - a);
+function seed(p, kind, first) {   // put one drifting thing somewhere around the player
+  p.kind = kind; p.ph = Math.random() * 6.28; const s = p.s, m = s.material;
+  s.position.set(g.x * 0.5 + rnd(-13, 13), 0, g.z + rnd(-26, 9)); m.rotation = 0;
+  if (kind === 0) { m.color.set([0xffb7d5, 0xffd9ea, 0xfff1a8][Math.floor(Math.random() * 3)]); m.blending = THREE.NormalBlending; s.scale.set(0.16, 0.16, 1); s.position.y = first ? rnd(0.3, 7) : rnd(5, 8); p.v.set(rnd(0.3, 0.9), -rnd(0.5, 0.9), rnd(-0.2, 0.2)); p.o = 0.95; }          // petals
+  else if (kind === 1) { m.color.set(0xd8ff7a); m.blending = THREE.AdditiveBlending; s.scale.set(0.34, 0.34, 1); s.position.y = rnd(0.5, 3.2); p.v.set(rnd(-0.4, 0.4), 0, rnd(-0.4, 0.4)); p.o = 1; }                                                                                   // fireflies
+  else if (kind === 2) { m.color.set(0xe6f0ee); m.blending = THREE.NormalBlending; const w = rnd(7, 12); s.scale.set(w, w * 0.45, 1); s.position.y = rnd(0.5, 1.8); p.v.set(rnd(0.15, 0.5), 0, rnd(-0.1, 0.1)); p.o = rnd(0.1, 0.2); }                                                // mist
+  else { m.color.set(0xc9d6ff); m.blending = THREE.AdditiveBlending; s.scale.set(0.05, 1.1, 1); s.position.set(g.x + rnd(-9, 9), first ? rnd(0, 10) : rnd(8, 11), g.z + rnd(-14, 5)); p.v.set(-1.2, -rnd(17, 22), 0); p.o = 0.5; m.rotation = -0.07; }                                // rain
+  m.opacity = 0;
+}
+let ambKind = -1, boltT = 6, flash = 0;
+function live(dt) {
+  if (!amb.length) return;
+  const kind = mix.k < 0.5 ? mix.a : mix.b, edge = Math.min(1, Math.abs(mix.k - 0.5) * 3 + (mix.a === mix.b ? 1 : 0));
+  if (kind !== ambKind) { ambKind = kind; amb.forEach(p => seed(p, kind, true)); }
+  for (const p of amb) {
+    const s = p.s; p.ph += dt; s.position.addScaledVector(p.v, dt);
+    let o = p.o;
+    if (p.kind === 0) { s.position.x += Math.sin(p.ph * 2.2) * dt * 0.8; }
+    else if (p.kind === 1) { s.position.y += Math.sin(p.ph * 1.7) * dt * 0.5; o *= 0.35 + 0.65 * Math.max(0, Math.sin(p.ph * 2.4)); if (p.ph > 9) { p.v.set(rnd(-0.4, 0.4), 0, rnd(-0.4, 0.4)); p.ph = 0; } }
+    s.material.opacity = o * edge;
+    if (s.position.y < 0.05 || Math.abs(s.position.x - g.x * 0.5) > 15 || s.position.z > g.z + 11 || s.position.z < g.z - 30) seed(p, p.kind, false);
+  }
+  for (const f of flies) {   // butterflies loop around the flower beds
+    f.ph += dt * f.sp; const o = f.o; o.visible = Math.abs(f.cz - g.z) < 45;
+    if (!o.visible) continue;
+    o.position.set(f.cx + Math.cos(f.ph) * f.r, f.y + Math.sin(f.ph * 2.3) * 0.35, f.cz + Math.sin(f.ph * 1.3) * f.r); o.rotation.y = -f.ph + Math.PI;
+    const w = Math.sin(g.t * 22 + f.cx) * 1.05; f.l.rotation.z = w; f.rw.rotation.z = -w;
+  }
+  for (const d of drops) { const t = (g.t * 0.8 + d.k) % 1, a = d.k * 31; d.s.position.set(d.x + Math.cos(a) * t * 0.95, d.y + t * 1.5 - t * t * 2.6, d.z + Math.sin(a) * t * 0.95); d.s.material.opacity = 0.9 * (1 - t); }
+  for (const q of glows) q.s.material.opacity = q.o * (0.65 + 0.35 * Math.sin(g.t * q.sp + q.ph));
+  const ahead = Math.min(70, scene.fog.far * 0.8); for (const q of scenery) q.o.visible = q.z < g.z + 16 && q.z > g.z - ahead;   // nothing is drawn behind you or past the fog
+  // the storm over the last yard
+  const storm = mix.b === 3 ? (mix.a === 3 ? 1 : mix.k) : 0;
+  if (storm > 0.6 && g.mode === 'play') { boltT -= dt; if (boltT <= 0) { boltT = rnd(5, 10); flash = 0.5; thunder(); if (!g.busy) buzz(25); } }
+  if (flash > 0) { flash -= dt; const f = flash > 0.38 ? 1 : flash > 0.3 ? 0.15 : flash > 0.2 ? 0.8 : Math.max(0, flash * 3); hemi.intensity = mix.hemi * (1 + f * 2.6); if (flash <= 0) hemi.intensity = mix.hemi; }
 }
 function resize() { renderer.setSize(innerWidth, innerHeight, false); camera.aspect = innerWidth / innerHeight; camera.fov = camera.aspect < 1 ? 62 : 52; camera.updateProjectionMatrix(); }
 addEventListener('resize', resize); resize();
@@ -490,17 +562,48 @@ function build() {
     gates.push({ bar });
   }
   // lanterns down the road, towers behind the walls, clutter by the walls
-  for (let z = START_Z; z > FAR - 6; z -= 10) [-1, 1].forEach(s => { const o = put(M.lantern, s * 5.6, z - (s > 0 ? 5 : 0)); const h = new THREE.Sprite(new THREE.SpriteMaterial({ map: GLOW, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: 0.9 })); h.scale.set(2.2, 2.2, 1); h.position.y = 3; o.add(h); });
-  for (let i = 0; i < 10; i++) put(M.tower, (i % 2 ? 1 : -1) * (HALF + 5 + (i * 7 % 4)), -i * 13, i, 7 + (i * 5 % 4));
-  [[-9, -3, 'crate'], [-9.6, -4.4, 'barrel'], [9.2, -14, 'barrel'], [9, -15.6, 'crate'], [-9.3, -42, 'crate'], [9.4, -50, 'barrel'], [-9, -72, 'barrel'], [9.3, -77, 'crate'], [-9.4, -100, 'crate'], [9, -96, 'barrel']].forEach(([x, z, k], i) => put(M[k], x, z, i * 1.3));
+  for (let z = START_Z; z > FAR - 6; z -= 10) [-1, 1].forEach(s => { const o = put(M.lantern, s * 5.6, z - (s > 0 ? 5 : 0)); scenery.push({ o, z }); const h = new THREE.Sprite(new THREE.SpriteMaterial({ map: GLOW, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: 0.9 })); h.scale.set(2.2, 2.2, 1); h.position.y = 3; o.add(h); });
+  for (let i = 0; i < 10; i++) scenery.push({ o: put(M.tower, (i % 2 ? 1 : -1) * (HALF + 5 + (i * 7 % 4)), -i * 13, i, 7 + (i * 5 % 4)), z: -i * 13 });
+  [[-9, -3, 'crate'], [-9.6, -4.4, 'barrel'], [9.2, -14, 'barrel'], [9, -15.6, 'crate'], [-9.3, -42, 'crate'], [9.4, -50, 'barrel'], [-9, -72, 'barrel'], [9.3, -77, 'crate'], [-9.4, -100, 'crate'], [9, -96, 'barrel']].forEach(([x, z, k], i) => scenery.push({ o: put(M[k], x, z, i * 1.3), z }));
+  // each yard gets its own things: inside the walls (you walk round them) and a skyline outside
+  const sc = (model, x, z, ry, s) => { const o = put(model, x, z, ry, s); scenery.push({ o, z }); return o; };
+  const solid = (model, x, z, r, ry, s) => { blockers.push({ x, z, r }); return sc(model, x, z, ry, s); };
+  const glow = (o, y, size, color, op) => { const h = new THREE.Sprite(new THREE.SpriteMaterial({ map: SOFT, color, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: op })); h.scale.set(size, size, 1); h.position.y = y; o.add(h); glows.push({ s: h, o: op, sp: 1.5 + (glows.length % 5) * 0.4, ph: glows.length }); };
+  const hash = n => { const x = Math.sin(n * 127.1) * 43758.5453; return x - Math.floor(x); };
+  const skyline = (i, model, step, lo, hi) => { let n = i * 100; for (let z = yardTop(i) - 2; z > yardEnd(i) + 2; z -= step) [-1, 1].forEach(sd => { n++; sc(model, sd * (HALF + 3 + hash(n) * 9), z + hash(n + 7) * step * 0.6, hash(n + 3) * 6.28, lo + hash(n + 5) * (hi - lo)); }); };
+  const m0 = yardMid(0), m1 = yardMid(1), m2 = yardMid(2), m3 = yardMid(3);
+  // 1 · the garden
+  solid(M.fountain, -7.2, m0 - 1.5, 2.3, 0, 1.25);
+  for (let k = 0; k < 16; k++) { const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: SOFT, color: 0xbfeaff, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending })); s.scale.set(0.3, 0.3, 1); scene.add(s); drops.push({ s, k: k / 16, x: -7.2, y: 2.0, z: m0 - 1.5 }); }
+  [[9, m0 + 7], [9, m0 - 9], [-9.2, m0 - 8], [4.6, m0 + 9.5], [-4.4, m0 + 11]].forEach(([x, z], k) => {
+    solid(M.flowers, x, z, 1.05, k * 1.7, 1.15);
+    for (let j = 0; j < 2; j++) { const o = new THREE.Group(), col = [0xff8fc7, 0xffd34d, 0x8fd0ff, 0xffffff, 0xc59bff][(k + j) % 5], mat = new THREE.MeshBasicMaterial({ color: col, side: THREE.DoubleSide }), geo = new THREE.CircleGeometry(0.13, 10); geo.translate(0.12, 0, 0);
+      const l = new THREE.Mesh(geo, mat), rw = new THREE.Mesh(geo, mat); l.rotation.x = rw.rotation.x = -Math.PI / 2; const lp = new THREE.Group(), rp = new THREE.Group(); lp.add(l); rw.scale.x = -1; rp.add(rw); o.add(lp, rp); scene.add(o);
+      flies.push({ o, l: lp, rw: rp, cx: x, cz: z, r: 1 + j * 0.8, y: 1.3 + j * 0.5, ph: k * 2 + j * 3, sp: 0.9 + j * 0.35 }); }
+  });
+  solid(M.blossom, -9.4, m0 + 13, 0.9, 1, 0.8); solid(M.blossom, 9.4, m0 - 14, 0.9, 2.2, 0.85);
+  skyline(0, M.blossom, 8, 0.9, 1.5);
+  // 2 · the forest
+  [[8.8, m1 + 8, 1.2], [-9, m1 - 1, 1], [8.6, m1 - 11, 1.35], [-9.1, m1 + 12, 0.9], [5, m1 + 12, 0.75]].forEach(([x, z, s], k) => { const o = solid(M.mushroom, x, z, 1.1 * s, k * 2.1, s); glow(o, 1.5, 5.5, 0x4fe6e0, 0.55); });
+  solid(M.pine, 9.6, m1 + 1, 1, 0, 0.75); solid(M.pine, -9.6, m1 - 10, 1, 2, 0.8); solid(M.pine, -9.5, m1 + 5, 1, 4, 0.65);
+  skyline(1, M.pine, 6, 0.9, 1.6);
+  // 3 · the marsh
+  [[8.8, m2 + 7, 1], [-9, m2, 1.2], [8.6, m2 - 11, 0.9], [-5, m2 + 12, 0.8]].forEach(([x, z, s], k) => solid(M.ruin, x, z, 1.2 * s, k * 1.9, s));
+  solid(M.deadtree, -9.3, m2 + 11, 1, 1, 0.9); solid(M.deadtree, 9.4, m2 - 4, 1, 3, 1); solid(M.deadtree, -9.2, m2 - 12, 1, 5, 0.8);
+  skyline(2, M.deadtree, 6, 0.9, 1.7);
+  // 4 · the storm rocks
+  [[8.6, m3 + 8, 1.1], [-9, m3 + 1, 1.3], [8.8, m3 - 7, 0.9], [-8.4, m3 - 11, 1.1], [-5, m3 + 12, 0.7], [5.2, m3 + 3, 0.6]].forEach(([x, z, s], k) => { const o = solid(M.crystal, x, z, 1.05 * s, k * 2.3, s); glow(o, 1.3, 6, 0xd04cff, 0.6); });
+  solid(M.rock, 9.6, m3 - 1, 1.3, 1, 0.5); solid(M.rock, -9.7, m3 + 9, 1.3, 3, 0.55);
+  skyline(3, M.rock, 6, 0.9, 2.1);
+  for (let k = 0; k < 90; k++) { const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: SOFT, transparent: true, depthWrite: false, opacity: 0 })); scene.add(s); amb.push({ s, v: new THREE.Vector3(), kind: 0, ph: 0, o: 1 }); }
   // who is where
   const who = [['pixel', 3.6, yardMid(0) - 5, 'c1'], ['bot', -3.8, yardMid(1) - 5, 'c2'], ['bot', 3.8, yardMid(2) - 5, 'c3']];
-  who.forEach(([w, x, z, talk], i) => { const o = put(M[w], x, z, x > 0 ? -0.6 : 0.6); const mk = mark(); scene.add(mk); npcs.push({ who: w, x, z, talk, ch: i, obj: o, mark: mk }); });
+  who.forEach(([w, x, z, talk], i) => { const o = put(M[w], x, z, x > 0 ? -0.6 : 0.6); const mk = mark(); scene.add(mk); npcs.push({ who: w, x, z, talk, ch: i, obj: o, mark: mk }); blockers.push(npcs[npcs.length - 1]); });
   // the old tower at the end, and its door
   const tz = FAR + 1; put(M.tower, 0, tz - 3, 0, 15);
   { const c = document.createElement('canvas'); c.width = 128; c.height = 192; const x = c.getContext('2d'); x.fillStyle = '#6b4226'; x.fillRect(0, 0, 128, 192); x.strokeStyle = '#3a2413'; x.lineWidth = 5; for (let i = 1; i < 4; i++) { x.beginPath(); x.moveTo(i * 32, 0); x.lineTo(i * 32, 192); x.stroke(); } x.strokeStyle = '#1c1c22'; x.lineWidth = 10; x.strokeRect(5, 5, 118, 182); x.fillStyle = '#e8c56a'; x.beginPath(); x.arc(104, 104, 7, 0, 7); x.fill();
     const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace; const d = new THREE.Mesh(new THREE.PlaneGeometry(1.9, 2.8), new THREE.MeshStandardMaterial({ map: tex, roughness: 0.8 })); d.position.set(0, 1.4, tz + 1.35); scene.add(d);
-    const mk = mark(); scene.add(mk); npcs.push({ who: 'sprout', door: true, x: 0, z: tz + 1.6, talk: 'c4', ch: 3, mark: mk }); }
+    const mk = mark(); scene.add(mk); npcs.push({ who: 'sprout', door: true, x: 0, z: tz + 1.6, talk: 'c4', ch: 3, mark: mk }); blockers.push(npcs[npcs.length - 1]); }
   M.dame.position.set(-2.6, 0, START_Z - 2.5); M.dame.rotation.y = 0.6; scene.add(M.dame);
   M.sprout.visible = false; scene.add(M.sprout); M.glitch.visible = false; scene.add(M.glitch);
   // three messages in each yard
