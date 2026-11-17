@@ -27,7 +27,9 @@
     "endHow": "How the trick was built",
     "endDo": "If this ever happens to you",
     "reason": "The Lost Sprout",
-    "sound": "Sound"
+    "sound": "Sound",
+    "cont": "Carry on where you left off",
+    "fresh": "Start from the beginning"
   },
   "names": { "shieldy": "Shieldy", "dame": "Dame Noble", "pixel": "Pixel", "bot": "Bot", "sprout": "Sprout", "glitch": "Glitch", "star": "StarKnight" },
   "chapters": [

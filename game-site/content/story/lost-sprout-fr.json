@@ -27,7 +27,9 @@
     "endHow": "Comment le piège a été monté",
     "endDo": "Si ça t’arrive un jour",
     "reason": "The Lost Sprout",
-    "sound": "Son"
+    "sound": "Son",
+    "cont": "Reprendre là où tu t’es arrêté",
+    "fresh": "Recommencer depuis le début"
   },
   "names": {
     "shieldy": "Shieldy",

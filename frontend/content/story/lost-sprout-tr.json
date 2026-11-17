@@ -27,7 +27,9 @@
     "endHow": "Tuzak nasıl kuruldu",
     "endDo": "Bir gün senin başına gelirse",
     "reason": "Kayıp Sprout",
-    "sound": "Ses"
+    "sound": "Ses",
+    "cont": "Kaldığın yerden devam et",
+    "fresh": "Baştan başla"
   },
   "names": {
     "shieldy": "Shieldy",

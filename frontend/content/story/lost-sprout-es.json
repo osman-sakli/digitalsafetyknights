@@ -27,7 +27,9 @@
     "endHow": "Cómo se armó el engaño",
     "endDo": "Si alguna vez te pasa a ti",
     "reason": "The Lost Sprout",
-    "sound": "Sonido"
+    "sound": "Sonido",
+    "cont": "Seguir donde lo dejaste",
+    "fresh": "Empezar desde el principio"
   },
   "names": {
     "shieldy": "Shieldy",
