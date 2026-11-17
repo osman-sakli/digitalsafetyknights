@@ -103,5 +103,12 @@
     "source": "CSO Online",
     "source_url": "https://www.csoonline.com/article/4248687/ai-written-patches-are-becoming-attack-maps-for-hackers.html",
     "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:share:7528085497051648001/"
+  },
+  {
+    "date": "2026-11-17",
+    "topic": "Supply chain attack on ad/testing platform Optimizely injected malware into scripts loaded by CNN, BBC, Fox News, Salesforce and dozens of other major sites, enabling crypto wallet swapping, payment card skimming, and iOS/iPadOS exploit kits",
+    "source": "BleepingComputer",
+    "source_url": "https://www.bleepingcomputer.com/news/security/optimizely-supply-chain-attack-delivers-malware-to-cnn-fox-news-bbc-salesforce-sites/",
+    "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:share:7528446690350120960/"
   }
 ]
