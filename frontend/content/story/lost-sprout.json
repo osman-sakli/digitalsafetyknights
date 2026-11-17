@@ -1,0 +1,127 @@
+{
+  "ui": {
+    "title": "The Lost Sprout",
+    "how": "Sprout is missing. Walk the castle as Shieldy, read the messages Sprout left behind, and talk to the Knights. Every chapter shows one move of the trick that was played on Sprout. What you say at the end decides how the story finishes.",
+    "start": "Begin the search",
+    "again": "Play the story again",
+    "arcade": "← Back to the Arcade",
+    "back": "Arcade",
+    "loading": "Opening the castle…",
+    "loadErr": "Part of the castle didn't load. Check your connection and reload the page.",
+    "moveKeys": "Move: arrow keys or W A S D · Talk: E or Space",
+    "moveTouch": "Drag anywhere to walk · Tap the button to talk",
+    "talk": "Talk to {n}",
+    "open": "Knock on the door",
+    "next": "Next ▸",
+    "close": "Keep going ▸",
+    "found": "Message found",
+    "journal": "Messages",
+    "journalEmpty": "No messages found yet.",
+    "goalClues": "Find Sprout's messages: {a}/{b}",
+    "goalTalk": "Now talk to {n}",
+    "goalGate": "The gate is open. Go on.",
+    "gateLocked": "Read every message here and talk to {n} first.",
+    "chapter": "Chapter {n}",
+    "noGL": "This device can't run the 3D game. The 2D game works everywhere:",
+    "noGLbtn": "Play Shieldy Dash →",
+    "endHow": "How the trick was built",
+    "endDo": "If this ever happens to you",
+    "reason": "The Lost Sprout",
+    "sound": "Sound"
+  },
+  "names": { "shieldy": "Shieldy", "dame": "Dame Noble", "pixel": "Pixel", "bot": "Bot", "sprout": "Sprout", "glitch": "Glitch", "star": "StarKnight" },
+  "chapters": [
+    { "name": "The Compliments", "lever": "Flattery", "step": "First came the compliments and the gifts, from someone Sprout had never met." },
+    { "name": "The Secret", "lever": "Secrecy", "step": "Then came the secret: don't tell your family about me." },
+    { "name": "The Other App", "lever": "Moving away", "step": "Then the move to another app, where nobody could see or report." },
+    { "name": "The Threat", "lever": "Fear", "step": "And only then the threat, once Sprout felt alone." }
+  ],
+  "clues": {
+    "c1a": "StarKnight: You're the best builder I've EVER seen!",
+    "c1b": "StarKnight: Nobody else gets you like I do.",
+    "c1c": "StarKnight: I sent you 500 gems. Just for you. 🎁",
+    "c2a": "StarKnight: Don't tell your sister about me. She wouldn't understand.",
+    "c2b": "StarKnight: This is OUR secret base. Secrets are what make friends real.",
+    "c2c": "Sprout: ok. I promise.",
+    "c3a": "StarKnight: The game chat is so laggy. Come to ChatNook. Nobody watches there.",
+    "c3b": "StarKnight: Here's the code. Delete this message after.",
+    "c3c": "Sprout has left the game chat.",
+    "c4a": "StarKnight: Give me your password or I'll tell everyone you broke the rules.",
+    "c4b": "StarKnight: If you tell anyone, I'll delete your castle.",
+    "c4c": "Sprout: please don't. I'll do it."
+  },
+  "dialogs": {
+    "intro": [
+      { "s": "dame", "t": "Shieldy! Sprout didn't come to breakfast, and his tablet is still on in the courtyard." },
+      { "s": "dame", "t": "He has been so quiet this week. Something is wrong." },
+      { "s": "dame", "t": "Find the messages he left behind. Read all of them. Then find him." }
+    ],
+    "c1": [
+      { "s": "pixel", "t": "Sprout met someone called StarKnight in Castle Craft last week. He couldn't stop talking about it." },
+      { "s": "pixel", "t": "StarKnight gave him 500 gems. For free. That's a nice thing to do… right?" },
+      { "c": [
+        { "t": "A big gift from someone you've never met is a hook, not a present.", "r": "…That's what my stomach said. He was so happy, though." },
+        { "t": "Sure. Lucky Sprout!", "r": "Hm. Then why does my stomach feel weird about it?" }
+      ] },
+      { "s": "pixel", "t": "He went toward the garden. The gate is open now." }
+    ],
+    "c2": [
+      { "s": "bot", "t": "Log entry: Sprout asked me to stop reading his messages aloud. He said it was a surprise." },
+      { "s": "bot", "t": "Query: is a secret the same thing as a surprise?" },
+      { "c": [
+        { "t": "A surprise ends with everyone smiling. A secret you must keep from your family is a warning sign.", "r": "Understood. Updating my definitions. This was not a surprise." },
+        { "t": "Pretty much the same thing.", "r": "Then I cannot explain why Sprout stopped smiling." }
+      ] },
+      { "s": "bot", "t": "His trail continues past the library yard." }
+    ],
+    "c3": [
+      { "s": "bot", "t": "I followed the messages to here. Then they stop. They moved to an app called ChatNook." },
+      { "s": "bot", "t": "I cannot follow. Why would StarKnight want to leave the game chat?" },
+      { "c": [
+        { "t": "The game has moderators and a report button. StarKnight wanted a place where nobody is watching.", "r": "That matches the pattern. A friend does not need to hide a conversation." },
+        { "t": "Maybe the game chat really was laggy.", "r": "The game chat was running at full speed. I checked." }
+      ] },
+      { "s": "bot", "t": "There is a light on in the old tower. Hurry." }
+    ],
+    "c4": [
+      { "s": "sprout", "t": "Go away. I messed up. Everyone is going to be so mad at me." },
+      { "c": [
+        { "t": "You're not in trouble, Sprout. The one who did something wrong is StarKnight.", "r": "…I'm not? But I promised to keep it secret." },
+        { "t": "Why did you talk to a stranger in the first place?!", "r": "See? I knew you'd be mad. Leave me alone." },
+        { "t": "Just come out. It's fine.", "r": "It's not fine. You don't know what happened." }
+      ] },
+      { "s": "sprout", "t": "StarKnight said he'd delete my castle if I told anyone. He wants my password." },
+      { "c": [
+        { "t": "A threat only works while you stay silent. Let's tell Dame Noble together. I'll be right next to you.", "r": "…Together? Okay. Together." },
+        { "t": "Then give the password, so it stops.", "r": "I did think about that. But what would StarKnight ask for next?" },
+        { "t": "Let's just block StarKnight and never mention it again.", "r": "Okay… but what if it happens to Pixel next?" }
+      ] }
+    ],
+    "best": [
+      { "s": "sprout", "t": "Dame Noble… I have to tell you something. I made a friend online. Then it got scary." },
+      { "s": "dame", "t": "Thank you for telling me. That was the bravest thing you could do. You are not in trouble." },
+      { "s": "dame", "t": "We don't give the password. We keep the messages as proof, block StarKnight, and report the account." },
+      { "s": "glitch", "t": "No! Blocked AND reported? It was working so well while nobody was talking!" },
+      { "s": "sprout", "t": "It was Glitch the whole time! And my castle is still there." }
+    ],
+    "ok": [
+      { "s": "sprout", "t": "Okay, I'll come out. But please don't tell Dame Noble. Promise?" },
+      { "s": "shieldy", "t": "Sprout is safe tonight. But StarKnight is still out there, and no grown-up knows." }
+    ],
+    "low": [
+      { "s": "sprout", "t": "I'm staying here. Nobody understands." },
+      { "s": "shieldy", "t": "The door stays shut. Sprout needed to hear one thing first: that this was not his fault." }
+    ]
+  },
+  "endings": {
+    "best": { "h": "Sprout is safe, and Glitch is out", "p": "You told Sprout it wasn't his fault, and you brought in a grown-up he trusts. That is what ended it." },
+    "ok": { "h": "Sprout is out of the tower", "p": "But the trick isn't over. While no trusted adult knows, StarKnight can try again, with Sprout or with someone else." },
+    "low": { "h": "The door stayed shut", "p": "Someone who has been tricked already feels ashamed. Blame makes them hide. Start with: you're not in trouble." }
+  },
+  "todo": [
+    "Stop replying. Don't send anything, and don't give a password.",
+    "Keep the messages as proof: take screenshots before you block.",
+    "Block the account and report it in the app.",
+    "Tell an adult you trust. You are not in trouble."
+  ]
+}

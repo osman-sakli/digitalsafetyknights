@@ -1,0 +1,275 @@
+{
+  "ui": {
+    "title": "Kayıp Sprout",
+    "how": "Sprout kayıp. Shieldy olarak kalede dolaş, Sprout'un geride bıraktığı mesajları oku ve Şövalyelerle konuş. Her bölüm, Sprout'a kurulan tuzağın bir adımını gösterir. Hikâyenin nasıl biteceği, sonunda söyleyeceklerine bağlı.",
+    "start": "Aramaya başla",
+    "again": "Hikâyeyi yeniden oyna",
+    "arcade": "← Oyun Salonu'na dön",
+    "back": "Oyun Salonu",
+    "loading": "Kale açılıyor…",
+    "loadErr": "Kalenin bir bölümü yüklenemedi. Bağlantını kontrol et ve sayfayı yenile.",
+    "moveKeys": "Yürü: ok tuşları ya da W A S D · Konuş: E ya da Boşluk",
+    "moveTouch": "Yürümek için ekranda parmağını sürükle · Konuşmak için düğmeye dokun",
+    "talk": "{n} ile konuş",
+    "open": "Kapıyı çal",
+    "next": "İleri ▸",
+    "close": "Devam et ▸",
+    "found": "Mesaj bulundu",
+    "journal": "Mesajlar",
+    "journalEmpty": "Henüz hiç mesaj bulunmadı.",
+    "goalClues": "Sprout'un mesajlarını bul: {a}/{b}",
+    "goalTalk": "Şimdi {n} ile konuş",
+    "goalGate": "Kapı açıldı. Yoluna devam et.",
+    "gateLocked": "Önce buradaki bütün mesajları oku ve {n} ile konuş.",
+    "chapter": "{n}. Bölüm",
+    "noGL": "Bu cihaz 3D oyunu çalıştıramıyor. 2D oyun ise her cihazda çalışır:",
+    "noGLbtn": "Shieldy Dash oyna →",
+    "endHow": "Tuzak nasıl kuruldu",
+    "endDo": "Bir gün senin başına gelirse",
+    "reason": "Kayıp Sprout",
+    "sound": "Ses"
+  },
+  "names": {
+    "shieldy": "Shieldy",
+    "dame": "Dame Noble",
+    "pixel": "Pixel",
+    "bot": "Bot",
+    "sprout": "Sprout",
+    "glitch": "Glitch",
+    "star": "StarKnight"
+  },
+  "chapters": [
+    {
+      "name": "İltifatlar",
+      "lever": "Övgü",
+      "step": "Önce iltifatlar ve hediyeler geldi; hem de Sprout'un hiç tanımadığı birinden."
+    },
+    {
+      "name": "Sır",
+      "lever": "Gizlilik",
+      "step": "Sonra sır geldi: Ailene benden bahsetme."
+    },
+    {
+      "name": "Başka Uygulama",
+      "lever": "Uzaklaştırma",
+      "step": "Sonra başka bir uygulamaya geçildi; kimsenin göremeyeceği, kimsenin bildiremeyeceği bir yere."
+    },
+    {
+      "name": "Tehdit",
+      "lever": "Korku",
+      "step": "Tehdit ise en sona kaldı: Sprout kendini yapayalnız hissettiğinde geldi."
+    }
+  ],
+  "clues": {
+    "c1a": "StarKnight: Senin kadar iyi inşa eden birini HİÇ görmedim!",
+    "c1b": "StarKnight: Seni benim kadar anlayan kimse yok.",
+    "c1c": "StarKnight: Sana 500 elmas yolladım. Sadece sana özel. 🎁",
+    "c2a": "StarKnight: Ablana benden bahsetme. O anlamaz.",
+    "c2b": "StarKnight: Burası BİZİM gizli üssümüz. Gerçek arkadaşların sırları olur.",
+    "c2c": "Sprout: tamam. söz veriyorum.",
+    "c3a": "StarKnight: Oyun sohbeti çok kasıyor. ChatNook'a gel. Orada kimse bakmıyor.",
+    "c3b": "StarKnight: Kod bu. Okuyunca bu mesajı sil.",
+    "c3c": "Sprout oyun sohbetinden ayrıldı.",
+    "c4a": "StarKnight: Şifreni ver, yoksa kuralları çiğnediğini herkese söylerim.",
+    "c4b": "StarKnight: Birine söylersen kaleni silerim.",
+    "c4c": "Sprout: lütfen yapma. tamam, vereceğim."
+  },
+  "dialogs": {
+    "intro": [
+      {
+        "s": "dame",
+        "t": "Shieldy! Sprout kahvaltıya gelmedi, tableti de avluda açık duruyor."
+      },
+      {
+        "s": "dame",
+        "t": "Bu hafta çok sessizdi. Bir şeyler yolunda değil."
+      },
+      {
+        "s": "dame",
+        "t": "Geride bıraktığı mesajları bul. Hepsini oku. Sonra da onu bul."
+      }
+    ],
+    "c1": [
+      {
+        "s": "pixel",
+        "t": "Sprout geçen hafta Castle Craft'ta StarKnight diye biriyle tanıştı. Durmadan ondan bahsediyordu."
+      },
+      {
+        "s": "pixel",
+        "t": "StarKnight ona 500 elmas vermiş. Bedavaya. Bu güzel bir şey… değil mi?"
+      },
+      {
+        "c": [
+          {
+            "t": "Hiç tanımadığın birinden gelen büyük bir hediye, hediye değil yemdir.",
+            "r": "…Benim içimden bir ses de öyle diyordu. Ama o kadar mutluydu ki."
+          },
+          {
+            "t": "Tabii ki. Şanslı Sprout!",
+            "r": "Hım. O zaman benim içim neden hiç rahat değil?"
+          }
+        ]
+      },
+      {
+        "s": "pixel",
+        "t": "Bahçeye doğru gitti. Kapı artık açık."
+      }
+    ],
+    "c2": [
+      {
+        "s": "bot",
+        "t": "Kayıt: Sprout, mesajlarını sesli okumayı bırakmamı istedi. Bunun bir sürpriz olduğunu söyledi."
+      },
+      {
+        "s": "bot",
+        "t": "Sorgu: Sır ile sürpriz aynı şey midir?"
+      },
+      {
+        "c": [
+          {
+            "t": "Sürprizin sonunda herkes gülümser. Ailenden saklaman gereken bir sır ise uyarı işaretidir.",
+            "r": "Anlaşıldı. Tanımlarımı güncelliyorum. Bu bir sürpriz değildi."
+          },
+          {
+            "t": "Aşağı yukarı aynı şey.",
+            "r": "O hâlde Sprout'un gülümsemeyi neden bıraktığını açıklayamıyorum."
+          }
+        ]
+      },
+      {
+        "s": "bot",
+        "t": "İzi kütüphane avlusunun ilerisinde devam ediyor."
+      }
+    ],
+    "c3": [
+      {
+        "s": "bot",
+        "t": "Mesajları buraya kadar takip ettim. Burada kesiliyorlar. ChatNook adlı bir uygulamaya geçmişler."
+      },
+      {
+        "s": "bot",
+        "t": "Oraya kadar takip edemiyorum. StarKnight oyun sohbetinden neden ayrılmak istesin?"
+      },
+      {
+        "c": [
+          {
+            "t": "Oyunda moderatörler ve bir bildir düğmesi var. StarKnight kimsenin bakmadığı bir yer istedi.",
+            "r": "Bu, örüntüye uyuyor. Bir arkadaşın konuşmayı saklamasına gerek yoktur."
+          },
+          {
+            "t": "Belki oyun sohbeti gerçekten kasıyordu.",
+            "r": "Oyun sohbeti tam hızda çalışıyordu. Kontrol ettim."
+          }
+        ]
+      },
+      {
+        "s": "bot",
+        "t": "Eski kulede bir ışık yanıyor. Acele et."
+      }
+    ],
+    "c4": [
+      {
+        "s": "sprout",
+        "t": "Git buradan. Her şeyi berbat ettim. Herkes bana çok kızacak."
+      },
+      {
+        "c": [
+          {
+            "t": "Senin bir suçun yok Sprout. Yanlış yapan kişi StarKnight.",
+            "r": "…Yok mu? Ama kimseye söylemeyeceğime söz vermiştim."
+          },
+          {
+            "t": "Tanımadığın biriyle neden konuştun ki?!",
+            "r": "Gördün mü? Kızacağını biliyordum. Beni rahat bırak."
+          },
+          {
+            "t": "Hadi çık artık. Bir şey yok.",
+            "r": "Bir şey var. Ne olduğunu bilmiyorsun."
+          }
+        ]
+      },
+      {
+        "s": "sprout",
+        "t": "StarKnight, birine söylersem kalemi sileceğini söyledi. Şifremi istiyor."
+      },
+      {
+        "c": [
+          {
+            "t": "Tehdit ancak sen sustuğun sürece işe yarar. Gel, Dame Noble'a birlikte anlatalım. Hep yanında olacağım.",
+            "r": "…Birlikte mi? Tamam. Birlikte."
+          },
+          {
+            "t": "O zaman şifreyi ver de bitsin.",
+            "r": "Bunu ben de düşündüm. Ama StarKnight bundan sonra ne isteyecek?"
+          },
+          {
+            "t": "StarKnight'ı engelleyelim ve bir daha bu konuyu hiç açmayalım.",
+            "r": "Tamam… Peki ya sıradaki Pixel olursa?"
+          }
+        ]
+      }
+    ],
+    "best": [
+      {
+        "s": "sprout",
+        "t": "Dame Noble… Sana bir şey söylemem lazım. Çevrimiçi bir arkadaş edindim. Sonra işler korkutucu olmaya başladı."
+      },
+      {
+        "s": "dame",
+        "t": "Bana anlattığın için teşekkür ederim. Yapabileceğin en cesurca şey buydu. Sana kimse kızmayacak."
+      },
+      {
+        "s": "dame",
+        "t": "Şifreyi vermiyoruz. Mesajları kanıt olarak saklıyoruz, StarKnight'ı engelliyoruz ve hesabı bildiriyoruz."
+      },
+      {
+        "s": "glitch",
+        "t": "Olamaz! Hem engellendim HEM bildirildim, öyle mi? Kimse konuşmazken her şey ne güzel gidiyordu!"
+      },
+      {
+        "s": "sprout",
+        "t": "Başından beri Glitch'miş! Kalem de yerinde duruyor."
+      }
+    ],
+    "ok": [
+      {
+        "s": "sprout",
+        "t": "Tamam, çıkıyorum. Ama lütfen Dame Noble'a söyleme. Söz mü?"
+      },
+      {
+        "s": "shieldy",
+        "t": "Sprout bu gece güvende. Ama StarKnight hâlâ ortalıkta ve hiçbir yetişkinin olanlardan haberi yok."
+      }
+    ],
+    "low": [
+      {
+        "s": "sprout",
+        "t": "Ben burada kalıyorum. Kimse anlamıyor."
+      },
+      {
+        "s": "shieldy",
+        "t": "Kapı kapalı kaldı. Sprout'un önce tek bir şeyi duymaya ihtiyacı vardı: Bu onun suçu değildi."
+      }
+    ]
+  },
+  "endings": {
+    "best": {
+      "h": "Sprout güvende, Glitch oyun dışı",
+      "p": "Sprout'a bunun onun suçu olmadığını söyledin ve güvendiği bir yetişkini işin içine kattın. Tuzağı bozan da bu oldu."
+    },
+    "ok": {
+      "h": "Sprout kuleden çıktı",
+      "p": "Ama tuzak hâlâ kurulu. Güvendiği bir yetişkin olanları öğrenmediği sürece StarKnight yeniden deneyebilir: Sprout'la ya da başka biriyle."
+    },
+    "low": {
+      "h": "Kapı kapalı kaldı",
+      "p": "Kandırılan biri zaten utanç duyar. Suçlanınca iyice saklanır. Söze şöyle başla: Sana kimse kızmayacak."
+    }
+  },
+  "todo": [
+    "Cevap yazmayı bırak. Hiçbir şey gönderme, şifreni de verme.",
+    "Mesajları kanıt olarak sakla: Engellemeden önce ekran görüntüsü al.",
+    "Hesabı engelle ve uygulamanın içinden bildir.",
+    "Güvendiğin bir yetişkine anlat. Sana kimse kızmayacak."
+  ]
+}

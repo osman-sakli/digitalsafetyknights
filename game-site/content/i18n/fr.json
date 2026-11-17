@@ -1507,5 +1507,7 @@
   "arc.filterAria": "Filtrer",
   "qp.defaultNick": "Chevalier",
   "arc.toss.h": "Shield Toss 3D",
-  "arc.toss.p": "Des amis arrivent à la porte du château avec des messages, mais Glitch peut prendre l’apparence de n’importe lequel. Lis, puis lance ton bouclier sur les pièges."
+  "arc.toss.p": "Des amis arrivent à la porte du château avec des messages, mais Glitch peut prendre l’apparence de n’importe lequel. Lis, puis lance ton bouclier sur les pièges.",
+  "arc.story.h": "The Lost Sprout",
+  "arc.story.p": "Une histoire en 3D. Sprout a disparu. Explore le château, lis les messages qu’il a laissés et décide de la fin."
 }

@@ -1,0 +1,275 @@
+{
+  "ui": {
+    "title": "The Lost Sprout",
+    "how": "Sprout no aparece. Recorre el castillo como Shieldy, lee los mensajes que Sprout dejó atrás y habla con los Caballeros. Cada capítulo muestra una jugada del engaño que le hicieron a Sprout. Lo que digas al final decide cómo termina la historia.",
+    "start": "Empezar la búsqueda",
+    "again": "Jugar la historia otra vez",
+    "arcade": "← Volver al Arcade",
+    "back": "Arcade",
+    "loading": "Abriendo el castillo…",
+    "loadErr": "Una parte del castillo no se cargó. Revisa tu conexión y vuelve a cargar la página.",
+    "moveKeys": "Moverte: flechas o W A S D · Hablar: E o Espacio",
+    "moveTouch": "Arrastra en cualquier parte para caminar · Toca el botón para hablar",
+    "talk": "Hablar con {n}",
+    "open": "Tocar la puerta",
+    "next": "Siguiente ▸",
+    "close": "Seguir ▸",
+    "found": "Mensaje encontrado",
+    "journal": "Mensajes",
+    "journalEmpty": "Todavía no encontraste ningún mensaje.",
+    "goalClues": "Encuentra los mensajes de Sprout: {a}/{b}",
+    "goalTalk": "Ahora habla con {n}",
+    "goalGate": "El portón está abierto. Sigue adelante.",
+    "gateLocked": "Primero lee todos los mensajes de aquí y habla con {n}.",
+    "chapter": "Capítulo {n}",
+    "noGL": "Este dispositivo no puede abrir el juego en 3D. El juego en 2D funciona en cualquiera:",
+    "noGLbtn": "Jugar Shieldy Dash →",
+    "endHow": "Cómo se armó el engaño",
+    "endDo": "Si alguna vez te pasa a ti",
+    "reason": "The Lost Sprout",
+    "sound": "Sonido"
+  },
+  "names": {
+    "shieldy": "Shieldy",
+    "dame": "Dame Noble",
+    "pixel": "Pixel",
+    "bot": "Bot",
+    "sprout": "Sprout",
+    "glitch": "Glitch",
+    "star": "StarKnight"
+  },
+  "chapters": [
+    {
+      "name": "Los halagos",
+      "lever": "Halagos",
+      "step": "Primero llegaron los halagos y los regalos, de alguien a quien Sprout nunca había visto."
+    },
+    {
+      "name": "El secreto",
+      "lever": "Secretismo",
+      "step": "Después llegó el secreto: no le cuentes de mí a tu familia."
+    },
+    {
+      "name": "La otra app",
+      "lever": "Alejamiento",
+      "step": "Después, el cambio a otra app, donde nadie podía ver ni reportar."
+    },
+    {
+      "name": "La amenaza",
+      "lever": "Miedo",
+      "step": "Y solo entonces la amenaza, cuando Sprout ya se sentía solo."
+    }
+  ],
+  "clues": {
+    "c1a": "StarKnight: ¡Eres el mejor constructor que he visto EN MI VIDA!",
+    "c1b": "StarKnight: Nadie más te entiende como yo.",
+    "c1c": "StarKnight: Te mandé 500 gemas. Solo para ti. 🎁",
+    "c2a": "StarKnight: No le cuentes de mí a tu hermana. No lo entendería.",
+    "c2b": "StarKnight: Esta es NUESTRA base secreta. Los secretos son lo que hace que una amistad sea de verdad.",
+    "c2c": "Sprout: ok. lo prometo.",
+    "c3a": "StarKnight: El chat del juego tiene demasiado lag. Vente a ChatNook. Ahí nadie vigila.",
+    "c3b": "StarKnight: Aquí va el código. Borra este mensaje después.",
+    "c3c": "Sprout salió del chat del juego.",
+    "c4a": "StarKnight: Dame tu contraseña o les digo a todos que rompiste las reglas.",
+    "c4b": "StarKnight: Si le cuentas a alguien, te borro el castillo.",
+    "c4c": "Sprout: no, por favor. lo voy a hacer."
+  },
+  "dialogs": {
+    "intro": [
+      {
+        "s": "dame",
+        "t": "¡Shieldy! Sprout no vino a desayunar, y su tableta sigue encendida en el patio."
+      },
+      {
+        "s": "dame",
+        "t": "Ha estado muy callado esta semana. Algo anda mal."
+      },
+      {
+        "s": "dame",
+        "t": "Busca los mensajes que dejó atrás. Léelos todos. Después, encuéntralo."
+      }
+    ],
+    "c1": [
+      {
+        "s": "pixel",
+        "t": "La semana pasada Sprout conoció a alguien que se llama StarKnight en Castle Craft. No paraba de hablar de eso."
+      },
+      {
+        "s": "pixel",
+        "t": "StarKnight le regaló 500 gemas. Gratis. Eso es algo lindo… ¿no?"
+      },
+      {
+        "c": [
+          {
+            "t": "Un regalo grande de alguien a quien nunca has visto es un anzuelo, no un regalo.",
+            "r": "…Eso mismo me decía la panza. Pero él estaba tan contento."
+          },
+          {
+            "t": "Claro. ¡Qué suerte tiene Sprout!",
+            "r": "Mmm. ¿Y entonces por qué siento algo raro en la panza?"
+          }
+        ]
+      },
+      {
+        "s": "pixel",
+        "t": "Se fue hacia el jardín. El portón ya está abierto."
+      }
+    ],
+    "c2": [
+      {
+        "s": "bot",
+        "t": "Registro: Sprout me pidió que dejara de leer sus mensajes en voz alta. Dijo que era una sorpresa."
+      },
+      {
+        "s": "bot",
+        "t": "Consulta: ¿un secreto es lo mismo que una sorpresa?"
+      },
+      {
+        "c": [
+          {
+            "t": "Una sorpresa termina con todos sonriendo. Un secreto que tienes que ocultarle a tu familia es una señal de alerta.",
+            "r": "Entendido. Actualizando mis definiciones. Esto no era una sorpresa."
+          },
+          {
+            "t": "Es casi lo mismo.",
+            "r": "Entonces no puedo explicar por qué Sprout dejó de sonreír."
+          }
+        ]
+      },
+      {
+        "s": "bot",
+        "t": "Su rastro sigue más allá del patio de la biblioteca."
+      }
+    ],
+    "c3": [
+      {
+        "s": "bot",
+        "t": "Seguí los mensajes hasta aquí. Después se cortan. Se pasaron a una app llamada ChatNook."
+      },
+      {
+        "s": "bot",
+        "t": "No puedo seguirlos. ¿Por qué StarKnight querría salir del chat del juego?"
+      },
+      {
+        "c": [
+          {
+            "t": "El juego tiene moderadores y un botón para reportar. StarKnight quería un lugar donde nadie estuviera mirando.",
+            "r": "Eso coincide con el patrón. Un amigo no necesita esconder una conversación."
+          },
+          {
+            "t": "A lo mejor el chat del juego sí tenía lag.",
+            "r": "El chat del juego funcionaba a máxima velocidad. Lo comprobé."
+          }
+        ]
+      },
+      {
+        "s": "bot",
+        "t": "Hay una luz encendida en la torre vieja. Date prisa."
+      }
+    ],
+    "c4": [
+      {
+        "s": "sprout",
+        "t": "Vete. Lo arruiné todo. Todos se van a enojar muchísimo conmigo."
+      },
+      {
+        "c": [
+          {
+            "t": "No estás en problemas, Sprout. Quien hizo algo malo fue StarKnight.",
+            "r": "…¿No? Pero yo prometí guardar el secreto."
+          },
+          {
+            "t": "¡¿Y para qué te pusiste a hablar con un desconocido?!",
+            "r": "¿Ves? Sabía que te ibas a enojar. Déjame en paz."
+          },
+          {
+            "t": "Sal de ahí y ya. No pasa nada.",
+            "r": "Sí pasa. Tú no sabes lo que pasó."
+          }
+        ]
+      },
+      {
+        "s": "sprout",
+        "t": "StarKnight dijo que me iba a borrar el castillo si le contaba a alguien. Quiere mi contraseña."
+      },
+      {
+        "c": [
+          {
+            "t": "Una amenaza solo funciona mientras te quedas en silencio. Vamos a contárselo juntos a Dame Noble. Voy a estar a tu lado.",
+            "r": "…¿Juntos? Bueno. Juntos."
+          },
+          {
+            "t": "Entonces dale la contraseña, para que esto se acabe.",
+            "r": "Sí lo pensé. Pero ¿qué me pediría StarKnight después?"
+          },
+          {
+            "t": "Mejor bloqueamos a StarKnight y no volvemos a hablar del tema.",
+            "r": "Bueno… pero ¿y si después le pasa a Pixel?"
+          }
+        ]
+      }
+    ],
+    "best": [
+      {
+        "s": "sprout",
+        "t": "Dame Noble… tengo que contarte algo. Hice un amigo en internet. Y después me empezó a dar miedo."
+      },
+      {
+        "s": "dame",
+        "t": "Gracias por contármelo. Era lo más valiente que podías hacer. No estás en problemas."
+      },
+      {
+        "s": "dame",
+        "t": "La contraseña no se da. Guardamos los mensajes como prueba, bloqueamos a StarKnight y reportamos la cuenta."
+      },
+      {
+        "s": "glitch",
+        "t": "¡No! ¿Bloqueado Y reportado? ¡Con lo bien que iba todo mientras nadie hablaba!"
+      },
+      {
+        "s": "sprout",
+        "t": "¡Era Glitch todo el tiempo! Y mi castillo sigue ahí."
+      }
+    ],
+    "ok": [
+      {
+        "s": "sprout",
+        "t": "Bueno, voy a salir. Pero por favor no le digas a Dame Noble. ¿Me lo prometes?"
+      },
+      {
+        "s": "shieldy",
+        "t": "Esta noche Sprout está a salvo. Pero StarKnight sigue por ahí, y ningún adulto lo sabe."
+      }
+    ],
+    "low": [
+      {
+        "s": "sprout",
+        "t": "Yo me quedo aquí. Nadie me entiende."
+      },
+      {
+        "s": "shieldy",
+        "t": "La puerta sigue cerrada. Sprout necesitaba oír una cosa antes que nada: que esto no fue culpa suya."
+      }
+    ]
+  },
+  "endings": {
+    "best": {
+      "h": "Sprout está a salvo y Glitch quedó fuera",
+      "p": "Le dijiste a Sprout que no fue culpa suya y buscaste a un adulto de confianza. Eso fue lo que le puso fin."
+    },
+    "ok": {
+      "h": "Sprout salió de la torre",
+      "p": "Pero el engaño no terminó. Mientras ningún adulto de confianza lo sepa, StarKnight puede volver a intentarlo, con Sprout o con alguien más."
+    },
+    "low": {
+      "h": "La puerta siguió cerrada",
+      "p": "Quien cayó en un engaño ya siente vergüenza. Si le echas la culpa, se esconde. Empieza con: no estás en problemas."
+    }
+  },
+  "todo": [
+    "Deja de responder. No mandes nada y no des ninguna contraseña.",
+    "Guarda los mensajes como prueba: toma capturas de pantalla antes de bloquear.",
+    "Bloquea la cuenta y repórtala en la app.",
+    "Cuéntaselo a un adulto de confianza. No estás en problemas."
+  ]
+}

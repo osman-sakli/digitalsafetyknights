@@ -1507,5 +1507,7 @@
   "arc.filterAria": "Filtrele",
   "qp.defaultNick": "Şövalye",
   "arc.toss.h": "Shield Toss 3D",
-  "arc.toss.p": "Arkadaşlar kale kapısına mesajlarla geliyor ama Glitch herhangi birinin kılığına girebilir. Oku, sonra kalkanını tuzaklara fırlat."
+  "arc.toss.p": "Arkadaşlar kale kapısına mesajlarla geliyor ama Glitch herhangi birinin kılığına girebilir. Oku, sonra kalkanını tuzaklara fırlat.",
+  "arc.story.h": "Kayıp Sprout",
+  "arc.story.p": "3D bir hikâye. Sprout kayıp. Kalede dolaş, geride bıraktığı mesajları oku ve hikâyenin nasıl biteceğine sen karar ver."
 }

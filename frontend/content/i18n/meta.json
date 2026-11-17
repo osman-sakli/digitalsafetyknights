@@ -208,6 +208,10 @@
     "shield-toss.html": {
       "title": "Shield Toss 3D — Digital Safety Knights",
       "description": "Shield Toss — ücretsiz bir 3D oyun. Arkadaşlar kale kapısına mesajlarla geliyor ama Glitch herhangi birinin kılığına girebilir. Oku, sonra kalkanını tuzaklara fırlat. Hesap yok, reklam yok, izleme yok."
+    },
+    "lost-sprout.html": {
+      "title": "Kayıp Sprout — Digital Safety Knights",
+      "description": "3D bir hikâye. Sprout kayıp. Kalede dolaş, geride bıraktığı mesajları oku ve hikâyenin nasıl biteceğine sen karar ver. Hesap yok, reklam yok, izleme yok."
     }
   },
   "es": {
@@ -418,6 +422,10 @@
     "shield-toss.html": {
       "title": "Shield Toss 3D — Digital Safety Knights",
       "description": "Shield Toss: un juego en 3D gratuito. Llegan amigos a la puerta del castillo con mensajes, pero Glitch puede verse igualito a cualquiera. Lee y luego lanza tu escudo a las trampas. Sin cuenta, sin anuncios, sin rastreo."
+    },
+    "lost-sprout.html": {
+      "title": "The Lost Sprout — Digital Safety Knights",
+      "description": "Una historia en 3D. Sprout desapareció. Recorre el castillo, lee los mensajes que dejó y decide cómo termina. Sin cuenta, sin anuncios, sin rastreo."
     }
   },
   "fr": {
@@ -628,6 +636,10 @@
     "shield-toss.html": {
       "title": "Shield Toss 3D — Digital Safety Knights",
       "description": "Shield Toss : un jeu en 3D gratuit. Des amis arrivent à la porte du château avec des messages, mais Glitch peut prendre l’apparence de n’importe lequel. Lis, puis lance ton bouclier sur les pièges. Sans compte, sans publicité, sans suivi."
+    },
+    "lost-sprout.html": {
+      "title": "The Lost Sprout — Digital Safety Knights",
+      "description": "Une histoire en 3D. Sprout a disparu. Explore le château, lis les messages qu’il a laissés et décide de la fin. Sans compte, sans publicité, sans suivi."
     }
   }
 }

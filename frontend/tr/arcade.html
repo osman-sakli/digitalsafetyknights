@@ -136,6 +136,13 @@
   <div class="grid" id="ar-grid">
 
     <!-- ── games ── -->
+    <div class="tile feature" data-cat="play" data-id="story">
+      <button type="button" class="fav" aria-pressed="false" aria-label="Favourite">★</button>
+      <a href="/lost-sprout.html"><img class="cover" src="/assets/arcade/sprout-cover.webp" alt="" width="780" height="300" loading="lazy">
+        <h3 data-i18n="arc.story.h">The Lost Sprout</h3>
+        <p data-i18n="arc.story.p">A 3D story. Sprout is missing. Walk the castle, read the messages he left behind, and decide how it ends.</p>
+        <span class="go" data-i18n="arc.play">Play →</span></a>
+    </div>
     <div class="tile feature" data-cat="play" data-id="toss">
       <button type="button" class="fav" aria-pressed="false" aria-label="Favourite">★</button>
       <a href="/shield-toss.html"><img class="cover" src="/assets/arcade/toss-cover.webp" alt="" width="780" height="300" loading="lazy">
@@ -286,7 +293,7 @@
   'use strict';
   var FAV_KEY = 'dsk_arcade_favs';
   var RECENT_KEY = 'dsk_arcade_recent';
-  var NEW_IDS = ['toss', 'run', 'dash'];
+  var NEW_IDS = ['story', 'toss', 'run'];
   var RECENT_MAX = 4;
 
   function t(k, f) { return (window.DSKi18n && DSKi18n.t) ? DSKi18n.t(k, f) : f; }

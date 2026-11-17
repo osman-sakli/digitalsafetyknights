@@ -1,0 +1,275 @@
+{
+  "ui": {
+    "title": "The Lost Sprout",
+    "how": "Sprout a disparu. Parcours le château avec Shieldy, lis les messages que Sprout a laissés derrière lui et parle aux Chevaliers. Chaque chapitre dévoile une étape du piège qu’on a tendu à Sprout. Ce que tu diras à la fin décidera de la fin de l’histoire.",
+    "start": "Commencer les recherches",
+    "again": "Rejouer l’histoire",
+    "arcade": "← Retour à l’Arcade",
+    "back": "Arcade",
+    "loading": "Ouverture du château…",
+    "loadErr": "Une partie du château ne s’est pas chargée. Vérifie ta connexion et recharge la page.",
+    "moveKeys": "Se déplacer : flèches ou W A S D · Parler : E ou Espace",
+    "moveTouch": "Fais glisser ton doigt n’importe où pour marcher · Touche le bouton pour parler",
+    "talk": "Parler à {n}",
+    "open": "Frapper à la porte",
+    "next": "Suite ▸",
+    "close": "Continuer ▸",
+    "found": "Message trouvé",
+    "journal": "Messages",
+    "journalEmpty": "Aucun message trouvé pour l’instant.",
+    "goalClues": "Trouve les messages de Sprout : {a}/{b}",
+    "goalTalk": "Maintenant, va parler à {n}",
+    "goalGate": "La grille est ouverte. Avance.",
+    "gateLocked": "Lis d’abord tous les messages d’ici et va parler à {n}.",
+    "chapter": "Chapitre {n}",
+    "noGL": "Cet appareil ne peut pas lancer le jeu en 3D. Le jeu en 2D, lui, marche partout :",
+    "noGLbtn": "Jouer à Shieldy Dash →",
+    "endHow": "Comment le piège a été monté",
+    "endDo": "Si ça t’arrive un jour",
+    "reason": "The Lost Sprout",
+    "sound": "Son"
+  },
+  "names": {
+    "shieldy": "Shieldy",
+    "dame": "Dame Noble",
+    "pixel": "Pixel",
+    "bot": "Bot",
+    "sprout": "Sprout",
+    "glitch": "Glitch",
+    "star": "StarKnight"
+  },
+  "chapters": [
+    {
+      "name": "Les compliments",
+      "lever": "Flatterie",
+      "step": "D’abord, il y a eu les compliments et les cadeaux, de la part de quelqu’un que Sprout n’avait jamais rencontré."
+    },
+    {
+      "name": "Le secret",
+      "lever": "Secret",
+      "step": "Ensuite, le secret : ne parle pas de moi à ta famille."
+    },
+    {
+      "name": "L’autre appli",
+      "lever": "Éloignement",
+      "step": "Puis le passage sur une autre appli, où personne ne pouvait rien voir ni rien signaler."
+    },
+    {
+      "name": "La menace",
+      "lever": "Peur",
+      "step": "Et seulement après, la menace, une fois que Sprout se sentait seul."
+    }
+  ],
+  "clues": {
+    "c1a": "StarKnight : T’es le meilleur bâtisseur que j’aie JAMAIS vu !",
+    "c1b": "StarKnight : Personne te comprend comme moi.",
+    "c1c": "StarKnight : Je t’ai envoyé 500 gemmes. Rien que pour toi. 🎁",
+    "c2a": "StarKnight : Parle pas de moi à ta sœur. Elle comprendrait pas.",
+    "c2b": "StarKnight : C’est NOTRE base secrète. Les vrais amis, ça a des secrets.",
+    "c2c": "Sprout : ok. promis.",
+    "c3a": "StarKnight : Le chat du jeu rame trop. Viens sur ChatNook. Là-bas, personne nous surveille.",
+    "c3b": "StarKnight : Voilà le code. Supprime ce message après.",
+    "c3c": "Sprout a quitté le chat du jeu.",
+    "c4a": "StarKnight : Donne-moi ton mot de passe, sinon je dis à tout le monde que t’as pas respecté les règles.",
+    "c4b": "StarKnight : Si t’en parles à quelqu’un, je supprime ton château.",
+    "c4c": "Sprout : s’il te plaît, fais pas ça. je vais le faire."
+  },
+  "dialogs": {
+    "intro": [
+      {
+        "s": "dame",
+        "t": "Shieldy ! Sprout n’est pas venu au petit-déjeuner, et sa tablette est restée allumée dans la cour."
+      },
+      {
+        "s": "dame",
+        "t": "Il a été tellement silencieux cette semaine. Quelque chose ne va pas."
+      },
+      {
+        "s": "dame",
+        "t": "Retrouve les messages qu’il a laissés derrière lui. Lis-les tous. Ensuite, retrouve-le."
+      }
+    ],
+    "c1": [
+      {
+        "s": "pixel",
+        "t": "La semaine dernière, Sprout a rencontré un certain StarKnight dans Castle Craft. Il n’arrêtait pas d’en parler."
+      },
+      {
+        "s": "pixel",
+        "t": "StarKnight lui a donné 500 gemmes. Gratuitement. C’est gentil, ça… non ?"
+      },
+      {
+        "c": [
+          {
+            "t": "Un gros cadeau de la part de quelqu’un qu’on n’a jamais rencontré, ce n’est pas un cadeau : c’est un hameçon.",
+            "r": "…C’est bien ce que me disait ma boule au ventre. Pourtant, il était tellement content."
+          },
+          {
+            "t": "Bien sûr. Quelle chance il a, Sprout !",
+            "r": "Hum. Alors pourquoi j’ai une boule au ventre quand j’y pense ?"
+          }
+        ]
+      },
+      {
+        "s": "pixel",
+        "t": "Il est parti vers le jardin. La grille est ouverte, maintenant."
+      }
+    ],
+    "c2": [
+      {
+        "s": "bot",
+        "t": "Entrée de journal : Sprout m’a demandé de ne plus lire ses messages à voix haute. Il a dit que c’était une surprise."
+      },
+      {
+        "s": "bot",
+        "t": "Requête : un secret est-il la même chose qu’une surprise ?"
+      },
+      {
+        "c": [
+          {
+            "t": "Une surprise, ça finit avec tout le monde qui sourit. Un secret qu’on doit cacher à sa famille, c’est un signal d’alerte.",
+            "r": "Compris. Mise à jour de mes définitions. Ce n’était pas une surprise."
+          },
+          {
+            "t": "C’est à peu près la même chose.",
+            "r": "Dans ce cas, je ne peux pas expliquer pourquoi Sprout a cessé de sourire."
+          }
+        ]
+      },
+      {
+        "s": "bot",
+        "t": "Sa trace continue au-delà de la cour de la bibliothèque."
+      }
+    ],
+    "c3": [
+      {
+        "s": "bot",
+        "t": "J’ai suivi les messages jusqu’ici. Ensuite, ils s’arrêtent. La conversation est passée sur une appli appelée ChatNook."
+      },
+      {
+        "s": "bot",
+        "t": "Je ne peux pas suivre. Pourquoi StarKnight voudrait-il quitter le chat du jeu ?"
+      },
+      {
+        "c": [
+          {
+            "t": "Dans le jeu, il y a des modérateurs et un bouton pour signaler. StarKnight voulait un endroit où personne ne surveille.",
+            "r": "Cela correspond au schéma. Un ami n’a pas besoin de cacher une conversation."
+          },
+          {
+            "t": "Peut-être que le chat du jeu ramait vraiment.",
+            "r": "Le chat du jeu fonctionnait à pleine vitesse. J’ai vérifié."
+          }
+        ]
+      },
+      {
+        "s": "bot",
+        "t": "Il y a de la lumière dans la vieille tour. Dépêche-toi."
+      }
+    ],
+    "c4": [
+      {
+        "s": "sprout",
+        "t": "Va-t’en. J’ai fait une grosse bêtise. Tout le monde va être trop fâché contre moi."
+      },
+      {
+        "c": [
+          {
+            "t": "Tu ne vas pas te faire gronder, Sprout. Celui qui a mal agi, c’est StarKnight.",
+            "r": "…C’est vrai ? Mais j’ai promis de garder le secret."
+          },
+          {
+            "t": "Mais pourquoi tu as parlé à un inconnu, aussi ?!",
+            "r": "Tu vois ? Je savais que tu allais te fâcher. Laisse-moi tranquille."
+          },
+          {
+            "t": "Allez, sors de là. Ce n’est rien.",
+            "r": "Non, ce n’est pas rien. Tu ne sais pas ce qui s’est passé."
+          }
+        ]
+      },
+      {
+        "s": "sprout",
+        "t": "StarKnight a dit qu’il supprimerait mon château si j’en parlais à quelqu’un. Il veut mon mot de passe."
+      },
+      {
+        "c": [
+          {
+            "t": "Une menace ne marche que tant qu’on se tait. Allons le dire à Dame Noble ensemble. Je resterai juste à côté de toi.",
+            "r": "…Ensemble ? D’accord. Ensemble."
+          },
+          {
+            "t": "Alors donne le mot de passe, comme ça ce sera fini.",
+            "r": "J’y ai pensé. Mais qu’est-ce que StarKnight demanderait après ?"
+          },
+          {
+            "t": "On n’a qu’à bloquer StarKnight et ne plus jamais en parler.",
+            "r": "D’accord… mais si ça arrive à Pixel, la prochaine fois ?"
+          }
+        ]
+      }
+    ],
+    "best": [
+      {
+        "s": "sprout",
+        "t": "Dame Noble… Il faut que je te dise quelque chose. Je me suis fait un ami en ligne. Et après, ça a commencé à me faire peur."
+      },
+      {
+        "s": "dame",
+        "t": "Merci de me l’avoir dit. C’est la chose la plus courageuse que tu pouvais faire. Tu ne seras pas grondé."
+      },
+      {
+        "s": "dame",
+        "t": "On ne donne pas le mot de passe. On garde les messages comme preuves, on bloque StarKnight et on signale le compte."
+      },
+      {
+        "s": "glitch",
+        "t": "Non ! Bloqué ET signalé ? Ça marchait si bien tant que personne ne disait rien !"
+      },
+      {
+        "s": "sprout",
+        "t": "C’était Glitch depuis le début ! Et mon château est toujours là."
+      }
+    ],
+    "ok": [
+      {
+        "s": "sprout",
+        "t": "D’accord, je sors. Mais s’il te plaît, ne dis rien à Dame Noble. Promis ?"
+      },
+      {
+        "s": "shieldy",
+        "t": "Ce soir, Sprout est en sécurité. Mais StarKnight est toujours là, quelque part, et aucun adulte n’est au courant."
+      }
+    ],
+    "low": [
+      {
+        "s": "sprout",
+        "t": "Je reste ici. Personne ne comprend."
+      },
+      {
+        "s": "shieldy",
+        "t": "La porte reste fermée. Sprout avait d’abord besoin d’entendre une chose : que ce n’était pas sa faute."
+      }
+    ]
+  },
+  "endings": {
+    "best": {
+      "h": "Sprout est en sécurité, et Glitch est hors jeu",
+      "p": "Tu as dit à Sprout que ce n’était pas sa faute, et tu as fait appel à un adulte en qui il a confiance. C’est ça qui a tout arrêté."
+    },
+    "ok": {
+      "h": "Sprout est sorti de la tour",
+      "p": "Mais le piège n’est pas terminé. Tant qu’aucun adulte de confiance n’est au courant, StarKnight peut recommencer, avec Sprout ou avec quelqu’un d’autre."
+    },
+    "low": {
+      "h": "La porte est restée fermée",
+      "p": "Quand on s’est fait piéger, on a déjà honte. Les reproches poussent à se cacher. Commence par : « tu ne vas pas te faire gronder »."
+    }
+  },
+  "todo": [
+    "Arrête de répondre. N’envoie rien, et ne donne aucun mot de passe.",
+    "Garde les messages comme preuves : fais des captures d’écran avant de bloquer.",
+    "Bloque le compte et signale-le dans l’appli.",
+    "Parles-en à un adulte de confiance. Tu ne vas pas te faire gronder."
+  ]
+}

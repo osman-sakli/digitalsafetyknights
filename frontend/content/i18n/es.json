@@ -1507,5 +1507,7 @@
   "arc.filterAria": "Filtrar",
   "qp.defaultNick": "Caballero",
   "arc.toss.h": "Shield Toss 3D",
-  "arc.toss.p": "Llegan amigos a la puerta del castillo con mensajes, pero Glitch puede verse igualito a cualquiera. Lee y luego lanza tu escudo a las trampas."
+  "arc.toss.p": "Llegan amigos a la puerta del castillo con mensajes, pero Glitch puede verse igualito a cualquiera. Lee y luego lanza tu escudo a las trampas.",
+  "arc.story.h": "The Lost Sprout",
+  "arc.story.p": "Una historia en 3D. Sprout desapareció. Recorre el castillo, lee los mensajes que dejó y decide cómo termina."
 }
