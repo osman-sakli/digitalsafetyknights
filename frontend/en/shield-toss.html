@@ -343,7 +343,8 @@ try { snd = localStorage.getItem('dsk_toss_snd') !== '0'; } catch (e) {}
 const paintSnd = () => { $('b-snd').textContent = snd ? '🔊' : '🔇'; };
 $('b-snd').onclick = () => { snd = !snd; try { localStorage.setItem('dsk_toss_snd', snd ? '1' : '0'); } catch (e) {} paintSnd(); };
 paintSnd();
-function tone(freqs, dur, type, vol) {
+// pan: -1 (left ear) to 1 (right ear), so a sound comes from where the thing is
+function tone(freqs, dur, type, vol, pan) {
   if (!snd) return;
   try {
     ac = ac || new (window.AudioContext || window.webkitAudioContext)();
@@ -351,15 +352,20 @@ function tone(freqs, dur, type, vol) {
     o.type = type || 'triangle';
     freqs.forEach((f, i) => o.frequency.setValueAtTime(f, t0 + i * dur / freqs.length));
     gn.gain.setValueAtTime(vol || 0.1, t0); gn.gain.exponentialRampToValueAtTime(0.001, t0 + dur);
-    o.connect(gn); gn.connect(ac.destination); o.start(t0); o.stop(t0 + dur);
+    o.connect(gn);
+    if (pan && ac.createStereoPanner) { const sp = ac.createStereoPanner(); sp.pan.value = Math.max(-1, Math.min(1, pan)); gn.connect(sp); sp.connect(ac.destination); }
+    else gn.connect(ac.destination);
+    o.start(t0); o.stop(t0 + dur);
   } catch (e) {}
 }
+// the phone itself shakes (Android; iPhones ignore this). Off with the sound.
+function buzz(pattern) { if (snd && navigator.vibrate) { try { navigator.vibrate(pattern); } catch (e) {} } }
 const SFX = {
-  toss: () => tone([300, 520, 760], 0.22, 'sawtooth', 0.035),
-  unmask: () => tone([880, 660, 990, 1320], 0.3, 'square', 0.05),
-  friend: () => tone([523, 659, 784, 1047], 0.32, 'triangle', 0.11),
+  toss: p => tone([300, 520, 760], 0.22, 'sawtooth', 0.035, p),
+  unmask: p => tone([880, 660, 990, 1320], 0.3, 'square', 0.05, p),
+  friend: p => tone([523, 659, 784, 1047], 0.32, 'triangle', 0.11, p),
   hurt: () => tone([220, 140], 0.36, 'sawtooth', 0.08),
-  laugh: () => tone([620, 520, 620, 520, 420], 0.5, 'square', 0.045),
+  laugh: p => tone([620, 520, 620, 520, 420], 0.5, 'square', 0.045, p),
   wave: () => tone([392, 523, 659], 0.35, 'triangle', 0.1),
   over: () => tone([392, 330, 262, 196], 0.8, 'triangle', 0.11)
 };
@@ -435,7 +441,7 @@ function settle(w, cls) { w.state = 'done'; w.bub.classList.add(cls, 'done'); se
 
 function unmask(w) {   // the shield found Glitch
   g.combo++; const pts = 50 + Math.min(100, g.combo * 10); g.score += pts;
-  settle(w, 'good'); SFX.unmask();
+  settle(w, 'good'); SFX.unmask(w.lane * 0.8); buzz([25, 30, 60]);
   flash(S.caught + ' +' + pts, '#8fe6e2', S.lever[w.lever]);
   burst(w.obj.position.x, 1.2, w.obj.position.z, 18, 0xc18bff, 0.4, 5);
   const gl = M.glitch.clone(); gl.position.copy(w.obj.position); scene.add(gl);
@@ -455,7 +461,7 @@ function bonk(w) {   // the shield hit a real friend
 function arrive(w) {   // reached the gate
   if (w.fake) {
     g.combo = 0; g.missed[w.lever] = (g.missed[w.lever] || 0) + 1; g.waveHurt = true;
-    settle(w, 'bad'); SFX.laugh();
+    settle(w, 'bad'); SFX.laugh(w.lane * 0.8);
     flash(leverShout(w.lever), '#ff7a85', S.rule[w.lever]);
     const gl = M.glitch.clone(); gl.position.copy(w.obj.position); scene.add(gl);
     fliers.push({ obj: gl, t: 0, kind: 'sneak', vx: (w.obj.position.x >= 0 ? 1 : -1) * 2.5 });
@@ -464,13 +470,13 @@ function arrive(w) {   // reached the gate
   } else {
     const wasHit = w.state === 'hitdone';
     settle(w, wasHit ? 'bad' : 'good');
-    if (!wasHit) { g.combo++; g.score += 100; flash(S.friendIn, '#7dffb0'); SFX.friend(); g.cheer = 1; burst(w.obj.position.x, 1.8, GATE, 10, 0x9dffb8, 0.3, 3); }
+    if (!wasHit) { g.combo++; g.score += 100; flash(S.friendIn, '#7dffb0'); SFX.friend(w.lane * 0.8); buzz(30); g.cheer = 1; burst(w.obj.position.x, 1.8, GATE, 10, 0x9dffb8, 0.3, 3); }
     fliers.push({ obj: w.obj, sh: w.sh, t: 0, kind: 'in', vx: (w.obj.position.x === 0 ? (Math.random() < 0.5 ? -1 : 1) : Math.sign(w.obj.position.x)) * 3.2 });
     w.bub.remove(); const i = g.walkers.indexOf(w); if (i >= 0) g.walkers.splice(i, 1);
   }
 }
 function hurt() {
-  g.hearts--; g.shake = reduced ? 0 : 0.35; SFX.hurt();
+  g.hearts--; g.shake = reduced ? 0 : 0.35; SFX.hurt(); buzz([90, 40, 90]);
   if (g.hearts <= 0) end();
 }
 
@@ -484,7 +490,7 @@ function tossAt(w) {
   const tp = w.obj.position;
   flight.dur = 0.22 + Math.min(0.4, Math.abs(tp.z) * 0.009);
   flight.ctrl.set((shieldHome.x + tp.x) / 2 + (tp.x >= 0 ? -2.2 : 2.2), 3.2, (shieldHome.z + tp.z) / 2);
-  w.targeted = true; g.throwT = 0.25; SFX.toss();
+  w.targeted = true; g.throwT = 0.25; SFX.toss(w.lane * 0.8); buzz(15);
 }
 function bez(out, a, c, b, t) {
   const u = 1 - t;
