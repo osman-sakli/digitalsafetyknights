@@ -2,64 +2,103 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Knight's Run — Digital Safety Knights</title>
-<meta name="description" content="An endless-runner game — dodge and jump past the tricks and threats kids actually face online. Free, no download, no account.">
-<meta property="og:title" content="Knight's Run — Digital Safety Knights">
-<meta property="og:description" content="Dodge, jump, and collect your way through the digital world — free, no download, no account.">
-<meta property="og:image" content="https://play.digitalsafetyknights.org/assets/logo.png">
-<meta property="og:url" content="https://play.digitalsafetyknights.org/">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Play — Digital Safety Knights</title>
+<link rel="canonical" href="https://digitalsafetyknights.org/arcade.html">
+<meta name="description" content="Free 3D games from Digital Safety Knights. No account, no ads, nothing tracked.">
+<meta property="og:title" content="Play — Digital Safety Knights">
+<meta property="og:description" content="Free 3D games. No account, no ads, nothing tracked.">
+<meta property="og:image" content="https://play.digitalsafetyknights.org/assets/arcade/toss-cover.webp">
+<link rel="icon" href="/assets/favicon.ico">
+<script src="/assets/knight-points.js"></script>
+<script src="/assets/i18n.js"></script>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html, body { background: #0a1122; overflow: hidden; height: 100%; }
-  body { font-family: 'Segoe UI', system-ui, sans-serif; }
-  #game-wrap { width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; }
-  #game-container { width: 100%; height: 100%; max-width: 500px; max-height: 800px; position: relative; }
-  canvas { display: block; }
-
-  #overlay { position: fixed; inset: 0; background: rgba(4,9,26,0.94); display: none; align-items: center; justify-content: center; z-index: 100; flex-direction: column; text-align: center; padding: 1.5rem; color: white; }
-  #overlay.show { display: flex; }
-  #overlay .icon { font-size: 3.6rem; margin-bottom: 0.6rem; }
-  #overlay h1 { font-size: 1.8rem; margin-bottom: 0.6rem; }
-  #overlay h1 .gold { color: #e8c56a; }
-  #overlay p { color: #cdd6ea; line-height: 1.6; max-width: 440px; margin-bottom: 1.4rem; font-size: 0.95rem; }
-  #nickname-input { width: 100%; max-width: 300px; padding: 13px; border-radius: 12px; border: 2px solid rgba(201,168,76,0.4); background: rgba(255,255,255,0.08); color: white; font-size: 1rem; font-weight: 800; text-align: center; margin-bottom: 1rem; }
-  #nickname-input::placeholder { color: #8899bb; }
-  .shake-error { animation: shakeError 0.35s; }
-  @keyframes shakeError { 10%,90%{transform:translate3d(-2px,0,0);} 20%,80%{transform:translate3d(4px,0,0);} 30%,50%,70%{transform:translate3d(-7px,0,0);} 40%,60%{transform:translate3d(7px,0,0);} }
-  .btn-gold { background: linear-gradient(135deg, #e8c56a, #c9a84c); color: #0d1b3e; border: none; padding: 15px 34px; border-radius: 28px; font-weight: 900; font-size: 1rem; cursor: pointer; box-shadow: 0 8px 24px rgba(201,168,76,0.35); }
-  .btn-ghost { background: rgba(255,255,255,0.08); color: white; border: 2px solid rgba(255,255,255,0.2); padding: 13px 28px; border-radius: 26px; font-weight: 800; cursor: pointer; font-size: 0.9rem; margin-top: 0.7rem; }
-  #result-canvas { max-width: 100%; width: 320px; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); margin-bottom: 1rem; }
-  .controls-hint { position: fixed; bottom: 10px; left: 50%; transform: translateX(-50%); color: #6c7aa0; font-size: 0.72rem; z-index: 20; text-align: center; }
-  a.home-link { position: fixed; top: 12px; left: 14px; color: #cdd6ea; text-decoration: none; font-weight: 700; font-size: 0.82rem; z-index: 20; }
+  :root { --navy:#0d1b3e; --gold:#c9a84c; --gold2:#e8c56a; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'Nunito Sans','Segoe UI',system-ui,sans-serif; background:linear-gradient(#081440,#1d2a6e 60%,#3a2f6e); color:#fff; min-height:100vh; padding:calc(18px + env(safe-area-inset-top)) 16px 40px; }
+  .wrap { max-width:980px; margin:0 auto; }
+  header { display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:22px; }
+  header img { height:44px; width:auto; }
+  header b { font-size:1.05rem; }
+  .langs { margin-left:auto; display:flex; gap:6px; }
+  .langs a { color:#dfe6f5; text-decoration:none; font-weight:800; font-size:.8rem; padding:6px 10px; border-radius:10px; background:rgba(255,255,255,.1); }
+  .langs a[aria-current="true"] { background:var(--gold); color:var(--navy); }
+  h1 { font-size:clamp(1.9rem,6vw,2.8rem); line-height:1.1; margin-bottom:6px; }
+  .sub { color:#c3cee6; font-size:.95rem; margin-bottom:8px; }
+  .pts { display:inline-block; background:rgba(255,255,255,.1); border-radius:14px; padding:6px 12px; font-weight:800; font-size:.85rem; color:var(--gold2); margin-bottom:22px; }
+  .grid { display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); }
+  .game { background:#fff; color:#2d3748; border-radius:18px; overflow:hidden; text-decoration:none; display:flex; flex-direction:column; box-shadow:0 10px 30px rgba(0,0,0,.35); transition:transform .15s; }
+  .game:hover, .game:focus-visible { transform:translateY(-4px); }
+  .game:focus-visible { outline:4px solid var(--gold2); outline-offset:3px; }
+  .game .art { height:170px; background:var(--navy); display:flex; align-items:center; justify-content:center; overflow:hidden; }
+  .game .art img.cover { width:100%; height:100%; object-fit:cover; }
+  .game .art img.sprite { height:150px; width:auto; }
+  .game .tx { padding:14px 16px 16px; display:flex; flex-direction:column; gap:6px; flex:1; }
+  .game h2 { font-size:1.15rem; color:var(--navy); }
+  .game p { font-size:.86rem; line-height:1.55; color:#46536c; flex:1; }
+  .game .go { align-self:flex-start; margin-top:6px; background:var(--gold); color:var(--navy); font-weight:900; border-radius:10px; padding:9px 16px; font-size:.92rem; }
+  .tag { display:inline-block; font-size:.62rem; font-weight:900; letter-spacing:1px; background:#2a9d8f; color:#fff; border-radius:8px; padding:2px 7px; vertical-align:middle; margin-left:6px; }
+  footer { margin-top:30px; font-size:.85rem; color:#c3cee6; line-height:1.7; }
+  footer a { color:var(--gold2); font-weight:800; }
+  @media (prefers-reduced-motion: reduce) { .game { transition:none; } }
 </style>
 </head>
 <body>
-
-<a class="home-link" href="https://digitalsafetyknights.org">← Digital Safety Knights</a>
-
-<div id="game-wrap"><div id="game-container"></div></div>
-<div class="controls-hint" id="controls-hint"></div>
-
-<div id="overlay" class="show">
-  <div id="ov-intro">
-    <div class="icon">🏃‍♂️</div>
-    <h1>Knight's <span class="gold">Run</span></h1>
-    <p id="ov-tagline"></p>
-    <input type="text" id="nickname-input" maxlength="24">
-    <div><button class="btn-gold" id="start-btn"></button></div>
+<div class="wrap">
+  <header>
+    <img src="/assets/logo.png" alt="">
+    <b>Digital Safety Knights</b>
+    <nav class="langs" aria-label="Language">
+      <a href="/en/" data-l="en">EN</a><a href="/tr/" data-l="tr">TR</a><a href="/es/" data-l="es">ES</a><a href="/fr/" data-l="fr">FR</a>
+    </nav>
+  </header>
+  <h1 id="t-h1"></h1>
+  <p class="sub" id="t-sub"></p>
+  <div class="pts" id="t-pts" hidden></div>
+  <div class="grid">
+    <a class="game" href="/shield-toss.html"><div class="art"><img class="cover" src="/assets/arcade/toss-cover.webp" alt="" width="780" height="300"></div>
+      <div class="tx"><h2>Shield Toss <span class="tag">3D</span></h2><p id="t-toss"></p><span class="go" data-go></span></div></a>
+    <a class="game" href="/shieldy-run.html"><div class="art"><img class="cover" src="/assets/arcade/run-cover.webp" alt="" width="720" height="360"></div>
+      <div class="tx"><h2>Shieldy Run <span class="tag">3D</span></h2><p id="t-run"></p><span class="go" data-go></span></div></a>
+    <a class="game" href="/shieldy-dash.html"><div class="art"><img class="sprite" src="/assets/arcade/shieldy-shield.webp" alt="" width="98" height="150"></div>
+      <div class="tx"><h2>Shieldy Dash</h2><p id="t-dash"></p><span class="go" data-go></span></div></a>
   </div>
-  <div id="ov-victory" style="display:none;">
-    <div class="icon">🏆</div>
-    <h1 id="victory-title"></h1>
-    <p id="victory-sub"></p>
-    <canvas id="result-canvas" width="600" height="600"></canvas>
-    <div><button class="btn-gold" id="download-btn"></button></div>
-    <div><button class="btn-ghost" id="victory-home"></button></div>
-  </div>
+  <footer><span id="t-more"></span> <a id="a-more" href="https://digitalsafetyknights.org/arcade.html">digitalsafetyknights.org →</a></footer>
 </div>
-
-<script src="assets/js/phaser.min.js"></script>
-<script src="assets/js/game.js"></script>
+<script>
+(function () {
+  var T = {
+    en: { h1: 'Pick a game', sub: 'Free. No account, no ads, and nothing you do here is tracked.', go: 'Play →', pts: 'Knight Points',
+      toss: 'Friends walk up to the castle gate with messages, but Glitch can look like any of them. Read, then throw your shield at the tricks.',
+      run: 'Race Shieldy down the castle road, jump the crates and barrels, grab the coins. Run into your friends\' messages, steer around the tricks.',
+      dash: 'One button. Messages fly in: raise the shield against the tricks, let your friends through. It gets fast.',
+      more: 'More games, quests and quizzes:' },
+    tr: { h1: 'Bir oyun seç', sub: 'Ücretsiz. Hesap yok, reklam yok, burada yaptığın hiçbir şey izlenmez.', go: 'Oyna →', pts: 'Şövalye Puanı',
+      toss: 'Arkadaşlar kale kapısına mesajlarla geliyor ama Glitch herhangi birinin kılığına girebilir. Oku, sonra kalkanını tuzaklara fırlat.',
+      run: 'Shieldy ile kale yolunda koş, sandıkların ve fıçıların üstünden atla, altınları topla. Arkadaşlarının mesajlarının içinden geç, tuzakların etrafından dolaş.',
+      dash: 'Tek tuş. Mesajlar uçarak gelir: tuzaklara karşı kalkanı kaldır, arkadaşlarını geçir. Gittikçe hızlanır.',
+      more: 'Daha fazla oyun, görev ve quiz:' },
+    es: { h1: 'Elige un juego', sub: 'Gratis. Sin cuenta, sin anuncios, y nada de lo que hagas aquí se rastrea.', go: 'Jugar →', pts: 'Puntos de Caballero',
+      toss: 'Llegan amigos a la puerta del castillo con mensajes, pero Glitch puede verse igualito a cualquiera. Lee y luego lanza tu escudo a las trampas.',
+      run: 'Corre con Shieldy por el camino del castillo, salta las cajas y los barriles, junta las monedas. Pasa por los mensajes de tus amigos y esquiva las trampas.',
+      dash: 'Un solo botón. Llegan mensajes volando: levanta el escudo contra las trampas y deja pasar a tus amigos. Se pone rápido.',
+      more: 'Más juegos, misiones y quizzes:' },
+    fr: { h1: 'Choisis un jeu', sub: 'Gratuit. Sans compte, sans publicité, et rien de ce que tu fais ici n’est suivi.', go: 'Jouer →', pts: 'Points de Chevalier',
+      toss: 'Des amis arrivent à la porte du château avec des messages, mais Glitch peut prendre l’apparence de n’importe lequel. Lis, puis lance ton bouclier sur les pièges.',
+      run: 'Fonce avec Shieldy sur la route du château, saute les caisses et les tonneaux, ramasse les pièces. Passe dans les messages de tes amis, contourne les pièges.',
+      dash: 'Un seul bouton. Les messages arrivent en volant : lève le bouclier contre les pièges, laisse passer tes amis. Ça accélère.',
+      more: 'Plus de jeux, de quêtes et de quiz :' }
+  };
+  var lang = (window.DSKi18n && DSKi18n.lang) || 'en'; if (!T[lang]) lang = 'en';
+  var S = T[lang]; document.documentElement.lang = lang;
+  function $(id) { return document.getElementById(id); }
+  $('t-h1').textContent = S.h1; $('t-sub').textContent = S.sub;
+  $('t-toss').textContent = S.toss; $('t-run').textContent = S.run; $('t-dash').textContent = S.dash; $('t-more').textContent = S.more;
+  document.querySelectorAll('[data-go]').forEach(function (e) { e.textContent = S.go; });
+  document.querySelectorAll('.langs a').forEach(function (a) { if (a.getAttribute('data-l') === lang) a.setAttribute('aria-current', 'true'); });
+  if (lang !== 'en') $('a-more').href = 'https://digitalsafetyknights.org/' + lang + '/arcade.html';
+  try { var p = window.DSKPoints && DSKPoints.getPoints(); if (p > 0) { $('t-pts').hidden = false; $('t-pts').textContent = '⭐ ' + p + ' ' + S.pts; } } catch (e) {}
+})();
+</script>
 </body>
 </html>

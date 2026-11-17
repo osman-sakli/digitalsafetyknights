@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Knight's Run — Digital Safety Knights</title>
+<meta name="description" content="An endless-runner game — dodge and jump past the tricks and threats kids actually face online. Free, no download, no account.">
+<meta property="og:title" content="Knight's Run — Digital Safety Knights">
+<meta property="og:description" content="Dodge, jump, and collect your way through the digital world — free, no download, no account.">
+<meta property="og:image" content="https://play.digitalsafetyknights.org/assets/logo.png">
+<meta property="og:url" content="https://play.digitalsafetyknights.org/">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { background: #0a1122; overflow: hidden; height: 100%; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; }
+  #game-wrap { width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; }
+  #game-container { width: 100%; height: 100%; max-width: 500px; max-height: 800px; position: relative; }
+  canvas { display: block; }
+
+  #overlay { position: fixed; inset: 0; background: rgba(4,9,26,0.94); display: none; align-items: center; justify-content: center; z-index: 100; flex-direction: column; text-align: center; padding: 1.5rem; color: white; }
+  #overlay.show { display: flex; }
+  #overlay .icon { font-size: 3.6rem; margin-bottom: 0.6rem; }
+  #overlay h1 { font-size: 1.8rem; margin-bottom: 0.6rem; }
+  #overlay h1 .gold { color: #e8c56a; }
+  #overlay p { color: #cdd6ea; line-height: 1.6; max-width: 440px; margin-bottom: 1.4rem; font-size: 0.95rem; }
+  #nickname-input { width: 100%; max-width: 300px; padding: 13px; border-radius: 12px; border: 2px solid rgba(201,168,76,0.4); background: rgba(255,255,255,0.08); color: white; font-size: 1rem; font-weight: 800; text-align: center; margin-bottom: 1rem; }
+  #nickname-input::placeholder { color: #8899bb; }
+  .shake-error { animation: shakeError 0.35s; }
+  @keyframes shakeError { 10%,90%{transform:translate3d(-2px,0,0);} 20%,80%{transform:translate3d(4px,0,0);} 30%,50%,70%{transform:translate3d(-7px,0,0);} 40%,60%{transform:translate3d(7px,0,0);} }
+  .btn-gold { background: linear-gradient(135deg, #e8c56a, #c9a84c); color: #0d1b3e; border: none; padding: 15px 34px; border-radius: 28px; font-weight: 900; font-size: 1rem; cursor: pointer; box-shadow: 0 8px 24px rgba(201,168,76,0.35); }
+  .btn-ghost { background: rgba(255,255,255,0.08); color: white; border: 2px solid rgba(255,255,255,0.2); padding: 13px 28px; border-radius: 26px; font-weight: 800; cursor: pointer; font-size: 0.9rem; margin-top: 0.7rem; }
+  #result-canvas { max-width: 100%; width: 320px; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); margin-bottom: 1rem; }
+  .controls-hint { position: fixed; bottom: 10px; left: 50%; transform: translateX(-50%); color: #6c7aa0; font-size: 0.72rem; z-index: 20; text-align: center; }
+  a.home-link { position: fixed; top: 12px; left: 14px; color: #cdd6ea; text-decoration: none; font-weight: 700; font-size: 0.82rem; z-index: 20; }
+</style>
+</head>
+<body>
+
+<a class="home-link" href="https://digitalsafetyknights.org">← Digital Safety Knights</a>
+
+<div id="game-wrap"><div id="game-container"></div></div>
+<div class="controls-hint" id="controls-hint"></div>
+
+<div id="overlay" class="show">
+  <div id="ov-intro">
+    <div class="icon">🏃‍♂️</div>
+    <h1>Knight's <span class="gold">Run</span></h1>
+    <p id="ov-tagline"></p>
+    <input type="text" id="nickname-input" maxlength="24">
+    <div><button class="btn-gold" id="start-btn"></button></div>
+  </div>
+  <div id="ov-victory" style="display:none;">
+    <div class="icon">🏆</div>
+    <h1 id="victory-title"></h1>
+    <p id="victory-sub"></p>
+    <canvas id="result-canvas" width="600" height="600"></canvas>
+    <div><button class="btn-gold" id="download-btn"></button></div>
+    <div><button class="btn-ghost" id="victory-home"></button></div>
+  </div>
+</div>
+
+<script src="assets/js/phaser.min.js"></script>
+<script src="assets/js/game.js"></script>
+</body>
+</html>
