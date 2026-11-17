@@ -1,6 +1,6 @@
 # DSK Threat Intelligence & Policy Research Bank
 
-Compiled 2026-08-02, last refreshed 2026-11-15. Covers the last ~10 months of
+Compiled 2026-08-02, last refreshed 2026-11-17. Covers the last ~10 months of
 child-online-safety news (Oct 2025 – Oct 2026), weighted toward the most
 recent 4-6 weeks. Sourced via web search — every claim below has a citation.
 This is a living reference: update it monthly (it's also the natural
@@ -289,6 +289,92 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
   mental-health suits rather than litigating to verdict) worth keeping in
   mind for any future Snapchat-safety guide.
   [CNBC](https://www.cnbc.com/2026/11/07/snap-social-media-teen-safety-lawsuits.html)
+
+---
+
+## 0x. November 2026 Refresh (Nov 17, 2026)
+
+Automated biennial freshness scan, ~48 hours after the last one. A quiet
+window again for anything that would move a tracked law's status. Three
+spot-checks this run — the Texas 5th Circuit status, federal KOSA/Kids
+Internet and Digital Safety Act's Senate status, and the Character.AI
+bankruptcy schedule (tied to the Kentucky v. Character Technologies tracker
+entry) — all confirm the tracker is still accurate. One item from Nov 6,
+2026 that the two prior refreshes missed is logged below as a catch-up; it
+does not change the tracker (no EU/TikTok-DSA entry exists on it). No
+tracker edit this run.
+
+### Spot-checked, no change needed
+- **Texas App Store Accountability Act** — still "in effect ... 5th Circuit
+  stayed the injunction." No merits opinion from the 5th Circuit (Students
+  Engaged in Advancing Texas v. Paxton / CCIA v. Paxton, No. 25-51073) found
+  in any search through Nov 17; the Aug 4, 2026 oral argument remains the
+  most recent confirmed docket event.
+  [CCIA litigation page](https://ccianet.org/litigation/ccia-v-paxton/)
+- **Kids Internet and Digital Safety Act (federal KOSA bundle)** — tracker's
+  "pending ... Senate Commerce Committee advanced an amended version Aug 5,
+  2026" status still holds. No Senate floor vote has been scheduled; the
+  Senate returned from its post-election recess Nov 9, 2026, and scheduling
+  a roll-call vote is reportedly up to Majority Leader Thune, who has not
+  committed to one. The House and Senate versions still differ on the
+  duty-of-care standard, which remains the core obstacle to reconciliation.
+  [Biometric Update](https://www.biometricupdate.com/202610/kosa-stalls-in-senate-as-age-assurance-moves-into-online-safety-debate)
+- **Character.AI bankruptcy / Kentucky v. Character Technologies** — the
+  Nov 4, 2026 Bidding Procedures Order schedule is unchanged: bid deadline
+  Nov 24 (noon ET), auction Dec 1, sale hearing Dec 3-4. Disney remains the
+  $20M stalking-horse bidder with the $21.7M minimum competing bid. Kentucky
+  v. Character Technologies' tracker status ("court," filed Jan 8, 2026,
+  Franklin Circuit Court) is unaffected — still a separate, pending state
+  suit, not stayed by the Delaware bankruptcy.
+  [Character.AI blog — Chapter 11 update](https://blog.character.ai/chapter-11-update-and-transaction-notice/)
+
+### Catch-up item (missed by the Nov 13 and Nov 15 refreshes)
+- **(2026-11-06) European Commission issues preliminary findings that
+  TikTok's "For You" feed breaches the Digital Services Act** — the
+  Commission says TikTok's recommendation algorithm can pull users,
+  including minors, into "rabbit hole" loops of harmful content (centered
+  on mental-health and body-image material) without adequately assessing
+  or mitigating the risk, and wants the feed redesigned (weighting
+  explicit user preferences over watch-time signals, clearer controls,
+  regular algorithm testing). This is the fourth set of preliminary
+  findings in a DSA case opened in 2024 (prior rounds covered addictive
+  design in Feb 2026 and protection of minors in July 2026). TikTok calls
+  the findings "fundamentally inaccurate" and "categorically false." Not a
+  final decision — TikTok can respond in writing, and the Commission has
+  set no fine or deadline (ceiling is 6% of global annual turnover). Not
+  actioned: no EU/TikTok-DSA entry exists on legislative-tracker.html to
+  attach a status to, and this is preliminary, not a final ruling or
+  enacted rule — same bar that's kept the parallel EU KIDS Act proposal and
+  the UK's TikTok Section 12 investigation off the tracker. Worth a look
+  if the Commission issues a final decision or fine.
+  [AP via NY1](https://ny1.com/nyc/all-boroughs/ap-top-news/2026/11/06/eu-says-rabbit-hole-video-feeds-on-tiktok-violate-its-digital-rules) ·
+  [MLex](https://www.mlex.com/mlex/articles/2547180) ·
+  [European Commission](https://digital-strategy.ec.europa.eu/en/news/commission-preliminary-view-tiktoks-you-feed-breaches-digital-services-act) ·
+  [CADE Project](https://cadeproject.org/updates/european-commission-preliminarily-finds-tiktok-in-breach-of-digital-services-act-over-child-account-safety/)
+
+### Context, not a tracker change
+- EU KIDS Act (proposed): still Commission-proposal stage. The public
+  feedback period on the proposal closes Nov 26, 2026; no European
+  Parliament/Council position yet. Tracker's "pending" status unchanged.
+- UK Ofcom's Section 12 (age-assurance) investigation into TikTok UK: still
+  open, no finding or fine found through Nov 17. No tracker bucket applies.
+- MDL 3166 (Roblox/Discord/Snap/Meta): still consolidated in N.D. Cal.
+  before Chief Judge Seeborg; Roblox's September 2026 omnibus motion to
+  compel arbitration has no confirmed ruling found this run, and the
+  Ninth Circuit's earlier finding that Roblox waived arbitration by
+  litigating first (a separate, non-MDL class action) is unchanged. Still
+  not reflected anywhere on the tracker — same treatment as prior refreshes.
+- Eight-state OpenAI/ChatGPT suits (Oct 14, 2026 filing): no ruling or
+  motion-to-dismiss decision found. Unchanged — still too early/no tracker
+  bucket fits, per the Oct 2026 refreshes' reasoning.
+- Georgia's under-16 social-media law: the 11th Circuit's Oct 2026 reversal
+  of the injunction (sending it back to the district court on the merits)
+  is unchanged since the last refresh; still no Georgia entry on the
+  tracker and no Supreme Court cert petition found yet.
+
+**Site follow-up from this refresh:** none — nothing surfaced rose to a
+clear-cut, mechanical tracker update. "Last refreshed" date bumped to Nov
+17, 2026 above.
 
 ---
 
