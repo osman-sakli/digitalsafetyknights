@@ -1,6 +1,6 @@
 # DSK Threat Intelligence & Policy Research Bank
 
-Compiled 2026-08-02, last refreshed 2026-11-17. Covers the last ~10 months of
+Compiled 2026-08-02, last refreshed 2026-11-19. Covers the last ~10 months of
 child-online-safety news (Oct 2025 – Oct 2026), weighted toward the most
 recent 4-6 weeks. Sourced via web search — every claim below has a citation.
 This is a living reference: update it monthly (it's also the natural
@@ -289,6 +289,61 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
   mental-health suits rather than litigating to verdict) worth keeping in
   mind for any future Snapchat-safety guide.
   [CNBC](https://www.cnbc.com/2026/11/07/snap-social-media-teen-safety-lawsuits.html)
+
+---
+
+## 0y. November 2026 Refresh (Nov 19, 2026)
+
+Automated biennial freshness scan, ~48 hours after the last one. Another
+quiet window — broad searches across federal/state legislation, platform
+policy changes, litigation, and EU/UK developments turned up nothing dated
+after Nov 17, 2026 that changes a tracked law's status or corrects a
+tracker fact. Three spot-checks this run, continuing the rotation: the
+Alabama App Store Accountability Act / CCIA suit, the UK Online Safety
+Act's CSEA reporting duty, and the EU KIDS Act's feedback-period status.
+All confirm the tracker is still accurate. No tracker edit this run.
+
+### Spot-checked, no change needed
+- **Alabama App Store Accountability Act (CCIA suit)** — tracker's
+  "pending ... Signed Feb 17, 2026 (HB 161) — effective Jan 1, 2027" status
+  still holds. CCIA's First Amendment suit against Alabama officials
+  (filed around Oct 28, 2026) has no reported ruling on a preliminary
+  injunction as of Nov 19; coverage of a Fifth Circuit panel hearing
+  without a ruling found in one search snippet could not be confirmed as
+  referring to Alabama rather than the separate Texas case, so it is not
+  relied on here.
+  [MLex](https://www.mlex.com/mlex/articles/2543750) ·
+  [idtechwire](https://idtechwire.com/ccia-sues-to-block-alabamas-app-store-age-verification-law/)
+- **UK Online Safety Act — CSEA Reporting Duty** — unchanged: the duty
+  took effect April 7, 2026 under the Online Safety (CSEA Content
+  Reporting by Regulated User-to-User Service Providers) Regulations 2026;
+  in-scope services not already reporting to NCMEC must register with the
+  NCA's Industry Reporting Portal. No update to Ofcom's guidance found
+  since its July 28, 2026 roadmap revision.
+  [Ofcom](https://www.ofcom.org.uk/online-safety/illegal-and-harmful-content/duty-to-report-child-sexual-exploitation-and-abuse-csea-content-know-the-rules-and-how-to-comply)
+- **EU KIDS Act (proposed)** — still Commission-proposal stage, tracker's
+  "pending" status unchanged. The public feedback window closes Nov 26,
+  2026 (one week from this refresh); no tally of responses or
+  Parliament/Council position published yet.
+  [Brussels Times](https://www.brusselstimes.com/2343893/eu-kids-act-draft-sparks-widespread-feedback-push-to-reshape-digital-childhoods)
+
+### Context, not a tracker change
+- Federal KOSA bundle (Kids Internet and Digital Safety Act): no Senate
+  floor vote found since the Nov 17 refresh; status unchanged.
+- Character.AI bankruptcy / Kentucky v. Character Technologies: the Nov 4
+  Bidding Procedures Order schedule (objections due Nov 18, bids due Nov
+  24 noon ET, auction Dec 1, sale hearing Dec 3-4) is unchanged in every
+  source checked this run. Kentucky's suit is still unaffected.
+- No new state has enacted an App Store Accountability Act since the
+  Louisiana/Alabama entries already on the tracker; broad searches for a
+  November 2026 enactment turned up nothing.
+- TAKE IT DOWN Act FTC enforcement: no update found since the May/June
+  2026 warning-letter reporting already reflected in the tracker's
+  "effect" status.
+
+**Site follow-up from this refresh:** none — nothing surfaced rose to a
+clear-cut, mechanical tracker update. "Last refreshed" date bumped to Nov
+19, 2026 above.
 
 ---
 
