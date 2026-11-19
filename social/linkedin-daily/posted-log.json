@@ -117,5 +117,12 @@
     "source": "Engadget",
     "source_url": "https://www.engadget.com/2320041/oregon-is-the-latest-state-to-sue-openai-over-child-safety/",
     "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:share:7528808645522771968/"
+  },
+  {
+    "date": "2026-11-19",
+    "topic": "OpenAI releases free CSAM image classifier built with NCMEC and adds 24-hour ChatGPT suspensions for abuse-related prompts",
+    "source": "TechCrunch",
+    "source_url": "https://techcrunch.com/2026/11/16/openai-releases-a-new-image-classifier-and-chatgpt-warnings-to-combat-csam/",
+    "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:share:7529171055081349120/"
   }
 ]
