@@ -1,0 +1,162 @@
+{
+ "who": {
+  "dame": {
+   "1": "Fener Gecesi'ne üç gün var, yapılacaklar listem ise iskele kadar uzun. Sokakları öğren Shieldy. Lazım olacak.",
+   "2": "Kasaba bir kötü adam arıyor. Ben doğruyu arıyorum. İkisi her zaman aynı kapıya çıkmaz.",
+   "3": "Biz her baktığımızda biri para kazanıyor. O birinin hesap defterlerini görmeyi çok isterdim.",
+   "4": "Benim de sahtem yapıldı; insan, gözünün önünde evi soyuluyormuş gibi oluyor. Bu işte yalnız değilsin.",
+   "5": "Yüz yüze, tanıkların önünde. Doğruyu söylemenin en eski yolu bu ve hâlâ işe yarıyor.",
+   "6": "Bana Fener Gecesi kurtuldu mu diye soruyorlar. Ben de onu kasaba kurtardı diyorum; durup düşünmeyi öğrenerek."
+  },
+  "pixel": {
+   "1": "Twin: Bir cümle yaz, bir yüz seç. İçini açıp inceledim. Olması gerekenden daha akıllı ve kapatma düğmesi yok.",
+   "2": "İncelediğim her sahte videoda bir yer ters çevrilmiş. Kalkanlar, rozetler, saçın ayrıldığı yer. Ters dönmüş olanı ara.",
+   "3": "Paranın izini sür. Bir klibin izini sürmekten yavaştır ama sonunda hep tek bir kapıya çıkar.",
+   "4": "Sen olmadığını biliyordum. Ama “biliyordum” demenin başkası için hiçbir değeri olmadığını da biliyorum. Bunca koşturmaca o yüzden.",
+   "5": "Mavna bu işin son parçası. Ondan sonrası sadece konuşan insanlar. İnsanları ele geçirmek bence çok daha zor; işin güzelliği de bu.",
+   "6": "Bir şey paylaşmama izin vermeden önce dört soru soran küçük bir kontrol programı yazdım. Aslında Iris'in ta kendisi; sadece kod hâlinde."
+  },
+  "bot": {
+   "1": "Fener asıyorum. Fener asmakta iyiyim. Kol çırpmam.",
+   "2": "İnsanlar hâlâ bana tavuk taklidi yapıyor. İlk seferinde güldüm diye hoşuma gittiğini sanıyorlar. Herkes gülüyordu diye gülmüştüm.",
+   "3": "Nilo bana bir ekmek verdi. Çekmecemde saklıyorum. O benim ekmeğim.",
+   "4": "Ekrandaki ben olduğumda bana ne hissettiğimi sormuştun. O hâlde: Sen ne hissediyorsun? “Tuhaf” diyebilirsin. Ben öyle demiştim.",
+   "5": "Ön sırada duracağım. Biri tavuk taklidi yaparsa ona sakince bakacağım.",
+   "6": "Bugün bir çocuk benden tavuk dansı yapmamı istedi. Hayır, teşekkür ederim dedim. Tamam dedi. Bu kadar basitmiş."
+  },
+  "sprout": {
+   "1": "Lila'yla birlikte tutabilelim diye iki saplı bir fener yapıyoruz.",
+   "2": "Yüzü benim yüzümdü. Bir şey nasıl benim yüzümü taşır da ben olmaz?",
+   "3": "Gizli kelimeyi her gün çalışıyoruz. Söylemiyoruz. Sadece ikimiz de hâlâ biliyor muyuz diye bakıyoruz.",
+   "4": "Shieldy, ne hissettiğini biliyorum. Bir kişi sana inanınca daha iyi oluyor. Ben sana inanıyorum. Bir kişi etti.",
+   "5": "Bütün meydana bir kelime bulmalarını söyleyeceğim. Aynanın karşısında prova yaptım. Gerçek aynanın.",
+   "6": "Lila en yükseğe bizim fenerin çıktığını söylüyor. Bence iki sapı olduğu için."
+  },
+  "lila": {
+   "1": "Sprout benim en yakın arkadaşım. Fener yapıyoruz. Simlerden ben sorumluyum.",
+   "2": "Hâlâ kulağımda. Onun sesi, onu söylüyor. O olmadığını artık bildiğim hâlde.",
+   "3": "2. sınıftan Mina mavi ata çok biner. İyi biri. Pek konuşmaz.",
+   "4": "Sana da mı yaptılar? O zaman bilirsin. Mesele sözler değil. Mesele herkesin GÖRMÜŞ olması.",
+   "5": "Kai yüzüme karşı özür dileyecek. Karar verdim: Bir şey demeden önce sözünü bitirmesine izin vereceğim.",
+   "6": "Özür diledi. Hep gözümün içine baktı. Tamam dedim. Sonra bir daha yapma dedim; istese de yapamayacağını söyledi. İyi."
+  },
+  "iris": {
+   "1": "Iris, Koy Gazetesi. Bu kasabada tuhaf bir şey görürsen bir ekrana anlatmadan önce gel, bana anlat.",
+   "2": "Dört soru. İlk kim paylaştı, aslı nerede, neyi kontrol edebilirim, bana ne hissettirmek istiyor. Kulağına küpe olsun.",
+   "3": "Defterimin sayfalarını kasabanın dört bir yanında kaybettim. Üstüne sayfa bağlı bir fener bulursan sayfa benim, fener senin.",
+   "4": "İlk sayfada adımı senin adının yanına yazıyorum. İnsanın adı bunun için vardır.",
+   "5": "Her şey sahte olabiliyorsa insanlar doğru şeylere de inanmayı bırakır. Bence asıl hırsızlık bu.",
+   "6": "Kai'yle perşembeleri ders veriyoruz. “Seni Nasıl Kandırırdım.” Çocuklar önce çok gülüyor, sonra iyice sessizleşiyor."
+  },
+  "baker": {
+   "1": "Tohumlu ekmeği dene! Otuz yıldır aynı fırın. Fırının sahtesi olmaz.",
+   "2": "Bir telefon yüzünden bir robota bağırdım. Hâlâ utanıyorum. Böyle dediğimi ona söyleme.",
+   "3": "Siparişler geri geldi. İnsanlar durmadan özür diliyor. Ben de diyorum ki: Sen kandırıldın, ben de kandırıldım, al bir poğaça.",
+   "4": "Şimdi de SANA mı yaptılar? Demek kimin seçildiği kimsenin suçu değil. Sıra kime gelirse.",
+   "5": "Çıkıp kandırıldığımı söyleyeceğim. Kısa bir konuşma. Sonra ekmek.",
+   "6": "Vitrine bir yazı astım. “Bu fırın hakkında bir şey mi gördünüz? İçeri gelin, zemine bakın.”"
+  },
+  "captain": {
+   "1": "Sabah vapuru, akşam vapuru, arada da deniz feneri. Kırk yıldır. Vapuruma hoş geldin, Şövalye.",
+   "2": "Kayıp eşya kutusu bilet gişesinin yanında. İçinde bir sarı atkı var, ufak. Bir haftadır orada.",
+   "3": "Liman kamerası on bir yıldır bu kasabanın her gününü gördü. Hiçbir konuda fikri yok hanımefendinin. Tanık dediğin böyle olmalı.",
+   "4": "Ben yüz tanırım evlat, seninkini de tanırım. Ekran yüz değildir.",
+   "5": "Kasetler, defter, düdük. Hazırım.",
+   "6": "Bu hafta fener odasının önünde kuyruk vardı. Millet “asıl kayıt” görmek istiyor. Giriş ücreti bir bisküvi."
+  },
+  "alder": {
+   "1": "Otuz çocuk ve yapıştırılacak üç yüz fener. Yardım yollayın. Ya da çay.",
+   "2": "Bu hafta her derse tek bir soruyla başladım: “Doğrusunu nasıl öğreniriz?”",
+   "3": "Çocukların artık gizli kelimeleri var. Bana söylenene göre benimki “öğretmenlerin kullanacağı bir kelime değilmiş”.",
+   "4": "Sınıfım senin klibin gerçek mi diye sordu. Ben de neyi kontrol edebileceklerini sordum. Gidip kontrol ettiler. Hiç bu kadar gurur duymamıştım.",
+   "5": "Bütün okul meydana geliyor. Yüz yüze. Kıpırdamadan durmanın provasını yaptık.",
+   "6": "Sınıf duvarında yeni bir kuralımız var. “Bir dakika bekle.” Futbol tartışmalarında da işe yarıyor."
+  },
+  "tomas": {
+   "2": "Futbol topumu görmek ister misin? İmzalı. Şey. Ben imzaladım.",
+   "3": "Kelimeyi sordum, ses kesildi. Hayatımda duyduğum en sessiz şeydi.",
+   "4": "Bütün sınıfıma aile parolasını anlattım. Dördü o akşam kendine bir tane belirledi.",
+   "5": "Onlara o telefonu anlatacağım. Annem zorunda değilsin diyor. Anlatacağım.",
+   "6": "Dün telefonum çaldı, gerçekten annemdi. Yine de kelimeyi sordum. Hemen söyledi. Aferin oğluma dedi."
+  },
+  "elena": {
+   "2": "Tomas hiç durmadan koşar. Ayakkabılarının bir dönem dayanmasından umudu kestim.",
+   "3": "Benim kendi sesim. Aklımdan çıkmıyor. Benim kendi sesim, oğlumdan babasından sır saklamasını istiyor.",
+   "4": "Artık bir kuralımız var: “Acele et” ve “kimseye söyleme” diyen her şey herkese, acele etmeden anlatılır.",
+   "5": "Orada olacağız. İkimiz de. Bir gün başka birinin telefonu çalabilir.",
+   "6": "Telesekreterime yeni bir mesaj kaydettim. Beş saniye boyunca hiçbir şey demiyorum. Pixel'in fikri."
+  },
+  "glitch": {
+   "2": "Bak sen, bir Şövalye. Ben olsam daha iyisini yapacağım bir iş yüzünden beni tutuklamaya mı geldin?",
+   "3": "Bir klip çiftliği. Bir depoda. Faturalı. Ne kadar… düzenli. Bunun neresi sanat?",
+   "4": "Demek şimdi o ekranda senin yüzün var. Gülerdim ama kimsenin bana inanmamasının sebebi benmişim, öyle diyorlar. Ne tuhaf, değil mi?",
+   "5": "Ben insanları yüzlerine baka baka kandırırım; onlar da bana yüzüme karşı alçak diyebilsin diye. Fark bu ve büyük bir fark.",
+   "6": "Alkışladılar. Beni. Ellerimi nereye koyacağımı bilemedim. Bundan bir daha asla söz etmemeye karar verdim."
+  },
+  "mina": {
+   "3": "Bu at mavi. En iyisi bu. Nedenini söylemem.",
+   "5": "Teknede yaşayacaktım. İptal oldu. Kai'ye ağladığımı söyleme, zaten biliyor.",
+   "6": "Artık beni okula Kai götürüyor. Her gün. Kapıda elimi tutması yasak ama köşeye kadar tutabilir."
+  },
+  "kai": {
+   "5": "Gözlerimi her kapattığımda onu o teknenin dibinde görüyorum. Söyleyeceğim. Hepsini.",
+   "6": "Şimdiye kadar dört yüz on iki tanesini kaldırdım. Her biri için yüz yüze özür diliyorum. Bazıları kapıyı kapatıyor. Hakları var."
+  },
+  "vale": {
+   "3": "Hâlâ burada mısın küçük Şövalye? Lobi randevusu olan ziyaretçiler içindir. Ya da teklifi olanlar.",
+   "4": "Klibini gördüm. Çok üzücü. Keşke biri sana önceden daha iyisini teklif etmiş olsaydı.",
+   "5": "Küçük toplantının tadını çıkar. İnsanlar doğruyu istemez tatlım. Gösteri ister."
+  }
+ },
+ "warm": {
+  "1": [
+   "Robotu gördün mü? Gülmekten patates kızartmamı düşürdüm.",
+   "Fener Gecesi'ne üç gün kaldı! Bizim sokakta şimdiden kırk fener yaptık.",
+   "Yeni bir uygulama çıkmış. Bir yüz seçiyorsun, ne yazarsan onu söylüyor. Akıl alır gibi değil.",
+   "Bu yıl koy o kadar berrakmış ki balıkları sayabiliyormuşsun.",
+   "Ayna Koyu'na hoş geldin! Kanala dikkat et; göründüğünden daha ıslaktır."
+  ],
+  "2": [
+   "Artık neye inanacağımı bilmiyorum. Dame Noble'ın iptal ettiğini kendi gözlerimle gördüm. Gibi bir şey.",
+   "Glitch yaptı. Herkes öyle diyor. …Peki gerçekten bilen var mı?",
+   "Babaannem aradı, örgüsü için gerçekten öyle mi dedin diye sordu. Dememiştim.",
+   "Su bugün biraz bulanık görünüyor. Önemli bir şey değildir herhalde.",
+   "Gazete fırının zemininin rengi tutmuyor diyor. Gidip baktım. Tutmuyor!"
+  ],
+  "3": [
+   "Fark ettin mi, BayBuzz hep ilk yayınlıyor? Her seferinde?",
+   "Artık bir aile parolamız var. Ne olduğunu sana söylemem. Bütün mesele bu zaten.",
+   "Paylaşmayı bıraktım. Yani. Bir dakika beklemeye başladım. Neredeyse aynı şey.",
+   "Suyun rengi bir tuhaf oldu, değil mi? Babam kasaba üzülünce böyle olur diyor.",
+   "Birinin dronları otobüs durağında klip oynatıyordu. Yürüyüp gittim. İyi de geldi doğrusu."
+  ],
+  "4": [
+   "Gazete'yi okudum. Aynı anda iki yer. Bunu ben de akıl etmeliydim.",
+   "Kardeşimin okulunda çocuklar artık birbirlerinin klibini yapıyormuş. Çok kötü.",
+   "Dün yağmurda bir Şövalye'ye bağırdım. İçim hiç rahat değil.",
+   "Bir Şövalye'nin sahtesini yapabiliyorlarsa herkesinkini yapabilirler. Benimkini bile.",
+   "Dün gece denizden küçük bir kızı getirmişler. Yazık yavrucağa. Bir video yüzünden."
+  ],
+  "5": [
+   "Meydana gidiyor musun? Herkes meydana gidiyor. Dame Noble “yüz yüze” dedi.",
+   "Onu yapan çocuk çıkıp söyleyecekmiş. Kendi yüzüyle.",
+   "Fenerimi astım. Bütün hafta ilk kez içimden geldi.",
+   "Kasabanın yarısı artık bütün videoları sahte sanıyor. Gerçek olanları bile. Bu da iyi değil.",
+   "Glitch geliyormuş. Hem de BİZİM tarafta. Görmeden inanmam. Kendi gözümle."
+  ],
+  "6": [
+   "Her feneri iki kez görebiliyordun. Bir gökyüzünde, bir suda.",
+   "İşten aradığımda kızım aile parolasını sordu. Doğru bildim. Öyle sevindim ki.",
+   "Artık bir şey göndermeden önce bir dakika bekliyorum. Çoğu gün hiç göndermiyorum.",
+   "O çocuk özür dilemek için kapımıza geldi. Annemin gözünün içine baka baka. Kolay iş değil.",
+   "Sahteler yok olmadı. Biz onları tanımayı öğrendik. Yapılabilecek en iyi şey de bu bence."
+  ]
+ },
+ "cold": [
+  "Sana söyleyecek sözüm yok. Videoyu gördüm.",
+  "Çocuklarım Şövalyeleri örnek alırdı. Yazıklar olsun.",
+  "Dükkânıma yaklaşma.",
+  "Sahtekâr.",
+  "…Sen olmadığına inanmak istiyorum. Gerçekten. Ama gördüm."
+ ]
+}

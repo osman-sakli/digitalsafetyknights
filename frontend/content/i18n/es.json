@@ -1512,7 +1512,10 @@
   "arc.story.p": "Una historia en 3D. Sprout desapareció. Recorre el castillo, lee los mensajes que dejó y decide cómo termina.",
   "arc.city.h": "Knight City",
   "arc.city.p": "Una ciudad abierta en 3D para recorrer a pie o en auto. Toma prestado un auto, enciende la radio y descubre quién está detrás de la app que de pronto tiene todo el mundo. Cinco capítulos, dieciséis misiones, tres finales.",
-  "hero.playBtn": "🎮 Jugar a Knight City",
+  "hero.playBtn": "🎮 Jugar a Bahía Espejo",
   "home.city.eyebrow": "🎮 Juego nuevo · Gratis · Sin descargas",
-  "home.city.cta": "Jugar ahora →"
+  "home.city.cta": "Jugar ahora →",
+  "arc.bay.h": "Bahía Espejo",
+  "arc.bay.p": "Un pueblo costero abierto para recorrer a pie, en auto y en bote. Alguien está haciendo videos de personas que dicen cosas que nunca dijeron. Descubre quién es, limpia tu nombre y salva la Noche de los Faroles. Cinco capítulos, diecisiete misiones, tres finales.",
+  "home.city.also": "También: Knight City →"
 }

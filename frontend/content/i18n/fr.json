@@ -1512,7 +1512,10 @@
   "arc.story.p": "Une histoire en 3D. Sprout a disparu. Explore le château, lis les messages qu’il a laissés et décide de la fin.",
   "arc.city.h": "Knight City",
   "arc.city.p": "Une ville ouverte en 3D à parcourir à pied ou en voiture. Emprunte une voiture, allume la radio et découvre qui se cache derrière l’appli que tout le monde a installée du jour au lendemain. Cinq chapitres, seize missions, trois fins.",
-  "hero.playBtn": "🎮 Jouer à Knight City",
+  "hero.playBtn": "🎮 Jouer à Baie Miroir",
   "home.city.eyebrow": "🎮 Nouveau jeu · Gratuit · Rien à télécharger",
-  "home.city.cta": "Jouer maintenant →"
+  "home.city.cta": "Jouer maintenant →",
+  "arc.bay.h": "Baie Miroir",
+  "arc.bay.p": "Une ville portuaire ouverte à parcourir à pied, en voiture et en bateau. Quelqu’un fabrique des vidéos où les gens disent des choses qu’ils n’ont jamais dites. Découvre qui, lave ton nom et sauve la Nuit des Lanternes. Cinq chapitres, dix-sept missions, trois fins.",
+  "home.city.also": "Aussi : Knight City →"
 }

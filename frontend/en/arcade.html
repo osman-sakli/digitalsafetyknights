@@ -136,6 +136,13 @@
   <div class="grid" id="ar-grid">
 
     <!-- ── games ── -->
+    <div class="tile feature" data-cat="play" data-id="bay">
+      <button type="button" class="fav" aria-pressed="false" aria-label="Favourite">★</button>
+      <a href="/mirror-bay.html"><img class="cover" src="/assets/arcade/bay-cover.webp" alt="" width="780" height="300" loading="lazy">
+        <h3 data-i18n="arc.bay.h">Mirror Bay</h3>
+        <p data-i18n="arc.bay.p">An open harbour town to walk, drive and sail around. Somebody is making videos of people saying things they never said. Find out who, clear your own name, and save Lantern Night. Five chapters, seventeen jobs, three endings.</p>
+        <span class="go" data-i18n="arc.play">Play →</span></a>
+    </div>
     <div class="tile feature" data-cat="play" data-id="city">
       <button type="button" class="fav" aria-pressed="false" aria-label="Favourite">★</button>
       <a href="/knight-city.html"><img class="cover" src="/assets/arcade/city-cover.webp" alt="" width="780" height="300" loading="lazy">
@@ -300,7 +307,7 @@
   'use strict';
   var FAV_KEY = 'dsk_arcade_favs';
   var RECENT_KEY = 'dsk_arcade_recent';
-  var NEW_IDS = ['city', 'story', 'toss', 'run'];
+  var NEW_IDS = ['bay', 'city', 'story', 'toss', 'run'];
   var RECENT_MAX = 4;
 
   function t(k, f) { return (window.DSKi18n && DSKi18n.t) ? DSKi18n.t(k, f) : f; }

@@ -1,0 +1,162 @@
+{
+ "who": {
+  "dame": {
+   "1": "Trois jours avant la Nuit des Lanternes, et j’ai une liste longue comme la jetée. Apprends les rues, Shieldy. Tu en auras besoin.",
+   "2": "La ville veut un coupable. Moi, je veux la vérité. Ce n’est pas toujours la même personne.",
+   "3": "Quelqu’un est payé chaque fois que nous regardons. J’aimerais beaucoup voir les comptes de ce quelqu’un.",
+   "4": "On a truqué mon image, à moi aussi. C’est comme être cambriolée sous ses propres yeux. Tu as du monde à tes côtés.",
+   "5": "En personne, devant témoins. C’est la plus vieille façon de dire la vérité, et elle marche toujours.",
+   "6": "On me demande si la Nuit des Lanternes a été sauvée. Je réponds que c’est la ville qui l’a sauvée, en apprenant à marquer une pause."
+  },
+  "pixel": {
+   "1": "Twin : tu tapes une phrase, tu choisis un visage. Je l’ai démonté. C’est plus malin que ça ne devrait, et ça n’a pas de bouton d’arrêt.",
+   "2": "Toutes les fausses vidéos que j’ai examinées sont inversées quelque part. Un bouclier, un badge, une raie dans les cheveux. Cherche l’effet miroir.",
+   "3": "Suis l’argent. C’est plus lent que de suivre un clip, mais ça ne mène jamais qu’à une seule porte.",
+   "4": "Je savais que ce n’était pas toi. Je sais aussi que « je le savais » ne vaut rien pour les autres. D’où toute cette marche à pied.",
+   "5": "La barge, c’est le dernier morceau. Après, il ne restera que des gens qui parlent. Ça, c’est plus dur à pirater, et c’est bien le but.",
+   "6": "J’ai écrit un petit programme qui me pose quatre questions avant de me laisser partager quoi que ce soit. En fait, c’est juste Iris, en code."
+  },
+  "bot": {
+   "1": "J’accroche des lanternes. Je suis doué pour les lanternes. Je ne bats pas des bras.",
+   "2": "Les gens me font encore le poulet. Ils pensent que ça me plaît parce que j’ai ri la première fois. J’ai ri parce que tout le monde riait.",
+   "3": "Nilo m’a donné un pain. Je le garde dans mon tiroir. C’est mon pain.",
+   "4": "Quand c’était moi à l’écran, tu m’as demandé ce que je ressentais. Alors : que ressens-tu ? Tu as le droit de dire « bizarre ». Je l’ai dit.",
+   "5": "Je me tiendrai au premier rang. Si quelqu’un fait le poulet, je le regarderai calmement.",
+   "6": "Une enfant m’a demandé de faire la danse du poulet aujourd’hui. J’ai dit non merci. Elle a dit d’accord. C’était aussi simple que ça."
+  },
+  "sprout": {
+   "1": "Avec Lila, on fabrique une lanterne à deux poignées pour pouvoir la tenir ensemble.",
+   "2": "Ça avait mon visage. Comment une chose peut avoir mon visage sans être moi ?",
+   "3": "On s’entraîne tous les jours pour le mot secret. On ne le dit pas. On vérifie juste qu’on le connaît encore toutes les deux.",
+   "4": "Shieldy, je sais ce que ça fait. Ça va mieux dès qu’une personne te croit. Moi, je te crois. Ça fait une.",
+   "5": "Je vais dire à toute la place de se trouver un mot. Je me suis entraînée devant le miroir. Le vrai miroir.",
+   "6": "Lila dit que notre lanterne est montée le plus haut. Moi, je dis que c’est grâce aux deux poignées."
+  },
+  "lila": {
+   "1": "Sprout, c’est ma meilleure amie. On fabrique une lanterne. C’est moi la cheffe des paillettes.",
+   "2": "Je l’entends encore. Sa voix, qui dit ça. Même maintenant que je sais que ce n’était pas elle.",
+   "3": "Mina, une CE1, monte souvent sur le cheval bleu. Elle est gentille. Elle ne parle pas beaucoup.",
+   "4": "Ils te l’ont fait à toi aussi ? Alors tu sais. Ce n’est pas les mots. C’est que tout le monde a VU.",
+   "5": "Kai va me demander pardon en face. J’ai décidé de le laisser finir avant de dire quoi que ce soit.",
+   "6": "Il a demandé pardon. Il m’a regardée tout le long. J’ai dit d’accord. Après j’ai dit ne recommence pas, et il a dit qu’il ne pourrait pas, même s’il voulait. Tant mieux."
+  },
+  "iris": {
+   "1": "Iris, La Gazette de la Baie. Si tu vois quelque chose de bizarre dans cette ville, viens me le dire avant de le dire à un écran.",
+   "2": "Quatre questions. Qui en premier, où est l’original, qu’est-ce que je peux vérifier, qu’est-ce qu’on veut me faire ressentir. Fais-les-toi tatouer quelque part.",
+   "3": "J’ai semé des pages de mon carnet dans toute la baie. Si tu trouves une lanterne avec une page attachée, la page est à moi et la lanterne est à toi.",
+   "4": "Je mets mon nom à côté du tien, à la une. Un nom, c’est fait pour ça.",
+   "5": "Quand tout peut être faux, les gens cessent aussi de croire ce qui est vrai. Pour moi, le vrai vol, il est là.",
+   "6": "Kai et moi, on donne un cours le jeudi. « Comment je te piégerais. » Les enfants trouvent ça hilarant, et ensuite ils ne disent plus un mot."
+  },
+  "baker": {
+   "1": "Goûte le pain aux graines ! Trente ans, le même four. Un four, ça ne se truque pas.",
+   "2": "J’ai crié sur un robot à cause d’un téléphone. J’en ai encore honte. Ne lui répète pas.",
+   "3": "Les commandes reprennent. Les gens n’arrêtent pas de s’excuser. Je leur dis : vous vous êtes fait avoir, moi aussi, prenez une brioche.",
+   "4": "Ils te l’ont fait à TOI, maintenant ? Alors celui sur qui ça tombe n’y est pour rien. C’est juste son tour.",
+   "5": "Je me lèverai pour dire que je me suis fait avoir. C’est un discours court. Ensuite, du pain.",
+   "6": "J’ai mis une pancarte en vitrine. « Vous avez vu quelque chose sur cette boulangerie ? Entrez regarder le sol. »"
+  },
+  "captain": {
+   "1": "Ferry du matin, ferry du soir, et le phare entre les deux. Quarante ans que ça dure. Bienvenue à bord, Chevalier.",
+   "2": "La boîte des objets trouvés est près du guichet. Une écharpe jaune, petite taille. Une semaine qu’elle est là.",
+   "3": "La caméra du port a vu chaque journée de cette ville depuis onze ans. Elle n’a d’avis sur rien. J’aime ça, chez un témoin.",
+   "4": "Je sais reconnaître un visage, moussaillon, et je connais le tien. Un écran, ce n’est pas un visage.",
+   "5": "Bandes, journal de bord, corne. Je suis paré.",
+   "6": "Y a eu la queue à la salle de la lanterne, cette semaine. Des gens qui voulaient voir « un original ». Je leur fais payer un biscuit."
+  },
+  "alder": {
+   "1": "Trente enfants et trois cents lanternes à coller. Envoyez de l’aide. Ou du thé.",
+   "2": "Cette semaine, j’ai commencé chaque leçon par la même question : « Comment pourrait-on le savoir ? »",
+   "3": "Les enfants ont des mots secrets, maintenant. Il paraît que le mien n’est « pas un vrai mot de maîtresse ».",
+   "4": "Ma classe m’a demandé si le clip sur toi était vrai. J’ai demandé ce qu’ils pouvaient vérifier. Ils sont allés vérifier. Je n’ai jamais été aussi fière.",
+   "5": "Toute l’école vient sur la place. En personne. On s’est entraînés à rester immobiles.",
+   "6": "Nous avons une nouvelle règle au mur de la classe. « Attends une minute. » Elle marche aussi pour les disputes de foot."
+  },
+  "tomas": {
+   "2": "Tu veux voir mon ballon de foot ? Il est dédicacé. Enfin. C’est moi qui l’ai dédicacé.",
+   "3": "J’ai demandé le mot, et il n’y a plus eu de bruit. C’est le silence le plus silencieux que j’aie entendu.",
+   "4": "J’ai parlé du mot de passe à toute ma classe. Quatre en ont inventé un le soir même.",
+   "5": "Je vais leur raconter le coup de téléphone. Maman dit que je ne suis pas obligé. Je vais le faire.",
+   "6": "Mon téléphone a sonné hier, et c’était vraiment maman. J’ai quand même demandé le mot. Elle l’a dit tout de suite. Elle a dit : bravo, mon grand."
+  },
+  "elena": {
+   "2": "Tomas n’arrête jamais de courir. J’ai renoncé à voir ses chaussures tenir un trimestre.",
+   "3": "Ma propre voix. Je n’arrête pas d’y penser. Ma propre voix, qui demande à mon fils de cacher quelque chose à son père.",
+   "4": "On a une règle, maintenant : tout ce qui dit « dépêche-toi » et « ne le dis à personne », on le raconte, lentement, à tout le monde.",
+   "5": "On sera là. Tous les deux. Le téléphone de quelqu’un d’autre pourrait sonner.",
+   "6": "J’ai enregistré une nouvelle annonce de répondeur. C’est moi qui ne dis rien du tout pendant cinq secondes. Une idée de Pixel."
+  },
+  "glitch": {
+   "2": "Tiens donc, un Chevalier. Tu viens m’arrêter pour un truc que j’aurais mieux fait ?",
+   "3": "Une ferme à clips. Dans un hangar. Avec des factures. C’est tellement… organisé. Il est où, l’art ?",
+   "4": "Alors maintenant, c’est ton visage, là-haut. Je rirais bien, mais il paraît que c’est ma faute si personne ne me croit. C’est fou comme ça marche.",
+   "5": "Je piège les gens en face, comme ça ils peuvent me traiter de sale rat en face aussi. C’est ça, la différence, et elle est de taille.",
+   "6": "Ils ont applaudi. Moi. Je ne savais pas quoi faire de mes mains. J’ai décidé de ne plus jamais en reparler."
+  },
+  "mina": {
+   "3": "Ce cheval est bleu. C’est le meilleur. Je te dirai pas pourquoi.",
+   "5": "J’allais vivre sur un bateau. C’est annulé. Dis pas à Kai que j’ai pleuré, il le sait déjà.",
+   "6": "Kai m’accompagne à l’école maintenant. Tous les jours. Il a pas le droit de me tenir la main devant le portail, mais jusqu’au coin de la rue il peut."
+  },
+  "kai": {
+   "5": "Dès que je ferme les yeux, je la revois au fond de ce bateau. Je vais le dire. Tout.",
+   "6": "J’en ai retiré quatre cent douze pour l’instant. Pour chacune, je vais demander pardon en personne. Il y en a qui me ferment la porte au nez. C’est normal."
+  },
+  "vale": {
+   "3": "Encore là, petit Chevalier ? Le hall est réservé aux visiteurs qui ont rendez-vous. Ou une offre à faire.",
+   "4": "J’ai vu votre clip. Affreusement triste. Si seulement quelqu’un vous en avait proposé un meilleur avant.",
+   "5": "Profitez bien de votre petite réunion. Les gens ne veulent pas la vérité, mon petit. Ils veulent du spectacle."
+  }
+ },
+ "warm": {
+  "1": [
+   "T’as vu le robot ? J’ai tellement ri que j’ai fait tomber mes frites.",
+   "Plus que trois jours avant la Nuit des Lanternes ! Dans notre rue, on en a déjà fait quarante.",
+   "Il y a une nouvelle appli. Tu choisis un visage et il dit tout ce que tu tapes. C’est dingue.",
+   "Il paraît que la baie est si claire cette année qu’on peut compter les poissons.",
+   "Bienvenue à Baie Miroir ! Attention au canal : il mouille plus qu’il n’en a l’air."
+  ],
+  "2": [
+   "Je ne sais plus quoi croire. J’ai vu la Dame l’annuler, de mes propres yeux. Enfin, presque.",
+   "C’était Glitch. Tout le monde le dit. …Mais est-ce que quelqu’un le sait vraiment ?",
+   "Ma mamie m’a appelé pour savoir si j’avais vraiment dit ça sur son tricot. Bien sûr que non.",
+   "L’eau a l’air un peu trouble aujourd’hui. Ce n’est sûrement rien.",
+   "La Gazette dit que le sol de la boulangerie n’est pas de la bonne couleur. J’ai vérifié sur place. C’est vrai !"
+  ],
+  "3": [
+   "Vous avez remarqué que BayBuzz l’a toujours en premier ? À chaque fois ?",
+   "On a un mot de passe de la famille, maintenant. Je ne vous dirai pas lequel. C’est tout l’intérêt.",
+   "J’ai arrêté de partager. Enfin. J’attends une minute, maintenant. Ça revient presque au même.",
+   "L’eau a pris une drôle de couleur, non ? Mon père dit que ça arrive quand la ville est contrariée.",
+   "Des drones passaient des clips à l’arrêt de bus. J’ai tourné les talons. Ça m’a fait du bien, en fait."
+  ],
+  "4": [
+   "J’ai lu la Gazette. Deux endroits à la fois. J’aurais dû y penser.",
+   "Dans l’école de mon frère, les élèves se font des clips les uns sur les autres, maintenant. C’est horrible.",
+   "Hier, j’ai crié sur un Chevalier sous la pluie. J’en suis malade.",
+   "S’ils peuvent truquer un Chevalier, ils peuvent truquer n’importe qui. Même moi.",
+   "On a ramené une petite fille de la baie hier soir. Pauvre puce. Tout ça pour une vidéo."
+  ],
+  "5": [
+   "Vous allez sur la place ? Tout le monde y va. En personne, a dit la Dame.",
+   "Il paraît que le garçon qui a fait ça va monter sur scène pour le dire. À visage découvert.",
+   "J’ai accroché ma lanterne. C’est la première fois de la semaine que j’en avais envie.",
+   "La moitié de la ville pense que toutes les vidéos sont fausses, maintenant. Même les vraies. Ça ne va pas non plus.",
+   "Il paraît que Glitch vient. De NOTRE côté. J’y croirai quand je le verrai. En personne."
+  ],
+  "6": [
+   "On voyait chaque lanterne deux fois. Une fois dans le ciel, une fois dans l’eau.",
+   "Ma fille m’a demandé le mot de la famille quand j’ai appelé du travail. J’ai donné le bon. Ça m’a fait tellement plaisir.",
+   "Maintenant, j’attends une minute avant d’envoyer quoi que ce soit. La plupart du temps, je n’envoie rien du tout.",
+   "Ce garçon est venu jusqu’à notre porte pour demander pardon. Il a regardé ma mère droit dans les yeux. Il en fallait, du cran.",
+   "Les fausses vidéos n’ont pas disparu. C’est juste qu’on sait mieux s’y prendre. On ne peut pas faire mieux, à mon avis."
+  ]
+ },
+ "cold": [
+  "Je n’ai rien à vous dire. J’ai vu la vidéo.",
+  "Mes enfants admiraient les Chevaliers. Vous devriez avoir honte.",
+  "N’approchez pas de ma boutique.",
+  "Faussaire.",
+  "…Je voudrais croire que ce n’était pas vous. Vraiment. Mais je l’ai vu."
+ ]
+}

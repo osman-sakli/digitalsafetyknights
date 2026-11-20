@@ -177,7 +177,9 @@
   .city-text { flex: 1 1 340px; padding: 1.6rem 1.8rem; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 0.7rem; }
   .city-text h2 { font-family: 'Baloo Display', system-ui, sans-serif; font-size: clamp(1.7rem, 3.4vw, 2.4rem); font-weight: 800; line-height: 1.1; color: white; margin: 0; }
   .city-text p { color: #c3cde6; line-height: 1.6; font-size: 0.98rem; margin: 0; }
-  .city-go { display: inline-block; background: var(--gold); color: var(--navy); font-weight: 900; padding: 13px 30px; border-radius: 32px; box-shadow: 0 6px 24px rgba(201,168,76,0.45); margin-top: 0.3rem; }
+  .city-go { text-decoration: none; display: inline-block; background: var(--gold); color: var(--navy); font-weight: 900; padding: 13px 30px; border-radius: 32px; box-shadow: 0 6px 24px rgba(201,168,76,0.45); margin-top: 0.3rem; }
+  .city-also { color: var(--gold2); font-weight: 800; font-size: 0.9rem; text-decoration: underline; text-underline-offset: 4px; }
+  .city-go:focus-visible, .city-also:focus-visible { outline: 3px solid var(--gold2); outline-offset: 3px; }
   @media (prefers-reduced-motion: reduce) { .city-card { transition: none; } .city-card:hover { transform: none; } }
 
   .stats { background: white; padding: 3.5rem 2rem; border-bottom: 1px solid #eee; }
@@ -473,7 +475,7 @@
     <h1 data-i18n="hero.title">Protecting Kids in the<br><span class="gold">Digital World</span></h1>
     <p data-i18n="hero.subtitle">From Roblox to AI chatbots, messaging apps to online predators — we equip families with the knowledge and tools to keep children safe online.</p>
     <div class="hero-btns">
-      <a class="btn-play" href="/knight-city.html" data-i18n="hero.playBtn">🎮 Play Knight City</a>
+      <a class="btn-play" href="/mirror-bay.html" data-i18n="hero.playBtn">🎮 Play Mirror Bay</a>
       <a class="btn-gold" href="#" onclick="openKnightModal();return false;" data-i18n="hero.joinBtn">Join the Knights — Free</a>
       <a class="btn-ghost" href="/audit.html" data-i18n="hero.auditBtn">🛡️ Take Family Safety Audit</a>
       <a class="btn-ghost btn-workshop" href="/school-programs.html#sp-form-title" data-i18n="hero.workshopBtn">🏫 Request a Free Workshop</a>
@@ -490,16 +492,17 @@
   </div>
 </section>
 
-<section class="city-band" id="play-knight-city">
-  <a class="city-card" href="/knight-city.html">
-    <div class="city-shot"><img src="/assets/arcade/city-cover.webp" width="780" height="300" alt="" fetchpriority="high"></div>
+<section class="city-band" id="play-mirror-bay">
+  <div class="city-card">
+    <a class="city-shot" href="/mirror-bay.html" tabindex="-1" aria-hidden="true"><img src="/assets/arcade/bay-cover.webp" width="780" height="300" alt="" fetchpriority="high"></a>
     <div class="city-text">
       <div class="wb-eyebrow" data-i18n="home.city.eyebrow">🎮 New game · Free · Nothing to download</div>
-      <h2 data-i18n="arc.city.h">Knight City</h2>
-      <p data-i18n="arc.city.p">An open 3D city to walk and drive around. Borrow a car, turn on the radio, and find out who is behind the app everybody suddenly has. Five chapters, sixteen jobs, three endings.</p>
-      <span class="city-go" data-i18n="home.city.cta">Play now →</span>
+      <h2 data-i18n="arc.bay.h">Mirror Bay</h2>
+      <p data-i18n="arc.bay.p">An open harbour town to walk, drive and sail around. Somebody is making videos of people saying things they never said. Find out who, clear your own name, and save Lantern Night. Five chapters, seventeen jobs, three endings.</p>
+      <a class="city-go" href="/mirror-bay.html" data-i18n="home.city.cta">Play now →</a>
+      <a class="city-also" href="/knight-city.html" data-i18n="home.city.also">Also new: Knight City →</a>
     </div>
-  </a>
+  </div>
 </section>
 
 <div class="stats">

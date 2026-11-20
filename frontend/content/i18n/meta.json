@@ -216,6 +216,10 @@
     "knight-city.html": {
       "title": "Şövalye Şehri — Digital Safety Knights",
       "description": "Şövalye Şehri: ücretsiz, açık dünyalı bir 3D oyun. İstediğin yere yürü ya da arabayla git, görev al ve şehri saran uygulamanın arkasında kimin olduğunu ortaya çıkar. Hikâyenin sonunu, insanlara söylediklerin belirler. Hesap yok, reklam yok, takip yok."
+    },
+    "mirror-bay.html": {
+      "title": "Ayna Koyu — Digital Safety Knights",
+      "description": "Ayna Koyu: deepfake konulu, ücretsiz, açık dünyalı bir 3D oyun. Bir liman kasabasında yürü, araba sür, tekneyle açıl; insanların yüzünü ve sesini kimin taklit ettiğini bul ve hikâyenin nasıl biteceğine sen karar ver. Hesap yok, reklam yok, takip yok."
     }
   },
   "es": {
@@ -434,6 +438,10 @@
     "knight-city.html": {
       "title": "Knight City — Digital Safety Knights",
       "description": "Knight City: un juego gratuito de mundo abierto en 3D. Camina o maneja por donde quieras, acepta misiones y descubre quién está detrás de la app que se adueñó de la ciudad. Lo que le digas a la gente decide cómo termina. Sin cuenta, sin anuncios, sin rastreo."
+    },
+    "mirror-bay.html": {
+      "title": "Bahía Espejo — Digital Safety Knights",
+      "description": "Bahía Espejo: un juego gratuito de mundo abierto en 3D sobre los deepfakes. Camina, maneja y navega por un pueblo costero, descubre quién está falsificando caras y voces, y decide cómo termina. Sin cuenta, sin anuncios, sin rastreo."
     }
   },
   "fr": {
@@ -652,6 +660,10 @@
     "knight-city.html": {
       "title": "Knight City — Digital Safety Knights",
       "description": "Knight City — un jeu gratuit en 3D, en monde ouvert. Balade-toi à pied ou en voiture, accepte des missions et découvre qui se cache derrière l’appli qui s’est emparée de la ville. Ce que tu dis aux gens décide de la fin. Sans compte, sans pub, sans aucun pistage."
+    },
+    "mirror-bay.html": {
+      "title": "Baie Miroir — Digital Safety Knights",
+      "description": "Baie Miroir — un jeu gratuit en 3D, en monde ouvert, sur les deepfakes. Balade-toi à pied, en voiture et en bateau dans une ville portuaire, découvre qui imite les visages et les voix, et décide de la fin. Sans compte, sans pub, sans aucun pistage."
     }
   }
 }

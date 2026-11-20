@@ -1,0 +1,2107 @@
+{
+ "ui": {
+  "title": "Ayna Koyu",
+  "tag": "Görmenin artık inanmaya yetmediği bir liman kasabası.",
+  "how": "Ayna Koyu'nda istediğin yere yürü, arabayla ya da tekneyle git. Fener Gecesi'ne üç gün kala Twin adında bir uygulama ortaya çıkıyor: İstediği kişiye istediği sözü söyleten videolar yapabiliyor. Altın ışıklardan görev al, sahte videoların arkasında kimin olduğunu bul ve sözlerini özenle seç. İnsanlara nasıl davrandığın, sonunda kasabanın ne kadar net göreceğini belirler.",
+  "start": "Vapurdan in",
+  "cont": "Kaldığın yerden devam et",
+  "fresh": "Baştan başla",
+  "arcade": "← Oyun Salonu'na dön",
+  "back": "Oyun Salonu",
+  "loading": "Koy doluyor…",
+  "loadErr": "Kasabanın bir bölümü yüklenemedi. Bağlantını kontrol et ve sayfayı yenile.",
+  "noGL": "Bu cihaz 3D oyunu çalıştıramıyor. 2D oyun ise her cihazda çalışır:",
+  "noGLbtn": "Shieldy Dash oyna →",
+  "keysFoot": "Koş: W A S D ya da ok tuşları · Yürü: Shift'i basılı tut · Zıpla: Boşluk · Bin, konuş: E · Telefon: P",
+  "keysCar": "Sür: W A S D ya da ok tuşları · El freni: Boşluk · Korna: H · Radyo: R · İn: E",
+  "keysBoat": "Tekneyi sür: W A S D ya da ok tuşları · Yavaşla: Boşluk · Radyo: R · İskeleye bağla ve karaya çık: E",
+  "touchFoot": "Sol başparmakla yürü · Sağ başparmakla etrafına bak",
+  "touchCar": "Sol başparmakla direksiyonu çevir ve sür · El freni için ⏹ simgesini basılı tut",
+  "touchBoat": "Sol başparmakla tekneyi yönlendir · Yavaşlamak için ⏹ simgesini basılı tut · İnmek için bir iskeleye bağla",
+  "getIn": "Bin",
+  "getOut": "İn",
+  "aboard": "Tekneye bin",
+  "ashore": "Bağla ve karaya çık",
+  "talk": "Konuş",
+  "talkTo": "{n} ile konuş",
+  "startJob": "Göreve başla: {n}",
+  "deliver": "Teslim et",
+  "retune": "Ekranı canlı kameraya çevir",
+  "look": "Yakından bak",
+  "next": "İleri ▸",
+  "close": "Kapat",
+  "jobDone": "Görev tamam",
+  "jobFail": "Bu sefer olmadı",
+  "retry": "Tekrar dene",
+  "points": "+{n} Şövalye Puanı",
+  "learned": "Bir Şövalye bunu bilir",
+  "allDone": "Bütün görevler tamam. Ayna Koyu artık senin, dilediğince gez.",
+  "freeRoam": "Kasaba senin. Sıradaki görev için altın ışığı izle.",
+  "badge": "Kalkan rozeti {a}/{b}",
+  "badgesAll": "Bütün kalkan rozetlerini buldun!",
+  "stunt": "Müthiş sıçrayış! +{n}",
+  "careful": "Dikkat! Burada insanlar yürüyor.",
+  "notYours": "O arabanın bir sahibi var. Şövalyeler yalnızca üzerinde kalkan olan arabaları ödünç alır.",
+  "coldCar": "Anahtarlar bugün sahibinin cebinde kalıyor. Klipteki Şövalye'ye kimse araba vermiyor.",
+  "bump": "Yavaş! Şövalyeler dikkatli sürer.",
+  "kmh": "km/sa",
+  "knots": "knot",
+  "phone": "Telefon",
+  "tabMap": "Harita",
+  "tabJobs": "Görevler",
+  "tabMsgs": "Mesajlar",
+  "tabNotes": "Defter",
+  "tabHelp": "Yardım",
+  "jobNow": "Şimdi",
+  "jobDone1": "Tamam",
+  "jobLock": "Sonra",
+  "jobAt": "Başlangıç: {n}",
+  "at_ferry": "vapur iskelesi",
+  "at_square": "Saat Meydanı",
+  "at_arcade": "oyun salonu",
+  "at_gazette": "Koy Gazetesi",
+  "at_school": "okul",
+  "at_park": "park",
+  "at_studio": "BayBuzz Kulesi",
+  "at_depot": "liman deposu",
+  "at_hq": "Şövalye Karargâhı",
+  "at_quay": "rıhtım",
+  "sound": "Ses",
+  "music": "Radyo",
+  "radioOff": "Radyo kapalı",
+  "radio1": "Bay FM",
+  "radio2": "Harbour Lights",
+  "radio3": "Night Ferry",
+  "quality": "Görüntü",
+  "q_auto": "otomatik",
+  "q_low": "hızlı",
+  "q_mid": "dengeli",
+  "q_high": "en iyi",
+  "callCar": "Arabamı ve teknemi getir",
+  "called": "Araban en yakın köşede. Teknen en yakın iskelede bağlı.",
+  "newMsg": "Yeni klip",
+  "msgGood": "İyi karar. +{n}",
+  "timeLeft": "{t} sn",
+  "tagging": "Yakın dur…",
+  "tagged": "Tamamdır!",
+  "tailStart": "Minibüsü takip et. Ne çok yaklaş ne çok uzaklaş.",
+  "tooClose": "Çok yaklaştın! Seni görecekler.",
+  "tooFar": "Gözden kaçırıyorsun!",
+  "endDo": "Bir gün karşına sahte bir video çıkarsa",
+  "endKeep": "Ayna Koyu'nu keşfetmeye devam et",
+  "reason": "Ayna Koyu",
+  "chapter": "{n}. Bölüm",
+  "clearH": "Koy ne kadar net görüyor",
+  "clearP": "Kandırılan, sahtesi yapılan ya da saçmalayan insanlara adil davrandıkça artar, onları utandırdıkça azalır. Hikâyenin sonunu da suyun rengini de o belirler.",
+  "clearUp": "Su biraz daha berrak görünüyor.",
+  "clearDown": "Su biraz daha bulanık görünüyor.",
+  "blame": "Dikkat et Shieldy. İnsanlar utandırıldıkça gizli gizli paylaşır, kandırıldığını da kimseye söyleyemez.",
+  "noMsgs": "Henüz mesaj yok.",
+  "notesH": "Iris'in defteri: {a}/{b} sayfa",
+  "noNotes": "Muhabir Iris, defterinin on iki sayfasını kasabanın dört bir yanında kaybetti. Her sayfa, parlayan bir kâğıt fenere bağlı.",
+  "note": "Iris'in defteri: sayfa {a}/{b}",
+  "notesAll": "Iris'in defterinin bütün sayfalarını buldun!",
+  "hintShown": "Takıldın mı? Aradığın yer artık haritanda.",
+  "chased": "Kamera dronları peşinde! Durma, devam et.",
+  "news": "Bay FM haberleri",
+  "goalCar": "Arabana bin (altın renkli olan).",
+  "goalBoat": "Teknene bin (altın ve lacivert, iskelede).",
+  "trial": "Zamana karşı",
+  "trial_road": "Karadan kasaba turu",
+  "trial_sea": "Tekneyle deniz feneri turu",
+  "trialStart": "Zamana karşı yarışa başla",
+  "trialGo": "Başla!",
+  "trialGoal": "Kapı {a}/{b}",
+  "trialOff": "Yarış durduruldu.",
+  "trialDone": "Süren: {t} sn.",
+  "trialBest": "Yeni rekor: {t} sn!",
+  "helpKeys": "W A S D ya da ok tuşlarıyla koş, yürümek için Shift'i basılı tut, zıplamak için Boşluk'a bas. E tuşuyla arabaya ya da tekneye biner, göreve başlar ve insanlarla konuşursun. Arabada Boşluk el frenidir. P telefonunu açar.",
+  "helpTouch": "Sol başparmağınla yürür, sağ başparmağınla etrafına bakarsın. Altın düğme o an ne mümkünse onu yapar: biner, konuşur, göreve başlar. Yuvarlak düğme zıplatır; araba sürerken de fren yapar.",
+  "helpGame": "Altın ışıklar sıradaki görevi başlatır. Mavi ışıklar görev için gitmen gereken yeri gösterir. Kendi araban ve teknen haritada altın renkli görünür. Haritadaki çizgi seni oraya götüren yoldur.",
+  "helpSafe": "Ayna Koyu'nda kimse zarar görmez; yalnızca üzerinde kalkan olan arabaları ödünç alabilirsin. Oyun bu tarayıcıda kendiliğinden kaydedilir. Hiçbir yere hiçbir şey gönderilmez.",
+  "cardH": "Ayna Koyu",
+  "cardP": "Yürüyerek, arabayla ve tekneyle gezebileceğin açık bir liman kasabası. Biri, insanlara hiç söylemedikleri şeyleri söyleten videolar yapıyor. Kim olduğunu bul, adını temize çıkar ve Fener Gecesi'ni kurtar. Beş bölüm, on yedi görev, üç farklı son.",
+  "metaTitle": "Ayna Koyu — Digital Safety Knights",
+  "metaDesc": "Ayna Koyu: deepfake'leri anlatan ücretsiz, açık dünyalı bir 3D oyun. Bir liman kasabasında yürü, araba ve tekne sür, insanların yüzlerini ve seslerini kimin taklit ettiğini bul ve hikâyenin nasıl biteceğine sen karar ver. Hesap yok, reklam yok, takip yok."
+ },
+ "names": {
+  "shieldy": "Shieldy",
+  "dame": "Dame Noble",
+  "pixel": "Pixel",
+  "bot": "Bot",
+  "sprout": "Sprout",
+  "glitch": "Glitch",
+  "iris": "Iris",
+  "kai": "Kai",
+  "mina": "Mina",
+  "vale": "Bayan Vale",
+  "lila": "Lila",
+  "tomas": "Tomas",
+  "captain": "Kaptan Marlo",
+  "baker": "Fırıncı Nilo",
+  "elena": "Elena",
+  "alder": "Alder Öğretmen",
+  "cit": "Kasabadan biri",
+  "kids": "Ekranın başındaki çocuklar",
+  "crowd": "Kasaba halkı",
+  "screen": "Ekranda",
+  "clip": "Klip",
+  "voice": "Telefondaki ses",
+  "twin": "TWIN",
+  "unknown": "Bilinmeyen numara"
+ },
+ "todo": [
+  "Seni kızdıran, korkutan ya da kıs kıs güldüren bir şeyi paylaşmadan önce bir dakika bekle.",
+  "İlk kimin paylaştığını sor. Adı resmî gibi duran yepyeni bir hesap, kostümden başka bir şey değildir.",
+  "Aslını ara ya da videodaki kişiye sor. Ne dediğini en iyi o bilir.",
+  "Acele bir şey isteyen aramalar ve mesajlar için ailenle bir aile parolası belirle.",
+  "Sahte video seninle ilgiliyse suç sende değil. Videoyu kaydet, güvendiğin bir yetişkine anlat ve şikâyet et."
+ ],
+ "chapters": {
+  "1": {
+   "name": "Biraz Eğlence",
+   "sub": "Bir arkadaşın komik bir klibi. Herkes gülüyor. Neredeyse herkes."
+  },
+  "2": {
+   "name": "Görmek İnanmaya Yetmez",
+   "sub": "Bir yüz kopyalanabilir. Bir ses de. En yakın arkadaşın bile."
+  },
+  "3": {
+   "name": "Kazanan Kim",
+   "sub": "Kasaba bir yalana her baktığında biri para kazanıyor."
+  },
+  "4": {
+   "name": "Sahte Sen",
+   "sub": "Ekrandaki yüz seninki olunca iş değişir."
+  },
+  "5": {
+   "name": "Fener Gecesi",
+   "sub": "Herkesin önünde, yüksek sesle söylenen tek bir doğru."
+  }
+ },
+ "jobs": {
+  "m1": {
+   "name": "Ayna Koyu'na Hoş Geldin",
+   "lesson": "Biriyle ilgili bir şaka, ancak o da gülüyorsa şakadır. Daha fazla yayılmadan önce ona sor.",
+   "goals": {
+    "drive": "Saat Meydanı'na sür. Haritandaki çizgiyi izle."
+   },
+   "intro": [
+    {
+     "s": "dame",
+     "t": "Shieldy! Ayna Koyu'na hoş geldin. Fener Gecesi'ne üç gün kaldı ve bu yılın Festival Sorumlusu benim; yani bulabildiğim her Şövalye'ye ihtiyacım var."
+    },
+    {
+     "s": "dame",
+     "t": "Fener Gecesi'nde bütün kasaba denizin üzerine fenerler uçurur. Derler ki su o kadar berrak olurmuş ki her feneri iki kez görürmüşsün."
+    },
+    {
+     "s": "dame",
+     "t": "Araban sabah vapuruyla geldi: kaldırımın kenarındaki altın renkli olan. Bot ile Pixel, Saat Meydanı'nda fener asıyor. Orada buluşalım."
+    }
+   ],
+   "clip": [
+    {
+     "s": "bot",
+     "t": "Shieldy! Geldin demek! Baksana, herkesin telefonu durmadan titriyor…"
+    },
+    {
+     "s": "screen",
+     "t": "Dev ekranda ve meydandaki bütün telefonlarda bir klip: Bot tavuk gibi dans ediyor, kollarını çırpıyor. Meydan kahkahadan kırılıyor."
+    },
+    {
+     "s": "bot",
+     "t": "Ha! Ha ha. Bu… Ben bunu hiç yapmadım. Kol çırpmayı bilmem bile."
+    },
+    {
+     "s": "pixel",
+     "t": "Twin diye yeni bir uygulamayla yapılmış. Bir cümle yazıyorsun, bir yüz seçiyorsun, o da videoyu yapıyor. Sabahtan beri her yerde."
+    },
+    {
+     "s": "bot",
+     "t": "Herkes gülüyor, demek ki komik. Benim de gülmem mi gerekiyor?"
+    }
+   ],
+   "laugh": {
+    "q": "Telefonuna bir arkadaşının komik bir klibi düşüyor. Ne yaparsın?",
+    "c": [
+     {
+      "t": "Daha fazla yayılmadan önce arkadaşına ne hissettiğini sor.",
+      "r": "Sorduğun için teşekkür ederim. Doğrusunu istersen tuhaf bir his. Sanki biri kapıyı çalmadan bedenimi ödünç almış gibi."
+     },
+     {
+      "t": "Herkese gönder. Zararı yok.",
+      "r": "Shieldy, ekrana değil Bot'un yüzüne bak. O, zararsız olduğundan pek emin değil."
+     },
+     {
+      "t": "Sonra onunla dalga geçmek için sakla.",
+      "r": "O zaman klip, onu ucundan tuttuğun bir ipe dönüşür. Tekrar dene."
+     }
+    ]
+   },
+   "outro": [
+    {
+     "s": "bot",
+     "t": "Sorun değil. Alt tarafı biraz eğlence. Herhalde."
+    },
+    {
+     "s": "dame",
+     "t": "Hımm. Yılın en kalabalık gecesine üç gün kala, insanların ağzına laf koyan bir makine. Hiç hoşuma gitmedi. Yanıma gel Shieldy. Dağıtacak fenerlerimiz var."
+    }
+   ]
+  },
+  "m2": {
+   "name": "Fenerler Asılıyor",
+   "lesson": "Bir ekranın biri hakkında söylediğine inanmadan önce o kişinin kendisine sor. Çoğu zaman sandığından yakındadır; tam karşında duruyordur.",
+   "goals": {
+    "crates": "Fener sandıklarını kasabaya dağıt: {a}/{b}.",
+    "bakery": "Bot'un adı lekeleniyor. Kanal kenarındaki fırına, Nilo'ya git."
+   },
+   "intro": [
+    {
+     "s": "dame",
+     "t": "Dört sandık fener, kasabanın dört köşesi: okul, pazar, sinema ve lunapark. Mavi ışıklar sana yerlerini gösterir."
+    },
+    {
+     "s": "dame",
+     "t": "Acele etme, sokakları öğren. Bir de insanları dinle Shieldy. Kasaba o dans eden robot için ne düşünüyor, bilmek isterim."
+    }
+   ],
+   "quiz": {
+    "l1": {
+     "q": "Alder Öğretmen: “Bütün sınıfım o robot klibini izlemiş. Otuz çocuk bana gerçek mi diye soruyor. İnsan bunu nereden bilecek?”",
+     "c": [
+      {
+       "t": "Bot'a sorarak. Klipteki o.",
+       "r": "Tabii ya. En basit yol bu; sınıfımda kimsenin aklına gelmedi. Benim de gelmedi."
+      },
+      {
+       "t": "Kaç kişinin paylaştığını sayarak.",
+       "r": "Bin paylaşım sadece klibin yayıldığını gösterir, doğru olduğunu değil."
+      },
+      {
+       "t": "Yakından bakıp gerçek gibi durup durmadığını görerek.",
+       "r": "Bu sahte videolar gerçek gibi dursun diye yapılıyor. Sadece gözlerinle çözemezsin."
+      }
+     ]
+    },
+    "l2": {
+     "q": "Pazarda bir tezgâhtar: “Bana kuzenim gönderdi. O da bir gruptan almış. Kim yapmış? Hiç bilmem. Önemi var mı?”",
+     "c": [
+      {
+       "t": "Var. İlk kimin paylaştığını kimse bilmiyorsa, bu yavaşlamak için bir sebep.",
+       "r": "Haklısın. Balığı nerede tuttuğunu söylemeyen adamdan ben de balık almam."
+      },
+      {
+       "t": "Yok. Bu kadar kişide varsa biri mutlaka kontrol etmiştir.",
+       "r": "Herkes “nasılsa biri kontrol etmiştir” diye düşünür. Böylece kimse etmez."
+      },
+      {
+       "t": "Yok. Kuzeninizden geldi, kuzeninize de güveniyorsunuz.",
+       "r": "O kuzenine güveniyor ama klibi kuzeni de yapmadı. İzini geriye doğru sür."
+      }
+     ]
+    },
+    "l3": {
+     "q": "Sinemadaki yer gösterici: “Beni güldürdü, ben de daha gülmem bitmeden dokuz kişiye gönderdim. Yanlış mı yaptım?”",
+     "c": [
+      {
+       "t": "Bir dahaki sefere göndermeden önce bir dakika bekleyin. Sahte videoların çoğu bir dakikalık düşünmeye dayanamaz.",
+       "r": "Bir dakika. Bir dakikayı beceririm. Film fragmanları bile daha uzun sürüyor."
+      },
+      {
+       "t": "Hayır. İlk olmak için hızlı olmak gerekir.",
+       "r": "Yanlış bir şeyi ilk paylaşan olmak ödül değildir."
+      },
+      {
+       "t": "Evet, hem de çok utanmalısınız.",
+       "r": "Yavaş ol Shieldy. O kötü biri değil, sadece kandırıldı. Ona bir dahaki sefere ne yapacağını söyle."
+      }
+     ]
+    },
+    "l4": {
+     "q": "Lunaparkta bir çocuk: “Şakaysa sahte olması kimin umurunda?”",
+     "c": [
+      {
+       "t": "Klipteki kişinin umurunda. Biriyle ilgili şaka yapmak için onun “olur” demesi gerekir.",
+       "r": "Hımm. Ben olsam bana sorulsun isterdim. Tamam. Anladım."
+      },
+      {
+       "t": "Kimsenin. Şakanın kuralı olmaz.",
+       "r": "Bot'a sor bakalım, ona kuralsız bir şaka gibi geliyor mu?"
+      },
+      {
+       "t": "Bunu sadece büyükler dert eder.",
+       "r": "Bu uygulamalar en çok çocukların yüzlerini sever. Tekrar dene."
+      }
+     ]
+    }
+   },
+   "second": [
+    {
+     "s": "pixel",
+     "t": "Shieldy, yeni klip. Aynı yüz."
+    },
+    {
+     "s": "screen",
+     "t": "Yine Bot, bu sefer yakın çekim: “Nilo'nun ekmeğinin tadı ıslak karton gibi. Poşetini yerim daha iyi.”"
+    },
+    {
+     "s": "pixel",
+     "t": "Buna kimse gülmüyor. Nilo'nun fırını aşağıda, kanalın kenarında. Dedikodu oraya varmadan sen var."
+    }
+   ],
+   "baker": [
+    {
+     "s": "baker",
+     "t": "Otuz yıldır bu kasabaya ekmek yapıyorum. OTUZ. Teneke bir robot da kalkıp bütün koya ekmeğime karton diyor!"
+    },
+    {
+     "s": "bot",
+     "t": "Nilo, ben öyle bir şey demedim. Hayatımda ekmek tatmadım bile. Ben pille çalışıyorum."
+    },
+    {
+     "s": "baker",
+     "t": "Duydum seni. Kendi kulaklarımla. Kendi telefonumdan."
+    }
+   ],
+   "sure": {
+    "q": "Nilo'ya ne dersin?",
+    "c": [
+     {
+      "t": "Bot tam karşınızda duruyor ve öyle demediğini söylüyor. Bir ekrana inanmadan önce ona sorun.",
+      "r": "…Haklısın. Burada duruyor, üstelik titriyor. Bot. Sen mi söyledin? Hayır. O zaman konu kapanmıştır. Gelin içeri ikiniz de; karton nasıl kokarmış, bir koklayın."
+     },
+     {
+      "t": "Videoda var, demek ki söylemiştir.",
+      "r": "Bu sabah bir video Bot'u tavuk gibi dans ettiriyordu. Twin'e ne yazılırsa videolar onu söyler."
+     },
+     {
+      "t": "Belki yanlışlıkla söylemiştir.",
+      "r": "Kimse yanlışlıkla on bir saniye boyunca ekmeğe hakaret etmez. İnkâr edenin kim olduğuna ve nasıl inkâr ettiğine bak."
+     }
+    ]
+   },
+   "outro": [
+    {
+     "s": "baker",
+     "t": "Önce komikti. Sonra sıra benim ekmeğime geldi. Yarın sıra kime gelecek?"
+    },
+    {
+     "s": "pixel",
+     "t": "Shieldy, dev ekranlara bak. HEMEN bak."
+    }
+   ]
+  },
+  "m3": {
+   "name": "Festival İptal",
+   "lesson": "Kimin paylaştığına bak, bir de o kişinin kendisine sor. Gerçek bir duyuru kontrol edilmekten rahatsız olmaz; sahtesi ise acele etmeni ister.",
+   "goals": {
+    "screens": "Kasabanın dev ekranlarını yeniden canlı kameraya çevir: {a}/{b}.",
+    "back": "Saat Meydanı'na dön."
+   },
+   "intro": [
+    {
+     "s": "screen",
+     "t": "Kasabadaki bütün dev ekranlarda, Sorumlu kuşağını takmış Dame Noble: “Fener Gecesi iptal edildi. Evinizde kalın. Herkese söyleyin. Beklemeyin.”"
+    },
+    {
+     "s": "dame",
+     "t": "Ben bütün sabah senin yanındaydım."
+    },
+    {
+     "s": "pixel",
+     "t": "Pazar tezgâhları toplanıyor. İnsanlar fenerleri indiriyor. On dakika sonra kurtaracak festival kalmayacak."
+    },
+    {
+     "s": "dame",
+     "t": "Shieldy: dört ekran. Her birini kendi canlı kamerasına çevir ki insanlar gerçek meydanı ve gerçek beni görsün. Koş. Ben Belediye Binası'nın merdivenlerinde, herkesin görebileceği yerde duracağım; etten kemikten Dame olduğum anlaşılsın."
+    }
+   ],
+   "quiz": {
+    "s1": {
+     "q": "Ekrandaki Dame kalkanını sol kolunda taşıyor. Belediye Binası'nın merdivenlerindeki Dame ise sağ kolunda. Bu sana ne anlatıyor?",
+     "c": [
+      {
+       "t": "Görüntü ters çevrilip birbirine eklenmiş. Bu, onun gerçek bir kaydı değil.",
+       "r": "Aynen öyle. Ayna görüntüsü. Twin ek yerini gizlemek için yüzleri ters çevirir, kalkan da kol değiştirir."
+      },
+      {
+       "t": "Kamera için kol değiştirmiş.",
+       "r": "Bir Şövalye'nin kalkan kolu değişmez. Makinenin ne yaptığını ara."
+      },
+      {
+       "t": "Hiçbir şey. Kalkanın önemi yok.",
+       "r": "Sahte videolar kendini işte böyle ters duran küçük şeylerle ele verir."
+      }
+     ]
+    },
+    "s2": {
+     "q": "Klibi “AynaKoyu_Resmi_Haber” adlı bir hesap paylaşmış. Hesap dün açılmış. Bundan ne anlarsın?",
+     "c": [
+      {
+       "t": "Yepyeni bir hesaptaki resmî görünen ad kaynak değil, kostümdür.",
+       "r": "Evet. “Resmi” kelimesini herkes yazabilir. Ama yıllardır oradaymış gibi yapmayı kimse beceremez."
+      },
+      {
+       "t": "“Resmi” yazıyor, demek ki resmî.",
+       "r": "Bir kelime yazmak bedava. Hesabın ne kadar eski olduğuna bak."
+      },
+      {
+       "t": "Yeni hesaplar en güncel olanlardır.",
+       "r": "Yeni hesap, bulunmak istemeyenlerin de açtığı şeydir."
+      }
+     ]
+    },
+    "s3": {
+     "q": "“Evinizde kalın. Herkese söyleyin. Beklemeyin.” Bu duyuru ne yapmaya çalışıyor?",
+     "c": [
+      {
+       "t": "İnsanları aceleye getirmeye. Kimsenin durup kontrol etmesini istemiyor.",
+       "r": "Görüntü kusursuz olsa bile sahteyi ele veren şey budur: Acelesi vardır, senin de acele etmeni ister."
+      },
+      {
+       "t": "İnsanları korumaya.",
+       "r": "Neden koruyacak? Hiç söylemiyor. Sadece acele et diyor."
+      },
+      {
+       "t": "İnsanları boşuna yola çıkmaktan kurtarmaya.",
+       "r": "Gerçek bir duyuru nedenini ve kime sorabileceğini söylerdi. Bu ise sadece “hadi, hadi, hadi” diyor."
+      }
+     ]
+    },
+    "s4": {
+     "q": "Festival Sorumlusu Fener Gecesi'ni gerçekten iptal etmek zorunda kalsaydı, bunu nereden duyardın?",
+     "c": [
+      {
+       "t": "Kendisinden, Belediye Binası'nın merdivenlerinde yüz yüze; bir de Gazete'nin ilk sayfasından. Yani kontrol edebileceğim yerlerden.",
+       "r": "Doğru. Büyük haberler birden fazla yerde çıkar; hem de kapısını çalabileceğin yerlerde."
+      },
+      {
+       "t": "Bir arkadaşın ilettiği bir klipten.",
+       "r": "Orada haberi değil, dedikoduyu duyarsın."
+      },
+      {
+       "t": "Sadece dev ekranlardan.",
+       "r": "Tek kanal, başka kaynak yok: Ekranları ele geçiren biri olsa tam böyle görünürdü."
+      }
+     ]
+    }
+   },
+   "outro": [
+    {
+     "s": "dame",
+     "t": "İptal DEĞİL. Fener Gecesi yapılacak. Beni görüyorsunuz, duyuyorsunuz; isterseniz gelip dürtün."
+    },
+    {
+     "s": "pixel",
+     "t": "Tezgâhlar yeniden açılıyor. Kıl payı kurtardık."
+    },
+    {
+     "s": "bot",
+     "t": "Bakın. Heykelin yanında. Sırıtıyor."
+    },
+    {
+     "s": "cit",
+     "t": "Glitch bu! Hep Glitch zaten! Biri yakalasın şunu!"
+    },
+    {
+     "s": "pixel",
+     "t": "Gitti. Kedi gibi Belediye Binası'nın arkasına süzüldü. Eh. Kimin yaptığını öğrendik sanırım."
+    },
+    {
+     "s": "dame",
+     "t": "Öğrendik mi Pixel? Gerçekten biliyor muyuz? Yoksa bu cevap sadece hoşumuza mı gidiyor?"
+    }
+   ]
+  },
+  "m4": {
+   "name": "Her Zamanki Şüpheli",
+   "lesson": "Sezgi kanıt değildir. Birini sırf “o yapar” diye suçlarsan sen de kandırılmış olursun; üstelik gönül rahatlığıyla.",
+   "goals": {
+    "r1": "Bilmece: “Denizle sokağın buluştuğu yerde koca teneke bir ambar; dört bir yandan gelmiş sandıklar içinde yığın yığın var.” Glitch'in ilk saklandığı yeri bul.",
+    "r2": "Bilmece: “Döner durur, bir yere varamaz; lunaparkta ondan uzunu olmaz. İyi saklanmak isteyen onun altından ayrılmaz.” Glitch'i bul."
+   },
+   "intro": [
+    {
+     "s": "dame",
+     "t": "Bütün kasaba Glitch'in yaptığına karar verdi. Ben bizim bütün kasabadan daha iyi olmamızı isterim."
+    },
+    {
+     "s": "pixel",
+     "t": "Ama sabıkası kabarık, Dame Noble."
+    },
+    {
+     "s": "dame",
+     "t": "Öyle. İşte tam da bu yüzden peşin hüküm vermek yerine gidip ona SORACAĞIZ. Bul onu Shieldy. Oyun salonundaki makineye göre bir saat önce oradaymış, ekrana da bir bilmece bırakmış. Tabii ki."
+    }
+   ],
+   "c1": [
+    {
+     "s": "pixel",
+     "t": "Burada yok. Ama deponun kapısına tebeşirle bir bilmece daha yazmış. Bayağı eğleniyor."
+    },
+    {
+     "s": "pixel",
+     "t": "Yalnız bir tuhaflık var. Bu deponun camları siyaha boyanmış, kilidi de gıcır gıcır. Bunu aklında tut."
+    }
+   ],
+   "found": [
+    {
+     "s": "glitch",
+     "t": "Nihayet. Bir saattir bu dönme dolabın altındayım, boynum tutuldu."
+    },
+    {
+     "s": "glitch",
+     "t": "Hadi, söyle. “Glitch yaptı.” Herkes söyledi nasılsa."
+    }
+   ],
+   "heart": {
+    "q": "Glitch kollarını kavuşturup bekliyor. Ne dersin?",
+    "c": [
+     {
+      "t": "Öyle demiyorum. Soruyorum. Bu sabah neredeydin?",
+      "r": "…Hah. Kimse sormaz ki. Oyun salonundaydım, Bubble Kart'ta yeniliyordum. Makine skorları saatiyle birlikte kaydediyor. Git bak."
+     },
+     {
+      "t": "Hep sen yaparsın. İtiraf et işte.",
+      "r": "İşte bu. Gözde bir kötü adamın varsa kanıta gerek kalmıyor. Bu duyguyu unutma Şövalye. O ekrandaki yüz seninki olduğunda hatırlarsın."
+     },
+     {
+      "t": "Kimin yaptığı umurumda değil. Durdurmama yardım et yeter.",
+      "r": "Pratik. Soğuk ama pratik. Peki."
+     }
+    ]
+   },
+   "lead": [
+    {
+     "s": "glitch",
+     "t": "Kayıtlara geçsin: Keşke benim aklıma gelseydi. Gelmedi. Ben insanları yüzlerine baka baka kandırırım. Bu şey perdenin arkasından yapıyor; buna hile denir."
+    },
+    {
+     "s": "glitch",
+     "t": "Sana bedavadan bir bilgi. O kliplerin her biri, başka her yerden tam bir dakika önce BayBuzz'da çıkıyor. Her seferinde. Biri onlara klip taşıyor."
+    },
+    {
+     "s": "glitch",
+     "t": "Bu kasabada neyin doğru olduğunu öğrenmek istiyorsan da bir Şövalye'ye sorma. Gazete'deki kadına sor. Ekranlar daha düzleşmeden önce bile ekmeğini doğruyu yanlıştan ayırarak kazanıyordu."
+    }
+   ]
+  },
+  "m5": {
+   "name": "Dört Soru",
+   "lesson": "İlk kim paylaştı? Aslı nerede? Kendim neyi kontrol edebilirim? Bana ne hissettirmek istiyor? Dört soru, sahte videoların çoğunu durdurur.",
+   "goals": {
+    "facts": "“Fırındaki fare” klibini gerçek dünyayla karşılaştır: {a}/{b}.",
+    "gazette": "Bulduklarını Gazete'ye, Iris'e götür.",
+    "bread": "Nilo'nun ekmeklerini soğumadan teslim et: {a}/{b}."
+   },
+   "intro": [
+    {
+     "s": "iris",
+     "t": "Demek yeni Şövalye sensin. Ben Iris. Koy Gazetesi benden sorulur: bir muhabir, bir baskı makinesi ve tek bir kural. Kendim kontrol etmediğim hiçbir şey ilk sayfama girmez."
+    },
+    {
+     "s": "iris",
+     "t": "Bu sabah yeni bir klip çıktı. Nilo'nun fırınında, yerde bir fare. Adamcağız bütün gün dört ekmek satabildi."
+    },
+    {
+     "s": "iris",
+     "t": "Böyle şeylere dört soru sorarım. İlk kim paylaştı? Aslı nerede? Kendi gözlerimle neyi kontrol edebilirim? Ve bana ne hissettirmek istiyor?"
+    },
+    {
+     "s": "iris",
+     "t": "Senin bacakların da var, araban da. Git, benim için üç şeyi kontrol et: fırının zemini, sinemanın önündeki sokak kamerası ve klibi elden ele dolaştıran her kimse o. Sonra buraya dön."
+    }
+   ],
+   "quiz": {
+    "e1": {
+     "q": "Nilo seni mutfağına alıyor. Zemin eski kırmızı tuğla, aşınmaktan kayganlaşmış. Klipteki fare ise parlak yeşil fayansların üzerinde koşuyor. Ne buldun?",
+     "c": [
+      {
+       "t": "Burası onun mutfağı değil. Klip başka bir yerde çekilmiş ya da yapılmış.",
+       "r": "Yeşil fayans mı! Hayatımda yeşil fayansım olmadı benim. Bu tuğlaları dedem döşedi."
+      },
+      {
+       "t": "Saklamak için zemini değiştirmiş olmalı.",
+       "r": "Bir sabahta mı, hem de yüz yıllık tuğlayı? Gözünün önündekine bak."
+      },
+      {
+       "t": "Zemin hiçbir şeyi kanıtlamaz.",
+       "r": "Gidip kendi gözlerinle bakabildiğin bir şey, olabilecek en iyi kanıttır."
+      }
+     ]
+    },
+    "e2": {
+     "q": "Sokak kamerasının kaydı: Klip BayBuzz'da 06.02'de çıkmış. Klipte ise “bu sabah 7'de” çekildiği söyleniyor. Bu sana ne anlatıyor?",
+     "c": [
+      {
+       "t": "Çekildiğini söylediği saatten önce paylaşılmış. Hikâye kendi içinde tutmuyor.",
+       "r": "Gelecekten gelen bir video. Bunu Twin bile dürüstçe beceremez."
+      },
+      {
+       "t": "Kameranın saati yanlıştır herhalde.",
+       "r": "O, liman idaresinin kamerası; her gün vapur saatine göre ayarlanır. Sıkıcı saate inan."
+      },
+      {
+       "t": "Bir saatin önemi yok.",
+       "r": "Saat geriye doğru akıyorsa önemi var."
+      }
+     ]
+    },
+    "e3": {
+     "q": "Bir komşu, kanal kenarında klibi insanlara gösteriyor. “Kız kardeşim gönderdi. O da bir anne grubundan almış. Kim mi çekmiş? Biri çekmiştir herhalde.” Burada eksik olan ne?",
+     "c": [
+      {
+       "t": "Kaynak. Zincirdeki hiç kimse klibi kimin, nerede çektiğini bilmiyor.",
+       "r": "Sen söyleyince fark ettim… Herkese “biri fare görmüş” diyorum ama o birinin adını veremiyorum."
+      },
+      {
+       "t": "Daha çok paylaşım. Emin olmak için daha çok kişiye ulaşması lazım.",
+       "r": "Bir dedikodu büyüdükçe daha doğru olmaz."
+      },
+      {
+       "t": "Hiçbir şey. Kız kardeş iyi bir kaynaktır.",
+       "r": "Kız kardeşi de çekmedi. Bu zincirin başı yok."
+      }
+     ]
+    }
+   },
+   "proof": {
+    "q": "Iris: “Üç kontrol. Klipteki yerin Nilo'nun fırını olmadığını göstermek için ilk sayfama hangi tek bilgiyi koyardın?”",
+    "c": [
+     {
+      "t": "Zemini. Klipte yeşil fayans, fırında kırmızı tuğla. İsteyen gidip bakabilir.",
+      "r": "İşte o. Zekice olduğu için değil; her okur ekmek almaya giderken kendi gözüyle kontrol edebileceği için."
+     },
+     {
+      "t": "Nilo doğru olmadığını söylüyor.",
+      "r": "Doğru olsaydı da öyle derdi. Bana okurun kimseye güvenmek zorunda kalmadan kontrol edebileceği bir şey lazım."
+     },
+     {
+      "t": "Bir sürü insan inanmıyor.",
+      "r": "Bir sürü insan da inanıyor. Fikirleri saymakla gerçek ortaya çıkmaz."
+     }
+    ]
+   },
+   "lens": [
+    {
+     "s": "iris",
+     "t": "Manşet: ZEMİNİN RENGİ TUTMUYOR. Bir saate kalmaz tezgâhlarda olur."
+    },
+    {
+     "s": "iris",
+     "t": "İşin zor yanı şu, Şövalye. Klip bütün koyu on dakikada dolaştı. Benim düzeltmem ise bütün gün sürecek ve o kadar insanın ancak yarısına ulaşacak."
+    },
+    {
+     "s": "iris",
+     "t": "Doğru daha ayakkabısını giyerken yalan kasabayı çoktan dolaşmış olur. Yani Nilo'ya bir manşetten fazlası lazım. İnsanların bugün ekmeğinin tadına bakması lazım. Üç sipariş hazırladı. Onları sen götür."
+    }
+   ],
+   "d1": [
+    {
+     "s": "cit",
+     "t": "Nilo'dan mı? O videodan sonra mı? …Hâlâ sıcak. Her zamanki gibi kokuyor. Doğrusu kendimi biraz aptal gibi hissediyorum."
+    },
+    {
+     "s": "shieldy",
+     "t": "Aptal değilsiniz. Sizi kandırmak için yapılmış bir şeye kandınız. Artık biliyorsunuz."
+    }
+   ],
+   "d2": [
+    {
+     "s": "cit",
+     "t": "Az kalsın siparişimi iptal ediyordum. Sonra düşündüm: Yirmi yıldır onun ekmeğini yiyorum, o klibi ise yirmi saniye izledim. Neden yirmi saniyeye inanayım?"
+    }
+   ],
+   "d3": [
+    {
+     "s": "cit",
+     "t": "A! Ekmek! Nilo'ya söyle, özür dilerim. O klibi ben de paylaştım. Gazete'nin ilk sayfasını iki katı hevesle paylaşacağım."
+    }
+   ],
+   "outro": [
+    {
+     "s": "baker",
+     "t": "Üç ekmek teslim edildi, on bir sipariş daha geldi. Shieldy, ikimizden biri emekli olana kadar bu dükkânda ekmeğin benden."
+    },
+    {
+     "s": "iris",
+     "t": "Dört soruyu aklından çıkarma, Şövalye. Arkadaşlarına da göz kulak ol. Twin bir robotla ve bir fırıncıyla başladı. Büyüklerle yetinmeyecek."
+    }
+   ]
+  },
+  "m6": {
+   "name": "En Yakın Arkadaşlar",
+   "lesson": "Kopyalanmış bir ses tıpatıp arkadaşının sesi gibi çıkar. Ona kanmış olman aptal olduğunu göstermez. Arkadaşına doğrudan sor ve aranızda hiçbir makinenin bilmediği bir gizli kelime belirleyin.",
+   "goals": {
+    "r1": "Bilmece: “Boyalı atlar döner de döner; ne yorulur ne yolu biter.” Lila'nın saklandığı yeri bul.",
+    "fetch": "Lila dinlemeye razı. Okula dön ve Sprout'u al.",
+    "bring": "Sprout'u atlıkarıncaya, Lila'nın yanına götür."
+   },
+   "intro": [
+    {
+     "s": "screen",
+     "t": "Okulun dev ekranı. Sarı atkılı Sprout gülümsüyor: “Lila tam bir bebek. Her şeye ağlıyor. Yanına sırf başka kimse oturmadığı için oturuyorum.”"
+    },
+    {
+     "s": "sprout",
+     "t": "Bu… Ben hiç… Lila! LİLA! Gitti. Kapıdan koşarak çıktı."
+    },
+    {
+     "s": "kids",
+     "t": "Sprout BUNU mu demiş? En yakın arkadaşına mı? Bana da gönder, bana da gönder!"
+    }
+   ],
+   "crowd": {
+    "q": "Bir grup çocuk halka olmuş, ekrana gülüyor ve telefonlarını havaya kaldırıyor. Ne yaparsın?",
+    "c": [
+     {
+      "t": "“Konuşan Sprout değil. Olsaydı bile bunu yaymak bize düşmez” de.",
+      "r": "…Doğru. Orada ben olsaydım nefret ederdim. Siliyorum."
+     },
+     {
+      "t": "“Hadi, gönderin. Nasılsa herkes gördü” de.",
+      "r": "Gönderdim! Bütün sınıfa! Kuzenimin sınıfına da!"
+     },
+     {
+      "t": "Hiçbir şey söylemeden yürüyüp geç.",
+      "r": "Kahkahalar arkandan devam ediyor. Kimse onlara durun demedi."
+     }
+    ]
+   },
+   "gone": [
+    {
+     "s": "sprout",
+     "t": "Ben söylemedim. Bana inanıyorsun, değil mi? Yüz benim, ses benim, atkı benim ama BEN SÖYLEMEDİM."
+    },
+    {
+     "s": "shieldy",
+     "t": "Sana inanıyorum. Sen burada, Alder Öğretmen'in yanında kal. Lila'yı ben bulurum."
+    }
+   ],
+   "lila": [
+    {
+     "s": "lila",
+     "t": "Git buradan. Şövalye falan istemiyorum. Hiç olmamış olsun istiyorum."
+    },
+    {
+     "s": "lila",
+     "t": "Tıpatıp onun sesiydi. Tıpatıp. Kelimelerin sonunda sesi incecik olur ya, o bile vardı. Her şeyiyle."
+    }
+   ],
+   "lilaH": {
+    "q": "Lila boyalı bir atın üstünde büzülmüş oturuyor. Ne dersin?",
+    "c": [
+     {
+      "t": "“Gerçekten onun sesi gibiydi. Kim olsa inanırdı. Sen saflık etmedin. Sahtesi çok iyi yapılmıştı.”",
+      "r": "…Yani aptal değil miyim? Çünkü kendimi aptal gibi hissediyorum. Hem aptal gibi hem üzgün hissettim; ikisi birden en kötüsü."
+     },
+     {
+      "t": "“Sprout'un asla öyle demeyeceğini bilmen gerekirdi.”",
+      "r": "BİLİYORDUM zaten! Sonra onun sesinden duydum. Kulaklarımı ne yapacaktım peki?"
+     },
+     {
+      "t": "“Doğrusu birazcık komikti.”",
+      "r": "GİT buradan."
+     }
+    ]
+   },
+   "fetch": [
+    {
+     "s": "sprout",
+     "t": "Benimle görüşecek mi? Gerçekten mi? Ne diyeceğim ona? Şey diyeceğim… Ne diyeceğimi bilmiyorum."
+    }
+   ],
+   "meet": [
+    {
+     "s": "sprout",
+     "t": "Lila. Ben söylemedim. Asla söylemem. Sen tanıdığım en iyi insansın ve sadece gerçekten üzücü şeylere ağlarsın."
+    },
+    {
+     "s": "lila",
+     "t": "Sana inanmak istiyorum. Gerçekten. Ama nereden BİLECEĞİM?"
+    },
+    {
+     "s": "shieldy",
+     "t": "Klibe birlikte bakın, ikiniz de. Sözlere değil. Geri kalan her şeye."
+    }
+   ],
+   "scarf": {
+    "q": "Lila, klibe bir daha bak. Yerine oturmayan ne var?",
+    "c": [
+     {
+      "t": "Sarı atkı. Sprout onu geçen hafta vapurda kaybetti. Bu eski bir video; ağzına yeni sözler koymuşlar.",
+      "r": "Atkı! Kaptan Marlo'nun kayıp eşya kutusunda duruyor, pazartesi orada GÖRDÜM! Bu, geçen ay bana gönderdiğin doğum günü mesajın. Senin “iyi ki doğdun”unu almışlar ve ona bunu söyletmişler."
+     },
+     {
+      "t": "Sesi biraz kızgın gibi.",
+      "r": "Kopyalanmış bir ses, makineye ne denirse öyle çıkar. Kopyalanamayacak bir şey ara: bir bilgi."
+     },
+     {
+      "t": "Video çok kısa.",
+      "r": "Gerçek videoların da çoğu kısadır. Videonun NE ZAMAN çekildiğiyle ilgili bir yanlış bul."
+     }
+    ]
+   },
+   "code": [
+    {
+     "s": "lila",
+     "t": "Doğum günü mesajımı kullanmışlar. Bana gönderilmiş en güzel şeydi; alıp tersyüz ettiler."
+    },
+    {
+     "s": "sprout",
+     "t": "O zaman bize tersyüz edemeyecekleri bir şey lazım."
+    },
+    {
+     "s": "lila",
+     "t": "Gizli bir kelime. Sadece ikimizin bildiği. Bir video ya da bir ses tuhaf bir şey söylerse kelimeyi sorarız."
+    },
+    {
+     "s": "sprout",
+     "t": "Hiçbir makine de bilemez, çünkü onu asla yazmayacağız. Sadece fısıldayacağız. Hemen şimdi. Shieldy, kulaklarını kapat."
+    },
+    {
+     "s": "shieldy",
+     "t": "(Kulaklarını kapatıyorsun. Kelime her neyse ikisini de öyle güldürüyor ki atlıkarınca iki tur atana kadar susamıyorlar.)"
+    }
+   ]
+  },
+  "m7": {
+   "name": "Annenin Sesi",
+   "lesson": "Bir sesi kopyalamak için birkaç saniyelik kayıt yeter. Bir arama senden aceleyle ve gizlice bir şey istiyorsa aile parolasını sor ya da kapatıp bildiğin numaradan geri ara.",
+   "goals": {
+    "catch": "Tomas kulağında telefonla rıhtıma doğru koşuyor. Oraya varmadan ona yetiş!",
+    "home": "Tomas'ı evine götür."
+   },
+   "intro": [
+    {
+     "s": "pixel",
+     "t": "Shieldy, parka bak. Bir çocuğun telefonu çaldı ve duyduğum şey hiç hoşuma gitmedi. Bir kadın sesi: “Tomas, canım, ben annen. Hemen 4 numaralı rıhtıma gel. Kapı şifresini de getir. Babana söyleme.”"
+    },
+    {
+     "s": "pixel",
+     "t": "Koşmaya başladı bile: doğu tarafında, limana inen uzun sokakta. Dokuz yaşında. Rıhtıma varmadan yakala onu!"
+    }
+   ],
+   "stop": [
+    {
+     "s": "tomas",
+     "t": "Bırak beni! Annemin bana ihtiyacı var! Acele et dedi, kimseye söyleme dedi!"
+    },
+    {
+     "s": "voice",
+     "t": "Tomas? Tomas, yanındaki kim? Onları dinleme canım. Sen gel. Hadi, çabuk."
+    },
+    {
+     "s": "shieldy",
+     "t": "Tomas. Bu ses tıpatıp annenin sesi. Biliyorum. Bir adım daha atmadan önce ona tek bir şey sor."
+    }
+   ],
+   "code": {
+    "q": "Tomas sese ne sormalı?",
+    "c": [
+     {
+      "t": "“Aile parolamız ne?” Yani sadece gerçek annesinin bildiği kelime.",
+      "r": "…Anne? Bizim kelimemiz neydi? Acil durumlar için olan? … Anne? … Söylemiyor. HİÇBİR ŞEY söylemiyor. …Kapattı."
+     },
+     {
+      "t": "“Gerçekten sen misin anne?”",
+      "r": "“Tabii ki benim, şapşal. Hadi, acele et.” Sahtesi “evet” der, geçer. Bilemeyeceği bir şey sor."
+     },
+     {
+      "t": "Hiçbir şey. 4 numaralı rıhtıma koşup kendi gözüyle görsün.",
+      "r": "Ses onu tam da orada istiyor. Tek başına, telaş içinde, rıhtımda."
+     }
+    ]
+   },
+   "hang": [
+    {
+     "s": "tomas",
+     "t": "O değildi. Sesi onundu ama o değildi. Nasıl onun sesi olabilir?"
+    },
+    {
+     "s": "pixel",
+     "t": "Birinin birkaç saniye konuşması, Twin'e yeter. Telesekreter mesajı bile iş görür."
+    },
+    {
+     "s": "shieldy",
+     "t": "Sorduğun anda doğru olanı yaptın. Hadi gel. Seni eve, gerçek annene götürelim."
+    }
+   ],
+   "home": [
+    {
+     "s": "elena",
+     "t": "Tomas! Ne demek seni aradım? Bütün öğleden sonra burada çamaşır asıyordum. Ben kimseyi aramadım."
+    },
+    {
+     "s": "elena",
+     "t": "Benim sesim mi? Kapı şifremizi mi istemiş? …Oturun, ikiniz de. Oturun."
+    },
+    {
+     "s": "elena",
+     "t": "O parolayı o altı yaşındayken oyun olsun diye bulmuştuk. “Korsanlar gelirse diye” demiştim. Korsanların benim sesimle konuşacağı hiç aklıma gelmezdi."
+    },
+    {
+     "s": "pixel",
+     "t": "Shieldy. 4 numaralı rıhtımdan az önce tepesinde çanak anten olan beyaz bir minibüs ayrıldı. BayBuzz. Bir şey çekmek için bekliyorlarmış. Sanırım bu akşam için bir “kayıp çocuğu BayBuzz buldu” haberi istiyorlardı."
+    },
+    {
+     "s": "elena",
+     "t": "Bir manşet için bir çocuğu mu korkutacaklardı?"
+    },
+    {
+     "s": "pixel",
+     "t": "O minibüs geceleri nerede yatıyor, bilmek isterdim."
+    }
+   ]
+  },
+  "m8": {
+   "name": "Minibüsü Takip Et",
+   "lesson": "Bir yalan durmadan karşına çıkıyorsa, insanlar ona baktıkça kimin para kazandığını sor. Paranın izini sürersen yalanı yapanı bulursun.",
+   "goals": {
+    "tail": "BayBuzz minibüsünü fark edilmeden takip et. Arkasında kal; ne çok yaklaş ne çok uzaklaş."
+   },
+   "intro": [
+    {
+     "s": "pixel",
+     "t": "Minibüs BayBuzz Kulesi'nin önünde, motoru çalışıyor. O hareket edince sen de peşine düş. Aynada altın renkli bir araba fark etmeyecekleri kadar geride, onları kaybetmeyeceğin kadar yakında dur."
+    },
+    {
+     "s": "pixel",
+     "t": "Çarpmak yok, yarışmak yok. Sakin bir yolda sakin bir Şövalye, o kadar."
+    }
+   ],
+   "outro": [
+    {
+     "s": "pixel",
+     "t": "Limandaki büyük depoya girdi. Camları siyaha boyalı, kilidi yeni olan depo. Glitch'in bilmecesinin seni yolladığı yer."
+    },
+    {
+     "s": "pixel",
+     "t": "Kilitli bir depoda yatan bir haber minibüsü. Park et. Şu camlardan içeri bir bakacağız."
+    }
+   ]
+  },
+  "m9": {
+   "name": "Klip Çiftliği",
+   "lesson": "İnsanlar sahte videoları ilgi ve para için yapar; her izlenme onlara kazanç demektir. Utandırmak, yapanı daha da inatlaştırır; içten bir soru ise onu düşündürebilir.",
+   "goals": {
+    "windows": "Deponun camlarından içeri bak: {a}/{b}.",
+    "chase": "Tekneyle kaçıyor! Koyu boydan boya, şamandıra şamandıra peşinden git: {a}/{b}.",
+    "land": "Teknesini Fener Kayası'na bağladı. Sen de tekneni adadaki iskeleye yanaştır.",
+    "find": "Karaya çık ve onu bul."
+   },
+   "intro": [
+    {
+     "s": "pixel",
+     "t": "Eğil. Siyah boyanın arasında boşluklar var. Üç cam: Ne gördüğünü bana anlat."
+    }
+   ],
+   "quiz": {
+    "w1": {
+     "q": "İlk camdan: sıra sıra ekranlar. Her birinde kasabadan bir yüz; fırıncı, öğretmen, vapur kaptanı. Ses kapalı, ağızları oynuyor. Burası neresi?",
+     "c": [
+      {
+       "t": "Gerçek insanların sahte videolarını düzinelerce üreten bir atölye.",
+       "r": "Klip çiftliği. Sıra sıra klip yetiştiriyorlar."
+      },
+      {
+       "t": "Bir televizyon mağazası.",
+       "r": "Televizyon mağazalarında her ekranda senin komşuların olmaz."
+      },
+      {
+       "t": "Liman işçileri için bir sinema.",
+       "r": "Camları siyaha boyalı, kilidi yepyeni bir sinema mı? Bak bakalım o yüzler kimin."
+      }
+     ]
+    },
+    "w2": {
+     "q": "İkinci cam: bir yazı tahtası. “Yarının haberleri”, her birinin yanında bir sayı. “Robot fırıncıya hakaret ediyor: 12.000. Festival iptal: 40.000. Rıhtımda kayıp çocuk: 60.000?” Bu sayılar ne?",
+     "c": [
+      {
+       "t": "İzlenme sayıları. En çok kişinin izleyeceği yalanı seçiyorlar.",
+       "r": "“Doğru mu?” diye sormuyorlar. “İzlenir mi?” diye soruyorlar."
+      },
+      {
+       "t": "Ekmek fiyatları.",
+       "r": "Sayıların büyüklüğüne ve en büyüğünü hangi haberin aldığına bak."
+      },
+      {
+       "t": "Haberin kaç kişi için doğru olduğu.",
+       "r": "Hiçbiri hiç kimse için doğru değil. O sayı, kaç gözün baktığı."
+      }
+     ]
+    },
+    "w3": {
+     "q": "Üçüncü cam: bir masa ve bir fatura. BayBuzz her klip için “K.” diye birine az bir para ödüyor, kendisi de her izlenmeden kazanıyor. Peki kasaba sahte bir video izlediğinde kim kazanıyor?",
+     "c": [
+      {
+       "t": "Videoyu yayınlayan kanal her izlenmeden kazanıyor, yapana da bunun küçük bir kısmını veriyor.",
+       "r": "Demek çark böyle dönüyor. Bir ucundan kasabanın dikkati giriyor, öbür ucundan para çıkıyor."
+      },
+      {
+       "t": "Hiç kimse. Sadece eğlence için.",
+       "r": "Masada bir fatura duruyor. Eğlence fatura kesmez."
+      },
+      {
+       "t": "Kliplerdeki insanlar.",
+       "r": "Kliplerdeki insanlar müşterilerini ve arkadaşlarını kaybediyor. Parayı kimin aldığına bak."
+      }
+     ]
+    }
+   },
+   "kai": [
+    {
+     "s": "kai",
+     "t": "Hey! Kim var orada? …Olamaz. Yok, yok, yok. Bir Şövalye."
+    },
+    {
+     "s": "pixel",
+     "t": "Bu bir çocuk. On beşinde var yok. “K.” bu mu?"
+    },
+    {
+     "s": "kai",
+     "t": "Seninle konuşmuyorum. Benim teknem var. Arabayla tekne takip edemezsin!"
+    },
+    {
+     "s": "pixel",
+     "t": "Haklı. Ama seninki de rıhtımdaki iskelede, Shieldy. Altın ve lacivert. Koş!"
+    }
+   ],
+   "corner": [
+    {
+     "s": "kai",
+     "t": "Tamam. TAMAM. Bu kayada deniz fenerine tırmanmaktan başka gidecek yer yok, ben de yüksekten korkarım."
+    },
+    {
+     "s": "kai",
+     "t": "Ben Kai. Twin'i ben yaptım. Şaka olsun diye yaptığım bir uygulamaydı. Odamda yaptım."
+    },
+    {
+     "s": "kai",
+     "t": "Eskiden videolarımı kaç kişi izlerdi, biliyor musun? Üç. Biri annemdi. Şimdi kırk bin. Hiç tanımadığım insanlar “o klibi gördün mü” diyor. Ve o klip BENİM."
+    }
+   ],
+   "heart": {
+    "q": "Kai on beş yaşında, zeki ve köşeye sıkışmış. Ona ne dersin?",
+    "c": [
+     {
+      "t": "“Kırk bin kişi izledi. Ben ağlayan bir tanesini soruyorum. Onun adını biliyor musun?”",
+      "r": "…Hayır. “Adı Lila. On yaşında. Doğum günü mesajını kullandılar.” …Onu ben seçmedim. BayBuzz seçiyor. Ben sadece… Ben sadece makineyi çalıştırıyorum."
+     },
+     {
+      "t": "“Sen bir suçlusun. Bütün kasaba yüzünü tanıyacak.”",
+      "r": "O zaman kaybedecek bir şeyim kalmadı, öyle mi? Sağ ol. İşimi kolaylaştırdın."
+     },
+     {
+      "t": "“Uygulamayı sil, biz de olanları unutalım.”",
+      "r": "Silmek mi? Bin telefonda yüklü. Ok yaydan çıktı bir kere. Ne olduğunu anlamıyorsun bile."
+     }
+    ]
+   },
+   "leave": [
+    {
+     "s": "kai",
+     "t": "Bayan Vale biz yalan söylemiyoruz diyor. Yayınlıyoruz. Neye inanacağını insanlar seçiyor. Öyle diyor."
+    },
+    {
+     "s": "kai",
+     "t": "Vapur geliyor. Ona bineceğim ve beni durdurmayacaksın, çünkü Şövalyeler kimseyi zorla tutmaz. Sizinle ilgili yazılanları okudum."
+    },
+    {
+     "s": "pixel",
+     "t": "Bırak gitsin Shieldy. O da bugün unutamayacağı bir şey duydu. Şimdi şu Bayan Vale'le tanışmak istiyorum."
+    }
+   ]
+  },
+  "m10": {
+   "name": "Her Tıklama",
+   "lesson": "Sahte videoların kazancı ilgidir. Bir yalanı izleyerek, paylaşarak ya da herkesin önünde onunla tartışarak besleme: Şikâyet et ve aç bırak.",
+   "goals": {
+    "drones": "BayBuzz dronları sokaktaki insanlara klip yansıtıyor. Yaklaş ve hepsini tek tek kapat: {a}/{b}."
+   },
+   "intro": [
+    {
+     "s": "vale",
+     "t": "Bir Şövalye. Benim lobimde. Ne hoş. Ben Verena Vale. Hiç uyumayan akışın, BayBuzz'ın sahibiyim."
+    },
+    {
+     "s": "vale",
+     "t": "Neden geldiğini biliyorum; seni nutuk atma zahmetinden kurtarayım. Biz yalan söylemiyoruz. Yayınlıyoruz. Kırk bin kişi dans eden bir robotu izlemeyi kendi SEÇTİ. Kimse gözlerini zorla açık tutmadı."
+    },
+    {
+     "s": "vale",
+     "t": "Ama senden hoşlandım. Kameraya yakışıyorsun. O yüzden bir teklifim var. Tek bir klip. Fener Gecesi'ni kurtaran Şövalyeler, Ayna Koyu'nun kahramanları. Akşam olmadan kasabadaki bütün ekranlarda. Senin bir şey yapmana bile gerek yok. Hepsini Twin halleder."
+    }
+   ],
+   "deal": {
+    "q": "Bayan Vale gülümsüyor. Cevabın ne?",
+    "c": [
+     {
+      "t": "“Hayır. Bizi iyi gösteren sahte bir videoya izin verirsek, başkasını kötü gösteren sahtesinden şikâyet edemeyiz.”",
+      "r": "Güzel söyledin Shieldy. Seni öven sahte video da sahtedir; üstelik ona borçlu kalırsın."
+     },
+     {
+      "t": "“Olur ama klip bizi gerçekten çok iyi gösterecekse.”",
+      "r": "O zaman Şövalyeler de dans eden robotla aynı hamurdan yapılmış olur. Bir daha düşün."
+     },
+     {
+      "t": "“Olur. Sahte videolarla daha iyi bir sahte videoyla savaşırız.”",
+      "r": "Yarın bize de kimse inanamazdı. Onun bütün işi bu zaten. Sen ortak olma."
+     }
+    ]
+   },
+   "after": [
+    {
+     "s": "vale",
+     "t": "Yazık. On iki yaş altı izleyiciler sana bayılırdı."
+    },
+    {
+     "s": "vale",
+     "t": "Göreceksin küçük Şövalye, doğruyu söyledin diye kimse sana teşekkür etmez. Doğru yavaştır, sıkıcıdır. İnsanlar gösteri ister. Ben de onlara gösteri veriyorum."
+    },
+    {
+     "s": "vale",
+     "t": "Sırası gelmişken. Dronlarım havada. Öğleden sonra programının tadını çıkar."
+    }
+   ],
+   "outro": [
+    {
+     "s": "pixel",
+     "t": "Beş dron indi. Bu arada bir şey fark ettim: İnsanlar durup kliple ne kadar çok tartıştıysa dron da o kadar uzun kaldı. Onları sayıyordu."
+    },
+    {
+     "s": "pixel",
+     "t": "Ona “bu sahte!” diye bağırmak bile bir izlenme sayılıyor. Onu aç bırakan tek şey yürüyüp gitmek ve şikâyet etmek."
+    },
+    {
+     "s": "pixel",
+     "t": "Bağırarak onu bastıramayız Shieldy. Bize klibin tam tersi lazım. Bize işin aslı lazım."
+    }
+   ]
+  },
+  "m11": {
+   "name": "Asıl Kayıt",
+   "lesson": "Sahte bir video çoğu zaman gerçek bir şeyden yapılır. Tarihiyle ve yeriyle birlikte aslını bulursan sahtesinin basacağı zemin kalmaz. Ama düzeltme yalandan yavaş yayılır; o yüzden bir şeyi iletmeden önce dur ve düşün.",
+   "goals": {
+    "sail": "Tekneyle Fener Kayası'na git. Kaptan Marlo liman kamerasının kayıtlarını orada saklıyor.",
+    "tape": "Deniz fenerinin yanında Kaptan Marlo'yu bul.",
+    "back": "Tekneyle rıhtımdaki iskeleye dön, tekneyi bağla ve karaya çık.",
+    "rush": "Kaydı, akşam gazetesi baskıya girmeden Gazete'ye, Iris'e yetiştir!"
+   },
+   "intro": [
+    {
+     "s": "captain",
+     "t": "Liman kamerası mı? Ha, o suyun öte yanından bütün Saat Meydanı'nı görür; on bir yıldır da her günü kaydeder. Bugüne kadar kasetleri soran olmamıştı."
+    },
+    {
+     "s": "captain",
+     "t": "Kasetler Fener Kayası'nda, fener odasında durur; orada nem işlemez. Ben şimdi vapurla geçiyorum. Senin de iskelede kendi teknen var. Şamandıralara dikkat et, orada görüşürüz."
+    }
+   ],
+   "tape": [
+    {
+     "s": "captain",
+     "t": "İşte burada. “İptal edilen festival” sabahı. İzle."
+    },
+    {
+     "s": "captain",
+     "t": "Bak, sizin Dame Noble, Belediye Binası'nın merdivenlerinde, deniz feneri gibi ortada. Fener asıyor; hem de o klibe göre bir stüdyoda her şeyi iptal ettiği dakikada."
+    },
+    {
+     "s": "captain",
+     "t": "Asıl kayıt dediğin budur, Şövalye. Köşesinde tarihi, görüntüsünde yeri var; kamera da bu kavgada kimsenin tarafında değil. Baskıya girmeden Iris'e yetiştir. Ben vapurla arkandan gelirim."
+    }
+   ],
+   "print": [
+    {
+     "s": "iris",
+     "t": "Yetiştin! Ver bakayım. …Ah, harika. Dame Noble, bir merdiven, bir fener ve bir saat damgası. İlk sayfa, üst yarı."
+    },
+    {
+     "s": "iris",
+     "t": "Manşet: O SIRADA MERDİVENLERDEYDİ. İki görüntüyü yan yana koyacağım, gerisini insanların kendi gözleri halletsin."
+    },
+    {
+     "s": "iris",
+     "t": "Herkese ulaşmayacak. Hiçbir zaman ulaşmaz. Ama ulaştığı insanların ayağını basacağı sağlam bir zemin olacak."
+    }
+   ],
+   "twist": [
+    {
+     "s": "pixel",
+     "t": "Shieldy. Dev ekrana bakma."
+    },
+    {
+     "s": "pixel",
+     "t": "…Dev ekrana bakıyorsun."
+    },
+    {
+     "s": "screen",
+     "t": "Ayna Koyu'ndaki bütün ekranlarda altın renkli küçük bir şövalye: “Biz yaptık. Sahte videoları Şövalyeler yaptı. Kahraman gibi görünmek istedik, o yüzden belayı kendimiz çıkardık.”"
+    },
+    {
+     "s": "shieldy",
+     "t": "Bu benim yüzüm. Bu BENİM sesim."
+    },
+    {
+     "s": "pixel",
+     "t": "Kalkan da yanlış kolda. Ama kalkana bakan yok."
+    }
+   ]
+  },
+  "m12": {
+   "name": "Ben Değildim",
+   "lesson": "Sahte video seninle ilgiliyse suç sende değil. Saklanma, karşılık da verme: Güvendiğin birine anlat, klibi kanıt olarak kaydet ve şikâyet et.",
+   "goals": {
+    "walk": "Klipteki Şövalye'ye kimse araba vermiyor. Şövalye Karargâhı'na yürü."
+   },
+   "intro": [
+    {
+     "s": "iris",
+     "t": "Sen olmadığını biliyorum. Klibe göre itiraf ettiğin sırada yanımda duruyordun. Ama ben tek bir muhabirim, o klip ise koydaki bütün ekranlarda."
+    },
+    {
+     "s": "cit",
+     "t": "İşte o! Videodaki Şövalye bu!"
+    },
+    {
+     "s": "iris",
+     "t": "Kendi arkadaşlarının yanına git Shieldy. Başın dik olsun. Yağmur da başladı; tam sırasıydı zaten."
+    }
+   ],
+   "shout": [
+    {
+     "s": "cit",
+     "t": "SEN! Sana güvenmiştik! Küçük kızımın duvarında senin posterin asılı! Sahtekâr!"
+    }
+   ],
+   "heart": {
+    "q": "Tanımadığın biri sokak ortasında, yağmurun altında sana bağırıyor. Ne yaparsın?",
+    "c": [
+     {
+      "t": "“Nasıl göründüğünü biliyorum. Bana istediğinizi sorun. Cevap veririm, siz de doğru mu diye kontrol edersiniz” de.",
+      "r": "…Hımm. Belki sorarım. Gözüm üstünde, Şövalye. (Ama bağırmayı kesti.)"
+     },
+     {
+      "t": "“Kendi gözlerinize değil bir ekrana inandınız! İnsan bu kadar aptal olur mu?” de.",
+      "r": "Aptalım, öyle mi? Dur da Şövalye'nin bana ne dediğini herkese bir anlatayım."
+     },
+     {
+      "t": "Başını eğip yürümeye devam et.",
+      "r": "Bağırışlar sokak boyunca peşinden geliyor. Senin anlatacaklarını kimse duymuyor."
+     }
+    ]
+   },
+   "hq": [
+    {
+     "s": "pixel",
+     "t": "Sen olmadığını biliyorum. Ama bilmek kanıt değil; kasabanın ihtiyacı olan şey ise kanıt."
+    },
+    {
+     "s": "bot",
+     "t": "Böyle bir histi işte. Tavuk dansında. Yalnız seninki daha kötü."
+    },
+    {
+     "s": "dame",
+     "t": "Otur Shieldy. Sırılsıklam olmuşsun. Şimdi sana, bana böyle bir dertle gelen her çocuğa sorduğum soruyu soracağım."
+    }
+   ],
+   "whatdo": {
+    "q": "Dame Noble: “Sahte video SENİNLE ilgili olduğunda ilk iş ne olmalı?”",
+    "c": [
+     {
+      "t": "Güvendiğim birine anlatmak, klibi kanıt olarak kaydetmek ve şikâyet etmek. Tek başıma savaşmak değil.",
+      "r": "Evet. Bize anlattın. Pixel klibi kaydetti. Iris şikâyet etti. Bu işte yalnız değilsin; sahte bir videonun sana ilk hissettirmek istediği şey de yalnızlıktır."
+     },
+     {
+      "t": "Paylaşan herkese öfkeli bir cevap yazmak.",
+      "r": "Her cevap, klibi üstünde senin adınla yeniden dolaşıma sokar. Onu besleme."
+     },
+     {
+      "t": "Herkes unutana kadar saklanmak.",
+      "r": "Sen susarsan konuşan sadece sahte video olur. Hem suç sende değildi; saklayacak bir şeyin yok."
+     }
+    ]
+   },
+   "outro": [
+    {
+     "s": "dame",
+     "t": "Bot'un, Nilo'nun ve küçük Sprout'un neler hissettiğini artık biliyorsun. Bunu yaşamanı istemezdim. Ama sayesinde daha iyi bir Şövalye olacaksın."
+    },
+    {
+     "s": "pixel",
+     "t": "Klibe göre dün üçü çeyrek geçe Saat Meydanı'nda itiraf etmişsin. Peki dün üçü çeyrek geçe neredeydin?"
+    },
+    {
+     "s": "shieldy",
+     "t": "…Ekmek dağıtıyordum."
+    },
+    {
+     "s": "pixel",
+     "t": "O zaman seni gören biri vardır. Hadi gidip dünkü öğleden sonranı bulalım."
+    }
+   ]
+  },
+  "m13": {
+   "name": "Başka Yerdeydim",
+   "lesson": "Sahte bir videoyu “ben asla yapmam” diyerek çürütemezsin. Onu herkesin kontrol edebileceği bir şeyle yenersin: asıl kayıtla, bir saatle, orada bulunmuş bir tanıkla.",
+   "goals": {
+    "alibi": "Gerçekte nerede olduğunu gören insanları ve kamerayı bul: {a}/{b}.",
+    "gazette": "Dünkü öğleden sonranı Gazete'ye, Iris'e götür."
+   },
+   "intro": [
+    {
+     "s": "pixel",
+     "t": "Üç şey yeter. Kasabaya ne zaman ayak bastığını gösteren, Kaptan Marlo'nun vapur defteri. Ekmek dağıtımı için Nilo. Bir de sinemadaki sokak kamerası: Iris'le önünden geçmiştiniz."
+    },
+    {
+     "s": "pixel",
+     "t": "Araba hâlâ yok. İnsanlar seni görünce hâlâ karşı kaldırıma geçiyor. Üzülme; kasaba küçük, senin bacakların da sağlam."
+    }
+   ],
+   "a1": [
+    {
+     "s": "captain",
+     "t": "Defter mi? Al bak. “Salı, 09.10, bir Şövalye, altın renkli; bir araba, o da altın renkli.” O günden beri her gün ya vapurumdaydın ya gözümün önünde. Kim sorarsa altına imzamı atarım."
+    }
+   ],
+   "a2": [
+    {
+     "s": "baker",
+     "t": "Dün üçü çeyrek geçe mi? BURADAYDIN, üç siparişi alıyordun. Kanıtı da sipariş defterimde; saati unlu parmağımla yazmışım."
+    },
+    {
+     "s": "baker",
+     "t": "Bot konusunda bir ekrana inandım. İkinci kez inanmam. Ver şu kalemi."
+    }
+   ],
+   "quiz": {
+    "a3": {
+     "q": "Sinema kamerasının kaydı, dün, saat 15.15: altın renkli küçük bir şövalye ile sarı paltolu bir muhabir, sinemanın kapısında; yani kasabanın Saat Meydanı'na en uzak ucunda. Bu kayıt neden senin söyleyebileceğin her şeyden daha değerli?",
+     "c": [
+      {
+       "t": "Üzerinde saati olan asıl bir kayıt bu; kamera da bu tartışmada kimsenin elinde değil.",
+       "r": "Üstelik o da senin gibi aynı anda iki yerde olamaz."
+      },
+      {
+       "t": "Beni güzel açıdan gösteriyor.",
+       "r": "Mesele güzel görünmek değil. Mesele kontrol edilebilir olmak."
+      },
+      {
+       "t": "Onların videosundan daha hoş bir video.",
+       "r": "Hoş olmasının önemi yok. Önemli olan kimin, ne zaman çektiği ve herkesin kontrol edip edemeyeceği."
+      }
+     ]
+    }
+   },
+   "clock": {
+    "q": "Iris hepsini masasına yayıyor. “İlk sayfa için tek cümle. Klibi hangi bilgi çürütür?”",
+    "c": [
+     {
+      "t": "“Klipte Belediye Binası'nın saati 15.15'i gösteriyor; 15.15'te ise sinema kamerası beni kasabanın öbür ucunda çekmiş.”",
+      "r": "İki saat, bir Şövalye, iki ayrı yer. İşte bu. Manşet de bu: BİR ŞÖVALYE AYNI ANDA İKİ YERDE OLAMAZ."
+     },
+     {
+      "t": "“Ben asla öyle bir şey söylemem.”",
+      "r": "Sahtesi yapılan herkes böyle der. Çoğu zaman doğrudur da; ama kimseyi ikna etmez. Bana kontrol edilebilir bir şey ver."
+     },
+     {
+      "t": "“Klip biraz bulanık görünüyor.”",
+      "r": "Gerçek videolar da bulanık olur. Kimsenin itiraz edemeyeceği bilgiyi bul."
+     }
+    ]
+   },
+   "outro": [
+    {
+     "s": "iris",
+     "t": "Özel baskı. Bu gece kasabadaki bütün kapıların altından atılacak."
+    },
+    {
+     "s": "iris",
+     "t": "Dışarı bak. Yağmur dinmiş."
+    },
+    {
+     "s": "cit",
+     "t": "Şövalye! Hey, Şövalye. Gazete'yi okudum. Ben, şey… Bir şeyler söylemiştim. Sokakta."
+    },
+    {
+     "s": "shieldy",
+     "t": "Sizi kandırmak için yapılmış bir şeye kandınız. Gazeteyi okuduğunuz için teşekkür ederim."
+    },
+    {
+     "s": "pixel",
+     "t": "Araba anahtarları ceplerden çıkmaya başladı Shieldy. Ama Twin artık ortalıkta, bin telefonda yüklü. Onu kullanan sadece BayBuzz değil artık, bence."
+    }
+   ]
+  },
+  "m14": {
+   "name": "Taklitçiler",
+   "lesson": "Sahte video yapan bir araç bir kez ortaya çıktı mı herkes kullanabilir; çocuklar bile, birbirlerine karşı. Sahte videodaki kişi yanlış bir şey yapmamıştır: Ona bir şey yapılmıştır.",
+   "goals": {
+    "r1": "Mina'nın defterinden bir bilmece: “En sevdiğim at mavi; koşar koşar, hiçbir yere varamaz.” İlk nereye gittiğini bul.",
+    "r2": "Bilmece: “Bin kapılı bir ev; her kapının ardında bir hikâye.” Sonra nereye gittiğini bul.",
+    "r3": "Bilmece: “Tahta yolun denize doğru yürüdüğü yer.” Mina'nın gittiği yeri bul.",
+    "reach": "Küçük bir yelkenlide sürükleniyor ve hava kararıyor. Tahta iskeleden teknene bin ve ona ulaş!",
+    "tow": "Mina'nın teknesini tahta iskeleye geri çek."
+   },
+   "intro": [
+    {
+     "s": "kai",
+     "t": "Şövalye. Şövalye! Benden nefret ettiğini biliyorum. Umurumda değil. Sana ihtiyacım var."
+    },
+    {
+     "s": "kai",
+     "t": "Kardeşim. Mina. Yedi yaşında. Altıncı sınıflardan birkaç çocuk telefonlarına Twin yüklemiş. Onun bir klibini yapmışlar. Klipte Mina hâlâ ışık açık uyuduğunu ve okulda “anne” diye ağladığını söylüyor."
+    },
+    {
+     "s": "kai",
+     "t": "Bütün okul bahçesi izlemiş. Öğle arasında kapıdan çıkıp gitmiş, o zamandan beri gören yok. Defterini bırakmış. İçine bilmeceler yazar. Bunu benden öğrendi."
+    },
+    {
+     "s": "kai",
+     "t": "Bunu yapan şeyi ben yaptım. BİLİYORUM. Sonra bağırırsın bana. Lütfen, onu bulmama yardım et."
+    }
+   ],
+   "c1": [
+    {
+     "s": "lila",
+     "t": "Mina mı? Buradaydı. Üç tur boyunca mavi atın üstünde oturdu, tek kelime etmedi. Sonra hiç ekran olmayan bir yerde olmak istediğini söyledi."
+    }
+   ],
+   "c2": [
+    {
+     "s": "pixel",
+     "t": "Kütüphaneci, pembe yağmurluklu küçük bir kızın masal köşesinde oturduğunu söylüyor; ta ki içeri bir sınıf girene kadar. Çocuklardan birinin telefonunda o klip varmış. Kız kaçmış. Denize doğru."
+    }
+   ],
+   "seen": [
+    {
+     "s": "kai",
+     "t": "Çizmesi. Bu onun sarı çizmesi, iskelenin üstünde. MİNA!"
+    },
+    {
+     "s": "pixel",
+     "t": "Orada. Şamandıranın ötesinde. İskelenin ucundaki küçük yelkenli: İpi çözülmüş, sürükleniyor. Kapüşonunu başına çekmiş, teknenin dibinde oturuyor."
+    },
+    {
+     "s": "kai",
+     "t": "O kadar yüzemem. Ben… Şövalye. Teknen. Lütfen."
+    }
+   ],
+   "mina": [
+    {
+     "s": "mina",
+     "t": "Git buradan. Ben artık burada yaşıyorum."
+    },
+    {
+     "s": "mina",
+     "t": "Okuldaki herkes gördü. Herkes. Bana ağlama taklidi yaptılar. Bir daha asla gitmeyeceğim. Bu teknede yaşayıp balık yiyeceğim."
+    }
+   ],
+   "heart": {
+    "q": "Mina başını kaldırmıyor. Ne dersin?",
+    "c": [
+     {
+      "t": "“Sen bir şey yapmadın. Biri SANA bir şey yaptı. Bu ikisi aynı şey değil; bu yükü taşımak da sana düşmez.”",
+      "r": "…Ama benim sesimdi. “Sesinin kopyasıydı. Biliyorum, çünkü benimkini de kopyaladılar. Bütün kasaba izledi.” …Seninkini DE mi? …Kai bana kızgın mı? “İskelede bekliyor. Seni aramayı bir saniye bile bırakmadı.”"
+     },
+     {
+      "t": "“Alt tarafı saçma bir video. Pazartesiye unutulur gider.”",
+      "r": "SEN unutmazdın. Sana yapılsaydı."
+     },
+     {
+      "t": "“Bütün bunları ağabeyinin başlattığını biliyorsun.”",
+      "r": "(Kapüşonunu yüzünü örtecek kadar aşağı çekiyor ve tek kelime etmiyor.)"
+     }
+    ]
+   },
+   "kai": [
+    {
+     "s": "kai",
+     "t": "Mina. Mina, özür dilerim. Çok özür dilerim. Özür dilerim, özür dilerim."
+    },
+    {
+     "s": "mina",
+     "t": "Eziyorsun beni."
+    },
+    {
+     "s": "kai",
+     "t": "Sadece görüntü sanıyordum. Ekranda yüzler. O yüzün arkasında duran insanı bir kez olsun düşünmedim. Sonra o insan sen oldun."
+    },
+    {
+     "s": "kai",
+     "t": "Şövalye. Onlara anlatacağım. Her şeyi: kendimi, BayBuzz'ı, depoyu, faturaları. Bütün dosyalar hâlâ bende."
+    },
+    {
+     "s": "pixel",
+     "t": "Bu cesaret ister, Kai. Yalnız bir sorun var. Videolara inanmamayı daha yeni öğrenmiş bir kasabada, videoyla itiraf edeceksin."
+    }
+   ]
+  },
+  "m15": {
+   "name": "Tanıklar",
+   "lesson": "İnsanlar hiçbir şeye inanmaz olunca yalancılar doğruya da “sahte” diyebilir. Çare insanlardır: Doğruyu yüz yüze, birbirine kefil olabilecek tanıkların önünde söyle.",
+   "goals": {
+    "allies": "Doğruyu bilenlerden Fener Gecesi'nde Saat Meydanı'na gelmelerini iste: {a}/{b}."
+   },
+   "intro": [
+    {
+     "s": "dame",
+     "t": "Pixel haklı. Kai'nin itirafı bir ekrana düştüğü an Bayan Vale “bu sahte, Şövalyeler yaptı” diyecek. Kasabanın yarısı da omuz silkecek; çünkü bu saatten sonra kim ayırt edebilir ki?"
+    },
+    {
+     "s": "iris",
+     "t": "Bu oyunun bir adı var. Her şey sahte olabiliyorsa yalancı, doğru olan her şeyi elinin tersiyle itebilir. Sahte bir videonun en son çaldığı şey budur: neye inandığın değil, inanabilme gücün."
+    },
+    {
+     "s": "dame",
+     "t": "O yüzden ekran kullanmıyoruz. Kai bunu Fener Gecesi'nde, Saat Meydanı'nda, kendi ağzıyla söyleyecek; onu tanıyan ve birbirini tanıyan insanların önünde."
+    },
+    {
+     "s": "dame",
+     "t": "Kasabayı dolaş Shieldy. Bunu yaşamış herkesten gelip görünecekleri bir yerde durmalarını iste. Bir de… Glitch'e sor."
+    }
+   ],
+   "baker": [
+    {
+     "s": "baker",
+     "t": "Kasabanın önüne çıkıp kandırıldım mı diyeyim? …Evet. Evet, derim. İlk bağıran bendim, ilk söyleyen de ben olmalıyım. Ekmek de getiririm."
+    }
+   ],
+   "captain": [
+    {
+     "s": "captain",
+     "t": "Kasetleri de vapur defterini de getiririm; birilerini susturmak gerekirse diye vapurun düdüğünü de. On bir yıllık asıl kayıt. Hadi BUNA da sahte desin bakalım."
+    }
+   ],
+   "friends": [
+    {
+     "s": "lila",
+     "t": "Geliriz. İkimiz de."
+    },
+    {
+     "s": "sprout",
+     "t": "Artık bir kelimemiz var. Gizli bir kelime. Herkese bir tane bulmasını söyleyeceğiz. BİZİMKİNİ değil. Kendilerininkini."
+    }
+   ],
+   "elena": [
+    {
+     "s": "elena",
+     "t": "Tomas onlara o telefonu anlatmak istiyor. Zorunda değilsin dedim. “Anne, ya telefon kelimesi olmayan birine çalarsa?” dedi. Yani geliyoruz."
+    }
+   ],
+   "glitch": [
+    {
+     "s": "glitch",
+     "t": "Dur, doğru mu duydum bir bakayım. BENİ istiyorsun. Sahnede. Ayna Koyu'na neyin gerçek olduğunu anlatırken."
+    },
+    {
+     "s": "glitch",
+     "t": "Salı günü beni Belediye Binası'nın etrafında kovalayan kasabaya."
+    }
+   ],
+   "glitch2": {
+    "q": "Glitch tek kaşını kaldırıyor. Ne dersin?",
+    "c": [
+     {
+      "t": "“Önce sana bir özür borcum var. Bir süre senin yaptığına yarı yarıya inandım, elimde kanıt da yoktu.”",
+      "r": "…Bunu bana bugüne kadar kimse söylemedi. Bir kez bile. Peki. Gelirim. O makinenin bütün numaralarını bilirim. Çıkar, tek tek sayarım; kimse de senden yana olduğumu söyleyemez."
+     },
+     {
+      "t": "“Bu kasabaya çok borcun var. Birazını ödemenin vakti geldi.”",
+      "r": "İşte benim bildiğim Şövalye. Gelirim. Vale'nin yüzünün alacağı hâli görmek için. Senin için değil."
+     },
+     {
+      "t": "“Gel ya da gelme. Sen bilirsin.”",
+      "r": "Hımm. Düşünürüm. (Gelecek. Şapka seçmeye başladı bile.)"
+     }
+    ]
+   },
+   "outro": [
+    {
+     "s": "dame",
+     "t": "Bir fırıncı, bir vapur kaptanı, iki yakın arkadaş, bir anne ile oğlu ve kasabanın meşhur düzenbazı. Ön sıra için bundan iyisini seçemezdim."
+    },
+    {
+     "s": "pixel",
+     "t": "Dame Noble. Shieldy. Koya bakmanız lazım. BayBuzz'ın rıhtımından az önce büyük bir şey ayrıldı ve bu bir vapur değil."
+    }
+   ]
+  },
+  "m16": {
+   "name": "Mavna",
+   "lesson": "Bir yüz de bir ses de kimde büyüdüyse onundur. Kimse onları ödünç alamaz: ne şaka için ne para için, iyi bir amaç için bile.",
+   "goals": {
+    "masts": "Mavna bütün koya sahte bir fırtına uyarısı yayacak. Teknenle yaklaş ve üç direğini devre dışı bırak: {a}/{b}.",
+    "board": "Mavna durdu. Tekneni yanına yanaştır."
+   },
+   "intro": [
+    {
+     "s": "pixel",
+     "t": "Bu bir mavna. Üstü çanak antenlerle, hoparlörlerle ve kocaman bir projektörle dolu. Bayan Vale'nin Saat Meydanı'na cevabı bu."
+    },
+    {
+     "s": "pixel",
+     "t": "İçine ne yüklendiğini okudum. Yarın hava kararırken bulutlara yüz metre boyunda bir Dame Noble yansıtacak: “Fırtına geliyor. Koyu terk edin. Hemen gidin.” Kasaba boşalacak. Ne tanık kalacak ne itiraf; BayBuzz da paniği çekecek."
+    },
+    {
+     "s": "dame",
+     "t": "Öyle bir izdihamda insanlar zarar görebilir. Çocuklar. Shieldy, mavnanın üç aktarma direği var. Teknenle her birine iyice yaklaş ve orada kal. Seni üstünden atmaya çalışacak."
+    }
+   ],
+   "final": {
+    "q": "Mavnanın kontrol ekranı: “TWIN HAZIR. Kimin yüzünü takayım? Kimin sesini kullanayım?”",
+    "c": [
+     {
+      "t": "“Hiç kimseninkini. Bir yüz de bir ses de kimde büyüdüyse onundur. Kapan.”",
+      "r": "“…Yüz seçilmedi. Ses seçilmedi. Söylenecek bir şey yok. Kapanıyor.” Kapandı Shieldy. O mavnadaki bütün ışıklar az önce söndü."
+     },
+     {
+      "t": "“Bayan Vale'ninkini kullan. Nasıl bir his olduğunu o da görsün.”",
+      "r": "O zaman onun yaptığının aynısını yapıp adına adalet demiş oluruz. Bu olmaz."
+     },
+     {
+      "t": "“Benimkini kullan; fırtına uyarısının yalan olduğunu herkese söyle.”",
+      "r": "Doğruyu söyleyen bir sahten de sahtedir; yarın hangi Shieldy'ye inanacağını kimse bilemez."
+     }
+    ]
+   },
+   "outro": [
+    {
+     "s": "pixel",
+     "t": "Kule de karardı. Kasabadaki bütün dev ekranlar liman kamerasını gösteriyor. Sadece meydan, fenerler; kimsenin yüzü yok."
+    },
+    {
+     "s": "kai",
+     "t": "Şövalye? Rıhtımdayım. Karardığını gördüm. Hazırım. Sanırım hazırım. Vazgeçmeden gelip beni alır mısın?"
+    }
+   ]
+  },
+  "m17": {
+   "name": "Fener Gecesi",
+   "lesson": "Yanlış yapan ve bunu kendi yüzüyle söyleyen biri, işin en zor kısmını yapmıştır. Yara utandırmakla değil, yanlışı düzeltmekle ve düzeltirken görülmekle kapanır.",
+   "goals": {
+    "shake": "BayBuzz'ın kamera dronları peşinde! Kai'yi sokaklardan geçirip Saat Meydanı'na ulaştır: {a}/{b}.",
+    "square": "Kai'yi Saat Meydanı'na getir. Bütün kasaba bekliyor."
+   },
+   "intro": [
+    {
+     "s": "kai",
+     "t": "Bacaklarım bir tuhaf oldu."
+    },
+    {
+     "s": "kai",
+     "t": "Oraya çıktığımda benden nefret ederlerse haklılar. Yeter ki cesaretimi kaybetmeden söyleyeyim. Hızlı sür. Yok. Normal sür. Bilmiyorum. Sür işte."
+    },
+    {
+     "s": "pixel",
+     "t": "Dikkat. Bayan Vale'nin son üç dronu rıhtımın üstünde. Konuşmasını engelleyemezse kaçarken çekecek. Ona o görüntüyü verme."
+    }
+   ],
+   "stage": [
+    {
+     "s": "dame",
+     "t": "Ayna Koyu! Tek bir fener bile yakmadan önce, konuşmak isteyen biri var. Kendi yüzüyle. Sizden sözünü bitirmesine izin vermenizi istiyorum."
+    },
+    {
+     "s": "kai",
+     "t": "Benim adım Kai. On beş yaşındayım. Twin'i ben yaptım. Dans eden robot bendim. Ekmek bendim. Şey… festival. Sprout'un videosu. Telefon. Hepsini yapan şeyi ben kurdum, BayBuzz da bana her klip için para ödedi."
+    },
+    {
+     "s": "kai",
+     "t": "Bütün dosyaları getirdim. Gerçekte ne olduğunu gösteren kasetler de Kaptan Marlo'da. Kendi kendime sadece yüz bunlar diyordum. Sonra biri aynısını kardeşime yaptı."
+    },
+    {
+     "s": "vale",
+     "t": "Ne dokunaklı bir gösteri! Peki BUNUN gerçek olduğunu nereden bileceğiz, hı? Hepimizin gördüğü gibi Şövalyeler klip işinde pek usta. Belki bu çocuk da sahtedir."
+    },
+    {
+     "s": "glitch",
+     "t": "Yapma Verena. Ben numaranın her türlüsünü bilirim; o çocuk numara değil. Terliyor. Sahteler terlemez. Üstelik tam orada duruyor; isteyen gidip dürtebilir."
+    },
+    {
+     "s": "baker",
+     "t": "Bot konusunda kandırıldım. Bunu kendi dükkânımda söyledim, burada da söylüyorum."
+    },
+    {
+     "s": "elena",
+     "t": "Oğlumu benim kendi sesim aradı. Bana sorun. Tomas'a sorun."
+    },
+    {
+     "s": "captain",
+     "t": "Bakmak isteyen olursa bende de on bir yıllık kaset var."
+    },
+    {
+     "s": "crowd",
+     "t": "Meydan çok sessiz. Bayan Vale konuşacak bir kamera arıyor ama yok. Sonra arkalardan biri sesleniyor: “Peki onu ne yapacağız?”"
+    }
+   ],
+   "town": {
+    "q": "Bütün kasaba sana bakıyor Shieldy. Ne dersin?",
+    "c": [
+     {
+      "t": "“Doğruyu kendi yüzüyle söyledi. Bırakın düzeltmeye yardım etsin: Her sahte video kaldırılsın, herkesten özür dilensin, hepimiz de bunu yaptığını görelim.”",
+      "r": "“…Eh. Adil.” “Cezadan daha zor bu.” “Benim ekmeğimden başlayabilir.” Kalabalığın içinde biri alkışlamaya başlıyor."
+     },
+     {
+      "t": "“ONUN yüzünü bütün ekranlara koyun. Nasıl bir his olduğunu görsün.”",
+      "r": "Meydan buz kesiyor. “O zaman kendi klip çiftliğimizi kurmuş oluruz” diyor Dame Noble alçak sesle. “Hiçbir şey öğrenmemiş oluruz.”"
+     },
+     {
+      "t": "“O daha çocuk. Unutun gitsin, fenerleri yakın.”",
+      "r": "“Yani kimse özür dilemeyecek mi?” diyor incecik bir ses. Lila. “Bu kadar mı? Unutacak mıyız yani?” Ona kimse cevap vermiyor."
+     }
+    ]
+   },
+   "end": [
+    {
+     "s": "kai",
+     "t": "Hepsini kaldıracağım. Tek tek. Sonra herkesin yanına gidip yüzüne söyleyeceğim. Lila'dan başlayarak."
+    },
+    {
+     "s": "dame",
+     "t": "Bayan Vale, Belediye sabah sizinle görüşmek isteyecek. Yüz yüze. Faturalarınızı da getirin."
+    },
+    {
+     "s": "iris",
+     "t": "Orada ne söylenirse ben de basacağım. Kontrol ederek."
+    },
+    {
+     "s": "mina",
+     "t": "Kai. KAİ. Fenerleri yakıyorlar. Fenerleri kaçırıyorsun."
+    },
+    {
+     "s": "dame",
+     "t": "Ayna Koyu… yakın fenerleri."
+    }
+   ]
+  }
+ },
+ "endings": {
+  "best": {
+   "h": "Berrak su",
+   "p": "Fener Gecesi'nde koy öyle berrak ki fenerleri iki kez görüyorsun: bir gökyüzünde, bir suda. Sahte videolar bir makine kapatıldı diye bitmedi. Bitti, çünkü kasaba durmayı, “kim?” diye sormayı, aslını bulmayı ve kişinin kendisine sormayı öğrendi; çünkü kandırılan hiç kimseye kendini aptal gibi hissettirmediler. Kai artık okulda Iris'le birlikte ders veriyor. Dersin adı “Seni Nasıl Kandırırdım”."
+  },
+  "ok": {
+   "h": "Dalgalı su",
+   "p": "Mavna karanlık, BayBuzz Kulesi sessiz. Fener Gecesi yapılıyor. Ama kasaba artık diken üstünde: Kimileri her klibe inanıyor, kimileri de hiçbir şeye inanmamaya karar vermiş; doğru olana bile. Hiçbir şeye güvenilmediğinde yalancılar başka bir yoldan kazanır. Şövalyelerin Ayna Koyu'nda hâlâ işi var ve bu iş, eskisinden daha nazik olmakla başlıyor."
+  },
+  "low": {
+   "h": "Bulanık su",
+   "p": "Makine kapalı. Fenerler yükseliyor ama geçen yıldan az. Komşular sokağın iki yanından birbirine kuşkuyla bakıyor. Kai okul değiştirdi. Kandırılan çocuklar bunu içlerine atıyor. Sahte bir video, doğrunun tek başına onaramayacağı şeyleri kırar: Onları yalnızca adil davranmak onarır; bu hikâyede ise pek çok insan yardım görmek yerine utandırıldı. Yeniden oynayıp farklı seçimler yapabilirsin."
+  }
+ },
+ "msgs": [
+  {
+   "q": "Tanımadığın bir numaradan bir klip: Ünlü bir futbolcu, videoyu bir saat içinde paylaşan herkese bedava telefon vereceğini söylüyor.",
+   "c": [
+    {
+     "t": "Paylaşma. Önce futbolcunun gerçek hesabına ya da bir haber sitesine bak.",
+     "r": "Doğru. “Bir saat içinde paylaş” demek aceleye getirmektir; sahte videolar da böyle yayılır."
+    },
+    {
+     "t": "Hemen paylaş, belki doğrudur.",
+     "r": "Klip tam da bu “belki doğrudur”a güveniyor. Sahteyse onu bütün arkadaşlarına kendi elinle vermiş olursun."
+    },
+    {
+     "t": "Sadece en yakın arkadaşlarına gönder.",
+     "r": "O zaman en yakın arkadaşların sahte videoyu güvendikleri birinden almış olur. Bu daha iyi değil, daha kötü."
+    }
+   ]
+  },
+  {
+   "q": "Arkadaşının sesiyle bir sesli mesaj: “Selam, benim, numaram değişti, telefonumu kaybettim. Oyunun şifresini hemen gönderir misin?”",
+   "c": [
+    {
+     "t": "Eski numarasını ara ya da sadece gerçek arkadaşının bileceği bir şey sor.",
+     "r": "Evet. Bir ses, birkaç saniyelik kayıttan kopyalanabilir. Aranızdaki bir sır kopyalanamaz."
+    },
+    {
+     "t": "Şifreyi gönder. Onun sesi olduğu belli.",
+     "r": "Sahtesinin en iyi kopyaladığı şey tam da onun sesi."
+    },
+    {
+     "t": "“Gerçekten sen misin?” diye yaz.",
+     "r": "Sahtesi “evet” der, geçer. Bilemeyeceği bir şey sor."
+    }
+   ]
+  },
+  {
+   "q": "Okul müdürünün yarın okulun kapalı olduğunu söylediği bir klip. “OkulHaberleriii” adlı bir hesap paylaşmış.",
+   "c": [
+    {
+     "t": "Okulun kendi sitesine bak ya da annenden babandan okulu aramasını iste.",
+     "r": "Doğru. Gerçek haber birden fazla yerde çıkar; o yerlerden birinin de telefonu vardır."
+    },
+    {
+     "t": "İnan. Tatil!",
+     "r": "Bir şeyin doğru olmasını istemek, onu kontrol etmek için en iyi sebeptir."
+    },
+    {
+     "t": "Herkes bilsin diye sınıf grubuna ilet.",
+     "r": "O zaman otuz aileyi sen kandırmış olursun. Önce kontrol et; iletmeyi ise aklından çıkar."
+    }
+   ]
+  },
+  {
+   "q": "Su basmış bir caddede yüzen bir köpekbalığı fotoğrafı. İki milyon paylaşım.",
+   "c": [
+    {
+     "t": "İnanmadan önce fotoğrafın ilk nerede çıktığını araştır.",
+     "r": "Bu, eski ve ünlü bir sahte fotoğraf; her fırtınadan sonra yeniden ortaya çıkar. Bir fotoğrafın nereden çıktığını bulabilmek süper güçtür."
+    },
+    {
+     "t": "İki milyon kişi yanılıyor olamaz.",
+     "r": "İki milyon kişi düşünmeden bir düğmeye basabilir. Paylaşım sayısı doğruluğu değil, hızı gösterir."
+    },
+    {
+     "t": "Gerçek gibi duruyor, demek ki gerçek.",
+     "r": "Gerçek gibi durmak, sahtelerin en iyi yaptığı iştir."
+    }
+   ]
+  },
+  {
+   "q": "Bir sınıf arkadaşın sana, başka bir sınıf arkadaşını gülünç gösteren sahte bir klip gönderiyor. “Sen de yolla ahaha.”",
+   "c": [
+    {
+     "t": "Yollama. Ona bunun doğru olmadığını söyle; klipteki kişiye ya da bir öğretmene de haber ver.",
+     "r": "Evet. Zincir, biri “burada bitsin” dediğinde biter; o kişi sen olabilirsin."
+    },
+    {
+     "t": "Yolla. Nasılsa herkes yollayacak.",
+     "r": "Acımasız bir klip, işte bu “nasılsa herkes yollayacak” sayesinde bütün okula yayılır."
+    },
+    {
+     "t": "Sakla ama gönderme.",
+     "r": "Göndermekten iyidir. Ama klipteki kişinin bunu bilmeye ve yanında bir yetişkinin olmasına hakkı var."
+    }
+   ]
+  },
+  {
+   "q": "Bir video: Beyaz önlüklü bir adam sakız çiğnemenin boy uzattığını söylüyor. “Bilim insanları doğruladı!”",
+   "c": [
+    {
+     "t": "Beyaz önlük kanıt değildir. Bu bilim insanlarının kim olduğuna ve aynı haberi başkasının verip vermediğine bak.",
+     "r": "Doğru. Kostüm ucuzdur. Kim, nerede ve başka kim söylüyor diye sor."
+    },
+    {
+     "t": "Önlük giymiş, demek ki bilim insanı.",
+     "r": "Beyaz önlüğü herkes satın alabilir; bir makine de çizebilir."
+    },
+    {
+     "t": "Bir ay dene, gör.",
+     "r": "Hevesin güzel, yöntemin yanlış. Önce o “bilim insanları” gerçekten var mı, ona bak."
+    }
+   ]
+  },
+  {
+   "q": "“Canlı” bir video, Ayna Koyu'nu dev bir fırtınanın vurmak üzere olduğunu söylüyor: “Hemen ayrılın!” Pencerenin dışında ise gökyüzü masmavi.",
+   "c": [
+    {
+     "t": "Dışarı bak, bir de hava durumuna. Kontrol edebildiğine güven.",
+     "r": "Evet. Kendi penceren de asıl kaynaktır."
+    },
+    {
+     "t": "Kaç. Tedbirli olmakta fayda var.",
+     "r": "Korkuyla koşuşan bir kalabalığın kendisi tehlikedir. Güvenli olan, otuz saniye ayırıp kontrol etmektir."
+    },
+    {
+     "t": "Herkesi uyarmak için ilet.",
+     "r": "Sahteyse az önce onun hoparlörü olmuş olursun."
+    }
+   ]
+  },
+  {
+   "q": "Bir uygulama diyor ki: “Bir selfie ve bir ses kaydı yükle, kendini çizgi film yıldızı olarak gör!” Rehberine de erişmek istiyor.",
+   "c": [
+    {
+     "t": "Yükleme. Yüzün ve sesin sahte videoların ham maddesidir; rehberindeki insanlar ise senin verebileceğin bir şey değil.",
+     "r": "Aynen öyle. Yüzünü, sesini ve arkadaşlarını isteyen bedava bir oyuncak, bedava değildir."
+    },
+    {
+     "t": "Yükle. Alt tarafı bir selfie.",
+     "r": "Bir selfie ve birkaç saniyelik ses, Twin'e gereken her şeydi."
+    },
+    {
+     "t": "Güvenli olsun diye onun yerine bir arkadaşının fotoğrafını yükle.",
+     "r": "O zaman ONUN yüzünü sormadan vermiş olursun. Bu daha kötü."
+    }
+   ]
+  },
+  {
+   "q": "Tanımadığın biri yazıyor: “Elimde senin utanç verici bir videon var. Bu bağlantıyı beş arkadaşına gönder, yoksa paylaşırım.”",
+   "c": [
+    {
+     "t": "Tıklama, gönderme. Ekran görüntüsü al ve güvendiğin bir yetişkine anlat.",
+     "r": "Doğru. Bu bir tehdit, video büyük ihtimalle yok ve suç asla sende değil."
+    },
+    {
+     "t": "Kurtulmak için bağlantıyı gönder.",
+     "r": "Bu yolla asla kurtulamazsın. Daha fazlasını istemek için geri gelir, tuzağa da arkadaşların düşer."
+    },
+    {
+     "t": "Cevap yazıp onunla tartış.",
+     "r": "Tartışmak ona korktuğunu ve orada olduğunu gösterir. Kaydet, bir yetişkine anlat, şikâyet et."
+    }
+   ]
+  },
+  {
+   "q": "Sevdiğin bir şarkıcının acımasız bir şey söylediği bir klip. Grup sohbetiniz küplere binmiş, herkesin bu konuda paylaşım yapmasını istiyor.",
+   "c": [
+    {
+     "t": "Bekle. Katılmadan önce şarkıcının gerçek hesabında ya da gerçek haberlerde var mı, bak.",
+     "r": "Evet. Öfke en hızlı duygudur; sahteler de bu yüzden onu hedef alır."
+    },
+    {
+     "t": "Hemen paylaşım yap. Sessiz kalmak kötü görünür.",
+     "r": "Bağıra bağıra yanılmak daha kötü görünür. Bir dakika beklemenin sana bir zararı olmaz."
+    },
+    {
+     "t": "Takibi bırak, herkese de bırakmasını söyle.",
+     "r": "Doğruysa belki. Ama bunu henüz bilmiyorsun."
+    }
+   ]
+  }
+ ],
+ "inbox": {
+  "m1": {
+   "from": "bot",
+   "t": "Tavuk klibini bir daha izledim. Saydım. Bana kırk bir kez gönderilmiş, hem de beni seven insanlar tarafından. Sevilmek böyle bir his mi?"
+  },
+  "m2": {
+   "from": "baker",
+   "t": "Tezgâhta üstünde adın yazan bir ekmek var. Bir tane de robota; çekmecesinde saklasın."
+  },
+  "m3": {
+   "from": "dame",
+   "t": "İnsanlar gerçek olduğumu görsün diye o merdivenlerde iki saat durdum. Ayaklarım ağrıyor. İşe yaradı. Bunu unutma: Bazen bir ekranın cevabı bir insandır."
+  },
+  "m4": {
+   "from": "glitch",
+   "t": "Oyun salonundaki makineye baktın mı? 10.42, G.L.I., 3. sıra. O skoru çerçeveletiyorum. İlk kez bir Şövalye karar vermeden önce sordu."
+  },
+  "m5": {
+   "from": "iris",
+   "t": "İlk sayfa saat beş olmadan tükendi. Klip yine de on katı kişiye ulaştı. Ben bu işi yine de yapıyorum. İlk kim paylaştı, aslı nerede, neyi kontrol edebilirim, bana ne hissettirmek istiyor."
+  },
+  "m6": {
+   "from": "sprout",
+   "t": "Artık bir kelimemiz var, ne olduğunu sana söyleyemem ama ÇOK iyi. Lila herkesin en yakın arkadaşıyla ve annesiyle bir kelimesi olmalı diyor."
+  },
+  "m7": {
+   "from": "elena",
+   "t": "Kapı şifresini değiştirdik, yeni bir aile parolası da belirledik. Tomas seçti. Bir yere yazmam yasakmış; haklı da."
+  },
+  "m8": {
+   "from": "pixel",
+   "t": "Kilitli bir depoda yaşayan bir haber minibüsü. Depoyu kimin kiraladığına baktım. Kirasını her ay BayBuzz ödüyor, nakit olarak."
+  },
+  "m9": {
+   "from": "kai",
+   "t": "onun adını söylemene gerek yoktu"
+  },
+  "m10": {
+   "from": "vale",
+   "t": "Beş dron devede kulak, tatlım. Çabanı takdir ediyorum. Teklifim hâlâ geçerli; geçerli olmadığı güne kadar. — V.V."
+  },
+  "m11": {
+   "from": "captain",
+   "t": "Kasetler vapurun kasasında. Bu akşam ekranlardaki her neyse evlat, sen değildin. Seni iki kez karşıya geçirdim; ben yüz tanırım."
+  },
+  "m12": {
+   "from": "bot",
+   "t": "Karargâhın önündeyim, elimde bir şemsiye var. Benim ihtiyacım yok; su geçirmem. Şemsiye senin için. Şemsiye bunun için vardır."
+  },
+  "m13": {
+   "from": "iris",
+   "t": "BİR ŞÖVALYE AYNI ANDA İKİ YERDE OLAMAZ. Gece yarısına kadar bütün kapıların altında. Uyu. Seni kontrol ettik: Tertemiz çıktın."
+  },
+  "m14": {
+   "from": "mina",
+   "t": "kai telefonunu verdi. balık planı iptal. en sevdiğim at hâlâ mavi olan. tekneyle geldiğin için teşekkür ederim"
+  },
+  "m15": {
+   "from": "glitch",
+   "t": "Şapkayı seçtim. Ciddi bir şapka. Vale'ye söyle, yanına bir palto alsın; onun için hava epey soğuyacak."
+  },
+  "m16": {
+   "from": "pixel",
+   "t": "“Yüz seçilmedi.” Çok makine kaydı okudum. İçlerinde gördüğüm en güzel satır bu."
+  },
+  "m17": {
+   "from": "dame",
+   "t": "Fenerler hâlâ yukarıda Shieldy. Git, suya bak."
+  }
+ },
+ "news": {
+  "m1": "Bay FM. Dans eden robot Ayna Koyu'nu kasıp kavuruyor. Klip, Twin adlı ücretsiz bir uygulamayla yapıldı. Saat Meydanı'nda ulaştığımız Bot şöyle dedi: “Bana komik olduğu söylendi.”",
+  "m2": "Bay FM. Fener Gecesi için kasabanın dört bir yanına fenerler asılıyor. Bu kez ekmekle ilgili ikinci bir robot klibi ise kanal kenarındaki fırında ağızların tadını kaçırdı.",
+  "m3": "Bay FM. Ayna Koyu bu sabah on bir dakika boyunca Fener Gecesi'nin iptal edildiğine inandı. Edilmedi. Festival Sorumlusu şöyle diyor: “Haber büyükse gelin, bana bakın.”",
+  "m4": "Bay FM. Kasabanın gözde şüphelisi o saatte başka yerde olduğunu söylüyor; bir oyun salonu da skor tablosunun bunu kanıtlayabileceğini belirtiyor. Peki klipleri ilk kim paylaşıyor? Dinleyicilerimiz BayBuzz'ı gösteriyor.",
+  "m5": "Bay FM. Bu akşamki Gazete “ZEMİNİN RENGİ TUTMUYOR” diyor ve kanal kenarındaki fırını aklıyor. Nilo on bir yeni sipariş ve bir robot müşteri bildiriyor.",
+  "m6": "Bay FM. Kasaba okulunun öğrencileri en yakın arkadaşlarıyla gizli kelimeler belirliyor. Bir öğretmen şöyle diyor: “Hiçbirini bilmiyorum; olması gereken de bu.”",
+  "m7": "Bay FM. Bu akşam ailelere bir uyarı. Dokuz yaşında bir çocuğu annesinin sesiyle arayıp rıhtıma çağırdılar. Arayan annesi değildi. Bir aile parolası belirleyin.",
+  "m8": "Bay FM. Dinleyicilerimiz soruyor: Her tuhaf klibi neden hep ilk BayBuzz yayınlıyor? BayBuzz “mükemmel kaynakları” olduğunu söylüyor. Bay FM bu kaynakların ne olduğunu sordu.",
+  "m9": "Bay FM. Bu öğleden sonra Fener Kayası'na uzanan tekne kovalamacası kimse ıslanmadan sona erdi. Limandaki, camları siyaha boyalı bir depo ise pek çok kişinin merakını çekiyor.",
+  "m10": "Bay FM. Bugün kasabanın üzerinde beş BayBuzz dronu kapatıldı. Şövalyelerin tavsiyesi: Sahte bir videoyla durup tartışmayın. Şikâyet edin ve yürüyüp gidin.",
+  "m11": "Bay FM. O SIRADA MERDİVENLERDEYDİ: Gazete, Festival Sorumlusu'nu sözde festivali iptal ettiği dakikada fener asarken gösteren liman kamerası görüntülerine ulaştı.",
+  "m12": "Bay FM. Bir klipte bir Şövalye'nin sahte videoları yaptığını itiraf ettiği görülüyor. Bay FM klibi doğrulayamadı, bu yüzden yayınlamıyoruz. Bu iş böyle yapılır.",
+  "m13": "Bay FM. BİR ŞÖVALYE AYNI ANDA İKİ YERDE OLAMAZ. Bir vapur defteri, bir fırıncının sipariş defteri ve bir sinema kamerası, “itiraf” saatinde Shieldy'nin kasabanın öbür ucunda olduğunu gösteriyor.",
+  "m14": "Bay FM. Yedi yaşında bir çocuk, büyük sınıflardaki öğrencilerin yaptığı sahte bir klibin ardından akşam karanlığında sağ salim iskeleye getirildi. Okulunda bir toplantı yapılacak. Twin artık bin telefonda.",
+  "m15": "Bay FM. Fener Gecesi'nde Saat Meydanı'nda bir şeyler olacak ve bu hiçbir ekranda yok. Festival Sorumlusu yalnızca şunu söylüyor: “Kendiniz gelin.”",
+  "m16": "Bay FM. Projektörlerle dolu bir mavna bu gece koyda karanlığa gömüldü. BayBuzz Kulesi de. Dev ekranlar liman kamerasını gösteriyor: meydanı ve fenerleri.",
+  "m17": "Bay FM. Fener Gecesi. Bizi arabada dinliyorsanız park edin ve gidip koya bakın."
+ },
+ "notes": [
+  {
+   "h": "Bir dakika",
+   "t": "Sahte bir video senden hemen harekete geçmeni ister. Ona bir dakika ver; çoğu kendiliğinden dağılır."
+  },
+  {
+   "h": "İlk kim?",
+   "t": "Sana kimin gönderdiğini sorma. İlk kimin paylaştığını sor. Kimse bilmiyorsa cevabını almışsın demektir."
+  },
+  {
+   "h": "Kostüm",
+   "t": "Bir hesabın adındaki “Resmi”, “Gerçek”, “Haber” kelimeleri bedavadır. Hesabın ne zaman doğduğuna bak."
+  },
+  {
+   "h": "Aslını bul",
+   "t": "Sahteler çoğu zaman gerçek bir şeyden yapılır. Gerçeğini bul ve ikisini yan yana koy."
+  },
+  {
+   "h": "Kişinin kendisine sor",
+   "t": "Birinin ne dediğini en iyi bilen, o kişinin kendisidir."
+  },
+  {
+   "h": "Kenarlar",
+   "t": "Yüzün saçla birleştiği yere, kulaklara, dişlere ve parmaklara bak. Makineler kenarlarda yorulur."
+  },
+  {
+   "h": "Ters çevrilmiş",
+   "t": "Yanlış tarafta bir rozet, yanlış bilekte bir saat, tersten yazılmış bir yazı: Ayna görüntüsü kendini ele verir."
+  },
+  {
+   "h": "Işık ve gölge",
+   "t": "Güneş sokağın solunda ama yüzün sağındaysa biri iki ayrı dünyayı birbirine yapıştırmıştır."
+  },
+  {
+   "h": "Bana ne hissettirmek istiyor?",
+   "t": "Öfke mi? Korku mu? Kıs kıs gülme isteği mi? Tek bir duyguya sertçe asılan bir klip seni bir yere sürüklüyordur."
+  },
+  {
+   "h": "Sesi kopyalamak kolay",
+   "t": "Bir sesi kopyalamak için birkaç saniyelik kayıt yeter. Aile parolası ise hiçbir yerde satılmaz."
+  },
+  {
+   "h": "Düzeltme daha yavaştır",
+   "t": "Doğru daha ayakkabısını giyerken yalan bütün koyu dolaşır. O yüzden yalanı yola çıkaran sen olma."
+  },
+  {
+   "h": "Her şey sahte değil",
+   "t": "Hiçbir şeye inanmamaya karar verirsen yalancılar yine kazanır. Kontrol et, sonra kontrolden geçene güven."
+  }
+ ]
+}
