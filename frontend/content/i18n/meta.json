@@ -212,6 +212,10 @@
     "lost-sprout.html": {
       "title": "Kayıp Sprout — Digital Safety Knights",
       "description": "3D bir hikâye. Sprout kayıp. Kalede dolaş, geride bıraktığı mesajları oku ve hikâyenin nasıl biteceğine sen karar ver. Hesap yok, reklam yok, izleme yok."
+    },
+    "knight-city.html": {
+      "title": "Şövalye Şehri — Digital Safety Knights",
+      "description": "Şövalye Şehri: ücretsiz, açık dünyalı bir 3D oyun. İstediğin yere yürü ya da arabayla git, görev al ve şehri saran uygulamanın arkasında kimin olduğunu ortaya çıkar. Hikâyenin sonunu, insanlara söylediklerin belirler. Hesap yok, reklam yok, takip yok."
     }
   },
   "es": {
@@ -426,6 +430,10 @@
     "lost-sprout.html": {
       "title": "The Lost Sprout — Digital Safety Knights",
       "description": "Una historia en 3D. Sprout desapareció. Recorre el castillo, lee los mensajes que dejó y decide cómo termina. Sin cuenta, sin anuncios, sin rastreo."
+    },
+    "knight-city.html": {
+      "title": "Knight City — Digital Safety Knights",
+      "description": "Knight City: un juego gratuito de mundo abierto en 3D. Camina o maneja por donde quieras, acepta misiones y descubre quién está detrás de la app que se adueñó de la ciudad. Lo que le digas a la gente decide cómo termina. Sin cuenta, sin anuncios, sin rastreo."
     }
   },
   "fr": {
@@ -640,6 +648,10 @@
     "lost-sprout.html": {
       "title": "The Lost Sprout — Digital Safety Knights",
       "description": "Une histoire en 3D. Sprout a disparu. Explore le château, lis les messages qu’il a laissés et décide de la fin. Sans compte, sans publicité, sans suivi."
+    },
+    "knight-city.html": {
+      "title": "Knight City — Digital Safety Knights",
+      "description": "Knight City — un jeu gratuit en 3D, en monde ouvert. Balade-toi à pied ou en voiture, accepte des missions et découvre qui se cache derrière l’appli qui s’est emparée de la ville. Ce que tu dis aux gens décide de la fin. Sans compte, sans pub, sans aucun pistage."
     }
   }
 }

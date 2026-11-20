@@ -1,0 +1,1792 @@
+{
+  "ui": {
+    "title": "Knight City",
+    "tag": "Una ciudad abierta. Tu auto. Y un secreto detrás de cada pantalla.",
+    "how": "Camina o maneja por donde quieras en Knight City. Una app nueva llamada ShineUp se ha adueñado de la ciudad, y nadie sabe quién está detrás. Acepta misiones en las balizas doradas, sigue la historia a lo largo de cinco capítulos y elige bien tus palabras: lo que le digas a la gente decide cómo termina todo.",
+    "start": "¡A la calle!",
+    "cont": "Seguir donde lo dejaste",
+    "fresh": "Empezar desde el principio",
+    "arcade": "← Volver al Arcade",
+    "back": "Arcade",
+    "loading": "Construyendo la ciudad…",
+    "loadErr": "Una parte de la ciudad no se cargó. Revisa tu conexión y vuelve a cargar la página.",
+    "noGL": "Este dispositivo no puede abrir el juego en 3D. El juego en 2D funciona en cualquiera:",
+    "noGLbtn": "Jugar Shieldy Dash →",
+    "keysFoot": "Caminar: W A S D o flechas · Saltar: Espacio · Subir a un auto o hablar: E · Teléfono: P",
+    "keysCar": "Manejar: W A S D o flechas · Freno de mano: Espacio · Bocina: H · Radio: R · Bajar: E",
+    "touchFoot": "Con el pulgar izquierdo caminas · Con el derecho miras alrededor",
+    "touchCar": "Con el pulgar izquierdo manejas · Toca ⏹ para el freno de mano",
+    "getIn": "Subir",
+    "getOut": "Bajar",
+    "talk": "Hablar",
+    "check": "Revisar el quiosco",
+    "startJob": "Empezar misión: {n}",
+    "next": "Siguiente ▸",
+    "close": "Cerrar",
+    "jobDone": "Misión cumplida",
+    "jobFail": "Se acabó el tiempo",
+    "retry": "Intentar de nuevo",
+    "points": "+{n} Puntos de Caballero",
+    "learned": "Lo que sabe un Caballero",
+    "allDone": "Todas las misiones están cumplidas. Knight City está a salvo. ¡Sigue explorando!",
+    "badge": "Insignia de escudo {a}/{b}",
+    "badgesAll": "¡Encontraste todas las insignias de escudo!",
+    "stunt": "¡Qué salto! +{n}",
+    "careful": "¡Cuidado! Por aquí camina gente.",
+    "notYours": "Ese auto es de alguien. Los Caballeros solo toman prestados los autos que tienen un escudo encima.",
+    "bump": "¡Con calma! Los Caballeros manejan con cuidado.",
+    "splash": "De vuelta en tierra firme.",
+    "kmh": "km/h",
+    "phone": "Teléfono",
+    "tabMap": "Mapa",
+    "tabJobs": "Misiones",
+    "tabHelp": "Ayuda",
+    "jobNow": "Ahora",
+    "jobDoneTag": "Cumplida",
+    "jobLocked": "Bloqueada",
+    "jobNext": "Siguiente",
+    "badges": "Insignias de escudo",
+    "sound": "Sonido",
+    "music": "Radio",
+    "radioOff": "Radio apagada",
+    "radio1": "Knight FM",
+    "radio2": "Beach Wave",
+    "radio3": "Night Drive",
+    "newMsg": "Mensaje nuevo",
+    "unknown": "Número desconocido",
+    "msgGood": "Bien pensado. +{n}",
+    "msgBad": "Eso era justo lo que Glitch esperaba.",
+    "timeLeft": "{t} s",
+    "tagging": "No te alejes…",
+    "tagged": "¡Marcado!",
+    "wrongWay": "Prueba con otra respuesta.",
+    "endDo": "Si alguna vez te llega un engaño como estos",
+    "endKeep": "Seguir explorando la ciudad",
+    "reason": "Knight City",
+    "placeHQ": "Cuartel de los Caballeros",
+    "placeLibrary": "Biblioteca",
+    "placeSchool": "Escuela",
+    "placePark": "Parque",
+    "placeArcade": "Sala de videojuegos",
+    "placePier": "Muelle",
+    "placeHome": "Casa de Sprout",
+    "talkTo": "Hablar con {n}",
+    "look": "Mirar la foto",
+    "unplug": "Desconectar la antena",
+    "chapter": "Capítulo {n}",
+    "trust": "La confianza de la ciudad",
+    "trustHint": "Sube cuando tratas con cariño a quienes cayeron en un engaño. De ella depende el final.",
+    "tabMsgs": "Mensajes",
+    "tabNotes": "Reglas",
+    "noMsgs": "Todavía no hay mensajes.",
+    "noNotes": "Todavía no encontraste ninguna página del libro de reglas de Glitch. Brillan con luz morada, en algún lugar de la ciudad.",
+    "shard": "El libro de reglas de Glitch: página {a}/{b}",
+    "shardsAll": "¡Encontraste todas las páginas del libro de reglas de Glitch!",
+    "notesHead": "El libro de reglas de Glitch, con sus propias palabras. Cuando conoces el truco, deja de funcionar.",
+    "bait": "¡Era un anzuelo! No toques las chispas moradas.",
+    "baitNone": "¡No tocaste ni un solo anzuelo!",
+    "hintShown": "¿No lo encuentras? El lugar ya aparece en tu mapa.",
+    "chased": "¡Tienes drones detrás! No te detengas.",
+    "news": "Noticias de Knight FM",
+    "placeBeach": "Escenario de la playa",
+    "placeTower": "Torre ShineUp",
+    "placeRose": "Casa de la abuela Rose",
+    "placeNova": "Departamento de Nova",
+    "placeLight": "Faro",
+    "endBest": "La ciudad lo cuenta",
+    "endOk": "La red cayó",
+    "endLow": "Glitch fue atrapado, pero…",
+    "again": "Jugar la historia otra vez",
+    "freeRoam": "La ciudad es tuya. Sigue la baliza dorada para la próxima misión.",
+    "trustUp": "La ciudad confía un poco más en los Caballeros.",
+    "trustDown": "La ciudad confía un poco menos en los Caballeros.",
+    "blame": "Cuidado, Shieldy. Echarles la culpa es justo lo que Glitch les prometió que haríamos.",
+    "cardH": "Knight City",
+    "cardP": "Una ciudad abierta en 3D para recorrer a pie o en auto. Toma prestado un auto, enciende la radio y descubre quién está detrás de la app que de pronto tiene todo el mundo. Cinco capítulos, dieciséis misiones, tres finales.",
+    "metaTitle": "Knight City — Digital Safety Knights",
+    "metaDesc": "Knight City: un juego gratuito de mundo abierto en 3D. Camina o maneja por donde quieras, acepta misiones y descubre quién está detrás de la app que se adueñó de la ciudad. Lo que le digas a la gente decide cómo termina. Sin cuenta, sin anuncios, sin rastreo."
+  },
+  "names": {
+    "shieldy": "Shieldy",
+    "dame": "Dame Noble",
+    "pixel": "Pixel",
+    "bot": "Bot",
+    "sprout": "Sprout",
+    "glitch": "Glitch",
+    "kiosk": "Pantalla del quiosco",
+    "unknown": "Número desconocido",
+    "nova": "Nova",
+    "milo": "Milo",
+    "tess": "Tess",
+    "finn": "Finn",
+    "jay": "Jay",
+    "rose": "Abuela Rose",
+    "sam": "Cartero Sam",
+    "mum": "La mamá de Nova",
+    "photo": "Foto de Sprout",
+    "mast": "Antena repetidora",
+    "radio": "Knight FM",
+    "star": "StarKnight",
+    "luna": "LunaBest",
+    "ace": "AceRider",
+    "botfake": "Cuenta de Bot",
+    "cit": "Alguien que pasa"
+  },
+  "todo": [
+    "No respondas y no le sigas el juego.",
+    "Guarda la prueba: toma una captura de pantalla.",
+    "Bloquea la cuenta y repórtala.",
+    "Cuéntaselo a un adulto de confianza. Contarlo nunca te mete en problemas."
+  ],
+  "jobs": {
+    "j1": {
+      "name": "Primer paseo",
+      "lesson": "Antes de unirte a algo, pregunta quién lo hizo y qué gana con eso.",
+      "goals": {
+        "car": "Sube a tu auto",
+        "drive": "Maneja hasta la biblioteca"
+      },
+      "intro": [
+        {
+          "s": "dame",
+          "t": "Buenos días, Shieldy. Algo raro pasa en Knight City. De la noche a la mañana, la mitad de los niños de la ciudad se unió a una app nueva llamada ShineUp."
+        },
+        {
+          "s": "dame",
+          "t": "Y aparecieron quioscos morados en las esquinas. Pixel está en la biblioteca tratando de averiguar quién los puso."
+        },
+        {
+          "s": "dame",
+          "t": "Tu auto está afuera. Ve a ver. Y cuidado con las aceras: por ahí camina la gente."
+        }
+      ],
+      "outro": [
+        {
+          "s": "pixel",
+          "t": "¡Por fin llegas! ¿Ves ese quiosco? Dice CHISPAS GRATIS. Las chispas son los puntos de ShineUp. Todo el mundo las quiere."
+        },
+        {
+          "s": "pixel",
+          "t": "Y esto es lo que no me cuadra: nadie sabe quién hace ShineUp. Ni un nombre, ni una dirección, nada. ¿Quién regala algo a cambio de nada y después se esconde?"
+        }
+      ]
+    },
+    "j2": {
+      "name": "Demasiado bueno para ser cierto",
+      "lesson": "¿Es gratis, te apura y te pide algo privado? Es un engaño.",
+      "goals": {
+        "kiosks": "Apaga los quioscos: {a}/{b}"
+      },
+      "intro": [
+        {
+          "s": "pixel",
+          "t": "Cada quiosco muestra una promesa distinta. Lee la pantalla y decide qué hace un Caballero."
+        },
+        {
+          "s": "pixel",
+          "t": "Están en tu mapa. Estaciona cerca y acércate caminando."
+        }
+      ],
+      "quiz": {
+        "k1": {
+          "q": "¡GANASTE 5.000 GEMAS! Escribe tu contraseña para recibirlas.",
+          "c": [
+            {
+              "t": "Lo apago. Un premio de verdad nunca necesita mi contraseña.",
+              "r": "Exacto. El premio que él quería era la contraseña."
+            },
+            {
+              "t": "Escribo mi contraseña. Es solo una cuenta de un juego.",
+              "r": "En una cuenta de juego están tus amigos, tus objetos y a veces la tarjeta de tu mamá o tu papá. Intenta de nuevo."
+            },
+            {
+              "t": "Escribo una contraseña falsa, a ver qué pasa.",
+              "r": "Seguirle el juego también le avisa a Glitch que hay alguien ahí. Intenta de nuevo."
+            }
+          ]
+        },
+        "k2": {
+          "q": "¡SOLO QUEDAN 10 SEGUNDOS! ¡Toca AHORA o lo pierdes todo!",
+          "c": [
+            {
+              "t": "Alto. El truco es apurarme. Lo apago.",
+              "r": "Así es. La cuenta regresiva está ahí para que no te dé tiempo de pensar."
+            },
+            {
+              "t": "Toco rápido y después lo pienso.",
+              "r": "Después ya es tarde. Por eso te apura. Intenta de nuevo."
+            },
+            {
+              "t": "Le pido más tiempo al quiosco.",
+              "r": "El quiosco no está de tu lado. Intenta de nuevo."
+            }
+          ]
+        },
+        "k3": {
+          "q": "¡SKIN GRATIS! Solo escribe la dirección de tu casa para el envío.",
+          "c": [
+            {
+              "t": "Una skin vive dentro del juego. No necesita mi dirección. Lo apago.",
+              "r": "Sí. Cuando la pregunta no tiene nada que ver con el regalo, el regalo es un anzuelo."
+            },
+            {
+              "t": "Doy solo el nombre de la calle, sin el número.",
+              "r": "Media dirección sigue siendo una pista de dónde vives. Intenta de nuevo."
+            },
+            {
+              "t": "Mejor doy la dirección de un amigo.",
+              "r": "Ahora quien corre peligro es tu amigo. Intenta de nuevo."
+            }
+          ]
+        },
+        "k4": {
+          "q": "¡Envía esto a 5 amigos y TODOS reciben gemas!",
+          "c": [
+            {
+              "t": "No lo reenvío. Mejor les aviso a mis amigos. Lo apago.",
+              "r": "Eso es. Glitch quería que le hicieras el trabajo."
+            },
+            {
+              "t": "Lo envío. Mis amigos también querrían gemas gratis.",
+              "r": "Si viene de ti, van a confiar. Ese es el truco. Intenta de nuevo."
+            },
+            {
+              "t": "Se lo envío a un solo amigo, para probar.",
+              "r": "Un amigo que cae ya es demasiado. Intenta de nuevo."
+            }
+          ]
+        }
+      },
+      "outro": [
+        {
+          "s": "pixel",
+          "t": "¡Los cuatro están apagados! Y mira lo que había adentro: todos los quioscos mandaban nombres y direcciones al mismo lugar."
+        },
+        {
+          "s": "dame",
+          "t": "Entonces alguien está juntando datos de niños. Quiero saber quién. Empieza donde está la gente, Shieldy: hoy hay un gran sorteo de ShineUp en la playa."
+        }
+      ]
+    },
+    "j3": {
+      "name": "El sorteo",
+      "lesson": "\"Todos lo hacen\" y \"solo por hoy\" están hechos para apurarte. Ve más despacio.",
+      "goals": {
+        "beach": "Llega al escenario de la playa. Anzuelos tocados: {n}"
+      },
+      "intro": [
+        {
+          "s": "bot",
+          "t": "ALERTA. Nova, la streamer con más seguidores de Knight City, presenta un sorteo de ShineUp en la playa. Los primeros cien en registrarse reciben 5.000 chispas."
+        },
+        {
+          "s": "bot",
+          "t": "Alguien regó chispas moradas por las calles para atraer a los niños. Son un anzuelo. No las recojas."
+        },
+        {
+          "s": "bot",
+          "t": "Repito, porque te conozco: NO recojas las cosas que brillan."
+        }
+      ],
+      "meet": [
+        {
+          "s": "nova",
+          "t": "¡Miren nada más, es el Caballero! ¡Vean todos, hasta Shieldy vino por chispas gratis!"
+        },
+        {
+          "s": "nova",
+          "t": "¡Regístrate en vivo en mi stream! Solo necesito tu nombre completo, tu fecha de cumpleaños y tu escuela. ¡Facilísimo!"
+        }
+      ],
+      "signup": {
+        "q": "¿Y? Nombre completo, cumpleaños, escuela. ¡Todos están mirando!",
+        "c": [
+          {
+            "t": "Me quedo a mirar, pero no me registro. ¿Para qué necesita un juego saber mi escuela?",
+            "r": "Pues… porque sí, ¿ok? Todos la dan. No lo hagas raro."
+          },
+          {
+            "t": "Bueno. Un nombre y un cumpleaños no le hacen mal a nadie.",
+            "r": "Con un nombre completo, un cumpleaños y una escuela alcanza para encontrar a un niño, o para hacerse pasar por él. Intenta de nuevo."
+          },
+          {
+            "t": "Me registro con los datos de Sprout, de broma.",
+            "r": "Entonces al que encuentran es a Sprout. Intenta de nuevo."
+          }
+        ]
+      },
+      "after": [
+        {
+          "s": "nova",
+          "t": "Mira. Hoy tengo que conseguir cien registros. Tengo que conseguirlos."
+        },
+        {
+          "s": "nova",
+          "t": "…Digo, quiero conseguirlos. Obvio."
+        },
+        {
+          "s": "shieldy",
+          "t": "¿Tienes que? ¿Quién lo dice?"
+        },
+        {
+          "s": "nova",
+          "t": "Nadie. Olvídalo. ¡Gente, seguimos con el stream!"
+        },
+        {
+          "s": "pixel",
+          "t": "¿Le viste la cara? Miraba el teléfono todo el tiempo, como si la fuera a morder."
+        }
+      ]
+    },
+    "j4": {
+      "name": "El regreso a casa",
+      "lesson": "Los cambios de planes te llegan por gente que conoces. Confírmalos directamente con ellos, y acuerda con tu familia una palabra clave.",
+      "goals": {
+        "school": "Llega a la escuela antes que la camioneta",
+        "home": "Lleva a Sprout a su casa"
+      },
+      "intro": [
+        {
+          "s": "dame",
+          "t": "A Sprout le acaba de llegar un mensaje: \"¡Hola! Soy amigo de tu mamá. Paso por ti a la escuela en una camioneta morada\"."
+        },
+        {
+          "s": "dame",
+          "t": "Su mamá no mandó a nadie. ¡Llega a la escuela antes que esa camioneta!"
+        }
+      ],
+      "pickup": [
+        {
+          "s": "sprout",
+          "t": "¡Shieldy! Sabía mi nombre. Sabía cuál es mi escuela. Pensé que tenía que ser de verdad."
+        },
+        {
+          "s": "sprout",
+          "t": "Se llama StarKnight. Es mi mejor amigo en ShineUp. Me trata superbién."
+        },
+        {
+          "s": "shieldy",
+          "t": "Que sepa tu nombre no prueba nada, Sprout. Súbete."
+        }
+      ],
+      "msg": {
+        "q": "¡Cambio de planes! Dice tu mamá que mejor dejes a Sprout en el muelle. Ahí los espero. — El amigo de mamá",
+        "c": [
+          {
+            "t": "No respondo. Llamo a Dame Noble para confirmarlo.",
+            "r": "Dame Noble llamó a la mamá de Sprout. Ella nunca cambió ningún plan."
+          },
+          {
+            "t": "Doy la vuelta y manejo hasta el muelle.",
+            "r": "Un mensaje puede decir que viene de cualquiera. Intenta de nuevo."
+          },
+          {
+            "t": "Respondo: \"¿Quién eres?\"",
+            "r": "Solo va a inventar un cuento mejor. Confírmalo con alguien a quien ya conozcas. Intenta de nuevo."
+          }
+        ]
+      },
+      "outro": [
+        {
+          "s": "sprout",
+          "t": "¡En casa! Mi mamá y yo estamos inventando una palabra clave secreta. Si alguien no la sabe, no me voy con esa persona."
+        },
+        {
+          "s": "dame",
+          "t": "Muy bien. Ahora, la pregunta que me preocupa: ¿cómo supo un desconocido el nombre de Sprout, su escuela y la hora a la que vuelve caminando a casa?"
+        }
+      ]
+    },
+    "j5": {
+      "name": "¿Cómo lo supo?",
+      "lesson": "Cada publicación es una pista. Deja tu perfil en privado, no muestres tu escuela, tu calle ni tu rutina, y pregunta antes de etiquetar a un amigo.",
+      "goals": {
+        "photos": "Encuentra dónde se tomaron las fotos de Sprout: {a}/{b}"
+      },
+      "intro": [
+        {
+          "s": "pixel",
+          "t": "Revisé la página de Sprout en ShineUp. Cinco fotos. Y creo que cada una dejó escapar algo."
+        },
+        {
+          "s": "pixel",
+          "t": "Los lugares están en tu mapa. Párate donde se tomó cada foto y mírala como la miraría un desconocido."
+        }
+      ],
+      "quiz": {
+        "p1": {
+          "q": "Sprout con su uniforme, muy sonriente, frente a la entrada de la escuela.",
+          "c": [
+            {
+              "t": "Su escuela. El nombre está en la entrada y el escudo, en su suéter.",
+              "r": "Así es. Una sola foto, y un desconocido ya sabe dónde está Sprout cinco días a la semana."
+            },
+            {
+              "t": "Nada. Es solo una foto linda.",
+              "r": "Mira otra vez: lo que hay detrás de él y lo que lleva puesto."
+            },
+            {
+              "t": "Que le gusta la escuela.",
+              "r": "¡Puede ser! Pero fíjate en lo que podría aprovechar un desconocido."
+            }
+          ]
+        },
+        "p2": {
+          "q": "La bici nueva de Sprout, estacionada frente a su casa.",
+          "c": [
+            {
+              "t": "Dónde vive. Al fondo se ven el número de la casa y el letrero de la calle.",
+              "r": "Sí. Él presumía la bici. El fondo presumía su dirección."
+            },
+            {
+              "t": "Que tiene una bici muy linda.",
+              "r": "Cierto. Ahora fíjate en qué más sale en la foto."
+            },
+            {
+              "t": "Nada que sirva. Hay muchas casas parecidas.",
+              "r": "No con un número y el nombre de la calle en la imagen."
+            }
+          ]
+        },
+        "p3": {
+          "q": "El parque, con el texto: \"¡Aquí todos los días a las 4, después de la escuela!\"",
+          "c": [
+            {
+              "t": "Su rutina: dónde va a estar y a qué hora, todos los días.",
+              "r": "Exacto. Es un horario para cualquiera que quiera encontrárselo \"por casualidad\"."
+            },
+            {
+              "t": "Que le gusta el parque.",
+              "r": "Sí, pero vuelve a leer lo que dice abajo."
+            },
+            {
+              "t": "Nada. Los parques son públicos.",
+              "r": "El parque es público. Su horario no debería serlo."
+            }
+          ]
+        },
+        "p4": {
+          "q": "Sprout y sus amigos en la sala de videojuegos, todos etiquetados con su nombre.",
+          "c": [
+            {
+              "t": "Los nombres de sus amigos. Ahora un desconocido puede decir: \"Yo conozco a Milo y a Tess\".",
+              "r": "Así es. Por eso StarKnight sonaba como alguien del grupo."
+            },
+            {
+              "t": "Que tiene muchos amigos.",
+              "r": "Puede ser, pero piensa en lo que un desconocido podría hacer con esos nombres."
+            },
+            {
+              "t": "En qué juego es mejor.",
+              "r": "Mira las etiquetas, no la pantalla."
+            }
+          ]
+        },
+        "p5": {
+          "q": "Una gata adormilada, con el texto: \"¡Bigotes cumple 3 años hoy!\"",
+          "c": [
+            {
+              "t": "El nombre de su mascota: un clásico de las contraseñas y las preguntas secretas.",
+              "r": "Sí. Y una manera de sonar como un amigo: \"¿Cómo está Bigotes?\""
+            },
+            {
+              "t": "Que tiene una gata. ¿Y qué?",
+              "r": "Que ese nombre abre más puertas de las que crees. Intenta de nuevo."
+            },
+            {
+              "t": "Nada. Los gatos son inofensivos.",
+              "r": "La gata sí. Su nombre en malas manos, no."
+            }
+          ]
+        }
+      },
+      "outro": [
+        {
+          "s": "pixel",
+          "t": "Escuela, calle, rutina, amigos, mascota. StarKnight nunca hackeó nada. Sprout se lo fue entregando, una foto tierna a la vez."
+        },
+        {
+          "s": "sprout",
+          "t": "Ya puse mi página en privado. Y Bigotes ya no es mi contraseña. …Era Bigotes1."
+        },
+        {
+          "s": "dame",
+          "t": "Nadie te culpa, Sprout. Nadie te lo había explicado. Ahora lo sabes, y ahora puedes contárselo a tus amigos."
+        }
+      ]
+    },
+    "j6": {
+      "name": "Espías en el cielo",
+      "lesson": "Tu ubicación es para gente que conoces en la vida real, o para nadie.",
+      "goals": {
+        "drones": "Marca los drones espía: {a}/{b}"
+      },
+      "intro": [
+        {
+          "s": "bot",
+          "t": "ALERTA. Sprout no fue el único. Los drones de Glitch están siguiendo a los niños hasta sus casas."
+        },
+        {
+          "s": "bot",
+          "t": "Los encontraron porque tenían la ubicación compartida con todo el mundo. Maneja debajo de cada dron y quédate cerca hasta que tu escudo lo marque."
+        }
+      ],
+      "outro": [
+        {
+          "s": "bot",
+          "t": "Todos los drones cayeron. También revisé mis propios ajustes. Ahora mi ubicación no se comparte con nadie."
+        },
+        {
+          "s": "dame",
+          "t": "Un mapa en vivo, una publicación de \"estoy aquí\", una foto donde se ve la calle. Cada una es un dron que lanzaste tú."
+        }
+      ]
+    },
+    "j7": {
+      "name": "Una voz, muchas caras",
+      "lesson": "Un perfil es una máscara. Si alguien no quiere mostrar la cara, pide secretos o apura la amistad, es una señal de alerta.",
+      "goals": {
+        "kids": "Lee los chats: {a}/{b}"
+      },
+      "intro": [
+        {
+          "s": "pixel",
+          "t": "Tres chicos. Tres mejores amigos recién estrenados: StarKnight, LunaBest y AceRider. Quiero ver esos chats."
+        },
+        {
+          "s": "pixel",
+          "t": "Milo está en la sala de videojuegos, Tess en el parque y Finn en los cafés de la playa. Pídeselos con amabilidad. Están un poco encandilados con sus nuevos amigos."
+        }
+      ],
+      "milo": [
+        {
+          "s": "milo",
+          "t": "Luna es increíble. Me entiende. Mira, léelo si quieres, no tiene nada de malo."
+        }
+      ],
+      "tess": [
+        {
+          "s": "tess",
+          "t": "¡StarKnight dice que soy la mejor artista de toda la ciudad! ¿Ves?"
+        }
+      ],
+      "finn": [
+        {
+          "s": "finn",
+          "t": "Ace es genial. Tiene quince años y aun así habla conmigo. Toma."
+        }
+      ],
+      "quiz": {
+        "milo": {
+          "q": "LunaBest: \"eres el único que me entiende. no le digas a tu abuela que hablamos, lo arruinaría todo\"",
+          "c": [
+            {
+              "t": "Le pide que no le cuente de ella a su familia.",
+              "r": "Así es. A una amiga de verdad le alegra que tu familia sepa que existe."
+            },
+            {
+              "t": "Dice que Milo la entiende.",
+              "r": "Eso es el azúcar. Busca el anzuelo que viene después."
+            },
+            {
+              "t": "Nada. Es un mensaje lindo.",
+              "r": "Está hecho para sentirse lindo. Vuelve a leer la segunda mitad."
+            }
+          ]
+        },
+        "tess": {
+          "q": "StarKnight: \"se me rompió la cámara y no puedo hacer videollamada. pero mándame una foto tuya!\"",
+          "c": [
+            {
+              "t": "Él nunca se deja ver, pero le pide una foto a ella.",
+              "r": "Sí. La cámara siempre está rota. No es mala suerte: es la máscara."
+            },
+            {
+              "t": "Se le rompió la cámara. Eso pasa.",
+              "r": "¿Durante meses? ¿Y solo a él?"
+            },
+            {
+              "t": "Le gustan sus dibujos.",
+              "r": "Ese fue el mensaje de ayer. Fíjate en lo que quiere hoy."
+            }
+          ]
+        },
+        "finn": {
+          "q": "AceRider: \"ya llevamos 2 días enteros de amigos, me puedes contar lo q sea. cuál es tu contraseña? los mejores amigos comparten\"",
+          "c": [
+            {
+              "t": "Van dos días, ya son \"mejores amigos\" y le pide la contraseña.",
+              "r": "Exacto. Primero una cercanía apurada; después, el pedido."
+            },
+            {
+              "t": "Él tiene quince años y Finn tiene diez.",
+              "r": "Eso también es una señal de alerta. Pero fíjate en lo que le está pidiendo."
+            },
+            {
+              "t": "Nada. Los amigos sí comparten cosas.",
+              "r": "Contraseñas, no. Nunca."
+            }
+          ]
+        }
+      },
+      "trace": [
+        {
+          "s": "pixel",
+          "t": "Shieldy… Rastreé las tres cuentas. StarKnight, LunaBest, AceRider. Las tres se conectan desde la misma máquina."
+        },
+        {
+          "s": "pixel",
+          "t": "Y con las mismas faltas de ortografía. No son tres amigos. Es una sola persona con tres caras."
+        },
+        {
+          "s": "dame",
+          "t": "Y esa máquina se está moviendo. Va dentro de una camioneta morada."
+        },
+        {
+          "s": "glitch",
+          "t": "Qué listos, mis Caballeritos. Atrápenme si pueden. — G"
+        }
+      ]
+    },
+    "j8": {
+      "name": "La camioneta morada",
+      "lesson": "Lo que se ve casi nunca es la historia completa. Reúne hechos antes de acusar a alguien.",
+      "goals": {
+        "van": "Marca la camioneta morada: {a}/{b}"
+      },
+      "intro": [
+        {
+          "s": "dame",
+          "t": "Ahí está. La camioneta de Glitch, con los tres amigos falsos adentro."
+        },
+        {
+          "s": "dame",
+          "t": "Pégate a ella y no la sueltes hasta que tu escudo la marque. Con tres marcas se detiene. Nada de chocarla: hay gente en la calle."
+        }
+      ],
+      "outro": [
+        {
+          "s": "pixel",
+          "t": "¡Se detuvo! Abro las puertas… ¡está VACÍA! Sin conductor. Solo una caja repetidora que la manejaba desde otro lugar."
+        },
+        {
+          "s": "pixel",
+          "t": "Y la caja tiene una calcomanía. Una estrellita con una N. Ese… ese es el logo de Nova."
+        },
+        {
+          "s": "dame",
+          "t": "Despacio, Pixel. Una calcomanía no es una prueba. Pero sí: mantén los ojos abiertos."
+        }
+      ]
+    },
+    "j9": {
+      "name": "Bot no es Bot",
+      "lesson": "Un mensaje desde la cuenta de un amigo no siempre es de tu amigo. Confírmalo por otro medio. Si te roban la cuenta: contraseña nueva, verificación en dos pasos y cuéntaselo a un adulto.",
+      "goals": {
+        "kids": "Llega con los amigos de Bot antes de que respondan: {a}/{b}",
+        "hq": "Lleva a Bot al Cuartel de los Caballeros"
+      },
+      "intro": [
+        {
+          "s": "botfake",
+          "t": "holaa amigui!! pásame tu contraseña un ratito y te subo de nivel 😎"
+        },
+        {
+          "s": "shieldy",
+          "t": "Bot jamás en su vida ha dicho \"amigui\"."
+        },
+        {
+          "s": "bot",
+          "t": "ERROR. ERROR. ¡Ese no fui yo! Le di mi contraseña a LunaBest. Dijo que los mejores amigos comparten. Ahora ella ES yo."
+        },
+        {
+          "s": "bot",
+          "t": "Mi cuenta les está escribiendo a todos mis conocidos. ¡Milo, Tess, Finn y Jay se lo van a creer, porque viene de mí!"
+        }
+      ],
+      "quiz": {
+        "k1": {
+          "q": "Bot me acaba de pedir mi contraseña. Es su cuenta, así que es él. ¿No?",
+          "c": [
+            {
+              "t": "Llama a Bot, o pregúntaselo en persona.",
+              "r": "Bien. Otro camino, uno que el ladrón no controla."
+            },
+            {
+              "t": "Sí. Si es su cuenta, es él.",
+              "r": "Las cuentas se roban. Quien tiene la contraseña tiene el nombre. Intenta de nuevo."
+            },
+            {
+              "t": "Pregúntale a la cuenta: \"¿De verdad eres tú?\"",
+              "r": "El ladrón va a decir que sí. Intenta de nuevo."
+            }
+          ]
+        },
+        "k2": {
+          "q": "De verdad parece la cuenta de Bot. ¿Cómo puedo saberlo con certeza?",
+          "c": [
+            {
+              "t": "Pregúntale algo que solo sepa el Bot de verdad, como qué hicieron el sábado.",
+              "r": "Sí. Una cuenta robada tiene el nombre, pero no los recuerdos."
+            },
+            {
+              "t": "Revisa la foto de perfil.",
+              "r": "El ladrón tiene la cuenta entera, con foto y todo. Intenta de nuevo."
+            },
+            {
+              "t": "Fíjate si responde rápido.",
+              "r": "La rapidez no prueba nada. Intenta de nuevo."
+            }
+          ]
+        },
+        "k3": {
+          "q": "Dijo que me sube de nivel si le presto mi contraseña.",
+          "c": [
+            {
+              "t": "No suena como él, y un amigo de verdad nunca necesita tu contraseña.",
+              "r": "Exacto. Dos señales de alerta en un solo mensaje."
+            },
+            {
+              "t": "Préstasela cinco minutos y después la cambias.",
+              "r": "Cinco minutos sobran para dejarte fuera de tu cuenta. Intenta de nuevo."
+            },
+            {
+              "t": "Dale solo la mitad.",
+              "r": "¿Para qué darle media llave a un ladrón? Intenta de nuevo."
+            }
+          ]
+        },
+        "k4": {
+          "q": "¿Y entonces qué hago con el mensaje?",
+          "c": [
+            {
+              "t": "No lo respondas. Avísale a Bot que le robaron la cuenta, y cuéntaselo a un adulto.",
+              "r": "Eso es. Acabas de romper la cadena."
+            },
+            {
+              "t": "Respóndele y dile al ladrón lo que se merece.",
+              "r": "Ahora sabe que estás ahí, y va a probar con algo más astuto. Intenta de nuevo."
+            },
+            {
+              "t": "Reenvíaselo a todo el mundo como aviso.",
+              "r": "Una captura de pantalla a un adulto, sí. Reenviarlo hace circular su mensaje. Intenta de nuevo."
+            }
+          ]
+        }
+      },
+      "fix": [
+        {
+          "s": "dame",
+          "t": "Tres pasos, Bot. Uno: una contraseña nueva. Larga, rara y que no uses en ningún otro lugar."
+        },
+        {
+          "s": "dame",
+          "t": "Dos: activa la verificación en dos pasos, para que la contraseña sola no alcance. Tres: cierra la sesión en todos los demás dispositivos."
+        }
+      ],
+      "pass": {
+        "q": "Elige tú mi contraseña nueva, Shieldy. Hoy confío más en tu criterio que en el mío.",
+        "c": [
+          {
+            "t": "tetera-morada-vuela-en-7-nubes",
+            "r": "Larga, rara, fácil de imaginar para ti y difícil de adivinar para los demás."
+          },
+          {
+            "t": "Bot123",
+            "r": "Tu nombre y tres números es lo primero que prueba cualquiera. Intenta de nuevo."
+          },
+          {
+            "t": "LunaBestPorSiempre",
+            "r": "Ay, Bot. Intenta de nuevo."
+          }
+        ]
+      },
+      "outro": [
+        {
+          "s": "bot",
+          "t": "CUENTA RECUPERADA. LunaBest fue eliminada de mis amigos, de mis dispositivos y de mi corazón."
+        },
+        {
+          "s": "bot",
+          "t": "También aprendí que la vergüenza no sirve de nada. Contártelo fue mucho más rápido."
+        }
+      ]
+    },
+    "j10": {
+      "name": "Solo entre nosotros",
+      "lesson": "\"No se lo cuentes a nadie\" es la trampa misma. La vergüenza hace callar, y el silencio es lo que necesita quien engaña. A los adultos también los engañan.",
+      "goals": {
+        "r1": "Acertijo de Milo: \"Donde brilla un joystick gigante\"",
+        "r2": "Acertijo de Milo: \"Donde el agua salta en medio de los árboles\"",
+        "r3": "Acertijo de Milo: \"Donde la torre a rayas vigila el mar\"",
+        "rose": "Lleva a Milo con la abuela Rose"
+      },
+      "intro": [
+        {
+          "s": "sprout",
+          "t": "Milo no vino hoy a la escuela. Su último mensaje dice: \"Voy a ver a Luna. Me tiene un regalo. No digas nada\"."
+        },
+        {
+          "s": "dame",
+          "t": "LunaBest es Glitch. Encuentra a ese niño, Shieldy."
+        },
+        {
+          "s": "sprout",
+          "t": "Dejó tres acertijos sobre adónde iba. Siempre hace eso. Le parece gracioso."
+        }
+      ],
+      "c1": [
+        {
+          "s": "shieldy",
+          "t": "Una nota en el piso, con la letra de Milo: \"Luna dice que vaya solo\". Estuvo aquí."
+        }
+      ],
+      "c2": [
+        {
+          "s": "shieldy",
+          "t": "Su mochila, debajo de una banca. Va ligero de equipaje. Queda un acertijo."
+        }
+      ],
+      "found": [
+        {
+          "s": "milo",
+          "t": "¡Vete! Luna dijo que si le cuento a alguien, ya no va a ser mi amiga. ¡Me vas a meter en problemas!"
+        }
+      ],
+      "heart": {
+        "q": "¡Me vas a meter en problemas!",
+        "c": [
+          {
+            "t": "No estás en problemas, Milo. Ni conmigo ni con nadie. Solo quiero que estés a salvo.",
+            "r": "…¿Me lo prometes? Ella dijo que todos se iban a enojar."
+          },
+          {
+            "t": "Eso fue una tontería enorme, Milo. Tú sabes que esto no se hace.",
+            "r": "¡SABÍA que ibas a decir eso! ¡Por eso no le conté a nadie!"
+          },
+          {
+            "t": "Luna no existe. Súbete al auto.",
+            "r": "¡SÍ existe! ¡Y es más buena que todos ustedes!"
+          }
+        ]
+      },
+      "soft": [
+        {
+          "s": "shieldy",
+          "t": "Nadie está enojado. Y, Milo, el regalo no va a llegar. Luna y StarKnight son la misma persona. Es Glitch."
+        },
+        {
+          "s": "milo",
+          "t": "…¿La misma? Pero ella sabía cuál es mi juego favorito. Sabía todo de mí."
+        },
+        {
+          "s": "shieldy",
+          "t": "Porque tú se lo habías contado. Ven. Vamos con tu abuela."
+        }
+      ],
+      "rose": [
+        {
+          "s": "rose",
+          "t": "Ay, mi Milo. Ven acá."
+        },
+        {
+          "s": "rose",
+          "t": "Siéntense los dos. Les voy a contar algo que no le he contado a nadie."
+        },
+        {
+          "s": "rose",
+          "t": "El año pasado me llamó un hombre por teléfono. Dijo que era de mi banco. Era tan amable. Le leí los números de mi tarjeta."
+        },
+        {
+          "s": "rose",
+          "t": "Me dio tanta vergüenza que pasé tres meses sin contárselo a nadie. Tres meses en los que él siguió sacando dinero. El día que se lo conté a tu madre, se acabó."
+        },
+        {
+          "s": "milo",
+          "t": "¿A ti te engañaron, abuela? ¡Pero si tú eres grande!"
+        },
+        {
+          "s": "rose",
+          "t": "Con muchos años o con pocos, con astucia o con cuidado: da igual. Engañar a la gente es su trabajo, y lo hacen bien. El nuestro es contarlo."
+        }
+      ]
+    },
+    "j11": {
+      "name": "La noche de Nova",
+      "lesson": "Si alguien amenaza con compartir algo tuyo, no es tu culpa. Ni siquiera si tú lo enviaste. Ni siquiera si después hiciste lo que te pidió.",
+      "goals": {
+        "pier": "Reúnete con Nova en el muelle",
+        "shake": "Despista a los drones: {a}/{b}",
+        "hq": "Lleva a Nova al Cuartel de los Caballeros"
+      },
+      "intro": [
+        {
+          "s": "nova",
+          "t": "¿Shieldy? Soy Nova. No digas mi nombre en voz alta. Búscame al final del muelle cuando oscurezca. Ven solo. Por favor."
+        },
+        {
+          "s": "dame",
+          "t": "Puede ser una trampa. Puede ser una chica que necesita ayuda. Ve, y no apagues el teléfono."
+        }
+      ],
+      "confess": [
+        {
+          "s": "nova",
+          "t": "La calcomanía de la camioneta. La viste. Ya sé lo que piensas."
+        },
+        {
+          "s": "nova",
+          "t": "Hace un año empezó a seguirme alguien que se llamaba Kite. Kite me decía las cosas más lindas que me han dicho en la vida. Le mandé un video. Uno tonto, privado. Solo para un amigo."
+        },
+        {
+          "s": "nova",
+          "t": "Kite era Glitch. Ahora me dice: promociona ShineUp, tráeme niños, o lo ve todo el mundo. Cada semana quiere más."
+        },
+        {
+          "s": "nova",
+          "t": "Le llevé media ciudad. A Sprout. A Milo. Yo sabía lo que él era, y lo hice igual."
+        }
+      ],
+      "heart": {
+        "q": "Yo sabía lo que él era, y lo hice igual.",
+        "c": [
+          {
+            "t": "Esto lo hizo él, Nova. No tú. A ti te engañaron y después te amenazaron. Lo arreglamos juntos, con un adulto.",
+            "r": "…Eres la primera persona que no me mira así."
+          },
+          {
+            "t": "Le entregaste a esos niños. ¿Cómo pudiste?",
+            "r": "¡Ya lo sé! ¿Crees que no lo sé? Justo por esto no podía contárselo a nadie."
+          },
+          {
+            "t": "Por ahora sigue haciendo lo que te dice, hasta que encontremos otra salida.",
+            "r": "Eso me vengo diciendo desde hace un año. Y solo se pone peor."
+          }
+        ]
+      },
+      "caught": [
+        {
+          "s": "glitch",
+          "t": "Nova, Nova… Eso no se hace. Hablando con Caballeros. Drones: sigan a ese auto."
+        },
+        {
+          "s": "shieldy",
+          "t": "Súbete. Agárrate fuerte."
+        }
+      ],
+      "safe": [
+        {
+          "s": "dame",
+          "t": "Aquí están a salvo. Nova, no te voy a preguntar por qué no lo contaste antes. Te voy a preguntar qué necesitas."
+        },
+        {
+          "s": "nova",
+          "t": "Necesito que se acabe."
+        }
+      ]
+    },
+    "j12": {
+      "name": "No pagues",
+      "lesson": "Nunca pagues y nunca negocies: eso no se acaba. Cuéntale todo a un adulto de confianza. Casi siempre se enojan mucho menos y ayudan mucho más de lo que temes.",
+      "goals": {
+        "kids": "Evita que los chicos le paguen a Glitch: {a}/{b}",
+        "home": "Lleva a Nova a casa, con su mamá"
+      },
+      "intro": [
+        {
+          "s": "glitch",
+          "t": "10.000 chispas antes de la medianoche, Nova. O el video llega a todos los teléfonos de Knight City."
+        },
+        {
+          "s": "pixel",
+          "t": "Los chicos se enteraron. Están juntando chispas por toda la ciudad para pagarle por ella. Lo hacen con buena intención. Es lo peor que podrían hacer."
+        }
+      ],
+      "quiz": {
+        "k1": {
+          "q": "¡Ya tenemos 4.000 chispas! Si pagamos, va a dejar a Nova en paz. ¿Verdad?",
+          "c": [
+            {
+              "t": "Pagar le demuestra que funciona. Va a volver a pedir, y más.",
+              "r": "Así es. Para él, un pago no es un final. Es un comienzo."
+            },
+            {
+              "t": "Sí. Un trato es un trato.",
+              "r": "Él no cumple tratos. Solo sigue pidiendo. Intenta de nuevo."
+            },
+            {
+              "t": "Paguen la mitad, a ver qué pasa.",
+              "r": "Entonces sabe que van a pagar, y que tienen miedo. Intenta de nuevo."
+            }
+          ]
+        },
+        "k2": {
+          "q": "Pero cuando tenga las chispas va a borrar el video. Él lo dijo.",
+          "c": [
+            {
+              "t": "Después de pagar, el video lo sigue teniendo él. Pagar no compra nada.",
+              "r": "Exacto. Una copia no se puede recomprar."
+            },
+            {
+              "t": "Lo prometió. ¿Por qué iba a mentir?",
+              "r": "No ha hecho otra cosa que mentir. Intenta de nuevo."
+            },
+            {
+              "t": "Que primero lo borre, y después le pagan.",
+              "r": "Se queda con una copia y con las chispas. Intenta de nuevo."
+            }
+          ]
+        },
+        "k3": {
+          "q": "¿Y entonces qué hacemos? ¡No podemos quedarnos sin hacer nada!",
+          "c": [
+            {
+              "t": "La salida no es el dinero. Es contárselo a un adulto y reportarlo.",
+              "r": "Sí. Eso es lo que más miedo le da."
+            },
+            {
+              "t": "Busquen a Glitch y díganle lo que se merece.",
+              "r": "No está arrepentido y no va a escuchar. Intenta de nuevo."
+            },
+            {
+              "t": "Esperen, a ver si se aburre.",
+              "r": "No se aburre. Se envalentona. Intenta de nuevo."
+            }
+          ]
+        },
+        "k4": {
+          "q": "Alguien dijo que me podía mandar el video, solo para que sepa qué es. ¿Lo miro?",
+          "c": [
+            {
+              "t": "No. No lo abras ni lo reenvíes. Compartirlo es hacerle el trabajo a él.",
+              "r": "Así es. Cada reenvío vuelve a lastimar a Nova, lo mande quien lo mande."
+            },
+            {
+              "t": "Solo una mirada. No se lo voy a mandar a nadie.",
+              "r": "Mirándolo es como se difunde. Y es de ella, no nuestro. Intenta de nuevo."
+            },
+            {
+              "t": "Mándaselo a un adulto como prueba.",
+              "r": "Cuéntale a un adulto que existe y quién lo tiene. El video en sí no se manda. Intenta de nuevo."
+            }
+          ]
+        }
+      },
+      "drive": [
+        {
+          "s": "nova",
+          "t": "Mi mamá se va a enojar muchísimo. Me dijo cien veces que no mandara cosas."
+        }
+      ],
+      "heart": {
+        "q": "A lo mejor le cuento lo de ShineUp y… lo del video me lo salto.",
+        "c": [
+          {
+            "t": "Cuéntale todo. La parte que quieres esconder es justo la que él está usando.",
+            "r": "…Sí. Si ella lo sabe, a él ya no le queda nada con qué amenazarme."
+          },
+          {
+            "t": "Cuéntale casi todo. Lo del video, no.",
+            "r": "Entonces él sigue teniendo algo contra mí que ella no sabe."
+          },
+          {
+            "t": "Va a estar enojada un tiempo. A lo mejor te lo mereces un poquito.",
+            "r": "…Gracias. Qué gran ayuda."
+          }
+        ]
+      },
+      "mum": [
+        {
+          "s": "mum",
+          "t": "¿Nova? Me llamó Dame Noble. Ven acá."
+        },
+        {
+          "s": "nova",
+          "t": "Mamá, hice algo muy…"
+        },
+        {
+          "s": "mum",
+          "t": "Ya lo sé. No estoy enojada. Estoy asustada, y me duele muchísimo que hayas cargado con esto tú sola durante un año."
+        },
+        {
+          "s": "mum",
+          "t": "Lo reportamos esta misma noche. Juntas. Y no estás castigada. Eres valiente."
+        }
+      ]
+    },
+    "j13": {
+      "name": "La prueba",
+      "lesson": "Primero la prueba: una captura de pantalla donde se vean el nombre y la fecha, guardada en un lugar seguro. Después, bloquea y reporta. Nunca reenvíes la imagen que hace daño.",
+      "goals": {
+        "kids": "Guarda las pruebas antes de que lleguen los drones borradores: {a}/{b}"
+      },
+      "intro": [
+        {
+          "s": "pixel",
+          "t": "Glitch entró en pánico. Está mandando drones borradores para eliminar sus mensajes de los teléfonos de los chicos. Sin esos chats, no tenemos nada."
+        },
+        {
+          "s": "dame",
+          "t": "Llega primero con cada niño. Y escucha bien: guardamos pruebas de lo que hizo ÉL. Ni una sola copia de lo que le quitó a Nova."
+        }
+      ],
+      "quiz": {
+        "k1": {
+          "q": "¡Todavía tengo todos los mensajes de LunaBest! ¿Qué hago con ellos?",
+          "c": [
+            {
+              "t": "Tómale capturas de pantalla al chat, donde se vean su nombre de usuario y las fechas.",
+              "r": "Sí. Quién lo dijo y cuándo: eso es lo que lo convierte en prueba."
+            },
+            {
+              "t": "Borra el chat para que nadie lo vea nunca.",
+              "r": "Eso es lo que quiere Glitch. Sin el chat, es como si nunca hubiera pasado. Intenta de nuevo."
+            },
+            {
+              "t": "Escríbele y dile que ya la descubrimos.",
+              "r": "Entonces lo borra todo desde su lado. Intenta de nuevo."
+            }
+          ]
+        },
+        "k2": {
+          "q": "¡Ya tengo las capturas! ¿Dónde las pongo?",
+          "c": [
+            {
+              "t": "Guárdalas en un lugar seguro y muéstraselas a un adulto de confianza.",
+              "r": "Así es. Las pruebas son para quienes pueden hacer algo con ellas."
+            },
+            {
+              "t": "Publícalas para que todo el mundo quede avisado.",
+              "r": "En esos chats hay nombres y mensajes de otros chicos. Intenta de nuevo."
+            },
+            {
+              "t": "Mándaselas a todos tus amigos.",
+              "r": "Entonces son chisme, no pruebas. Intenta de nuevo."
+            }
+          ]
+        },
+        "k3": {
+          "q": "¿Ya puedo bloquear a StarKnight? No quiero volver a ver ese nombre nunca más.",
+          "c": [
+            {
+              "t": "Sí: ahora que la prueba está guardada, bloquéalo y reporta la cuenta.",
+              "r": "Ese es el orden. Guardar, después bloquear, después reportar."
+            },
+            {
+              "t": "Sigue chateando un poco, para conseguir más pruebas.",
+              "r": "Ya tienes suficientes. Cada mensaje de más es un riesgo para ti. Intenta de nuevo."
+            },
+            {
+              "t": "Bloquéalo y borra todo, ahora mismo.",
+              "r": "Bloquear está bien. Al borrar se pierde la prueba. Intenta de nuevo."
+            }
+          ]
+        }
+      },
+      "k4": [
+        {
+          "s": "jay",
+          "t": "Ya está hecho, Caballero. Capturas, fechas, todo. Mi mamá tiene una copia."
+        }
+      ],
+      "k5": [
+        {
+          "s": "milo",
+          "t": "¡Me ayudó mi abuela! Guardamos todos los mensajes. Dice que ahora soy detective."
+        }
+      ],
+      "outro": [
+        {
+          "s": "pixel",
+          "t": "Cinco teléfonos, cinco chats completos, un solo remitente. Es un patrón que nadie puede negar."
+        },
+        {
+          "s": "dame",
+          "t": "Entonces llegó la hora de usarlo."
+        }
+      ]
+    },
+    "j14": {
+      "name": "Todos lo cuentan",
+      "lesson": "Si una app no te escucha, las personas sí: tu mamá o tu papá, una maestra o un maestro, una línea de ayuda, la policía. Tienes más puertas que el botón de reportar.",
+      "goals": {
+        "allies": "Suma a los adultos: {a}/{b}"
+      },
+      "intro": [
+        {
+          "s": "pixel",
+          "t": "Reportamos a Glitch dentro de ShineUp. La respuesta llegó en un segundo: \"No se encontró ningún problema\"."
+        },
+        {
+          "s": "pixel",
+          "t": "Claro que sí. La app es suya. Se está calificando su propio examen."
+        },
+        {
+          "s": "dame",
+          "t": "Entonces lo rodeamos. El botón de reportar es una puerta. Las personas son las demás. Ve a tocar."
+        }
+      ],
+      "rose": [
+        {
+          "s": "rose",
+          "t": "Voy a llamar a cada abuela y a cada abuelo de mi grupo de tejido. Si un niño nos cuenta algo, primero escuchamos, y el alboroto queda para después."
+        }
+      ],
+      "sam": [
+        {
+          "s": "sam",
+          "t": "Yo camino todas las calles de esta ciudad. Voy a explicarle qué es ShineUp a cada familia de mi ruta. Y a la línea de seguridad de la ciudad la llamo yo mismo."
+        }
+      ],
+      "mum": [
+        {
+          "s": "mum",
+          "t": "Hablé con el equipo de seguridad en línea de la policía y con la escuela. Me dijeron: traigan las capturas de pantalla. Dijeron que pasa mucho, y que Nova hizo lo correcto."
+        }
+      ],
+      "jay": [
+        {
+          "s": "jay",
+          "t": "Mi hermanito está en ShineUp. Esta noche me siento a hablar con él. Y para esto hay líneas de ayuda. Gratis. Ni siquiera tienes que decir tu nombre."
+        }
+      ],
+      "outro": [
+        {
+          "s": "dame",
+          "t": "Mira eso. Una chica lo contó, y ahora lo está contando toda una ciudad."
+        },
+        {
+          "s": "nova",
+          "t": "No pensé que alguien se fuera a poner de mi lado."
+        }
+      ]
+    },
+    "j15": {
+      "name": "Desconectar",
+      "lesson": "Cuatro ajustes hacen que sea difícil encontrarte: perfil privado, mensajes solo de amigos, ubicación desactivada, verificación en dos pasos.",
+      "goals": {
+        "masts": "Derriba las antenas repetidoras: {a}/{b}"
+      },
+      "intro": [
+        {
+          "s": "pixel",
+          "t": "ShineUp funciona con cuatro antenas repetidoras. Si las derribas, Glitch no puede llegar a un solo teléfono de la ciudad."
+        },
+        {
+          "s": "glitch",
+          "t": "¡Mi hermosa red! ¡Camioneta! ¡Drones! ¡Detengan a ese Caballero!"
+        },
+        {
+          "s": "pixel",
+          "t": "Cada antena tiene un candado. Pregunta cómo se ajusta una cuenta segura. Si aciertas, se suelta."
+        }
+      ],
+      "quiz": {
+        "a1": {
+          "q": "CANDADO 1 — ¿Quién puede enviarte mensajes?",
+          "c": [
+            {
+              "t": "Solo mis amigos.",
+              "r": "Correcto. Un desconocido no puede tocar una puerta que no ve."
+            },
+            {
+              "t": "Todo el mundo.",
+              "r": "Ese es el ajuste que le encanta a Glitch. Intenta de nuevo."
+            },
+            {
+              "t": "Amigos de mis amigos.",
+              "r": "Siguen siendo miles de personas a las que nunca has visto. Intenta de nuevo."
+            }
+          ]
+        },
+        "a2": {
+          "q": "CANDADO 2 — ¿Quién puede ver dónde estás?",
+          "c": [
+            {
+              "t": "Nadie.",
+              "r": "Correcto. En internet, tu ubicación no es asunto de nadie."
+            },
+            {
+              "t": "Todo el mundo.",
+              "r": "Así encontraron los drones a los niños. Intenta de nuevo."
+            },
+            {
+              "t": "Personas cercanas.",
+              "r": "\"Personas cercanas\" quiere decir desconocidos cercanos. Intenta de nuevo."
+            }
+          ]
+        },
+        "a3": {
+          "q": "CANDADO 3 — ¿Quién puede ver tu perfil y tus fotos?",
+          "c": [
+            {
+              "t": "Solo las personas que yo acepté.",
+              "r": "Correcto. Un perfil privado no le deja a un desconocido nada de dónde agarrarse."
+            },
+            {
+              "t": "Todo el mundo. Quiero más seguidores.",
+              "r": "Más seguidores, más desconocidos leyendo tus pistas. Intenta de nuevo."
+            },
+            {
+              "t": "Todo el mundo, pero voy a tener cuidado con lo que publico.",
+              "r": "Sprout también tenía cuidado. Intenta de nuevo."
+            }
+          ]
+        },
+        "a4": {
+          "q": "CANDADO 4 — ¿Cómo inicias sesión?",
+          "c": [
+            {
+              "t": "Con una contraseña larga y, además, verificación en dos pasos.",
+              "r": "Correcto. Ni siquiera una contraseña robada alcanza."
+            },
+            {
+              "t": "Con una contraseña corta que uso en todos lados.",
+              "r": "Una sola filtración y todas tus cuentas quedan abiertas. Intenta de nuevo."
+            },
+            {
+              "t": "Con el nombre de mi mascota y mi cumpleaños.",
+              "r": "Los dos están en tu perfil. Intenta de nuevo."
+            }
+          ]
+        }
+      },
+      "outro": [
+        {
+          "s": "pixel",
+          "t": "¡La torre se apagó! ¡ShineUp salió del aire!"
+        },
+        {
+          "s": "dame",
+          "t": "Está huyendo. Un superdeportivo morado, rumbo al sur. Shieldy: termina con esto."
+        }
+      ]
+    },
+    "j16": {
+      "name": "Duelo en el muelle",
+      "lesson": "Guarda la prueba, bloquea, reporta y cuéntaselo a un adulto de confianza. Y cuando alguien te lo cuente a ti, primero escucha.",
+      "goals": {
+        "chase": "Persigue a Glitch: punto de control {a}/{b}",
+        "pier": "Acorrala a Glitch en el muelle"
+      },
+      "intro": [
+        {
+          "s": "dame",
+          "t": "Glitch sabe que perdió. Va a toda velocidad hacia su lancha, en el muelle."
+        },
+        {
+          "s": "dame",
+          "t": "Síguelo por la ciudad. Que no se te escape."
+        }
+      ],
+      "final": {
+        "q": "¡No puedes probar nada, Caballero! Borra esas capturas y me voy de la ciudad. ¿Trato hecho?",
+        "c": [
+          {
+            "t": "No hay trato. Me quedo con las pruebas, te reporto y se lo cuento a Dame Noble.",
+            "r": "¡No! ¡El botón de reportar no! ¡Lo que sea menos el botón de reportar!"
+          },
+          {
+            "t": "Trato hecho. Las borro, pero vete.",
+            "r": "Sin pruebas, mañana empieza de nuevo en otra ciudad. Intenta de nuevo."
+          },
+          {
+            "t": "Voy a publicar las capturas en todos lados para que todos se rían de ti.",
+            "r": "Así también se difunden los mensajes privados de otros chicos. Intenta de nuevo."
+          }
+        ]
+      },
+      "outro": [
+        {
+          "s": "dame",
+          "t": "Reportado, bloqueado y con las pruebas a salvo. Así se hace."
+        },
+        {
+          "s": "sprout",
+          "t": "¡Y nadie se metió en problemas por contarlo!"
+        }
+      ]
+    }
+  },
+  "msgs": [
+    {
+      "q": "¡Hola, soy tu primo! Perdí mi teléfono, este es mi número nuevo. ¿Me repites tu dirección?",
+      "c": [
+        {
+          "t": "No respondo. Le pregunto a mi familia si es cierto.",
+          "r": "Con un primo de verdad es fácil confirmarlo."
+        },
+        {
+          "t": "Le mando la dirección.",
+          "r": "Cualquiera puede decir que es tu primo."
+        },
+        {
+          "t": "Le pregunto: \"¿Qué primo?\"",
+          "r": "Va a adivinar, o a lograr que tú digas el nombre primero."
+        }
+      ]
+    },
+    {
+      "q": "Tu cuenta del juego será ELIMINADA hoy. Toca este enlace e inicia sesión para salvarla.",
+      "c": [
+        {
+          "t": "Ignoro el enlace. Abro el juego por mi cuenta y reviso.",
+          "r": "El juego de verdad nunca te amenaza por mensaje."
+        },
+        {
+          "t": "Toco el enlace rápido.",
+          "r": "El enlace lleva a una página falsa para iniciar sesión."
+        },
+        {
+          "t": "Se lo reenvío a mis amigos para avisarles.",
+          "r": "Al reenviarlo, haces circular el enlace."
+        }
+      ]
+    },
+    {
+      "q": "Me caes superbién. No les digas a tus papás que hablamos, no lo entenderían.",
+      "c": [
+        {
+          "t": "Bloqueo, reporto y se lo cuento a un adulto de confianza.",
+          "r": "\"Guarda el secreto\" es la señal de alerta más grande que existe."
+        },
+        {
+          "t": "Guardo el secreto, solo estamos chateando.",
+          "r": "Las personas de fiar nunca te piden que las escondas."
+        },
+        {
+          "t": "Le pregunto por qué tiene que ser secreto.",
+          "r": "La respuesta va a ser otro engaño."
+        }
+      ]
+    },
+    {
+      "q": "Soy cazatalentos. ¡Mándame una foto tuya y podrías llegar a la fama!",
+      "c": [
+        {
+          "t": "No mando nada. Bloqueo y reporto.",
+          "r": "Los cazatalentos de verdad hablan con las familias, no con niños por mensaje."
+        },
+        {
+          "t": "Mando una foto con gorra.",
+          "r": "Cualquier foto tuya es tuya, y te toca protegerla."
+        },
+        {
+          "t": "Le pregunto cuánto ganaría.",
+          "r": "No hay ningún trabajo. Solo está la foto."
+        }
+      ]
+    },
+    {
+      "q": "¡Mejora gratis de tu Wi‑Fi! Responde con el código que acabamos de enviar a tu teléfono.",
+      "c": [
+        {
+          "t": "Un código nunca se comparte. Borro el mensaje.",
+          "r": "Ese código es la llave de tu cuenta."
+        },
+        {
+          "t": "Respondo con el código.",
+          "r": "Ahora puede entrar como si fuera tú."
+        },
+        {
+          "t": "Respondo con la mitad del código.",
+          "r": "¿Para qué darle media llave a un desconocido?"
+        }
+      ]
+    },
+    {
+      "q": "Hola, voy en tu salón. Agrégame en ChatNook, el chat de la escuela lo vigilan jaja",
+      "c": [
+        {
+          "t": "Me quedo donde los adultos de confianza pueden ver. No me cambio de app.",
+          "r": "\"Ahí nadie vigila\" es justo la razón por la que lo quiere."
+        },
+        {
+          "t": "Lo agrego en ChatNook.",
+          "r": "Cambiar de app es como se cierra la trampa."
+        },
+        {
+          "t": "Le pregunto de qué salón.",
+          "r": "Eso lo puede encontrar en tu perfil."
+        }
+      ]
+    },
+    {
+      "q": "Vi lo que publicaste. Paga 500 gemas o se lo muestro a todos.",
+      "c": [
+        {
+          "t": "No pago. Captura de pantalla, bloqueo y se lo cuento a un adulto ya.",
+          "r": "Pagar nunca le pone fin. Contarlo, sí."
+        },
+        {
+          "t": "Pago una vez para que pare.",
+          "r": "Va a volver a pedir, y más."
+        },
+        {
+          "t": "Borro mi cuenta y me escondo.",
+          "r": "Perderías la prueba, y tú no hiciste nada malo."
+        }
+      ]
+    },
+    {
+      "q": "¡Hora del quiz! ¿Cómo se llamaba tu primera mascota y en qué calle creciste?",
+      "c": [
+        {
+          "t": "Lo dejo pasar. Esas son respuestas para recuperar contraseñas.",
+          "r": "Los quizzes divertidos son una manera de juntarlas."
+        },
+        {
+          "t": "Respondo, es solo un quiz.",
+          "r": "Esas respuestas abren cuentas."
+        },
+        {
+          "t": "Respondo con los datos de mi mejor amigo.",
+          "r": "Entonces la cuenta en riesgo es la de tu amigo."
+        }
+      ]
+    }
+  ],
+  "chapters": {
+    "1": {
+      "name": "Todos la tienen",
+      "sub": "Cómo empieza: es gratis, es divertida y todos la tienen"
+    },
+    "2": {
+      "name": "Mejores amigos",
+      "sub": "Cómo un desconocido se vuelve alguien en quien confías"
+    },
+    "3": {
+      "name": "Solo entre nosotros",
+      "sub": "Cómo los secretos te alejan de la ayuda"
+    },
+    "4": {
+      "name": "El precio",
+      "sub": "Qué pasa cuando se cae la máscara"
+    },
+    "5": {
+      "name": "Luces encendidas",
+      "sub": "Cómo termina: con gente que lo cuenta"
+    }
+  },
+  "endings": {
+    "best": {
+      "h": "La ciudad lo cuenta",
+      "p": "Esa tarde, Nova subió sola al escenario de la playa. \"Me llamo Nova. Hace un año me engañaron, después me amenazaron, y lo guardé en secreto. Guardarlo en secreto fue lo único que a él le sirvió\". Nadie se rio. Milo fue el primero en aplaudir. Para la medianoche, otros cuarenta niños ya se lo habían contado a alguien. La red de Glitch desapareció, y Knight City sabe cómo la armó."
+    },
+    "ok": {
+      "h": "La red cayó",
+      "p": "ShineUp ya no está en ningún teléfono de Knight City, y Glitch quedó reportado y bloqueado. Nova está en casa con su mamá. Todavía no se anima a contar su historia en voz alta, y nadie la va a presionar. \"Tal vez algún día\", dice. \"Cuando sepa que nadie me va a mirar así\"."
+    },
+    "low": {
+      "h": "Glitch fue atrapado, pero…",
+      "p": "Las antenas cayeron y Glitch está acabado aquí. Pero en el patio de la escuela los niños cuentan en voz baja que, cuando Nova y Milo dijeron la verdad, les echaron la culpa. Esta noche, algunos guardan sus propios secretos. Dame Noble te pone una mano en el hombro. \"Lo detuvimos. Mañana aprendemos a escuchar sin culpar. Esa parte es más difícil\"."
+    }
+  },
+  "inbox": [
+    {
+      "after": "j1",
+      "from": "pixel",
+      "t": "Dato curioso: las reglas de ShineUp tienen 41 páginas. Las leí. En la página 38 dice que se pueden quedar con tus fotos para siempre."
+    },
+    {
+      "after": "j2",
+      "from": "sprout",
+      "t": "shieldy!!! me dieron 200 chispas en shineup y tengo un amigo nuevo que se llama StarKnight. dice que soy el mejor constructor que ha visto"
+    },
+    {
+      "after": "j3",
+      "from": "nova",
+      "t": "Hola, Caballero. Sobre lo de hoy. Olvida eso de que \"tengo que\". Estaba cansada. No se lo cuentes a nadie, ¿ok?"
+    },
+    {
+      "after": "j3",
+      "from": "dame",
+      "t": "Nova tiene dos millones de seguidores y parecía tenerle miedo a su propio teléfono. No lo olvides."
+    },
+    {
+      "after": "j4",
+      "from": "sprout",
+      "t": "ya tenemos palabra clave. no te puedo decir cuál es. de eso se trata. (no es bigotes)"
+    },
+    {
+      "after": "j5",
+      "from": "pixel",
+      "t": "Después de eso revisé mi propia página. Mi calle salía en tres fotos. ¡Tres! Borradas. No le digas a Dame Noble."
+    },
+    {
+      "after": "j6",
+      "from": "bot",
+      "t": "Les puse nombre a los drones rotos. Todos se llaman Kevin. Ahora viven en una caja."
+    },
+    {
+      "after": "j7",
+      "from": "glitch",
+      "t": "¿Tres caras? Tengo trescientas. Cerraron tres puertas en una ciudad llena de ventanas. — G"
+    },
+    {
+      "after": "j8",
+      "from": "nova",
+      "t": "Supe que detuviste una camioneta. ¿Había algo adentro? ¿Algo con un logo? Solo pregunto."
+    },
+    {
+      "after": "j9",
+      "from": "bot",
+      "t": "Mi contraseña nueva tiene 30 caracteres. No te voy a decir cuál es. No se lo voy a decir a NADIE. He madurado."
+    },
+    {
+      "after": "j10",
+      "from": "rose",
+      "t": "Shieldy, querido, Milo ya se durmió. Gracias por no gritarle. Estuve horneando. Te dejé una lata en la puerta."
+    },
+    {
+      "after": "j10",
+      "from": "milo",
+      "t": "mi abuela dice que caer en un engaño no es lo mismo que ser tonto. es cierto? pregunto por un amigo. el amigo soy yo"
+    },
+    {
+      "after": "j11",
+      "from": "glitch",
+      "t": "Va a volver conmigo. Siempre vuelven. Todos los demás le van a echar la culpa. Yo soy el único que nunca lo hizo. — G"
+    },
+    {
+      "after": "j11",
+      "from": "dame",
+      "t": "Lo que sea que le hayas dicho a esa chica esta noche en el muelle, lo va a recordar toda la vida. Vuelve a elegir palabras así."
+    },
+    {
+      "after": "j12",
+      "from": "nova",
+      "t": "Mi mamá preparó té y hablamos hasta las 2. Lloró más que yo. No estoy castigada. Estoy agotada. Gracias."
+    },
+    {
+      "after": "j13",
+      "from": "pixel",
+      "t": "Carpeta de pruebas: 212 capturas de pantalla, 5 teléfonos, 1 Pixel muy orgulloso de sí mismo."
+    },
+    {
+      "after": "j14",
+      "from": "sam",
+      "t": "Cuarenta y una puertas tocadas hasta ahora. Tres familias no tenían idea de que sus pequeños estaban en ShineUp. Sigo caminando."
+    },
+    {
+      "after": "j15",
+      "from": "glitch",
+      "t": "¿Creen que esto se acabó? Hay otras ciudades. Otras apps. Otros niños que se sienten solos. — G"
+    },
+    {
+      "after": "j15",
+      "from": "dame",
+      "t": "Tiene razón en que hay otras ciudades. Por eso también se lo contamos a ellas."
+    },
+    {
+      "after": "j16",
+      "from": "nova",
+      "t": "Lo hice. Lo dije en voz alta. Me temblaron las manos todo el tiempo. Una chica a la que no conozco me acaba de escribir: \"yo también. esta noche se lo conté a mi papá\"."
+    }
+  ],
+  "news": {
+    "j1": "De la noche a la mañana aparecen quioscos morados por toda Knight City. La ciudad dice que no le dio permiso a nadie.",
+    "j2": "Se apagan cuatro quioscos. Su dueño no ha dado la cara. Qué curioso.",
+    "j3": "Cientos de niños se unen a ShineUp en un sorteo en la playa. Las familias preguntan qué hace la app con sus datos.",
+    "j4": "Se vio una camioneta morada cerca de la entrada de la escuela. Recordatorio para las familias: sin palabra clave, nadie se sube.",
+    "j5": "Las fotos de un escolar le dieron a un desconocido su dirección, su rutina y el nombre de su gata. Revisen las suyas, oyentes.",
+    "j6": "Marcan drones espía sobre el centro de la ciudad. La ubicación compartida: ¿quién puede ver la tuya?",
+    "j7": "Tres \"mejores amigos\" de internet resultan ser un solo usuario. Más detalles después de esta canción.",
+    "j8": "La camioneta morada fue detenida. No había nadie adentro. La policía lo califica de \"rarísimo\".",
+    "j9": "La cuenta robada de un robot les pidió la contraseña a sus amigos. Dicen que el robot está avergonzado.",
+    "j10": "Un niño desaparecido fue encontrado sano y salvo en el faro. Su abuela dice que ya puso el agua para el té.",
+    "j11": "Unos drones persiguen de noche a un auto dorado por la ciudad. No hay heridos. El auto iba muy rápido.",
+    "j12": "Unos niños juntaban chispas para pagarle a un chantajista. Un Caballero los convenció de no hacerlo. Nunca paguen, oyentes.",
+    "j13": "Crecen las pruebas contra el usuario conocido como Glitch, una captura de pantalla a la vez.",
+    "j14": "Un grupo de tejido, un cartero y una mamá se suman a los Caballeros. La línea de seguridad de la ciudad informa de una noche muy movida.",
+    "j15": "La Torre ShineUp se apagó. La app está fuera de servicio en toda la ciudad.",
+    "j16": "Glitch está acorralado en el muelle. Y esta noche, en la playa, una chica tiene algo que decir."
+  },
+  "barks": {
+    "1": [
+      "¿Ya tienes ShineUp? ¡Todo el mundo tiene ShineUp!",
+      "¡Chispas gratis en los quioscos morados! Voy por más.",
+      "Todo mi salón se unió anoche. No quería quedarme fuera, así que también me uní.",
+      "El stream de Nova estuvo increíble. Yo haría lo que ella dijera.",
+      "No sé quién la hace. ¿Importa? ¡Es gratis!"
+    ],
+    "2": [
+      "Tengo una nueva mejor amiga en internet. Nunca la he visto, pero me entiende de verdad.",
+      "Alguien en internet sabía el nombre de mi perro. Qué raro, no recuerdo habérselo dicho.",
+      "StarKnight dice que soy especial. En la escuela nadie me dice eso.",
+      "Anoche había un dron frente a mi ventana. Seguro no es nada.",
+      "La cámara de mi amigo siempre está rota. Raro, ¿no?"
+    ],
+    "3": [
+      "No puedo hablar de eso. Prometí que no iba a contar nada.",
+      "Perdón, me tengo que ir. No debería estar hablando contigo.",
+      "¿Te llegó un mensaje raro de Bot? Casi le respondo.",
+      "Mi amigo dice que los adultos no lo entenderían. A lo mejor es verdad.",
+      "Ya no tengo ganas de salir a jugar."
+    ],
+    "4": [
+      "Dicen que Nova está en problemas. Dicen que es culpa suya. ¿Lo es?",
+      "¿Tú pagarías, si alguien tuviera un secreto tuyo?",
+      "Supe de un video. Yo no lo voy a mirar. Tú tampoco deberías.",
+      "Milo le contó todo a su abuela. Y ni siquiera lo regañaron.",
+      "Tengo algo que creo que debería contarle a mi papá."
+    ],
+    "5": [
+      "Se lo conté a mi mamá. Me abrazó. Tanto miedo para nada.",
+      "Perfil privado, ubicación desactivada, verificación en dos pasos. Listo, listo y listo.",
+      "El cartero Sam le explicó lo de ShineUp a toda nuestra calle.",
+      "Bloqueé a StarKnight y lo reporté. Me tomó diez segundos.",
+      "Si Nova puede decirlo en voz alta, yo también."
+    ]
+  },
+  "shards": [
+    {
+      "h": "Regla 1 — Primero, regala",
+      "t": "Gemas gratis. Skins gratis. Lo que sea gratis. Un niño que aceptó un regalo siente que me debe uno. Y yo siempre cobro."
+    },
+    {
+      "h": "Regla 2 — Está donde están ellos",
+      "t": "Yo no salgo a buscar niños. Espero dentro de los juegos y las apps que ya les encantan. Ellos vienen a mí."
+    },
+    {
+      "h": "Regla 3 — Lee antes de escribir",
+      "t": "Su perfil me dice su escuela, su calle, su mascota, su mejor amigo. Cuando escribo mi primer \"hola\", ya sueno como alguien del grupo."
+    },
+    {
+      "h": "Regla 4 — Elige al que está solo",
+      "t": "El niño con cien amigos da mucho trabajo. El que publica \"nadie me entiende\" me está esperando."
+    },
+    {
+      "h": "Regla 5 — Sé su espejo",
+      "t": "Lo que a ellos les encanta, a mí me encanta. Tengan la edad que tengan, yo soy un poco mayor y un poco más genial. Soy exactamente el amigo que pidieron."
+    },
+    {
+      "h": "Regla 6 — Nunca muestres la cara",
+      "t": "Se me rompió la cámara. Se me rompió el micrófono. Mi mamá es muy estricta. Siempre hay una razón, y siempre se la creen."
+    },
+    {
+      "h": "Regla 7 — Que se sienta especial",
+      "t": "\"No eres como los demás\". \"Eres tan maduro para tu edad\". Si lo repito lo suficiente, harán mucho por seguir oyéndolo."
+    },
+    {
+      "h": "Regla 8 — Que sea un secreto",
+      "t": "\"No les digas a tus papás, no lo entenderían\". Un secreto es un muro. Cuando están detrás del muro conmigo, nadie puede llegar hasta ellos."
+    },
+    {
+      "h": "Regla 9 — Llévatelos a otro lado",
+      "t": "El chat del juego está vigilado. Entonces digo que tiene lag y los invito a una app donde nadie está mirando."
+    },
+    {
+      "h": "Regla 10 — Pide poco y luego más",
+      "t": "Un nombre. Después una foto. Después un secreto. Cada sí vuelve más fácil el siguiente. Nadie salta de un precipicio. Bajan por una escalera."
+    },
+    {
+      "h": "Regla 11 — Y entonces, úsalo",
+      "t": "El secreto que me dieron se convierte en la cadena. \"Haz lo que te digo o se entera todo el mundo\". Creen que están a solas con eso. Ese es todo el truco."
+    },
+    {
+      "h": "Regla 12 — Lo que temo",
+      "t": "Una captura de pantalla. Un bloqueo. Un reporte. Y lo peor de todo: un niño que entra a la cocina y dice: \"Mamá, ¿te puedo mostrar algo?\". Contra eso, no tengo nada."
+    }
+  ]
+}

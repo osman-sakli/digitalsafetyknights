@@ -1,0 +1,136 @@
+{
+  "who": {
+    "dame": {
+      "1": "Una app gratis que no lleva el nombre de nadie. Por experiencia te lo digo, Shieldy: cuando no ves quién vende, lo que se vende eres tú.",
+      "2": "Sprout confía con facilidad. Eso no es un defecto. Es justo lo que vinimos a proteger.",
+      "3": "Fíjate en lo callados que están los niños. Una ciudad llena de secretos es una ciudad donde alguien los está juntando.",
+      "4": "Cuando hablas con alguien que cayó en un engaño, tu primera frase decide si volverá a contárselo a alguien.",
+      "5": "No ganamos por ser más listos que Glitch. Ganamos cuando nadie se queda a solas con él.",
+      "6": "Descansa, Caballero. Mañana les escribimos a las otras ciudades."
+    },
+    "pixel": {
+      "1": "Busqué quién registró ShineUp. La dirección es un estacionamiento. ¡UN ESTACIONAMIENTO, Shieldy!",
+      "2": "Robar una foto de perfil lleva cuatro segundos. Lo cronometré.",
+      "3": "Puedo rastrear una camioneta. Lo que no puedo rastrear es por qué un niño prefiere hablar con un desconocido antes que con nosotros. Esa parte nos toca a nosotros.",
+      "4": "No dejo de pensar en esa calcomanía. Tenía tantas ganas de enojarme con Nova. Qué bueno que Dame Noble me frenó.",
+      "5": "Doscientas doce capturas de pantalla. Una prueba no es más que la verdad con fecha.",
+      "6": "Estoy escribiendo una guía: \"Cómo revisar una app antes de unirte\". Página uno: averigua quién la hizo."
+    },
+    "bot": {
+      "1": "No entiendo las chispas. Son números. Yo ya tengo muchos números.",
+      "2": "CONSULTA: si un amigo no muestra su cara, ¿es un amigo o es un nombre de usuario? No tengo datos suficientes.",
+      "3": "Compartí mi contraseña para demostrar amistad. Fue un error. La amistad no requiere contraseña.",
+      "4": "Quise ocultar lo que le pasó a mi cuenta. Ocultarlo gastó más energía que contarlo. Ahora soy un robot muy eficiente.",
+      "5": "ESTADO: verificación en dos pasos ACTIVADA. Ubicación DESACTIVADA. Perfil PRIVADO. Sentimientos: BUENOS.",
+      "6": "Los drones llamados Kevin fueron reciclados. Ahora son una tostadora. Es una buena tostadora."
+    },
+    "sprout": {
+      "1": "¡Todos en mi clase tienen ShineUp! Ya tengo 200 chispas. ¿Eso es mucho? A mí me parece un montón.",
+      "2": "StarKnight decía que yo era su mejor amigo. ¿Algo de eso era verdad? ¿Aunque sea un poquito?",
+      "3": "Milo anda muy callado. Antes me contaba todo. Ahora dice que es \"privado\".",
+      "4": "¿Nova es mala? …No. Yo creo que no. Creo que tenía miedo, como yo, pero durante mucho más tiempo.",
+      "5": "Le conté a toda mi clase lo de la palabra clave. ¡Siete ya tienen la suya!",
+      "6": "Sigo subiendo fotos. Pero no donde se ve mi escuela o mi casa. Bigotes sí puede salir, pero solo su carita."
+    },
+    "nova": {
+      "1": "¡Chispas gratis para todo el mundo! …Perdón, Caballero, no puedo hablar. Estoy en vivo. Siempre estoy en vivo.",
+      "2": "¿Sigues investigando ShineUp? ¿Para qué? Es solo una app. En serio. Déjalo.",
+      "3": "No dormí. No es nada. Los streamers nunca duermen. Por favor, deja de mirarme así.",
+      "4": "Sigo esperando que alguien me grite. Nadie lo ha hecho. No sé qué hacer con eso.",
+      "5": "Apagué mi stream una semana. Una semana entera. El silencio se siente raro. Creo que me gusta.",
+      "6": "Ahora me llegan mensajes todos los días. Chicos que dicen \"a mí también me pasó\". A cada uno le respondo: cuéntaselo a alguien. Hoy."
+    },
+    "milo": {
+      "1": "Le llevo diez niveles a Finn en ShineUp. DIEZ.",
+      "2": "Luna dice que soy la persona más graciosa que ha conocido. Tú no lo entenderías.",
+      "3": "No puedo hablar de Luna. Es privado. Ella lo dijo.",
+      "4": "Mi abuela y yo ahora tenemos un trato. Yo le cuento las cosas y ella no se altera. Casi nunca se altera.",
+      "5": "Ahora soy detective. Lo dice mi abuela. Los detectives guardan las pruebas.",
+      "6": "Luna ni siquiera existió. Estuve triste un tiempo por eso. ¿Es raro? Mi abuela dice que no es raro."
+    },
+    "tess": {
+      "1": "¡Dibujé a Nova! ¿Crees que lo vea si lo subo a ShineUp?",
+      "2": "StarKnight quiere una foto mía. Tiene la cámara rota, así que no puede mandarme una suya. Es justo, ¿no?",
+      "3": "No mandé la foto. No sé por qué. Sentí algo como un dolor de panza.",
+      "4": "Todos andan diciendo cosas feas de Nova. Yo no quiero decir ninguna.",
+      "5": "¡Ese dolorcito de panza tenía razón! Dame Noble dice que eso se llama hacerle caso a tu instinto.",
+      "6": "Ahora dibujo a los Caballeros. Tú eres más difícil de dibujar que Nova. Es por el casco."
+    },
+    "finn": {
+      "1": "La verdad, ShineUp no me gusta mucho. Pero si no estoy ahí, nadie me habla en el recreo.",
+      "2": "AceRider tiene quince años y habla CONMIGO. Nadie de esa edad me habla nunca.",
+      "3": "Ace se enojó cuando no quise darle mi contraseña. Los amigos no se enojan por eso. ¿O sí?",
+      "4": "Si alguien tuviera un secreto mío, creo que yo también haría casi cualquier cosa. Da miedo pensarlo.",
+      "5": "Le conté a mi papá lo de Ace. Se quedó callado un ratito y después dijo \"gracias por contármelo\". Nada más.",
+      "6": "Jay me está enseñando a andar en patineta. Tiene dieciséis. Y es de verdad. Lo comprobé."
+    },
+    "jay": {
+      "1": "¿ShineUp? Es para más chicos que yo. Eso sí, mi hermanito no se despega.",
+      "2": "Hay una cuenta que no para de escribirle a mi hermano. Dice que tiene doce años. Escribe como si tuviera cuarenta.",
+      "3": "Mi hermano empezó a cerrar su puerta con llave. Tiene ocho años. ¿Qué tiene que esconder un niño de ocho?",
+      "4": "En la escuela anda circulando un enlace al \"video de Nova\". No lo abrí. Les dije a dos amigos que no lo abrieran. Uno me hizo caso.",
+      "5": "Anoche me senté con mi hermano y revisamos su lista de amigos. Borró a nueve \"amigos\" que nunca ha visto en persona.",
+      "6": "Si un niño me pide ayuda, no le digo \"¿qué hiciste?\". Le digo \"bueno, aquí estoy\". Eso lo aprendí este año."
+    },
+    "rose": {
+      "1": "Una caja morada en cada esquina, y a nosotros nadie nos preguntó. En mis tiempos hacía falta un permiso hasta para un puesto de flores.",
+      "2": "Milo se la pasa con ese teléfono, sonriéndole. Me alegra que tenga amigos. Lo que me pregunto es quiénes son.",
+      "3": "Ya no conversa en la cena. Algo tiene atrapado a ese niño, y no es la tarea.",
+      "4": "Le conté a Milo mi secreto, lo del hombre del banco. Creí que iba a pensar mal de mí. En vez de eso, me abrazó.",
+      "5": "El grupo de tejido se convirtió en el grupo de contar. Nueve abuelas y muchísimo té.",
+      "6": "Pasa, cariño. Hay pastel. Siempre hay pastel para quien sabe escuchar."
+    },
+    "sam": {
+      "1": "Treinta años haciendo este recorrido y jamás había repartido tanta nada. Quioscos, volantes, esto gratis, aquello gratis.",
+      "2": "Desde la acera se ve de todo. Niños que vuelven a casa con los ojos en el teléfono, sin la menor idea de quién viene detrás.",
+      "3": "Los más chiquitos ya no me saludan con la mano. Pasan apurados, como si llegaran tarde a algo.",
+      "4": "La gente culpa rápido a la muchacha. Yo le llevo el correo desde que tenía seis años. Es una niña, y alguien la usó.",
+      "5": "Ahora hay un folleto en cada buzón de mi recorrido. \"Pregúntales a qué juegan. Y después escucha\".",
+      "6": "El recorrido está más tranquilo estos días. Para bien. Hay más niños en bicicleta."
+    },
+    "mum": {
+      "4": "No dejo de pensar: un año entero, y no me di cuenta. Y luego pienso: ahora sí puede contármelo. Eso es lo que importa.",
+      "5": "La oficial me dijo algo muy amable: \"Te sorprendería lo seguido que pasa. Y lo bien que sale cuando lo cuentan\".",
+      "6": "En casa tenemos una regla nueva. Nada de teléfonos en la cena, y ninguna pregunta da demasiada vergüenza."
+    }
+  },
+  "adults": {
+    "1": [
+      "Mi hija me rogó por eso de ShineUp. Le dije que sí. Todos lo tienen, ¿no?",
+      "Gratis, dicen. He vivido lo suficiente para preguntarme cuánto cuesta lo gratis.",
+      "No sabría decirte qué hace mi hijo en el teléfono. Jugar, supongo."
+    ],
+    "2": [
+      "Mi hijo tiene un amigo nuevo en internet. Muy educado, según él. Yo no le he visto ni una foto.",
+      "Otra vez había una camioneta morada frente a la escuela. Será de reparto.",
+      "Ha publicado cada día de nuestras vacaciones. Toda la calle sabe que no estamos."
+    ],
+    "3": [
+      "El mío anda callado. \"No pasa nada, papá\". Es lo único que me dice.",
+      "Le pregunté qué escribía y puso el teléfono boca abajo. Eso es nuevo.",
+      "Cuando yo era joven teníamos diarios. Ahora el diario contesta."
+    ],
+    "4": [
+      "Dicen que esa streamer se lo buscó. Yo no lo tengo tan claro. Tiene quince años.",
+      "Le pregunté a mi hijo, con calma, si alguien le había pedido una foto alguna vez. Se puso pálido. Hablamos toda la noche.",
+      "Si la mía estuviera en problemas, ¿me lo contaría? Quiero creer que sí. Voy a asegurarme."
+    ],
+    "5": [
+      "Revisé sus ajustes con ella. Fueron diez minutos. Debí hacerlo hace un año.",
+      "Llamé a la línea de ayuda, solo para preguntar. Nadie me juzgó. Simplemente me ayudaron.",
+      "Ayer mi hijo me contó algo difícil. Le dije \"gracias por contármelo\" antes de decir cualquier otra cosa."
+    ],
+    "6": [
+      "Ahora es otra ciudad. La gente se pregunta cosas.",
+      "Ya no hay cajas moradas. No las extraño.",
+      "Esta mañana mi hija me mostró un mensaje raro, antes de contestarlo siquiera. Es lo único que siempre quise."
+    ]
+  },
+  "kids6": [
+    "Se lo conté a mi mamá. Me abrazó. Tenía miedo por nada.",
+    "¡Nova me saludó hoy! La Nova de verdad, no la del stream.",
+    "A mi amiga le llegó un mensaje raro y me lo mostró enseguida. Después fuimos a mostrárselo a su papá.",
+    "Tengo palabra clave, perfil privado y verificación en dos pasos. A ver, intenta engañarme ahora.",
+    "El cartero Sam dice que no hay nadie más a salvo que yo en todo su recorrido."
+  ]
+}

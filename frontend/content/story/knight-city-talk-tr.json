@@ -1,0 +1,136 @@
+{
+  "who": {
+    "dame": {
+      "1": "Üzerinde kimsenin adı olmayan bedava bir uygulama. Benim gördüğüm şu Shieldy: Satanın kim olduğunu göremiyorsan satılan sensin.",
+      "2": "Sprout çabuk güvenir. Bu bir kusur değil. Bizim burada korumaya çalıştığımız şey tam da bu.",
+      "3": "Çocukların ne kadar sessizleştiğine dikkat et. Sırlarla dolu bir şehir, birinin o sırları topladığı bir şehirdir.",
+      "4": "Kandırılmış biriyle konuşurken kuracağın ilk cümle, onun bir daha kimseye bir şey anlatıp anlatmayacağını belirler.",
+      "5": "Glitch'ten daha kurnaz olarak kazanmayız. Kimse onunla baş başa kalmadığında kazanırız.",
+      "6": "Dinlen Şövalye. Yarın öteki şehirlere mektup yazacağız."
+    },
+    "pixel": {
+      "1": "ShineUp'ı kimin kaydettirdiğine baktım. Adres bir otopark çıktı. OTOPARK, Shieldy!",
+      "2": "Bir profil fotoğrafını çalmak dört saniye sürüyor. Süre tuttum.",
+      "3": "Bir minibüsün izini sürebilirim. Ama bir çocuğun neden bizimle değil de bir yabancıyla konuşmayı seçtiğinin izini süremem. O kısım bizim eksiğimiz.",
+      "4": "Aklım hâlâ o çıkartmada. Nova'ya kızmaya öyle hazırdım ki. İyi ki Dame Noble beni frenledi.",
+      "5": "İki yüz on iki ekran görüntüsü. Kanıt dediğin, üzerinde tarih olan gerçektir.",
+      "6": "Bir rehber yazıyorum: “Katılmadan önce bir uygulama nasıl incelenir?” Birinci sayfa: Kimin yaptığını öğren."
+    },
+    "bot": {
+      "1": "Kıvılcımları anlamıyorum. Onlar sayı. Bende zaten çok sayı var.",
+      "2": "SORGU: Bir arkadaş yüzünü göstermiyorsa o bir arkadaş mıdır, yoksa bir kullanıcı adı mı? Yeterli verim yok.",
+      "3": "Arkadaşlığımı kanıtlamak için şifremi paylaştım. Bu bir hataydı. Arkadaşlık şifre gerektirmez.",
+      "4": "Hesabıma olanları saklamak istedim. Saklamak, anlatmaktan daha çok enerji harcadı. Artık çok verimli bir robotum.",
+      "5": "DURUM: İki adımlı giriş AÇIK. Konum KAPALI. Profil GİZLİ. Duygular: İYİ.",
+      "6": "Kevin adlı dronlar geri dönüştürüldü. Artık bir ekmek kızartma makinesi oldular. İyi bir ekmek kızartma makinesi."
+    },
+    "sprout": {
+      "1": "Sınıfımdaki herkeste ShineUp var! Şimdiden 200 kıvılcımım oldu. Bu çok mu? Bana çok gibi geliyor.",
+      "2": "StarKnight bana en iyi arkadaşı olduğumu söylemişti. Hiçbiri doğru değil miydi? Birazcığı bile mi?",
+      "3": "Milo çok sessizleşti. Eskiden bana her şeyi anlatırdı. Şimdi “özel” diyor.",
+      "4": "Nova kötü biri mi? …Hayır. Bence değil. Bence o da benim gibi korktu, ama çok daha uzun süre.",
+      "5": "Parolayı bütün sınıfıma anlattım. Artık yedi kişinin parolası var!",
+      "6": "Hâlâ fotoğraf paylaşıyorum. Ama okulumun ya da evimin göründüğü fotoğrafları değil. Pamuk'a izin var, ama sadece yüzüne."
+    },
+    "nova": {
+      "1": "Herkese bedava kıvılcım! …Kusura bakma Şövalye, konuşamam. Yayındayım. Ben hep yayındayım.",
+      "2": "Hâlâ ShineUp'ı mı araştırıyorsun? Neden? Alt tarafı bir uygulama. Gerçekten. Bırak artık.",
+      "3": "Uyumadım. Bir şey yok. Yayıncılar hiç uyumaz. Lütfen bana öyle bakma.",
+      "4": "Biri bana bağıracak diye bekleyip duruyorum. Kimse bağırmadı. Bununla ne yapacağımı bilmiyorum.",
+      "5": "Yayınımı bir haftalığına kapattım. Koca bir hafta. Sessizlik tuhaf. Galiba hoşuma gidiyor.",
+      "6": "Artık her gün mesaj alıyorum. Çocuklar “benim de başıma geldi” diyor. Hepsine tek tek cevap yazıyorum: Birine anlat. Bugün."
+    },
+    "milo": {
+      "1": "ShineUp'ta Finn'den on seviye öndeyim. ON.",
+      "2": "Luna, tanıdığı en komik insan olduğumu söylüyor. Sen anlamazsın.",
+      "3": "Luna hakkında konuşamam. Bu özel. O öyle dedi.",
+      "4": "Ninemle artık bir anlaşmamız var. Ben ona olanları anlatıyorum, o da telaşa kapılmıyor. Çoğu zaman kapılmıyor.",
+      "5": "Ben artık dedektifim. Ninem öyle diyor. Dedektifler kanıtları saklar.",
+      "6": "Luna diye biri hiç olmamış. Buna bir süre üzüldüm. Bu tuhaf mı? Ninem tuhaf değil diyor."
+    },
+    "tess": {
+      "1": "Nova'nın resmini çizdim! ShineUp'ta paylaşırsam görür mü sence?",
+      "2": "StarKnight bir fotoğrafımı istiyor. Kamerası bozukmuş, o yüzden kendi fotoğrafını gönderemiyormuş. Bunda bir tuhaflık yok, değil mi?",
+      "3": "Fotoğrafı göndermedim. Neden bilmiyorum. Karnım ağrıyormuş gibi oldu.",
+      "4": "Herkes Nova hakkında kötü şeyler söylüyor. Ben söylemek istemiyorum.",
+      "5": "O karın ağrısı haklıymış! Dame Noble'a göre bunun adı içindeki sese güvenmekmiş.",
+      "6": "Artık Şövalyeleri çiziyorum. Seni çizmek Nova'yı çizmekten zor. Miğfer yüzünden."
+    },
+    "finn": {
+      "1": "ShineUp'ı pek sevmiyorum aslında. Ama orada olmazsam teneffüste kimse benimle konuşmuyor.",
+      "2": "AceRider on beş yaşında ve BENİMLE konuşuyor. O yaşta kimse benimle konuşmaz.",
+      "3": "Şifremi vermeyince Ace kızdı. Arkadaşlar buna kızmaz. Kızar mı?",
+      "4": "Biri benim bir sırrımı bilseydi galiba ben de neredeyse her şeyi yapardım. Bunu düşünmek korkutucu.",
+      "5": "Babama Ace'i anlattım. Bir süre sustu, sonra “anlattığın için teşekkür ederim” dedi. O kadar.",
+      "6": "Jay bana kaykay sürmeyi öğretiyor. On altı yaşında. Ve gerçek. Kontrol ettim."
+    },
+    "jay": {
+      "1": "ShineUp mı? Benim yaşıma biraz çocukça. Ama küçük kardeşim başından kalkmıyor.",
+      "2": "Bir hesap kardeşime mesaj atıp duruyor. On iki yaşındayım diyor. Kırk yaşında biri gibi yazıyor.",
+      "3": "Kardeşim kapısını kilitlemeye başladı. Sekiz yaşında. Sekiz yaşında bir çocuğun saklayacak nesi olur?",
+      "4": "Okulda “Nova videosu” diye bir bağlantı elden ele dolaşıyor. Açmadım. İki arkadaşıma da açmayın dedim. Biri dinledi.",
+      "5": "Dün akşam kardeşimle oturup arkadaş listesine baktık. Hiç tanışmadığı dokuz “arkadaşı” sildi.",
+      "6": "Bir çocuk benden yardım isterse “ne yaptın?” demiyorum. “Tamam, buradayım” diyorum. Bunu bu yıl öğrendim."
+    },
+    "rose": {
+      "1": "Her köşe başında mor bir kutu, bize soran da olmadı. Bizim zamanımızda çiçek tezgâhı açmak için bile izin gerekirdi.",
+      "2": "Milo'nun elinden o telefon düşmüyor, baktıkça gülümsüyor. Arkadaşları olmasına seviniyorum. Yalnız kim olduklarını merak ediyorum.",
+      "3": "Sofrada artık sohbet etmiyor. Bir şey o çocuğu avucuna almış, ödev olmadığı da kesin.",
+      "4": "Milo'ya bankadan arayan adamla ilgili sırrımı anlattım. Gözünden düşerim sandım. Tersine, boynuma sarıldı.",
+      "5": "Örgü grubumuz anlatma grubuna döndü. Dokuz nine ve demlik demlik çay.",
+      "6": "Gel yavrum, içeri gel. Kek var. Dinlemeyi bilenlere bu evde her zaman kek vardır."
+    },
+    "sam": {
+      "1": "Otuz yıldır bu mahallede mektup dağıtırım, bu kadar boş kâğıt taşıdığım olmadı. Kiosklar, el ilanları, şu bedava, bu bedava.",
+      "2": "Kaldırımdan çok şey görülür. Gözü telefonunda eve yürüyen çocuklar… Arkalarında kim var, haberleri yok.",
+      "3": "Küçükler artık bana el sallamıyor. Bir yere geç kalmış gibi hızlı hızlı geçip gidiyorlar.",
+      "4": "Millet kızı suçlamaya pek hevesli. Altı yaşından beri mektuplarını ben getiririm. O bir çocuk ve biri onu kullandı.",
+      "5": "Artık mektup dağıttığım her posta kutusunda bir broşür var. “Ne oynadığını sor. Sonra dinle.”",
+      "6": "Bugünlerde sokaklar daha sakin. İyi anlamda. Bisiklete binen çocuklar çoğaldı."
+    },
+    "mum": {
+      "4": "Aklımdan çıkmıyor: Koca bir yıl ve ben fark etmedim. Sonra şunu düşünüyorum: Artık bana anlatabiliyor. Önemli olan bu.",
+      "5": "Polis memuru çok içten bir şey söyledi: “Bunun ne kadar sık yaşandığını bilseniz şaşarsınız. Çocuklar anlattığında işlerin ne kadar iyi gittiğine de.”",
+      "6": "Evde yeni bir kuralımız var. Sofrada telefon yok ve hiçbir soru sorulamayacak kadar utanç verici değil."
+    }
+  },
+  "adults": {
+    "1": [
+      "Kızım şu ShineUp için yalvardı. Peki dedim. Herkeste var, öyle değil mi?",
+      "Bedava diyorlar. Bedavanın neye mal olduğunu merak edecek kadar yaşadım.",
+      "Oğlum telefonunda ne yapıyor, sorsan bilemem. Oyun oynuyordur herhalde."
+    ],
+    "2": [
+      "Oğlum internette yeni bir arkadaş edinmiş. Çok kibar biriymiş. Ben daha bir fotoğrafını bile görmedim.",
+      "Okulun önünde yine mor bir minibüs vardı. Teslimat içindir herhalde.",
+      "Tatilimizin her gününü paylaştı. Evde olmadığımızı bütün sokak biliyor."
+    ],
+    "3": [
+      "Benimki sessizleşti. “Bir şey yok baba.” Aldığım tek cevap bu.",
+      "Ne yazdığını sordum, telefonu ters çevirdi. Bunu eskiden yapmazdı.",
+      "Biz gençken günlük tutardık. Şimdi günlük cevap veriyor."
+    ],
+    "4": [
+      "O yayıncı kız için “kendi kaşındı” diyorlar. Ben o kadar emin değilim. Daha on beş yaşında.",
+      "Oğluma sakin sakin sordum: Senden hiç fotoğraf isteyen oldu mu? Yüzü bembeyaz kesildi. Bütün akşam konuştuk.",
+      "Benimkinin başı dertte olsa bana anlatır mıydı? Anlatırdı diye düşünmek istiyorum. Bundan emin olacağım."
+    ],
+    "5": [
+      "Ayarlarına birlikte baktık. On dakika sürdü. Bunu bir yıl önce yapmalıydım.",
+      "Yardım hattını aradım, sadece sormak için. Kimse yargılamadı. Yardım ettiler, o kadar.",
+      "Oğlum dün bana zor bir şey anlattı. Başka bir şey söylemeden önce “anlattığın için teşekkür ederim” dedim."
+    ],
+    "6": [
+      "Burası artık başka bir şehir. İnsanlar birbirine soru soruyor.",
+      "Mor kutular kalmadı. Özlediğim de yok.",
+      "Kızım bu sabah bana tuhaf bir mesaj gösterdi, daha cevap bile yazmadan. Tek istediğim buydu zaten."
+    ]
+  },
+  "kids6": [
+    "Anneme anlattım. Bana sarıldı. Boşuna korkmuşum.",
+    "Nova bugün bana el salladı! Gerçek Nova, yayındaki değil.",
+    "Arkadaşıma tuhaf bir mesaj geldi, hemen bana gösterdi. Birlikte babasına gösterdik.",
+    "Bir parolam, gizli bir profilim ve iki adımlı girişim var. Hadi şimdi kandır bakalım.",
+    "Postacı Sam, mektup dağıttığı sokakların en güvende çocuğu olduğumu söylüyor."
+  ]
+}

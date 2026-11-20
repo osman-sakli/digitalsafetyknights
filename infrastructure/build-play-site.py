@@ -16,13 +16,14 @@ import shutil
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC, OUT = ROOT / "frontend", ROOT / "game-site"
-GAMES = ["lost-sprout.html", "shield-toss.html", "shieldy-run.html", "shieldy-dash.html"]
+GAMES = ["knight-city.html", "lost-sprout.html", "shield-toss.html", "shieldy-run.html", "shieldy-dash.html"]
 ASSET_DIRS = ["assets/arcade", "assets/arcade3d", "assets/lib"]
 ASSET_FILES = ["assets/arcade-messages.js", "assets/knight-points.js", "assets/i18n.js",
                "assets/favicon.ico", "assets/logo.png",
                "content/i18n/tr.json", "content/i18n/es.json", "content/i18n/fr.json",
                "content/story/lost-sprout.json", "content/story/lost-sprout-tr.json",
-               "content/story/lost-sprout-es.json", "content/story/lost-sprout-fr.json"]
+               "content/story/lost-sprout-es.json", "content/story/lost-sprout-fr.json",
+               "assets/knight-city.js"] + [f"content/story/knight-city{k}{l}.json" for k in ("", "-talk") for l in ("", "-tr", "-es", "-fr")]
 LANGS = ["en", "tr", "es", "fr"]
 
 

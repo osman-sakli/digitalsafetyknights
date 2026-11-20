@@ -56,6 +56,8 @@
   <p class="sub" id="t-sub"></p>
   <div class="pts" id="t-pts" hidden></div>
   <div class="grid">
+    <a class="game" href="/knight-city.html"><div class="art"><img class="cover" src="/assets/arcade/city-cover.webp" alt="" width="780" height="300"></div>
+      <div class="tx"><h2><span id="t-city-h"></span> <span class="tag">3D</span></h2><p id="t-city"></p><span class="go" data-go></span></div></a>
     <a class="game" href="/lost-sprout.html"><div class="art"><img class="cover" src="/assets/arcade/sprout-cover.webp" alt="" width="780" height="300"></div>
       <div class="tx"><h2><span id="t-story-h"></span> <span class="tag">3D</span></h2><p id="t-story"></p><span class="go" data-go></span></div></a>
     <a class="game" href="/shield-toss.html"><div class="art"><img class="cover" src="/assets/arcade/toss-cover.webp" alt="" width="780" height="300"></div>
@@ -70,22 +72,22 @@
 <script>
 (function () {
   var T = {
-    en: { storyH: 'The Lost Sprout', story: 'A 3D story. Sprout is missing. Walk the castle, read the messages he left behind, and decide how it ends.', h1: 'Pick a game', sub: 'Free. No account, no ads, and nothing you do here is tracked.', go: 'Play →', pts: 'Knight Points',
+    en: { cityH: "Knight City", city: "An open 3D city to walk and drive around. Borrow a car, turn on the radio, and find out who is behind the app everybody suddenly has. Five chapters, sixteen jobs, three endings.", storyH: 'The Lost Sprout', story: 'A 3D story. Sprout is missing. Walk the castle, read the messages he left behind, and decide how it ends.', h1: 'Pick a game', sub: 'Free. No account, no ads, and nothing you do here is tracked.', go: 'Play →', pts: 'Knight Points',
       toss: 'Friends walk up to the castle gate with messages, but Glitch can look like any of them. Read, then throw your shield at the tricks.',
       run: 'Race Shieldy down the castle road, jump the crates and barrels, grab the coins. Run into your friends\' messages, steer around the tricks.',
       dash: 'One button. Messages fly in: raise the shield against the tricks, let your friends through. It gets fast.',
       more: 'More games, quests and quizzes:' },
-    tr: { storyH: 'Kayıp Sprout', story: '3D bir hikâye. Sprout kayıp. Kalede dolaş, geride bıraktığı mesajları oku ve hikâyenin nasıl biteceğine sen karar ver.', h1: 'Bir oyun seç', sub: 'Ücretsiz. Hesap yok, reklam yok, burada yaptığın hiçbir şey izlenmez.', go: 'Oyna →', pts: 'Şövalye Puanı',
+    tr: { cityH: "Şövalye Şehri", city: "Yürüyerek ve arabayla gezebileceğin açık bir 3D şehir. Bir araba ödünç al, radyoyu aç ve herkesin telefonunda birdenbire beliren uygulamanın arkasında kimin olduğunu bul. Beş bölüm, on altı görev, üç farklı son.", storyH: 'Kayıp Sprout', story: '3D bir hikâye. Sprout kayıp. Kalede dolaş, geride bıraktığı mesajları oku ve hikâyenin nasıl biteceğine sen karar ver.', h1: 'Bir oyun seç', sub: 'Ücretsiz. Hesap yok, reklam yok, burada yaptığın hiçbir şey izlenmez.', go: 'Oyna →', pts: 'Şövalye Puanı',
       toss: 'Arkadaşlar kale kapısına mesajlarla geliyor ama Glitch herhangi birinin kılığına girebilir. Oku, sonra kalkanını tuzaklara fırlat.',
       run: 'Shieldy ile kale yolunda koş, sandıkların ve fıçıların üstünden atla, altınları topla. Arkadaşlarının mesajlarının içinden geç, tuzakların etrafından dolaş.',
       dash: 'Tek tuş. Mesajlar uçarak gelir: tuzaklara karşı kalkanı kaldır, arkadaşlarını geçir. Gittikçe hızlanır.',
       more: 'Daha fazla oyun, görev ve quiz:' },
-    es: { storyH: 'The Lost Sprout', story: 'Una historia en 3D. Sprout desapareció. Recorre el castillo, lee los mensajes que dejó y decide cómo termina.', h1: 'Elige un juego', sub: 'Gratis. Sin cuenta, sin anuncios, y nada de lo que hagas aquí se rastrea.', go: 'Jugar →', pts: 'Puntos de Caballero',
+    es: { cityH: "Knight City", city: "Una ciudad abierta en 3D para recorrer a pie o en auto. Toma prestado un auto, enciende la radio y descubre quién está detrás de la app que de pronto tiene todo el mundo. Cinco capítulos, dieciséis misiones, tres finales.", storyH: 'The Lost Sprout', story: 'Una historia en 3D. Sprout desapareció. Recorre el castillo, lee los mensajes que dejó y decide cómo termina.', h1: 'Elige un juego', sub: 'Gratis. Sin cuenta, sin anuncios, y nada de lo que hagas aquí se rastrea.', go: 'Jugar →', pts: 'Puntos de Caballero',
       toss: 'Llegan amigos a la puerta del castillo con mensajes, pero Glitch puede verse igualito a cualquiera. Lee y luego lanza tu escudo a las trampas.',
       run: 'Corre con Shieldy por el camino del castillo, salta las cajas y los barriles, junta las monedas. Pasa por los mensajes de tus amigos y esquiva las trampas.',
       dash: 'Un solo botón. Llegan mensajes volando: levanta el escudo contra las trampas y deja pasar a tus amigos. Se pone rápido.',
       more: 'Más juegos, misiones y quizzes:' },
-    fr: { storyH: 'The Lost Sprout', story: 'Une histoire en 3D. Sprout a disparu. Explore le château, lis les messages qu’il a laissés et décide de la fin.', h1: 'Choisis un jeu', sub: 'Gratuit. Sans compte, sans publicité, et rien de ce que tu fais ici n’est suivi.', go: 'Jouer →', pts: 'Points de Chevalier',
+    fr: { cityH: "Knight City", city: "Une ville ouverte en 3D à parcourir à pied ou en voiture. Emprunte une voiture, allume la radio et découvre qui se cache derrière l’appli que tout le monde a installée du jour au lendemain. Cinq chapitres, seize missions, trois fins.", storyH: 'The Lost Sprout', story: 'Une histoire en 3D. Sprout a disparu. Explore le château, lis les messages qu’il a laissés et décide de la fin.', h1: 'Choisis un jeu', sub: 'Gratuit. Sans compte, sans publicité, et rien de ce que tu fais ici n’est suivi.', go: 'Jouer →', pts: 'Points de Chevalier',
       toss: 'Des amis arrivent à la porte du château avec des messages, mais Glitch peut prendre l’apparence de n’importe lequel. Lis, puis lance ton bouclier sur les pièges.',
       run: 'Fonce avec Shieldy sur la route du château, saute les caisses et les tonneaux, ramasse les pièces. Passe dans les messages de tes amis, contourne les pièges.',
       dash: 'Un seul bouton. Les messages arrivent en volant : lève le bouclier contre les pièges, laisse passer tes amis. Ça accélère.',
@@ -95,6 +97,7 @@
   var S = T[lang]; document.documentElement.lang = lang;
   function $(id) { return document.getElementById(id); }
   $('t-h1').textContent = S.h1; $('t-sub').textContent = S.sub;
+  $('t-city-h').textContent = S.cityH; $('t-city').textContent = S.city;
   $('t-story-h').textContent = S.storyH; $('t-story').textContent = S.story; $('t-toss').textContent = S.toss; $('t-run').textContent = S.run; $('t-dash').textContent = S.dash; $('t-more').textContent = S.more;
   document.querySelectorAll('[data-go]').forEach(function (e) { e.textContent = S.go; });
   document.querySelectorAll('.langs a').forEach(function (a) { if (a.getAttribute('data-l') === lang) a.setAttribute('aria-current', 'true'); });

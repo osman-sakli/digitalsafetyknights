@@ -1,0 +1,136 @@
+{
+  "who": {
+    "dame": {
+      "1": "Une appli gratuite que personne n’a signée. Crois-en mon expérience, Shieldy : quand on ne voit pas qui vend, c’est toi qu’on vend.",
+      "2": "Sprout fait facilement confiance. Ce n’est pas un défaut. C’est justement ce que nous sommes là pour protéger.",
+      "3": "Remarque comme les enfants sont devenus silencieux. Une ville pleine de secrets, c’est une ville où quelqu’un les collectionne.",
+      "4": "Quand tu parles à quelqu’un qui s’est fait piéger, ta première phrase décide s’il en reparlera un jour à qui que ce soit.",
+      "5": "Nous ne gagnons pas en étant plus malins que Glitch. Nous gagnons quand plus personne ne reste seul face à lui.",
+      "6": "Repose-toi, Chevalier. Demain, nous écrirons aux autres villes."
+    },
+    "pixel": {
+      "1": "J’ai cherché qui a enregistré ShineUp. L’adresse, c’est un parking. UN PARKING, Shieldy !",
+      "2": "Voler une photo de profil, ça prend quatre secondes. J’ai chronométré.",
+      "3": "Je sais pister une camionnette. Je ne sais pas pister ce qui pousse un enfant à parler à un inconnu plutôt qu’à nous. Là, c’est à nous de faire mieux.",
+      "4": "Je repense sans arrêt à cet autocollant. J’étais tellement prêt à en vouloir à Nova. Heureusement que Dame Noble m’a freiné.",
+      "5": "Deux cent douze captures d’écran. Une preuve, c’est juste la vérité avec une date dessus.",
+      "6": "J’écris un guide : « Comment vérifier une appli avant de s’inscrire ». Page un : cherche qui l’a créée."
+    },
+    "bot": {
+      "1": "Je ne comprends pas les étincelles. Ce sont des nombres. Je possède déjà beaucoup de nombres.",
+      "2": "REQUÊTE : si un ami refuse de montrer son visage, est-ce un ami ou un nom d’utilisateur ? Données insuffisantes.",
+      "3": "J’ai partagé mon mot de passe pour prouver mon amitié. C’était une erreur. L’amitié ne nécessite pas de mot de passe.",
+      "4": "J’ai voulu cacher ce qui était arrivé à mon compte. Cacher a consommé plus d’énergie que raconter. Je suis désormais un robot très économe.",
+      "5": "STATUT : connexion en deux étapes ACTIVÉE. Position DÉSACTIVÉE. Profil PRIVÉ. Sentiments : BONS.",
+      "6": "Les drones nommés Kevin ont été recyclés en grille-pain. C’est un bon grille-pain."
+    },
+    "sprout": {
+      "1": "Tout le monde a ShineUp dans ma classe ! J’ai déjà 200 étincelles. C’est beaucoup ? Moi, je trouve que c’est beaucoup.",
+      "2": "StarKnight disait que j’étais son meilleur ami. Est-ce qu’il y avait quelque chose de vrai ? Même un tout petit peu ?",
+      "3": "Milo ne dit plus rien. Avant, il me racontait tout. Maintenant, il dit que c’est « privé ».",
+      "4": "Elle est méchante, Nova ? …Non. Je crois pas. Je crois qu’elle avait peur, comme moi, mais depuis beaucoup plus longtemps.",
+      "5": "J’ai parlé du mot de code à toute ma classe. Ils sont sept à en avoir un, maintenant !",
+      "6": "Je poste encore des photos. Mais pas celles où on voit mon école ou ma maison. Biscuit a le droit, mais seulement sa tête."
+    },
+    "nova": {
+      "1": "Étincelles gratuites pour tout le monde ! …Désolée, Chevalier, je peux pas parler. Je suis en direct. Je suis toujours en direct.",
+      "2": "Tu enquêtes encore sur ShineUp ? Pourquoi ? C’est juste une appli. Franchement. Laisse tomber.",
+      "3": "J’ai pas dormi. C’est rien. Les streamers ne dorment jamais. Arrête de me regarder comme ça, s’il te plaît.",
+      "4": "J’attends tout le temps que quelqu’un me crie dessus. Personne ne l’a fait. Je sais pas quoi faire de ça.",
+      "5": "J’ai coupé mon stream pendant une semaine. Une semaine entière. Le silence, ça fait bizarre. Je crois que j’aime bien.",
+      "6": "Maintenant, je reçois des messages tous les jours. Des enfants qui écrivent « moi aussi, ça m’est arrivé ». Je réponds à chacun : parles-en à quelqu’un. Aujourd’hui."
+    },
+    "milo": {
+      "1": "J’ai dix niveaux d’avance sur Finn dans ShineUp. DIX.",
+      "2": "Luna dit que je suis la personne la plus drôle qu’elle ait jamais rencontrée. Tu peux pas comprendre.",
+      "3": "Je peux pas parler de Luna. C’est privé. C’est elle qui l’a dit.",
+      "4": "Mamie et moi, on a un accord maintenant. Je lui raconte des trucs, et elle panique pas. Enfin, presque jamais.",
+      "5": "Je suis détective, maintenant. C’est Mamie qui le dit. Un détective, ça garde les preuves.",
+      "6": "Luna n’a même jamais existé. Ça m’a rendu triste pendant un moment. C’est bizarre ? Mamie dit que c’est pas bizarre."
+    },
+    "tess": {
+      "1": "J’ai dessiné Nova ! Tu crois qu’elle le verra si je le poste sur ShineUp ?",
+      "2": "StarKnight veut une photo de moi. Sa caméra est cassée, alors il peut pas m’en envoyer une de lui. C’est normal, non ?",
+      "3": "J’ai pas envoyé la photo. Je sais pas pourquoi. Ça m’a fait comme un mal de ventre.",
+      "4": "Tout le monde dit des méchancetés sur Nova. Moi, j’ai pas envie d’en dire.",
+      "5": "Mon mal de ventre avait raison ! Dame Noble dit que ça s’appelle écouter son instinct.",
+      "6": "Je dessine les Chevaliers, maintenant. Tu es plus dur à dessiner que Nova. C’est à cause du casque."
+    },
+    "finn": {
+      "1": "J’aime pas trop ShineUp, en vrai. Mais si j’y suis pas, personne me parle à la récré.",
+      "2": "AceRider a quinze ans et il me parle, à MOI. Personne d’aussi grand ne me parle jamais.",
+      "3": "Ace s’est énervé quand j’ai refusé de lui donner mon mot de passe. Un ami, ça s’énerve pas pour ça. Si ?",
+      "4": "Si quelqu’un connaissait un de mes secrets, je crois que moi aussi je ferais presque n’importe quoi. Ça fait peur d’y penser.",
+      "5": "J’ai parlé d’Ace à mon père. Il n’a rien dit pendant un moment, et puis il a dit « merci de me l’avoir dit ». C’est tout.",
+      "6": "Jay m’apprend le skate. Il a seize ans. Et il existe. J’ai vérifié."
+    },
+    "jay": {
+      "1": "ShineUp ? Un peu jeune pour moi. Mon petit frère, par contre, il décroche plus.",
+      "2": "Il y a un compte qui écrit sans arrêt à mon frère. Il dit qu’il a douze ans. Il écrit comme s’il en avait quarante.",
+      "3": "Mon frère s’est mis à fermer sa porte à clé. Il a huit ans. Qu’est-ce qu’on a à cacher, à huit ans ?",
+      "4": "Au lycée, un lien vers « la vidéo de Nova » circule. Je l’ai pas ouvert. J’ai dit à deux potes de pas l’ouvrir. Il y en a un qui m’a écouté.",
+      "5": "Hier soir, je me suis assis avec mon frère et on a passé en revue sa liste d’amis. Il a supprimé neuf « amis » qu’il n’a jamais vus en vrai.",
+      "6": "Quand un petit me demande de l’aide, je dis pas « qu’est-ce que t’as fait ? ». Je dis « OK, je suis là ». J’ai appris ça cette année."
+    },
+    "rose": {
+      "1": "Une boîte violette à chaque coin de rue, et personne ne nous a rien demandé. De mon temps, il fallait une autorisation rien que pour un étal de fleurs.",
+      "2": "Milo est toujours sur ce téléphone, à lui sourire. Je suis contente qu’il ait des amis. Je me demande tout de même qui ils sont.",
+      "3": "Il ne bavarde plus à table. Quelque chose tient ce petit, et ce ne sont pas les devoirs.",
+      "4": "J’ai confié à Milo mon secret, l’histoire du monsieur de la banque. Je pensais baisser dans son estime. Il m’a serrée dans ses bras.",
+      "5": "Le club de tricot est devenu le club où l’on se confie. Neuf grands-mères et beaucoup, beaucoup de thé.",
+      "6": "Entre, mon grand. Il y a du gâteau. Il y a toujours du gâteau pour ceux qui savent écouter."
+    },
+    "sam": {
+      "1": "Trente ans de tournée, et je n’ai jamais distribué autant de vent. Des bornes, des prospectus, du gratuit par-ci, du gratuit par-là.",
+      "2": "On en voit, des choses, depuis le trottoir. Des enfants qui rentrent chez eux les yeux sur leur téléphone, sans la moindre idée de qui marche derrière.",
+      "3": "Les petits ne me font plus coucou. Ils filent comme s’ils étaient en retard quelque part.",
+      "4": "Les gens ont vite fait d’accuser la petite. Je lui apporte son courrier depuis ses six ans. C’est une enfant, et quelqu’un s’est servi d’elle.",
+      "5": "Il y a maintenant un dépliant dans chaque boîte aux lettres de ma tournée. « Demandez-leur à quoi ils jouent. Puis écoutez. »",
+      "6": "La tournée est plus calme, ces temps-ci. Dans le bon sens. Il y a plus d’enfants à vélo."
+    },
+    "mum": {
+      "4": "Je me répète : toute une année, et je n’ai rien vu. Et puis je me dis : maintenant, elle peut me parler. C’est ça qui compte.",
+      "5": "La policière a dit la chose la plus gentille qui soit : « Vous seriez surprise de voir comme c’est fréquent. Et comme ça se passe bien quand ils en parlent. »",
+      "6": "On a une nouvelle règle à la maison. Pas de téléphone à table, et aucune question n’est trop gênante."
+    }
+  },
+  "adults": {
+    "1": [
+      "Ma fille réclamait ce ShineUp à cor et à cri. J’ai dit oui. Tout le monde l’a, non ?",
+      "Gratuit, qu’ils disent. J’ai assez vécu pour me demander ce que coûte le gratuit.",
+      "Je serais bien incapable de vous dire ce que mon fils fait sur son téléphone. Des jeux, j’imagine."
+    ],
+    "2": [
+      "Mon garçon a un nouvel ami sur Internet. Très poli, paraît-il. Je n’ai jamais vu ne serait-ce qu’une photo.",
+      "Il y avait encore une camionnette violette devant l’école. Des livraisons, sans doute.",
+      "Elle a posté chaque jour de nos vacances. Toute la rue sait que la maison est vide."
+    ],
+    "3": [
+      "Le mien ne dit plus rien. « Tout va bien, papa. » C’est tout ce que j’obtiens.",
+      "Je lui ai demandé ce qu’elle écrivait, et elle a retourné son téléphone. Ça, c’est nouveau.",
+      "Quand j’étais jeune, on tenait un journal intime. Maintenant, le journal répond."
+    ],
+    "4": [
+      "On raconte que cette streameuse l’a bien cherché. Moi, j’ai des doutes. Elle a quinze ans.",
+      "J’ai demandé à mon fils, calmement, si quelqu’un lui avait déjà réclamé une photo. Il est devenu tout blanc. On a parlé toute la soirée.",
+      "Si la mienne avait des ennuis, est-ce qu’elle me le dirait ? J’aimerais le croire. Je vais m’en assurer."
+    ],
+    "5": [
+      "On a regardé ses réglages ensemble. Ça a pris dix minutes. J’aurais dû le faire il y a un an.",
+      "J’ai appelé la ligne d’écoute, juste pour poser une question. Aucun jugement. Juste de l’aide.",
+      "Hier, mon fils m’a confié quelque chose de difficile. J’ai dit « merci de me l’avoir dit » avant de dire quoi que ce soit d’autre."
+    ],
+    "6": [
+      "Ce n’est plus la même ville. Les gens se posent des questions, les uns aux autres.",
+      "Finies, les boîtes violettes. Elles ne me manquent pas.",
+      "Ce matin, ma fille m’a montré un message bizarre avant même d’y avoir répondu. Je n’ai jamais rien voulu d’autre."
+    ]
+  },
+  "kids6": [
+    "Je l’ai dit à ma maman. Elle m’a fait un câlin. J’avais peur pour rien.",
+    "Nova m’a fait coucou aujourd’hui ! La vraie Nova, pas celle du stream.",
+    "Ma copine a reçu un message bizarre et elle me l’a montré tout de suite. Ensuite, on l’a montré à son père.",
+    "J’ai un mot de code, un profil privé et la connexion en deux étapes. Essaie de m’avoir, maintenant.",
+    "Sam le facteur dit que personne n’est mieux protégé que moi dans toute sa tournée."
+  ]
+}

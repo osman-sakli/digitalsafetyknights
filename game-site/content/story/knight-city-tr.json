@@ -1,0 +1,1792 @@
+{
+  "ui": {
+    "title": "Şövalye Şehri",
+    "tag": "Açık bir şehir. Senin araban. Ve her ekranın ardında bir sır.",
+    "how": "Şövalye Şehri'nde istediğin yere yürü ya da arabayla git. ShineUp adlı yeni bir uygulama bütün şehri sardı ve arkasında kimin olduğunu bilen yok. Altın ışıklardan görev al, beş bölümlük hikâyeyi izle ve sözlerini özenle seç: Hikâyenin nasıl biteceği, insanlara söylediklerine bağlı.",
+    "start": "Sokaklara çık",
+    "cont": "Kaldığın yerden devam et",
+    "fresh": "Baştan başla",
+    "arcade": "← Oyun Salonu'na dön",
+    "back": "Oyun Salonu",
+    "loading": "Şehir kuruluyor…",
+    "loadErr": "Şehrin bir bölümü yüklenemedi. Bağlantını kontrol et ve sayfayı yenile.",
+    "noGL": "Bu cihaz 3D oyunu çalıştıramıyor. 2D oyun ise her cihazda çalışır:",
+    "noGLbtn": "Shieldy Dash oyna →",
+    "keysFoot": "Yürü: W A S D ya da ok tuşları · Zıpla: Boşluk · Arabaya bin ya da konuş: E · Telefon: P",
+    "keysCar": "Sür: W A S D ya da ok tuşları · El freni: Boşluk · Korna: H · Radyo: R · İn: E",
+    "touchFoot": "Sol başparmakla yürü · Sağ başparmakla etrafına bak",
+    "touchCar": "Sol başparmakla direksiyonu çevir ve sür · El freni için ⏹ simgesine dokun",
+    "getIn": "Bin",
+    "getOut": "İn",
+    "talk": "Konuş",
+    "check": "Kioska bak",
+    "startJob": "Göreve başla: {n}",
+    "next": "İleri ▸",
+    "close": "Kapat",
+    "jobDone": "Görev tamam",
+    "jobFail": "Süre doldu",
+    "retry": "Tekrar dene",
+    "points": "+{n} Şövalye Puanı",
+    "learned": "Bir Şövalye bunu bilir",
+    "allDone": "Bütün görevler tamam. Şövalye Şehri güvende. Keşfetmeye devam et!",
+    "badge": "Kalkan rozeti {a}/{b}",
+    "badgesAll": "Bütün kalkan rozetlerini buldun!",
+    "stunt": "Müthiş sıçrayış! +{n}",
+    "careful": "Dikkat! Burada insanlar yürüyor.",
+    "notYours": "O arabanın bir sahibi var. Şövalyeler yalnızca üzerinde kalkan olan arabaları ödünç alır.",
+    "bump": "Yavaş! Şövalyeler dikkatli sürer.",
+    "splash": "Yeniden karadasın.",
+    "kmh": "km/sa",
+    "phone": "Telefon",
+    "tabMap": "Harita",
+    "tabJobs": "Görevler",
+    "tabHelp": "Yardım",
+    "jobNow": "Şimdi",
+    "jobDoneTag": "Tamam",
+    "jobLocked": "Kilitli",
+    "jobNext": "Sıradaki",
+    "badges": "Kalkan rozetleri",
+    "sound": "Ses",
+    "music": "Radyo",
+    "radioOff": "Radyo kapalı",
+    "radio1": "Knight FM",
+    "radio2": "Beach Wave",
+    "radio3": "Night Drive",
+    "newMsg": "Yeni mesaj",
+    "unknown": "Bilinmeyen numara",
+    "msgGood": "İyi karar. +{n}",
+    "msgBad": "Glitch'in umduğu da tam buydu.",
+    "timeLeft": "{t} sn",
+    "tagging": "Yakın dur…",
+    "tagged": "İşaretlendi!",
+    "wrongWay": "Başka bir cevap dene.",
+    "endDo": "Bir gün böyle bir oyunla karşılaşırsan",
+    "endKeep": "Şehri keşfetmeye devam et",
+    "reason": "Şövalye Şehri",
+    "placeHQ": "Şövalye Merkezi",
+    "placeLibrary": "Kütüphane",
+    "placeSchool": "Okul",
+    "placePark": "Park",
+    "placeArcade": "Oyun salonu",
+    "placePier": "İskele",
+    "placeHome": "Sprout'un evi",
+    "talkTo": "{n} ile konuş",
+    "look": "Fotoğrafa bak",
+    "unplug": "Direğin fişini çek",
+    "chapter": "{n}. Bölüm",
+    "trust": "Şehrin güveni",
+    "trustHint": "Kandırılan insanlara iyi davrandıkça artar. Hikâyenin sonunu o belirler.",
+    "tabMsgs": "Mesajlar",
+    "tabNotes": "Kural defteri",
+    "noMsgs": "Henüz mesaj yok.",
+    "noNotes": "Glitch'in kural defterinden henüz hiç sayfa bulmadın. Sayfalar şehrin bir yerlerinde mor mor parlıyor.",
+    "shard": "Glitch'in kural defteri: {a}/{b}. sayfa",
+    "shardsAll": "Glitch'in kural defterinin bütün sayfalarını buldun!",
+    "notesHead": "Glitch'in kural defteri, kendi ağzından. Oyunu bilirsen oyun bozulur.",
+    "bait": "O bir yemdi! Mor kıvılcımlara dokunma.",
+    "baitNone": "Tek bir yeme bile dokunmadın!",
+    "hintShown": "Takıldın mı? Aradığın yer artık haritanda.",
+    "chased": "Dronlar peşinde! Durma, devam et.",
+    "news": "Knight FM haberleri",
+    "placeBeach": "Plaj sahnesi",
+    "placeTower": "ShineUp Kulesi",
+    "placeRose": "Rose Nine'nin evi",
+    "placeNova": "Nova'nın dairesi",
+    "placeLight": "Deniz feneri",
+    "endBest": "Şehir anlatıyor",
+    "endOk": "Ağ çöktü",
+    "endLow": "Glitch yakalandı, ama…",
+    "again": "Hikâyeyi yeniden oyna",
+    "freeRoam": "Şehir senin. Sıradaki görev için altın ışığı izle.",
+    "trustUp": "Şehir Şövalyelere biraz daha fazla güveniyor.",
+    "trustDown": "Şehir Şövalyelere biraz daha az güveniyor.",
+    "blame": "Dikkat et Shieldy. Glitch onlara bizden tam da bunu göreceklerini söylemişti: suçlanmayı.",
+    "cardH": "Şövalye Şehri",
+    "cardP": "Yürüyerek ve arabayla gezebileceğin açık bir 3D şehir. Bir araba ödünç al, radyoyu aç ve herkesin telefonunda birdenbire beliren uygulamanın arkasında kimin olduğunu bul. Beş bölüm, on altı görev, üç farklı son.",
+    "metaTitle": "Şövalye Şehri — Digital Safety Knights",
+    "metaDesc": "Şövalye Şehri: ücretsiz, açık dünyalı bir 3D oyun. İstediğin yere yürü ya da arabayla git, görev al ve şehri saran uygulamanın arkasında kimin olduğunu ortaya çıkar. Hikâyenin sonunu, insanlara söylediklerin belirler. Hesap yok, reklam yok, takip yok."
+  },
+  "names": {
+    "shieldy": "Shieldy",
+    "dame": "Dame Noble",
+    "pixel": "Pixel",
+    "bot": "Bot",
+    "sprout": "Sprout",
+    "glitch": "Glitch",
+    "kiosk": "Kiosk ekranı",
+    "unknown": "Bilinmeyen numara",
+    "nova": "Nova",
+    "milo": "Milo",
+    "tess": "Tess",
+    "finn": "Finn",
+    "jay": "Jay",
+    "rose": "Rose Nine",
+    "sam": "Postacı Sam",
+    "mum": "Nova'nın annesi",
+    "photo": "Sprout'un fotoğrafı",
+    "mast": "Aktarma direği",
+    "radio": "Knight FM",
+    "star": "StarKnight",
+    "luna": "LunaBest",
+    "ace": "AceRider",
+    "botfake": "Bot'un hesabı",
+    "cit": "Yoldan geçen"
+  },
+  "todo": [
+    "Cevap yazma, oyununa da gelme.",
+    "Kanıtı sakla: Ekran görüntüsü al.",
+    "Hesabı engelle ve bildir.",
+    "Güvendiğin bir yetişkine anlat. Anlattığın için sana kimse kızmaz."
+  ],
+  "jobs": {
+    "j1": {
+      "name": "İlk Sürüş",
+      "lesson": "Bir şeye katılmadan önce sor: Bunu kim yaptı ve bundan ne kazanıyor?",
+      "goals": {
+        "car": "Arabana bin",
+        "drive": "Kütüphaneye sür"
+      },
+      "intro": [
+        {
+          "s": "dame",
+          "t": "Günaydın Shieldy. Şövalye Şehri'nde bir tuhaflık var. Şehirdeki çocukların yarısı bir gecede ShineUp adlı yeni bir uygulamaya katılmış."
+        },
+        {
+          "s": "dame",
+          "t": "Üstelik sokak köşelerinde mor kiosklar belirdi. Pixel kütüphanede, onları oraya kimin koyduğunu çözmeye çalışıyor."
+        },
+        {
+          "s": "dame",
+          "t": "Araban kapıda. Git, bir bak. Kaldırımlara da dikkat et: Orada insanlar yürüyor."
+        }
+      ],
+      "outro": [
+        {
+          "s": "pixel",
+          "t": "Geldin demek! Şu kioskı görüyor musun? Üstünde BEDAVA KIVILCIM yazıyor. Kıvılcım, ShineUp'taki puanların adı. Herkes peşinde."
+        },
+        {
+          "s": "pixel",
+          "t": "Beni asıl düşündüren şu: ShineUp'ı kimin yaptığını bilen yok. Ne bir isim var ne bir adres. İnsan hiçbir karşılık beklemeden bir şey dağıtıp sonra neden saklanır?"
+        }
+      ]
+    },
+    "j2": {
+      "name": "Fazla Güzel",
+      "lesson": "Bedava mı, acele mi ettiriyor, özel bir bilgini mi istiyor? O hâlde bu bir tuzak.",
+      "goals": {
+        "kiosks": "Kioskları kapat: {a}/{b}"
+      },
+      "intro": [
+        {
+          "s": "pixel",
+          "t": "Her kioskta başka bir vaat var. Ekranı oku, sonra bir Şövalye ne yapar, ona karar ver."
+        },
+        {
+          "s": "pixel",
+          "t": "Hepsi haritanda. Yakına park et ve yanlarına yürü."
+        }
+      ],
+      "quiz": {
+        "k1": {
+          "q": "5.000 ELMAS KAZANDIN! Almak için şifreni yaz.",
+          "c": [
+            {
+              "t": "Kapat gitsin. Gerçek bir ödül şifremi istemez.",
+              "r": "Aynen öyle. Onun gözündeki asıl ödül şifrendi."
+            },
+            {
+              "t": "Şifremi yazarım. Alt tarafı bir oyun hesabı.",
+              "r": "Oyun hesabında arkadaşların, eşyaların, bazen de annenin ya da babanın kartı kayıtlıdır. Tekrar dene."
+            },
+            {
+              "t": "Ne olacağını görmek için uydurma bir şifre yazarım.",
+              "r": "Oyununa gelmek bile Glitch'e orada biri olduğunu söyler. Tekrar dene."
+            }
+          ]
+        },
+        "k2": {
+          "q": "SADECE 10 SANİYE KALDI! HEMEN dokun, yoksa her şeyi kaybedersin!",
+          "c": [
+            {
+              "t": "Dur. İşin hilesi zaten bu acele. Kapat gitsin.",
+              "r": "Doğru. Geri sayım, düşünmeye vaktin kalmasın diye oradadır."
+            },
+            {
+              "t": "Hemen dokunurum, sonra düşünürüm.",
+              "r": "Sonra dediğin an iş işten geçmiş olur. Seni bunun için aceleye getiriyor. Tekrar dene."
+            },
+            {
+              "t": "Kiosktan biraz daha süre isterim.",
+              "r": "Kiosk senden yana değil. Tekrar dene."
+            }
+          ]
+        },
+        "k3": {
+          "q": "BEDAVA SKIN! Teslimat için ev adresini yazman yeter.",
+          "c": [
+            {
+              "t": "Skin oyunun içinde durur. Adresime ihtiyacı yok. Kapat gitsin.",
+              "r": "Evet. Soru hediyeye uymuyorsa o hediye yemdir."
+            },
+            {
+              "t": "Yalnızca sokağın adını yazarım, kapı numarasını yazmam.",
+              "r": "Yarım adres de nerede oturduğuna dair bir ipucudur. Tekrar dene."
+            },
+            {
+              "t": "Onun yerine bir arkadaşımın adresini yazarım.",
+              "r": "O zaman tehlikeye giren arkadaşın olur. Tekrar dene."
+            }
+          ]
+        },
+        "k4": {
+          "q": "Bunu 5 arkadaşına gönder, HEPİNİZ elmas kazanın!",
+          "c": [
+            {
+              "t": "Kimseye göndermem. Arkadaşlarımı uyarırım. Kapat gitsin.",
+              "r": "İşte bu. Glitch kendi işini sana yaptırmak istiyordu."
+            },
+            {
+              "t": "Gönderirim. Arkadaşlarım da bedava elmas ister.",
+              "r": "Senden geldiği için güvenirler. Hile de tam bu. Tekrar dene."
+            },
+            {
+              "t": "Denemek için tek bir arkadaşıma gönderirim.",
+              "r": "Tuzağa düşen tek bir arkadaş bile fazla. Tekrar dene."
+            }
+          ]
+        }
+      },
+      "outro": [
+        {
+          "s": "pixel",
+          "t": "Dördü de karardı! Bak içlerinden ne çıktı: Bütün kiosklar isimleri ve adresleri aynı yere gönderiyormuş."
+        },
+        {
+          "s": "dame",
+          "t": "Demek biri çocukların bilgilerini topluyor. Kim olduğunu öğrenmek istiyorum. Kalabalığın olduğu yerden başla Shieldy: Bugün plajda büyük bir ShineUp çekilişi var."
+        }
+      ]
+    },
+    "j3": {
+      "name": "Çekiliş",
+      "lesson": "“Herkes yapıyor” ve “sadece bugün” sözleri seni aceleye getirmek için söylenir. Yavaşla.",
+      "goals": {
+        "beach": "Plaj sahnesine ulaş. Dokunduğun yem: {n}"
+      },
+      "intro": [
+        {
+          "s": "bot",
+          "t": "UYARI. Şövalye Şehri'nin en çok takip edilen yayıncısı Nova, plajda bir ShineUp çekilişi düzenliyor. İlk kaydolan yüz kişi 5.000 kıvılcım kazanacak."
+        },
+        {
+          "s": "bot",
+          "t": "Çocukları çekmek için yollara mor kıvılcımlar saçılmış. Bunlar yem. Toplama."
+        },
+        {
+          "s": "bot",
+          "t": "Seni tanıdığım için tekrar ediyorum: Parlayan şeyleri TOPLAMA."
+        }
+      ],
+      "meet": [
+        {
+          "s": "nova",
+          "t": "Vay canına, Şövalye gelmiş! Herkes baksın, Shieldy bile bedava kıvılcım için burada!"
+        },
+        {
+          "s": "nova",
+          "t": "Yayınımda canlı canlı kaydol! Tek istediğim adın soyadın, doğum günün ve okulun. Çok kolay!"
+        }
+      ],
+      "signup": {
+        "q": "Eee? Ad soyad, doğum günü, okul. Herkes seni izliyor!",
+        "c": [
+          {
+            "t": "İzlerim ama kaydolmuyorum. Bir oyun okulumu neden bilmek istesin?",
+            "r": "Öyle… işte, tamam mı? Herkes veriyor. İşi tuhaflaştırma."
+          },
+          {
+            "t": "Olur. Bir isimle bir doğum gününden ne çıkar?",
+            "r": "Ad soyad, doğum günü ve okul, bir çocuğu bulmaya ya da o çocukmuş gibi davranmaya yeter. Tekrar dene."
+          },
+          {
+            "t": "Şaka olsun diye Sprout'un bilgileriyle kaydolurum.",
+            "r": "O zaman buldukları kişi Sprout olur. Tekrar dene."
+          }
+        ]
+      },
+      "after": [
+        {
+          "s": "nova",
+          "t": "Bak. Bugün yüz kayıt toplamak zorundayım. Zorundayım."
+        },
+        {
+          "s": "nova",
+          "t": "…Yani, istiyorum. Tabii ki istiyorum."
+        },
+        {
+          "s": "shieldy",
+          "t": "Zorunda mısın? Kim diyor bunu?"
+        },
+        {
+          "s": "nova",
+          "t": "Hiç kimse. Boş ver. Yayına döndük millet!"
+        },
+        {
+          "s": "pixel",
+          "t": "Yüzünü gördün mü? Telefonuna, sanki onu ısıracakmış gibi bakıp durdu."
+        }
+      ]
+    },
+    "j4": {
+      "name": "Eve Dönüş",
+      "lesson": "Plan değişikliği tanıdığın insanlardan gelir. Doğrudan onlara sor ve ailenle bir parola belirle.",
+      "goals": {
+        "school": "Minibüsten önce okula var",
+        "home": "Sprout'u evine götür"
+      },
+      "intro": [
+        {
+          "s": "dame",
+          "t": "Sprout'a az önce bir mesaj geldi: “Selam! Ben annenin arkadaşıyım. Seni okuldan mor bir minibüsle alacağım.”"
+        },
+        {
+          "s": "dame",
+          "t": "Annesi kimseyi göndermedi. O minibüsten önce okula var!"
+        }
+      ],
+      "pickup": [
+        {
+          "s": "sprout",
+          "t": "Shieldy! Adımı biliyordu. Okulumu biliyordu. Gerçek olmalı diye düşündüm."
+        },
+        {
+          "s": "sprout",
+          "t": "Adı StarKnight. ShineUp'taki en iyi arkadaşım. Bana çok iyi davranıyor."
+        },
+        {
+          "s": "shieldy",
+          "t": "Adını bilmesi hiçbir şeyi kanıtlamaz Sprout. Atla bakalım."
+        }
+      ],
+      "msg": {
+        "q": "Plan değişti! Annesi, Sprout'u iskeleye bırakmanı istiyor. Orada buluşuruz. — Annesinin arkadaşı",
+        "c": [
+          {
+            "t": "Cevap yazma. Dame Noble'ı ara ve doğru mu diye sor.",
+            "r": "Dame Noble, Sprout'un annesini aradı. Annesi hiçbir planı değiştirmemiş."
+          },
+          {
+            "t": "Geri dön ve iskeleye sür.",
+            "r": "Bir mesaj, herhangi birinden geldiğini söyleyebilir. Tekrar dene."
+          },
+          {
+            "t": "“Kimsiniz?” diye cevap yaz.",
+            "r": "Daha inandırıcı bir hikâye uydurur, o kadar. Zaten tanıdığın birine sor. Tekrar dene."
+          }
+        ]
+      },
+      "outro": [
+        {
+          "s": "sprout",
+          "t": "Evdeyim! Annemle gizli bir parola belirliyoruz. Parolayı bilmeyen biriyle hiçbir yere gitmem."
+        },
+        {
+          "s": "dame",
+          "t": "Güzel. Şimdi asıl içimi kemiren soruya gelelim. Bir yabancı Sprout'un adını, okulunu ve eve saat kaçta yürüdüğünü nereden biliyordu?"
+        }
+      ]
+    },
+    "j5": {
+      "name": "Nereden Biliyordu?",
+      "lesson": "Her paylaşım bir ipucudur. Profilini gizli tut; okulunu, sokağını ve her gün yaptıklarını paylaşma. Bir arkadaşını etiketlemeden önce ona sor.",
+      "goals": {
+        "photos": "Sprout'un fotoğraflarının çekildiği yerleri bul: {a}/{b}"
+      },
+      "intro": [
+        {
+          "s": "pixel",
+          "t": "Sprout'un ShineUp sayfasını inceledim. Beş fotoğraf var. Bence her biri bir şeyi ele vermiş."
+        },
+        {
+          "s": "pixel",
+          "t": "Yerler haritanda. Her fotoğrafın çekildiği yere git, orada dur ve fotoğrafa bir yabancının gözüyle bak."
+        }
+      ],
+      "quiz": {
+        "p1": {
+          "q": "Sprout okul formasıyla, okulun kapısının önünde sırıtıyor.",
+          "c": [
+            {
+              "t": "Okulunu. Okulun adı kapıda, arması da kazağında.",
+              "r": "Doğru. Tek bir fotoğrafla bir yabancı, Sprout'un haftanın beş günü nerede olduğunu öğreniyor."
+            },
+            {
+              "t": "Hiçbir şeyi. Güzel bir fotoğraf, o kadar.",
+              "r": "Bir daha bak: arkasında ne var, üstünde ne var?"
+            },
+            {
+              "t": "Okulu sevdiğini.",
+              "r": "Olabilir! Ama sen bir yabancının işine yarayacak şeye bak."
+            }
+          ]
+        },
+        "p2": {
+          "q": "Sprout'un yeni bisikleti, evinin önüne park edilmiş.",
+          "c": [
+            {
+              "t": "Nerede oturduğunu. Arka planda kapı numarası ve sokak tabelası var.",
+              "r": "Evet. O bisikletini gösteriyordu. Arka plan da adresini gösterdi."
+            },
+            {
+              "t": "Güzel bir bisikleti olduğunu.",
+              "r": "Doğru, ama fotoğrafta başka neler var, ona da bak."
+            },
+            {
+              "t": "İşe yarar hiçbir şeyi. Bir sürü ev buna benzer.",
+              "r": "Karede kapı numarası ve sokak adı varken benzemez."
+            }
+          ]
+        },
+        "p3": {
+          "q": "Park fotoğrafı, altında da şu yazı: “Her gün okuldan sonra saat 4'te buradayım!”",
+          "c": [
+            {
+              "t": "Her gün ne yaptığını: nerede ve saat kaçta olacağını.",
+              "r": "Aynen öyle. Onunla “tesadüfen” karşılaşmak isteyen biri için hazır bir program bu."
+            },
+            {
+              "t": "Parkı sevdiğini.",
+              "r": "Evet, ama altındaki yazıyı bir daha oku."
+            },
+            {
+              "t": "Hiçbir şeyi. Parklar herkese açıktır.",
+              "r": "Park herkese açık. Sprout'un programı herkese açık olmamalı."
+            }
+          ]
+        },
+        "p4": {
+          "q": "Sprout ve arkadaşları oyun salonunda, herkes adıyla etiketlenmiş.",
+          "c": [
+            {
+              "t": "Arkadaşlarının adlarını. Artık bir yabancı “Milo'yla Tess'i tanıyorum” diyebilir.",
+              "r": "Doğru. StarKnight böylece onlardan biri gibi göründü."
+            },
+            {
+              "t": "Çok sevildiğini.",
+              "r": "Belki, ama bir yabancı o isimlerle neler yapabilir, onu düşün."
+            },
+            {
+              "t": "En iyi oynadığı oyunu.",
+              "r": "Ekrana değil, etiketlere bak."
+            }
+          ]
+        },
+        "p5": {
+          "q": "Uykulu bir kedi, altında da şu yazı: “Pamuk bugün 3 yaşında!”",
+          "c": [
+            {
+              "t": "Evcil hayvanının adını: Şifrelerde ve gizli sorularda en çok kullanılan şeylerden biri.",
+              "r": "Evet. Üstelik arkadaş gibi görünmenin de bir yolu: “Pamuk nasıl?”"
+            },
+            {
+              "t": "Bir kedisi olduğunu. Ne olmuş yani?",
+              "r": "O isim, sandığından çok daha fazla kapıyı açar. Tekrar dene."
+            },
+            {
+              "t": "Hiçbir şeyi. Kedilerden zarar gelmez.",
+              "r": "Kediden gelmez. Ama adı yanlış ellere geçerse gelir."
+            }
+          ]
+        }
+      },
+      "outro": [
+        {
+          "s": "pixel",
+          "t": "Okul, sokak, günlük program, arkadaşlar, evcil hayvan. StarKnight hiçbir şeyi hacklemedi. Sprout hepsini kendi eliyle verdi; her seferinde sevimli bir fotoğrafla."
+        },
+        {
+          "s": "sprout",
+          "t": "Sayfamı gizli yaptım. Pamuk da artık şifrem değil. …Şifrem Pamuk1'di."
+        },
+        {
+          "s": "dame",
+          "t": "Kimse seni suçlamıyor Sprout. Sana bunu söyleyen olmamıştı. Artık biliyorsun ve arkadaşlarına da anlatabilirsin."
+        }
+      ]
+    },
+    "j6": {
+      "name": "Gökteki Casuslar",
+      "lesson": "Konumun ya gerçek hayatta tanıdığın insanlar içindir ya da hiç kimse için.",
+      "goals": {
+        "drones": "Casus dronları işaretle: {a}/{b}"
+      },
+      "intro": [
+        {
+          "s": "bot",
+          "t": "UYARI. Sprout tek değilmiş. Glitch'in dronları çocukları evlerine kadar takip ediyor."
+        },
+        {
+          "s": "bot",
+          "t": "Çocukları, herkese açık bırakılmış konum paylaşımından bulmuşlar. Her dronun altına sür ve kalkanın onu işaretleyene kadar yakınında kal."
+        }
+      ],
+      "outro": [
+        {
+          "s": "bot",
+          "t": "Bütün dronlar indirildi. Kendi ayarlarımı da kontrol ettim. Konumum artık hiç kimseyle paylaşılmıyor."
+        },
+        {
+          "s": "dame",
+          "t": "Canlı bir harita, “şu an buradayım” paylaşımı, içinde sokağın göründüğü bir fotoğraf. Her biri, kendi elinle havalandırdığın bir drondur."
+        }
+      ]
+    },
+    "j7": {
+      "name": "Tek Ses, Çok Yüz",
+      "lesson": "Profil bir maskedir. Yüzünü göstermeyen, sır isteyen ya da arkadaşlığı aceleye getiren biri uyarı işaretidir.",
+      "goals": {
+        "kids": "Sohbetleri oku: {a}/{b}"
+      },
+      "intro": [
+        {
+          "s": "pixel",
+          "t": "Üç çocuk. Üç tane yepyeni en iyi arkadaş: StarKnight, LunaBest ve AceRider. O sohbetleri görmek istiyorum."
+        },
+        {
+          "s": "pixel",
+          "t": "Milo oyun salonunda, Tess parkta, Finn de plajdaki kafelerde. Güzellikle iste. Yeni arkadaşlarına biraz hayranlar."
+        }
+      ],
+      "milo": [
+        {
+          "s": "milo",
+          "t": "Luna harika biri. Beni anlıyor. Bak, okuyabilirsin, kötü bir şey yok içinde."
+        }
+      ],
+      "tess": [
+        {
+          "s": "tess",
+          "t": "StarKnight, şehrin en iyi ressamı olduğumu söylüyor! Gördün mü?"
+        }
+      ],
+      "finn": [
+        {
+          "s": "finn",
+          "t": "Ace çok havalı. On beş yaşında ama yine de benimle konuşuyor. Al, bak."
+        }
+      ],
+      "quiz": {
+        "milo": {
+          "q": "LunaBest: “beni bir tek sen anlıyorsun. konuştuğumuzu ninene söyleme, her şeyi bozar”",
+          "c": [
+            {
+              "t": "Milo'dan, kendisini ailesinden sır olarak saklamasını istiyor.",
+              "r": "Doğru. Gerçek bir arkadaş, ailenin onu tanımasından mutlu olur."
+            },
+            {
+              "t": "Milo'nun onu anladığını söylüyor.",
+              "r": "O, işin şekeri. Arkasından gelen oltaya bak."
+            },
+            {
+              "t": "Hiçbir şey. Güzel bir mesaj.",
+              "r": "Güzel gelsin diye yazılmış zaten. İkinci yarısını bir daha oku."
+            }
+          ]
+        },
+        "tess": {
+          "q": "StarKnight: “kameram bozuk, görüntülü arayamıyorum. ama sen bana bi fotoğrafını at!”",
+          "c": [
+            {
+              "t": "Kendini hiç göstermiyor ama Tess'in fotoğrafını istiyor.",
+              "r": "Evet. Kamera hep bozuktur. Bu şanssızlık değil, maskenin ta kendisi."
+            },
+            {
+              "t": "Kamerası bozukmuş. Olur böyle şeyler.",
+              "r": "Aylardır mı? Hem de bir tek onunki mi?"
+            },
+            {
+              "t": "Tess'in çizimlerini beğeniyor.",
+              "r": "O dünkü mesajdı. Bugün ne istediğine bak."
+            }
+          ]
+        },
+        "finn": {
+          "q": "AceRider: “tam 2 gündür arkadaşız, bana her şeyi anlatabilirsin. şifren ne? en iyi arkadaşlar paylaşır”",
+          "c": [
+            {
+              "t": "Daha iki gün olmuş, şimdiden “en iyi arkadaş” ve şifre istiyor.",
+              "r": "Aynen öyle. Önce aceleyle kurulan yakınlık, sonra istek."
+            },
+            {
+              "t": "O on beş yaşında, Finn ise on.",
+              "r": "Bu da bir uyarı işareti. Ama sen ne istediğine bak."
+            },
+            {
+              "t": "Hiçbir şey. Arkadaşlar bir şeyler paylaşır.",
+              "r": "Şifre paylaşmaz. Hiçbir zaman."
+            }
+          ]
+        }
+      },
+      "trace": [
+        {
+          "s": "pixel",
+          "t": "Shieldy… Üç hesabın da izini sürdüm. StarKnight, LunaBest, AceRider. Hepsi aynı cihazdan giriş yapıyor."
+        },
+        {
+          "s": "pixel",
+          "t": "Yazım hataları bile aynı. Ortada üç arkadaş yok. Üç ayrı yüz takan tek bir kişi var."
+        },
+        {
+          "s": "dame",
+          "t": "Ve o cihaz hareket ediyor. Mor bir minibüsün içinde."
+        },
+        {
+          "s": "glitch",
+          "t": "Pek zekisiniz, küçük Şövalyeler. Yakalayabilirseniz yakalayın. — G"
+        }
+      ]
+    },
+    "j8": {
+      "name": "Mor Minibüs",
+      "lesson": "Gördüğün şey çoğu zaman hikâyenin tamamı değildir. Birini suçlamadan önce gerçekleri topla.",
+      "goals": {
+        "van": "Mor minibüsü işaretle: {a}/{b}"
+      },
+      "intro": [
+        {
+          "s": "dame",
+          "t": "İşte orada. Glitch'in minibüsü; üç sahte arkadaş da içinde."
+        },
+        {
+          "s": "dame",
+          "t": "Peşine düş ve kalkanın onu işaretleyene kadar arkasından ayrılma. Üç işaret onu durdurur. Sakın çarpma: Etrafta insanlar var."
+        }
+      ],
+      "outro": [
+        {
+          "s": "pixel",
+          "t": "Durdu! Kapıları açıyorum… BOMBOŞ. Sürücü yok. Yalnızca onu başka bir yerden yöneten bir aktarma kutusu var."
+        },
+        {
+          "s": "pixel",
+          "t": "Kutunun üstünde de bir çıkartma var. İçinde N harfi olan küçük bir yıldız. Bu… bu Nova'nın logosu."
+        },
+        {
+          "s": "dame",
+          "t": "Ağır ol Pixel. Bir çıkartma kanıt değildir. Ama evet. Gözünü dört aç."
+        }
+      ]
+    },
+    "j9": {
+      "name": "Bot, Bot Değil",
+      "lesson": "Arkadaşının hesabından gelen mesajı her zaman arkadaşın yazmış olmayabilir. Başka bir yoldan kontrol et. Hesabın ele geçirildiyse: yeni şifre, iki adımlı giriş ve bir yetişkine haber.",
+      "goals": {
+        "kids": "Bot'un arkadaşlarına cevap yazmadan önce ulaş: {a}/{b}",
+        "hq": "Bot'u Şövalye Merkezi'ne götür"
+      },
+      "intro": [
+        {
+          "s": "botfake",
+          "t": "selam kankaa!! şifreni bi saniyeliğine versene, sana seviye atlatıcam 😎"
+        },
+        {
+          "s": "shieldy",
+          "t": "Bot hayatında bir kez bile “kanka” dememiştir."
+        },
+        {
+          "s": "bot",
+          "t": "HATA. HATA. O ben değildim! Şifremi LunaBest'e söyledim. En iyi arkadaşların her şeyi paylaştığını söylemişti. Şimdi o, BEN oldu."
+        },
+        {
+          "s": "bot",
+          "t": "Hesabım tanıdığım herkese mesaj atıyor. Milo, Tess, Finn ve Jay inanacak, çünkü mesaj benden geliyor!"
+        }
+      ],
+      "quiz": {
+        "k1": {
+          "q": "Bot az önce şifremi istedi. Hesap onun, demek ki yazan da o. Öyle değil mi?",
+          "c": [
+            {
+              "t": "Bot'u ara ya da yüz yüze sor.",
+              "r": "Güzel. Hırsızın elinde olmayan, bambaşka bir yol."
+            },
+            {
+              "t": "Evet. Hesap onunsa yazan da odur.",
+              "r": "Hesaplar çalınır. Şifre kimdeyse isim de ondadır. Tekrar dene."
+            },
+            {
+              "t": "Hesaba “Gerçekten sen misin?” diye sor.",
+              "r": "Hırsız “evet” der. Tekrar dene."
+            }
+          ]
+        },
+        "k2": {
+          "q": "Gerçekten Bot'un hesabına benziyor. Nasıl emin olabilirim?",
+          "c": [
+            {
+              "t": "Yalnızca gerçek Bot'un bildiği bir şey sor; mesela cumartesi günü ne yaptığınızı.",
+              "r": "Evet. Çalınan bir hesapta isim vardır ama anılar yoktur."
+            },
+            {
+              "t": "Profil resmine bak.",
+              "r": "Hesabın tamamı hırsızın elinde, resim de dahil. Tekrar dene."
+            },
+            {
+              "t": "Hızlı cevap yazıyor mu, ona bak.",
+              "r": "Hız hiçbir şeyi kanıtlamaz. Tekrar dene."
+            }
+          ]
+        },
+        "k3": {
+          "q": "Şifremi ödünç verirsem bana seviye atlatacağını söyledi.",
+          "c": [
+            {
+              "t": "Hiç onun gibi konuşmuyor. Gerçek arkadaşların da şifrene ihtiyacı olmaz.",
+              "r": "Aynen öyle. Tek mesajda iki uyarı işareti."
+            },
+            {
+              "t": "Beş dakikalığına ver, sonra değiştir.",
+              "r": "Beş dakika, seni kendi hesabının dışında bırakmasına fazlasıyla yeter. Tekrar dene."
+            },
+            {
+              "t": "Yarısını ver.",
+              "r": "Bir hırsıza neden yarım anahtar veresin? Tekrar dene."
+            }
+          ]
+        },
+        "k4": {
+          "q": "Peki bu mesajı ne yapacağım?",
+          "c": [
+            {
+              "t": "Cevap yazma. Bot'a hesabının ele geçirildiğini söyle ve bir yetişkine anlat.",
+              "r": "İşte bu. Zinciri az önce sen kırdın."
+            },
+            {
+              "t": "Cevap yazıp hırsıza haddini bildir.",
+              "r": "Artık orada olduğunu biliyor; daha kurnazca bir şey deneyecek. Tekrar dene."
+            },
+            {
+              "t": "Uyarı olsun diye herkese ilet.",
+              "r": "Bir yetişkine ekran görüntüsü göstermek, evet. Mesajı iletmek ise onu yaymak olur. Tekrar dene."
+            }
+          ]
+        }
+      },
+      "fix": [
+        {
+          "s": "dame",
+          "t": "Üç adım var Bot. Bir: yeni bir şifre. Uzun, tuhaf ve başka hiçbir yerde kullanmadığın bir şifre."
+        },
+        {
+          "s": "dame",
+          "t": "İki: iki adımlı girişi aç ki tek başına şifre yetmesin. Üç: diğer bütün cihazlardan çıkış yap."
+        }
+      ],
+      "pass": {
+        "q": "Yeni şifremi sen seç Shieldy. Bugün senin aklına kendi aklımdan daha çok güveniyorum.",
+        "c": [
+          {
+            "t": "mor-demlik-7-buluta-biniyor",
+            "r": "Uzun, tuhaf, senin gözünün önüne kolayca gelir ama kimse tahmin edemez."
+          },
+          {
+            "t": "Bot123",
+            "r": "Adın ve üç rakam, herkesin ilk denediği şeydir. Tekrar dene."
+          },
+          {
+            "t": "CanımLunaBest4",
+            "r": "Ah, Bot. Tekrar dene."
+          }
+        ]
+      },
+      "outro": [
+        {
+          "s": "bot",
+          "t": "HESAP KURTARILDI. LunaBest arkadaş listemden, cihazlarımdan ve kalbimden silindi."
+        },
+        {
+          "s": "bot",
+          "t": "Ayrıca utanmanın bir işe yaramadığını öğrendim. Sana anlatmak çok daha hızlı sonuç verdi."
+        }
+      ]
+    },
+    "j10": {
+      "name": "Aramızda Kalsın",
+      "lesson": "“Kimseye söyleme” sözü tuzağın ta kendisidir. Utanç insanı susturur, düzenbazın istediği de bu sessizliktir. Yetişkinler de kandırılır.",
+      "goals": {
+        "r1": "Milo'nun bilmecesi: “Dev bir oyun kolunun parladığı yer”",
+        "r2": "Milo'nun bilmecesi: “Ağaçların ortasında suyun zıpladığı yer”",
+        "r3": "Milo'nun bilmecesi: “Çizgili kulenin denizi gözlediği yer”",
+        "rose": "Milo'yu Rose Nine'ye götür"
+      },
+      "intro": [
+        {
+          "s": "sprout",
+          "t": "Milo bugün okula gelmedi. Son mesajında şöyle yazıyor: “Luna'yla buluşuyorum. Bana bir hediyesi varmış. Kimseye söyleme.”"
+        },
+        {
+          "s": "dame",
+          "t": "LunaBest, Glitch'in ta kendisi. O çocuğu bul Shieldy."
+        },
+        {
+          "s": "sprout",
+          "t": "Nereye gittiğiyle ilgili üç bilmece bırakmış. Hep böyle yapar. Komik olduğunu sanıyor."
+        }
+      ],
+      "c1": [
+        {
+          "s": "shieldy",
+          "t": "Yerde bir not var, Milo'nun el yazısıyla: “Luna yalnız gelmemi söylüyor.” Buradaymış."
+        }
+      ],
+      "c2": [
+        {
+          "s": "shieldy",
+          "t": "Okul çantası, bir bankın altında. Yanına pek bir şey almamış. Geriye tek bilmece kaldı."
+        }
+      ],
+      "found": [
+        {
+          "s": "milo",
+          "t": "Git buradan! Luna, birine söylersem artık arkadaşım olmayacağını söyledi. Başımı belaya sokacaksın!"
+        }
+      ],
+      "heart": {
+        "q": "Başımı belaya sokacaksın!",
+        "c": [
+          {
+            "t": "Başın belada değil Milo. Sana ne ben kızgınım ne de başkası. Tek istediğim güvende olman.",
+            "r": "…Söz mü? Luna herkesin bana kızacağını söylemişti."
+          },
+          {
+            "t": "Çok aptalca bir şey yaptın Milo. Bunu yapmayacak kadar akıllısın sen.",
+            "r": "Böyle diyeceğini BİLİYORDUM! Zaten bu yüzden kimseye söylemedim!"
+          },
+          {
+            "t": "Luna gerçek değil. Arabaya bin.",
+            "r": "GERÇEK o! Hepinizden daha iyi biri!"
+          }
+        ]
+      },
+      "soft": [
+        {
+          "s": "shieldy",
+          "t": "Kimse kızgın değil. Bir de, Milo, o hediye gelmeyecek. Luna ile StarKnight aynı kişi. İkisi de Glitch."
+        },
+        {
+          "s": "milo",
+          "t": "…Aynı kişi mi? Ama en sevdiğim oyunu biliyordu. Hakkımda her şeyi biliyordu."
+        },
+        {
+          "s": "shieldy",
+          "t": "Çünkü sen anlatmıştın. Hadi gel. Seni ninene götürelim."
+        }
+      ],
+      "rose": [
+        {
+          "s": "rose",
+          "t": "Ah, Milo'm benim. Gel buraya."
+        },
+        {
+          "s": "rose",
+          "t": "Oturun bakalım, ikiniz de. Size bugüne kadar kimseye anlatmadığım bir şey anlatacağım."
+        },
+        {
+          "s": "rose",
+          "t": "Geçen yıl bir adam beni telefonla aradı. Bankamdan aradığını söyledi. Öyle kibardı ki. Kartımın üstündeki numaraları ona okudum."
+        },
+        {
+          "s": "rose",
+          "t": "Utancımdan üç ay boyunca kimseye söyleyemedim. O da üç ay boyunca hesabımdan para çekti durdu. Annene anlattığım gün her şey bitti."
+        },
+        {
+          "s": "milo",
+          "t": "Sen mi kandırıldın Nine? Ama sen yaşlısın!"
+        },
+        {
+          "s": "rose",
+          "t": "Yaşlı, genç, akıllı, tedbirli… Hiç fark etmez. İnsan kandırmak onların işi ve işlerini iyi yapıyorlar. Bizim işimiz de anlatmak."
+        }
+      ]
+    },
+    "j11": {
+      "name": "Nova'nın Gecesi",
+      "lesson": "Biri sana ait bir şeyi yaymakla tehdit ediyorsa bu senin suçun değildir. Onu sen göndermiş olsan bile. Sonradan dediklerini yapmış olsan bile.",
+      "goals": {
+        "pier": "İskelede Nova'yla buluş",
+        "shake": "Dronları atlat: {a}/{b}",
+        "hq": "Nova'yı Şövalye Merkezi'ne götür"
+      },
+      "intro": [
+        {
+          "s": "nova",
+          "t": "Shieldy? Ben Nova. Adımı yüksek sesle söyleme. Hava kararınca iskelenin ucuna gel. Yalnız gel. Lütfen."
+        },
+        {
+          "s": "dame",
+          "t": "Bu bir tuzak olabilir. Yardıma ihtiyacı olan bir kız da olabilir. Git ama telefonun açık kalsın."
+        }
+      ],
+      "confess": [
+        {
+          "s": "nova",
+          "t": "Minibüsteki çıkartma. Gördün onu. Ne düşündüğünü biliyorum."
+        },
+        {
+          "s": "nova",
+          "t": "Bir yıl önce Kite diye biri beni takip etmeye başladı. Kite bana, o güne kadar duyduğum en güzel sözleri söyledi. Ben de Kite'a bir video gönderdim. Aptalca, özel bir video. Sadece bir arkadaşım görsün diye."
+        },
+        {
+          "s": "nova",
+          "t": "Kite, Glitch'miş. Şimdi diyor ki: ShineUp'ın reklamını yap, bana çocuk getir, yoksa videoyu herkes görür. Her hafta daha fazlasını istiyor."
+        },
+        {
+          "s": "nova",
+          "t": "Şehrin yarısını ona ben getirdim. Sprout'u. Milo'yu. Onun ne olduğunu biliyordum ve yine de yaptım."
+        }
+      ],
+      "heart": {
+        "q": "Onun ne olduğunu biliyordum ve yine de yaptım.",
+        "c": [
+          {
+            "t": "Bunu yapan o, Nova. Sen değilsin. Önce kandırıldın, sonra tehdit edildin. Bunu bir yetişkinle, birlikte çözeceğiz.",
+            "r": "…Bana öyle bakmayan ilk kişi sensin."
+          },
+          {
+            "t": "O çocukları ona kendi elinle verdin. Bunu nasıl yapabildin?",
+            "r": "Biliyorum! Bilmiyor muyum sanıyorsun? İşte tam da bu yüzden kimseye anlatamadım."
+          },
+          {
+            "t": "Başka bir yol bulana kadar şimdilik dediklerini yapmaya devam et.",
+            "r": "Bir yıldır kendime bunu söylüyorum. Her seferinde daha da kötüye gidiyor."
+          }
+        ]
+      },
+      "caught": [
+        {
+          "s": "glitch",
+          "t": "Yaramaz Nova. Şövalyelerle konuşuyorsun demek. Dronlar: O arabayı takip edin."
+        },
+        {
+          "s": "shieldy",
+          "t": "Bin. Sıkı tutun."
+        }
+      ],
+      "safe": [
+        {
+          "s": "dame",
+          "t": "Burada ikiniz de güvendesiniz. Nova, sana neden daha önce anlatmadığını sormayacağım. Neye ihtiyacın olduğunu soracağım."
+        },
+        {
+          "s": "nova",
+          "t": "Bunun bitmesine ihtiyacım var."
+        }
+      ]
+    },
+    "j12": {
+      "name": "Ödeme Yapma",
+      "lesson": "Asla ödeme yapma, asla pazarlık etme: Bunun sonu gelmez. Güvendiğin bir yetişkine her şeyi anlat. Çoğu, korktuğundan çok daha az kızar ve çok daha fazla yardım eder.",
+      "goals": {
+        "kids": "Çocukların Glitch'e ödeme yapmasını engelle: {a}/{b}",
+        "home": "Nova'yı evine, annesine götür"
+      },
+      "intro": [
+        {
+          "s": "glitch",
+          "t": "Gece yarısına kadar 10.000 kıvılcım, Nova. Yoksa video Şövalye Şehri'ndeki bütün telefonlara gider."
+        },
+        {
+          "s": "pixel",
+          "t": "Çocuklar duymuş. Nova'nın yerine Glitch'e ödemek için şehrin dört bir yanında kıvılcım topluyorlar. Niyetleri iyi. Ama yapabilecekleri en kötü şey bu."
+        }
+      ],
+      "quiz": {
+        "k1": {
+          "q": "Şimdiden 4.000 kıvılcım topladık! Ödersek Nova'yı rahat bırakır. Bırakır, değil mi?",
+          "c": [
+            {
+              "t": "Ödemek ona bu yöntemin işe yaradığını gösterir. Yine ister, hem de daha fazlasını.",
+              "r": "Doğru. Onun için ödeme bir son değil, bir başlangıçtır."
+            },
+            {
+              "t": "Evet. Anlaşma anlaşmadır.",
+              "r": "O sözünde durmaz. İstemeye devam eder. Tekrar dene."
+            },
+            {
+              "t": "Yarısını ödeyip ne olacağına bakın.",
+              "r": "O zaman ödeyeceğinizi ve korktuğunuzu öğrenmiş olur. Tekrar dene."
+            }
+          ]
+        },
+        "k2": {
+          "q": "Ama kıvılcımları alınca videoyu silecek. Kendisi söyledi.",
+          "c": [
+            {
+              "t": "Siz ödedikten sonra da video onda kalır. Ödemek hiçbir şeyi çözmez.",
+              "r": "Aynen öyle. Bir kopyayı parayla geri alamazsın."
+            },
+            {
+              "t": "Söz verdi. Neden yalan söylesin?",
+              "r": "Bugüne kadar yalandan başka bir şey söylemedi. Tekrar dene."
+            },
+            {
+              "t": "Önce videoyu sildirin, sonra ödeyin.",
+              "r": "Bir kopyasını saklar, kıvılcımları da alır. Tekrar dene."
+            }
+          ]
+        },
+        "k3": {
+          "q": "Peki onun yerine ne yapacağız? Elimiz kolumuz bağlı duramayız ki!",
+          "c": [
+            {
+              "t": "Çıkış yolu para değil. Bir yetişkine anlatmak ve onu bildirmek.",
+              "r": "Evet. En çok korktuğu şey de bu."
+            },
+            {
+              "t": "Glitch'i bulup ona haddini bildirin.",
+              "r": "Ne pişman olur ne de dinler. Tekrar dene."
+            },
+            {
+              "t": "Bekleyin, belki sıkılıp bırakır.",
+              "r": "O sıkılmaz. Gittikçe cesaretlenir. Tekrar dene."
+            }
+          ]
+        },
+        "k4": {
+          "q": "Biri, ne olduğunu bileyim diye videoyu bana gönderebileceğini söyledi. Baksam mı?",
+          "c": [
+            {
+              "t": "Hayır. Açma, kimseye de iletme. Onu yaymak Glitch'in işini yapmak olur.",
+              "r": "Doğru. Kim gönderirse göndersin, her iletme Nova'yı bir kez daha yaralar."
+            },
+            {
+              "t": "Bir kerecik bak. Kimseye göndermezsin.",
+              "r": "Bakmak, yayılmasının ilk adımıdır. Hem o video bizim değil, Nova'nın. Tekrar dene."
+            },
+            {
+              "t": "Kanıt olsun diye bir yetişkine gönder.",
+              "r": "Bir yetişkine böyle bir videonun olduğunu ve kimde olduğunu söyle. Videonun kendisini gönderme. Tekrar dene."
+            }
+          ]
+        }
+      },
+      "drive": [
+        {
+          "s": "nova",
+          "t": "Annem çok kızacak. Bana yüz kere söyledi böyle şeyler gönderme diye."
+        }
+      ],
+      "heart": {
+        "q": "Belki ona ShineUp'ı anlatırım, videoyu da… hiç söylemem.",
+        "c": [
+          {
+            "t": "Ona hepsini anlat. Glitch'in kullandığı şey, tam da senin saklamak istediğin kısım.",
+            "r": "…Evet. Annem bilirse beni tehdit edecek hiçbir şeyi kalmaz."
+          },
+          {
+            "t": "Çoğunu anlat. Videoyu geç.",
+            "r": "O zaman elinde hâlâ annemin bilmediği bir koz kalır."
+          },
+          {
+            "t": "Bir süre kızar. Belki birazını hak ediyorsundur da.",
+            "r": "…Sağ ol. Çok yardımcı oldun."
+          }
+        ]
+      },
+      "mum": [
+        {
+          "s": "mum",
+          "t": "Nova? Dame Noble beni aradı. Gel buraya."
+        },
+        {
+          "s": "nova",
+          "t": "Anne, ben gerçekten çok—"
+        },
+        {
+          "s": "mum",
+          "t": "Biliyorum. Kızgın değilim. Korkuyorum. Bunu bir yıl boyunca tek başına taşıdığın için de çok ama çok üzgünüm."
+        },
+        {
+          "s": "mum",
+          "t": "Onu bu gece bildiriyoruz. Birlikte. Cezalı falan da değilsin. Sen cesursun."
+        }
+      ]
+    },
+    "j13": {
+      "name": "Kanıt",
+      "lesson": "Önce kanıt: adın ve tarihin göründüğü bir ekran görüntüsü, güvenli bir yere kaydedilmiş. Sonra engelle ve bildir. Zarar veren görüntünün kendisini asla iletme.",
+      "goals": {
+        "kids": "Kanıtı silici dronlardan önce kaydet: {a}/{b}"
+      },
+      "intro": [
+        {
+          "s": "pixel",
+          "t": "Glitch paniğe kapıldı. Çocukların telefonlarındaki mesajlarını sildirmek için silici dronlar yolluyor. O sohbetler olmazsa elimizde hiçbir şey kalmaz."
+        },
+        {
+          "s": "dame",
+          "t": "Her çocuğa dronlardan önce ulaş. Ve iyi dinle: ONUN yaptıklarının kanıtını saklıyoruz. Nova'dan aldığı şeyin ise tek bir kopyasını bile saklamıyoruz."
+        }
+      ],
+      "quiz": {
+        "k1": {
+          "q": "LunaBest'in bütün mesajları hâlâ bende! Onları ne yapayım?",
+          "c": [
+            {
+              "t": "Kullanıcı adı ve tarihler görünecek şekilde sohbetin ekran görüntüsünü al.",
+              "r": "Evet. Kim söyledi ve ne zaman söyledi: Onu kanıt yapan budur."
+            },
+            {
+              "t": "Kimse görmesin diye sohbeti sil.",
+              "r": "Glitch'in istediği de bu. Sohbet yoksa hiçbir şey olmamış sayılır. Tekrar dene."
+            },
+            {
+              "t": "Ona yazıp her şeyi anladığımızı söyle.",
+              "r": "O zaman kendi tarafındaki her şeyi siler. Tekrar dene."
+            }
+          ]
+        },
+        "k2": {
+          "q": "Ekran görüntülerini aldım! Şimdi bunlar nereye gidecek?",
+          "c": [
+            {
+              "t": "Güvenli bir yere kaydet ve güvendiğin bir yetişkine göster.",
+              "r": "Doğru. Kanıt, bu konuda bir şey yapabilecek kişiler içindir."
+            },
+            {
+              "t": "Herkes uyarılsın diye herkese açık paylaş.",
+              "r": "O sohbetlerde başka çocukların adları ve mesajları da var. Tekrar dene."
+            },
+            {
+              "t": "Bütün arkadaşlarına gönder.",
+              "r": "O zaman kanıt olmaktan çıkar, dedikodu olur. Tekrar dene."
+            }
+          ]
+        },
+        "k3": {
+          "q": "StarKnight'ı artık engelleyebilir miyim? O ismi bir daha görmek istemiyorum.",
+          "c": [
+            {
+              "t": "Evet: Kanıt artık kayıtlı. Onu engelle ve hesabı bildir.",
+              "r": "Sıra tam da böyle. Kaydet, sonra engelle, sonra bildir."
+            },
+            {
+              "t": "Daha çok kanıt toplamak için biraz daha yazış.",
+              "r": "Elindeki yeter. Fazladan her mesaj senin için bir risk. Tekrar dene."
+            },
+            {
+              "t": "Onu engelle ve her şeyi sil, hemen şimdi.",
+              "r": "Engellemek doğru. Silersen kanıt da gider. Tekrar dene."
+            }
+          ]
+        }
+      },
+      "k4": [
+        {
+          "s": "jay",
+          "t": "Çoktan hallettim Şövalye. Ekran görüntüleri, tarihler, hepsi tamam. Bir kopyası da annemde."
+        }
+      ],
+      "k5": [
+        {
+          "s": "milo",
+          "t": "Ninem yardım etti! Bütün mesajları kaydettik. Artık dedektif olduğumu söylüyor."
+        }
+      ],
+      "outro": [
+        {
+          "s": "pixel",
+          "t": "Beş telefon, beş eksiksiz sohbet, tek bir gönderen. Bu örüntüyü kimse tesadüf diye geçiştiremez."
+        },
+        {
+          "s": "dame",
+          "t": "O hâlde onu kullanmanın vakti geldi."
+        }
+      ]
+    },
+    "j14": {
+      "name": "Herkes Anlatıyor",
+      "lesson": "Uygulama dinlemezse insanlar dinler: annen ya da baban, öğretmenin, bir yardım hattı, polis. Çalabileceğin kapı bildir düğmesinden ibaret değil.",
+      "goals": {
+        "allies": "Yetişkinleri işin içine kat: {a}/{b}"
+      },
+      "intro": [
+        {
+          "s": "pixel",
+          "t": "Glitch'i ShineUp'ın içinden bildirdik. Cevap bir saniyede geldi: “Herhangi bir sorun bulunamadı.”"
+        },
+        {
+          "s": "pixel",
+          "t": "Tabii ki öyle geldi. Uygulamanın sahibi o. Kendi sınav kâğıdını kendi okuyor."
+        },
+        {
+          "s": "dame",
+          "t": "O zaman biz de etrafından dolaşırız. Bildir düğmesi kapılardan yalnızca biri. Öteki kapılar insanlar. Git, çal o kapıları."
+        }
+      ],
+      "rose": [
+        {
+          "s": "rose",
+          "t": "Örgü grubumdaki bütün nineleri ve dedeleri arayacağım. Bir çocuk bize bir şey anlatırsa önce dinleyeceğiz, telaşlanmayı sonraya bırakacağız."
+        }
+      ],
+      "sam": [
+        {
+          "s": "sam",
+          "t": "Ben bu şehrin her sokağını yürürüm. Mektup bıraktığım her aileye ShineUp'ın ne olduğunu anlatacağım. Şehir güvenlik hattını da bizzat arıyorum."
+        }
+      ],
+      "mum": [
+        {
+          "s": "mum",
+          "t": "Polisin çevrimiçi güvenlik ekibiyle ve okulla konuştum. “Ekran görüntülerini getirin” dediler. Böyle şeylerin çok yaşandığını ve Nova'nın doğru olanı yaptığını söylediler."
+        }
+      ],
+      "jay": [
+        {
+          "s": "jay",
+          "t": "Küçük kardeşim ShineUp'ta. Bu akşam onunla oturup konuşacağım. Bir de bunun için yardım hatları var. Ücretsiz. Adını söylemen bile gerekmiyor."
+        }
+      ],
+      "outro": [
+        {
+          "s": "dame",
+          "t": "Şuna bak. Bir kız anlattı, şimdi koca bir şehir anlatıyor."
+        },
+        {
+          "s": "nova",
+          "t": "Kimsenin yanımda duracağını sanmıyordum."
+        }
+      ]
+    },
+    "j15": {
+      "name": "Fişi Çek",
+      "lesson": "Dört ayar seni bulunması zor biri yapar: gizli profil, yalnızca arkadaşlardan mesaj, kapalı konum, iki adımlı giriş.",
+      "goals": {
+        "masts": "Aktarma direklerini devre dışı bırak: {a}/{b}"
+      },
+      "intro": [
+        {
+          "s": "pixel",
+          "t": "ShineUp dört aktarma direği üzerinden çalışıyor. Onları devre dışı bırakırsan Glitch şehirdeki tek bir telefona bile ulaşamaz."
+        },
+        {
+          "s": "glitch",
+          "t": "Benim güzelim ağım! Minibüs! Dronlar! Durdurun şu Şövalyeyi!"
+        },
+        {
+          "s": "pixel",
+          "t": "Her direkte bir kilit var. Kilit, güvenli bir hesabın nasıl ayarlandığını soruyor. Doğru cevabı verirsen açılır."
+        }
+      ],
+      "quiz": {
+        "a1": {
+          "q": "1. KİLİT — Sana kimler mesaj gönderebilir?",
+          "c": [
+            {
+              "t": "Yalnızca arkadaşlarım.",
+              "r": "Doğru. Yabancılar, göremedikleri bir kapıyı çalamaz."
+            },
+            {
+              "t": "Herkes.",
+              "r": "Glitch'in bayıldığı ayar bu. Tekrar dene."
+            },
+            {
+              "t": "Arkadaşlarımın arkadaşları.",
+              "r": "Bu da hiç tanımadığın binlerce kişi demek. Tekrar dene."
+            }
+          ]
+        },
+        "a2": {
+          "q": "2. KİLİT — Nerede olduğunu kimler görebilir?",
+          "c": [
+            {
+              "t": "Hiç kimse.",
+              "r": "Doğru. Konumun, internette kimseyi ilgilendirmez."
+            },
+            {
+              "t": "Herkes.",
+              "r": "Dronlar çocukları böyle buldu. Tekrar dene."
+            },
+            {
+              "t": "Yakınımdaki kişiler.",
+              "r": "“Yakınımdaki kişiler”, yakınındaki yabancılar demektir. Tekrar dene."
+            }
+          ]
+        },
+        "a3": {
+          "q": "3. KİLİT — Profilini ve fotoğraflarını kimler görebilir?",
+          "c": [
+            {
+              "t": "Yalnızca kabul ettiğim kişiler.",
+              "r": "Doğru. Gizli bir profil, bir yabancının eline hiçbir koz vermez."
+            },
+            {
+              "t": "Herkes. Daha çok takipçim olsun istiyorum.",
+              "r": "Daha çok takipçi, ipuçlarını okuyan daha çok yabancı demek. Tekrar dene."
+            },
+            {
+              "t": "Herkes, ama ne paylaştığıma dikkat ederim.",
+              "r": "Sprout da dikkat ediyordu. Tekrar dene."
+            }
+          ]
+        },
+        "a4": {
+          "q": "4. KİLİT — Hesabına nasıl giriş yaparsın?",
+          "c": [
+            {
+              "t": "Uzun bir şifre ve iki adımlı girişle.",
+              "r": "Doğru. Şifren çalınsa bile tek başına yetmez."
+            },
+            {
+              "t": "Her yerde kullandığım kısa bir şifreyle.",
+              "r": "Bir kez sızarsa bütün hesapların açılır. Tekrar dene."
+            },
+            {
+              "t": "Evcil hayvanımın adı ve doğum günümle.",
+              "r": "İkisi de profilinde yazıyor. Tekrar dene."
+            }
+          ]
+        }
+      },
+      "outro": [
+        {
+          "s": "pixel",
+          "t": "Kule karardı! ShineUp yayından kalktı!"
+        },
+        {
+          "s": "dame",
+          "t": "Kaçıyor. Mor bir süper araba, güneye gidiyor. Shieldy: Bu işi bitir."
+        }
+      ]
+    },
+    "j16": {
+      "name": "İskelede Hesaplaşma",
+      "lesson": "Kanıtı sakla, engelle, bildir ve güvendiğin bir yetişkine anlat. Biri sana anlattığında ise önce dinle.",
+      "goals": {
+        "chase": "Glitch'i kovala: {a}/{b}. kontrol noktası",
+        "pier": "Glitch'i iskelede köşeye sıkıştır"
+      },
+      "intro": [
+        {
+          "s": "dame",
+          "t": "Glitch yenildiğini biliyor. İskeledeki teknesine yetişmeye çalışıyor."
+        },
+        {
+          "s": "dame",
+          "t": "Şehir boyunca peşinden git. Onu gözden kaçırma."
+        }
+      ],
+      "final": {
+        "q": "Hiçbir şeyi kanıtlayamazsın Şövalye! O ekran görüntülerini sil, ben de şehirden gideyim. Anlaştık mı?",
+        "c": [
+          {
+            "t": "Anlaşma yok. Kanıtı saklıyorum, seni bildiriyorum ve Dame Noble'a anlatıyorum.",
+            "r": "Hayır! Bildir düğmesi olmaz! Ne olursa olsun ama bildir düğmesi olmasın!"
+          },
+          {
+            "t": "Anlaştık. Silerim, yeter ki git.",
+            "r": "Kanıt olmazsa yarın başka bir şehirde her şeye yeniden başlar. Tekrar dene."
+          },
+          {
+            "t": "Ekran görüntülerini her yerde paylaşırım, herkes sana gülsün.",
+            "r": "Bu, başka çocukların özel mesajlarını da yayar. Tekrar dene."
+          }
+        ]
+      },
+      "outro": [
+        {
+          "s": "dame",
+          "t": "Bildirildi, engellendi ve kanıt güvende. Bu iş işte böyle yapılır."
+        },
+        {
+          "s": "sprout",
+          "t": "Üstelik anlattığı için kimsenin başı belaya girmedi!"
+        }
+      ]
+    }
+  },
+  "msgs": [
+    {
+      "q": "Selam, ben kuzenin! Telefonumu kaybettim, bu yeni numaram. Adresiniz neydi?",
+      "c": [
+        {
+          "t": "Cevap yazma. Doğru mu diye aileme sor.",
+          "r": "Gerçek bir kuzeni kontrol etmek kolaydır."
+        },
+        {
+          "t": "Adresi gönder.",
+          "r": "Kuzenin olduğunu herkes söyleyebilir."
+        },
+        {
+          "t": "“Hangi kuzenim?” diye sor.",
+          "r": "Ya tahmin yürütür ya da ismi önce sana söyletir."
+        }
+      ]
+    },
+    {
+      "q": "Oyun hesabın bugün SİLİNECEK. Kurtarmak için bu bağlantıya dokun ve giriş yap.",
+      "c": [
+        {
+          "t": "Bağlantıya dokunma. Oyunu kendim açıp bakarım.",
+          "r": "Gerçek oyun seni asla mesajla tehdit etmez."
+        },
+        {
+          "t": "Hemen bağlantıya dokun.",
+          "r": "Bağlantı sahte bir giriş sayfasına gidiyor."
+        },
+        {
+          "t": "Uyarmak için arkadaşlarıma ilet.",
+          "r": "İletmek, bağlantıyı yaymak olur."
+        }
+      ]
+    },
+    {
+      "q": "Çok havalı birine benziyorsun. Konuştuğumuzu annenle babana söyleme, anlamazlar.",
+      "c": [
+        {
+          "t": "Engelle, bildir ve güvendiğim bir yetişkine anlat.",
+          "r": "“Aramızda sır kalsın” sözü, uyarı işaretlerinin en büyüğüdür."
+        },
+        {
+          "t": "Sır olarak sakla, alt tarafı sohbet.",
+          "r": "Güvenilir insanlar senden onları saklamanı asla istemez."
+        },
+        {
+          "t": "Neden sır olması gerektiğini sor.",
+          "r": "Cevabı da başka bir oyun olur."
+        }
+      ]
+    },
+    {
+      "q": "Ben yetenek avcısıyım. Bir fotoğrafını gönder, ünlü olabilirsin!",
+      "c": [
+        {
+          "t": "Hiçbir şey gönderme. Engelle ve bildir.",
+          "r": "Gerçek yetenek avcıları çocuklara mesaj atmaz, anne babalarla konuşur."
+        },
+        {
+          "t": "Şapkalı bir fotoğraf gönder.",
+          "r": "Her fotoğrafın sana aittir ve onu korumak senin hakkındır."
+        },
+        {
+          "t": "Ne kadar kazanacağımı sor.",
+          "r": "Ortada bir iş yok. Yalnızca fotoğraf var."
+        }
+      ]
+    },
+    {
+      "q": "Ücretsiz Wi‑Fi yükseltmesi! Telefonuna az önce gönderdiğimiz kodu yazıp cevapla.",
+      "c": [
+        {
+          "t": "Kod asla paylaşılmaz. Mesajı sil.",
+          "r": "O kod, hesabının anahtarıdır."
+        },
+        {
+          "t": "Kodu yazıp cevapla.",
+          "r": "Artık senin adınla giriş yapabilir."
+        },
+        {
+          "t": "Kodun yalnızca yarısını yaz.",
+          "r": "Bir yabancıya neden yarım anahtar veresin?"
+        }
+      ]
+    },
+    {
+      "q": "Selam, seninle aynı sınıftayım. Beni ChatNook'tan ekle, okul sohbetini izliyorlar ahah",
+      "c": [
+        {
+          "t": "Güvendiğim yetişkinlerin görebildiği yerde kal. Başka uygulamaya geçme.",
+          "r": "Orayı istemesinin nedeni zaten “orada kimsenin izlememesi”."
+        },
+        {
+          "t": "ChatNook'tan ekle.",
+          "r": "Tuzak, başka uygulamaya geçince kapanır."
+        },
+        {
+          "t": "Hangi sınıf olduğunu sor.",
+          "r": "Onu profilinden öğrenebilir."
+        }
+      ]
+    },
+    {
+      "q": "Ne paylaştığını gördüm. 500 elmas öde, yoksa herkese gösteririm.",
+      "c": [
+        {
+          "t": "Ödeme. Ekran görüntüsü al, engelle, hemen bir yetişkine anlat.",
+          "r": "Ödemek bunu asla bitirmez. Anlatmak bitirir."
+        },
+        {
+          "t": "Bitsin diye bir kere öde.",
+          "r": "Yine ister, hem de daha fazlasını."
+        },
+        {
+          "t": "Hesabımı silip saklan.",
+          "r": "Kanıtı kaybedersin. Üstelik sen yanlış bir şey yapmadın."
+        }
+      ]
+    },
+    {
+      "q": "Test zamanı! İlk evcil hayvanının adı neydi, hangi sokakta büyüdün?",
+      "c": [
+        {
+          "t": "Geç. Bunlar şifre sıfırlama sorularının cevapları.",
+          "r": "Eğlenceli testler, bu cevapları toplamanın bir yoludur."
+        },
+        {
+          "t": "Cevapla, alt tarafı bir test.",
+          "r": "O cevaplar hesapların kilidini açar."
+        },
+        {
+          "t": "En iyi arkadaşımın bilgileriyle cevapla.",
+          "r": "O zaman tehlikeye giren arkadaşının hesabı olur."
+        }
+      ]
+    }
+  ],
+  "chapters": {
+    "1": {
+      "name": "Herkes Orada",
+      "sub": "Nasıl başlar: bedava, eğlenceli ve herkeste var"
+    },
+    "2": {
+      "name": "En İyi Arkadaşlar",
+      "sub": "Bir yabancı nasıl güvendiğin birine dönüşür"
+    },
+    "3": {
+      "name": "Aramızda Kalsın",
+      "sub": "Sırlar seni yardımdan nasıl uzaklaştırır"
+    },
+    "4": {
+      "name": "Bedel",
+      "sub": "Maske düşünce neler olur"
+    },
+    "5": {
+      "name": "Işıklar Açık",
+      "sub": "Nasıl biter: anlatan insanlarla"
+    }
+  },
+  "endings": {
+    "best": {
+      "h": "Şehir anlatıyor",
+      "p": "O akşam Nova plaj sahnesine tek başına çıktı. “Benim adım Nova. Bir yıl önce kandırıldım, sonra tehdit edildim ve bunu herkesten sakladım. Ona yarayan tek şey de benim susmam oldu.” Kimse gülmedi. İlk alkışlayan Milo oldu. Gece yarısına kadar kırk çocuk daha başından geçenleri birine anlattı. Glitch'in ağı yok oldu ve Şövalye Şehri artık o ağı nasıl kurduğunu biliyor."
+    },
+    "ok": {
+      "h": "Ağ çöktü",
+      "p": "ShineUp, Şövalye Şehri'ndeki bütün telefonlardan silindi; Glitch de bildirildi ve engellendi. Nova evinde, annesinin yanında. Hikâyesini yüksek sesle anlatmaya henüz hazır değil ve kimse onu zorlamayacak. “Belki bir gün,” diyor. “Kimsenin bana öyle bakmayacağından emin olduğumda.”"
+    },
+    "low": {
+      "h": "Glitch yakalandı, ama…",
+      "p": "Direkler devre dışı ve Glitch'in bu şehirde işi bitti. Ama okul bahçesinde çocuklar fısıldaşıyor: Nova ile Milo gerçeği anlattıklarında suçlanmışlar. Bazıları bu gece kendi sırlarını saklıyor. Dame Noble elini omzuna koyuyor. “Onu durdurduk. Yarın da suçlamadan dinlemeyi öğreneceğiz. İşin zor kısmı o.”"
+    }
+  },
+  "inbox": [
+    {
+      "after": "j1",
+      "from": "pixel",
+      "t": "İlginç bilgi: ShineUp'ın kuralları 41 sayfa. Hepsini okudum. 38. sayfada fotoğraflarını sonsuza kadar saklayabileceklerini yazıyor."
+    },
+    {
+      "after": "j2",
+      "from": "sprout",
+      "t": "shieldy!!! shineup'ta 200 kıvılcım kazandım, bi de StarKnight diye yeni bi arkadaşım oldu. gördüğü en iyi inşaatçı benmişim"
+    },
+    {
+      "after": "j3",
+      "from": "nova",
+      "t": "Selam Şövalye. Bugünle ilgili. “Zorundayım” dediğimi unut. Yorgundum. Kimseye söyleme, olur mu?"
+    },
+    {
+      "after": "j3",
+      "from": "dame",
+      "t": "Nova'nın iki milyon takipçisi var ama kendi telefonundan korkuyor gibiydi. Bunu aklından çıkarma."
+    },
+    {
+      "after": "j4",
+      "from": "sprout",
+      "t": "parolamız hazır. ne olduğunu sana söyleyemem. olay da bu zaten. (pamuk değil)"
+    },
+    {
+      "after": "j5",
+      "from": "pixel",
+      "t": "Ondan sonra kendi sayfama da baktım. Üç fotoğrafta sokağım görünüyordu. Üç! Sildim. Dame Noble'a söyleme."
+    },
+    {
+      "after": "j6",
+      "from": "bot",
+      "t": "Bozuk dronlara isim verdim. Hepsinin adı Kevin. Artık bir kutuda yaşıyorlar."
+    },
+    {
+      "after": "j7",
+      "from": "glitch",
+      "t": "Üç maske mi? Bende üç yüz tane var. Pencerelerle dolu bir şehirde üç kapı kapattınız. — G"
+    },
+    {
+      "after": "j8",
+      "from": "nova",
+      "t": "Bir minibüsü durdurmuşsun diye duydum. İçinde bir şey var mıydı? Üstünde logo olan bir şey? Öylesine soruyorum."
+    },
+    {
+      "after": "j9",
+      "from": "bot",
+      "t": "Yeni şifrem 28 karakter uzunluğunda. Ne olduğunu sana söylemeyeceğim. Ne olduğunu HİÇ KİMSEYE söylemeyeceğim. Olgunlaştım."
+    },
+    {
+      "after": "j10",
+      "from": "rose",
+      "t": "Shieldy'ciğim, Milo uyudu. Ona bağırmadığın için teşekkür ederim. Kurabiye yaptım. Kapının önünde senin için bir kutu var."
+    },
+    {
+      "after": "j10",
+      "from": "milo",
+      "t": "ninem kandırılmak aptal olmakla aynı şey değil diyor. doğru mu bu? bi arkadaşım için soruyorum. o arkadaş benim"
+    },
+    {
+      "after": "j11",
+      "from": "glitch",
+      "t": "Bana geri dönecek. Hep dönerler. Geri kalan herkes onu suçlayacak. Onu hiç suçlamayan tek kişi benim. — G"
+    },
+    {
+      "after": "j11",
+      "from": "dame",
+      "t": "Bu gece iskelede o kıza ne söylediysen ömrü boyunca unutmayacak. Sözlerini hep böyle seç."
+    },
+    {
+      "after": "j12",
+      "from": "nova",
+      "t": "Annem çay demledi, gece 2'ye kadar konuştuk. Benden çok o ağladı. Cezalı değilim. Çok yorgunum. Teşekkür ederim."
+    },
+    {
+      "after": "j13",
+      "from": "pixel",
+      "t": "Kanıt klasörü: 212 ekran görüntüsü, 5 telefon, kendinden fazlasıyla memnun 1 Pixel."
+    },
+    {
+      "after": "j14",
+      "from": "sam",
+      "t": "Şimdiye kadar kırk bir kapı çaldım. Üç ailenin, çocuklarının ShineUp'ta olduğundan hiç haberi yokmuş. Yürümeye devam."
+    },
+    {
+      "after": "j15",
+      "from": "glitch",
+      "t": "Bitti mi sanıyorsunuz? Başka şehirler var. Başka uygulamalar. Başka yalnız çocuklar. — G"
+    },
+    {
+      "after": "j15",
+      "from": "dame",
+      "t": "Başka şehirler olduğu konusunda haklı. İşte bu yüzden onlara da anlatıyoruz."
+    },
+    {
+      "after": "j16",
+      "from": "nova",
+      "t": "Yaptım. Yüksek sesle söyledim. Ellerim baştan sona titredi. Hiç tanımadığım bir kız az önce bana yazdı: “ben de. bu akşam babama anlattım.”"
+    }
+  ],
+  "news": {
+    "j1": "Şövalye Şehri'nde bir gecede her yerde mor kiosklar belirdi. Belediye, kimseye izin vermediğini söylüyor.",
+    "j2": "Dört kiosk karardı. Sahipleri hâlâ ortaya çıkmadı. Ne tuhaf, değil mi?",
+    "j3": "Plajdaki bir çekilişte yüzlerce çocuk ShineUp'a katıldı. Anne babalar, uygulamanın çocuklarının bilgileriyle ne yaptığını soruyor.",
+    "j4": "Okul kapısının yakınında mor bir minibüs görüldü. Ailelere hatırlatma: Parola yoksa arabaya binmek de yok.",
+    "j5": "Bir öğrencinin fotoğrafları bir yabancıya adresini, günlük programını ve kedisinin adını verdi. Siz de kendi fotoğraflarınıza bir bakın sevgili dinleyiciler.",
+    "j6": "Şehir merkezinin üzerinde casus dronlar işaretlendi. Konum paylaşımı: Sizinkini kimler görebiliyor?",
+    "j7": "İnternetteki üç “en iyi arkadaşın” tek bir kullanıcı olduğu ortaya çıktı. Ayrıntılar bu şarkıdan sonra.",
+    "j8": "Mor minibüs durduruldu. İçinde kimse yoktu. Polis olayı “son derece tuhaf” diye nitelendiriyor.",
+    "j9": "Bir robotun çalınan hesabı, arkadaşlarından şifrelerini istedi. Robotun mahcup olduğu söyleniyor.",
+    "j10": "Kayıp çocuk deniz fenerinde sağ salim bulundu. Ninesi, çayın demlendiğini söylüyor.",
+    "j11": "Gece vakti dronlar altın renkli bir arabayı şehir boyunca kovaladı. Yaralanan yok. Araba çok hızlıydı.",
+    "j12": "Çocuklar bir şantajcıya ödeme yapmak için kıvılcım topluyordu. Bir Şövalye onları vazgeçirdi. Asla ödeme yapmayın sevgili dinleyiciler.",
+    "j13": "Glitch adıyla bilinen kullanıcı aleyhindeki kanıtlar artıyor: her seferinde bir ekran görüntüsü.",
+    "j14": "Bir örgü grubu, bir postacı ve bir anne Şövalyelere katıldı. Şehir güvenlik hattı yoğun bir gece geçirdiğini bildiriyor.",
+    "j15": "ShineUp Kulesi karardı. Uygulama şehrin her yerinde devre dışı.",
+    "j16": "Glitch iskelede köşeye sıkıştı. Bu gece plajda ise bir kızın söyleyecekleri var."
+  },
+  "barks": {
+    "1": [
+      "Sen hâlâ ShineUp'ı indirmedin mi? ShineUp herkeste var!",
+      "Mor kiosklarda bedava kıvılcım var! Ben yine gidiyorum.",
+      "Dün gece bütün sınıfım katıldı. Dışarıda kalmış gibi hissettim, ben de katıldım.",
+      "Nova'nın yayını harikaydı. O ne derse yaparım.",
+      "Kimin yaptığını bilmiyorum. Ne önemi var ki? Bedava!"
+    ],
+    "2": [
+      "İnternette yeni bir en iyi arkadaşım var. Onu hiç görmedim ama beni çok iyi anlıyor.",
+      "İnternetteki biri köpeğimin adını biliyordu. Tuhaf, söylediğimi hiç hatırlamıyorum.",
+      "StarKnight özel biri olduğumu söylüyor. Okulda bunu kimse söylemiyor.",
+      "Dün gece penceremin önünde bir dron vardı. Önemli bir şey değildir herhâlde.",
+      "Arkadaşımın kamerası hep bozuk. Tuhaf, değil mi?"
+    ],
+    "3": [
+      "Bu konuda konuşamam. Söylemeyeceğime söz verdim.",
+      "Kusura bakma, gitmem lazım. Seninle konuşmamam gerekiyor.",
+      "Sana da Bot'tan tuhaf bir mesaj geldi mi? Az kalsın cevap yazıyordum.",
+      "Arkadaşım yetişkinlerin anlamayacağını söylüyor. Belki de doğrudur.",
+      "Artık canım dışarıda oynamak istemiyor."
+    ],
+    "4": [
+      "Nova'nın başı dertteymiş. Kendi suçuymuş, öyle diyorlar. Gerçekten öyle mi?",
+      "Birinin elinde senin bir sırrın olsa öder miydin?",
+      "Bir videodan söz ediyorlar. Ben bakmayacağım. Sen de bakma.",
+      "Milo ninesine her şeyi anlatmış. Azar bile işitmemiş.",
+      "Benim de babama anlatmam gereken bir şey var galiba."
+    ],
+    "5": [
+      "Anneme anlattım. Bana sarıldı. Boşuna korkmuşum.",
+      "Gizli profil, kapalı konum, iki adımlı giriş. Tamam, tamam ve tamam.",
+      "Postacı Sam bizim bütün sokağa ShineUp'ı anlattı.",
+      "StarKnight'ı engelledim ve bildirdim. On saniyemi aldı.",
+      "Nova yüksek sesle söyleyebiliyorsa ben de söyleyebilirim."
+    ]
+  },
+  "shards": [
+    {
+      "h": "1. Kural — Önce sen ver",
+      "t": "Bedava elmas. Bedava skin. Bedava ne olursa. Hediye almış bir çocuk, bana bir hediye borçlu olduğunu hisseder. Ben alacağımı her zaman tahsil ederim."
+    },
+    {
+      "h": "2. Kural — Onların olduğu yerde ol",
+      "t": "Ben çocukları aramaya çıkmam. Zaten sevdikleri oyunların ve uygulamaların içinde beklerim. Onlar bana gelir."
+    },
+    {
+      "h": "3. Kural — Yazmadan önce oku",
+      "t": "Profilleri bana okullarını, sokaklarını, evcil hayvanlarını, en iyi arkadaşlarını söyler. Daha ilk selamımda onlardan biri gibi konuşurum."
+    },
+    {
+      "h": "4. Kural — Yalnız olanı seç",
+      "t": "Yüz arkadaşı olan çocukla uğraşmak zordur. “Beni kimse anlamıyor” yazan çocuk ise beni bekliyordur."
+    },
+    {
+      "h": "5. Kural — Aynaları ol",
+      "t": "Onlar neyi seviyorsa ben de onu severim. Kaç yaşındalarsa ben biraz daha büyük ve biraz daha havalıyımdır. Tam da ısmarladıkları arkadaşım."
+    },
+    {
+      "h": "6. Kural — Yüzünü asla gösterme",
+      "t": "Kameram bozuk. Mikrofonum bozuk. Annem çok katı. Her zaman bir bahane vardır ve her seferinde inanırlar."
+    },
+    {
+      "h": "7. Kural — Özel hissettir",
+      "t": "“Sen ötekiler gibi değilsin.” “Yaşına göre çok olgunsun.” Yeterince sık söylersen bunu duymaya devam etmek için çok şey yaparlar."
+    },
+    {
+      "h": "8. Kural — Sır hâline getir",
+      "t": "“Annenle babana söyleme, anlamazlar.” Sır bir duvardır. Benimle o duvarın arkasına geçtiklerinde onlara kimse ulaşamaz."
+    },
+    {
+      "h": "9. Kural — Başka yere taşı",
+      "t": "Oyun sohbetini izleyenler var. Ben de sohbetin kastığını söyler, onları kimsenin bakmadığı bir uygulamaya çağırırım."
+    },
+    {
+      "h": "10. Kural — Küçük iste, sonra büyüt",
+      "t": "Önce bir isim. Sonra bir fotoğraf. Sonra bir sır. Her “evet” bir sonrakini kolaylaştırır. Kimse uçurumdan atlamaz. Merdivenden inerler, basamak basamak."
+    },
+    {
+      "h": "11. Kural — Sonra kullan",
+      "t": "Bana verdikleri sır, zincirin kendisi olur. “Dediğimi yap, yoksa herkes öğrenir.” Bununla yapayalnız olduklarını sanırlar. Bütün oyun da bundan ibarettir."
+    },
+    {
+      "h": "12. Kural — Nelerden korkarım",
+      "t": "Bir ekran görüntüsü. Bir engelleme. Bir bildirim. En kötüsü de mutfağa girip “Anne, sana bir şey gösterebilir miyim?” diyen bir çocuk. Buna karşı elimden hiçbir şey gelmez."
+    }
+  ]
+}

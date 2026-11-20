@@ -136,6 +136,13 @@
   <div class="grid" id="ar-grid">
 
     <!-- ── games ── -->
+    <div class="tile feature" data-cat="play" data-id="city">
+      <button type="button" class="fav" aria-pressed="false" aria-label="Favourite">★</button>
+      <a href="/knight-city.html"><img class="cover" src="/assets/arcade/city-cover.webp" alt="" width="780" height="300" loading="lazy">
+        <h3 data-i18n="arc.city.h">Knight City</h3>
+        <p data-i18n="arc.city.p">An open 3D city to walk and drive around. Borrow a car, turn on the radio, and find out who is behind the app everybody suddenly has. Five chapters, sixteen jobs, three endings.</p>
+        <span class="go" data-i18n="arc.play">Play →</span></a>
+    </div>
     <div class="tile feature" data-cat="play" data-id="story">
       <button type="button" class="fav" aria-pressed="false" aria-label="Favourite">★</button>
       <a href="/lost-sprout.html"><img class="cover" src="/assets/arcade/sprout-cover.webp" alt="" width="780" height="300" loading="lazy">
@@ -293,7 +300,7 @@
   'use strict';
   var FAV_KEY = 'dsk_arcade_favs';
   var RECENT_KEY = 'dsk_arcade_recent';
-  var NEW_IDS = ['story', 'toss', 'run'];
+  var NEW_IDS = ['city', 'story', 'toss', 'run'];
   var RECENT_MAX = 4;
 
   function t(k, f) { return (window.DSKi18n && DSKi18n.t) ? DSKi18n.t(k, f) : f; }

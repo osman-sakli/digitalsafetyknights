@@ -72,6 +72,65 @@ MODELS = {
                  "base, cartoon game style. " + PROP, 512, 0.2),
     "rock":     ("A big jagged dark slate boulder with sharp edges and thin cracks glowing faint "
                  "purple, cartoon game style. " + PROP, 512, 0.2),
+    # Knight City: an open city to walk and drive around. Cars, buildings, street things.
+    "car-hero":   ("A shiny golden-yellow cartoon sports coupe with a navy blue racing stripe and a small round "
+                   "shield emblem on the bonnet. Clean cartoon toy-car style, four wheels visible, no people inside, no text, no logos. " + PROP, 512, 0.2, 0.012),
+    "car-sedan":  ("A sky-blue cartoon family sedan car. Clean cartoon toy-car style, four wheels visible, no people inside, no text, no logos. " + PROP, 512, 0.25, 0.01),
+    "car-hatch":  ("A cherry-red small cartoon hatchback car. Clean cartoon toy-car style, four wheels visible, no people inside, no text, no logos. " + PROP, 512, 0.1, 0.02),
+    "car-pickup": ("A mint-green cartoon pickup truck with an empty open bed. Clean cartoon toy-car style, four wheels visible, no people inside, no text, no logos. " + PROP, 512, 0.25, 0.01),
+    "car-taxi":   ("An orange cartoon city taxi car with a small plain light box on the roof. Clean cartoon toy-car style, four wheels visible, no people inside, no text, no logos. " + PROP, 512, 0.25, 0.01),
+    "car-bus":    ("A long teal and white cartoon city bus with many windows. Clean cartoon toy-car style, four wheels visible, no people inside, no text, no logos. " + PROP, 512, 0.25, 0.01),
+    "car-van":    ("A dark purple cartoon delivery van with bright green zigzag glitch stripes on its sides "
+                   "and tinted windows. Clean cartoon toy-car style, four wheels visible, no people inside, no text, no logos. " + PROP, 512, 0.25, 0.01),
+    "car-glitch": ("A low sleek dark purple cartoon supercar with glowing green neon underglow and a big "
+                   "rear wing. Clean cartoon toy-car style, four wheels visible, no people inside, no text, no logos. " + PROP, 512, 0.25, 0.01),
+    "b-glass":    ("A tall modern glass skyscraper with teal mirrored windows and a white frame. Stylised cartoon city game building, whole building from ground to roof, no text, no signs with letters. " + PROP, 512, 0.2, 0.012),
+    "b-deco":     ("A tall pastel pink and mint art deco beachfront hotel tower with rounded corners and "
+                   "balconies. Stylised cartoon city game building, whole building from ground to roof, no text, no signs with letters. " + PROP, 512, 0.2, 0.012),
+    "b-office":   ("A tall sandy-beige office tower with rows of blue windows and a flat roof with a water tank. Stylised cartoon city game building, whole building from ground to roof, no text, no signs with letters. " + PROP, 512, 0.2, 0.012),
+    "b-apart":    ("A five-storey pastel yellow apartment block with white balconies and a flat roof. Stylised cartoon city game building, whole building from ground to roof, no text, no signs with letters. " + PROP, 512, 0.14, 0.03),
+    "b-apart2":   ("A four-storey coral-orange apartment block with teal shutters and a roof garden. Stylised cartoon city game building, whole building from ground to roof, no text, no signs with letters. " + PROP, 512, 0.08, 0.06),
+    "b-house":    ("A small white beach house with a turquoise roof, a porch and a little garden fence. Stylised cartoon city game building, whole building from ground to roof, no text, no signs with letters. " + PROP, 512, 0.08, 0.06),
+    "b-house2":   ("A small pastel pink bungalow house with a terracotta tiled roof and a garage door. Stylised cartoon city game building, whole building from ground to roof, no text, no signs with letters. " + PROP, 512, 0.14, 0.03),
+    "b-house3":   ("A two-storey lemon-yellow family house with a blue front door and a red roof. Stylised cartoon city game building, whole building from ground to roof, no text, no signs with letters. " + PROP, 512, 0.14, 0.03),
+    "b-shop":     ("A one-storey corner shop with a big red and white striped awning and large display windows. Stylised cartoon city game building, whole building from ground to roof, no text, no signs with letters. " + PROP, 512, 0.1, 0.03),
+    "b-cafe":     ("A small beach cafe with a mint-green roof, an open terrace with two parasols and round tables. Stylised cartoon city game building, whole building from ground to roof, no text, no signs with letters. " + PROP, 512, 0.12, 0.03),
+    "b-arcade":   ("A fun two-storey game arcade building with glowing pink and blue neon tubes around the "
+                   "roof and a giant joystick on top. Stylised cartoon city game building, whole building from ground to roof, no text, no signs with letters. " + PROP, 512, 0.18, 0.02),
+    "b-library":  ("A grand white stone public library with four columns, wide steps and a green copper dome. Stylised cartoon city game building, whole building from ground to roof, no text, no signs with letters. " + PROP, 512, 0.12, 0.03),
+    "b-school":   ("A friendly red brick school building with a clock tower with no numbers and a yellow door. Stylised cartoon city game building, whole building from ground to roof, no text, no signs with letters. " + PROP, 512, 0.08, 0.06),
+    "b-hq":       ("A small golden and navy castle-shaped headquarters building with two round towers, a big "
+                   "garage door and a large round shield emblem above it. Stylised cartoon city game building, whole building from ground to roof, no text, no signs with letters. " + PROP, 512, 0.1, 0.03),
+    "palm":       ("A tall cartoon palm tree with a curved trunk and big green fronds. " + PROP, 512, 0.15, 0.02),
+    "citytree":   ("A simple smooth low-poly cartoon street tree: one big round solid green canopy like a smooth ball of clay, "
+                   "a short thick brown trunk, no separate leaves, toy style. " + PROP, 512, 0.25, 0.01),
+    "streetlamp": ("A tall modern grey cartoon street lamp post with a curved arm and a glowing warm lamp. " + PROP, 512, 0.2, 0.01),
+    "trafficlight": ("A cartoon traffic light on a dark pole with red, yellow and green lamps. " + PROP, 512, 0.2, 0.01),
+    "bench":      ("A wooden cartoon park bench with dark iron legs. " + PROP, 256, 0.2, 0.01),
+    "hydrant":    ("A bright red cartoon fire hydrant. " + PROP, 256, 0.15, 0.01),
+    "ramp":       ("A wooden stunt jump ramp with orange and white chevron stripes on its sides, a simple wedge. " + PROP, 512, 0.15, 0.01),
+    "kiosk":      ("A purple cartoon street kiosk booth with a big cracked glowing green screen with no text and "
+                   "antennas on its roof, slightly sinister. " + PROP, 512, 0.25, 0.01),
+    "drone":      ("A dark purple cartoon quadcopter drone with four rotors and one big glowing green eye. " + PROP, 512, 0.25, 0.01),
+    "parasol":    ("A red and white striped cartoon beach parasol with a sun lounger under it. " + PROP, 512, 0.15, 0.015),
+    "boat":       ("A small white and turquoise cartoon speedboat. " + PROP, 512, 0.2, 0.01),
+    "citizen-a":  ("A friendly cartoon teenage girl with curly dark hair, a yellow hoodie, jeans and a backpack, "
+                   "standing straight, arms relaxed, full body, 3D animated-film character. " + PROP, 512, 0.1, 0.01),
+    "citizen-b":  ("A friendly cartoon boy with a red baseball cap, a green t-shirt, shorts and sneakers, "
+                   "standing straight, arms relaxed, full body, 3D animated-film character. " + PROP, 512, 0.3),
+    "citizen-c":  ("A friendly cartoon grandmother with grey hair in a bun, round glasses, a lilac cardigan and a "
+                   "handbag, standing straight, full body, 3D animated-film character. " + PROP, 512, 0.3),
+    "citizen-d":  ("A friendly cartoon man with a short beard, a blue postal worker uniform and a shoulder bag, "
+                   "standing straight, arms relaxed, full body, 3D animated-film character. " + PROP, 512, 0.3),
+    # Knight City's story: Nova's mum, the kids Glitch befriends, and the places the story goes.
+    "citizen-e":  ("A kind cartoon woman in her forties with shoulder-length brown hair, a teal blazer and white trousers, standing straight, arms relaxed, full body, 3D animated-film character. " + PROP, 512, 0.25, 0.008),
+    "citizen-f":  ("A cheerful cartoon girl about nine years old with two pigtails, a purple dress and yellow rain boots, standing straight, arms relaxed, full body, 3D animated-film character. " + PROP, 512, 0.25, 0.008),
+    "citizen-g":  ("A shy cartoon boy about ten years old with round glasses, a blue hoodie and grey trousers, standing straight, arms relaxed, full body, 3D animated-film character. " + PROP, 512, 0.25, 0.008),
+    "citizen-h":  ("A cool cartoon teenage boy with big orange headphones round his neck, a striped t-shirt and a skateboard under one arm, standing straight, arms relaxed, full body, 3D animated-film character. " + PROP, 512, 0.25, 0.008),
+    "antenna":    ("A sinister dark purple cartoon radio relay mast with a satellite dish, blinking green lights and thick cables at its base. " + PROP, 512, 0.2, 0.01),
+    "stage":      ("A small outdoor cartoon concert stage with a purple roof, two big speakers and coloured spotlights, empty, no people, no text. " + PROP, 512, 0.07, 0.04),
+    "polaroid":   ("A single thick cartoon instant photo card with a white frame showing a simple picture of a little house and a tree, slightly tilted. " + PROP, 256, 0.2, 0.01),
+    "lighthouse": ("A tall red and white striped cartoon lighthouse on a small rock base with a glowing lamp room. " + PROP, 512, 0.2, 0.012),
 }
 TEXTURES = {
     "road":  "Seamless tileable texture, straight top-down view, of a fairy-tale castle cobblestone "
@@ -94,6 +153,16 @@ TEXTURES = {
               "horizontal grey-brown planks with nails and gaps, soft even lighting, stylised hand-painted game texture, no perspective, no shadows, no objects.",
     "slate":  "Seamless tileable texture, straight top-down view, of dark blue-grey flagstone paving "
               "with deep cracks, soft even lighting, stylised hand-painted game texture, no perspective, no shadows, no objects.",
+    "asphalt": "Seamless tileable texture, straight top-down view, of clean dark grey city asphalt with fine "
+               "grain and a few faint cracks, no road markings, no lines, soft even lighting, stylised hand-painted game texture, no perspective, no shadows, no objects.",
+    "pavers":  "Seamless tileable texture, straight top-down view, of light warm-grey square city pavement "
+               "slabs with thin joints, soft even lighting, stylised hand-painted game texture, no perspective, no shadows, no objects.",
+    "sand":    "Seamless tileable texture, straight top-down view, of pale golden beach sand with soft "
+               "ripples and a few tiny shells, soft even lighting, stylised hand-painted game texture, no perspective, no shadows, no objects.",
+    "water":   "Seamless tileable texture, straight top-down view, of bright turquoise tropical sea water "
+               "with soft white caustic light ripples, soft even lighting, stylised hand-painted game texture, no perspective, no shadows, no objects.",
+    "plaza":   "Seamless tileable texture, straight top-down view, of terracotta and cream checkered plaza "
+               "tiles, soft even lighting, stylised hand-painted game texture, no perspective, no shadows, no objects.",
 }
 
 
@@ -160,7 +229,7 @@ def main():
     raw = pathlib.Path(a.raw); raw.mkdir(parents=True, exist_ok=True)
     want = a.only or list(MODELS) + [f"tex-{t}" for t in TEXTURES]
     jobs = []
-    with cf.ThreadPoolExecutor(5) as ex:
+    with cf.ThreadPoolExecutor(8) as ex:
         for n in want:
             if n.startswith("tex-"):
                 jobs.append(ex.submit(texture, n[4:], key, raw))
