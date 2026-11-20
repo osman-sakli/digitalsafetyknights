@@ -1511,5 +1511,11 @@
   "arc.story.h": "Kayıp Sprout",
   "arc.story.p": "3D bir hikâye. Sprout kayıp. Kalede dolaş, geride bıraktığı mesajları oku ve hikâyenin nasıl biteceğine sen karar ver.",
   "arc.city.h": "Şövalye Şehri",
-  "arc.city.p": "Yürüyerek ve arabayla gezebileceğin açık bir 3D şehir. Bir araba ödünç al, radyoyu aç ve herkesin telefonunda birdenbire beliren uygulamanın arkasında kimin olduğunu bul. Beş bölüm, on altı görev, üç farklı son."
+  "arc.city.p": "Yürüyerek ve arabayla gezebileceğin açık bir 3D şehir. Bir araba ödünç al, radyoyu aç ve herkesin telefonunda birdenbire beliren uygulamanın arkasında kimin olduğunu bul. Beş bölüm, on altı görev, üç farklı son.",
+  "hero.playBtn": "🎮 Ayna Koyu’nu Oyna",
+  "home.city.eyebrow": "🎮 Yeni oyun · Ücretsiz · İndirme yok",
+  "home.city.cta": "Hemen oyna →",
+  "arc.bay.h": "Ayna Koyu",
+  "arc.bay.p": "Yürüyerek, arabayla ve tekneyle gezebileceğin açık bir liman kasabası. Biri, insanlara hiç söylemedikleri şeyleri söyleten videolar yapıyor. Kim olduğunu bul, kendi adını temize çıkar ve Fener Gecesi’ni kurtar. Beş bölüm, on yedi görev, üç farklı son.",
+  "home.city.also": "Bir de bu var: Şövalye Şehri →"
 }

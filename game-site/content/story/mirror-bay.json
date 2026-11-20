@@ -1,0 +1,2107 @@
+{
+ "ui": {
+  "title": "Mirror Bay",
+  "tag": "A harbour town where seeing is no longer believing.",
+  "how": "Walk, drive and sail anywhere in Mirror Bay. Three days before Lantern Night, an app called Twin appears: it can make a video of anyone saying anything. Take jobs from the gold beacons, work out who is behind the fakes, and choose your words with care. How you treat people decides how clearly the town sees at the end.",
+  "start": "Step off the ferry",
+  "cont": "Carry on where you left off",
+  "fresh": "Start from the beginning",
+  "arcade": "← Back to the Arcade",
+  "back": "Arcade",
+  "loading": "Filling the bay…",
+  "loadErr": "Part of the town didn't load. Check your connection and reload the page.",
+  "noGL": "This device can't run the 3D game. The 2D game works everywhere:",
+  "noGLbtn": "Play Shieldy Dash →",
+  "keysFoot": "Run: W A S D or arrows · Walk: hold Shift · Jump: Space · Get in, talk: E · Phone: P",
+  "keysCar": "Drive: W A S D or arrows · Handbrake: Space · Horn: H · Radio: R · Get out: E",
+  "keysBoat": "Sail: W A S D or arrows · Slow down: Space · Radio: R · Tie up at a jetty and step ashore: E",
+  "touchFoot": "Left thumb walks · Right thumb looks around",
+  "touchCar": "Left thumb steers and drives · Hold ⏹ for the handbrake",
+  "touchBoat": "Left thumb steers the boat · Hold ⏹ to slow down · Tie up at a jetty to get out",
+  "getIn": "Get in",
+  "getOut": "Get out",
+  "aboard": "Take the boat",
+  "ashore": "Tie up and step ashore",
+  "talk": "Talk",
+  "talkTo": "Talk to {n}",
+  "startJob": "Start job: {n}",
+  "deliver": "Hand it over",
+  "retune": "Switch the screen to the live camera",
+  "look": "Take a closer look",
+  "next": "Next ▸",
+  "close": "Close",
+  "jobDone": "Job done",
+  "jobFail": "Not this time",
+  "retry": "Try again",
+  "points": "+{n} Knight Points",
+  "learned": "What a Knight knows",
+  "allDone": "Every job is done. Mirror Bay is yours to explore.",
+  "freeRoam": "The town is yours. Follow the gold beacon for the next job.",
+  "badge": "Shield {a}/{b}",
+  "badgesAll": "You found every shield!",
+  "stunt": "Big air! +{n}",
+  "careful": "Careful! People are walking here.",
+  "notYours": "That car belongs to somebody. Knights only borrow cars with a shield above them.",
+  "coldCar": "The keys stay in the owner's pocket today. Nobody lends to the Knight from the clip.",
+  "bump": "Easy! Knights drive carefully.",
+  "kmh": "km/h",
+  "knots": "knots",
+  "phone": "Phone",
+  "tabMap": "Map",
+  "tabJobs": "Jobs",
+  "tabMsgs": "Messages",
+  "tabNotes": "Notebook",
+  "tabHelp": "Help",
+  "jobNow": "Now",
+  "jobDone1": "Done",
+  "jobLock": "Later",
+  "jobAt": "Starts at: {n}",
+  "at_ferry": "the ferry terminal",
+  "at_square": "Clock Square",
+  "at_arcade": "the game arcade",
+  "at_gazette": "the Bay Gazette",
+  "at_school": "the school",
+  "at_park": "the park",
+  "at_studio": "BayBuzz Tower",
+  "at_depot": "the harbour warehouse",
+  "at_hq": "Knight HQ",
+  "at_quay": "the quay",
+  "sound": "Sound",
+  "music": "Radio",
+  "radioOff": "Radio off",
+  "radio1": "Bay FM",
+  "radio2": "Harbour Lights",
+  "radio3": "Night Ferry",
+  "quality": "Picture",
+  "q_auto": "automatic",
+  "q_low": "fast",
+  "q_mid": "balanced",
+  "q_high": "best",
+  "callCar": "Bring my car and my boat",
+  "called": "Your car is at the nearest corner. Your boat is tied up at the nearest jetty.",
+  "newMsg": "New clip",
+  "msgGood": "Good call. +{n}",
+  "timeLeft": "{t}s",
+  "tagging": "Hold it close…",
+  "tagged": "Got it!",
+  "tailStart": "Follow the van. Not too close, not too far.",
+  "tooClose": "Too close! They'll see you.",
+  "tooFar": "You're losing them!",
+  "endDo": "If a fake ever reaches you",
+  "endKeep": "Keep exploring Mirror Bay",
+  "reason": "Mirror Bay",
+  "chapter": "Chapter {n}",
+  "clearH": "How clearly the bay sees",
+  "clearP": "It rises when you are fair to people who were fooled, faked or foolish, and falls when you shame them. It decides the ending, and the colour of the water.",
+  "clearUp": "The water looks a little clearer.",
+  "clearDown": "The water looks a little cloudier.",
+  "blame": "Careful, Shieldy. Shame is what keeps people sharing in secret and hiding when they've been fooled.",
+  "noMsgs": "No messages yet.",
+  "notesH": "Iris's notebook: {a} of {b} pages",
+  "noNotes": "Iris the reporter has lost twelve pages of her notebook around the bay. Each one is tied to a glowing paper lantern.",
+  "note": "Iris's notebook: page {a}/{b}",
+  "notesAll": "You found every page of Iris's notebook!",
+  "hintShown": "Stuck? The place is on your map now.",
+  "chased": "Camera drones on your tail! Keep moving.",
+  "news": "Bay FM news",
+  "goalCar": "Get in your car (the gold one).",
+  "goalBoat": "Take your boat (gold and navy, at the jetty).",
+  "trial": "Time trials",
+  "trial_road": "Round the town by road",
+  "trial_sea": "Round the lighthouse by boat",
+  "trialStart": "Start the time trial",
+  "trialGo": "Go!",
+  "trialGoal": "Gate {a} of {b}",
+  "trialOff": "Time trial stopped.",
+  "trialDone": "Finished in {t} s.",
+  "trialBest": "New best time: {t} s!",
+  "helpKeys": "Run with W A S D or the arrow keys, hold Shift to walk, Space to jump. E gets you into a car or a boat, starts a job and talks to people. In a car, Space is the handbrake. P opens your phone.",
+  "helpTouch": "Your left thumb moves you; your right thumb looks around. The gold button does whatever is possible right now: get in, talk, start a job. The round button jumps, or brakes when you drive.",
+  "helpGame": "Gold beacons start the next job. Blue beacons show where the job wants you. Your own car and boat are gold on the map. The line on the map is the way there.",
+  "helpSafe": "Nobody gets hurt in Mirror Bay, and you can only borrow cars with a shield above them. The game saves by itself in this browser. Nothing is sent anywhere.",
+  "cardH": "Mirror Bay",
+  "cardP": "An open harbour town to walk, drive and sail around. Somebody is making videos of people saying things they never said. Find out who, clear your own name, and save Lantern Night. Five chapters, seventeen jobs, three endings.",
+  "metaTitle": "Mirror Bay — Digital Safety Knights",
+  "metaDesc": "Mirror Bay — a free open-world 3D game about deepfakes. Walk, drive and sail a harbour town, find out who is faking people's faces and voices, and decide how it ends. No account, no ads, nothing tracked."
+ },
+ "names": {
+  "shieldy": "Shieldy",
+  "dame": "Dame Noble",
+  "pixel": "Pixel",
+  "bot": "Bot",
+  "sprout": "Sprout",
+  "glitch": "Glitch",
+  "iris": "Iris",
+  "kai": "Kai",
+  "mina": "Mina",
+  "vale": "Ms Vale",
+  "lila": "Lila",
+  "tomas": "Tomas",
+  "captain": "Captain Marlo",
+  "baker": "Nilo the baker",
+  "elena": "Elena",
+  "alder": "Mrs Alder",
+  "cit": "Someone from town",
+  "kids": "Kids at the screen",
+  "crowd": "The town",
+  "screen": "On the screen",
+  "clip": "The clip",
+  "voice": "The voice on the phone",
+  "twin": "TWIN",
+  "unknown": "Unknown number"
+ },
+ "todo": [
+  "Wait one minute before you share anything that makes you angry, scared or gleeful.",
+  "Ask who posted it first. A brand-new account with an official-sounding name is a costume.",
+  "Look for the original, or ask the person in it. They are the expert on what they said.",
+  "Agree a family code word, for any call or message that wants something in a hurry.",
+  "If a fake is about you, it is not your fault. Save it, tell an adult you trust, and report it."
+ ],
+ "chapters": {
+  "1": {
+   "name": "A Bit of Fun",
+   "sub": "A funny clip of a friend. Everybody laughs. Almost everybody."
+  },
+  "2": {
+   "name": "Seeing Isn't Believing",
+   "sub": "A face can be copied. So can a voice. So can a best friend."
+  },
+  "3": {
+   "name": "Who Profits",
+   "sub": "Somebody is paid every time the town looks at a lie."
+  },
+  "4": {
+   "name": "The Fake You",
+   "sub": "It is different when the face on the screen is yours."
+  },
+  "5": {
+   "name": "Lantern Night",
+   "sub": "One true thing, said out loud, in front of everyone."
+  }
+ },
+ "jobs": {
+  "m1": {
+   "name": "Welcome to Mirror Bay",
+   "lesson": "A joke about someone is only a joke if they are laughing too. Ask them before it travels any further.",
+   "goals": {
+    "drive": "Drive to Clock Square. Follow the line on your map."
+   },
+   "intro": [
+    {
+     "s": "dame",
+     "t": "Shieldy! Welcome to Mirror Bay. Three days to Lantern Night, and I am this year's Festival Warden, which means I need every Knight I can get."
+    },
+    {
+     "s": "dame",
+     "t": "On Lantern Night the whole town floats lanterns over the bay. People say the water is so clear you see every one of them twice."
+    },
+    {
+     "s": "dame",
+     "t": "Your car came over on the morning ferry: the gold one, by the kerb. Bot and Pixel are hanging lanterns in Clock Square. Meet me there."
+    }
+   ],
+   "clip": [
+    {
+     "s": "bot",
+     "t": "Shieldy! You made it! Look, everybody's phones are buzzing…"
+    },
+    {
+     "s": "screen",
+     "t": "A clip, on the big screen and on every phone in the square: Bot, dancing like a chicken, flapping his arms. The square roars with laughter."
+    },
+    {
+     "s": "bot",
+     "t": "Ha! Ha ha. That's… I never did that. I don't even know how to flap."
+    },
+    {
+     "s": "pixel",
+     "t": "It's made with a new app called Twin. Type a sentence, pick a face, and it makes the video. It's been everywhere since breakfast."
+    },
+    {
+     "s": "bot",
+     "t": "Everyone's laughing, so it must be funny. Am I supposed to be laughing?"
+    }
+   ],
+   "laugh": {
+    "q": "A funny clip of your friend lands on your phone. What do you do with it?",
+    "c": [
+     {
+      "t": "Ask the friend how they feel about it before it goes any further.",
+      "r": "Thank you for asking. Honestly? It feels strange. Like someone borrowed my body without knocking."
+     },
+     {
+      "t": "Send it to everyone. It's harmless.",
+      "r": "Shieldy, look at Bot's face, not at the screen. He isn't sure it's harmless."
+     },
+     {
+      "t": "Save it to tease him with later.",
+      "r": "That turns a clip into a lead you keep him on. Try again."
+     }
+    ]
+   },
+   "outro": [
+    {
+     "s": "bot",
+     "t": "It's all right. It's only a bit of fun. Probably."
+    },
+    {
+     "s": "dame",
+     "t": "Hm. A machine that puts words in people's mouths, three days before the busiest night of the year. I don't love it. Come and see me, Shieldy. We have lanterns to deliver."
+    }
+   ]
+  },
+  "m2": {
+   "name": "Lanterns Up",
+   "lesson": "Before you believe a screen about somebody, ask the somebody. They are standing right there more often than you think.",
+   "goals": {
+    "crates": "Deliver lantern crates around town: {a} of {b}.",
+    "bakery": "Bot's name is in trouble. Drive to Nilo's bakery by the canal."
+   },
+   "intro": [
+    {
+     "s": "dame",
+     "t": "Four crates of lanterns, four corners of town: the school, the market, the cinema and the fairground. The blue beacons show you where."
+    },
+    {
+     "s": "dame",
+     "t": "Take your time and learn the streets. And listen to people, Shieldy. I'd like to know what the town makes of that dancing robot."
+    }
+   ],
+   "quiz": {
+    "l1": {
+     "q": "Mrs Alder, the teacher: \"My whole class has seen that robot clip. Thirty children asking me if it's real. How would anyone find out?\"",
+     "c": [
+      {
+       "t": "Ask Bot. He's the one in it.",
+       "r": "Of course. The simplest check of all, and nobody in my class thought of it. Nor did I."
+      },
+      {
+       "t": "Count how many people have shared it.",
+       "r": "A thousand shares only tell you it travelled, not whether it's true."
+      },
+      {
+       "t": "Look closely and see if it seems real.",
+       "r": "These fakes are made to seem real. Your eyes alone won't settle it."
+      }
+     ]
+    },
+    "l2": {
+     "q": "A stallholder at the market: \"My cousin sent it to me. She got it from a group. Who made it? No idea. Does that matter?\"",
+     "c": [
+      {
+       "t": "Yes. If nobody knows who posted it first, that's a reason to slow down.",
+       "r": "Fair enough. I wouldn't buy fish from a man who won't say where he caught it."
+      },
+      {
+       "t": "No. If lots of people have it, somebody must have checked.",
+       "r": "Everybody thinks somebody else checked. That's how nobody does."
+      },
+      {
+       "t": "No. It came from your cousin, and you trust your cousin.",
+       "r": "She trusts her cousin, but her cousin didn't make it either. Follow it back."
+      }
+     ]
+    },
+    "l3": {
+     "q": "The cinema usher: \"It made me laugh, so I sent it to nine people before I'd finished laughing. Was that wrong?\"",
+     "c": [
+      {
+       "t": "Next time, wait one minute before you send. Most fakes don't survive a minute of thinking.",
+       "r": "One minute. I can manage a minute. The film trailers take longer than that."
+      },
+      {
+       "t": "No. Fast is how you stay first.",
+       "r": "Being first with something false is no prize."
+      },
+      {
+       "t": "Yes, and you should feel terrible.",
+       "r": "Easy, Shieldy. He was fooled, not wicked. Tell him what to do next time."
+      }
+     ]
+    },
+    "l4": {
+     "q": "A boy at the fairground: \"If it's just a joke, who cares if it's fake?\"",
+     "c": [
+      {
+       "t": "The person in it cares. A joke about someone needs their yes.",
+       "r": "Huh. I'd want to be asked. Okay. I get it."
+      },
+      {
+       "t": "Nobody. Jokes don't have rules.",
+       "r": "Ask Bot whether it feels like a joke with no rules."
+      },
+      {
+       "t": "Only grown-ups care about that.",
+       "r": "It's children's faces these apps like best. Try again."
+      }
+     ]
+    }
+   },
+   "second": [
+    {
+     "s": "pixel",
+     "t": "Shieldy, new clip. Same face."
+    },
+    {
+     "s": "screen",
+     "t": "Bot again, close up this time: \"Nilo's bread tastes like wet cardboard. I'd rather eat the bag.\""
+    },
+    {
+     "s": "pixel",
+     "t": "Nobody's laughing at this one. Nilo's bakery is down by the canal. You'd better get there before the rumour does."
+    }
+   ],
+   "baker": [
+    {
+     "s": "baker",
+     "t": "Thirty years I've baked for this town. THIRTY. And a tin robot tells the whole bay it's cardboard!"
+    },
+    {
+     "s": "bot",
+     "t": "Nilo, I never said it. I've never even tasted bread. I run on batteries."
+    },
+    {
+     "s": "baker",
+     "t": "I heard you. With my own ears. On my own phone."
+    }
+   ],
+   "sure": {
+    "q": "What do you tell Nilo?",
+    "c": [
+     {
+      "t": "Bot is standing right here saying he never said it. Ask him before you believe a screen.",
+      "r": "…You're right. He's here, and he's shaking. Bot. Did you say it? No. Then that's the end of it. Come in, both of you, and smell what cardboard smells like."
+     },
+     {
+      "t": "It's on video, so he must have said it.",
+      "r": "This morning a video had Bot dancing like a chicken. Videos say whatever Twin is told to say."
+     },
+     {
+      "t": "Maybe he said it by accident.",
+      "r": "Nobody insults bread for eleven seconds by accident. Look at who is denying it, and how."
+     }
+    ]
+   },
+   "outro": [
+    {
+     "s": "baker",
+     "t": "First it was funny. Then it was my bread. What is it tomorrow?"
+    },
+    {
+     "s": "pixel",
+     "t": "Shieldy, look at the big screens. Look NOW."
+    }
+   ]
+  },
+  "m3": {
+   "name": "The Festival Is Off",
+   "lesson": "Check who posted it, and check with the person. A real announcement does not mind being checked; a fake one wants you to hurry.",
+   "goals": {
+    "screens": "Switch the town's big screens back to the live camera: {a} of {b}.",
+    "back": "Get back to Clock Square."
+   },
+   "intro": [
+    {
+     "s": "screen",
+     "t": "On every big screen in town, Dame Noble, in her Warden's sash: \"Lantern Night is cancelled. Stay at home. Tell everyone. Don't wait.\""
+    },
+    {
+     "s": "dame",
+     "t": "I have been standing next to you all morning."
+    },
+    {
+     "s": "pixel",
+     "t": "The market stalls are packing up. People are taking lanterns down. In ten minutes there won't be a festival to save."
+    },
+    {
+     "s": "dame",
+     "t": "Shieldy: four screens. Switch each one to its own live camera so people see the real square and the real me. Go. I'll stand on the Town Hall steps where everyone can see I'm made of Dame."
+    }
+   ],
+   "quiz": {
+    "s1": {
+     "q": "The Dame on the screen wears her shield on her left arm. The Dame on the Town Hall steps wears hers on the right. What does that tell you?",
+     "c": [
+      {
+       "t": "The picture has been flipped and stitched together. It isn't a recording of her.",
+       "r": "Exactly. Mirrored. Twin flips faces to hide the join, and the shield changes arms."
+      },
+      {
+       "t": "She changed arms for the camera.",
+       "r": "A Knight's shield arm doesn't change. Look for what the machine did."
+      },
+      {
+       "t": "Nothing. Shields don't matter.",
+       "r": "Small things that are the wrong way round are how fakes give themselves away."
+      }
+     ]
+    },
+    "s2": {
+     "q": "The clip was posted by an account called 'MirrorBay_Official_News'. The account was made yesterday. What do you make of that?",
+     "c": [
+      {
+       "t": "An official-sounding name on a brand-new account is a costume, not a source.",
+       "r": "Yes. Anyone can type the word 'official'. Nobody can fake having been around for years."
+      },
+      {
+       "t": "It says 'Official', so it's official.",
+       "r": "Typing a word costs nothing. Look at how old the account is."
+      },
+      {
+       "t": "New accounts are the most up to date.",
+       "r": "New accounts are also what you make when you don't want to be found."
+      }
+     ]
+    },
+    "s3": {
+     "q": "\"Stay at home. Tell everyone. Don't wait.\" What is the announcement trying to do?",
+     "c": [
+      {
+       "t": "Rush people. It doesn't want anyone to stop and check.",
+       "r": "That's the tell that works even when the picture is perfect: it's in a hurry, and it wants you to be."
+      },
+      {
+       "t": "Keep people safe.",
+       "r": "From what? It never says. It only says hurry."
+      },
+      {
+       "t": "Save people a wasted trip.",
+       "r": "A real notice would say why, and where to ask. This one only says go, go, go."
+      }
+     ]
+    },
+    "s4": {
+     "q": "If the Festival Warden really had to cancel Lantern Night, where would you hear it?",
+     "c": [
+      {
+       "t": "From her, in person on the Town Hall steps, and on the Gazette's front page: places you can check.",
+       "r": "Right. Big news turns up in more than one place, and in places with a door you can knock on."
+      },
+      {
+       "t": "In a clip forwarded by a friend.",
+       "r": "That's where you'd hear the rumour, not the news."
+      },
+      {
+       "t": "Only on the big screens.",
+       "r": "One channel, no other source: that's what somebody hijacking the screens would look like."
+      }
+     ]
+    }
+   },
+   "outro": [
+    {
+     "s": "dame",
+     "t": "It IS on. Lantern Night is on. You can see me, you can hear me, and you can come and poke me if you like."
+    },
+    {
+     "s": "pixel",
+     "t": "The stalls are unpacking again. That was close."
+    },
+    {
+     "s": "bot",
+     "t": "Look. By the statue. Grinning."
+    },
+    {
+     "s": "cit",
+     "t": "It's Glitch! It's always Glitch! Somebody grab him!"
+    },
+    {
+     "s": "pixel",
+     "t": "He's gone. Round the Town Hall like a cat. Well. I suppose now we know who did it."
+    },
+    {
+     "s": "dame",
+     "t": "Do we, Pixel? Do we know? Or do we just like the answer?"
+    }
+   ]
+  },
+  "m4": {
+   "name": "The Usual Suspect",
+   "lesson": "A hunch is not proof. If you blame someone because they are the sort who would, you have been fooled too, just more comfortably.",
+   "goals": {
+    "r1": "Riddle: \"Big tin shed where the sea meets the street; boxes from everywhere stacked in a heap.\" Find Glitch's first hiding place.",
+    "r2": "Riddle: \"It goes round but gets nowhere, tallest thing at the fair; if you want to hide well, stand under there.\" Find Glitch."
+   },
+   "intro": [
+    {
+     "s": "dame",
+     "t": "The whole town has decided it was Glitch. I would like us to be better than the whole town."
+    },
+    {
+     "s": "pixel",
+     "t": "He does have a history, Dame."
+    },
+    {
+     "s": "dame",
+     "t": "He does. And a history is why we go and ASK him, instead of deciding. Find him, Shieldy. The arcade machine says he was here an hour ago, and he left a riddle on the screen. Naturally."
+    }
+   ],
+   "c1": [
+    {
+     "s": "pixel",
+     "t": "Not here. But there's another riddle chalked on the warehouse door. He's enjoying this."
+    },
+    {
+     "s": "pixel",
+     "t": "Odd, though. This warehouse has blacked-out windows and a brand-new lock. Remember it."
+    }
+   ],
+   "found": [
+    {
+     "s": "glitch",
+     "t": "Took you long enough. I've been under this wheel for an hour and my neck hurts."
+    },
+    {
+     "s": "glitch",
+     "t": "Go on, then. Say it. \"It was Glitch.\" Everyone else has."
+    }
+   ],
+   "heart": {
+    "q": "Glitch folds his arms and waits. What do you say?",
+    "c": [
+     {
+      "t": "I'm not saying it. I'm asking. Where were you this morning?",
+      "r": "…Huh. Nobody asks. At the arcade, losing at Bubble Kart. The machine keeps scores with the time on. Go and look."
+     },
+     {
+      "t": "It's always you. Just admit it.",
+      "r": "There it is. No proof needed when you've got a favourite villain. Remember this feeling, Knight. Remember it when it's your face up there."
+     },
+     {
+      "t": "I don't care who did it. Just help me stop it.",
+      "r": "Practical. Cold, but practical. Fine."
+     }
+    ]
+   },
+   "lead": [
+    {
+     "s": "glitch",
+     "t": "For the record: I wish I'd thought of it. I didn't. I trick people to their faces. This thing does it from behind a curtain, and that's cheating."
+    },
+    {
+     "s": "glitch",
+     "t": "Here's something for free. Every one of those clips shows up on BayBuzz one whole minute before it's anywhere else. Every time. Somebody is feeding them."
+    },
+    {
+     "s": "glitch",
+     "t": "And if you want to know what's true in this town, don't ask a Knight. Ask the woman at the Gazette. She's been checking things for a living since before screens were flat."
+    }
+   ]
+  },
+  "m5": {
+   "name": "Four Questions",
+   "lesson": "Who posted it first? Where is the original? What can I check for myself? How does it want me to feel? Four questions will stop most fakes.",
+   "goals": {
+    "facts": "Check the 'rat in the bakery' clip against the real world: {a} of {b}.",
+    "gazette": "Take what you found back to Iris at the Gazette.",
+    "bread": "Deliver Nilo's bread before it goes cold: {a} of {b}."
+   },
+   "intro": [
+    {
+     "s": "iris",
+     "t": "So you're the new Knight. Iris. I run the Bay Gazette: one reporter, one press, and one rule. Nothing goes on my front page until I've checked it myself."
+    },
+    {
+     "s": "iris",
+     "t": "There's a new clip this morning. A rat on the floor of Nilo's bakery. He's sold four loaves all day."
+    },
+    {
+     "s": "iris",
+     "t": "I ask four questions of anything like this. Who posted it first? Where's the original? What can I check with my own eyes? And how does it want me to feel?"
+    },
+    {
+     "s": "iris",
+     "t": "You've got legs and a car. Go and check three things for me: the bakery floor, the street camera outside the cinema, and whoever is passing the clip round. Then come back."
+    }
+   ],
+   "quiz": {
+    "e1": {
+     "q": "Nilo lets you into his kitchen. The floor is old red brick, worn smooth. In the clip, the rat runs over shiny green tiles. What have you found?",
+     "c": [
+      {
+       "t": "It isn't his kitchen. The clip was filmed, or made, somewhere else.",
+       "r": "Green tiles! I've never had a green tile in my life. My grandfather laid these bricks."
+      },
+      {
+       "t": "He must have changed the floor to hide it.",
+       "r": "In one morning, with brick a hundred years old? Check what's in front of you."
+      },
+      {
+       "t": "Floors don't prove anything.",
+       "r": "A thing you can go and look at with your own eyes is the best proof there is."
+      }
+     ]
+    },
+    "e2": {
+     "q": "The street camera's log: the clip appeared on BayBuzz at 6:02. The clip says it was filmed 'this morning at 7'. What does that tell you?",
+     "c": [
+      {
+       "t": "It was posted before the time it claims to have been filmed. The story doesn't hold together.",
+       "r": "A video from the future. Even Twin can't manage that honestly."
+      },
+      {
+       "t": "The camera's clock is probably wrong.",
+       "r": "It's the harbour office's camera, checked against the ferry clock every day. Believe the boring clock."
+      },
+      {
+       "t": "An hour doesn't matter.",
+       "r": "It matters when the hour runs backwards."
+      }
+     ]
+    },
+    "e3": {
+     "q": "A neighbour is showing the clip to people at the canal. \"My sister sent it. She got it from a mums' group. Who filmed it? Well, somebody must have.\" What is missing?",
+     "c": [
+      {
+       "t": "A source. Nobody in the chain knows who filmed it or where.",
+       "r": "Now you say it… I've been telling people 'somebody saw a rat', and I can't name the somebody."
+      },
+      {
+       "t": "More shares. It needs to reach more people to be sure.",
+       "r": "A rumour doesn't get truer by getting bigger."
+      },
+      {
+       "t": "Nothing. A sister is a good source.",
+       "r": "Her sister didn't film it either. The chain has no beginning."
+      }
+     ]
+    }
+   },
+   "proof": {
+    "q": "Iris: \"Three checks. Which single fact would you put on my front page to show the clip isn't Nilo's bakery?\"",
+    "c": [
+     {
+      "t": "The floor. Green tiles in the clip, red brick in the bakery. Anyone can go and look.",
+      "r": "That's the one. Not because it's clever, but because every reader can check it for themselves on the way to buy a loaf."
+     },
+     {
+      "t": "Nilo says it isn't true.",
+      "r": "He'd say that if it were true, too. I need something a reader can check without trusting anybody."
+     },
+     {
+      "t": "Lots of people don't believe it.",
+      "r": "And lots do. A count of opinions isn't a fact."
+     }
+    ]
+   },
+   "lens": [
+    {
+     "s": "iris",
+     "t": "Headline: THE FLOOR IS THE WRONG COLOUR. It'll be on the stands in an hour."
+    },
+    {
+     "s": "iris",
+     "t": "Here's the hard part, Knight. The clip went round the bay in ten minutes. My correction will take all day, and reach half as many."
+    },
+    {
+     "s": "iris",
+     "t": "A lie runs while the truth is still tying its shoes. So Nilo needs more than a headline. He needs people to taste his bread today. He's baked three orders. Drive them."
+    }
+   ],
+   "d1": [
+    {
+     "s": "cit",
+     "t": "From Nilo? After that video? …It's still warm. It smells like it always did. I feel a bit daft, to be honest."
+    },
+    {
+     "s": "shieldy",
+     "t": "You're not daft. You were fooled by something built to fool you. Now you know."
+    }
+   ],
+   "d2": [
+    {
+     "s": "cit",
+     "t": "I nearly cancelled my order. Then I thought: I've eaten his bread for twenty years and I've watched that clip for twenty seconds. Why would I believe the twenty seconds?"
+    }
+   ],
+   "d3": [
+    {
+     "s": "cit",
+     "t": "Oh! The bread! Tell Nilo I'm sorry. I shared that clip. I'll share the Gazette's front page twice as hard."
+    }
+   ],
+   "outro": [
+    {
+     "s": "baker",
+     "t": "Three loaves delivered and eleven more ordered. Shieldy, you're welcome to bread in this shop until one of us retires."
+    },
+    {
+     "s": "iris",
+     "t": "Keep the four questions, Knight. And keep an eye on your own friends. Twin started with a robot and a baker. It won't stop at grown-ups."
+    }
+   ]
+  },
+  "m6": {
+   "name": "Best Friends",
+   "lesson": "A copied voice sounds exactly like your friend. Being fooled by it does not make you stupid. Ask your friend directly, and agree a secret word that no machine knows.",
+   "goals": {
+    "r1": "Riddle: \"Painted horses, round they run, never tired, never done.\" Find where Lila is hiding.",
+    "fetch": "Lila will listen. Go back to the school and fetch Sprout.",
+    "bring": "Bring Sprout to Lila at the carousel."
+   },
+   "intro": [
+    {
+     "s": "screen",
+     "t": "The school's big screen. Sprout, in her yellow scarf, smiling: \"Lila is a baby. She cries at everything. I only sit with her because nobody else will.\""
+    },
+    {
+     "s": "sprout",
+     "t": "That's not… I never… Lila! LILA! She's gone. She ran out of the gate."
+    },
+    {
+     "s": "kids",
+     "t": "Sprout said THAT? About her best friend? Send it to me, send it to me!"
+    }
+   ],
+   "crowd": {
+    "q": "A ring of children is laughing at the screen and holding up their phones. What do you do?",
+    "c": [
+     {
+      "t": "Say: \"That isn't Sprout talking. And even if it were, it isn't ours to pass round.\"",
+      "r": "…Yeah. I'd hate it if that was me up there. I'm deleting it."
+     },
+     {
+      "t": "Say: \"Go on, send it. Everyone's seen it anyway.\"",
+      "r": "Sent! To the whole class! And my cousin's class!"
+     },
+     {
+      "t": "Say nothing and walk past.",
+      "r": "The laughing carries on behind you. Nobody told them to stop."
+     }
+    ]
+   },
+   "gone": [
+    {
+     "s": "sprout",
+     "t": "I didn't say it. You believe me, don't you? It's my face and my voice and my scarf and I DIDN'T SAY IT."
+    },
+    {
+     "s": "shieldy",
+     "t": "I believe you. Stay here with Mrs Alder. I'll find Lila."
+    }
+   ],
+   "lila": [
+    {
+     "s": "lila",
+     "t": "Go away. I don't want a Knight. I want it to not have happened."
+    },
+    {
+     "s": "lila",
+     "t": "It sounded exactly like her. Exactly. The little squeak she does at the end of words. Everything."
+    }
+   ],
+   "lilaH": {
+    "q": "Lila is hunched on a painted horse. What do you say?",
+    "c": [
+     {
+      "t": "\"It did sound like her. Anyone would have believed it. That isn't you being silly. That's the fake being good.\"",
+      "r": "…So I'm not stupid? Because I feel stupid. I felt stupid AND sad at the same time and that's the worst one."
+     },
+     {
+      "t": "\"You should have known Sprout would never say that.\"",
+      "r": "I DID know! And then I heard her voice say it. What was I supposed to do with my ears?"
+     },
+     {
+      "t": "\"Honestly, it was a little bit funny.\"",
+      "r": "Go AWAY."
+     }
+    ]
+   },
+   "fetch": [
+    {
+     "s": "sprout",
+     "t": "She'll see me? She'll really see me? What do I say? I'll say… I don't know what I'll say."
+    }
+   ],
+   "meet": [
+    {
+     "s": "sprout",
+     "t": "Lila. I didn't say it. I would never say it. You're the best person I know and you only cry at things that are actually sad."
+    },
+    {
+     "s": "lila",
+     "t": "I want to believe you. I do. But how do I KNOW?"
+    },
+    {
+     "s": "shieldy",
+     "t": "Look at the clip together, both of you. Not at the words. At everything else."
+    }
+   ],
+   "scarf": {
+    "q": "Lila, look at the clip again. What doesn't fit?",
+    "c": [
+     {
+      "t": "The yellow scarf. Sprout lost it on the ferry last week. This is an old video with new words put in her mouth.",
+      "r": "The scarf! It's in Captain Marlo's lost-property box, I SAW it there on Monday! This is your birthday message to me from last month. They took your happy-birthday and made it say that."
+     },
+     {
+      "t": "Her voice sounds a bit cross.",
+      "r": "A copied voice can sound any way the machine is told. Look for something that can't be copied: a fact."
+     },
+     {
+      "t": "The video is very short.",
+      "r": "Lots of real videos are short. Find something that's wrong about WHEN it was made."
+     }
+    ]
+   },
+   "code": [
+    {
+     "s": "lila",
+     "t": "They used my birthday message. The nicest thing anyone ever sent me, and they turned it inside out."
+    },
+    {
+     "s": "sprout",
+     "t": "Then we need something they can't turn inside out."
+    },
+    {
+     "s": "lila",
+     "t": "A secret word. One only we know. If a video or a voice ever says something strange, we ask for the word."
+    },
+    {
+     "s": "sprout",
+     "t": "And no machine knows it, because we'll never type it. We'll only whisper it. Right now. Shieldy, cover your ears."
+    },
+    {
+     "s": "shieldy",
+     "t": "(You cover your ears. Whatever the word is, it makes them both laugh until the carousel has gone round twice.)"
+    }
+   ]
+  },
+  "m7": {
+   "name": "Mum's Voice",
+   "lesson": "A few seconds of sound is enough to copy a voice. If a call wants something in a hurry and in secret, ask for the family code word, or hang up and call back on the number you know.",
+   "goals": {
+    "catch": "Tomas is running for the docks with a phone at his ear. Catch up with him before he gets there!",
+    "home": "Take Tomas home."
+   },
+   "intro": [
+    {
+     "s": "pixel",
+     "t": "Shieldy, the park. A boy's phone just rang and I didn't like what I heard. A woman's voice: \"Tomas, sweetheart, it's Mum. Come to Dock 4 right now. Bring the door code. Don't tell Dad.\""
+    },
+    {
+     "s": "pixel",
+     "t": "He's already running: east side, down the long street towards the harbour. He's nine. Catch him before the docks!"
+    }
+   ],
+   "stop": [
+    {
+     "s": "tomas",
+     "t": "Let go! Mum needs me! She said hurry, she said don't tell anyone!"
+    },
+    {
+     "s": "voice",
+     "t": "Tomas? Tomas, who's that with you? Don't listen to them, sweetheart. Just come. Quickly now."
+    },
+    {
+     "s": "shieldy",
+     "t": "Tomas. That sounds exactly like your mum. I know. Before you take one more step, ask her one thing."
+    }
+   ],
+   "code": {
+    "q": "What should Tomas ask the voice?",
+    "c": [
+     {
+      "t": "\"What's our family code word?\" The one only his real mum knows.",
+      "r": "…Mum? What's our word? The one for emergencies? … Mum? … She's not saying it. She's not saying ANYTHING. …She hung up."
+     },
+     {
+      "t": "\"Is that really you, Mum?\"",
+      "r": "\"Of course it's me, silly. Now hurry.\" A fake will just say yes. Ask for something it can't know."
+     },
+     {
+      "t": "Nothing. Run to Dock 4 and see for himself.",
+      "r": "That is exactly where the voice wants him. Alone, in a hurry, at the docks."
+     }
+    ]
+   },
+   "hang": [
+    {
+     "s": "tomas",
+     "t": "It wasn't her. It was her voice and it wasn't her. How can it be her voice?"
+    },
+    {
+     "s": "pixel",
+     "t": "A few seconds of somebody talking, that's all Twin needs. Her voicemail greeting would do it."
+    },
+    {
+     "s": "shieldy",
+     "t": "You did the right thing the moment you asked. Come on. Let's get you home to the real one."
+    }
+   ],
+   "home": [
+    {
+     "s": "elena",
+     "t": "Tomas! What do you mean, I rang you? I've been here hanging washing all afternoon. I never rang anybody."
+    },
+    {
+     "s": "elena",
+     "t": "My voice? Asking for our door code? …Sit down, both of you. Sit down."
+    },
+    {
+     "s": "elena",
+     "t": "We made that code word as a game when he was six. 'In case of pirates,' I said. I never thought the pirates would sound like me."
+    },
+    {
+     "s": "pixel",
+     "t": "Shieldy. A white van with a dish on its roof just pulled away from Dock 4. BayBuzz. They were waiting to film something. I think they wanted a 'lost boy found by BayBuzz' story for tonight."
+    },
+    {
+     "s": "elena",
+     "t": "They'd frighten a child for a headline?"
+    },
+    {
+     "s": "pixel",
+     "t": "I'd like to know where that van sleeps at night."
+    }
+   ]
+  },
+  "m8": {
+   "name": "Follow the Van",
+   "lesson": "When a lie keeps appearing, ask who is paid when people look at it. Follow the money and you find the maker.",
+   "goals": {
+    "tail": "Follow the BayBuzz van without being spotted. Stay behind it, not too close, not too far."
+   },
+   "intro": [
+    {
+     "s": "pixel",
+     "t": "The van's outside BayBuzz Tower with its engine running. When it goes, go with it. Hang back far enough that they don't notice a gold car in the mirror, and close enough that you don't lose them."
+    },
+    {
+     "s": "pixel",
+     "t": "No bumping, no racing. Just a quiet Knight on a quiet drive."
+    }
+   ],
+   "outro": [
+    {
+     "s": "pixel",
+     "t": "It's gone into the big warehouse on the harbour. The one with the blacked-out windows and the new lock. The one Glitch's riddle sent you to."
+    },
+    {
+     "s": "pixel",
+     "t": "A news van that sleeps in a locked warehouse. Park up. We're going to look through those windows."
+    }
+   ]
+  },
+  "m9": {
+   "name": "The Clip Farm",
+   "lesson": "People make fakes for attention and for money, and every view pays them. Shame makes a maker dig in; a real question can make them think.",
+   "goals": {
+    "windows": "Look in through the warehouse windows: {a} of {b}.",
+    "chase": "He's taken a boat! Follow him across the bay, buoy by buoy: {a} of {b}.",
+    "land": "He's tied up at Lighthouse Rock. Bring your boat in to the island jetty.",
+    "find": "Step ashore and find him."
+   },
+   "intro": [
+    {
+     "s": "pixel",
+     "t": "Stay low. There are gaps in the blackout paint. Three windows: tell me what you see."
+    }
+   ],
+   "quiz": {
+    "w1": {
+     "q": "Through the first window: rows of screens. On each one a face from town, the baker, the teacher, the ferry captain, mouths moving with the sound off. What is this place?",
+     "c": [
+      {
+       "t": "A workshop that makes fake videos of real people, a dozen at a time.",
+       "r": "A clip farm. They're growing them in rows."
+      },
+      {
+       "t": "A television shop.",
+       "r": "Television shops don't have your neighbours on every screen."
+      },
+      {
+       "t": "A cinema for the dock workers.",
+       "r": "With blacked-out windows and a new lock? Look at whose faces those are."
+      }
+     ]
+    },
+    "w2": {
+     "q": "Second window: a whiteboard. 'Tomorrow's stories', each with a number beside it. 'Robot insults baker: 12,000. Festival cancelled: 40,000. Lost boy at docks: 60,000?' What are the numbers?",
+     "c": [
+      {
+       "t": "Views. They pick the lie that the most people will watch.",
+       "r": "They aren't asking 'is it true'. They're asking 'will it be watched'."
+      },
+      {
+       "t": "Prices of bread.",
+       "r": "Look at the size of them, and at which story got the biggest."
+      },
+      {
+       "t": "How many people it is true for.",
+       "r": "None of them are true for anyone. The number is how many eyes."
+      }
+     ]
+    },
+    "w3": {
+     "q": "Third window: a desk, and an invoice. BayBuzz pays somebody called 'K.' a little money for every clip, and earns from every view. So who profits when the town watches a fake?",
+     "c": [
+      {
+       "t": "The channel that shows it earns from every view, and pays the maker a little of it.",
+       "r": "So that's the engine. The town's attention goes in one end and money comes out the other."
+      },
+      {
+       "t": "Nobody. It's just for fun.",
+       "r": "There's an invoice on the desk. Fun doesn't send invoices."
+      },
+      {
+       "t": "The people in the clips.",
+       "r": "The people in the clips lose customers and friends. Look at who is being paid."
+      }
+     ]
+    }
+   },
+   "kai": [
+    {
+     "s": "kai",
+     "t": "Hey! Who's out there? …Oh no. Oh no, no, no. A Knight."
+    },
+    {
+     "s": "pixel",
+     "t": "He's a kid. Fifteen, maybe. That's 'K.'?"
+    },
+    {
+     "s": "kai",
+     "t": "I'm not talking to you. I've got a boat. You can't follow a boat in a car!"
+    },
+    {
+     "s": "pixel",
+     "t": "He's right. But yours is at the quay jetty, Shieldy. Gold and navy. Run!"
+    }
+   ],
+   "corner": [
+    {
+     "s": "kai",
+     "t": "Fine. FINE. There's nowhere to go on this rock except up the lighthouse, and I don't like heights."
+    },
+    {
+     "s": "kai",
+     "t": "I'm Kai. I made Twin. It was a joke app. I made it in my bedroom."
+    },
+    {
+     "s": "kai",
+     "t": "Do you know how many people watched my videos before? Three. One was my mum. Now it's forty thousand. People I've never met say 'did you see that clip'. And it's MINE."
+    }
+   ],
+   "heart": {
+    "q": "Kai is fifteen, clever, and cornered. What do you say to him?",
+    "c": [
+     {
+      "t": "\"Forty thousand people watched. I'm asking about the one who cried. Do you know her name?\"",
+      "r": "…No. \"It's Lila. She's ten. They used her birthday message.\" …I didn't pick that one. BayBuzz picks. I just… I just make the machine go."
+     },
+     {
+      "t": "\"You're a criminal, and the whole town is going to know your face.\"",
+      "r": "Then I've got nothing left to lose, have I? Thanks. That makes it easy."
+     },
+     {
+      "t": "\"Just delete the app and we'll forget the whole thing.\"",
+      "r": "Delete it? It's on a thousand phones. You can't un-ring a bell. You don't even understand what it is."
+     }
+    ]
+   },
+   "leave": [
+    {
+     "s": "kai",
+     "t": "Ms Vale says we don't lie. We publish. People choose what to believe. That's what she says."
+    },
+    {
+     "s": "kai",
+     "t": "The ferry's coming in. I'm getting on it and you're not going to stop me, because Knights don't grab people. I've read about you."
+    },
+    {
+     "s": "pixel",
+     "t": "Let him go, Shieldy. He's heard something he can't un-hear either. Now I want to meet this Ms Vale."
+    }
+   ]
+  },
+  "m10": {
+   "name": "Every Click",
+   "lesson": "Attention is what fakes are paid in. Don't feed a lie by watching, sharing or arguing with it in public: report it, and starve it.",
+   "goals": {
+    "drones": "BayBuzz drones are beaming the clips at people in the street. Get close and switch each one off: {a} of {b}."
+   },
+   "intro": [
+    {
+     "s": "vale",
+     "t": "A Knight. In my lobby. How lovely. Verena Vale. I own BayBuzz, the feed that never sleeps."
+    },
+    {
+     "s": "vale",
+     "t": "I know why you're here, and let me save you the speech. We don't lie. We publish. Forty thousand people CHOSE to watch a robot dance. Nobody held their eyes open."
+    },
+    {
+     "s": "vale",
+     "t": "But I like you. You're good on camera. So here's an offer. One clip. The Knights saving Lantern Night, heroes of the bay. On every screen in town by teatime. You wouldn't even have to do anything. Twin does it all."
+    }
+   ],
+   "deal": {
+    "q": "Ms Vale is smiling. What is your answer?",
+    "c": [
+     {
+      "t": "\"No. If we let you fake us looking good, we can't complain when you fake someone looking bad.\"",
+      "r": "Well said, Shieldy. A fake that flatters you is still a fake, and it means you owe her one."
+     },
+     {
+      "t": "\"Yes, but only if the clip makes us look really good.\"",
+      "r": "Then the Knights would be made of the same stuff as the dancing robot. Think again."
+     },
+     {
+      "t": "\"Yes. We'll fight fakes with a better fake.\"",
+      "r": "And tomorrow nobody could believe us either. That's her whole business. Don't join it."
+     }
+    ]
+   },
+   "after": [
+    {
+     "s": "vale",
+     "t": "Pity. You'd have tested so well with the under-twelves."
+    },
+    {
+     "s": "vale",
+     "t": "You'll find, little Knight, that nobody thanks you for the truth. It's slow and it's dull. People want a show. I give them one."
+    },
+    {
+     "s": "vale",
+     "t": "Speaking of which. My drones are out. Do enjoy the afternoon programme."
+    }
+   ],
+   "outro": [
+    {
+     "s": "pixel",
+     "t": "Five drones down, and here's the thing I noticed: the more people stood and argued with the clip, the longer the drone stayed. It was counting them."
+    },
+    {
+     "s": "pixel",
+     "t": "Even shouting 'that's fake!' at it is a view. The only thing that starves it is walking away and reporting it."
+    },
+    {
+     "s": "pixel",
+     "t": "We can't out-shout her, Shieldy. We need the opposite of a clip. We need an original."
+    }
+   ]
+  },
+  "m11": {
+   "name": "The Original",
+   "lesson": "A fake is usually built out of something real. Find the original, with its date and its place, and the fake has nothing to stand on. But the correction travels slower than the lie, so pause before you pass anything on.",
+   "goals": {
+    "sail": "Sail to Lighthouse Rock. Captain Marlo keeps the harbour camera's recordings there.",
+    "tape": "Find Captain Marlo by the lighthouse.",
+    "back": "Sail back to the quay jetty, tie up and step ashore.",
+    "rush": "Get the recording to Iris at the Gazette before the evening paper goes to press!"
+   },
+   "intro": [
+    {
+     "s": "captain",
+     "t": "The harbour camera? Aye, she sees the whole of Clock Square across the water, and she's recorded every day for eleven years. Nobody's ever asked for the tapes before."
+    },
+    {
+     "s": "captain",
+     "t": "They're out at Lighthouse Rock, in the lamp room, where the damp can't get them. I'm taking the ferry over now. You've a boat of your own at the jetty. Mind the buoys and I'll see you there."
+    }
+   ],
+   "tape": [
+    {
+     "s": "captain",
+     "t": "Here she is. The morning of the 'cancelled festival'. Watch."
+    },
+    {
+     "s": "captain",
+     "t": "There's your Dame Noble on the Town Hall steps, plain as a lighthouse, hanging a lantern, at the very minute that clip says she was in a studio cancelling everything."
+    },
+    {
+     "s": "captain",
+     "t": "That's the original, Knight. Date in the corner, place in the picture, and a camera that belongs to nobody in this quarrel. Get it to Iris before she goes to press. I'll follow on the ferry."
+    }
+   ],
+   "print": [
+    {
+     "s": "iris",
+     "t": "In time! Give it here. …Oh, that's beautiful. Dame Noble, a ladder, a lantern, and a timestamp. Front page, top half."
+    },
+    {
+     "s": "iris",
+     "t": "Headline: SHE WAS ON THE STEPS. I'll put the two pictures side by side and let people's own eyes do the work."
+    },
+    {
+     "s": "iris",
+     "t": "It won't reach everyone. It never does. But the ones it reaches will have something solid to stand on."
+    }
+   ],
+   "twist": [
+    {
+     "s": "pixel",
+     "t": "Shieldy. Don't look at the big screen."
+    },
+    {
+     "s": "pixel",
+     "t": "…You're looking at the big screen."
+    },
+    {
+     "s": "screen",
+     "t": "A small gold knight, on every screen in Mirror Bay: \"It was us. The Knights made the fakes. We wanted to look like heroes, so we made the trouble ourselves.\""
+    },
+    {
+     "s": "shieldy",
+     "t": "That's my face. That's MY voice."
+    },
+    {
+     "s": "pixel",
+     "t": "And the shield's on the wrong arm. But nobody's looking at the shield."
+    }
+   ]
+  },
+  "m12": {
+   "name": "It Wasn't Me",
+   "lesson": "When the fake is about you, it is not your fault. Don't hide and don't hit back: tell someone you trust, save the clip as evidence, and report it.",
+   "goals": {
+    "walk": "Nobody will lend a car to the Knight from the clip. Walk to Knight HQ."
+   },
+   "intro": [
+    {
+     "s": "iris",
+     "t": "I know it isn't you. I was standing next to you when it says you were confessing. But I'm one reporter, and that clip is on every screen in the bay."
+    },
+    {
+     "s": "cit",
+     "t": "That's the one! That's the Knight from the video!"
+    },
+    {
+     "s": "iris",
+     "t": "Go to your own people, Shieldy. Head up. It's started to rain; of course it has."
+    }
+   ],
+   "shout": [
+    {
+     "s": "cit",
+     "t": "YOU! We trusted you! My little girl has your poster on her wall! Faker!"
+    }
+   ],
+   "heart": {
+    "q": "A stranger is shouting at you in the street, in the rain. What do you do?",
+    "c": [
+     {
+      "t": "Say: \"I know how it looks. Ask me anything you like. I'll answer, and then you can check it.\"",
+      "r": "…Hm. Maybe I will. I'll be watching you, Knight. (But she has stopped shouting.)"
+     },
+     {
+      "t": "Say: \"You believed a screen over your own eyes! How stupid can you be?\"",
+      "r": "Stupid, am I? Wait till I tell the others what the Knight called me."
+     },
+     {
+      "t": "Keep walking. Head down.",
+      "r": "The shout follows you down the street. Nobody hears your side."
+     }
+    ]
+   },
+   "hq": [
+    {
+     "s": "pixel",
+     "t": "I know it isn't you. But knowing isn't proof, and proof is what the town needs."
+    },
+    {
+     "s": "bot",
+     "t": "This is how it felt. With the chicken dance. Only yours is worse."
+    },
+    {
+     "s": "dame",
+     "t": "Sit down, Shieldy. You're soaked. Now. I am going to ask you the question I'd ask any child who came to me with this."
+    }
+   ],
+   "whatdo": {
+    "q": "Dame Noble: \"When the fake is about YOU, what comes first?\"",
+    "c": [
+     {
+      "t": "Tell someone I trust, save the clip as evidence, and report it. Not fight it alone.",
+      "r": "Yes. You've told us. Pixel has saved it. Iris has reported it. You are not alone in this, and that's the first thing a fake wants you to feel."
+     },
+     {
+      "t": "Post an angry reply to everyone who shared it.",
+      "r": "Every reply sends the clip round again with your name on it. Don't feed it."
+     },
+     {
+      "t": "Hide until everyone forgets.",
+      "r": "Silence lets the fake do all the talking. And it wasn't your fault, so there is nothing to hide."
+     }
+    ]
+   },
+   "outro": [
+    {
+     "s": "dame",
+     "t": "Now you know what Bot felt, and Nilo, and little Sprout. I wouldn't have wished it on you. But you'll be a better Knight for it."
+    },
+    {
+     "s": "pixel",
+     "t": "The clip says you confessed in Clock Square at a quarter past three yesterday. So where were you at a quarter past three yesterday?"
+    },
+    {
+     "s": "shieldy",
+     "t": "…Delivering bread."
+    },
+    {
+     "s": "pixel",
+     "t": "Then somebody saw you. Let's go and find your afternoon."
+    }
+   ]
+  },
+  "m13": {
+   "name": "Alibi",
+   "lesson": "You cannot argue a fake away by saying 'I would never'. You beat it with something anyone can check: an original, a time, a witness who was there.",
+   "goals": {
+    "alibi": "Find the people and the camera that saw where you really were: {a} of {b}.",
+    "gazette": "Take your afternoon to Iris at the Gazette."
+   },
+   "intro": [
+    {
+     "s": "pixel",
+     "t": "Three things would do it. Captain Marlo's ferry log, for when you landed. Nilo, for the bread run. And the street camera at the cinema: you passed it with Iris."
+    },
+    {
+     "s": "pixel",
+     "t": "Still no car. People are still crossing the road to avoid you. Chin up; it's a small town and you've got good legs."
+    }
+   ],
+   "a1": [
+    {
+     "s": "captain",
+     "t": "The log? Here. 'Tuesday, 9:10, one Knight, gold, one car, also gold.' You've been on my ferry or in my sight every day since. I'll sign that for anyone who asks."
+    }
+   ],
+   "a2": [
+    {
+     "s": "baker",
+     "t": "Quarter past three yesterday? You were HERE, picking up three orders, and I've the order book to prove it, with the time written in flour."
+    },
+    {
+     "s": "baker",
+     "t": "I believed a screen about Bot. I'm not doing it twice. Give me a pen."
+    }
+   ],
+   "quiz": {
+    "a3": {
+     "q": "The cinema camera's recording, yesterday, 3:15 pm: a small gold knight and a reporter in a yellow coat, at the cinema doors, on the far side of town from Clock Square. Why is this worth more than anything you could say?",
+     "c": [
+      {
+       "t": "It's an original with a time on it, from a camera nobody in this argument controls.",
+       "r": "And it can't be in two places at once any more than you can."
+      },
+      {
+       "t": "It shows my good side.",
+       "r": "It isn't about looking good. It's about being checkable."
+      },
+      {
+       "t": "It's a nicer video than theirs.",
+       "r": "Nice doesn't matter. What matters is who made it, when, and whether anyone can check."
+      }
+     ]
+    }
+   },
+   "clock": {
+    "q": "Iris spreads it all on her desk. \"One line for the front page. Which fact breaks the clip?\"",
+    "c": [
+     {
+      "t": "\"The Town Hall clock in the clip says 3:15, and at 3:15 the cinema camera has me on the other side of town.\"",
+      "r": "Two clocks, one Knight, two places. That's it. That's the headline: A KNIGHT CAN'T BE IN TWO PLACES."
+     },
+     {
+      "t": "\"I would never say a thing like that.\"",
+      "r": "Everyone in a fake says that, and it's usually true, and it never convinces anybody. Give me something checkable."
+     },
+     {
+      "t": "\"The clip looks a bit blurry.\"",
+      "r": "Real videos are blurry too. Find the fact that can't be argued with."
+     }
+    ]
+   },
+   "outro": [
+    {
+     "s": "iris",
+     "t": "Special edition. It's going under every door in town tonight."
+    },
+    {
+     "s": "iris",
+     "t": "Look outside. It's stopped raining."
+    },
+    {
+     "s": "cit",
+     "t": "Knight! Hey, Knight. I read the Gazette. I, er. I said some things. In the street."
+    },
+    {
+     "s": "shieldy",
+     "t": "You were fooled by something built to fool you. Thank you for reading the paper."
+    },
+    {
+     "s": "pixel",
+     "t": "Car keys are coming back out of pockets, Shieldy. But Twin's out there now, on a thousand phones. I don't think BayBuzz is the only one using it any more."
+    }
+   ]
+  },
+  "m14": {
+   "name": "Copycat",
+   "lesson": "Once a tool for faking is loose, anyone can use it, even children on each other. The person in the fake has done nothing wrong: something was done to them.",
+   "goals": {
+    "r1": "Riddle from Mina's notebook: \"My favourite horse is blue, and it never gets anywhere.\" Find where she went first.",
+    "r2": "Riddle: \"A house with a thousand doors, and every door is a story.\" Find where she went next.",
+    "r3": "Riddle: \"Where the wooden road walks out to sea.\" Find where Mina went.",
+    "reach": "She's adrift in a little sailing boat and the light is going. Take your boat from the pier and reach her!",
+    "tow": "Tow Mina's boat back to the pier."
+   },
+   "intro": [
+    {
+     "s": "kai",
+     "t": "Knight. Knight! I know you hate me. I don't care. I need you."
+    },
+    {
+     "s": "kai",
+     "t": "It's my sister. Mina. She's seven. Some kids in Year 6 got Twin on their phones. They made a clip of her. Saying she still sleeps with the light on and cries for our mum at school."
+    },
+    {
+     "s": "kai",
+     "t": "The whole playground watched it. She walked out of the gate at lunch and nobody's seen her since. She left her notebook. She writes riddles in it. She got that from me."
+    },
+    {
+     "s": "kai",
+     "t": "I made the thing that did this. I KNOW. Shout at me later. Please, just help me find her."
+    }
+   ],
+   "c1": [
+    {
+     "s": "lila",
+     "t": "Mina? She was here. She sat on the blue horse for three goes and didn't say a word. Then she said she wanted to be somewhere with no screens."
+    }
+   ],
+   "c2": [
+    {
+     "s": "pixel",
+     "t": "The librarian says a small girl in a pink raincoat sat in the story corner until a class came in. One of them had the clip on his phone. She ran. Towards the sea."
+    }
+   ],
+   "seen": [
+    {
+     "s": "kai",
+     "t": "Her boot. That's her yellow boot, on the pier. MINA!"
+    },
+    {
+     "s": "pixel",
+     "t": "Out there. Beyond the buoy. The little sailing boat from the end of the pier: the rope's come loose and she's drifting. She's sitting in the bottom of it with her hood up."
+    },
+    {
+     "s": "kai",
+     "t": "I can't swim that. I can't… Knight. Your boat. Please."
+    }
+   ],
+   "mina": [
+    {
+     "s": "mina",
+     "t": "Go away. I live here now."
+    },
+    {
+     "s": "mina",
+     "t": "Everyone at school saw it. Everyone. They did the crying noise at me. I'm never going back. I'm going to live on this boat and eat fish."
+    }
+   ],
+   "heart": {
+    "q": "Mina won't look up. What do you say?",
+    "c": [
+     {
+      "t": "\"You didn't do anything. Somebody did something TO you. That's a different thing, and it isn't yours to carry.\"",
+      "r": "…It was my voice, though. \"It was a copy of your voice. I know, because they copied mine too. The whole town watched.\" …Yours TOO? …Is Kai cross with me? \"He's on the pier. He hasn't stopped looking for one second.\""
+     },
+     {
+      "t": "\"It's only a silly video. They'll have forgotten by Monday.\"",
+      "r": "YOU wouldn't forget. If it was you."
+     },
+     {
+      "t": "\"You know your brother started all this.\"",
+      "r": "(She pulls her hood right down over her face and says nothing at all.)"
+     }
+    ]
+   },
+   "kai": [
+    {
+     "s": "kai",
+     "t": "Mina. Mina, I'm sorry. I'm so sorry. I'm sorry, I'm sorry."
+    },
+    {
+     "s": "mina",
+     "t": "You're squashing me."
+    },
+    {
+     "s": "kai",
+     "t": "I thought it was just pictures. Faces on a screen. I never once thought about the person standing behind the face. And then it was you."
+    },
+    {
+     "s": "kai",
+     "t": "Knight. I'll tell them. Everything: me, BayBuzz, the warehouse, the invoices. I've still got every file."
+    },
+    {
+     "s": "pixel",
+     "t": "That's brave, Kai. Here's the trouble. You're going to confess on video, in a town that has just learned not to believe videos."
+    }
+   ]
+  },
+  "m15": {
+   "name": "Witnesses",
+   "lesson": "When people stop believing anything, liars can call the truth a fake too. The answer is people: say it in person, in front of witnesses who can vouch for each other.",
+   "goals": {
+    "allies": "Ask the people who know what's true to come to Clock Square on Lantern Night: {a} of {b}."
+   },
+   "intro": [
+    {
+     "s": "dame",
+     "t": "Pixel has it right. The moment Kai's confession goes on a screen, Ms Vale will say 'that's a fake, the Knights made it'. And half the town will shrug, because by now who can tell?"
+    },
+    {
+     "s": "iris",
+     "t": "It has a name, that trick. When everything might be fake, a liar can wave away anything true. It's the last thing a fake steals: not what you believe, but your ability to believe at all."
+    },
+    {
+     "s": "dame",
+     "t": "So we don't use a screen. Kai says it in Clock Square, on Lantern Night, with his own mouth, in front of people who know him and know each other."
+    },
+    {
+     "s": "dame",
+     "t": "Go round the town, Shieldy. Ask everyone who's been through this to come and stand where they can be seen. And… ask Glitch."
+    }
+   ],
+   "baker": [
+    {
+     "s": "baker",
+     "t": "Stand up in front of the town and say I was fooled? …Yes. Yes, I will. I was the first to shout and I ought to be the first to say so. I'll bring bread."
+    }
+   ],
+   "captain": [
+    {
+     "s": "captain",
+     "t": "I'll bring the tapes and the ferry log, and I'll bring the ferry's horn in case anybody needs quietening down. Eleven years of original footage. Let her call THAT a fake."
+    }
+   ],
+   "friends": [
+    {
+     "s": "lila",
+     "t": "We'll come. Both of us."
+    },
+    {
+     "s": "sprout",
+     "t": "We've got a word now. A secret one. We're going to tell everyone to get one. Not OUR one. Their own one."
+    }
+   ],
+   "elena": [
+    {
+     "s": "elena",
+     "t": "Tomas wants to tell them about the phone call. I said he didn't have to. He said, 'Mum, what if it rings for somebody who hasn't got a word?' So we're coming."
+    }
+   ],
+   "glitch": [
+    {
+     "s": "glitch",
+     "t": "Let me check I've heard this right. You want ME. On a stage. Telling Mirror Bay what's real."
+    },
+    {
+     "s": "glitch",
+     "t": "The town that chased me round the Town Hall on Tuesday."
+    }
+   ],
+   "glitch2": {
+    "q": "Glitch raises an eyebrow. What do you say?",
+    "c": [
+     {
+      "t": "\"I owe you an apology first. For a while I half believed it was you, and I had no proof.\"",
+      "r": "…Nobody has ever said that to me. Not once. Fine. I'll come. I know every trick in that machine. I'll stand up and name them one by one, and nobody can say I'm on your side."
+     },
+     {
+      "t": "\"You owe this town plenty. Time to pay some of it back.\"",
+      "r": "And there's the Knight I know. I'll come. For the look on Vale's face. Not for you."
+     },
+     {
+      "t": "\"Come or don't. It's up to you.\"",
+      "r": "Hm. I'll think about it. (He's going to come. He's already choosing a hat.)"
+     }
+    ]
+   },
+   "outro": [
+    {
+     "s": "dame",
+     "t": "A baker, a ferry captain, two best friends, a mother and son, and the town's own trickster. I couldn't have picked a better front row."
+    },
+    {
+     "s": "pixel",
+     "t": "Dame. Shieldy. You need to see the bay. Something big just left the BayBuzz dock, and it isn't a ferry."
+    }
+   ]
+  },
+  "m16": {
+   "name": "The Barge",
+   "lesson": "A face and a voice belong to the person they grew on. Nobody gets to borrow them: not for a joke, not for money, not even for a good cause.",
+   "goals": {
+    "masts": "The barge is going to beam a fake storm warning over the whole bay. Bring your boat in close and knock out its three masts: {a} of {b}.",
+    "board": "The barge has stopped. Bring your boat alongside."
+   },
+   "intro": [
+    {
+     "s": "pixel",
+     "t": "It's a barge. Covered in dishes and loudspeakers and one enormous projector. It's Ms Vale's answer to Clock Square."
+    },
+    {
+     "s": "pixel",
+     "t": "I've read what it's loaded with. At dusk tomorrow it projects Dame Noble, a hundred metres tall, on the clouds: 'Storm coming. Leave the bay. Go now.' The town empties. No witnesses, no confession, and BayBuzz films the panic."
+    },
+    {
+     "s": "dame",
+     "t": "People could be hurt in a rush like that. Children. Shieldy, it has three relay masts. Get your boat in close to each and hold there. It will try to shake you off."
+    }
+   ],
+   "final": {
+    "q": "The barge's control screen: \"TWIN IS READY. Whose face shall I wear? Whose voice shall I use?\"",
+    "c": [
+     {
+      "t": "\"Nobody's. A face and a voice belong to the person they grew on. Shut down.\"",
+      "r": "\"…No face selected. No voice selected. Nothing to say. Shutting down.\" It's off, Shieldy. Every light on that barge just went out."
+     },
+     {
+      "t": "\"Use Ms Vale's. Let her see how it feels.\"",
+      "r": "Then we'd be doing exactly what she did, and calling it justice. Not that one."
+     },
+     {
+      "t": "\"Use mine, to tell everyone the storm warning is false.\"",
+      "r": "A fake of you telling the truth is still a fake, and tomorrow nobody could tell which of you to believe."
+     }
+    ]
+   },
+   "outro": [
+    {
+     "s": "pixel",
+     "t": "The tower's gone dark too. Every big screen in town is showing the harbour camera. Just the square, and the lanterns, and nobody's face."
+    },
+    {
+     "s": "kai",
+     "t": "Knight? I'm on the quay. I saw it go dark. I'm ready. I think I'm ready. Can you come and get me before I'm not?"
+    }
+   ]
+  },
+  "m17": {
+   "name": "Lantern Night",
+   "lesson": "A person who did wrong and says so with their own face has done the hardest part. Mending comes from putting it right and being watched while you do it, not from being shamed.",
+   "goals": {
+    "shake": "BayBuzz camera drones are on you! Get Kai through the streets to Clock Square: {a} of {b}.",
+    "square": "Bring Kai to Clock Square. The whole town is waiting."
+   },
+   "intro": [
+    {
+     "s": "kai",
+     "t": "My legs have gone funny."
+    },
+    {
+     "s": "kai",
+     "t": "If I get up there and they hate me, that's fair. I just need to say it before I lose my nerve. Drive fast. No. Drive normally. I don't know. Drive."
+    },
+    {
+     "s": "pixel",
+     "t": "Heads up. Ms Vale's last three drones are over the quay. If she can't stop him talking, she'll film him running. Don't give her the picture."
+    }
+   ],
+   "stage": [
+    {
+     "s": "dame",
+     "t": "Mirror Bay! Before we light a single lantern, there is someone who has asked to speak. With his own face. I ask you to let him finish."
+    },
+    {
+     "s": "kai",
+     "t": "My name's Kai. I'm fifteen. I made Twin. The dancing robot was me. The bread was me. The… the festival. Sprout's video. The phone call. I built the thing that did all of it, and BayBuzz paid me for every clip."
+    },
+    {
+     "s": "kai",
+     "t": "I've brought every file. Captain Marlo's got the tapes that show what really happened. I told myself they were just faces. Then someone did it to my sister."
+    },
+    {
+     "s": "vale",
+     "t": "A touching performance! And how do we know THIS is real, hm? The Knights are rather good at clips, as we've all seen. Perhaps the boy is a fake too."
+    },
+    {
+     "s": "glitch",
+     "t": "Oh, stop it, Verena. I know every trick there is, and that boy isn't one. He's sweating. Fakes don't sweat. And he's standing right there, where anybody can poke him."
+    },
+    {
+     "s": "baker",
+     "t": "I was fooled about Bot. I said so in my own shop and I'll say it here."
+    },
+    {
+     "s": "elena",
+     "t": "My own voice rang my son. Ask me. Ask Tomas."
+    },
+    {
+     "s": "captain",
+     "t": "And I've eleven years of tapes for anyone who'd like a look."
+    },
+    {
+     "s": "crowd",
+     "t": "The square is very quiet. Ms Vale looks for a camera to talk to, and there isn't one. Then somebody at the back calls out: \"So what do we do with him?\""
+    }
+   ],
+   "town": {
+    "q": "The whole town is looking at you, Shieldy. What do you say?",
+    "c": [
+     {
+      "t": "\"He told the truth with his own face. Let him help mend it: every fake taken down, every person told sorry, and all of us watching that he does it.\"",
+      "r": "\"…Aye. That's fair.\" \"Harder than a punishment, that.\" \"He can start with my bread.\" Somewhere in the crowd, somebody starts to clap."
+     },
+     {
+      "t": "\"Put HIS face on every screen. Let him see how it feels.\"",
+      "r": "The square goes cold. \"Then we'd have our own clip farm,\" says Dame Noble quietly. \"And we'd have learned nothing.\""
+     },
+     {
+      "t": "\"He's only a kid. Forget it and light the lanterns.\"",
+      "r": "\"So nobody says sorry?\" says a small voice. Lila. \"That's it? We just forget?\" Nobody answers her."
+     }
+    ]
+   },
+   "end": [
+    {
+     "s": "kai",
+     "t": "I'll take them all down. Every one. And I'll go to every person and say it to their face. Starting with Lila."
+    },
+    {
+     "s": "dame",
+     "t": "Ms Vale, the Town Hall will want a word with you in the morning. In person. Bring your invoices."
+    },
+    {
+     "s": "iris",
+     "t": "And I'll print whatever is said there. Checked."
+    },
+    {
+     "s": "mina",
+     "t": "Kai. KAI. They're doing the lanterns. You're missing the lanterns."
+    },
+    {
+     "s": "dame",
+     "t": "Mirror Bay… light them."
+    }
+   ]
+  }
+ },
+ "endings": {
+  "best": {
+   "h": "Clear water",
+   "p": "On Lantern Night the bay is so clear you can see the lanterns twice: once in the sky and once in the water. The fakes did not stop because a machine was switched off. They stopped because the town learned to pause, ask who, find the original and ask the person, and because nobody who was fooled was made to feel a fool. Kai now teaches a class at the school with Iris. It is called \"How I Would Trick You\"."
+  },
+  "ok": {
+   "h": "Ripples",
+   "p": "The barge is dark and BayBuzz Tower is quiet. Lantern Night goes ahead. But the town is jumpy now: some people believe every clip, and some have decided to believe nothing at all, not even what is true. When nothing can be trusted, liars win a different way. The Knights still have work to do in Mirror Bay, and it starts with being kinder than you were."
+  },
+  "low": {
+   "h": "Murky",
+   "p": "The machine is off. The lanterns go up, fewer than last year. Neighbours squint at each other across the street. Kai has changed schools. Children who were fooled keep it to themselves. A fake breaks things that the truth alone cannot mend: only fairness mends them, and too many people in this story were shamed instead of helped. You can play it again and choose differently."
+  }
+ },
+ "msgs": [
+  {
+   "q": "A clip from a number you don't know: a famous footballer says he'll give a free phone to everyone who shares the video in the next hour.",
+   "c": [
+    {
+     "t": "Don't share it. Look on his real account or a news site first.",
+     "r": "Right. 'Share in the next hour' is a hurry-up, and hurry-ups are how fakes travel."
+    },
+    {
+     "t": "Share it fast, just in case it's true.",
+     "r": "'Just in case' is what the clip is counting on. If it's fake, you've handed it to all your friends."
+    },
+    {
+     "t": "Send it only to your best friends.",
+     "r": "Then your best friends get the fake from someone they trust. That's worse, not better."
+    }
+   ]
+  },
+  {
+   "q": "A voice note in your friend's voice: \"Hey, it's me, new number, I lost my phone. Can you send me the game password quick?\"",
+   "c": [
+    {
+     "t": "Call the old number, or ask something only your real friend would know.",
+     "r": "Yes. A voice can be copied from a few seconds of sound. A shared secret can't."
+    },
+    {
+     "t": "Send the password. It's obviously their voice.",
+     "r": "Their voice is exactly the thing a fake copies best."
+    },
+    {
+     "t": "Reply 'is this really you?'",
+     "r": "A fake will just say 'yes'. Ask for something it can't know."
+    }
+   ]
+  },
+  {
+   "q": "A clip of your head teacher saying school is closed tomorrow. It was posted by an account called 'SchoolNewsss'.",
+   "c": [
+    {
+     "t": "Check the school's own website, or ask a parent to ring the office.",
+     "r": "Right. Real news is in more than one place, and one of them has a telephone."
+    },
+    {
+     "t": "Believe it. A day off!",
+     "r": "Wanting something to be true is the best reason to check it."
+    },
+    {
+     "t": "Forward it to the class group so everyone knows.",
+     "r": "Then thirty families are fooled by you. Check first, forward never."
+    }
+   ]
+  },
+  {
+   "q": "A photo of a shark swimming down a flooded high street. Two million shares.",
+   "c": [
+    {
+     "t": "Search for where the picture first appeared before believing it.",
+     "r": "It's a famous old fake, and it comes back after every storm. Finding where a picture started is a superpower."
+    },
+    {
+     "t": "Two million people can't be wrong.",
+     "r": "Two million people can press a button without thinking. Shares measure speed, not truth."
+    },
+    {
+     "t": "It looks real, so it is.",
+     "r": "Looking real is the one thing a fake is good at."
+    }
+   ]
+  },
+  {
+   "q": "A classmate sends you a fake clip that makes another classmate look silly. \"Pass it on lol.\"",
+   "c": [
+    {
+     "t": "Don't pass it on. Tell them it's not okay, and tell the person in it or a teacher.",
+     "r": "Yes. The chain stops at whoever decides it stops, and that can be you."
+    },
+    {
+     "t": "Pass it on. Everyone else will anyway.",
+     "r": "'Everyone else will' is how one cruel clip becomes a whole school's."
+    },
+    {
+     "t": "Keep it, but don't send it.",
+     "r": "Better than sending. But the person in it deserves to know, and to have a grown-up on their side."
+    }
+   ]
+  },
+  {
+   "q": "A video: a man in a white coat says chewing gum makes you taller. \"Scientists confirm!\"",
+   "c": [
+    {
+     "t": "A white coat isn't proof. Look for who the scientists are and whether anyone else reports it.",
+     "r": "Right. Costumes are cheap. Ask who, where, and who else says so."
+    },
+    {
+     "t": "He's wearing a lab coat, so he's a scientist.",
+     "r": "Anyone can buy a white coat, and a machine can draw one."
+    },
+    {
+     "t": "Try it for a month and see.",
+     "r": "Good spirit, wrong test. Start by checking whether the 'scientists' exist."
+    }
+   ]
+  },
+  {
+   "q": "A 'live' video says a huge storm is about to hit Mirror Bay: \"Leave now!\" Outside your window the sky is blue.",
+   "c": [
+    {
+     "t": "Look outside, and check the weather service. Trust what you can check.",
+     "r": "Yes. Your own window is an original source."
+    },
+    {
+     "t": "Run. Better safe than sorry.",
+     "r": "A rush of frightened people is its own danger. Thirty seconds of checking is the safe thing."
+    },
+    {
+     "t": "Forward it to warn everyone.",
+     "r": "If it's fake, you've just become its loudspeaker."
+    }
+   ]
+  },
+  {
+   "q": "An app says: \"Upload a selfie and a voice note and see yourself as a cartoon star!\" It also wants your contacts.",
+   "c": [
+    {
+     "t": "Don't. Your face and your voice are the raw material for fakes, and your contacts aren't yours to give.",
+     "r": "Exactly. A free toy that wants your face, your voice and your friends is not free."
+    },
+    {
+     "t": "Upload them. It's only a selfie.",
+     "r": "A selfie and a few seconds of voice is everything Twin needed."
+    },
+    {
+     "t": "Upload a friend's photo instead, to be safe.",
+     "r": "Then you've handed over THEIR face without asking. That's worse."
+    }
+   ]
+  },
+  {
+   "q": "A stranger writes: \"I have an embarrassing video of you. Send this link to five friends or I post it.\"",
+   "c": [
+    {
+     "t": "Don't click, don't send. Take a screenshot and tell an adult you trust.",
+     "r": "Right. It's a threat, the video probably doesn't exist, and it is never your fault."
+    },
+    {
+     "t": "Send the link, to make it go away.",
+     "r": "It never goes away that way. It comes back asking for more, and your friends get the trap."
+    },
+    {
+     "t": "Write back and argue with them.",
+     "r": "Arguing tells them you're scared and you're there. Save it, tell an adult, report it."
+    }
+   ]
+  },
+  {
+   "q": "A clip of a singer you love saying something cruel. Your group chat is furious and wants everyone to post about it.",
+   "c": [
+    {
+     "t": "Wait. See whether it's on the singer's real account or in real news before joining in.",
+     "r": "Yes. Anger is the fastest feeling, and that's why fakes aim for it."
+    },
+    {
+     "t": "Post straight away. Staying silent looks bad.",
+     "r": "Being loudly wrong looks worse. One minute costs nothing."
+    },
+    {
+     "t": "Unfollow and tell everyone else to.",
+     "r": "Maybe, if it's true. You don't know that yet."
+    }
+   ]
+  }
+ ],
+ "inbox": {
+  "m1": {
+   "from": "bot",
+   "t": "I watched the chicken clip again. I counted. I have been sent it forty-one times, by people who like me. Is that what being liked feels like?"
+  },
+  "m2": {
+   "from": "baker",
+   "t": "A loaf is on the counter with your name on it. And one for the robot, to keep in a drawer."
+  },
+  "m3": {
+   "from": "dame",
+   "t": "I stood on those steps for two hours so that people could see I was real. My feet hurt. It worked. Remember that: sometimes the answer to a screen is a person."
+  },
+  "m4": {
+   "from": "glitch",
+   "t": "Checked the arcade machine yet? 10:42, G.L.I., 3rd place. I'm framing that score. It's the first time a Knight asked before deciding."
+  },
+  "m5": {
+   "from": "iris",
+   "t": "Front page sold out by five. The clip still got ten times the readers. I do this job anyway. Who first, where's the original, what can I check, how does it want me to feel."
+  },
+  "m6": {
+   "from": "sprout",
+   "t": "We have a word now and I can't tell you what it is but it's VERY good. Lila says everyone should have one with their best friend and their mum."
+  },
+  "m7": {
+   "from": "elena",
+   "t": "We've changed the door code and made a new family word. Tomas chose it. I'm not allowed to write it down, he says, and he's right."
+  },
+  "m8": {
+   "from": "pixel",
+   "t": "A news van that lives in a locked shed. I looked up who rents the shed. It's paid for by BayBuzz, in cash, every month."
+  },
+  "m9": {
+   "from": "kai",
+   "t": "you didn't have to tell me her name"
+  },
+  "m10": {
+   "from": "vale",
+   "t": "Five drones is a rounding error, dear. I admire the effort. My offer stays open until it doesn't. — V.V."
+  },
+  "m11": {
+   "from": "captain",
+   "t": "Tapes are in the ferry safe. Whatever that was on the screens tonight, lad, it wasn't you. I've carried you over the water twice and I know a face."
+  },
+  "m12": {
+   "from": "bot",
+   "t": "I am outside HQ with an umbrella. I don't need it; I'm waterproof. It is for you. That is what the umbrella is for."
+  },
+  "m13": {
+   "from": "iris",
+   "t": "A KNIGHT CAN'T BE IN TWO PLACES. Under every door by midnight. Sleep. You've been checked, and you check out."
+  },
+  "m14": {
+   "from": "mina",
+   "t": "kai let me use his phone. the fish plan is cancelled. the blue horse is still my favourite. thank you for coming in the boat"
+  },
+  "m15": {
+   "from": "glitch",
+   "t": "I have chosen the hat. It is a serious hat. Tell Vale to bring a coat, because it is going to get chilly for her."
+  },
+  "m16": {
+   "from": "pixel",
+   "t": "\"No face selected.\" I've read a lot of machine logs. That's the nicest line I've ever seen in one."
+  },
+  "m17": {
+   "from": "dame",
+   "t": "The lanterns are still up there, Shieldy. Go and look at the water."
+  }
+ },
+ "news": {
+  "m1": "Bay FM. Dancing robot takes Mirror Bay by storm. The clip was made with a free app called Twin. Bot, reached at Clock Square, said: \"I am told it is funny.\"",
+  "m2": "Bay FM. Lanterns are going up across town for Lantern Night. And a second robot clip, this one about bread, has left a sour taste at the canal bakery.",
+  "m3": "Bay FM. For eleven minutes this morning, Mirror Bay believed Lantern Night was cancelled. It is not. The Festival Warden says: \"If it's big news, come and look at me.\"",
+  "m4": "Bay FM. The town's favourite suspect has an alibi, and a game arcade says its score table can prove it. Meanwhile, who is posting first? Listeners point at BayBuzz.",
+  "m5": "Bay FM. THE FLOOR IS THE WRONG COLOUR, says tonight's Gazette, clearing the canal bakery. Nilo reports eleven new orders and one robot customer.",
+  "m6": "Bay FM. Children at the bay school are making up secret words with their best friends. A teacher says: \"I don't know any of them, and that's the point.\"",
+  "m7": "Bay FM. A warning for families tonight. A nine-year-old got a call in his mother's voice asking him to come to the docks. It was not his mother. Agree a family code word.",
+  "m8": "Bay FM. Listeners keep asking why BayBuzz is always first with every strange clip. BayBuzz says it has \"excellent sources\". Bay FM has asked what they are.",
+  "m9": "Bay FM. A speedboat chase to Lighthouse Rock this afternoon ended without a splash. And a harbour warehouse with blacked-out windows has a lot of people curious.",
+  "m10": "Bay FM. Five BayBuzz drones were switched off over the town today. Advice from the Knights: don't stand and argue with a fake. Report it and walk away.",
+  "m11": "Bay FM. SHE WAS ON THE STEPS: the Gazette has harbour-camera pictures of the Festival Warden hanging lanterns at the minute she was supposedly cancelling them.",
+  "m12": "Bay FM. A clip appears to show a Knight confessing to making the fakes. Bay FM has not been able to check it, so we are not going to play it. That is how this works.",
+  "m13": "Bay FM. A KNIGHT CAN'T BE IN TWO PLACES. A ferry log, a baker's order book and a cinema camera put Shieldy across town at the time of the 'confession'.",
+  "m14": "Bay FM. A seven-year-old was brought safely back to the pier at dusk after a fake clip made by older children. Her school will hold an assembly. Twin is now on a thousand phones.",
+  "m15": "Bay FM. Something is planned for Clock Square on Lantern Night, and it isn't on any screen. The Festival Warden says only: \"Come in person.\"",
+  "m16": "Bay FM. A barge loaded with projectors went dark in the bay tonight. So did BayBuzz Tower. The big screens are showing the harbour camera: the square, and the lanterns.",
+  "m17": "Bay FM. Lantern Night. If you are listening to this in a car, park it, and go and look at the bay."
+ },
+ "notes": [
+  {
+   "h": "One minute",
+   "t": "A fake needs you to act now. Give it one minute, and most of them fall apart."
+  },
+  {
+   "h": "Who first?",
+   "t": "Don't ask who sent it to you. Ask who posted it first. If nobody knows, that is your answer."
+  },
+  {
+   "h": "The costume",
+   "t": "'Official', 'Real', 'News' in an account's name cost nothing. Check when the account was born."
+  },
+  {
+   "h": "Find the original",
+   "t": "Fakes are usually built out of something real. Find the real one and lay them side by side."
+  },
+  {
+   "h": "Ask the person",
+   "t": "The best expert on what somebody said is that somebody."
+  },
+  {
+   "h": "Edges",
+   "t": "Look where the face meets the hair, at ears, teeth and fingers. Machines get tired at the edges."
+  },
+  {
+   "h": "Flipped",
+   "t": "A badge on the wrong side, a watch on the wrong wrist, writing back to front: a mirrored picture gives itself away."
+  },
+  {
+   "h": "Light and shadow",
+   "t": "If the sun is on the left of the street and the right of the face, somebody glued two worlds together."
+  },
+  {
+   "h": "How does it want me to feel?",
+   "t": "Angry? Scared? Gleeful? A clip that pulls hard on one feeling is steering you somewhere."
+  },
+  {
+   "h": "Voices are easy",
+   "t": "A few seconds of sound is enough to copy a voice. A family code word is not for sale anywhere."
+  },
+  {
+   "h": "The correction is slower",
+   "t": "A lie runs round the bay while the truth is tying its shoes. So don't be the one who starts it running."
+  },
+  {
+   "h": "Not everything is fake",
+   "t": "If you decide to believe nothing, the liars win that way too. Check, and then trust what passes the check."
+  }
+ ]
+}

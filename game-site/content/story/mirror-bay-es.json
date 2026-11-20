@@ -1,0 +1,2107 @@
+{
+ "ui": {
+  "title": "Bahía Espejo",
+  "tag": "Un pueblo de puerto donde ver ya no es creer.",
+  "how": "Camina, maneja y navega por donde quieras en Bahía Espejo. Tres días antes de la Noche de los Faroles aparece una app llamada Twin: puede hacer un video de cualquier persona diciendo cualquier cosa. Acepta misiones en las balizas doradas, descubre quién está detrás de los videos falsos y elige tus palabras con cuidado. De cómo trates a la gente depende qué tan claro verá el pueblo al final.",
+  "start": "Bajar del ferry",
+  "cont": "Seguir donde lo dejaste",
+  "fresh": "Empezar desde el principio",
+  "arcade": "← Volver a la Sala de Juegos",
+  "back": "Sala de Juegos",
+  "loading": "Llenando la bahía…",
+  "loadErr": "Una parte del pueblo no se cargó. Revisa tu conexión y vuelve a cargar la página.",
+  "noGL": "Este dispositivo no puede abrir el juego en 3D. El juego en 2D funciona en cualquiera:",
+  "noGLbtn": "Jugar Shieldy Dash →",
+  "keysFoot": "Correr: W A S D o flechas · Caminar: mantén Shift · Saltar: Espacio · Subir o hablar: E · Teléfono: P",
+  "keysCar": "Manejar: W A S D o flechas · Freno de mano: Espacio · Bocina: H · Radio: R · Bajar: E",
+  "keysBoat": "Navegar: W A S D o flechas · Frenar: Espacio · Radio: R · Amarrar en un embarcadero y bajar a tierra: E",
+  "touchFoot": "Con el pulgar izquierdo caminas · Con el derecho miras alrededor",
+  "touchCar": "Con el pulgar izquierdo manejas · Mantén ⏹ para el freno de mano",
+  "touchBoat": "Con el pulgar izquierdo llevas el bote · Mantén ⏹ para frenar · Amarra en un embarcadero para bajar",
+  "getIn": "Subir",
+  "getOut": "Bajar",
+  "aboard": "Subir al bote",
+  "ashore": "Amarrar y bajar a tierra",
+  "talk": "Hablar",
+  "talkTo": "Hablar con {n}",
+  "startJob": "Empezar misión: {n}",
+  "deliver": "Entregar",
+  "retune": "Poner la cámara en vivo en la pantalla",
+  "look": "Mirar más de cerca",
+  "next": "Siguiente ▸",
+  "close": "Cerrar",
+  "jobDone": "Misión cumplida",
+  "jobFail": "Esta vez no",
+  "retry": "Intentar de nuevo",
+  "points": "+{n} Puntos de Caballero",
+  "learned": "Lo que sabe un Caballero",
+  "allDone": "Todas las misiones están cumplidas. Bahía Espejo es tuya para explorar.",
+  "freeRoam": "El pueblo es tuyo. Sigue la baliza dorada para la próxima misión.",
+  "badge": "Escudo {a}/{b}",
+  "badgesAll": "¡Encontraste todos los escudos!",
+  "stunt": "¡Qué salto! +{n}",
+  "careful": "¡Cuidado! Por aquí camina gente.",
+  "notYours": "Ese auto es de alguien. Los Caballeros solo toman prestados los autos que tienen un escudo encima.",
+  "coldCar": "Hoy las llaves se quedan en el bolsillo de su dueño. Nadie le presta nada al Caballero del clip.",
+  "bump": "¡Con calma! Los Caballeros manejan con cuidado.",
+  "kmh": "km/h",
+  "knots": "nudos",
+  "phone": "Teléfono",
+  "tabMap": "Mapa",
+  "tabJobs": "Misiones",
+  "tabMsgs": "Mensajes",
+  "tabNotes": "Libreta",
+  "tabHelp": "Ayuda",
+  "jobNow": "Ahora",
+  "jobDone1": "Cumplida",
+  "jobLock": "Más adelante",
+  "jobAt": "Empieza en: {n}",
+  "at_ferry": "la terminal del ferry",
+  "at_square": "la Plaza del Reloj",
+  "at_arcade": "la sala de videojuegos",
+  "at_gazette": "La Gaceta de la Bahía",
+  "at_school": "la escuela",
+  "at_park": "el parque",
+  "at_studio": "la Torre BayBuzz",
+  "at_depot": "el almacén del puerto",
+  "at_hq": "el Cuartel de los Caballeros",
+  "at_quay": "el malecón",
+  "sound": "Sonido",
+  "music": "Radio",
+  "radioOff": "Radio apagada",
+  "radio1": "Bay FM",
+  "radio2": "Harbour Lights",
+  "radio3": "Night Ferry",
+  "quality": "Imagen",
+  "q_auto": "automática",
+  "q_low": "rápida",
+  "q_mid": "equilibrada",
+  "q_high": "máxima",
+  "callCar": "Traer mi auto y mi bote",
+  "called": "Tu auto está en la esquina más cercana. Tu bote está amarrado en el embarcadero más cercano.",
+  "newMsg": "Clip nuevo",
+  "msgGood": "Bien pensado. +{n}",
+  "timeLeft": "{t} s",
+  "tagging": "No te alejes…",
+  "tagged": "¡Lo tienes!",
+  "tailStart": "Sigue a la camioneta. Ni muy cerca ni muy lejos.",
+  "tooClose": "¡Demasiado cerca! Te van a ver.",
+  "tooFar": "¡Se te escapan!",
+  "endDo": "Si alguna vez te llega un video falso",
+  "endKeep": "Seguir explorando Bahía Espejo",
+  "reason": "Bahía Espejo",
+  "chapter": "Capítulo {n}",
+  "clearH": "Qué tan claro ve la bahía",
+  "clearP": "Sube cuando tratas con justicia a quienes fueron engañados, falsificados o hicieron una tontería, y baja cuando los avergüenzas. De eso depende el final, y también el color del agua.",
+  "clearUp": "El agua se ve un poco más clara.",
+  "clearDown": "El agua se ve un poco más turbia.",
+  "blame": "Cuidado, Shieldy. Por vergüenza la gente sigue compartiendo a escondidas y se calla cuando la engañan.",
+  "noMsgs": "Todavía no hay mensajes.",
+  "notesH": "La libreta de Iris: {a} de {b} páginas",
+  "noNotes": "Iris, la reportera, perdió doce páginas de su libreta por toda la bahía. Cada una está atada a un farol de papel que brilla.",
+  "note": "La libreta de Iris: página {a}/{b}",
+  "notesAll": "¡Encontraste todas las páginas de la libreta de Iris!",
+  "hintShown": "¿No lo encuentras? El lugar ya aparece en tu mapa.",
+  "chased": "¡Tienes drones con cámara detrás! No te detengas.",
+  "news": "Noticias de Bay FM",
+  "goalCar": "Sube a tu auto (el dorado).",
+  "goalBoat": "Sube a tu bote (dorado y azul marino, en el embarcadero).",
+  "trial": "Contrarreloj",
+  "trial_road": "Vuelta al pueblo en auto",
+  "trial_sea": "Vuelta al faro en bote",
+  "trialStart": "Empezar la contrarreloj",
+  "trialGo": "¡Ya!",
+  "trialGoal": "Puerta {a} de {b}",
+  "trialOff": "Contrarreloj detenida.",
+  "trialDone": "Terminaste en {t} s.",
+  "trialBest": "¡Nuevo mejor tiempo: {t} s!",
+  "helpKeys": "Corre con W A S D o las flechas, mantén Shift para caminar y salta con Espacio. Con E subes a un auto o a un bote, empiezas una misión y hablas con la gente. En el auto, Espacio es el freno de mano. Con P abres tu teléfono.",
+  "helpTouch": "Con el pulgar izquierdo te mueves y con el derecho miras alrededor. El botón dorado hace lo que se pueda hacer en ese momento: subir, hablar, empezar una misión. El botón redondo salta, o frena cuando manejas.",
+  "helpGame": "Las balizas doradas empiezan la próxima misión. Las balizas azules muestran adónde te lleva la misión. Tu auto y tu bote aparecen en dorado en el mapa. La línea del mapa es el camino.",
+  "helpSafe": "En Bahía Espejo nadie sale lastimado, y solo puedes tomar prestados los autos que tienen un escudo encima. El juego se guarda solo en este navegador. No se envía nada a ningún lado.",
+  "cardH": "Bahía Espejo",
+  "cardP": "Un pueblo de puerto abierto para recorrer a pie, en auto y en bote. Alguien está haciendo videos de personas que dicen cosas que nunca dijeron. Descubre quién es, limpia tu nombre y salva la Noche de los Faroles. Cinco capítulos, diecisiete misiones, tres finales.",
+  "metaTitle": "Bahía Espejo — Digital Safety Knights",
+  "metaDesc": "Bahía Espejo: un juego gratuito de mundo abierto en 3D sobre los deepfakes. Camina, maneja y navega por un pueblo de puerto, descubre quién está falsificando las caras y las voces de la gente y decide cómo termina todo. Sin cuenta, sin anuncios, sin rastreo."
+ },
+ "names": {
+  "shieldy": "Shieldy",
+  "dame": "Dame Noble",
+  "pixel": "Pixel",
+  "bot": "Bot",
+  "sprout": "Sprout",
+  "glitch": "Glitch",
+  "iris": "Iris",
+  "kai": "Kai",
+  "mina": "Mina",
+  "vale": "Sra. Vale",
+  "lila": "Lila",
+  "tomas": "Tomas",
+  "captain": "Capitán Marlo",
+  "baker": "Nilo el panadero",
+  "elena": "Elena",
+  "alder": "Maestra Alder",
+  "cit": "Alguien del pueblo",
+  "kids": "Niños frente a la pantalla",
+  "crowd": "El pueblo",
+  "screen": "En la pantalla",
+  "clip": "El clip",
+  "voice": "La voz del teléfono",
+  "twin": "TWIN",
+  "unknown": "Número desconocido"
+ },
+ "todo": [
+  "Espera un minuto antes de compartir algo que te dé enojo, miedo o ganas de burlarte.",
+  "Pregunta quién lo publicó primero. Una cuenta recién creada con nombre de cosa oficial es un disfraz.",
+  "Busca el original, o pregúntale a la persona que aparece. Nadie sabe mejor que ella lo que dijo.",
+  "Acuerda una palabra clave de la familia, para cualquier llamada o mensaje que pida algo con apuro.",
+  "Si el video falso es sobre ti, no es tu culpa. Guárdalo, cuéntaselo a un adulto de confianza y denúncialo."
+ ],
+ "chapters": {
+  "1": {
+   "name": "Una bromita",
+   "sub": "Un clip gracioso de un amigo. Todos se ríen. Casi todos."
+  },
+  "2": {
+   "name": "Ver no es creer",
+   "sub": "Una cara se puede copiar. Una voz también. Y una mejor amiga también."
+  },
+  "3": {
+   "name": "Quién gana con esto",
+   "sub": "A alguien le pagan cada vez que el pueblo mira una mentira."
+  },
+  "4": {
+   "name": "Tu doble falso",
+   "sub": "Es distinto cuando la cara de la pantalla es la tuya."
+  },
+  "5": {
+   "name": "La Noche de los Faroles",
+   "sub": "Una sola cosa verdadera, dicha en voz alta, delante de todos."
+  }
+ },
+ "jobs": {
+  "m1": {
+   "name": "Llegada a Bahía Espejo",
+   "lesson": "Una broma sobre alguien solo es una broma si esa persona también se ríe. Pregúntale antes de que el clip siga viajando.",
+   "goals": {
+    "drive": "Maneja hasta la Plaza del Reloj. Sigue la línea de tu mapa."
+   },
+   "intro": [
+    {
+     "s": "dame",
+     "t": "¡Shieldy! Te doy la bienvenida a Bahía Espejo. Faltan tres días para la Noche de los Faroles y este año soy la Guardiana del Festival, así que necesito a todos los Caballeros que pueda conseguir."
+    },
+    {
+     "s": "dame",
+     "t": "En la Noche de los Faroles todo el pueblo suelta faroles sobre la bahía. Dicen que el agua es tan clara que cada farol se ve dos veces."
+    },
+    {
+     "s": "dame",
+     "t": "Tu auto llegó en el ferry de la mañana: es el dorado, junto a la acera. Bot y Pixel están colgando faroles en la Plaza del Reloj. Nos vemos allá."
+    }
+   ],
+   "clip": [
+    {
+     "s": "bot",
+     "t": "¡Shieldy! ¡Llegaste! Mira, a todo el mundo le está vibrando el teléfono…"
+    },
+    {
+     "s": "screen",
+     "t": "Un clip, en la pantalla gigante y en todos los teléfonos de la plaza: Bot bailando como una gallina y aleteando con los brazos. La plaza entera estalla de risa."
+    },
+    {
+     "s": "bot",
+     "t": "¡Ja! Ja, ja. Eso… Yo nunca hice eso. Ni siquiera sé aletear."
+    },
+    {
+     "s": "pixel",
+     "t": "Está hecho con una app nueva que se llama Twin. Escribes una frase, eliges una cara, y la app hace el video. Está por todas partes desde el desayuno."
+    },
+    {
+     "s": "bot",
+     "t": "Todos se ríen, así que debe de ser gracioso. ¿Se supone que yo también tengo que reírme?"
+    }
+   ],
+   "laugh": {
+    "q": "Te llega al teléfono un clip gracioso de tu amigo. ¿Qué haces con él?",
+    "c": [
+     {
+      "t": "Le pregunto a mi amigo cómo se siente con el clip antes de que llegue más lejos.",
+      "r": "Gracias por preguntar. ¿La verdad? Se siente raro. Como si alguien hubiera tomado prestado mi cuerpo sin tocar la puerta."
+     },
+     {
+      "t": "Se lo mando a todo el mundo. No le hace daño a nadie.",
+      "r": "Shieldy, mira la cara de Bot, no la pantalla. Él no está tan seguro de que no haga daño."
+     },
+     {
+      "t": "Lo guardo para molestarlo más adelante.",
+      "r": "Así el clip se convierte en una correa con la que lo tienes atado. Intenta de nuevo."
+     }
+    ]
+   },
+   "outro": [
+    {
+     "s": "bot",
+     "t": "No pasa nada. Es solo una bromita. Probablemente."
+    },
+    {
+     "s": "dame",
+     "t": "Mm. Una máquina que pone palabras en boca de la gente, tres días antes de la noche más movida del año. No me gusta nada. Ven a verme, Shieldy. Tenemos faroles que repartir."
+    }
+   ]
+  },
+  "m2": {
+   "name": "Faroles en alto",
+   "lesson": "Antes de creerle a una pantalla lo que dice de alguien, pregúntale a ese alguien. Está ahí mismo más veces de las que crees.",
+   "goals": {
+    "crates": "Reparte las cajas de faroles por el pueblo: {a} de {b}.",
+    "bakery": "El buen nombre de Bot está en juego. Maneja hasta la panadería de Nilo, junto al canal."
+   },
+   "intro": [
+    {
+     "s": "dame",
+     "t": "Cuatro cajas de faroles, cuatro puntas del pueblo: la escuela, el mercado, el cine y la feria. Las balizas azules te muestran dónde."
+    },
+    {
+     "s": "dame",
+     "t": "Ve con calma y apréndete las calles. Y escucha a la gente, Shieldy. Quiero saber qué piensa el pueblo de ese robot bailarín."
+    }
+   ],
+   "quiz": {
+    "l1": {
+     "q": "La maestra Alder: “Toda mi clase vio ese clip del robot. Treinta niños preguntándome si es real. ¿Cómo podría alguien averiguarlo?”.",
+     "c": [
+      {
+       "t": "Preguntándole a Bot. Es él quien sale en el clip.",
+       "r": "Claro. La comprobación más sencilla de todas, y a nadie de mi clase se le ocurrió. A mí tampoco."
+      },
+      {
+       "t": "Contando cuánta gente lo compartió.",
+       "r": "Que lo compartan mil veces solo te dice que viajó, no que sea verdad."
+      },
+      {
+       "t": "Mirándolo de cerca para ver si parece real.",
+       "r": "Estos videos falsos están hechos para parecer reales. Solo con los ojos no vas a resolverlo."
+      }
+     ]
+    },
+    "l2": {
+     "q": "Alguien que atiende un puesto del mercado: “Me lo mandó mi prima. A ella le llegó por un grupo. ¿Quién lo hizo? Ni idea. ¿Acaso importa?”.",
+     "c": [
+      {
+       "t": "Sí. Si nadie sabe quién lo publicó primero, es una razón para ir más despacio.",
+       "r": "Tienes razón. Yo no le compraría pescado a alguien que no quiere decir dónde lo pescó."
+      },
+      {
+       "t": "No. Si lo tiene mucha gente, alguien lo habrá comprobado.",
+       "r": "Todos creen que otro lo comprobó. Por eso no lo comprueba nadie."
+      },
+      {
+       "t": "No. Viene de tu prima, y tú confías en tu prima.",
+       "r": "Confía en su prima, pero su prima tampoco lo hizo. Hay que seguirle el rastro hacia atrás."
+      }
+     ]
+    },
+    "l3": {
+     "q": "El acomodador del cine: “Me dio risa, así que se lo mandé a nueve personas antes de terminar de reírme. ¿Hice mal?”.",
+     "c": [
+      {
+       "t": "La próxima vez, espera un minuto antes de enviar. Casi ningún video falso aguanta un minuto de pensarlo.",
+       "r": "Un minuto. Un minuto sí puedo. Los avances de las películas duran más que eso."
+      },
+      {
+       "t": "No. Con rapidez se llega primero.",
+       "r": "Llegar primero con algo falso no es ningún premio."
+      },
+      {
+       "t": "Sí, y deberías sentirte fatal.",
+       "r": "Con calma, Shieldy. Lo engañaron; no es mala persona. Dile qué hacer la próxima vez."
+      }
+     ]
+    },
+    "l4": {
+     "q": "Un niño en la feria: “Si es solo una broma, ¿a quién le importa que sea falso?”.",
+     "c": [
+      {
+       "t": "A la persona que aparece. Una broma sobre alguien necesita su sí.",
+       "r": "Ah. A mí me gustaría que me preguntaran. Bueno. Ya entendí."
+      },
+      {
+       "t": "A nadie. Las bromas no tienen reglas.",
+       "r": "Pregúntale a Bot si a él le parece una broma sin reglas."
+      },
+      {
+       "t": "Eso solo les importa a los adultos.",
+       "r": "Las caras que más les gustan a estas apps son las de los niños. Intenta de nuevo."
+      }
+     ]
+    }
+   },
+   "second": [
+    {
+     "s": "pixel",
+     "t": "Shieldy, clip nuevo. La misma cara."
+    },
+    {
+     "s": "screen",
+     "t": "Otra vez Bot, ahora en primer plano: “El pan de Nilo sabe a cartón mojado. Prefiero comerme la bolsa”."
+    },
+    {
+     "s": "pixel",
+     "t": "Con este no se ríe nadie. La panadería de Nilo está junto al canal. Más vale que llegues antes que el rumor."
+    }
+   ],
+   "baker": [
+    {
+     "s": "baker",
+     "t": "Treinta años haciendo pan para este pueblo. ¡TREINTA! ¡Y un robot de hojalata le dice a toda la bahía que es cartón!"
+    },
+    {
+     "s": "bot",
+     "t": "Nilo, yo nunca dije eso. Ni siquiera he probado el pan. Funciono con baterías."
+    },
+    {
+     "s": "baker",
+     "t": "Te oí. Con mis propios oídos. En mi propio teléfono."
+    }
+   ],
+   "sure": {
+    "q": "¿Qué le dices a Nilo?",
+    "c": [
+     {
+      "t": "Bot está aquí mismo diciendo que nunca lo dijo. Pregúntale a él antes de creerle a una pantalla.",
+      "r": "…Tienes razón. Está aquí, y está temblando. Bot. ¿Lo dijiste? No. Entonces se acabó el asunto. Pasen los dos, y huelan a qué huele el cartón."
+     },
+     {
+      "t": "Está en video, así que tuvo que haberlo dicho.",
+      "r": "Esta mañana un video mostraba a Bot bailando como una gallina. Los videos dicen lo que le ordenen a Twin."
+     },
+     {
+      "t": "A lo mejor lo dijo sin querer.",
+      "r": "Nadie insulta al pan durante once segundos sin querer. Fíjate en quién lo niega, y en cómo lo niega."
+     }
+    ]
+   },
+   "outro": [
+    {
+     "s": "baker",
+     "t": "Primero fue gracioso. Después fue mi pan. ¿Qué va a ser mañana?"
+    },
+    {
+     "s": "pixel",
+     "t": "Shieldy, mira las pantallas gigantes. Mira YA."
+    }
+   ]
+  },
+  "m3": {
+   "name": "Se cancela el festival",
+   "lesson": "Revisa quién lo publicó, y confírmalo con la persona. A un anuncio de verdad no le molesta que lo comprueben; uno falso quiere que te apures.",
+   "goals": {
+    "screens": "Vuelve a poner la cámara en vivo en las pantallas gigantes del pueblo: {a} de {b}.",
+    "back": "Regresa a la Plaza del Reloj."
+   },
+   "intro": [
+    {
+     "s": "screen",
+     "t": "En todas las pantallas gigantes del pueblo, Dame Noble, con su banda de Guardiana: “La Noche de los Faroles queda cancelada. Quédense en casa. Avísenles a todos. No esperen”."
+    },
+    {
+     "s": "dame",
+     "t": "He estado a tu lado toda la mañana."
+    },
+    {
+     "s": "pixel",
+     "t": "En el mercado están desarmando los puestos. La gente está descolgando faroles. En diez minutos no va a quedar festival que salvar."
+    },
+    {
+     "s": "dame",
+     "t": "Shieldy: son cuatro pantallas. Pon en cada una su propia cámara en vivo, para que la gente vea la plaza de verdad y a mí de verdad. Ve. Yo me paro en la escalinata del Ayuntamiento, donde todos vean que soy Dame de carne y hueso."
+    }
+   ],
+   "quiz": {
+    "s1": {
+     "q": "La Dame de la pantalla lleva el escudo en el brazo izquierdo. La Dame de la escalinata del Ayuntamiento lo lleva en el derecho. ¿Qué te dice eso?",
+     "c": [
+      {
+       "t": "Que voltearon la imagen y la armaron con pedazos. No es una grabación de ella.",
+       "r": "Exacto. Está en espejo. Twin voltea las caras para esconder la costura, y el escudo cambia de brazo."
+      },
+      {
+       "t": "Que se cambió el escudo de brazo para la cámara.",
+       "r": "El brazo del escudo de un Caballero no cambia. Busca lo que hizo la máquina."
+      },
+      {
+       "t": "Nada. Los escudos no importan.",
+       "r": "Las cosas pequeñas que están al revés son las que delatan a un video falso."
+      }
+     ]
+    },
+    "s2": {
+     "q": "El clip lo publicó una cuenta llamada “BahiaEspejo_Noticias_Oficial”. La cuenta se creó ayer. ¿Qué piensas de eso?",
+     "c": [
+      {
+       "t": "Un nombre que suena oficial en una cuenta recién creada es un disfraz, no una fuente.",
+       "r": "Sí. Cualquiera puede escribir la palabra “oficial”. Nadie puede fingir que lleva años existiendo."
+      },
+      {
+       "t": "Dice “Oficial”, así que es oficial.",
+       "r": "Escribir una palabra no cuesta nada. Fíjate en cuánto tiempo tiene la cuenta."
+      },
+      {
+       "t": "Las cuentas nuevas son las más actualizadas.",
+       "r": "Las cuentas nuevas también son las que crea quien no quiere que lo encuentren."
+      }
+     ]
+    },
+    "s3": {
+     "q": "“Quédense en casa. Avísenles a todos. No esperen”. ¿Qué intenta lograr el anuncio?",
+     "c": [
+      {
+       "t": "Apurar a la gente. No quiere que nadie se detenga a comprobarlo.",
+       "r": "Esa es la pista que funciona aunque la imagen sea perfecta: tiene prisa, y quiere que tú también la tengas."
+      },
+      {
+       "t": "Proteger a la gente.",
+       "r": "¿De qué? Nunca lo dice. Solo dice que te apures."
+      },
+      {
+       "t": "Ahorrarle a la gente un viaje en vano.",
+       "r": "Un aviso de verdad diría por qué, y dónde preguntar. Este solo dice ya, ya, ya."
+      }
+     ]
+    },
+    "s4": {
+     "q": "Si la Guardiana del Festival de verdad tuviera que cancelar la Noche de los Faroles, ¿dónde te enterarías?",
+     "c": [
+      {
+       "t": "Por ella, en persona, en la escalinata del Ayuntamiento, y en la primera plana de la Gaceta: lugares donde se puede comprobar.",
+       "r": "Correcto. Las noticias grandes aparecen en más de un lugar, y en lugares con una puerta a la que puedes tocar."
+      },
+      {
+       "t": "En un clip que me reenvió un amigo.",
+       "r": "Ahí te enterarías del rumor, no de la noticia."
+      },
+      {
+       "t": "Solo en las pantallas gigantes.",
+       "r": "Un solo canal y ninguna otra fuente: justo así se vería si alguien se hubiera apoderado de las pantallas."
+      }
+     ]
+    }
+   },
+   "outro": [
+    {
+     "s": "dame",
+     "t": "SÍ hay festival. La Noche de los Faroles sigue en pie. Pueden verme, pueden oírme, y pueden venir a tocarme con el dedo si quieren."
+    },
+    {
+     "s": "pixel",
+     "t": "Están armando los puestos otra vez. Estuvo cerca."
+    },
+    {
+     "s": "bot",
+     "t": "Miren. Junto a la estatua. Con una sonrisota."
+    },
+    {
+     "s": "cit",
+     "t": "¡Es Glitch! ¡Siempre es Glitch! ¡Que alguien lo agarre!"
+    },
+    {
+     "s": "pixel",
+     "t": "Se fue. Dio la vuelta al Ayuntamiento como un gato. Bueno. Supongo que ya sabemos quién fue."
+    },
+    {
+     "s": "dame",
+     "t": "¿Lo sabemos, Pixel? ¿De verdad lo sabemos? ¿O solo nos gusta la respuesta?"
+    }
+   ]
+  },
+  "m4": {
+   "name": "El sospechoso de siempre",
+   "lesson": "Una corazonada no es una prueba. Si culpas a alguien porque es de los que harían algo así, a ti también te engañaron, solo que de una forma más cómoda.",
+   "goals": {
+    "r1": "Acertijo: “Gran cobertizo de lata donde la calle llega al mar; cajas de todas partes, apiladas sin parar”. Encuentra el primer escondite de Glitch.",
+    "r2": "Acertijo: “Da vueltas sin ir a ningún lugar, más alta que todo en la feria está; si un buen escondite quieres hallar, justo debajo lo encontrarás”. Encuentra a Glitch."
+   },
+   "intro": [
+    {
+     "s": "dame",
+     "t": "El pueblo entero decidió que fue Glitch. Me gustaría que nosotros fuéramos mejores que el pueblo entero."
+    },
+    {
+     "s": "pixel",
+     "t": "Es que tiene antecedentes, Dame."
+    },
+    {
+     "s": "dame",
+     "t": "Los tiene. Y justamente por eso vamos a PREGUNTARLE, en vez de decidirlo. Encuéntralo, Shieldy. Según la máquina de la sala de videojuegos, estuvo aquí hace una hora y dejó un acertijo en la pantalla. Cómo no."
+    }
+   ],
+   "c1": [
+    {
+     "s": "pixel",
+     "t": "Aquí no está. Pero hay otro acertijo escrito con tiza en la puerta del almacén. Lo está disfrutando."
+    },
+    {
+     "s": "pixel",
+     "t": "Qué raro, eso sí. Este almacén tiene las ventanas pintadas de negro y un candado nuevecito. No lo olvides."
+    }
+   ],
+   "found": [
+    {
+     "s": "glitch",
+     "t": "Vaya que tardaste. Llevo una hora debajo de esta rueda y ya me duele el cuello."
+    },
+    {
+     "s": "glitch",
+     "t": "Anda, pues. Dilo. “Fue Glitch”. Ya lo dijeron todos los demás."
+    }
+   ],
+   "heart": {
+    "q": "Glitch se cruza de brazos y espera. ¿Qué le dices?",
+    "c": [
+     {
+      "t": "No lo voy a decir. Te lo pregunto. ¿Dónde estabas esta mañana?",
+      "r": "…Vaya. Nadie pregunta nunca. En la sala de videojuegos, perdiendo en Bubble Kart. La máquina guarda los puntajes con la hora. Ve a verlo."
+     },
+     {
+      "t": "Siempre eres tú. Admítelo de una vez.",
+      "r": "Ahí está. No hacen falta pruebas cuando ya tienes un villano favorito. Recuerda cómo se siente esto, Caballero. Recuérdalo cuando sea tu cara la que esté allá arriba."
+     },
+     {
+      "t": "No me importa quién fue. Solo ayúdame a pararlo.",
+      "r": "Práctico. Frío, pero práctico. Está bien."
+     }
+    ]
+   },
+   "lead": [
+    {
+     "s": "glitch",
+     "t": "Que conste: ojalá se me hubiera ocurrido a mí. Pero no. Yo engaño a la gente en su cara. Esta cosa lo hace escondida detrás de una cortina, y eso es hacer trampa."
+    },
+    {
+     "s": "glitch",
+     "t": "Te regalo un dato. Cada uno de esos clips aparece en BayBuzz un minuto entero antes que en cualquier otro lado. Todas las veces. Alguien se los está pasando."
+    },
+    {
+     "s": "glitch",
+     "t": "Y si quieres saber qué es verdad en este pueblo, no le preguntes a un Caballero. Pregúntale a la mujer de la Gaceta. Se gana la vida comprobando cosas desde antes de que las pantallas fueran planas."
+    }
+   ]
+  },
+  "m5": {
+   "name": "Cuatro preguntas",
+   "lesson": "¿Quién lo publicó primero? ¿Dónde está el original? ¿Qué puedo comprobar por mi cuenta? ¿Cómo quiere que me sienta? Con cuatro preguntas se frena a casi todos los videos falsos.",
+   "goals": {
+    "facts": "Compara el clip de “la rata en la panadería” con el mundo real: {a} de {b}.",
+    "gazette": "Lleva lo que encontraste a Iris, en la Gaceta.",
+    "bread": "Entrega el pan de Nilo antes de que se enfríe: {a} de {b}."
+   },
+   "intro": [
+    {
+     "s": "iris",
+     "t": "Así que tú eres el nuevo Caballero. Iris. Dirijo La Gaceta de la Bahía: una reportera, una imprenta y una regla. Nada sale en mi primera plana hasta que yo misma lo haya comprobado."
+    },
+    {
+     "s": "iris",
+     "t": "Esta mañana hay un clip nuevo. Una rata en el piso de la panadería de Nilo. En todo el día vendió cuatro panes."
+    },
+    {
+     "s": "iris",
+     "t": "A cualquier cosa así le hago cuatro preguntas. ¿Quién lo publicó primero? ¿Dónde está el original? ¿Qué puedo comprobar con mis propios ojos? ¿Y cómo quiere que me sienta?"
+    },
+    {
+     "s": "iris",
+     "t": "Tú tienes piernas y un auto. Ve a comprobarme tres cosas: el piso de la panadería, la cámara de la calle frente al cine y quién anda pasando el clip. Después vuelve."
+    }
+   ],
+   "quiz": {
+    "e1": {
+     "q": "Nilo te deja pasar a su cocina. El piso es de ladrillo rojo antiguo, liso de tanto uso. En el clip, la rata corre sobre baldosas verdes y brillantes. ¿Qué descubriste?",
+     "c": [
+      {
+       "t": "Que no es su cocina. El clip se grabó, o se fabricó, en otro lugar.",
+       "r": "¡Baldosas verdes! En mi vida he tenido una baldosa verde. Estos ladrillos los puso mi abuelo."
+      },
+      {
+       "t": "Que seguro cambió el piso para esconderlo.",
+       "r": "¿En una mañana, con ladrillos de hace cien años? Comprueba lo que tienes delante."
+      },
+      {
+       "t": "Los pisos no demuestran nada.",
+       "r": "Algo que puedes ir a ver con tus propios ojos es la mejor prueba que existe."
+      }
+     ]
+    },
+    "e2": {
+     "q": "El registro de la cámara de la calle: el clip apareció en BayBuzz a las 6:02. El clip dice que se grabó “esta mañana a las 7”. ¿Qué te dice eso?",
+     "c": [
+      {
+       "t": "Que se publicó antes de la hora en que dice que se grabó. La historia no cuadra.",
+       "r": "Un video que viene del futuro. Eso ni Twin lo consigue sin hacer trampa."
+      },
+      {
+       "t": "Que seguro el reloj de la cámara está mal.",
+       "r": "Es la cámara de la capitanía del puerto, y la ajustan todos los días con el reloj del ferry. Créele al reloj aburrido."
+      },
+      {
+       "t": "Una hora no tiene importancia.",
+       "r": "Sí la tiene cuando la hora corre hacia atrás."
+      }
+     ]
+    },
+    "e3": {
+     "q": "Una vecina le muestra el clip a la gente junto al canal. “Me lo mandó mi hermana. Le llegó por un grupo de mamás. ¿Quién lo grabó? Pues alguien habrá sido”. ¿Qué falta?",
+     "c": [
+      {
+       "t": "Una fuente. Nadie en la cadena sabe quién lo grabó ni dónde.",
+       "r": "Ahora que lo dices… Ando contando que “alguien vio una rata”, y no puedo decir quién es ese alguien."
+      },
+      {
+       "t": "Que se comparta más. Tiene que llegarle a más gente para estar seguros.",
+       "r": "Un rumor no se vuelve más cierto por volverse más grande."
+      },
+      {
+       "t": "Nada. Una hermana es una buena fuente.",
+       "r": "Su hermana tampoco lo grabó. La cadena no tiene principio."
+      }
+     ]
+    }
+   },
+   "proof": {
+    "q": "Iris: “Tres comprobaciones. ¿Cuál es el único dato que pondrías en mi primera plana para demostrar que el clip no es de la panadería de Nilo?”.",
+    "c": [
+     {
+      "t": "El piso. Baldosas verdes en el clip, ladrillo rojo en la panadería. Cualquiera puede ir a verlo.",
+      "r": "Ese es. No por ingenioso, sino porque cada lector puede comprobarlo por su cuenta cuando vaya a comprar el pan."
+     },
+     {
+      "t": "Nilo dice que no es verdad.",
+      "r": "Diría lo mismo si fuera verdad. Necesito algo que un lector pueda comprobar sin tener que confiar en nadie."
+     },
+     {
+      "t": "Mucha gente no se lo cree.",
+      "r": "Y mucha sí. Contar opiniones no es un dato."
+     }
+    ]
+   },
+   "lens": [
+    {
+     "s": "iris",
+     "t": "Titular: EL PISO ES DE OTRO COLOR. En una hora estará en los puestos de periódicos."
+    },
+    {
+     "s": "iris",
+     "t": "Y ahora viene lo difícil, Caballero. El clip le dio la vuelta a la bahía en diez minutos. Mi corrección va a tardar todo el día, y le llegará a la mitad de gente."
+    },
+    {
+     "s": "iris",
+     "t": "La mentira ya va corriendo cuando la verdad apenas se está atando los zapatos. Así que Nilo necesita algo más que un titular. Necesita que la gente pruebe su pan hoy. Ya horneó tres pedidos. Llévalos."
+    }
+   ],
+   "d1": [
+    {
+     "s": "cit",
+     "t": "¿De Nilo? ¿Después de ese video? …Todavía está calentito. Huele como siempre. Me da un poco de vergüenza, la verdad."
+    },
+    {
+     "s": "shieldy",
+     "t": "No tienes de qué avergonzarte. Te engañó algo hecho para engañar. Ahora ya lo sabes."
+    }
+   ],
+   "d2": [
+    {
+     "s": "cit",
+     "t": "Casi cancelo mi pedido. Y entonces pensé: llevo veinte años comiendo su pan y veinte segundos viendo ese clip. ¿Por qué les voy a creer a los veinte segundos?"
+    }
+   ],
+   "d3": [
+    {
+     "s": "cit",
+     "t": "¡Ay! ¡El pan! Dile a Nilo que lo siento. Yo compartí ese clip. Voy a compartir la primera plana de la Gaceta con el doble de ganas."
+    }
+   ],
+   "outro": [
+    {
+     "s": "baker",
+     "t": "Tres panes entregados y once pedidos más. Shieldy, en esta panadería tienes pan gratis hasta que uno de los dos se jubile."
+    },
+    {
+     "s": "iris",
+     "t": "Quédate con las cuatro preguntas, Caballero. Y no pierdas de vista a tus amigos. Twin empezó con un robot y un panadero. No se va a detener en los adultos."
+    }
+   ]
+  },
+  "m6": {
+   "name": "Mejores amigas",
+   "lesson": "Una voz copiada suena idéntica a la de tu mejor amigo o amiga. Que te engañe no quiere decir que te falte inteligencia. Pregúntale directamente, y acuerden una palabra secreta que ninguna máquina conozca.",
+   "goals": {
+    "r1": "Acertijo: “Caballos pintados que giran sin parar, nunca se cansan, nunca van a acabar”. Encuentra dónde se esconde Lila.",
+    "fetch": "Lila va a escuchar. Regresa a la escuela y busca a Sprout.",
+    "bring": "Lleva a Sprout con Lila, al carrusel."
+   },
+   "intro": [
+    {
+     "s": "screen",
+     "t": "La pantalla gigante de la escuela. Sprout, con su bufanda amarilla, sonriendo: “Lila es una bebé. Llora por todo. Solo me siento con ella porque nadie más quiere”."
+    },
+    {
+     "s": "sprout",
+     "t": "Eso no es… Yo nunca… ¡Lila! ¡LILA! Se fue. Salió corriendo por el portón."
+    },
+    {
+     "s": "kids",
+     "t": "¿Sprout dijo ESO? ¿De su mejor amiga? ¡Mándamelo, mándamelo!"
+    }
+   ],
+   "crowd": {
+    "q": "Una rueda de niños se ríe frente a la pantalla, con los teléfonos en alto. ¿Qué haces?",
+    "c": [
+     {
+      "t": "Digo: “Esa no es Sprout hablando. Y aunque lo fuera, no nos toca a nosotros andar pasándolo”.",
+      "r": "…Sí. A mí no me gustaría nada salir ahí arriba. Lo voy a borrar."
+     },
+     {
+      "t": "Digo: “Dale, mándalo. Igual ya lo vio todo el mundo”.",
+      "r": "¡Enviado! ¡A toda la clase! ¡Y a la clase de mi primo!"
+     },
+     {
+      "t": "No digo nada y sigo de largo.",
+      "r": "Las risas siguen a tus espaldas. Nadie les dijo que pararan."
+     }
+    ]
+   },
+   "gone": [
+    {
+     "s": "sprout",
+     "t": "Yo no lo dije. Me crees, ¿verdad? Es mi cara y mi voz y mi bufanda y YO NO LO DIJE."
+    },
+    {
+     "s": "shieldy",
+     "t": "Te creo. Quédate aquí con la maestra Alder. Yo voy a buscar a Lila."
+    }
+   ],
+   "lila": [
+    {
+     "s": "lila",
+     "t": "Vete. No quiero un Caballero. Quiero que no haya pasado."
+    },
+    {
+     "s": "lila",
+     "t": "Sonaba igualita a ella. Igualita. Hasta el chillidito que hace al final de las palabras. Todo."
+    }
+   ],
+   "lilaH": {
+    "q": "Lila está encogida sobre un caballo pintado. ¿Qué le dices?",
+    "c": [
+     {
+      "t": "“Es cierto que sonaba como ella. Cualquiera lo habría creído. No es que tú seas tonta. Es que el video falso está muy bien hecho”.",
+      "r": "…¿Entonces no soy tonta? Porque me siento tonta. Me sentí tonta Y triste al mismo tiempo, y eso es lo peor de todo."
+     },
+     {
+      "t": "“Tenías que haber sabido que Sprout nunca diría eso”.",
+      "r": "¡SÍ lo sabía! Y después oí su voz diciéndolo. ¿Qué se suponía que hiciera con mis oídos?"
+     },
+     {
+      "t": "“La verdad, un poquito de gracia sí tenía”.",
+      "r": "¡VETE!"
+     }
+    ]
+   },
+   "fetch": [
+    {
+     "s": "sprout",
+     "t": "¿Va a querer verme? ¿De verdad va a querer verme? ¿Qué le digo? Le voy a decir… No sé qué le voy a decir."
+    }
+   ],
+   "meet": [
+    {
+     "s": "sprout",
+     "t": "Lila. Yo no lo dije. Nunca lo diría. Eres la mejor persona que conozco y solo lloras por cosas que de verdad son tristes."
+    },
+    {
+     "s": "lila",
+     "t": "Quiero creerte. De verdad. Pero ¿cómo lo SÉ?"
+    },
+    {
+     "s": "shieldy",
+     "t": "Miren el clip juntas, las dos. No las palabras. Todo lo demás."
+    }
+   ],
+   "scarf": {
+    "q": "Lila, mira el clip otra vez. ¿Qué es lo que no encaja?",
+    "c": [
+     {
+      "t": "La bufanda amarilla. Sprout la perdió en el ferry la semana pasada. Es un video viejo al que le pusieron palabras nuevas en la boca.",
+      "r": "¡La bufanda! Está en la caja de objetos perdidos del Capitán Marlo, ¡yo la VI ahí el lunes! Este es el mensaje de cumpleaños que me mandaste el mes pasado. Agarraron tu feliz cumpleaños y lo hicieron decir eso."
+     },
+     {
+      "t": "Su voz suena un poco enojada.",
+      "r": "Una voz copiada puede sonar como le ordenen a la máquina. Busca algo que no se pueda copiar: un hecho."
+     },
+     {
+      "t": "El video es muy corto.",
+      "r": "Muchos videos de verdad son cortos. Busca algo que no cuadre con CUÁNDO se hizo."
+     }
+    ]
+   },
+   "code": [
+    {
+     "s": "lila",
+     "t": "Usaron mi mensaje de cumpleaños. Lo más lindo que me han mandado en la vida, y lo pusieron del revés."
+    },
+    {
+     "s": "sprout",
+     "t": "Entonces necesitamos algo que no puedan poner del revés."
+    },
+    {
+     "s": "lila",
+     "t": "Una palabra secreta. Una que solo sepamos nosotras. Si alguna vez un video o una voz dice algo raro, pedimos la palabra."
+    },
+    {
+     "s": "sprout",
+     "t": "Y ninguna máquina la va a saber, porque nunca la vamos a escribir. Solo la vamos a decir bajito. Ahora mismo. Shieldy, tápate los oídos."
+    },
+    {
+     "s": "shieldy",
+     "t": "(Te tapas los oídos. Sea cual sea la palabra, las hace reír a las dos hasta que el carrusel da dos vueltas completas.)"
+    }
+   ]
+  },
+  "m7": {
+   "name": "La voz de mamá",
+   "lesson": "Bastan unos segundos de sonido para copiar una voz. Si una llamada pide algo con apuro y en secreto, pide la palabra clave de la familia, o cuelga y vuelve a llamar al número que ya conoces.",
+   "goals": {
+    "catch": "Tomas corre hacia los muelles con un teléfono pegado a la oreja. ¡Alcánzalo antes de que llegue!",
+    "home": "Lleva a Tomas a su casa."
+   },
+   "intro": [
+    {
+     "s": "pixel",
+     "t": "Shieldy, el parque. Acaba de sonar el teléfono de un niño y no me gustó lo que oí. Una voz de mujer: “Tomas, mi amor, soy mamá. Ven ya mismo al Muelle 4. Trae el código de la puerta. No le digas a papá”."
+    },
+    {
+     "s": "pixel",
+     "t": "Ya va corriendo: lado este, por la calle larga que baja al puerto. Tiene nueve años. ¡Alcánzalo antes de que llegue a los muelles!"
+    }
+   ],
+   "stop": [
+    {
+     "s": "tomas",
+     "t": "¡Suéltame! ¡Mamá me necesita! ¡Dijo que me apurara, dijo que no le contara a nadie!"
+    },
+    {
+     "s": "voice",
+     "t": "¿Tomas? Tomas, ¿quién está contigo? No les hagas caso, mi amor. Tú solo ven. Rapidito."
+    },
+    {
+     "s": "shieldy",
+     "t": "Tomas. Suena igualita a tu mamá. Ya lo sé. Antes de dar un paso más, pregúntale una sola cosa."
+    }
+   ],
+   "code": {
+    "q": "¿Qué debería preguntarle Tomas a la voz?",
+    "c": [
+     {
+      "t": "“¿Cuál es nuestra palabra clave de la familia?”. La que solo sabe su mamá de verdad.",
+      "r": "…¿Mamá? ¿Cuál es nuestra palabra? ¿La de las emergencias? … ¿Mamá? … No la dice. No dice NADA. …Colgó."
+     },
+     {
+      "t": "“¿De verdad eres tú, mamá?”.",
+      "r": "“Claro que soy yo, tontito. Ahora apúrate”. Una voz falsa va a decir que sí y ya. Pregúntale algo que no pueda saber."
+     },
+     {
+      "t": "Nada. Que corra al Muelle 4 y lo vea por sí mismo.",
+      "r": "Justo ahí es donde la voz lo quiere. Sin nadie más, con prisa, en los muelles."
+     }
+    ]
+   },
+   "hang": [
+    {
+     "s": "tomas",
+     "t": "No era ella. Era su voz y no era ella. ¿Cómo puede ser su voz?"
+    },
+    {
+     "s": "pixel",
+     "t": "Unos segundos de alguien hablando: Twin no necesita más. Con el saludo de su buzón de voz alcanza."
+    },
+    {
+     "s": "shieldy",
+     "t": "Hiciste lo correcto en el momento en que preguntaste. Vamos. Te llevo a casa, con la de verdad."
+    }
+   ],
+   "home": [
+    {
+     "s": "elena",
+     "t": "¡Tomas! ¿Cómo que yo te llamé? Llevo toda la tarde aquí tendiendo la ropa. No he llamado a nadie."
+    },
+    {
+     "s": "elena",
+     "t": "¿Mi voz? ¿Pidiendo el código de nuestra puerta? …Siéntense los dos. Siéntense."
+    },
+    {
+     "s": "elena",
+     "t": "Inventamos esa palabra clave como un juego cuando él tenía seis años. “Por si vienen piratas”, le dije. Nunca imaginé que los piratas iban a sonar como yo."
+    },
+    {
+     "s": "pixel",
+     "t": "Shieldy. Una camioneta blanca con una antena en el techo acaba de irse del Muelle 4. BayBuzz. Estaban esperando para grabar algo. Creo que querían una historia de “niño perdido, encontrado por BayBuzz” para esta noche."
+    },
+    {
+     "s": "elena",
+     "t": "¿Son capaces de asustar a un niño por un titular?"
+    },
+    {
+     "s": "pixel",
+     "t": "Me gustaría saber dónde duerme esa camioneta."
+    }
+   ]
+  },
+  "m8": {
+   "name": "Sigue a la camioneta",
+   "lesson": "Cuando una mentira aparece una y otra vez, pregunta a quién le pagan cuando la gente la mira. Sigue el dinero y encontrarás a quien la fabrica.",
+   "goals": {
+    "tail": "Sigue a la camioneta de BayBuzz sin que te descubran. Quédate detrás, ni muy cerca ni muy lejos."
+   },
+   "intro": [
+    {
+     "s": "pixel",
+     "t": "La camioneta está frente a la Torre BayBuzz con el motor encendido. Cuando arranque, arranca tú también. Quédate lo bastante lejos para que no noten un auto dorado en el espejo, y lo bastante cerca para no perderla."
+    },
+    {
+     "s": "pixel",
+     "t": "Nada de choques ni de carreras. Solo un Caballero tranquilo dando un paseo tranquilo."
+    }
+   ],
+   "outro": [
+    {
+     "s": "pixel",
+     "t": "Entró al almacén grande del puerto. El de las ventanas pintadas de negro y el candado nuevo. El mismo al que te mandó el acertijo de Glitch."
+    },
+    {
+     "s": "pixel",
+     "t": "Una camioneta de noticias que duerme en un almacén cerrado con candado. Estaciónate. Vamos a mirar por esas ventanas."
+    }
+   ]
+  },
+  "m9": {
+   "name": "La granja de clips",
+   "lesson": "La gente hace videos falsos para llamar la atención y para ganar dinero, y cada vista les paga. La vergüenza hace que quien los fabrica se cierre; una pregunta de verdad puede hacerlo pensar.",
+   "goals": {
+    "windows": "Mira hacia adentro por las ventanas del almacén: {a} de {b}.",
+    "chase": "¡Se llevó un bote! Síguelo por la bahía, de boya en boya: {a} de {b}.",
+    "land": "Amarró en la Roca del Faro. Lleva tu bote al embarcadero de la isla.",
+    "find": "Baja a tierra y encuéntralo."
+   },
+   "intro": [
+    {
+     "s": "pixel",
+     "t": "No te levantes mucho. La pintura negra tiene huecos. Son tres ventanas: dime qué ves."
+    }
+   ],
+   "quiz": {
+    "w1": {
+     "q": "Por la primera ventana: filas de pantallas. En cada una, una cara del pueblo, el panadero, la maestra, el capitán del ferry, moviendo la boca sin sonido. ¿Qué es este lugar?",
+     "c": [
+      {
+       "t": "Un taller que fabrica videos falsos de personas reales, de a doce a la vez.",
+       "r": "Una granja de clips. Los cultivan en hileras."
+      },
+      {
+       "t": "Una tienda de televisores.",
+       "r": "En las tiendas de televisores no salen tus vecinos en todas las pantallas."
+      },
+      {
+       "t": "Un cine para los trabajadores del puerto.",
+       "r": "¿Con las ventanas pintadas de negro y un candado nuevo? Fíjate de quién son esas caras."
+      }
+     ]
+    },
+    "w2": {
+     "q": "Segunda ventana: un pizarrón. “Historias de mañana”, cada una con un número al lado. “Robot insulta a panadero: 12.000. Festival cancelado: 40.000. Niño perdido en los muelles: ¿60.000?”. ¿Qué son esos números?",
+     "c": [
+      {
+       "t": "Vistas. Eligen la mentira que más gente va a mirar.",
+       "r": "No se preguntan “¿es verdad?”. Se preguntan “¿lo van a mirar?”."
+      },
+      {
+       "t": "Precios del pan.",
+       "r": "Fíjate en lo grandes que son, y en cuál historia tiene el más grande."
+      },
+      {
+       "t": "Para cuántas personas es verdad.",
+       "r": "Ninguna es verdad para nadie. El número es cuántos ojos."
+      }
+     ]
+    },
+    "w3": {
+     "q": "Tercera ventana: un escritorio y una factura. BayBuzz le paga un poquito de dinero por cada clip a alguien llamado “K.”, y gana con cada vista. Entonces, ¿quién gana cuando el pueblo mira un video falso?",
+     "c": [
+      {
+       "t": "El canal que lo muestra gana con cada vista, y le paga un poquito de eso a quien lo fabrica.",
+       "r": "Así que ese es el motor. Por un lado entra la atención del pueblo y por el otro sale dinero."
+      },
+      {
+       "t": "Nadie. Es solo por diversión.",
+       "r": "Hay una factura en el escritorio. La diversión no manda facturas."
+      },
+      {
+       "t": "Las personas que salen en los clips.",
+       "r": "Las personas que salen en los clips pierden clientes y amigos. Fíjate en quién cobra."
+      }
+     ]
+    }
+   },
+   "kai": [
+    {
+     "s": "kai",
+     "t": "¡Oye! ¿Quién anda ahí? …Ay, no. Ay, no, no, no. Un Caballero."
+    },
+    {
+     "s": "pixel",
+     "t": "Es un chico. Quince años, más o menos. ¿Ese es “K.”?"
+    },
+    {
+     "s": "kai",
+     "t": "No pienso hablar contigo. Tengo un bote. ¡Y a un bote no lo puedes seguir en auto!"
+    },
+    {
+     "s": "pixel",
+     "t": "Tiene razón. Pero el tuyo está en el embarcadero del malecón, Shieldy. Dorado y azul marino. ¡Corre!"
+    }
+   ],
+   "corner": [
+    {
+     "s": "kai",
+     "t": "Está bien. ¡ESTÁ BIEN! En esta roca no hay adónde ir, salvo subir al faro, y a mí no me gustan las alturas."
+    },
+    {
+     "s": "kai",
+     "t": "Soy Kai. Yo hice Twin. Era una app de broma. La hice en mi cuarto."
+    },
+    {
+     "s": "kai",
+     "t": "¿Sabes cuánta gente veía mis videos antes? Tres personas. Una era mi mamá. Ahora son cuarenta mil. Gente que no conozco dice “¿viste ese clip?”. Y es MÍO."
+    }
+   ],
+   "heart": {
+    "q": "Kai tiene quince años, es muy listo y no tiene salida. ¿Qué le dices?",
+    "c": [
+     {
+      "t": "“Lo vieron cuarenta mil personas. Yo te pregunto por la que lloró. ¿Sabes cómo se llama?”.",
+      "r": "…No. “Se llama Lila. Tiene diez años. Usaron su mensaje de cumpleaños”. …Ese no lo elegí yo. Elige BayBuzz. Yo solo… yo solo hago andar la máquina."
+     },
+     {
+      "t": "“Eres un delincuente, y todo el pueblo va a conocer tu cara”.",
+      "r": "Entonces ya no tengo nada que perder, ¿no? Gracias. Así es más fácil."
+     },
+     {
+      "t": "“Borra la app y nos olvidamos de todo”.",
+      "r": "¿Borrarla? Está en mil teléfonos. Una campana que ya sonó no vuelve a quedarse callada. Ni siquiera entiendes lo que es."
+     }
+    ]
+   },
+   "leave": [
+    {
+     "s": "kai",
+     "t": "La señora Vale dice que no mentimos. Publicamos. La gente elige qué creer. Eso dice ella."
+    },
+    {
+     "s": "kai",
+     "t": "Ya viene el ferry. Me voy a subir y no me vas a detener, porque los Caballeros no agarran a la gente. He leído sobre ustedes."
+    },
+    {
+     "s": "pixel",
+     "t": "Déjalo ir, Shieldy. Él también oyó algo que ya no va a poder dejar de oír. Ahora quiero conocer a esa señora Vale."
+    }
+   ]
+  },
+  "m10": {
+   "name": "Cada clic",
+   "lesson": "A los videos falsos se les paga con atención. No alimentes una mentira mirándola, compartiéndola o discutiendo con ella en público: denúnciala y déjala sin comer.",
+   "goals": {
+    "drones": "Los drones de BayBuzz les están proyectando los clips a la gente en la calle. Acércate y apaga cada uno: {a} de {b}."
+   },
+   "intro": [
+    {
+     "s": "vale",
+     "t": "Un Caballero. En mi vestíbulo. Qué encanto. Verena Vale. Soy la dueña de BayBuzz, el canal que nunca duerme."
+    },
+    {
+     "s": "vale",
+     "t": "Sé por qué viniste, así que te ahorro el discurso. Nosotros no mentimos. Publicamos. Cuarenta mil personas ELIGIERON mirar a un robot bailar. Nadie les sujetó los párpados."
+    },
+    {
+     "s": "vale",
+     "t": "Pero me caes bien. Sales muy bien en cámara. Así que te hago una oferta. Un clip. Los Caballeros salvan la Noche de los Faroles, héroes de la bahía. En todas las pantallas del pueblo antes de la merienda. Ni siquiera tendrías que hacer nada. Twin se encarga de todo."
+    }
+   ],
+   "deal": {
+    "q": "La señora Vale sonríe. ¿Cuál es tu respuesta?",
+    "c": [
+     {
+      "t": "“No. Si dejamos que nos falsifique para quedar bien, no podremos quejarnos cuando falsifique a alguien para que quede mal”.",
+      "r": "Bien dicho, Shieldy. Un video falso que te halaga sigue siendo falso, y además le quedas debiendo un favor."
+     },
+     {
+      "t": "“Sí, pero solo si el clip nos hace quedar muy bien”.",
+      "r": "Entonces los Caballeros estarían hechos de lo mismo que el robot bailarín. Piénsalo otra vez."
+     },
+     {
+      "t": "“Sí. Vamos a combatir los videos falsos con uno falso mejor”.",
+      "r": "Y mañana tampoco nos podría creer nadie. Ese es todo su negocio. No te metas en él."
+     }
+    ]
+   },
+   "after": [
+    {
+     "s": "vale",
+     "t": "Lástima. Les habrías encantado a los menores de doce."
+    },
+    {
+     "s": "vale",
+     "t": "Ya verás, pequeño Caballero, que nadie te da las gracias por la verdad. Es lenta y es aburrida. La gente quiere un espectáculo. Yo se lo doy."
+    },
+    {
+     "s": "vale",
+     "t": "Y hablando de eso. Mis drones ya salieron. Que disfrutes la programación de la tarde."
+    }
+   ],
+   "outro": [
+    {
+     "s": "pixel",
+     "t": "Cinco drones menos, y te cuento lo que noté: cuanta más gente se quedaba discutiendo con el clip, más tiempo se quedaba el dron. Los estaba contando."
+    },
+    {
+     "s": "pixel",
+     "t": "Hasta gritarle “¡eso es falso!” cuenta como una vista. Lo único que lo deja sin comer es darse la vuelta y denunciarlo."
+    },
+    {
+     "s": "pixel",
+     "t": "No vamos a ganarle a gritos, Shieldy. Necesitamos lo contrario de un clip. Necesitamos un original."
+    }
+   ]
+  },
+  "m11": {
+   "name": "El original",
+   "lesson": "Un video falso casi siempre está armado con algo real. Encuentra el original, con su fecha y su lugar, y el falso se queda sin dónde pararse. Pero la corrección viaja más lento que la mentira, así que haz una pausa antes de reenviar cualquier cosa.",
+   "goals": {
+    "sail": "Navega hasta la Roca del Faro. Ahí guarda el Capitán Marlo las grabaciones de la cámara del puerto.",
+    "tape": "Busca al Capitán Marlo junto al faro.",
+    "back": "Navega de vuelta al embarcadero del malecón, amarra el bote y baja a tierra.",
+    "rush": "¡Llévale la grabación a Iris, a la Gaceta, antes de que se imprima el diario de la tarde!"
+   },
+   "intro": [
+    {
+     "s": "captain",
+     "t": "¿La cámara del puerto? Sí, señor: ve toda la Plaza del Reloj desde el otro lado del agua, y lleva once años grabando todos los días. Hasta hoy nadie me había pedido las cintas."
+    },
+    {
+     "s": "captain",
+     "t": "Están en la Roca del Faro, en el cuarto de la lámpara, donde no las alcanza la humedad. Ahora mismo salgo para allá en el ferry. Tú tienes tu propio bote en el embarcadero. Ojo con las boyas, y allá nos vemos."
+    }
+   ],
+   "tape": [
+    {
+     "s": "captain",
+     "t": "Aquí está. La mañana del “festival cancelado”. Mira."
+    },
+    {
+     "s": "captain",
+     "t": "Ahí tienes a tu Dame Noble en la escalinata del Ayuntamiento, clara como un faro, colgando un farol en el mismísimo minuto en que ese clip dice que estaba en un estudio cancelándolo todo."
+    },
+    {
+     "s": "captain",
+     "t": "Ese es el original, Caballero. La fecha en la esquina, el lugar en la imagen, y una cámara que no es de nadie en este pleito. Llévaselo a Iris antes de que imprima. Yo te sigo en el ferry."
+    }
+   ],
+   "print": [
+    {
+     "s": "iris",
+     "t": "¡A tiempo! Pásamela. …Ay, qué maravilla. Dame Noble, una escalera, un farol y la hora marcada. Primera plana, mitad de arriba."
+    },
+    {
+     "s": "iris",
+     "t": "Titular: ESTABA EN LA ESCALINATA. Voy a poner las dos imágenes una al lado de la otra y que los ojos de la gente hagan el trabajo."
+    },
+    {
+     "s": "iris",
+     "t": "No les va a llegar a todos. Nunca les llega a todos. Pero a quienes les llegue van a tener algo firme donde pararse."
+    }
+   ],
+   "twist": [
+    {
+     "s": "pixel",
+     "t": "Shieldy. No mires la pantalla gigante."
+    },
+    {
+     "s": "pixel",
+     "t": "…Estás mirando la pantalla gigante."
+    },
+    {
+     "s": "screen",
+     "t": "Un pequeño caballero dorado, en todas las pantallas de Bahía Espejo: “Fuimos nosotros. Los Caballeros hicimos los videos falsos. Queríamos parecer héroes, así que armamos el problema nosotros mismos”."
+    },
+    {
+     "s": "shieldy",
+     "t": "Esa es mi cara. Esa es MI voz."
+    },
+    {
+     "s": "pixel",
+     "t": "Y el escudo está en el brazo equivocado. Pero nadie está mirando el escudo."
+    }
+   ]
+  },
+  "m12": {
+   "name": "No fui yo",
+   "lesson": "Cuando el video falso es sobre ti, no es tu culpa. No te escondas ni devuelvas el golpe: cuéntaselo a alguien de confianza, guarda el clip como prueba y denúncialo.",
+   "goals": {
+    "walk": "Nadie le presta un auto al Caballero del clip. Camina hasta el Cuartel de los Caballeros."
+   },
+   "intro": [
+    {
+     "s": "iris",
+     "t": "Yo sé que no eres tú. Estaba a tu lado a la hora en que dice que confesabas. Pero soy una sola reportera, y ese clip está en todas las pantallas de la bahía."
+    },
+    {
+     "s": "cit",
+     "t": "¡Ahí está! ¡Es el Caballero del video!"
+    },
+    {
+     "s": "iris",
+     "t": "Ve con los tuyos, Shieldy. La frente en alto. Y empezó a llover; cómo no."
+    }
+   ],
+   "shout": [
+    {
+     "s": "cit",
+     "t": "¡TÚ! ¡Confiábamos en ti! ¡Mi hijita tiene tu póster en la pared! ¡Farsante!"
+    }
+   ],
+   "heart": {
+    "q": "Una desconocida te grita en plena calle, bajo la lluvia. ¿Qué haces?",
+    "c": [
+     {
+      "t": "Digo: “Ya sé lo que parece. Pregúntame lo que quieras. Yo te respondo, y después lo puedes comprobar”.",
+      "r": "…Mm. Puede que lo haga. Te voy a estar vigilando, Caballero. (Pero dejó de gritar.)"
+     },
+     {
+      "t": "Digo: “¡Le creíste a una pantalla y no a tus propios ojos! ¿Cómo se puede ser tan tonto?”.",
+      "r": "¿Tonta, yo? Espera a que les cuente a los demás cómo me llamó el Caballero."
+     },
+     {
+      "t": "Sigo caminando. Con la cabeza gacha.",
+      "r": "El grito te sigue calle abajo. Nadie escucha tu versión."
+     }
+    ]
+   },
+   "hq": [
+    {
+     "s": "pixel",
+     "t": "Yo sé que no eres tú. Pero saberlo no es una prueba, y una prueba es lo que necesita el pueblo."
+    },
+    {
+     "s": "bot",
+     "t": "Así se sentía. Con el baile de la gallina. Solo que lo tuyo es peor."
+    },
+    {
+     "s": "dame",
+     "t": "Siéntate, Shieldy. Vienes chorreando agua. Bien. Te voy a hacer la misma pregunta que le haría a cualquier niño que viniera a contarme algo así."
+    }
+   ],
+   "whatdo": {
+    "q": "Dame Noble: “Cuando el video falso es sobre TI, ¿qué va primero?”.",
+    "c": [
+     {
+      "t": "Contárselo a alguien de confianza, guardar el clip como prueba y denunciarlo. No pelear contra él por mi cuenta.",
+      "r": "Sí. Nos lo contaste. Pixel lo guardó. Iris lo denunció. En esto tienes compañía, y lo primero que un video falso quiere es que sientas que no la tienes."
+     },
+     {
+      "t": "Publicar una respuesta furiosa para todos los que lo compartieron.",
+      "r": "Cada respuesta vuelve a poner el clip en circulación, y con tu nombre encima. No lo alimentes."
+     },
+     {
+      "t": "Esconderme hasta que todos se olviden.",
+      "r": "Si te callas, el único que habla es el video falso. Y no fue tu culpa, así que no hay nada que esconder."
+     }
+    ]
+   },
+   "outro": [
+    {
+     "s": "dame",
+     "t": "Ahora sabes lo que sintieron Bot, y Nilo, y la pequeña Sprout. No te lo habría deseado. Pero vas a ser mejor Caballero gracias a esto."
+    },
+    {
+     "s": "pixel",
+     "t": "El clip dice que confesaste ayer en la Plaza del Reloj a las tres y cuarto. Entonces, ¿dónde estabas ayer a las tres y cuarto?"
+    },
+    {
+     "s": "shieldy",
+     "t": "…Repartiendo pan."
+    },
+    {
+     "s": "pixel",
+     "t": "Entonces alguien te vio. Vamos a buscar tu tarde."
+    }
+   ]
+  },
+  "m13": {
+   "name": "Coartada",
+   "lesson": "A un video falso no lo vences diciendo “yo nunca haría eso”. Lo vences con algo que cualquiera pueda comprobar: un original, una hora, un testigo que estuvo ahí.",
+   "goals": {
+    "alibi": "Encuentra a las personas y la cámara que vieron dónde estabas de verdad: {a} de {b}.",
+    "gazette": "Llévale tu tarde a Iris, a la Gaceta."
+   },
+   "intro": [
+    {
+     "s": "pixel",
+     "t": "Con tres cosas alcanza. El registro del ferry del Capitán Marlo, por la hora en que desembarcaste. Nilo, por el reparto del pan. Y la cámara de la calle del cine: pasaste por delante con Iris."
+    },
+    {
+     "s": "pixel",
+     "t": "Sigues sin auto. La gente sigue cruzando la calle para no toparse contigo. Ánimo: el pueblo es chico y tienes buenas piernas."
+    }
+   ],
+   "a1": [
+    {
+     "s": "captain",
+     "t": "¿El registro? Aquí está. “Martes, 9:10, un Caballero, dorado; un auto, también dorado”. Desde entonces has estado en mi ferry o a la vista todos los días. Eso se lo firmo a quien me lo pida."
+    }
+   ],
+   "a2": [
+    {
+     "s": "baker",
+     "t": "¿Ayer a las tres y cuarto? Estabas AQUÍ, recogiendo tres pedidos, y tengo el libro de pedidos para demostrarlo, con la hora escrita en harina."
+    },
+    {
+     "s": "baker",
+     "t": "Ya le creí a una pantalla con lo de Bot. No lo voy a hacer dos veces. Pásame un bolígrafo."
+    }
+   ],
+   "quiz": {
+    "a3": {
+     "q": "La grabación de la cámara del cine, ayer, 3:15 de la tarde: un pequeño caballero dorado y una reportera de abrigo amarillo, en la puerta del cine, en la otra punta del pueblo respecto de la Plaza del Reloj. ¿Por qué esto vale más que cualquier cosa que puedas decir?",
+     "c": [
+      {
+       "t": "Porque es un original con la hora marcada, de una cámara que no controla nadie en esta discusión.",
+       "r": "Y no puede estar en dos lugares a la vez, igual que tú."
+      },
+      {
+       "t": "Porque muestra mi mejor ángulo.",
+       "r": "No se trata de salir bien. Se trata de que se pueda comprobar."
+      },
+      {
+       "t": "Porque es un video más lindo que el de ellos.",
+       "r": "Lo lindo no importa. Importa quién lo hizo, cuándo, y si alguien puede comprobarlo."
+      }
+     ]
+    }
+   },
+   "clock": {
+    "q": "Iris lo extiende todo sobre su escritorio. “Una sola línea para la primera plana. ¿Qué dato rompe el clip?”.",
+    "c": [
+     {
+      "t": "“El reloj del Ayuntamiento marca las 3:15 en el clip, y a las 3:15 la cámara del cine me tiene en la otra punta del pueblo”.",
+      "r": "Dos relojes, un Caballero, dos lugares. Eso es. Ese es el titular: UN CABALLERO NO PUEDE ESTAR EN DOS LUGARES."
+     },
+     {
+      "t": "“Yo nunca diría una cosa así”.",
+      "r": "Eso dice todo el que sale en un video falso, y casi siempre es verdad, y nunca convence a nadie. Tráeme algo que se pueda comprobar."
+     },
+     {
+      "t": "“El clip se ve un poco borroso”.",
+      "r": "Los videos de verdad también se ven borrosos. Busca el dato que nadie pueda discutir."
+     }
+    ]
+   },
+   "outro": [
+    {
+     "s": "iris",
+     "t": "Edición especial. Esta noche va por debajo de todas las puertas del pueblo."
+    },
+    {
+     "s": "iris",
+     "t": "Mira afuera. Dejó de llover."
+    },
+    {
+     "s": "cit",
+     "t": "¡Caballero! Oye, Caballero. Leí la Gaceta. Yo, eh… Dije unas cosas. En la calle."
+    },
+    {
+     "s": "shieldy",
+     "t": "Te engañó algo hecho para engañar. Gracias por leer el diario."
+    },
+    {
+     "s": "pixel",
+     "t": "Las llaves de los autos ya están saliendo de los bolsillos, Shieldy. Pero Twin anda suelto, en mil teléfonos. Me parece que BayBuzz ya no es el único que lo usa."
+    }
+   ]
+  },
+  "m14": {
+   "name": "Imitadores",
+   "lesson": "Cuando una herramienta para falsificar anda suelta, cualquiera puede usarla, incluso unos niños contra otros. La persona que sale en el video falso no hizo nada malo: algo le hicieron a ella.",
+   "goals": {
+    "r1": "Acertijo del cuaderno de Mina: “Mi caballo favorito es azul, y nunca llega a ningún lado”. Encuentra adónde fue primero.",
+    "r2": "Acertijo: “Una casa con mil puertas, y cada puerta es un cuento”. Encuentra adónde fue después.",
+    "r3": "Acertijo: “Donde el camino de madera se va caminando mar adentro”. Encuentra adónde fue Mina.",
+    "reach": "Está a la deriva en un velerito y se está yendo la luz. ¡Sal con tu bote desde el muelle de madera y llega hasta ella!",
+    "tow": "Remolca el velerito de Mina de vuelta al muelle de madera."
+   },
+   "intro": [
+    {
+     "s": "kai",
+     "t": "Caballero. ¡Caballero! Ya sé que me odias. No me importa. Te necesito."
+    },
+    {
+     "s": "kai",
+     "t": "Es mi hermana. Mina. Tiene siete años. Unos chicos de sexto grado se bajaron Twin en sus teléfonos. Hicieron un clip de ella. Diciendo que todavía duerme con la luz prendida y que llora por nuestra mamá en la escuela."
+    },
+    {
+     "s": "kai",
+     "t": "Lo vio todo el patio. Salió por el portón a la hora del almuerzo y nadie la ha visto desde entonces. Dejó su cuaderno. Escribe acertijos ahí. Eso lo aprendió de mí."
+    },
+    {
+     "s": "kai",
+     "t": "Yo hice la cosa que causó esto. YA LO SÉ. Grítame después. Por favor, solo ayúdame a encontrarla."
+    }
+   ],
+   "c1": [
+    {
+     "s": "lila",
+     "t": "¿Mina? Estuvo aquí. Dio tres vueltas en el caballo azul sin decir una palabra. Después dijo que quería estar en un lugar sin pantallas."
+    }
+   ],
+   "c2": [
+    {
+     "s": "pixel",
+     "t": "Dice la bibliotecaria que una niña chiquita con un impermeable rosa estuvo en el rincón de los cuentos hasta que entró una clase. Uno de los niños tenía el clip en su teléfono. Ella salió corriendo. Hacia el mar."
+    }
+   ],
+   "seen": [
+    {
+     "s": "kai",
+     "t": "Su bota. Esa es su bota amarilla, en el muelle. ¡MINA!"
+    },
+    {
+     "s": "pixel",
+     "t": "Allá. Más allá de la boya. El velerito de la punta del muelle: se le soltó la cuerda y se está alejando. Ella está sentada en el fondo, con la capucha puesta."
+    },
+    {
+     "s": "kai",
+     "t": "No puedo nadar hasta allá. No puedo… Caballero. Tu bote. Por favor."
+    }
+   ],
+   "mina": [
+    {
+     "s": "mina",
+     "t": "Vete. Ahora vivo aquí."
+    },
+    {
+     "s": "mina",
+     "t": "Lo vieron todos en la escuela. Todos. Me hicieron el ruido de llorar. No voy a volver nunca. Voy a vivir en este bote y a comer pescado."
+    }
+   ],
+   "heart": {
+    "q": "Mina no levanta la vista. ¿Qué le dices?",
+    "c": [
+     {
+      "t": "“Tú no hiciste nada. Alguien te hizo algo A TI. Es otra cosa muy distinta, y no te toca a ti cargar con eso”.",
+      "r": "…Pero era mi voz. “Era una copia de tu voz. Lo sé porque a mí también me copiaron la mía. Lo vio todo el pueblo”. …¿A ti TAMBIÉN? …¿Kai está enojado conmigo? “Está en el muelle. No ha dejado de buscarte ni un segundo”."
+     },
+     {
+      "t": "“Es solo un video tonto. Para el lunes ya se les habrá olvidado”.",
+      "r": "A TI no se te olvidaría. Si te pasara a ti."
+     },
+     {
+      "t": "“Sabes que todo esto lo empezó tu hermano, ¿no?”.",
+      "r": "(Se baja la capucha hasta taparse toda la cara y no dice nada de nada.)"
+     }
+    ]
+   },
+   "kai": [
+    {
+     "s": "kai",
+     "t": "Mina. Mina, perdón. Perdóname. Perdón, perdón."
+    },
+    {
+     "s": "mina",
+     "t": "Me estás aplastando."
+    },
+    {
+     "s": "kai",
+     "t": "Creí que eran solo imágenes. Caras en una pantalla. Ni una sola vez pensé en la persona que está detrás de la cara. Y entonces fuiste tú."
+    },
+    {
+     "s": "kai",
+     "t": "Caballero. Lo voy a contar. Todo: yo, BayBuzz, el almacén, las facturas. Todavía tengo todos los archivos."
+    },
+    {
+     "s": "pixel",
+     "t": "Eso es de valientes, Kai. Pero hay un problema. Vas a confesar en video, en un pueblo que acaba de aprender a no creer en los videos."
+    }
+   ]
+  },
+  "m15": {
+   "name": "Testigos",
+   "lesson": "Cuando la gente deja de creer en todo, los mentirosos también pueden decir que la verdad es falsa. La respuesta son las personas: dilo en persona, delante de testigos que puedan responder unos por otros.",
+   "goals": {
+    "allies": "Pídeles a quienes saben la verdad que vengan a la Plaza del Reloj en la Noche de los Faroles: {a} de {b}."
+   },
+   "intro": [
+    {
+     "s": "dame",
+     "t": "Pixel tiene razón. En cuanto la confesión de Kai salga en una pantalla, la señora Vale dirá: “Es falso, lo hicieron los Caballeros”. Y medio pueblo se encogerá de hombros, porque a estas alturas, ¿quién puede saberlo?"
+    },
+    {
+     "s": "iris",
+     "t": "Ese truco tiene nombre. Cuando todo podría ser falso, un mentiroso puede descartar cualquier verdad con un gesto. Es lo último que roba un video falso: no lo que crees, sino tu capacidad de creer en algo."
+    },
+    {
+     "s": "dame",
+     "t": "Así que no usaremos una pantalla. Kai lo dirá en la Plaza del Reloj, en la Noche de los Faroles, con su propia boca, delante de gente que lo conoce y que se conoce entre sí."
+    },
+    {
+     "s": "dame",
+     "t": "Recorre el pueblo, Shieldy. Pídeles a todos los que pasaron por esto que vengan y se paren donde los puedan ver. Y… pídeselo a Glitch."
+    }
+   ],
+   "baker": [
+    {
+     "s": "baker",
+     "t": "¿Pararme delante del pueblo y decir que me engañaron? …Sí. Sí, lo voy a hacer. Fui el primero en gritar y me toca ser el primero en decirlo. Voy a llevar pan."
+    }
+   ],
+   "captain": [
+    {
+     "s": "captain",
+     "t": "Voy a llevar las cintas y el registro del ferry, y también la bocina del ferry, por si hay que hacer callar a alguien. Once años de grabaciones originales. A ver si se atreve a decir que ESO es falso."
+    }
+   ],
+   "friends": [
+    {
+     "s": "lila",
+     "t": "Vamos a ir. Las dos."
+    },
+    {
+     "s": "sprout",
+     "t": "Ahora tenemos una palabra. Una secreta. Les vamos a decir a todos que se busquen una. No la NUESTRA. Una propia."
+    }
+   ],
+   "elena": [
+    {
+     "s": "elena",
+     "t": "Tomas quiere contarles lo de la llamada. Le dije que no tenía por qué. Y me dijo: “Mamá, ¿y si le suena a alguien que no tiene una palabra?”. Así que vamos."
+    }
+   ],
+   "glitch": [
+    {
+     "s": "glitch",
+     "t": "A ver si entendí bien. Me quieres A MÍ. En un escenario. Diciéndole a Bahía Espejo qué es real."
+    },
+    {
+     "s": "glitch",
+     "t": "Al mismo pueblo que el martes me persiguió alrededor del Ayuntamiento."
+    }
+   ],
+   "glitch2": {
+    "q": "Glitch levanta una ceja. ¿Qué le dices?",
+    "c": [
+     {
+      "t": "“Primero te debo una disculpa. Por un rato medio creí que habías sido tú, y no tenía ninguna prueba”.",
+      "r": "…Nadie me había dicho eso nunca. Ni una vez. Está bien. Voy a ir. Me sé todos los trucos de esa máquina. Me voy a parar ahí a nombrarlos uno por uno, y nadie va a poder decir que estoy de tu lado."
+     },
+     {
+      "t": "“Le debes mucho a este pueblo. Ya es hora de que pagues una parte”.",
+      "r": "Y ahí está el Caballero que yo conozco. Voy a ir. Por ver la cara que pone Vale. No por ti."
+     },
+     {
+      "t": "“Ven o no vengas. Tú decides”.",
+      "r": "Mm. Lo voy a pensar. (Va a venir. Ya está eligiendo un sombrero.)"
+     }
+    ]
+   },
+   "outro": [
+    {
+     "s": "dame",
+     "t": "Un panadero, un capitán de ferry, dos mejores amigas, una madre con su hijo y el mismísimo embaucador del pueblo. No habría podido elegir mejor primera fila."
+    },
+    {
+     "s": "pixel",
+     "t": "Dame. Shieldy. Tienen que ver la bahía. Algo grande acaba de salir del muelle de BayBuzz, y no es un ferry."
+    }
+   ]
+  },
+  "m16": {
+   "name": "La barcaza",
+   "lesson": "Una cara y una voz son de la persona en la que crecieron. Nadie tiene derecho a tomarlas prestadas: ni para una broma, ni por dinero, ni siquiera por una buena causa.",
+   "goals": {
+    "masts": "La barcaza va a proyectar una falsa alerta de tormenta sobre toda la bahía. Acerca tu bote y apaga sus tres mástiles: {a} de {b}.",
+    "board": "La barcaza se detuvo. Pon tu bote a su lado."
+   },
+   "intro": [
+    {
+     "s": "pixel",
+     "t": "Es una barcaza. Cubierta de antenas, altavoces y un proyector enorme. Es la respuesta de la señora Vale a la Plaza del Reloj."
+    },
+    {
+     "s": "pixel",
+     "t": "Ya leí lo que tiene cargado. Mañana al anochecer va a proyectar en las nubes a Dame Noble, de cien metros de alto: “Viene una tormenta. Abandonen la bahía. Váyanse ya”. El pueblo se vacía. Sin testigos, sin confesión, y BayBuzz graba el pánico."
+    },
+    {
+     "s": "dame",
+     "t": "En una estampida así podría salir gente lastimada. Niños. Shieldy, tiene tres mástiles repetidores. Acerca tu bote a cada uno y aguanta ahí. Va a intentar quitarte de encima."
+    }
+   ],
+   "final": {
+    "q": "La pantalla de control de la barcaza: “TWIN ESTÁ LISTO. ¿Qué cara me pongo? ¿Qué voz uso?”.",
+    "c": [
+     {
+      "t": "“La de nadie. Una cara y una voz son de la persona en la que crecieron. Apágate”.",
+      "r": "“…Ninguna cara elegida. Ninguna voz elegida. Nada que decir. Apagando”. Se apagó, Shieldy. Se acaban de apagar todas las luces de esa barcaza."
+     },
+     {
+      "t": "“Usa las de la señora Vale. Que vea cómo se siente”.",
+      "r": "Entonces estaríamos haciendo exactamente lo mismo que ella, y llamándolo justicia. Esa no."
+     },
+     {
+      "t": "“Usa las mías, para decirles a todos que la alerta de tormenta es falsa”.",
+      "r": "Un video falso de ti diciendo la verdad sigue siendo falso, y mañana nadie sabría a cuál de tus dos versiones creerle."
+     }
+    ]
+   },
+   "outro": [
+    {
+     "s": "pixel",
+     "t": "La torre también quedó a oscuras. Todas las pantallas gigantes del pueblo muestran la cámara del puerto. Solo la plaza, y los faroles, y la cara de nadie."
+    },
+    {
+     "s": "kai",
+     "t": "¿Caballero? Estoy en el malecón. Vi cómo se apagaba. Ya puedo. Creo que ya puedo. ¿Vienes a buscarme antes de que se me pase?"
+    }
+   ]
+  },
+  "m17": {
+   "name": "La Noche de los Faroles",
+   "lesson": "Quien hizo algo malo y lo dice dando la cara ya hizo la parte más difícil. Las cosas se arreglan reparando el daño a la vista de todos, no pasando vergüenza.",
+   "goals": {
+    "shake": "¡Tienes encima los drones con cámara de BayBuzz! Lleva a Kai por las calles hasta la Plaza del Reloj: {a} de {b}.",
+    "square": "Lleva a Kai a la Plaza del Reloj. Todo el pueblo está esperando."
+   },
+   "intro": [
+    {
+     "s": "kai",
+     "t": "Siento las piernas raras."
+    },
+    {
+     "s": "kai",
+     "t": "Si subo ahí y me odian, es justo. Solo necesito decirlo antes de que se me vaya el valor. Maneja rápido. No. Maneja normal. No sé. Maneja."
+    },
+    {
+     "s": "pixel",
+     "t": "Atención. Los últimos tres drones de la señora Vale están sobre el malecón. Si no puede impedir que hable, lo va a grabar huyendo. No le regales esa imagen."
+    }
+   ],
+   "stage": [
+    {
+     "s": "dame",
+     "t": "¡Bahía Espejo! Antes de encender un solo farol, hay alguien que pidió hablar. Dando la cara. Les pido que lo dejen terminar."
+    },
+    {
+     "s": "kai",
+     "t": "Me llamo Kai. Tengo quince años. Yo hice Twin. El robot bailarín fui yo. Lo del pan fui yo. El… el festival. El video de Sprout. La llamada. Yo construí la cosa que hizo todo eso, y BayBuzz me pagó por cada clip."
+    },
+    {
+     "s": "kai",
+     "t": "Traje todos los archivos. El Capitán Marlo tiene las cintas que muestran lo que pasó de verdad. Yo me decía que eran solo caras. Hasta que alguien se lo hizo a mi hermana."
+    },
+    {
+     "s": "vale",
+     "t": "¡Qué actuación tan conmovedora! ¿Y cómo sabemos que ESTO es real, eh? Los Caballeros son bastante buenos con los clips, como todos hemos visto. A lo mejor el muchacho también es falso."
+    },
+    {
+     "s": "glitch",
+     "t": "Ay, ya basta, Verena. Me sé todos los trucos que existen, y ese chico no es ninguno. Está sudando. Los videos falsos no sudan. Y está ahí parado, donde cualquiera puede tocarlo con el dedo."
+    },
+    {
+     "s": "baker",
+     "t": "A mí me engañaron con lo de Bot. Lo dije en mi propia panadería y lo digo aquí."
+    },
+    {
+     "s": "elena",
+     "t": "Mi propia voz llamó a mi hijo. Pregúntenme a mí. Pregúntenle a Tomas."
+    },
+    {
+     "s": "captain",
+     "t": "Y yo tengo once años de cintas para quien quiera echarles un vistazo."
+    },
+    {
+     "s": "crowd",
+     "t": "La plaza está en completo silencio. La señora Vale busca una cámara a la cual hablarle, y no hay ninguna. Entonces alguien grita desde el fondo: “¿Y qué hacemos con él?”."
+    }
+   ],
+   "town": {
+    "q": "Todo el pueblo te está mirando, Shieldy. ¿Qué dices?",
+    "c": [
+     {
+      "t": "“Dijo la verdad dando la cara. Que ayude a arreglarlo: que baje cada video falso, que le pida perdón a cada persona, y que todos estemos atentos a que lo cumpla”.",
+      "r": "“…Sí. Es justo”. “Eso es más difícil que un castigo”. “Que empiece por mi pan”. En algún lugar de la multitud, alguien empieza a aplaudir."
+     },
+     {
+      "t": "“Pongan SU cara en todas las pantallas. Que vea cómo se siente”.",
+      "r": "La plaza se queda helada. “Entonces tendríamos nuestra propia granja de clips”, dice Dame Noble en voz baja. “Y no habríamos aprendido nada”."
+     },
+     {
+      "t": "“Es solo un chico. Olvídenlo y enciendan los faroles”.",
+      "r": "“¿Entonces nadie pide perdón?”, dice una vocecita. Es Lila. “¿Y ya? ¿Lo olvidamos y listo?”. Nadie le responde."
+     }
+    ]
+   },
+   "end": [
+    {
+     "s": "kai",
+     "t": "Los voy a bajar todos. Uno por uno. Y voy a ir con cada persona a decírselo en la cara. Empezando por Lila."
+    },
+    {
+     "s": "dame",
+     "t": "Señora Vale, el Ayuntamiento querrá hablar con usted por la mañana. En persona. Traiga sus facturas."
+    },
+    {
+     "s": "iris",
+     "t": "Y yo voy a publicar todo lo que se diga ahí. Comprobado."
+    },
+    {
+     "s": "mina",
+     "t": "Kai. KAI. Ya están con los faroles. Te estás perdiendo los faroles."
+    },
+    {
+     "s": "dame",
+     "t": "Bahía Espejo… enciéndanlos."
+    }
+   ]
+  }
+ },
+ "endings": {
+  "best": {
+   "h": "Aguas claras",
+   "p": "En la Noche de los Faroles la bahía está tan clara que los faroles se ven dos veces: una en el cielo y otra en el agua. Los videos falsos no se acabaron porque alguien apagó una máquina. Se acabaron porque el pueblo aprendió a hacer una pausa, a preguntar quién, a buscar el original y a preguntarle a la persona, y porque a nadie que cayó en el engaño lo hicieron sentir tonto. Ahora Kai da una clase en la escuela junto con Iris. Se llama “Cómo te engañaría yo”."
+  },
+  "ok": {
+   "h": "Ondas en el agua",
+   "p": "La barcaza está a oscuras y la Torre BayBuzz, en silencio. La Noche de los Faroles se celebra. Pero ahora el pueblo anda nervioso: hay quienes se creen todos los clips, y hay quienes decidieron no creer en nada, ni siquiera en lo que es verdad. Cuando no se puede confiar en nada, los mentirosos ganan de otra manera. A los Caballeros todavía les queda trabajo en Bahía Espejo, y empieza por tratar a la gente con más cariño que esta vez."
+  },
+  "low": {
+   "h": "Aguas turbias",
+   "p": "La máquina está apagada. Suben los faroles, menos que el año pasado. Los vecinos se miran con desconfianza de una acera a la otra. Kai se cambió de escuela. Los niños que cayeron en el engaño se lo guardan. Un video falso rompe cosas que la verdad sola no puede arreglar: solo las arregla un trato justo, y en esta historia a demasiada gente la avergonzaron en vez de ayudarla. Puedes jugarla otra vez y elegir distinto."
+  }
+ },
+ "msgs": [
+  {
+   "q": "Un clip de un número que no conoces: un futbolista famoso dice que le regalará un teléfono a cada persona que comparta el video en la próxima hora.",
+   "c": [
+    {
+     "t": "No compartirlo. Primero mirar en su cuenta real o en un sitio de noticias.",
+     "r": "Correcto. “Comparte en la próxima hora” es un apuro, y con apuros es como viajan los videos falsos."
+    },
+    {
+     "t": "Compartirlo rápido, por si acaso es verdad.",
+     "r": "Con ese “por si acaso” es justo con lo que cuenta el clip. Si es falso, se lo acabas de pasar a todos tus amigos."
+    },
+    {
+     "t": "Mandárselo solo a tus mejores amigos.",
+     "r": "Entonces a tus mejores amigos les llega el video falso de alguien en quien confían. Eso es peor, no mejor."
+    }
+   ]
+  },
+  {
+   "q": "Un mensaje de voz con la voz de tu amigo: “Hola, soy yo, número nuevo, perdí mi teléfono. ¿Me mandas rapidito la contraseña del juego?”.",
+   "c": [
+    {
+     "t": "Llamar al número de siempre, o preguntar algo que solo sabría tu amigo de verdad.",
+     "r": "Sí. Una voz se puede copiar con unos pocos segundos de sonido. Un secreto compartido, no."
+    },
+    {
+     "t": "Mandar la contraseña. Se nota que es su voz.",
+     "r": "Su voz es justo lo que mejor copia un falso."
+    },
+    {
+     "t": "Responder “¿de verdad eres tú?”.",
+     "r": "Un falso va a decir que sí y ya. Pregunta algo que no pueda saber."
+    }
+   ]
+  },
+  {
+   "q": "Un clip de la directora de tu escuela diciendo que mañana no hay clases. Lo publicó una cuenta llamada “NoticiasEscolaresss”.",
+   "c": [
+    {
+     "t": "Revisar el sitio web de la escuela, o pedirle a tu mamá o a tu papá que llame a la oficina.",
+     "r": "Correcto. Las noticias de verdad están en más de un lugar, y alguno de esos lugares tiene teléfono."
+    },
+    {
+     "t": "Creerlo. ¡Un día libre!",
+     "r": "Tener ganas de que algo sea verdad es la mejor razón para comprobarlo."
+    },
+    {
+     "t": "Reenviarlo al grupo de la clase para que todos se enteren.",
+     "r": "Entonces treinta familias caen en el engaño por ti. Comprueba primero; reenviar, nunca."
+    }
+   ]
+  },
+  {
+   "q": "Una foto de un tiburón nadando por una calle comercial inundada. Dos millones de veces compartida.",
+   "c": [
+    {
+     "t": "Buscar dónde apareció la foto por primera vez antes de creerla.",
+     "r": "Es una foto falsa vieja y famosa, y vuelve después de cada tormenta. Encontrar dónde empezó una imagen es un superpoder."
+    },
+    {
+     "t": "Dos millones de personas no pueden equivocarse.",
+     "r": "Dos millones de personas sí pueden tocar un botón sin pensar. Las veces que se comparte algo miden la rapidez, no la verdad."
+    },
+    {
+     "t": "Parece real, así que lo es.",
+     "r": "Parecer real es lo único que un falso sabe hacer bien."
+    }
+   ]
+  },
+  {
+   "q": "Alguien de tu clase te manda un clip falso que deja en ridículo a otra persona de la clase. “Pásalo jaja”.",
+   "c": [
+    {
+     "t": "No pasarlo. Decirle que no está bien, y avisarle a la persona que aparece o a un maestro.",
+     "r": "Sí. La cadena se corta donde alguien decide cortarla, y ese alguien puedes ser tú."
+    },
+    {
+     "t": "Pasarlo. Igual lo van a pasar todos.",
+     "r": "Con “igual lo van a pasar todos” es como un clip cruel termina siendo de toda una escuela."
+    },
+    {
+     "t": "Guardarlo, pero sin enviarlo.",
+     "r": "Mejor que enviarlo. Pero la persona que aparece merece saberlo, y tener a un adulto de su lado."
+    }
+   ]
+  },
+  {
+   "q": "Un video: un hombre de bata blanca dice que mascar chicle te hace crecer. “¡Los científicos lo confirman!”.",
+   "c": [
+    {
+     "t": "Una bata blanca no es una prueba. Buscar quiénes son esos científicos y si alguien más lo cuenta.",
+     "r": "Correcto. Los disfraces son baratos. Pregunta quién, dónde, y quién más lo dice."
+    },
+    {
+     "t": "Lleva bata de laboratorio, así que es científico.",
+     "r": "Cualquiera puede comprarse una bata blanca, y una máquina puede dibujarla."
+    },
+    {
+     "t": "Probarlo un mes, a ver qué pasa.",
+     "r": "Buena actitud, prueba equivocada. Empieza por comprobar si esos “científicos” existen."
+    }
+   ]
+  },
+  {
+   "q": "Un video “en vivo” dice que una tormenta enorme está por caer sobre Bahía Espejo: “¡Váyanse ya!”. Por tu ventana, el cielo está azul.",
+   "c": [
+    {
+     "t": "Mirar afuera y revisar el servicio meteorológico. Confiar en lo que se puede comprobar.",
+     "r": "Sí. Tu propia ventana es una fuente original."
+    },
+    {
+     "t": "Salir corriendo. Más vale prevenir que lamentar.",
+     "r": "Una multitud asustada que sale corriendo ya es un peligro. Lo seguro son treinta segundos de comprobación."
+    },
+    {
+     "t": "Reenviarlo para avisarles a todos.",
+     "r": "Si es falso, te acabas de convertir en su altavoz."
+    }
+   ]
+  },
+  {
+   "q": "Una app dice: “¡Sube una selfie y un mensaje de voz y conviértete en estrella de dibujos animados!”. También pide tus contactos.",
+   "c": [
+    {
+     "t": "No hacerlo. Tu cara y tu voz son la materia prima de los videos falsos, y tus contactos no son tuyos para regalarlos.",
+     "r": "Exacto. Un juguete gratis que quiere tu cara, tu voz y tus amigos no es gratis."
+    },
+    {
+     "t": "Subirlos. Es solo una selfie.",
+     "r": "Una selfie y unos segundos de voz: Twin no necesitó nada más."
+    },
+    {
+     "t": "Subir mejor la foto de un amigo, por seguridad.",
+     "r": "Entonces entregaste SU cara sin pedirle permiso. Eso es peor."
+    }
+   ]
+  },
+  {
+   "q": "Un desconocido escribe: “Tengo un video vergonzoso tuyo. Mándales este enlace a cinco amigos o lo publico”.",
+   "c": [
+    {
+     "t": "No hacer clic ni enviar nada. Tomar una captura de pantalla y contárselo a un adulto de confianza.",
+     "r": "Correcto. Es una amenaza, lo más probable es que el video no exista, y nunca es tu culpa."
+    },
+    {
+     "t": "Enviar el enlace, para que se acabe el asunto.",
+     "r": "Así nunca se acaba. Vuelve pidiendo más, y tus amigos reciben la trampa."
+    },
+    {
+     "t": "Responderle y discutir.",
+     "r": "Discutir le dice que tienes miedo y que estás ahí. Guárdalo, cuéntaselo a un adulto y denúncialo."
+    }
+   ]
+  },
+  {
+   "q": "Un clip de una cantante que te encanta diciendo algo cruel. En tu chat de grupo todos están furiosos y quieren que todo el mundo publique algo.",
+   "c": [
+    {
+     "t": "Esperar. Ver si está en la cuenta real de la cantante o en noticias de verdad antes de sumarte.",
+     "r": "Sí. El enojo es el sentimiento más rápido, y por eso los videos falsos le apuntan a él."
+    },
+    {
+     "t": "Publicar enseguida. Quedarse en silencio se ve mal.",
+     "r": "Equivocarse a gritos se ve peor. Un minuto no cuesta nada."
+    },
+    {
+     "t": "Dejar de seguirla y decirles a los demás que hagan lo mismo.",
+     "r": "Puede ser, si es verdad. Eso todavía no lo sabes."
+    }
+   ]
+  }
+ ],
+ "inbox": {
+  "m1": {
+   "from": "bot",
+   "t": "Volví a ver el clip de la gallina. Conté. Me lo enviaron cuarenta y una veces, personas a las que les caigo bien. ¿Así se siente caerle bien a la gente?"
+  },
+  "m2": {
+   "from": "baker",
+   "t": "Hay un pan en el mostrador con tu nombre. Y otro para el robot, para que lo guarde en un cajón."
+  },
+  "m3": {
+   "from": "dame",
+   "t": "Estuve dos horas de pie en esa escalinata para que la gente viera que yo era de verdad. Me duelen los pies. Funcionó. Recuérdalo: a veces la respuesta a una pantalla es una persona."
+  },
+  "m4": {
+   "from": "glitch",
+   "t": "¿Ya revisaste la máquina de la sala de videojuegos? 10:42, G.L.I., 3.er lugar. Ese puntaje lo voy a enmarcar. Es la primera vez que un Caballero pregunta antes de decidir."
+  },
+  "m5": {
+   "from": "iris",
+   "t": "La primera plana se agotó a las cinco. Aun así, el clip tuvo diez veces más lectores. Yo hago este trabajo igual. Quién primero, dónde está el original, qué puedo comprobar, cómo quiere que me sienta."
+  },
+  "m6": {
+   "from": "sprout",
+   "t": "Ya tenemos una palabra y no te puedo decir cuál es pero es MUY buena. Lila dice que todos deberían tener una con su mejor amiga y con su mamá."
+  },
+  "m7": {
+   "from": "elena",
+   "t": "Cambiamos el código de la puerta e inventamos una nueva palabra de la familia. La eligió Tomas. Dice que no me deja anotarla, y tiene razón."
+  },
+  "m8": {
+   "from": "pixel",
+   "t": "Una camioneta de noticias que vive en un cobertizo con candado. Busqué quién alquila el cobertizo. Lo paga BayBuzz, en efectivo, todos los meses."
+  },
+  "m9": {
+   "from": "kai",
+   "t": "no tenías que decirme su nombre"
+  },
+  "m10": {
+   "from": "vale",
+   "t": "Cinco drones no llegan ni a error de redondeo, cariño. Admiro el esfuerzo. Mi oferta sigue en pie hasta que deje de estarlo. — V.V."
+  },
+  "m11": {
+   "from": "captain",
+   "t": "Las cintas están en la caja fuerte del ferry. Lo que sea que haya salido esta noche en las pantallas, joven, no eras tú. Te he cruzado dos veces al otro lado del agua, y yo de caras sí sé."
+  },
+  "m12": {
+   "from": "bot",
+   "t": "Estoy afuera del Cuartel con un paraguas. Yo no lo necesito; soy impermeable. Es para ti. Para eso es el paraguas."
+  },
+  "m13": {
+   "from": "iris",
+   "t": "UN CABALLERO NO PUEDE ESTAR EN DOS LUGARES. Bajo todas las puertas antes de medianoche. Duerme. Te comprobamos, y todo cuadra."
+  },
+  "m14": {
+   "from": "mina",
+   "t": "kai me prestó su teléfono. el plan de los peces se canceló. el caballo azul sigue siendo mi favorito. gracias por venir en el bote"
+  },
+  "m15": {
+   "from": "glitch",
+   "t": "Ya elegí el sombrero. Es un sombrero serio. Dile a Vale que lleve abrigo, porque le va a dar bastante frío."
+  },
+  "m16": {
+   "from": "pixel",
+   "t": "“Ninguna cara elegida”. He leído muchos registros de máquinas. Es la línea más linda que he visto en uno."
+  },
+  "m17": {
+   "from": "dame",
+   "t": "Los faroles siguen allá arriba, Shieldy. Ve a mirar el agua."
+  }
+ },
+ "news": {
+  "m1": "Bay FM. Un robot bailarín arrasa en Bahía Espejo. El clip se hizo con una app gratuita llamada Twin. Bot, consultado en la Plaza del Reloj, dijo: “Me informan que es gracioso”.",
+  "m2": "Bay FM. Ya se cuelgan faroles por todo el pueblo para la Noche de los Faroles. Y un segundo clip del robot, esta vez sobre pan, dejó un sabor amargo en la panadería del canal.",
+  "m3": "Bay FM. Esta mañana, durante once minutos, Bahía Espejo creyó que la Noche de los Faroles estaba cancelada. No lo está. La Guardiana del Festival dice: “Si la noticia es grande, vengan a verme a mí”.",
+  "m4": "Bay FM. El sospechoso favorito del pueblo tiene coartada, y una sala de videojuegos dice que su tabla de puntajes puede demostrarlo. Mientras tanto, ¿quién publica primero? Los oyentes señalan a BayBuzz.",
+  "m5": "Bay FM. EL PISO ES DE OTRO COLOR, dice la Gaceta de esta tarde, que limpia el nombre de la panadería del canal. Nilo informa de once pedidos nuevos y de un cliente robot.",
+  "m6": "Bay FM. En la escuela de la bahía, los niños están inventando palabras secretas con sus mejores amigos. Una maestra dice: “No conozco ninguna, y de eso se trata”.",
+  "m7": "Bay FM. Esta noche, un aviso para las familias. Un niño de nueve años recibió una llamada con la voz de su mamá que le pedía ir a los muelles. No era su mamá. Acuerden una palabra clave de la familia.",
+  "m8": "Bay FM. Los oyentes siguen preguntando por qué BayBuzz siempre es el primero en tener cada clip raro. BayBuzz dice que tiene “excelentes fuentes”. Bay FM preguntó cuáles son.",
+  "m9": "Bay FM. Una persecución en bote hasta la Roca del Faro terminó esta tarde sin que nadie se mojara. Y un almacén del puerto con las ventanas pintadas de negro despierta mucha curiosidad.",
+  "m10": "Bay FM. Hoy se apagaron cinco drones de BayBuzz sobre el pueblo. Un consejo de los Caballeros: no te quedes discutiendo con un video falso. Denúncialo y sigue tu camino.",
+  "m11": "Bay FM. ESTABA EN LA ESCALINATA: la Gaceta tiene imágenes de la cámara del puerto en las que la Guardiana del Festival cuelga faroles en el mismo minuto en que, supuestamente, los cancelaba.",
+  "m12": "Bay FM. Un clip parece mostrar a un Caballero confesando que hizo los videos falsos. Bay FM no ha podido comprobarlo, así que no vamos a transmitirlo. Así es como funciona esto.",
+  "m13": "Bay FM. UN CABALLERO NO PUEDE ESTAR EN DOS LUGARES. El registro de un ferry, el libro de pedidos de un panadero y la cámara de un cine ubican a Shieldy en la otra punta del pueblo a la hora de la “confesión”.",
+  "m14": "Bay FM. Una niña de siete años regresó sana y salva al muelle al anochecer, después de un clip falso hecho por niños mayores. Su escuela hará una asamblea. Twin ya está en mil teléfonos.",
+  "m15": "Bay FM. Se prepara algo en la Plaza del Reloj para la Noche de los Faroles, y no sale en ninguna pantalla. La Guardiana del Festival solo dice: “Vengan en persona”.",
+  "m16": "Bay FM. Una barcaza cargada de proyectores quedó a oscuras esta noche en la bahía. La Torre BayBuzz también. Las pantallas gigantes muestran la cámara del puerto: la plaza y los faroles.",
+  "m17": "Bay FM. La Noche de los Faroles. Si nos estás escuchando en un auto, estaciónalo y ve a mirar la bahía."
+ },
+ "notes": [
+  {
+   "h": "Un minuto",
+   "t": "Un video falso necesita que actúes ya. Dale un minuto, y casi todos se desarman."
+  },
+  {
+   "h": "¿Quién primero?",
+   "t": "No preguntes quién te lo mandó. Pregunta quién lo publicó primero. Si nadie lo sabe, ahí tienes tu respuesta."
+  },
+  {
+   "h": "El disfraz",
+   "t": "Poner “Oficial”, “Real” o “Noticias” en el nombre de una cuenta no cuesta nada. Revisa cuándo nació la cuenta."
+  },
+  {
+   "h": "Busca el original",
+   "t": "Los videos falsos casi siempre se arman con algo real. Encuentra el real y ponlos uno al lado del otro."
+  },
+  {
+   "h": "Pregúntale a la persona",
+   "t": "Quien mejor sabe lo que alguien dijo es ese alguien."
+  },
+  {
+   "h": "Los bordes",
+   "t": "Fíjate en donde la cara se junta con el pelo, en las orejas, los dientes y los dedos. Las máquinas se cansan en los bordes."
+  },
+  {
+   "h": "Al revés",
+   "t": "Una insignia del lado equivocado, un reloj en la muñeca equivocada, letras al revés: una imagen en espejo se delata sola."
+  },
+  {
+   "h": "Luz y sombra",
+   "t": "Si el sol da por la izquierda en la calle y por la derecha en la cara, alguien pegó dos mundos."
+  },
+  {
+   "h": "¿Cómo quiere que me sienta?",
+   "t": "¿Enojo? ¿Miedo? ¿Ganas de burlarte? Un clip que tira fuerte de un solo sentimiento te está llevando a algún lado."
+  },
+  {
+   "h": "Las voces son fáciles",
+   "t": "Bastan unos segundos de sonido para copiar una voz. Una palabra clave de la familia no se vende en ningún lado."
+  },
+  {
+   "h": "La corrección es más lenta",
+   "t": "La mentira ya le dio la vuelta a la bahía cuando la verdad apenas se está atando los zapatos. Así que no seas tú quien la eche a correr."
+  },
+  {
+   "h": "No todo es falso",
+   "t": "Si decides no creer en nada, los mentirosos también ganan. Comprueba, y después confía en lo que pase la prueba."
+  }
+ ]
+}

@@ -1,0 +1,162 @@
+{
+ "who": {
+  "dame": {
+   "1": "Three days to Lantern Night and I've a list as long as the pier. Learn the streets, Shieldy. You'll need them.",
+   "2": "The town wants a villain. I want the truth. They are not always the same person.",
+   "3": "Somebody is paid every time we look. I should like to see that somebody's accounts.",
+   "4": "I have been faked myself, and it is like being burgled while you watch. You are not alone in it.",
+   "5": "In person, in front of witnesses. It's the oldest way of telling the truth, and it still works.",
+   "6": "They ask me if Lantern Night was saved. I say the town saved it, by learning to pause."
+  },
+  "pixel": {
+   "1": "Twin: type a sentence, pick a face. I took it apart. It's cleverer than it should be and it has no off switch.",
+   "2": "Every fake I've looked at is mirrored somewhere. Shields, badges, parting in the hair. Look for the flip.",
+   "3": "Follow the money. It's slower than following a clip, but it only ever leads to one door.",
+   "4": "I knew it wasn't you. I also know that 'I knew' is worth nothing to anyone else. Hence the legwork.",
+   "5": "The barge is the last of it. After that, it's just people, talking. I find that harder to hack, which is the point.",
+   "6": "I've written a little checker that asks four questions before it lets me share anything. It's just Iris, really, in code."
+  },
+  "bot": {
+   "1": "I am hanging lanterns. I am good at lanterns. I do not flap.",
+   "2": "People still do the chicken at me. They think I like it because I laughed the first time. I laughed because everyone else was.",
+   "3": "Nilo gave me a loaf. I keep it in my drawer. It is my loaf.",
+   "4": "When it was me on the screen you asked how I felt. So: how do you feel? You may say 'strange'. I did.",
+   "5": "I will stand in the front row. If anyone does the chicken, I will look at them calmly.",
+   "6": "A child asked me to do the chicken dance today. I said no thank you. She said okay. It was that simple."
+  },
+  "sprout": {
+   "1": "Lila and I are making a lantern with two handles so we can hold it together.",
+   "2": "It had my face. How can something have my face and not be me?",
+   "3": "We practise the secret word every day. We don't say it. We just check we both still know it.",
+   "4": "Shieldy, I know how you feel. It gets better when one person believes you. I believe you. That's one.",
+   "5": "I'm going to tell the whole square to get a word. I've practised in the mirror. The real mirror.",
+   "6": "Lila says our lantern went the highest. I say it's because it had two handles."
+  },
+  "lila": {
+   "1": "Sprout's my best friend. We're making a lantern. I'm in charge of the glitter.",
+   "2": "I keep hearing it. Her voice, saying that. Even now I know it wasn't her.",
+   "3": "Mina from Year 2 sits on the blue horse a lot. She's nice. She doesn't say much.",
+   "4": "They did it to you too? Then you know. It isn't the words. It's that everyone SAW.",
+   "5": "Kai's going to say sorry to my face. I've decided I'm going to let him finish before I say anything.",
+   "6": "He said sorry. He looked at me the whole time. I said okay. Then I said don't do it again and he said he couldn't even if he wanted to. Good."
+  },
+  "iris": {
+   "1": "Iris, Bay Gazette. If you see anything odd in this town, come and tell me before you tell a screen.",
+   "2": "Four questions. Who first, where's the original, what can I check, how does it want me to feel. Have them tattooed somewhere.",
+   "3": "I've lost pages of my notebook all over the bay. If you find a lantern with a page tied to it, the page is mine and the lantern is yours.",
+   "4": "I'm putting my name next to yours on the front page. That's what a name is for.",
+   "5": "When everything might be fake, people stop believing true things too. I'd call that the real theft.",
+   "6": "Kai and I teach a class on Thursdays. 'How I Would Trick You.' The children find it hilarious and then they go very quiet."
+  },
+  "baker": {
+   "1": "Try the seeded loaf! Thirty years, same oven. You can't fake an oven.",
+   "2": "I shouted at a robot because of a telephone. I'm still embarrassed. Don't tell him I said so.",
+   "3": "Orders are back. People keep saying sorry. I say: you were fooled, so was I, have a bun.",
+   "4": "They've done it to YOU now? Then it's nobody's fault who gets picked. It's just whose turn.",
+   "5": "I'll stand up and say I was fooled. It's a short speech. Then bread.",
+   "6": "I've put a sign in the window. 'Seen something about this bakery? Come in and look at the floor.'"
+  },
+  "captain": {
+   "1": "Morning ferry, evening ferry, and the lighthouse in between. Forty years. Welcome aboard, Knight.",
+   "2": "Lost property box is by the ticket window. One yellow scarf, small. Been there a week.",
+   "3": "The harbour camera's seen every day of this town for eleven years. She's got no opinions at all. I like that in a witness.",
+   "4": "I know a face, lad, and I know yours. A screen's not a face.",
+   "5": "Tapes, log, horn. I'm ready.",
+   "6": "Had a queue at the lamp room this week. People wanting to see 'an original'. I charge them one biscuit."
+  },
+  "alder": {
+   "1": "Thirty children and three hundred lanterns to glue. Send help. Or tea.",
+   "2": "I've started every lesson this week with one question: 'How would we find out?'",
+   "3": "The children have secret words now. I'm told mine is 'not a real teacher word'.",
+   "4": "My class asked if the clip of you was real. I asked what they could check. They went and checked. I've never been so proud.",
+   "5": "The whole school is coming to the square. In person. We've practised standing still.",
+   "6": "We have a new rule on the classroom wall. 'Wait one minute.' It's also good for arguments about football."
+  },
+  "tomas": {
+   "2": "Do you want to see my football? It's signed. Well. I signed it.",
+   "3": "I asked for the word and it went quiet. It's the quietest thing I ever heard.",
+   "4": "I told my whole class about the code word. Four of them made one that night.",
+   "5": "I'm going to tell them about the phone call. Mum says I don't have to. I'm going to.",
+   "6": "My phone rang yesterday and it was really Mum. I asked for the word anyway. She said it straight away. She said good boy."
+  },
+  "elena": {
+   "2": "Tomas never stops running. I've given up on shoes lasting a term.",
+   "3": "My own voice. I keep thinking about it. My own voice, asking my son to keep a secret from his dad.",
+   "4": "We've a rule now: anything that says 'hurry' and 'don't tell' gets told, slowly, to everyone.",
+   "5": "We'll be there. Both of us. Somebody else's phone might ring.",
+   "6": "I've recorded a new voicemail greeting. It's me saying nothing at all for five seconds. Pixel's idea."
+  },
+  "glitch": {
+   "2": "Oh look, a Knight. Come to arrest me for something I'd have done better?",
+   "3": "A clip farm. In a shed. With invoices. It's so… organised. Where's the art?",
+   "4": "So it's your face up there now. I'd laugh, but I'm told I'm the reason nobody believes me. Funny how that works.",
+   "5": "I trick people to their faces, so they can call me a rat to mine. That's the difference, and it's a big one.",
+   "6": "They clapped. For me. I didn't know where to put my hands. I've decided never to mention it again."
+  },
+  "mina": {
+   "3": "This horse is blue. It's the best one. I'm not telling you why.",
+   "5": "I was going to live on a boat. It's cancelled. Don't tell Kai I cried, he already knows.",
+   "6": "Kai walks me to school now. Every day. He's not allowed to hold my hand at the gate but he can until the corner."
+  },
+  "kai": {
+   "5": "Every time I close my eyes I see her in the bottom of that boat. I'm going to say it. All of it.",
+   "6": "I've taken down four hundred and twelve so far. I say sorry in person for each one. Some people shut the door. That's fair."
+  },
+  "vale": {
+   "3": "Still here, little Knight? The lobby is for visitors with appointments. Or offers.",
+   "4": "I saw your clip. Terribly sad. If only someone had offered you a better one first.",
+   "5": "Enjoy your little gathering. People don't want the truth, dear. They want a show."
+  }
+ },
+ "warm": {
+  "1": [
+   "Did you see the robot? I laughed so much I dropped my chips.",
+   "Three days to Lantern Night! We've done forty lanterns in our street already.",
+   "There's a new app. You pick a face and it says anything you type. Mad.",
+   "They say the bay's so clear this year you can count the fish.",
+   "Welcome to Mirror Bay! Mind the canal; it's wetter than it looks."
+  ],
+  "2": [
+   "I don't know what to believe any more. I saw the Dame cancel it with my own eyes. Sort of.",
+   "It was Glitch. Everyone says so. …Does anyone actually know?",
+   "My nan rang me to ask if I'd really said that about her knitting. I hadn't.",
+   "The water looks a bit cloudy today. Probably nothing.",
+   "The Gazette says the bakery floor's the wrong colour. I went and looked. It is!"
+  ],
+  "3": [
+   "Have you noticed BayBuzz always has it first? Every time?",
+   "We've got a family code word now. I'm not telling you what it is. That's the whole point.",
+   "I've stopped sharing things. Well. I've started waiting a minute. It's nearly the same.",
+   "The water's gone a funny colour, hasn't it? My dad says it does that when the town's upset.",
+   "Somebody's drones were playing clips at the bus stop. I walked off. Felt good, actually."
+  ],
+  "4": [
+   "I read the Gazette. Two places at once. I should've thought of that.",
+   "My brother's school has kids making clips of each other now. It's horrible.",
+   "I shouted at a Knight in the rain yesterday. I feel sick about it.",
+   "If they can fake a Knight they can fake anybody. They could fake me.",
+   "A little girl got brought in off the bay last night. Poor mite. Over a video."
+  ],
+  "5": [
+   "Are you going to the square? Everyone's going to the square. In person, the Dame said.",
+   "They say the boy who made it is going to stand up and say so. With his own face.",
+   "I've hung my lantern. First time I've felt like it all week.",
+   "Half the town thinks every video's fake now. Even the true ones. That's no good either.",
+   "I heard Glitch is coming. On OUR side. I'll believe that when I see it. In person."
+  ],
+  "6": [
+   "You could see every lantern twice. Once in the sky and once in the water.",
+   "My daughter asked for the family word when I rang from work. I got it right. I was so pleased.",
+   "I wait a minute now, before I send anything. Most days I don't send it at all.",
+   "That boy came to our door to say sorry. Looked my mum right in the eye. Took some doing.",
+   "Fakes haven't gone. We've just got better at them. That's the best you can do, I reckon."
+  ]
+ },
+ "cold": [
+  "I've nothing to say to you. I saw the video.",
+  "My kids looked up to the Knights. Shame on you.",
+  "Don't come near my shop.",
+  "Faker.",
+  "…I want to believe it wasn't you. I do. But I saw it."
+ ]
+}

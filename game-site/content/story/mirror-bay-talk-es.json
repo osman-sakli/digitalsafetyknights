@@ -1,0 +1,162 @@
+{
+ "who": {
+  "dame": {
+   "1": "Faltan tres días para la Noche de los Faroles y tengo una lista más larga que el muelle. Apréndete las calles, Shieldy. Las vas a necesitar.",
+   "2": "El pueblo quiere un villano. Yo quiero la verdad. No siempre son la misma persona.",
+   "3": "A alguien le pagan cada vez que miramos. Me gustaría ver las cuentas de ese alguien.",
+   "4": "A mí también me falsificaron, y es como que te roben la casa mientras miras. Esto no te pasa solo a ti.",
+   "5": "En persona, delante de testigos. Es la manera más antigua de decir la verdad, y todavía funciona.",
+   "6": "Me preguntan si se salvó la Noche de los Faroles. Yo digo que la salvó el pueblo, cuando aprendió a hacer una pausa."
+  },
+  "pixel": {
+   "1": "Twin: escribes una frase, eliges una cara. Lo desarmé. Es más listo de lo que debería y no tiene botón de apagado.",
+   "2": "Todos los videos falsos que he revisado están en espejo en alguna parte. Escudos, insignias, la raya del pelo. Busca lo que está volteado.",
+   "3": "Sigue el dinero. Es más lento que seguir un clip, pero siempre termina en una sola puerta.",
+   "4": "Yo sabía que no eras tú. También sé que un “yo sabía” no le sirve de nada a nadie más. Por eso toca gastar suela.",
+   "5": "La barcaza es lo último. Después de eso, solo queda gente hablando. Eso me cuesta más hackearlo, y de eso se trata.",
+   "6": "Programé un pequeño verificador que me hace cuatro preguntas antes de dejarme compartir algo. En realidad es Iris, pero en código."
+  },
+  "bot": {
+   "1": "Estoy colgando faroles. Soy bueno con los faroles. Yo no aleteo.",
+   "2": "La gente todavía me hace la gallina. Creen que me gusta porque la primera vez me reí. Me reí porque todos los demás se reían.",
+   "3": "Nilo me dio un pan. Lo guardo en mi cajón. Es mi pan.",
+   "4": "Cuando era yo el de la pantalla, me preguntaste cómo me sentía. Entonces: ¿cómo te sientes tú? Puedes decir “se siente raro”. Yo lo dije.",
+   "5": "Voy a pararme en la primera fila. Si alguien hace la gallina, lo voy a mirar con calma.",
+   "6": "Hoy una niña me pidió que hiciera el baile de la gallina. Le dije que no, gracias. Dijo que bueno. Así de sencillo fue."
+  },
+  "sprout": {
+   "1": "Lila y yo estamos haciendo un farol con dos asas para poder llevarlo entre las dos.",
+   "2": "Tenía mi cara. ¿Cómo puede algo tener mi cara y no ser yo?",
+   "3": "Practicamos la palabra secreta todos los días. No la decimos. Solo revisamos que las dos todavía nos la sabemos.",
+   "4": "Shieldy, yo sé cómo te sientes. Mejora cuando una persona te cree. Yo te creo. Ya va una.",
+   "5": "Le voy a decir a toda la plaza que se busque una palabra. Practiqué frente al espejo. El espejo de verdad.",
+   "6": "Lila dice que nuestro farol fue el que llegó más alto. Yo digo que es porque tenía dos asas."
+  },
+  "lila": {
+   "1": "Sprout es mi mejor amiga. Estamos haciendo un farol. Yo soy la encargada de la brillantina.",
+   "2": "Lo sigo oyendo. Su voz, diciendo eso. Incluso ahora que sé que no era ella.",
+   "3": "Mina, la de segundo grado, se sienta mucho en el caballo azul. Es buena onda. No habla mucho.",
+   "4": "¿A ti también te lo hicieron? Entonces ya sabes. No son las palabras. Es que todos lo VIERON.",
+   "5": "Kai me va a pedir perdón en la cara. Ya decidí que lo voy a dejar terminar antes de decir nada.",
+   "6": "Pidió perdón. Me miró todo el tiempo. Le dije que bueno. Después le dije que no lo volviera a hacer, y dijo que no podría aunque quisiera. Mejor."
+  },
+  "iris": {
+   "1": "Iris, de La Gaceta de la Bahía. Si ves algo raro en este pueblo, ven a contármelo a mí antes de contárselo a una pantalla.",
+   "2": "Cuatro preguntas. Quién primero, dónde está el original, qué puedo comprobar, cómo quiere que me sienta. Tatúatelas en algún lado.",
+   "3": "Perdí páginas de mi libreta por toda la bahía. Si encuentras un farol con una página atada, la página es mía y el farol es tuyo.",
+   "4": "Voy a poner mi nombre junto al tuyo en la primera plana. Para eso sirve un nombre.",
+   "5": "Cuando todo podría ser falso, la gente también deja de creer en lo que es verdad. Para mí, ese es el verdadero robo.",
+   "6": "Kai y yo damos una clase los jueves. “Cómo te engañaría yo”. A los niños les da muchísima risa, y después se quedan muy callados."
+  },
+  "baker": {
+   "1": "¡Prueba el pan de semillas! Treinta años, el mismo horno. Un horno no se puede falsificar.",
+   "2": "Le grité a un robot por culpa de un teléfono. Todavía me da vergüenza. No le digas que te lo dije.",
+   "3": "Volvieron los pedidos. La gente no para de pedir perdón. Yo les digo: a ti te engañaron, a mí también, toma un pancito.",
+   "4": "¿Ahora te lo hicieron a TI? Entonces nadie tiene la culpa de que lo elijan. Solo es a quién le toca.",
+   "5": "Voy a pararme y decir que me engañaron. Es un discurso corto. Después, pan.",
+   "6": "Puse un cartel en la vitrina. “¿Viste algo sobre esta panadería? Entra y mira el piso”."
+  },
+  "captain": {
+   "1": "Ferry de la mañana, ferry de la tarde, y el faro entre uno y otro. Cuarenta años. Sube a bordo, Caballero.",
+   "2": "La caja de objetos perdidos está junto a la ventanilla de boletos. Una bufanda amarilla, chica. Lleva ahí una semana.",
+   "3": "La cámara del puerto ha visto cada día de este pueblo desde hace once años. No tiene ninguna opinión. Eso me gusta en un testigo.",
+   "4": "Yo de caras sí sé, joven, y la tuya la conozco. Una pantalla no es una cara.",
+   "5": "Cintas, registro, bocina. Todo a punto.",
+   "6": "Esta semana tuve fila en el cuarto de la lámpara. Gente que quería ver “un original”. Les cobro una galleta."
+  },
+  "alder": {
+   "1": "Treinta niños y trescientos faroles por pegar. Manden ayuda. O té.",
+   "2": "Esta semana empecé todas las clases con una pregunta: “¿Cómo podríamos averiguarlo?”.",
+   "3": "Ahora los niños tienen palabras secretas. Me dicen que la mía “no es una palabra de maestra de verdad”.",
+   "4": "Mi clase me preguntó si el clip en el que sales era real. Les pregunté qué podían comprobar. Fueron y lo comprobaron. Nunca había estado tan orgullosa.",
+   "5": "Toda la escuela va a ir a la plaza. En persona. Estuvimos practicando quedarnos quietos.",
+   "6": "Tenemos una regla nueva en la pared del salón. “Espera un minuto”. También sirve para las discusiones de fútbol."
+  },
+  "tomas": {
+   "2": "¿Quieres ver mi pelota de fútbol? Está firmada. Bueno. La firmé yo.",
+   "3": "Pedí la palabra y se quedó callada. Es lo más callado que he oído en mi vida.",
+   "4": "Le conté a toda mi clase lo de la palabra clave. Cuatro inventaron una esa misma noche.",
+   "5": "Les voy a contar lo de la llamada. Mamá dice que no tengo por qué. Pero lo voy a hacer.",
+   "6": "Ayer sonó mi teléfono y sí era mamá. Igual le pedí la palabra. La dijo enseguida. Y me dijo: “muy bien, hijo”."
+  },
+  "elena": {
+   "2": "Tomas no para de correr. Ya me rendí: los zapatos no le duran ni un trimestre.",
+   "3": "Mi propia voz. No dejo de pensarlo. Mi propia voz, pidiéndole a mi hijo que le guardara un secreto a su papá.",
+   "4": "Ahora tenemos una regla: todo lo que diga “apúrate” y “no le cuentes a nadie” se cuenta, despacito, a todo el mundo.",
+   "5": "Ahí vamos a estar. Los dos. Puede que suene el teléfono de alguien más.",
+   "6": "Grabé un nuevo saludo para mi buzón de voz. Soy yo sin decir absolutamente nada durante cinco segundos. Idea de Pixel."
+  },
+  "glitch": {
+   "2": "Miren nada más, un Caballero. ¿Vienes a arrestarme por algo que yo habría hecho mejor?",
+   "3": "Una granja de clips. En un cobertizo. Con facturas. Es tan… organizado. ¿Dónde quedó el arte?",
+   "4": "Así que ahora es tu cara la que está allá arriba. Me reiría, pero dicen que si nadie me cree es por mi culpa. Qué cosas, ¿no?",
+   "5": "Yo engaño a la gente en su cara, para que me puedan decir sinvergüenza en la mía. Esa es la diferencia, y es grande.",
+   "6": "Aplaudieron. A mí. No supe dónde poner las manos. Decidí no volver a mencionarlo jamás."
+  },
+  "mina": {
+   "3": "Este caballo es azul. Es el mejor. No te voy a decir por qué.",
+   "5": "Iba a vivir en un bote. Se canceló. No le digas a Kai que lloré, ya lo sabe.",
+   "6": "Ahora Kai me lleva a la escuela caminando. Todos los días. En el portón no lo dejo darme la mano, pero hasta la esquina sí."
+  },
+  "kai": {
+   "5": "Cada vez que cierro los ojos la veo en el fondo de ese bote. Lo voy a decir. Todo.",
+   "6": "Hasta ahora bajé cuatrocientos doce. Pido perdón en persona por cada uno. Algunos me cierran la puerta. Es justo."
+  },
+  "vale": {
+   "3": "¿Sigues aquí, pequeño Caballero? El vestíbulo es para visitas con cita. O con ofertas.",
+   "4": "Vi tu clip. Tristísimo. Si tan solo alguien te hubiera ofrecido uno mejor antes.",
+   "5": "Disfruta tu reunioncita. La gente no quiere la verdad, cariño. Quiere un espectáculo."
+  }
+ },
+ "warm": {
+  "1": [
+   "¿Viste al robot? Me reí tanto que se me cayeron las papas fritas.",
+   "¡Tres días para la Noche de los Faroles! En nuestra calle ya hicimos cuarenta faroles.",
+   "Hay una app nueva. Eliges una cara y dice cualquier cosa que escribas. Una locura.",
+   "Dicen que este año la bahía está tan clara que se pueden contar los peces.",
+   "¡Te damos la bienvenida a Bahía Espejo! Ojo con el canal: moja más de lo que parece."
+  ],
+  "2": [
+   "Ya no sé qué creer. Vi a la Dame cancelarlo con mis propios ojos. Más o menos.",
+   "Fue Glitch. Lo dice todo el mundo. …¿Alguien lo sabe de verdad?",
+   "Mi abuela me llamó para preguntarme si de verdad dije eso de su tejido. Yo nunca lo dije.",
+   "Hoy el agua se ve un poco turbia. No ha de ser nada.",
+   "La Gaceta dice que el piso de la panadería es de otro color. Fui a ver. ¡Y es cierto!"
+  ],
+  "3": [
+   "¿Te fijaste en que BayBuzz siempre lo tiene primero? ¿Todas las veces?",
+   "Ya tenemos una palabra clave de la familia. No te voy a decir cuál es. De eso se trata.",
+   "Dejé de compartir cosas. Bueno. Empecé a esperar un minuto. Es casi lo mismo.",
+   "El agua tiene un color raro, ¿no? Dice mi papá que se pone así cuando el pueblo anda alterado.",
+   "Los drones de alguien estaban pasando clips en la parada del autobús. Me fui caminando. Y la verdad, se sintió bien."
+  ],
+  "4": [
+   "Leí la Gaceta. Dos lugares a la vez. Se me tenía que haber ocurrido.",
+   "En la escuela de mi hermano ya hay chicos haciéndose clips unos a otros. Es horrible.",
+   "Ayer le grité a un Caballero bajo la lluvia. Me siento fatal.",
+   "Si pueden falsificar a un Caballero, pueden falsificar a cualquiera. Podrían falsificarme a mí.",
+   "Anoche trajeron a una niñita desde la bahía. Pobrecita. Por un video."
+  ],
+  "5": [
+   "¿Vas a ir a la plaza? Todo el mundo va a ir a la plaza. En persona, dijo la Dame.",
+   "Dicen que el chico que lo hizo se va a parar ahí a decirlo. Dando la cara.",
+   "Ya colgué mi farol. Es la primera vez en toda la semana que tuve ganas.",
+   "Medio pueblo cree que ahora todos los videos son falsos. Hasta los verdaderos. Eso tampoco sirve.",
+   "Oí que viene Glitch. De NUESTRO lado. Lo creeré cuando lo vea. En persona."
+  ],
+  "6": [
+   "Cada farol se veía dos veces. Una en el cielo y otra en el agua.",
+   "Mi hija me pidió la palabra de la familia cuando la llamé desde el trabajo. La dije bien. Qué alegría me dio.",
+   "Ahora espero un minuto antes de enviar cualquier cosa. Casi siempre termino sin enviarla.",
+   "Ese chico vino a nuestra puerta a pedir perdón. Miró a mi mamá directo a los ojos. No ha de haber sido fácil.",
+   "Los videos falsos no desaparecieron. Solo aprendimos a reconocerlos mejor. Y más que eso no se puede, creo yo."
+  ]
+ },
+ "cold": [
+  "No tengo nada que decirte. Vi el video.",
+  "Mis hijos admiraban a los Caballeros. Qué vergüenza.",
+  "No te acerques a mi tienda.",
+  "Farsante.",
+  "…Quiero creer que no fuiste tú. De verdad. Pero lo vi."
+ ]
+}
