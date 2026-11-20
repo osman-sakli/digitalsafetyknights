@@ -1511,5 +1511,8 @@
   "arc.story.h": "The Lost Sprout",
   "arc.story.p": "Una historia en 3D. Sprout desapareció. Recorre el castillo, lee los mensajes que dejó y decide cómo termina.",
   "arc.city.h": "Knight City",
-  "arc.city.p": "Una ciudad abierta en 3D para recorrer a pie o en auto. Toma prestado un auto, enciende la radio y descubre quién está detrás de la app que de pronto tiene todo el mundo. Cinco capítulos, dieciséis misiones, tres finales."
+  "arc.city.p": "Una ciudad abierta en 3D para recorrer a pie o en auto. Toma prestado un auto, enciende la radio y descubre quién está detrás de la app que de pronto tiene todo el mundo. Cinco capítulos, dieciséis misiones, tres finales.",
+  "hero.playBtn": "🎮 Jugar a Knight City",
+  "home.city.eyebrow": "🎮 Juego nuevo · Gratis · Sin descargas",
+  "home.city.cta": "Jugar ahora →"
 }

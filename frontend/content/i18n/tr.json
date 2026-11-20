@@ -1511,5 +1511,8 @@
   "arc.story.h": "Kayıp Sprout",
   "arc.story.p": "3D bir hikâye. Sprout kayıp. Kalede dolaş, geride bıraktığı mesajları oku ve hikâyenin nasıl biteceğine sen karar ver.",
   "arc.city.h": "Şövalye Şehri",
-  "arc.city.p": "Yürüyerek ve arabayla gezebileceğin açık bir 3D şehir. Bir araba ödünç al, radyoyu aç ve herkesin telefonunda birdenbire beliren uygulamanın arkasında kimin olduğunu bul. Beş bölüm, on altı görev, üç farklı son."
+  "arc.city.p": "Yürüyerek ve arabayla gezebileceğin açık bir 3D şehir. Bir araba ödünç al, radyoyu aç ve herkesin telefonunda birdenbire beliren uygulamanın arkasında kimin olduğunu bul. Beş bölüm, on altı görev, üç farklı son.",
+  "hero.playBtn": "🎮 Şövalye Şehri'ni Oyna",
+  "home.city.eyebrow": "🎮 Yeni oyun · Ücretsiz · İndirme yok",
+  "home.city.cta": "Hemen oyna →"
 }

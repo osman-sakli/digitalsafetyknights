@@ -165,6 +165,21 @@
   .wb-facts li { padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); font-weight: 700; font-size: 0.92rem; color: #e9edf7; }
   .wb-facts li:last-child { border-bottom: none; }
 
+  /* ---- Knight City band: the first thing under the hero, so a child who
+     lands here can be in the game in one tap. ---- */
+  .btn-play { background: #fff; color: var(--navy); padding: 15px 36px; border-radius: 32px; font-weight: 900; text-decoration: none; box-shadow: 0 6px 24px rgba(255,255,255,0.25); }
+  .city-band { background: #0a1430; padding: 2.2rem 2rem; border-bottom: 3px solid var(--gold); }
+  .city-card { max-width: 1060px; margin: 0 auto; display: flex; align-items: stretch; flex-wrap: wrap; background: linear-gradient(135deg, #14245a 0%, #0d1b3e 100%); border: 1px solid rgba(201,168,76,0.45); border-radius: 22px; overflow: hidden; text-decoration: none; color: white; box-shadow: 0 14px 44px rgba(0,0,0,0.35); transition: transform .18s ease, box-shadow .18s ease; }
+  .city-card:hover, .city-card:focus-visible { transform: translateY(-3px); box-shadow: 0 20px 54px rgba(0,0,0,0.45); }
+  .city-card:focus-visible { outline: 3px solid var(--gold2); outline-offset: 3px; }
+  .city-shot { flex: 1 1 420px; min-height: 210px; background: #0d1b3e; }
+  .city-shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .city-text { flex: 1 1 340px; padding: 1.6rem 1.8rem; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 0.7rem; }
+  .city-text h2 { font-family: 'Baloo Display', system-ui, sans-serif; font-size: clamp(1.7rem, 3.4vw, 2.4rem); font-weight: 800; line-height: 1.1; color: white; margin: 0; }
+  .city-text p { color: #c3cde6; line-height: 1.6; font-size: 0.98rem; margin: 0; }
+  .city-go { display: inline-block; background: var(--gold); color: var(--navy); font-weight: 900; padding: 13px 30px; border-radius: 32px; box-shadow: 0 6px 24px rgba(201,168,76,0.45); margin-top: 0.3rem; }
+  @media (prefers-reduced-motion: reduce) { .city-card { transition: none; } .city-card:hover { transform: none; } }
+
   .stats { background: white; padding: 3.5rem 2rem; border-bottom: 1px solid #eee; }
   .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 2rem; max-width: 900px; margin: 0 auto; text-align: center; }
   .stat-num { font-size: 2.6rem; font-weight: 900; color: var(--navy); font-variant-numeric: tabular-nums; }
@@ -458,6 +473,7 @@
     <h1 data-i18n="hero.title">Protecting Kids in the<br><span class="gold">Digital World</span></h1>
     <p data-i18n="hero.subtitle">From Roblox to AI chatbots, messaging apps to online predators — we equip families with the knowledge and tools to keep children safe online.</p>
     <div class="hero-btns">
+      <a class="btn-play" href="/knight-city.html" data-i18n="hero.playBtn">🎮 Play Knight City</a>
       <a class="btn-gold" href="#" onclick="openKnightModal();return false;" data-i18n="hero.joinBtn">Join the Knights — Free</a>
       <a class="btn-ghost" href="/audit.html" data-i18n="hero.auditBtn">🛡️ Take Family Safety Audit</a>
       <a class="btn-ghost btn-workshop" href="/school-programs.html#sp-form-title" data-i18n="hero.workshopBtn">🏫 Request a Free Workshop</a>
@@ -472,6 +488,18 @@
       <div class="nt-foot" id="nt-foot"></div>
     </aside>
   </div>
+</section>
+
+<section class="city-band" id="play-knight-city">
+  <a class="city-card" href="/knight-city.html">
+    <div class="city-shot"><img src="/assets/arcade/city-cover.webp" width="780" height="300" alt="" fetchpriority="high"></div>
+    <div class="city-text">
+      <div class="wb-eyebrow" data-i18n="home.city.eyebrow">🎮 New game · Free · Nothing to download</div>
+      <h2 data-i18n="arc.city.h">Knight City</h2>
+      <p data-i18n="arc.city.p">An open 3D city to walk and drive around. Borrow a car, turn on the radio, and find out who is behind the app everybody suddenly has. Five chapters, sixteen jobs, three endings.</p>
+      <span class="city-go" data-i18n="home.city.cta">Play now →</span>
+    </div>
+  </a>
 </section>
 
 <div class="stats">
