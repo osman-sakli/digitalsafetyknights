@@ -1,6 +1,6 @@
 # DSK Threat Intelligence & Policy Research Bank
 
-Compiled 2026-08-02, last refreshed 2026-11-19. Covers the last ~10 months of
+Compiled 2026-08-02, last refreshed 2026-11-21. Covers the last ~10 months of
 child-online-safety news (Oct 2025 – Oct 2026), weighted toward the most
 recent 4-6 weeks. Sourced via web search — every claim below has a citation.
 This is a living reference: update it monthly (it's also the natural
@@ -289,6 +289,88 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
   mental-health suits rather than litigating to verdict) worth keeping in
   mind for any future Snapchat-safety guide.
   [CNBC](https://www.cnbc.com/2026/11/07/snap-social-media-teen-safety-lawsuits.html)
+
+---
+
+## 0z. November 2026 Refresh (Nov 21, 2026)
+
+Automated biennial freshness scan, 2 days after the last one. Another quiet
+window — broad searches across federal/state legislation, platform policy
+changes, AI-chatbot litigation, EU developments, and the Character.AI
+bankruptcy docket turned up nothing dated after Nov 19, 2026 that changes a
+tracked law's status or corrects a tracker fact. One apparent lead (a
+"Roblox bans under-13s from social hangouts, Nov 18" story) turned out on
+closer check to be a 2024 story resurfacing in search results, not a new
+2026 development — not actioned. Four spot-checks this run, continuing the
+rotation: Texas App Store Accountability Act litigation, New York SAFE for
+Kids Act rules, Utah App Store Accountability Act enforcement, and the New
+Jersey Kids Code Act. All confirm the tracker is still accurate. No tracker
+edit this run.
+
+### Spot-checked, no change needed
+- **Texas App Store Accountability Act (CCIA v. Paxton)** — tracker's
+  "effect ... 5th Circuit stayed the injunction" status still holds. The
+  Supreme Court denied emergency applications from CCIA and Students
+  Engaged in Advancing Texas to vacate the Fifth Circuit's stay, leaving
+  the law in effect while the case returns to the Fifth Circuit for a
+  merits ruling; no merits decision found as of Nov 21.
+  [MoFo](https://www.mofo.com/resources/insights/251111-texas-targets-app-stores-with-new-accountability-law) ·
+  [Bloomberg Law](https://news.bloomberglaw.com/litigation/block-on-texas-phone-app-age-law-lifted-temporarily)
+- **New York SAFE for Kids Act** — unchanged: final rules (published in the
+  State Register July 29, 2026) still put the effective date at Jan 25,
+  2027, matching the tracker. NetChoice and NYCLU oppose the final rules,
+  but no lawsuit or injunction found as of this check.
+  [Governor.ny.gov](https://www.governor.ny.gov/news/governor-hochul-and-attorney-general-james-announce-final-safe-kids-act-rules-protect-children) ·
+  [Privo](https://www.privo.com/blog/new-yorks-safe-for-kids-act-final-rules)
+- **Utah App Store Accountability Act** — unchanged: CCIA's First Amendment
+  challenge was voluntarily dismissed in April 2026 after Utah's HB 498
+  amendments stripped state-agency enforcement and pushed the effective
+  date to May 6, 2027 — exactly what the tracker already says ("private-
+  lawsuit enforcement only"). No new suit found.
+  [JD Supra](https://www.jdsupra.com/legalnews/challenge-to-utah-s-app-store-6173927/) ·
+  [Wiley](https://www.wileyconnect.com/utah-amends-app-store-accountability-act-asaa-key-obligations-delayed-until-may-6-2027)
+- **New Jersey Kids Code Act** — unchanged: signed Aug 11, 2026, effective
+  Sept 1, 2027, with a private right of action alongside AG enforcement —
+  matching the tracker. NetChoice/CCIA have signaled likely opposition but
+  no complaint has been filed as of this check.
+  [Hunton](https://www.hunton.com/privacy-and-cybersecurity-law-blog/new-jersey-enacts-the-kids-code-act-with-privacy-by-default-and-safety-by-design-obligations)
+
+### Context, not a tracker change
+- Federal KOSA bundle: a bipartisan coalition of 45 state/territory
+  attorneys general (led by Tennessee AG Skrmetti) sent a NAAG letter Nov
+  4, 2026 urging Congress to pass the Senate's KOSA text (S. 1748) as a
+  federal baseline that preserves state authority — consistent with (and
+  slightly larger than) the 45-AG coalition already logged under Nov 9.
+  A Nov 17 Senate hearing had sponsors/advocates urging passage again, but
+  no floor vote; the Senate heads into a month-long recess at the end of
+  this week, leaving only a lame-duck window before year-end. Tracker
+  status unchanged ("pending").
+  [NAAG](https://www.naag.org/news-resources/press-releases/45-state-and-territory-attorneys-general-press-congress-to-protect-kids-online/) ·
+  [Tennessee AG](https://www.tn.gov/attorneygeneral/news/2026/11/5/pr26-50.html)
+- Character.AI bankruptcy / Kentucky v. Character Technologies: the Nov 4
+  Bidding Procedures Order schedule is unchanged across every source
+  checked this run (sale-objection deadline Nov 18, bid deadline Nov 24
+  noon ET, auction Dec 1, sale hearing Dec 3-4). Kentucky's suit remains
+  unaffected. No ruling found yet on the Nov 18 sale objections.
+  [PPC Land](https://ppc.land/character-ai-keeps-21-7m-bid-floor-for-disney-rivals-despite-32-states/)
+- EU KIDS Act: the Commission's public feedback window still closes Nov
+  26, 2026 (per the Commission's own release); a couple of law-firm
+  summaries cite Dec 3 instead, but the official Commission date controls.
+  No tally or Parliament/Council position published yet. Tracker status
+  unchanged ("pending").
+  [Digital Strategy (EC)](https://digital-strategy.ec.europa.eu/en/news/commission-seeks-feedback-eu-kids-act)
+- No new state has enacted an App Store Accountability Act since the
+  Louisiana/Alabama entries already on the tracker; broad searches for a
+  November 2026 enactment (including the previously-reported Kansas/New
+  Hampshire/Wisconsin/South Dakota bills) turned up nothing signed.
+- Meta/Instagram global AI age-estimation rollout, Snap's confidential LA
+  bellwether settlement, and the Character.AI bidding-procedures schedule
+  are all already captured in earlier dated sections and "Flagged for
+  review" above; nothing new to add there this run.
+
+**Site follow-up from this refresh:** none — nothing surfaced rose to a
+clear-cut, mechanical tracker update. "Last refreshed" date bumped to Nov
+21, 2026 above.
 
 ---
 
