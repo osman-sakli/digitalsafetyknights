@@ -139,5 +139,12 @@
     "source_url": "https://techcrunch.com/2026/11/19/uber-tests-rides-for-kids-as-young-as-10-with-extra-pay-for-drivers/",
     "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:share:7529895910097530880/",
     "note": "A first post attempt (urn:li:share:7529895486640508928) was published with broken caption text due to a curl form-field error (literal file path posted instead of the post body); it could not be deleted or edited via the API (no delete/edit endpoint available), so a corrected second post was published immediately after with the same card image and correct caption."
+  },
+  {
+    "date": "2026-11-22",
+    "topic": "Meta's AI agent Muse (10M+ downloads) mixed up conversations across different user accounts, showing some users strangers' bank balances, unrelated messages, and childcare requests they never made",
+    "source": "TechCrunch",
+    "source_url": "https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/",
+    "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:share:7530257013944205312/"
   }
 ]
