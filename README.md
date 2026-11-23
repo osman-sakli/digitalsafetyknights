@@ -73,3 +73,14 @@ See [ROADMAP.md](ROADMAP.md). Longer planning docs: `DSK_MASTER_STRATEGY.md`, `D
 ## License
 
 [MIT](LICENSE)
+
+## Firewall (Preclearance edge)
+
+Since 2026-11-23 the site's names go through Preclearance's edge, a web application firewall run for the site (dashboard: preclearance.ai/dashboard/sites/digitalsafetyknights.org). It starts in count-only mode.
+
+- `digitalsafetyknights.org`: a Route 53 failover pair. Primary: the edge's two addresses, while Route 53's health check sees the edge; secondary: CloudFront (`d2dqzna61puppe.cloudfront.net`).
+- `www.` and `api.`: CNAMEs to the site's own names under `edge.preclearance.ai`, which Preclearance points straight at CloudFront and at the API when the edge is down.
+- `api.digitalsafetyknights.org` is an API Gateway custom domain for `dsk-api` (mapping `prod` → stage `prod`); the pages call `https://api.digitalsafetyknights.org/prod/<route>`.
+- `backend/lambda_edge_gate.py` (`dsk-edge-gate`, authorizer `preclear-edge-gate`) admits only the edge's addresses to every route except `POST /stripe-webhook`, and everyone while the edge is down.
+- To leave the edge: point `digitalsafetyknights.org` and `www.` back at the CloudFront distribution (A alias records) and `api.` at `d-g4h747qk14.execute-api.us-east-1.amazonaws.com`, then detach the authorizer from the routes.
+

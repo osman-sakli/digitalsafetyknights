@@ -49,6 +49,11 @@ resource "aws_apigatewayv2_route" "knight_council" {
   api_id    = local.dsk_api_id
   route_key = "POST /knight-council-apply"
   target    = "integrations/${aws_apigatewayv2_integration.knight_council.id}"
+
+  # Only Preclearance's edge may call the API, unless the edge is down
+  # (backend/lambda_edge_gate.py, authorizer "preclear-edge-gate", made with the AWS CLI).
+  authorization_type = "CUSTOM"
+  authorizer_id      = local.edge_gate_authorizer_id
 }
 
 resource "aws_lambda_permission" "knight_council_apigw" {

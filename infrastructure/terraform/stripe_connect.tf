@@ -48,6 +48,11 @@ resource "aws_apigatewayv2_route" "connect_onboard_chapter" {
   api_id    = local.dsk_api_id
   route_key = "POST /connect-onboard-chapter"
   target    = "integrations/${aws_apigatewayv2_integration.connect_onboard_chapter.id}"
+
+  # Only Preclearance's edge may call the API, unless the edge is down
+  # (backend/lambda_edge_gate.py, authorizer "preclear-edge-gate", made with the AWS CLI).
+  authorization_type = "CUSTOM"
+  authorizer_id      = local.edge_gate_authorizer_id
 }
 
 resource "aws_lambda_permission" "connect_onboard_chapter_apigw" {
@@ -91,6 +96,11 @@ resource "aws_apigatewayv2_route" "connect_checkout" {
   api_id    = local.dsk_api_id
   route_key = "POST /connect-checkout"
   target    = "integrations/${aws_apigatewayv2_integration.connect_checkout.id}"
+
+  # Only Preclearance's edge may call the API, unless the edge is down
+  # (backend/lambda_edge_gate.py, authorizer "preclear-edge-gate", made with the AWS CLI).
+  authorization_type = "CUSTOM"
+  authorizer_id      = local.edge_gate_authorizer_id
 }
 
 resource "aws_lambda_permission" "connect_checkout_apigw" {
