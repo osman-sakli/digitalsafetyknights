@@ -1694,7 +1694,7 @@
   (function memberPoll() {
     var box = document.getElementById('member-poll');
     if (!box) return;
-    var API = 'https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/poll';
+    var API = 'https://api.digitalsafetyknights.org/prod/poll';
     var pLang = (window.DSKi18n && DSKi18n.lang) || 'en';
     var L = pLang === 'tr'
       ? { votes: 'oy', thanks: 'Oyun kaydedildi!', fail: 'Oylama şu anda yüklenemedi.', already: 'Bu ay oyunu kullandın', sub: 'Seçimin gelecek ay ne üreteceğimizi belirliyor. Hesap gerekmez.' }
@@ -1880,7 +1880,7 @@
     btn.disabled = true;
     btn.textContent = isTr ? 'Kaydediliyor…' : isEs ? 'Guardando…' : isFr ? 'Inscription…' : 'Joining…';
 
-    fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/signup', {
+    fetch('https://api.digitalsafetyknights.org/prod/signup', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -2041,7 +2041,7 @@
     }
     var name = (profile && profile.name) || prompt(dIsTr2 ? 'Adın (ya da "Anonim"):' : dIsEs2 ? 'Tu nombre (o "Anónimo"):' : dIsFr2 ? 'Votre nom (ou « Anonyme ») :' : 'Your name (or "Anonymous"):') || (dIsTr2 ? 'Anonim Bağışçı' : dIsEs2 ? 'Donante Anónimo' : dIsFr2 ? 'Anonyme' : 'Anonymous Donor');
 
-    fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/donate', {
+    fetch('https://api.digitalsafetyknights.org/prod/donate', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -2084,7 +2084,7 @@
     btn.textContent = sIsTr ? 'Katılıyor...' : sIsEs ? 'Uniéndote…' : sIsFr ? 'Inscription…' : 'Joining...';
     btn.disabled = true;
 
-    fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/signup', {
+    fetch('https://api.digitalsafetyknights.org/prod/signup', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({

@@ -349,7 +349,7 @@ var dashIsFr = dashLang === 'fr';
       manageCard.style.display = 'block';
       document.getElementById('manageSubBtn').addEventListener('click', function (e) {
         e.preventDefault();
-        fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/billing-portal', {
+        fetch('https://api.digitalsafetyknights.org/prod/billing-portal', {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({email: profile.email})
@@ -430,7 +430,7 @@ var dashIsFr = dashLang === 'fr';
   if (!token) {
     window.location.href = '/login.html';
   } else {
-    fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/verify', {
+    fetch('https://api.digitalsafetyknights.org/prod/verify', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({token: token})

@@ -250,7 +250,7 @@ var CH_EMPTY_H = chIsTr ? 'Henüz şube yok — ülkenizdeki ilk şube siz olun!
 var CH_EMPTY_P = chIsTr ? 'Aşağıdan başvuran ilk kişi olun. Her yeni şube, bu haritada gerçek bir nokta olarak başlar.' : chIsEs ? 'Sé el primero en postularte a continuación. Cada nueva sección local comienza como un punto real en este mapa.' : chIsFr ? 'Soyez la première personne à postuler ci-dessous. Chaque nouvelle section locale commence par un point réel sur cette carte.' : "Be the first person to apply below. Every new chapter starts as one real point on this map.";
 var CH_SINCE = chIsTr ? 'yılından beri' : chIsEs ? 'desde' : chIsFr ? 'depuis' : 'since';
 
-fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/chapters-list')
+fetch('https://api.digitalsafetyknights.org/prod/chapters-list')
   .then(function (r) { return r.json(); })
   .then(function (data) {
     var el = document.getElementById('ch-active-list');
@@ -286,7 +286,7 @@ document.getElementById('ch-form').addEventListener('submit', function (e) {
   statusEl.className = 'ch-status';
   submitBtn.disabled = true;
 
-  fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/chapter-apply', {
+  fetch('https://api.digitalsafetyknights.org/prod/chapter-apply', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({

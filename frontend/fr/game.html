@@ -717,7 +717,7 @@ function endGame() {
   var loginCta = document.getElementById('login-cta');
   if (profile && profile.email) {
     loginCta.textContent = gameIsTr ? 'Skorun DSK profiline kaydediliyor...' : gameIsEs ? 'Guardando tu puntaje en tu perfil de DSK…' : gameIsFr ? 'Enregistrement de ton score sur ton profil DSK…' : 'Saving your score to your DSK profile...';
-    fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/game-score', {
+    fetch('https://api.digitalsafetyknights.org/prod/game-score', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: profile.email, score: score })

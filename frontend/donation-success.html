@@ -65,7 +65,7 @@
   var params = new URLSearchParams(window.location.search);
   var sessionId = params.get('session_id');
   if (sessionId) {
-    fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/donation-confirm', {
+    fetch('https://api.digitalsafetyknights.org/prod/donation-confirm', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({session_id: sessionId})

@@ -76,7 +76,7 @@
     btn.textContent = loginIsTr ? 'Gönderiliyor...' : loginIsEs ? 'Enviando...' : 'Sending...';
     btn.disabled = true;
 
-    fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/login', {
+    fetch('https://api.digitalsafetyknights.org/prod/login', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({email: email})

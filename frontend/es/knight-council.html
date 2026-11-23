@@ -217,7 +217,7 @@ document.getElementById('kc-form').addEventListener('submit', function (e) {
   statusEl.className = 'kc-status';
   submitBtn.disabled = true;
 
-  fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/knight-council-apply', {
+  fetch('https://api.digitalsafetyknights.org/prod/knight-council-apply', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({

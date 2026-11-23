@@ -147,7 +147,7 @@ function render(memberCount, countryCount) {
 // Render immediately with a safe fallback, then swap in live numbers.
 render(7, 2);
 
-fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/transparency-stats')
+fetch('https://api.digitalsafetyknights.org/prod/transparency-stats')
   .then(function (r) { return r.json(); })
   .then(function (data) {
     if (typeof data.members === 'number') {

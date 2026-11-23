@@ -370,7 +370,7 @@ document.getElementById('sp-form').addEventListener('submit', function (e) {
   var radios = document.getElementsByName('sp-format');
   for (var i = 0; i < radios.length; i++) { if (radios[i].checked) formatVal = radios[i].value; }
 
-  fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/school-program-request', {
+  fetch('https://api.digitalsafetyknights.org/prod/school-program-request', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({

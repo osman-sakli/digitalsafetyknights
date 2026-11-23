@@ -101,7 +101,7 @@ document.getElementById('ap-form').addEventListener('submit', function (e) {
   statusEl.className = 'ap-status';
   submitBtn.disabled = true;
 
-  fetch('https://w6dqaq0l33.execute-api.us-east-1.amazonaws.com/prod/volunteer-apply', {
+  fetch('https://api.digitalsafetyknights.org/prod/volunteer-apply', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({
