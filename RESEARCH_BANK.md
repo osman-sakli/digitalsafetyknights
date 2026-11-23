@@ -1,6 +1,6 @@
 # DSK Threat Intelligence & Policy Research Bank
 
-Compiled 2026-08-02, last refreshed 2026-11-21. Covers the last ~10 months of
+Compiled 2026-08-02, last refreshed 2026-11-23. Covers the last ~10 months of
 child-online-safety news (Oct 2025 – Oct 2026), weighted toward the most
 recent 4-6 weeks. Sourced via web search — every claim below has a citation.
 This is a living reference: update it monthly (it's also the natural
@@ -289,6 +289,93 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
   mental-health suits rather than litigating to verdict) worth keeping in
   mind for any future Snapchat-safety guide.
   [CNBC](https://www.cnbc.com/2026/11/07/snap-social-media-teen-safety-lawsuits.html)
+- **(2026-11-17) Oregon sues OpenAI for at least $2.035 billion over
+  ChatGPT's safety for teens** — Oregon AG Dan Rayfield filed suit in
+  Multnomah County Circuit Court alleging OpenAI misrepresents the
+  safety/age-appropriateness of ChatGPT and "ChatGPT for Teens" and fails
+  to reliably identify or age-verify underage users; two claims are under
+  Oregon's Unlawful Trade Practices Act (civil penalties, injunction),
+  three more (negligence, unjust enrichment, public nuisance) are brought
+  parens patriae on behalf of minor residents. Announced alongside a
+  state "Keeping Kids Safe" initiative; follows the eight-state OpenAI
+  suits already logged above (Oct 14, 2026) — Oregon sued separately
+  rather than joining that group. OpenAI's response wasn't found. Not
+  actioned: fresh litigation, no ruling, and still no OpenAI/ChatGPT
+  tracker entry to attach a status to — same treatment as the eight-state
+  suits. Worth a second look if this, the eight-state suits, or Kentucky
+  v. Character Technologies produces a ruling, or if the pattern of
+  state-by-state AI-chatbot suits reaches a critical mass that warrants
+  its own tracker entry.
+  [OPB](https://www.opb.org/article/2026/11/17/oregon-ag-sues-openai-claims-company-knowingly-endangers-teens/) ·
+  [TechRepublic](https://www.techrepublic.com/article/news-oregon-openai-chatgpt-teen-safety-lawsuit/) ·
+  [Washington State Standard](https://washingtonstatestandard.com/?p=18036)
+
+---
+
+## 0aa. November 2026 Refresh (Nov 23, 2026)
+
+Automated biennial freshness scan, 2 days after the last one. Broad
+searches across federal/state legislation, platform policy, AI-chatbot
+litigation, and EU/UK developments turned up nothing dated after Nov 21,
+2026 that changes a tracked law's status. The one notable catch-up find
+is an industry lawsuit against California's AB 1709 (filed in early
+November, before this routine's last two refreshes, but not previously
+logged) — see below; it doesn't change the tracker's "pending" status.
+Three spot-checks this run: the Louisiana App Store Accountability Act,
+the Meta Teen Accounts Settlement's court-approval status, and California
+AB 1709. All confirm the tracker is still accurate. No tracker edit this
+run.
+
+### Spot-checked, no change needed
+- **Louisiana App Store Accountability Act** — unchanged: HB 977's delay
+  to a July 1, 2027 effective date (signed May 15, 2026) still stands;
+  NetChoice has publicly criticized the law as likely unconstitutional
+  (drawing on the blocked 2025 Texas SB 2420 precedent) but no lawsuit
+  against Louisiana's law specifically was found as of this check.
+  Tracker's "pending ... effective July 1, 2027" status remains accurate.
+  [JD Supra](https://www.jdsupra.com/legalnews/louisiana-delays-app-store-3163634/) ·
+  [Wiley](https://www.wiley.law/alert-Key-Developments-With-State-App-Store-Accountability-Acts-as-Texas-Act-Takes-Effect)
+- **Meta Teen Accounts Settlement** — unchanged: U.S. District Judge
+  Yvonne Gonzalez Rogers approved the ~$17.1B multistate settlement
+  (Aug 26, 2026), confirming the default 2-hour/day teen time limit,
+  midnight-6am block, and other terms already on the tracker. Florida
+  didn't join and is proceeding to its own trial separately — doesn't
+  affect the tracker's description of the multistate deal. No further
+  court action found since approval.
+  [Hunton](https://www.hunton.com/privacy-and-cybersecurity-law-blog/court-approves-meta-settlement-with-29-states-over-alleged-harms-to-children-and-teens) ·
+  [NPR](https://www.npr.org/2026/08/26/nx-s1-5944781/meta-settlemet-child-safety-lawsuit)
+- **California AB 1709** — new context, no status change: Google, Meta,
+  and TikTok each filed separate federal suits in early November 2026
+  (reported Nov 8) seeking to enjoin AB 1709 before its Jan 1, 2027
+  effective date — Meta on First Amendment/editorial-decision grounds,
+  TikTok arguing the law effectively overrides California's SB 976 (which
+  lets platforms offer "addictive features" with parental consent). No
+  injunction has been granted as of this check; tracker's "pending ...
+  effective January 1, 2027" status remains accurate, though the
+  description doesn't yet mention active litigation — not a mechanical
+  status change this routine is scoped to make, but worth re-checking for
+  a ruling before Jan 1.
+  [The Star/AP](https://www.thestar.com.my/tech/tech-news/2026/11/08/social-media-companies-sue-california-over-new-law-restricting-use-for-children) ·
+  [Bloomberg Law](https://news.bloomberglaw.com/litigation/meta-tiktok-sue-california-over-social-media-restriction-law)
+
+### Context, not a tracker change
+- Character.AI bankruptcy / Kentucky v. Character Technologies: the bid
+  deadline (Nov 24, 2026, noon ET, Disney as $20M stalking-horse bidder)
+  is unchanged; auction still set for Dec 1, sale hearing Dec 3-4.
+  Kentucky's suit remains unaffected. Worth checking post-auction outcome
+  next run.
+  [Technobezz](https://www.technobezz.com/news/character-ai-sale-bid-deadline-disney)
+- EU KIDS Act: the Commission's public feedback window still closes Nov
+  26, 2026; no tally or Parliament/Council position published yet.
+  Tracker status unchanged ("pending").
+- Federal KOSA bundle (Kids Internet and Digital Safety Act): no Senate
+  floor vote found since the Nov 21 refresh; status unchanged.
+- No new state has enacted an App Store Accountability Act since the
+  Louisiana/Alabama entries already on the tracker.
+
+**Site follow-up from this refresh:** none — nothing surfaced rose to a
+clear-cut, mechanical tracker update. "Last refreshed" date bumped to Nov
+23, 2026 above.
 
 ---
 
