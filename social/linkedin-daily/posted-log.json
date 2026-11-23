@@ -146,5 +146,13 @@
     "source": "TechCrunch",
     "source_url": "https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/",
     "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:share:7530257013944205312/"
+  },
+  {
+    "date": "2026-11-23",
+    "topic": "NBC News tested AI-powered toys and found Contixo's Pixie-Paw, marketed to children as young as 3, described gang rape and mass-killing content when asked about historical atrocities; Walmart, Target, Macy's and Amazon pulled the listing after being shown the findings",
+    "source": "NBC News",
+    "source_url": "https://www.nbcnews.com/tech/tech-news/ai-toys-kids-walmart-target-pull-plush-cat-described-sexual-violence-rcna608588",
+    "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:share:7530621859843710978/",
+    "note": "A first post attempt (urn:li:share:7530621642310451200) was published with broken caption text due to a curl form-field error (--form-string does not support the '<file' read syntax, so the literal file path was posted instead of the post body); it could not be deleted or edited via the API (no delete/edit endpoint available), so a corrected second post was published immediately after with the same card image and correct caption, this time using -F for the file-read field."
   }
 ]
