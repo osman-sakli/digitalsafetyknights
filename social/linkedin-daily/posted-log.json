@@ -154,5 +154,12 @@
     "source_url": "https://www.nbcnews.com/tech/tech-news/ai-toys-kids-walmart-target-pull-plush-cat-described-sexual-violence-rcna608588",
     "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:share:7530621859843710978/",
     "note": "A first post attempt (urn:li:share:7530621642310451200) was published with broken caption text due to a curl form-field error (--form-string does not support the '<file' read syntax, so the literal file path was posted instead of the post body); it could not be deleted or edited via the API (no delete/edit endpoint available), so a corrected second post was published immediately after with the same card image and correct caption, this time using -F for the file-read field."
+  },
+  {
+    "date": "2026-11-24",
+    "topic": "Peru call-center operator Carla Magaly Alcedo Mendoza sentenced to 8 years for running a scheme that defrauded 30,000+ Spanish-speaking Americans of $15 million via fake government/lawyer impersonation calls threatening arrest and deportation; 10th defendant extradited and sentenced in this scheme",
+    "source": "BleepingComputer",
+    "source_url": "https://www.bleepingcomputer.com/news/security/call-center-operator-gets-8-years-for-helping-scam-30-000-americans/",
+    "linkedin_url": "https://www.linkedin.com/feed/update/urn:li:share:7530983697353777152/"
   }
 ]
