@@ -1,6 +1,6 @@
 # DSK Threat Intelligence & Policy Research Bank
 
-Compiled 2026-08-02, last refreshed 2026-11-23. Covers the last ~10 months of
+Compiled 2026-08-02, last refreshed 2026-11-25. Covers the last ~10 months of
 child-online-safety news (Oct 2025 – Oct 2026), weighted toward the most
 recent 4-6 weeks. Sourced via web search — every claim below has a citation.
 This is a living reference: update it monthly (it's also the natural
@@ -309,6 +309,67 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
   [OPB](https://www.opb.org/article/2026/11/17/oregon-ag-sues-openai-claims-company-knowingly-endangers-teens/) ·
   [TechRepublic](https://www.techrepublic.com/article/news-oregon-openai-chatgpt-teen-safety-lawsuit/) ·
   [Washington State Standard](https://washingtonstatestandard.com/?p=18036)
+
+---
+
+## 0ab. November 2026 Refresh (Nov 25, 2026)
+
+Automated biennial freshness scan, 2 days after the last one. Another quiet
+window — broad searches across federal/state legislation, platform policy,
+AI-chatbot litigation, and EU/UK developments turned up nothing dated after
+Nov 23, 2026 that changes a tracked law's status. Three spot-checks this
+run, continuing the rotation: the TikTok–Alabama Teen Safety Settlement,
+California SB 1119 ("Adam's Law"), and Kentucky v. Character Technologies.
+All confirm the tracker is still accurate. No tracker edit this run.
+
+### Spot-checked, no change needed
+- **TikTok–Alabama Teen Safety Settlement** — unchanged: the consent decree
+  terms (2-hour/day default cap, midnight-6am lockout, 15-minute "productive
+  pause" prompts, cosmetic-filter removal for teens, $100M+ payment rising
+  to $300M if 40+ other states join) match the tracker. No independent
+  compliance audit or court filing on TikTok's rollout progress found as of
+  this check; nothing contradicts the tracker's "core limits in effect now"
+  description.
+  [CTV News](https://www.ctvnews.ca/world/article/tiktok-settles-lawsuit-with-alabama-for-at-least-us100-million-will-implement-safety-features/) ·
+  [Fox Business](https://www.foxbusiness.com/politics/alabama-teens-getting-own-version-tiktok-under-sweeping-100m-deal)
+- **California SB 1119 ("Adam's Law")** — unchanged: signed Sept 10, 2026
+  as Chapter 190, Statutes of 2026; law firms differ on which specific
+  sub-obligations start Jan 1, 2027 vs. July 1, 2027 (first independent
+  audit isn't due until Jan 1, 2029), but every source agrees the law's
+  core requirements take effect July 1, 2027, matching the tracker. No
+  lawsuit or enforcement action found yet.
+  [Orrick](https://www.orrick.com/en/Insights/2026/10/Examining-Californias-New-AI-Chatbot-Bill-SB-1119) ·
+  [Common Sense Media](https://www.commonsensemedia.org/press-releases/governor-newsom-signs-adams-law-setting-first-real-safety-standard-for-kids-and-chatbots)
+- **Kentucky v. Character Technologies** — unchanged: still filed/pending
+  in Franklin Circuit Court (filed Jan 8, 2026); a less-redacted version of
+  the complaint surfaced in October 2026 (alleging 71,000+ active Kentucky
+  users as of Sept 2025) but that's additional detail on an already-filed
+  complaint, not a new development. No ruling on the merits found. Tracker's
+  "court ... Filed Jan 8, 2026" status remains accurate.
+  [WSMV](https://www.wsmv.com/2026/10/11/uncontrolled-experiment-unredacted-ky-ag-lawsuit-reveals-alleged-dangers-ai-chatbot/)
+
+### Context, not a tracker change
+- Character.AI bankruptcy: the Nov 18, 2026 sale-objection deadline
+  produced substance, not just a passed date — a coalition of 39 states
+  plus D.C. (up from the 32/40-state bidding-procedures objection already
+  logged, which the court overruled Nov 4) filed asking the Delaware
+  bankruptcy court to deny the Disney sale outright, not just adjust its
+  terms; Texas filed its own separate 15-page objection the same day. No
+  ruling on these sale objections yet — Judge Brendan Shannon hears them at
+  the Dec 3-4 sale hearing, after the Nov 24 bid deadline and Dec 1 auction.
+  Doesn't change Kentucky v. Character Technologies' tracker status.
+  [PPC Land](https://ppc.land/39-states-and-dc-ask-court-to-deny-disneys-20m-character-ai-deal/)
+- Federal KOSA bundle (Kids Internet and Digital Safety Act): no Senate
+  floor vote found since the Nov 23 refresh; status unchanged.
+- EU KIDS Act: the Commission's public feedback window closes Nov 26, 2026
+  (tomorrow); no tally or Parliament/Council position published yet.
+  Tracker status unchanged ("pending").
+- No new state has enacted an App Store Accountability Act since the
+  Louisiana/Alabama entries already on the tracker.
+
+**Site follow-up from this refresh:** none — nothing surfaced rose to a
+clear-cut, mechanical tracker update. "Last refreshed" date bumped to Nov
+25, 2026 above.
 
 ---
 
