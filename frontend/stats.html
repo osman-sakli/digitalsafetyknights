@@ -48,7 +48,7 @@
   <div class="panel" id="pagesPanel"><div class="empty">Loading…</div></div>
   <h2>Where visitors came from</h2>
   <div class="panel" id="countriesPanel"><div class="empty">Loading…</div></div>
-  <p class="sub">Approximated from the CloudFront edge that served each visitor. No IP is ever sent to a geolocation service.</p>
+  <p class="sub">Each visitor's country is looked up in a table kept inside the daily report; no address is sent to anyone for it. Where the table has no answer, the CloudFront edge that served the visitor stands in, which is only approximate. Days before 23 November 2026 were counted from the edge alone. <a href="https://db-ip.com">IP Geolocation by DB-IP</a>.</p>
   <div class="note">
     “Visitors” counts distinct IP addresses that requested an actual page, with obvious bots filtered out.
     IPs are counted in memory and never stored — this file holds counts only, and the raw CloudFront logs

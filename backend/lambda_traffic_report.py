@@ -17,8 +17,10 @@ import collections
 import datetime
 import gzip
 import io
+import ipaddress
 import json
 import os
+import urllib.parse
 
 import boto3
 import boto3.dynamodb.conditions as ddb_cond
@@ -95,12 +97,15 @@ def log_keys_for(day):
 
 
 # CloudFront standard logs carry no c-country field — only real-time logs do,
-# and those need a paid Kinesis stream. The edge location is the next best
-# signal and costs nothing: CloudFront serves each viewer from a nearby edge,
-# so the airport code approximates where they are. Deliberately NOT resolved
-# by sending visitor IPs to a geolocation API — the site promises no tracking
-# and no data collected, and handing real visitor IPs to a third party would
-# break that promise for a nice-to-have stat.
+# and those need a paid Kinesis stream. Deliberately NOT resolved by sending
+# visitor IPs to a geolocation API — the site promises no tracking and no
+# data collected, and handing real visitor IPs to a third party would break
+# that promise for a nice-to-have stat.
+#
+# A visitor's country is looked up in a table that travels with this report
+# (country_of, below). Where the table has no answer, the edge location is
+# the next best signal and costs nothing: CloudFront serves each viewer from
+# a nearby edge, so the airport code approximates where they are.
 EDGE_COUNTRY = {
     # United States
     "ATL": "United States", "BOS": "United States", "ORD": "United States",
@@ -151,6 +156,110 @@ def edge_country(edge_location):
     return EDGE_COUNTRY.get(code, f"Unknown ({code})" if code else "Unknown")
 
 
+# The country table: DB-IP's free "IP to Country Lite" (CC BY 4.0), turned
+# into traffic_countries.bin by build_country_table.py and shipped in this
+# function's zip. The lookup happens here, in memory; no address leaves.
+# Whatever shows its results carries the credit below (DB-IP's condition).
+COUNTRY_TABLE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "traffic_countries.bin")
+COUNTRY_CREDIT = ("IP Geolocation by DB-IP", "https://db-ip.com")
+_countries = None
+
+
+def load_countries():
+    """The table, or None when its file is missing or not whole. The report
+    then goes on without it: countries fall back to the CloudFront edge."""
+    global _countries
+    if _countries is None:
+        try:
+            with open(COUNTRY_TABLE, "rb") as f:
+                raw = f.read()
+            if raw[:8] != b"DSKGEO1\n":
+                raise ValueError("not a country table")
+            head_len = int.from_bytes(raw[8:12], "big")
+            head = json.loads(raw[12:12 + head_len])
+            at = 12 + head_len
+            parts = {}
+            for version, width in ((4, 4), (6, 16)):
+                rows = int(head["rows"][str(version)])
+                firsts = raw[at:at + rows * width]
+                at += rows * width
+                codes = raw[at:at + rows * 2]
+                at += rows * 2
+                parts[version] = (width, rows, firsts, codes)
+            if at != len(raw) or not parts[4][1] or not parts[6][1]:
+                raise ValueError("country table is cut short")
+            _countries = {"release": str(head["release"]), "names": head["names"], "parts": parts}
+        except (OSError, ValueError, KeyError, TypeError) as e:
+            print(f"country table not usable, falling back to the CloudFront edge: {e}")
+            _countries = False
+    return _countries or None
+
+
+def country_of(address):
+    """'1.0.0.1' -> 'Australia'. None when the table has no answer for it."""
+    table = load_countries()
+    if not table:
+        return None
+    try:
+        ip = ipaddress.ip_address((address or "").strip())
+    except ValueError:
+        return None
+    if ip.version == 6 and ip.ipv4_mapped:
+        ip = ip.ipv4_mapped
+    width, rows, firsts, codes = table["parts"][ip.version]
+    # Addresses are stored in order as fixed-width bytes, so comparing the
+    # bytes compares the addresses. Find the last stretch that starts at or
+    # before this one.
+    key = ip.packed
+    lo, hi = 0, rows
+    while lo < hi:
+        mid = (lo + hi) // 2
+        if firsts[mid * width:(mid + 1) * width] <= key:
+            lo = mid + 1
+        else:
+            hi = mid
+    if lo == 0:
+        return None
+    code = codes[(lo - 1) * 2:lo * 2].decode("ascii", "replace")
+    if code == "ZZ":
+        return None
+    return table["names"].get(code, code)
+
+
+# Since 2026-11-23 the site is served through Preclearance's firewall: its
+# edge in Frankfurt receives every visitor and fetches the page from
+# CloudFront itself. CloudFront therefore logs the edge's two outgoing
+# addresses as c-ip for everybody. Counted by c-ip, all visitors became two
+# "addresses", one crawler among them marked both as bots, and this report
+# read 0 visitors on 24 and 25 November while about 2,000 requests a day
+# were being served.
+#
+# The edge puts the visitor's own address in X-Forwarded-For (it does not
+# pass on what the visitor sent in that header), and CloudFront logs the
+# header. It is believed only on requests that arrive from the edge's two
+# addresses: anyone can call CloudFront directly and write what they like in
+# it. Same addresses and same setting name as the API's door
+# (lambda_edge_gate.py).
+EDGE_EGRESS = {ip.strip() for ip in os.environ.get("EDGE_EGRESS_IPS", "63.185.255.22,63.186.219.69").split(",") if ip.strip()}
+THROUGH_FIREWALL = "Not known (came through the firewall)"
+
+
+def visitor_of(row):
+    """(the address to count this request under, whether it came through the firewall).
+
+    The address is None for a request the firewall made for itself, which is
+    nobody's visit.
+    """
+    ip = row.get("c-ip", "")
+    if ip not in EDGE_EGRESS:
+        return ip, False
+    forwarded = urllib.parse.unquote(row.get("x-forwarded-for", "") or "")
+    last = forwarded.split(",")[-1].strip()
+    if not last or last == "-" or last in EDGE_EGRESS:
+        return None, True
+    return last, True
+
+
 def aggregate(day):
     """Counts humans, not scripts.
 
@@ -161,7 +270,7 @@ def aggregate(day):
     all shared one spoofed iPhone-OS-13 agent and fetched zero assets.
     """
     per_ip = collections.defaultdict(
-        lambda: {"pages": collections.Counter(), "assets": 0, "bot": False, "edges": collections.Counter()}
+        lambda: {"pages": collections.Counter(), "assets": 0, "bot": False, "edges": collections.Counter(), "firewall": False}
     )
     total_requests = 0
 
@@ -180,7 +289,9 @@ def aggregate(day):
                 continue
             row = dict(zip(fields, parts))
             total_requests += 1
-            ip = row.get("c-ip", "")
+            ip, through_firewall = visitor_of(row)
+            if ip is None:
+                continue
             agent = row.get("cs(User-Agent)", "")
             uri = row.get("cs-uri-stem", "")
             status = row.get("sc-status", "")
@@ -191,7 +302,12 @@ def aggregate(day):
                 continue
             if not (status.startswith("2") or status.startswith("3")):
                 continue
-            rec["edges"][row.get("x-edge-location", "")] += 1
+            if through_firewall:
+                # Served from Frankfurt whoever they are: that is where the
+                # firewall stands, not where the visitor is.
+                rec["firewall"] = True
+            else:
+                rec["edges"][row.get("x-edge-location", "")] += 1
             if is_asset(uri):
                 rec["assets"] += 1
             elif is_page(uri):
@@ -214,9 +330,14 @@ def aggregate(day):
             pages.update(rec["pages"])
             # Counted per visitor, not per request, so one busy reader does
             # not outweigh several people from somewhere else.
+            country = country_of(ip)
             edge = rec["edges"].most_common(1)
-            if edge:
+            if country:
+                countries[country] += 1
+            elif edge:
                 countries[edge_country(edge[0][0])] += 1
+            elif rec["firewall"]:
+                countries[THROUGH_FIREWALL] += 1
 
     return {
         "date": day.isoformat(),
@@ -346,6 +467,17 @@ def send_email(stats, days, health=None):
                       f'{arrow} {sign}{change} ({sign}{pct}%) vs yesterday</div>')
         delta_txt = f" ({sign}{change}, {sign}{pct}% vs yesterday)"
 
+    # 0 visitors on a day with hundreds of requests is not a quiet day: it is
+    # the count breaking, as it did for two days in November 2026 when the
+    # firewall went in front of the site. Say so instead of reporting a 0.
+    warn_html, warn_txt = "", ""
+    if stats["visitors"] == 0 and stats["totalRequests"] >= 200:
+        warning = (f"0 visitors out of {stats['totalRequests']} requests is not a quiet day: "
+                   "the count is probably broken. Has something new been put in front of the site?")
+        warn_html = (f'<p style="background:#fdecea;color:#8a1f11;font-size:13px;font-weight:700;'
+                     f'padding:10px 12px;border-radius:8px;margin:12px 0 0;">{warning}</p>')
+        warn_txt = f"\n!! {warning}\n"
+
     def stat_card(num, label, extra=""):
         return (f'<td style="padding:14px 10px;background:#f4f6fb;border-radius:12px;text-align:center;" width="25%">'
                 f'<div style="font-size:26px;font-weight:900;color:#0d1b3e;">{num}</div>'
@@ -365,6 +497,21 @@ def send_email(stats, days, health=None):
         f'<td style="padding:7px 0;border-top:1px solid #eef1f7;font-size:13px;text-align:right;font-weight:800;color:#0d1b3e;">{c["visitors"]}</td></tr>'
         for c in stats.get("countries", [])
     ) or '<tr><td style="padding:10px 0;color:#6c757d;font-size:13px;">No country data yet.</td></tr>'
+
+    table = load_countries()
+    if table:
+        country_note_html = (
+            "Each visitor&rsquo;s country is looked up in a table kept inside this report "
+            f"(DB-IP&rsquo;s free country table of {table['release']}); no address is sent to anyone for it. "
+            "Where the table has no answer, the CloudFront edge that served the visitor stands in, which is only approximate. "
+            f'<a href="{COUNTRY_CREDIT[1]}" style="color:#8a93a6;">{COUNTRY_CREDIT[0]}</a>.'
+        )
+        country_note_txt = f"looked up in a table inside this report; {COUNTRY_CREDIT[0]}, {COUNTRY_CREDIT[1]}"
+    else:
+        country_note_html = (
+            "Based on the CloudFront edge that served each visitor — a close approximation of their region, not a precise lookup. No IP is ever sent to a geolocation service. Visitors who come through the firewall are all served from Frankfurt, so their country is not known."
+        )
+        country_note_txt = "approx, from the serving CloudFront edge"
 
     if health and health["problems"]:
         health_html = (
@@ -404,6 +551,7 @@ def send_email(stats, days, health=None):
       {stat_card(week_total, 'Last 7 days')}
       {stat_card(stats['botsFiltered'], 'Bots filtered')}
     </tr></table>
+    {warn_html}
 
     <h3 style="color:#0d1b3e;font-size:14px;margin:24px 0 6px;">Top pages</h3>
     <table width="100%" cellspacing="0" cellpadding="0">{top_rows}</table>
@@ -412,7 +560,7 @@ def send_email(stats, days, health=None):
 
     <h3 style="color:#0d1b3e;font-size:14px;margin:24px 0 6px;">Where visitors came from</h3>
     <table width="100%" cellspacing="0" cellpadding="0">{country_rows}</table>
-    <p style="color:#8a93a6;font-size:11px;margin:6px 0 0;">Based on the CloudFront edge that served each visitor — a close approximation of their region, not a precise lookup. No IP is ever sent to a geolocation service.</p>
+    <p style="color:#8a93a6;font-size:11px;margin:6px 0 0;">{country_note_html}</p>
 
     <h3 style="color:#0d1b3e;font-size:14px;margin:24px 0 6px;">Last 7 days</h3>
     <table width="100%" cellspacing="0" cellpadding="0">{week_rows}</table>
@@ -436,11 +584,11 @@ def send_email(stats, days, health=None):
         f"Visitors:      {stats['visitors']}{delta_txt}\n"
         f"Page views:    {stats['pageViews']}\n"
         f"Last 7 days:   {week_total}\n"
-        f"Bots filtered: {stats['botsFiltered']}\n\n"
+        f"Bots filtered: {stats['botsFiltered']}\n{warn_txt}\n"
         + "\n".join(f"  {p['views']:>5}  {p['path']}" for p in stats["topPages"])
         + ("\n\nDAILY SHORT: " + ("OK, published" if health and not health["problems"]
              else "; ".join(health["problems"]) if health else "not checked"))
-        + "\n\nWhere visitors came from (approx, from the serving CloudFront edge):\n"
+        + f"\n\nWhere visitors came from ({country_note_txt}):\n"
         + ("\n".join(f"  {c['visitors']:>5}  {c['country']}" for c in stats.get("countries", []))
            or "  no country data yet")
         + "\n\nDashboard: https://digitalsafetyknights.org/stats.html\n"
