@@ -69,6 +69,17 @@ def last_modified(path):
     return datetime.date.fromtimestamp(os.path.getmtime(path)).isoformat()
 
 
+NOINDEX = re.compile(r'<meta\s+name="robots"\s+content="[^"]*noindex', re.I)
+
+
+def asks_not_to_be_indexed(name):
+    """A page whose own head says noindex. Listing one in the sitemap tells
+    Google "index this" and "do not index this" at once, and Search Console
+    reports it (apply.html, 2026-11-27)."""
+    with open(os.path.join(FRONTEND, name), encoding="utf-8", errors="replace") as f:
+        return bool(NOINDEX.search(f.read(20000)))
+
+
 def pages():
     out = []
     for name in sorted(os.listdir(FRONTEND)):
@@ -271,7 +282,9 @@ def write_lang_mirrors(names):
 
 if __name__ == "__main__":
     names = pages()
-    n = write_sitemap(names)
+    # Only the sitemap leaves these pages out: they still get their canonical
+    # tag and their language mirrors like every other page.
+    n = write_sitemap([name for name in names if not asks_not_to_be_indexed(name)])
     write_robots()
     c = inject_canonicals(names)
     m = write_lang_mirrors(names)
