@@ -1,6 +1,6 @@
 # DSK Threat Intelligence & Policy Research Bank
 
-Compiled 2026-08-02, last refreshed 2026-11-25. Covers the last ~10 months of
+Compiled 2026-08-02, last refreshed 2026-11-27. Covers the last ~10 months of
 child-online-safety news (Oct 2025 – Oct 2026), weighted toward the most
 recent 4-6 weeks. Sourced via web search — every claim below has a citation.
 This is a living reference: update it monthly (it's also the natural
@@ -309,6 +309,75 @@ see `CHAPTER9_CONTENT_PLAN.md` for how this translates into site work).
   [OPB](https://www.opb.org/article/2026/11/17/oregon-ag-sues-openai-claims-company-knowingly-endangers-teens/) ·
   [TechRepublic](https://www.techrepublic.com/article/news-oregon-openai-chatgpt-teen-safety-lawsuit/) ·
   [Washington State Standard](https://washingtonstatestandard.com/?p=18036)
+
+---
+
+## 0ac. November 2026 Refresh (Nov 27, 2026)
+
+Automated biennial freshness scan, 2 days after the last one. Another quiet
+window — broad searches across federal legislation, state app-store/CSAM
+laws, the Character.AI bankruptcy, the EU KIDS Act, and general
+child-safety news turned up nothing dated after Nov 25, 2026 that changes a
+tracked law's status. Three spot-checks this run, continuing the rotation
+(none of these three were checked in the last several refreshes): the
+TAKE IT DOWN Act, the California App Store Accountability Act (DAAA), and
+the "45 states criminalize AI-generated CSAM" entry. All confirm the
+tracker is still accurate. No tracker edit this run.
+
+### Spot-checked, no change needed
+- **TAKE IT DOWN Act** — unchanged: FTC enforcement began May 19, 2026
+  (48-hour takedown requirement plus the TakeItDown.ftc.gov complaint
+  portal); the FTC's May 20, 2026 warning letters to a dozen "nudify"
+  tool operators are still the most recent enforcement-adjacent action
+  found — no new formal violation finding or settlement located as of
+  this check. Tracker's "effect ... FTC enforcement began May 2026"
+  status holds.
+  [FTC](https://www.ftc.gov/news-events/news/press-releases/2026/05/ftc-begins-enforcing-take-it-down-act) ·
+  [Orrick](https://www.orrick.com/en/Insights/2026/06/Nonconsensual-Intimate-Images-Online-Take-It-Down-Act-Enforcement-In-Full-Swing)
+- **California App Store Accountability Act (DAAA / AB 1043)** — unchanged:
+  still on track for its January 1, 2027 operative date; no lawsuit against
+  the California law found (unlike Texas's law, which was enjoined before
+  its own effective date but later allowed into effect on appeal). Tracker's
+  "pending ... Effective January 1, 2027" status holds.
+  [Kelley Drye](https://www.kelleydrye.com/viewpoints/blogs/ad-law-access/faq-digital-age-assurance-act-california-youth-safety-on-the-internet) ·
+  [Mondaq/FKKS](https://www.mondaq.com/article/1850146/update-your-app-(again)-californias-digital-age-assurance-act-takes-effect-january-1-2027)
+- **"45 states criminalize AI-generated CSAM"** — unchanged: no authoritative
+  recount found changing the 45-state figure. Several states continue
+  tightening related statutes (e.g. Minnesota's "nudification"-tool law,
+  South Carolina's SB 28/29 closing prosecution loopholes, a Louisiana SB 42
+  amendment, Nebraska's LB 383 effective July 1, 2026) but these are
+  refinements of existing criminalization, not evidence the baseline count
+  changed. Tracker's "effect ... Most enacted 2024-2025" status holds.
+  [Bloomberg Law](https://news.bloomberglaw.com/tech-and-telecom-law/ai-slop-drives-states-to-act-as-federal-rules-lag-explained) ·
+  [CBS News Minnesota](https://www.cbsnews.com/minnesota/news/governor-walz-sings-law-stop-ai-being-used-for-csam/)
+
+### Context, not a tracker change
+- Character.AI bankruptcy: the Nov 24, 2026 noon-ET competing-bid deadline
+  passed; no report found yet naming qualified competing bidders. The
+  court-approved schedule (auction Dec 1, 2026; sale hearing Dec 3-4, 2026
+  before Judge Brendan Shannon) is unchanged from the Nov 25 refresh — this
+  is simply the next scheduled date arriving, not new substance. Doesn't
+  change Kentucky v. Character Technologies' tracker status.
+  [Technobezz](https://www.technobezz.com/news/character-ai-sale-bid-deadline-disney)
+- Federal KOSA bundle (Kids Internet and Digital Safety Act): no Senate
+  floor vote found since the Nov 23 refresh; status unchanged (House passed
+  267-117 June 29, 2026; Senate Commerce Committee advanced an amended
+  version Aug 5, 2026; no full Senate vote yet).
+- EU KIDS Act: still at Commission-proposal stage; the public feedback
+  window closed Nov 26, 2026, but no tally or Parliament/Council position
+  published yet. Tracker status unchanged ("pending").
+- No new state has enacted an App Store Accountability Act since the
+  Louisiana/Alabama entries already on the tracker; law-firm trackers
+  continue to list Kansas, New Hampshire, Wisconsin, and South Dakota only
+  as bills introduced, not enacted.
+  [Wiley](https://www.wiley.law/alert-Key-Developments-With-State-App-Store-Accountability-Acts-as-Texas-Act-Takes-Effect)
+- No November 2026 Roblox/Discord/Snapchat child-safety settlement found
+  beyond the state-AG settlements (Nevada, Alabama, West Virginia) already
+  reflected in site content from earlier in 2026.
+
+**Site follow-up from this refresh:** none — nothing surfaced rose to a
+clear-cut, mechanical tracker update. "Last refreshed" date bumped to Nov
+27, 2026 above.
 
 ---
 
