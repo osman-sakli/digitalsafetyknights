@@ -14,13 +14,17 @@ stored — the published JSON contains counts only. The raw log bucket has a
 7-day expiry lifecycle rule on top of that.
 """
 import collections
+import csv
 import datetime
 import gzip
 import io
 import ipaddress
 import json
 import os
+import re
+import urllib.error
 import urllib.parse
+import urllib.request
 
 import boto3
 import boto3.dynamodb.conditions as ddb_cond
@@ -160,46 +164,130 @@ def edge_country(edge_location):
 # into traffic_countries.bin by build_country_table.py and shipped in this
 # function's zip. The lookup happens here, in memory; no address leaves.
 # Whatever shows its results carries the credit below (DB-IP's condition).
+#
+# DB-IP publishes a new table each month. Once a month this report fetches it
+# (a plain download: nothing about any visitor is sent with it), builds the
+# file again, checks it against its source and keeps it in the site's bucket.
+# The newer of that copy and the one in the zip is used. If any of that
+# fails, the report carries on with the table it has.
 COUNTRY_TABLE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "traffic_countries.bin")
+COUNTRY_KEY = "content/traffic-countries.bin"
+COUNTRY_SOURCE = "https://download.db-ip.com/free/dbip-country-lite-{month}.csv.gz"
 COUNTRY_CREDIT = ("IP Geolocation by DB-IP", "https://db-ip.com")
+COUNTRY_MAGIC = b"DSKGEO1\n"
+COUNTRY_UNKNOWN = "ZZ"  # DB-IP's own code for "not known"
 _countries = None
 
 
+def parse_countries(raw):
+    """A table file's bytes -> the table. ValueError when it is not one, or not whole.
+
+    The file: the magic line, a 4-byte length, a JSON heading (the table's
+    month, names by country code, row counts), then for IPv4 and for IPv6
+    the first address of every stretch (4 or 16 bytes each, in order)
+    followed by each stretch's two-letter code. A stretch runs up to the
+    next one's first address.
+    """
+    if raw[:8] != COUNTRY_MAGIC:
+        raise ValueError("not a country table")
+    head_len = int.from_bytes(raw[8:12], "big")
+    try:
+        head = json.loads(raw[12:12 + head_len])
+        counts = {v: int(head["rows"][str(v)]) for v in (4, 6)}
+        release, names = str(head["release"]), dict(head["names"])
+    except (KeyError, TypeError, ValueError) as e:
+        raise ValueError(f"country table has no proper heading: {e}")
+    if not re.fullmatch(r"\d{4}-\d{2}", release):
+        raise ValueError("country table does not say which month it is")
+    at = 12 + head_len
+    parts = {}
+    for version, width in ((4, 4), (6, 16)):
+        rows = counts[version]
+        firsts = raw[at:at + rows * width]
+        at += rows * width
+        codes = raw[at:at + rows * 2]
+        at += rows * 2
+        parts[version] = (width, rows, firsts, codes)
+    if at != len(raw) or counts[4] <= 0 or counts[6] <= 0:
+        raise ValueError("country table is cut short")
+    return {"release": release, "names": names, "parts": parts}
+
+
+def make_country_table(rows, month, names):
+    """DB-IP's rows (first address, last address, country code) -> a table file's bytes.
+
+    Every address ends up in exactly one stretch; what DB-IP leaves out is
+    marked not known. ValueError when a row is not what it should be.
+    """
+    by_version = {4: [], 6: []}
+    for n, row in enumerate(rows, 1):
+        if len(row) != 3:
+            raise ValueError(f"line {n}: expected first address, last address, country code")
+        first, last, code = row
+        a, b = ipaddress.ip_address(first), ipaddress.ip_address(last)
+        if a.version != b.version or int(b) < int(a) or not re.fullmatch(r"[A-Z]{2}", code):
+            raise ValueError(f"line {n}: not a stretch of addresses with a country code")
+        by_version[a.version].append((int(a), int(b), code))
+    body = b""
+    counts = {}
+    seen = set()
+    for version, width in ((4, 4), (6, 16)):
+        top = (1 << (width * 8)) - 1
+        out = []
+
+        def add(first, code):
+            if not out or out[-1][1] != code:
+                out.append((first, code))
+
+        cursor = 0
+        for first, last, code in sorted(by_version[version]):
+            if first < cursor:
+                raise ValueError(f"IPv{version}: two stretches overlap at {ipaddress.ip_address(first)}")
+            if first > cursor:
+                add(cursor, COUNTRY_UNKNOWN)
+            add(first, code)
+            cursor = last + 1
+        if cursor <= top:
+            add(cursor, COUNTRY_UNKNOWN)
+        counts[str(version)] = len(out)
+        seen.update(code for _, code in out)
+        body += b"".join(first.to_bytes(width, "big") for first, _ in out)
+        body += b"".join(code.encode("ascii") for _, code in out)
+    head = json.dumps({
+        "release": month,
+        "source": "DB-IP IP to Country Lite, CC BY 4.0, https://db-ip.com",
+        "rows": counts,
+        "names": {c: names[c] for c in sorted(seen) if c in names},
+    }, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
+    return COUNTRY_MAGIC + len(head).to_bytes(4, "big") + head + body
+
+
 def load_countries():
-    """The table, or None when its file is missing or not whole. The report
-    then goes on without it: countries fall back to the CloudFront edge."""
+    """The table in use: the newer of the one in the zip and the renewed one
+    in the site's bucket. None when neither is usable; the report then goes
+    on without it and countries fall back to the CloudFront edge."""
     global _countries
     if _countries is None:
+        found = []
         try:
             with open(COUNTRY_TABLE, "rb") as f:
-                raw = f.read()
-            if raw[:8] != b"DSKGEO1\n":
-                raise ValueError("not a country table")
-            head_len = int.from_bytes(raw[8:12], "big")
-            head = json.loads(raw[12:12 + head_len])
-            at = 12 + head_len
-            parts = {}
-            for version, width in ((4, 4), (6, 16)):
-                rows = int(head["rows"][str(version)])
-                firsts = raw[at:at + rows * width]
-                at += rows * width
-                codes = raw[at:at + rows * 2]
-                at += rows * 2
-                parts[version] = (width, rows, firsts, codes)
-            if at != len(raw) or not parts[4][1] or not parts[6][1]:
-                raise ValueError("country table is cut short")
-            _countries = {"release": str(head["release"]), "names": head["names"], "parts": parts}
-        except (OSError, ValueError, KeyError, TypeError) as e:
-            print(f"country table not usable, falling back to the CloudFront edge: {e}")
-            _countries = False
+                found.append(parse_countries(f.read()))
+        except (OSError, ValueError) as e:
+            print(f"country table in the zip not usable: {e}")
+        try:
+            found.append(parse_countries(s3.get_object(Bucket=SITE_BUCKET, Key=COUNTRY_KEY)["Body"].read()))
+        except s3.exceptions.NoSuchKey:
+            pass  # never renewed yet
+        except Exception as e:  # a damaged copy or a refused read must not stop the report
+            print(f"renewed country table not usable: {e}")
+        if not found:
+            print("no country table: countries fall back to the CloudFront edge")
+        _countries = max(found, key=lambda t: t["release"]) if found else False
     return _countries or None
 
 
-def country_of(address):
-    """'1.0.0.1' -> 'Australia'. None when the table has no answer for it."""
-    table = load_countries()
-    if not table:
-        return None
+def code_of(table, address):
+    """'1.0.0.1' -> 'AU'. None when the table has no answer for it."""
     try:
         ip = ipaddress.ip_address((address or "").strip())
     except ValueError:
@@ -221,9 +309,66 @@ def country_of(address):
     if lo == 0:
         return None
     code = codes[(lo - 1) * 2:lo * 2].decode("ascii", "replace")
-    if code == "ZZ":
+    return None if code == COUNTRY_UNKNOWN else code
+
+
+def country_of(address):
+    """'1.0.0.1' -> 'Australia'. None when the table has no answer for it."""
+    table = load_countries()
+    if not table:
         return None
-    return table["names"].get(code, code)
+    code = code_of(table, address)
+    return table["names"].get(code, code) if code else None
+
+
+def renew_countries(today=None, again=False):
+    """Takes this month's table from DB-IP when the one in use is older.
+
+    Returns what happened, in words. Nothing here may stop the daily report:
+    every failure leaves the table in use as it is.
+    """
+    global _countries
+    today = today or datetime.datetime.now(datetime.timezone.utc).date()
+    month = today.strftime("%Y-%m")
+    current = load_countries()
+    if current and current["release"] >= month and not again:
+        return f"the country table is this month's ({current['release']})"
+    url = COUNTRY_SOURCE.format(month=month)
+    try:
+        request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (compatible; monthly-table-download)"})
+        with urllib.request.urlopen(request, timeout=60) as response:
+            packed = response.read(40 * 1024 * 1024 + 1)
+    except urllib.error.HTTPError as e:
+        return f"DB-IP has no table for {month} to give yet (answer {e.code}); keeping {current['release'] if current else 'none'}"
+    except (urllib.error.URLError, OSError) as e:
+        return f"DB-IP could not be reached ({e}); keeping {current['release'] if current else 'none'}"
+    if len(packed) > 40 * 1024 * 1024:
+        return "DB-IP's file is far larger than a country table; not used"
+    try:
+        text = gzip.GzipFile(fileobj=io.BytesIO(packed)).read(300 * 1024 * 1024 + 1)
+        if len(text) > 300 * 1024 * 1024:
+            return "DB-IP's file unpacks far larger than a country table; not used"
+        text = text.decode("utf-8")
+        blob = make_country_table(csv.reader(io.StringIO(text)), month, dict(current["names"]) if current else {})
+        table = parse_countries(blob)
+    except (OSError, EOFError, ValueError) as e:
+        return f"DB-IP's file for {month} is not usable ({e}); keeping {current['release'] if current else 'none'}"
+    if current and any(table["parts"][v][1] < 0.8 * current["parts"][v][1] for v in (4, 6)):
+        return f"DB-IP's table for {month} is much smaller than the one in use; not used"
+    # Every 200th row of the source has to come back out of the new table.
+    asked = wrong = 0
+    for n, (first, last, code) in enumerate(csv.reader(io.StringIO(text))):
+        if n % 200:
+            continue
+        want = None if code == COUNTRY_UNKNOWN else code
+        asked += 2
+        wrong += (code_of(table, first) != want) + (code_of(table, last) != want)
+    if wrong:
+        return f"the table built for {month} does not agree with its source ({wrong} of {asked} wrong); not used"
+    s3.put_object(Bucket=SITE_BUCKET, Key=COUNTRY_KEY, Body=blob,
+                  ContentType="application/octet-stream", CacheControl="max-age=86400")
+    _countries = None
+    return f"country table renewed to {month}: {table['parts'][4][1]:,} IPv4 and {table['parts'][6][1]:,} IPv6 stretches, {asked:,} addresses checked"
 
 
 # Since 2026-11-23 the site is served through Preclearance's firewall: its
@@ -506,6 +651,11 @@ def send_email(stats, days, health=None):
             "Where the table has no answer, the CloudFront edge that served the visitor stands in, which is only approximate. "
             f'<a href="{COUNTRY_CREDIT[1]}" style="color:#8a93a6;">{COUNTRY_CREDIT[0]}</a>.'
         )
+        # The table renews itself each month. Two months behind means that has stopped working.
+        day = datetime.date.fromisoformat(stats["date"])
+        behind = (day.year - int(table["release"][:4])) * 12 + day.month - int(table["release"][5:7])
+        if behind >= 2:
+            country_note_html += f" The table is {behind} months old: its monthly renewal has not been working."
         country_note_txt = f"looked up in a table inside this report; {COUNTRY_CREDIT[0]}, {COUNTRY_CREDIT[1]}"
     else:
         country_note_html = (
@@ -606,6 +756,12 @@ def send_email(stats, days, health=None):
 
 def handler(event, context):
     event = event or {}
+    if event.get("renewCountries"):
+        # By hand: {"renewCountries": true}, with "again": true to fetch and
+        # rebuild even when the table in use is already this month's.
+        outcome = renew_countries(again=bool(event.get("again")))
+        print(outcome)
+        return {"countries": outcome}
     if event.get("date"):
         day = datetime.date.fromisoformat(event["date"])
     else:
@@ -616,6 +772,12 @@ def handler(event, context):
     if not event.get("skipEmail"):
         send_email(stats, days, shorts_health(day))
     print(json.dumps(stats, indent=2))
+    if not event.get("date"):
+        # After the day's report is out, so that nothing here can hold it up.
+        try:
+            print(renew_countries())
+        except Exception as e:
+            print(f"country table renewal failed: {e}")
     return stats
 
 

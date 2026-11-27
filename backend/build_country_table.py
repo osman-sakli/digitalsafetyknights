@@ -21,11 +21,10 @@ DB-IP publishes a new table each month. To take a newer one:
 The build checks the finished file against every row it was made from, and
 stops if a country code has no name in country_names.json.
 
-The file: b"DSKGEO1\\n", a 4-byte length, a JSON header (the table's month,
-names by country code, row counts), then for IPv4 and for IPv6 the first
-address of every stretch (4 or 16 bytes each, in order) followed by each
-stretch's two-letter code. A stretch runs up to the next one's first address.
-"ZZ" is DB-IP's own code for "not known".
+The report also renews the table by itself once a month (renew_countries in
+lambda_traffic_report.py) and keeps that copy in the site's bucket; this
+script is for the copy that ships in the zip. The file's layout is described
+at parse_countries there.
 """
 import csv
 import gzip
@@ -38,103 +37,58 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "traffic_countries.bin")
 NAMES = os.path.join(HERE, "country_names.json")
-MAGIC = b"DSKGEO1\n"
-UNKNOWN = "ZZ"
-WIDTH = {4: 4, 6: 16}
-
-
-def read_rows(path):
-    """{4: [(first, last, code)], 6: [...]} with the addresses as numbers."""
-    rows = {4: [], 6: []}
-    with gzip.open(path, "rt", encoding="utf-8", newline="") as f:
-        for n, line in enumerate(csv.reader(f), 1):
-            if len(line) != 3:
-                sys.exit(f"line {n}: expected first address, last address, country code; got {line!r}")
-            first, last, code = line
-            a, b = ipaddress.ip_address(first), ipaddress.ip_address(last)
-            if a.version != b.version or int(b) < int(a) or not re.fullmatch(r"[A-Z]{2}", code):
-                sys.exit(f"line {n}: not a stretch of addresses with a country code: {line!r}")
-            rows[a.version].append((int(a), int(b), code))
-    return rows
-
-
-def stretches(rows, version):
-    """[(first address, code)] covering every address once, neighbours with the same code joined."""
-    top = (1 << (WIDTH[version] * 8)) - 1
-    out = []
-
-    def add(first, code):
-        if not out or out[-1][1] != code:
-            out.append((first, code))
-
-    cursor = 0
-    for first, last, code in sorted(rows):
-        if first < cursor:
-            sys.exit(f"IPv{version}: two stretches overlap at {ipaddress.ip_address(first)}")
-        if first > cursor:
-            add(cursor, UNKNOWN)
-        add(first, code)
-        cursor = last + 1
-    if cursor <= top:
-        add(cursor, UNKNOWN)
-    return out
+sys.path.insert(0, HERE)
+import lambda_traffic_report as report  # noqa: E402  (the builder and the lookup live in the report itself)
 
 
 def build(source):
+    """Writes the table and returns the rows it was made from."""
     month = re.search(r"(\d{4}-\d{2})", os.path.basename(source))
     if not month:
         sys.exit("the file's name should carry its month, as DB-IP names it: dbip-country-lite-YYYY-MM.csv.gz")
     with open(NAMES, encoding="utf-8") as f:
         names = json.load(f)
-    rows = read_rows(source)
-    table = {v: stretches(rows[v], v) for v in (4, 6)}
-    codes = {code for v in table for _, code in table[v]} - {UNKNOWN}
-    nameless = sorted(codes - set(names))
+    with gzip.open(source, "rt", encoding="utf-8", newline="") as f:
+        rows = list(csv.reader(f))
+    nameless = sorted({row[2] for row in rows if len(row) == 3} - set(names) - {report.COUNTRY_UNKNOWN})
     if nameless:
         sys.exit(f"no name in country_names.json for: {', '.join(nameless)}")
-    head = json.dumps({
-        "release": month.group(1),
-        "source": "DB-IP IP to Country Lite, CC BY 4.0, https://db-ip.com",
-        "rows": {str(v): len(table[v]) for v in (4, 6)},
-        "names": {c: names[c] for c in sorted(codes)},
-    }, ensure_ascii=False, separators=(",", ":")).encode("utf-8")
-    blob = bytearray(MAGIC + len(head).to_bytes(4, "big") + head)
-    for v in (4, 6):
-        blob += b"".join(first.to_bytes(WIDTH[v], "big") for first, _ in table[v])
-        blob += b"".join(code.encode("ascii") for _, code in table[v])
+    try:
+        blob = report.make_country_table(rows, month.group(1), names)
+    except ValueError as e:
+        sys.exit(str(e))
     with open(OUT, "wb") as f:
         f.write(blob)
-    return rows, table
+    return rows, names
 
 
-def check(rows):
+def check(rows, names):
     """Every row the table was made from must come back out of the report's own lookup."""
-    sys.path.insert(0, HERE)
-    import lambda_traffic_report as report
-    with open(NAMES, encoding="utf-8") as f:
-        names = json.load(f)
-    report._countries = None
+    with open(OUT, "rb") as f:
+        table = report.parse_countries(f.read())
     asked = wrong = 0
-    for version in (4, 6):
-        for first, last, code in rows[version]:
-            want = None if code == UNKNOWN else names[code]
-            for number in {first, last, (first + last) // 2}:
-                asked += 1
-                got = report.country_of(str(ipaddress.ip_address(number) if version == 4 else ipaddress.IPv6Address(number)))
-                if got != want:
-                    wrong += 1
-                    if wrong <= 5:
-                        print(f"  wrong: {ipaddress.ip_address(number) if version == 4 else ipaddress.IPv6Address(number)} gave {got!r}, the table says {want!r}")
-    return asked, wrong
+    for first, last, code in rows:
+        want = None if code == report.COUNTRY_UNKNOWN else names[code]
+        a, b = ipaddress.ip_address(first), ipaddress.ip_address(last)
+        middle = type(a)((int(a) + int(b)) // 2)
+        for address in {str(a), str(b), str(middle)}:
+            asked += 1
+            got = report.code_of(table, address)
+            got = table["names"].get(got, got) if got else None
+            if got != want:
+                wrong += 1
+                if wrong <= 5:
+                    print(f"  wrong: {address} gave {got!r}, the source says {want!r}")
+    return table, asked, wrong
 
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         sys.exit(__doc__)
-    rows, table = build(sys.argv[1])
-    print(f"{OUT}: {os.path.getsize(OUT):,} bytes; "
-          f"IPv4 {len(rows[4]):,} rows -> {len(table[4]):,} stretches, IPv6 {len(rows[6]):,} rows -> {len(table[6]):,} stretches")
-    asked, wrong = check(rows)
+    rows, names = build(sys.argv[1])
+    table, asked, wrong = check(rows, names)
+    print(f"{OUT}: {os.path.getsize(OUT):,} bytes, {table['release']}; "
+          f"{len(rows):,} rows -> {table['parts'][4][1]:,} IPv4 and {table['parts'][6][1]:,} IPv6 stretches")
     print(f"checked {asked:,} addresses against the source: {wrong} wrong")
     if wrong:
         os.remove(OUT)

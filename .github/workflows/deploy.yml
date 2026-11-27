@@ -31,6 +31,8 @@ jobs:
           # doesn't wipe the whole video library on every deploy (this bit us
           # for real on 2026-09-26: the bucket's ACL setting was also stale
           # here, "Bucket owner enforced" doesn't accept --acl at all).
+          # content/traffic-countries.bin is the country table the dsk-traffic-report
+          # Lambda renews each month; it is not in this repo either.
           aws s3 sync frontend/ s3://${{ secrets.S3_BUCKET }}/ \
             --delete \
             --exclude ".DS_Store" \
@@ -38,6 +40,7 @@ jobs:
             --exclude "*.json" \
             --exclude "videos/*" \
             --exclude "films/*" \
+            --exclude "content/traffic-countries.bin" \
             --cache-control "max-age=86400"
 
       - name: Deploy HTML/JSON to S3
